@@ -58,14 +58,10 @@ Section "-Reg" Reg
 	WriteRegStr HKLM "Software\${PACKAGING_WINDOWS_REGISTRY_KEY}" "InstallDir" $INSTDIR
 
 	; Join server URL Scheme
-	WriteRegStr HKLM "Software\Classes\openra-kknd1-${TAG}" "" "URL:Join OpenRA server"
-	WriteRegStr HKLM "Software\Classes\openra-kknd2-${TAG}" "" "URL:Join OpenRA server"
-	WriteRegStr HKLM "Software\Classes\openra-kknd1-${TAG}" "URL Protocol" ""
-	WriteRegStr HKLM "Software\Classes\openra-kknd2-${TAG}" "URL Protocol" ""
-	WriteRegStr HKLM "Software\Classes\openra-kknd1-${TAG}\DefaultIcon" "" "$INSTDIR\${MOD_ID}.ico,0"
-	WriteRegStr HKLM "Software\Classes\openra-kknd2-${TAG}\DefaultIcon" "" "$INSTDIR\${MOD_ID}.ico,0"
-	WriteRegStr HKLM "Software\Classes\openra-kknd1-${TAG}\Shell\Open\Command" "" "$INSTDIR\${PACKAGING_WINDOWS_LAUNCHER_NAME}.exe Launch.URI=%1"
-	WriteRegStr HKLM "Software\Classes\openra-kknd2-${TAG}\Shell\Open\Command" "" "$INSTDIR\${PACKAGING_WINDOWS_LAUNCHER_NAME}.exe Launch.URI=%1"
+	WriteRegStr HKLM "Software\Classes\openra-${MOD_ID}-${TAG}" "" "URL:Join OpenRA server"
+	WriteRegStr HKLM "Software\Classes\openra-${MOD_ID}-${TAG}" "URL Protocol" ""
+	WriteRegStr HKLM "Software\Classes\openra-${MOD_ID}-${TAG}\DefaultIcon" "" "$INSTDIR\${MOD_ID}.ico,0"
+	WriteRegStr HKLM "Software\Classes\openra-${MOD_ID}-${TAG}\Shell\Open\Command" "" "$INSTDIR\${PACKAGING_WINDOWS_LAUNCHER_NAME}.exe Launch.URI=%1"
 
 SectionEnd
 
@@ -120,10 +116,8 @@ Section "Game" GAME
 
 	SetShellVarContext all
 	CreateDirectory "$APPDATA\OpenRA\ModMetadata"
-	nsExec::ExecToLog '"$INSTDIR\OpenRA.Utility.exe" kknd1 --register-mod "$INSTDIR\${PACKAGING_WINDOWS_LAUNCHER_NAME}.exe" system'
-	nsExec::ExecToLog '"$INSTDIR\OpenRA.Utility.exe" kknd2 --register-mod "$INSTDIR\${PACKAGING_WINDOWS_LAUNCHER_NAME}.exe" system'
-	nsExec::ExecToLog '"$INSTDIR\OpenRA.Utility.exe" kknd1 --clear-invalid-mod-registrations system'
-	nsExec::ExecToLog '"$INSTDIR\OpenRA.Utility.exe" kknd2 --clear-invalid-mod-registrations system'
+	nsExec::ExecToLog '"$INSTDIR\OpenRA.Utility.exe" ${MOD_ID} --register-mod "$INSTDIR\${PACKAGING_WINDOWS_LAUNCHER_NAME}.exe" system'
+	nsExec::ExecToLog '"$INSTDIR\OpenRA.Utility.exe" ${MOD_ID} --clear-invalid-mod-registrations system'
 	SetShellVarContext current
 
 SectionEnd
@@ -171,8 +165,7 @@ SectionEnd
 
 !macro Clean UN
 Function ${UN}Clean
-	nsExec::ExecToLog '"$INSTDIR\OpenRA.Utility.exe" kknd1 --unregister-mod system'
-	nsExec::ExecToLog '"$INSTDIR\OpenRA.Utility.exe" kknd2 --unregister-mod system'
+	nsExec::ExecToLog '"$INSTDIR\OpenRA.Utility.exe" ${MOD_ID} --unregister-mod system'
 
 	RMDir /r $INSTDIR\mods
 	RMDir /r $INSTDIR\maps
@@ -207,8 +200,7 @@ Function ${UN}Clean
 	RMDir /r $INSTDIR\Support
 
 	DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PACKAGING_WINDOWS_REGISTRY_KEY}"
-	DeleteRegKey HKLM "Software\Classes\openra-kknd1-${TAG}"
-	DeleteRegKey HKLM "Software\Classes\openra-kknd2-${TAG}"
+	DeleteRegKey HKLM "Software\Classes\openra-${MOD_ID}-${TAG}"
 
 	Delete $INSTDIR\uninstaller.exe
 	RMDir $INSTDIR
