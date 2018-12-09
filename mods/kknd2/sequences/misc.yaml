@@ -1,0 +1,101 @@
+overlay:
+	build-valid: sprites|B_Cursors.mobd
+		Start: 132
+		Offset: -16, -16
+	build-invalid: sprites|B_Cursors.mobd
+		Start: 131
+		Offset: -16, -16
+
+editor-overlay:
+	copy: sprites|Cursors.mobd
+		Start: 131
+		Offset: -16, -16
+	paste: sprites|Cursors.mobd
+		Start: 132
+		Offset: -16, -16
+
+shroud: # TODO this is the kknd1 shroud
+	shroud: bits/shroud.png
+		Length: 16
+	shroudfull: bits/shroud.png
+		Start: 1
+	fog: bits/shroud.png
+		Length: 16
+	fogfull: bits/shroud.png
+		Start: 1
+
+moveflsh:
+	idle: sprites|B_Cursors.mobd
+		Start: 119 # or 130
+		Length: 11
+
+indicators:
+	repair: sprites|B_Oil.mobd # TODO wrong
+	research0: sprites|B_Cursors.mobd
+		Start: 141
+	research1: sprites|B_Cursors.mobd
+		Start: 142
+	research2: sprites|B_Cursors.mobd
+		Start: 143
+	research3: sprites|B_Cursors.mobd
+		Start: 144
+	research4: sprites|B_Cursors.mobd
+		Start: 145
+	research5: sprites|B_Cursors.mobd
+		Start: 146
+	research6: sprites|B_Cursors.mobd
+		Start: 147
+	research7: sprites|B_Cursors.mobd
+		Start: 148
+	research8: sprites|B_Cursors.mobd
+		Start: 149
+	research9: sprites|B_Cursors.mobd
+		Start: 150
+	research10: sprites|B_Cursors.mobd
+		Start: 151
+	research11: sprites|B_Cursors.mobd
+		Start: 152
+	research12: sprites|B_Cursors.mobd
+		Start: 153
+	research13: sprites|B_Cursors.mobd
+		Start: 154
+	research14: sprites|B_Cursors.mobd
+		Start: 155
+	research15: sprites|B_Cursors.mobd
+		Start: 156
+	research16: sprites|B_Cursors.mobd
+		Start: 157
+	research17: sprites|B_Cursors.mobd
+		Start: 158
+	research18: sprites|B_Cursors.mobd
+		Start: 159
+	research19: sprites|B_Cursors.mobd
+		Start: 160
+
+crater:
+	a: sprites|B_Cursors.mobd # placeholder
+	b: sprites|B_Cursors.mobd # placeholder
+	c: sprites|B_Cursors.mobd # placeholder
+	d: sprites|B_Cursors.mobd # placeholder
+	e: sprites|B_Cursors.mobd # placeholder
+	f: sprites|B_Cursors.mobd # placeholder
+	g: sprites|B_Cursors.mobd # placeholder
+	h: sprites|B_Cursors.mobd # placeholder
+	i: sprites|B_Cursors.mobd # placeholder
+
+oilpatch:
+	idle: sprites|B_Oil.mobd
+		Length: 14
+		Tick: 70
+		ZOffset: -2000
+	burn: sprites|B_Oil.mobd # TODO wrong
+
+font:
+	production: bits/FontProduction.png
+		Length: 11
+
+beacon:
+	x: bits/Beacon.png
+		Length: 10
+		Tick: 600
+

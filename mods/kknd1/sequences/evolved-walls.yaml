@@ -1,0 +1,14 @@
+evolved_skeletalwall:
+	idle: bits/MWall.png
+		Length: 16
+	damaged-idle: bits/MWall.png
+		Start: 16
+		Length: 16
+	make0: bits/MWall.png
+		Start: 32
+	make1: bits/MWall.png
+		Start: 33
+	make2: bits/MWall.png
+		Start: 34
+	icon: bits/Buttons.png
+		Start: 13

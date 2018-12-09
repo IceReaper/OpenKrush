@@ -1,0 +1,18 @@
+evolved_wasp:
+	Inherits: ^EvolvedAircraft
+	Tooltip:
+		Name: Wasp
+	TooltipDescription:
+		Description: Goes boom!
+	Health:
+		HP: 1500
+	Aircraft:
+		Speed: 200
+		TurnSpeed: 3
+	RevealsShroud:
+		Range: 5c0
+		Type: CenterPosition
+	OffsetsArmament:
+		Weapon: evolved_wasp
+	Voiced:
+		VoiceSet: WaspVoice

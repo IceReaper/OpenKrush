@@ -1,0 +1,123 @@
+desert_objects_1:
+	idle: bits/desert_objects.png
+		Start: 0
+
+desert_objects_2:
+	idle: bits/desert_objects.png
+		Start: 1
+
+desert_objects_3:
+	idle: bits/desert_objects.png
+		Start: 2
+
+desert_objects_4:
+	idle: bits/desert_objects.png
+		Start: 3
+
+desert_objects_5:
+	idle: bits/desert_objects.png
+		Start: 4
+
+desert_objects_6:
+	idle: bits/desert_objects.png
+		Start: 5
+
+desert_objects_7:
+	idle: bits/desert_objects.png
+		Start: 6
+
+desert_objects_8:
+	idle: bits/desert_objects.png
+		Start: 7
+
+desert_objects_9:
+	idle: bits/desert_objects.png
+		Start: 8
+
+desert_objects_10:
+	idle: bits/desert_objects.png
+		Start: 9
+
+desert_objects_11:
+	idle: bits/desert_objects.png
+		Start: 10
+
+desert_objects_12:
+	idle: bits/desert_objects.png
+		Start: 11
+
+desert_objects_13:
+	idle: bits/desert_objects.png
+		Start: 12
+
+desert_objects_14:
+	idle: bits/desert_objects.png
+		Start: 13
+
+desert_objects_15:
+	idle: bits/desert_objects.png
+		Start: 14
+
+desert_objects_16:
+	idle: bits/desert_objects.png
+		Start: 15
+
+desert_objects_17:
+	idle: bits/desert_objects.png
+		Start: 16
+
+desert_objects_18:
+	idle: bits/desert_objects.png
+		Start: 17
+
+desert_objects_19:
+	idle: bits/desert_objects.png
+		Start: 18
+
+desert_objects_20:
+	idle: bits/desert_objects.png
+		Start: 19
+
+desert_objects_21:
+	idle: bits/desert_objects.png
+		Start: 20
+
+desert_objects_22:
+	idle: bits/desert_objects.png
+		Start: 21
+
+desert_objects_23:
+	idle: bits/desert_objects.png
+		Start: 22
+
+desert_objects_24:
+	idle: bits/desert_objects.png
+		Start: 23
+
+desert_objects_25:
+	idle: bits/desert_objects.png
+		Start: 24
+
+desert_objects_26:
+	idle: bits/desert_objects.png
+		Start: 25
+
+desert_objects_27:
+	idle: bits/desert_objects.png
+		Start: 26
+
+desert_objects_28:
+	idle: bits/desert_objects.png
+		Start: 27
+
+desert_objects_29:
+	idle: bits/desert_objects.png
+		Start: 28
+
+desert_objects_30:
+	idle: bits/desert_objects.png
+		Start: 29
+
+desert_objects_31:
+	idle: bits/desert_objects.png
+		Start: 30

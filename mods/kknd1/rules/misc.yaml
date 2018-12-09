@@ -1,0 +1,14 @@
+Player:
+	PlaceBuilding:
+		Palette: kknd
+		LineBuildSegmentPalette: kknd
+
+^CoreWorld:
+	ShroudRenderer:
+		Index: 0, 15, 3, 6, 12, 9, 11, 7, 14, 13, 1, 2, 4, 8, 5, 10
+	Faction@Random:
+		RandomFactionMembers: survivors, evolved
+
+EditorWorld:
+	EditorSelectionLayer:
+		Palette: kknd

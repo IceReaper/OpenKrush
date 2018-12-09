@@ -1,0 +1,7 @@
+demo: Demo Files
+	MirrorList: http://www.kknd-game.com/packages/KKNDXtremeDemo.txt
+	Extract:
+		^Content/kknd1/Sounds/Evolved.lvl: LEVELS/MUTE.SLV
+		^Content/kknd1/Sounds/Survivors.lvl: LEVELS/SURV.SLV
+		^Content/kknd1/Sprites/Sprites.lvl: LEVELS/640/SPRITES.LVL
+		^Content/kknd1/Movies/Melbourne House.vbc: FMV/MH_FMV.VBC

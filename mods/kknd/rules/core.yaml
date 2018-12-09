@@ -1,0 +1,490 @@
+# Base for all actors.
+^CoreVisibleActor:
+	# All our actors are sprite based and need to render sprites.
+	RenderSprites:
+	# At default fog hides every actor.
+	HiddenUnderFog:
+	# Allow actors to rotate and use facings.
+	BodyOrientation: # TODO verify if we can remove this from constructions!
+	# Automatically detect the number of facings from the sequences.
+	QuantizeFacingsFromSequence: # TODO see BodyOrientation todo
+	# Required to see debug overlays.
+	CombatDebugOverlay:
+
+# Base for all movable units.
+^CoreUnit:
+	Inherits: ^CoreVisibleActor
+	# Any build unit should report with a sound.
+	VoiceAnnouncement:
+		Voice: Create
+		ValidStances: Neutral
+		AnnounceWhenSpawnedByMap: false
+	# Default set which fits for most units: Occupy exactly 1 cell / 32x32 pixel tile.
+	HitShape:
+		Type: Circle
+			Radius: 512
+	# In general all units can be selected by using its full cell / tile.
+	Selectable:
+		Bounds: 32, 32
+		# Make the default priority higher, so units are prefered over constructions.
+		Priority: 20
+	# Units have a healthbar when selected or hovered.
+	AdvancedSelectionDecorations:
+	# Enemy units must be destroyed to win a game.
+	MustBeDestroyed:
+	# Units sequences should always use facings.
+	WithFacingSpriteBody:
+	# Units are visible on the radar.
+	AppearsOnRadar:
+	# Allow units to use the AttackMove and AssaultMove commands.
+	AttackMove:
+	HiddenUnderFog:
+		Type: CenterPosition
+	# Units should die when owner lost the game.
+	OwnerLostAction:
+		Action: Kill
+	# Make unit notify being attacked.
+	AttackNotification:
+		Notifications: UnitUnderAttack, UnitUnderAttackVeteran, UnitUnderAttackVeteran
+	# Show control group numbers when selected.
+	WithTextControlGroupDecoration:
+		ReferencePoint: Bottom, Right
+
+# Base for all buildings, towers and walls.
+^CoreConstruction:
+	Inherits: ^CoreVisibleActor
+	# As buildings have complexer states then just live / be dead, they require conditon support.
+	ConditionManager:
+	# Last seen state of a building will be rendered under fog, instead of using the default hiding behavior.
+	-HiddenUnderFog:
+	FrozenUnderFog:
+	# Applying "building"-damage to all actors based on this.
+	Armor:
+		Type: building
+	# Add building specific logic to Constructions.
+	Building:
+		TerrainTypes: Dirt, Grass, Sand, Path, Street
+	# Constructions can be targeted by anything which attacks ground.
+	Targetable:
+		TargetTypes: Ground
+	# In general all constructions can be selected.
+	Selectable:
+	# Constructions have sprites but do not use facing for them.
+	WithSpriteBody:
+	# Implement KKnD style construction logic.
+	SelfConstructing:
+		Condition: selfconstructing
+	# Also implement reverse deconstruction for selling.
+	DeconstructSellable:
+		Condition: deconstructing
+		RequiresCondition: !deconstructing
+	# Constructions are visible on the radar.
+	AppearsOnRadar:
+	# Constructions should explode when owner lost the game.
+	OwnerLostAction:
+		Action: Kill
+	# No projectiles can pass through a construction.
+	BlocksProjectiles:
+		RequiresCondition: !selfconstructing && !deconstructing
+
+# Base for all buildings.
+^CoreBuilding:
+	Inherits: ^CoreConstruction
+	# Require other actor nearby which provides buildable area in order to place a building.
+	RequiresBuildableArea:
+		AreaTypes: building
+		Adjacent: 4
+	# Grants buildable area for other buildings and defence structures.
+	GivesBuildableArea:
+		AreaTypes: building, defence
+		RequiresCondition: !selfconstructing && !deconstructing
+	# Buildings have a bigger healthbar when selected or hovered.
+	AdvancedSelectionDecorations:
+		Width: 64
+		BigVariant: true
+	# Enemy buildings  have to be destroyed to win, even when short game option is used.
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	# If a building is destroyed, it should play an animation...
+	Explodes:
+		Weapon: dieBuilding
+		EmptyWeapon: dieBuilding
+	ExplosionOnDamageTransition@Heavy:
+		Weapon: breakBuilding
+		DamageState: Heavy
+	ExplosionOnDamageTransition@Critical:
+		Weapon: breakBuilding
+		DamageState: Critical
+	# ... and Shake the screen.
+	ShakeOnDeath:
+		Intensity: 10
+	# Buildings can be repaired by technicians.
+	TechnicianRepairable:
+		RequiresCondition: !selfconstructing && !deconstructing
+	# The view radius of buildings.
+	RevealsShroud:
+		Range: 5c0
+	# Making buildings actualy buildable.
+	AdvancedBuildable:
+		Queue: building
+		BuildDurationModifier: 100
+		BuildLimit: 4
+	# Group all buildings in the map editor.
+	MapEditorData:
+		Categories: Building
+	# Having at last one building, allows to build another HQ.
+	Production:
+		Produces: building
+		RequiresCondition: !selfconstructing && !deconstructing
+	# Should not be auto attacked.
+	Targetable@NoAutoAttack:
+		TargetTypes: NoAutoAttack
+	# Make unit notify being attacked.
+	AttackNotification:
+		Notifications: BuildingUnderAttack
+	# Notify when building lost.
+	ActorLostNotification:
+		Notification: BuildingLost
+	# TODO remove this, if it works with hit shapes!
+	-BlocksProjectiles:
+	# Target "Structure" target for ai bombers.
+	Targetable:
+		TargetTypes: Ground, Structure
+	# Render the building a little bit when destroyed.
+	FrozenOnDeath:
+		Duration: 60
+
+# Base for all towers.
+^CoreTower:
+	Inherits@1: ^CoreConstruction
+	Inherits@2: ^CoreTurret
+	# Making towers actualy buildable.
+	AdvancedBuildable:
+		Queue: tower
+		BuildDurationModifier: 100
+		BuildLimit: 8
+	# Group all towers in the map editor.
+	MapEditorData:
+		Categories: Tower
+	# Towers can be repaired by technicians.
+	TechnicianRepairable:
+		RequiresCondition: !selfconstructing && !deconstructing
+	# Towers have the same healthbar as units when selected or hovered.
+	AdvancedSelectionDecorations:
+	# Towers in KKnD are always 2x2 in size.
+	Building:
+		Dimensions: 2,2
+		Footprint: xx==
+	# Correct Hitshape and selection box for all towers
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 0
+		TargetableOffsets: 819,-512,0, 819,512,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
+	Selectable:
+		Bounds: 64, 64, 0, -16
+	# Require other actor nearby which provides buildable area in order to place a tower.
+	RequiresBuildableArea:
+		AreaTypes: defence
+		Adjacent: 4
+	# Towers will show an explosion upon being destroyed.
+	Explodes:
+		Weapon: dieTower
+		EmptyWeapon: dieTower
+	ExplosionOnDamageTransition@Heavy:
+		Weapon: breakTower
+		DamageState: Heavy
+	ExplosionOnDamageTransition@Critical:
+		Weapon: breakTower
+		DamageState: Critical
+	# Do not show turret when being constructed or deconstructed...
+	WithOffsetsSpriteTurret:
+		RequiresCondition: !selfconstructing && !deconstructing
+	# ... and do not shoot when being constructed or deconstructed.
+	AttackTurreted:
+		RequiresCondition: !selfconstructing && !deconstructing
+	# Towers also have to be destroyed when short game option is used.
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	# TODO remove this, if it works with hit shapes!
+	-BlocksProjectiles:
+	# Render the tower a little bit when destroyed.
+	FrozenOnDeath:
+
+# Base for all walls.
+^CoreWall:
+	Inherits: ^CoreConstruction
+	# A wall is always 1 tile in size.
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	# Correct Hitshape
+	HitShape:
+		Type: Rectangle
+			TopLeft: -512, -512
+			BottomRight: 512, 512
+	Selectable:
+		Bounds: 32, 32, 0, 0
+	# Walls do visualy connect with adjecent walls.
+	-WithSpriteBody:
+	WithWallSpriteBody:
+	# Walls will show an explosion when destroyed.
+	Explodes:
+		Weapon: dieWall
+		EmptyWeapon: dieWall
+	ExplosionOnDamageTransition@Heavy:
+		Weapon: breakWall
+		DamageState: Heavy
+	ExplosionOnDamageTransition@Critical:
+		Weapon: breakWall
+		DamageState: Critical
+	# Group all walls in the map editor.
+	MapEditorData:
+		Categories: Walls
+	# The view radius of walls.
+	RevealsShroud:
+		Range: 1c0
+	# Make walls actually buildable.
+	AdvancedBuildable:
+		Queue: wall
+		BuildDurationModifier: 100
+	# Require other actor nearby which provides buildable area in order to place a wall.
+	RequiresBuildableArea:
+		AreaTypes: defence
+		Adjacent: 6
+	# Walls will use line-build mode.
+	LineBuildNode: # TODO replace this by continuous placing implementation!
+	LineBuild:
+		Range: 5
+	# Wall will use the standard unit healthbar.
+	AdvancedSelectionDecorations:
+	# Should not be auto attacked.
+	Targetable@NoAutoAttack:
+		TargetTypes: NoAutoAttack
+
+# Base for all infantry.
+^CoreInfantry:
+	Inherits: ^CoreUnit
+	# Applying "infantry"-damage to all actors based on this.
+	Armor:
+		Type: infantry
+	# Vehicles can kill infantry by driving over them.
+	Crushable:
+		CrushClasses: infantry
+		WarnProbability: 0
+	# Allow 5 infantry units to share a cell and set movement modifiers.
+	Mobile:
+		Locomotor: infantry
+	# Actor can be targeted by anything which attacks ground.
+	Targetable:
+		TargetTypes: Ground, Infantry
+	# Calculated size for infantry to match shared cells.
+	Selectable:
+		Bounds: 18,20,0,-6
+	# Infantry hitshape
+	HitShape:
+		Type: Circle
+			Radius: 128
+	# Infantry has an animation while moving: walking.
+	WithMoveAnimation:
+	# Group all infantry in the map editor.
+	MapEditorData:
+		Categories: Infantry
+	# Making infantry actualy buildable.
+	AdvancedBuildable:
+		Queue: infantry
+		BuildDurationModifier: 100
+	# Infantry has a smaller healthbar.
+	AdvancedSelectionDecorations:
+		Width: 16
+		Offset: 0,-6
+	# Make infantry act like they live.
+	Living:
+	# If infantry is killed, it screams.
+	DeathSounds:
+
+# Add locomotor to world...
+^CoreWorld:
+	Locomotor@infantry:
+		Name: infantry
+		SharesCell: true
+		TerrainSpeeds:
+			Dirt: 100
+			Grass: 100
+			Sand: 100
+			Path: 100
+			Street: 100
+
+# Base for all vehicles
+^CoreVehicle:
+	Inherits: ^CoreUnit
+	Armor:
+		Type: vehicle
+	# Vehicles can kill infantry by moving over them and set movement modifiers.
+	Mobile:
+		Locomotor: vehicle
+	# Actor can be targeted by anything which attacks ground.
+	Targetable:
+		TargetTypes: Ground
+	# Vehicles have an animation while moving.
+	WithMoveAnimation:
+	# Destroying a vehicle always causes an explosion.
+	Explodes:
+		Weapon: dieVehicle
+		EmptyWeapon: dieVehicle
+	# Group all vehicles in the map editor.
+	MapEditorData:
+		Categories: Vehicle
+	# Making vehicles actualy buildable.
+	AdvancedBuildable:
+		Queue: vehicle
+		BuildDurationModifier: 100
+	# Can be repaired using repairbays.
+	RepairableVehicle:
+	# Render the vehicle a little bit when destroyed.
+	FrozenOnDeath:
+		Duration: 15
+
+# Add locomotor to world...
+^CoreWorld:
+	Locomotor@vehicle:
+		Name: vehicle
+		Crushes: infantry
+		CrushDamageTypes: Crush
+		TerrainSpeeds:
+			Dirt: 100
+			Grass: 100
+			Sand: 100
+			Path: 100
+			Street: 100
+
+# Base for all aircrafts
+^CoreAircraft:
+	Inherits: ^CoreUnit
+	# Applying "armor"-damage to all actors based on this.
+	Armor:
+		Type: aircraft
+	# Making the actors actualy fly.
+	Aircraft:
+		CruiseAltitude: 2560 # TODO verify if this applies to both games. other wise
+		Repulsable: False # TODO verify what this is and if its correct
+	# Actor can be targeted by anything which attacks air.
+	Targetable:
+		TargetTypes: Air
+	# Group all aircrafts in the map editor.
+	MapEditorData:
+		Categories: Aircraft
+	# Aircraft has visible shadow on ground beneath
+	WithShadow: # TODO verify this one. why 43? Shouldnt it be just "below"? And how does this work in combination with ZOffset?
+		Offset: 43,128,0
+		ZOffset: -129
+	# Making aircraft actualy buildable.
+	AdvancedBuildable:
+		Queue: aircraft
+		BuildDurationModifier: 100
+
+# Special light vehicles
+^CoreLightVehicle:
+	# Can not crush infantry.
+	Mobile:
+		Locomotor: vehicleNonCrushing
+	# Uses smaller explosion
+	Explodes:
+		Weapon: dieVehicleLight
+		EmptyWeapon: dieVehicleLight
+
+# Add locomotor to world...
+^CoreWorld:
+	Locomotor@vehicleNonCrushing:
+		Name: vehicleNonCrushing
+		TerrainSpeeds:
+			Dirt: 100
+			Grass: 100
+			Sand: 100
+			Path: 100
+			Street: 100
+
+# Special heavy vehicles
+^CoreHeavyVehicle:
+	# Heavy vehicles occupy 2x2 cells
+	Selectable:
+		Bounds: 64,64
+	# 2x2 hitshape - TODO reimplement me after collision works. otherwise unit gets damage by nearby actors.
+	#HitShape:
+	#	Type: Circle
+	#		Radius: 1024
+	# Uses larger explosion
+	Explodes:
+		Weapon: dieVehicleHeavy
+		EmptyWeapon: dieVehicleHeavy
+
+# Grouped traits for standard turret behavior.
+^CoreTurret:
+	# General turret behavior.
+	Turreted:
+	# Special trait to position turret depending on attachment point (only visualy).
+	WithOffsetsSpriteTurret:
+	# If it has a turret, it should attack with its turret only, meaning it can aim and fire with it while moving.
+	AttackTurreted:
+		Voice: Attack
+
+# Grouped traits for standard non-turreted behavior.
+^CoreArmedSelf:
+	# Units without a turret have to stop and aim at a target to shoot.
+	AttackFrontal:
+		Voice: Attack
+	# Specify the sequence to use when shooting.
+	WithAimAttackAnimation:
+		SequenceFire: shoot
+		SequenceAim: aim
+
+# Oil resource.
+oilpatch:
+	Inherits: ^CoreConstruction
+	# KKnD oilpatch behavior.
+	Oilpatch:
+	# Put oil in resources catgegory in map editor.
+	MapEditorData:
+		Categories: Resource
+	# Should not be auto attacked.
+	Targetable@NoAutoAttack:
+		TargetTypes: NoAutoAttack
+	# Required for burning effect.
+	WithIdleOverlay@Animation: # TODO add burning damage
+		Sequence: burn
+		RequiresCondition: Burning
+	# An oilpatch is a construction, occupying 3x3 cells for buildings but not units.
+	Building:
+		TerrainTypes: Clear
+		Dimensions: 5,5
+		Footprint: ===== ===== ===== ===== =====
+	# Oilpatch hitshape is only the center cell.
+	HitShape:
+		Type: Rectangle
+			TopLeft: -512, -512
+			BottomRight: 512, 512
+	Selectable:
+		Bounds: 32, 32, 0, 0
+	# Oil has a healthbar when hovered, which shows the oil amount.
+	AdvancedSelectionDecorations:
+	# Not build or sellable.
+	-SelfConstructing:
+	-DeconstructSellable:
+	# Not blocking projectiles.
+	-BlocksProjectiles:
+
+# Map decoration actors.
+^CoreDecoration:
+	Inherits: ^CoreVisibleActor
+	# Always visible, no special shroud logic here.
+	-HiddenUnderFog:
+	FrozenUnderFog:
+	# Decorations  have sprites but do not use facing for them.
+	WithSpriteBody:
+	# Default setting makes decorations take 1x1 tiles.
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	# Put decorations in own catgegory in map editor.
+	MapEditorData:
+		Categories: Decorations

@@ -1,0 +1,449 @@
+urban_trees_1:
+	idle: bits/urban_trees.png
+		Start: 0
+
+urban_trees_2:
+	idle: bits/urban_trees.png
+		Start: 1
+
+urban_trees_3:
+	idle: bits/urban_trees.png
+		Start: 2
+
+urban_trees_4:
+	idle: bits/urban_trees.png
+		Start: 3
+
+urban_trees_5:
+	idle: bits/urban_trees.png
+		Start: 4
+
+urban_trees_6:
+	idle: bits/urban_trees.png
+		Start: 5
+
+urban_trees_7:
+	idle: bits/urban_trees.png
+		Start: 6
+
+urban_trees_8:
+	idle: bits/urban_trees.png
+		Start: 7
+
+urban_trees_9:
+	idle: bits/urban_trees.png
+		Start: 8
+
+urban_trees_10:
+	idle: bits/urban_trees.png
+		Start: 9
+
+urban_trees_11:
+	idle: bits/urban_trees.png
+		Start: 10
+
+urban_trees_12:
+	idle: bits/urban_trees.png
+		Start: 11
+
+urban_objects_1:
+	idle: bits/urban_objects.png
+		Start: 0
+		ZOffset: -5000
+
+urban_objects_2:
+	idle: bits/urban_objects.png
+		Start: 1
+		ZOffset: -5000
+
+urban_objects_3:
+	idle: bits/urban_objects.png
+		Start: 2
+
+urban_objects_4:
+	idle: bits/urban_objects.png
+		Start: 3
+		ZOffset: -5000
+
+urban_objects_5:
+	idle: bits/urban_objects.png
+		Start: 4
+
+urban_objects_6:
+	idle: bits/urban_objects.png
+		Start: 5
+
+urban_objects_7:
+	idle: bits/urban_objects.png
+		Start: 6
+
+urban_objects_8:
+	idle: bits/urban_objects.png
+		Start: 7
+
+urban_objects_9:
+	idle: bits/urban_objects.png
+		Start: 8
+
+urban_objects_10:
+	idle: bits/urban_objects.png
+		Start: 9
+
+urban_objects_11:
+	idle: bits/urban_objects.png
+		Start: 10
+
+urban_objects_12:
+	idle: bits/urban_objects.png
+		Start: 11
+
+urban_objects_13:
+	idle: bits/urban_objects.png
+		Start: 12
+
+urban_objects_14:
+	idle: bits/urban_objects.png
+		Start: 13
+
+urban_objects_15:
+	idle: bits/urban_objects.png
+		Start: 14
+
+urban_objects_16:
+	idle: bits/urban_objects.png
+		Start: 15
+		ZOffset: -500
+
+urban_objects_17:
+	idle: bits/urban_objects.png
+		Start: 16
+		ZOffset: -500
+
+urban_objects_18:
+	idle: bits/urban_objects.png
+		Start: 17
+		ZOffset: -500
+
+urban_objects_19:
+	idle: bits/urban_objects.png
+		Start: 18
+		ZOffset: -500
+
+urban_objects_20:
+	idle: bits/urban_objects.png
+		Start: 19
+		ZOffset: -500
+
+urban_objects_21:
+	idle: bits/urban_objects.png
+		Start: 20
+		ZOffset: -500
+
+urban_objects_21:
+	idle: bits/urban_objects.png
+		Start: 21
+		ZOffset: -500
+
+urban_objects_22:
+	idle: bits/urban_objects.png
+		Start: 21
+		ZOffset: -500
+
+urban_objects_23:
+	idle: bits/urban_objects.png
+		Start: 22
+		ZOffset: -500
+
+urban_objects_24:
+	idle: bits/urban_objects.png
+		Start: 23
+		ZOffset: -500
+
+urban_objects_25:
+	idle: bits/urban_objects.png
+		Start: 24
+
+urban_objects_26:
+	idle: bits/urban_objects.png
+		Start: 25
+
+urban_objects_27:
+	idle: bits/urban_objects.png
+		Start: 26
+
+urban_objects_28:
+	idle: bits/urban_objects.png
+		Start: 27
+
+urban_objects_29:
+	idle: bits/urban_objects.png
+		Start: 28
+
+urban_objects_30:
+	idle: bits/urban_objects.png
+		Start: 29
+
+urban_objects_31:
+	idle: bits/urban_objects.png
+		Start: 30
+
+urban_objects_32:
+	idle: bits/urban_objects.png
+		Start: 31
+
+urban_objects_33:
+	idle: bits/urban_objects.png
+		Start: 32
+
+urban_objects_34:
+	idle: bits/urban_objects.png
+		Start: 33
+
+urban_objects_35:
+	idle: bits/urban_objects.png
+		Start: 34
+
+urban_objects_36:
+	idle: bits/urban_objects.png
+		Start: 35
+
+urban_objects_37:
+	idle: bits/urban_objects.png
+		Start: 36
+
+urban_objects_38:
+	idle: bits/urban_objects.png
+		Start: 37
+
+urban_objects_39:
+	idle: bits/urban_objects.png
+		Start: 38
+
+urban_buildings_1:
+	idle: bits/urban_buildings.png
+		Start: 0
+
+urban_buildings_2:
+	idle: bits/urban_buildings.png
+		Start: 1
+
+urban_buildings_3:
+	idle: bits/urban_buildings.png
+		Start: 2
+
+urban_buildings_4:
+	idle: bits/urban_buildings.png
+		Start: 3
+
+urban_buildings_5:
+	idle: bits/urban_buildings.png
+		Start: 4
+
+urban_buildings_6:
+	idle: bits/urban_buildings.png
+		Start: 5
+
+urban_buildings_7:
+	idle: bits/urban_buildings.png
+		Start: 6
+
+urban_buildings_8:
+	idle: bits/urban_buildings.png
+		Start: 7
+
+urban_buildings_9:
+	idle: bits/urban_buildings.png
+		Start: 8
+
+urban_buildings_10:
+	idle: bits/urban_buildings.png
+		Start: 9
+
+urban_buildings_11:
+	idle: bits/urban_buildings.png
+		Start: 10
+
+urban_buildings_12:
+	idle: bits/urban_buildings.png
+		Start: 11
+
+urban_buildings_13:
+	idle: bits/urban_buildings.png
+		Start: 12
+
+urban_buildings_14:
+	idle: bits/urban_buildings.png
+		Start: 13
+
+urban_buildings_15:
+	idle: bits/urban_buildings.png
+		Start: 14
+
+urban_buildings_16:
+	idle: bits/urban_buildings.png
+		Start: 15
+
+urban_buildings_17:
+	idle: bits/urban_buildings.png
+		Start: 16
+
+urban_buildings_18:
+	idle: bits/urban_buildings.png
+		Start: 17
+
+urban_buildings_19:
+	idle: bits/urban_buildings.png
+		Start: 18
+
+urban_buildings_20:
+	idle: bits/urban_buildings.png
+		Start: 19
+
+urban_buildings_21:
+	idle: bits/urban_buildings.png
+		Start: 20
+
+urban_buildings_22:
+	idle: bits/urban_buildings.png
+		Start: 21
+
+urban_buildings_23:
+	idle: bits/urban_buildings.png
+		Start: 22
+
+urban_buildings_24:
+	idle: bits/urban_buildings.png
+		Start: 23
+
+urban_buildings_25:
+	idle: bits/urban_buildings.png
+		Start: 24
+
+urban_buildings_26:
+	idle: bits/urban_buildings.png
+		Start: 25
+
+urban_buildings_27:
+	idle: bits/urban_buildings.png
+		Start: 26
+
+urban_buildings_28:
+	idle: bits/urban_buildings.png
+		Start: 27
+
+urban_buildings_29:
+	idle: bits/urban_buildings.png
+		Start: 28
+
+urban_buildings_30:
+	idle: bits/urban_buildings.png
+		Start: 29
+
+urban_buildings_31:
+	idle: bits/urban_buildings.png
+		Start: 30
+
+urban_buildings_32:
+	idle: bits/urban_buildings.png
+		Start: 31
+
+urban_buildings_33:
+	idle: bits/urban_buildings.png
+		Start: 32
+
+urban_buildings_34:
+	idle: bits/urban_buildings.png
+		Start: 33
+
+urban_buildings_35:
+	idle: bits/urban_buildings.png
+		Start: 34
+
+urban_buildings_36:
+	idle: bits/urban_buildings.png
+		Start: 35
+
+urban_buildings_37:
+	idle: bits/urban_buildings.png
+		Start: 36
+
+urban_buildings_38:
+	idle: bits/urban_buildings.png
+		Start: 37
+
+urban_buildings_39:
+	idle: bits/urban_buildings.png
+		Start: 38
+
+urban_buildings_40:
+	idle: bits/urban_buildings.png
+		Start: 39
+
+urban_buildings_41:
+	idle: bits/urban_buildings.png
+		Start: 40
+
+urban_buildings_42:
+	idle: bits/urban_buildings.png
+		Start: 41
+
+urban_buildings_43:
+	idle: bits/urban_buildings.png
+		Start: 42
+
+urban_buildings_44:
+	idle: bits/urban_buildings.png
+		Start: 43
+
+urban_buildings_45:
+	idle: bits/urban_buildings.png
+		Start: 44
+
+urban_buildings_46:
+	idle: bits/urban_buildings.png
+		Start: 45
+
+urban_buildings_47:
+	idle: bits/urban_buildings.png
+		Start: 46
+
+urban_buildings_48:
+	idle: bits/urban_buildings.png
+		Start: 47
+
+urban_buildings_49:
+	idle: bits/urban_buildings.png
+		Start: 48
+
+urban_buildings_50:
+	idle: bits/urban_buildings.png
+		Start: 49
+
+urban_buildings_51:
+	idle: bits/urban_buildings.png
+		Start: 50
+
+urban_buildings_52:
+	idle: bits/urban_buildings.png
+		Start: 51
+
+urban_buildings_53:
+	idle: bits/urban_buildings.png
+		Start: 52
+
+urban_buildings_54:
+	idle: bits/urban_buildings.png
+		Start: 53
+		ZOffset: -5000
+
+urban_buildings_55:
+	idle: bits/urban_buildings.png
+		Start: 54
+
+urban_buildings_56:
+	idle: bits/urban_buildings.png
+		Start: 55
+
+urban_buildings_57:
+	idle: bits/urban_buildings.png
+		Start: 56

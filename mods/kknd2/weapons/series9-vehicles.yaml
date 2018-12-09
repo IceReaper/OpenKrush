@@ -1,0 +1,173 @@
+series9_patrolbot:
+	Range: 4c0
+	Burst: 4
+	BurstDelay: 1 # TODO
+	ReloadDelay: 25 # TODO
+	Report: sounds_series9|17.wav
+	Projectile: InstantHit
+		Blockable: true
+	Warhead@1Damage: SpreadDamage
+		Damage: 100
+		Spread: 0c32 # TODO
+		Falloff: 100, 100
+		Versus:
+			infantry: 36
+			vehicle: 77
+			building: 15
+			# aircraft: 77
+	Warhead@2Effect: ShrapnelCreateEffect
+		Image: hit
+		ExplosionPalette: B_Explosions
+		Explosions: bullet_a, bullet_b, bullet_c
+		ImpactSounds: sounds_series9|151.wav, sounds_series9|152.wav, kknd2|bits/sounds/ricochet.wav
+		ImpactSoundChance: 10
+		Radius: 250,250
+
+series9_responsebot:
+	Range: 5c0
+	Burst: 8
+	BurstDelay: 1 # TODO
+	ReloadDelay: 25 # TODO
+	Report: sounds_series9|17.wav
+	Projectile: InstantHit
+		Blockable: true
+	Warhead@1Damage: SpreadDamage
+		Damage: 100
+		Spread: 0c32 # TODO
+		Falloff: 100, 100
+		Versus:
+			infantry: 128
+			vehicle: 51
+			building: 51
+			# aircraft: 51
+	Warhead@2Effect: ShrapnelCreateEffect
+		Image: hit
+		ExplosionPalette: B_Explosions
+		Explosions: bullet_a, bullet_b, bullet_c
+		ImpactSounds: sounds_series9|151.wav, sounds_series9|152.wav, kknd2|bits/sounds/ricochet.wav
+		ImpactSoundChance: 10
+		Radius: 250,250
+
+series9_radiator:
+	Range: 2c0 # TODO
+	ReloadDelay: 50 # TODO
+	Report: sounds_series9|174.wav
+	Projectile: SourceExplosion
+	Warhead@1Damage: SpreadDamage
+		Damage: 100
+		Spread: 0c32 # TODO
+		Falloff: 100, 100
+		ValidStances: Enemy
+		Versus:
+			infantry: 150
+			vehicle: 450
+			building: 60
+			# aircraft: 450
+	Warhead@2Effect: ShrapnelCreateEffect
+		Image: hit
+		ExplosionPalette: P_Fire
+		Explosions: series9_radiator
+
+series9_tankbot:
+	Range: 7c0
+	Burst: 2
+	BurstDelay: 5 #TODO
+	ReloadDelay: 25 #TODO
+	Report: sounds_series9|178.wav
+	Projectile: Bullet
+		Image: projectile
+		Palette: P_SmallProjectiles
+		Sequences: series9_tankbot # TODO find correct one
+		Speed: 512
+	Warhead@1Damage: SpreadDamage
+		Damage: 100
+		Spread: 0c512 # TODO
+		Falloff: 100, 100
+		Versus:
+			infantry: 135
+			vehicle: 370
+			building: 45
+			# aircraft: 370
+	Warhead@2Effect: ShrapnelCreateEffect
+		Image: explosions
+		ExplosionPalette: B_Explosions
+		Explosions: small_explosion
+		ImpactSounds: sounds_series9|150.wav
+		Radius: 250,250
+
+series9_doomdome:
+	Range: 8c0
+	ReloadDelay: 25 # TODO
+	Report: sounds_evolved|178.wav
+	Projectile: Bullet
+		Image: projectile
+		Palette: P_GreenProjectiles
+		Sequences: series9_doomdome # TODO find correct one
+		Speed: 340
+	Warhead@1Damage: SpreadDamage
+		Damage: 100
+		Spread: 0c512 # TODO
+		Falloff: 100, 100
+		Versus:
+			infantry: 265
+			vehicle: 595
+			building: 70
+			# aircraft: 595
+	Warhead@2Effect: ShrapnelCreateEffect
+		Image: hit
+		ExplosionPalette: P_GreenProjectiles
+		Explosions: series9_doomdome
+		ImpactSounds: sounds_series9|152.wav
+		Radius: 250,250
+
+series9_cauteriser:
+	Range: 9c0
+	ReloadDelay: 25 # todo copied from kknd1
+	Report: #todo add custom sound
+	Projectile: Laser
+		SegmentLength: 512
+		Distortion: 128
+		DistortionAnimation: 32
+		ZOffset: 5000
+		Color: 08F8D0
+	Warhead@1Damage: SpreadDamage
+		Damage: 100
+		DamageTypes: Laser # todo
+		Spread: 0c512 # TODO
+		Falloff: 100, 100
+		AffectsParent: true
+		Versus:
+			infantry: 895
+			vehicle: 398
+			building: 120
+			# aircraft: 398
+	Warhead@2Effect: ShrapnelCreateEffect
+		Image: hit
+		ExplosionPalette: P_SmallProjectiles
+		Explosions: laser
+		ImpactSounds: sounds_series9|146.wav
+
+series9_grimreaper:
+	Range: 10c0
+	Burst: 15
+	BurstDelay: 1 # TODO
+	ReloadDelay: 25 # TODO
+	Report: sounds_series9|148.wav
+	Projectile: InstantHit
+		Blockable: true
+	Warhead@1Damage: SpreadDamage
+		Damage: 100
+		Spread: 0c32 # TODO
+		Falloff: 100, 100
+		Versus:
+			infantry: 80
+			vehicle: 170
+			building: 20
+			# aircraft: 170
+	Warhead@2Effect: ShrapnelCreateEffect
+		Image: hit
+		ExplosionPalette: B_Explosions
+		Explosions: bullet_a, bullet_b, bullet_c
+		ImpactSounds: sounds_series9|151.wav, sounds_series9|152.wav, kknd2|bits/sounds/ricochet.wav
+		ImpactSoundChance: 10
+		Radius: 250,250

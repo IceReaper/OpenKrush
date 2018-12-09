@@ -1,0 +1,79 @@
+World:
+	Faction@Survivors:
+		Name: Survivors
+		InternalName: survivors
+	MPStartUnits@survivors0:
+		Class: none
+		ClassName: Mobile Base
+		BaseActor: survivors_mobileoutpost
+		Factions: survivors
+	MPStartUnits@survivors1:
+		Class: support
+		ClassName: With Derrick
+		BaseActor: survivors_mobileoutpost
+		SupportActors: survivors_derrick
+		InnerSupportRadius: 4
+		OuterSupportRadius: 6
+		Factions: survivors
+	MPStartUnits@survivors2:
+		Class: light
+		ClassName: Light support
+		BaseActor: survivors_mobileoutpost
+		SupportActors: survivors_derrick, survivors_rifleman, survivors_rifleman, survivors_rifleman, survivors_rifleman, survivors_rifleman
+		InnerSupportRadius: 4
+		OuterSupportRadius: 6
+		Factions: survivors
+	MPStartUnits@survivors3:
+		Class: heavy
+		ClassName: Heavy support
+		BaseActor: survivors_mobileoutpost
+		SupportActors: survivors_derrick, survivors_dirtbike, survivors_4x4pickup, survivors_allterrainvehicle, survivors_flameatv
+		InnerSupportRadius: 4
+		OuterSupportRadius: 6
+		Factions: survivors
+	MPStartUnits@survivors4:
+		Class: eco
+		ClassName: Eco support
+		BaseActor: survivors_mobileoutpost
+		SupportActors: survivors_derrick, survivors_derrick, survivors_oiltanker, survivors_oiltanker
+		InnerSupportRadius: 4
+		OuterSupportRadius: 6
+		Factions: survivors
+
+^SurvivorsBuilding:
+	Inherits: ^CoreBuilding
+	AdvancedBuildable:
+		Prerequisites: survivors_outpost
+	ProvidesPrerequisite@Generic:
+		Prerequisite: survivors_building
+		RequiresCondition: !selfconstructing && !deconstructing
+
+^SurvivorsWall:
+	Inherits: ^CoreWall
+	AdvancedBuildable:
+		Prerequisites: survivors_outpost
+
+^SurvivorsTower:
+	Inherits@1: ^CoreTower
+	Inherits@2: ^CoreTurret
+	AdvancedBuildable:
+		Prerequisites: survivors_outpost
+
+^SurvivorsInfantry:
+	Inherits: ^CoreInfantry
+	AdvancedBuildable:
+		Prerequisites: survivors_barracks
+	VeterancyVoiced:
+		VoiceSets: SurvivorsVoice, SurvivorsVeteranVoice, SurvivorsVeteranVoice
+
+^SurvivorsVehicle:
+	Inherits: ^CoreVehicle
+	AdvancedBuildable:
+		Prerequisites: survivors_machineshop
+	VeterancyVoiced:
+		VoiceSets: SurvivorsVoice, SurvivorsVeteranVoice, SurvivorsVeteranVoice
+
+^SurvivorsAircraft:
+	Inherits: ^CoreAircraft
+	Voiced:
+		VoiceSet: SurvivorsVoice

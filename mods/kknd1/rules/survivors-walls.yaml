@@ -1,0 +1,13 @@
+survivors_barricade:
+	Inherits: ^SurvivorsWall
+	Tooltip:
+		Name: Barricade
+	Valued:
+		Cost: 200
+	Health:
+		HP: 2500
+	AdvancedBuildable:
+		BuildDuration: 150
+		Level: 2
+	WithWallSpriteBody:
+		Type: survivors_wall

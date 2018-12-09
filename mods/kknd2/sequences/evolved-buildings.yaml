@@ -1,0 +1,244 @@
+evolved_clanhall:
+	idle: sprites|M_B_Outpost.mobd
+		Start: 6
+	damaged-idle: sprites|M_B_Outpost.mobd
+		Start: 0
+	critical-idle: sprites|M_B_Outpost.mobd
+		Start: 1
+	animation: sprites|M_B_Outpost.mobd
+		Start: 12
+		Length: 10
+		Tick: 140
+	deploy: sprites|M_B_Outpost.mobd
+		Start: 7
+		Length: 5
+		Tick: 80
+	make0: sprites|M_B_Outpost.mobd
+		Start: 2
+	make1: sprites|M_B_Outpost.mobd
+		Start: 3
+	make2: sprites|M_B_Outpost.mobd
+		Start: 4
+	make3: sprites|M_B_Outpost.mobd
+		Start: 5
+
+evolved_warriorhall:
+	idle: sprites|M_B_Barracks.mobd
+		Start: 6
+	damaged-idle: sprites|M_B_Barracks.mobd
+	critical-idle: sprites|M_B_Barracks.mobd
+		Start: 1
+	make0: sprites|M_B_Barracks.mobd
+		Start: 2
+	make1: sprites|M_B_Barracks.mobd
+		Start: 3
+	make2: sprites|M_B_Barracks.mobd
+		Start: 4
+	make3: sprites|M_B_Barracks.mobd
+		Start: 5
+
+evolved_beastenclosure:
+	idle: sprites|M_B_Machineshop.mobd
+		Start: 6
+		Offset: 0,-32
+	damaged-idle: sprites|M_B_Machineshop.mobd
+		Start: 0
+		Offset: 0,-32
+	critical-idle: sprites|M_B_Machineshop.mobd
+		Start: 1
+		Offset: 0,-32
+	animation: sprites|M_B_Machineshop.mobd
+		Start: 7
+		Length: 8
+		Tick: 140
+		Offset: 0,-32
+	make0: sprites|M_B_Machineshop.mobd
+		Start: 2
+		Offset: 0,-32
+	make1: sprites|M_B_Machineshop.mobd
+		Start: 3
+		Offset: 0,-32
+	make2: sprites|M_B_Machineshop.mobd
+		Start: 4
+		Offset: 0,-32
+	make3: sprites|M_B_Machineshop.mobd
+		Start: 5
+		Offset: 0,-32
+
+evolved_healingtent:
+	idle: sprites|M_B_Repairbay.mobd
+		Start: 6
+		Offset: 0,-32
+	damaged-idle: sprites|M_B_Repairbay.mobd
+		Start: 0
+		Offset: 0,-32
+	critical-idle: sprites|M_B_Repairbay.mobd
+		Start: 1
+		Offset: 0,-32
+	animation: sprites|M_B_Repairbay.mobd # TODO use correct name
+		Start: 7
+		Length: 9
+		Tick: 140
+		Offset: 0,-32
+	make0: sprites|M_B_Repairbay.mobd
+		Start: 2
+		Offset: 0,-32
+	make1: sprites|M_B_Repairbay.mobd
+		Start: 3
+		Offset: 0,-32
+	make2: sprites|M_B_Repairbay.mobd
+		Start: 4
+		Offset: 0,-32
+	make3: sprites|M_B_Repairbay.mobd
+		Start: 5
+		Offset: 0,-32
+
+evolved_forge:
+	idle: sprites|M_B_Armory.mobd
+		Start: 6
+	damaged-idle: sprites|M_B_Armory.mobd
+		Start: 0
+	critical-idle: sprites|M_B_Armory.mobd
+		Start: 1
+	animation: sprites|M_B_Armory.mobd
+		Start: 7
+		Length: 9
+		Tick: 140
+	make0: sprites|M_B_Armory.mobd
+		Start: 2
+	make1: sprites|M_B_Armory.mobd
+		Start: 3
+	make2: sprites|M_B_Armory.mobd
+		Start: 4
+	make3: sprites|M_B_Armory.mobd
+		Start: 5
+
+evolved_alchemyhall:
+	idle: sprites|M_B_Researchlab.mobd
+		Start: 6
+	damaged-idle: sprites|M_B_Researchlab.mobd
+	critical-idle: sprites|M_B_Researchlab.mobd
+		Start: 1
+	animation: sprites|M_B_Researchlab.mobd
+		Start: 7
+		Length: 9
+		Tick: 140
+	make0: sprites|M_B_Researchlab.mobd
+		Start: 2
+	make1: sprites|M_B_Researchlab.mobd
+		Start: 3
+	make2: sprites|M_B_Researchlab.mobd
+		Start: 4
+	make3: sprites|M_B_Researchlab.mobd
+		Start: 5
+
+evolved_powerplant:
+	idle: sprites|M_B_Powerstation.mobd
+		Start: 6
+		Offset: 0,-32
+	damaged-idle: sprites|M_B_Powerstation.mobd
+		Offset: 0,-32
+	critical-idle: sprites|M_B_Powerstation.mobd
+		Start: 1
+		Offset: 0,-32
+	animation: sprites|M_B_Powerstation.mobd
+		Start: 7
+		Length: 2
+		Tick: 140
+		Offset: 0,-32
+	make0: sprites|M_B_Powerstation.mobd
+		Start: 2
+		Offset: 0,-32
+	make1: sprites|M_B_Powerstation.mobd
+		Start: 3
+		Offset: 0,-32
+	make2: sprites|M_B_Powerstation.mobd
+		Start: 4
+		Offset: 0,-32
+	make3: sprites|M_B_Powerstation.mobd
+		Start: 5
+		Offset: 0,-32
+
+evolved_bigpig:
+	idle: sprites|M_B_Collector.mobd
+		Start: 6
+	damaged-idle: sprites|M_B_Collector.mobd
+	critical-idle: sprites|M_B_Collector.mobd
+		Start: 1
+	animation: sprites|M_B_Collector.mobd
+		Start: 7
+		Length: 10
+		Tick: 140
+	make0: sprites|M_B_Collector.mobd
+		Start: 2
+	make1: sprites|M_B_Collector.mobd
+		Start: 3
+	make2: sprites|M_B_Collector.mobd
+		Start: 4
+	make3: sprites|M_B_Collector.mobd
+		Start: 5
+
+evolved_pigpen:
+	idle: sprites|M_B_Converter.mobd
+		Start: 6
+	damaged-idle: sprites|M_B_Converter.mobd
+	critical-idle: sprites|M_B_Converter.mobd
+		Start: 1
+	animation: sprites|M_B_Converter.mobd
+		Start: 7
+		Length: 9
+		Tick: 140
+	make0: sprites|M_B_Converter.mobd
+		Start: 2
+	make1: sprites|M_B_Converter.mobd
+		Start: 3
+	make2: sprites|M_B_Converter.mobd
+		Start: 4
+	make3: sprites|M_B_Converter.mobd
+		Start: 5
+
+evolved_derrick:
+	idle: sprites|M_B_Drillrig.mobd
+		Start: 6
+	damaged-idle: sprites|M_B_Drillrig.mobd
+	critical-idle: sprites|M_B_Drillrig.mobd
+		Start: 1
+	animation: sprites|M_B_Drillrig.mobd
+		Start: 12
+		Length: 9
+		Tick: 140
+	deploy: sprites|M_B_Drillrig.mobd
+		Start: 7
+		Length: 5
+		Tick: 80
+	make0: sprites|M_B_Drillrig.mobd
+		Start: 2
+	make1: sprites|M_B_Drillrig.mobd
+		Start: 3
+	make2: sprites|M_B_Drillrig.mobd
+		Start: 4
+	make3: sprites|M_B_Drillrig.mobd
+		Start: 5
+
+evolved_altarofthescourge:
+	idle: sprites|B_Temple.mobd
+		Start: 6
+	damaged-idle: sprites|B_Temple.mobd
+	critical-idle: sprites|B_Temple.mobd
+		Start: 1
+	make0: sprites|B_Temple.mobd
+		Start: 2
+	make1: sprites|B_Temple.mobd
+		Start: 3
+	make2: sprites|B_Temple.mobd
+		Start: 4
+	make3: sprites|B_Temple.mobd
+		Start: 5
+	sacrifice1: sprites|B_Temple.mobd # TODO check
+		Start: 8
+		Length: 9
+		Tick: 140
+	sacrifice2: sprites|B_Temple.mobd # TODO check
+		Start: 8
+		Length: 9
+		Tick: 140

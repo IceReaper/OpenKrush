@@ -1,0 +1,188 @@
+desert_objects_1:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 5,3
+		Footprint: ===== xxxxx =xxxx
+
+desert_objects_2:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 5,4
+		Footprint: ==x== xxxx= =xxxx =xx==
+
+desert_objects_3:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: 100,100,0
+
+desert_objects_4:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: -300,-100,0
+
+desert_objects_5:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: -300,-100,0
+
+desert_objects_6:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+
+desert_objects_7:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+
+desert_objects_8:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: 100,-50,0
+
+desert_objects_9:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: 50,0,0
+
+desert_objects_10:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: 50,0,0
+
+desert_objects_11:
+	Inherits: ^CoreDecoration
+
+desert_objects_12:
+	Inherits: ^CoreDecoration
+
+desert_objects_13:
+	Inherits: ^CoreDecoration
+
+desert_objects_14:
+	Inherits: ^CoreDecoration
+
+desert_objects_15:
+	Inherits: ^CoreDecoration
+	 Building:
+		Footprint: =
+
+desert_objects_16:
+	Inherits: ^CoreDecoration
+	 Building:
+		Footprint: =
+
+desert_objects_17:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: 0,100,0
+
+desert_objects_18:
+	Inherits: ^CoreDecoration
+	Building:
+		LocalCenterOffset: 0,-200,0
+
+desert_objects_19:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: 0,100,0
+
+desert_objects_20:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: 0,100,0
+
+desert_objects_21:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: -100,100,0
+
+desert_objects_22:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: 0,100,0
+
+desert_objects_23:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: -100,100,0
+
+desert_objects_24:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: 0,100,0
+
+desert_objects_25:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: 0,100,0
+
+desert_objects_26:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,3
+		Footprint: xxxx xxxx xxx=
+		LocalCenterOffset: 0,-1000,0
+
+desert_objects_27:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xx=
+		LocalCenterOffset: 0,-1000,0
+
+desert_objects_28:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 3,2
+		Footprint: xxx x==
+		LocalCenterOffset: 0,-1000,0
+
+desert_objects_29:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 3,2
+		Footprint: xxx x==
+		LocalCenterOffset: 0,-1000,0
+
+desert_objects_30:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 2,3
+		Footprint: == xx xx
+
+desert_objects_31:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 2,2
+		Footprint: == xx

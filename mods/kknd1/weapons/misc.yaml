@@ -1,0 +1,196 @@
+dieVehicleLight:
+	Warhead: ShrapnelCreateEffect
+		Image: explosions
+		Explosions: m
+		ExplosionPalette: kknd
+		ImpactSounds: sounds_survivors|3.wav
+		ShrapnelWeapon: ShrapnelExplosion
+
+dieVehicle:
+	Warhead: ShrapnelCreateEffect
+		Image: explosions
+		Explosions: m
+		ExplosionPalette: kknd
+		ImpactSounds: sounds_survivors|3.wav
+		ShrapnelWeapon: ShrapnelExplosion
+
+dieVehicleHeavy:
+	Warhead: ShrapnelCreateEffect
+		Image: explosions
+		Explosions: m
+		ExplosionPalette: kknd
+		ImpactSounds: sounds_survivors|3.wav
+		ShrapnelWeapon: ShrapnelExplosion
+
+breakBuilding:
+	Warhead@1: ShrapnelCreateEffect
+		Image: explosions
+		Explosions: s
+		ExplosionPalette: kknd
+		Radius: 100,10
+		ImpactSounds: sounds_survivors|10.wav
+		ShrapnelWeapon: ShrapnelExplosion
+	Warhead@2: ShrapnelCreateEffect
+		Image: explosions
+		Explosions: s
+		ExplosionPalette: kknd
+		Radius: 500,600
+		ShrapnelWeapon: ShrapnelExplosion
+	Warhead@3: ShrapnelCreateEffect
+		Image: explosions
+		Explosions: s
+		ExplosionPalette: kknd
+		Radius: 1000,600
+		ShrapnelWeapon: ShrapnelExplosion
+	Warhead@4: ShrapnelCreateEffect
+		Image: explosions
+		Explosions: s
+		ExplosionPalette: kknd
+		Radius: 1500,600
+		ShrapnelWeapon: ShrapnelExplosion
+
+breakSmallBuilding:
+	Warhead@1: ShrapnelCreateEffect
+		Image: explosions
+		Explosions: s
+		ExplosionPalette: kknd
+		Radius: 100,100
+		ImpactSounds: sounds_survivors|10.wav
+		ShrapnelWeapon: ShrapnelExplosion
+	Warhead@2: ShrapnelCreateEffect
+		Image: explosions
+		Explosions: s
+		ExplosionPalette: kknd
+		Radius: 1000,100
+		ShrapnelWeapon: ShrapnelExplosion
+
+dieBuilding:
+	Warhead@1: ShrapnelCreateEffect
+		Image: explosions
+		Explosions: m
+		ExplosionPalette: kknd
+		ImpactSounds: sounds_survivors|3.wav
+		Delay: 0
+		Radius: 50,50
+		ShrapnelWeapon: ShrapnelExplosion
+	Warhead@2: ShrapnelCreateEffect
+		Image: explosions
+		Explosions: s
+		ExplosionPalette: kknd
+		ImpactSounds: sounds_survivors|3.wav
+		Delay: 8
+		Radius: 750,750
+		ShrapnelWeapon: ShrapnelExplosion
+	Warhead@3: ShrapnelCreateEffect
+		Image: explosions
+		Explosions: s
+		ExplosionPalette: kknd
+		ImpactSounds: sounds_survivors|3.wav
+		Delay: 16
+		Radius: 750,750
+		ShrapnelWeapon: ShrapnelExplosion
+	Warhead@4: ShrapnelCreateEffect
+		Image: explosions
+		Explosions: s
+		ExplosionPalette: kknd
+		ImpactSounds: sounds_survivors|3.wav
+		Delay: 24
+		Radius: 750,750
+		ShrapnelWeapon: ShrapnelExplosion
+	Warhead@5: ShrapnelCreateEffect
+		Image: explosions
+		Explosions: l
+		ExplosionPalette: kknd
+		ImpactSounds: sounds_survivors|3.wav
+		Delay: 32
+		Radius: 750,750
+		ShrapnelWeapon: ShrapnelExplosion
+	Warhead@6: ShrapnelCreateEffect
+		Image: explosions
+		Explosions: l
+		ExplosionPalette: kknd
+		ImpactSounds: sounds_survivors|3.wav
+		Delay: 40
+		Radius: 750,750
+		ShrapnelWeapon: ShrapnelExplosion
+	Warhead@7: ShrapnelCreateEffect
+		Image: explosions
+		Explosions: xl_fast
+		ExplosionPalette: kknd
+		ImpactSounds: sounds_survivors|3.wav
+		Delay: 48
+		ShrapnelWeapon: ShrapnelExplosion
+
+dieSmallBuilding:
+	Warhead@1: ShrapnelCreateEffect
+		Image: explosions
+		Explosions: m
+		ExplosionPalette: kknd
+		ImpactSounds: sounds_survivors|3.wav
+		Delay: 0
+		Radius: 50,50
+		ShrapnelWeapon: ShrapnelExplosion
+	Warhead@2: ShrapnelCreateEffect
+		Image: explosions
+		Explosions: s
+		ExplosionPalette: kknd
+		ImpactSounds: sounds_survivors|3.wav
+		Delay: 8
+		Radius: 500,500
+		ShrapnelWeapon: ShrapnelExplosion
+	Warhead@3: ShrapnelCreateEffect
+		Image: explosions
+		Explosions: s
+		ExplosionPalette: kknd
+		ImpactSounds: sounds_survivors|3.wav
+		Delay: 16
+		Radius: 500,500
+		ShrapnelWeapon: ShrapnelExplosion
+	Warhead@4: ShrapnelCreateEffect
+		Image: explosions
+		Explosions: s
+		ExplosionPalette: kknd
+		ImpactSounds: sounds_survivors|3.wav
+		Delay: 24
+		Radius: 500,500
+		ShrapnelWeapon: ShrapnelExplosion
+	Warhead@5: ShrapnelCreateEffect
+		Image: explosions
+		Explosions: l
+		ExplosionPalette: kknd
+		ImpactSounds: sounds_survivors|3.wav
+		Delay: 32
+		Radius: 100,100
+		ShrapnelWeapon: ShrapnelExplosion
+
+breakTower:
+	Warhead: ShrapnelCreateEffect
+		Image: explosions
+		Explosions: s
+		ExplosionPalette: kknd
+		ImpactSounds: sounds_survivors|10.wav
+		ShrapnelWeapon: ShrapnelExplosion
+
+dieTower:
+	Warhead: ShrapnelCreateEffect
+		Image: explosions
+		Explosions: l
+		ExplosionPalette: kknd
+		ImpactSounds: sounds_survivors|3.wav
+		ShrapnelWeapon: ShrapnelExplosion
+
+breakWall:
+	Warhead: ShrapnelCreateEffect
+		Image: explosions
+		Explosions: xs
+		ExplosionPalette: kknd
+		ImpactSounds: sounds_survivors|10.wav
+		ShrapnelWeapon: ShrapnelExplosion
+
+dieWall:
+	Warhead: ShrapnelCreateEffect
+		Image: explosions
+		Explosions: m
+		ExplosionPalette: kknd
+		ImpactSounds: sounds_survivors|10.wav
+		ShrapnelWeapon: ShrapnelExplosion

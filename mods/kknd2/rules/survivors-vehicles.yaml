@@ -1,0 +1,465 @@
+survivors_dirtbike:
+	Inherits@1: ^SurvivorsVehicle
+	Inherits@2: ^CoreLightVehicle
+	Inherits@3: ^CoreArmedSelf
+	Inherits@4: ^AutoTargetDefault
+	Tooltip:
+		Name: Dirt Bike
+	Valued:
+		Cost: 200
+	Health:
+		HP: 750
+	Mobile:
+		Speed: 128
+		TurnSpeed: 41 #TODO
+	AdvancedBuildable:
+		BuildDuration: 250
+		Level: 0
+	RevealsShroud:
+		Range: 10c0 #TODO
+	OffsetsArmament:
+		Weapon: survivors_dirtbike
+	AdvancedSelectionDecorations:
+		Offset: 0,-2 #TODO
+	Veterancy:
+	RenderSprites:
+		PlayerPalette: S_V_DirtBike_player
+^Palettes:
+	PaletteFromMobd@S_V_DirtBike:
+		Name: S_V_DirtBike
+		Filename: sprites|S_V_DirtBike.mobd
+	OverlayPlayerColorPalette@S_V_DirtBike_player:
+		BasePalette: S_V_DirtBike
+		BaseName: S_V_DirtBike_player
+		RemapIndex: 5,6,7,8
+
+survivors_atv:
+	Inherits@1: ^SurvivorsVehicle
+	Inherits@2: ^CoreTurret
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: ATV
+	Valued:
+		Cost: 300
+	Health:
+		HP: 1250
+	Mobile:
+		Speed: 96
+		TurnSpeed: 41 #TODO
+	AdvancedBuildable:
+		BuildDuration: 375
+		Level: 0
+	RevealsShroud:
+		Range: 12c0
+	OffsetsArmament:
+		Weapon: survivors_atv
+	WithTurretAttackAnimation:
+		Sequence: shoot
+	Turreted:
+		TurnSpeed: 20 # todo copied from kknd1
+	AdvancedSelectionDecorations:
+		Offset: 0,-2 #TODO
+	Veterancy:
+	RenderSprites:
+		PlayerPalette: S_V_ATV_player
+	WithOffsetsSpriteTurret:
+		Palette: S_V_TATV
+^Palettes:
+	PaletteFromMobd@S_V_ATV:
+		Name: S_V_ATV
+		Filename: sprites|S_V_ATV.mobd
+	OverlayPlayerColorPalette@S_V_ATV_player:
+		BasePalette: S_V_ATV
+		BaseName: S_V_ATV_player
+		RemapIndex: 8,9,10,11,12,13
+	PaletteFromMobd@S_V_TATV:
+		Name: S_V_TATV
+		Filename: sprites|S_V_TATV.mobd
+
+survivors_hoverbuggy:
+	Inherits@1: ^SurvivorsVehicle
+	Inherits@2: ^CoreTurret
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: Hover Buggy
+	Valued:
+		Cost: 500
+	Health:
+		HP: 1500
+	Mobile:
+		Speed: 90
+		TurnSpeed: 41 #TODO
+	AdvancedBuildable:
+		BuildDuration: 500
+		Level: 1
+	RevealsShroud:
+		Range: 12c0
+	OffsetsArmament:
+		Weapon: survivors_hoverbuggy
+	WithTurretAttackAnimation:
+		Sequence: shoot
+	Turreted:
+		TurnSpeed: 20 # todo copied from kknd1
+	AdvancedSelectionDecorations:
+		Offset: 0,-2 #TODO
+	Veterancy:
+	RenderSprites:
+		PlayerPalette: S_V_AHoverBike_player
+	WithOffsetsSpriteTurret:
+		Palette: S_V_TAHoverBike
+^Palettes:
+	PaletteFromMobd@S_V_AHoverBike:
+		Name: S_V_AHoverBike
+		Filename: sprites|S_V_AHoverBike.mobd
+	OverlayPlayerColorPalette@S_V_AHoverBike_player:
+		BasePalette: S_V_AHoverBike
+		BaseName: S_V_AHoverBike_player
+		RemapIndex: 1,2,3,4,5,6
+	PaletteFromMobd@S_V_TAHoverBike:
+		Name: S_V_TAHoverBike
+		Filename: sprites|S_V_TAHoverBike.mobd
+
+
+survivors_anacondatank:
+	Inherits@1: ^SurvivorsVehicle
+	Inherits@2: ^CoreTurret
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: Anaconda Tank
+	Valued:
+		Cost: 800
+	Health:
+		HP: 2000
+	Mobile:
+		Speed: 64
+		TurnSpeed: 41 #TODO
+	AdvancedBuildable:
+		BuildDuration: 625
+		Level: 2
+	RevealsShroud:
+		Range: 12c0
+	OffsetsArmament:
+		Weapon: survivors_anacondatank
+	WithTurretAttackAnimation:
+		Sequence: shoot
+	Turreted:
+		TurnSpeed: 20 # todo copied from kknd1
+	AdvancedSelectionDecorations:
+		Offset: 0,-2 #TODO
+	Veterancy:
+	RenderSprites:
+		PlayerPalette: S_V_AnacondaTank_player
+	WithOffsetsSpriteTurret:
+		Palette: S_V_TAnacondaTank_player
+		IsPlayerPalette: true
+^Palettes:
+	PaletteFromMobd@S_V_AnacondaTank:
+		Name: S_V_AnacondaTank
+		Filename: sprites|S_V_AnacondaTank.mobd
+	OverlayPlayerColorPalette@S_V_AnacondaTank_player:
+		BasePalette: S_V_AnacondaTank
+		BaseName: S_V_AnacondaTank_player
+		RemapIndex: 1,2,3,4,5,6
+	PaletteFromMobd@S_V_TAnacondaTank:
+		Name: S_V_TAnacondaTank
+		Filename: sprites|S_V_TAnacondaTank.mobd
+	OverlayPlayerColorPalette@S_V_TAnacondaTank_player:
+		BasePalette: S_V_TAnacondaTank
+		BaseName: S_V_TAnacondaTank_player
+		RemapIndex: 1,2,3,4
+
+survivors_barragecraft:
+	Inherits@1: ^SurvivorsVehicle
+	Inherits@4: ^AutoTargetDefault
+	Inherits@5: ^CoreTurret
+	Tooltip:
+		Name: Barrage Craft
+	Valued:
+		Cost: 1000
+	Health:
+		HP: 2500
+	Mobile:
+		Speed: 51
+		TurnSpeed: 41 #TODO
+	AdvancedBuildable:
+		BuildDuration: 750
+		Level: 3
+	RevealsShroud:
+		Range: 12c0
+	OffsetsArmament@0:
+		Name: primary
+		Weapon: survivors_barragecraft
+		BurstOffsets: 0
+		FireDelay: 0
+	OffsetsArmament@1:
+		Name: secondary
+		Weapon: survivors_barragecraft
+		BurstOffsets: 1
+		FireDelay: 2 # TODO
+	OffsetsArmament@2:
+		Name: secondary
+		Weapon: survivors_barragecraft
+		BurstOffsets: 2
+		FireDelay: 4 # TODO
+	WithTurretAttackAnimation:
+		Sequence: shoot
+	Turreted:
+		TurnSpeed: 20 # todo copied from kknd1
+	AdvancedSelectionDecorations:
+		Offset: 0,-2 #TODO
+	Veterancy:
+	RenderSprites:
+		PlayerPalette: S_V_ABarrageCraft_player
+	WithOffsetsSpriteTurret:
+		Palette: S_V_TABarrageCraft_player
+		IsPlayerPalette: true
+^Palettes:
+	PaletteFromMobd@S_V_ABarrageCraft:
+		Name: S_V_ABarrageCraft
+		Filename: sprites|S_V_ABarrageCraft.mobd
+	OverlayPlayerColorPalette@S_V_ABarrageCraft_player:
+		BasePalette: S_V_ABarrageCraft
+		BaseName: S_V_ABarrageCraft_player
+		RemapIndex: 1,2,3,4,5,6
+	PaletteFromMobd@S_V_TABarrageCraft:
+		Name: S_V_TABarrageCraft
+		Filename: sprites|S_V_TABarrageCraft.mobd
+	OverlayPlayerColorPalette@S_V_TABarrageCraft_player:
+		BasePalette: S_V_TABarrageCraft
+		BaseName: S_V_TABarrageCraft_player
+		RemapIndex: 1,2,3,4
+
+survivors_theenforcer:
+	Inherits@1: ^SurvivorsVehicle
+	Inherits@4: ^AutoTargetDefault
+	Inherits@5: ^CoreTurret
+	Tooltip:
+		Name: The Enforcer
+	Valued:
+		Cost: 1250
+	Health:
+		HP: 3000
+	Mobile:
+		Speed: 45
+		TurnSpeed: 41 #TODO
+	AdvancedBuildable:
+		BuildDuration: 875
+		Level: 4
+	RevealsShroud:
+		Range: 12c0
+	OffsetsArmament@0:
+		Name: primary
+		Weapon: survivors_theenforcer
+		BurstOffsets: 0
+		FireDelay: 0
+	OffsetsArmament@1:
+		Name: secondary
+		Weapon: survivors_theenforcer
+		BurstOffsets: 1
+		FireDelay: 0
+	WithTurretAttackAnimation:
+		Sequence: shoot
+	Turreted:
+		TurnSpeed: 20 # todo copied from kknd1
+	AdvancedSelectionDecorations:
+		Offset: 0,-2 #TODO
+	Veterancy:
+	RenderSprites:
+		PlayerPalette: S_V_AutocannonTank_player
+	WithOffsetsSpriteTurret:
+		Palette: S_V_TAutocannonTank_player
+		IsPlayerPalette: true
+^Palettes:
+	PaletteFromMobd@S_V_AutocannonTank:
+		Name: S_V_AutocannonTank
+		Filename: sprites|S_V_AutocannonTank.mobd
+	OverlayPlayerColorPalette@S_V_AutocannonTank_player:
+		BasePalette: S_V_AutocannonTank
+		BaseName: S_V_AutocannonTank_player
+		RemapIndex: 1,2,3,4,5
+	PaletteFromMobd@S_V_TAutocannonTank:
+		Name: S_V_TAutocannonTank
+		Filename: sprites|S_V_TAutocannonTank.mobd
+	OverlayPlayerColorPalette@S_V_TAutocannonTank_player:
+		BasePalette: S_V_TAutocannonTank
+		BaseName: S_V_TAutocannonTank_player
+		RemapIndex: 1,2,3,4,5,6
+
+survivors_juggernaut:
+	Inherits@1: ^SurvivorsVehicle
+	Inherits@4: ^AutoTargetDefault
+	Inherits@5: ^CoreTurret
+	Tooltip:
+		Name: Juggernaut
+	Valued:
+		Cost: 1500
+	Health:
+		HP: 3500
+	Mobile:
+		Speed: 45
+		TurnSpeed: 41 #TODO
+	AdvancedBuildable:
+		BuildDuration: 1000
+		Level: 5
+	RevealsShroud:
+		Range: 12c0
+	OffsetsArmament@0:
+		Name: primary
+		Weapon: survivors_juggernaut_gun
+		BurstOffsets: 0
+		FireDelay: 0
+	OffsetsArmament@1:
+		Name: secondary
+		Weapon: survivors_juggernaut_missle
+		BurstOffsets: 1 # TODO
+		FireDelay: 8 # TODO
+	OffsetsArmament@2:
+		Name: secondary
+		Weapon: survivors_juggernaut_missle
+		BurstOffsets: 2 # TODO
+		FireDelay: 8 # TODO
+	WithTurretAttackAnimation:
+		Sequence: shoot
+	Turreted:
+		TurnSpeed: 20 # todo copied from kknd1
+	AdvancedSelectionDecorations:
+		Offset: 0,-2 #TODO
+	Veterancy:
+	RenderSprites:
+		PlayerPalette: S_V_Juggernaut_player
+	WithOffsetsSpriteTurret:
+		Palette: S_V_TJuggernaut
+^Palettes:
+	PaletteFromMobd@S_V_Juggernaut:
+		Name: S_V_Juggernaut
+		Filename: sprites|S_V_Juggernaut.mobd
+	OverlayPlayerColorPalette@S_V_Juggernaut_player:
+		BasePalette: S_V_Juggernaut
+		BaseName: S_V_Juggernaut_player
+		RemapIndex: 1,2,3,4,5
+	PaletteFromMobd@S_V_TJuggernaut:
+		Name: S_V_TJuggernaut
+		Filename: sprites|S_V_TJuggernaut.mobd
+
+survivors_oiltanker:
+	Inherits: ^SurvivorsVehicle
+	Tooltip:
+		Name: Oil Tanker
+	TooltipDescription:
+		Description: Transports oil
+	Valued:
+		Cost: 1000
+	Health:
+		HP: 10000
+	Mobile:
+		Speed: 26
+		TurnSpeed: 8 # TODO
+	AdvancedBuildable:
+		BuildDuration: 2500
+		Level: 2
+	RevealsShroud:
+		Range: 12c0
+	Selectable:
+		Priority: 15
+	Tanker:
+		DockingActivity: TankerCycle
+	AdvancedSelectionDecorations:
+		Offset: 0,-1
+	AttackNotification:
+		Notifications: TankerUnderAttack
+	IgnoreRallyPoint:
+	RenderSprites:
+		PlayerPalette: S_V_Tanker_player
+^Palettes:
+	PaletteFromMobd@S_V_Tanker:
+		Name: S_V_Tanker
+		Filename: sprites|S_V_Tanker.mobd
+	OverlayPlayerColorPalette@S_V_Tanker_player:
+		BasePalette: S_V_Tanker
+		BaseName: S_V_Tanker_player
+		RemapIndex: 9,10,11,12,13
+
+survivors_mobiledrillrig:
+	Inherits@1: ^SurvivorsVehicle
+	Inherits@2: ^CoreHeavyVehicle
+	Tooltip:
+		Name: Mobile Drill Rig
+	TooltipDescription:
+		Description: Deploys on oilpatch
+	Valued:
+		Cost: 1000
+	Health:
+		HP: 5000
+	Mobile:
+		Speed: 38
+		TurnSpeed: 8 # TODO
+	AdvancedBuildable:
+		BuildDuration: 1250
+		Level: 0
+	RevealsShroud:
+		Range: 12c0
+	Selectable:
+		Priority: 15
+	DeploysOnActor:
+		IntoActor: survivors_drillrig
+		ValidTargets: oilpatch
+		DeployCursor: dock
+		Offset: -1,-2
+	AdvancedSelectionDecorations:
+		Offset: 0,-12
+	AttackNotification:
+		Notifications: DrillRigUnderAttack
+	IgnoreRallyPoint:
+	RenderSprites:
+		PlayerPalette: S_V_MobileDrillrig_player
+^Palettes:
+	PaletteFromMobd@S_V_MobileDrillrig:
+		Name: S_V_MobileDrillrig
+		Filename: sprites|S_V_MobileDrillrig.mobd
+	OverlayPlayerColorPalette@S_V_MobileDrillrig_player:
+		BasePalette: S_V_MobileDrillrig
+		BaseName: S_V_MobileDrillrig_player
+		RemapIndex: 8,9,10,11,12
+
+survivors_mobileoutpost:
+	Inherits@1: ^SurvivorsVehicle
+	Inherits@2: ^CoreHeavyVehicle
+	Tooltip:
+		Name: Mobile Outpost
+	TooltipDescription:
+		Description: Mobile base
+	Valued:
+		Cost: 5000
+	Health:
+		HP: 10000
+	Mobile:
+		Speed: 32
+		TurnSpeed: 5 # TODO
+	AdvancedBuildable:
+		BuildDuration: 6750
+		Level: 5
+	RevealsShroud:
+		Range: 15c0
+	Transforms:
+		TransformSounds: sounds_survivors|164.wav
+		IntoActor: survivors_outpost
+		Offset: -2,-2
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	Selectable:
+		Priority: 15
+	AdvancedSelectionDecorations:
+		Offset: 0,-14
+	IgnoreRallyPoint:
+	RenderSprites:
+		PlayerPalette: S_Spriteb_player # While being an unit, this one uses the global survivors building palette. Might be a very old leftover.
+
+survivors_mobileoutpost.colorpicker:
+	Inherits: survivors_mobileoutpost
+	Mobile:
+		InitialFacing: 128
+	RenderSprites:
+		Image: survivors_mobileoutpost
+		Palette: colorpicker
+	-AdvancedBuildable:
+	-MapEditorData:

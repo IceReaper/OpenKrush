@@ -1,0 +1,224 @@
+survivors_outpost:
+	idle: sprites|S_B_Outpost.mobd
+		Start: 6
+	damaged-idle: sprites|S_B_Outpost.mobd
+	critical-idle: sprites|S_B_Outpost.mobd
+		Start: 1
+	animation: sprites|S_B_Outpost.mobd
+		Start: 23
+		Length: 10
+		Tick: 80 # TODO check timing
+	deploy: sprites|S_B_Outpost.mobd
+		Start: 7
+		Length: 16
+		Tick: 80
+	make0: sprites|S_B_Outpost.mobd
+		Start: 2
+	make1: sprites|S_B_Outpost.mobd
+		Start: 3
+	make2: sprites|S_B_Outpost.mobd
+		Start: 4
+	make3: sprites|S_B_Outpost.mobd
+		Start: 5
+
+survivors_barracks:
+	idle: sprites|S_B_Barracks.mobd
+		Start: 6
+	damaged-idle: sprites|S_B_Barracks.mobd
+	critical-idle: sprites|S_B_Barracks.mobd
+		Start: 1
+	animation: sprites|S_B_Barracks.mobd
+		Start: 7
+		Length: 7
+		Tick: 80 # TODO check timing
+	make0: sprites|S_B_Barracks.mobd
+		Start: 2
+	make1: sprites|S_B_Barracks.mobd
+		Start: 3
+	make2: sprites|S_B_Barracks.mobd
+		Start: 4
+	make3: sprites|S_B_Barracks.mobd
+		Start: 5
+
+survivors_machineshop:
+	idle: sprites|S_B_Machineshop.mobd
+		Start: 6
+		Offset: 0,-32
+	damaged-idle: sprites|S_B_Machineshop.mobd
+		Offset: 0,-32
+	critical-idle: sprites|S_B_Machineshop.mobd
+		Start: 1
+		Offset: 0,-32
+	animation: sprites|S_B_Machineshop.mobd
+		Start: 7
+		Length: 4
+		Tick: 80 # TODO check timing
+		Offset: 0,-32
+	make0: sprites|S_B_Machineshop.mobd
+		Start: 2
+		Offset: 0,-32
+	make1: sprites|S_B_Machineshop.mobd
+		Start: 3
+		Offset: 0,-32
+	make2: sprites|S_B_Machineshop.mobd
+		Start: 4
+		Offset: 0,-32
+	make3: sprites|S_B_Machineshop.mobd
+		Start: 5
+		Offset: 0,-32
+
+survivors_repairbay:
+	idle: sprites|S_B_Repairbay.mobd
+		Start: 6
+		Offset: -32,-32
+	damaged-idle: sprites|S_B_Repairbay.mobd
+		Offset: -32,-32
+	critical-idle: sprites|S_B_Repairbay.mobd
+		Start: 1
+		Offset: -32,-32
+	animation: sprites|S_B_Repairbay.mobd # TODO use correct name
+		Start: 7
+		Offset: -32,-32
+	repairing-fx: sprites|S_B_Repairbay.mobd # TODO use correct name
+		Start: 7
+		Length: 27
+		Tick: 80 # TODO check timing
+		Offset: -32,-32
+	make0: sprites|S_B_Repairbay.mobd
+		Start: 2
+		Offset: -32,-32
+	make1: sprites|S_B_Repairbay.mobd
+		Start: 3
+		Offset: -32,-32
+	make2: sprites|S_B_Repairbay.mobd
+		Start: 4
+		Offset: -32,-32
+	make3: sprites|S_B_Repairbay.mobd
+		Start: 5
+		Offset: -32,-32
+
+survivors_armoury:
+	idle: sprites|S_B_Armory.mobd
+		Start: 6
+	damaged-idle: sprites|S_B_Armory.mobd
+	critical-idle: sprites|S_B_Armory.mobd
+		Start: 1
+	animation: sprites|S_B_Armory.mobd
+		Start: 7
+		Length: 25
+		Tick: 80 # TODO check timing
+	make0: sprites|S_B_Armory.mobd
+		Start: 2
+	make1: sprites|S_B_Armory.mobd
+		Start: 3
+	make2: sprites|S_B_Armory.mobd
+		Start: 4
+	make3: sprites|S_B_Armory.mobd
+		Start: 5
+
+survivors_researchlab:
+	idle: sprites|S_B_Researchlab.mobd
+		Start: 6
+	damaged-idle: sprites|S_B_Researchlab.mobd
+	critical-idle: sprites|S_B_Researchlab.mobd
+		Start: 1
+	animation: sprites|S_B_Researchlab.mobd
+		Start: 7
+		Length: 126
+		Tick: 80 # TODO check timing
+	make0: sprites|S_B_Researchlab.mobd
+		Start: 2
+	make1: sprites|S_B_Researchlab.mobd
+		Start: 3
+	make2: sprites|S_B_Researchlab.mobd
+		Start: 4
+	make3: sprites|S_B_Researchlab.mobd
+		Start: 5
+
+survivors_powerstation:
+	idle: sprites|S_B_Powerstation.mobd
+		Start: 6
+		Offset: 0,-32
+	damaged-idle: sprites|S_B_Powerstation.mobd
+		Offset: 0,-32
+	critical-idle: sprites|S_B_Powerstation.mobd
+		Start: 1
+		Offset: 0,-32
+	animation: sprites|S_B_Powerstation.mobd
+		Start: 7
+		Length: 9
+		Tick: 80 # TODO check timing
+		Offset: 0,-32
+	make0: sprites|S_B_Powerstation.mobd
+		Start: 2
+		Offset: 0,-32
+	make1: sprites|S_B_Powerstation.mobd
+		Start: 3
+		Offset: 0,-32
+	make2: sprites|S_B_Powerstation.mobd
+		Start: 4
+		Offset: 0,-32
+	make3: sprites|S_B_Powerstation.mobd
+		Start: 5
+		Offset: 0,-32
+
+survivors_solarcollector:
+	idle: sprites|S_B_Collector.mobd
+		Start: 6
+	damaged-idle: sprites|S_B_Collector.mobd
+	critical-idle: sprites|S_B_Collector.mobd
+		Start: 1
+	animation: sprites|S_B_Collector.mobd
+		Start: 7
+		Length: 124
+		Tick: 80 # TODO check timing
+	make0: sprites|S_B_Collector.mobd
+		Start: 2
+	make1: sprites|S_B_Collector.mobd
+		Start: 3
+	make2: sprites|S_B_Collector.mobd
+		Start: 4
+	make3: sprites|S_B_Collector.mobd
+		Start: 5
+
+survivors_thermalexchanger:
+	idle: sprites|S_B_Converter.mobd
+		Start: 6
+	damaged-idle: sprites|S_B_Converter.mobd
+	critical-idle: sprites|S_B_Converter.mobd
+		Start: 1
+	animation: sprites|S_B_Converter.mobd
+		Start: 7
+		Length: 16
+		Tick: 80 # TODO check timing
+	make0: sprites|S_B_Converter.mobd
+		Start: 2
+	make1: sprites|S_B_Converter.mobd
+		Start: 3
+	make2: sprites|S_B_Converter.mobd
+		Start: 4
+	make3: sprites|S_B_Converter.mobd
+		Start: 5
+
+survivors_drillrig:
+	idle: sprites|S_B_Drillrig.mobd
+		Start: 6
+	damaged-idle: sprites|S_B_Drillrig.mobd
+	critical-idle: sprites|S_B_Drillrig.mobd
+		Start: 1
+	animation: sprites|S_B_Drillrig.mobd
+		Start: 41
+		Length: 11
+		Tick: 80 # TODO check timing
+	deploy: sprites|S_B_Drillrig.mobd
+		Start: 7
+		Length: 34
+		Tick: 80
+	make0: sprites|S_B_Drillrig.mobd
+		Start: 2
+	make1: sprites|S_B_Drillrig.mobd
+		Start: 3
+	make2: sprites|S_B_Drillrig.mobd
+		Start: 4
+	make3: sprites|S_B_Drillrig.mobd
+		Start: 5

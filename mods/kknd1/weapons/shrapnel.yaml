@@ -1,0 +1,180 @@
+Smudge:
+	Warhead@Smudge: LeaveSmudge
+		Chance: 35
+		SmudgeType: Crater
+
+Debris1:
+	ReloadDelay: 60
+	Range: 1c0
+	Projectile: Bullet
+		Speed: 50,80
+		Blockable: false
+		LaunchAngle: 70, 150
+		Inaccuracy: 2c0
+		Image: shrapnels
+		Palette: kknd
+		Sequences: debris1
+	Warhead: ShrapnelCreateEffect
+		Image: hit
+		ExplosionPalette: kknd
+		Explosions: smoke
+
+Debris2:
+	Inherits: Debris1
+	Projectile: Bullet
+		Image: shrapnels
+		Sequences: debris2
+
+Debris3:
+	Inherits: Debris1
+	Projectile: Bullet
+		Image: shrapnels
+		Sequences: debris3
+
+Debris4:
+	Inherits: Debris1
+	Projectile: Bullet
+		Image: shrapnels
+		Sequences: debris4
+
+Debris5:
+	Inherits: Debris1
+	Projectile: Bullet
+		Image: shrapnels
+		Sequences: debris5
+
+Debris6:
+	Inherits: Debris1
+	Projectile: Bullet
+		Image: shrapnels
+		Sequences: debris6
+
+Debris7:
+	Inherits: Debris1
+	Projectile: Bullet
+		Image: shrapnels
+		Sequences: debris7
+
+Spark1:
+	ReloadDelay: 60
+	Range: 1c0
+	Projectile: Bullet
+		Speed: 50,80
+		Blockable: false
+		LaunchAngle: 70, 150
+		Inaccuracy: 2c0
+		Image: shrapnels
+		Palette: kknd
+		Sequences: spark1
+	Warhead: ShrapnelCreateEffect
+		Image: hit
+		ExplosionPalette: kknd
+		Explosions: smoke
+
+Spark2:
+	Inherits: Spark1
+	Projectile: Bullet
+		Image: shrapnels
+		Sequences: spark2
+
+Spark3:
+	Inherits: Spark1
+	Projectile: Bullet
+		Image: shrapnels
+		Sequences: spark3
+
+Blood1:
+	ReloadDelay: 60
+	Range: 1c0
+	Projectile: Bullet
+		Speed: 40, 70
+		Blockable: false
+		LaunchAngle: 70, 110
+		Inaccuracy: 1c0
+		Image: shrapnels
+		Palette: kknd
+		Sequences: blood1
+	Warhead: ShrapnelCreateEffect
+		Image: shrapnels
+		ExplosionPalette: kknd
+		Explosions: blood_impact
+
+Blood2:
+	Inherits: Blood1
+	Projectile: Bullet
+		Image: shrapnels
+		Sequences: blood2
+
+Blood3:
+	Inherits: Blood1
+	Projectile: Bullet
+		Image: shrapnels
+		Sequences: blood3
+
+Blood4:
+	Inherits: Blood1
+	Projectile: Bullet
+		Image: shrapnels
+		Sequences: blood4
+
+Blood5:
+	Inherits: Blood1
+	Projectile: Bullet
+		Image: shrapnels
+		Sequences: blood5
+
+ShrapnelExplosion:
+	Warhead@1: ShrapnelCreateEffect
+		ShrapnelWeapon: Debris1
+		ShrapnelRange: 1c0, 2c0
+	Warhead@2: ShrapnelCreateEffect
+		ShrapnelWeapon: Debris2
+		ShrapnelRange: 1c0, 2c0
+	Warhead@3: ShrapnelCreateEffect
+		ShrapnelWeapon: Debris3
+		ShrapnelRange: 1c0, 2c0
+	Warhead@4: ShrapnelCreateEffect
+		ShrapnelWeapon: Debris4
+		ShrapnelRange: 1c0, 2c0
+	Warhead@5: ShrapnelCreateEffect
+		ShrapnelWeapon: Debris5
+		ShrapnelRange: 1c0, 2c0
+	Warhead@6: ShrapnelCreateEffect
+		ShrapnelWeapon: Debris6
+		ShrapnelRange: 1c0, 2c0
+	Warhead@7: ShrapnelCreateEffect
+		ShrapnelWeapon: Debris1
+		ShrapnelRange: 1c0, 2c0
+	Warhead@8: ShrapnelCreateEffect
+		ShrapnelWeapon: Debris2
+		ShrapnelRange: 1c0, 2c0
+	Warhead@9: ShrapnelCreateEffect
+		ShrapnelWeapon: Debris3
+		ShrapnelRange: 1c0, 2c0
+	Warhead@10: ShrapnelCreateEffect
+		ShrapnelWeapon: Spark1
+		ShrapnelRange: 1c0, 2c0
+	Warhead@11: ShrapnelCreateEffect
+		ShrapnelWeapon: Spark2
+		ShrapnelRange: 1c0, 2c0
+	Warhead@12: ShrapnelCreateEffect
+		ShrapnelWeapon: Spark3
+		ShrapnelRange: 1c0, 2c0
+	Warhead@13: ShrapnelCreateEffect
+		ShrapnelWeapon: Spark1
+		ShrapnelRange: 1c0, 2c0
+	Warhead@14: ShrapnelCreateEffect
+		ShrapnelWeapon: Spark2
+		ShrapnelRange: 1c0, 2c0
+	Warhead@15: ShrapnelCreateEffect
+		ShrapnelWeapon: Spark3
+		ShrapnelRange: 1c0, 2c0
+	Warhead@16: ShrapnelCreateEffect
+		ShrapnelWeapon: Spark1
+		ShrapnelRange: 1c0, 2c0
+	Warhead@17: ShrapnelCreateEffect
+		ShrapnelWeapon: Spark2
+		ShrapnelRange: 1c0, 2c0
+	Warhead@18: ShrapnelCreateEffect
+		ShrapnelWeapon: Spark3
+		ShrapnelRange: 1c0, 2c0

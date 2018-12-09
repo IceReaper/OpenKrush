@@ -1,0 +1,79 @@
+ProductionInfantry: T
+	Description: Infantry
+	Types: ProductionSlot
+
+ProductionVehicles: Y
+	Description: Vehicles
+	Types: ProductionSlot
+
+ProductionConstructibles: 
+	Description: Constructibles
+	Types: ProductionSlot
+
+ProductionAircrafts: U
+	Description: Aircrafts
+	Types: ProductionSlot
+
+ProductionBuildings: E
+	Description: Buildings
+	Types: ProductionSlot
+
+ProductionTowers: R
+	Description: Towers
+	Types: ProductionSlot
+
+ProductionWalls: R ALT
+	Description: Walls
+	Types: ProductionSlot
+
+Superweapons: U
+	Description: Superweapons
+	Types: ProductionSlot
+
+Production1: F1
+	Description: Slot 1
+	Types: ProductionSlot
+
+Production2: F2
+	Description: Slot 2
+	Types: ProductionSlot
+
+Production3: F3
+	Description: Slot 3
+	Types: ProductionSlot
+
+Production4: F4
+	Description: Slot 4
+	Types: ProductionSlot
+
+Production5: F5
+	Description: Slot 5
+	Types: ProductionSlot
+
+Production6: F6
+	Description: Slot 6
+	Types: ProductionSlot
+
+Production7: F7
+	Description: Slot 7
+	Types: ProductionSlot
+
+Production8: F8
+	Description: Slot 8
+	Types: ProductionSlot
+
+Production9: F9
+	Description: Slot 9
+	Types: ProductionSlot
+
+Production10: F10
+	Description: Slot 10
+	Types: ProductionSlot
+
+Production11: F11
+	Description: Slot 11
+	Types: ProductionSlot
+
+Production12: F12
+	Description: Slot 12
+	Types: ProductionSlot

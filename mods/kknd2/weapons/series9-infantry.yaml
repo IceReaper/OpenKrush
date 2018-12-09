@@ -1,0 +1,139 @@
+series9_seeder:
+	Range: 5c768
+	Burst: 4
+	BurstDelay: 5 # TODO
+	ReloadDelay: 25 # TODO
+	Report: sounds_series9|159.wav
+	Projectile: Bullet
+		Image: projectile
+		Palette: P_GreenProjectiles
+		Sequences: series9_seeder
+		Speed: 340
+	Warhead@1Damage: SpreadDamage
+		Damage: 100
+		Spread: 0c32 # TODO
+		Falloff: 100, 100 # TODO
+		Versus:
+			infantry: 70
+			vehicle: 15
+			building: 7
+	Warhead@2Effect: ShrapnelCreateEffect
+		Image: hit
+		ExplosionPalette: P_GreenProjectiles
+		Explosions: series9_seeder
+		ImpactSounds: sounds_series9|146.wav
+
+series9_podlauncher:
+	MinRange: 1c0
+	Range: 5c512
+	ReloadDelay: 25 # TODO
+	Report: kknd2|bits/sounds/pod_Launcher.wav
+	Projectile: Bullet
+		Image: projectile
+		Palette: P_SmallProjectiles
+		Sequences: series9_podlauncher
+		Speed: 256
+		Blockable: false
+		LaunchAngle: 62 # TODO
+	Warhead@1Damage: SpreadDamage
+		Damage: 100
+		Spread: 0c32 # TODO
+		Falloff: 100, 100 # TODO
+		Versus:
+			infantry: 123
+			vehicle: 370
+			building: 370
+	Warhead@2Effect: ShrapnelCreateEffect
+		Image: explosions
+		ExplosionPalette: B_Explosions
+		Explosions: small_explosion # TODO might be wrong need to verify
+		ImpactSounds: sounds_series9|150.wav
+
+
+series9_weedkiller:
+	Range: 2c0
+	ReloadDelay: 15
+	Report: sounds_series9|157.wav
+	Burst: 1
+	Projectile: Bullet
+		Image: projectile
+		Palette: P_GreenFire
+		Sequences: green_fire
+		Speed: 100 # TODO
+	Warhead@1Damage: SpreadDamage
+		Damage: 100 # TODO
+		DamageTypes: Fire # TODO
+		Spread: 0c512 # TODO
+		Falloff: 100, 100 # TODO
+		Versus:
+			infantry: 14 # TODO
+			vehicle: 8 # TODO
+			building: 19 # TODO
+
+series9_sporemissle:
+	MinRange: 1c256
+	Range: 7c0
+	ReloadDelay: 63 # TODO
+	Report: sounds_series9|153.wav
+	Projectile: Bullet
+		Image: projectile
+		Palette: P_Projectiles
+		Sequences: small_rocket
+		Speed: 430
+		TrailPalette: B_Explosions
+		TrailImage: hit
+		TrailSequences: small_rocket_trail
+		Inaccuracy: 2000 #TODO VERIFY
+	Warhead@1Damage: SpreadDamage
+		Damage: 100 
+		DamageTypes: Explosion # TODO
+		Spread: 0c512 # TODO
+		Falloff: 100, 100 # TODO
+		AffectsParent: true # TODO
+		Versus:
+			infantry: 50
+			vehicle: 50
+			building: 20
+	Warhead@2Effect: ShrapnelCreateEffect
+		Image: explosions
+		ExplosionPalette: B_Explosions
+		Explosions: small_explosion
+		ImpactSounds: sounds_series9|150.wav
+
+series9_sterilizer:
+	Range: 8c0
+	ReloadDelay: 25 # TODO
+	Report: kknd2|bits/sounds/sterilizer.wav
+	Projectile: Bullet
+		Image: projectile
+		Palette: P_GreenProjectiles
+		Sequences: series9_sterilizer
+		Speed: 512
+	Warhead@1Damage: SpreadDamage
+		Damage: 100
+		Spread: 0c32 # TODO
+		Falloff: 100, 100 # TODO
+		Versus:
+			infantry: 700
+			vehicle: 70
+			building: 22
+	Warhead@2Effect: ShrapnelCreateEffect
+		Image: hit
+		ExplosionPalette: P_GreenProjectiles
+		Explosions: series9_sterilizer
+		ImpactSounds: sounds_series9|146.wav
+
+series9_michaelangelo:
+	Warhead@1Damage: SpreadDamage
+		Damage: 100 # TODO
+		Spread: 5c0 # TODO
+		Falloff: 100, 100 # TODO
+		Versus:
+			infantry: 1000
+			vehicle: 2500
+			building: 1250
+	Warhead@2Effect: ShrapnelCreateEffect
+		Image: hit
+		ExplosionPalette: B_Explosions
+		Explosions: kamikaze_explosion
+		ImpactSounds: sounds_evolved|147.wav

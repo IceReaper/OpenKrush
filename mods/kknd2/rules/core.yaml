@@ -1,0 +1,67 @@
+^CoreConstruction:
+	SelfConstructing:
+		Steps: 4
+
+^CoreBuilding:
+	Building:
+		BuildSounds: sounds_survivors|167.wav
+	SaboteurConquerable:
+		RequiresCondition: !selfconstructing && !deconstructing
+
+^CoreTower:
+	Building:
+		BuildSounds: sounds_survivors|167.wav
+	Turreted:
+		InitialFacing: 96
+
+^CoreWall:
+	Building:
+		BuildSounds: sounds_survivors|167.wav
+
+^CoreInfantry:
+	Crushable:
+	Sacrificable:
+	WithDeathAnimation:
+		FallbackSequence: die
+		#DeathTypes:
+		#	Explosion: -explode
+		#	Fire: -burn
+		#	Acid: -melt
+		#	Electricity: -zap
+		#	Laser: -dissolve
+		#	Crush: -crush
+	#DeathSounds@CRUSH:
+	#	Voice: Crush
+	#	DeathTypes: Crush
+	#DeathSounds@ELECTRICITY:
+	#	Voice: Zapped
+	#	DeathTypes: Electricity
+	#ThrowsShrapnel:
+	#	Weapons: Blood1, Blood2, Blood3, Blood4, Blood5
+	#	Pieces: 1, 1
+	#	Range: 0c512, 1c256
+
+^CoreAircraft:
+	# TODO kknd2 aircraft code!
+
+^AutoTargetDefault:
+	AutoTarget:
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: Ground
+		InvalidTargets: NoAutoAttack
+
+World:
+	SmudgeLayer@CRATER:
+		Type: Crater
+		Palette: B_Cursors_Alpha # TODO wrong one
+		Sequence: crater
+		SmokePercentage: -1
+
+oilpatch:
+	RenderSprites:
+		Palette: B_Oil
+^Palettes:
+	PaletteFromMobd@B_Oil:
+		Name: B_Oil
+		Filename: sprites|B_Oil.mobd
+

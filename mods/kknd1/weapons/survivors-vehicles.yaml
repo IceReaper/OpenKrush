@@ -1,0 +1,180 @@
+survivors_dirtbike:
+	Range: 4c0
+	Burst: 1
+	BurstDelays: 0
+	ReloadDelay: 25
+	Report: kknd1|bits/sounds/pistol.wav #sounds_survivors|5.wav
+	Projectile: InstantHit
+		Blockable: true
+	Warhead@Damage: SpreadDamage
+		Damage: 100
+		Spread: 32
+		Falloff: 100, 100
+		Versus:
+			infantry: 28
+			vehicle: 15
+			building: 11
+	Warhead@Effect: ShrapnelCreateEffect
+		Image: hit
+		ExplosionPalette: kknd
+		Explosions: bullet_a, bullet_b, bullet_c, bullet_d, bullet_e, bullet_f, bullet_g, bullet_h
+		ImpactSounds: sounds_survivors|11.wav, sounds_survivors|12.wav, sounds_survivors|13.wav
+		ImpactSoundChance: 10
+		Radius: 250,250
+
+survivors_4x4pickup:
+	Range: 4c0
+	Burst: 10
+	BurstDelays: 19
+	ReloadDelay: 25
+	Report: sounds_survivors|5.wav
+	Projectile: InstantHit
+		Blockable: true
+	Warhead@Damage: SpreadDamage
+		Damage: 100
+		Spread: 32
+		Falloff: 100, 100
+		Versus:
+			infantry: 28
+			vehicle: 21
+			building: 11
+	Warhead@Effect: ShrapnelCreateEffect
+		Image: hit
+		ExplosionPalette: kknd
+		Explosions: bullet_a, bullet_b, bullet_c, bullet_d, bullet_e, bullet_f, bullet_g, bullet_h
+		ImpactSounds: sounds_survivors|11.wav, sounds_survivors|12.wav, sounds_survivors|13.wav
+		ImpactSoundChance: 10
+		Radius: 250,250
+
+survivors_allterrainvehicle:
+	Range: 5c0
+	Burst: 10
+	BurstDelays: 13
+	ReloadDelay: 38
+	Report: sounds_survivors|8.wav
+	Projectile: InstantHit
+		Blockable: true
+	Warhead@Damage: SpreadDamage
+		Damage: 100
+		Spread: 32
+		Falloff: 100, 100
+		Versus:
+			infantry: 28
+			vehicle: 30
+			building: 11
+	Warhead@Effect: ShrapnelCreateEffect
+		Image: hit
+		ExplosionPalette: kknd
+		Explosions: bullet_a, bullet_b, bullet_c, bullet_d, bullet_e, bullet_f, bullet_g, bullet_h
+		ImpactSounds: sounds_survivors|11.wav, sounds_survivors|12.wav, sounds_survivors|13.wav
+		ImpactSoundChance: 10
+		Radius: 250,250
+
+survivors_flameatv:
+	Range: 3c0
+	Burst: 10
+	BurstDelays: 1
+	ReloadDelay: 41
+	Report: sounds_survivors|86.wav
+	Projectile: Bullet
+		Image: projectile
+		Palette: kknd
+		Sequences: fire
+		Speed: 110
+	Warhead@Damage: SpreadDamage
+		Damage: 100
+		DamageTypes: Fire
+		Spread: 512
+		Falloff: 100, 100
+		Versus:
+			infantry: 17
+			vehicle: 20
+			building: 20
+
+survivors_anacondatank:
+	Inherits: Smudge
+	Range: 6c0
+	Burst: 1
+	BurstDelays: 0
+	ReloadDelay: 82
+	Report: sounds_survivors|9.wav
+	Projectile: Bullet
+		Image: projectile
+		Palette: kknd
+		Sequences: cannon_l
+		Speed: 450
+	Warhead@Damage: SpreadDamage
+		Damage: 100
+		DamageTypes: Explosion
+		Spread: 512
+		Falloff: 100, 100
+		AffectsParent: true
+		Versus:
+			infantry: 226
+			vehicle: 300
+			building: 113
+	Warhead@Effect: ShrapnelCreateEffect
+		Image: explosions
+		ExplosionPalette: kknd
+		Explosions: s
+		ImpactSounds: sounds_survivors|10.wav
+
+survivors_barragecraft:
+	Inherits: Smudge
+	Range: 8c0
+	Burst: 6
+	BurstDelays: 8
+	ReloadDelay: 200
+	Report: sounds_survivors|14.wav
+	Projectile: Bullet
+		Image: projectile
+		# TODO currently broken in openRA lint, while this works, it makes the project build fail -.-
+		#Palette: player
+		#IsPlayerPalette: true
+		Sequences: rocket_l
+		Speed: 200
+		TrailPalette: kknd
+		TrailImage: hit
+		TrailSequences: smoke
+		Inaccuracy: 2000
+		LaunchAngle: 50
+		Blockable: false
+	Warhead@Damage: SpreadDamage
+		Damage: 100
+		DamageTypes: Explosion
+		Spread: 512
+		Falloff: 100, 100
+		AffectsParent: true
+		Versus:
+			infantry: 120
+			vehicle: 160
+			building: 96
+	Warhead@Effect: ShrapnelCreateEffect
+		Image: explosions
+		ExplosionPalette: kknd
+		Explosions: s
+		ImpactSounds: sounds_survivors|10.wav
+
+survivors_autocannontank:
+	Range: 7c0
+	Burst: 1
+	BurstDelays: 0
+	ReloadDelay: 3
+	Report: sounds_survivors|6.wav
+	ReportLooped: true
+	Projectile: InstantHit
+	Warhead@Damage: SpreadDamage
+		Damage: 100
+		Spread: 32
+		Falloff: 100, 100
+		Versus:
+			infantry: 50
+			vehicle: 20
+			building: 13
+	Warhead@Effect: ShrapnelCreateEffect
+		Image: hit
+		ExplosionPalette: kknd
+		Explosions: bullet_a, bullet_b, bullet_c, bullet_d, bullet_e, bullet_f, bullet_g, bullet_h
+		ImpactSounds: sounds_survivors|11.wav, sounds_survivors|12.wav, sounds_survivors|13.wav
+		ImpactSoundChance: 10
+		Radius: 250,250

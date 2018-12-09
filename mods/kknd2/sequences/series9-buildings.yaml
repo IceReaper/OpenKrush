@@ -1,0 +1,216 @@
+series9_barn:
+	idle: sprites|R_B_Outpost.mobd
+		Start: 6
+	damaged-idle: sprites|R_B_Outpost.mobd
+	critical-idle: sprites|R_B_Outpost.mobd
+		Start: 1
+	animation: sprites|R_B_Outpost.mobd
+		Start: 23
+		Length: 4
+		Tick: 80 # TODO check timing
+	deploy: sprites|R_B_Outpost.mobd
+		Start: 7
+		Length: 16
+		Tick: 80
+	make0: sprites|R_B_Outpost.mobd
+		Start: 2
+	make1: sprites|R_B_Outpost.mobd
+		Start: 3
+	make2: sprites|R_B_Outpost.mobd
+		Start: 4
+	make3: sprites|R_B_Outpost.mobd
+		Start: 5
+
+series9_microunitfactory:
+	idle: sprites|R_B_Barracks.mobd
+		Start: 6
+	damaged-idle: sprites|R_B_Barracks.mobd
+	critical-idle: sprites|R_B_Barracks.mobd
+		Start: 1
+	animation: sprites|R_B_Barracks.mobd
+		Start: 7
+		Length: 8
+		Tick: 80 # TODO check timing
+	make0: sprites|R_B_Barracks.mobd
+		Start: 2
+	make1: sprites|R_B_Barracks.mobd
+		Start: 3
+	make2: sprites|R_B_Barracks.mobd
+		Start: 4
+	make3: sprites|R_B_Barracks.mobd
+		Start: 5
+
+series9_macrounitfactory:
+	idle: sprites|R_B_Machineshop.mobd
+		Start: 6
+		Offset: 0,-32
+	damaged-idle: sprites|R_B_Machineshop.mobd
+		Offset: 0,-32
+	critical-idle: sprites|R_B_Machineshop.mobd
+		Start: 1
+		Offset: 0,-32
+	animation: sprites|R_B_Machineshop.mobd
+		Start: 7
+		Length: 13
+		Tick: 80 # TODO check timing
+		Offset: 0,-32
+	make0: sprites|R_B_Machineshop.mobd
+		Start: 2
+		Offset: 0,-32
+	make1: sprites|R_B_Machineshop.mobd
+		Start: 3
+		Offset: 0,-32
+	make2: sprites|R_B_Machineshop.mobd
+		Start: 4
+		Offset: 0,-32
+	make3: sprites|R_B_Machineshop.mobd
+		Start: 5
+		Offset: 0,-32
+
+series9_maintenancedepot:
+	idle: sprites|R_B_Repairbay.mobd
+		Start: 6
+		Offset: 0,-32
+	damaged-idle: sprites|R_B_Repairbay.mobd
+		Offset: 0,-32
+	critical-idle: sprites|R_B_Repairbay.mobd
+		Start: 1
+		Offset: 0,-32
+	animation: sprites|R_B_Repairbay.mobd # TODO use correct name
+		Start: 7
+		Offset: 0,-32
+	repairing-fx: sprites|R_B_Repairbay.mobd # TODO use correct name
+		Start: 7
+		Length: 32
+		Tick: 80 # TODO check timing
+		Offset: 0,-32
+	make0: sprites|R_B_Repairbay.mobd
+		Start: 2
+		Offset: 0,-32
+	make1: sprites|R_B_Repairbay.mobd
+		Start: 3
+		Offset: 0,-32
+	make2: sprites|R_B_Repairbay.mobd
+		Start: 4
+		Offset: 0,-32
+	make3: sprites|R_B_Repairbay.mobd
+		Start: 5
+		Offset: 0,-32
+
+series9_weaponcontrol:
+	idle: sprites|R_B_Armory.mobd
+		Start: 6
+	damaged-idle: sprites|R_B_Armory.mobd
+	critical-idle: sprites|R_B_Armory.mobd
+		Start: 1
+	animation: sprites|R_B_Armory.mobd
+		Start: 7
+		Length: 18
+		Tick: 80 # TODO check timing
+	make0: sprites|R_B_Armory.mobd
+		Start: 2
+	make1: sprites|R_B_Armory.mobd
+		Start: 3
+	make2: sprites|R_B_Armory.mobd
+		Start: 4
+	make3: sprites|R_B_Armory.mobd
+		Start: 5
+
+series9_technostudy:
+	idle: sprites|R_B_Researchlab.mobd
+		Start: 6
+	damaged-idle: sprites|R_B_Researchlab.mobd
+	critical-idle: sprites|R_B_Researchlab.mobd
+		Start: 1
+	animation: sprites|R_B_Researchlab.mobd
+		Start: 7
+		Length: 8
+		Tick: 80 # TODO check timing
+	make0: sprites|R_B_Researchlab.mobd
+		Start: 2
+	make1: sprites|R_B_Researchlab.mobd
+		Start: 3
+	make2: sprites|R_B_Researchlab.mobd
+		Start: 4
+	make3: sprites|R_B_Researchlab.mobd
+		Start: 5
+
+series9_powerunit:
+	idle: sprites|R_B_Powerstation.mobd
+		Start: 6
+	damaged-idle: sprites|R_B_Powerstation.mobd
+	critical-idle: sprites|R_B_Powerstation.mobd
+		Start: 1
+	animation: sprites|R_B_Powerstation.mobd
+		Start: 7
+		Length: 8
+		Tick: 80 # TODO check timing
+	make0: sprites|R_B_Powerstation.mobd
+		Start: 2
+	make1: sprites|R_B_Powerstation.mobd
+		Start: 3
+	make2: sprites|R_B_Powerstation.mobd
+		Start: 4
+	make3: sprites|R_B_Powerstation.mobd
+		Start: 5
+
+series9_windmill:
+	idle: sprites|R_B_Collector.mobd
+		Start: 6
+	damaged-idle: sprites|R_B_Collector.mobd
+	critical-idle: sprites|R_B_Collector.mobd
+		Start: 1
+	animation: sprites|R_B_Collector.mobd
+		Start: 7
+		Length: 6
+		Tick: 80 # TODO check timing
+	make0: sprites|R_B_Collector.mobd
+		Start: 2
+	make1: sprites|R_B_Collector.mobd
+		Start: 3
+	make2: sprites|R_B_Collector.mobd
+		Start: 4
+	make3: sprites|R_B_Collector.mobd
+		Start: 5
+
+series9_windturbine:
+	idle: sprites|R_B_Converter.mobd
+		Start: 6
+	damaged-idle: sprites|R_B_Converter.mobd
+	critical-idle: sprites|R_B_Converter.mobd
+		Start: 1
+	animation: sprites|R_B_Converter.mobd
+		Start: 7
+		Length: 8
+		Tick: 80 # TODO check timing
+	make0: sprites|R_B_Converter.mobd
+		Start: 2
+	make1: sprites|R_B_Converter.mobd
+		Start: 3
+	make2: sprites|R_B_Converter.mobd
+		Start: 4
+	make3: sprites|R_B_Converter.mobd
+		Start: 5
+
+series9_oilbot:
+	idle: sprites|R_B_Drillrig.mobd
+		Start: 6
+	damaged-idle: sprites|R_B_Drillrig.mobd
+	critical-idle: sprites|R_B_Drillrig.mobd
+		Start: 1
+	animation: sprites|R_B_Drillrig.mobd
+		Start: 18
+		Length: 8
+		Tick: 80 # TODO check timing
+	deploy: sprites|R_B_Drillrig.mobd
+		Start: 7
+		Length: 11
+		Tick: 80
+	make0: sprites|R_B_Drillrig.mobd
+		Start: 2
+	make1: sprites|R_B_Drillrig.mobd
+		Start: 3
+	make2: sprites|R_B_Drillrig.mobd
+		Start: 4
+	make3: sprites|R_B_Drillrig.mobd
+		Start: 5

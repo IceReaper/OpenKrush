@@ -1,0 +1,154 @@
+survivors_dirtbike:
+	Inherits@muzzle: ^gun_16
+	idle: sprites|Bike.mobd
+		Facings: -16
+	move: sprites|Bike.mobd
+		Start: 48
+		Facings: -16
+	shoot: sprites|Bike.mobd
+		Start: 16
+		Length: 2
+		Tick: 120
+		Facings: -16
+	aim: sprites|Bike.mobd
+		Start: 16
+		Stride: 2
+		Facings: -16
+	icon: bits/Buttons.png
+		Start: 51
+
+survivors_4x4pickup:
+	Inherits@muzzle: ^gun_16
+	idle: sprites|Pickup.mobd
+		Start: 16
+		Facings: -16
+	move: sprites|Pickup.mobd
+		Start: 32
+		Length: 2
+		Tick: 120
+		Facings: -16
+	# Original KKnD also uses the MonsterTruck turret, cause the Pickup turret has a broken up-frame.
+	#turret: sprites|Pickup.mobd
+	#	Facings: -16
+	turret: sprites|MonsterTruck.mobd
+		Facings: -16
+	icon: bits/Buttons.png
+		Start: 52
+
+survivors_allterrainvehicle:
+	Inherits@muzzle: ^gun_16
+	idle: sprites|AllTerrainVehicle.mobd
+		Start: 16
+		Facings: -16
+	move: sprites|AllTerrainVehicle.mobd
+		Start: 32
+		Length: 2
+		Tick: 120
+		Facings: -16
+	turret: sprites|AllTerrainVehicle.mobd
+		Facings: -16
+	icon: bits/Buttons.png
+		Start: 53
+
+survivors_flameatv:
+	idle: sprites|FlameAtv.mobd
+		Start: 16
+		Facings: -16
+	move: sprites|FlameAtv.mobd
+		Start: 32
+		Length: 2
+		Tick: 120
+		Facings: -16
+	turret: sprites|FlameAtv.mobd
+		Facings: -16
+	icon: bits/Buttons.png
+		Start: 54
+
+survivors_anacondatank:
+	Inherits@muzzle: ^gun_16
+	idle: sprites|Tank.mobd
+		Start: 32
+		Facings: -16
+	move: sprites|Tank.mobd
+		Start: 48
+		Length: 2
+		Tick: 120
+		Facings: -16
+	turret: sprites|Tank.mobd
+		Start: 16
+		Facings: -16
+	icon: bits/Buttons.png
+		Start: 55
+
+survivors_barragecraft:
+	idle: sprites|BarrageCraft.mobd
+		Start: 32
+		Facings: -16
+	turret: sprites|BarrageCraft.mobd
+		Start: 16
+		Facings: -16
+	icon: bits/Buttons.png
+		Start: 57
+
+survivors_autocannontank:
+	idle: sprites|CannonTank.mobd
+		Start: 80
+		Facings: -16
+	move: sprites|CannonTank.mobd
+		Start: 96
+		Length: 2
+		Tick: 120
+		Facings: -16
+	turret: sprites|CannonTank.mobd
+		Start: 64
+		Facings: -16
+	shoot: sprites|CannonTank.mobd
+		Length: 4
+		Tick: 40
+		Facings: -16
+	icon: bits/Buttons.png
+		Start: 58
+
+survivors_oiltanker:
+	idle: sprites|SOTanker.mobd
+		Facings: -16
+	move: sprites|SOTanker.mobd
+		Start: 16
+		Length: 2
+		Tick: 120
+		Facings: -16
+	icon: bits/Buttons.png
+		Start: 56
+
+#survivors_derrick_beta:
+#	idle: bits/SDerrickBeta.mobd
+#		Facings: -16
+#	move: bits/SDerrickBeta.mobd
+#		Start: 17
+#		Length: 2
+#		Tick: 120
+#		Facings: -16
+#	icon: bits/Buttons.png
+#		Start: 59
+
+survivors_derrick:
+	idle: sprites|SDerrick.mobd
+		Facings: -16
+	move: sprites|SDerrick.mobd
+		Start: 17
+		Length: 2
+		Tick: 120
+		Facings: -16
+	icon: bits/Buttons.png
+		Start: 104
+
+survivors_mobileoutpost:
+	idle: sprites|OutpostMobile.mobd
+		Facings: -16
+	move: sprites|OutpostMobile.mobd
+		Start: 16
+		Length: 4
+		Tick: 120
+		Facings: -16
+	icon: bits/Buttons.png
+		Start: 60

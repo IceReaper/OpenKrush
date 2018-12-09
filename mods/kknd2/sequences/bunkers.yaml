@@ -1,0 +1,79 @@
+bunker_techbunker:
+	idle: sprites|T_Bunker.mobd
+		Start: 4
+	idle-open: sprites|T_Bunker.mobd
+		Start: 18
+	opening: sprites|T_Bunker.mobd
+		Start: 5
+		Length: 13
+	lock: sprites|T_Bunker.mobd
+		Start: 1
+		Length: 2
+		Tick: 160
+
+
+bunker_gorttherobot:
+	idle: sprites|T_GortRobot.mobd
+		Facings: -8
+	move: sprites|T_GortRobot.mobd
+		Start: 24
+		Length: 8
+		Tick: 120
+		Facings: -8
+	turret: sprites|T_GortRobotTurret.mobd
+		Facings: -16
+	shoot: sprites|T_GortRobotTurret.mobd
+		Start: 16
+		Length: 2
+		Tick: 120
+		Facings: -16
+
+bunker_plasmatank:
+	idle: sprites|T_PlasmaTankVehicle.mobd
+		Start: 8
+		Facings: -16
+	move: sprites|T_PlasmaTankVehicle.mobd
+		Start: 24
+		Length: 3
+		Facings: -8
+	turret: sprites|T_PlasmaTankTurret.mobd
+		Facings: -16
+	shoot: sprites|T_PlasmaTankTurret.mobd
+		Start: 16
+		Length: 3
+		Tick: 120
+		Facings: -16
+
+bunker_mech:
+	idle: sprites|T_MechanoidWalker.mobd
+		Start: 8
+		Facings: -16
+	move: sprites|T_MechanoidWalker.mobd
+		Start: 24
+		Length: 9
+		Tick: 115
+		Facings: -8
+	turret: sprites|T_MechanoidWalkerTurret.mobd
+		Facings: -16
+	shoot: sprites|T_MechanoidWalkerTurret.mobd
+		Start: 16
+		Length: 7
+		Tick: 120
+		Facings: -16
+
+bunker_sentineldroid:
+	idle: sprites|T_SentinelDroidVehicle.mobd
+		Start: 8
+		Facings: -16
+	move: sprites|T_SentinelDroidVehicle.mobd
+		Start: 24
+		Length: 10
+		Tick: 60
+		Facings: -8
+	turret: sprites|T_SentinelDroidTurret.mobd
+		Facings: -16
+	shoot: sprites|T_SentinelDroidTurret.mobd
+		Start: 16
+		Length: 5
+		Tick: 120
+		Facings: -16

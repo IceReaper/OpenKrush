@@ -1,0 +1,13 @@
+# Shared palettes for all KKnD games.
+^Palettes:
+	# Palette to use for generated shadow. Its basicaly just half-transparent black.
+	PaletteFromRGBA@shadow:
+		Name: shadow
+		R: 0
+		G: 0
+		B: 0
+		A: 128
+	# Default palette for the mpspawn, as its not part of the KKnD assets.
+	PaletteFromPng@mpspawn:
+		Name: mpspawn
+		Filename: bits/mpspawn.png

@@ -1,0 +1,31 @@
+dieVehicleLight:
+
+dieVehicle:
+
+dieVehicleHeavy:
+
+breakBuilding:
+
+dieBuilding:
+	Warhead@1: ShrapnelCreateEffect # placeholder
+		Image: explosions
+		ExplosionPalette: B_Explosions
+		Explosions: small_explosion # TODO might be wrong need to verify
+		ImpactSounds: sounds_survivors|146.wav
+		Delay: 0
+		Radius: 50,50
+
+breakTower:
+
+dieTower:
+	Warhead@1: ShrapnelCreateEffect # placeholder
+		Image: explosions
+		ExplosionPalette: B_Explosions
+		Explosions: small_explosion # TODO might be wrong need to verify
+		ImpactSounds: sounds_survivors|146.wav
+		Delay: 0
+		Radius: 50,50
+
+breakWall:
+
+dieWall:

@@ -1,0 +1,29 @@
+Metadata:
+	Title: Game Chooser
+	Version: release-20181215
+	Hidden: true
+
+Packages:
+	~^Content/: content
+	$kknd: kknd
+	./mods/common: common
+
+Cursors:
+	kknd|cursors.yaml
+
+Assemblies:
+	common|OpenRA.Mods.Common.dll
+	kknd|OpenRA.Mods.Kknd.dll
+
+LoadScreen: GameSelectLoadScreen
+
+Rules:
+	kknd|rules/modchooser.yaml
+
+Fonts:
+
+SpriteFormats: PngSheet
+
+SpriteSequenceFormat: DefaultSpriteSequence
+
+ModelSequenceFormat: PlaceholderModelSequence

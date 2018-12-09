@@ -1,0 +1,14 @@
+Player:
+	PlaceBuilding:
+		Palette: B_Cursors_Alpha
+		LineBuildSegmentPalette: B_Cursors_Alpha
+
+^CoreWorld:
+	ShroudRenderer:
+		Index: 0, 15, 3, 6, 12, 9, 11, 7, 14, 13, 1, 2, 4, 8, 5, 10 # TODO adjust to kknd2 shroud
+	Faction@Random:
+		RandomFactionMembers: survivors, evolved, series9
+
+EditorWorld:
+	EditorSelectionLayer:
+		Palette: B_Cursors_Alpha

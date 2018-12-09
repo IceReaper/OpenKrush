@@ -1,0 +1,270 @@
+evolved_berzerker:
+	Inherits@1: ^EvolvedInfantry
+	Inherits@2: ^CoreArmedSelf
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: Berzerker
+	Valued:
+		Cost: 100
+	Health:
+		HP: 450
+	Mobile:
+		Speed: 58
+	RevealsShroud:
+		Range: 12c0
+	AdvancedBuildable:
+		BuildDuration: 250
+		Level: 0
+	OffsetsArmament:
+		Weapon: evolved_berzerker
+	Veterancy:
+		HealRates: 1,2 # TODO
+		Experience: 500, 1000 # TODO
+	RenderSprites:
+		PlayerPalette: M_I_Gunner_player
+^Palettes:
+	PaletteFromMobd@M_I_Gunner:
+		Name: M_I_Gunner
+		Filename: sprites|M_I_Gunner.mobd
+	OverlayPlayerColorPalette@M_I_Gunner_player:
+		BasePalette: M_I_Gunner
+		BaseName: M_I_Gunner_player
+		RemapIndex: 7,8,9,10
+
+evolved_rioter:
+	Inherits@1: ^EvolvedInfantry
+	Inherits@2: ^CoreArmedSelf
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: Rioter
+	Valued:
+		Cost: 125
+	Health:
+		HP: 450
+	Mobile:
+		Speed: 58
+	RevealsShroud:
+		Range: 12c0
+	AdvancedBuildable:
+		BuildDuration: 350
+		Level: 1
+	OffsetsArmament:
+		Weapon: evolved_rioter
+	Veterancy:
+		HealRates: 1,2 # TODO
+		Experience: 500, 1000 # TODO
+	RenderSprites:
+		PlayerPalette: M_I_Grenadier_player
+^Palettes:
+	PaletteFromMobd@M_I_Grenadier:
+		Name: M_I_Grenadier
+		Filename: sprites|M_I_Grenadier.mobd
+	OverlayPlayerColorPalette@M_I_Grenadier_player:
+		BasePalette: M_I_Grenadier
+		BaseName: M_I_Grenadier_player
+		RemapIndex: 7,8,9,10
+
+evolved_pyromaniac:
+	Inherits@1: ^EvolvedInfantry
+	Inherits@2: ^CoreArmedSelf
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: Pyromaniac
+	Valued:
+		Cost: 200
+	Health:
+		HP: 450
+	Mobile:
+		Speed: 58
+	RevealsShroud:
+		Range: 12c0
+	AdvancedBuildable:
+		BuildDuration: 350
+		Level: 2
+	OffsetsArmament:
+		Weapon: evolved_pyromaniac
+	Veterancy:
+		HealRates: 1,2 # TODO
+		Experience: 2000, 3000 # TODO
+	RenderSprites:
+		PlayerPalette: M_I_Flamer_player
+^Palettes:
+	PaletteFromMobd@M_I_Flamer:
+		Name: M_I_Flamer
+		Filename: sprites|M_I_Flamer.mobd
+	OverlayPlayerColorPalette@M_I_Flamer_player:
+		BasePalette: M_I_Flamer
+		BaseName: M_I_Flamer_player
+		RemapIndex: 7,8,9,10
+
+evolved_homingbazookoid:
+	Inherits@1: ^EvolvedInfantry
+	Inherits@2: ^CoreArmedSelf
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: Homing Bazookoid
+	Valued:
+		Cost: 200
+	Health:
+		HP: 450
+	Mobile:
+		Speed: 58
+	RevealsShroud:
+		Range: 12c0
+	AdvancedBuildable:
+		BuildDuration: 450
+		Level: 3
+	OffsetsArmament:
+		Weapon: evolved_homingbazookoid
+	Veterancy:
+		HealRates: 1,2 # TODO
+		Experience: 1700, 2700 # TODO
+	RenderSprites:
+		PlayerPalette: M_I_Rocketeer_player
+^Palettes:
+	PaletteFromMobd@M_I_Rocketeer:
+		Name: M_I_Rocketeer
+		Filename: sprites|M_I_Rocketeer.mobd
+	OverlayPlayerColorPalette@M_I_Rocketeer_player:
+		BasePalette: M_I_Rocketeer
+		BaseName: M_I_Rocketeer_player
+		RemapIndex: 7,8,9,10
+
+evolved_spiritarcher:
+	Inherits@1: ^EvolvedInfantry
+	Inherits@2: ^CoreArmedSelf
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: Spirit Archer
+	Valued:
+		Cost: 250
+	Health:
+		HP: 550
+	Mobile:
+		Speed: 58
+	RevealsShroud:
+		Range: 12c0
+	AdvancedBuildable:
+		BuildDuration: 550
+		Level: 5
+	OffsetsArmament:
+		Weapon: evolved_spiritarcher
+	Veterancy:
+		HealRates: 1,2 # TODO
+		Experience: 1700, 2700 # TODO
+	RenderSprites:
+		PlayerPalette: M_I_Sniper_player
+^Palettes:
+	PaletteFromMobd@M_I_Sniper:
+		Name: M_I_Sniper
+		Filename: sprites|M_I_Sniper.mobd
+	OverlayPlayerColorPalette@M_I_Sniper_player:
+		BasePalette: M_I_Sniper
+		BaseName: M_I_Sniper_player
+		RemapIndex: 7,8,9,10
+
+evolved_scourgedemon:
+	Inherits@1: ^EvolvedInfantry
+	Inherits@2: ^CoreArmedSelf
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: Scourge Demon
+	Valued:
+		Cost: 100
+	Health:
+		HP: 1000
+	AdvancedBuildable:
+		Prerequisites: unbuildable
+	Mobile:
+		Speed: 58
+	RevealsShroud:
+		Range: 12c0
+	Voiced:
+		VoiceSet: DemonVoice
+	OffsetsArmament@0:
+		Weapon: evolved_scourgedemon
+		Name: primary
+		BurstOffsets: 0
+	OffsetsArmament@1:
+		Weapon: evolved_scourgedemon
+		Name: secondary
+		BurstOffsets: 1
+	Veterancy:
+		HealRates: 1,2 # TODO
+		Experience: 1700, 2700 # TODO
+	-Sacrificable:
+	RenderSprites:
+		PlayerPalette: M_I_Demon_player
+^Palettes:
+	PaletteFromMobd@M_I_Demon:
+		Name: M_I_Demon
+		Filename: sprites|M_I_Demon.mobd
+	OverlayPlayerColorPalette@M_I_Demon_player:
+		BasePalette: M_I_Demon
+		BaseName: M_I_Demon_player
+		RemapIndex: 7,8,9,10
+
+evolved_mekanik:
+	Inherits: ^EvolvedInfantry
+	Tooltip:
+		Name: Mekanik
+	TooltipDescription:
+		Description: Repairs buildings
+	Valued:
+		Cost: 100
+	Health:
+		HP: 500
+	Mobile:
+		Speed: 58
+	RevealsShroud:
+		Range: 12c0
+	AdvancedBuildable:
+		BuildDuration: 175
+		Level: 0
+	Selectable:
+		Priority: 15 # TODO
+	Technician:
+	-WithAimAttackAnimation:
+	IgnoreRallyPoint:
+	RenderSprites:
+		PlayerPalette: M_I_Technician_player
+^Palettes:
+	PaletteFromMobd@M_I_Technician:
+		Name: M_I_Technician
+		Filename: sprites|M_I_Technician.mobd
+	OverlayPlayerColorPalette@M_I_Technician_player:
+		BasePalette: M_I_Technician
+		BaseName: M_I_Technician_player
+		RemapIndex: 7,8,9,10
+
+evolved_martyr:
+	Inherits@1: ^EvolvedInfantry
+	Tooltip:
+		Name: Martyr
+	Valued:
+		Cost: 250
+	Health:
+		HP: 450
+	Mobile:
+		Speed: 64
+	RevealsShroud:
+		Range: 12c0
+	AdvancedBuildable:
+		BuildDuration: 625
+		Level: 4
+	-WithAimAttackAnimation:
+	Explodes:
+		Weapon: evolved_martyr
+		EmptyWeapon: evolved_martyr
+	AttackSuicides:
+	AttackMove:
+	RenderSprites:
+		PlayerPalette: M_I_Kamikaze_player
+^Palettes:
+	PaletteFromMobd@M_I_Kamikaze:
+		Name: M_I_Kamikaze
+		Filename: sprites|M_I_Kamikaze.mobd
+	OverlayPlayerColorPalette@M_I_Kamikaze_player:
+		BasePalette: M_I_Kamikaze
+		BaseName: M_I_Kamikaze_player
+		RemapIndex: 7,8,9,10

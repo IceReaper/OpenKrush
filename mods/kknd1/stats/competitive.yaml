@@ -1,0 +1,954 @@
+Meta:
+	Name: Competitive balance
+	Version: 0.1.0
+	Author: Dzierzan
+	Description: Balance based on roles and counters.
+Stats:
+	Rifleman:
+		Health: 400
+		Movement speed: 50
+		View range: 5c0
+		Cost: 80
+		Build duration: 75
+		Tech level: 0
+		Fire range: 4c0
+		Burst: 1
+		Burst delay: 0
+		Reload time: 25
+		Damage:
+			infantry: 50
+			vehicle: 5
+			heavy vehicles: 3
+			buildings: 7
+	Berserker:
+		Health: 425
+		Movement speed: 50
+		View range: 5c0
+		Cost: 80
+		Build duration: 75
+		Tech level: 0
+		Fire range: 4c0
+		Burst: 1
+		Burst delay: 0
+		Reload time: 25
+		Projectile Speed: 410
+		Damage:
+			infantry: 50
+			vehicle: 5
+			heavy vehicles: 3
+			buildings: 7
+	SWAT:
+		Health: 500
+		Movement speed: 50
+		View range: 5c0
+		Cost: 100
+		Build duration: 90
+		Tech level: 1
+		Fire range: 4c512
+		Burst: 4
+		Burst delay: 4
+		Reload time: 13
+		Damage:
+			infantry: 17
+			vehicle: 3
+			heavy vehicles: 2
+			buildings: 3
+	Shotgunner:
+		Health: 500
+		Movement speed: 50
+		View range: 5c0
+		Cost: 100
+		Build duration: 90
+		Tech level: 1
+		Fire range: 4c512
+		Burst: 1
+		Burst delay: 0
+		Reload time: 38
+		Damage:
+			infantry: 100
+			vehicle: 16
+			heavy vehicles: 12
+			buildings: 17
+	Flamer:
+		Health: 400
+		Movement speed: 50
+		View range: 5c0
+		Cost: 175
+		Build duration: 150
+		Tech level: 2
+		Fire range: 3c512
+		Burst: 10
+		Burst delay: 1
+		Reload time: 41
+		Inaccuracy: 0
+		Projectile Speed: 125
+		Damage:
+			infantry: 20
+			vehicle: 2
+			heavy vehicles: 1
+			buildings: 26
+	Pyromaniac:
+		Health: 400
+		Movement speed: 50
+		View range: 5c0
+		Cost: 175
+		Build duration: 150
+		Tech level: 2
+		Fire range: 3c512
+		Burst: 10
+		Burst delay: 1
+		Reload time: 41
+		Inaccuracy: 0
+		Projectile Speed: 125
+		Damage:
+			infantry: 20
+			vehicle: 2
+			heavy vehicles: 1
+			buildings: 26
+	Sapper:
+		Health: 500
+		Movement speed: 50
+		View range: 5c0
+		Cost: 150
+		Build duration: 150
+		Tech level: 1
+		Fire range: 3c512
+		Burst: 1
+		Burst delay: 0
+		Reload time: 50
+		Inaccuracy: 750
+		Projectile Speed: 160
+		Damage:
+			infantry: 10
+			vehicle: 140
+			heavy vehicles: 110
+			buildings: 80
+	Rioter:
+		Health: 525
+		Movement speed: 50
+		View range: 5c0
+		Cost: 150
+		Build duration: 150
+		Tech level: 1
+		Fire range: 3c512
+		Burst: 1
+		Burst delay: 0
+		Reload time: 50
+		Inaccuracy: 750
+		Projectile Speed: 160
+		Damage:
+			infantry: 10
+			vehicle: 140
+			heavy vehicles: 110
+			buildings: 80
+	RPG Launcher:
+		Health: 400
+		Movement speed: 50
+		View range: 5c0
+		Cost: 250
+		Build duration: 250
+		Tech level: 3
+		Fire range: 6c0
+		Burst: 1
+		Burst delay: 0
+		Reload time: 63
+		Inaccuracy: 1250
+		Projectile Speed: 200
+		Damage:
+			infantry: 10
+			vehicle: 200
+			heavy vehicles: 180
+			buildings: 75
+	Bazooka:
+		Health: 400
+		Movement speed: 50
+		View range: 5c0
+		Cost: 250
+		Build duration: 250
+		Tech level: 3
+		Fire range: 6c0
+		Burst: 1
+		Burst delay: 0
+		Reload time: 63
+		Inaccuracy: 1250
+		Projectile Speed: 200
+		Damage:
+			infantry: 10
+			vehicle: 200
+			heavy vehicles: 180
+			buildings: 75
+	Sniper:
+		Health: 550
+		Movement speed: 50
+		View range: 7c0
+		Cost: 450
+		Build duration: 450
+		Tech level: 4
+		Fire range: 7c0
+		Burst: 1
+		Burst delay: 0
+		Reload time: 38
+		Damage:
+			infantry: 425
+			vehicle: 40
+			heavy vehicles: 30
+			buildings: 35
+	Crazy Harry:
+		Health: 650
+		Movement speed: 50
+		View range: 7c0
+		Cost: 450
+		Build duration: 450
+		Tech level: 4
+		Fire range: 6c0
+		Burst: 1
+		Burst delay: 0
+		Reload time: 13
+		Damage:
+			infantry: 145
+			vehicle: 14
+			heavy vehicles: 10
+			buildings: 18
+	El Presidente:
+		Health: 600
+		Movement speed: 50
+		View range: 5c0
+		Cost: 450
+		Build duration: 250
+		Tech level: -1
+		Fire range: 4c0
+		Burst: 1
+		Burst delay: 0
+		Reload time: 38
+		Damage:
+			infantry: 50
+			vehicle: 23
+			heavy vehicles: 15
+			buildings: 11
+	King Zog:
+		Health: 600
+		Movement speed: 50
+		View range: 5c0
+		Cost: 450
+		Build duration: 250
+		Tech level: -1
+		Fire range: 4c0
+		Burst: 1
+		Burst delay: 0
+		Reload time: 38
+		Damage:
+			infantry: 50
+			vehicle: 23
+			heavy vehicles: 15
+			buildings: 11
+	Technician:
+		Health: 500
+		Movement speed: 60
+		View range: 5c0
+		Cost: 100
+		Build duration: 150
+		Tech level: 0
+	Mekanik:
+		Health: 500
+		Movement speed: 60
+		View range: 5c0
+		Cost: 100
+		Build duration: 150
+		Tech level: 0
+	Saboteur:
+		Health: 250
+		Movement speed: 60
+		View range: 5c0
+		Cost: 200
+		Build duration: 250
+		Tech level: 1
+		Fire range: 4c0
+		Burst: 1
+		Burst delay: 0
+		Reload time: 50
+		Damage:
+			infantry: 50
+			vehicle: 23
+			heavy vehicles: 15
+			buildings: 11
+	Vandal:
+		Health: 250
+		Movement speed: 60
+		View range: 5c0
+		Cost: 200
+		Build duration: 250
+		Tech level: 1
+		Fire range: 4c0
+		Burst: 1
+		Burst delay: 0
+		Reload time: 50
+		Damage:
+			infantry: 50
+			vehicle: 23
+			heavy vehicles: 15
+			buildings: 11
+	Dirt Bike:
+		Health: 400
+		Movement speed: 115
+		Turn speed: 41
+		View range: 11c0
+		Cost: 150
+		Build duration: 125
+		Tech level: 0
+		Fire range: 4c0
+		Burst: 1
+		Burst delay: 0
+		Reload time: 25
+		Damage:
+			infantry: 35
+			vehicle: 10
+			heavy vehicles: 5
+			buildings: 11
+	Dire Wolf:
+		Health: 400
+		Movement speed: 115
+		Turn speed: 41
+		View range: 11c0
+		Cost: 150
+		Build duration: 125
+		Tech level: 0
+		Fire range: 4c0
+		Burst: 1
+		Burst delay: 0
+		Reload time: 25
+		Damage:
+			infantry: 35
+			vehicle: 10
+			heavy vehicles: 5
+			buildings: 11
+	4x4 Pickup:
+		Health: 800
+		Movement speed: 90
+		Turn speed: 8
+		View range: 7c0
+		Cost: 300
+		Build duration: 150
+		Tech level: 0
+		Turret speed: 20
+		Fire range: 4c0
+		Burst: 10
+		Burst delay: 19
+		Reload time: 25
+		Damage:
+			infantry: 40
+			vehicle: 30
+			heavy vehicles: 11
+			buildings: 12
+	Bike & Sidecar:
+		Health: 800
+		Movement speed: 90
+		Turn speed: 8
+		View range: 7c0
+		Cost: 300
+		Build duration: 150
+		Tech level: 0
+		Turret speed: 20
+		Fire range: 4c0
+		Burst: 10
+		Burst delay: 19
+		Reload time: 25
+		Damage:
+			infantry: 40
+			vehicle: 30
+			heavy vehicles: 11
+			buildings: 12
+	All-Terrain Vehicle:
+		Health: 1100
+		Movement speed: 70
+		Turn speed: 8
+		View range: 7c0
+		Cost: 550
+		Build duration: 300
+		Tech level: 1
+		Turret speed: 20
+		Fire range: 5c0
+		Burst: 10
+		Burst delay: 13
+		Reload time: 38
+		Damage:
+			infantry: 45
+			vehicle: 40
+			heavy vehicles: 14
+			buildings: 12
+	Monster Truck:
+		Health: 1100
+		Movement speed: 70
+		Turn speed: 8
+		View range: 7c0
+		Cost: 550
+		Build duration: 300
+		Tech level: 1
+		Turret speed: 20
+		Fire range: 5c0
+		Burst: 10
+		Burst delay: 13
+		Reload time: 38
+		Damage:
+			infantry: 45
+			vehicle: 40
+			heavy vehicles: 14
+			buildings: 12
+	Flame ATV:
+		Health: 1250
+		Movement speed: 65
+		Turn speed: 8
+		View range: 7c0
+		Cost: 700
+		Build duration: 450
+		Tech level: 2
+		Turret speed: 20
+		Fire range: 3c512
+		Burst: 10
+		Burst delay: 1
+		Reload time: 41
+		Inaccuracy: 0
+		Projectile Speed: 125
+		Damage:
+			infantry: 20
+			vehicle: 3
+			heavy vehicles: 2
+			buildings: 26
+	Giant Scorpion:
+		Health: 1250
+		Movement speed: 60
+		Turn speed: 8
+		View range: 7c0
+		Cost: 700
+		Build duration: 450
+		Tech level: 2
+		Fire range: 5c0
+		Burst: 1
+		Burst delay: 0
+		Reload time: 50
+		Inaccuracy: 0
+		Projectile Speed: 410
+		Damage:
+			infantry: 125
+			vehicle: 125
+			heavy vehicles: 80
+			buildings: 125
+	Anaconda Tank:
+		Health: 2000
+		Armor: heavy vehicles
+		Movement speed: 55
+		Turn speed: 8
+		View range: 7c0
+		Cost: 900
+		Build duration: 650
+		Tech level: 3
+		Turret speed: 20
+		Fire range: 6c0
+		Burst: 1
+		Burst delay: 0
+		Reload time: 82
+		Inaccuracy: 0
+		Projectile Speed: 450
+		Damage:
+			infantry: 40
+			vehicle: 320
+			heavy vehicles: 320
+			buildings: 100
+	War Mastodon:
+		Health: 2000
+		Armor: heavy vehicles
+		Movement speed: 55
+		Turn speed: 8
+		View range: 7c0
+		Cost: 900
+		Build duration: 650
+		Tech level: 3
+		Turret speed: 20
+		Fire range: 6c0
+		Burst: 4
+		Burst delay: 4
+		Reload time: 67
+		Inaccuracy: 400
+		Projectile Speed: 450
+		Damage:
+			infantry: 10
+			vehicle: 76
+			heavy vehicles: 76
+			buildings: 25
+	Barrage Craft:
+		Health: 1100
+		Movement speed: 45
+		Turn speed: 8
+		View range: 7c0
+		Cost: 1100
+		Build duration: 850
+		Tech level: 4
+		Turret speed: 8
+		Fire range: 9c0
+		Burst: 6
+		Burst delay: 8
+		Reload time: 200
+		Inaccuracy: 2000
+		Projectile Speed: 200
+		Damage:
+			infantry: 150
+			vehicle: 200
+			heavy vehicles: 150
+			buildings: 120
+	Giant Beetle:
+		Health: 1100
+		Movement speed: 55
+		Turn speed: 8
+		View range: 7c0
+		Cost: 1100
+		Build duration: 850
+		Tech level: 4
+		Fire range: 9c0
+		Burst: 6
+		Burst delay: 0
+		Reload time: 63
+		Inaccuracy: 2c0
+		Projectile Speed: 250
+		Damage:
+			infantry: 50
+			vehicle: 60
+			heavy vehicles: 40
+			buildings: 30
+	Autocannon Tank:
+		Health: 2500
+		Armor: heavy vehicles
+		Movement speed: 45
+		Turn speed: 8
+		View range: 7c0
+		Cost: 1500
+		Build duration: 900
+		Tech level: 5
+		Turret speed: 20
+		Fire range: 7c0
+		Burst: 1
+		Burst delay: 0
+		Reload time: 3
+		Damage:
+			infantry: 50
+			vehicle: 33
+			heavy vehicles: 33
+			buildings: 13
+	Missile Crab:
+		Health: 2500
+		Armor: heavy vehicles
+		Movement speed: 45
+		Turn speed: 8
+		View range: 7c0
+		Cost: 1500
+		Build duration: 900
+		Tech level: 5
+		Turret speed: 20
+		Fire range: 7c0
+		Burst: 2
+		Burst delay: 13
+		Reload time: 38
+		Projectile Speed: 250
+		Damage:
+			infantry: 150
+			vehicle: 190
+			heavy vehicles: 190
+			buildings: 112
+	Oil Tanker (Survivors):
+		Health: 3000
+		Armor: heavy vehicles
+		Movement speed: 45
+		Turn speed: 8
+		View range: 7c0
+		Cost: 700
+		Build duration: 425
+		Tech level: 2
+	Oil Tanker (Evolved):
+		Health: 3000
+		Armor: heavy vehicles
+		Movement speed: 45
+		Turn speed: 8
+		View range: 7c0
+		Cost: 700
+		Build duration: 425
+		Tech level: 2
+	Derrick (Survivors):
+		Health: 4000
+		Armor: heavy vehicles
+		Movement speed: 40
+		Turn speed: 8
+		View range: 7c0
+		Cost: 1000
+		Build duration: 500
+		Tech level: 0
+	Derrick (Evolved):
+		Health: 4000
+		Armor: heavy vehicles
+		Movement speed: 40
+		Turn speed: 8
+		View range: 7c0
+		Cost: 1000
+		Build duration: 500
+		Tech level: 0
+	Mobile Outpost:
+		Health: 6000
+		Armor: heavy vehicles
+		Movement speed: 40
+		Turn speed: 5
+		View range: 11c0
+		Cost: 1500
+		Build duration: 1000
+		Tech level: 3
+	Clanhall Wagon:
+		Health: 6000
+		Armor: heavy vehicles
+		Movement speed: 40
+		Turn speed: 5
+		View range: 11c0
+		Cost: 1500
+		Build duration: 1000
+		Tech level: 3
+	Bomber:
+		Armor: vehicle
+		Movement speed: 200
+		View range: 5c0
+		Damage:
+			infantry: 2500
+			vehicle: 2500
+			vehicles: 2500
+			buildings: 2500
+	Wasp:
+		Armor: vehicle
+		Movement speed: 200
+		View range: 5c0
+		Damage:
+			infantry: 2500
+			vehicle: 2500
+			heavy vehicles: 2500
+			buildings: 2500
+	Tech Bunker:
+	Gort The Robot:
+		Health: 6000
+		Armor: heavy vehicles
+		Movement speed: 50
+		Turn speed: 8
+		View range: 8c0
+		Turret speed: 8
+		Fire range: 7c0
+		Burst: 1
+		Burst delay: 0
+		Reload time: 1
+		Damage:
+			infantry: 7
+			vehicle: 14
+			heavy vehicles: 14
+			buildings: 8
+	Mech:
+		Health: 6000
+		Armor: heavy vehicles
+		Movement speed: 50
+		Turn speed: 8
+		View range: 8c0
+		Turret speed: 8
+		Laser Projectile Speed: 600
+		Laser Damage:
+			infantry: 150
+			vehicle: 300
+			heavy vehicles: 300
+			building: 180
+		Rocket Projectile Speed: 600
+		Rocket Damage:
+			infantry: 150
+			vehicle: 300
+			heavy vehicles: 300
+			building: 180
+	Plasma Tank:
+		Health: 6000
+		Armor: heavy vehicles
+		Movement speed: 50
+		Turn speed: 8
+		View range: 8c0
+		Turret speed: 8
+		Fire range: 7c0
+		Burst: 3
+		Burst delay: 4
+		Reload time: 25
+		Projectile Speed: 600
+		Damage:
+			infantry: 75
+			vehicle: 150
+			heavy vehicles: 150
+			buildings: 90
+	Sentinel Droid:
+		Health: 6000
+		Armor: heavy vehicles
+		Movement speed: 50
+		Turn speed: 8
+		View range: 8c0
+		Turret speed: 8
+		Fire range: 7c0
+		Burst: 2
+		Burst delay: 13
+		Reload time: 50
+		Projectile Speed: 600
+		Damage:
+			infantry: 215
+			vehicle: 430
+			heavy vehicles: 430
+			buildings: 260
+	Outpost:
+		Health: 6000
+		Cost: 1250
+		Build duration: 1250
+		Tech level: -1
+		Build limit: 4
+		Saboteurs: 3
+		Max tech level: 5
+	Clanhall:
+		Health: 6000
+		Cost: 1250
+		Build duration: 1250
+		Tech level: -1
+		Build limit: 4
+		Saboteurs: 3
+		Max tech level: 5
+	Barracks:
+		Health: 3000
+		Cost: 500
+		Build duration: 500
+		Tech level: 0
+		Build limit: 4
+		Saboteurs: 2
+		Max tech level: 4
+		Research time: 400,800,1250,1500
+		Research cost: 250,750,1500,2000
+	Warrior Hall:
+		Health: 3000
+		Cost: 500
+		Build duration: 500
+		Tech level: 0
+		Build limit: 4
+		Saboteurs: 2
+		Max tech level: 4
+		Research time: 400,800,1250,1500
+		Research cost: 250,750,1500,2000
+	Machine Shop:
+		Health: 4000
+		Cost: 1500
+		Build duration: 1000
+		Tech level: 0
+		Build limit: 4
+		Saboteurs: 2
+		Max tech level: 5
+	Beast Forge:
+		Health: 4000
+		Cost: 1500
+		Build duration: 1000
+		Tech level: 0
+		Build limit: 4
+		Saboteurs: 2
+		Max tech level: 5
+	Repair Bay:
+		Health: 3000
+		Cost: 500
+		Build duration: 750
+		Tech level: 1
+		Build limit: 4
+		Saboteurs: 1
+		Max tech level: 3
+	Menagerie:
+		Health: 3000
+		Cost: 500
+		Build duration: 750
+		Tech level: 1
+		Build limit: 4
+		Saboteurs: 1
+		Max tech level: 3
+	Research Lab:
+		Health: 3000
+		Cost: 400
+		Build duration: 400
+		Tech level: 0
+		Build limit: 1
+		Saboteurs: 1
+		Max tech level: 5
+	Alchemy Hall:
+		Health: 3000
+		Cost: 400
+		Build duration: 400
+		Tech level: 0
+		Build limit: 1
+		Saboteurs: 1
+	Power Station (Survivors):
+		Health: 4000
+		Cost: 1400
+		Build duration: 850
+		Tech level: 0
+		Build limit: 8
+		Saboteurs: 2
+		Max tech level: 5
+	Power Station (Evolved):
+		Health: 4000
+		Cost: 1400
+		Build duration: 850
+		Tech level: 0
+		Build limit: 8
+		Saboteurs: 2
+		Max tech level: 5
+	Drill Rig (Survivors):
+		Health: 4000
+		Cost: 1000
+		Build duration: 625
+		Saboteurs: 2
+	Drill Rig (Evolved):
+		Health: 4000
+		Cost: 1000
+		Build duration: 625
+		Saboteurs: 2
+	Thermal Generator:
+		Health: 2000
+		Cost: 750
+		Build duration: 750
+		Tech level: 3
+		Build limit: 4
+		Saboteurs: 1
+		Resource amount: 20
+		Resource delay: 50
+	Gas Converter:
+		Health: 2000
+		Cost: 750
+		Build duration: 750
+		Tech level: 3
+		Build limit: 4
+		Saboteurs: 1
+		Resource amount: 20
+		Resource delay: 50
+	Airfield:
+		Health: 5000
+		Cost: 2500
+		Build duration: 1500
+		Tech level: 5
+		Build limit: 1
+		Saboteurs: 2
+	Vespiary:
+		Health: 5000
+		Cost: 2500
+		Build duration: 1500
+		Tech level: 5
+		Build limit: 1
+		Saboteurs: 2
+	Barricade:
+		Health: 1500
+		Cost: 200
+		Build duration: 150
+		Tech level: 2
+	Skeletal Wall:
+		Health: 1500
+		Cost: 200
+		Build duration: 150
+		Tech level: 2
+	Guard Tower:
+		Health: 1500
+		View range: 10c0
+		Cost: 750
+		Build duration: 500
+		Tech level: 1
+		Turret speed: 20
+		Fire range: 7c0
+		Burst: 10
+		Burst delay: 7
+		Reload time: 38
+		Damage:
+			infantry: 40
+			vehicle: 30
+			heavy vehicles: 11
+			buildings: 15
+	Machinegun Nest:
+		Health: 1500
+		View range: 10c0
+		Cost: 750
+		Build duration: 500
+		Tech level: 1
+		Turret speed: 20
+		Fire range: 7c0
+		Burst: 10
+		Burst delay: 7
+		Reload time: 38
+		Damage:
+			infantry: 40
+			vehicle: 30
+			heavy vehicles: 11
+			buildings: 15
+	Missile Battery:
+		Health: 2000
+		View range: 10c0
+		Cost: 1500
+		Build duration: 850
+		Tech level: 3
+		Turret speed: 20
+		Fire range: 7c0
+		Burst: 3
+		Burst delay: 13
+		Reload time: 50
+		Inaccuracy: 0
+		Projectile Speed: 250
+		Damage:
+			infantry: 150
+			vehicle: 150
+			heavy vehicles: 120
+			buildings: 100
+	GrapeShot Cannon:
+		Health: 2000
+		View range: 10c0
+		Cost: 1500
+		Build duration: 850
+		Tech level: 3
+		Turret speed: 20
+		Fire range: 7c0
+		Burst: 5
+		Burst delay: 1
+		Reload time: 50
+		Inaccuracy: 1c0
+		Projectile Speed: 655
+		Damage:
+			infantry: 20
+			vehicle: 17
+			heavy vehicles: 17
+			buildings: 12
+	Cannon Tower:
+		Health: 2500
+		View range: 10c0
+		Cost: 2500
+		Build duration: 1200
+		Tech level: 4
+		Turret speed: 20
+		Fire range: 7c0
+		Burst: 2
+		Burst delay: 4
+		Reload time: 52
+		Inaccuracy: 0
+		Projectile Speed: 450
+		Damage:
+			infantry: 172
+			vehicle: 258
+			heavy vehicles: 258
+			buildings: 135
+	Rotary Cannon:
+		Health: 2500
+		View range: 10c0
+		Cost: 2500
+		Build duration: 1200
+		Tech level: 4
+		Turret speed: 20
+		Fire range: 7c0
+		Burst: 10
+		Burst delay: 3
+		Reload time: 4
+		Damage:
+			infantry: 50
+			vehicle: 27
+			heavy vehicles: 27
+			buildings: 14
+	Oil Derrick:
+		Health: 3000
+		Saboteurs: 2
+		Resource amount: 100
+		Resource delay: 100

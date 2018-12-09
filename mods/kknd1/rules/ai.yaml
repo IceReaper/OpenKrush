@@ -1,0 +1,64 @@
+Player:
+	HackyAI:
+		Type: computer
+		Name: Computer
+		BuildingQueues: building
+		DefenseQueues: tower
+		UnitQueues: infantry, vehicle, beast
+		UnitsToBuild:
+			evolved_berserker: 100%
+			evolved_shotgunner: 100%
+			evolved_pyromaniac: 100%
+			evolved_rioter: 100%
+			evolved_bazooka: 100%
+			evolved_crazyharry: 100%
+			evolved_direwolf: 100%
+			evolved_bikeandsidecar: 100%
+			evolved_monstertruck: 100%
+			evolved_giantscorpion: 100%
+			evolved_warmastodon: 100%
+			evolved_giantbeetle: 100%
+			evolved_missilecrab: 100%
+			survivors_rifleman: 100%
+			survivors_swat: 100%
+			survivors_flamer: 100%
+			survivors_sapper: 100%
+			survivors_rpglauncher: 100%
+			survivors_sniper: 100%
+			survivors_dirtbike: 100%
+			survivors_4x4pickup: 100%
+			survivors_allterrainvehicle: 100%
+			survivors_atvflamethrower: 100%
+			survivors_anacondatank: 100%
+			survivors_barragecraft: 100%
+			survivors_autocannontank: 100%
+		BuildingFractions:
+			survivors_machineshop: 100%
+			survivors_guardtower: 100%
+			survivors_missilebattery: 100%
+			survivors_cannontower: 100%
+			survivors_airfield: 100%
+			evolved_beastenclosure: 100%
+			evolved_blacksmith: 100%
+			evolved_machinegunnest: 100%
+			evolved_grapeshotcannon: 100%
+			evolved_rotarycannon: 100%
+			evolved_vespiary: 100%
+		UnitsCommonNames:
+			Mcv: survivors_mobileoutpost, evolved_clanhallwagon
+			ExcludeFromSquads: survivors_mobileoutpost, evolved_clanhallwagon, survivors_derrick, evolved_derrick, survivors_oiltanker, evolved_oiltanker
+		BuildingCommonNames:
+			ConstructionYard: survivors_outpost, evolved_clanhall
+			Barracks: survivors_barracks, evolved_warriorhall
+			VehiclesFactory: survivors_machineshop, evolved_beastenclosure, evolved_blacksmith
+			Production: survivors_outpost, evolved_clanhall, survivors_barracks, evolved_warriorhall, survivors_machineshop, evolved_beastenclosure, evolved_blacksmith
+		BuildingLimits:
+		#SupportPowerDecisions:
+		#	bomber:
+		#		OrderName: AdvancedAirstrikePowerInfoOrder
+		#		Consideration@1:
+		#			Against: Enemy
+		#			Types: Structure
+	#GrantConditionOnBotOwner:
+	#	Condition: enable-ai
+	#	Bots: computer

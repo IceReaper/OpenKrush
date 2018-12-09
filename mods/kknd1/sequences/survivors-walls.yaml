@@ -1,0 +1,14 @@
+survivors_barricade:
+	idle: bits/SWall.png
+		Length: 16
+	damaged-idle: bits/SWall.png
+		Start: 16
+		Length: 16
+	make0: bits/SWall.png
+		Start: 32
+	make1: bits/SWall.png
+		Start: 33
+	make2: bits/SWall.png
+		Start: 34
+	icon: bits/Buttons.png
+		Start: 49

@@ -1,0 +1,9 @@
+evolved_wasp:
+	idle: sprites|Wasp.mobd
+		Start: 16
+		Length: 3
+		Tick: 50
+		Facings: -16
+		ZOffset: 3500
+	icon: bits/Buttons.png
+		Start: 25

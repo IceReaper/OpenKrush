@@ -1,0 +1,149 @@
+bunker_gorttherobot:
+	Burst: 1
+	BurstDelays: 0
+	ReloadDelay: 1
+	Range: 7c0
+	Report: sounds_survivors|188.wav
+	ReportLooped: true
+	Projectile: InstantHit
+		Blockable: true
+	Warhead@Damage: SpreadDamage
+		Damage: 100
+		DamageTypes: Electricity
+		Spread: 512
+		Falloff: 100, 100
+		AffectsParent: true
+		Versus:
+			infantry: 7
+			vehicle: 14
+			building: 8
+	Warhead@Effect: ShrapnelCreateEffect
+		Image: hit
+		ExplosionPalette: kknd
+		Explosions: electrified_m1, electrified_m2, electrified_m3, electrified_m4, electrified_m5, electrified_m6, electrified_m7, electrified_m8, electrified_m9
+		ImpactSounds: kknd1|bits/sounds/electricity.wav #soudns_survivors|187.wav
+		ImpactSoundChance: 15
+		InvalidTargets: Infantry
+	Warhead@EffectInfantry: ShrapnelCreateEffect
+		Image: hit
+		ExplosionPalette: kknd
+		Explosions: electrified_s1, electrified_s2, electrified_s3, electrified_s4, electrified_s5, electrified_s6, electrified_s7, electrified_s8, electrified_s9
+		ImpactSounds: kknd1|bits/sounds/electricity.wav #soudns_survivors|187.wav
+		ImpactSoundChance: 15
+		ValidTargets: Infantry
+
+bunker_mech_primary:
+	Inherits: Smudge
+	Range: 7c0
+	Burst: 2
+	BurstDelays: 8 # 8 + 8 (secondary weapon)
+	ReloadDelay: 58 # 50 + 8 (secondary weapon)
+	Report: sounds_survivors|87.wav
+	Projectile: Bullet
+		Image: projectile
+		Palette: kknd
+		Sequences: laser_rotating_s
+		Speed: 500
+	Warhead@Damage: SpreadDamage
+		Damage: 100
+		DamageTypes: Laser
+		Spread: 512
+		Falloff: 100, 100
+		AffectsParent: true
+		Versus:
+			infantry: 150
+			vehicle: 300
+			building: 180
+	Warhead@Effect: ShrapnelCreateEffect
+		Image: hit
+		ExplosionPalette: kknd
+		Explosions: laser_round
+		ImpactSounds: sounds_evolved|10.wav
+
+bunker_mech_secondary:
+	Inherits: Smudge
+	Range: 7c0
+	Burst: 1
+	BurstDelays: 0
+	ReloadDelay: 66 # 50 + 2 * 8 (primary weapon)
+	Report: sounds_survivors|14.wav
+	Projectile: Bullet
+		Image: projectile
+		Palette: kknd
+		Sequences: rocket_m
+		Speed: 300
+		TrailPalette: kknd
+		TrailImage: hit
+		TrailSequences: smoke
+		Inaccuracy: 300
+	Warhead@Damage: SpreadDamage
+		Damage: 100
+		DamageTypes: Explosion
+		Spread: 512
+		Falloff: 100, 100
+		AffectsParent: true
+		Versus:
+			infantry: 150
+			vehicle: 300
+			building: 180
+	Warhead@Effect: ShrapnelCreateEffect
+		Image: explosions
+		ExplosionPalette: kknd
+		Explosions: s
+		ImpactSounds: sounds_survivors|10.wav
+
+bunker_plasmatank:
+	Inherits: Smudge
+	Range: 7c0
+	Burst: 3
+	BurstDelays: 4
+	ReloadDelay: 25
+	Report: sounds_survivors|87.wav
+	Projectile: Bullet
+		Image: projectile
+		Palette: kknd
+		Sequences: laser_beam
+		Speed: 600
+	Warhead@Damage: SpreadDamage
+		Damage: 100
+		DamageTypes: Laser
+		Spread: 512
+		Falloff: 100, 100
+		AffectsParent: true
+		Versus:
+			infantry: 75
+			vehicle: 150
+			building: 90
+	Warhead@Effect: ShrapnelCreateEffect
+		Image: hit
+		ExplosionPalette: kknd
+		Explosions: laser_round
+		ImpactSounds: sounds_evolved|10.wav
+
+bunker_sentineldroid:
+	Inherits: Smudge
+	Range: 7c0
+	Burst: 2
+	BurstDelays: 13
+	ReloadDelay: 50
+	Report: sounds_survivors|87.wav
+	Projectile: Bullet
+		Image: projectile
+		Palette: kknd
+		Sequences: laser_rotating_l
+		Speed: 600
+	Warhead@Damage: SpreadDamage
+		Damage: 100
+		DamageTypes: Laser
+		Spread: 512
+		Falloff: 100, 100
+		AffectsParent: true
+		Versus:
+			infantry: 215
+			vehicle: 430
+			building: 260
+	Warhead@Effect: ShrapnelCreateEffect
+		Image: hit
+		ExplosionPalette: kknd
+		Explosions: laser_round
+		ImpactSounds: sounds_evolved|10.wav

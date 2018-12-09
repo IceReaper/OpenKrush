@@ -1,0 +1,169 @@
+^survivors_infantry_death:
+	die-burn: sprites|S_I_Death.mobd
+		Length: 14
+		Tick: 70 # TODO
+
+survivors_machinegunner:
+	Inherits@death: ^survivors_infantry_death
+	die: sprites|S_I_Death.mobd # TODO there are other animations aswell
+		Start: 29
+		Length: 8
+		Tick: 70 # TODO
+	idle: sprites|S_I_Gunner.mobd
+		Facings: -8
+	move: sprites|S_I_Gunner.mobd
+		Start: 48
+		Length: 6
+		Tick: 70 # TODO
+		Facings: -8
+	aim: sprites|S_I_Gunner.mobd
+		Facings: -8
+	shoot: sprites|S_I_Gunner.mobd
+		Start: 16
+		Length: 2
+		Tick: 70 # TODO
+		Facings: -8
+	bored: sprites|S_I_Gunner.mobd
+		Start: 96
+		Length: 39
+		Tick: 60 # TODO
+
+survivors_grenadier:
+	Inherits@death: ^survivors_infantry_death
+	die: sprites|S_I_Death.mobd
+		Start: 22
+		Length: 7
+		Tick: 70 # TODO
+	idle: sprites|S_I_Grenadier.mobd
+		Facings: -8
+	move: sprites|S_I_Grenadier.mobd
+		Start: 80
+		Length: 6
+		Tick: 70 # TODO
+		Facings: -8
+	aim: sprites|S_I_Grenadier.mobd
+		Facings: -8
+	shoot: sprites|S_I_Grenadier.mobd
+		Start: 16
+		Length: 4
+		Tick: 70 # TODO
+		Facings: -8
+	bored: sprites|S_I_Grenadier.mobd
+		Start: 128
+		Length: 29
+		Tick: 60 # TODO
+
+survivors_flamer:
+	Inherits@death: ^survivors_infantry_death
+	die: sprites|S_I_Death.mobd
+		Start: 14
+		Length: 8
+		Tick: 70 # TODO
+	idle: sprites|S_I_Flamer.mobd
+		Facings: -8
+	move: sprites|S_I_Flamer.mobd
+		Start: 112
+		Length: 6
+		Tick: 70 # TODO
+		Facings: -8
+	aim: sprites|S_I_Flamer.mobd
+		Facings: -8
+	shoot: sprites|S_I_Flamer.mobd
+		Start: 16
+		Length: 6
+		Tick: 70 # TODO
+		Facings: -8
+	bored: sprites|S_I_Flamer.mobd
+		Start: 160
+		Length: 41
+		Tick: 60 # TODO
+
+survivors_rocketeer:
+	Inherits@death: ^survivors_infantry_death
+	die: sprites|S_I_Death.mobd
+		Start: 60
+		Length: 8
+		Tick: 70 # TODO
+	idle: sprites|S_I_Rocketeer.mobd
+		Facings: -8
+	move: sprites|S_I_Rocketeer.mobd
+		Start: 64
+		Length: 6
+		Tick: 70 # TODO
+		Facings: -8
+	aim: sprites|S_I_Rocketeer.mobd
+		Facings: -8
+	shoot: sprites|S_I_Rocketeer.mobd
+		Start: 16
+		Length: 3
+		Tick: 70 # TODO
+		Facings: -8
+	bored: sprites|S_I_Rocketeer.mobd
+		Start: 112
+		Length: 29
+		Tick: 60 # TODO
+
+survivors_laserrifleman:
+	Inherits@death: ^survivors_infantry_death
+	die: sprites|S_I_Death.mobd
+		Start: 68
+		Length: 9
+		Tick: 70 # TODO
+	idle: sprites|S_I_Sniper.mobd
+		Start: 16
+		Facings: -8
+	move: sprites|S_I_Sniper.mobd
+		Start: 104
+		Length: 6
+		Tick: 70 # TODO
+		Facings: -8
+	aim: sprites|S_I_Sniper.mobd # TODO fix
+		Start: 16
+		Facings: -8
+	shoot: sprites|S_I_Sniper.mobd
+		Start: 32
+		Length: 3
+		Tick: 70 # TODO
+		Facings: -16
+	bored: sprites|S_I_Sniper.mobd
+		Start: 152
+		Length: 33
+		Tick: 60 # TODO
+
+survivors_technician:
+	Inherits@death: ^survivors_infantry_death
+	die: sprites|S_I_Death.mobd
+		Start: 85
+		Length: 7
+		Tick: 70 # TODO
+	idle: sprites|S_I_Technician.mobd
+		Facings: -8
+	move: sprites|S_I_Technician.mobd
+		Start: 16
+		Length: 6
+		Tick: 70 # TODO
+		Facings: -8
+	bored: sprites|S_I_Technician.mobd
+		Start: 64
+		Length: 23
+		Tick: 60 # TODO
+
+survivors_kamikaze:
+	Inherits@death: ^survivors_infantry_death
+	die: sprites|S_I_Kamikaze.mobd 
+		Start: 16
+		Length: 19
+		Tick: 70 # TODO
+	idle: sprites|S_I_Kamikaze.mobd
+		Facings: -8
+	move: sprites|S_I_Kamikaze.mobd
+		Start: 52
+		Length: 6
+		Tick: 70 # TODO
+		Facings: -8
+	shoot: sprites|S_I_Kamikaze.mobd
+		Start: 16
+		Length: 19
+		Tick: 70 # TODO
+	bored: sprites|S_I_Kamikaze.mobd # TODO placeholder
+		Facings: -8

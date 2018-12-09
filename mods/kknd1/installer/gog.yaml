@@ -1,0 +1,74 @@
+gog: KKnD Xtreme (GoG)
+	Type: Install
+	RegistryPrefixes: HKEY_LOCAL_MACHINE\Software\, HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\
+	RegistryKey: GOG.com\Games\1207659107
+	RegistryValue: PATH
+	IDFiles:
+		KKNDGAME.EXE: 763410af1c0a42c2fbd196bd5edd5331bdc07348
+	Install:
+		copy: .
+			^Content/kknd1/Sounds/Evolved.lvl: LEVELS/MUTE.SLV
+			^Content/kknd1/Sounds/Survivors.lvl: LEVELS/SURV.SLV
+			^Content/kknd1/Sprites/Sprites.lvl: LEVELS/640/SPRITES.LVL
+			^Content/kknd1/Movies/Melbourne House.vbc: FMV/MH_FMV.VBC
+			^Content/kknd1/Movies/Survivors/01 The Next Generation.vbc: FMV/HEADS01.VBC
+			^Content/kknd1/Movies/Survivors/02 Build An Outpost.vbc: FMV/HEADS02.VBC
+			^Content/kknd1/Movies/Survivors/03 Withstand The Raiding Party.vbc: FMV/HEADS03.VBC
+			^Content/kknd1/Movies/Survivors/04 Rescue The Scout.vbc: FMV/HEADS04.VBC
+			^Content/kknd1/Movies/Survivors/05 Toll Gate.vbc: FMV/HEADS05.VBC
+			^Content/kknd1/Movies/Survivors/06 Exterminate The Village.vbc: FMV/HEADS06.VBC
+			^Content/kknd1/Movies/Survivors/07 Protect The Convoy.vbc: FMV/HEADS07.VBC
+			^Content/kknd1/Movies/Survivors/08 Back To The Beach.vbc: FMV/HEADS08.VBC
+			^Content/kknd1/Movies/Survivors/09 Rescue The Commander.vbc: FMV/HEADS09.VBC
+			^Content/kknd1/Movies/Survivors/10 Occupation Force.vbc: FMV/HEADS10.VBC
+			^Content/kknd1/Movies/Survivors/11 Give Me Liberty.vbc: FMV/HEADS11.VBC
+			^Content/kknd1/Movies/Survivors/12 Surgical Strike.vbc: FMV/HEADS12.VBC
+			^Content/kknd1/Movies/Survivors/13 Hold The Bridge.vbc: FMV/HEADS13.VBC
+			^Content/kknd1/Movies/Survivors/14 The Rout - Retreat.vbc: FMV/HEADS14.VBC
+			^Content/kknd1/Movies/Survivors/15 Besieged.vbc: FMV/HEADS15.VBC
+			^Content/kknd1/Movies/Survivors/Outro.vbc: FMV/SURVOUT.VBC
+			^Content/kknd1/Movies/Evolved/01 Return Of The Slugs.vbc: FMV/HEADM01.VBC
+			^Content/kknd1/Movies/Evolved/02 Repel Them.vbc: FMV/HEADM02.VBC
+			^Content/kknd1/Movies/Evolved/03 Bubblin Crude.vbc: FMV/HEADM03.VBC
+			^Content/kknd1/Movies/Evolved/04 Raid The Fort.vbc: FMV/HEADM04.VBC
+			^Content/kknd1/Movies/Evolved/05 Ambush.vbc: FMV/HEADM05.VBC
+			^Content/kknd1/Movies/Evolved/06 Siege.vbc: FMV/HEADM06.VBC
+			^Content/kknd1/Movies/Evolved/07 Release The Prisoners.vbc: FMV/HEADM07.VBC
+			^Content/kknd1/Movies/Evolved/08 Smash The Convoy.vbc: FMV/HEADM08.VBC
+			^Content/kknd1/Movies/Evolved/09 Fight For Territory.vbc: FMV/HEADM09.VBC
+			^Content/kknd1/Movies/Evolved/10 Close Encounters.vbc: FMV/HEADM10.VBC
+			^Content/kknd1/Movies/Evolved/11 Its The End Of The World.vbc: FMV/HEADM11.VBC
+			^Content/kknd1/Movies/Evolved/12 The Big Attack.vbc: FMV/HEADM12.VBC
+			^Content/kknd1/Movies/Evolved/13 Battle For The Islands.vbc: FMV/HEADM13.VBC
+			^Content/kknd1/Movies/Evolved/14 The Final Assault.vbc: FMV/HEADM14.VBC
+			^Content/kknd1/Movies/Evolved/15 Counter-Attack.vbc: FMV/HEADM15.VBC
+			^Content/kknd1/Movies/Evolved/Outro.vbc: FMV/EVOLVOUT.VBC
+			^Content/kknd1/Movies/Survivors/Squish.wav: LEVELS/MB_S01.WAV
+			^Content/kknd1/Movies/Survivors/Counter Attack.wav: LEVELS/MB_S02.WAV
+			^Content/kknd1/Movies/Survivors/Distress Signal.wav: LEVELS/MB_S03.WAV
+			^Content/kknd1/Movies/Survivors/Trickle Feed.wav: LEVELS/MB_S04.WAV
+			^Content/kknd1/Movies/Survivors/SOS.wav: LEVELS/MB_S05.WAV
+			^Content/kknd1/Movies/Survivors/Bug Hunt.wav: LEVELS/MB_S06.WAV
+			^Content/kknd1/Movies/Survivors/The Infiltrator.wav: LEVELS/MB_S07.WAV
+			^Content/kknd1/Movies/Survivors/Jail Break.wav: LEVELS/MB_S08.WAV
+			^Content/kknd1/Movies/Survivors/Wagons Ho.wav: LEVELS/MB_S09.WAV
+			^Content/kknd1/Movies/Survivors/Tag team.wav: LEVELS/MB_S10.WAV
+			^Content/kknd1/Movies/Evolved/Fresh Meat.wav: LEVELS/MB_M01.WAV
+			^Content/kknd1/Movies/Evolved/The Amoeba.wav: LEVELS/MB_M02.WAV
+			^Content/kknd1/Movies/Evolved/The Gauntlet.wav: LEVELS/MB_M03.WAV
+			^Content/kknd1/Movies/Evolved/Stand And Fight.wav: LEVELS/MB_M04.WAV
+			^Content/kknd1/Movies/Evolved/The Prophecy.wav: LEVELS/MB_M05.WAV
+			^Content/kknd1/Movies/Evolved/Traitors.wav: LEVELS/MB_M06.WAV
+			^Content/kknd1/Movies/Evolved/The Pursuit.wav: LEVELS/MB_M07.WAV
+			^Content/kknd1/Movies/Evolved/Hive Mind.wav: LEVELS/MB_M08.WAV
+			^Content/kknd1/Movies/Evolved/Bombardment.wav: LEVELS/MB_M09.WAV
+			^Content/kknd1/Movies/Evolved/Hand Of God.wav: LEVELS/MB_M10.WAV
+			^Content/kknd1/Movies/Intro.vbc: FMV/INTRO.VBC
+			^Content/kknd1/Music/Survivors 1.wav: LEVELS/SURV1.WAV
+			^Content/kknd1/Music/Survivors 2.wav: LEVELS/SURV2.WAV
+			^Content/kknd1/Music/Survivors 3.wav: LEVELS/SURV3.WAV
+			^Content/kknd1/Music/Survivors 4.wav: LEVELS/SURV4.WAV
+			^Content/kknd1/Music/Evolved 1.wav: LEVELS/MUTE1.WAV
+			^Content/kknd1/Music/Evolved 2.wav: LEVELS/MUTE2.WAV
+			^Content/kknd1/Music/Evolved 3.wav: LEVELS/MUTE3.WAV
+			^Content/kknd1/Music/Evolved 4.wav: LEVELS/MUTE4.WAV

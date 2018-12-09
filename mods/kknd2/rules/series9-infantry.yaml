@@ -1,0 +1,233 @@
+series9_seeder:
+	Inherits@1: ^Series9Infantry
+	Inherits@2: ^CoreArmedSelf
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: Seeder
+	Valued:
+		Cost: 250
+	Health:
+		HP: 1200
+	Mobile:
+		Speed: 58
+	RevealsShroud:
+		Range: 12c0
+	AdvancedBuildable:
+		BuildDuration: 375
+		Level: 0
+	OffsetsArmament:
+		Weapon: series9_seeder
+	Veterancy:
+		HealRates: 1,2 # TODO
+		Experience: 500, 1000 # TODO
+	RenderSprites:
+		PlayerPalette: R_I_Gunner_player
+^Palettes:
+	PaletteFromMobd@R_I_Gunner:
+		Name: R_I_Gunner
+		Filename: sprites|R_I_Gunner.mobd
+	OverlayPlayerColorPalette@R_I_Gunner_player:
+		BasePalette: R_I_Gunner
+		BaseName: R_I_Gunner_player
+		RemapIndex: 7,8,9,10,11,12,15
+
+series9_podlauncher:
+	Inherits@1: ^Series9Infantry
+	Inherits@2: ^CoreArmedSelf
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: Pod Launcher
+	Valued:
+		Cost: 300
+	Health:
+		HP: 1200
+	Mobile:
+		Speed: 58
+	RevealsShroud:
+		Range: 12c0
+	AdvancedBuildable:
+		BuildDuration: 500
+		Level: 1
+	OffsetsArmament:
+		Weapon: series9_podlauncher
+	Veterancy:
+		HealRates: 1,2 # TODO
+		Experience: 500, 1000 # TODO
+	RenderSprites:
+		PlayerPalette: R_I_Grenadier_player
+^Palettes:
+	PaletteFromMobd@R_I_Grenadier:
+		Name: R_I_Grenadier
+		Filename: sprites|R_I_Grenadier.mobd
+	OverlayPlayerColorPalette@R_I_Grenadier_player:
+		BasePalette: R_I_Grenadier
+		BaseName: R_I_Grenadier_player
+		RemapIndex: 7,8,9,10,11,12,15
+
+series9_weedkiller:
+	Inherits@1: ^Series9Infantry
+	Inherits@2: ^CoreArmedSelf
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: Weed Killer
+	Valued:
+		Cost: 450
+	Health:
+		HP: 1200
+	Mobile:
+		Speed: 58
+	RevealsShroud:
+		Range: 12c0
+	AdvancedBuildable:
+		BuildDuration: 500
+		Level: 2
+	OffsetsArmament:
+		Weapon: series9_weedkiller
+	Veterancy:
+		HealRates: 1,2 # TODO
+		Experience: 2000, 3000 # TODO
+	RenderSprites:
+		PlayerPalette: R_I_Flamer_player
+^Palettes:
+	PaletteFromMobd@R_I_Flamer:
+		Name: R_I_Flamer
+		Filename: sprites|R_I_Flamer.mobd
+	OverlayPlayerColorPalette@R_I_Flamer_player:
+		BasePalette: R_I_Flamer
+		BaseName: R_I_Flamer_player
+		RemapIndex: 7,8,9,10,11,12,15
+		
+series9_sporemissle:
+	Inherits@1: ^Series9Infantry
+	Inherits@2: ^CoreArmedSelf
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: Spore Missle
+	Valued:
+		Cost: 450
+	Health:
+		HP: 1200
+	Mobile:
+		Speed: 58
+	RevealsShroud:
+		Range: 12c0
+	AdvancedBuildable:
+		BuildDuration: 625
+		Level: 3
+	OffsetsArmament@primary:
+		Name: primary
+		Weapon: series9_sporemissle
+	OffsetsArmament@secondary:
+		Name: secondary
+		Weapon: series9_sporemissle
+	Veterancy:
+		HealRates: 1,2 # TODO
+		Experience: 1700, 2700 # TODO
+	RenderSprites:
+		PlayerPalette: R_I_Rocketeer_player
+^Palettes:
+	PaletteFromMobd@R_I_Rocketeer:
+		Name: R_I_Rocketeer
+		Filename: sprites|R_I_Rocketeer.mobd
+	OverlayPlayerColorPalette@R_I_Rocketeer_player:
+		BasePalette: R_I_Rocketeer
+		BaseName: R_I_Rocketeer_player
+		RemapIndex: 7,8,9,10,11,12,15
+
+series9_sterilizer:
+	Inherits@1: ^Series9Infantry
+	Inherits@2: ^CoreArmedSelf
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: Sterilizer
+	Valued:
+		Cost: 600
+	Health:
+		HP: 1250
+	Mobile:
+		Speed: 58
+	RevealsShroud:
+		Range: 12c0
+	AdvancedBuildable:
+		BuildDuration: 750
+		Level: 5
+	OffsetsArmament:
+		Weapon: series9_sterilizer
+	Veterancy:
+		HealRates: 1,2 # TODO
+		Experience: 1700, 2700 # TODO
+	RenderSprites:
+		PlayerPalette: R_I_Sniper_player
+^Palettes:
+	PaletteFromMobd@R_I_Sniper:
+		Name: R_I_Sniper
+		Filename: sprites|R_I_Sniper.mobd
+	OverlayPlayerColorPalette@R_I_Sniper_player:
+		BasePalette: R_I_Sniper
+		BaseName: R_I_Sniper_player
+		RemapIndex: 7,8,9,10,11,12,15
+
+series9_systech:
+	Inherits: ^Series9Infantry
+	Tooltip:
+		Name: Systech
+	TooltipDescription:
+		Description: Repairs buildings
+	Valued:
+		Cost: 100
+	Health:
+		HP: 700
+	Mobile:
+		Speed: 58
+	RevealsShroud:
+		Range: 12c0
+	AdvancedBuildable:
+		BuildDuration: 175
+		Level: 0
+	Selectable:
+		Priority: 15 # TODO
+	Technician:
+	-WithAimAttackAnimation:
+	IgnoreRallyPoint:
+	RenderSprites:
+		PlayerPalette: R_I_Technician_player
+^Palettes:
+	PaletteFromMobd@R_I_Technician:
+		Name: R_I_Technician
+		Filename: sprites|R_I_Technician.mobd
+	OverlayPlayerColorPalette@R_I_Technician_player:
+		BasePalette: R_I_Technician
+		BaseName: R_I_Technician_player
+		RemapIndex: 7,8,9,10,11,12,15
+
+series9_michaelangelo:
+	Inherits@1: ^Series9Infantry
+	Tooltip:
+		Name: Michaelangelo
+	Valued:
+		Cost: 500
+	Health:
+		HP: 750
+	Mobile:
+		Speed: 64
+	RevealsShroud:
+		Range: 12c0
+	AdvancedBuildable:
+		BuildDuration: 625
+		Level: 4
+	-WithAimAttackAnimation:
+	Explodes:
+		Weapon: series9_michaelangelo
+		EmptyWeapon: series9_michaelangelo
+	AttackSuicides:
+	AttackMove:
+	RenderSprites:
+		PlayerPalette: R_I_Kamikaze_player
+^Palettes:
+	PaletteFromMobd@R_I_Kamikaze:
+		Name: R_I_Kamikaze
+		Filename: sprites|R_I_Kamikaze.mobd
+	OverlayPlayerColorPalette@R_I_Kamikaze_player:
+		BasePalette: R_I_Kamikaze
+		BaseName: R_I_Kamikaze_player
+		RemapIndex: 7,8,9,10,11,12,15

@@ -1,0 +1,82 @@
+series9_distanceseeder:
+	idle: sprites|R_Tower1.mobd
+		Start: 6
+	damaged-idle: sprites|R_Tower1.mobd
+	damaged-critical: sprites|R_Tower1.mobd
+		Start: 1
+	make0: sprites|R_Tower1.mobd
+		Start: 2
+	make1: sprites|R_Tower1.mobd
+		Start: 3
+	make2: sprites|R_Tower1.mobd
+		Start: 4
+	make3: sprites|R_Tower1.mobd
+		Start: 5
+	turret: sprites|R_Tower1Turret.mobd
+		Start: 129
+		Facings: -16
+	shoot: sprites|R_Tower1Turret.mobd
+		Length: 8
+		Facings: -16
+
+series9_podcannon:
+	idle: sprites|R_Tower2.mobd
+		Start: 6
+	damaged-idle: sprites|R_Tower2.mobd
+	damaged-critical: sprites|R_Tower2.mobd
+		Start: 1
+	make0: sprites|R_Tower2.mobd
+		Start: 2
+	make1: sprites|R_Tower2.mobd
+		Start: 3
+	make2: sprites|R_Tower2.mobd
+		Start: 4
+	make3: sprites|R_Tower2.mobd
+		Start: 5
+	turret: sprites|R_Tower2Turret.mobd
+		Start: 80
+		Facings: -16
+	shoot: sprites|R_Tower2Turret.mobd
+		Length: 5
+		Facings: -16
+
+series9_solarintensifier:
+	idle: sprites|R_Tower3.mobd
+		Start: 6
+	damaged-idle: sprites|R_Tower3.mobd
+	damaged-critical: sprites|R_Tower3.mobd
+		Start: 1
+	make0: sprites|R_Tower3.mobd
+		Start: 2
+	make1: sprites|R_Tower3.mobd
+		Start: 3
+	make2: sprites|R_Tower3.mobd
+		Start: 4
+	make3: sprites|R_Tower3.mobd
+		Start: 5
+	turret: sprites|R_Tower3Turret.mobd
+		Start: 64
+		Facings: -16
+	shoot: sprites|R_Tower3Turret.mobd
+		Length: 4
+		Facings: -16
+
+series9_lightninggenerator:
+	idle: sprites|R_Tower4.mobd
+		Start: 6
+	damaged-idle: sprites|R_Tower4.mobd
+	damaged-critical: sprites|R_Tower4.mobd
+		Start: 1
+	make0: sprites|R_Tower4.mobd
+		Start: 2
+	make1: sprites|R_Tower4.mobd
+		Start: 3
+	make2: sprites|R_Tower4.mobd
+		Start: 4
+	make3: sprites|R_Tower4.mobd
+		Start: 5
+	turret: sprites|R_Tower4Turret.mobd
+		Start: 512
+	shoot: sprites|R_Tower4Turret.mobd
+		Length: 32
+		Facings: -16

@@ -1,0 +1,113 @@
+bunker_techbunker:
+	Inherits: ^CoreConstruction
+	Building:
+		TerrainTypes: Clear
+		Dimensions: 3,2
+		Footprint: xxx ===
+	TechBunker:
+		ContainableActors: bunker_gorttherobot, bunker_mech, bunker_plasmatank, bunker_sentineldroid
+		SoundOpen: sounds_evolved|189.wav
+		SequenceUnlocked: openable
+	Exit:
+		SpawnOffset: 0c-700,-0c150,0
+		ExitCell: -1,1 
+		Facing: 75
+	MapEditorData:
+		Categories: Bunker
+	-Selectable:
+	-SelfConstructing:
+	-DeconstructSellable:
+	BlocksProjectiles:
+		-RequiresCondition:
+
+^BunkerVehicle:
+	Inherits: ^CoreVehicle
+	Voiced:
+		VoiceSet: BunkerVoice
+	AdvancedBuildable:
+		Level: -1
+	MapEditorData:
+		Categories: Bunker
+	Veterancy:
+		Experience: 7500, 15000
+	AttackNotification:
+		Notifications: BunkerUnderAttack
+	Health:
+		HP: 6500
+	Mobile:
+		Speed: 50
+		TurnSpeed: 8
+	RevealsShroud:
+		Range: 8c0
+
+bunker_gorttherobot:
+	Inherits@1: ^BunkerVehicle
+	Inherits@2: ^CoreTurret
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: Gort The Robot
+	OffsetsArmament:
+		Weapon: bunker_gorttherobot
+	WithLoopedTurretAttackAnimation:
+		Sequence: shoot
+	Turreted:
+		TurnSpeed: 8
+	AdvancedSelectionDecorations:
+		Offset: 0,-47
+	Voiced:
+		VoiceSet: GortVoice
+	RenderSprites:
+		Image: bunker_gorttherobot_modern
+
+bunker_mech:
+	Inherits@1: ^BunkerVehicle
+	Inherits@2: ^CoreTurret
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: Mech
+	OffsetsArmament@primary:
+		Weapon: bunker_mech_primary
+	OffsetsArmament@secondary:
+		Weapon: bunker_mech_secondary
+		FireDelay: 16
+		LocalOffset: 0,-960,0
+	Turreted:
+		TurnSpeed: 8
+	AdvancedSelectionDecorations:
+		Offset: 0,-21
+
+bunker_plasmatank:
+	Inherits@1: ^BunkerVehicle
+	Inherits@2: ^CoreTurret
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: Plasma Tank
+	OffsetsArmament:
+		Weapon: bunker_plasmatank
+	Turreted:
+		TurnSpeed: 8
+	AdvancedSelectionDecorations:
+		Offset: 0,-10
+
+bunker_plasmatank.colorpicker:
+	Inherits: bunker_plasmatank
+	Mobile:
+		InitialFacing: 128
+	RenderSprites:
+		Image: bunker_plasmatank
+		Palette: colorpicker
+	-AdvancedBuildable:
+	-MapEditorData:
+
+bunker_sentineldroid:
+	Inherits@1: ^BunkerVehicle
+	Inherits@2: ^CoreTurret
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: Sentinel Droid
+	OffsetsArmament:
+		Weapon: bunker_sentineldroid
+	Turreted:
+		TurnSpeed: 8
+	AdvancedSelectionDecorations:
+		Offset: 0,-7

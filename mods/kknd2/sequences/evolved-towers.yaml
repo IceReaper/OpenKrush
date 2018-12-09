@@ -1,0 +1,79 @@
+evolved_kneecapper:
+	idle: sprites|M_Tower1.mobd
+		Start: 6
+	damaged-idle: sprites|M_Tower1.mobd
+	damaged-critical: sprites|M_Tower1.mobd
+		Start: 1
+	make0: sprites|M_Tower1.mobd
+		Start: 2
+	make1: sprites|M_Tower1.mobd
+		Start: 3
+	make2: sprites|M_Tower1.mobd
+		Start: 4
+	make3: sprites|M_Tower1.mobd
+		Start: 5
+	turret: sprites|M_Tower1Turret.mobd
+		Facings: -16
+	shoot: sprites|M_Tower1Turret.mobd
+		Start: 16
+		Facings: -16
+
+evolved_theworm:
+	idle: sprites|M_Tower2.mobd
+		Start: 6
+	damaged-idle: sprites|M_Tower2.mobd
+	damaged-critical: sprites|M_Tower2.mobd
+		Start: 1
+	make0: sprites|M_Tower2.mobd
+		Start: 2
+	make1: sprites|M_Tower2.mobd
+		Start: 3
+	make2: sprites|M_Tower2.mobd
+		Start: 4
+	make3: sprites|M_Tower2.mobd
+		Start: 5
+	turret: sprites|M_Tower2Turret.mobd
+		Start: 48
+	shoot: sprites|M_Tower2Turret.mobd
+		Length: 3
+		Facings: -16
+
+evolved_bazookabattery:
+	idle: sprites|M_Tower3.mobd
+		Start: 6
+	damaged-idle: sprites|M_Tower3.mobd
+	damaged-critical: sprites|M_Tower3.mobd
+		Start: 1
+	make0: sprites|M_Tower3.mobd
+		Start: 2
+	make1: sprites|M_Tower3.mobd
+		Start: 3
+	make2: sprites|M_Tower3.mobd
+		Start: 4
+	make3: sprites|M_Tower3.mobd
+		Start: 5
+	turret: sprites|M_Tower3Turret.mobd
+		Start: 144
+		Facings: -16
+	shoot: sprites|M_Tower3Turret.mobd
+		Length: 9
+		Facings: -16
+
+evolved_touchofdeath:
+	idle: sprites|M_Tower4.mobd
+		Start: 6
+	damaged-idle: sprites|M_Tower4.mobd
+	damaged-critical: sprites|M_Tower4.mobd
+		Start: 1
+	make0: sprites|M_Tower4.mobd
+		Start: 2
+	make1: sprites|M_Tower4.mobd
+		Start: 3
+	make2: sprites|M_Tower4.mobd
+		Start: 4
+	make3: sprites|M_Tower4.mobd
+		Start: 5
+	turret: sprites|M_Tower4Turret.mobd
+		Start: 48 # no facings as all look the same
+	shoot: sprites|M_Tower4Turret.mobd
+		Length: 3 # no facings as all look the same

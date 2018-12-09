@@ -1,0 +1,76 @@
+evolved_machinegunnest:
+	Range: 7c0
+	Burst: 10
+	BurstDelays: 7
+	ReloadDelay: 38
+	Report: kknd1|bits/sounds/machinegun.wav #sounds_evolved|4.wav
+	Projectile: InstantHit
+	Warhead@Damage: SpreadDamage
+		Damage: 100
+		Spread: 32
+		Falloff: 100, 100
+		Versus:
+			infantry: 36
+			vehicle: 27
+			building: 14
+	Warhead@Effect: ShrapnelCreateEffect
+		Image: hit
+		ExplosionPalette: kknd
+		Explosions: bullet_a, bullet_b, bullet_c, bullet_d, bullet_e, bullet_f, bullet_g, bullet_h
+		ImpactSounds: sounds_evolved|11.wav, sounds_evolved|12.wav, sounds_evolved|13.wav
+		ImpactSoundChance: 10
+		Radius: 250,250
+
+evolved_grapeshotcannon:
+	Inherits: Smudge
+	Range: 7c0
+	Burst: 5
+	BurstDelays: 1
+	ReloadDelay: 50
+	StartBurstReport: kknd1|bits/sounds/grapeshot.wav
+	#Report: sounds_evolved|9.wav
+	Projectile: Bullet
+		Image: projectile
+		Palette: kknd
+		Sequences: grapeshot
+		Speed: 655
+		Inaccuracy: 1c0
+		Blockable: false
+	Warhead@Damage: SpreadDamage
+		Damage: 100
+		DamageTypes: Explosion
+		Spread: 512
+		Falloff: 100, 100
+		Versus:
+			infantry: 16
+			vehicle: 26
+			building: 18
+	Warhead@Effect: ShrapnelCreateEffect
+		Image: explosions
+		ExplosionPalette: kknd
+		Explosions: s
+		ImpactSounds: sounds_evolved|10.wav
+
+evolved_rotarycannon:
+	Range: 7c0
+	Burst: 10
+	BurstDelays: 3
+	ReloadDelay: 4
+	Report: kknd1|bits/sounds/chaingun.wav #sounds_evolved|4.wav
+	ReportLooped: true
+	Projectile: InstantHit
+	Warhead@Damage: SpreadDamage
+		Damage: 100
+		Spread: 32
+		Falloff: 100, 100
+		Versus:
+			infantry: 36
+			vehicle: 27
+			building: 14
+	Warhead@Effect: ShrapnelCreateEffect
+		Image: hit
+		ExplosionPalette: kknd
+		Explosions: bullet_a, bullet_b, bullet_c, bullet_d, bullet_e, bullet_f, bullet_g, bullet_h
+		ImpactSounds: sounds_evolved|11.wav, sounds_evolved|12.wav, sounds_evolved|13.wav
+		ImpactSoundChance: 10
+		Radius: 250,250

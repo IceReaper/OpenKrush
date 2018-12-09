@@ -1,0 +1,74 @@
+survivors_guardtower:
+	Inherits@1: ^SurvivorsTower
+	Inherits@2: ^HasMuzzle
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: Guard Tower
+	Valued:
+		Cost: 750
+	Health:
+		HP: 1500
+	AdvancedBuildable:
+		BuildDuration: 500
+		Level: 1
+	RevealsShroud:
+		Range: 10c0
+	OffsetsArmament:
+		Weapon: survivors_guardtower
+		LocalOffset: 0,0,500
+	Turreted:
+		TurnSpeed: 20
+	AdvancedSelectionDecorations:
+		Offset: -1,-23
+	TechnicianRepairable:
+		Offset: 0,-15
+
+survivors_missilebattery:
+	Inherits@1: ^SurvivorsTower
+	Inherits@2: ^AutoTargetDefault
+	Tooltip:
+		Name: Missile Battery
+	Valued:
+		Cost: 1500
+	Health:
+		HP: 2000
+	AdvancedBuildable:
+		BuildDuration: 850
+		Level: 3
+	RevealsShroud:
+		Range: 10c0
+	OffsetsArmament:
+		Weapon: survivors_missilebattery
+		LocalOffset: 0,0,500
+	Turreted:
+		TurnSpeed: 20
+	AdvancedSelectionDecorations:
+		Offset: -1,-16
+	TechnicianRepairable:
+		Offset: 0,-15
+
+survivors_cannontower:
+	Inherits@1: ^SurvivorsTower
+	Inherits@2: ^HasMuzzle
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: Cannon Tower
+	Valued:
+		Cost: 2500
+	Health:
+		HP: 2500
+	AdvancedBuildable:
+		BuildDuration: 1200
+		Level: 4
+	RevealsShroud:
+		Range: 10c0
+	OffsetsArmament:
+		Weapon: survivors_cannontower
+		LocalOffset: 0,0,350
+		BurstOffsets: 0, 1, 0, 1
+	Turreted:
+		TurnSpeed: 20
+	AdvancedSelectionDecorations:
+		Offset: 0,1
+	TechnicianRepairable:
+		Offset: 0,-15

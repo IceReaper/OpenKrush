@@ -1,0 +1,40 @@
+^EvolvedVehicle:
+	AdvancedBuildable:
+		Prerequisites: evolved_blacksmith
+
+evolved_beastforge:
+	AdvancedBuildable:
+		Level: -1
+
+evolved_beastenclosure:
+	AdvancedBuildable:
+		Level: 0
+
+evolved_blacksmith:
+	AdvancedBuildable:
+		Level: 0
+
+evolved_direwolf:
+	AdvancedBuildable:
+		Queue: beast
+		Prerequisites: evolved_beastenclosure
+
+evolved_giantscorpion:
+	AdvancedBuildable:
+		Queue: beast
+		Prerequisites: evolved_beastenclosure
+
+evolved_warmastodon:
+	AdvancedBuildable:
+		Queue: beast
+		Prerequisites: evolved_beastenclosure
+
+evolved_giantbeetle:
+	AdvancedBuildable:
+		Queue: beast
+		Prerequisites: evolved_beastenclosure
+
+evolved_missilecrab:
+	AdvancedBuildable:
+		Queue: beast
+		Prerequisites: evolved_beastenclosure

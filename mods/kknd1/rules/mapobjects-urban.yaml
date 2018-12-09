@@ -1,0 +1,647 @@
+urban_trees_1:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+
+urban_trees_2:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+
+urban_trees_3:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+
+urban_trees_4:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 2,2
+		Footprint: == xx
+
+urban_trees_5:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 2,2
+		Footprint: == xx
+
+urban_trees_6:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 2,2
+		Footprint: == xx
+
+urban_trees_7:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 3,2
+		Footprint: === xxx
+
+urban_trees_8:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 2,2
+		Footprint: == xx
+
+urban_trees_9:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 3,2
+		Footprint: === xxx
+
+urban_trees_10:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+
+urban_trees_11:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+
+urban_trees_12:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+
+urban_objects_1:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+
+urban_objects_2:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+
+urban_objects_3:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 2,1
+		Footprint: xx
+		LocalCenterOffset: 0,100,0
+
+urban_objects_4:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+
+urban_objects_5:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 2,2
+		Footprint: xx =x
+		LocalCenterOffset: 250,-50,0
+
+urban_objects_6:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 2,1
+		Footprint: xx
+
+urban_objects_7:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 2,1
+		Footprint: xx
+
+urban_objects_8:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: x x
+
+urban_objects_9:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: x x
+
+urban_objects_10:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 2,1
+		Footprint: xx
+
+urban_objects_11:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 2,1
+		Footprint: xx
+
+urban_objects_12:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+
+urban_objects_13:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: 150,0,0
+
+urban_objects_14:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: 150,0,0
+
+urban_objects_15:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: 150,0,0
+
+urban_objects_16:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,1
+		Footprint: _
+
+urban_objects_17:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,1
+		Footprint: _
+
+urban_objects_18:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,1
+		Footprint: _
+
+urban_objects_19:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,1
+		Footprint: _
+
+urban_objects_20:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,1
+		Footprint: _
+
+urban_objects_21:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,1
+		Footprint: _
+
+urban_objects_21:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,1
+		Footprint: _
+
+urban_objects_22:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,1
+		Footprint: _
+
+urban_objects_23:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,1
+		Footprint: _
+
+urban_objects_24:
+	Inherits: ^CoreDecoration
+
+urban_objects_25:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+
+urban_objects_26:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 2,2
+		Footprint: == xx
+
+urban_objects_27:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 2,2
+		Footprint: == xx
+
+urban_objects_28:
+	Inherits: ^CoreDecoration
+
+urban_objects_29:
+	Inherits: ^CoreDecoration
+
+urban_objects_30:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+
+urban_objects_31:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 2,2
+		Footprint: == xx
+
+urban_objects_32:
+	Inherits: ^CoreDecoration
+
+urban_objects_33:
+	Inherits: ^CoreDecoration
+
+urban_objects_34:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+
+urban_objects_35:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 2,2
+		Footprint: == xx
+
+urban_objects_36:
+	Inherits: ^CoreDecoration
+
+urban_objects_37:
+	Inherits: ^CoreDecoration
+
+urban_objects_38:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+
+urban_objects_39:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 2,2
+		Footprint: == xx
+
+urban_buildings_1:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,4
+		Footprint: ==== xxx= xxxx =xx=
+
+urban_buildings_2:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,3
+		Footprint: ==== =xxx xxxx
+
+urban_buildings_3:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 3,3
+		Footprint: === xxx xxx
+
+urban_buildings_4:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 6,4
+		Footprint: ====== =xxxxx xxxxxx =xxx==
+
+urban_buildings_5:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 5,3
+		Footprint: ===== xxxxx xxx==
+
+urban_buildings_6:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,4
+		Footprint: ==== xxxx xxxx =xx=
+
+urban_buildings_7:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 5,4
+		Footprint: =xx== =xxxx xxxxx =====
+
+urban_buildings_8:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 3,3
+		Footprint: === xxx xxx
+
+urban_buildings_9:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,3
+		Footprint: ==== xxxx =xx=
+
+urban_buildings_10:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 6,4
+		Footprint: ====== ==xxx= xxxxxx =xxx==
+
+urban_buildings_11:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 3,3
+		Footprint: === xxx =xx
+
+urban_buildings_12:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 6,4
+		Footprint: ====== xxxxxx xxxxxx ==xxxx
+
+urban_buildings_13:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 5,4
+		Footprint: ===== xxxx= xxxxx =xxxx
+
+urban_buildings_14:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 3,3
+		Footprint: === xxx =x= 
+
+urban_buildings_15:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 3,4
+		Footprint: === === xxx =x= 
+
+urban_buildings_16:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,8
+		Footprint: ____ ____ ===_ ===_ xxx_ xxx_ =x== ====
+
+urban_buildings_17:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,5
+		Footprint: ____ ==== =xx= xxx= =x==
+
+urban_buildings_18:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+
+urban_buildings_19:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 3,2
+		Footprint: xxx xxx
+
+urban_buildings_20:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 3,3
+		Footprint: === xxx xxx
+
+urban_buildings_21:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 3,3
+		Footprint: === xxx xxx
+
+urban_buildings_22:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 3,3
+		Footprint: === xxx xxx
+
+urban_buildings_23:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 3,3
+		Footprint: === xxx xxx
+
+urban_buildings_24:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,3
+		Footprint: ==== xxxx xxxx
+
+urban_buildings_25:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,4
+		Footprint: ==== xxxx xxxx xxxx
+
+urban_buildings_26:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,4
+		Footprint: ==== xxxx xxxx xxxx
+
+urban_buildings_27:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,4
+		Footprint: ==== xxxx xxxx xxxx
+
+urban_buildings_28:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,3
+		Footprint: ==== xxxx xxxx
+
+urban_buildings_29:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,3
+		Footprint: ==== xxxx xxxx
+
+urban_buildings_30:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 3,4
+		Footprint: === xxx xxx xxx
+
+urban_buildings_31:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,4
+		Footprint: ==== ==== xxxx xxxx
+
+urban_buildings_32:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,5
+		Footprint: ==== ==== xxxx xxxx xxxx
+
+urban_buildings_33:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,5
+		Footprint: ==== ==== xxxx xxxx xxxx
+
+urban_buildings_34:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,2
+		Footprint: xxxx xxxx
+		LocalCenterOffset: 0,-1500,0
+
+urban_buildings_35:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,5
+		Footprint: ==== ==== xxxx xxxx xxxx
+
+urban_buildings_36:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,6
+		Footprint: ==== ==== ==== xxxx xxxx xxxx
+
+urban_buildings_37:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,6
+		Footprint: ==== ==== ==== xxxx xxxx xxxx
+
+urban_buildings_38:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,6
+		Footprint: ____ ==== ==== xxxx xxxx xxxx
+
+urban_buildings_39:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,3
+		Footprint: xxxx xxxx xxxx
+		LocalCenterOffset: 0,-2000,0
+
+urban_buildings_40:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,3
+		Footprint: xxxx xxxx xxxx
+		LocalCenterOffset: 0,-2000,0
+
+urban_buildings_41:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,3
+		Footprint: xxxx xxxx xxxx
+		LocalCenterOffset: 0,-2000,0
+
+urban_buildings_42:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 3,3
+		Footprint: === xxx xxx
+
+urban_buildings_43:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,5
+		Footprint: ==== ==== xxxx xxxx xxxx
+
+urban_buildings_44:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,5
+		Footprint: ==== xxxx xxxx xxxx xxxx
+
+urban_buildings_45:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 5,5
+		Footprint: ===== xxxxx xxxxx xxxxx xxxxx
+
+urban_buildings_46:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,5
+		Footprint: ==== ==== xxxx xxxx xxxx
+
+urban_buildings_47:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,5
+		Footprint: ==== ==== xxxx xxxx xxxx
+
+urban_buildings_48:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,6
+		Footprint: ==== ==== xxxx xxxx xxxx xxxx
+
+urban_buildings_49:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,7
+		Footprint: ==== ==== xxxx xxxx xxxx xxxx xxxx
+
+urban_buildings_50:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 7,5
+		Footprint: ======= xxxxxx= xxxxxxx =xxxxxx ==xxxx=
+
+urban_buildings_51:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 5,3
+		Footprint: xxxxx xxxx= =====
+		LocalCenterOffset: 0,-2000,0
+
+urban_buildings_52:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 5,4
+		Footprint: =xxxx =xxxx =xxxx xxxx=
+		LocalCenterOffset: 0,-2000,0
+
+urban_buildings_53:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 5,3
+		Footprint: xxxx= xxxx= xxxx=
+		LocalCenterOffset: 0,-2000,0
+
+urban_buildings_54:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 7,4
+		Footprint: xxxxxx= xxxxxx= xxxxxx= =xxxxx=
+
+urban_buildings_55:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 18,5
+		Footprint: ========xxxxx==___ ===xxx==xxxxxx==__ ========xxxxxx==== ========xxxxxxx=== _______=========== 
+		LocalCenterOffset: 0,-2000,0
+
+urban_buildings_56:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 7,5
+		Footprint: =xxxxxx =xxxxxx ==xxxxx ==xxxxx ==xxxx=
+		LocalCenterOffset: 0,-3000,0
+
+urban_buildings_57:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 8,6
+		Footprint: ==xxxxx= xxxxxxx= xxxxxxx= xxxxxxxx =xxxxxxx ==xxx===
+		LocalCenterOffset: 0,-4000,0

@@ -1,0 +1,422 @@
+evolved_direwolf:
+	Inherits@1: ^EvolvedVehicle
+	Inherits@2: ^CoreLightVehicle
+	Inherits@3: ^CoreArmedSelf
+	Inherits@4: ^AutoTargetDefault
+	Tooltip:
+		Name: Dire Wolf
+	Valued:
+		Cost: 200
+	Health:
+		HP: 750
+	Mobile:
+		Speed: 128
+		TurnSpeed: 41 #TODO
+	AdvancedBuildable:
+		BuildDuration: 250
+		Level: 0
+	RevealsShroud:
+		Range: 12c0
+	Voiced:
+		VoiceSet: WolfVoice
+	OffsetsArmament:
+		Weapon: evolved_direwolf
+	AdvancedSelectionDecorations:
+		Offset: 0,-2 #TODO
+	Veterancy:
+	RenderSprites:
+		PlayerPalette: M_V_DireWolf_player
+^Palettes:
+	PaletteFromMobd@M_V_DireWolf:
+		Name: M_V_DireWolf
+		Filename: sprites|M_V_DireWolf.mobd
+	OverlayPlayerColorPalette@M_V_DireWolf_player:
+		BasePalette: M_V_DireWolf
+		BaseName: M_V_DireWolf_player
+		RemapIndex: 1,3,6,9,11
+
+evolved_pitscorpion:
+	Inherits@1: ^EvolvedVehicle
+	Inherits@2: ^CoreArmedSelf
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: Pit Scorpion
+	Valued:
+		Cost: 300
+	Health:
+		HP: 1250
+	Mobile:
+		Speed: 96
+		TurnSpeed: 41 #TODO
+	AdvancedBuildable:
+		BuildDuration: 375
+		Level: 0
+	RevealsShroud:
+		Range: 12c0
+	Voiced:
+		VoiceSet: ScorpionVoice
+	OffsetsArmament:
+		Weapon: evolved_pitscorpion
+	AdvancedSelectionDecorations:
+		Offset: 0,-2 #TODO
+	Veterancy:
+	RenderSprites:
+		PlayerPalette: M_V_Scorpion_player
+^Palettes:
+	PaletteFromMobd@M_V_Scorpion:
+		Name: M_V_Scorpion
+		Filename: sprites|M_V_Scorpion.mobd
+	OverlayPlayerColorPalette@M_V_Scorpion_player:
+		BasePalette: M_V_Scorpion
+		BaseName: M_V_Scorpion_player
+		RemapIndex: 2,3,4,5,6,7,8,9,10,11,12,13,14
+		
+evolved_crinoid:
+	Inherits@1: ^EvolvedVehicle
+	Inherits@2: ^CoreTurret
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: Crinoid
+	Valued:
+		Cost: 500
+	Health:
+		HP: 1500
+	Mobile:
+		Speed: 90
+		TurnSpeed: 41 #TODO
+	AdvancedBuildable:
+		BuildDuration: 500
+		Level: 1
+	RevealsShroud:
+		Range: 12c0
+	Voiced:
+		VoiceSet: ScorpionVoice
+	OffsetsArmament:
+		Weapon: evolved_crinoid
+	WithTurretAttackAnimation:
+		Sequence: shoot
+	Turreted:
+		TurnSpeed: 20 # todo copied from kknd1
+	AdvancedSelectionDecorations:
+		Offset: 0,-2 #TODO
+	Veterancy:
+	RenderSprites:
+		PlayerPalette: M_V_ACrinoid_player
+	WithOffsetsSpriteTurret:
+		Palette: M_V_TACrinoid
+^Palettes:
+	PaletteFromMobd@M_V_ACrinoid:
+		Name: M_V_ACrinoid
+		Filename: sprites|M_V_ACrinoid.mobd
+	OverlayPlayerColorPalette@M_V_ACrinoid_player:
+		BasePalette: M_V_ACrinoid
+		BaseName: M_V_ACrinoid_player
+		RemapIndex: 6,7,8,9,10
+	PaletteFromMobd@M_V_TACrinoid:
+		Name: M_V_TACrinoid
+		Filename: sprites|M_V_TACrinoid.mobd
+
+evolved_warmastodon:
+	Inherits@1: ^EvolvedVehicle
+	Inherits@2: ^CoreTurret
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: War Mastodon
+	Valued:
+		Cost: 800
+	Health:
+		HP: 2000
+	Mobile:
+		Speed: 64
+		TurnSpeed: 41 #TODO
+	AdvancedBuildable:
+		BuildDuration: 625
+		Level: 2
+	RevealsShroud:
+		Range: 12c0
+	Voiced:
+		VoiceSet: MastodonVoice
+	OffsetsArmament:
+		Weapon: evolved_warmastodon
+	WithTurretAttackAnimation:
+		Sequence: shoot
+	Turreted:
+		TurnSpeed: 20 # todo copied from kknd1
+	AdvancedSelectionDecorations:
+		Offset: 0,-2 #TODO
+	Veterancy:
+	RenderSprites:
+		PlayerPalette: M_V_Mastodon_player
+	WithOffsetsSpriteTurret:
+		Palette: M_V_TMastodon_player
+		IsPlayerPalette: true
+^Palettes:
+	PaletteFromMobd@M_V_Mastodon:
+		Name: M_V_Mastodon
+		Filename: sprites|M_V_Mastodon.mobd
+	OverlayPlayerColorPalette@M_V_Mastodon_player:
+		BasePalette: M_V_Mastodon
+		BaseName: M_V_Mastodon_player
+		RemapIndex: 13,14,15
+	PaletteFromMobd@M_V_TMastodon:
+		Name: M_V_TMastodon
+		Filename: sprites|M_V_TMastodon.mobd
+	OverlayPlayerColorPalette@M_V_TMastodon_player:
+		BasePalette: M_V_TMastodon
+		BaseName: M_V_TMastodon_player
+		RemapIndex: 3,6,7,8,9,10,11,13,14
+
+evolved_deathhippo:
+	Inherits@1: ^EvolvedVehicle
+	Inherits@4: ^AutoTargetDefault
+	Inherits@5: ^CoreTurret
+	Tooltip:
+		Name: Death Hippo
+	Valued:
+		Cost: 1000
+	Health:
+		HP: 2500
+	Mobile:
+		Speed: 51
+		TurnSpeed: 41 #TODO
+	AdvancedBuildable:
+		BuildDuration: 750
+		Level: 3
+	RevealsShroud:
+		Range: 12c0
+	Voiced:
+		VoiceSet: HippoVoice
+	OffsetsArmament:
+		Weapon: evolved_deathhippo
+	WithTurretAttackAnimation:
+		Sequence: shoot
+	Turreted:
+		TurnSpeed: 20 # todo copied from kknd1
+	AdvancedSelectionDecorations:
+		Offset: 0,-2 #TODO
+	Veterancy:
+	RenderSprites:
+		PlayerPalette: M_V_AHippo_player
+	WithOffsetsSpriteTurret:
+		Palette: M_V_TAHippo_player
+		IsPlayerPalette: true
+^Palettes:
+	PaletteFromMobd@M_V_AHippo:
+		Name: M_V_AHippo
+		Filename: sprites|M_V_AHippo.mobd
+	OverlayPlayerColorPalette@M_V_AHippo_player:
+		BasePalette: M_V_AHippo
+		BaseName: M_V_AHippo_player
+		RemapIndex: 7,8,9
+	PaletteFromMobd@M_V_TAHippo:
+		Name: M_V_TAHippo
+		Filename: sprites|M_V_TAHippo.mobd
+	OverlayPlayerColorPalette@M_V_TAHippo_player:
+		BasePalette: M_V_TAHippo
+		BaseName: M_V_TAHippo_player
+		RemapIndex: 6,7,8,9,10,12
+
+evolved_missilecrab:
+	Inherits@1: ^EvolvedVehicle
+	Inherits@4: ^AutoTargetDefault
+	Inherits@5: ^CoreTurret
+	Tooltip:
+		Name: Missile Crab
+	Valued:
+		Cost: 1250
+	Health:
+		HP: 3000
+	Mobile:
+		Speed: 45
+		TurnSpeed: 41 #TODO
+	AdvancedBuildable:
+		BuildDuration: 875
+		Level: 4
+	RevealsShroud:
+		Range: 10c0 #TODO
+	Voiced:
+		VoiceSet: CrabVoice
+	OffsetsArmament:
+		Weapon: evolved_missilecrab
+	WithTurretAttackAnimation:
+		Sequence: shoot
+	Turreted:
+		TurnSpeed: 20 # todo copied from kknd1
+	AdvancedSelectionDecorations:
+		Offset: 0,-2 #TODO
+	Veterancy:
+	RenderSprites:
+		Palette: M_V_MissileCrab
+	WithOffsetsSpriteTurret:
+		Palette: M_V_TMissileCrab_player
+		IsPlayerPalette: true
+^Palettes:
+	PaletteFromMobd@M_V_MissileCrab:
+		Name: M_V_MissileCrab
+		Filename: sprites|M_V_MissileCrab.mobd
+	PaletteFromMobd@M_V_TMissileCrab:
+		Name: M_V_TMissileCrab
+		Filename: sprites|M_V_TMissileCrab.mobd
+	OverlayPlayerColorPalette@M_V_TMissileCrab_player:
+		BasePalette: M_V_TMissileCrab
+		BaseName: M_V_TMissileCrab_player
+		RemapIndex: 3,5,7,8,9,10
+
+evolved_megabeetle:
+	Inherits@1: ^EvolvedVehicle
+	Inherits@3: ^CoreArmedSelf
+	Inherits@4: ^AutoTargetDefault
+	Tooltip:
+		Name: Mega Beetle
+	Valued:
+		Cost: 1500
+	Health:
+		HP: 3500
+	Mobile:
+		Speed: 45
+		TurnSpeed: 41 #TODO
+	AdvancedBuildable:
+		BuildDuration: 1000
+		Level: 5
+	RevealsShroud:
+		Range: 12c0
+	Voiced:
+		VoiceSet: BeetleVoice
+	OffsetsArmament:
+		Weapon: evolved_megabeetle
+	AdvancedSelectionDecorations:
+		Offset: 0,-2 #TODO
+	Veterancy:
+	RenderSprites:
+		PlayerPalette: M_V_Beetle_player
+^Palettes:
+	PaletteFromMobd@M_V_Beetle:
+		Name: M_V_Beetle
+		Filename: sprites|M_V_Beetle.mobd
+	OverlayPlayerColorPalette@M_V_Beetle_player:
+		BasePalette: M_V_Beetle
+		BaseName: M_V_Beetle_player
+		RemapIndex: 3,4,5,6,7,8,10,11
+
+evolved_bullanttanker:
+	Inherits: ^EvolvedVehicle
+	Tooltip:
+		Name: Bull Ant Tanker
+	TooltipDescription:
+		Description: Transports oil
+	Valued:
+		Cost: 1000
+	Health:
+		HP: 10000
+	Mobile:
+		Speed: 26
+		TurnSpeed: 8 # todo
+	AdvancedBuildable:
+		BuildDuration: 2500
+		Level: 2
+	RevealsShroud:
+		Range: 12c0
+	Voiced:
+		VoiceSet: ScorpionVoice
+	Selectable:
+		Priority: 15
+	Tanker:
+		DockingActivity: TankerCycle
+	AdvancedSelectionDecorations:
+		Offset: 0,-1
+	AttackNotification:
+		Notifications: TankerUnderAttack
+	IgnoreRallyPoint:
+	RenderSprites:
+		PlayerPalette: M_V_Tanker_player
+^Palettes:
+	PaletteFromMobd@M_V_Tanker:
+		Name: M_V_Tanker
+		Filename: sprites|M_V_Tanker.mobd
+	OverlayPlayerColorPalette@M_V_Tanker_player:
+		BasePalette: M_V_Tanker
+		BaseName: M_V_Tanker_player
+		RemapIndex: 1,2,3,4,5
+
+evolved_mobilederrick:
+	Inherits@1: ^EvolvedVehicle
+	Inherits@2: ^CoreHeavyVehicle
+	Tooltip:
+		Name: Mobile Derrick
+	TooltipDescription:
+		Description: Deploys on oilpatch
+	Valued:
+		Cost: 1000
+	Health:
+		HP: 5000
+	Mobile:
+		Speed: 38
+		TurnSpeed: 8 #TODO
+	AdvancedBuildable:
+		BuildDuration: 1250
+		Level: 0
+	RevealsShroud:
+		Range: 12c0
+	Selectable:
+		Priority: 15
+	DeploysOnActor:
+		IntoActor: evolved_derrick
+		ValidTargets: oilpatch
+		DeployCursor: dock
+		Offset: -1,-2
+	AdvancedSelectionDecorations:
+		Offset: 0,-12
+	AttackNotification:
+		Notifications: DrillRigUnderAttack
+	IgnoreRallyPoint:
+	RenderSprites:
+		PlayerPalette: M_V_MobileDrillrig_player
+^Palettes:
+	PaletteFromMobd@M_V_MobileDrillrig:
+		Name: M_V_MobileDrillrig
+		Filename: sprites|M_V_MobileDrillrig.mobd
+	OverlayPlayerColorPalette@M_V_MobileDrillrig_player:
+		BasePalette: M_V_MobileDrillrig
+		BaseName: M_V_MobileDrillrig_player
+		RemapIndex: 1,2,3,4,5
+
+evolved_mobileclanhall:
+	Inherits@1: ^EvolvedVehicle
+	Inherits@2: ^CoreHeavyVehicle
+	Tooltip:
+		Name: Mobile Clanhall
+	TooltipDescription:
+		Description: Mobile base
+	Valued:
+		Cost: 5000
+	Health:
+		HP: 10000
+	Mobile:
+		Speed: 32
+		TurnSpeed: 5 # todo
+	AdvancedBuildable:
+		BuildDuration: 6750
+		Level: 5
+	RevealsShroud:
+		Range: 15c0
+	Transforms:
+		TransformSounds: sounds_evolved|164.wav
+		IntoActor: evolved_clanhall
+		Offset: -2,-1
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	Selectable:
+		Priority: 15
+	AdvancedSelectionDecorations:
+		Offset: 0,-14
+	IgnoreRallyPoint:
+	RenderSprites:
+		PlayerPalette: M_V_MobileOutpost_player
+^Palettes:
+	PaletteFromMobd@M_V_MobileOutpost:
+		Name: M_V_MobileOutpost
+		Filename: sprites|M_V_MobileOutpost.mobd
+	OverlayPlayerColorPalette@M_V_MobileOutpost_player:
+		BasePalette: M_V_MobileOutpost
+		BaseName: M_V_MobileOutpost_player
+		RemapIndex: 1,2,3,4,5,6

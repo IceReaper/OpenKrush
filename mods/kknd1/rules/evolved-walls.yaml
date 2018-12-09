@@ -1,0 +1,13 @@
+evolved_skeletalwall:
+	Inherits: ^EvolvedWall
+	Tooltip:
+		Name: Skeletal Wall
+	Valued:
+		Cost: 200
+	Health:
+		HP: 2500
+	AdvancedBuildable:
+		BuildDuration: 150
+		Level: 2
+	WithWallSpriteBody:
+		Type: evolved_barbedwire

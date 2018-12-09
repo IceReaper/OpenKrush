@@ -1,0 +1,54 @@
+Meta:
+	Name: Classic KKnD
+	Version: 0.1.0
+	Author: KKnD Team
+	Description: Original KKnD stats.
+
+Stats:
+	Barricade:
+		Tech level: -1
+	Skeletal Wall:
+		Tech level: -1
+
+	Thermal Generator:
+		Tech level: -1
+	Gas Converter:
+		Tech level: -1
+
+	Mobile Outpost:
+		Tech level: -1
+	Clanhall Wagon:
+		Tech level: -1
+
+	Outpost:
+		Tech level: 0
+	Clanhall:
+		Tech level: 0
+
+#gort -> without head
+#voices -> only used sounds
+#notifications -> only used sounds
+#superweapons -> implement classic production mode
+#bomers -> send in from random side
+#weapons -> original sounds
+#infantry death -> use original
+#custom building damage state -> revert
+#infantry animations -> remove
+#swat -> use old one
+#ricochet -> use only original ones
+#molotov -> make grenade again
+#oil -> remove burn completely
+#infinite build -> after 9
+#remove selling
+#remove research button
+#remove repair button
+#reorder ui
+#restore original money widget and button
+#remove beacon
+#fog of war -> remove
+#spawn -> without derrick!
+#researchable -> remove from buildings which were nor researchable before
+#derricks -> show oil underneath
+#restore all original techlevels: startling level, granting level, max level
+
+#and at last: use original stats!

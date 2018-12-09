@@ -1,0 +1,97 @@
+using System.Drawing;
+using System.Linq;
+using OpenRA.Graphics;
+using OpenRA.Mods.Common.Activities.Docking;
+using OpenRA.Mods.Common.Effects;
+using OpenRA.Mods.Common.Orders;
+using OpenRA.Mods.Common.Traits;
+using OpenRA.Mods.Kknd.Activities;
+using OpenRA.Mods.Kknd.Traits.Resources;
+using OpenRA.Widgets;
+
+namespace OpenRA.Mods.Kknd.Widgets.Ingame
+{
+	// TODO add all the hotkeys we need for stances etc here, so we can remove the trash from the ingame chrome yaml.
+	public sealed class IngameUiWidget : Widget
+	{
+		public readonly World World;
+		public readonly WorldRenderer WorldRenderer;
+		public readonly RadarPings RadarPings;
+
+		public readonly PaletteReference Palette;
+
+		public readonly StatusWidget Status;
+		public readonly RadarWidget Radar;
+		public readonly TooltipWidget Tooltip;
+
+		private ISound oilSound;
+
+		[ObjectCreator.UseCtor]
+		public IngameUiWidget(World world, WorldRenderer worldRenderer)
+		{
+			World = world;
+			WorldRenderer = worldRenderer;
+			RadarPings = world.WorldActor.Trait<RadarPings>();
+
+			IgnoreChildMouseOver = true;
+			IgnoreMouseOver = true;
+
+			Palette = WorldRenderer.Palette(World.LocalPlayer.Faction.InternalName + "_Buttons" + World.LocalPlayer.InternalName);
+
+			AddChild(Status = new StatusWidget(this));
+			AddChild(Radar = new RadarWidget(this));
+			AddChild(new SidebarWidget(this));
+			AddChild(Tooltip = new TooltipWidget());
+
+			Resize();
+			TickOuter();
+		}
+
+		public override void Resize()
+		{
+			Bounds = new Rectangle(0, 0, Game.Renderer.Resolution.Width, Game.Renderer.Resolution.Height);
+		}
+
+		public override string GetCursor(int2 pos) { return null; }
+
+		public override void Tick()
+		{
+			var playOilSound = World.Actors.Any(a =>
+			{
+				if (a.IsDead || !a.IsInWorld || a.Owner != a.World.LocalPlayer)
+					return false;
+
+				var tanker = a.TraitOrDefault<Tanker>();
+
+				if (tanker == null)
+					return false;
+
+				var dockActivity = a.CurrentActivity as Docking;
+
+				if (dockActivity == null)
+					return false;
+
+				return dockActivity.DockingState == DockingState.Docked && dockActivity.DockActor.Info.HasTraitInfo<PowerStationInfo>();
+			});
+
+			if (playOilSound && oilSound == null)
+				oilSound = Game.Sound.PlayLooped(SoundType.UI, "191.wav"); // TODO un-hardcode this for kknd2!
+			else if (!playOilSound && oilSound != null)
+			{
+				Game.Sound.StopSound(oilSound);
+				oilSound = null;
+			}
+		}
+
+		public override bool HandleKeyPress(KeyInput e)
+		{
+			if (e.Key == Game.ModData.Hotkeys["PlaceBeacon"].GetValue().Key)
+			{
+				World.OrderGenerator = new BeaconOrderGenerator();
+				return true;
+			}
+
+			return false;
+		}
+	}
+}

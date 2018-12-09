@@ -1,0 +1,159 @@
+series9_distanceseeder:
+	Inherits@1: ^Series9Tower
+	Inherits@2: ^AutoTargetDefault
+	Tooltip:
+		Name: Distance Seeder
+	Valued:
+		Cost: 800
+	Health:
+		HP: 1000
+	AdvancedBuildable:
+		BuildDuration: 375
+		Level: 1
+	RevealsShroud:
+		Range: 12c0
+	OffsetsArmament:
+		Weapon: series9_distanceseeder
+	WithTurretAttackAnimation:
+		Sequence: shoot
+	Turreted:
+		TurnSpeed: 20 # todo copied from kknd1
+	AdvancedSelectionDecorations:
+	RenderSprites:
+		Palette: R_Tower1
+	WithOffsetsSpriteTurret:
+		Palette: R_Tower1Turret_player
+		IsPlayerPalette: true
+^Palettes:
+	PaletteFromMobd@R_Tower1:
+		Name: R_Tower1
+		Filename: sprites|R_Tower1.mobd
+	PaletteFromMobd@R_Tower1Turret:
+		Name: R_Tower1Turret
+		Filename: sprites|R_Tower1Turret.mobd
+	OverlayPlayerColorPalette@R_Tower1Turret_player:
+		BasePalette: R_Tower1Turret
+		BaseName: R_Tower1Turret_player
+		RemapIndex: 5,6,7,8,9,10,11,12,13,14,15
+
+series9_podcannon:
+	Inherits@1: ^Series9Tower
+	Inherits@2: ^AutoTargetDefault
+	Tooltip:
+		Name: Pod Cannon
+	Valued:
+		Cost: 1200
+	Health:
+		HP: 1500
+	AdvancedBuildable:
+		BuildDuration: 750
+		Level: 2
+	RevealsShroud:
+		Range: 15c0
+	OffsetsArmament:
+		Weapon: series9_podcannon
+	WithTurretAttackAnimation:
+		Sequence: shoot
+	Turreted:
+		TurnSpeed: 20 # todo copied from kknd1
+	AdvancedSelectionDecorations:
+	RenderSprites:
+		PlayerPalette: R_Tower2_player
+	WithOffsetsSpriteTurret:
+		Palette: R_Tower2Turret_player
+		IsPlayerPalette: true
+		
+^Palettes:
+	PaletteFromMobd@R_Tower2:
+		Name: R_Tower2
+		Filename: sprites|R_Tower2.mobd
+	OverlayPlayerColorPalette@R_Tower2_player:
+		BasePalette: R_Tower2
+		BaseName: R_Tower2_player
+		RemapIndex: 8,9,10,11,12,13,14
+	PaletteFromMobd@R_Tower2Turret:
+		Name: R_Tower2Turret
+		Filename: sprites|R_Tower2Turret.mobd
+	OverlayPlayerColorPalette@R_Tower2Turret_player:
+		BasePalette: R_Tower2Turret
+		BaseName: R_Tower2Turret_player
+		RemapIndex: 5,6,7,8,9
+
+series9_solarintensifier:
+	Inherits@1: ^Series9Tower
+	Inherits@2: ^AutoTargetDefault
+	Tooltip:
+		Name: Solar Intensifier
+	Valued:
+		Cost: 2500
+	Health:
+		HP: 2500
+	AdvancedBuildable:
+		BuildDuration: 1125
+		Level: 3
+	RevealsShroud:
+		Range: 15c0 
+	OffsetsArmament:
+		Weapon: series9_podcannon
+	WithTurretAttackAnimation:
+		Sequence: shoot
+	Turreted:
+		TurnSpeed: 20 # todo copied from kknd1
+	AdvancedSelectionDecorations:
+	RenderSprites:
+		PlayerPalette: R_Tower3_player
+	WithOffsetsSpriteTurret:
+		Palette: R_Tower3Turret_player
+		IsPlayerPalette: true
+^Palettes:
+	PaletteFromMobd@R_Tower3:
+		Name: R_Tower3
+		Filename: sprites|R_Tower3.mobd
+	OverlayPlayerColorPalette@R_Tower3_player:
+		BasePalette: R_Tower3
+		BaseName: R_Tower3_player
+		RemapIndex: 11,12,13,14,15
+	PaletteFromMobd@R_Tower3Turret:
+		Name: R_Tower3Turret
+		Filename: sprites|R_Tower3Turret.mobd
+	OverlayPlayerColorPalette@R_Tower3Turret_player:
+		BasePalette: R_Tower3Turret
+		BaseName: R_Tower3Turret_player
+		RemapIndex: 8,9,10,11,12
+
+series9_lightninggenerator:
+	Inherits@1: ^Series9Tower
+	Inherits@2: ^AutoTargetDefault
+	Tooltip:
+		Name: Lightning Generator
+	Valued:
+		Cost: 3500
+	Health:
+		HP: 3500
+	AdvancedBuildable:
+		BuildDuration: 1500
+		Level: 4
+	RevealsShroud:
+		Range: 15c0
+	OffsetsArmament:
+		Weapon: series9_lightninggenerator
+	WithTurretAttackAnimation:
+		Sequence: shoot
+	Turreted:
+		TurnSpeed: 255
+	AdvancedSelectionDecorations:
+	RenderSprites:
+		PlayerPalette: R_Tower4_player
+	WithOffsetsSpriteTurret:
+		Palette: R_Tower4Turret
+^Palettes:
+	PaletteFromMobd@R_Tower4:
+		Name: R_Tower4
+		Filename: sprites|R_Tower4.mobd
+	OverlayPlayerColorPalette@R_Tower4_player:
+		BasePalette: R_Tower4
+		BaseName: R_Tower4_player
+		RemapIndex: 8,9,10,11,12,13,14,15
+	PaletteFromMobd@R_Tower4Turret:
+		Name: R_Tower4Turret
+		Filename: sprites|R_Tower4Turret.mobd

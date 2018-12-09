@@ -1,0 +1,436 @@
+survivors_outpost:
+	Inherits: ^SurvivorsBuilding
+	Tooltip:
+		Name: Outpost
+	TooltipDescription:
+		Description: Produces buildings
+	Valued:
+		Cost: 1500
+	Health:
+		HP: 10000
+	AdvancedBuildable:
+		BuildDuration: 1500
+		Prerequisites: survivors_building
+	RevealsShroud:
+		Range: 20c0
+	Building:
+		Dimensions: 5,4
+		Footprint: =xxx= xxxx= xxxx= =====
+	HitShape: #TODO adjust that
+		Type: Rectangle
+			TopLeft: -1536, -2048
+			BottomRight: 1536, 1024
+		TargetableOffsets: -819,-1024,0, -819,0,0, -819,1024,0, 819,-1024,0, 819,0,0, 819,1024,0, 2458,-1024,0, 2458,0,0, 2458,1024,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
+	Selectable:
+		Bounds: 96, 96, 0, -16 #TODO adjust that
+	WithIdleOverlay@Animation:
+		Sequence: animation
+		RequiresCondition: !selfconstructing && !deconstructing
+	Production:
+		Produces: building, wall
+		RequiresCondition: !selfconstructing && !deconstructing
+	ProvidesPrerequisite:
+		Prerequisite: survivors_outpost
+		RequiresCondition: !selfconstructing && !deconstructing
+	ProvidesResearchableRadar:
+	Researchable:
+		Offset: 11,-102 #TODO adjust that
+		RequiresCondition: !selfconstructing && !deconstructing
+	AdvancedSelectionDecorations:
+		Offset: -12,-12 #TODO adjust that
+	SaboteurConquerable:
+		Population: 3
+	HackedAiShit:
+
+survivors_barracks:
+	Inherits: ^SurvivorsBuilding
+	Tooltip:
+		Name: Barracks
+	TooltipDescription:
+		Description: Produces infantry
+	Valued:
+		Cost: 400
+	Health:
+		HP: 4000
+	AdvancedBuildable:
+		BuildDuration: 750
+	RevealsShroud:
+		Range: 15c0
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx ===
+	WithIdleOverlay@Animation:
+		Sequence: animation
+		RequiresCondition: !selfconstructing && !deconstructing
+	Production:
+		Produces: infantry
+		RequiresCondition: !selfconstructing && !deconstructing
+	AdvancedProductionQueue:
+		Type: infantry
+		InfiniteBuildLimit: 10
+	ProvidesPrerequisite:
+		Prerequisite: survivors_barracks
+		RequiresCondition: !selfconstructing && !deconstructing
+	Exit:
+		SpawnOffset: 0c-700,-0c220,0 # TODO verify
+		ExitCell: -1,2 # TODO verify
+		Facing: 64
+	RallyPoint:
+		Cursor: move
+		Image:
+		Offset: -1,2
+	Researchable:
+		Offset: -3,-80 #TODO adjust that
+		RequiresCondition: !selfconstructing && !deconstructing
+	HitShape:
+		Type: Rectangle
+			TopLeft: -2048, -1536
+			BottomRight: 1024, 512
+		TargetableOffsets: 0,-1536,0, 0,-512,0, 0,512,0, 1638,-1536,0, 1638,-512,0, 1638,512,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
+	Selectable: 
+		Bounds: 96, 64, -16, -16
+	AdvancedSelectionDecorations:
+		Offset: 19,-14 #TODO adjust that
+	SaboteurConquerable:
+		Population: 2
+
+survivors_machineshop:
+	Inherits: ^SurvivorsBuilding
+	Tooltip:
+		Name: Machine Shop
+	TooltipDescription:
+		Description: Produces vehicles
+	Valued:
+		Cost: 800
+	Health:
+		HP: 6000
+	AdvancedBuildable:
+		BuildDuration: 750
+	RevealsShroud:
+		Range: 15c0
+	Building:
+		Dimensions: 4,5
+		Footprint: ==== xxxx xxxx ==== ====
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1536, -2048
+			BottomRight: 1536, 0
+		TargetableOffsets: 819,-1024,0, 819,0,0, 819,1024,0, 2458,-1024,0, 2458,0,0, 2458,1024,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
+	Selectable: 
+		Bounds: 128, 96, 0, -32 #TODO adjust that
+	WithIdleOverlay@Animation:
+		Sequence: animation
+		RequiresCondition: !selfconstructing && !deconstructing
+	Production:
+		Produces: building, vehicle
+		RequiresCondition: !selfconstructing && !deconstructing
+	AdvancedProductionQueue:
+		Type: vehicle
+		InfiniteBuildLimit: 10
+	ProvidesPrerequisite:
+		Prerequisite: survivors_machineshop
+	Exit:
+		SpawnOffset: -1c0,0c50,0 #TODO adjust that
+		ExitCell: 0,2 #TODO adjust that
+		Facing: 75 #TODO adjust that
+	RallyPoint:
+		Cursor: move
+		Image:
+		Offset: 0,2
+	Researchable:
+		Offset: 0,-119 #TODO adjust that
+		RequiresCondition: !selfconstructing && !deconstructing
+	AdvancedSelectionDecorations:
+		Offset: -1,-7 #TODO adjust that
+	SaboteurConquerable:
+		Population: 2
+
+survivors_repairbay:
+	Inherits: ^SurvivorsBuilding
+	Tooltip:
+		Name: Repair Bay
+	TooltipDescription:
+		Description: Repairs vehicles
+	Valued:
+		Cost: 500
+	Health:
+		HP: 5000
+	AdvancedBuildable:
+		BuildDuration: 1125
+		Level: 2
+	RevealsShroud:
+		Range: 15c0
+	Building:
+		Dimensions: 4,5
+		Footprint: xxxx xxxx xxxx ==== ====
+	HitShape: #TODO adjust that
+		Type: Rectangle
+			TopLeft: -1024, -2048
+			BottomRight: 1024, 0
+		TargetableOffsets: 819,-512,0, 819,512,0, 2458,-512,0, 2458,512,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
+	Selectable:
+		Bounds: 80, 64, -8, -32
+	WithIdleOverlay@idle:
+		Sequence: animation
+		RequiresCondition: !repairing && !selfconstructing && !deconstructing
+	WithIdleOverlay@repairing:
+		Sequence: repairing-fx
+		RequiresCondition: repairing
+	Researchable:
+		Offset: 5,-125 #TODO adjust that
+		RequiresCondition: !selfconstructing && !deconstructing
+	AdvancedSelectionDecorations:
+		Offset: 1,-27  #TODO adjust that
+	SaboteurConquerable:
+		Population: 1
+	Repairbay:
+		Cursor: repair
+	Dock:
+		Position: -800,-192,0 #TODO adjust that
+		RequiresCondition: !selfconstructing && !deconstructing
+
+survivors_armoury:
+	Inherits: ^SurvivorsBuilding
+	Tooltip:
+		Name: Armoury
+	TooltipDescription:
+		Description: Produces towers
+	Valued:
+		Cost: 500
+	Health:
+		HP: 5000
+	AdvancedBuildable:
+		BuildDuration: 1125
+		BuildLimit: 1
+	RevealsShroud:
+		Range: 15c0
+	Building:
+		Dimensions: 3,4
+		Footprint: === xxx xxx xxx
+	HitShape: #TODO adjust that
+		Type: Rectangle
+			TopLeft: -1024, -2048
+			BottomRight: 1024, 0
+		TargetableOffsets: 819,-512,0, 819,512,0, 2458,-512,0, 2458,512,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
+	Selectable:
+		Bounds: 80, 64, -8, -32 #TODO adjust that
+	WithIdleOverlay@Animation:
+		Sequence: animation
+		RequiresCondition: !selfconstructing && !deconstructing
+	Production:
+		Produces: tower
+		RequiresCondition: !selfconstructing && !deconstructing
+	ProvidesPrerequisite:
+		Prerequisite: survivors_armoury
+		RequiresCondition: !selfconstructing && !deconstructing
+	Researchable:
+		Offset: 5,-125 #TODO adjust that
+		RequiresCondition: !selfconstructing && !deconstructing
+	AdvancedSelectionDecorations:
+		Offset: 1,-27 #TODO adjust that
+	SaboteurConquerable:
+		Population: 1
+
+survivors_researchlab:
+	Inherits: ^SurvivorsBuilding
+	Tooltip:
+		Name: Research Lab
+	TooltipDescription:
+		Description: Researches buildings
+	Valued:
+		Cost: 700
+	Health:
+		HP: 5000
+	AdvancedBuildable:
+		BuildDuration: 750
+		BuildLimit: 1
+	RevealsShroud:
+		Range: 15c0
+	Building:
+		Dimensions: 3,3
+		Footprint: === xxx xxx
+	HitShape: #TODO adjust that
+		Type: Rectangle
+			TopLeft: -1536, -1024
+			BottomRight: 1536, 0
+		TargetableOffsets: 819,-1024,0, 819,0,0, 819,1024,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
+	Selectable: #TODO adjust that
+		Bounds: 96, 64, 0, -32
+	WithIdleOverlay@Animation:
+		Sequence: animation
+		RequiresCondition: !selfconstructing && !deconstructing
+	Researches:
+		ResearchSteps: 20
+		RequiresCondition: !selfconstructing && !deconstructing
+	Researchable:
+		Offset: 9,-134 #TODO adjust that
+		RequiresCondition: !selfconstructing && !deconstructing
+	AdvancedSelectionDecorations:
+		Offset: -9,-32 #TODO adjust that
+	SaboteurConquerable:
+		Population: 1
+
+survivors_powerstation:
+	Inherits: ^SurvivorsBuilding
+	Tooltip:
+		Name: Power Station
+	TooltipDescription:
+		Description: Processes oil
+	Valued:
+		Cost: 2000
+	Health:
+		HP: 6000
+	AdvancedBuildable:
+		BuildDuration: 2000
+		BuildLimit: 8
+	RevealsShroud:
+		Range: 15c0
+	Building:
+		Dimensions: 4,3
+		Footprint: xxxx xxxx ====
+	HitShape: #TODO adjust that
+		Type: Rectangle
+			TopLeft: -2048, -1536
+			BottomRight: 2048, -512
+		TargetableOffsets: 1638,-1536,0, 1638,-512,0, 1638,512,0, 1638,1536,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
+	Selectable:
+		Bounds: 160, 32, 0, -32
+	WithIdleOverlay@Animation:
+		Sequence: animation
+		RequiresCondition: !selfconstructing && !deconstructing
+	FreeActor:
+	 	Actor: survivors_oiltanker
+		SpawnOffset: 2,2
+		Facing: 96
+		RequiresCondition: !selfconstructing && !deconstructing
+	PowerStation:
+	Dock:
+		Position: -800,96,0 #TODO adjust that
+		RequiresCondition: !selfconstructing && !deconstructing
+	Researchable:
+		Offset: 4,-128
+		RequiresCondition: !selfconstructing && !deconstructing
+	AdvancedSelectionDecorations:
+		Offset: -4,-44 #TODO adjust that
+	SaboteurConquerable:
+		Population: 2
+
+survivors_solarcollector:
+	Inherits: ^SurvivorsBuilding
+	Tooltip:
+		Name: Solar Collector
+	TooltipDescription:
+		Description: Produces additional resources
+	Valued:
+		Cost: 1000
+	Health:
+		HP: 1500
+	AdvancedBuildable:
+		BuildDuration: 750
+		BuildLimit: 4
+		Level: 3
+	RevealsShroud:
+		Range: 10c0
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 1024
+		TargetableOffsets: 819,-512,0, 819,512,0, -819,-512,0, -819,512,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
+	Selectable:
+		Bounds: 64, 64, 0, 0
+	AdvancedSelectionDecorations:
+		Offset: 0,-7 #TODO adjust that
+	SaboteurConquerable:
+		Population: 1
+	WithIdleOverlay@Animation:
+		Sequence: animation
+		RequiresCondition: !selfconstructing && !deconstructing
+	CashTrickler:
+		Interval: 75
+		Amount: 7
+		ShowTicks: false
+
+survivors_thermalexchanger:
+	Inherits: ^SurvivorsBuilding
+	Tooltip:
+		Name: Thermal Exchanger
+	TooltipDescription:
+		Description: Produces additional resources
+	Valued:
+		Cost: 2000
+	Health:
+		HP: 5000
+	AdvancedBuildable:
+		BuildDuration: 1500
+		BuildLimit: 4
+		Level: 3
+	RevealsShroud:
+		Range: 15c0
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 1024
+		TargetableOffsets: 819,-512,0, 819,512,0, -819,-512,0, -819,512,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
+	Selectable:
+		Bounds: 64, 64, 0, 0
+	AdvancedSelectionDecorations:
+		Offset: 0,-7 #TODO adjust that
+	SaboteurConquerable:
+		Population: 1
+	WithIdleOverlay@Animation:
+		Sequence: animation
+		RequiresCondition: !selfconstructing && !deconstructing
+	CashTrickler:
+		Interval: 75
+		Amount: 14
+		ShowTicks: false
+
+survivors_drillrig:
+	Inherits: ^SurvivorsBuilding
+	Tooltip:
+		Name: Drill Rig
+	TooltipDescription:
+		Description: Extracts oil
+	Valued:
+		Cost: 1000
+	Health:
+		HP: 4000
+	AdvancedBuildable:
+		BuildDuration: 200
+		Prerequisites: unbuildable
+	RevealsShroud:
+		Range: 15c0
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx =xx ===
+	HitShape: #TODO adjust that
+		Type: Rectangle
+			TopLeft: -512, -1024
+			BottomRight: 512, 0
+		TargetableOffsets: 819,0,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
+	Selectable:
+		Bounds: 64, 64, 0, -16 #TODO adjust that
+	WithIdleOverlay@Animation:
+		Sequence: animation
+		PauseOnCondition: !HasOil
+		RequiresCondition: !selfconstructing && !deconstructing
+	Drillrig:
+	Dock:
+		Position: -896,864,0 #TODO adjust that
+		RequiresCondition: !selfconstructing && !deconstructing
+	AdvancedSelectionDecorations:
+		Offset: -3,-12 #TODO adjust that
+	SaboteurConquerable:
+		Population: 2
+	GivesBuildableArea:
+		AreaTypes: defence
+	-ProvidesPrerequisite@Generic:
+	AttackNotification:
+		Notifications: DrillRigUnderAttack
+

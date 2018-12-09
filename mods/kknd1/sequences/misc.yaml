@@ -1,0 +1,167 @@
+overlay:
+	build-valid: sprites|Cursors.mobd
+		Start: 98
+		Offset: -16, -16
+	build-invalid: sprites|Cursors.mobd
+		Start: 97
+		Offset: -16, -16
+
+editor-overlay:
+	copy: sprites|Cursors.mobd
+		Start: 97
+		Offset: -16, -16
+	paste: sprites|Cursors.mobd
+		Start: 98
+		Offset: -16, -16
+
+shroud:
+	shroud: bits/shroud.png
+		Length: 16
+	shroudfull: bits/shroud.png
+		Start: 1
+	fog: bits/shroud.png
+		Length: 16
+	fogfull: bits/shroud.png
+		Start: 1
+
+moveflsh:
+	idle: sprites|Cursors.mobd
+		Start: 89
+		Length: 8
+
+indicators:
+	repair: sprites|Cursors.mobd
+		Start: 26
+		Length: 9
+		ZOffset: 2000
+	research0: sprites|Cursors.mobd
+		Start: 105
+		Length: 7
+	research1: sprites|Cursors.mobd
+		Start: 112
+		Length: 7
+	research2: sprites|Cursors.mobd
+		Start: 119
+		Length: 7
+	research3: sprites|Cursors.mobd
+		Start: 126
+		Length: 7
+	research4: sprites|Cursors.mobd
+		Start: 133
+		Length: 7
+	research5: sprites|Cursors.mobd
+		Start: 140
+		Length: 7
+
+crater:
+	a: sprites|Extras.mobd
+		Start: 362
+		Offset: -16,-16
+	b: sprites|Extras.mobd
+		Start: 363
+		Offset: -16,-16
+	c: sprites|Extras.mobd
+		Start: 364
+		Offset: -16,-16
+	d: sprites|Extras.mobd
+		Start: 365
+		Offset: -16,-16
+	e: sprites|Extras.mobd
+		Start: 366
+		Offset: -16,-16
+	f: sprites|Extras.mobd
+		Start: 367
+		Offset: -16,-16
+	g: sprites|Extras.mobd
+		Start: 368
+		Offset: -16,-16
+	h: sprites|Extras.mobd
+		Start: 369
+		Offset: -16,-16
+	i: sprites|Extras.mobd
+		Start: 370
+		Offset: -16,-16
+
+hut_a:
+	idle: sprites|Hut.mobd
+		Start: 5
+
+hut_b:
+	idle: sprites|Hut.mobd
+		Start: 6
+
+hut_c:
+	idle: sprites|Hut.mobd
+		Start: 7
+
+hut_d:
+	idle: sprites|Hut.mobd
+		Start: 8
+
+hut_e:
+	idle: sprites|Hut.mobd
+		Start: 9
+
+hut_a_rubble:
+	idle: sprites|Hut.mobd
+		Start: 0
+		ZOffset: -1000
+
+hut_b_rubble:
+	idle: sprites|Hut.mobd
+		Start: 1
+		ZOffset: -1000
+
+hut_c_rubble:
+	idle: sprites|Hut.mobd
+		Start: 2
+		ZOffset: -1000
+
+hut_d_rubble:
+	idle: sprites|Hut.mobd
+		Start: 3
+		ZOffset: -1000
+
+hut_e_rubble:
+	idle: sprites|Hut.mobd
+		Start: 4
+		ZOffset: -1000
+
+campfire:
+	idle: sprites|Hut.mobd
+		Start: 10
+		Length: 4
+		Tick: 120
+
+oilpatch:
+	idle: sprites|Oil.mobd
+		Length: 14
+		Tick: 120
+		ZOffset: -2000
+	burn: bits/Oil.png
+		Length: 4
+		Tick: 120
+
+tech_drillrig:
+	idle: bits/TechDrillRig.png
+		Start: 0
+	damaged-idle: bits/TechDrillRig.png
+		Start: 1
+	critical-idle: bits/TechDrillRig.png
+		Start: 2
+	animation: bits/TechDrillRig.png
+		Start: 3
+		Length: 8
+		Tick: 120
+	make0: bits/TechDrillRig.png
+	make1: bits/TechDrillRig.png
+	make2: bits/TechDrillRig.png
+
+font:
+	production: bits/FontProduction.png
+		Length: 11
+
+beacon:
+	x: bits/Beacon.png
+		Length: 10
+		Tick: 600

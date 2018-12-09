@@ -1,0 +1,160 @@
+series9_seeder:
+	die: sprites|R_I_Death.mobd
+		Start: 10
+		Length: 8
+		Tick: 70
+	idle: sprites|R_I_Gunner.mobd
+		Facings: -8
+	move: sprites|R_I_Gunner.mobd
+		Start: 48
+		Length: 6
+		Tick: 120
+		Facings: -8
+	aim: sprites|R_I_Gunner.mobd
+		Start: 17
+		Stride: 2
+		Facings: -8
+	shoot: sprites|R_I_Gunner.mobd
+		Start: 16
+		Length: 2
+		Tick: 150
+		Facings: -8
+	bored: sprites|R_I_Gunner.mobd
+		Start: 96
+		Length: 8
+		Tick: 130
+
+series9_podlauncher:
+	die: sprites|R_I_Death.mobd
+		Start: 18
+		Length: 8
+		Tick: 70
+	idle: sprites|R_I_Grenadier.mobd
+		Facings: -8
+	move: sprites|R_I_Grenadier.mobd
+		Start: 64
+		Length: 6
+		Tick: 120
+		Facings: -8
+	aim: sprites|R_I_Grenadier.mobd
+		Start: 16
+		Stride: 3
+		Facings: -8
+	shoot: sprites|R_I_Grenadier.mobd
+		Start: 16
+		Length: 3
+		Tick: 110
+		Facings: -8
+	bored: sprites|R_I_Grenadier.mobd
+		Start: 112
+		Length: 15
+		Tick: 105
+
+series9_weedkiller:
+	die: sprites|R_I_Death.mobd
+		Start: 42
+		Length: 10
+		Tick: 70
+	idle: sprites|R_I_Flamer.mobd
+		Facings: -8
+	move: sprites|R_I_Flamer.mobd
+		Start: 56
+		Length: 6
+		Tick: 120
+		Facings: -8
+	aim: sprites|R_I_Flamer.mobd
+		Start: 25
+		Stride: 2
+		Facings: -8
+	shoot: sprites|R_I_Flamer.mobd
+		Start: 24
+		Length: 2
+		Tick: 100
+		Facings: -8
+	bored: sprites|R_I_Flamer.mobd # TODO placeholder
+		Facings: -8
+
+series9_sporemissle:
+	die: sprites|R_I_Death.mobd
+		Start: 26
+		Length: 16
+		Tick: 70
+	idle: sprites|R_I_Rocketeer.mobd
+		Facings: -8
+	move: sprites|R_I_Rocketeer.mobd
+		Start: 56
+		Length: 6
+		Tick: 120
+		Facings: -8
+	aim: sprites|R_I_Rocketeer.mobd
+		Start: 25
+		Stride: 2
+		Facings: -8
+	shoot: sprites|R_I_Rocketeer.mobd
+		Start: 24
+		Length: 2
+		Tick: 100
+		Facings: -8
+	bored: sprites|R_I_Rocketeer.mobd # TODO placeholder
+		Facings: -8
+		
+series9_sterilizer:
+	die: sprites|R_I_Death.mobd
+		Length: 10
+		Tick: 70
+	idle: sprites|R_I_Sniper.mobd
+		Facings: -8
+	move: sprites|R_I_Sniper.mobd
+		Start: 96
+		Length: 6
+		Tick: 120
+		Facings: -8
+	aim: sprites|R_I_Sniper.mobd
+		Start: 16
+		Stride: 5
+		Facings: -8
+	shoot: sprites|R_I_Sniper.mobd
+		Start: 16
+		Length: 5
+		Tick: 60
+		Facings: -8
+	bored: sprites|R_I_Sniper.mobd # TODO placeholder
+		Facings: -8
+
+series9_systech:
+	die: sprites|R_I_Death.mobd
+		Start: 52
+		Length: 10
+		Tick: 70
+	idle: sprites|R_I_Technician.mobd
+		Facings: -8
+	move: sprites|R_I_Technician.mobd
+		Start: 24
+		Length: 6
+		Tick: 120
+		Facings: -8
+	bored: sprites|R_I_Technician.mobd # TODO placeholder
+		Facings: -8
+
+series9_michaelangelo:
+	die: sprites|R_I_Kamikaze.mobd # TODO top right animation is missing
+		Start: 64
+		Length: 16
+		Tick: 200
+	idle: sprites|R_I_Kamikaze.mobd
+		Length: 4
+		Facings: -8
+		Tick: 200
+	move: sprites|R_I_Kamikaze.mobd
+		Start: 32
+		Length: 4
+		Tick: 200
+		Facings: -8
+	shoot: sprites|R_I_Kamikaze.mobd # TODO top right animation is missing
+		Start: 64
+		Length: 16
+		Tick: 100
+	bored: sprites|R_I_Kamikaze.mobd  # TODO placeholder
+		Length: 4
+		Facings: -8
+		Tick: 200

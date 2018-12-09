@@ -1,0 +1,72 @@
+World:
+	Faction@Series9:
+		Name: Series9
+		InternalName: series9
+	MPStartUnits@series90:
+		Class: supportInfantry
+		ClassName: Mobile Base, Derrick and Infantry
+		BaseActor: series9_mobilebarn
+		SupportActors: series9_mobileoilbot, series9_seeder, series9_seeder
+		Factions: series9
+		InnerSupportRadius: 4
+		OuterSupportRadius: 6
+	MPStartUnits@series91:
+		Class: support
+		ClassName: Mobile Base and Derrick
+		BaseActor: series9_mobilebarn
+		SupportActors: series9_mobileoilbot
+		Factions: series9
+		InnerSupportRadius: 4
+		OuterSupportRadius: 6
+	MPStartUnits@series92:
+		Class: none
+		ClassName: Mobile Base Only
+		BaseActor: series9_mobilebarn
+		Factions: series9
+
+^Series9Building:
+	Inherits: ^CoreBuilding
+	AdvancedBuildable:
+		Prerequisites: series9_barn
+	ProvidesPrerequisite@Generic:
+		Prerequisite: series9_building
+		RequiresCondition: !selfconstructing && !deconstructing
+	RenderSprites:
+		PlayerPalette: R_Spriteb_player
+
+^Series9Wall:
+	Inherits: ^CoreWall
+	AdvancedBuildable:
+		Prerequisites: series9_barn
+
+^Series9Tower:
+	Inherits@1: ^CoreTower
+	Inherits@2: ^CoreTurret
+	AdvancedBuildable:
+		Prerequisites: series9_weaponcontrol
+
+^Series9Infantry:
+	Inherits: ^CoreInfantry
+	-Crushable:
+	AdvancedBuildable:
+		Prerequisites: series9_microunitfactory
+	VeterancyVoiced:
+		VoiceSets: Series9Voice, Series9VeteranVoice, Series9VeteranVoice
+	WithDeathAnimation:
+		DeathSequencePalette: R_I_Gunner_player # same for all infantry
+
+^Series9Vehicle:
+	Inherits: ^CoreVehicle
+	AdvancedBuildable:
+		Prerequisites: series9_macrounitfactory
+	VeterancyVoiced:
+		VoiceSets: Series9Voice, Series9VeteranVoice, Series9VeteranVoice
+
+^Series9Aircraft:
+	Inherits: ^CoreAircraft
+	AdvancedBuildable:
+		Queue: aircraft
+		Prerequisites: series9_macrounitfactory
+	VeterancyVoiced:
+		VoiceSets: Series9Voice, Series9VeteranVoice, Series9VeteranVoice
+

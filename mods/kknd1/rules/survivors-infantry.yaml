@@ -1,0 +1,248 @@
+survivors_rifleman:
+	Inherits@1: ^SurvivorsInfantry
+	Inherits@2: ^CoreArmedSelf
+	Inherits@3: ^HasMuzzle
+	Inherits@4: ^AutoTargetDefault
+	Tooltip:
+		Name: Rifleman
+	Valued:
+		Cost: 50
+	Health:
+		HP: 400
+	Mobile:
+		Speed: 50
+	RevealsShroud:
+		Range: 5c0
+	AdvancedBuildable:
+		BuildDuration: 75
+		Level: 0
+	OffsetsArmament:
+		Weapon: survivors_rifleman
+	Veterancy:
+		HealRates: 1,2
+		Experience: 500, 1000
+
+survivors_swat:
+	Inherits@1: ^SurvivorsInfantry
+	Inherits@2: ^CoreArmedSelf
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: SWAT
+	Valued:
+		Cost: 80
+	Health:
+		HP: 500
+	Mobile:
+		Speed: 50
+	RevealsShroud:
+		Range: 5c0
+	AdvancedBuildable:
+		BuildDuration: 100
+		Level: 1
+	OffsetsArmament:
+		Weapon: survivors_swat
+	Veterancy:
+		HealRates: 1,2
+		Experience: 1100, 2100
+	RenderSprites:
+		Image: survivors_swat_modern
+
+survivors_flamer:
+	Inherits@1: ^SurvivorsInfantry
+	Inherits@2: ^CoreArmedSelf
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: Flamer
+	Valued:
+		Cost: 100
+	Health:
+		HP: 400
+	Mobile:
+		Speed: 50
+	RevealsShroud:
+		Range: 5c0
+	AdvancedBuildable:
+		BuildDuration: 125
+		Level: 2
+	OffsetsArmament:
+		Weapon: survivors_flamer
+	Veterancy:
+		HealRates: 1,2
+		Experience: 2000, 3000
+
+survivors_sapper:
+	Inherits@1: ^SurvivorsInfantry
+	Inherits@2: ^CoreArmedSelf
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: Sapper
+	Valued:
+		Cost: 135
+	Health:
+		HP: 525
+	Mobile:
+		Speed: 50
+	RevealsShroud:
+		Range: 5c0
+	AdvancedBuildable:
+		BuildDuration: 175
+		Level: 3
+	OffsetsArmament:
+		Weapon: survivors_sapper
+		FireDelay: 8
+		LocalOffset: 250,0,0
+	WithAimAttackAnimation:
+		SequenceAim: idle
+	Veterancy:
+		HealRates: 1,2
+		Experience: 1500, 2500
+
+survivors_rpglauncher:
+	Inherits@1: ^SurvivorsInfantry
+	Inherits@2: ^CoreArmedSelf
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: RPG Launcher
+	Valued:
+		Cost: 165
+	Health:
+		HP: 400
+	Mobile:
+		Speed: 50
+	RevealsShroud:
+		Range: 5c0
+	AdvancedBuildable:
+		BuildDuration: 200
+		Level: 4
+	OffsetsArmament:
+		Weapon: survivors_rpglauncher
+	Veterancy:
+		HealRates: 1,2
+		Experience: 1700, 2700
+
+survivors_sniper:
+	Inherits@1: ^SurvivorsInfantry
+	Inherits@2: ^CoreArmedSelf
+	Inherits@3: ^HasMuzzle
+	Inherits@4: ^AutoTargetDefault
+	Tooltip:
+		Name: Sniper
+	Valued:
+		Cost: 250
+	Health:
+		HP: 550
+	Mobile:
+		Speed: 50
+	RevealsShroud:
+		Range: 7c0
+	AdvancedBuildable:
+		BuildDuration: 300
+		Level: 5
+	OffsetsArmament:
+		Weapon: survivors_sniper
+	Veterancy:
+		HealRates: 1,2
+		Experience: 2000, 3000
+
+survivors_elpresidente:
+	Inherits@1: ^SurvivorsInfantry
+	Inherits@2: ^CoreArmedSelf
+	Inherits@3: ^HasMuzzle
+	Inherits@4: ^AutoTargetDefault
+	Tooltip:
+		Name: El Presidente
+	Valued:
+		Cost: 450
+	Health:
+		HP: 600
+	Mobile:
+		Speed: 50
+	RevealsShroud:
+		Range: 5c0
+	AdvancedBuildable:
+		BuildDuration: 250
+		Level: -1
+	OffsetsArmament:
+		Weapon: survivors_elpresidente
+	Veterancy:
+		HealRates: 1,2
+		Experience: 500, 1000
+
+survivors_technician:
+	Inherits: ^SurvivorsInfantry
+	Tooltip:
+		Name: Technician
+	TooltipDescription:
+		Description: Repairs buildings
+	Valued:
+		Cost: 100
+	Health:
+		HP: 500
+	Mobile:
+		Speed: 60
+	RevealsShroud:
+		Range: 5c0
+	AdvancedBuildable:
+		BuildDuration: 150
+		Level: 0
+	Technician:
+	Selectable:
+		Priority: 15
+	IgnoreRallyPoint:
+
+survivors_saboteur:
+	Inherits@1: ^SurvivorsInfantry
+	Inherits@2: ^CoreArmedSelf
+	Inherits@3: ^HasMuzzle
+	Inherits@4: ^AutoTargetDefault
+	Tooltip:
+		Name: Saboteur
+	TooltipDescription:
+		Description: Conquers buildings
+	Valued:
+		Cost: 150
+	Health:
+		HP: 500
+	Mobile:
+		Speed: 60
+	RevealsShroud:
+		Range: 5c0
+	AdvancedBuildable:
+		BuildDuration: 150
+		Level: 1
+	OffsetsArmament:
+		Weapon: survivors_saboteur
+	Saboteur:
+	Veterancy:
+		HealRates: 1,2
+		Experience: 250, 500
+	IgnoreRallyPoint:
+
+# TODO this one is for singleplayer campaign only - use classic stats!
+survivors_scout:
+	Inherits@1: ^SurvivorsInfantry
+	Inherits@2: ^CoreArmedSelf
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: Scout
+	TooltipDescription:
+		Description: It's not my fault!	
+	Valued:
+		Cost: 50
+	Health:
+		HP: 500
+	Mobile:
+		Speed: 50
+	RevealsShroud:
+		Range: 6c0
+	AdvancedBuildable:
+		BuildDuration: 100
+		Level: -1
+	-VeterancyVoiced:
+	Voiced:
+		VoiceSet: ScoutVoice
+	OffsetsArmament:
+		Weapon: survivors_scout
+	Veterancy:
+		HealRates: 1,2
+		Experience: 500, 1000

@@ -1,0 +1,455 @@
+series9_patrolbot:
+	Inherits@1: ^Series9Vehicle
+	Inherits@2: ^CoreLightVehicle
+	Inherits@3: ^CoreArmedSelf
+	Inherits@4: ^AutoTargetDefault
+	Tooltip:
+		Name: Patrolbot
+	Valued:
+		Cost: 200
+	Health:
+		HP: 750
+	Mobile:
+		Speed: 128
+		TurnSpeed: 41 #TODO
+	AdvancedBuildable:
+		BuildDuration: 250
+		Level: 0
+	RevealsShroud:
+		Range: 12c0
+	OffsetsArmament:
+		Weapon: series9_patrolbot
+	AdvancedSelectionDecorations:
+		Offset: 0,-2 #TODO
+	Veterancy:
+	RenderSprites:
+		PlayerPalette: R_V_Patrolbot_player
+^Palettes:
+	PaletteFromMobd@R_V_Patrolbot:
+		Name: R_V_Patrolbot
+		Filename: sprites|R_V_Patrolbot.mobd
+	OverlayPlayerColorPalette@R_V_Patrolbot_player:
+		BasePalette: R_V_Patrolbot
+		BaseName: R_V_Patrolbot_player
+		RemapIndex: 7,8,9,10,11
+
+series9_responsebot:
+	Inherits@1: ^Series9Vehicle
+	Inherits@2: ^CoreTurret
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: Responsebot
+	Valued:
+		Cost: 300
+	Health:
+		HP: 1250
+	Mobile:
+		Speed: 96
+		TurnSpeed: 41 #TODO
+	AdvancedBuildable:
+		BuildDuration: 375
+		Level: 0
+	RevealsShroud:
+		Range: 12c0
+	OffsetsArmament:
+		Weapon: series9_responsebot
+	WithTurretAttackAnimation:
+		Sequence: shoot
+	Turreted:
+		TurnSpeed: 20 # todo copied from kknd1
+	AdvancedSelectionDecorations:
+		Offset: 0,-2 #TODO
+	Veterancy:
+	RenderSprites:
+		PlayerPalette: R_V_Responsebot_player
+	WithOffsetsSpriteTurret:
+		Palette: R_V_TResponsebot_player
+		IsPlayerPalette: true
+^Palettes:
+	PaletteFromMobd@R_V_Responsebot:
+		Name: R_V_Responsebot
+		Filename: sprites|R_V_Responsebot.mobd
+	OverlayPlayerColorPalette@R_V_Responsebot_player:
+		BasePalette: R_V_Responsebot
+		BaseName: R_V_Responsebot_player
+		RemapIndex: 8,9,10,11,12,13,14
+	PaletteFromMobd@R_V_TResponsebot:
+		Name: R_V_TResponsebot
+		Filename: sprites|R_V_TResponsebot.mobd
+	OverlayPlayerColorPalette@R_V_TResponsebot_player:
+		BasePalette: R_V_TResponsebot
+		BaseName: R_V_TResponsebot_player
+		RemapIndex: 9,10,11,12
+
+series9_radiator:
+	Inherits@1: ^Series9Vehicle
+	Inherits@2: ^CoreTurret
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: Radiator
+	Valued:
+		Cost: 500
+	Health:
+		HP: 1500
+	Mobile:
+		Speed: 90
+		TurnSpeed: 41 #TODO
+	AdvancedBuildable:
+		BuildDuration: 500
+		Level: 1
+	RevealsShroud:
+		Range: 12c0
+	OffsetsArmament:
+		Weapon: series9_radiator
+	-WithMoveAnimation:
+	WithTurretAttackAnimation:
+		Sequence: shoot
+	Turreted:
+		TurnSpeed: 255
+	AdvancedSelectionDecorations:
+		Offset: 0,-2 #TODO
+	Veterancy:
+	RenderSprites:
+		PlayerPalette: R_V_ARadiator_player
+	WithOffsetsSpriteTurret:
+		Palette: R_V_TARadiator
+^Palettes:
+	PaletteFromMobd@R_V_ARadiator:
+		Name: R_V_ARadiator
+		Filename: sprites|R_V_ARadiator.mobd
+	OverlayPlayerColorPalette@R_V_ARadiator_player:
+		BasePalette: R_V_ARadiator
+		BaseName: R_V_ARadiator_player
+		RemapIndex: 9,10,11,12,13,14,15
+	PaletteFromMobd@R_V_TARadiator:
+		Name: R_V_TARadiator
+		Filename: sprites|R_V_TARadiator.mobd
+
+series9_tankbot:
+	Inherits@1: ^Series9Vehicle
+	Inherits@2: ^CoreTurret
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: Tankbot
+	Valued:
+		Cost: 800
+	Health:
+		HP: 2000
+	Mobile:
+		Speed: 64
+		TurnSpeed: 41 #TODO
+	AdvancedBuildable:
+		BuildDuration: 625
+		Level: 2
+	RevealsShroud:
+		Range: 12c0
+	OffsetsArmament:
+		Weapon: series9_tankbot
+	WithTurretAttackAnimation:
+		Sequence: shoot
+	Turreted:
+		TurnSpeed: 20 # todo copied from kknd1
+	AdvancedSelectionDecorations:
+		Offset: 0,-2 #TODO
+	Veterancy:
+	RenderSprites:
+		PlayerPalette: R_V_Tankbot_player
+	WithOffsetsSpriteTurret:
+		Palette: R_V_TTankbot_player
+		IsPlayerPalette: true
+^Palettes:
+	PaletteFromMobd@R_V_Tankbot:
+		Name: R_V_Tankbot
+		Filename: sprites|R_V_Tankbot.mobd
+	OverlayPlayerColorPalette@R_V_Tankbot_player:
+		BasePalette: R_V_Tankbot
+		BaseName: R_V_Tankbot_player
+		RemapIndex: 8,9,10,11,12,13,14,15
+	PaletteFromMobd@R_V_TTankbot:
+		Name: R_V_TTankbot
+		Filename: sprites|R_V_TTankbot.mobd
+	OverlayPlayerColorPalette@R_V_TTankbot_player:
+		BasePalette: R_V_TTankbot
+		BaseName: R_V_TTankbot_player
+		RemapIndex: 7,8,9,10,11
+
+series9_doomdome:
+	Inherits@1: ^Series9Vehicle
+	Inherits@4: ^AutoTargetDefault
+	Inherits@5: ^CoreTurret
+	Tooltip:
+		Name: Doom Dome
+	Valued:
+		Cost: 1000
+	Health:
+		HP: 2500
+	Mobile:
+		Speed: 51
+		TurnSpeed: 41 #TODO
+	AdvancedBuildable:
+		BuildDuration: 750
+		Level: 3
+	RevealsShroud:
+		Range: 12c0
+	OffsetsArmament@0:
+		Name: primary
+		Weapon: series9_doomdome
+		BurstOffsets: 0
+		FireDelay: 0
+	OffsetsArmament@1:
+		Name: secondary
+		Weapon: series9_doomdome
+		BurstOffsets: 1
+		FireDelay: 0
+	WithTurretAttackAnimation:
+		Sequence: shoot
+	Turreted:
+		TurnSpeed: 20 # todo copied from kknd1
+	AdvancedSelectionDecorations:
+		Offset: 0,-2 #TODO
+	Veterancy:
+	RenderSprites:
+		PlayerPalette: R_V_ADoomDome_player
+	WithOffsetsSpriteTurret:
+		Palette: R_V_TADoomDome_player
+		IsPlayerPalette: true
+^Palettes:
+	PaletteFromMobd@R_V_ADoomDome:
+		Name: R_V_ADoomDome
+		Filename: sprites|R_V_ADoomDome.mobd
+	OverlayPlayerColorPalette@R_V_ADoomDome_player:
+		BasePalette: R_V_ADoomDome
+		BaseName: R_V_ADoomDome_player
+		RemapIndex: 9,10,11,12,13,14,15
+	PaletteFromMobd@R_V_TADoomDome:
+		Name: R_V_TADoomDome
+		Filename: sprites|R_V_TADoomDome.mobd
+	OverlayPlayerColorPalette@R_V_TADoomDome_player:
+		BasePalette: R_V_TADoomDome
+		BaseName: R_V_TADoomDome_player
+		RemapIndex: 4,5,6,7,8,9
+
+
+series9_cauteriser:
+	Inherits@1: ^Series9Vehicle
+	Inherits@4: ^AutoTargetDefault
+	Inherits@5: ^CoreTurret
+	Tooltip:
+		Name: Cauteriser
+	Valued:
+		Cost: 1250
+	Health:
+		HP: 3000
+	Mobile:
+		Speed: 45
+		TurnSpeed: 41 #TODO
+	AdvancedBuildable:
+		BuildDuration: 875
+		Level: 4
+	RevealsShroud:
+		Range: 12c0
+	OffsetsArmament@0:
+		Name: primary
+		Weapon: series9_cauteriser
+		BurstOffsets: 0
+		FireDelay: 0
+	WithTurretAttackAnimation:
+		Sequence: shoot
+	Turreted:
+		TurnSpeed: 20 # todo copied from kknd1
+	AdvancedSelectionDecorations:
+		Offset: 0,-2 #TODO
+	Veterancy:
+	RenderSprites:
+		PlayerPalette: R_V_Cauteriser_player
+	WithOffsetsSpriteTurret:
+		Palette: R_V_TCauteriser_player
+		IsPlayerPalette: true
+^Palettes:
+	PaletteFromMobd@R_V_Cauteriser:
+		Name: R_V_Cauteriser
+		Filename: sprites|R_V_Cauteriser.mobd
+	OverlayPlayerColorPalette@R_V_Cauteriser_player:
+		BasePalette: R_V_Cauteriser
+		BaseName: R_V_Cauteriser_player
+		RemapIndex: 7,8,9,10,11,12,13,14,15
+	PaletteFromMobd@R_V_TCauteriser:
+		Name: R_V_TCauteriser
+		Filename: sprites|R_V_TCauteriser.mobd
+	OverlayPlayerColorPalette@R_V_TCauteriser_player:
+		BasePalette: R_V_TCauteriser
+		BaseName: R_V_TCauteriser_player
+		RemapIndex: 7,8,9,10,11,12,13
+
+
+series9_grimreaper:
+	Inherits@1: ^Series9Vehicle
+	Inherits@4: ^AutoTargetDefault
+	Inherits@5: ^CoreTurret
+	Tooltip:
+		Name: Grim Reaper
+	Valued:
+		Cost: 1250
+	Health:
+		HP: 3000
+	Mobile:
+		Speed: 45
+		TurnSpeed: 41 #TODO
+	AdvancedBuildable:
+		BuildDuration: 1000
+		Level: 5
+	RevealsShroud:
+		Range: 12c0
+	OffsetsArmament@0:
+		Name: primary
+		Weapon: series9_grimreaper
+		BurstOffsets: 0
+		FireDelay: 0
+	WithTurretAttackAnimation:
+		Sequence: shoot
+	Turreted:
+		TurnSpeed: 20 # todo copied from kknd1
+	AdvancedSelectionDecorations:
+		Offset: 0,-2 #TODO
+	Veterancy:
+	RenderSprites:
+		PlayerPalette: R_V_Reaper_player
+	WithOffsetsSpriteTurret:
+		Palette: R_V_TReaper_player
+		IsPlayerPalette: true
+^Palettes:
+	PaletteFromMobd@R_V_Reaper:
+		Name: R_V_Reaper
+		Filename: sprites|R_V_Reaper.mobd
+	OverlayPlayerColorPalette@R_V_Reaper_player:
+		BasePalette: R_V_Reaper
+		BaseName: R_V_Reaper_player
+		RemapIndex: 8,9,10,11,12,13,14,15
+	PaletteFromMobd@R_V_TReaper:
+		Name: R_V_TReaper
+		Filename: sprites|R_V_TReaper.mobd
+	OverlayPlayerColorPalette@R_V_TReaper_player:
+		BasePalette: R_V_TReaper
+		BaseName: R_V_TReaper_player
+		RemapIndex: 6,7,8,9,10,11
+
+series9_oiltankeroid:
+	Inherits: ^Series9Vehicle
+	Tooltip:
+		Name: Oil Tankeroid
+	TooltipDescription:
+		Description: Transports oil
+	Valued:
+		Cost: 1000
+	Health:
+		HP: 10000
+	Mobile:
+		Speed: 26
+		TurnSpeed: 8 # TODO
+	AdvancedBuildable:
+		BuildDuration: 2500
+		Level: 2
+	RevealsShroud:
+		Range: 12c0
+	Selectable:
+		Priority: 15
+	Tanker:
+		DockingActivity: TankerCycle
+	AdvancedSelectionDecorations:
+		Offset: 0,-1
+	AttackNotification:
+		Notifications: TankerUnderAttack
+	IgnoreRallyPoint:
+	RenderSprites:
+		PlayerPalette: R_V_Tanker_player
+^Palettes:
+	PaletteFromMobd@R_V_Tanker:
+		Name: R_V_Tanker
+		Filename: sprites|R_V_Tanker.mobd
+	OverlayPlayerColorPalette@R_V_Tanker_player:
+		BasePalette: R_V_Tanker
+		BaseName: R_V_Tanker_player
+		RemapIndex: 8,9,10,11,12,13,14
+
+series9_mobileoilbot:
+	Inherits@1: ^Series9Vehicle
+	Inherits@2: ^CoreHeavyVehicle
+	Tooltip:
+		Name: Mobile Oilbot
+	TooltipDescription:
+		Description: Deploys on oilpatch
+	Valued:
+		Cost: 1000
+	Health:
+		HP: 5000
+	Mobile:
+		Speed: 38
+		TurnSpeed: 8 # TODO
+	AdvancedBuildable:
+		BuildDuration: 1250
+		Level: 0
+	RevealsShroud:
+		Range: 12c0
+	Selectable:
+		Priority: 15
+	DeploysOnActor:
+		IntoActor: series9_oilbot
+		ValidTargets: oilpatch
+		DeployCursor: dock
+		Offset: -1,-2 # TODO requires facing north east
+	AdvancedSelectionDecorations:
+		Offset: 0,-12
+	AttackNotification:
+		Notifications: DrillRigUnderAttack
+	IgnoreRallyPoint:
+	RenderSprites:
+		PlayerPalette: R_V_MobileDrillrig_player
+^Palettes:
+	PaletteFromMobd@R_V_MobileDrillrig:
+		Name: R_V_MobileDrillrig
+		Filename: sprites|R_V_MobileDrillrig.mobd
+	OverlayPlayerColorPalette@R_V_MobileDrillrig_player:
+		BasePalette: R_V_MobileDrillrig
+		BaseName: R_V_MobileDrillrig_player
+		RemapIndex: 8,9,10,11,12,13,14
+
+series9_mobilebarn:
+	Inherits@1: ^Series9Vehicle
+	Inherits@2: ^CoreHeavyVehicle
+	Tooltip:
+		Name: Mobile Barn
+	TooltipDescription:
+		Description: Mobile base
+	Valued:
+		Cost: 5000
+	Health:
+		HP: 10000
+	Mobile:
+		Speed: 32
+		TurnSpeed: 5 # TODO
+	AdvancedBuildable:
+		BuildDuration: 6750
+		Level: 5
+	RevealsShroud:
+		Range: 15c0
+	Transforms:
+		TransformSounds: sounds_series9|164.wav
+		IntoActor: series9_barn
+		Offset: -1,-2  # TODO requires facing north east
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	Selectable:
+		Priority: 15
+	AdvancedSelectionDecorations:
+		Offset: 0,-14
+	IgnoreRallyPoint:
+	RenderSprites:
+		PlayerPalette: R_V_MobileOutpost_player
+^Palettes:
+	PaletteFromMobd@R_V_MobileOutpost:
+		Name: R_V_MobileOutpost
+		Filename: sprites|R_V_MobileOutpost.mobd
+	OverlayPlayerColorPalette@R_V_MobileOutpost_player:
+		BasePalette: R_V_MobileOutpost
+		BaseName: R_V_MobileOutpost_player
+		RemapIndex: 9,10,11,12,13,14,15

@@ -1,0 +1,202 @@
+^evolved_infantrydeath:
+	die-burn: sprites|M_I_Death.mobd
+		Length: 11
+		Tick: 70 # TODO
+
+evolved_berzerker:
+	Inherits@death: ^evolved_infantrydeath
+	die: sprites|M_I_Death.mobd
+		Start: 26
+		Length: 10
+		Tick: 70
+	idle: sprites|M_I_Gunner.mobd
+		Start: 16
+		Facings: -8
+	move: sprites|M_I_Gunner.mobd
+		Start: 80
+		Length: 6
+		Tick: 120
+		Facings: -8
+	aim: sprites|M_I_Gunner.mobd
+		Start: 16
+		Facings: -8
+	shoot: sprites|M_I_Gunner.mobd
+		Start: 32
+		Length: 3
+		Tick: 100
+		Facings: -8
+	bored: sprites|M_I_Gunner.mobd
+		Start: 128
+		Length: 9
+		Tick: 120
+
+evolved_rioter:
+	Inherits@death: ^evolved_infantrydeath
+	die: sprites|M_I_Death.mobd
+		Start: 19
+		Length: 7
+		Tick: 70
+	idle: sprites|M_I_Grenadier.mobd
+		Length: 3
+		Facings: -8
+	move: sprites|M_I_Grenadier.mobd
+		Start: 96
+		Length: 6
+		Tick: 100
+		Facings: -8
+	aim: sprites|M_I_Grenadier.mobd
+		Length: 3
+		Facings: -8
+	shoot: sprites|M_I_Grenadier.mobd
+		Start: 48
+		Length: 3
+		Tick: 120
+		Facings: -8
+	bored: sprites|M_I_Grenadier.mobd # TODO might be obsolete
+		Start: 144
+		Length: 3
+		Tick: 120
+
+evolved_pyromaniac:
+	Inherits@death: ^evolved_infantrydeath
+	die: sprites|M_I_Death.mobd
+		Start: 11
+		Length: 8
+		Tick: 70
+	idle: sprites|M_I_Flamer.mobd
+		Facings: -8
+	move: sprites|M_I_Flamer.mobd
+		Start: 80
+		Length: 6
+		Tick: 120
+		Facings: -8
+	aim: sprites|M_I_Flamer.mobd
+		Facings: -8
+	shoot: sprites|M_I_Flamer.mobd # TODO top right animation is missing
+		Start: 16
+		Length: 4
+		Tick: 100
+		Facings: -8
+	bored: sprites|M_I_Flamer.mobd # TODO might be obsolete
+		Start: 128
+		Length: 11
+		Tick: 120
+
+evolved_homingbazookoid:
+	Inherits@death: ^evolved_infantrydeath
+	die: sprites|M_I_Death.mobd
+		Start: 36
+		Length: 9
+		Tick: 70
+	idle: sprites|M_I_Rocketeer.mobd
+		Facings: -8
+	move: sprites|M_I_Rocketeer.mobd
+		Start: 64
+		Length: 6
+		Tick: 120
+		Facings: -8
+	aim: sprites|M_I_Rocketeer.mobd
+		Facings: -8
+	shoot: sprites|M_I_Rocketeer.mobd # TODO top right animation is missing
+		Start: 16
+		Length: 3
+		Tick: 100
+		Facings: -8
+	bored: sprites|M_I_Rocketeer.mobd # TODO might be obsolete
+		Start: 112
+		Length: 19
+		Tick: 120
+
+evolved_spiritarcher:
+	Inherits@death: ^evolved_infantrydeath
+	die: sprites|M_I_Death.mobd
+		Start: 45
+		Length: 9
+		Tick: 70
+	idle: sprites|M_I_Sniper.mobd
+		Start: 48
+		Facings: -8
+	move: sprites|M_I_Sniper.mobd
+		Start: 96
+		Length: 6
+		Tick: 120
+		Facings: -8
+	aim: sprites|M_I_Sniper.mobd
+		Facings: -8
+	shoot: sprites|M_I_Sniper.mobd # TODO top right animation is missing
+		Start: 64
+		Length: 2
+		Tick: 100
+		Facings: -8
+	bored: sprites|M_I_Sniper.mobd # TODO might be obsolete
+		Start: 144
+		Length: 24
+		Tick: 120
+
+evolved_scourgedemon:
+	Inherits@death: ^evolved_infantrydeath
+	die: sprites|M_I_Death.mobd
+		Start: 63
+		Length: 7
+		Tick: 70
+		Offset: -32,-63,0
+	idle: sprites|M_I_Demon.mobd
+		Facings: -8
+	move: sprites|M_I_Demon.mobd
+		Start: 64
+		Length: 6
+		Tick: 120
+		Facings: -8
+	aim: sprites|M_I_Demon.mobd
+		Facings: -8
+	shoot: sprites|M_I_Demon.mobd # TODO top right animation is missing
+		Start: 16
+		Length: 3
+		Tick: 100
+		Facings: -8
+	bored: sprites|M_I_Demon.mobd # TODO might be obsolete
+		Start: 112
+		Length: 13
+		Tick: 120
+
+evolved_mekanik:
+	Inherits@death: ^evolved_infantrydeath
+	die: sprites|M_I_Death.mobd
+		Start: 54
+		Length: 9
+		Tick: 120 # TODO
+	idle: sprites|M_I_Technician.mobd
+		Facings: -8
+	move: sprites|M_I_Technician.mobd
+		Start: 16
+		Length: 6
+		Tick: 120
+		Facings: -8
+	bored: sprites|M_I_Technician.mobd
+		Start: 64
+		Length: 15
+		Tick: 80
+
+evolved_martyr:
+	Inherits@death: ^evolved_infantrydeath
+	die: sprites|M_I_Kamikaze.mobd # TODO top right animation is missing
+		Start: 16
+		Length: 2
+		Tick: 120 # TODO
+		Facings: -8
+	idle: sprites|M_I_Kamikaze.mobd
+		Facings: -8
+	move: sprites|M_I_Kamikaze.mobd
+		Start: 48
+		Length: 6
+		Tick: 120
+		Facings: -8
+	shoot: sprites|M_I_Kamikaze.mobd # TODO top right animation is missing
+		Start: 16
+		Length: 2
+		Tick: 120 # TODO
+		Facings: -8
+	bored: sprites|M_I_Kamikaze.mobd
+		Start: 96
+		Length: 11
+		Tick: 80

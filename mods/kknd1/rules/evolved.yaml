@@ -1,0 +1,79 @@
+World:
+	Faction@Evolved:
+		Name: Evolved
+		InternalName: evolved
+	MPStartUnits@evolved0:
+		Class: none
+		ClassName: Mobile Base
+		BaseActor: evolved_clanhallwagon
+		Factions: evolved
+	MPStartUnits@evolved1:
+		Class: support
+		ClassName: With Derrick
+		BaseActor: evolved_clanhallwagon
+		SupportActors: evolved_derrick
+		InnerSupportRadius: 4
+		OuterSupportRadius: 6
+		Factions: evolved
+	MPStartUnits@evolved2:
+		Class: light
+		ClassName: Light support
+		BaseActor: evolved_clanhallwagon
+		SupportActors: evolved_derrick, evolved_berserker, evolved_berserker, evolved_berserker, evolved_berserker, evolved_berserker
+		InnerSupportRadius: 4
+		OuterSupportRadius: 6
+		Factions: evolved
+	MPStartUnits@evolved3:
+		Class: heavy
+		ClassName: Heavy support
+		BaseActor: evolved_clanhallwagon
+		SupportActors: evolved_derrick, evolved_direwolf, evolved_bikeandsidecar, evolved_monstertruck, evolved_giantscorpion
+		InnerSupportRadius: 4
+		OuterSupportRadius: 6
+		Factions: evolved
+	MPStartUnits@evolved4:
+		Class: eco
+		ClassName: Eco support
+		BaseActor: evolved_clanhallwagon
+		SupportActors: evolved_derrick, evolved_derrick, evolved_oiltanker, evolved_oiltanker
+		InnerSupportRadius: 4
+		OuterSupportRadius: 6
+		Factions: evolved
+
+^EvolvedBuilding:
+	Inherits: ^CoreBuilding
+	AdvancedBuildable:
+		Prerequisites: evolved_clanhall
+	ProvidesPrerequisite@Generic:
+		Prerequisite: evolved_building
+		RequiresCondition: !selfconstructing && !deconstructing
+
+^EvolvedWall:
+	Inherits: ^CoreWall
+	AdvancedBuildable:
+		Prerequisites: evolved_clanhall
+
+^EvolvedTower:
+	Inherits@1: ^CoreTower
+	Inherits@2: ^CoreTurret
+	AdvancedBuildable:
+		Prerequisites: evolved_clanhall
+
+^EvolvedInfantry:
+	Inherits: ^CoreInfantry
+	AdvancedBuildable:
+		Prerequisites: evolved_warriorhall
+	VeterancyVoiced:
+		VoiceSets: EvolvedVoice, EvolvedVeteranVoice, EvolvedVeteranVoice
+
+^EvolvedVehicle:
+	Inherits: ^CoreVehicle
+	AdvancedBuildable:
+		Prerequisites: evolved_beastforge
+	VeterancyVoiced:
+		VoiceSets: EvolvedVoice, EvolvedVeteranVoice, EvolvedVeteranVoice
+
+^EvolvedAircraft:
+	Inherits: ^CoreAircraft
+	Voiced:
+		VoiceSet: EvolvedVoice

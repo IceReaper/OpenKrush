@@ -1,0 +1,223 @@
+survivors_rifleman:
+	Range: 4c0
+	Burst: 1
+	BurstDelays: 0
+	ReloadDelay: 25
+	Report: sounds_survivors|4.wav
+	Projectile: InstantHit
+		Blockable: true
+	Warhead@Damage: SpreadDamage
+		Damage: 100
+		Spread: 32
+		Falloff: 100, 100
+		Versus:
+			infantry: 16
+			vehicle: 4
+			building: 7
+	Warhead@Effect: ShrapnelCreateEffect
+		Image: hit
+		ExplosionPalette: kknd
+		Explosions: bullet_a, bullet_b, bullet_c, bullet_d, bullet_e, bullet_f, bullet_g, bullet_h
+		ImpactSounds: sounds_survivors|11.wav, sounds_survivors|12.wav, sounds_survivors|13.wav
+		ImpactSoundChance: 10
+		Radius: 250,250
+
+survivors_swat:
+	Range: 4c512
+	ReloadDelay: 13
+	BurstDelays: 4
+	Burst: 4
+	Report: sounds_survivors|4.wav
+	Projectile: InstantHit
+		Blockable: true
+	Warhead@Damage: SpreadDamage
+		Damage: 100
+		Spread: 32
+		Falloff: 100, 100
+		Versus:
+			infantry: 7
+			vehicle: 2
+			building: 3
+	Warhead@Effect: ShrapnelCreateEffect
+		Image: hit
+		ExplosionPalette: kknd
+		Explosions: bullet_a, bullet_b, bullet_c, bullet_d, bullet_e, bullet_f, bullet_g, bullet_h
+		ImpactSounds: sounds_survivors|11.wav, sounds_survivors|12.wav, sounds_survivors|13.wav
+		ImpactSoundChance: 10
+		Radius: 250,250
+
+survivors_flamer:
+	Range: 3c0
+	ReloadDelay: 41
+	Report: sounds_survivors|86.wav
+	Burst: 10
+	BurstDelays: 1
+	Projectile: Bullet
+		Image: projectile
+		Palette: kknd
+		Sequences: fire
+		Speed: 100
+	Warhead@Damage: SpreadDamage
+		Damage: 100
+		DamageTypes: Fire
+		Spread: 512
+		Falloff: 100, 100
+		Versus:
+			infantry: 17
+			vehicle: 4
+			building: 20
+
+survivors_saboteur:
+	Range: 3c0
+	Burst: 1
+	BurstDelays: 0
+	ReloadDelay: 50
+	Report: sounds_survivors|16.wav
+	Projectile: InstantHit
+	Warhead@Damage: SpreadDamage
+		Damage: 100
+		Spread: 32
+		Falloff: 100, 100
+		Versus:
+			infantry: 30
+			vehicle: 23
+			building: 11
+	Warhead@Effect: ShrapnelCreateEffect
+		Image: hit
+		ExplosionPalette: kknd
+		Explosions: bullet_a, bullet_b, bullet_c, bullet_d, bullet_e, bullet_f, bullet_g, bullet_h
+		ImpactSounds: sounds_survivors|11.wav, sounds_survivors|12.wav, sounds_survivors|13.wav
+		ImpactSoundChance: 10
+		Radius: 250,250
+
+survivors_sapper:
+	Inherits: Smudge
+	Range: 3c512
+	Burst: 1
+	BurstDelays: 0
+	ReloadDelay: 50
+	Projectile: Bullet
+		Image: projectile
+		Palette: kknd
+		Sequences: grenade
+		Inaccuracy: 750
+		Speed: 150
+		LaunchAngle: 75
+		Blockable: false
+	Warhead@Damage: SpreadDamage
+		Damage: 100
+		DamageTypes: Explosion
+		Spread: 512
+		Falloff: 100, 100
+		AffectsParent: true
+		Versus:
+			infantry: 91
+			vehicle: 85
+			building: 108
+	Warhead@Effect: ShrapnelCreateEffect
+		Image: explosions
+		ExplosionPalette: kknd
+		Explosions: xs
+		ImpactSounds: sounds_survivors|10.wav
+
+survivors_rpglauncher:
+	Inherits: Smudge
+	Range: 6c0
+	Burst: 1
+	BurstDelays: 0
+	ReloadDelay: 63
+	Report: sounds_survivors|14.wav
+	Projectile: Bullet
+		Image: projectile
+		Palette: kknd
+		Sequences: rocket_m
+		Speed: 200
+		TrailPalette: kknd
+		TrailImage: hit
+		TrailSequences: smoke
+		Inaccuracy: 1500
+	Warhead@Damage: SpreadDamage
+		Damage: 100
+		DamageTypes: Explosion
+		Spread: 512
+		Falloff: 100, 100
+		AffectsParent: true
+		Versus:
+			infantry: 62
+			vehicle: 105
+			building: 68
+	Warhead@Effect: ShrapnelCreateEffect
+		Image: explosions
+		ExplosionPalette: kknd
+		Explosions: s
+		ImpactSounds: sounds_survivors|10.wav
+
+survivors_sniper:
+	Range: 7c0
+	Burst: 1
+	BurstDelays: 0
+	ReloadDelay: 38
+	Report: kknd1|bits/sounds/sniper.wav #sounds_survivors|4.wav
+	Projectile: InstantHit
+		Blockable: true
+	Warhead@Damage: SpreadDamage
+		Damage: 100
+		Spread: 32
+		Falloff: 100, 100
+		Versus:
+			infantry: 250
+			vehicle: 100
+			building: 35
+	Warhead@Effect: ShrapnelCreateEffect
+		Image: hit
+		ExplosionPalette: kknd
+		Explosions: bullet_a, bullet_b, bullet_c, bullet_d, bullet_e, bullet_f, bullet_g, bullet_h
+		ImpactSounds: sounds_survivors|11.wav, sounds_survivors|12.wav, sounds_survivors|13.wav
+		ImpactSoundChance: 10
+		Radius: 250,250
+
+survivors_elpresidente:
+	Range: 3c0
+	Burst: 1
+	BurstDelays: 0
+	ReloadDelay: 38
+	Report: sounds_survivors|16.wav
+	Projectile: InstantHit
+		Blockable: true
+	Warhead@Damage: SpreadDamage
+		Damage: 100
+		Spread: 32
+		Falloff: 100, 100
+		Versus:
+			infantry: 30
+			vehicle: 23
+			building: 11
+	Warhead@Effect: ShrapnelCreateEffect
+		Image: hit
+		ExplosionPalette: kknd
+		Explosions: bullet_a, bullet_b, bullet_c, bullet_d, bullet_e, bullet_f, bullet_g, bullet_h
+		ImpactSounds: sounds_survivors|11.wav, sounds_survivors|12.wav, sounds_survivors|13.wav
+		ImpactSoundChance: 10
+		Radius: 250,250
+
+survivors_scout:
+	Range: 3c0
+	ReloadDelay: 25
+	Report: sounds_survivors|4.wav
+	Projectile: InstantHit
+		Blockable: true
+	Warhead@Damage: SpreadDamage
+		Damage: 100
+		Spread: 32
+		Falloff: 100, 100
+		Versus:
+			infantry: 20
+			vehicle: 15
+			building: 8
+	Warhead@Effect: ShrapnelCreateEffect
+		Image: hit
+		ExplosionPalette: kknd
+		Explosions: bullet_a, bullet_b, bullet_c, bullet_d, bullet_e, bullet_f, bullet_g, bullet_h
+		ImpactSounds: sounds_survivors|11.wav, sounds_survivors|12.wav, sounds_survivors|13.wav
+		ImpactSoundChance: 10
+		Radius: 250,250

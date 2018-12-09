@@ -1,0 +1,53 @@
+evolved_warriorhall:
+	AdvancedBuildable:
+		Prerequisites: unbuildable
+
+evolved_clanhall:
+	AdvancedProduction:
+		Produces: infantry
+		RequiresCondition: !selfconstructing && !deconstructing
+	AdvancedProductionQueue:
+		Type: infantry
+		InfiniteBuildLimit: 10
+	FocusInUi:
+		Category: infantry
+		RequiresCondition: !selfconstructing && !deconstructing
+	Exit:
+		SpawnOffset: 0c-700,-0c220,0 # TODO restore from git!
+		ExitCell: -1,2 # TODO restore from git!
+		Facing: 64
+	RallyPoint:
+		Cursor: move
+		Image:
+		Offset: -1,2 # TODO restore from git!
+
+^EvolvedInfantry:
+	AdvancedBuildable:
+		Prerequisites: evolved_clanhall
+
+survivors_barracks:
+	AdvancedBuildable:
+		Prerequisites: unbuildable
+
+survivors_outpost:
+	AdvancedProduction:
+		Produces: infantry
+		RequiresCondition: !selfconstructing && !deconstructing
+	AdvancedProductionQueue:
+		Type: infantry
+		InfiniteBuildLimit: 10
+	FocusInUi:
+		Category: infantry
+		RequiresCondition: !selfconstructing && !deconstructing
+	Exit:
+		SpawnOffset: 0c-700,-0c220,0 # TODO restore from git!
+		ExitCell: -1,2 # TODO restore from git!
+		Facing: 64
+	RallyPoint:
+		Cursor: move
+		Image:
+		Offset: -1,2 # TODO restore from git!
+
+^SurvivorsInfantry:
+	AdvancedBuildable:
+		Prerequisites: survivors_outpost

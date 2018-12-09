@@ -1,0 +1,284 @@
+highland_trees_1:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: 50,0,0
+
+highland_trees_2:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: 50,0,0
+
+highland_trees_3:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: 0,200,0
+
+highland_trees_4:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: 75,-300,0
+
+highland_trees_5:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: 0,-100,0
+
+highland_trees_6:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: 0,-50,0
+
+highland_trees_7:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: -75,200,0
+
+highland_trees_8:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: 0,-0,0
+
+highland_trees_9:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: 0,-150,0
+
+highland_trees_10:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: 0,-200,0
+
+highland_trees_11:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: -50,-275,0
+
+highland_trees_12:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: -100,0,0
+
+highland_trees_13:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: 0,150,0
+
+highland_trees_14:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: 0,-75,0
+
+highland_trees_15:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: -75,-75,0
+
+highland_trees_16:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: 0,-400,0
+
+highland_trees_17:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: -50,0,0
+
+highland_trees_18:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: 0,100,0
+
+highland_trees_19:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+		LocalCenterOffset: 0,0,0
+
+highland_trees_20:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 3,3
+		Footprint: === xxx xxx
+
+highland_trees_21:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 3,3
+		Footprint: === xxx xxx
+
+highland_trees_22:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 3,3
+		Footprint: === xxx xxx
+
+highland_objects_1:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 3,3
+		Footprint: === xxx xxx
+
+highland_objects_2:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 3,3
+		Footprint: === xxx xxx
+
+highland_objects_3:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,3
+		Footprint: ==== xxxx xxxx
+
+highland_objects_4:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 2,2
+		Footprint: == xx
+
+highland_objects_5:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 2,2
+		Footprint: == xx
+
+highland_objects_6:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,2
+		Footprint: ==== xxxx
+
+highland_objects_7:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 3,2
+		Footprint: === xxx
+
+highland_objects_8:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 2,3
+		Footprint: == xx xx
+
+highland_objects_9:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,4
+		Footprint: ==== xxxx xxxx =xx=
+
+highland_objects_10:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 2,2
+		Footprint: == xx
+		LocalCenterOffset: 0,160,0
+
+highland_objects_11:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,1
+		Footprint: =
+
+highland_objects_12:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+
+highland_objects_13:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+
+highland_objects_14:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+
+highland_objects_15:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 3,3
+		Footprint: === xxx xxx
+
+highland_objects_16:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,3
+		Footprint: ==== xxxx x===
+
+highland_objects_17:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 2,3
+		Footprint: xxx xxx
+
+highland_objects_18:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 3,3
+		Footprint: === xxx xxx
+
+highland_objects_19:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 3,3
+		Footprint: === xxx xxx
+
+highland_objects_20:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,4
+		Footprint: _ = x x
+		LocalCenterOffset: 0,200,0
+
+highland_objects_21:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 2,3
+		Footprint: == xx xx
+
+highland_objects_22:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 4,4
+		Footprint: xx== xxx= xxx= ==xx

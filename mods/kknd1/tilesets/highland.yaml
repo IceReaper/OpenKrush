@@ -1,0 +1,10176 @@
+General:
+	Name: Highland
+	Id: highland
+	Palette: kknd
+	EditorTemplateOrder: Terrain, Decoration, Decoration Dirt, Dirt Cliff, Dirt Cliff Extra, Dirt Cliff Ramp, Grass Cliff, Grass Cliff Extra, Grass Cliff Ramp, Narrow Path, Narrow Path Extra, River, River Crossing, River Extra, Street, Transition, Wide Path, Wide Path Extra
+	SheetSize: 2048
+
+Terrain:
+	TerrainType@Clear:
+		Type: Clear
+	TerrainType@Dirt:
+		Type: Dirt
+		TargetTypes: Ground
+		Color: 5E4E3B
+		AcceptsSmudgeType: Crater
+	TerrainType@Water:
+		Type: Water
+		TargetTypes: Ground
+		Color: 58707D
+	TerrainType@Street:
+		Type: Street
+		TargetTypes: Ground
+		Color: 515151
+		AcceptsSmudgeType: Crater
+	TerrainType@Grass:
+		Type: Grass
+		TargetTypes: Ground
+		Color: 434B0A
+		AcceptsSmudgeType: Crater
+	TerrainType@Path:
+		Type: Path
+		TargetTypes: Ground
+		Color: 935320
+		AcceptsSmudgeType: Crater
+	TerrainType@Cliff:
+		Type: Cliff
+		TargetTypes: Ground
+		Color: 342D1C
+
+Templates:
+	Template@147:
+		Id: 147
+		Images: bits/Highland/Terrain_Grass.png
+		Size: 1,1
+		PickAny: true
+		Categories: Terrain
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Grass
+			5: Grass
+			6: Grass
+			7: Grass
+			8: Grass
+			9: Grass
+			10: Grass
+			11: Grass
+			12: Grass
+			13: Grass
+			14: Grass
+			15: Grass
+			16: Grass
+			17: Grass
+			18: Grass
+			19: Grass
+			20: Grass
+			21: Grass
+			22: Grass
+			23: Grass
+			24: Grass
+			25: Grass
+			26: Grass
+			27: Grass
+			28: Grass
+			29: Grass
+			30: Grass
+			31: Grass
+			32: Grass
+			33: Grass
+			34: Grass
+			35: Grass
+
+	Template@148:
+		Id: 148
+		Images: bits/Highland/Terrain_Dirt.png
+		Size: 1,1
+		PickAny: true
+		Categories: Terrain
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Dirt
+			9: Dirt
+			10: Dirt
+			11: Dirt
+			12: Dirt
+			13: Dirt
+			14: Dirt
+			15: Dirt
+			16: Dirt
+			17: Dirt
+			18: Dirt
+			19: Dirt
+			20: Dirt
+			21: Dirt
+			22: Dirt
+			23: Dirt
+			24: Dirt
+			25: Dirt
+			26: Dirt
+			27: Dirt
+			28: Dirt
+			29: Dirt
+			30: Dirt
+			31: Dirt
+			32: Dirt
+			33: Dirt
+			34: Dirt
+			35: Dirt
+
+	Template@835:
+		Id: 835
+		Images: bits/Highland/Terrain_Dirt1.png
+		Size: 3,3
+		Categories: Terrain
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Dirt
+
+	Template@837:
+		Id: 837
+		Images: bits/Highland/Terrain_Dirt2.png
+		Size: 4,4
+		Categories: Terrain
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Dirt
+			9: Dirt
+			10: Dirt
+			11: Dirt
+			12: Dirt
+			13: Dirt
+			14: Dirt
+			15: Dirt
+
+	Template@838:
+		Id: 838
+		Images: bits/Highland/Terrain_Dirt3.png
+		Size: 4,4
+		Categories: Terrain
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Dirt
+			9: Dirt
+			10: Dirt
+			11: Dirt
+			12: Dirt
+			13: Dirt
+			14: Dirt
+			15: Dirt
+
+	Template@839:
+		Id: 839
+		Images: bits/Highland/Terrain_Dirt4.png
+		Size: 2,2
+		Categories: Terrain
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+
+	Template@840:
+		Id: 840
+		Images: bits/Highland/Terrain_Dirt5.png
+		Size: 2,2
+		Categories: Terrain
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+
+	Template@841:
+		Id: 841
+		Images: bits/Highland/Terrain_Dirt6.png
+		Size: 2,2
+		Categories: Terrain
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+
+	Template@842:
+		Id: 842
+		Images: bits/Highland/Terrain_Dirt7.png
+		Size: 2,2
+		Categories: Terrain
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+
+	Template@843:
+		Id: 843
+		Images: bits/Highland/Terrain_Dirt8.png
+		Size: 3,2
+		Categories: Terrain
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+
+	Template@845:
+		Id: 845
+		Images: bits/Highland/Terrain_Dirt9.png
+		Size: 3,2
+		Categories: Terrain
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+
+	Template@849:
+		Id: 849
+		Images: bits/Highland/Terrain_Dirt10.png
+		Size: 2,1
+		Categories: Terrain
+		Tiles:
+			0: Dirt
+			1: Dirt
+
+	Template@852:
+		Id: 852
+		Images: bits/Highland/Terrain_Dirt12.png
+		Size: 2,1
+		Categories: Terrain
+		Tiles:
+			0: Dirt
+			1: Dirt
+
+	Template@855:
+		Id: 855
+		Images: bits/Highland/Terrain_Dirt11.png
+		Size: 2,1
+		Categories: Terrain
+		Tiles:
+			0: Dirt
+			1: Dirt
+
+	Template@856:
+		Id: 856
+		Images: bits/Highland/Terrain_Dirt13.png
+		Size: 2,1
+		Categories: Terrain
+		Tiles:
+			0: Dirt
+			1: Dirt
+
+	Template@857:
+		Id: 857
+		Images: bits/Highland/Terrain_Grass1.png
+		Size: 3,3
+		Categories: Terrain
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Grass
+			5: Grass
+			6: Grass
+			7: Grass
+			8: Grass
+
+	Template@858:
+		Id: 858
+		Images: bits/Highland/Terrain_Grass2.png
+		Size: 3,3
+		Categories: Terrain
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Grass
+			5: Grass
+			6: Grass
+			7: Grass
+			8: Grass
+
+	Template@859:
+		Id: 859
+		Images: bits/Highland/Terrain_Grass3.png
+		Size: 4,3
+		Categories: Terrain
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Grass
+			5: Grass
+			6: Grass
+			7: Grass
+			8: Grass
+			9: Grass
+			10: Grass
+			11: Grass
+
+	Template@861:
+		Id: 861
+		Images: bits/Highland/Terrain_Grass4.png
+		Size: 1,2
+		Categories: Terrain
+		Tiles:
+			0: Grass
+			1: Grass
+
+	Template@862:
+		Id: 862
+		Images: bits/Highland/Terrain_Grass5.png
+		Size: 2,2
+		Categories: Terrain
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+
+	Template@863:
+		Id: 863
+		Images: bits/Highland/Terrain_Grass6.png
+		Size: 2,2
+		Categories: Terrain
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+
+	Template@864:
+		Id: 864
+		Images: bits/Highland/Decoration_Mountain1.png
+		Size: 12,13
+		Categories: Decoration
+		Tiles:
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Grass
+			12: Grass
+			13: Cliff
+			14: Cliff
+			15: Cliff
+			16: Cliff
+			17: Cliff
+			18: Cliff
+			19: Cliff
+			20: Cliff
+			21: Cliff
+			22: Grass
+			23: Cliff
+			24: Cliff
+			25: Cliff
+			26: Cliff
+			27: Cliff
+			28: Cliff
+			29: Cliff
+			30: Cliff
+			31: Cliff
+			32: Cliff
+			33: Cliff
+			34: Cliff
+			35: Grass
+			36: Cliff
+			37: Cliff
+			38: Cliff
+			39: Cliff
+			40: Cliff
+			41: Cliff
+			42: Cliff
+			43: Cliff
+			44: Cliff
+			45: Cliff
+			46: Cliff
+			47: Cliff
+			48: Cliff
+			49: Cliff
+			50: Cliff
+			51: Cliff
+			52: Cliff
+			53: Cliff
+			54: Cliff
+			55: Cliff
+			56: Cliff
+			57: Cliff
+			58: Cliff
+			59: Cliff
+			60: Cliff
+			61: Cliff
+			62: Cliff
+			63: Cliff
+			64: Cliff
+			65: Cliff
+			66: Cliff
+			67: Cliff
+			68: Cliff
+			69: Cliff
+			70: Cliff
+			71: Cliff
+			72: Cliff
+			73: Cliff
+			74: Cliff
+			75: Cliff
+			76: Cliff
+			77: Cliff
+			78: Cliff
+			79: Cliff
+			80: Cliff
+			81: Cliff
+			82: Cliff
+			83: Cliff
+			84: Cliff
+			85: Cliff
+			86: Cliff
+			87: Cliff
+			88: Cliff
+			89: Cliff
+			90: Cliff
+			91: Cliff
+			92: Cliff
+			93: Cliff
+			94: Cliff
+			95: Cliff
+			96: Grass
+			97: Cliff
+			98: Cliff
+			99: Cliff
+			100: Cliff
+			101: Cliff
+			102: Cliff
+			103: Cliff
+			104: Cliff
+			105: Cliff
+			106: Grass
+			108: Cliff
+			109: Cliff
+			110: Cliff
+			111: Cliff
+			112: Cliff
+			113: Cliff
+			114: Cliff
+			115: Cliff
+			116: Cliff
+			120: Cliff
+			121: Cliff
+			122: Cliff
+			123: Cliff
+			124: Cliff
+			125: Cliff
+			126: Cliff
+			127: Cliff
+			128: Cliff
+			132: Cliff
+			133: Cliff
+			134: Grass
+			135: Grass
+			136: Cliff
+			137: Cliff
+			138: Cliff
+			139: Cliff
+			140: Grass
+			144: Grass
+			145: Grass
+			150: Grass
+			151: Grass
+
+	Template@867:
+		Id: 867
+		Images: bits/Highland/Decoration_Mountain2.png
+		Size: 12,12
+		Categories: Decoration
+		Tiles:
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Grass
+			12: Grass
+			13: Cliff
+			14: Cliff
+			15: Cliff
+			16: Cliff
+			17: Cliff
+			18: Cliff
+			19: Cliff
+			20: Cliff
+			21: Cliff
+			24: Cliff
+			25: Cliff
+			26: Cliff
+			27: Cliff
+			28: Cliff
+			29: Cliff
+			30: Cliff
+			31: Cliff
+			32: Cliff
+			33: Cliff
+			34: Cliff
+			35: Grass
+			36: Cliff
+			37: Cliff
+			38: Cliff
+			39: Cliff
+			40: Cliff
+			41: Cliff
+			42: Cliff
+			43: Cliff
+			44: Cliff
+			45: Cliff
+			46: Cliff
+			47: Cliff
+			48: Cliff
+			49: Cliff
+			50: Cliff
+			51: Cliff
+			52: Cliff
+			53: Cliff
+			54: Cliff
+			55: Cliff
+			56: Cliff
+			57: Cliff
+			58: Cliff
+			59: Cliff
+			60: Cliff
+			61: Cliff
+			62: Cliff
+			63: Cliff
+			64: Cliff
+			65: Cliff
+			66: Cliff
+			67: Cliff
+			68: Cliff
+			69: Cliff
+			70: Cliff
+			71: Cliff
+			72: Cliff
+			73: Cliff
+			74: Cliff
+			75: Cliff
+			76: Cliff
+			77: Cliff
+			78: Cliff
+			79: Cliff
+			80: Cliff
+			81: Cliff
+			82: Cliff
+			83: Cliff
+			84: Cliff
+			85: Cliff
+			86: Cliff
+			87: Cliff
+			88: Cliff
+			89: Cliff
+			90: Cliff
+			91: Cliff
+			92: Cliff
+			93: Cliff
+			94: Cliff
+			95: Cliff
+			96: Grass
+			97: Cliff
+			98: Cliff
+			99: Cliff
+			100: Cliff
+			101: Cliff
+			102: Cliff
+			103: Cliff
+			104: Cliff
+			105: Grass
+			108: Cliff
+			109: Cliff
+			110: Cliff
+			111: Cliff
+			112: Cliff
+			113: Cliff
+			114: Cliff
+			115: Grass
+			120: Cliff
+			121: Cliff
+			122: Cliff
+			123: Cliff
+			124: Grass
+			125: Grass
+			132: Cliff
+			133: Cliff
+
+	Template@868:
+		Id: 868
+		Images: bits/Highland/Decoration_Mountain3.png
+		Size: 12,11
+		Categories: Decoration
+		Tiles:
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Grass
+			12: Grass
+			13: Cliff
+			14: Cliff
+			15: Cliff
+			16: Cliff
+			17: Cliff
+			18: Cliff
+			19: Cliff
+			20: Cliff
+			21: Cliff
+			22: Grass
+			24: Cliff
+			25: Cliff
+			26: Cliff
+			27: Cliff
+			28: Cliff
+			29: Cliff
+			30: Cliff
+			31: Cliff
+			32: Cliff
+			33: Cliff
+			34: Cliff
+			35: Grass
+			36: Cliff
+			37: Cliff
+			38: Cliff
+			39: Cliff
+			40: Cliff
+			41: Cliff
+			42: Cliff
+			43: Cliff
+			44: Cliff
+			45: Cliff
+			46: Cliff
+			47: Cliff
+			48: Grass
+			49: Cliff
+			50: Cliff
+			51: Cliff
+			52: Cliff
+			53: Cliff
+			54: Cliff
+			55: Cliff
+			56: Cliff
+			57: Cliff
+			58: Cliff
+			59: Cliff
+			61: Cliff
+			62: Cliff
+			63: Cliff
+			64: Cliff
+			65: Cliff
+			66: Cliff
+			67: Cliff
+			68: Cliff
+			69: Cliff
+			70: Cliff
+			71: Cliff
+			74: Cliff
+			75: Cliff
+			76: Cliff
+			77: Cliff
+			78: Cliff
+			79: Cliff
+			80: Cliff
+			81: Cliff
+			82: Cliff
+			83: Cliff
+			85: Grass
+			86: Cliff
+			87: Cliff
+			88: Cliff
+			89: Cliff
+			90: Cliff
+			91: Cliff
+			92: Cliff
+			93: Cliff
+			94: Cliff
+			95: Cliff
+			96: Grass
+			97: Cliff
+			98: Cliff
+			99: Cliff
+			100: Cliff
+			101: Cliff
+			102: Cliff
+			103: Cliff
+			104: Cliff
+			105: Grass
+			108: Cliff
+			109: Cliff
+			110: Cliff
+			111: Cliff
+			112: Cliff
+			113: Cliff
+			114: Cliff
+			121: Cliff
+			122: Cliff
+			123: Cliff
+			124: Grass
+			125: Grass
+
+	Template@869:
+		Id: 869
+		Images: bits/Highland/Decoration_Mountain4.png
+		Size: 12,11
+		Categories: Decoration
+		Tiles:
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Grass
+			12: Grass
+			13: Cliff
+			14: Cliff
+			15: Cliff
+			16: Cliff
+			17: Cliff
+			18: Cliff
+			19: Cliff
+			20: Cliff
+			21: Cliff
+			24: Cliff
+			25: Cliff
+			26: Cliff
+			27: Cliff
+			28: Cliff
+			29: Cliff
+			30: Cliff
+			31: Cliff
+			32: Cliff
+			33: Cliff
+			34: Cliff
+			35: Grass
+			36: Cliff
+			37: Cliff
+			38: Cliff
+			39: Cliff
+			40: Cliff
+			41: Cliff
+			42: Cliff
+			43: Cliff
+			44: Cliff
+			45: Cliff
+			46: Cliff
+			47: Cliff
+			48: Grass
+			49: Cliff
+			50: Cliff
+			51: Cliff
+			52: Cliff
+			53: Cliff
+			54: Cliff
+			55: Cliff
+			56: Cliff
+			57: Cliff
+			58: Cliff
+			59: Cliff
+			61: Cliff
+			62: Cliff
+			63: Cliff
+			64: Cliff
+			65: Cliff
+			66: Cliff
+			67: Cliff
+			68: Cliff
+			69: Cliff
+			70: Cliff
+			71: Cliff
+			74: Cliff
+			75: Cliff
+			76: Cliff
+			77: Cliff
+			78: Cliff
+			79: Cliff
+			80: Cliff
+			81: Cliff
+			82: Cliff
+			83: Cliff
+			85: Cliff
+			86: Cliff
+			87: Cliff
+			88: Cliff
+			89: Cliff
+			90: Cliff
+			91: Cliff
+			92: Cliff
+			93: Cliff
+			94: Cliff
+			95: Cliff
+			96: Grass
+			97: Cliff
+			98: Cliff
+			99: Cliff
+			100: Cliff
+			101: Cliff
+			102: Cliff
+			103: Cliff
+			104: Cliff
+			105: Grass
+			108: Cliff
+			109: Cliff
+			110: Cliff
+			111: Cliff
+			112: Cliff
+			113: Cliff
+			114: Cliff
+			121: Cliff
+			122: Cliff
+			123: Cliff
+			124: Grass
+
+	Template@870:
+		Id: 870
+		Images: bits/Highland/Decoration_Crater1.png
+		Size: 8,8
+		Categories: Decoration
+		Tiles:
+			3: Grass
+			4: Grass
+			5: Grass
+			6: Grass
+			10: Grass
+			11: Cliff
+			12: Cliff
+			13: Cliff
+			14: Cliff
+			15: Grass
+			18: Grass
+			19: Cliff
+			20: Cliff
+			21: Cliff
+			22: Cliff
+			23: Grass
+			25: Grass
+			26: Cliff
+			27: Cliff
+			28: Cliff
+			29: Cliff
+			30: Cliff
+			33: Cliff
+			34: Cliff
+			35: Cliff
+			36: Cliff
+			37: Cliff
+			38: Grass
+			41: Cliff
+			42: Cliff
+			43: Cliff
+			44: Cliff
+			45: Grass
+			46: Grass
+			48: Grass
+			49: Cliff
+			50: Cliff
+			51: Cliff
+			56: Grass
+			57: Cliff
+			58: Cliff
+
+	Template@871:
+		Id: 871
+		Images: bits/Highland/Decoration_Crater2.png
+		Size: 12,15
+		Categories: Decoration
+		Tiles:
+			6: Grass
+			7: Grass
+			8: Grass
+			9: Grass
+			17: Grass
+			18: Grass
+			19: Cliff
+			20: Cliff
+			21: Cliff
+			22: Grass
+			29: Grass
+			30: Cliff
+			31: Cliff
+			32: Cliff
+			33: Cliff
+			34: Cliff
+			35: Grass
+			40: Grass
+			41: Cliff
+			42: Cliff
+			43: Cliff
+			44: Cliff
+			45: Cliff
+			46: Cliff
+			47: Grass
+			52: Grass
+			53: Cliff
+			54: Cliff
+			55: Cliff
+			56: Cliff
+			57: Cliff
+			58: Cliff
+			59: Grass
+			64: Grass
+			65: Cliff
+			66: Cliff
+			67: Cliff
+			68: Cliff
+			69: Cliff
+			70: Grass
+			75: Grass
+			76: Cliff
+			77: Cliff
+			78: Cliff
+			79: Cliff
+			80: Cliff
+			81: Grass
+			87: Cliff
+			88: Cliff
+			89: Cliff
+			90: Cliff
+			91: Cliff
+			92: Grass
+			93: Grass
+			98: Grass
+			99: Cliff
+			100: Cliff
+			101: Cliff
+			102: Cliff
+			103: Grass
+			104: Grass
+			110: Cliff
+			111: Cliff
+			112: Cliff
+			113: Cliff
+			114: Grass
+			115: Grass
+			121: Grass
+			122: Cliff
+			123: Cliff
+			124: Cliff
+			125: Cliff
+			126: Grass
+			133: Cliff
+			134: Cliff
+			135: Cliff
+			136: Cliff
+			137: Grass
+			145: Cliff
+			146: Cliff
+			147: Cliff
+			148: Grass
+			157: Cliff
+			158: Cliff
+			159: Grass
+			168: Grass
+			169: Cliff
+			170: Grass
+
+	Template@873:
+		Id: 873
+		Images: bits/Highland/Decoration_Rock9.png
+		Size: 2,3
+		Categories: Decoration
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Grass
+			5: Cliff
+
+	Template@874:
+		Id: 874
+		Images: bits/Highland/Decoration_Rock10.png
+		Size: 3,2
+		Categories: Decoration
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+
+	Template@875:
+		Id: 875
+		Images: bits/Highland/Decoration_Crack2.png
+		Size: 5,6
+		Categories: Decoration
+		Tiles:
+			1: Grass
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			6: Grass
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Grass
+			11: Cliff
+			12: Cliff
+			13: Grass
+			14: Grass
+			15: Grass
+			16: Cliff
+			17: Cliff
+			18: Grass
+			20: Grass
+			21: Cliff
+			22: Grass
+			23: Grass
+			25: Grass
+			26: Grass
+			27: Grass
+
+	Template@877:
+		Id: 877
+		Images: bits/Highland/Decoration_Fence23.png
+		Size: 3,2
+		Categories: Decoration
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Grass
+
+	Template@878:
+		Id: 878
+		Images: bits/Highland/Decoration_Fence5.png
+		Size: 3,4
+		Categories: Decoration
+		Tiles:
+			2: Cliff
+			4: Cliff
+			5: Cliff
+			6: Grass
+			7: Cliff
+			8: Grass
+			9: Grass
+
+	Template@879:
+		Id: 879
+		Images: bits/Highland/Decoration_Fence6.png
+		Size: 3,4
+		Categories: Decoration
+		Tiles:
+			0: Cliff
+			3: Cliff
+			4: Cliff
+			6: Grass
+			7: Cliff
+			8: Grass
+			11: Grass
+
+	Template@880:
+		Id: 880
+		Images: bits/Highland/Decoration_Fence1.png
+		Size: 5,2
+		Categories: Decoration
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+
+	Template@881:
+		Id: 881
+		Images: bits/Highland/Decoration_Fence2.png
+		Size: 5,2
+		Categories: Decoration
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+
+	Template@883:
+		Id: 883
+		Images: bits/Highland/Decoration_Fence4.png
+		Size: 5,2
+		Categories: Decoration
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+
+	Template@884:
+		Id: 884
+		Images: bits/Highland/Decoration_Fence3.png
+		Size: 5,2
+		Categories: Decoration
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+
+	Template@885:
+		Id: 885
+		Images: bits/Highland/Decoration_Crack1.png
+		Size: 5,10
+		Categories: Decoration
+		Tiles:
+			3: Grass
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			11: Grass
+			12: Cliff
+			13: Cliff
+			14: Cliff
+			15: Grass
+			16: Cliff
+			17: Cliff
+			18: Grass
+			20: Grass
+			21: Cliff
+			22: Cliff
+			23: Grass
+			25: Grass
+			26: Cliff
+			27: Cliff
+			28: Grass
+			31: Grass
+			32: Cliff
+			33: Cliff
+			34: Grass
+			36: Grass
+			37: Cliff
+			38: Cliff
+			39: Grass
+			40: Grass
+			41: Cliff
+			42: Cliff
+			43: Cliff
+			44: Grass
+			46: Grass
+			47: Cliff
+			48: Cliff
+			49: Grass
+
+	Template@886:
+		Id: 886
+		Images: bits/Highland/Decoration_Fence12.png
+		Size: 3,3
+		Categories: Decoration
+		Tiles:
+			0: Cliff
+			1: Cliff
+			3: Grass
+			4: Cliff
+			5: Cliff
+			8: Cliff
+
+	Template@887:
+		Id: 887
+		Images: bits/Highland/Decoration_Fence13.png
+		Size: 3,3
+		Categories: Decoration
+		Tiles:
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Grass
+			6: Cliff
+
+	Template@888:
+		Id: 888
+		Images: bits/Highland/Decoration_Fence14.png
+		Size: 1,2
+		Categories: Decoration
+		Tiles:
+			0: Cliff
+			1: Cliff
+
+	Template@889:
+		Id: 889
+		Images: bits/Highland/Decoration_Fence15.png
+		Size: 1,2
+		Categories: Decoration
+		Tiles:
+			0: Cliff
+			1: Cliff
+
+	Template@891:
+		Id: 891
+		Images: bits/Highland/Decoration_Fence16.png
+		Size: 1,2
+		Categories: Decoration
+		Tiles:
+			0: Cliff
+			1: Cliff
+
+	Template@892:
+		Id: 892
+		Images: bits/Highland/Decoration_Fence17.png
+		Size: 1,2
+		Categories: Decoration
+		Tiles:
+			0: Cliff
+			1: Cliff
+
+	Template@893:
+		Id: 893
+		Images: bits/Highland/Decoration_Fence18.png
+		Size: 3,3
+		Categories: Decoration
+		Tiles:
+			1: Grass
+			2: Cliff
+			3: Grass
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Grass
+
+	Template@894:
+		Id: 894
+		Images: bits/Highland/Decoration_Fence7.png
+		Size: 1,2
+		Categories: Decoration
+		Tiles:
+			0: Cliff
+			1: Cliff
+
+	Template@895:
+		Id: 895
+		Images: bits/Highland/Decoration_Fence8.png
+		Size: 1,2
+		Categories: Decoration
+		Tiles:
+			0: Cliff
+			1: Cliff
+
+	Template@896:
+		Id: 896
+		Images: bits/Highland/Decoration_Fence9.png
+		Size: 1,2
+		Categories: Decoration
+		Tiles:
+			0: Cliff
+			1: Cliff
+
+	Template@898:
+		Id: 898
+		Images: bits/Highland/Decoration_Rock7.png
+		Size: 2,3
+		Categories: Decoration
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Grass
+
+	Template@899:
+		Id: 899
+		Images: bits/Highland/Decoration_Fence19.png
+		Size: 3,3
+		Categories: Decoration
+		Tiles:
+			0: Cliff
+			1: Grass
+			3: Cliff
+			4: Cliff
+			5: Grass
+			6: Grass
+			7: Cliff
+			8: Cliff
+
+	Template@900:
+		Id: 900
+		Images: bits/Highland/Decoration_Fence20.png
+		Size: 6,3
+		Categories: Decoration
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Grass
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Cliff
+			13: Cliff
+			14: Cliff
+			15: Cliff
+			16: Cliff
+			17: Grass
+
+	Template@901:
+		Id: 901
+		Images: bits/Highland/Decoration_Fence21.png
+		Size: 3,3
+		Categories: Decoration
+		Tiles:
+			2: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Grass
+
+	Template@902:
+		Id: 902
+		Images: bits/Highland/Decoration_Fence22.png
+		Size: 3,3
+		Categories: Decoration
+		Tiles:
+			0: Cliff
+			3: Cliff
+			4: Cliff
+			6: Grass
+			7: Cliff
+			8: Cliff
+
+	Template@903:
+		Id: 903
+		Images: bits/Highland/Decoration_Fence23.png
+		Size: 3,2
+		Categories: Decoration
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Grass
+			4: Grass
+			5: Cliff
+
+	Template@904:
+		Id: 904
+		Images: bits/Highland/Decoration_Fence24.png
+		Size: 3,2
+		Categories: Decoration
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Grass
+			5: Grass
+
+	Template@905:
+		Id: 905
+		Images: bits/Highland/Decoration_Rock8.png
+		Size: 3,2
+		Categories: Decoration
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+
+	Template@906:
+		Id: 906
+		Images: bits/Highland/Decoration_SmallTree1.png
+		Size: 1,1
+		Categories: Decoration
+		Tiles:
+			0: Cliff
+
+	Template@907:
+		Id: 907
+		Images: bits/Highland/Decoration_SmallTree2.png
+		Size: 1,1
+		Categories: Decoration
+		Tiles:
+			0: Cliff
+
+	Template@908:
+		Id: 908
+		Images: bits/Highland/Decoration_SmallTree3.png
+		Size: 1,2
+		Categories: Decoration
+		Tiles:
+			0: Cliff
+			1: Cliff
+
+	Template@909:
+		Id: 909
+		Images: bits/Highland/Decoration_Rock1.png
+		Size: 2,3
+		Categories: Decoration
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+
+	Template@910:
+		Id: 910
+		Images: bits/Highland/Decoration_Rock2.png
+		Size: 2,3
+		Categories: Decoration
+		Tiles:
+			0: Cliff
+			1: Grass
+			2: Cliff
+			3: Grass
+			4: Cliff
+
+	Template@912:
+		Id: 912
+		Images: bits/Highland/Decoration_Rock3.png
+		Size: 1,2
+		Categories: Decoration
+		Tiles:
+			0: Cliff
+			1: Cliff
+
+	Template@913:
+		Id: 913
+		Images: bits/Highland/Decoration_Rock4.png
+		Size: 2,1
+		Categories: Decoration
+		Tiles:
+			0: Grass
+			1: Grass
+
+	Template@914:
+		Id: 914
+		Images: bits/Highland/Decoration_Rock5.png
+		Size: 1,1
+		Categories: Decoration
+		Tiles:
+			0: Grass
+
+	Template@915:
+		Id: 915
+		Images: bits/Highland/Decoration_Crater3.png
+		Size: 3,2
+		Categories: Decoration
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+
+	Template@916:
+		Id: 916
+		Images: bits/Highland/Decoration_Crack5.png
+		Size: 5,6
+		Categories: Decoration
+		Tiles:
+			1: Cliff
+			2: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Grass
+			11: Cliff
+			12: Cliff
+			13: Cliff
+			14: Cliff
+			16: Cliff
+			17: Cliff
+			18: Grass
+			19: Cliff
+			21: Cliff
+			22: Cliff
+			23: Grass
+			26: Cliff
+			27: Cliff
+			28: Grass
+
+	Template@917:
+		Id: 917
+		Images: bits/Highland/Decoration_Crack4.png
+		Size: 11,5
+		Categories: Decoration
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Cliff
+			3: Grass
+			6: Grass
+			7: Cliff
+			8: Cliff
+			9: Grass
+			11: Cliff
+			12: Cliff
+			13: Cliff
+			14: Cliff
+			15: Cliff
+			16: Cliff
+			17: Cliff
+			18: Cliff
+			19: Cliff
+			20: Cliff
+			21: Grass
+			22: Cliff
+			23: Cliff
+			24: Cliff
+			25: Cliff
+			26: Cliff
+			27: Cliff
+			28: Cliff
+			29: Cliff
+			30: Cliff
+			31: Cliff
+			32: Grass
+			33: Cliff
+			34: Cliff
+			35: Cliff
+			36: Cliff
+			37: Cliff
+			38: Cliff
+			39: Cliff
+			40: Cliff
+			41: Cliff
+			42: Grass
+			44: Cliff
+			45: Cliff
+			46: Cliff
+			47: Grass
+			48: Cliff
+			49: Cliff
+			50: Cliff
+			51: Grass
+
+	Template@918:
+		Id: 918
+		Images: bits/Highland/Decoration_Crack3.png
+		Size: 5,6
+		Categories: Decoration
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Grass
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Grass
+			10: Grass
+			11: Grass
+			12: Cliff
+			13: Cliff
+			14: Grass
+			16: Grass
+			17: Cliff
+			18: Cliff
+			19: Grass
+			21: Grass
+			22: Cliff
+			23: Cliff
+			24: Grass
+			27: Grass
+			28: Grass
+			29: Grass
+
+	Template@919:
+		Id: 919
+		Images: bits/Highland/Decoration_Dam.png
+		Size: 8,9
+		Categories: Decoration
+		Tiles:
+			1: Cliff
+			2: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Cliff
+			13: Cliff
+			14: Cliff
+			15: Cliff
+			16: Cliff
+			17: Cliff
+			18: Cliff
+			19: Cliff
+			20: Cliff
+			21: Cliff
+			22: Cliff
+			23: Dirt
+			24: Cliff
+			25: Cliff
+			26: Cliff
+			27: Cliff
+			28: Cliff
+			29: Dirt
+			30: Dirt
+			32: Dirt
+			33: Cliff
+			34: Cliff
+			35: Cliff
+			36: Cliff
+			37: Cliff
+			38: Dirt
+			41: Dirt
+			42: Cliff
+			43: Cliff
+			44: Cliff
+			45: Cliff
+			46: Cliff
+			47: Cliff
+			49: Cliff
+			50: Cliff
+			51: Cliff
+			52: Cliff
+			53: Cliff
+			54: Cliff
+			55: Cliff
+			56: Cliff
+			57: Cliff
+			58: Cliff
+			59: Cliff
+			60: Cliff
+			61: Cliff
+			62: Cliff
+			63: Cliff
+			69: Cliff
+			70: Cliff
+
+	Template@920:
+		Id: 920
+		Images: bits/Highland/Decoration_Water1.png
+		Size: 7,5
+		Categories: Decoration
+		Tiles:
+			0: Grass
+			1: Water
+			2: Water
+			3: Grass
+			4: Grass
+			5: Grass
+			7: Grass
+			8: Water
+			9: Water
+			10: Water
+			11: Water
+			12: Water
+			13: Grass
+			14: Grass
+			15: Water
+			16: Water
+			17: Water
+			18: Grass
+			19: Grass
+			20: Grass
+			21: Grass
+			22: Water
+			23: Water
+			24: Grass
+			29: Grass
+			30: Grass
+			31: Grass
+
+	Template@921:
+		Id: 921
+		Images: bits/Highland/Decoration_Water2.png
+		Size: 7,5
+		Categories: Decoration
+		Tiles:
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Water
+			5: Water
+			6: Grass
+			7: Grass
+			8: Water
+			9: Water
+			10: Water
+			11: Water
+			12: Water
+			13: Grass
+			14: Grass
+			15: Grass
+			16: Grass
+			17: Water
+			18: Water
+			19: Water
+			20: Grass
+			24: Grass
+			25: Water
+			26: Water
+			27: Grass
+			31: Grass
+			32: Grass
+			33: Grass
+
+	Template@922:
+		Id: 922
+		Images: bits/Highland/Decoration_Water3.png
+		Size: 4,3
+		Categories: Decoration
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Grass
+			5: Water
+			6: Water
+			7: Grass
+			8: Grass
+			9: Water
+			10: Grass
+			11: Grass
+
+	Template@923:
+		Id: 923
+		Images: bits/Highland/Decoration_Water4.png
+		Size: 4,3
+		Categories: Decoration
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Grass
+			5: Water
+			6: Water
+			7: Grass
+			8: Grass
+			9: Grass
+			10: Water
+			11: Grass
+
+	Template@924:
+		Id: 924
+		Images: bits/Highland/Decoration_Water5.png
+		Size: 8,5
+		Categories: Decoration
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Water
+			4: Grass
+			5: Grass
+			6: Grass
+			8: Grass
+			9: Water
+			10: Water
+			11: Water
+			12: Water
+			13: Water
+			14: Water
+			15: Grass
+			17: Grass
+			18: Water
+			19: Water
+			20: Water
+			21: Water
+			22: Water
+			23: Grass
+			26: Grass
+			27: Grass
+			28: Water
+			29: Water
+			30: Grass
+			36: Grass
+			37: Grass
+
+	Template@925:
+		Id: 925
+		Images: bits/Highland/Decoration_Water7.png
+		Size: 7,6
+		Categories: Decoration
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Water
+			3: Grass
+			4: Grass
+			5: Grass
+			7: Grass
+			8: Water
+			9: Water
+			10: Water
+			11: Water
+			12: Water
+			13: Grass
+			14: Grass
+			15: Water
+			16: Water
+			17: Water
+			18: Grass
+			19: Grass
+			20: Grass
+			21: Grass
+			22: Water
+			23: Water
+			24: Grass
+			25: Grass
+			26: Grass
+			28: Grass
+			29: Water
+			30: Water
+			31: Water
+			32: Water
+			36: Grass
+			37: Water
+			38: Grass
+			39: Grass
+
+	Template@926:
+		Id: 926
+		Images: bits/Highland/Decoration_Water6.png
+		Size: 8,5
+		Categories: Decoration
+		Tiles:
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Water
+			5: Grass
+			6: Grass
+			7: Grass
+			8: Grass
+			9: Water
+			10: Water
+			11: Water
+			12: Water
+			13: Water
+			14: Water
+			15: Grass
+			16: Grass
+			17: Water
+			18: Water
+			19: Water
+			20: Water
+			21: Water
+			22: Grass
+			25: Grass
+			26: Water
+			27: Water
+			28: Grass
+			29: Grass
+			34: Grass
+			35: Grass
+
+	Template@927:
+		Id: 927
+		Images: bits/Highland/Decoration_Water8.png
+		Size: 7,4
+		Categories: Decoration
+		Tiles:
+			1: Grass
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			6: Grass
+			7: Grass
+			8: Water
+			9: Water
+			10: Water
+			11: Water
+			12: Water
+			13: Water
+			14: Grass
+			15: Water
+			16: Water
+			17: Water
+			18: Grass
+			19: Grass
+			20: Grass
+			22: Grass
+			23: Grass
+			24: Grass
+
+	Template@928:
+		Id: 928
+		Images: bits/Highland/Decoration_Water9.png
+		Size: 7,6
+		Categories: Decoration
+		Tiles:
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Water
+			5: Grass
+			6: Grass
+			7: Grass
+			8: Water
+			9: Water
+			10: Water
+			11: Water
+			12: Water
+			13: Grass
+			14: Grass
+			15: Grass
+			16: Grass
+			17: Water
+			18: Water
+			19: Water
+			20: Grass
+			22: Grass
+			23: Grass
+			24: Grass
+			25: Water
+			26: Water
+			27: Grass
+			30: Water
+			31: Water
+			32: Water
+			33: Water
+			34: Grass
+			37: Grass
+			38: Grass
+			39: Water
+			40: Grass
+
+	Template@929:
+		Id: 929
+		Images: bits/Highland/Decoration_Water10.png
+		Size: 7,4
+		Categories: Decoration
+		Tiles:
+			0: Grass
+			1: Water
+			2: Water
+			3: Water
+			4: Water
+			5: Grass
+			7: Water
+			8: Water
+			9: Water
+			10: Water
+			11: Water
+			12: Water
+			13: Grass
+			14: Grass
+			15: Grass
+			16: Grass
+			17: Water
+			18: Water
+			19: Water
+			20: Grass
+			24: Grass
+			25: Grass
+			26: Grass
+
+	Template@931:
+		Id: 931
+		Images: bits/Highland/Decoration_Water12.png
+		Size: 7,4
+		Categories: Decoration
+		Tiles:
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Cliff
+			5: Cliff
+			6: Grass
+			7: Grass
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Cliff
+			13: Grass
+			14: Grass
+			15: Grass
+			16: Grass
+			17: Cliff
+			18: Cliff
+			19: Cliff
+			20: Grass
+			24: Grass
+			25: Cliff
+			26: Grass
+
+	Template@950:
+		Id: 950
+		Images: bits/Highland/Decoration_Fence10.png
+		Size: 1,2
+		Categories: Decoration
+		Tiles:
+			0: Cliff
+			1: Cliff
+
+	Template@951:
+		Id: 951
+		Images: bits/Highland/Decoration_Water11.png
+		Size: 7,4
+		Categories: Decoration
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Cliff
+			3: Grass
+			4: Grass
+			5: Grass
+			7: Grass
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Cliff
+			13: Grass
+			14: Grass
+			15: Cliff
+			16: Cliff
+			17: Cliff
+			18: Grass
+			19: Grass
+			20: Grass
+			22: Grass
+			23: Cliff
+			24: Grass
+
+	Template@932:
+		Id: 932
+		Images: bits/Highland/DecorationDirt_Mine16.png
+		Size: 8,6
+		Categories: Decoration Dirt
+		Tiles:
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			8: Dirt
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Cliff
+			13: Cliff
+			14: Cliff
+			15: Dirt
+			16: Dirt
+			17: Cliff
+			18: Cliff
+			19: Cliff
+			20: Cliff
+			21: Cliff
+			22: Cliff
+			23: Dirt
+			24: Dirt
+			25: Cliff
+			26: Cliff
+			27: Cliff
+			28: Cliff
+			29: Cliff
+			30: Cliff
+			31: Dirt
+			32: Dirt
+			33: Cliff
+			34: Cliff
+			35: Cliff
+			36: Cliff
+			37: Cliff
+			38: Cliff
+			39: Dirt
+			41: Cliff
+			42: Cliff
+			43: Cliff
+			44: Cliff
+			45: Cliff
+			46: Cliff
+
+	Template@933:
+		Id: 933
+		Images: bits/Highland/DecorationDirt_Mine17.png
+		Size: 5,5
+		Categories: Decoration Dirt
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Dirt
+			10: Dirt
+			11: Dirt
+			12: Dirt
+			13: Dirt
+			14: Dirt
+			15: Dirt
+			16: Dirt
+			17: Dirt
+			18: Dirt
+			19: Dirt
+			21: Dirt
+			22: Dirt
+			23: Dirt
+			24: Dirt
+
+	Template@934:
+		Id: 934
+		Images: bits/Highland/DecorationDirt_Mine18.png
+		Size: 3,3
+		Categories: Decoration Dirt
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+
+	Template@935:
+		Id: 935
+		Images: bits/Highland/DecorationDirt_Mine1.png
+		Size: 2,2
+		Categories: Decoration Dirt
+		Tiles:
+			0: Cliff
+			1: Dirt
+			2: Dirt
+
+	Template@936:
+		Id: 936
+		Images: bits/Highland/DecorationDirt_Mine2.png
+		Size: 2,2
+		Categories: Decoration Dirt
+		Tiles:
+			0: Dirt
+			1: Cliff
+			3: Dirt
+
+	Template@937:
+		Id: 937
+		Images: bits/Highland/DecorationDirt_Mine3.png
+		Size: 2,3
+		Categories: Decoration Dirt
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+
+	Template@938:
+		Id: 938
+		Images: bits/Highland/DecorationDirt_Mine4.png
+		Size: 2,3
+		Categories: Decoration Dirt
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+
+	Template@939:
+		Id: 939
+		Images: bits/Highland/DecorationDirt_Mine5.png
+		Size: 2,3
+		Categories: Decoration Dirt
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+
+	Template@940:
+		Id: 940
+		Images: bits/Highland/DecorationDirt_Mine7.png
+		Size: 2,2
+		Categories: Decoration Dirt
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+
+	Template@941:
+		Id: 941
+		Images: bits/Highland/DecorationDirt_Mine19.png
+		Size: 2,2
+		Categories: Decoration Dirt
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+
+	Template@942:
+		Id: 942
+		Images: bits/Highland/DecorationDirt_Mine8.png
+		Size: 3,2
+		Categories: Decoration Dirt
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Dirt
+
+	Template@943:
+		Id: 943
+		Images: bits/Highland/DecorationDirt_Mine9.png
+		Size: 3,3
+		Categories: Decoration Dirt
+		Tiles:
+			1: Cliff
+			2: Cliff
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+
+	Template@944:
+		Id: 944
+		Images: bits/Highland/DecorationDirt_Mine10.png
+		Size: 3,3
+		Categories: Decoration Dirt
+		Tiles:
+			0: Cliff
+			1: Cliff
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			7: Dirt
+			8: Dirt
+
+	Template@945:
+		Id: 945
+		Images: bits/Highland/DecorationDirt_Mine11.png
+		Size: 2,2
+		Categories: Decoration Dirt
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+
+	Template@946:
+		Id: 946
+		Images: bits/Highland/DecorationDirt_Mine12.png
+		Size: 1,1
+		Categories: Decoration Dirt
+		Tiles:
+			0: Dirt
+
+	Template@947:
+		Id: 947
+		Images: bits/Highland/DecorationDirt_Mine13.png
+		Size: 1,1
+		Categories: Decoration Dirt
+		Tiles:
+			0: Dirt
+
+	Template@948:
+		Id: 948
+		Images: bits/Highland/DecorationDirt_Mine14.png
+		Size: 1,1
+		Categories: Decoration Dirt
+		Tiles:
+			0: Dirt
+
+	Template@949:
+		Id: 949
+		Images: bits/Highland/DecorationDirt_Mine15.png
+		Size: 1,1
+		Categories: Decoration Dirt
+		Tiles:
+			0: Dirt
+
+	Template@193:
+		Id: 193
+		Images: bits/Highland/DirtCliff_N_A.png
+		Size: 4,2
+		Categories: Dirt Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Grass
+			5: Grass
+			6: Grass
+			7: Grass
+
+	Template@194:
+		Id: 194
+		Images: bits/Highland/DirtCliff_N_B.png
+		Size: 4,2
+		Categories: Dirt Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Grass
+			5: Grass
+			6: Grass
+			7: Grass
+
+	Template@195:
+		Id: 195
+		Images: bits/Highland/DirtCliff_NE.png
+		Size: 2,1
+		Categories: Dirt Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+
+	Template@196:
+		Id: 196
+		Images: bits/Highland/DirtCliff_E_A.png
+		Size: 2,4
+		Categories: Dirt Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+
+	Template@197:
+		Id: 197
+		Images: bits/Highland/DirtCliff_E_B.png
+		Size: 2,4
+		Categories: Dirt Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+
+	Template@198:
+		Id: 198
+		Images: bits/Highland/DirtCliff_S_A.png
+		Size: 4,3
+		Categories: Dirt Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Dirt
+			9: Dirt
+			10: Dirt
+			11: Dirt
+
+	Template@199:
+		Id: 199
+		Images: bits/Highland/DirtCliff_S_B.png
+		Size: 4,3
+		Categories: Dirt Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Dirt
+			9: Dirt
+			10: Dirt
+			11: Dirt
+
+	Template@200:
+		Id: 200
+		Images: bits/Highland/DirtCliff_SW.png
+		Size: 1,3
+		Categories: Dirt Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+
+	Template@201:
+		Id: 201
+		Images: bits/Highland/DirtCliff_SE.png
+		Size: 1,3
+		Categories: Dirt Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+
+	Template@202:
+		Id: 202
+		Images: bits/Highland/DirtCliff_NW.png
+		Size: 2,1
+		Categories: Dirt Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+
+	Template@203:
+		Id: 203
+		Images: bits/Highland/DirtCliff_W_A.png
+		Size: 2,4
+		Categories: Dirt Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+
+	Template@204:
+		Id: 204
+		Images: bits/Highland/DirtCliff_W_B.png
+		Size: 2,4
+		Categories: Dirt Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+
+	Template@205:
+		Id: 205
+		Images: bits/Highland/DirtCliff_N2E.png
+		Size: 2,3
+		Categories: Dirt Cliff
+		Tiles:
+			0: Cliff
+			1: Dirt
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+
+	Template@206:
+		Id: 206
+		Images: bits/Highland/DirtCliff_S2E.png
+		Size: 3,4
+		Categories: Dirt Cliff
+		Tiles:
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Dirt
+			10: Dirt
+
+	Template@207:
+		Id: 207
+		Images: bits/Highland/DirtCliff_S2W.png
+		Size: 3,4
+		Categories: Dirt Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			10: Dirt
+			11: Dirt
+
+	Template@208:
+		Id: 208
+		Images: bits/Highland/DirtCliff_N2W.png
+		Size: 2,3
+		Categories: Dirt Cliff
+		Tiles:
+			0: Dirt
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+
+	Template@209:
+		Id: 209
+		Images: bits/Highland/DirtCliff_N2NE.png
+		Size: 2,2
+		Categories: Dirt Cliff
+		Tiles:
+			0: Cliff
+			1: Dirt
+			2: Cliff
+
+	Template@210:
+		Id: 210
+		Images: bits/Highland/DirtCliff_N2NW.png
+		Size: 2,2
+		Categories: Dirt Cliff
+		Tiles:
+			0: Dirt
+			1: Cliff
+			3: Cliff
+
+	Template@211:
+		Id: 211
+		Images: bits/Highland/DirtCliff_W2NW.png
+		Size: 2,3
+		Categories: Dirt Cliff
+		Tiles:
+			0: Dirt
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+
+	Template@212:
+		Id: 212
+		Images: bits/Highland/DirtCliff_E2NE.png
+		Size: 2,3
+		Categories: Dirt Cliff
+		Tiles:
+			1: Dirt
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+
+	Template@213:
+		Id: 213
+		Images: bits/Highland/DirtCliff_E2SE.png
+		Size: 2,4
+		Categories: Dirt Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+
+	Template@214:
+		Id: 214
+		Images: bits/Highland/DirtCliff_S2SE.png
+		Size: 2,4
+		Categories: Dirt Cliff
+		Tiles:
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Dirt
+			7: Dirt
+
+	Template@215:
+		Id: 215
+		Images: bits/Highland/DirtCliff_S2SW.png
+		Size: 2,4
+		Categories: Dirt Cliff
+		Tiles:
+			0: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Dirt
+			7: Dirt
+
+	Template@216:
+		Id: 216
+		Images: bits/Highland/DirtCliff_W2SW.png
+		Size: 2,4
+		Categories: Dirt Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			7: Cliff
+
+	Template@225:
+		Id: 225
+		Images: bits/Highland/DirtCliff_W2S.png
+		Size: 3,3
+		Categories: Dirt Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			3: Cliff
+			4: Cliff
+			5: Grass
+			6: Cliff
+			7: Cliff
+			8: Cliff
+
+	Template@226:
+		Id: 226
+		Images: bits/Highland/DirtCliff_E2S.png
+		Size: 3,3
+		Categories: Dirt Cliff
+		Tiles:
+			1: Cliff
+			2: Cliff
+			3: Grass
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+
+	Template@227:
+		Id: 227
+		Images: bits/Highland/DirtCliff_E2N.png
+		Size: 3,3
+		Categories: Dirt Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Dirt
+			3: Cliff
+			4: Cliff
+			5: Dirt
+			6: Cliff
+			7: Cliff
+			8: Cliff
+
+	Template@228:
+		Id: 228
+		Images: bits/Highland/DirtCliff_W2N.png
+		Size: 3,3
+		Categories: Dirt Cliff
+		Tiles:
+			0: Dirt
+			1: Cliff
+			2: Cliff
+			3: Dirt
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+
+	Template@229:
+		Id: 229
+		Images: bits/Highland/DirtCliff_SE2E.png
+		Size: 2,3
+		Categories: Dirt Cliff
+		Tiles:
+			1: Cliff
+			2: Grass
+			3: Cliff
+			4: Cliff
+			5: Cliff
+
+	Template@230:
+		Id: 230
+		Images: bits/Highland/DirtCliff_SW2W.png
+		Size: 2,3
+		Categories: Dirt Cliff
+		Tiles:
+			0: Cliff
+			2: Cliff
+			3: Grass
+			4: Cliff
+			5: Cliff
+
+	Template@231:
+		Id: 231
+		Images: bits/Highland/DirtCliff_SE2S.png
+		Size: 1,3
+		Categories: Dirt Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+
+	Template@232:
+		Id: 232
+		Images: bits/Highland/DirtCliff_SW2S.png
+		Size: 1,3
+		Categories: Dirt Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+
+	Template@233:
+		Id: 233
+		Images: bits/Highland/DirtCliff_NE2E.png
+		Size: 2,2
+		Categories: Dirt Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+
+	Template@234:
+		Id: 234
+		Images: bits/Highland/DirtCliff_NW2W.png
+		Size: 2,2
+		Categories: Dirt Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			3: Cliff
+
+	Template@235:
+		Id: 235
+		Images: bits/Highland/DirtCliff_NE2N.png
+		Size: 2,2
+		Categories: Dirt Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Grass
+			3: Cliff
+
+	Template@236:
+		Id: 236
+		Images: bits/Highland/DirtCliff_NW2N.png
+		Size: 2,2
+		Categories: Dirt Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Grass
+
+	Template@384:
+		Id: 384
+		Images: bits/Highland/DirtCliffExtra_6.png
+		Size: 4,2
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Grass
+			7: Grass
+
+	Template@385:
+		Id: 385
+		Images: bits/Highland/DirtCliffExtra_7.png
+		Size: 5,3
+		Categories: Dirt Cliff Extra
+		Tiles:
+			2: Dirt
+			3: Dirt
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Grass
+			10: Cliff
+			11: Cliff
+			12: Grass
+			13: Grass
+
+	Template@386:
+		Id: 386
+		Images: bits/Highland/DirtCliffExtra_1.png
+		Size: 3,3
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Dirt
+			1: Dirt
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Grass
+
+	Template@387:
+		Id: 387
+		Images: bits/Highland/DirtCliffExtra_2.png
+		Size: 3,2
+		Categories: Dirt Cliff Extra
+		Tiles:
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Grass
+
+	Template@389:
+		Id: 389
+		Images: bits/Highland/DirtCliffExtra_3.png
+		Size: 6,2
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Grass
+			7: Grass
+			8: Grass
+			9: Grass
+			10: Grass
+			11: Cliff
+
+	Template@390:
+		Id: 390
+		Images: bits/Highland/DirtCliffExtra_8.png
+		Size: 6,2
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Grass
+			7: Grass
+			8: Grass
+			9: Grass
+			10: Grass
+			11: Grass
+
+	Template@391:
+		Id: 391
+		Images: bits/Highland/DirtCliffExtra_4.png
+		Size: 3,2
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			3: Grass
+			4: Cliff
+			5: Cliff
+
+	Template@393:
+		Id: 393
+		Images: bits/Highland/DirtCliffExtra_9.png
+		Size: 5,3
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Dirt
+			2: Dirt
+			5: Grass
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			11: Grass
+			12: Grass
+			13: Cliff
+			14: Cliff
+
+	Template@395:
+		Id: 395
+		Images: bits/Highland/DirtCliffExtra_5.png
+		Size: 3,3
+		Categories: Dirt Cliff Extra
+		Tiles:
+			1: Dirt
+			2: Dirt
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			8: Grass
+
+	Template@396:
+		Id: 396
+		Images: bits/Highland/DirtCliffExtra_10.png
+		Size: 4,2
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Dirt
+			3: Dirt
+			4: Grass
+			5: Grass
+			6: Cliff
+			7: Cliff
+
+	Template@397:
+		Id: 397
+		Images: bits/Highland/DirtCliffExtra_16.png
+		Size: 4,3
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Dirt
+			5: Grass
+			6: Cliff
+			7: Cliff
+			10: Grass
+			11: Cliff
+
+	Template@398:
+		Id: 398
+		Images: bits/Highland/DirtCliffExtra_15.png
+		Size: 3,3
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Dirt
+			3: Cliff
+			4: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+
+	Template@400:
+		Id: 400
+		Images: bits/Highland/DirtCliffExtra_20.png
+		Size: 3,4
+		Categories: Dirt Cliff Extra
+		Tiles:
+			1: Cliff
+			2: Cliff
+			3: Grass
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Grass
+			10: Cliff
+			11: Cliff
+
+	Template@401:
+		Id: 401
+		Images: bits/Highland/DirtCliffExtra_19.png
+		Size: 2,2
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+
+	Template@403:
+		Id: 403
+		Images: bits/Highland/DirtCliffExtra_26.png
+		Size: 2,3
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+
+	Template@405:
+		Id: 405
+		Images: bits/Highland/DirtCliffExtra_27.png
+		Size: 3,3
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Dirt
+			3: Grass
+			4: Cliff
+			5: Dirt
+			6: Grass
+			7: Cliff
+			8: Cliff
+
+	Template@406:
+		Id: 406
+		Images: bits/Highland/DirtCliffExtra_28.png
+		Size: 2,3
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			5: Dirt
+
+	Template@411:
+		Id: 411
+		Images: bits/Highland/DirtCliffExtra_32.png
+		Size: 6,6
+		Categories: Dirt Cliff Extra
+		Tiles:
+			5: Grass
+			8: Grass
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			13: Grass
+			14: Cliff
+			15: Cliff
+			16: Cliff
+			17: Cliff
+			18: Cliff
+			19: Cliff
+			20: Cliff
+			21: Cliff
+			22: Dirt
+			23: Dirt
+			24: Cliff
+			25: Cliff
+			26: Dirt
+			27: Dirt
+			30: Cliff
+
+	Template@413:
+		Id: 413
+		Images: bits/Highland/DirtCliffExtra_41.png
+		Size: 4,7
+		Categories: Dirt Cliff Extra
+		Tiles:
+			2: Cliff
+			3: Cliff
+			5: Grass
+			6: Cliff
+			7: Cliff
+			9: Grass
+			10: Cliff
+			11: Cliff
+			13: Cliff
+			14: Cliff
+			15: Cliff
+			17: Cliff
+			18: Cliff
+			19: Dirt
+			20: Cliff
+			21: Cliff
+			22: Cliff
+			26: Dirt
+
+	Template@415:
+		Id: 415
+		Images: bits/Highland/DirtCliffExtra_40.png
+		Size: 3,3
+		Categories: Dirt Cliff Extra
+		Tiles:
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+
+	Template@416:
+		Id: 416
+		Images: bits/Highland/DirtCliffExtra_39.png
+		Size: 3,3
+		Categories: Dirt Cliff Extra
+		Tiles:
+			1: Grass
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+
+	Template@417:
+		Id: 417
+		Images: bits/Highland/DirtCliffExtra_35.png
+		Size: 3,4
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+
+	Template@418:
+		Id: 418
+		Images: bits/Highland/DirtCliffExtra_46.png
+		Size: 3,4
+		Categories: Dirt Cliff Extra
+		Tiles:
+			1: Grass
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Dirt
+			9: Cliff
+			10: Dirt
+
+	Template@419:
+		Id: 419
+		Images: bits/Highland/DirtCliffExtra_47.png
+		Size: 4,4
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Grass
+			13: Grass
+			14: Grass
+			15: Grass
+
+	Template@420:
+		Id: 420
+		Images: bits/Highland/DirtCliffExtra_53.png
+		Size: 6,3
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Dirt
+			1: Cliff
+			2: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Dirt
+			12: Cliff
+			13: Cliff
+			14: Grass
+			15: Grass
+			16: Cliff
+			17: Cliff
+
+	Template@421:
+		Id: 421
+		Images: bits/Highland/DirtCliffExtra_58.png
+		Size: 2,4
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Dirt
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+
+	Template@423:
+		Id: 423
+		Images: bits/Highland/DirtCliffExtra_52.png
+		Size: 2,5
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Dirt
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Grass
+			9: Cliff
+
+	Template@424:
+		Id: 424
+		Images: bits/Highland/DirtCliffExtra_57.png
+		Size: 3,3
+		Categories: Dirt Cliff Extra
+		Tiles:
+			1: Grass
+			2: Cliff
+			3: Grass
+			4: Cliff
+			5: Cliff
+			6: Grass
+			7: Cliff
+			8: Cliff
+
+	Template@425:
+		Id: 425
+		Images: bits/Highland/DirtCliffExtra_56.png
+		Size: 5,2
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Grass
+			6: Grass
+			7: Grass
+			8: Grass
+			9: Grass
+
+	Template@426:
+		Id: 426
+		Images: bits/Highland/DirtCliffExtra_60.png
+		Size: 4,5
+		Categories: Dirt Cliff Extra
+		Tiles:
+			2: Grass
+			3: Cliff
+			4: Grass
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Cliff
+			13: Cliff
+			14: Cliff
+			15: Dirt
+			16: Dirt
+			17: Dirt
+
+	Template@427:
+		Id: 427
+		Images: bits/Highland/DirtCliffExtra_50.png
+		Size: 3,5
+		Categories: Dirt Cliff Extra
+		Tiles:
+			1: Cliff
+			2: Cliff
+			3: Dirt
+			4: Cliff
+			6: Cliff
+			7: Cliff
+			9: Cliff
+			10: Cliff
+			12: Cliff
+			13: Grass
+
+	Template@428:
+		Id: 428
+		Images: bits/Highland/DirtCliffExtra_51.png
+		Size: 3,5
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			4: Cliff
+			5: Dirt
+			7: Cliff
+			8: Cliff
+			10: Cliff
+			11: Cliff
+			13: Grass
+			14: Cliff
+
+	Template@430:
+		Id: 430
+		Images: bits/Highland/DirtCliffExtra_45.png
+		Size: 4,3
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			5: Cliff
+			6: Cliff
+			7: Grass
+			8: Grass
+			9: Cliff
+			10: Cliff
+
+	Template@431:
+		Id: 431
+		Images: bits/Highland/DirtCliffExtra_44.png
+		Size: 4,3
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Grass
+			5: Cliff
+			6: Cliff
+			9: Cliff
+			10: Cliff
+			11: Grass
+
+	Template@432:
+		Id: 432
+		Images: bits/Highland/DirtCliffExtra_38.png
+		Size: 3,3
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Grass
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+
+	Template@433:
+		Id: 433
+		Images: bits/Highland/DirtCliffExtra_34.png
+		Size: 6,4
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Grass
+			1: Grass
+			4: Grass
+			5: Grass
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Cliff
+			13: Cliff
+			14: Cliff
+			15: Cliff
+			16: Cliff
+			17: Cliff
+			18: Dirt
+			19: Dirt
+			20: Dirt
+			21: Dirt
+			22: Dirt
+			23: Dirt
+
+	Template@434:
+		Id: 434
+		Images: bits/Highland/DirtCliffExtra_30.png
+		Size: 5,5
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Grass
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Cliff
+			13: Cliff
+			14: Cliff
+			15: Dirt
+			16: Dirt
+			17: Dirt
+			18: Cliff
+			19: Cliff
+			23: Dirt
+			24: Dirt
+
+	Template@436:
+		Id: 436
+		Images: bits/Highland/DirtCliffExtra_33.png
+		Size: 3,4
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Grass
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			11: Cliff
+
+	Template@437:
+		Id: 437
+		Images: bits/Highland/DirtCliffExtra_31.png
+		Size: 5,5
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Grass
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Cliff
+			13: Cliff
+			14: Cliff
+			15: Cliff
+			16: Cliff
+			17: Dirt
+			18: Dirt
+			19: Dirt
+			20: Dirt
+			21: Dirt
+
+	Template@438:
+		Id: 438
+		Images: bits/Highland/DirtCliffExtra_29.png
+		Size: 6,6
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Grass
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Grass
+			12: Cliff
+			13: Cliff
+			14: Cliff
+			15: Cliff
+			16: Grass
+			18: Dirt
+			19: Dirt
+			20: Cliff
+			21: Cliff
+			22: Cliff
+			23: Cliff
+			26: Dirt
+			27: Dirt
+			28: Cliff
+			29: Cliff
+			35: Cliff
+
+	Template@439:
+		Id: 439
+		Images: bits/Highland/DirtCliffExtra_22.png
+		Size: 3,3
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Dirt
+			1: Cliff
+			2: Grass
+			3: Dirt
+			4: Cliff
+			5: Grass
+			6: Cliff
+			7: Cliff
+			8: Grass
+
+	Template@440:
+		Id: 440
+		Images: bits/Highland/DirtCliffExtra_17.png
+		Size: 3,4
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			3: Cliff
+			4: Cliff
+			5: Grass
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Grass
+
+	Template@441:
+		Id: 441
+		Images: bits/Highland/DirtCliffExtra_18.png
+		Size: 2,2
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+
+	Template@443:
+		Id: 443
+		Images: bits/Highland/DirtCliffExtra_23.png
+		Size: 2,3
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+
+	Template@444:
+		Id: 444
+		Images: bits/Highland/DirtCliffExtra_21.png
+		Size: 2,3
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Dirt
+
+	Template@445:
+		Id: 445
+		Images: bits/Highland/DirtCliffExtra_36.png
+		Size: 4,7
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			4: Cliff
+			5: Cliff
+			6: Grass
+			8: Cliff
+			9: Cliff
+			10: Grass
+			12: Cliff
+			13: Cliff
+			14: Cliff
+			16: Dirt
+			17: Cliff
+			18: Cliff
+			21: Cliff
+			22: Cliff
+			23: Cliff
+			25: Dirt
+
+	Template@446:
+		Id: 446
+		Images: bits/Highland/DirtCliffExtra_37.png
+		Size: 3,3
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+
+	Template@447:
+		Id: 447
+		Images: bits/Highland/DirtCliffExtra_43.png
+		Size: 3,4
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Grass
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Dirt
+			7: Cliff
+			8: Cliff
+			10: Dirt
+			11: Cliff
+
+	Template@450:
+		Id: 450
+		Images: bits/Highland/DirtCliffExtra_42.png
+		Size: 4,4
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Grass
+			13: Grass
+			14: Grass
+			15: Grass
+
+	Template@452:
+		Id: 452
+		Images: bits/Highland/DirtCliffExtra_48.png
+		Size: 6,3
+		Categories: Dirt Cliff Extra
+		Tiles:
+			3: Cliff
+			4: Cliff
+			5: Dirt
+			6: Dirt
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Cliff
+			13: Cliff
+			14: Grass
+			15: Grass
+			16: Cliff
+			17: Cliff
+
+	Template@453:
+		Id: 453
+		Images: bits/Highland/DirtCliffExtra_49.png
+		Size: 2,5
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Dirt
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Grass
+
+	Template@454:
+		Id: 454
+		Images: bits/Highland/DirtCliffExtra_54.png
+		Size: 2,4
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Dirt
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+
+	Template@455:
+		Id: 455
+		Images: bits/Highland/DirtCliffExtra_55.png
+		Size: 3,3
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Grass
+			3: Cliff
+			4: Cliff
+			5: Grass
+			6: Cliff
+			7: Cliff
+			8: Grass
+
+	Template@456:
+		Id: 456
+		Images: bits/Highland/DirtCliffExtra_59.png
+		Size: 4,5
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Grass
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Grass
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Dirt
+			13: Cliff
+			14: Cliff
+			15: Cliff
+			18: Dirt
+			19: Dirt
+
+	Template@457:
+		Id: 457
+		Images: bits/Highland/DirtCliffExtra_24.png
+		Size: 4,4
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Grass
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Dirt
+			9: Dirt
+			10: Cliff
+			11: Cliff
+			15: Cliff
+
+	Template@460:
+		Id: 460
+		Images: bits/Highland/DirtCliffExtra_14.png
+		Size: 4,5
+		Categories: Dirt Cliff Extra
+		Tiles:
+			1: Cliff
+			2: Dirt
+			5: Cliff
+			6: Cliff
+			9: Cliff
+			10: Cliff
+			12: Grass
+			13: Cliff
+			14: Cliff
+			15: Dirt
+			16: Grass
+			17: Cliff
+			18: Cliff
+			19: Cliff
+
+	Template@461:
+		Id: 461
+		Images: bits/Highland/DirtCliffExtra_25.png
+		Size: 4,4
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Dirt
+			11: Dirt
+			12: Cliff
+
+	Template@531:
+		Id: 531
+		Images: bits/Highland/DirtCliffExtra_11.png
+		Size: 4,3
+		Categories: Dirt Cliff Extra
+		Tiles:
+			0: Dirt
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Grass
+			8: Cliff
+			9: Grass
+
+	Template@532:
+		Id: 532
+		Images: bits/Highland/DirtCliffExtra_12.png
+		Size: 3,3
+		Categories: Dirt Cliff Extra
+		Tiles:
+			1: Dirt
+			2: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+
+	Template@535:
+		Id: 535
+		Images: bits/Highland/DirtCliffExtra_13.png
+		Size: 4,5
+		Categories: Dirt Cliff Extra
+		Tiles:
+			1: Dirt
+			2: Cliff
+			5: Cliff
+			6: Cliff
+			9: Cliff
+			10: Cliff
+			12: Dirt
+			13: Cliff
+			14: Cliff
+			15: Grass
+			16: Cliff
+			17: Cliff
+			18: Cliff
+			19: Grass
+
+	Template@217:
+		Id: 217
+		Images: bits/Highland/DirtCliffRamp_SE.png
+		Size: 2,5
+		Categories: Dirt Cliff Ramp
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Dirt
+			9: Dirt
+
+	Template@218:
+		Id: 218
+		Images: bits/Highland/DirtCliffRamp_SW.png
+		Size: 2,5
+		Categories: Dirt Cliff Ramp
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Dirt
+			9: Dirt
+
+	Template@219:
+		Id: 219
+		Images: bits/Highland/DirtCliffRamp_NE.png
+		Size: 2,4
+		Categories: Dirt Cliff Ramp
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Grass
+			6: Cliff
+			7: Grass
+
+	Template@220:
+		Id: 220
+		Images: bits/Highland/DirtCliffRamp_NW.png
+		Size: 2,4
+		Categories: Dirt Cliff Ramp
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Grass
+			5: Cliff
+			6: Grass
+			7: Cliff
+
+	Template@221:
+		Id: 221
+		Images: bits/Highland/DirtCliffRamp_WS.png
+		Size: 4,3
+		Categories: Dirt Cliff Ramp
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Dirt
+			9: Dirt
+			10: Dirt
+			11: Grass
+
+	Template@222:
+		Id: 222
+		Images: bits/Highland/DirtCliffRamp_WN.png
+		Size: 4,2
+		Categories: Dirt Cliff Ramp
+		Tiles:
+			0: Dirt
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+
+	Template@223:
+		Id: 223
+		Images: bits/Highland/DirtCliffRamp_ES.png
+		Size: 4,3
+		Categories: Dirt Cliff Ramp
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Grass
+			9: Dirt
+			10: Dirt
+			11: Dirt
+
+	Template@224:
+		Id: 224
+		Images: bits/Highland/DirtCliffRamp_EN.png
+		Size: 4,2
+		Categories: Dirt Cliff Ramp
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Dirt
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+
+	Template@368:
+		Id: 368
+		Images: bits/Highland/DirtCliffRamp_1.png
+		Size: 2,5
+		Categories: Dirt Cliff Ramp
+		Tiles:
+			0: Cliff
+			1: Dirt
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Dirt
+			8: Cliff
+			9: Grass
+
+	Template@371:
+		Id: 371
+		Images: bits/Highland/DirtCliffRamp_2.png
+		Size: 2,5
+		Categories: Dirt Cliff Ramp
+		Tiles:
+			0: Dirt
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Dirt
+			7: Cliff
+			8: Grass
+			9: Cliff
+
+	Template@373:
+		Id: 373
+		Images: bits/Highland/DirtCliffRamp_3.png
+		Size: 4,3
+		Categories: Dirt Cliff Ramp
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Grass
+			9: Dirt
+			10: Dirt
+			11: Dirt
+
+	Template@374:
+		Id: 374
+		Images: bits/Highland/DirtCliffRamp_4.png
+		Size: 4,3
+		Categories: Dirt Cliff Ramp
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Dirt
+			9: Dirt
+			10: Dirt
+			11: Grass
+
+	Template@375:
+		Id: 375
+		Images: bits/Highland/DirtCliffRamp_6.png
+		Size: 3,4
+		Categories: Dirt Cliff Ramp
+		Tiles:
+			0: Grass
+			1: Grass
+			3: Dirt
+			4: Cliff
+			5: Cliff
+			6: Dirt
+			7: Cliff
+			8: Cliff
+			10: Dirt
+			11: Dirt
+
+	Template@378:
+		Id: 378
+		Images: bits/Highland/DirtCliffRamp_5.png
+		Size: 3,4
+		Categories: Dirt Cliff Ramp
+		Tiles:
+			1: Grass
+			2: Grass
+			3: Cliff
+			4: Cliff
+			5: Dirt
+			6: Cliff
+			7: Cliff
+			8: Dirt
+			9: Dirt
+			10: Dirt
+
+	Template@379:
+		Id: 379
+		Images: bits/Highland/DirtCliffRamp_7.png
+		Size: 3,4
+		Categories: Dirt Cliff Ramp
+		Tiles:
+			0: Cliff
+			1: Grass
+			2: Grass
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Dirt
+			10: Dirt
+			11: Dirt
+
+	Template@381:
+		Id: 381
+		Images: bits/Highland/DirtCliffRamp_8.png
+		Size: 3,4
+		Categories: Dirt Cliff Ramp
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Dirt
+			10: Dirt
+			11: Dirt
+
+	Template@382:
+		Id: 382
+		Images: bits/Highland/DirtCliffRamp_9.png
+		Size: 4,2
+		Categories: Dirt Cliff Ramp
+		Tiles:
+			0: Grass
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Grass
+			5: Cliff
+			6: Cliff
+			7: Cliff
+
+	Template@383:
+		Id: 383
+		Images: bits/Highland/DirtCliffRamp_10.png
+		Size: 4,2
+		Categories: Dirt Cliff Ramp
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Grass
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Grass
+
+	Template@149:
+		Id: 149
+		Images: bits/Highland/GrassCliff_N_A.png
+		Size: 4,2
+		Categories: Grass Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Grass
+			5: Grass
+			6: Grass
+			7: Grass
+
+	Template@150:
+		Id: 150
+		Images: bits/Highland/GrassCliff_N_B.png
+		Size: 4,2
+		Categories: Grass Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Grass
+			5: Grass
+			6: Grass
+			7: Grass
+
+	Template@151:
+		Id: 151
+		Images: bits/Highland/GrassCliff_NE.png
+		Size: 1,2
+		Categories: Grass Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+
+	Template@152:
+		Id: 152
+		Images: bits/Highland/GrassCliff_E_A.png
+		Size: 2,4
+		Categories: Grass Cliff
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Grass
+			3: Cliff
+			4: Grass
+			5: Cliff
+			6: Grass
+			7: Cliff
+
+	Template@153:
+		Id: 153
+		Images: bits/Highland/GrassCliff_E_B.png
+		Size: 2,4
+		Categories: Grass Cliff
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Grass
+			3: Cliff
+			4: Grass
+			5: Cliff
+			6: Grass
+			7: Cliff
+
+	Template@154:
+		Id: 154
+		Images: bits/Highland/GrassCliff_S_A.png
+		Size: 4,3
+		Categories: Grass Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+
+	Template@155:
+		Id: 155
+		Images: bits/Highland/GrassCliff_S_B.png
+		Size: 4,3
+		Categories: Grass Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+
+	Template@156:
+		Id: 156
+		Images: bits/Highland/GrassCliff_SW.png
+		Size: 2,5
+		Categories: Grass Cliff
+		Tiles:
+			0: Grass
+			2: Cliff
+			3: Grass
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			9: Cliff
+
+	Template@157:
+		Id: 157
+		Images: bits/Highland/GrassCliff_SE.png
+		Size: 2,5
+		Categories: Grass Cliff
+		Tiles:
+			1: Grass
+			2: Grass
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+
+	Template@158:
+		Id: 158
+		Images: bits/Highland/GrassCliff_NW.png
+		Size: 1,2
+		Categories: Grass Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+
+	Template@159:
+		Id: 159
+		Images: bits/Highland/GrassCliff_W_A.png
+		Size: 2,4
+		Categories: Grass Cliff
+		Tiles:
+			0: Cliff
+			1: Grass
+			2: Cliff
+			3: Grass
+			4: Cliff
+			5: Grass
+			6: Cliff
+			7: Grass
+
+	Template@160:
+		Id: 160
+		Images: bits/Highland/GrassCliff_W_B.png
+		Size: 2,4
+		Categories: Grass Cliff
+		Tiles:
+			0: Cliff
+			1: Grass
+			2: Cliff
+			3: Grass
+			4: Cliff
+			5: Grass
+			6: Cliff
+			7: Grass
+
+	Template@161:
+		Id: 161
+		Images: bits/Highland/GrassCliff_N2E.png
+		Size: 3,3
+		Categories: Grass Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Grass
+			4: Grass
+			5: Cliff
+			6: Grass
+			7: Grass
+			8: Cliff
+
+	Template@162:
+		Id: 162
+		Images: bits/Highland/GrassCliff_S2E.png
+		Size: 3,4
+		Categories: Grass Cliff
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			9: Grass
+
+	Template@163:
+		Id: 163
+		Images: bits/Highland/GrassCliff_S2W.png
+		Size: 3,4
+		Categories: Grass Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Grass
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			7: Cliff
+			8: Cliff
+			11: Grass
+
+	Template@164:
+		Id: 164
+		Images: bits/Highland/GrassCliff_N2W.png
+		Size: 3,3
+		Categories: Grass Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Grass
+			5: Grass
+			6: Cliff
+			7: Grass
+			8: Grass
+
+	Template@165:
+		Id: 165
+		Images: bits/Highland/GrassCliff_N2NE.png
+		Size: 2,2
+		Categories: Grass Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Grass
+			3: Cliff
+
+	Template@166:
+		Id: 166
+		Images: bits/Highland/GrassCliff_N2NW.png
+		Size: 2,2
+		Categories: Grass Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Grass
+
+	Template@167:
+		Id: 167
+		Images: bits/Highland/GrassCliff_W2NW.png
+		Size: 2,2
+		Categories: Grass Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+
+	Template@168:
+		Id: 168
+		Images: bits/Highland/GrassCliff_E2NE.png
+		Size: 2,2
+		Categories: Grass Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+
+	Template@169:
+		Id: 169
+		Images: bits/Highland/GrassCliff_E2SE.png
+		Size: 2,3
+		Categories: Grass Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+
+	Template@170:
+		Id: 170
+		Images: bits/Highland/GrassCliff_S2SE.png
+		Size: 1,4
+		Categories: Grass Cliff
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Cliff
+			3: Grass
+
+	Template@171:
+		Id: 171
+		Images: bits/Highland/GrassCliff_S2SW.png
+		Size: 1,4
+		Categories: Grass Cliff
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Cliff
+			3: Grass
+
+	Template@172:
+		Id: 172
+		Images: bits/Highland/GrassCliff_W2SW.png
+		Size: 2,3
+		Categories: Grass Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			5: Cliff
+
+	Template@181:
+		Id: 181
+		Images: bits/Highland/GrassCliff_W2S.png
+		Size: 3,3
+		Categories: Grass Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Grass
+			3: Cliff
+			4: Cliff
+			5: Grass
+			6: Cliff
+			7: Cliff
+			8: Cliff
+
+	Template@182:
+		Id: 182
+		Images: bits/Highland/GrassCliff_E2S.png
+		Size: 3,3
+		Categories: Grass Cliff
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Cliff
+			3: Grass
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+
+	Template@183:
+		Id: 183
+		Images: bits/Highland/GrassCliff_E2N.png
+		Size: 3,2
+		Categories: Grass Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Grass
+			3: Cliff
+			4: Cliff
+			5: Cliff
+
+	Template@184:
+		Id: 184
+		Images: bits/Highland/GrassCliff_W2N.png
+		Size: 3,2
+		Categories: Grass Cliff
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+
+	Template@185:
+		Id: 185
+		Images: bits/Highland/GrassCliff_SE2E.png
+		Size: 2,3
+		Categories: Grass Cliff
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Grass
+			3: Cliff
+			4: Cliff
+			5: Cliff
+
+	Template@186:
+		Id: 186
+		Images: bits/Highland/GrassCliff_SW2W.png
+		Size: 2,3
+		Categories: Grass Cliff
+		Tiles:
+			0: Cliff
+			1: Grass
+			2: Cliff
+			3: Grass
+			4: Cliff
+			5: Cliff
+
+	Template@187:
+		Id: 187
+		Images: bits/Highland/GrassCliff_SE2S.png
+		Size: 2,4
+		Categories: Grass Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+
+	Template@188:
+		Id: 188
+		Images: bits/Highland/GrassCliff_SW2S.png
+		Size: 2,4
+		Categories: Grass Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			7: Cliff
+
+	Template@189:
+		Id: 189
+		Images: bits/Highland/GrassCliff_NE2E.png
+		Size: 2,1
+		Categories: Grass Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+
+	Template@190:
+		Id: 190
+		Images: bits/Highland/GrassCliff_NW2W.png
+		Size: 2,1
+		Categories: Grass Cliff
+		Tiles:
+			0: Cliff
+			1: Cliff
+
+	Template@191:
+		Id: 191
+		Images: bits/Highland/GrassCliff_NE2N.png
+		Size: 1,2
+		Categories: Grass Cliff
+		Tiles:
+			0: Cliff
+			1: Grass
+
+	Template@192:
+		Id: 192
+		Images: bits/Highland/GrassCliff_NW2N.png
+		Size: 1,2
+		Categories: Grass Cliff
+		Tiles:
+			0: Cliff
+			1: Grass
+
+	Template@463:
+		Id: 463
+		Images: bits/Highland/GrassCliffExtra_1.png
+		Size: 3,3
+		Categories: Grass Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Grass
+			6: Cliff
+
+	Template@466:
+		Id: 466
+		Images: bits/Highland/GrassCliffExtra_2.png
+		Size: 3,3
+		Categories: Grass Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			4: Grass
+			5: Cliff
+			8: Cliff
+
+	Template@467:
+		Id: 467
+		Images: bits/Highland/GrassCliffExtra_8.png
+		Size: 3,3
+		Categories: Grass Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Grass
+			3: Cliff
+			4: Cliff
+			5: Grass
+			7: Cliff
+			8: Cliff
+
+	Template@468:
+		Id: 468
+		Images: bits/Highland/GrassCliffExtra_16.png
+		Size: 2,4
+		Categories: Grass Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Grass
+			3: Cliff
+			5: Cliff
+			7: Cliff
+
+	Template@469:
+		Id: 469
+		Images: bits/Highland/GrassCliffExtra_15.png
+		Size: 2,5
+		Categories: Grass Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Grass
+			3: Cliff
+			4: Grass
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Grass
+
+	Template@470:
+		Id: 470
+		Images: bits/Highland/GrassCliffExtra_7.png
+		Size: 3,5
+		Categories: Grass Cliff Extra
+		Tiles:
+			0: Grass
+			1: Cliff
+			3: Cliff
+			4: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Grass
+			10: Grass
+			11: Cliff
+			14: Cliff
+
+	Template@472:
+		Id: 472
+		Images: bits/Highland/GrassCliffExtra_6.png
+		Size: 3,3
+		Categories: Grass Cliff Extra
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Grass
+			6: Grass
+			7: Cliff
+			8: Cliff
+
+	Template@474:
+		Id: 474
+		Images: bits/Highland/GrassCliffExtra_13.png
+		Size: 3,3
+		Categories: Grass Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Grass
+
+	Template@477:
+		Id: 477
+		Images: bits/Highland/GrassCliffExtra_14.png
+		Size: 3,4
+		Categories: Grass Cliff Extra
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Grass
+			6: Grass
+			7: Cliff
+			8: Cliff
+			9: Grass
+			10: Grass
+			11: Cliff
+
+	Template@478:
+		Id: 478
+		Images: bits/Highland/GrassCliffExtra_18.png
+		Size: 3,3
+		Categories: Grass Cliff Extra
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Grass
+			6: Cliff
+			7: Grass
+			8: Grass
+
+	Template@480:
+		Id: 480
+		Images: bits/Highland/GrassCliffExtra_21.png
+		Size: 4,4
+		Categories: Grass Cliff Extra
+		Tiles:
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Grass
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Grass
+			12: Grass
+			13: Cliff
+			14: Cliff
+			15: Cliff
+
+	Template@481:
+		Id: 481
+		Images: bits/Highland/GrassCliffExtra_22.png
+		Size: 4,3
+		Categories: Grass Cliff Extra
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Cliff
+			3: Grass
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Grass
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+
+	Template@484:
+		Id: 484
+		Images: bits/Highland/GrassCliffExtra_5.png
+		Size: 3,3
+		Categories: Grass Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Grass
+			3: Grass
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Grass
+
+	Template@485:
+		Id: 485
+		Images: bits/Highland/GrassCliffExtra_12.png
+		Size: 3,3
+		Categories: Grass Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Grass
+			7: Cliff
+			8: Cliff
+
+	Template@487:
+		Id: 487
+		Images: bits/Highland/GrassCliffExtra_17.png
+		Size: 3,3
+		Categories: Grass Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Grass
+			3: Grass
+			4: Cliff
+			5: Cliff
+			6: Grass
+			7: Grass
+			8: Cliff
+
+	Template@488:
+		Id: 488
+		Images: bits/Highland/GrassCliffExtra_4.png
+		Size: 3,5
+		Categories: Grass Cliff Extra
+		Tiles:
+			1: Cliff
+			2: Grass
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Grass
+			11: Grass
+			12: Cliff
+
+	Template@489:
+		Id: 489
+		Images: bits/Highland/GrassCliffExtra_3.png
+		Size: 3,3
+		Categories: Grass Cliff Extra
+		Tiles:
+			1: Grass
+			2: Cliff
+			3: Grass
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+
+	Template@490:
+		Id: 490
+		Images: bits/Highland/GrassCliffExtra_10.png
+		Size: 2,5
+		Categories: Grass Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Grass
+			4: Cliff
+			5: Grass
+			6: Cliff
+			7: Cliff
+			8: Grass
+			9: Cliff
+
+	Template@491:
+		Id: 491
+		Images: bits/Highland/GrassCliffExtra_11.png
+		Size: 3,4
+		Categories: Grass Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Grass
+			3: Grass
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Grass
+			9: Cliff
+			10: Grass
+			11: Grass
+
+	Template@493:
+		Id: 493
+		Images: bits/Highland/GrassCliffExtra_9.png
+		Size: 2,4
+		Categories: Grass Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Grass
+			4: Cliff
+			6: Cliff
+
+	Template@494:
+		Id: 494
+		Images: bits/Highland/GrassCliffExtra_119.png
+		Size: 4,3
+		Categories: Grass Cliff Extra
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Cliff
+			3: Grass
+			4: Grass
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+
+	Template@495:
+		Id: 495
+		Images: bits/Highland/GrassCliffExtra_20.png
+		Size: 4,4
+		Categories: Grass Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Grass
+			8: Grass
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Cliff
+			13: Cliff
+			14: Cliff
+			15: Grass
+
+	Template@496:
+		Id: 496
+		Images: bits/Highland/GrassCliffExtra_23.png
+		Size: 4,4
+		Categories: Grass Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			13: Grass
+			14: Grass
+
+	Template@497:
+		Id: 497
+		Images: bits/Highland/GrassCliffExtra_24.png
+		Size: 4,4
+		Categories: Grass Cliff Extra
+		Tiles:
+			1: Cliff
+			2: Grass
+			3: Grass
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Grass
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			13: Grass
+			14: Grass
+			15: Grass
+
+	Template@498:
+		Id: 498
+		Images: bits/Highland/GrassCliffExtra_28.png
+		Size: 6,5
+		Categories: Grass Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Grass
+			2: Grass
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Grass
+			11: Grass
+			12: Cliff
+			13: Cliff
+			14: Cliff
+			15: Cliff
+			16: Cliff
+			17: Cliff
+			18: Grass
+			19: Grass
+			20: Grass
+			21: Cliff
+			22: Cliff
+			23: Cliff
+			27: Grass
+			28: Grass
+			29: Grass
+
+	Template@499:
+		Id: 499
+		Images: bits/Highland/GrassCliffExtra_27.png
+		Size: 4,6
+		Categories: Grass Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Grass
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			8: Grass
+			9: Cliff
+			10: Cliff
+			11: Grass
+			12: Grass
+			13: Grass
+			14: Cliff
+			17: Grass
+			18: Cliff
+			22: Grass
+
+	Template@500:
+		Id: 500
+		Images: bits/Highland/GrassCliffExtra_31.png
+		Size: 3,4
+		Categories: Grass Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Grass
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Grass
+			7: Cliff
+			8: Cliff
+			10: Grass
+			11: Grass
+
+	Template@501:
+		Id: 501
+		Images: bits/Highland/GrassCliffExtra_33.png
+		Size: 3,5
+		Categories: Grass Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Grass
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			10: Grass
+			11: Cliff
+			14: Grass
+
+	Template@502:
+		Id: 502
+		Images: bits/Highland/GrassCliffExtra_35.png
+		Size: 3,4
+		Categories: Grass Cliff Extra
+		Tiles:
+			1: Cliff
+			2: Cliff
+			4: Cliff
+			5: Grass
+			6: Grass
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Grass
+
+	Template@503:
+		Id: 503
+		Images: bits/Highland/GrassCliffExtra_29.png
+		Size: 6,5
+		Categories: Grass Cliff Extra
+		Tiles:
+			3: Grass
+			4: Grass
+			5: Cliff
+			6: Grass
+			7: Grass
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Cliff
+			13: Cliff
+			14: Cliff
+			15: Cliff
+			16: Cliff
+			17: Cliff
+			18: Cliff
+			19: Cliff
+			20: Cliff
+			21: Grass
+			22: Grass
+			23: Grass
+			24: Grass
+			25: Grass
+			26: Grass
+
+	Template@504:
+		Id: 504
+		Images: bits/Highland/GrassCliffExtra_25.png
+		Size: 4,4
+		Categories: Grass Cliff Extra
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Grass
+			12: Grass
+			13: Grass
+			14: Grass
+
+	Template@505:
+		Id: 505
+		Images: bits/Highland/GrassCliffExtra_26.png
+		Size: 4,4
+		Categories: Grass Cliff Extra
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			13: Grass
+			14: Grass
+
+	Template@506:
+		Id: 506
+		Images: bits/Highland/GrassCliffExtra_30.png
+		Size: 4,6
+		Categories: Grass Cliff Extra
+		Tiles:
+			1: Grass
+			2: Cliff
+			3: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Grass
+			9: Cliff
+			10: Cliff
+			11: Grass
+			13: Cliff
+			14: Grass
+			15: Grass
+			17: Cliff
+			18: Grass
+			21: Grass
+
+	Template@507:
+		Id: 507
+		Images: bits/Highland/GrassCliffExtra_32.png
+		Size: 3,4
+		Categories: Grass Cliff Extra
+		Tiles:
+			1: Grass
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Grass
+			9: Grass
+			10: Grass
+
+	Template@508:
+		Id: 508
+		Images: bits/Highland/GrassCliffExtra_34.png
+		Size: 3,5
+		Categories: Grass Cliff Extra
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Grass
+			12: Grass
+
+	Template@510:
+		Id: 510
+		Images: bits/Highland/GrassCliffExtra_36.png
+		Size: 3,4
+		Categories: Grass Cliff Extra
+		Tiles:
+			0: Cliff
+			1: Cliff
+			3: Grass
+			4: Cliff
+			6: Cliff
+			7: Cliff
+			8: Grass
+			9: Grass
+			10: Cliff
+			11: Cliff
+
+	Template@173:
+		Id: 173
+		Images: bits/Highland/GrassCliffRamp_SE.png
+		Size: 2,4
+		Categories: Grass Cliff Ramp
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Grass
+			6: Grass
+			7: Grass
+
+	Template@174:
+		Id: 174
+		Images: bits/Highland/GrassCliffRamp_SW.png
+		Size: 2,4
+		Categories: Grass Cliff Ramp
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Cliff
+			3: Cliff
+			4: Grass
+			5: Cliff
+			6: Grass
+			7: Grass
+
+	Template@175:
+		Id: 175
+		Images: bits/Highland/GrassCliffRamp_NE.png
+		Size: 2,3
+		Categories: Grass Cliff Ramp
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Cliff
+			3: Cliff
+			4: Grass
+			5: Grass
+
+	Template@176:
+		Id: 176
+		Images: bits/Highland/GrassCliffRamp_NW.png
+		Size: 2,3
+		Categories: Grass Cliff Ramp
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Cliff
+			3: Cliff
+			4: Grass
+			5: Grass
+
+	Template@177:
+		Id: 177
+		Images: bits/Highland/GrassCliffRamp_WS.png
+		Size: 2,4
+		Categories: Grass Cliff Ramp
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Grass
+			7: Grass
+
+	Template@178:
+		Id: 178
+		Images: bits/Highland/GrassCliffRamp_WN.png
+		Size: 3,3
+		Categories: Grass Cliff Ramp
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Grass
+			5: Grass
+			6: Cliff
+			7: Grass
+			8: Grass
+
+	Template@179:
+		Id: 179
+		Images: bits/Highland/GrassCliffRamp_ES.png
+		Size: 2,4
+		Categories: Grass Cliff Ramp
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Grass
+			7: Grass
+
+	Template@180:
+		Id: 180
+		Images: bits/Highland/GrassCliffRamp_EN.png
+		Size: 3,3
+		Categories: Grass Cliff Ramp
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Grass
+			4: Grass
+			5: Cliff
+			6: Grass
+			7: Grass
+			8: Cliff
+
+	Template@511:
+		Id: 511
+		Images: bits/Highland/GrassCliffRamp_1.png
+		Size: 3,2
+		Categories: Grass Cliff Ramp
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+
+	Template@513:
+		Id: 513
+		Images: bits/Highland/GrassCliffRamp_2.png
+		Size: 3,2
+		Categories: Grass Cliff Ramp
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Grass
+			3: Cliff
+			4: Cliff
+			5: Cliff
+
+	Template@514:
+		Id: 514
+		Images: bits/Highland/GrassCliffRamp_4.png
+		Size: 2,2
+		Categories: Grass Cliff Ramp
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Grass
+			3: Grass
+
+	Template@515:
+		Id: 515
+		Images: bits/Highland/GrassCliffRamp_3.png
+		Size: 2,2
+		Categories: Grass Cliff Ramp
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Grass
+			3: Grass
+
+	Template@516:
+		Id: 516
+		Images: bits/Highland/GrassCliffRamp_5.png
+		Size: 2,3
+		Categories: Grass Cliff Ramp
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Cliff
+			3: Cliff
+			4: Grass
+			5: Grass
+
+	Template@518:
+		Id: 518
+		Images: bits/Highland/GrassCliffRamp_6.png
+		Size: 2,3
+		Categories: Grass Cliff Ramp
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Cliff
+			3: Cliff
+			4: Grass
+			5: Grass
+
+	Template@519:
+		Id: 519
+		Images: bits/Highland/GrassCliffRamp_7.png
+		Size: 3,2
+		Categories: Grass Cliff Ramp
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Cliff
+			5: Cliff
+
+	Template@520:
+		Id: 520
+		Images: bits/Highland/GrassCliffRamp_8.png
+		Size: 3,2
+		Categories: Grass Cliff Ramp
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Cliff
+			4: Cliff
+			5: Grass
+
+	Template@521:
+		Id: 521
+		Images: bits/Highland/GrassCliffRamp_10.png
+		Size: 2,3
+		Categories: Grass Cliff Ramp
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Grass
+
+	Template@522:
+		Id: 522
+		Images: bits/Highland/GrassCliffRamp_9.png
+		Size: 2,3
+		Categories: Grass Cliff Ramp
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Grass
+			5: Cliff
+
+	Template@524:
+		Id: 524
+		Images: bits/Highland/GrassCliffRamp_12.png
+		Size: 2,3
+		Categories: Grass Cliff Ramp
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Grass
+
+	Template@525:
+		Id: 525
+		Images: bits/Highland/GrassCliffRamp_11.png
+		Size: 2,3
+		Categories: Grass Cliff Ramp
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Grass
+			5: Cliff
+
+	Template@527:
+		Id: 527
+		Images: bits/Highland/GrassCliffRamp_13.png
+		Size: 2,3
+		Categories: Grass Cliff Ramp
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Grass
+			5: Grass
+
+	Template@528:
+		Id: 528
+		Images: bits/Highland/GrassCliffRamp_14.png
+		Size: 2,3
+		Categories: Grass Cliff Ramp
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Grass
+			5: Grass
+
+	Template@529:
+		Id: 529
+		Images: bits/Highland/GrassCliffRamp_15.png
+		Size: 3,4
+		Categories: Grass Cliff Ramp
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Grass
+			7: Grass
+			8: Cliff
+			11: Grass
+
+	Template@530:
+		Id: 530
+		Images: bits/Highland/GrassCliffRamp_16.png
+		Size: 3,4
+		Categories: Grass Cliff Ramp
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Grass
+			8: Grass
+			9: Grass
+
+	Template@760:
+		Id: 760
+		Images: bits/Highland/NarrowPath_16.png
+		Size: 3,3
+		Categories: Narrow Path
+		Tiles:
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+
+	Template@761:
+		Id: 761
+		Images: bits/Highland/NarrowPath_1.png
+		Size: 5,2
+		Categories: Narrow Path
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Path
+			9: Path
+
+	Template@762:
+		Id: 762
+		Images: bits/Highland/NarrowPath_2.png
+		Size: 3,3
+		Categories: Narrow Path
+		Tiles:
+			0: Path
+			1: Path
+			3: Path
+			4: Path
+			5: Path
+			7: Path
+			8: Path
+
+	Template@763:
+		Id: 763
+		Images: bits/Highland/NarrowPath_3.png
+		Size: 2,2
+		Categories: Narrow Path
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+
+	Template@764:
+		Id: 764
+		Images: bits/Highland/NarrowPath_28.png
+		Size: 3,2
+		Categories: Narrow Path
+		Tiles:
+			0: Path
+			1: Path
+			3: Path
+			4: Path
+			5: Path
+
+	Template@765:
+		Id: 765
+		Images: bits/Highland/NarrowPath_4.png
+		Size: 3,2
+		Categories: Narrow Path
+		Tiles:
+			0: Path
+			1: Path
+			3: Path
+			4: Path
+			5: Path
+
+	Template@767:
+		Id: 767
+		Images: bits/Highland/NarrowPath_18.png
+		Size: 3,3
+		Categories: Narrow Path
+		Tiles:
+			1: Path
+			3: Path
+			4: Path
+			5: Path
+			7: Path
+			8: Path
+
+	Template@770:
+		Id: 770
+		Images: bits/Highland/NarrowPath_17.png
+		Size: 3,3
+		Categories: Narrow Path
+		Tiles:
+			1: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+
+	Template@774:
+		Id: 774
+		Images: bits/Highland/NarrowPath_6.png
+		Size: 3,2
+		Categories: Narrow Path
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+
+	Template@776:
+		Id: 776
+		Images: bits/Highland/NarrowPath_29.png
+		Size: 3,2
+		Categories: Narrow Path
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+
+	Template@777:
+		Id: 777
+		Images: bits/Highland/NarrowPath_7.png
+		Size: 2,2
+		Categories: Narrow Path
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+
+	Template@778:
+		Id: 778
+		Images: bits/Highland/NarrowPath_19.png
+		Size: 3,3
+		Categories: Narrow Path
+		Tiles:
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			7: Path
+
+	Template@780:
+		Id: 780
+		Images: bits/Highland/NarrowPath_8.png
+		Size: 3,3
+		Categories: Narrow Path
+		Tiles:
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+
+	Template@781:
+		Id: 781
+		Images: bits/Highland/NarrowPath_20.png
+		Size: 3,3
+		Categories: Narrow Path
+		Tiles:
+			0: Path
+			1: Path
+			3: Path
+			4: Path
+			5: Path
+			7: Path
+
+	Template@782:
+		Id: 782
+		Images: bits/Highland/NarrowPath_10.png
+		Size: 3,3
+		Categories: Narrow Path
+		Tiles:
+			0: Path
+			1: Path
+			3: Path
+			4: Path
+			5: Path
+			7: Path
+			8: Path
+
+	Template@783:
+		Id: 783
+		Images: bits/Highland/NarrowPath_9.png
+		Size: 5,2
+		Categories: Narrow Path
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Path
+			9: Path
+
+	Template@788:
+		Id: 788
+		Images: bits/Highland/NarrowPath_15.png
+		Size: 2,2
+		Categories: Narrow Path
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+
+	Template@789:
+		Id: 789
+		Images: bits/Highland/NarrowPath_27.png
+		Size: 3,2
+		Categories: Narrow Path
+		Tiles:
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+
+	Template@791:
+		Id: 791
+		Images: bits/Highland/NarrowPath_14.png
+		Size: 3,2
+		Categories: Narrow Path
+		Tiles:
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+
+	Template@792:
+		Id: 792
+		Images: bits/Highland/NarrowPath_13.png
+		Size: 2,3
+		Categories: Narrow Path
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+
+	Template@793:
+		Id: 793
+		Images: bits/Highland/NarrowPath_12.png
+		Size: 3,2
+		Categories: Narrow Path
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			4: Path
+			5: Path
+
+	Template@794:
+		Id: 794
+		Images: bits/Highland/NarrowPath_30.png
+		Size: 3,2
+		Categories: Narrow Path
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			4: Path
+			5: Path
+
+	Template@795:
+		Id: 795
+		Images: bits/Highland/NarrowPath_11.png
+		Size: 2,2
+		Categories: Narrow Path
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+
+	Template@825:
+		Id: 825
+		Images: bits/Highland/NarrowPath_25.png
+		Size: 2,2
+		Categories: Narrow Path
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+
+	Template@826:
+		Id: 826
+		Images: bits/Highland/NarrowPath_22.png
+		Size: 2,2
+		Categories: Narrow Path
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+
+	Template@827:
+		Id: 827
+		Images: bits/Highland/NarrowPath_23.png
+		Size: 2,2
+		Categories: Narrow Path
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+
+	Template@828:
+		Id: 828
+		Images: bits/Highland/NarrowPath_24.png
+		Size: 2,2
+		Categories: Narrow Path
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+
+	Template@831:
+		Id: 831
+		Images: bits/Highland/NarrowPath_21.png
+		Size: 6,6
+		Categories: Narrow Path
+		Tiles:
+			2: Path
+			3: Path
+			8: Path
+			9: Path
+			12: Path
+			13: Path
+			14: Path
+			15: Path
+			16: Path
+			17: Path
+			18: Path
+			19: Path
+			20: Path
+			21: Path
+			22: Path
+			23: Path
+			26: Path
+			27: Path
+			32: Path
+			33: Path
+
+	Template@833:
+		Id: 833
+		Images: bits/Highland/NarrowPath_5.png
+		Size: 2,3
+		Categories: Narrow Path
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+
+	Template@766:
+		Id: 766
+		Images: bits/Highland/NarrowPathExtra_4.png
+		Size: 3,2
+		Categories: Narrow Path Extra
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+
+	Template@771:
+		Id: 771
+		Images: bits/Highland/NarrowPathExtra_2.png
+		Size: 3,3
+		Categories: Narrow Path Extra
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Grass
+			7: Path
+			8: Path
+
+	Template@772:
+		Id: 772
+		Images: bits/Highland/NarrowPathExtra_3.png
+		Size: 3,3
+		Categories: Narrow Path Extra
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Grass
+
+	Template@773:
+		Id: 773
+		Images: bits/Highland/NarrowPathExtra_6.png
+		Size: 3,2
+		Categories: Narrow Path Extra
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+
+	Template@784:
+		Id: 784
+		Images: bits/Highland/NarrowPathExtra_5.png
+		Size: 3,2
+		Categories: Narrow Path Extra
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+
+	Template@785:
+		Id: 785
+		Images: bits/Highland/NarrowPathExtra_1.png
+		Size: 3,2
+		Categories: Narrow Path Extra
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+
+	Template@796:
+		Id: 796
+		Images: bits/Highland/NarrowPathExtra_7.png
+		Size: 3,4
+		Categories: Narrow Path Extra
+		Tiles:
+			0: Grass
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Path
+			9: Path
+			10: Path
+			11: Path
+
+	Template@797:
+		Id: 797
+		Images: bits/Highland/NarrowPathExtra_8.png
+		Size: 3,4
+		Categories: Narrow Path Extra
+		Tiles:
+			2: Grass
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Path
+			9: Path
+			10: Path
+			11: Path
+
+	Template@798:
+		Id: 798
+		Images: bits/Highland/NarrowPathExtra_9.png
+		Size: 3,4
+		Categories: Narrow Path Extra
+		Tiles:
+			1: Path
+			2: Path
+			4: Path
+			5: Path
+			7: Path
+			9: Path
+			10: Path
+
+	Template@799:
+		Id: 799
+		Images: bits/Highland/NarrowPathExtra_10.png
+		Size: 3,4
+		Categories: Narrow Path Extra
+		Tiles:
+			0: Path
+			1: Path
+			3: Path
+			4: Path
+			7: Path
+			10: Path
+			11: Path
+
+	Template@800:
+		Id: 800
+		Images: bits/Highland/NarrowPathExtra_11.png
+		Size: 2,3
+		Categories: Narrow Path Extra
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Grass
+			5: Path
+
+	Template@801:
+		Id: 801
+		Images: bits/Highland/NarrowPathExtra_12.png
+		Size: 2,3
+		Categories: Narrow Path Extra
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Grass
+
+	Template@802:
+		Id: 802
+		Images: bits/Highland/NarrowPathExtra_17.png
+		Size: 4,2
+		Categories: Narrow Path Extra
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Grass
+			5: Path
+			6: Path
+			7: Path
+
+	Template@803:
+		Id: 803
+		Images: bits/Highland/NarrowPathExtra_15.png
+		Size: 3,3
+		Categories: Narrow Path Extra
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Grass
+
+	Template@804:
+		Id: 804
+		Images: bits/Highland/NarrowPathExtra_16.png
+		Size: 3,3
+		Categories: Narrow Path Extra
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			7: Grass
+			8: Path
+
+	Template@805:
+		Id: 805
+		Images: bits/Highland/NarrowPathExtra_14.png
+		Size: 4,3
+		Categories: Narrow Path Extra
+		Tiles:
+			2: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Grass
+			9: Path
+			10: Path
+
+	Template@806:
+		Id: 806
+		Images: bits/Highland/NarrowPathExtra_13.png
+		Size: 4,3
+		Categories: Narrow Path Extra
+		Tiles:
+			1: Path
+			4: Path
+			5: Path
+			6: Path
+			9: Path
+			10: Path
+			11: Grass
+
+	Template@807:
+		Id: 807
+		Images: bits/Highland/NarrowPathExtra_18.png
+		Size: 3,2
+		Categories: Narrow Path Extra
+		Tiles:
+			0: Grass
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+
+	Template@808:
+		Id: 808
+		Images: bits/Highland/NarrowPathExtra_19.png
+		Size: 3,3
+		Categories: Narrow Path Extra
+		Tiles:
+			0: Grass
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Grass
+			8: Grass
+
+	Template@809:
+		Id: 809
+		Images: bits/Highland/NarrowPathExtra_20.png
+		Size: 3,3
+		Categories: Narrow Path Extra
+		Tiles:
+			0: Path
+			1: Path
+			2: Grass
+			3: Path
+			4: Path
+			5: Path
+			6: Grass
+			7: Grass
+			8: Path
+
+	Template@810:
+		Id: 810
+		Images: bits/Highland/NarrowPathExtra_21.png
+		Size: 3,3
+		Categories: Narrow Path Extra
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			7: Grass
+			8: Path
+
+	Template@811:
+		Id: 811
+		Images: bits/Highland/NarrowPathExtra_22.png
+		Size: 3,3
+		Categories: Narrow Path Extra
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Grass
+
+	Template@812:
+		Id: 812
+		Images: bits/Highland/NarrowPathExtra_23.png
+		Size: 3,2
+		Categories: Narrow Path Extra
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+
+	Template@813:
+		Id: 813
+		Images: bits/Highland/NarrowPathExtra_24.png
+		Size: 2,3
+		Categories: Narrow Path Extra
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+
+	Template@814:
+		Id: 814
+		Images: bits/Highland/NarrowPathExtra_26.png
+		Size: 3,2
+		Categories: Narrow Path Extra
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+
+	Template@815:
+		Id: 815
+		Images: bits/Highland/NarrowPathExtra_25.png
+		Size: 2,3
+		Categories: Narrow Path Extra
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+
+	Template@816:
+		Id: 816
+		Images: bits/Highland/NarrowPathExtra_28.png
+		Size: 2,2
+		Categories: Narrow Path Extra
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+
+	Template@817:
+		Id: 817
+		Images: bits/Highland/NarrowPathExtra_27.png
+		Size: 2,2
+		Categories: Narrow Path Extra
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+
+	Template@818:
+		Id: 818
+		Images: bits/Highland/NarrowPathExtra_30.png
+		Size: 2,2
+		Categories: Narrow Path Extra
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+
+	Template@819:
+		Id: 819
+		Images: bits/Highland/NarrowPathExtra_29.png
+		Size: 2,2
+		Categories: Narrow Path Extra
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+
+	Template@820:
+		Id: 820
+		Images: bits/Highland/NarrowPathExtra_32.png
+		Size: 2,2
+		Categories: Narrow Path Extra
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+
+	Template@821:
+		Id: 821
+		Images: bits/Highland/NarrowPathExtra_31.png
+		Size: 2,2
+		Categories: Narrow Path Extra
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+
+	Template@822:
+		Id: 822
+		Images: bits/Highland/NarrowPathExtra_33.png
+		Size: 2,2
+		Categories: Narrow Path Extra
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+
+	Template@823:
+		Id: 823
+		Images: bits/Highland/NarrowPathExtra_34.png
+		Size: 2,2
+		Categories: Narrow Path Extra
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+
+	Template@538:
+		Id: 538
+		Images: bits/Highland/River_1.png
+		Size: 6,3
+		Categories: River
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+			8: Water
+			9: Water
+			10: Water
+			11: Water
+			12: Water
+			13: Water
+			14: Water
+			15: Water
+			16: Water
+			17: Water
+
+	Template@543:
+		Id: 543
+		Images: bits/Highland/River_2.png
+		Size: 6,3
+		Categories: River
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+			8: Water
+			9: Water
+			10: Water
+			11: Water
+			12: Water
+			13: Water
+			14: Water
+			15: Water
+			16: Water
+			17: Water
+
+	Template@546:
+		Id: 546
+		Images: bits/Highland/River_4.png
+		Size: 4,4
+		Categories: River
+		Tiles:
+			0: Water
+			1: Water
+			2: Dirt
+			4: Water
+			5: Water
+			6: Water
+			7: Dirt
+			8: Water
+			9: Water
+			10: Water
+			11: Water
+			13: Dirt
+
+	Template@550:
+		Id: 550
+		Images: bits/Highland/River_3.png
+		Size: 4,4
+		Categories: River
+		Tiles:
+			1: Dirt
+			2: Water
+			3: Water
+			4: Dirt
+			5: Water
+			6: Water
+			7: Water
+			8: Water
+			9: Water
+			10: Water
+			11: Water
+			14: Dirt
+
+	Template@554:
+		Id: 554
+		Images: bits/Highland/River_5.png
+		Size: 4,4
+		Categories: River
+		Tiles:
+			1: Dirt
+			2: Water
+			4: Dirt
+			5: Water
+			6: Water
+			7: Water
+			9: Water
+			10: Water
+			11: Dirt
+			14: Dirt
+
+	Template@555:
+		Id: 555
+		Images: bits/Highland/River_7.png
+		Size: 4,4
+		Categories: River
+		Tiles:
+			1: Dirt
+			4: Dirt
+			5: Water
+			6: Water
+			8: Water
+			9: Water
+			10: Water
+			11: Dirt
+			12: Water
+			13: Water
+			14: Water
+
+	Template@571:
+		Id: 571
+		Images: bits/Highland/River_18.png
+		Size: 4,4
+		Categories: River
+		Tiles:
+			1: Water
+			2: Water
+			3: Water
+			4: Dirt
+			5: Water
+			6: Water
+			7: Water
+			9: Water
+			10: Water
+			11: Dirt
+			14: Dirt
+
+	Template@572:
+		Id: 572
+		Images: bits/Highland/River_10.png
+		Size: 3,6
+		Categories: River
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+			8: Water
+			9: Water
+			10: Water
+			11: Water
+			12: Water
+			13: Water
+			14: Water
+			15: Water
+			16: Water
+			17: Water
+
+	Template@573:
+		Id: 573
+		Images: bits/Highland/River_8.png
+		Size: 4,4
+		Categories: River
+		Tiles:
+			2: Dirt
+			5: Water
+			6: Water
+			7: Dirt
+			8: Dirt
+			9: Water
+			10: Water
+			11: Water
+			13: Water
+			14: Water
+			15: Water
+
+	Template@574:
+		Id: 574
+		Images: bits/Highland/River_6.png
+		Size: 4,4
+		Categories: River
+		Tiles:
+			1: Water
+			2: Dirt
+			4: Water
+			5: Water
+			6: Water
+			7: Dirt
+			8: Dirt
+			9: Water
+			10: Water
+			13: Dirt
+
+	Template@577:
+		Id: 577
+		Images: bits/Highland/River_17.png
+		Size: 4,4
+		Categories: River
+		Tiles:
+			1: Dirt
+			2: Water
+			4: Dirt
+			5: Water
+			6: Water
+			7: Water
+			9: Water
+			10: Water
+			11: Dirt
+			14: Dirt
+
+	Template@583:
+		Id: 583
+		Images: bits/Highland/River_14.png
+		Size: 6,3
+		Categories: River
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+			8: Water
+			9: Water
+			10: Water
+			11: Water
+			12: Water
+			13: Water
+			14: Water
+			15: Water
+			16: Water
+			17: Water
+
+	Template@586:
+		Id: 586
+		Images: bits/Highland/River_9.png
+		Size: 3,6
+		Categories: River
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+			8: Water
+			9: Water
+			10: Water
+			11: Water
+			12: Water
+			13: Water
+			14: Water
+			15: Water
+			16: Water
+			17: Water
+
+	Template@587:
+		Id: 587
+		Images: bits/Highland/River_11.png
+		Size: 4,4
+		Categories: River
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			4: Water
+			5: Water
+			6: Water
+			7: Dirt
+			8: Dirt
+			9: Water
+			10: Water
+			13: Dirt
+
+	Template@588:
+		Id: 588
+		Images: bits/Highland/River_12.png
+		Size: 4,4
+		Categories: River
+		Tiles:
+			1: Water
+			2: Dirt
+			4: Water
+			5: Water
+			6: Water
+			7: Dirt
+			8: Dirt
+			9: Water
+			10: Water
+			13: Dirt
+
+	Template@589:
+		Id: 589
+		Images: bits/Highland/River_15.png
+		Size: 4,4
+		Categories: River
+		Tiles:
+			1: Dirt
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+			8: Water
+			9: Water
+			10: Water
+			11: Water
+			12: Water
+			13: Water
+			14: Dirt
+
+	Template@591:
+		Id: 591
+		Images: bits/Highland/River_13.png
+		Size: 4,4
+		Categories: River
+		Tiles:
+			2: Dirt
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+			8: Dirt
+			9: Water
+			10: Water
+			11: Water
+			13: Water
+			14: Water
+			15: Water
+
+	Template@624:
+		Id: 624
+		Images: bits/Highland/RiverCrossing_2.png
+		Size: 9,3
+		Categories: River Crossing
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Dirt
+			9: Dirt
+			10: Dirt
+			11: Dirt
+			12: Dirt
+			13: Dirt
+			14: Dirt
+			15: Dirt
+			16: Dirt
+			17: Dirt
+			18: Dirt
+			19: Dirt
+			20: Dirt
+			21: Dirt
+			22: Dirt
+			23: Dirt
+			24: Dirt
+			25: Dirt
+			26: Dirt
+
+	Template@625:
+		Id: 625
+		Images: bits/Highland/RiverCrossing_3.png
+		Size: 8,6
+		Categories: River Crossing
+		Tiles:
+			0: Dirt
+			1: Dirt
+			8: Dirt
+			9: Dirt
+			10: Dirt
+			11: Dirt
+			12: Dirt
+			16: Dirt
+			17: Dirt
+			18: Dirt
+			19: Dirt
+			20: Dirt
+			21: Dirt
+			22: Dirt
+			26: Dirt
+			27: Dirt
+			28: Dirt
+			29: Dirt
+			30: Dirt
+			31: Dirt
+			37: Dirt
+			38: Dirt
+			39: Dirt
+			46: Dirt
+			47: Dirt
+
+	Template@626:
+		Id: 626
+		Images: bits/Highland/RiverCrossing_1.png
+		Size: 8,6
+		Categories: River Crossing
+		Tiles:
+			6: Dirt
+			7: Dirt
+			11: Dirt
+			12: Dirt
+			13: Dirt
+			14: Dirt
+			15: Dirt
+			17: Dirt
+			18: Dirt
+			19: Dirt
+			20: Dirt
+			21: Dirt
+			22: Dirt
+			23: Dirt
+			24: Dirt
+			25: Dirt
+			26: Dirt
+			27: Dirt
+			28: Dirt
+			29: Dirt
+			30: Dirt
+			32: Dirt
+			33: Dirt
+			34: Dirt
+			40: Dirt
+			41: Dirt
+
+	Template@627:
+		Id: 627
+		Images: bits/Highland/RiverCrossing_5.png
+		Size: 3,3
+		Categories: River Crossing
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Dirt
+
+	Template@628:
+		Id: 628
+		Images: bits/Highland/RiverCrossing_6.png
+		Size: 3,3
+		Categories: River Crossing
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Dirt
+
+	Template@629:
+		Id: 629
+		Images: bits/Highland/RiverCrossing_4.png
+		Size: 4,4
+		Categories: River Crossing
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Dirt
+			9: Dirt
+			10: Dirt
+			11: Dirt
+			12: Dirt
+			13: Dirt
+
+	Template@631:
+		Id: 631
+		Images: bits/Highland/RiverCrossing_26.png
+		Size: 3,9
+		Categories: River Crossing
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Dirt
+			9: Dirt
+			10: Dirt
+			11: Dirt
+			12: Dirt
+			13: Dirt
+			14: Dirt
+			15: Dirt
+			16: Dirt
+			17: Dirt
+			18: Dirt
+			19: Dirt
+			20: Dirt
+			21: Dirt
+			22: Dirt
+			23: Dirt
+			24: Dirt
+			25: Dirt
+			26: Dirt
+
+	Template@632:
+		Id: 632
+		Images: bits/Highland/RiverCrossing_8.png
+		Size: 2,3
+		Categories: River Crossing
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+
+	Template@633:
+		Id: 633
+		Images: bits/Highland/RiverCrossing_9.png
+		Size: 2,4
+		Categories: River Crossing
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+
+	Template@634:
+		Id: 634
+		Images: bits/Highland/RiverCrossing_10.png
+		Size: 2,2
+		Categories: River Crossing
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+
+	Template@635:
+		Id: 635
+		Images: bits/Highland/RiverCrossing_11.png
+		Size: 2,2
+		Categories: River Crossing
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+
+	Template@636:
+		Id: 636
+		Images: bits/Highland/RiverCrossing_7.png
+		Size: 4,4
+		Categories: River Crossing
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Dirt
+			9: Dirt
+			10: Dirt
+			11: Dirt
+			14: Dirt
+			15: Dirt
+
+	Template@637:
+		Id: 637
+		Images: bits/Highland/RiverCrossing_14.png
+		Size: 3,9
+		Categories: River Crossing
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Dirt
+			9: Dirt
+			10: Dirt
+			11: Dirt
+			12: Dirt
+			13: Dirt
+			14: Dirt
+			15: Dirt
+			16: Dirt
+			17: Dirt
+			18: Dirt
+			19: Dirt
+			20: Dirt
+			21: Dirt
+			22: Dirt
+			23: Dirt
+			24: Dirt
+			25: Dirt
+			26: Dirt
+
+	Template@638:
+		Id: 638
+		Images: bits/Highland/RiverCrossing_12.png
+		Size: 2,4
+		Categories: River Crossing
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+
+	Template@639:
+		Id: 639
+		Images: bits/Highland/RiverCrossing_13.png
+		Size: 2,3
+		Categories: River Crossing
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+
+	Template@640:
+		Id: 640
+		Images: bits/Highland/RiverCrossing_18.png
+		Size: 4,4
+		Categories: River Crossing
+		Tiles:
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Dirt
+			9: Dirt
+			10: Dirt
+			11: Dirt
+			12: Dirt
+			13: Dirt
+			14: Dirt
+
+	Template@643:
+		Id: 643
+		Images: bits/Highland/RiverCrossing_15.png
+		Size: 4,4
+		Categories: River Crossing
+		Tiles:
+			0: Dirt
+			1: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Dirt
+			9: Dirt
+			10: Dirt
+			11: Dirt
+			13: Dirt
+			14: Dirt
+			15: Dirt
+
+	Template@645:
+		Id: 645
+		Images: bits/Highland/RiverCrossing_16.png
+		Size: 3,3
+		Categories: River Crossing
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Dirt
+
+	Template@646:
+		Id: 646
+		Images: bits/Highland/RiverCrossing_17.png
+		Size: 3,3
+		Categories: River Crossing
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Dirt
+
+	Template@647:
+		Id: 647
+		Images: bits/Highland/RiverCrossing_19.png
+		Size: 3,3
+		Categories: River Crossing
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Dirt
+
+	Template@648:
+		Id: 648
+		Images: bits/Highland/RiverCrossing_20.png
+		Size: 3,3
+		Categories: River Crossing
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Dirt
+
+	Template@650:
+		Id: 650
+		Images: bits/Highland/RiverCrossing_22.png
+		Size: 9,3
+		Categories: River Crossing
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Dirt
+			9: Dirt
+			10: Dirt
+			11: Dirt
+			12: Dirt
+			13: Dirt
+			14: Dirt
+			15: Dirt
+			16: Dirt
+			17: Dirt
+			18: Dirt
+			19: Dirt
+			20: Dirt
+			21: Dirt
+			22: Dirt
+			23: Dirt
+			24: Dirt
+			25: Dirt
+			26: Dirt
+
+	Template@651:
+		Id: 651
+		Images: bits/Highland/RiverCrossing_21.png
+		Size: 8,6
+		Categories: River Crossing
+		Tiles:
+			0: Dirt
+			1: Dirt
+			8: Dirt
+			9: Dirt
+			10: Dirt
+			16: Dirt
+			17: Dirt
+			18: Dirt
+			19: Dirt
+			20: Dirt
+			21: Dirt
+			25: Dirt
+			26: Dirt
+			27: Dirt
+			28: Dirt
+			29: Dirt
+			30: Dirt
+			31: Dirt
+			35: Dirt
+			36: Dirt
+			37: Dirt
+			38: Dirt
+			39: Dirt
+			46: Dirt
+			47: Dirt
+
+	Template@652:
+		Id: 652
+		Images: bits/Highland/RiverCrossing_23.png
+		Size: 8,6
+		Categories: River Crossing
+		Tiles:
+			6: Dirt
+			7: Dirt
+			13: Dirt
+			14: Dirt
+			15: Dirt
+			18: Dirt
+			19: Dirt
+			20: Dirt
+			21: Dirt
+			22: Dirt
+			23: Dirt
+			24: Dirt
+			25: Dirt
+			26: Dirt
+			27: Dirt
+			28: Dirt
+			29: Dirt
+			30: Dirt
+			32: Dirt
+			33: Dirt
+			34: Dirt
+			35: Dirt
+			36: Dirt
+			40: Dirt
+			41: Dirt
+
+	Template@954:
+		Id: 954
+		Images: bits/Highland/RiverCrossing_24.png
+		Size: 3,3
+		Categories: River Crossing
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Dirt
+
+	Template@955:
+		Id: 955
+		Images: bits/Highland/RiverCrossing_25.png
+		Size: 3,3
+		Categories: River Crossing
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Dirt
+
+	Template@1682:
+		Id: 1682
+		Images: bits/Highland/RiverCrossing_27.png
+		Size: 3,3
+		Categories: River Crossing
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Dirt
+
+	Template@1683:
+		Id: 1683
+		Images: bits/Highland/RiverCrossing_28.png
+		Size: 3,3
+		Categories: River Crossing
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Dirt
+
+	Template@542:
+		Id: 542
+		Images: bits/Highland/RiverExtra_2.png
+		Size: 2,2
+		Categories: River Extra
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Water
+
+	Template@547:
+		Id: 547
+		Images: bits/Highland/RiverExtra_4.png
+		Size: 3,4
+		Categories: River Extra
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+			8: Water
+			10: Water
+			11: Water
+
+	Template@549:
+		Id: 549
+		Images: bits/Highland/RiverExtra_1.png
+		Size: 2,2
+		Categories: River Extra
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Water
+
+	Template@552:
+		Id: 552
+		Images: bits/Highland/RiverExtra_3.png
+		Size: 3,4
+		Categories: River Extra
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+			8: Water
+			9: Water
+			10: Water
+
+	Template@553:
+		Id: 553
+		Images: bits/Highland/RiverExtra_5.png
+		Size: 4,4
+		Categories: River Extra
+		Tiles:
+			1: Water
+			2: Water
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+			8: Water
+			9: Water
+			10: Water
+			11: Water
+			13: Water
+			14: Water
+			15: Dirt
+
+	Template@556:
+		Id: 556
+		Images: bits/Highland/RiverExtra_7.png
+		Size: 4,5
+		Categories: River Extra
+		Tiles:
+			2: Water
+			3: Water
+			5: Dirt
+			6: Water
+			7: Water
+			8: Water
+			9: Water
+			10: Water
+			11: Water
+			12: Water
+			13: Water
+			14: Water
+			15: Water
+			16: Water
+			17: Dirt
+
+	Template@558:
+		Id: 558
+		Images: bits/Highland/RiverExtra_8.png
+		Size: 4,4
+		Categories: River Extra
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			4: Water
+			5: Water
+			6: Water
+			8: Water
+			9: Water
+			10: Water
+			11: Water
+			12: Dirt
+			13: Water
+			14: Water
+
+	Template@559:
+		Id: 559
+		Images: bits/Highland/RiverExtra_11.png
+		Size: 4,4
+		Categories: River Extra
+		Tiles:
+			1: Water
+			2: Water
+			3: Water
+			5: Water
+			6: Water
+			7: Water
+			8: Water
+			9: Water
+			10: Water
+			11: Water
+			13: Water
+			14: Water
+			15: Dirt
+
+	Template@560:
+		Id: 560
+		Images: bits/Highland/RiverExtra_12.png
+		Size: 3,4
+		Categories: River Extra
+		Tiles:
+			0: Water
+			1: Dirt
+			3: Water
+			4: Water
+			5: Water
+			6: Dirt
+			7: Water
+			8: Water
+			10: Dirt
+			11: Water
+
+	Template@562:
+		Id: 562
+		Images: bits/Highland/RiverExtra_10.png
+		Size: 3,4
+		Categories: River Extra
+		Tiles:
+			1: Dirt
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+			8: Dirt
+			9: Water
+			10: Dirt
+
+	Template@563:
+		Id: 563
+		Images: bits/Highland/RiverExtra_15.png
+		Size: 3,3
+		Categories: River Extra
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			7: Water
+			8: Water
+
+	Template@565:
+		Id: 565
+		Images: bits/Highland/RiverExtra_16.png
+		Size: 2,4
+		Categories: River Extra
+		Tiles:
+			0: Water
+			1: Dirt
+			2: Water
+			3: Water
+			4: Dirt
+			5: Water
+			7: Dirt
+
+	Template@566:
+		Id: 566
+		Images: bits/Highland/RiverExtra_17.png
+		Size: 3,3
+		Categories: River Extra
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+
+	Template@567:
+		Id: 567
+		Images: bits/Highland/RiverExtra_20.png
+		Size: 3,4
+		Categories: River Extra
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+			9: Water
+			10: Water
+			11: Water
+
+	Template@569:
+		Id: 569
+		Images: bits/Highland/RiverExtra_19.png
+		Size: 2,4
+		Categories: River Extra
+		Tiles:
+			0: Dirt
+			1: Water
+			2: Water
+			3: Water
+			4: Water
+			5: Dirt
+			6: Dirt
+
+	Template@570:
+		Id: 570
+		Images: bits/Highland/RiverExtra_13.png
+		Size: 4,7
+		Categories: River Extra
+		Tiles:
+			0: Water
+			1: Water
+			2: Dirt
+			4: Water
+			5: Water
+			6: Dirt
+			8: Water
+			9: Water
+			10: Water
+			11: Water
+			12: Water
+			13: Water
+			14: Water
+			15: Water
+			16: Water
+			17: Water
+			18: Water
+			19: Water
+			20: Water
+			21: Water
+			22: Water
+			24: Water
+			25: Water
+
+	Template@575:
+		Id: 575
+		Images: bits/Highland/RiverExtra_6.png
+		Size: 4,4
+		Categories: River Extra
+		Tiles:
+			1: Water
+			2: Water
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+			8: Water
+			9: Water
+			10: Water
+			11: Water
+			12: Dirt
+			13: Water
+			14: Water
+
+	Template@578:
+		Id: 578
+		Images: bits/Highland/RiverExtra_28.png
+		Size: 4,4
+		Categories: River Extra
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+			8: Water
+			9: Water
+			10: Water
+			11: Water
+			13: Water
+			14: Water
+
+	Template@580:
+		Id: 580
+		Images: bits/Highland/RiverExtra_27.png
+		Size: 2,6
+		Categories: River Extra
+		Tiles:
+			0: Water
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+			8: Water
+			9: Water
+			10: Water
+			11: Water
+
+	Template@582:
+		Id: 582
+		Images: bits/Highland/RiverExtra_35.png
+		Size: 2,4
+		Categories: River Extra
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+
+	Template@584:
+		Id: 584
+		Images: bits/Highland/RiverExtra_18.png
+		Size: 3,4
+		Categories: River Extra
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			7: Water
+			8: Water
+			9: Water
+			10: Water
+			11: Water
+
+	Template@585:
+		Id: 585
+		Images: bits/Highland/RiverExtra_14.png
+		Size: 4,7
+		Categories: River Extra
+		Tiles:
+			1: Dirt
+			2: Water
+			3: Water
+			5: Dirt
+			6: Water
+			7: Water
+			8: Water
+			9: Water
+			10: Water
+			11: Water
+			12: Water
+			13: Water
+			14: Water
+			15: Water
+			16: Water
+			17: Water
+			18: Water
+			19: Water
+			21: Water
+			22: Water
+			23: Water
+			26: Water
+			27: Water
+
+	Template@592:
+		Id: 592
+		Images: bits/Highland/RiverExtra_21.png
+		Size: 4,4
+		Categories: River Extra
+		Tiles:
+			1: Water
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+			8: Water
+			9: Water
+			10: Water
+			11: Water
+			13: Water
+			14: Water
+
+	Template@593:
+		Id: 593
+		Images: bits/Highland/RiverExtra_22.png
+		Size: 2,6
+		Categories: River Extra
+		Tiles:
+			1: Water
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+			8: Water
+			9: Water
+			10: Water
+			11: Water
+
+	Template@594:
+		Id: 594
+		Images: bits/Highland/RiverExtra_23.png
+		Size: 4,3
+		Categories: River Extra
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+			8: Water
+			9: Dirt
+
+	Template@595:
+		Id: 595
+		Images: bits/Highland/RiverExtra_24.png
+		Size: 2,4
+		Categories: River Extra
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+
+	Template@596:
+		Id: 596
+		Images: bits/Highland/RiverExtra_25.png
+		Size: 2,4
+		Categories: River Extra
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+
+	Template@597:
+		Id: 597
+		Images: bits/Highland/RiverExtra_26.png
+		Size: 4,3
+		Categories: River Extra
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+			10: Dirt
+			11: Water
+
+	Template@598:
+		Id: 598
+		Images: bits/Highland/RiverExtra_29.png
+		Size: 2,4
+		Categories: River Extra
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+
+	Template@599:
+		Id: 599
+		Images: bits/Highland/RiverExtra_36.png
+		Size: 2,3
+		Categories: River Extra
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+
+	Template@600:
+		Id: 600
+		Images: bits/Highland/RiverExtra_38.png
+		Size: 3,4
+		Categories: River Extra
+		Tiles:
+			0: Water
+			3: Water
+			4: Water
+			6: Water
+			7: Water
+			8: Water
+			10: Water
+
+	Template@601:
+		Id: 601
+		Images: bits/Highland/RiverExtra_30.png
+		Size: 3,6
+		Categories: River Extra
+		Tiles:
+			0: Water
+			1: Water
+			2: Dirt
+			3: Water
+			4: Water
+			5: Dirt
+			6: Water
+			7: Water
+			8: Water
+			9: Water
+			10: Water
+			11: Water
+			12: Water
+			13: Water
+			14: Dirt
+			15: Water
+			16: Water
+			17: Water
+
+	Template@602:
+		Id: 602
+		Images: bits/Highland/RiverExtra_31.png
+		Size: 5,4
+		Categories: River Extra
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Dirt
+			5: Water
+			6: Water
+			7: Water
+			8: Water
+			9: Water
+			10: Dirt
+			11: Water
+			12: Water
+			13: Water
+			14: Water
+			17: Dirt
+			18: Water
+			19: Water
+
+	Template@603:
+		Id: 603
+		Images: bits/Highland/RiverExtra_32.png
+		Size: 5,4
+		Categories: River Extra
+		Tiles:
+			1: Dirt
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+			8: Water
+			9: Water
+			10: Water
+			11: Water
+			12: Water
+			13: Water
+			14: Dirt
+			15: Water
+			16: Water
+			17: Dirt
+
+	Template@604:
+		Id: 604
+		Images: bits/Highland/RiverExtra_33.png
+		Size: 3,6
+		Categories: River Extra
+		Tiles:
+			0: Dirt
+			1: Water
+			2: Water
+			3: Dirt
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+			8: Water
+			9: Water
+			10: Water
+			11: Water
+			12: Dirt
+			13: Water
+			14: Water
+			15: Water
+			16: Water
+			17: Water
+
+	Template@606:
+		Id: 606
+		Images: bits/Highland/RiverExtra_34.png
+		Size: 3,4
+		Categories: River Extra
+		Tiles:
+			2: Water
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+			8: Water
+			10: Water
+
+	Template@608:
+		Id: 608
+		Images: bits/Highland/RiverExtra_39.png
+		Size: 2,3
+		Categories: River Extra
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+
+	Template@609:
+		Id: 609
+		Images: bits/Highland/RiverExtra_40.png
+		Size: 4,3
+		Categories: River Extra
+		Tiles:
+			0: Water
+			1: Water
+			2: Dirt
+			4: Dirt
+			5: Water
+			6: Water
+			7: Water
+			9: Water
+			10: Water
+			11: Water
+
+	Template@610:
+		Id: 610
+		Images: bits/Highland/RiverExtra_41.png
+		Size: 3,3
+		Categories: River Extra
+		Tiles:
+			1: Water
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			6: Dirt
+			7: Dirt
+			8: Dirt
+
+	Template@612:
+		Id: 612
+		Images: bits/Highland/RiverExtra_42.png
+		Size: 3,3
+		Categories: River Extra
+		Tiles:
+			0: Water
+			1: Water
+			3: Water
+			4: Water
+			5: Water
+			6: Dirt
+			7: Dirt
+			8: Dirt
+
+	Template@613:
+		Id: 613
+		Images: bits/Highland/RiverExtra_43.png
+		Size: 4,3
+		Categories: River Extra
+		Tiles:
+			1: Dirt
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			6: Water
+			7: Dirt
+			8: Water
+			9: Water
+			10: Water
+
+	Template@614:
+		Id: 614
+		Images: bits/Highland/RiverExtra_44.png
+		Size: 3,3
+		Categories: River Extra
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			7: Water
+			8: Water
+
+	Template@615:
+		Id: 615
+		Images: bits/Highland/RiverExtra_45.png
+		Size: 3,3
+		Categories: River Extra
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+
+	Template@616:
+		Id: 616
+		Images: bits/Highland/RiverExtra_46.png
+		Size: 4,4
+		Categories: River Extra
+		Tiles:
+			1: Water
+			2: Water
+			4: Water
+			5: Water
+			6: Water
+			7: Dirt
+			8: Dirt
+			9: Water
+			10: Water
+			11: Water
+			13: Water
+			14: Water
+
+	Template@617:
+		Id: 617
+		Images: bits/Highland/RiverExtra_47.png
+		Size: 4,4
+		Categories: River Extra
+		Tiles:
+			1: Water
+			2: Dirt
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+			8: Dirt
+			9: Water
+			10: Water
+			11: Water
+			13: Dirt
+			14: Water
+
+	Template@619:
+		Id: 619
+		Images: bits/Highland/RiverExtra_48.png
+		Size: 4,4
+		Categories: River Extra
+		Tiles:
+			1: Dirt
+			2: Water
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+			8: Water
+			9: Water
+			10: Water
+			11: Dirt
+			13: Water
+			14: Dirt
+
+	Template@620:
+		Id: 620
+		Images: bits/Highland/RiverExtra_49.png
+		Size: 4,4
+		Categories: River Extra
+		Tiles:
+			1: Water
+			2: Water
+			4: Dirt
+			5: Water
+			6: Water
+			7: Water
+			8: Water
+			9: Water
+			10: Water
+			11: Dirt
+			13: Water
+			14: Water
+
+	Template@621:
+		Id: 621
+		Images: bits/Highland/RiverExtra_9.png
+		Size: 4,5
+		Categories: River Extra
+		Tiles:
+			0: Water
+			1: Water
+			4: Water
+			5: Water
+			6: Dirt
+			8: Water
+			9: Water
+			10: Water
+			11: Water
+			12: Water
+			13: Water
+			14: Water
+			15: Water
+			18: Dirt
+			19: Water
+
+	Template@656:
+		Id: 656
+		Images: bits/Highland/Street_1.png
+		Size: 7,2
+		Categories: Street
+		Tiles:
+			0: Street
+			1: Street
+			2: Street
+			3: Street
+			4: Street
+			5: Street
+			6: Street
+			7: Street
+			8: Street
+			9: Street
+			10: Street
+			11: Street
+			12: Street
+			13: Street
+
+	Template@657:
+		Id: 657
+		Images: bits/Highland/Street_3.png
+		Size: 3,2
+		Categories: Street
+		Tiles:
+			0: Dirt
+			1: Street
+			2: Street
+			3: Street
+			4: Street
+			5: Street
+
+	Template@658:
+		Id: 658
+		Images: bits/Highland/Street_4.png
+		Size: 3,2
+		Categories: Street
+		Tiles:
+			0: Street
+			1: Street
+			2: Dirt
+			3: Street
+			4: Street
+			5: Street
+
+	Template@659:
+		Id: 659
+		Images: bits/Highland/Street_5.png
+		Size: 3,4
+		Categories: Street
+		Tiles:
+			0: Street
+			1: Street
+			2: Street
+			3: Street
+			4: Street
+			5: Street
+			6: Dirt
+			7: Street
+			8: Street
+			10: Dirt
+			11: Street
+
+	Template@660:
+		Id: 660
+		Images: bits/Highland/Street_7.png
+		Size: 2,2
+		Categories: Street
+		Tiles:
+			0: Street
+			1: Street
+			2: Street
+
+	Template@661:
+		Id: 661
+		Images: bits/Highland/Street_10.png
+		Size: 3,2
+		Categories: Street
+		Tiles:
+			0: Street
+			1: Street
+			2: Street
+			3: Street
+			4: Street
+
+	Template@663:
+		Id: 663
+		Images: bits/Highland/Street_11.png
+		Size: 3,2
+		Categories: Street
+		Tiles:
+			0: Street
+			1: Street
+			2: Street
+			4: Street
+			5: Street
+
+	Template@664:
+		Id: 664
+		Images: bits/Highland/Street_17.png
+		Size: 3,2
+		Categories: Street
+		Tiles:
+			1: Street
+			2: Street
+			3: Street
+			4: Street
+			5: Street
+
+	Template@665:
+		Id: 665
+		Images: bits/Highland/Street_16.png
+		Size: 3,2
+		Categories: Street
+		Tiles:
+			0: Street
+			1: Street
+			3: Street
+			4: Street
+			5: Street
+
+	Template@667:
+		Id: 667
+		Images: bits/Highland/Street_12.png
+		Size: 3,3
+		Categories: Street
+		Tiles:
+			1: Street
+			3: Street
+			4: Street
+			5: Street
+			7: Street
+			8: Street
+
+	Template@668:
+		Id: 668
+		Images: bits/Highland/Street_13.png
+		Size: 2,7
+		Categories: Street
+		Tiles:
+			0: Street
+			1: Street
+			2: Street
+			3: Street
+			4: Street
+			5: Street
+			6: Street
+			7: Street
+			8: Street
+			9: Street
+			10: Street
+			11: Street
+			12: Street
+			13: Street
+
+	Template@669:
+		Id: 669
+		Images: bits/Highland/Street_14.png
+		Size: 2,7
+		Categories: Street
+		Tiles:
+			0: Street
+			1: Street
+			2: Street
+			3: Street
+			4: Street
+			5: Street
+			6: Street
+			7: Street
+			8: Street
+			9: Street
+			10: Street
+			11: Street
+			12: Street
+			13: Street
+
+	Template@670:
+		Id: 670
+		Images: bits/Highland/Street_24.png
+		Size: 3,4
+		Categories: Street
+		Tiles:
+			1: Dirt
+			2: Street
+			3: Dirt
+			4: Street
+			5: Street
+			6: Street
+			7: Street
+			8: Street
+			9: Street
+			10: Street
+			11: Street
+
+	Template@672:
+		Id: 672
+		Images: bits/Highland/Street_18.png
+		Size: 3,3
+		Categories: Street
+		Tiles:
+			0: Street
+			1: Street
+			2: Street
+			3: Street
+			4: Street
+			5: Street
+			7: Street
+
+	Template@673:
+		Id: 673
+		Images: bits/Highland/Street_20.png
+		Size: 2,2
+		Categories: Street
+		Tiles:
+			0: Street
+			1: Street
+			3: Street
+
+	Template@674:
+		Id: 674
+		Images: bits/Highland/Street_23.png
+		Size: 3,2
+		Categories: Street
+		Tiles:
+			0: Street
+			1: Street
+			2: Street
+			3: Street
+			4: Street
+			5: Dirt
+
+	Template@675:
+		Id: 675
+		Images: bits/Highland/Street_22.png
+		Size: 3,2
+		Categories: Street
+		Tiles:
+			0: Street
+			1: Street
+			2: Street
+			3: Dirt
+			4: Street
+			5: Street
+
+	Template@676:
+		Id: 676
+		Images: bits/Highland/Street_19.png
+		Size: 2,2
+		Categories: Street
+		Tiles:
+			0: Street
+			1: Street
+			2: Street
+
+	Template@677:
+		Id: 677
+		Images: bits/Highland/Street_15.png
+		Size: 3,3
+		Categories: Street
+		Tiles:
+			0: Street
+			1: Street
+			2: Street
+			3: Street
+			4: Street
+			5: Street
+			7: Street
+
+	Template@680:
+		Id: 680
+		Images: bits/Highland/Street_9.png
+		Size: 3,3
+		Categories: Street
+		Tiles:
+			1: Street
+			3: Street
+			4: Street
+			5: Street
+			6: Street
+			7: Street
+
+	Template@681:
+		Id: 681
+		Images: bits/Highland/Street_6.png
+		Size: 2,2
+		Categories: Street
+		Tiles:
+			0: Street
+			1: Street
+			3: Street
+
+	Template@682:
+		Id: 682
+		Images: bits/Highland/Street_2.png
+		Size: 3,4
+		Categories: Street
+		Tiles:
+			0: Street
+			1: Street
+			2: Street
+			3: Street
+			4: Street
+			5: Street
+			6: Street
+			7: Street
+			8: Dirt
+			9: Street
+			10: Dirt
+
+	Template@683:
+		Id: 683
+		Images: bits/Highland/Street_25.png
+		Size: 7,2
+		Categories: Street
+		Tiles:
+			0: Street
+			1: Street
+			2: Street
+			3: Street
+			4: Street
+			5: Street
+			6: Street
+			7: Street
+			8: Street
+			9: Street
+			10: Street
+			11: Street
+			12: Street
+			13: Street
+
+	Template@684:
+		Id: 684
+		Images: bits/Highland/Street_26.png
+		Size: 7,2
+		Categories: Street
+		Tiles:
+			0: Street
+			1: Street
+			2: Street
+			3: Street
+			4: Street
+			5: Street
+			6: Street
+			7: Street
+			8: Street
+			9: Street
+			10: Street
+			11: Street
+			12: Street
+			13: Street
+
+	Template@685:
+		Id: 685
+		Images: bits/Highland/Street_27.png
+		Size: 5,6
+		Categories: Street
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Dirt
+			10: Dirt
+			11: Dirt
+			12: Dirt
+			13: Dirt
+			14: Dirt
+			15: Dirt
+			16: Dirt
+			17: Dirt
+			18: Dirt
+			19: Dirt
+			21: Dirt
+			22: Street
+			23: Street
+			24: Dirt
+			27: Street
+			28: Street
+
+	Template@686:
+		Id: 686
+		Images: bits/Highland/Street_28.png
+		Size: 2,4
+		Categories: Street
+		Tiles:
+			0: Street
+			1: Street
+			2: Street
+			3: Street
+			4: Street
+			5: Street
+			6: Street
+			7: Street
+
+	Template@688:
+		Id: 688
+		Images: bits/Highland/Street_39.png
+		Size: 4,2
+		Categories: Street
+		Tiles:
+			0: Street
+			1: Street
+			2: Street
+			3: Street
+			4: Street
+			5: Street
+			6: Street
+			7: Street
+
+	Template@689:
+		Id: 689
+		Images: bits/Highland/Street_30.png
+		Size: 4,3
+		Categories: Street
+		Tiles:
+			0: Dirt
+			1: Street
+			2: Street
+			3: Dirt
+			4: Street
+			5: Street
+			6: Street
+			7: Street
+			8: Street
+			9: Street
+			10: Street
+			11: Street
+
+	Template@690:
+		Id: 690
+		Images: bits/Highland/Street_31.png
+		Size: 3,4
+		Categories: Street
+		Tiles:
+			0: Dirt
+			1: Street
+			2: Street
+			3: Street
+			4: Street
+			5: Street
+			6: Street
+			7: Street
+			8: Street
+			9: Dirt
+			10: Street
+			11: Street
+
+	Template@691:
+		Id: 691
+		Images: bits/Highland/Street_32.png
+		Size: 4,4
+		Categories: Street
+		Tiles:
+			0: Dirt
+			1: Street
+			2: Street
+			3: Dirt
+			4: Street
+			5: Street
+			6: Street
+			7: Street
+			8: Street
+			9: Street
+			10: Street
+			11: Street
+			12: Dirt
+			13: Street
+			14: Street
+			15: Dirt
+
+	Template@692:
+		Id: 692
+		Images: bits/Highland/Street_33.png
+		Size: 3,4
+		Categories: Street
+		Tiles:
+			0: Street
+			1: Street
+			2: Dirt
+			3: Street
+			4: Street
+			5: Street
+			6: Street
+			7: Street
+			8: Street
+			9: Street
+			10: Street
+			11: Dirt
+
+	Template@693:
+		Id: 693
+		Images: bits/Highland/Street_34.png
+		Size: 4,3
+		Categories: Street
+		Tiles:
+			0: Street
+			1: Street
+			2: Street
+			3: Street
+			4: Street
+			5: Street
+			6: Street
+			7: Street
+			8: Dirt
+			9: Street
+			10: Street
+			11: Dirt
+
+	Template@696:
+		Id: 696
+		Images: bits/Highland/Street_35.png
+		Size: 2,2
+		Categories: Street
+		Tiles:
+			0: Dirt
+			1: Street
+			2: Dirt
+			3: Street
+
+	Template@697:
+		Id: 697
+		Images: bits/Highland/Street_38.png
+		Size: 2,2
+		Categories: Street
+		Tiles:
+			0: Street
+			1: Street
+			2: Dirt
+			3: Dirt
+
+	Template@698:
+		Id: 698
+		Images: bits/Highland/Street_37.png
+		Size: 2,2
+		Categories: Street
+		Tiles:
+			0: Street
+			1: Dirt
+			2: Street
+			3: Dirt
+
+	Template@699:
+		Id: 699
+		Images: bits/Highland/Street_36.png
+		Size: 2,2
+		Categories: Street
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Street
+			3: Street
+
+	Template@700:
+		Id: 700
+		Images: bits/Highland/Street_29.png
+		Size: 1,2
+		Categories: Street
+		Tiles:
+			0: Cliff
+			1: Street
+
+	Template@701:
+		Id: 701
+		Images: bits/Highland/Street_21.png
+		Size: 3,4
+		Categories: Street
+		Tiles:
+			0: Street
+			1: Dirt
+			3: Street
+			4: Street
+			5: Dirt
+			6: Street
+			7: Street
+			8: Street
+			9: Street
+			10: Street
+			11: Street
+
+	Template@237:
+		Id: 237
+		Images: bits/Highland/Transition_SE.png
+		Size: 4,3
+		Categories: Transition
+		Tiles:
+			0: Grass
+			1: Grass
+			5: Grass
+			6: Grass
+			10: Grass
+			11: Dirt
+
+	Template@238:
+		Id: 238
+		Images: bits/Highland/Transition_SW.png
+		Size: 4,3
+		Categories: Transition
+		Tiles:
+			2: Grass
+			3: Grass
+			5: Grass
+			6: Grass
+			8: Dirt
+			9: Grass
+
+	Template@239:
+		Id: 239
+		Images: bits/Highland/Transition_NE.png
+		Size: 4,3
+		Categories: Transition
+		Tiles:
+			2: Dirt
+			3: Dirt
+			5: Grass
+			6: Grass
+			8: Grass
+			9: Grass
+
+	Template@240:
+		Id: 240
+		Images: bits/Highland/Transition_NW.png
+		Size: 4,3
+		Categories: Transition
+		Tiles:
+			0: Dirt
+			1: Dirt
+			5: Grass
+			6: Grass
+			10: Grass
+			11: Grass
+
+	Template@241:
+		Id: 241
+		Images: bits/Highland/Transition_NW2N.png
+		Size: 4,4
+		Categories: Transition
+		Tiles:
+			0: Dirt
+			4: Dirt
+			5: Dirt
+			8: Grass
+			9: Grass
+			10: Grass
+			12: Grass
+			13: Grass
+			14: Grass
+			15: Grass
+
+	Template@242:
+		Id: 242
+		Images: bits/Highland/Transition_NE2N.png
+		Size: 4,4
+		Categories: Transition
+		Tiles:
+			3: Dirt
+			6: Dirt
+			7: Dirt
+			9: Grass
+			10: Grass
+			11: Grass
+			12: Grass
+			13: Grass
+			14: Grass
+			15: Grass
+
+	Template@243:
+		Id: 243
+		Images: bits/Highland/Transition_NE2E.png
+		Size: 4,4
+		Categories: Transition
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Dirt
+			3: Dirt
+			4: Grass
+			5: Grass
+			6: Grass
+			8: Grass
+			9: Grass
+			12: Grass
+
+	Template@244:
+		Id: 244
+		Images: bits/Highland/Transition_NW2W.png
+		Size: 4,4
+		Categories: Transition
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Grass
+			3: Grass
+			5: Grass
+			6: Grass
+			7: Grass
+			10: Grass
+			11: Grass
+			15: Grass
+
+	Template@245:
+		Id: 245
+		Images: bits/Highland/Transition_SE2E.png
+		Size: 4,4
+		Categories: Transition
+		Tiles:
+			0: Grass
+			4: Grass
+			5: Grass
+			8: Grass
+			9: Grass
+			10: Grass
+			12: Grass
+			13: Grass
+			14: Dirt
+			15: Dirt
+
+	Template@246:
+		Id: 246
+		Images: bits/Highland/Transition_SW2W.png
+		Size: 4,4
+		Categories: Transition
+		Tiles:
+			3: Grass
+			6: Grass
+			7: Grass
+			9: Grass
+			10: Grass
+			11: Grass
+			12: Dirt
+			13: Dirt
+			14: Grass
+			15: Grass
+
+	Template@247:
+		Id: 247
+		Images: bits/Highland/Transition_SE2S.png
+		Size: 4,4
+		Categories: Transition
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			5: Grass
+			6: Grass
+			7: Grass
+			10: Dirt
+			11: Dirt
+			15: Dirt
+
+	Template@248:
+		Id: 248
+		Images: bits/Highland/Transition_SW2S.png
+		Size: 4,4
+		Categories: Transition
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Grass
+			5: Grass
+			6: Grass
+			8: Dirt
+			9: Dirt
+			12: Dirt
+
+	Template@249:
+		Id: 249
+		Images: bits/Highland/Transition_W2S.png
+		Size: 3,3
+		Categories: Transition
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Grass
+			5: Grass
+			6: Dirt
+			7: Grass
+			8: Grass
+
+	Template@250:
+		Id: 250
+		Images: bits/Highland/Transition_E2S.png
+		Size: 3,3
+		Categories: Transition
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Grass
+			5: Grass
+			6: Grass
+			7: Grass
+			8: Dirt
+
+	Template@251:
+		Id: 251
+		Images: bits/Highland/Transition_E2N.png
+		Size: 3,3
+		Categories: Transition
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Dirt
+			3: Grass
+			4: Grass
+			5: Grass
+			6: Grass
+			7: Grass
+			8: Grass
+
+	Template@252:
+		Id: 252
+		Images: bits/Highland/Transition_W2N.png
+		Size: 3,3
+		Categories: Transition
+		Tiles:
+			0: Dirt
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Grass
+			5: Grass
+			6: Grass
+			7: Grass
+			8: Grass
+
+	Template@253:
+		Id: 253
+		Images: bits/Highland/Transition_W.png
+		Size: 4,2
+		Categories: Transition
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Grass
+			3: Grass
+			4: Dirt
+			5: Dirt
+			6: Grass
+			7: Grass
+
+	Template@254:
+		Id: 254
+		Images: bits/Highland/Transition_N.png
+		Size: 2,4
+		Categories: Transition
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Grass
+			5: Grass
+			6: Grass
+			7: Grass
+
+	Template@255:
+		Id: 255
+		Images: bits/Highland/Transition_E.png
+		Size: 4,2
+		Categories: Transition
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Dirt
+			3: Dirt
+			4: Grass
+			5: Grass
+			6: Dirt
+			7: Dirt
+
+	Template@256:
+		Id: 256
+		Images: bits/Highland/Transition_S.png
+		Size: 2,4
+		Categories: Transition
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+
+	Template@257:
+		Id: 257
+		Images: bits/Highland/Transition_N2E.png
+		Size: 4,4
+		Categories: Transition
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Grass
+			9: Grass
+			10: Dirt
+			11: Dirt
+			12: Grass
+			13: Grass
+			14: Dirt
+			15: Dirt
+
+	Template@258:
+		Id: 258
+		Images: bits/Highland/Transition_S2E.png
+		Size: 4,4
+		Categories: Transition
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Dirt
+			3: Dirt
+			4: Grass
+			5: Grass
+			6: Dirt
+			7: Dirt
+			8: Dirt
+			9: Dirt
+			10: Dirt
+			11: Dirt
+			12: Dirt
+			13: Dirt
+			14: Dirt
+
+	Template@259:
+		Id: 259
+		Images: bits/Highland/Transition_S2W.png
+		Size: 4,4
+		Categories: Transition
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Grass
+			3: Grass
+			4: Dirt
+			5: Dirt
+			6: Grass
+			7: Grass
+			8: Dirt
+			9: Dirt
+			10: Dirt
+			11: Dirt
+			13: Dirt
+			14: Dirt
+			15: Dirt
+
+	Template@260:
+		Id: 260
+		Images: bits/Highland/Transition_N2W.png
+		Size: 4,4
+		Categories: Transition
+		Tiles:
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Dirt
+			9: Dirt
+			10: Grass
+			11: Grass
+			12: Dirt
+			13: Dirt
+			14: Grass
+			15: Grass
+
+	Template@261:
+		Id: 261
+		Images: bits/Highland/Transition_N2NE.png
+		Size: 4,4
+		Categories: Transition
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			8: Grass
+			9: Grass
+			12: Grass
+
+	Template@262:
+		Id: 262
+		Images: bits/Highland/Transition_E2NE.png
+		Size: 4,4
+		Categories: Transition
+		Tiles:
+			3: Dirt
+			6: Dirt
+			7: Dirt
+			9: Grass
+			10: Dirt
+			11: Dirt
+			12: Grass
+			13: Grass
+			14: Dirt
+			15: Dirt
+
+	Template@263:
+		Id: 263
+		Images: bits/Highland/Transition_E2SE.png
+		Size: 4,4
+		Categories: Transition
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Dirt
+			3: Dirt
+			5: Grass
+			6: Dirt
+			7: Dirt
+			10: Dirt
+			11: Dirt
+			15: Dirt
+
+	Template@264:
+		Id: 264
+		Images: bits/Highland/Transition_S2SE.png
+		Size: 4,4
+		Categories: Transition
+		Tiles:
+			0: Grass
+			4: Grass
+			5: Grass
+			8: Dirt
+			9: Dirt
+			10: Dirt
+			12: Dirt
+			13: Dirt
+			14: Dirt
+			15: Dirt
+
+	Template@265:
+		Id: 265
+		Images: bits/Highland/Transition_S2SW.png
+		Size: 4,4
+		Categories: Transition
+		Tiles:
+			3: Grass
+			6: Grass
+			7: Grass
+			9: Dirt
+			10: Dirt
+			11: Dirt
+			12: Dirt
+			13: Dirt
+			14: Dirt
+			15: Dirt
+
+	Template@266:
+		Id: 266
+		Images: bits/Highland/Transition_W2SW.png
+		Size: 4,4
+		Categories: Transition
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Grass
+			3: Grass
+			4: Dirt
+			5: Dirt
+			6: Grass
+			8: Dirt
+			9: Dirt
+			12: Dirt
+
+	Template@267:
+		Id: 267
+		Images: bits/Highland/Transition_W2NW.png
+		Size: 4,4
+		Categories: Transition
+		Tiles:
+			0: Dirt
+			4: Dirt
+			5: Dirt
+			8: Dirt
+			9: Dirt
+			10: Grass
+			12: Dirt
+			13: Dirt
+			14: Grass
+			15: Grass
+
+	Template@268:
+		Id: 268
+		Images: bits/Highland/Transition_N2NW.png
+		Size: 4,4
+		Categories: Transition
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			10: Grass
+			11: Grass
+			15: Grass
+
+	Template@703:
+		Id: 703
+		Images: bits/Highland/WidePath_3.png
+		Size: 3,3
+		Categories: Wide Path
+		Tiles:
+			1: Grass
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			7: Path
+			8: Path
+
+	Template@704:
+		Id: 704
+		Images: bits/Highland/WidePath_1.png
+		Size: 7,3
+		Categories: Wide Path
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Path
+			9: Path
+			10: Path
+			11: Path
+			12: Path
+			13: Path
+			14: Path
+			15: Path
+			16: Path
+			17: Path
+			18: Path
+			19: Path
+			20: Path
+
+	Template@706:
+		Id: 706
+		Images: bits/Highland/WidePath_2.png
+		Size: 3,3
+		Categories: Wide Path
+		Tiles:
+			0: Path
+			1: Grass
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+
+	Template@710:
+		Id: 710
+		Images: bits/Highland/WidePath_4.png
+		Size: 4,2
+		Categories: Wide Path
+		Tiles:
+			1: Path
+			2: Path
+			3: Grass
+			4: Path
+			5: Path
+			6: Path
+
+	Template@711:
+		Id: 711
+		Images: bits/Highland/WidePath_17.png
+		Size: 4,2
+		Categories: Wide Path
+		Tiles:
+			0: Grass
+			1: Path
+			2: Path
+			5: Path
+			6: Path
+			7: Path
+
+	Template@712:
+		Id: 712
+		Images: bits/Highland/WidePath_18.png
+		Size: 4,4
+		Categories: Wide Path
+		Tiles:
+			2: Grass
+			3: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Path
+			9: Path
+			10: Path
+			11: Path
+			12: Path
+			13: Path
+			14: Path
+
+	Template@713:
+		Id: 713
+		Images: bits/Highland/WidePath_19.png
+		Size: 4,4
+		Categories: Wide Path
+		Tiles:
+			0: Grass
+			1: Path
+			4: Path
+			5: Path
+			6: Path
+			8: Path
+			9: Path
+			10: Path
+			11: Path
+			13: Path
+			14: Path
+			15: Path
+
+	Template@718:
+		Id: 718
+		Images: bits/Highland/WidePath_16.png
+		Size: 4,3
+		Categories: Wide Path
+		Tiles:
+			1: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Path
+			9: Path
+			10: Path
+
+	Template@720:
+		Id: 720
+		Images: bits/Highland/WidePath_15.png
+		Size: 3,6
+		Categories: Wide Path
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Path
+			9: Path
+			10: Path
+			11: Path
+			12: Path
+			13: Path
+			14: Path
+			15: Path
+			16: Path
+			17: Path
+
+	Template@721:
+		Id: 721
+		Images: bits/Highland/WidePath_14.png
+		Size: 3,6
+		Categories: Wide Path
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Path
+			9: Path
+			10: Path
+			11: Path
+			12: Path
+			13: Path
+			14: Path
+			15: Path
+			16: Path
+			17: Path
+
+	Template@726:
+		Id: 726
+		Images: bits/Highland/WidePath_5.png
+		Size: 4,3
+		Categories: Wide Path
+		Tiles:
+			2: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			9: Path
+			10: Path
+			11: Path
+
+	Template@729:
+		Id: 729
+		Images: bits/Highland/WidePath_6.png
+		Size: 3,6
+		Categories: Wide Path
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Path
+			9: Path
+			10: Path
+			11: Path
+			12: Path
+			13: Path
+			14: Path
+			15: Path
+			16: Path
+			17: Path
+
+	Template@737:
+		Id: 737
+		Images: bits/Highland/WidePath_13.png
+		Size: 4,3
+		Categories: Wide Path
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			9: Path
+
+	Template@738:
+		Id: 738
+		Images: bits/Highland/WidePath_21.png
+		Size: 4,4
+		Categories: Wide Path
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			4: Grass
+			5: Path
+			6: Path
+			7: Path
+			9: Path
+			10: Path
+			11: Path
+			14: Path
+			15: Path
+
+	Template@740:
+		Id: 740
+		Images: bits/Highland/WidePath_20.png
+		Size: 4,4
+		Categories: Wide Path
+		Tiles:
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Grass
+			8: Path
+			9: Path
+			10: Path
+			12: Path
+			13: Path
+
+	Template@741:
+		Id: 741
+		Images: bits/Highland/WidePath_7.png
+		Size: 4,3
+		Categories: Wide Path
+		Tiles:
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			10: Path
+
+	Template@742:
+		Id: 742
+		Images: bits/Highland/WidePath_8.png
+		Size: 4,2
+		Categories: Wide Path
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			5: Path
+			6: Path
+			7: Grass
+
+	Template@743:
+		Id: 743
+		Images: bits/Highland/WidePath_12.png
+		Size: 4,2
+		Categories: Wide Path
+		Tiles:
+			1: Path
+			2: Path
+			3: Path
+			4: Grass
+			5: Path
+			6: Path
+
+	Template@745:
+		Id: 745
+		Images: bits/Highland/WidePath_11.png
+		Size: 3,3
+		Categories: Wide Path
+		Tiles:
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			7: Grass
+			8: Path
+
+	Template@746:
+		Id: 746
+		Images: bits/Highland/WidePath_10.png
+		Size: 7,3
+		Categories: Wide Path
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Path
+			9: Path
+			10: Path
+			11: Path
+			12: Path
+			13: Path
+			14: Path
+			15: Path
+			16: Path
+			17: Path
+			18: Path
+			19: Path
+			20: Path
+
+	Template@748:
+		Id: 748
+		Images: bits/Highland/WidePath_9.png
+		Size: 3,3
+		Categories: Wide Path
+		Tiles:
+			0: Path
+			1: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Grass
+
+	Template@751:
+		Id: 751
+		Images: bits/Highland/WidePath_22.png
+		Size: 3,2
+		Categories: Wide Path
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+
+	Template@753:
+		Id: 753
+		Images: bits/Highland/WidePath_23.png
+		Size: 2,3
+		Categories: Wide Path
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+
+	Template@755:
+		Id: 755
+		Images: bits/Highland/WidePath_24.png
+		Size: 2,3
+		Categories: Wide Path
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+
+	Template@756:
+		Id: 756
+		Images: bits/Highland/WidePath_25.png
+		Size: 3,2
+		Categories: Wide Path
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+
+	Template@830:
+		Id: 830
+		Images: bits/Highland/WidePath_26.png
+		Size: 7,7
+		Categories: Wide Path
+		Tiles:
+			2: Path
+			3: Path
+			4: Path
+			9: Path
+			10: Path
+			11: Path
+			14: Path
+			15: Path
+			16: Path
+			17: Path
+			18: Path
+			19: Path
+			20: Path
+			21: Path
+			22: Path
+			23: Path
+			24: Path
+			25: Path
+			26: Path
+			27: Path
+			28: Path
+			29: Path
+			30: Path
+			31: Path
+			32: Path
+			33: Path
+			34: Path
+			37: Path
+			38: Path
+			39: Path
+			44: Path
+			45: Path
+			46: Path
+
+	Template@702:
+		Id: 702
+		Images: bits/Highland/WidePathExtra_1.png
+		Size: 4,4
+		Categories: Wide Path Extra
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Path
+			9: Path
+			10: Path
+			11: Path
+			12: Path
+			13: Path
+			14: Path
+
+	Template@709:
+		Id: 709
+		Images: bits/Highland/WidePathExtra_2.png
+		Size: 4,4
+		Categories: Wide Path Extra
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Path
+			9: Path
+			10: Path
+			11: Path
+			13: Path
+			14: Path
+			15: Path
+
+	Template@714:
+		Id: 714
+		Images: bits/Highland/WidePathExtra_6.png
+		Size: 2,4
+		Categories: Wide Path Extra
+		Tiles:
+			0: Grass
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+
+	Template@715:
+		Id: 715
+		Images: bits/Highland/WidePathExtra_7.png
+		Size: 2,4
+		Categories: Wide Path Extra
+		Tiles:
+			0: Path
+			1: Grass
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			7: Path
+
+	Template@716:
+		Id: 716
+		Images: bits/Highland/WidePathExtra_8.png
+		Size: 3,3
+		Categories: Wide Path Extra
+		Tiles:
+			0: Path
+			1: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+
+	Template@717:
+		Id: 717
+		Images: bits/Highland/WidePathExtra_5.png
+		Size: 3,3
+		Categories: Wide Path Extra
+		Tiles:
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			7: Path
+			8: Path
+
+	Template@719:
+		Id: 719
+		Images: bits/Highland/WidePathExtra_3.png
+		Size: 5,3
+		Categories: Wide Path Extra
+		Tiles:
+			2: Path
+			3: Path
+			6: Path
+			7: Path
+			8: Path
+			9: Path
+			10: Path
+			11: Path
+			12: Path
+			13: Path
+
+	Template@722:
+		Id: 722
+		Images: bits/Highland/WidePathExtra_10.png
+		Size: 3,3
+		Categories: Wide Path Extra
+		Tiles:
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			7: Path
+			8: Path
+
+	Template@723:
+		Id: 723
+		Images: bits/Highland/WidePathExtra_11.png
+		Size: 2,4
+		Categories: Wide Path Extra
+		Tiles:
+			0: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Grass
+			7: Path
+
+	Template@724:
+		Id: 724
+		Images: bits/Highland/WidePathExtra_12.png
+		Size: 2,4
+		Categories: Wide Path Extra
+		Tiles:
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Grass
+
+	Template@725:
+		Id: 725
+		Images: bits/Highland/WidePathExtra_13.png
+		Size: 3,3
+		Categories: Wide Path Extra
+		Tiles:
+			0: Path
+			1: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+
+	Template@728:
+		Id: 728
+		Images: bits/Highland/WidePathExtra_4.png
+		Size: 5,3
+		Categories: Wide Path Extra
+		Tiles:
+			1: Path
+			2: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Path
+			11: Path
+			12: Path
+			13: Path
+			14: Path
+
+	Template@731:
+		Id: 731
+		Images: bits/Highland/WidePathExtra_9.png
+		Size: 4,3
+		Categories: Wide Path Extra
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Path
+			9: Path
+			10: Path
+			11: Path
+
+	Template@733:
+		Id: 733
+		Images: bits/Highland/WidePathExtra_14.png
+		Size: 5,3
+		Categories: Wide Path Extra
+		Tiles:
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Path
+			11: Path
+			12: Path
+
+	Template@736:
+		Id: 736
+		Images: bits/Highland/WidePathExtra_15.png
+		Size: 5,3
+		Categories: Wide Path Extra
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			6: Path
+			7: Path
+			8: Path
+			9: Path
+			12: Path
+			13: Path
+
+	Template@744:
+		Id: 744
+		Images: bits/Highland/WidePathExtra_16.png
+		Size: 4,4
+		Categories: Wide Path Extra
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Path
+			9: Path
+			10: Path
+			11: Path
+			12: Path
+			13: Path
+			14: Path
+			15: Path
+
+	Template@749:
+		Id: 749
+		Images: bits/Highland/WidePathExtra_17.png
+		Size: 4,4
+		Categories: Wide Path Extra
+		Tiles:
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Path
+			9: Path
+			10: Path
+			11: Path
+			12: Path
+			13: Path
+			14: Path
+			15: Path
+

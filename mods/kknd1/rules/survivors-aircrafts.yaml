@@ -1,0 +1,19 @@
+survivors_bomber:
+	Inherits: ^SurvivorsAircraft
+	Tooltip:
+		Name: Bomber
+	TooltipDescription:
+		Description: Drops a present
+	Health:
+		HP: 1500
+	Aircraft:
+		Speed: 200
+		TurnSpeed: 3
+	RevealsShroud:
+		Range: 5c0	
+		Type: CenterPosition	
+	OffsetsArmament:
+		Weapon: survivors_bomber
+	Voiced:
+		VoiceSet: WilburBomberVoice
+

@@ -1,0 +1,19 @@
+# TODO implement tracklist per faction.
+
+music/Survivors 1: Survivors 1
+	Extension: WAV
+music/Survivors 2: Survivors 2
+	Extension: WAV
+music/Survivors 3: Survivors 3
+	Extension: WAV
+music/Survivors 4: Survivors 4
+	Extension: WAV
+
+music/Evolved 1: Evolved 1
+	Extension: WAV
+music/Evolved 2: Evolved 2
+	Extension: WAV
+music/Evolved 3: Evolved 3
+	Extension: WAV
+music/Evolved 4: Evolved 4
+	Extension: WAV

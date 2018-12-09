@@ -1,0 +1,54 @@
+# TODO does this work?
+ObserverCombinedView: MINUS
+	Description: All Players
+	Types: Observer
+
+# TODO does this work?
+ObserverWorldView: EQUALS
+	Description: Disable Shroud
+	Types: Observer
+
+# TODO does this work?
+ReplaySpeedSlow: F5
+	Description: Slow speed
+	Types: Replay
+
+# TODO does this work?
+ReplaySpeedRegular: F6
+	Description: Regular speed
+	Types: Replay
+
+# TODO does this work?
+ReplaySpeedFast: F7
+	Description: Fast speed
+	Types: Replay
+
+# TODO does this work?
+ReplaySpeedMax: F8
+	Description: Maximum speed
+	Types: Replay
+
+# TODO does this work?
+StatisticsBasic: F1
+	Description: Basic statistics
+	Types: Observer, Replay
+
+# TODO does this work?
+StatisticsEconomy: F2
+	Description: Economy statistics
+	Types: Observer, Replay
+
+# TODO does this work?
+StatisticsProduction: F3
+	Description: Production statistics
+	Types: Observer, Replay
+
+# TODO does this work?
+StatisticsCombat: F4
+	Description: Combat statistics
+	Types: Observer, Replay
+
+# TODO does this work?
+StatisticsGraph:
+	Description: Statistics graph
+	Types: Observer, Replay

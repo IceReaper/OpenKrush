@@ -1,0 +1,216 @@
+bunker_techbunker:
+	Inherits: ^CoreConstruction
+	Building:
+		TerrainTypes: Clear
+		Dimensions: 3,2
+		Footprint: xxx ===
+	TechBunker:
+		ContainableActors: bunker_gorttherobot, bunker_mech, bunker_plasmatank, bunker_sentineldroid
+		#SoundOpen: sounds_evolved|164.wav
+		SequenceLocked: lock
+	Exit:
+		SpawnOffset: 0c-700,-0c150,0
+		ExitCell: -1,1 
+		Facing: 75
+	MapEditorData:
+		Categories: Bunker
+	-Selectable:
+	-SelfConstructing:
+	-DeconstructSellable:
+	-BlocksProjectiles: # TODO enable this again.. idk why this causes a crash, seems walls must be implemented for this to not crash O.o weird bug
+	RenderSprites:
+		Palette: T_Bunker
+^Palettes:
+	PaletteFromMobd@T_Bunker:
+		Name: T_Bunker
+		Filename: sprites|T_Bunker.mobd
+
+^BunkerVehicle:
+	Inherits: ^CoreVehicle
+	Voiced:
+		VoiceSet: BunkerVoice
+	AdvancedBuildable:
+		Prerequisites: unbuildable
+	MapEditorData:
+		Categories: Bunker
+	Veterancy:
+		Experience: 7500, 15000
+	AttackNotification:
+		Notifications: BunkerUnderAttack
+
+bunker_gorttherobot:
+	Inherits@1: ^BunkerVehicle
+	Inherits@2: ^CoreTurret
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: Gort
+	Health:
+		HP: 7000
+	Mobile:
+		Speed: 50
+		TurnSpeed: 8
+	RevealsShroud:
+		Range: 8c0
+	OffsetsArmament:
+		Weapon: bunker_gorttherobot
+	WithTurretAttackAnimation:
+		Sequence: shoot
+	Turreted:
+		TurnSpeed: 8
+	AdvancedSelectionDecorations:
+		Offset: 0,-47
+	# Voiced:
+	# 	VoiceSet: GortVoice
+	RenderSprites:
+		Palette: T_GortRobot
+	WithOffsetsSpriteTurret:
+		Palette: T_GortRobotTurret
+^Palettes:
+	PaletteFromMobd@T_GortRobot:
+		Name: T_GortRobot
+		Filename: sprites|T_GortRobot.mobd
+	PaletteFromMobd@T_GortRobotTurret:
+		Name: T_GortRobotTurret
+		Filename: sprites|T_GortRobotTurret.mobd
+
+bunker_mech:
+	Inherits@1: ^BunkerVehicle
+	Inherits@2: ^CoreTurret
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: Mechanoid
+	Health:
+		HP: 7000
+	Mobile:
+		Speed: 50
+		TurnSpeed: 8
+	RevealsShroud:
+		Range: 8c0
+	OffsetsArmament@0:
+		Weapon: bunker_mech_primary
+		Name: primary
+		BurstOffsets: 0
+	OffsetsArmament@1:
+		Weapon: bunker_mech_primary
+		Name: secondary
+		BurstOffsets: 1
+	OffsetsArmament@2: # todo correct position
+		Weapon: bunker_mech_secondary
+		FireDelay: 16
+		Name: secondary
+		BurstOffsets: 2
+	OffsetsArmament@3: # todo correct position
+		Weapon: bunker_mech_secondary
+		FireDelay: 24
+		Name: secondary
+		BurstOffsets: 3
+	WithTurretAttackAnimation:
+		Sequence: shoot
+	Turreted:
+		TurnSpeed: 8
+	AdvancedSelectionDecorations:
+		Offset: 0,-21
+	RenderSprites:
+		PlayerPalette: T_MechanoidWalker_player
+	WithOffsetsSpriteTurret:
+		Palette: T_MechanoidWalkerTurret_player
+		IsPlayerPalette: true
+^Palettes:
+	PaletteFromMobd@T_MechanoidWalker:
+		Name: T_MechanoidWalker
+		Filename: sprites|T_MechanoidWalker.mobd
+	OverlayPlayerColorPalette@T_MechanoidWalker_player:
+		BasePalette: T_MechanoidWalker
+		BaseName: T_MechanoidWalker_player
+		RemapIndex: 1,2,3,4,5,6
+	PaletteFromMobd@T_MechanoidWalkerTurret:
+		Name: T_MechanoidWalkerTurret
+		Filename: sprites|T_MechanoidWalkerTurret.mobd
+	OverlayPlayerColorPalette@T_MechanoidWalkerTurret_player:
+		BasePalette: T_MechanoidWalkerTurret
+		BaseName: T_MechanoidWalkerTurret_player
+		RemapIndex: 1,2,3,4,5,6
+
+bunker_plasmatank:
+	Inherits@1: ^BunkerVehicle
+	Inherits@2: ^CoreTurret
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: Railgun Tank
+	Health:
+		HP: 7000
+	Mobile:
+		Speed: 50
+		TurnSpeed: 8
+	RevealsShroud:
+		Range: 8c0
+	OffsetsArmament:
+		Weapon: bunker_plasmatank
+	WithTurretAttackAnimation:
+		Sequence: shoot
+	Turreted:
+		TurnSpeed: 8
+	AdvancedSelectionDecorations:
+		Offset: 0,-10
+	RenderSprites:
+		PlayerPalette: T_PlasmaTankVehicle_player
+	WithOffsetsSpriteTurret:
+		Palette: T_PlasmaTankTurret_player
+		IsPlayerPalette: true
+^Palettes:
+	PaletteFromMobd@T_PlasmaTankVehicle:
+		Name: T_PlasmaTankVehicle
+		Filename: sprites|T_PlasmaTankVehicle.mobd
+	OverlayPlayerColorPalette@T_PlasmaTankVehicle_player:
+		BasePalette: T_PlasmaTankVehicle
+		BaseName: T_PlasmaTankVehicle_player
+		RemapIndex: 2,4,5,8,9,12,13,14
+	PaletteFromMobd@T_PlasmaTankTurret:
+		Name: T_PlasmaTankTurret
+		Filename: sprites|T_PlasmaTankTurret.mobd
+	OverlayPlayerColorPalette@T_PlasmaTankTurret_player:
+		BasePalette: T_PlasmaTankTurret
+		BaseName: T_PlasmaTankTurret_player
+		RemapIndex: 3,4,5,6,7
+
+bunker_sentineldroid:
+	Inherits@1: ^BunkerVehicle
+	Inherits@2: ^CoreTurret
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: Sentinel Droid
+	Health:
+		HP: 7000
+	Mobile:
+		Speed: 50
+		TurnSpeed: 8
+	RevealsShroud:
+		Range: 8c0
+	OffsetsArmament:
+		Weapon: bunker_sentineldroid
+	WithTurretAttackAnimation:
+		Sequence: shoot
+	Turreted:
+		TurnSpeed: 8
+	AdvancedSelectionDecorations:
+		Offset: 0,-7
+	RenderSprites:
+		PlayerPalette: T_SentinelDroidVehicle_player
+	WithOffsetsSpriteTurret:
+		Palette: T_SentinelDroidTurret_player
+		IsPlayerPalette: true
+^Palettes:
+	PaletteFromMobd@T_SentinelDroidVehicle:
+		Name: T_SentinelDroidVehicle
+		Filename: sprites|T_SentinelDroidVehicle.mobd
+	OverlayPlayerColorPalette@T_SentinelDroidVehicle_player:
+		BasePalette: T_SentinelDroidVehicle
+		BaseName: T_SentinelDroidVehicle_player
+		RemapIndex: 1,2,3,4,5,6,7
+	PaletteFromMobd@T_SentinelDroidTurret:
+		Name: T_SentinelDroidTurret
+		Filename: sprites|T_SentinelDroidTurret.mobd
+	OverlayPlayerColorPalette@T_SentinelDroidTurret_player:
+		BasePalette: T_SentinelDroidTurret
+		BaseName: T_SentinelDroidTurret_player
+		RemapIndex: 1,2,3,4

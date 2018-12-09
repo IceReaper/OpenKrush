@@ -1,0 +1,213 @@
+evolved_direwolf:
+	Inherits@muzzle: ^gun_16
+	idle: sprites|DireWolf.mobd
+		Start: 40
+		Facings: -16
+	move: sprites|DireWolf.mobd
+		Start: 136
+		Length: 7
+		Tick: 60
+		Facings: -16
+	shoot: sprites|DireWolf.mobd
+		Start: 56
+		Length: 5
+		Tick: 60
+		Facings: -16
+	aim: sprites|DireWolf.mobd
+		Start: 56
+		Stride: 5
+		Facings: -16
+	die: sprites|DireWolf.mobd
+		Start: 2
+		Length: 13
+		Tick: 120
+	die-explode: bits/DireWolf.png
+		Length: 20
+		Tick: 60
+	die-zap: sprites|DireWolf.mobd
+		Start: 2
+		Length: 13
+		Tick: 120
+	die-burn: sprites|DireWolf.mobd
+		Start: 2
+		Length: 13
+		Tick: 120
+	die-melt: sprites|DireWolf.mobd
+		Start: 2
+		Length: 13
+		Tick: 120
+	die-dissolve: sprites|DireWolf.mobd
+		Start: 2
+		Length: 13
+		Tick: 120
+	icon: bits/Buttons.png
+		Start: 20
+
+evolved_chopper:
+	Inherits@muzzle: ^gun_16
+	idle: bits/Chopper.png
+		Start: 0
+		Facings: -16
+	move: bits/Chopper.png
+		Start: 16
+		Length: 2
+		Tick: 120
+		Facings: -16
+	shoot: bits/Chopper.png
+		Start: 48
+		Length: 3
+		Tick: 60
+		Facings: -16
+	aim: bits/Chopper.png
+		#Start: 48
+		#Stride: 3
+		Start: 0
+		Facings: -16
+	icon: bits/Buttons.png
+		Start: 95
+
+evolved_bikeandsidecar:
+	Inherits@muzzle: ^gun_16
+	idle: sprites|Sidecar.mobd
+		Start: 16
+		Facings: -16
+	move: sprites|Sidecar.mobd
+		Start: 32
+		Length: 2
+		Tick: 120
+		Facings: -16
+	turret: sprites|Sidecar.mobd
+		Facings: -16
+	icon: bits/Buttons.png
+		Start: 15
+
+evolved_giantscorpion:
+	idle: sprites|Scorpion.mobd
+		Facings: -16
+	move: sprites|Scorpion.mobd
+		Start: 80
+		Length: 8
+		Tick: 120
+		Facings: -16
+	shoot: sprites|Scorpion.mobd
+		Start: 16
+		Length: 4
+		Tick: 120
+		Facings: -16
+	aim: sprites|Scorpion.mobd
+		Start: 16
+		Stride: 4
+		Facings: -16
+	icon: bits/Buttons.png
+		Start: 21
+
+evolved_monstertruck:
+	Inherits@muzzle: ^gun_16
+	idle: sprites|MonsterTruck.mobd
+		Start: 16
+		Facings: -16
+	move: sprites|MonsterTruck.mobd
+		Start: 32
+		Length: 2
+		Tick: 120
+		Facings: -16
+	turret: sprites|MonsterTruck.mobd
+		Facings: -16
+	icon: bits/Buttons.png
+		Start: 17
+
+evolved_warmastodon:
+	#Inherits@muzzle: ^gun_16_dual
+	idle: sprites|Mastodon.mobd
+		Start: 32
+		Facings: -16
+	move: sprites|Mastodon.mobd
+		Start: 48
+		Length: 10
+		Tick: 120
+		Facings: -16
+	turret: sprites|Mastodon.mobd
+		Start: 16
+		Facings: -16
+	icon: bits/Buttons.png
+		Start: 22
+
+evolved_giantbeetle:
+	idle: sprites|Beetle.mobd
+		Start: 64
+		Facings: -16
+	move: sprites|Beetle.mobd
+		Start: 256
+		Length: 10
+		Tick: 120
+		Facings: -16
+	shoot: sprites|Beetle.mobd
+		Start: 80
+		Length: 11
+		Tick: 120
+		Facings: -16
+	aim: sprites|Beetle.mobd
+		Start: 80
+		Stride: 11
+		Facings: -16
+	icon: bits/Buttons.png
+		Start: 23
+
+evolved_missilecrab:
+	idle: sprites|Crab.mobd
+		Start: 48
+		Facings: -16
+	move: sprites|Crab.mobd
+		Start: 64
+		Length: 9
+		Tick: 120
+		Facings: -16
+	turret: sprites|Crab.mobd
+		Start: 32
+		Facings: -16
+	icon: bits/Buttons.png
+		Start: 24
+
+evolved_oiltanker:
+	idle: sprites|MOTanker.mobd
+		Facings: -16
+	move: sprites|MOTanker.mobd
+		Start: 16
+		Length: 2
+		Tick: 120
+		Facings: -16
+	icon: bits/Buttons.png
+		Start: 18
+
+#evolved_derrick_beta:
+#	idle: bits/MDerrickBeta.mobd
+#		Facings: -16
+#	move: bits/MDerrickBeta.mobd
+#		Start: 16
+#		Length: 2
+#		Tick: 120
+#		Facings: -16
+#	icon: bits/Buttons.png
+#		Start: 16
+
+evolved_derrick:
+	idle: sprites|MDerrick.mobd
+		Facings: -16
+	move: sprites|MDerrick.mobd
+		Start: 16
+		Length: 2
+		Tick: 120
+		Facings: -16
+	icon: bits/Buttons.png
+		Start: 103
+
+evolved_clanhallwagon:
+	idle: sprites|ClanhallWagon.mobd
+		Facings: -16
+	move: sprites|ClanhallWagon.mobd
+		Start: 16
+		Length: 2
+		Tick: 120
+		Facings: -16
+	icon: bits/Buttons.png
+		Start: 19

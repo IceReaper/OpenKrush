@@ -1,0 +1,343 @@
+evolved_direwolf:
+	Inherits@1: ^EvolvedVehicle
+	Inherits@2: ^CoreLightVehicle
+	Inherits@3: ^CoreArmedSelf
+	Inherits@4: ^HasMuzzle
+	Inherits@5: ^AutoTargetDefault
+	Tooltip:
+		Name: Dire Wolf
+	Valued:
+		Cost: 150
+	Health:
+		HP: 400
+	Mobile:
+		Speed: 115
+		TurnSpeed: 41
+	AdvancedBuildable:
+		BuildDuration: 125
+		Level: 0
+	RevealsShroud:
+		Range: 11c0
+	-VeterancyVoiced:
+	Voiced:
+		VoiceSet: WolfVoice
+	OffsetsArmament:
+		Weapon: evolved_direwolf
+	AdvancedSelectionDecorations:
+		Offset: 0,-2
+	Veterancy:
+	ThrowsShrapnel:
+		Weapons: Blood1, Blood2, Blood3, Blood4, Blood5
+		Pieces: 1, 1
+		Range: 0c512, 1c512
+	-Explodes:
+	-FrozenOnDeath:
+	WithDeathAnimation:
+		FallbackSequence: die
+		DeathTypes:
+			Explosion: -explode
+			Fire: -burn
+			Acid: -melt
+			Electricity: -zap
+			Laser: -dissolve
+	DeathSounds:
+		Voice: Die
+
+evolved_chopper:
+	Inherits@1: ^EvolvedVehicle
+	Inherits@2: ^CoreLightVehicle
+	Inherits@3: ^CoreArmedSelf
+	Inherits@4: ^AutoTargetDefault
+	Tooltip:
+		Name: Chopper
+	Valued:
+		Cost: 150
+	Health:
+		HP: 400
+	Mobile:
+		Speed: 115
+		TurnSpeed: 41
+	AdvancedBuildable:
+		BuildDuration: 125
+		Level: -1
+	RevealsShroud:
+		Range: 11c0
+	OffsetsArmament:
+		Weapon: evolved_chopper
+	AdvancedSelectionDecorations:
+		Offset: 0,-2
+	Veterancy:
+
+evolved_bikeandsidecar:
+	Inherits@1: ^EvolvedVehicle
+	Inherits@2: ^CoreLightVehicle
+	Inherits@3: ^CoreTurret
+	Inherits@4: ^HasMuzzle
+	Inherits@5: ^AutoTargetDefault
+	Tooltip:
+		Name: Bike & Sidecar
+	Valued:
+		Cost: 300
+	Health:
+		HP: 800
+	Mobile:
+		Speed: 90
+		TurnSpeed: 8
+	AdvancedBuildable:
+		BuildDuration: 150
+		Level: 0
+	RevealsShroud:
+		Range: 7c0
+	OffsetsArmament:
+		Weapon: evolved_bikeandsidecar
+	Turreted:
+		TurnSpeed: 20
+	AdvancedSelectionDecorations:
+		Offset: 0,1
+	Veterancy:
+
+evolved_monstertruck:
+	Inherits@1: ^EvolvedVehicle
+	Inherits@2: ^CoreTurret
+	Inherits@3: ^HasMuzzle
+	Inherits@4: ^AutoTargetDefault
+	Tooltip:
+		Name: Monster Truck
+	Valued:
+		Cost: 500
+	Health:
+		HP: 1000
+	Mobile:
+		Speed: 70
+		TurnSpeed: 8
+	AdvancedBuildable:
+		BuildDuration: 300
+		Level: 1
+	RevealsShroud:
+		Range: 7c0
+	OffsetsArmament:
+		Weapon: evolved_monstertruck
+	Turreted:
+		TurnSpeed: 20
+	AdvancedSelectionDecorations:
+		Offset: 0,-7
+	Veterancy:
+
+evolved_giantscorpion:
+	Inherits@1: ^EvolvedVehicle
+	Inherits@2: ^CoreArmedSelf
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: Giant Scorpion
+	Valued:
+		Cost: 700
+	Health:
+		HP: 1250
+	Mobile:
+		Speed: 60
+		TurnSpeed: 8
+	AdvancedBuildable:
+		BuildDuration: 300
+		Level: 2
+	RevealsShroud:
+		Range: 7c0
+	-VeterancyVoiced:
+	Voiced:
+		VoiceSet: ScorpionVoice
+	OffsetsArmament:
+		Weapon: evolved_giantscorpion
+	AdvancedSelectionDecorations:
+		Offset: 0,-12
+	Veterancy:
+		Experience: 1200, 2200
+
+evolved_warmastodon:
+	Inherits@1: ^EvolvedVehicle
+	Inherits@2: ^CoreTurret
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: War Mastodon
+	Valued:
+		Cost: 900
+	Health:
+		HP: 1800
+	Mobile:
+		Speed: 55
+		TurnSpeed: 8
+	AdvancedBuildable:
+		BuildDuration: 650
+		Level: 3
+	RevealsShroud:
+		Range: 7c0
+	-VeterancyVoiced:
+	Voiced:
+		VoiceSet: MastodonVoice
+	OffsetsArmament:
+		Weapon: evolved_warmastodon
+	Turreted:
+		TurnSpeed: 20
+	AdvancedSelectionDecorations:
+		Offset: 0,-20
+	Veterancy:
+		Experience: 1500, 2500
+
+evolved_giantbeetle:
+	Inherits@1: ^EvolvedVehicle
+	Inherits@2: ^CoreArmedSelf
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: Giant Beetle
+	Valued:
+		Cost: 1100
+	Health:
+		HP: 1500
+	Mobile:
+		Speed: 55
+		TurnSpeed: 8
+	AdvancedBuildable:
+		BuildDuration: 850
+		Level: 4
+	RevealsShroud:
+		Range: 7c0
+	-VeterancyVoiced:
+	Voiced:
+		VoiceSet: BeetleVoice
+	OffsetsArmament:
+		Weapon: evolved_giantbeetle
+	AdvancedSelectionDecorations:
+		Offset: 0,-3
+	Veterancy:
+		Experience: 2500, 3500
+
+evolved_missilecrab:
+	Inherits@1: ^EvolvedVehicle
+	Inherits@2: ^CoreHeavyVehicle
+	Inherits@3: ^CoreTurret
+	Inherits@4: ^AutoTargetDefault
+	Tooltip:
+		Name: Missile Crab
+	Valued:
+		Cost: 1500
+	Health:
+		HP: 2500
+	Mobile:
+		Speed: 45
+		TurnSpeed: 8
+	AdvancedBuildable:
+		BuildDuration: 1000
+		Level: 5
+	RevealsShroud:
+		Range: 7c0
+	-VeterancyVoiced:
+	Voiced:
+		VoiceSet: CrabVoice
+	OffsetsArmament:
+		Weapon: evolved_missilecrab
+	Turreted:
+		TurnSpeed: 20
+	AdvancedSelectionDecorations:
+		Offset: 0,-3
+	Veterancy:
+		Experience: 3000, 4000
+
+evolved_oiltanker:
+	Inherits: ^EvolvedVehicle
+	Tooltip:
+		Name: Oil Tanker
+	TooltipDescription:
+		Description: Transports oil
+	Valued:
+		Cost: 750
+	Health:
+		HP: 3000
+	Mobile:
+		Speed: 45
+		TurnSpeed: 8
+	AdvancedBuildable:
+		BuildDuration: 600
+		Level: 2
+	RevealsShroud:
+		Range: 7c0
+	Selectable:
+		Priority: 15
+	Tanker:
+		DockingActivity: TankerCycle
+	AdvancedSelectionDecorations:
+		Offset: 0,-1
+	AttackNotification:
+		Notifications: TankerUnderAttack
+	IgnoreRallyPoint:
+
+evolved_oiltanker.colorpicker:
+	Inherits: evolved_oiltanker
+	Mobile:
+		InitialFacing: 128
+	RenderSprites:
+		Image: evolved_oiltanker
+		Palette: colorpicker
+	-AdvancedBuildable:
+	-MapEditorData:
+
+evolved_derrick:
+	Inherits@1: ^EvolvedVehicle
+	Inherits@2: ^CoreHeavyVehicle
+	Tooltip:
+		Name: Derrick
+	TooltipDescription:
+		Description: Deploys on oilpatch
+	Valued:
+		Cost: 1000
+	Health:
+		HP: 4000
+	Mobile:
+		Speed: 40
+		TurnSpeed: 8
+	AdvancedBuildable:
+		BuildDuration: 500
+		Level: 0
+	RevealsShroud:
+		Range: 7c0
+	Selectable:
+		Priority: 15
+	DeploysOnActor:
+		IntoActor: evolved_drillrig
+		ValidTargets: oilpatch
+		DeployCursor: dock
+		Offset: -2,-2
+	AdvancedSelectionDecorations:
+		Offset: -2,3
+	AttackNotification:
+		Notifications: DrillRigUnderAttack
+	IgnoreRallyPoint:
+
+evolved_clanhallwagon:
+	Inherits@1: ^EvolvedVehicle
+	Inherits@2: ^CoreHeavyVehicle
+	Tooltip:
+		Name: Clanhall Wagon
+	TooltipDescription:
+		Description: Mobile base
+	Valued:
+		Cost: 1500
+	Health:
+		HP: 6000
+	Mobile:
+		Speed: 40
+		TurnSpeed: 5
+	AdvancedBuildable:
+		BuildDuration: 1000
+		Level: 3
+	RevealsShroud:
+		Range: 11c0
+	Transforms:
+		TransformSounds: sounds_evolved|189.wav
+		IntoActor: evolved_clanhall
+		Offset: -1,0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	Selectable:
+		Priority: 15
+	AdvancedSelectionDecorations:
+		Offset: 0,-14
+	IgnoreRallyPoint:
+	BaseBuilding:

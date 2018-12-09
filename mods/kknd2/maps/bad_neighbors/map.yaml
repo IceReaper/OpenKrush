@@ -1,0 +1,104 @@
+MapFormat: 11
+RequiresMod: kknd1
+Title: Bad Neighbors
+Author: IceReaper
+Tileset: highland
+MapSize: 66,66
+Bounds: 1,1,64,64
+Visibility: Lobby
+Categories: Conquest
+Players:
+	PlayerReference@Neutral:
+		Name: Neutral
+		OwnsWorld: True
+		NonCombatant: True
+		Faction: Random
+	PlayerReference@Creeps:
+		Name: Creeps
+		NonCombatant: True
+		Faction: Random
+		Enemies: Multi0, Multi1, Multi2, Multi3
+	PlayerReference@Multi0:
+		Name: Multi0
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi1:
+		Name: Multi1
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi2:
+		Name: Multi2
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi3:
+		Name: Multi3
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+Actors:
+	Actor4: oilpatch
+		Owner: Neutral
+		Location: 56,3
+	Actor5: oilpatch
+		Owner: Neutral
+		Location: 60,7
+	Actor6: oilpatch
+		Owner: Neutral
+		Location: 7,3
+	Actor7: oilpatch
+		Owner: Neutral
+		Location: 3,7
+	Actor8: oilpatch
+		Owner: Neutral
+		Location: 3,56
+	Actor9: oilpatch
+		Owner: Neutral
+		Location: 7,60
+	Actor10: oilpatch
+		Owner: Neutral
+		Location: 60,56
+	Actor11: oilpatch
+		Owner: Neutral
+		Location: 56,60
+	Actor12: oilpatch
+		Owner: Neutral
+		Location: 32,11
+	Actor14: oilpatch
+		Owner: Neutral
+		Location: 32,52
+	Actor15: oilpatch
+		Owner: Neutral
+		Location: 11,32
+	Actor16: oilpatch
+		Owner: Neutral
+		Location: 52,32
+	Actor17: bunker_techbunker
+		Owner: Neutral
+		Location: 31,33
+	Actor18: oilpatch
+		Owner: Neutral
+		Location: 34,35
+	Actor19: oilpatch
+		Owner: Neutral
+		Location: 28,35
+	Actor20: oilpatch
+		Owner: Neutral
+		Location: 28,29
+	Actor21: oilpatch
+		Owner: Neutral
+		Location: 34,29
+	Actor22: mpspawn
+		Owner: Neutral
+		Location: 56,9
+	Actor23: mpspawn
+		Owner: Neutral
+		Location: 56,56
+	Actor24: mpspawn
+		Owner: Neutral
+		Location: 9,56
+	Actor25: mpspawn
+		Owner: Neutral
+		Location: 9,9

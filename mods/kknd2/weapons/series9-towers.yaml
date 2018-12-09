@@ -1,0 +1,83 @@
+series9_distanceseeder:
+	Range: 8c0
+	ReloadDelay: 25 # todo copied from kknd1
+	Report: sounds_series9|178.wav
+	Projectile: Bullet
+		Image: projectile
+		Palette: P_Projectiles
+		Sequences: series9_distanceseeder
+		Speed: 340
+	TargetActorCenter: true
+	Warhead@1Damage: SpreadDamage
+		Damage: 100
+		DamageTypes: Laser # todo
+		Spread: 0c512
+		Falloff: 100, 100
+		AffectsParent: true
+		Versus:
+			infantry: 70
+			vehicle:  34
+			building: 17
+			#aircraft: 34
+	Warhead@2Effect: ShrapnelCreateEffect
+		Image: explosions
+		ExplosionPalette: B_Explosions
+		Explosions: small_explosion
+		ImpactSounds: sounds_series9|151.wav, sounds_series9|152.wav, kknd2|bits/sounds/ricochet.wav
+
+series9_podcannon:
+	Range: 10c0
+	ReloadDelay: 25 # todo copied from kknd1
+	Report: sounds_series9|168.wav
+	Projectile: Bullet
+		Image: projectile
+		Palette: P_GreenProjectiles
+		Sequences: series9_podcannon # todo
+		Speed: 430
+	TargetActorCenter: true
+	Warhead@1Damage: SpreadDamage
+		Damage: 100
+		DamageTypes: Laser # todo
+		Spread: 0c512
+		Falloff: 100, 100
+		AffectsParent: true
+		Versus:
+			infantry: 105
+			vehicle: 261
+			building: 50
+			#aircraft: 261
+	Warhead@2Effect: ShrapnelCreateEffect
+		Image: explosions
+		ExplosionPalette: B_Explosions
+		Explosions: small_explosion # todo
+		ImpactSounds: sounds_series9|149.wav
+
+# series9_solarintensifier
+#Speed: 512 speed for solarintensifier rockets
+
+series9_lightninggenerator:
+	Range: 11c0
+	ReloadDelay: 25 # todo copied from kknd1
+	Report: kknd2|bits/sounds/electricThrow1.wav, kknd2|bits/sounds/electricThrow2.wav, kknd2|bits/sounds/electricThrow3.wav #experimental
+	Projectile: Laser
+		SegmentLength: 512
+		Distortion: 256
+		DistortionAnimation: 64
+		ZOffset: 5000
+		Color: F018D0
+	Warhead@1Damage: SpreadDamage
+		Damage: 100
+		DamageTypes: Laser # todo
+		Spread: 0c512
+		Falloff: 100, 100
+		AffectsParent: true
+		Versus:
+			infantry: 520
+			vehicle: 1205
+			building: 170
+			#aircraft: 1205
+	Warhead@2Effect: ShrapnelCreateEffect
+		Image: hit
+		ExplosionPalette: P_SmallProjectiles
+		Explosions: laser
+		ImpactSounds: sounds_series9|150.wav

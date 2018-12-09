@@ -1,0 +1,28 @@
+Sounds:
+	DefaultVariant: .wav
+	Notifications:
+		Beacon: kknd|bits/beacon
+		ChatLine: kknd|bits/chat
+		ClickSound: kknd|bits/click
+
+Speech:
+	DefaultVariant: .wav
+	Prefixes:
+		survivors: survivors_
+		evolved: evolved_
+	Notifications:
+		BuildingReady: BuildingReady, BuildingReady2
+		ResearchStarted: ResearchStarted
+		ResearchCompleted: ResearchCompleted1, ResearchCompleted2
+		AirstrikeReady: AirstrikeReady
+		EnemyInfiltrated: EnemyInfiltrated
+		EnemyConquered: EnemyConquered
+		BuildingLost: BuildingLost
+		BuildingUnderAttack: BuildingUnderAttack
+		UnitUnderAttack: UnitUnderAttack
+		UnitUnderAttackVeteran: UnitUnderAttackVeteran
+		TankerUnderAttack: TankerUnderAttack
+		DrillRigUnderAttack: DrillRigUnderAttack
+		BunkerUnderAttack: BunkerUnderAttack
+		DrillrigLow: DrillrigLow, DrillrigLow2
+		DrillrigEmpty: DrillrigEmpty
