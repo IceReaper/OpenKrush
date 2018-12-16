@@ -24,7 +24,6 @@
 		RequiresCondition: produced
 		Voice: Create
 		ValidStances: Neutral
-		AnnounceWhenSpawnedByMap: false
 	# Default set which fits for most units: Occupy exactly 1 cell / 32x32 pixel tile.
 	HitShape:
 		Type: Circle

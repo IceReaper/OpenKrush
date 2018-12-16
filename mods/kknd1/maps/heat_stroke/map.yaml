@@ -55,46 +55,46 @@ Actors:
 		Owner: Neutral
 		Location: 52,9
 	Actor11: desert_objects_11
-		Owner: Creeps
+		Owner: Neutral
 		Location: 56,11
-	Actor12: desert_objects_12
-		Owner: Creeps
+	Actor12: desert_objects_11
+		Owner: Neutral
 		Location: 49,8
-	Actor13: desert_objects_14
-		Owner: Creeps
+	Actor13: desert_objects_11
+		Owner: Neutral
 		Location: 50,11
-	Actor18: desert_objects_19
-		Owner: Creeps
+	Actor18: desert_objects_11
+		Owner: Neutral
 		Location: 61,10
-	Actor19: desert_objects_24
-		Owner: Creeps
+	Actor19: desert_objects_11
+		Owner: Neutral
 		Location: 56,3
-	Actor20: desert_objects_25
-		Owner: Creeps
+	Actor20: desert_objects_11
+		Owner: Neutral
 		Location: 51,2
-	Actor21: desert_objects_21
-		Owner: Creeps
+	Actor21: desert_objects_11
+		Owner: Neutral
 		Location: 47,9
-	Actor22: desert_objects_16
-		Owner: Creeps
+	Actor22: desert_objects_11
+		Owner: Neutral
 		Location: 46,12
-	Actor23: desert_objects_15
-		Owner: Creeps
+	Actor23: desert_objects_11
+		Owner: Neutral
 		Location: 56,17
-	Actor24: desert_objects_14
-		Owner: Creeps
+	Actor24: desert_objects_11
+		Owner: Neutral
 		Location: 54,4
-	Actor25: desert_objects_10
-		Owner: Creeps
+	Actor25: desert_objects_11
+		Owner: Neutral
 		Location: 57,7
 	Actor26: urban_objects_18
-		Owner: Creeps
+		Owner: Neutral
 		Location: 52,11
 	Actor27: urban_objects_20
-		Owner: Creeps
+		Owner: Neutral
 		Location: 55,9
 	Actor28: urban_objects_19
-		Owner: Creeps
+		Owner: Neutral
 		Location: 51,8
 	Actor41: mpspawn
 		Owner: Neutral
@@ -167,26 +167,26 @@ Actors:
 		Owner: Creeps
 		Location: 48,16
 		TurretFacing: 92
-	Actor57: desert_objects_22
-		Owner: Creeps
+	Actor57: desert_objects_11
+		Owner: Neutral
 		Location: 59,13
-	Actor61: desert_objects_21
-		Owner: Creeps
+	Actor61: desert_objects_11
+		Owner: Neutral
 		Location: 60,16
-	Actor62: desert_objects_20
-		Owner: Creeps
+	Actor62: desert_objects_11
+		Owner: Neutral
 		Location: 47,19
-	Actor64: desert_objects_16
-		Owner: Creeps
+	Actor64: desert_objects_11
+		Owner: Neutral
 		Location: 50,18
-	Actor65: desert_objects_17
-		Owner: Creeps
+	Actor65: desert_objects_11
+		Owner: Neutral
 		Location: 59,18
-	Actor63: desert_objects_25
-		Owner: Creeps
+	Actor63: desert_objects_11
+		Owner: Neutral
 		Location: 46,16
-	Actor59: desert_objects_14
-		Owner: Creeps
+	Actor59: desert_objects_11
+		Owner: Neutral
 		Location: 57,21
 	Actor67: oilpatch
 		Owner: Neutral
