@@ -41,10 +41,10 @@ namespace OpenRA.Mods.Kknd.Activities
 		{
 			var result = base.Tick(self);
 
-			if (!abortByCancel && ShouldCancel)
-				ShouldCancel = false;
+			if (!abortByCancel && shouldCancel)
+				shouldCancel = false;
 
-			if (result == this || ShouldCancel)
+			if (result == this || shouldCancel)
 				return result;
 
 			var tanker = (Tanker)Dockable;
