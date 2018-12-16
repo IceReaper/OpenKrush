@@ -1,4 +1,4 @@
-gog: KKnD 2 Krossfire (GoG)
+gog_galaxy: KKnD 2 Krossfire (GoG)
 	Type: Install
 	RegistryPrefixes: HKEY_LOCAL_MACHINE\Software\, HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\
 	RegistryKey: GOG.com\Games\1207659196

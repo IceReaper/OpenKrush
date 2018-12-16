@@ -1,4 +1,4 @@
-gog: KKnD Xtreme (GoG Galaxy)
+gog_galaxy: KKnD Xtreme (GoG Galaxy)
 	Type: Install
 	RegistryPrefixes: HKEY_LOCAL_MACHINE\Software\, HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\
 	RegistryKey: GOG.com\Games\1207659107

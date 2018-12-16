@@ -276,4 +276,5 @@ ModContent:
 	Downloads:
 		kknd2|installer/downloads.yaml
 	Sources:
-		kknd2|installer/gog.yaml
+		kknd2|installer/gog_galaxy.yaml
+		kknd2|installer/gog_offline.yaml

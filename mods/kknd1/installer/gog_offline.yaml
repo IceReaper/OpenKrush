@@ -1,4 +1,4 @@
-gog: KKnD Xtreme (GoG offline installer)
+gog_offline: KKnD Xtreme (GoG offline installer)
 	Type: Install
 	RegistryPrefixes: HKEY_LOCAL_MACHINE\Software\, HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\
 	RegistryKey: GOG.com\GOGKKNDEXTREME
