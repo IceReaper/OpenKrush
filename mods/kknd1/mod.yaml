@@ -256,13 +256,13 @@ ModContent:
 	Packages:
 		base: Base Game Files
 			TestFiles: ^Content/kknd1/Sprites/Sprites.lvl
-			Sources: gog
+			Sources: gog_galaxy, gog_offline
 			Required: true
 			Download: demo
 		extra assets: Music and Movies
 			TestFiles: ^Content/kknd1/Movies/Intro.vbc
+			Sources: gog_galaxy, gog_offline
 			Required: false
-			Sources: gog
 	Downloads:
 		kknd1|installer/downloads.yaml
 	Sources:

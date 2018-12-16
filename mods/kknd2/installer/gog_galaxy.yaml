@@ -4,7 +4,7 @@ gog: KKnD 2 Krossfire (GoG)
 	RegistryKey: GOG.com\Games\1207659196
 	RegistryValue: PATH
 	IDFiles:
-		KKND2.EXE: 8d81c9183d04eb834aff29195797abe11aedc249
+		Levels/English/Gamesprt.lpk: 4b37ee84bb9216f8574330b11a139c90d640f503
 	Install:
 		copy: .
 			^Content/kknd2/Sounds/Evolved.lpk: LEVELS/ENGLISH/MUTE.SPK

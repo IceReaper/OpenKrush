@@ -1,10 +1,10 @@
-gog: KKnD Xtreme (GoG)
+gog: KKnD Xtreme (GoG Galaxy)
 	Type: Install
 	RegistryPrefixes: HKEY_LOCAL_MACHINE\Software\, HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\
 	RegistryKey: GOG.com\Games\1207659107
 	RegistryValue: PATH
 	IDFiles:
-		KKNDGAME.EXE: 763410af1c0a42c2fbd196bd5edd5331bdc07348
+		LEVELS/640/SPRITES.LVL: e08f6407d23b6b7c9fc3d49833428a6b260f73a0
 	Install:
 		copy: .
 			^Content/kknd1/Sounds/Evolved.lvl: LEVELS/MUTE.SLV
