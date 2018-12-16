@@ -46,7 +46,7 @@ namespace OpenRA.Mods.Kknd.Traits.Research
 			var rs = init.Self.Trait<RenderSprites>();
 			var body = init.Self.Trait<BodyOrientation>();
 
-			var hidden = new Func<bool>(() => Researches == null);
+			var hidden = new Func<bool>(() => Researches == null || init.Self.Owner.IsAlliedWith(init.World.LocalPlayer));
 
 			overlay = new Animation(init.World, "indicators", hidden);
 			overlay.PlayRepeating(this.info.Sequence + 0);
