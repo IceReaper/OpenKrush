@@ -98,6 +98,8 @@ survivors_barracks:
 		Image: survivors_detentioncenter
 	TechnicianRepairable:
 		Offset: 0,-30
+	GrantExternalConditionToProduced:
+		Condition: produced
 
 survivors_machineshop:
 	Inherits: ^SurvivorsBuilding
@@ -153,6 +155,8 @@ survivors_machineshop:
 		RequiresCondition: !selfconstructing && !deconstructing
 	TechnicianRepairable:
 		Offset: 10,-60
+	GrantExternalConditionToProduced:
+		Condition: produced
 
 survivors_repairbay:
 	Inherits: ^SurvivorsBuilding

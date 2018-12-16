@@ -19,6 +19,10 @@ bunker_techbunker:
 	-DeconstructSellable:
 	BlocksProjectiles:
 		-RequiresCondition:
+	RequiresSpecificOwners:
+		ValidOwnerNames: Neutral
+	GrantExternalConditionToProduced:
+		Condition: produced
 
 ^BunkerVehicle:
 	Inherits: ^CoreVehicle

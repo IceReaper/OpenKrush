@@ -14,8 +14,14 @@
 # Base for all movable units.
 ^CoreUnit:
 	Inherits: ^CoreVisibleActor
+	# Required for the below condition stuff
+	ConditionManager:
+	# Required to trigger VoiceAnnouncement only after producing.
+	ExternalCondition@PRODUCED:
+		Condition: produced
 	# Any build unit should report with a sound.
 	VoiceAnnouncement:
+		RequiresCondition: produced
 		Voice: Create
 		ValidStances: Neutral
 		AnnounceWhenSpawnedByMap: false
@@ -488,3 +494,6 @@ oilpatch:
 	# Put decorations in own catgegory in map editor.
 	MapEditorData:
 		Categories: Decorations
+	# Enforce neutral ownership.
+	RequiresSpecificOwners:
+		ValidOwnerNames: Neutral

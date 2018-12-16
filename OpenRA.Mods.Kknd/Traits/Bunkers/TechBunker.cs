@@ -205,6 +205,9 @@ namespace OpenRA.Mods.Kknd.Traits.Bunkers
 					newUnit.QueueActivity(move.MoveIntoWorld(newUnit, exitLocation));
 					newUnit.QueueActivity(new AttackMoveActivity(newUnit, move.MoveTo(exitLocation, 1)));
 				}
+
+				foreach (var t in self.TraitsImplementing<INotifyProduction>())
+					t.UnitProduced(self, newUnit, CPos.Zero);
 			});
 		}
 

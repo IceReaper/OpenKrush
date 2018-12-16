@@ -98,6 +98,8 @@ evolved_warriorhall:
 		Offset: 10,-30
 	RenderSprites:
 		Image: evolved_holdingpen
+	GrantExternalConditionToProduced:
+		Condition: produced
 
 evolved_beastenclosure:
 	Inherits: ^EvolvedBuilding
@@ -157,6 +159,8 @@ evolved_beastenclosure:
 		RequiresCondition: !selfconstructing && !deconstructing
 	TechnicianRepairable:
 		Offset: 10,-50
+	GrantExternalConditionToProduced:
+		Condition: produced
 
 evolved_blacksmith:
 	Inherits: ^EvolvedBuilding
@@ -216,6 +220,8 @@ evolved_blacksmith:
 		RequiresCondition: !selfconstructing && !deconstructing
 	TechnicianRepairable:
 		Offset: 15,-50
+	GrantExternalConditionToProduced:
+		Condition: produced
 
 evolved_beastforge:
 	Inherits: ^EvolvedBuilding
@@ -274,6 +280,8 @@ evolved_beastforge:
 		RequiresCondition: !selfconstructing && !deconstructing
 	TechnicianRepairable:
 		Offset: 10,-50
+	GrantExternalConditionToProduced:
+		Condition: produced
 
 evolved_menagerie:
 	Inherits: ^EvolvedBuilding
