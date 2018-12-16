@@ -111,7 +111,9 @@ namespace OpenRA.Mods.Kknd.Traits.Research
 			if (currentTarget == null)
 				return;
 
-			currentTarget.Trait<Researchable>().Researches = null;
+			if (!currentTarget.IsDead && currentTarget.IsInWorld)
+				currentTarget.Trait<Researchable>().Researches = null;
+
 			currentTarget = null;
 		}
 
