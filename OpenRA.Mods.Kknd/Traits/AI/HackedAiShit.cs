@@ -9,10 +9,12 @@
  */
 #endregion
 
+using System;
 using System.Linq;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Kknd.Orders;
 using OpenRA.Mods.Kknd.Traits.Research;
+using OpenRA.Mods.Kknd.Traits.Resources;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.Kknd.Traits.AI
@@ -21,26 +23,18 @@ namespace OpenRA.Mods.Kknd.Traits.AI
     [Desc("Ugly ugly hack to give the ai cash and make it research random buildings.")]
     public class HackedAiShitInfo : ITraitInfo
     {
-        public object Create(ActorInitializer init) { return new HackedAiShit(init.Self); }
+        public object Create(ActorInitializer init) { return new HackedAiShit(); }
     }
 
     public class HackedAiShit : ITick
     {
-        private bool isActive;
-
-        public HackedAiShit(Actor self)
-        {
-            isActive = self.Owner.IsBot;
-        }
-
         void ITick.Tick(Actor self)
         {
-            if (!isActive)
+            if (!self.Owner.IsBot)
                 return;
 
-            var pr = self.Owner.PlayerActor.Trait<PlayerResources>();
-            if (pr.Cash < 5000)
-                pr.GiveCash(5000);
+            var pumpForce = self.World.ActorsHavingTrait<PowerStationInfo>().Where(a => a.Owner == self.Owner).Sum(a => 5 + a.Trait<Researchable>().Level);
+            self.Owner.PlayerActor.Trait<PlayerResources>().GiveCash(Math.Max(5, pumpForce));
 
             var researcher = self.World.Actors.FirstOrDefault(a =>
             {

@@ -40,7 +40,6 @@ survivors_outpost:
 	SaboteurConquerable:
 		Population: 3
 		RequiresCondition: !selfconstructing && !deconstructing
-	HackedAiShit:
 	BaseBuilding:
 	TechnicianRepairable:
 		Offset: 10,-30

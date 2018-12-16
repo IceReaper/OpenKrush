@@ -42,7 +42,6 @@ evolved_clanhall:
 		RequiresCondition: !selfconstructing && !deconstructing
 	TechnicianRepairable:
 		Offset: 0,-50
-	HackedAiShit:
 	BaseBuilding:
 
 evolved_warriorhall:
