@@ -30,7 +30,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 		private readonly Sprite terrainSprite;
 		private readonly Sprite shroudSprite;
 
-		private int Size = 2;
+		private int size = 2;
 		private bool useStanceColor = false;
 
 		public Stance ShowStances { get; set; }
@@ -63,7 +63,11 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 
 		public override void Resize()
 		{
-			Bounds = new Rectangle(0, Game.Renderer.Resolution.Height - ingameUi.World.Map.MapSize.Y * Size, ingameUi.World.Map.MapSize.X * Size, ingameUi.World.Map.MapSize.Y * Size);
+			Bounds = new Rectangle(
+				0,
+				Game.Renderer.Resolution.Height - ingameUi.World.Map.MapSize.Y * size,
+				ingameUi.World.Map.MapSize.X * size,
+				ingameUi.World.Map.MapSize.Y * size);
 		}
 
 		private void DrawTerrain()
@@ -111,7 +115,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 
 		public override string GetCursor(int2 pos)
 		{
-			var cell = new MPos((pos.X - RenderBounds.X) / Size, (pos.Y - RenderBounds.Y) / Size).ToCPos(ingameUi.World.Map);
+			var cell = new MPos((pos.X - RenderBounds.X) / size, (pos.Y - RenderBounds.Y) / size).ToCPos(ingameUi.World.Map);
 			var worldPixel = ingameUi.WorldRenderer.ScreenPxPosition(ingameUi.World.Map.CenterOfCell(cell));
 			var location = ingameUi.WorldRenderer.Viewport.WorldToViewPx(worldPixel);
 
@@ -128,7 +132,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 
 		public override bool HandleMouseInput(MouseInput mi)
 		{
-			var cell = new MPos((mi.Location.X - RenderBounds.X) / Size, (mi.Location.Y - RenderBounds.Y) / Size).ToCPos(ingameUi.World.Map);
+			var cell = new MPos((mi.Location.X - RenderBounds.X) / size, (mi.Location.Y - RenderBounds.Y) / size).ToCPos(ingameUi.World.Map);
 			var pos = ingameUi.World.Map.CenterOfCell(cell);
 
 			if ((mi.Event == MouseInputEvent.Down || mi.Event == MouseInputEvent.Move) && mi.Button == Game.Settings.Game.MouseButtonPreference.Cancel)
@@ -158,7 +162,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 		{
 			UpdateShroud();
 
-			WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X - Size, RenderBounds.Y - Size, RenderBounds.Width + Size * 2, RenderBounds.Height + Size * 2), Color.White);
+			WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X - size, RenderBounds.Y - size, RenderBounds.Width + size * 2, RenderBounds.Height + size * 2), Color.White);
 
 			radarSheet.CommitBufferedData();
 			Game.Renderer.RgbaSpriteRenderer.DrawSprite(terrainSprite, new int2(RenderBounds.X, RenderBounds.Y), new int2(RenderBounds.Width, RenderBounds.Height));
@@ -187,18 +191,17 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 
 					var pos = cell.First.ToMPos(ingameUi.World.Map.Grid.Type);
 					var color = useStanceColor ? Color.FromArgb(e.Actor.Owner.PlayerStanceColor(e.Actor).ToArgb()) : e.Actor.Owner.Color.RGB;
-						
-					WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X + pos.U * Size, RenderBounds.Y + pos.V * Size, Size, Size), color);
+
+					WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X + pos.U * size, RenderBounds.Y + pos.V * size, size, size), color);
 				}
 			}
 
 			Game.Renderer.EnableScissor(RenderBounds);
 
 			Game.Renderer.RgbaColorRenderer.DrawRect(
-				new int2(RenderBounds.X, RenderBounds.Y) + ingameUi.WorldRenderer.Viewport.TopLeft / 32 * Size,
-				new int2(RenderBounds.X, RenderBounds.Y) + ingameUi.WorldRenderer.Viewport.BottomRight / 32 * Size, Size,
-				Color.White
-			);
+				new int2(RenderBounds.X, RenderBounds.Y) + ingameUi.WorldRenderer.Viewport.TopLeft / 32 * size,
+				new int2(RenderBounds.X, RenderBounds.Y) + ingameUi.WorldRenderer.Viewport.BottomRight / 32 * size, size,
+				Color.White);
 
 			foreach (var ping in ingameUi.RadarPings.Pings)
 			{
@@ -206,7 +209,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 					continue;
 
 				var center = ingameUi.World.Map.CellContaining(ping.Position).ToMPos(ingameUi.World.Map.Grid.Type);
-				var points = ping.Points(new int2(RenderBounds.X + center.U * Size, RenderBounds.Y + center.V * Size)).ToArray();
+				var points = ping.Points(new int2(RenderBounds.X + center.U * size, RenderBounds.Y + center.V * size)).ToArray();
 				Game.Renderer.RgbaColorRenderer.DrawPolygon(points, 2, ping.Color);
 			}
 

@@ -28,14 +28,15 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 
 		public override bool HandleKeyPress(KeyInput e)
 		{
-			if (!IsUsable() || e.Key != Game.ModData.Hotkeys["Radar"].GetValue().Key || e.IsRepeat || e.Event != KeyInputEvent.Down || e.Modifiers != Game.ModData.Hotkeys["Radar"].GetValue().Modifiers)
-				return false;
+			if (IsUsable() && !e.IsRepeat && e.Event == KeyInputEvent.Down
+			    && e.Key == Game.ModData.Hotkeys["Radar"].GetValue().Key && e.Modifiers == Game.ModData.Hotkeys["Radar"].GetValue().Modifiers)
+			{
+				Active = !Active;
+				sidebar.IngameUi.Radar.Visible = Active;
+				return true;
+			}
 
-			Active = !Active;
-
-			sidebar.IngameUi.Radar.Visible = Active;
-
-			return true;
+			return false;
 		}
 
 		protected override bool HandleLeftClick(MouseInput mi)

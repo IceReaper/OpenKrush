@@ -75,7 +75,6 @@ namespace OpenRA.Mods.Kknd.Activities
 			}
 
 			return this;
-
 		}
 
 		public override bool Cancel(Actor self, bool keepQueue = false)

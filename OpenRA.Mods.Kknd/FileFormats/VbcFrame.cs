@@ -77,7 +77,7 @@ namespace OpenRA.Mods.Kknd.FileFormats
 				var numColors = (colors.ReadUInt8() - 1) & 0xff;
 
 				for (var i = 0; i <= numColors; i++)
-					palette[firstIndex + i] = (uint) ((0xff << 24) | (colors.ReadUInt8() << 16) | (colors.ReadUInt8() << 8) | (colors.ReadUInt8() << 0));
+					palette[firstIndex + i] = (uint)((0xff << 24) | (colors.ReadUInt8() << 16) | (colors.ReadUInt8() << 8) | (colors.ReadUInt8() << 0));
 			}
 
 			video.Position = 0;
@@ -103,7 +103,7 @@ namespace OpenRA.Mods.Kknd.FileFormats
 
 							break;
 						}
-						
+
 						case 1:
 						{
 							var motion = video.ReadUInt8();
@@ -127,7 +127,7 @@ namespace OpenRA.Mods.Kknd.FileFormats
 
 							break;
 						}
-						
+
 						case 2:
 						{
 							var color = video.ReadUInt8();
@@ -137,7 +137,7 @@ namespace OpenRA.Mods.Kknd.FileFormats
 								newFrame[(by * 4 + y) * size.X + bx * 4 + x] = color;
 							break;
 						}
-						
+
 						case 3:
 						{
 							var patternData = video.ReadUInt8();
@@ -156,7 +156,7 @@ namespace OpenRA.Mods.Kknd.FileFormats
 										newFrame[(by * 4 + y) * size.X + bx * 4 + x] = ((pattern >> (y * 4 + x)) & 1) == 0 ? pixel0 : pixel1;
 									break;
 								}
-								
+
 								case 1:
 								{
 									var pixel = video.ReadUInt8();
@@ -174,7 +174,7 @@ namespace OpenRA.Mods.Kknd.FileFormats
 
 									break;
 								}
-								
+
 								case 2:
 								{
 									var pixel = video.ReadUInt8();

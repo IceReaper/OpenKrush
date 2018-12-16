@@ -30,7 +30,7 @@ namespace OpenRA.Mods.Kknd.Traits.Production
 
 	public class SelfConstructing : WithMakeAnimation, ITick, INotifyRemovedFromWorld, INotifyCreated, INotifyDamageStateChanged, INotifyKilled
 	{
-		private readonly SelfConstructingInfo Info;
+		private readonly SelfConstructingInfo info;
 
 		private readonly WithSpriteBody wsb;
 
@@ -46,13 +46,13 @@ namespace OpenRA.Mods.Kknd.Traits.Production
 
 		public SelfConstructing(ActorInitializer init, SelfConstructingInfo info) : base(init, info)
 		{
-			Info = info;
+			this.info = info;
 			wsb = init.Self.Trait<WithSpriteBody>();
 			conditionManager = init.Self.Trait<ConditionManager>();
 
-			if (!string.IsNullOrEmpty(Info.Condition) && token == ConditionManager.InvalidConditionToken)
-				token = conditionManager.GrantCondition(init.Self, Info.Condition);
-			
+			if (!string.IsNullOrEmpty(this.info.Condition) && token == ConditionManager.InvalidConditionToken)
+				token = conditionManager.GrantCondition(init.Self, this.info.Condition);
+
 			spawnType = init.Contains<PlaceBuildingInit>() ? SpawnType.PlaceBuilding : init.Contains<SpawnedByMapInit>() ? SpawnType.Other : SpawnType.Deploy;
 		}
 
@@ -68,13 +68,13 @@ namespace OpenRA.Mods.Kknd.Traits.Production
 				health = self.Trait<Health>();
 
 				healthSteps = new List<int>();
-				for (var i = 0; i <= Info.Steps; i++)
-					healthSteps.Add(health.MaxHP * (i + 1) / (Info.Steps + 1));
+				for (var i = 0; i <= info.Steps; i++)
+					healthSteps.Add(health.MaxHP * (i + 1) / (info.Steps + 1));
 
 				health.InflictDamage(self, self, new Damage(health.MaxHP - healthSteps[0]), true);
 
 				wsb.CancelCustomAnimation(self);
-				wsb.PlayCustomAnimationRepeating(self, Info.Sequence + 0);
+				wsb.PlayCustomAnimationRepeating(self, info.Sequence + 0);
 			}
 			else if (spawnType == SpawnType.Deploy)
 			{
@@ -102,21 +102,21 @@ namespace OpenRA.Mods.Kknd.Traits.Production
 				productionItem = null;
 				wsb.CancelCustomAnimation(self);
 
-				while (step < Info.Steps)
+				while (step < info.Steps)
 					health.InflictDamage(self, self, new Damage(healthSteps[step] - healthSteps[++step]), true);
 
 				OnComplete(self);
 				return;
 			}
 
-			var progress = Math.Max(0, Math.Min(Info.Steps * (productionItem.TotalTime - productionItem.RemainingTime) / Math.Max(1, productionItem.TotalTime), Info.Steps - 1));
+			var progress = Math.Max(0, Math.Min(info.Steps * (productionItem.TotalTime - productionItem.RemainingTime) / Math.Max(1, productionItem.TotalTime), info.Steps - 1));
 
 			if (progress != step)
 			{
 				while (step < progress)
 					health.InflictDamage(self, self, new Damage(healthSteps[step] - healthSteps[++step]), true);
 
-				wsb.PlayCustomAnimationRepeating(self, Info.Sequence + step);
+				wsb.PlayCustomAnimationRepeating(self, info.Sequence + step);
 			}
 		}
 
@@ -145,7 +145,7 @@ namespace OpenRA.Mods.Kknd.Traits.Production
 			if (productionItem == null)
 				return;
 
-			wsb.PlayCustomAnimationRepeating(self, Info.Sequence + step);
+			wsb.PlayCustomAnimationRepeating(self, info.Sequence + step);
 		}
 
 		void INotifyKilled.Killed(Actor self, AttackInfo e)

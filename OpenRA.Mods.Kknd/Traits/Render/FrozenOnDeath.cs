@@ -30,8 +30,10 @@ namespace OpenRA.Mods.Kknd.Traits.Render
         public FrozenOnDeath(ActorInitializer init, FrozenOnDeathInfo info)
         {
             despawn = info.Duration;
+            /*
             // TODO refactor this!
-            //init.Self.TraitOrDefault<Health>().RemoveOnDeath = false;
+            // init.Self.TraitOrDefault<Health>().RemoveOnDeath = false;
+            */
         }
 
         void ITick.Tick(Actor self)

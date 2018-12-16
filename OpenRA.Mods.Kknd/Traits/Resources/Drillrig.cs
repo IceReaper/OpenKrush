@@ -104,12 +104,12 @@ namespace OpenRA.Mods.Kknd.Traits.Resources
 		{
 			if (oilpatchActor == null)
 				return;
-			
+
 			oilpatchActor.Tick();
 
 			if (!oilpatchActor.IsDead)
 				return;
-			
+
 			Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", "DrillrigEmpty", self.Owner.Faction.InternalName);
 			oilpatchActor = null;
 			oilpatch = null;
@@ -117,7 +117,7 @@ namespace OpenRA.Mods.Kknd.Traits.Resources
 			token = ConditionManager.InvalidConditionToken;
 		}
 
-		void INotifySold.Selling(Actor self) {}
+		void INotifySold.Selling(Actor self) { }
 
 		void INotifySold.Sold(Actor self)
 		{

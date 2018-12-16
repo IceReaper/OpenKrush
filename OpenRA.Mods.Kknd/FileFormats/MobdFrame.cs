@@ -32,7 +32,6 @@ namespace OpenRA.Mods.Kknd.FileFormats
 			/*Unk2 = */stream.ReadUInt32();
 			var pointListOffset = stream.ReadUInt32();
 
-
 			if (pointListOffset > 0)
 			{
 				var points = new List<MobdPoint>();

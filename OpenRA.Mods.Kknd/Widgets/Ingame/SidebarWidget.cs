@@ -44,11 +44,11 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 
 			ChromeMetrics.TryGet("ButtonArea-" + IngameUi.World.LocalPlayer.Faction.InternalName, out ButtonArea);
 
-			AddChild(new ProductionCategoryButtonWidget(this, 0, new[] {"infantry"}, "Infantry"));
-			AddChild(new ProductionCategoryButtonWidget(this, 1, new[] {"vehicle", "beast"}, "Vehicles"));
-			AddChild(new ProductionCategoryButtonWidget(this, 2, new[] {"building"}, "Buildings"));
-			AddChild(new ProductionCategoryButtonWidget(this, 3, new[] {"tower"}, "Towers"));
-			AddChild(new ProductionCategoryButtonWidget(this, 4, new[] {"wall"}, "Walls"));
+			AddChild(new ProductionCategoryButtonWidget(this, 0, new[] { "infantry" }, "Infantry"));
+			AddChild(new ProductionCategoryButtonWidget(this, 1, new[] { "vehicle", "beast" }, "Vehicles"));
+			AddChild(new ProductionCategoryButtonWidget(this, 2, new[] { "building" }, "Buildings"));
+			AddChild(new ProductionCategoryButtonWidget(this, 3, new[] { "tower" }, "Towers"));
+			AddChild(new ProductionCategoryButtonWidget(this, 4, new[] { "wall" }, "Walls"));
 
 			AddChild(bomber = new BomberButtonWidget(this));
 
@@ -106,7 +106,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 		public void CloseAllBut(ButtonWidget keepOpen)
 		{
 			foreach (var widget in Children.Where(w => w != keepOpen && (w is ProductionCategoryButtonWidget || w is BomberButtonWidget)))
-				((ButtonWidget) widget).Active = false;
+				((ButtonWidget)widget).Active = false;
 		}
 
 		public void SelectFactory(Actor factory, string category)
@@ -117,13 +117,13 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 
 				if (button == null)
 					return false;
-				
+
 				return button.Categories.Contains(category);
 			}) as ProductionCategoryButtonWidget;
-			
+
 			if (categoryButton == null)
 				return;
-			
+
 			CloseAllBut(categoryButton);
 			categoryButton.Active = true;
 

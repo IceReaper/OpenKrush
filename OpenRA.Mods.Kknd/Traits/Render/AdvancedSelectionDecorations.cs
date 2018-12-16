@@ -62,12 +62,12 @@ namespace OpenRA.Mods.Kknd.Traits.Render
 				{
 					case StatusBarsType.Standard:
 						yield break;
-					
+
 					case StatusBarsType.DamageShow:
 						if (health == null || health.DamageState == DamageState.Undamaged)
 							yield break;
 						break;
-					
+
 					case StatusBarsType.AlwaysShow:
 						break;
 				}

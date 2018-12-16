@@ -15,12 +15,12 @@ using OpenRA.Mods.Common.Traits;
 namespace OpenRA.Mods.Kknd.Traits.Production
 {
     public class AdvancedProductionInfo : ProductionInfo
-    {   
+    {
         public readonly int MaximumDistance = 3;
-        
+
         public override object Create(ActorInitializer init) { return new AdvancedProduction(init, this); }
     }
-    
+
     public class AdvancedProduction : Common.Traits.Production
     {
         private AdvancedProductionInfo info;
@@ -49,10 +49,10 @@ namespace OpenRA.Mods.Kknd.Traits.Production
                 exitInfo.GetType().GetField("SpawnOffset").SetValue(exitInfo, exit.Info.SpawnOffset);
                 exitInfo.GetType().GetField("ExitCell").SetValue(exitInfo, spawn - self.Location + candidate);
                 exitInfo.GetType().GetField("Facing").SetValue(exitInfo, exit.Info.Facing);
-                
+
                 return new Exit(null, exitInfo);
             }
-            
+
             return null;
         }
     }

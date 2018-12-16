@@ -20,28 +20,28 @@ namespace OpenRA.Mods.Kknd.Traits.Veterancy
 	public class VeterancyInfo : ITraitInfo
 	{
 		[Desc("Amount of experience (damage made on enemies) required for levelup.")]
-		public readonly int[] Experience = {1000, 2000};
+		public readonly int[] Experience = { 1000, 2000 };
 
 		[Desc("Veterancy level unit frame border color.")]
-		public readonly Color[] Levels = {Color.FromArgb(255, 0, 165, 255), Color.FromArgb(255, 123, 0, 0)};
+		public readonly Color[] Levels = { Color.FromArgb(255, 0, 165, 255), Color.FromArgb(255, 123, 0, 0) };
 
 		[Desc("Percentual damage per veterancy level.")]
-		public readonly int[] DamageRates = {105, 110};
+		public readonly int[] DamageRates = { 105, 110 };
 
 		[Desc("Percentual inaccuracy per veterancy level.")]
-		public readonly int[] InaccuracyRates = {90, 70};
+		public readonly int[] InaccuracyRates = { 90, 70 };
 
 		[Desc("Percentual range per veterancy level.")]
-		public readonly int[] RangeRates = {100, 100};
+		public readonly int[] RangeRates = { 100, 100 };
 
 		[Desc("Percentual reload times per veterancy level.")]
-		public readonly int[] ReloadRates = {95, 90};
+		public readonly int[] ReloadRates = { 95, 90 };
 
 		[Desc("Percentual speed per veterancy level.")]
-		public readonly int[] SpeedRates = {100, 100};
+		public readonly int[] SpeedRates = { 100, 100 };
 
 		[Desc("Self heal per veterancy level.")]
-		public readonly int[] HealRates = {};
+		public readonly int[] HealRates = { };
 
 		[Desc("Delay in ticks between healing.")]
 		public readonly int HealDelay = 1;

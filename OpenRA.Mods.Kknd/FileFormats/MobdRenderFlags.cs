@@ -42,7 +42,7 @@ namespace OpenRA.Mods.Kknd.FileFormats
 					var r = ((color16 & 0x7c00) >> 7) & 0xff;
 					var g = ((color16 & 0x03e0) >> 2) & 0xff;
 					var b = ((color16 & 0x001f) << 3) & 0xff;
-					Palette[i] = (uint) ((0xff << 24) | (r << 16) | (g << 8) | b);
+					Palette[i] = (uint)((0xff << 24) | (r << 16) | (g << 8) | b);
 				}
 
 				stream.Position = returnPos;

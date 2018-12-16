@@ -96,22 +96,22 @@ namespace OpenRA.Mods.Kknd.Graphics
 						DrawRect(bounds, 2, -height - 2 + current * thickness, progress, 1, Color.FromArgb(255, 0, 255, 0));
 						DrawRect(bounds, 2, -height - 1 + current * thickness, progress, thickness - 2, Color.FromArgb(255, 0, 181, 0));
 						break;
-					
+
 					case DamageState.Light:
 						DrawRect(bounds, 2, -height - 2 + current * thickness, progress, 1, Color.FromArgb(255, 255, 255, 0));
 						DrawRect(bounds, 2, -height - 1 + current * thickness, progress, thickness - 2, Color.FromArgb(255, 141, 184, 28));
 						break;
-					
+
 					case DamageState.Medium:
 						DrawRect(bounds, 2, -height - 2 + current * thickness, progress, 1, Color.FromArgb(255, 255, 156, 0));
 						DrawRect(bounds, 2, -height - 1 + current * thickness, progress, thickness - 2, Color.FromArgb(255, 178, 122, 51));
 						break;
-					
+
 					case DamageState.Heavy:
 						DrawRect(bounds, 2, -height - 2 + current * thickness, progress, 1, Color.FromArgb(255, 230, 0, 0));
 						DrawRect(bounds, 2, -height - 1 + current * thickness, progress, thickness - 2, Color.FromArgb(255, 123, 0, 0));
 						break;
-					
+
 					case DamageState.Critical:
 						DrawRect(bounds, 2, -height - 2 + current * thickness, progress, 1, Color.FromArgb(255, 123, 0, 0));
 						DrawRect(bounds, 2, -height - 1 + current * thickness, progress, thickness - 2, Color.FromArgb(255, 82, 0, 0));

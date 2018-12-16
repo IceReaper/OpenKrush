@@ -55,8 +55,8 @@ namespace OpenRA.Mods.Kknd.Widgets.GameSelect
                     (OpenRA.Game.Renderer.Resolution.Width - player.Video.Size.X) / 2,
                     (OpenRA.Game.Renderer.Resolution.Height - player.Video.Size.Y) / 2,
                     player.Video.Size.X,
-                    player.Video.Size.Y
-                );
+                    player.Video.Size.Y);
+
                 player.Play(() =>
                 {
                     player.Visible = false;

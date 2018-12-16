@@ -17,7 +17,7 @@ namespace OpenRA.Mods.Kknd.Traits.Bunkers
 	[Desc("Selectable oilpatch oil amount in lobby.")]
 	public class BunkerSettingsInfo : ITraitInfo, ILobbyOptions
 	{
-		public readonly string[] Values = {"Disabled", "Single-Usage", "Reusable"};
+		public readonly string[] Values = { "Disabled", "Single-Usage", "Reusable" };
 
 		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(Ruleset rules)
 		{
@@ -26,7 +26,15 @@ namespace OpenRA.Mods.Kknd.Traits.Bunkers
 			foreach (var value in Values)
 				values.Add(value, value);
 
-			yield return new LobbyOption("bunkers", "Bunkers", "TechBunker behavior.", true, 0, new ReadOnlyDictionary<string, string>(values), "Reusable", false);
+			yield return new LobbyOption(
+				"bunkers",
+				"Bunkers",
+				"TechBunker behavior.",
+				true,
+				0,
+				new ReadOnlyDictionary<string, string>(values),
+				"Reusable",
+				false);
 		}
 
 		public object Create(ActorInitializer init) { return new BunkerSettings(); }

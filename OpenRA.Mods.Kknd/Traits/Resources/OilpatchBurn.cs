@@ -25,7 +25,15 @@ namespace OpenRA.Mods.Kknd.Traits.Resources
 			for (var i = 0; i <= 100; i += 20)
 				values.Add(i.ToString(), i + "%");
 
-			yield return new LobbyOption("OilpatchBurn", "Oil Burn", "Percent amount of oil to burn when shot.", true, 0, new ReadOnlyDictionary<string, string>(values), "0", false);
+			yield return new LobbyOption(
+				"OilpatchBurn",
+				"Oil Burn",
+				"Percent amount of oil to burn when shot.",
+				true,
+				0,
+				new ReadOnlyDictionary<string, string>(values),
+				"0",
+				false);
 		}
 
 		public object Create(ActorInitializer init) { return new OilpatchBurn(); }

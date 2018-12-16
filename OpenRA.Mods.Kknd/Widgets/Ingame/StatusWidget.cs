@@ -18,10 +18,10 @@ using OpenRA.Widgets;
 namespace OpenRA.Mods.Kknd.Widgets.Ingame
 {
 	public class StatusWidget : Widget {
-		private IngameUiWidget ingameUi;
+		private readonly IngameUiWidget ingameUi;
 		private readonly PlayerResources playerResources;
 		private readonly SpriteFont font;
-		private int powerHeight;
+		private readonly int powerHeight;
 
 		public StatusWidget(IngameUiWidget ingameUi)
 		{
@@ -78,8 +78,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 					var text = WidgetUtils.FormatTime(power.Value.RemainingTime, false, ingameUi.World.Timestep);
 					font.DrawTextWithContrast(text, new int2(
 						RenderBounds.X + 10 + index % 4 * ((RenderBounds.Width - 20) / 4),
-						RenderBounds.Y + 25 + index / 4 * powerHeight
-					), player.Color.RGB, player.Color.L > 50 ? Color.Black : Color.White, 1);
+						RenderBounds.Y + 25 + index / 4 * powerHeight), player.Color.RGB, player.Color.L > 50 ? Color.Black : Color.White, 1);
 					index++;
 				}
 			}

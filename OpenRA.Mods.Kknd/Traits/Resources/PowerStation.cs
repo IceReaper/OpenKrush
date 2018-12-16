@@ -23,7 +23,7 @@ namespace OpenRA.Mods.Kknd.Traits.Resources
 		public readonly int Amount = 20;
 
 		[Desc("How many additional oil is given for free per pump.")]
-		public readonly int[] Additional = {0, 3, 6, 9, 12, 15};
+		public readonly int[] Additional = { 0, 3, 6, 9, 12, 15 };
 
 		[Desc("How many ticks to wait between pumps.")]
 		public readonly int Delay = 6;

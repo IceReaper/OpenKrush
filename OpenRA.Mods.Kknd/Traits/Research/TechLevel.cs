@@ -28,7 +28,15 @@ namespace OpenRA.Mods.Kknd.Traits.Research
 			for (var i = 1; i <= TechLevels; i++)
 				values.Add(i.ToString(), i.ToString());
 
-			yield return new LobbyOption("techlevel", "Techlevel", "Maximum available techlevel.", true, 0, new ReadOnlyDictionary<string, string>(values), TechLevels.ToString(), false);
+			yield return new LobbyOption(
+				"techlevel",
+				"Techlevel",
+				"Maximum available techlevel.",
+				true,
+				0,
+				new ReadOnlyDictionary<string, string>(values),
+				TechLevels.ToString(),
+				false);
 		}
 
 		public object Create(ActorInitializer init) { return new TechLevel(this); }
@@ -36,17 +44,17 @@ namespace OpenRA.Mods.Kknd.Traits.Research
 
 	public class TechLevel : INotifyCreated
 	{
-		private readonly TechLevelInfo Info;
+		private readonly TechLevelInfo info;
 		public int TechLevels { get; set; }
 
 		public TechLevel(TechLevelInfo info)
 		{
-			Info = info;
+			this.info = info;
 		}
 
 		void INotifyCreated.Created(Actor self)
 		{
-			TechLevels = int.Parse(self.World.LobbyInfo.GlobalSettings.OptionOrDefault("techlevel", Info.TechLevels.ToString()));
+			TechLevels = int.Parse(self.World.LobbyInfo.GlobalSettings.OptionOrDefault("techlevel", info.TechLevels.ToString()));
 		}
 	}
 }

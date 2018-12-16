@@ -73,11 +73,11 @@ namespace OpenRA.Mods.Kknd.SpriteLoaders
 				case "DATA":
 					version = Version.KKND1;
 					return true;
-				
+
 				case "DAT2":
 					version = Version.KKND2;
 					return true;
-				
+
 				default:
 					return false;
 			}
@@ -103,14 +103,14 @@ namespace OpenRA.Mods.Kknd.SpriteLoaders
 			tmp.AddRange(from mobdAnimation in mobd.HardcodedAnimations
 				from mobdFrame in mobdAnimation.Frames
 				select new MobdSpriteFrame(mobdFrame));
-			
+
 			uint[] palette = null;
 			var points = new Dictionary<int, Offset[]>();
 
 			for (var i = 0; i < tmp.Count; i++)
 			{
 				if (tmp[i].Points != null)
-					points.Add(i, tmp[i].Points.Select(point => new Offset {Id = point.Id, X = point.X, Y = point.Y}).ToArray());
+					points.Add(i, tmp[i].Points.Select(point => new Offset { Id = point.Id, X = point.X, Y = point.Y }).ToArray());
 
 				if (tmp[i].Palette != null)
 					palette = tmp[i].Palette;
@@ -118,7 +118,7 @@ namespace OpenRA.Mods.Kknd.SpriteLoaders
 
 			frames = tmp.ToArray();
 
-			metadata = new TypeDictionary {new EmbeddedSpritePalette(palette), new EmbeddedSpriteOffsets(points)};
+			metadata = new TypeDictionary { new EmbeddedSpritePalette(palette), new EmbeddedSpriteOffsets(points) };
 
 			return true;
 		}

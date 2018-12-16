@@ -68,17 +68,17 @@ namespace OpenRA.Mods.Kknd.Projectiles
             for (var i = 0; i < info.Radius; i++)
             {
                 var color = info.Color == Color.Transparent ? args.SourceActor.Owner.Color.RGB : info.Color;
-                var bw = (float) ((info.InnerLightness - info.OuterLightness) * i / (info.Radius - 1) + info.OuterLightness) / 0xff;
-                var dstR = bw > .5 ? 1 - (1 - 2 * (bw - .5)) * (1 - (float) color.R / 0xff) : 2 * bw * ((float) color.R / 0xff);
-                var dstG = bw > .5 ? 1 - (1 - 2 * (bw - .5)) * (1 - (float) color.G / 0xff) : 2 * bw * ((float) color.G / 0xff);
-                var dstB = bw > .5 ? 1 - (1 - 2 * (bw - .5)) * (1 - (float) color.B / 0xff) : 2 * bw * ((float) color.B / 0xff);
-                colors[i] = Color.FromArgb((int) (dstR * 0xff), (int) (dstG * 0xff), (int) (dstB * 0xff));
+                var bw = (float)((info.InnerLightness - info.OuterLightness) * i / (info.Radius - 1) + info.OuterLightness) / 0xff;
+                var dstR = bw > .5 ? 1 - (1 - 2 * (bw - .5)) * (1 - (float)color.R / 0xff) : 2 * bw * ((float)color.R / 0xff);
+                var dstG = bw > .5 ? 1 - (1 - 2 * (bw - .5)) * (1 - (float)color.G / 0xff) : 2 * bw * ((float)color.G / 0xff);
+                var dstB = bw > .5 ? 1 - (1 - 2 * (bw - .5)) * (1 - (float)color.B / 0xff) : 2 * bw * ((float)color.B / 0xff);
+                colors[i] = Color.FromArgb((int)(dstR * 0xff), (int)(dstG * 0xff), (int)(dstB * 0xff));
             }
 
             var direction = args.PassiveTarget - args.Source;
             if (this.info.SegmentLength == 0)
             {
-                offsets = new[] {new int2(args.Source.X, args.Source.Y), new int2(args.PassiveTarget.X, args.PassiveTarget.Y)};
+                offsets = new[] { new int2(args.Source.X, args.Source.Y), new int2(args.PassiveTarget.X, args.PassiveTarget.Y) };
             }
             else
             {
@@ -96,8 +96,7 @@ namespace OpenRA.Mods.Kknd.Projectiles
                     {
                         offsets[i] = new int2(
                             offsets[i].X + Game.CosmeticRandom.Next(-info.Distortion / 2, info.Distortion / 2),
-                            offsets[i].Y + Game.CosmeticRandom.Next(-info.Distortion / 2, info.Distortion / 2)
-                        );
+                            offsets[i].Y + Game.CosmeticRandom.Next(-info.Distortion / 2, info.Distortion / 2));
                     }
                 }
             }
@@ -115,8 +114,7 @@ namespace OpenRA.Mods.Kknd.Projectiles
                 {
                     offsets[i] = new int2(
                         offsets[i].X + Game.CosmeticRandom.Next(-info.DistortionAnimation / 2, info.DistortionAnimation / 2),
-                        offsets[i].Y + Game.CosmeticRandom.Next(-info.DistortionAnimation / 2, info.DistortionAnimation / 2)
-                    );
+                        offsets[i].Y + Game.CosmeticRandom.Next(-info.DistortionAnimation / 2, info.DistortionAnimation / 2));
                 }
             }
         }

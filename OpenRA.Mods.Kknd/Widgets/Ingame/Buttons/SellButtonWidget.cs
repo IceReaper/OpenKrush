@@ -27,7 +27,8 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 
 		public override bool HandleKeyPress(KeyInput e)
 		{
-			if (IsUsable() && e.Key == Game.ModData.Hotkeys["Sell"].GetValue().Key && !e.IsRepeat && e.Event == KeyInputEvent.Down && e.Modifiers == Game.ModData.Hotkeys["Sell"].GetValue().Modifiers)
+			if (IsUsable() && !e.IsRepeat && e.Event == KeyInputEvent.Down
+			    && e.Key == Game.ModData.Hotkeys["Sell"].GetValue().Key && e.Modifiers == Game.ModData.Hotkeys["Sell"].GetValue().Modifiers)
 			{
 				Active = !Active;
 

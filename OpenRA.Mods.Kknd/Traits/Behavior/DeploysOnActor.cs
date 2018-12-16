@@ -28,7 +28,7 @@ namespace OpenRA.Mods.Kknd.Traits.Behavior
 		public readonly string DeployCursor = null;
 
 		[Desc("Actors which this actor can deploy on.")]
-		public readonly string[] ValidTargets = {};
+		public readonly string[] ValidTargets = { };
 
 		public readonly CVec Offset = CVec.Zero;
 
@@ -56,7 +56,7 @@ namespace OpenRA.Mods.Kknd.Traits.Behavior
 		{
 			if (issued || !self.IsIdle)
 				return;
-			
+
 			var actors = self.World.FindActorsOnCircle(self.CenterPosition, new WDist(512)).Where(actor =>
 			{
 				if (actor == self)
@@ -72,7 +72,7 @@ namespace OpenRA.Mods.Kknd.Traits.Behavior
 				return;
 
 			issued = true;
-				
+
 			self.QueueActivity(new Transform(self, info.IntoActor)
 			{
 				Faction = self.Owner.Faction.InternalName,

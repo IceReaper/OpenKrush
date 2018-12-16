@@ -33,7 +33,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 		public Func<bool> IsFocused;
 		public Func<int> Progress;
 		public Func<int> Amount;
-		
+
 		private ActorPreviewWidget actorPreviewWidget;
 		private bool isHovered;
 		private bool initialized;
@@ -141,12 +141,14 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 						new FactionInit(sidebar.IngameUi.World.LocalPlayer.Faction.Name)
 					});
 
+					/*
 					// TODO implement per actor offsets
 					// TODO implement per ui inner regions
 					// TODO fix turret palettes!
+					*/
 
-					var factorX = sidebar.ButtonArea.Width / (float) actorPreviewWidget.IdealPreviewSize.X;
-					var factorY = sidebar.ButtonArea.Height / (float) actorPreviewWidget.IdealPreviewSize.Y;
+					var factorX = sidebar.ButtonArea.Width / (float)actorPreviewWidget.IdealPreviewSize.X;
+					var factorY = sidebar.ButtonArea.Height / (float)actorPreviewWidget.IdealPreviewSize.Y;
 
 					if (factorX <= 1 && factorY <= 1)
 					{
@@ -175,8 +177,8 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 					RenderBounds.X + sidebar.ButtonArea.X,
 					RenderBounds.Y + sidebar.ButtonArea.Y,
 					sidebar.ButtonArea.Width,
-					sidebar.ButtonArea.Height
-				));
+					sidebar.ButtonArea.Height));
+
 				actorPreviewWidget.Draw();
 				Game.Renderer.DisableScissor();
 			}

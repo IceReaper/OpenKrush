@@ -22,7 +22,7 @@ namespace OpenRA.Mods.Kknd.Traits.Repairbay
 	class RepairbayInfo : DockActionInfo, Requires<ResearchableInfo>
 	{
 		[Desc("How many HP per tick should be repaired per tech level.")]
-		public readonly int[] Rates = {10, 20, 30, 40};
+		public readonly int[] Rates = { 10, 20, 30, 40 };
 
 		[Desc("Delay between repair ticks.")]
 		public readonly int Delay = 3;

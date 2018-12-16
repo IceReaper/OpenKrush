@@ -122,7 +122,7 @@ namespace OpenRA.Mods.Kknd.FileSystem
 			public Stream GetStream(string filename)
 			{
 				Entry entry;
-				
+
 				if (!index.TryGetValue(filename, out entry))
 					return null;
 

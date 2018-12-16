@@ -18,7 +18,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 	{
 		public static readonly int Size = 48;
 
-		protected readonly SidebarWidget sidebar;
+		protected SidebarWidget sidebar;
 		protected string type;
 		protected int2 center;
 		public bool Active;

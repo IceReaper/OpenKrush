@@ -9,6 +9,7 @@
  */
 #endregion
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using OpenRA.FileFormats;
@@ -25,11 +26,11 @@ namespace OpenRA.Mods.Kknd.Graphics
 		public int X;
 		public int Y;
 	}
-	
+
 	public class EmbeddedSpriteOffsets
 	{
 		public readonly Dictionary<int, Offset[]> FrameOffsets;
-		
+
 		public EmbeddedSpriteOffsets(Dictionary<int, Offset[]> frameOffsets = null)
 		{
 			FrameOffsets = frameOffsets;
@@ -57,7 +58,7 @@ namespace OpenRA.Mods.Kknd.Graphics
 			{
 				var src = GetSpriteSrc(modData, tileSet, sequence, animation, info.Value, info.ToDictionary());
 				var offsets = cache.FrameMetadata(src).Get<EmbeddedSpriteOffsets>();
-				
+
 				for (var i = 0; i < sprites.Length; i++)
 				{
 					if (sprites[i] == null)
@@ -71,19 +72,15 @@ namespace OpenRA.Mods.Kknd.Graphics
 			{
 				var src = GetSpriteSrc(modData, tileSet, sequence, animation, info.Value, info.ToDictionary());
 				var metadata = cache.FrameMetadata(src).Get<PngSheetMetadata>();
-				
+
 				for (var i = 0; i < sprites.Length; i++)
 				{
 					if (sprites[i] == null || !metadata.Metadata.ContainsKey("Offsets[" + i + "]"))
 						continue;
 
 					var lines = metadata.Metadata["Offsets[" + i + "]"].Split('\n');
-					EmbeddedOffsets.Add(sprites[i], lines.Select(t => t.Split(',')).Select(data => new Offset
-					{
-						Id = int.Parse(data[0]),
-						X = int.Parse(data[1]),
-						Y = int.Parse(data[2])
-					}).ToArray());
+					var convertOffsets = new Func<string[], Offset>(data => new Offset { Id = int.Parse(data[0]), X = int.Parse(data[1]), Y = int.Parse(data[2]) });
+					EmbeddedOffsets.Add(sprites[i], lines.Select(t => t.Split(',')).Select(convertOffsets).ToArray());
 				}
 			}
 		}

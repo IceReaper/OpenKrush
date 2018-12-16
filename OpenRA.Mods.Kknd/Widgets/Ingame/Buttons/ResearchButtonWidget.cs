@@ -30,7 +30,8 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 
 		public override bool HandleKeyPress(KeyInput e)
 		{
-			if (IsUsable() && e.Key == Game.ModData.Hotkeys["Research"].GetValue().Key && !e.IsRepeat && e.Event == KeyInputEvent.Down && e.Modifiers == Game.ModData.Hotkeys["Research"].GetValue().Modifiers)
+			if (IsUsable() && !e.IsRepeat && e.Event == KeyInputEvent.Down
+			    && e.Key == Game.ModData.Hotkeys["Research"].GetValue().Key && e.Modifiers == Game.ModData.Hotkeys["Research"].GetValue().Modifiers)
 			{
 				Active = !Active;
 
@@ -76,18 +77,18 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 
 		public override void Tick()
 		{
-			var researches = sidebar.IngameUi.World.ActorsWithTrait<Researches>().Where(e => e.Actor.Owner == sidebar.IngameUi.World.LocalPlayer && !e.Trait.IsTraitDisabled).ToArray();
-			researchAvailable = researches.Length > 0;
+			var res = sidebar.IngameUi.World.ActorsWithTrait<Researches>().Where(e => e.Actor.Owner == sidebar.IngameUi.World.LocalPlayer && !e.Trait.IsTraitDisabled).ToArray();
+			researchAvailable = res.Length > 0;
 			autoResearchEnabled = researchAvailable && autoResearchEnabled;
 			Active = !autoResearchEnabled && sidebar.IngameUi.World.OrderGenerator != null && sidebar.IngameUi.World.OrderGenerator is ResearchOrderGenerator;
 
 			if (autoResearchEnabled && sidebar.IngameUi.World.WorldTick % 50 == 0)
 			{
-				var pair = researches.FirstOrDefault(r => !r.Trait.IsResearching);
-				
+				var pair = res.FirstOrDefault(r => !r.Trait.IsResearching);
+
 				if (pair.Trait == null)
 					return;
-				
+
 				var researchables = sidebar.IngameUi.World.Actors.Where(a =>
 				{
 					if (a.Owner != sidebar.IngameUi.World.LocalPlayer)

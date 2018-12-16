@@ -32,7 +32,11 @@ namespace OpenRA.Mods.Kknd.Widgets
 
         public Vbc Video
         {
-            get { return video; }
+            get
+            {
+                return video;
+            }
+
             set
             {
                 video = value;

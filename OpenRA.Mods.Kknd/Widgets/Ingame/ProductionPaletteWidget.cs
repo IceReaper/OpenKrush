@@ -12,7 +12,6 @@
 using System;
 using System.Drawing;
 using System.Linq;
-using OpenRA.Graphics;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common.Traits.Render;
 using OpenRA.Mods.Kknd.Orders;
@@ -125,7 +124,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 
 				if (button == null)
 				{
-					Func<bool> IsActive = () =>
+					Func<bool> isActive = () =>
 					{
 						if (Queue is SelfConstructingProductionQueue)
 						{
@@ -165,7 +164,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 
 							if (actor.HasTraitInfo<BuildingInfo>())
 							{
-								if (IsActive())
+								if (isActive())
 									sidebar.IngameUi.World.CancelInputMode();
 								else
 									sidebar.IngameUi.World.OrderGenerator = new PlaceSpecificBuildingOrderGenerator(Queue, buildableItem.Name, sidebar.IngameUi.WorldRenderer);
@@ -178,7 +177,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 							var count = mi.Modifiers.HasModifier(Modifiers.Shift) ? 5 : mi.Modifiers.HasModifier(Modifiers.Ctrl) ? 11 : 1;
 							sidebar.IngameUi.World.IssueOrder(Order.CancelProduction(Queue.Actor, buildableItem.Name, count));
 						},
-						IsActive = IsActive,
+						IsActive = isActive,
 						IsFocused = () => Parent.Children.Count > 1 && IsFocused,
 						TooltipTitle = buildableItem.TraitInfo<TooltipInfo>().Name,
 						TooltipText = (valued == null ? "" : "Cost: " + valued.Cost + "\n") + "Time: " + buildTime + (description != null ? "\n" + description.Description : null)
@@ -210,7 +209,11 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 				WidgetUtils.DrawSHPCentered(sidebar.Buttons.Image, position, sidebar.IngameUi.Palette);
 
 				if (scrollOffset + visibleIcons == buildableItems.Length)
-					WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X, RenderBounds.Y + visibleIcons * ButtonWidget.Size, ButtonWidget.Size / 2, ButtonWidget.Size / 2), Color.FromArgb(128, 0, 0, 0));
+					WidgetUtils.FillRectWithColor(new Rectangle(
+						RenderBounds.X,
+						RenderBounds.Y + visibleIcons * ButtonWidget.Size,
+						ButtonWidget.Size / 2,
+						ButtonWidget.Size / 2), Color.FromArgb(128, 0, 0, 0));
 
 				sidebar.Buttons.PlayFetchIndex("button-small", () => 0);
 				WidgetUtils.DrawSHPCentered(sidebar.Buttons.Image, position + new int2(ButtonWidget.Size / 2, 0), sidebar.IngameUi.Palette);
@@ -218,7 +221,11 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 				WidgetUtils.DrawSHPCentered(sidebar.Buttons.Image, position + new int2(ButtonWidget.Size / 2, 0), sidebar.IngameUi.Palette);
 
 				if (scrollOffset == 0)
-					WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X + ButtonWidget.Size / 2, RenderBounds.Y + visibleIcons * ButtonWidget.Size, ButtonWidget.Size / 2, ButtonWidget.Size / 2), Color.FromArgb(128, 0, 0, 0));
+					WidgetUtils.FillRectWithColor(new Rectangle(
+						RenderBounds.X + ButtonWidget.Size / 2,
+						RenderBounds.Y + visibleIcons * ButtonWidget.Size,
+						ButtonWidget.Size / 2,
+						ButtonWidget.Size / 2), Color.FromArgb(128, 0, 0, 0));
 			}
 		}
 	}

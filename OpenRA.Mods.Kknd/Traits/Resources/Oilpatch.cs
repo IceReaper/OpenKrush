@@ -43,7 +43,7 @@ namespace OpenRA.Mods.Kknd.Traits.Resources
 		public WeaponInfo WeaponInfo { get; private set; }
 
 		public object Create(ActorInitializer init) { return new Oilpatch(init, this); }
-		
+
 		public void RulesetLoaded(Ruleset rules, ActorInfo ai)
 		{
 			if (!string.IsNullOrEmpty(Weapon))
@@ -69,7 +69,7 @@ namespace OpenRA.Mods.Kknd.Traits.Resources
 		public int DisplayHP { get { return HP; } }
 		public bool IsDead { get { return resources == 0; } }
 
-		private readonly ConditionManager conditionManager;
+		private ConditionManager conditionManager;
 		private int token = ConditionManager.InvalidConditionToken;
 
 		private int burnTotal;
@@ -118,16 +118,16 @@ namespace OpenRA.Mods.Kknd.Traits.Resources
 				{
 					var damage = Math.Min(info.BurnAmount, burnLeft);
 					burnLeft -= damage;
-					
+
 					if (resources > 0)
 						resources -= Math.Min(resources, damage);
-				
+
 					if (burnLeft == 0)
 					{
 						conditionManager.RevokeCondition(self, token);
 						token = ConditionManager.InvalidConditionToken;
 					}
-					
+
 					info.WeaponInfo.Impact(Target.FromPos(self.CenterPosition), self, Enumerable.Empty<int>());
 				}
 			}

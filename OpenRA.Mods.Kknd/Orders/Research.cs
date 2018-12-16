@@ -79,7 +79,7 @@ namespace OpenRA.Mods.Kknd.Orders
 	{
 		public const string Id = "Research";
 
-		private string cursor;
+		private readonly string cursor;
 		private readonly string blockedCursor;
 
 		public ResearchOrderTargeter(string cursor, string blockedCursor) : base(Id, 6, cursor, false, true)
@@ -90,7 +90,6 @@ namespace OpenRA.Mods.Kknd.Orders
 
 		public override bool CanTargetActor(Actor self, Actor target, TargetModifiers modifiers, ref string cursor)
 		{
-
 			if (!self.Trait<Researches>().IsValidTarget(self, target))
 			{
 				cursor = null;

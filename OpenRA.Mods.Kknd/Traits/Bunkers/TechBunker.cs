@@ -59,7 +59,7 @@ namespace OpenRA.Mods.Kknd.Traits.Bunkers
 
 		[Desc("Unlocked effect sequence.")]
 		public readonly string SequenceUnlocked = null;
-		
+
 		public readonly int MaximumDistance = 3;
 
 		public object Create(ActorInitializer init) { return new TechBunker(init, this); }
@@ -183,7 +183,7 @@ namespace OpenRA.Mods.Kknd.Traits.Bunkers
 			{
 				var actor = info.ContainableActors[self.World.SharedRandom.Next(0, info.ContainableActors.Length)];
 
-				var exit =  SelectExit(self, self.World.Map.Rules.Actors[actor]).Info;
+				var exit = SelectExit(self, self.World.Map.Rules.Actors[actor]).Info;
 				var exitLocation = self.Location + exit.ExitCell;
 
 				var td = new TypeDictionary
@@ -230,10 +230,10 @@ namespace OpenRA.Mods.Kknd.Traits.Bunkers
 				exitInfo.GetType().GetField("SpawnOffset").SetValue(exitInfo, exit.Info.SpawnOffset);
 				exitInfo.GetType().GetField("ExitCell").SetValue(exitInfo, spawn - self.Location + candidate);
 				exitInfo.GetType().GetField("Facing").SetValue(exitInfo, exit.Info.Facing);
-                
+
 				return new Exit(null, exitInfo);
 			}
-            
+
 			return exit;
 		}
 

@@ -18,7 +18,8 @@ namespace OpenRA.Mods.Kknd.Traits.Veterancy
     {
         [FieldLoader.Require]
         [Desc("Which voice sets to use.")]
-        [VoiceSetReference] public readonly string[] VoiceSets = {};
+        [VoiceSetReference]
+        public readonly string[] VoiceSets = { };
 
         [Desc("Multiply volume with this factor.")]
         public readonly float Volume = 1f;
@@ -48,7 +49,7 @@ namespace OpenRA.Mods.Kknd.Traits.Veterancy
             if (phrase == null)
                 return false;
 
-            var type = ((IVoiced) this).VoiceSet.ToLowerInvariant();
+            var type = ((IVoiced)this).VoiceSet.ToLowerInvariant();
             var volume = info.Volume;
             return Game.Sound.PlayPredefined(SoundType.World, self.World.Map.Rules, null, self, type, phrase, variant, true, WPos.Zero, volume, true);
         }
@@ -58,13 +59,13 @@ namespace OpenRA.Mods.Kknd.Traits.Veterancy
             if (phrase == null)
                 return false;
 
-            var type = ((IVoiced) this).VoiceSet.ToLowerInvariant();
+            var type = ((IVoiced)this).VoiceSet.ToLowerInvariant();
             return Game.Sound.PlayPredefined(SoundType.World, self.World.Map.Rules, null, self, type, phrase, variant, false, self.CenterPosition, volume, true);
         }
 
         bool IVoiced.HasVoice(Actor self, string voice)
         {
-            var voices = self.World.Map.Rules.Voices[((IVoiced) this).VoiceSet.ToLowerInvariant()];
+            var voices = self.World.Map.Rules.Voices[((IVoiced)this).VoiceSet.ToLowerInvariant()];
             return voices != null && voices.Voices.ContainsKey(voice);
         }
     }

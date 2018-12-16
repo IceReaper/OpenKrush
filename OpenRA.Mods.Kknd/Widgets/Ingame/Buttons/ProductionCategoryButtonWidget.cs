@@ -39,17 +39,17 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 			if (!Active)
 			{
 				Active = true;
-				sidebar.CloseAllBut(this);	
+				sidebar.CloseAllBut(this);
 			}
 			else
 			{
 				for (var i = 0; i < Children.Count; i++)
 				{
-					var child = (ProductionPaletteWidget) Children[i];
+					var child = (ProductionPaletteWidget)Children[i];
 					if (child.IsFocused)
 					{
 						child.IsFocused = false;
-						((ProductionPaletteWidget) Children[(i + 1) % Children.Count]).IsFocused = true;
+						((ProductionPaletteWidget)Children[(i + 1) % Children.Count]).IsFocused = true;
 						break;
 					}
 				}
@@ -112,13 +112,13 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 
 			Children.Sort((a, b) =>
 			{
-				var typeA = ((ProductionPaletteWidget) a).Queue.Info.Type;
-				var typeB = ((ProductionPaletteWidget) b).Queue.Info.Type;
+				var typeA = ((ProductionPaletteWidget)a).Queue.Info.Type;
+				var typeB = ((ProductionPaletteWidget)b).Queue.Info.Type;
 
 				if (typeA == typeB)
 				{
-					var idA = ((ProductionPaletteWidget) a).Queue.Actor.ActorID;
-					var idB = ((ProductionPaletteWidget) b).Queue.Actor.ActorID;
+					var idA = ((ProductionPaletteWidget)a).Queue.Actor.ActorID;
+					var idB = ((ProductionPaletteWidget)b).Queue.Actor.ActorID;
 
 					return (int)idA - (int)idB;
 				}
@@ -127,12 +127,12 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 			});
 
 			var focused = -1;
-			
+
 			for (var i = 0; i < Children.Count; i++)
 			{
 				var palette = (ProductionPaletteWidget)Children[i];
 				palette.Bounds.X = (i + 1) * Size * -1;
-				
+
 				if (palette.IsFocused)
 					focused = i;
 			}
@@ -156,7 +156,6 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 		{
 			var productionQueue = factory.TraitsImplementing<ProductionQueue>().First(pq => Categories.Contains(pq.Info.Type));
 			var productionPalettes = Children.OfType<ProductionPaletteWidget>().ToArray();
-
 
 			foreach (var productionPalette in productionPalettes)
 				productionPalette.IsFocused = productionPalette.Queue == productionQueue;

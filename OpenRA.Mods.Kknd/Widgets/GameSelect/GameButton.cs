@@ -22,7 +22,7 @@ namespace OpenRA.Mods.Kknd.Widgets.GameSelect
 
         private Sprite inactive;
         private Sprite active;
-        
+
         private bool isHovered;
         private bool isActive;
 
@@ -54,7 +54,7 @@ namespace OpenRA.Mods.Kknd.Widgets.GameSelect
             if (mi.Button == MouseButton.Left)
             {
                 foreach (var widget in Parent.Children.Where(child => child is GameButtonWidget))
-                    ((GameButtonWidget) widget).isActive = widget == this;
+                    ((GameButtonWidget)widget).isActive = widget == this;
                 isActive = true;
                 gameSelect.Game = game;
                 gameSelect.State = 1;

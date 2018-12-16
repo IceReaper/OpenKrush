@@ -44,7 +44,9 @@ namespace OpenRA.Mods.Kknd.Graphics
 		public void Render(WorldRenderer wr)
 		{
 			var screenWidth = wr.ScreenVector(new WVec(width, WDist.Zero, WDist.Zero))[0];
-			Game.Renderer.WorldRgbaColorRenderer.DrawLine(offsets.Select(offset => wr.Screen3DPosition(new WPos(offset.X, offset.Y, 0))), screenWidth, color, false); // TODO fix bool
+
+			// TODO fix connectSegments!
+			Game.Renderer.WorldRgbaColorRenderer.DrawLine(offsets.Select(offset => wr.Screen3DPosition(new WPos(offset.X, offset.Y, 0))), screenWidth, color, false);
 		}
 
 		public void RenderDebugGeometry(WorldRenderer wr) { }

@@ -39,8 +39,8 @@ namespace OpenRA.Mods.Kknd.Traits.Technicians
 			var overlay = new Animation(init.World, "indicators", () => repairTasks.Count == 0);
 			overlay.PlayRepeating(RenderSprites.NormalizeSequence(overlay, init.Self.GetDamageState(), "repair"));
 
+			// TODO body.LocalToWorld messes up the position.
 			var anim = new AnimationWithOffset(overlay,
-				// TODO body.LocalToWorld messes up the position.
 				() => body.LocalToWorld(new WVec(info.Offset.Y * -32, info.Offset.X * -32, 0).Rotate(body.QuantizeOrientation(init.Self, init.Self.Orientation))),
 				() => repairTasks.Count == 0,
 				p => RenderUtils.ZOffsetFromCenter(init.Self, p, 1));

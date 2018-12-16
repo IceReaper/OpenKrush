@@ -20,10 +20,10 @@ namespace OpenRA.Mods.Kknd.Traits.Production
 	{
 		[FieldLoader.RequireAttribute]
 		public readonly string Category = null;
-		
+
 		public override object Create(ActorInitializer init) { return new FocusInUi(this); }
 	}
-	
+
 	public class FocusInUi : ConditionalTrait<FocusInUiInfo>, INotifySelected
 	{
 		public FocusInUi(FocusInUiInfo info) : base(info) { }
@@ -32,7 +32,7 @@ namespace OpenRA.Mods.Kknd.Traits.Production
 		{
 			if (self.Owner != self.World.LocalPlayer || IsTraitDisabled)
 				return;
-			
+
 			var sidebar = Ui.Root.GetOrNull<SidebarWidget>("KKND_SIDEBAR");
 
 			if (sidebar == null)

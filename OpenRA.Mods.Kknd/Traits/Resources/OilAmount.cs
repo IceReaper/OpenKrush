@@ -18,8 +18,8 @@ namespace OpenRA.Mods.Kknd.Traits.Resources
 	[Desc("Selectable oilpatch oil amount in lobby.")]
 	public class OilAmountInfo : ITraitInfo, ILobbyOptions
 	{
-		public readonly int[] OilAmounts = {25000, 50000, 75000, 100000, -1};
-		public readonly string[] OilAmountNames = {"Scarce", "Normal", "Abundant", "Maximum", "Infinite"};
+		public readonly int[] OilAmounts = { 25000, 50000, 75000, 100000, -1 };
+		public readonly string[] OilAmountNames = { "Scarce", "Normal", "Abundant", "Maximum", "Infinite" };
 
 		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(Ruleset rules)
 		{
@@ -29,7 +29,15 @@ namespace OpenRA.Mods.Kknd.Traits.Resources
 				values.Add(OilAmounts[i].ToString(), OilAmountNames[i]);
 
 			var standard = OilAmounts[OilAmountNames.IndexOf("Normal")];
-			yield return new LobbyOption("oilpatches", "Oilpatches", "Amount of oil every oilpatch contains.", true, 0, new ReadOnlyDictionary<string, string>(values), standard.ToString(), false);
+			yield return new LobbyOption(
+				"oilpatches",
+				"Oilpatches",
+				"Amount of oil every oilpatch contains.",
+				true,
+				0,
+				new ReadOnlyDictionary<string, string>(values),
+				standard.ToString(),
+				false);
 		}
 
 		public object Create(ActorInitializer init) { return new OilAmount(this); }

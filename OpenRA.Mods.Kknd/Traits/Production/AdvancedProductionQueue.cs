@@ -68,7 +68,7 @@ namespace OpenRA.Mods.Kknd.Traits.Production
 				return false;
 
 			var researchable = actor.TraitOrDefault<Researchable>();
-			
+
 			return advancedBuildable.Level == 0 || (researchable != null && advancedBuildable.Level <= researchable.Level);
 		}
 	}

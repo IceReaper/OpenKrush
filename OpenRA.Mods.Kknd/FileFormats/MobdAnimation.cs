@@ -34,7 +34,7 @@ namespace OpenRA.Mods.Kknd.FileFormats
 			missingFrameWorkaround += stream.BaseStream.Position == 2094122 ? 1 : 0;
 
 			// TODO add kknd2 bugged ones here! (Worm projectile, ...)
-			
+
 			/*Unk1 = */stream.ReadUInt32(); // TODO this is likely the animation speed
 
 			var frames = new List<MobdFrame>();
@@ -72,7 +72,7 @@ namespace OpenRA.Mods.Kknd.FileFormats
 					foreach (var point in frame.Points)
 					{
 						if (point.Id == 0)
-							points.Add(new MobdPoint{X = point.X, Y = point.Y, Z = point.Z, Id = points.Count});
+							points.Add(new MobdPoint { X = point.X, Y = point.Y, Z = point.Z, Id = points.Count });
 					}
 				}
 

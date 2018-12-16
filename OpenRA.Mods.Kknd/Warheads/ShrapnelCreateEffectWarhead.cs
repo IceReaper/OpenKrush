@@ -27,7 +27,7 @@ namespace OpenRA.Mods.Kknd.Warheads
 
         [Desc("The minimum and maximum distances the shrapnel may travel.")]
         public readonly WDist[] ShrapnelRange = { WDist.Zero, WDist.Zero };
-        
+
 		public override void DoImpact(Target target, Actor firedBy, IEnumerable<int> damageModifiers)
 		{
 			if (!target.IsValidFor(firedBy))
@@ -73,7 +73,7 @@ namespace OpenRA.Mods.Kknd.Warheads
 					Weapon = weaponInfo,
 					DamageModifiers = new int[0],
 					InaccuracyModifiers = new int[0],
-					RangeModifiers= new int[0],
+					RangeModifiers = new int[0],
 					Source = pos,
 					CurrentSource = () => pos,
 					SourceActor = firedBy,

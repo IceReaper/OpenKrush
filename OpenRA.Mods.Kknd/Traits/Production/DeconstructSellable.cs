@@ -98,14 +98,14 @@ namespace OpenRA.Mods.Kknd.Traits.Production
 
 			var productionItem = self.Trait<SelfConstructing>().TryAbort(self);
 			var valued = self.Info.TraitInfoOrDefault<ValuedInfo>();
-			
+
 			if (productionItem != null)
 				refundAmount = productionItem.TotalCost - productionItem.RemainingCost;
 			else if (valued != null)
 				refundAmount = valued.Cost;
 
 			sellTimer = sellTimerTotal = self.Info.TraitInfoOrDefault<BuildableInfo>().BuildDuration * info.SellTimePercent / 100;
-			
+
 			if (developerMode.FastBuild)
 				sellTimer = 0;
 			else if (productionItem != null)

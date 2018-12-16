@@ -25,10 +25,10 @@ namespace OpenRA.Mods.Kknd.FileSystem
 			var tmp = encryptedStream.ReadBytes(4);
 			var decryptedSizeData = (tmp[0] << 24) | (tmp[1] << 16) | (tmp[2] << 8) | tmp[3];
 
-			// RRLC is for memory relocation when loading archive into memory. We do not need this at all.
-			//var metaOffset = encryptedStream.ReadUInt32() + 16;
-			//encryptedStream.Position = metaOffset;
-			//var decryptedSizeMeta = encryptedStream.ReadUInt32();
+			/*// RRLC is for memory relocation when loading archive into memory. We do not need this at all.
+			var metaOffset = encryptedStream.ReadUInt32() + 16;
+			encryptedStream.Position = metaOffset;
+			var decryptedSizeMeta = encryptedStream.ReadUInt32();*/
 
 			var decryptedData = new byte[8 + decryptedSizeData/* + 8 + decryptedSizeMeta*/];
 			var decryptedStream = new MemoryStream(decryptedData);
@@ -40,10 +40,10 @@ namespace OpenRA.Mods.Kknd.FileSystem
 			encryptedStream.Position = 16;
 			ParseBody(encryptedStream, decryptedStream, decryptedSizeData);
 
-			//decryptedStream.WriteArray(Encoding.ASCII.GetBytes("RRLC"));
-			//decryptedStream.WriteArray(BitConverter.GetBytes(decryptedSizeMeta));
-			//encryptedStream.Position = metaOffset + 8;
-			//ParseBody(encryptedStream, decryptedStream, (int)decryptedSizeMeta);
+			/*decryptedStream.WriteArray(Encoding.ASCII.GetBytes("RRLC"));
+			decryptedStream.WriteArray(BitConverter.GetBytes(decryptedSizeMeta));
+			encryptedStream.Position = metaOffset + 8;
+			ParseBody(encryptedStream, decryptedStream, (int)decryptedSizeMeta);*/
 
 			decryptedStream.Position = 0;
 
