@@ -12,11 +12,13 @@
 	Building:
 		BuildSounds: sounds_survivors|167.wav
 	Turreted:
-		InitialFacing: 96
+		InitialFacing: 128
+	-ExplosionOnDamageTransition@Critical:
 
 ^CoreWall:
 	Building:
 		BuildSounds: sounds_survivors|167.wav
+	-ExplosionOnDamageTransition@Critical:
 
 ^CoreInfantry:
 	Crushable:

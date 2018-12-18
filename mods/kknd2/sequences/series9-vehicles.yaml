@@ -32,6 +32,8 @@ series9_patrolbot:
 		Start: 72
 		Length: 3
 		Facings: -8
+	aim: sprites|R_V_Patrolbot.mobd
+		Facings: -8
 	shoot: sprites|R_V_Patrolbot.mobd
 		Start: 24
 		Length: 3

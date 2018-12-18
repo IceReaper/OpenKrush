@@ -40,7 +40,7 @@ series9_barn:
 		Offset: -12,-12 #TODO adjust that
 	SaboteurConquerable:
 		Population: 3
-	HackedAiShit:
+	BaseBuilding:
 
 series9_microunitfactory:
 	Inherits: ^Series9Building
@@ -93,6 +93,8 @@ series9_microunitfactory:
 		Offset: 19,-14 #TODO adjust that
 	SaboteurConquerable:
 		Population: 2
+	GrantExternalConditionToProduced:
+		Condition: produced
 
 series9_macrounitfactory:
 	Inherits: ^Series9Building
@@ -147,6 +149,8 @@ series9_macrounitfactory:
 		Offset: -1,-7 #TODO adjust that
 	SaboteurConquerable:
 		Population: 2
+	GrantExternalConditionToProduced:
+		Condition: produced
 
 series9_maintenancedepot:
 	Inherits: ^Series9Building

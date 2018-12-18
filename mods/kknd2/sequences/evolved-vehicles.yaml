@@ -37,6 +37,8 @@ evolved_direwolf:
 		Length: 6
 		Tick: 120
 		Facings: -8
+	aim: sprites|M_V_DireWolf.mobd
+		Facings: -8
 	shoot: sprites|M_V_DireWolf.mobd
 		Start: 24
 		Length: 3
@@ -51,6 +53,8 @@ evolved_pitscorpion:
 		Start: 88
 		Length: 6
 		Tick: 120
+		Facings: -8
+	aim: sprites|M_V_Scorpion.mobd
 		Facings: -8
 	shoot: sprites|M_V_Scorpion.mobd
 		Start: 24

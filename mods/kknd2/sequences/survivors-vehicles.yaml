@@ -32,6 +32,8 @@ survivors_dirtbike:
 	move: sprites|S_V_DirtBike.mobd
 		Start: 88
 		Facings: -8
+	aim: sprites|S_V_DirtBike.mobd
+		Facings: -8
 	shoot: sprites|S_V_DirtBike.mobd
 		Start: 24
 		Length: 4

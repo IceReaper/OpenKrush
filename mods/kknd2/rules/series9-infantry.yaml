@@ -187,7 +187,6 @@ series9_systech:
 	Selectable:
 		Priority: 15 # TODO
 	Technician:
-	-WithAimAttackAnimation:
 	IgnoreRallyPoint:
 	RenderSprites:
 		PlayerPalette: R_I_Technician_player
@@ -215,7 +214,6 @@ series9_michaelangelo:
 	AdvancedBuildable:
 		BuildDuration: 625
 		Level: 4
-	-WithAimAttackAnimation:
 	Explodes:
 		Weapon: series9_michaelangelo
 		EmptyWeapon: series9_michaelangelo

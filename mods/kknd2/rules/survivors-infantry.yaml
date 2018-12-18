@@ -183,7 +183,6 @@ survivors_technician:
 	Selectable:
 		Priority: 15 # TODO
 	Technician:
-	-WithAimAttackAnimation:
 	IgnoreRallyPoint:
 	RenderSprites:
 		PlayerPalette: S_I_Technician_player
@@ -212,7 +211,6 @@ survivors_kamikaze:
 	AdvancedBuildable:
 		BuildDuration: 625
 		Level: 4
-	-WithAimAttackAnimation:
 	Explodes:
 		Weapon: survivors_kamikaze
 		EmptyWeapon: survivors_kamikaze

@@ -10,6 +10,7 @@ Packages:
 	~^Content/kknd2/
 	.
 	$kknd: kknd
+	$kknd1: kknd1
 	$kknd2: kknd2
 	./mods/common: common
 	~Sprites/Sprites.lpk: sprites
@@ -20,7 +21,7 @@ Packages:
 
 MapFolders:
 	kknd2|maps: System
-	~^maps/kknd2: User # TODO remove me
+	~^maps/kknd2: User
 
 Rules:
 	kknd|rules/palettes.yaml
@@ -81,9 +82,9 @@ Sequences:
 	kknd2|sequences/series9-walls.yaml
 
 TileSets:
-	kknd2|tilesets/desert.yaml # TODO kknd2
-	kknd2|tilesets/highland.yaml # TODO kknd2
-	kknd2|tilesets/urban.yaml # TODO kknd2
+	kknd1|tilesets/desert.yaml # TODO kknd2
+	kknd1|tilesets/highland.yaml # TODO kknd2
+	kknd1|tilesets/urban.yaml # TODO kknd2
 
 Cursors:
 	kknd2|cursors.yaml

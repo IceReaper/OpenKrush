@@ -4,9 +4,14 @@ bunker_techbunker:
 		TerrainTypes: Clear
 		Dimensions: 3,2
 		Footprint: xxx ===
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1536, -1024
+			BottomRight: 1536, 0
+		TargetableOffsets: 819,-1024,0, 819,0,0, 819,1024,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
 	TechBunker:
 		ContainableActors: bunker_gorttherobot, bunker_mech, bunker_plasmatank, bunker_sentineldroid
-		#SoundOpen: sounds_evolved|164.wav
+		SoundOpen: sounds_evolved|164.wav
 		SequenceLocked: lock
 	Exit:
 		SpawnOffset: 0c-700,-0c150,0
@@ -17,7 +22,12 @@ bunker_techbunker:
 	-Selectable:
 	-SelfConstructing:
 	-DeconstructSellable:
-	-BlocksProjectiles: # TODO enable this again.. idk why this causes a crash, seems walls must be implemented for this to not crash O.o weird bug
+	BlocksProjectiles:
+		-RequiresCondition:
+	RequiresSpecificOwners:
+		ValidOwnerNames: Neutral
+	GrantExternalConditionToProduced:
+		Condition: produced
 	RenderSprites:
 		Palette: T_Bunker
 ^Palettes:
@@ -30,13 +40,20 @@ bunker_techbunker:
 	Voiced:
 		VoiceSet: BunkerVoice
 	AdvancedBuildable:
-		Prerequisites: unbuildable
+		Level: -1
 	MapEditorData:
 		Categories: Bunker
 	Veterancy:
 		Experience: 7500, 15000
 	AttackNotification:
 		Notifications: BunkerUnderAttack
+	Health:
+		HP: 6500
+	Mobile:
+		Speed: 50
+		TurnSpeed: 8
+	RevealsShroud:
+		Range: 8c0
 
 bunker_gorttherobot:
 	Inherits@1: ^BunkerVehicle
@@ -44,16 +61,9 @@ bunker_gorttherobot:
 	Inherits@3: ^AutoTargetDefault
 	Tooltip:
 		Name: Gort
-	Health:
-		HP: 7000
-	Mobile:
-		Speed: 50
-		TurnSpeed: 8
-	RevealsShroud:
-		Range: 8c0
 	OffsetsArmament:
 		Weapon: bunker_gorttherobot
-	WithTurretAttackAnimation:
+	WithLoopedTurretAttackAnimation:
 		Sequence: shoot
 	Turreted:
 		TurnSpeed: 8
@@ -79,13 +89,6 @@ bunker_mech:
 	Inherits@3: ^AutoTargetDefault
 	Tooltip:
 		Name: Mechanoid
-	Health:
-		HP: 7000
-	Mobile:
-		Speed: 50
-		TurnSpeed: 8
-	RevealsShroud:
-		Range: 8c0
 	OffsetsArmament@0:
 		Weapon: bunker_mech_primary
 		Name: primary
@@ -137,13 +140,6 @@ bunker_plasmatank:
 	Inherits@3: ^AutoTargetDefault
 	Tooltip:
 		Name: Railgun Tank
-	Health:
-		HP: 7000
-	Mobile:
-		Speed: 50
-		TurnSpeed: 8
-	RevealsShroud:
-		Range: 8c0
 	OffsetsArmament:
 		Weapon: bunker_plasmatank
 	WithTurretAttackAnimation:
@@ -179,13 +175,6 @@ bunker_sentineldroid:
 	Inherits@3: ^AutoTargetDefault
 	Tooltip:
 		Name: Sentinel Droid
-	Health:
-		HP: 7000
-	Mobile:
-		Speed: 50
-		TurnSpeed: 8
-	RevealsShroud:
-		Range: 8c0
 	OffsetsArmament:
 		Weapon: bunker_sentineldroid
 	WithTurretAttackAnimation:

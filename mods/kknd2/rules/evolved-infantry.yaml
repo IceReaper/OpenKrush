@@ -224,7 +224,6 @@ evolved_mekanik:
 	Selectable:
 		Priority: 15 # TODO
 	Technician:
-	-WithAimAttackAnimation:
 	IgnoreRallyPoint:
 	RenderSprites:
 		PlayerPalette: M_I_Technician_player
@@ -252,7 +251,6 @@ evolved_martyr:
 	AdvancedBuildable:
 		BuildDuration: 625
 		Level: 4
-	-WithAimAttackAnimation:
 	Explodes:
 		Weapon: evolved_martyr
 		EmptyWeapon: evolved_martyr

@@ -40,7 +40,7 @@ evolved_clanhall:
 		Offset: -12,-12 #TODO adjust that
 	SaboteurConquerable:
 		Population: 3
-	HackedAiShit:
+	BaseBuilding:
 
 evolved_warriorhall:
 	Inherits: ^EvolvedBuilding
@@ -90,6 +90,8 @@ evolved_warriorhall:
 		Offset: 19,-14 #TODO adjust that
 	SaboteurConquerable:
 		Population: 2
+	GrantExternalConditionToProduced:
+		Condition: produced
 
 evolved_beastenclosure:
 	Inherits: ^EvolvedBuilding
@@ -144,6 +146,8 @@ evolved_beastenclosure:
 		Offset: -1,-7 #TODO adjust that
 	SaboteurConquerable:
 		Population: 2
+	GrantExternalConditionToProduced:
+		Condition: produced
 
 evolved_healingtent:
 	Inherits: ^EvolvedBuilding

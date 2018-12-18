@@ -40,7 +40,7 @@ survivors_outpost:
 		Offset: -12,-12 #TODO adjust that
 	SaboteurConquerable:
 		Population: 3
-	HackedAiShit:
+	BaseBuilding:
 
 survivors_barracks:
 	Inherits: ^SurvivorsBuilding
@@ -93,6 +93,8 @@ survivors_barracks:
 		Offset: 19,-14 #TODO adjust that
 	SaboteurConquerable:
 		Population: 2
+	GrantExternalConditionToProduced:
+		Condition: produced
 
 survivors_machineshop:
 	Inherits: ^SurvivorsBuilding
@@ -144,6 +146,8 @@ survivors_machineshop:
 		Offset: -1,-7 #TODO adjust that
 	SaboteurConquerable:
 		Population: 2
+	GrantExternalConditionToProduced:
+		Condition: produced
 
 survivors_repairbay:
 	Inherits: ^SurvivorsBuilding

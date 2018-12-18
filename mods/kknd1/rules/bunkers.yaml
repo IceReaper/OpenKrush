@@ -4,6 +4,11 @@ bunker_techbunker:
 		TerrainTypes: Clear
 		Dimensions: 3,2
 		Footprint: xxx ===
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1536, -1024
+			BottomRight: 1536, 0
+		TargetableOffsets: 819,-1024,0, 819,0,0, 819,1024,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
 	TechBunker:
 		ContainableActors: bunker_gorttherobot, bunker_mech, bunker_plasmatank, bunker_sentineldroid
 		SoundOpen: sounds_evolved|189.wav

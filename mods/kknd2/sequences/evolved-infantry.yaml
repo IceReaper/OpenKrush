@@ -122,6 +122,7 @@ evolved_spiritarcher:
 		Tick: 120
 		Facings: -8
 	aim: sprites|M_I_Sniper.mobd
+		Start: 48
 		Facings: -8
 	shoot: sprites|M_I_Sniper.mobd # TODO top right animation is missing
 		Start: 64
