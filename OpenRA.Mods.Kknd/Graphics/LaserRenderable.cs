@@ -17,12 +17,12 @@ namespace OpenRA.Mods.Kknd.Graphics
 {
 	public struct LaserRenderable : IRenderable, IFinalizedRenderable
 	{
-		readonly int2[] offsets;
+		readonly WPos[] offsets;
 		readonly int zOffset;
 		readonly WDist width;
 		readonly Color color;
 
-		public LaserRenderable(int2[] offsets, int zOffset, WDist width, Color color)
+		public LaserRenderable(WPos[] offsets, int zOffset, WDist width, Color color)
 		{
 			this.offsets = offsets;
 			this.zOffset = zOffset;
@@ -37,16 +37,16 @@ namespace OpenRA.Mods.Kknd.Graphics
 
 		public IRenderable WithPalette(PaletteReference newPalette) { return this; }
 		public IRenderable WithZOffset(int newOffset) { return new LaserRenderable(offsets, newOffset, width, color); }
-		public IRenderable OffsetBy(WVec vec) { return this; } // TODO this one is wrong
+		public IRenderable OffsetBy(WVec vec) { return new LaserRenderable(offsets.Select(offset => offset + vec).ToArray(), zOffset, width, color); }
 		public IRenderable AsDecoration() { return this; }
 
 		public IFinalizedRenderable PrepareRender(WorldRenderer wr) { return this; }
 		public void Render(WorldRenderer wr)
 		{
+			// TODO fix connectSegments - asin smoothen the edge of a break!
 			var screenWidth = wr.ScreenVector(new WVec(width, WDist.Zero, WDist.Zero))[0];
 
-			// TODO fix connectSegments!
-			Game.Renderer.WorldRgbaColorRenderer.DrawLine(offsets.Select(offset => wr.Screen3DPosition(new WPos(offset.X, offset.Y, 0))), screenWidth, color, false);
+			Game.Renderer.WorldRgbaColorRenderer.DrawLine(offsets.Select(offset => wr.Screen3DPosition(offset)), screenWidth, color, false);
 		}
 
 		public void RenderDebugGeometry(WorldRenderer wr) { }
