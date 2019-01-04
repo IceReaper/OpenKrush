@@ -2,7 +2,7 @@ Meta:
 	Name: Classic KKnD
 	Version: 0.1.0
 	Author: KKnD Team
-	Description: Original KKnD stats.
+	Description: UNFINISHED Original KKnD stats.
 
 Stats:
 	Barricade:
@@ -24,6 +24,110 @@ Stats:
 		Tech level: 0
 	Clanhall:
 		Tech level: 0
+
+#-----------------------------------------------------------------#
+
+HardcodedRules:
+	evolved_warriorhall:
+		AdvancedBuildable:
+			Prerequisites: unbuildable
+
+	evolved_clanhall:
+		AdvancedProduction:
+			Produces: infantry
+			RequiresCondition: !selfconstructing && !deconstructing
+		AdvancedProductionQueue:
+			Type: infantry
+			InfiniteBuildLimit: 10
+		FocusInUi:
+			Category: infantry
+			RequiresCondition: !selfconstructing && !deconstructing
+		Exit:
+			SpawnOffset: 0c-700,-0c220,0 # TODO restore from git!
+			ExitCell: -1,2 # TODO restore from git!
+			Facing: 64
+		RallyPoint:
+			Cursor: move
+			Image:
+			Offset: -1,2 # TODO restore from git!
+
+	^EvolvedInfantry:
+		AdvancedBuildable:
+			Prerequisites: evolved_clanhall
+
+	survivors_barracks:
+		AdvancedBuildable:
+			Prerequisites: unbuildable
+
+	survivors_outpost:
+		AdvancedProduction:
+			Produces: infantry
+			RequiresCondition: !selfconstructing && !deconstructing
+		AdvancedProductionQueue:
+			Type: infantry
+			InfiniteBuildLimit: 10
+		FocusInUi:
+			Category: infantry
+			RequiresCondition: !selfconstructing && !deconstructing
+		Exit:
+			SpawnOffset: 0c-700,-0c220,0 # TODO restore from git!
+			ExitCell: -1,2 # TODO restore from git!
+			Facing: 64
+		RallyPoint:
+			Cursor: move
+			Image:
+			Offset: -1,2 # TODO restore from git!
+
+	^SurvivorsInfantry:
+		AdvancedBuildable:
+			Prerequisites: survivors_outpost
+
+	^EvolvedVehicle:
+		AdvancedBuildable:
+			Prerequisites: evolved_blacksmith
+
+	evolved_beastforge:
+		AdvancedBuildable:
+			Level: -1
+
+	evolved_beastenclosure:
+		AdvancedBuildable:
+			Level: 0
+
+	evolved_blacksmith:
+		AdvancedBuildable:
+			Level: 0
+
+	evolved_direwolf:
+		AdvancedBuildable:
+			Queue: beast
+			Prerequisites: evolved_beastenclosure
+
+	evolved_giantscorpion:
+		AdvancedBuildable:
+			Queue: beast
+			Prerequisites: evolved_beastenclosure
+
+	evolved_warmastodon:
+		AdvancedBuildable:
+			Queue: beast
+			Prerequisites: evolved_beastenclosure
+
+	evolved_giantbeetle:
+		AdvancedBuildable:
+			Queue: beast
+			Prerequisites: evolved_beastenclosure
+
+	evolved_missilecrab:
+		AdvancedBuildable:
+			Queue: beast
+			Prerequisites: evolved_beastenclosure
+
+#-----------------------------------------------------------------#
+
+HardcodedWeapons:
+
+#-----------------------------------------------------------------#
 
 #gort -> without head
 #voices -> only used sounds
