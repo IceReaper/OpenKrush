@@ -26,7 +26,7 @@ namespace OpenRA.Mods.Kknd.Orders
 		{
 			if (mi.Button != Game.Settings.Game.MouseButtonPreference.Action)
 				world.CancelInputMode();
-			else
+			else if (researchActors != null)
 			{
 				var actor = world.ActorMap.GetActorsAt(cell).FirstOrDefault(target =>
 				{
