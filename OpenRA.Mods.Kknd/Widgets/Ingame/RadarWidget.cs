@@ -61,7 +61,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 			return true;
 		}
 
-		public override void Resize()
+		public void Resize()
 		{
 			Bounds = new Rectangle(
 				0,

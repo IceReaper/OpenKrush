@@ -9,22 +9,22 @@ ObserverWorldView: EQUALS
 	Types: Observer
 
 # TODO does this work?
-ReplaySpeedSlow: F5
+ReplaySpeedSlow: F9
 	Description: Slow speed
 	Types: Replay
 
 # TODO does this work?
-ReplaySpeedRegular: F6
+ReplaySpeedRegular: F10
 	Description: Regular speed
 	Types: Replay
 
 # TODO does this work?
-ReplaySpeedFast: F7
+ReplaySpeedFast: F11
 	Description: Fast speed
 	Types: Replay
 
 # TODO does this work?
-ReplaySpeedMax: F8
+ReplaySpeedMax: F12
 	Description: Maximum speed
 	Types: Replay
 
@@ -49,6 +49,11 @@ StatisticsCombat: F4
 	Types: Observer, Replay
 
 # TODO does this work?
-StatisticsGraph:
+StatisticsGraph: F5
 	Description: Statistics graph
+	Types: Observer, Replay
+
+# TODO does this work?
+StatisticsArmyGraph: F6
+	Description: Army value graph
 	Types: Observer, Replay

@@ -58,7 +58,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 			TickOuter();
 		}
 
-		public override void Resize()
+		public void Resize()
 		{
 			Bounds = new Rectangle(0, 0, Game.Renderer.Resolution.Width, Game.Renderer.Resolution.Height);
 		}

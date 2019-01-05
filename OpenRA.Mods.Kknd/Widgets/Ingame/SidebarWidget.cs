@@ -62,7 +62,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 			Resize();
 		}
 
-		public override void Resize()
+		public void Resize()
 		{
 			Bounds = new Rectangle(Game.Renderer.Resolution.Width - ButtonWidget.Size, 0, ButtonWidget.Size, Game.Renderer.Resolution.Height);
 		}

@@ -32,7 +32,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 			Resize();
 		}
 
-		public override void Resize()
+		public void Resize()
 		{
 			Bounds = new Rectangle((Game.Renderer.Resolution.Width - 180) / 2, 0, 180, 28);
 		}
