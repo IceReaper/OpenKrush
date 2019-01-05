@@ -11,8 +11,8 @@ survivors_dirtbike:
 		Spread: 32
 		Falloff: 100, 100
 		Versus:
-			infantry: 28
-			vehicle: 15
+			infantry: 30
+			vehicle: 11
 			building: 11
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: hit
@@ -35,9 +35,9 @@ survivors_4x4pickup:
 		Spread: 32
 		Falloff: 100, 100
 		Versus:
-			infantry: 28
-			vehicle: 21
-			building: 11
+			infantry: 40
+			vehicle: 25
+			building: 15
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: hit
 		ExplosionPalette: kknd
@@ -59,9 +59,9 @@ survivors_allterrainvehicle:
 		Spread: 32
 		Falloff: 100, 100
 		Versus:
-			infantry: 28
-			vehicle: 30
-			building: 11
+			infantry: 45
+			vehicle: 25
+			building: 15
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: hit
 		ExplosionPalette: kknd
@@ -88,7 +88,7 @@ survivors_flameatv:
 		Falloff: 100, 100
 		Versus:
 			infantry: 17
-			vehicle: 20
+			vehicle: 25
 			building: 20
 
 survivors_anacondatank:
@@ -110,9 +110,9 @@ survivors_anacondatank:
 		Falloff: 100, 100
 		AffectsParent: true
 		Versus:
-			infantry: 226
+			infantry: 150
 			vehicle: 300
-			building: 113
+			building: 100
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: explosions
 		ExplosionPalette: kknd
@@ -121,7 +121,7 @@ survivors_anacondatank:
 
 survivors_barragecraft:
 	Inherits: Smudge
-	Range: 8c0
+	Range: 8c512
 	Burst: 6
 	BurstDelays: 8
 	ReloadDelay: 200
@@ -146,9 +146,9 @@ survivors_barragecraft:
 		Falloff: 100, 100
 		AffectsParent: true
 		Versus:
-			infantry: 120
-			vehicle: 160
-			building: 96
+			infantry: 150
+			vehicle: 200
+			building: 120
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: explosions
 		ExplosionPalette: kknd
@@ -169,7 +169,7 @@ survivors_autocannontank:
 		Falloff: 100, 100
 		Versus:
 			infantry: 50
-			vehicle: 20
+			vehicle: 33
 			building: 13
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: hit

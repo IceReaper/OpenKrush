@@ -7,14 +7,14 @@ survivors_dirtbike:
 	Tooltip:
 		Name: Dirt Bike
 	Valued:
-		Cost: 150
+		Cost: 200
 	Health:
 		HP: 400
 	Mobile:
 		Speed: 115
 		TurnSpeed: 41
 	AdvancedBuildable:
-		BuildDuration: 125
+		BuildDuration: 150
 		Level: 0
 	RevealsShroud:
 		Range: 11c0
@@ -201,7 +201,7 @@ survivors_oiltanker:
 	Valued:
 		Cost: 750
 	Health:
-		HP: 3000
+		HP: 3500
 	Mobile:
 		Speed: 45
 		TurnSpeed: 8

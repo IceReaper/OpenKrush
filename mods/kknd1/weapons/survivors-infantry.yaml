@@ -11,9 +11,9 @@ survivors_rifleman:
 		Spread: 32
 		Falloff: 100, 100
 		Versus:
-			infantry: 16
-			vehicle: 4
-			building: 7
+			infantry: 40
+			vehicle: 8
+			building: 15
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: hit
 		ExplosionPalette: kknd
@@ -25,8 +25,8 @@ survivors_rifleman:
 survivors_swat:
 	Range: 4c512
 	ReloadDelay: 13
-	BurstDelays: 4
-	Burst: 4
+	BurstDelays: 0
+	Burst: 1
 	Report: sounds_survivors|4.wav
 	Projectile: InstantHit
 		Blockable: true
@@ -35,9 +35,9 @@ survivors_swat:
 		Spread: 32
 		Falloff: 100, 100
 		Versus:
-			infantry: 7
-			vehicle: 2
-			building: 3
+			infantry: 48
+			vehicle: 12
+			building: 20
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: hit
 		ExplosionPalette: kknd
@@ -56,7 +56,7 @@ survivors_flamer:
 		Image: projectile
 		Palette: kknd
 		Sequences: fire
-		Speed: 100
+		Speed: 150
 	Warhead@Damage: SpreadDamage
 		Damage: 100
 		DamageTypes: Fire
@@ -64,7 +64,7 @@ survivors_flamer:
 		Falloff: 100, 100
 		Versus:
 			infantry: 17
-			vehicle: 4
+			vehicle: 5
 			building: 20
 
 survivors_saboteur:
@@ -79,9 +79,9 @@ survivors_saboteur:
 		Spread: 32
 		Falloff: 100, 100
 		Versus:
-			infantry: 30
-			vehicle: 23
-			building: 11
+			infantry: 40
+			vehicle: 25
+			building: 15
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: hit
 		ExplosionPalette: kknd
@@ -111,9 +111,9 @@ survivors_sapper:
 		Falloff: 100, 100
 		AffectsParent: true
 		Versus:
-			infantry: 91
-			vehicle: 85
-			building: 108
+			infantry: 150
+			vehicle: 130
+			building: 100
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: explosions
 		ExplosionPalette: kknd
@@ -143,9 +143,9 @@ survivors_rpglauncher:
 		Falloff: 100, 100
 		AffectsParent: true
 		Versus:
-			infantry: 62
-			vehicle: 105
-			building: 68
+			infantry: 80
+			vehicle: 150
+			building: 80
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: explosions
 		ExplosionPalette: kknd
@@ -166,7 +166,7 @@ survivors_sniper:
 		Falloff: 100, 100
 		Versus:
 			infantry: 250
-			vehicle: 100
+			vehicle: 50
 			building: 35
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: hit
@@ -189,9 +189,9 @@ survivors_elpresidente:
 		Spread: 32
 		Falloff: 100, 100
 		Versus:
-			infantry: 30
-			vehicle: 23
-			building: 11
+			infantry: 40
+			vehicle: 25
+			building: 15
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: hit
 		ExplosionPalette: kknd
@@ -201,7 +201,7 @@ survivors_elpresidente:
 		Radius: 250,250
 
 survivors_scout:
-	Range: 3c0
+	Range: 4c0
 	ReloadDelay: 25
 	Report: sounds_survivors|4.wav
 	Projectile: InstantHit
@@ -211,9 +211,9 @@ survivors_scout:
 		Spread: 32
 		Falloff: 100, 100
 		Versus:
-			infantry: 20
-			vehicle: 15
-			building: 8
+			infantry: 40
+			vehicle: 25
+			building: 15
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: hit
 		ExplosionPalette: kknd

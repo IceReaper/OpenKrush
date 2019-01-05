@@ -13,8 +13,8 @@ evolved_direwolf:
 		Spread: 32
 		Falloff: 100, 100
 		Versus:
-			infantry: 28
-			vehicle: 15
+			infantry: 30
+			vehicle: 11
 			building: 11
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: hit
@@ -39,8 +39,8 @@ evolved_chopper:
 		Spread: 32
 		Falloff: 100, 100
 		Versus:
-			infantry: 28
-			vehicle: 15
+			infantry: 30
+			vehicle: 11
 			building: 11
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: hit
@@ -63,9 +63,9 @@ evolved_bikeandsidecar:
 		Spread: 32
 		Falloff: 100, 100
 		Versus:
-			infantry: 28
-			vehicle: 21
-			building: 11
+			infantry: 40
+			vehicle: 25
+			building: 15
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: hit
 		ExplosionPalette: kknd
@@ -87,9 +87,9 @@ evolved_monstertruck:
 		Spread: 32
 		Falloff: 100, 100
 		Versus:
-			infantry: 28
-			vehicle: 30
-			building: 11
+			infantry: 45
+			vehicle: 25
+			building: 15
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: hit
 		ExplosionPalette: kknd
@@ -145,9 +145,9 @@ evolved_warmastodon:
 		Falloff: 100, 100
 		AffectsParent: true
 		Versus:
-			infantry: 54
+			infantry: 36
 			vehicle: 70
-			building: 27
+			building: 25
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: explosions
 		ExplosionPalette: kknd
@@ -155,7 +155,7 @@ evolved_warmastodon:
 		ImpactSounds: sounds_evolved|10.wav
 
 evolved_giantbeetle:
-	Range: 8c0
+	Range: 8c512
 	Burst: 6
 	BurstDelays: 0
 	ReloadDelay: 63
@@ -176,8 +176,8 @@ evolved_giantbeetle:
 		AffectsParent: true
 		Versus:
 			infantry: 50
-			vehicle: 45
-			building: 25
+			vehicle: 60
+			building: 30
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: hit
 		ExplosionPalette: kknd
@@ -211,7 +211,7 @@ evolved_missilecrab:
 		AffectsParent: true
 		Versus:
 			infantry: 150
-			vehicle: 167
+			vehicle: 180
 			building: 112
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: explosions

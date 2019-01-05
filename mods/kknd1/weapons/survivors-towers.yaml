@@ -10,9 +10,9 @@ survivors_guardtower:
 		Spread: 32
 		Falloff: 100, 100
 		Versus:
-			infantry: 36
-			vehicle: 27
-			building: 14
+			infantry: 45
+			vehicle: 30
+			building: 15
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: hit
 		ExplosionPalette: kknd
@@ -44,9 +44,9 @@ survivors_missilebattery:
 		Falloff: 100, 100
 		AffectsParent: true
 		Versus:
-			infantry: 81
-			vehicle: 135
-			building: 90
+			infantry: 150
+			vehicle: 150
+			building: 100
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: explosions
 		ExplosionPalette: kknd
@@ -75,7 +75,7 @@ survivors_cannontower:
 		Versus:
 			infantry: 172
 			vehicle: 258
-			building: 135
+			building: 110
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: explosions
 		ExplosionPalette: kknd

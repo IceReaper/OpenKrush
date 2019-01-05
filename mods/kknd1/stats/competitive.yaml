@@ -45,14 +45,14 @@ Stats:
 		Build duration: 90
 		Tech level: 1
 		Fire range: 4c512
-		Burst: 4
-		Burst delay: 4
-		Reload time: 13
+		Burst: 1
+		Burst delay: 0
+		Reload time: 25
 		Damage:
-			infantry: 17
-			vehicle: 3
-			heavy vehicles: 2
-			buildings: 3
+			infantry: 67
+			vehicle: 10
+			heavy vehicles: 8
+			buildings: 11
 	Shotgunner:
 		Health: 500
 		Movement speed: 50
@@ -81,7 +81,7 @@ Stats:
 		Burst delay: 1
 		Reload time: 41
 		Inaccuracy: 0
-		Projectile Speed: 125
+		Projectile Speed: 150
 		Damage:
 			infantry: 20
 			vehicle: 2
@@ -99,7 +99,7 @@ Stats:
 		Burst delay: 1
 		Reload time: 41
 		Inaccuracy: 0
-		Projectile Speed: 125
+		Projectile Speed: 150
 		Damage:
 			infantry: 20
 			vehicle: 2
@@ -110,9 +110,9 @@ Stats:
 		Movement speed: 50
 		View range: 5c0
 		Cost: 150
-		Build duration: 150
+		Build duration: 125
 		Tech level: 1
-		Fire range: 3c512
+		Fire range: 4c0
 		Burst: 1
 		Burst delay: 0
 		Reload time: 50
@@ -124,13 +124,13 @@ Stats:
 			heavy vehicles: 110
 			buildings: 80
 	Rioter:
-		Health: 525
+		Health: 500
 		Movement speed: 50
 		View range: 5c0
 		Cost: 150
-		Build duration: 150
+		Build duration: 125
 		Tech level: 1
-		Fire range: 3c512
+		Fire range: 4c0
 		Burst: 1
 		Burst delay: 0
 		Reload time: 50
@@ -293,14 +293,14 @@ Stats:
 		Turn speed: 41
 		View range: 11c0
 		Cost: 150
-		Build duration: 125
+		Build duration: 150
 		Tech level: 0
 		Fire range: 4c0
 		Burst: 1
 		Burst delay: 0
 		Reload time: 25
 		Damage:
-			infantry: 35
+			infantry: 30
 			vehicle: 10
 			heavy vehicles: 5
 			buildings: 11
@@ -310,14 +310,14 @@ Stats:
 		Turn speed: 41
 		View range: 11c0
 		Cost: 150
-		Build duration: 125
+		Build duration: 150
 		Tech level: 0
 		Fire range: 4c0
 		Burst: 1
 		Burst delay: 0
 		Reload time: 25
 		Damage:
-			infantry: 35
+			infantry: 30
 			vehicle: 10
 			heavy vehicles: 5
 			buildings: 11
@@ -395,19 +395,19 @@ Stats:
 			buildings: 12
 	Flame ATV:
 		Health: 1250
-		Movement speed: 65
+		Movement speed: 70
 		Turn speed: 8
 		View range: 7c0
 		Cost: 700
 		Build duration: 450
 		Tech level: 2
 		Turret speed: 20
-		Fire range: 3c512
+		Fire range: 4c0
 		Burst: 10
 		Burst delay: 1
 		Reload time: 41
 		Inaccuracy: 0
-		Projectile Speed: 125
+		Projectile Speed: 150
 		Damage:
 			infantry: 20
 			vehicle: 3
@@ -483,7 +483,7 @@ Stats:
 		Build duration: 850
 		Tech level: 4
 		Turret speed: 8
-		Fire range: 9c0
+		Fire range: 10c0
 		Burst: 6
 		Burst delay: 8
 		Reload time: 200
@@ -502,7 +502,7 @@ Stats:
 		Cost: 1100
 		Build duration: 850
 		Tech level: 4
-		Fire range: 9c0
+		Fire range: 10c0
 		Burst: 6
 		Burst delay: 0
 		Reload time: 63
@@ -613,7 +613,7 @@ Stats:
 		Damage:
 			infantry: 2500
 			vehicle: 2500
-			vehicles: 2500
+			heavy vehicles: 2500
 			buildings: 2500
 	Wasp:
 		Armor: vehicle

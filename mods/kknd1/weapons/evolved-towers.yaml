@@ -10,9 +10,9 @@ evolved_machinegunnest:
 		Spread: 32
 		Falloff: 100, 100
 		Versus:
-			infantry: 36
-			vehicle: 27
-			building: 14
+			infantry: 45
+			vehicle: 30
+			building: 15
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: hit
 		ExplosionPalette: kknd
@@ -42,9 +42,9 @@ evolved_grapeshotcannon:
 		Spread: 512
 		Falloff: 100, 100
 		Versus:
-			infantry: 16
-			vehicle: 26
-			building: 18
+			infantry: 20
+			vehicle: 17
+			building: 12
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: explosions
 		ExplosionPalette: kknd
@@ -64,9 +64,9 @@ evolved_rotarycannon:
 		Spread: 32
 		Falloff: 100, 100
 		Versus:
-			infantry: 36
-			vehicle: 27
-			building: 14
+			infantry: 45
+			vehicle: 30
+			building: 13
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: hit
 		ExplosionPalette: kknd

@@ -10,15 +10,15 @@ evolved_berserker:
 		#Palette: player
 		#IsPlayerPalette: true
 		Sequences: arrow
-		Speed: 410
+		Speed: 450
 	Warhead@Damage: SpreadDamage
 		Damage: 100
 		Spread: 32
 		Falloff: 100, 100
 		Versus:
-			infantry: 16
-			vehicle: 4
-			building: 7
+			infantry: 40
+			vehicle: 8
+			building: 15
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: hit
 		ExplosionPalette: kknd
@@ -41,9 +41,9 @@ evolved_shotgunner:
 		Spread: 32
 		Falloff: 100, 100
 		Versus:
-			infantry: 43
-			vehicle: 13
-			building: 17
+			infantry: 73
+			vehicle: 18
+			building: 30
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: hit
 		ExplosionPalette: kknd
@@ -70,7 +70,7 @@ evolved_pyromaniac:
 		Falloff: 100, 100
 		Versus:
 			infantry: 17
-			vehicle: 4
+			vehicle: 5
 			building: 20
 
 evolved_vandal:
@@ -86,9 +86,9 @@ evolved_vandal:
 		Spread: 32
 		Falloff: 100, 100
 		Versus:
-			infantry: 30
-			vehicle: 23
-			building: 11
+			infantry: 40
+			vehicle: 25
+			building: 15
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: hit
 		ExplosionPalette: kknd
@@ -118,9 +118,9 @@ evolved_rioter:
 		Falloff: 100, 100
 		AffectsParent: true
 		Versus:
-			infantry: 91
-			vehicle: 85
-			building: 108
+			infantry: 150
+			vehicle: 130
+			building: 100
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: explosions
 		ExplosionPalette: kknd
@@ -150,9 +150,9 @@ evolved_bazooka:
 		Falloff: 100, 100
 		AffectsParent: true
 		Versus:
-			infantry: 62
-			vehicle: 105
-			building: 68
+			infantry: 80
+			vehicle: 150
+			building: 80
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: explosions
 		ExplosionPalette: kknd
@@ -172,8 +172,8 @@ evolved_crazyharry:
 		Spread: 32
 		Falloff: 100, 100
 		Versus:
-			infantry: 85
-			vehicle: 35
+			infantry: 150
+			vehicle: 17
 			building: 18
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: hit
@@ -196,9 +196,9 @@ evolved_kingzog:
 		Spread: 32
 		Falloff: 100, 100
 		Versus:
-			infantry: 30
-			vehicle: 23
-			building: 11
+			infantry: 40
+			vehicle: 25
+			building: 15
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: hit
 		ExplosionPalette: kknd

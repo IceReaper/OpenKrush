@@ -42,7 +42,7 @@ bunker_techbunker:
 	AttackNotification:
 		Notifications: BunkerUnderAttack
 	Health:
-		HP: 6500
+		HP: 6000
 	Mobile:
 		Speed: 50
 		TurnSpeed: 8
