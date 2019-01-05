@@ -105,7 +105,7 @@ Stats:
 		Cost: 200
 		Build duration: 250
 		Damage:
-			infantry:
+			infantry: 250
 			vehicle: 90
 			building: 50
 	Crazy Harry:
@@ -263,7 +263,7 @@ Stats:
 		Build duration: 325
 		Fire range: 6c0
 		Damage:
-			infantry:
+			infantry: 50
 			vehicle: 60
 			building: 40
 	Autocannon Tank:
@@ -363,7 +363,7 @@ Stats:
 		Damage:
 			infantry: 150
 			vehicle: 150
-			building:
+			building: 90
 	Sentinel Droid:
 		Health: 3600
 		Movement speed: 77
