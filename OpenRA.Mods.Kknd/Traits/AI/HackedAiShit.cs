@@ -33,8 +33,10 @@ namespace OpenRA.Mods.Kknd.Traits.AI
             if (!self.Owner.IsBot)
                 return;
 
-            var pumpForce = self.World.ActorsHavingTrait<PowerStationInfo>().Where(a => a.Owner == self.Owner).Sum(a => 5 + a.Trait<Researchable>().Level);
-            self.Owner.PlayerActor.Trait<PlayerResources>().GiveCash(Math.Max(5, pumpForce));
+            if (self.World.WorldTick % 3 == 0) {
+                var pumpForce = self.World.ActorsHavingTrait<PowerStation>().Where(a => a.Owner == self.Owner).Sum(a => 5 + a.Trait<Researchable>().Level);
+                self.Owner.PlayerActor.Trait<PlayerResources>().GiveCash(Math.Max(5, pumpForce));
+            }
 
             var researcher = self.World.Actors.FirstOrDefault(a =>
             {
@@ -52,6 +54,9 @@ namespace OpenRA.Mods.Kknd.Traits.AI
             var researchables = self.World.Actors.Where(a =>
             {
                 if (a.Owner != self.Owner)
+                    return false;
+
+                if (a.TraitOrDefault<PowerStation>() != null && self.World.SharedRandom.Next(0, 10) != 0)
                     return false;
 
                 var researchable = a.TraitOrDefault<Researchable>();

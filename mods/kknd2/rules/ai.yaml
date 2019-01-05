@@ -1,12 +1,11 @@
 Player:
-	# TODO this is a stub!
-	HackyAI:
-		Type: computer
-		Name: Computer
-		BuildingQueues: building
-		DefenseQueues: tower
-		UnitQueues: infantry, vehicle, aircraft
-		UnitsToBuild:
-		BuildingFractions:
-		UnitsCommonNames:
-		BuildingCommonNames:
+#	HackyAI:
+#		Type: computer
+#		Name: Computer
+#		BuildingQueues: building
+#		DefenseQueues: tower
+#		UnitQueues: infantry, vehicle, aircraft
+#		UnitsToBuild:
+#		BuildingFractions:
+#		UnitsCommonNames:
+#		BuildingCommonNames:
