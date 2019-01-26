@@ -26,10 +26,12 @@ Player:
 		BuildingQueues: building
 		DefenseQueues: tower
 		BuildingLimits:
+			survivors_machineshop: 3
+			evolved_beastforge: 3
 		BuildingFractions:
 			survivors_barracks: 75
-			survivors_machineshop: 75
-			survivors_powerstation: 25
+			survivors_machineshop: 50
+			#survivors_powerstation: 1
 			survivors_geothermal: 25
 			survivors_researchlab: 100
 			survivors_guardtower: 50
@@ -37,10 +39,10 @@ Player:
 			survivors_cannontower: 100
 			survivors_airfield: 100
 			evolved_warriorhall: 75
-			evolved_beastenclosure: 75
-			evolved_blacksmith: 75
-			evolved_beastforge: 75
-			evolved_powerstation: 25
+			evolved_beastenclosure: 50
+			evolved_blacksmith: 50
+			evolved_beastforge: 50
+			#evolved_powerstation: 1
 			evolved_gasconverter: 25
 			evolved_alchemyhall: 100
 			evolved_machinegunnest: 50
@@ -57,6 +59,7 @@ Player:
 	SquadManagerBotModule@placeholder:
 		RequiresCondition: enable-placeholder-ai
 		SquadSize: 40
+		RushInterval: 1000
 		ExcludeFromSquadsTypes: survivors_mobileoutpost, evolved_clanhallwagon, survivors_derrick, evolved_derrick, survivors_oiltanker, evolved_oiltanker, survivors_technician, evolved_mekanik
 		ConstructionYardTypes: survivors_outpost, evolved_clanhall
 	UnitBuilderBotModule@placeholder:
@@ -66,6 +69,7 @@ Player:
 			evolved_berserker: 50
 			evolved_shotgunner: 60
 			evolved_pyromaniac: 70
+			#evolved_vandal: 75
 			evolved_rioter: 80
 			evolved_bazooka: 90
 			evolved_crazyharry: 100
@@ -79,6 +83,7 @@ Player:
 			survivors_rifleman: 50
 			survivors_swat: 60
 			survivors_flamer: 70
+			#survivors_saboteur: 75
 			survivors_sapper: 80
 			survivors_rpglauncher: 90
 			survivors_sniper: 100
@@ -90,3 +95,18 @@ Player:
 			survivors_barragecraft: 90
 			survivors_autocannontank: 100
 		UnitLimits:
+			evolved_direwolf: 5
+			evolved_bikeandsidecar: 10
+			evolved_monstertruck: 10
+			survivors_dirtbike: 5
+			survivors_4x4pickup: 10
+			survivors_allterrainvehicle: 10
+	#CaptureManagerBotModule@placeholder:
+	#	CapturingActorTypes: evolved_vandal, survivors_saboteur
+	#	CapturableActorTypes: tech_drillrig
+	#	MinimumCaptureDelay: 400
+	#	MaximumCaptureTargetOptions: 2
+	#	CheckCaptureTargetsForVisibility: False
+	#	CapturableStances: Neutral
+
+

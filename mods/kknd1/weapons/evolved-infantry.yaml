@@ -62,7 +62,7 @@ evolved_pyromaniac:
 		Image: projectile
 		Palette: kknd
 		Sequences: fire
-		Speed: 100
+		Speed: 150
 	Warhead@Damage: SpreadDamage
 		Damage: 100
 		DamageTypes: Fire

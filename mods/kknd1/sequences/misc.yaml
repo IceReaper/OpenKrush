@@ -102,6 +102,10 @@ hut_e:
 	idle: sprites|Hut.mobd
 		Start: 9
 
+hut_f:
+	idle: bits/Neutral_objects.png
+		Start: 0
+
 hut_a_rubble:
 	idle: sprites|Hut.mobd
 		Start: 0
@@ -132,6 +136,38 @@ campfire:
 		Start: 10
 		Length: 4
 		Tick: 120
+
+pillar_a:
+	idle: bits/Neutral_objects.png
+		Start: 1
+
+pillar_b:
+	idle: bits/Neutral_objects.png
+		Start: 2
+
+pillar_c:
+	idle: bits/Neutral_objects.png
+		Start: 3
+
+pillar_d:
+	idle: bits/Neutral_objects.png
+		Start: 4
+
+pillar_e:
+	idle: bits/Neutral_objects.png
+		Start: 5
+
+pillar_f:
+	idle: bits/Neutral_objects.png
+		Start: 6
+
+pillar_g:
+	idle: bits/Neutral_objects.png
+		Start: 7
+
+pillar_h:
+	idle: bits/Neutral_objects.png
+		Start: 8
 
 oilpatch:
 	idle: sprites|Oil.mobd

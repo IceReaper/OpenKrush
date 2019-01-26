@@ -80,7 +80,7 @@ survivors_flameatv:
 		Image: projectile
 		Palette: kknd
 		Sequences: fire
-		Speed: 110
+		Speed: 150
 	Warhead@Damage: SpreadDamage
 		Damage: 100
 		DamageTypes: Fire

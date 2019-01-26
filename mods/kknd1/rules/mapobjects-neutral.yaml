@@ -61,6 +61,11 @@ hut_e:
 hut_e_rubble:
 	Inherits: hut_a_rubble
 
+hut_f:
+	Inherits: hut_a
+	SpawnActorOnDeath:
+		Actor: hut_d_rubble
+
 campfire:
 	Inherits: ^CoreDecoration
 	Tooltip:
@@ -84,6 +89,49 @@ campfire:
 		EmptyWeapon: dieWall
 	FrozenOnDeath:
 		Duration: 10
+
+pillar_a:
+	Inherits: ^CoreDecoration
+	Tooltip:
+		Name: Evolved Pillar
+	Targetable:
+		TargetTypes: Ground
+	Health:
+		HP: 700
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+	AdvancedSelectionDecorations:
+		Offset: -2,-8
+	HitShape:
+		Type: Circle
+			Radius: 700
+	Selectable:
+		Bounds: 40, 40, 0, 0
+	Explodes:
+		Weapon: dieVehicle
+		EmptyWeapon: dieVehicle
+
+pillar_b:
+	Inherits: pillar_a
+
+pillar_c:
+	Inherits: pillar_a
+
+pillar_d:
+	Inherits: pillar_a
+
+pillar_e:
+	Inherits: pillar_a
+
+pillar_f:
+	Inherits: pillar_a
+
+pillar_g:
+	Inherits: pillar_a
+
+pillar_h:
+	Inherits: pillar_a
 
 tech_drillrig:
 	Inherits: ^CoreBuilding
