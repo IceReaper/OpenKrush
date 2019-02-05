@@ -82,7 +82,7 @@ namespace OpenRA.Mods.Kknd.Traits.Saboteurs
 
 			self.CancelActivity();
 			self.SetTargetLine(order.Target, Color.Yellow);
-			self.QueueActivity(new SaboteurEnter(self, order.Target.Actor));
+			self.QueueActivity(new SaboteurEnter(self, order.Target));
 		}
 	}
 }

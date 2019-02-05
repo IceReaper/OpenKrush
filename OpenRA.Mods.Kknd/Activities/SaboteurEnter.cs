@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
@@ -7,6 +8,7 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
+
 #endregion
 
 using OpenRA.Mods.Common.Activities;
@@ -15,32 +17,29 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.Kknd.Activities
 {
-	public class SaboteurEnter : Enter
-	{
-		private readonly Actor target;
-		private readonly SaboteurInfo saboteurInfo;
+    public class SaboteurEnter : Enter
+    {
+        public SaboteurEnter(Actor self, Target target) : base(self, target)
+        {
+        }
 
-		public SaboteurEnter(Actor self, Actor target) : base(self, target, EnterBehaviour.Dispose)
-		{
-			this.target = target;
-			saboteurInfo = self.Info.TraitInfo<SaboteurInfo>();
-		}
+        protected override void OnEnterComplete(Actor self, Actor targetActor)
+        {
+            var saboteurInfo = self.Info.TraitInfo<SaboteurInfo>();
+            var conquerable = targetActor.Trait<SaboteurConquerable>();
 
-		protected override void OnInside(Actor self)
-		{
-			var conquerable = target.Trait<SaboteurConquerable>();
+            if (self.Owner == self.World.LocalPlayer)
+            {
+                if (targetActor.Owner.Stances[self.Owner].HasStance(Stance.Ally))
+                    self.PlayVoice(saboteurInfo.VoiceEnterAlly);
+                else if (conquerable.Population == 0)
+                    self.PlayVoice(saboteurInfo.VoiceConquered);
+                else
+                    self.PlayVoice(saboteurInfo.VoiceEnterEnemy);
+            }
 
-			if (self.Owner == self.World.LocalPlayer)
-			{
-				if (target.Owner.Stances[self.Owner].HasStance(Stance.Ally))
-					self.PlayVoice(saboteurInfo.VoiceEnterAlly);
-				else if (conquerable.Population == 0)
-					self.PlayVoice(saboteurInfo.VoiceConquered);
-				else
-					self.PlayVoice(saboteurInfo.VoiceEnterEnemy);
-			}
-
-			conquerable.Enter(target, self);
-		}
-	}
+            conquerable.Enter(targetActor, self);
+            self.Dispose();
+        }
+    }
 }

@@ -67,7 +67,7 @@ namespace OpenRA.Mods.Kknd.Traits.Altar
 
 			self.CancelActivity();
 			self.SetTargetLine(order.Target, Color.Yellow);
-			self.QueueActivity(new Sacrifice(self, order.Target.Actor));
+			self.QueueActivity(new Sacrifice(self, order.Target));
 		}
 	}
 }

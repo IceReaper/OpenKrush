@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
@@ -7,25 +8,26 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
+
 #endregion
 
+using System.Drawing;
 using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Kknd.Traits.Altar;
+using OpenRA.Traits;
 
 namespace OpenRA.Mods.Kknd.Activities
 {
-	public class Sacrifice : Enter
-	{
-		private readonly Actor target;
+    public class Sacrifice : Enter
+    {
+        public Sacrifice(Actor self, Target target, Color? targetLineColor = null) : base(self, target, targetLineColor)
+        {
+        }
 
-		public Sacrifice(Actor self, Actor target) : base(self, target, EnterBehaviour.Dispose)
-		{
-			this.target = target;
-		}
-
-		protected override void OnInside(Actor self)
-		{
-			target.Trait<Altar>().Enter(self);
-		}
-	}
+        protected override void OnEnterComplete(Actor self, Actor targetActor)
+        {
+            targetActor.Trait<Altar>().Enter(self);
+            self.Dispose();
+        }
+    }
 }

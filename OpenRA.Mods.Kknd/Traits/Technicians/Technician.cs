@@ -73,7 +73,7 @@ namespace OpenRA.Mods.Kknd.Traits.Technicians
 
 			self.CancelActivity();
 			self.SetTargetLine(order.Target, Color.Yellow);
-			self.QueueActivity(new TechnicianRepair(self, order.Target.Actor, info.Amount, info.Duration, info.VoiceEnter));
+			self.QueueActivity(new TechnicianRepair(self, order.Target, info.Amount, info.Duration, info.VoiceEnter));
 		}
 	}
 }
