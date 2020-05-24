@@ -26,6 +26,7 @@ fi
 
 PACKAGING_DIR=$(python -c "import os; print(os.path.dirname(os.path.realpath('$0')))")
 TEMPLATE_ROOT="${PACKAGING_DIR}/../../"
+ARTWORK_DIR="${PACKAGING_DIR}/../artwork/"
 
 # shellcheck source=mod.config
 . "${TEMPLATE_ROOT}/mod.config"
@@ -75,8 +76,14 @@ else
 fi
 
 pushd "${ENGINE_DIRECTORY}" > /dev/null
-make linux-dependencies
-make core SDK="-sdk:4.5"
+make clean
+
+# linux-dependencies target will trigger the lua detection script, which we don't want during packaging
+make cli-dependencies
+sed "s/@LIBLUA51@/liblua5.1.so.0/" thirdparty/Eluant.dll.config.in > Eluant.dll.config
+
+make core
+make version VERSION="${ENGINE_VERSION}"
 make install-engine prefix="usr" DESTDIR="${BUILTDIR}/"
 make install-common-mod-files prefix="usr" DESTDIR="${BUILTDIR}/"
 
@@ -86,6 +93,11 @@ for f in ${PACKAGING_COPY_ENGINE_FILES}; do
 done
 
 popd > /dev/null
+
+echo "Building mod files"
+make core
+cp -Lr mods/* "${BUILTDIR}/usr/lib/openra/mods"
+
 popd > /dev/null
 
 # Add native libraries
@@ -97,20 +109,25 @@ else
 	wget -cq "${PACKAGING_APPIMAGE_DEPENDENCIES_SOURCE}" -O "${PACKAGING_APPIMAGE_DEPENDENCIES_TEMP_ARCHIVE_NAME}" || exit 3
 	wget -cq https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage || exit 3
 fi
+
 tar xf "${PACKAGING_APPIMAGE_DEPENDENCIES_TEMP_ARCHIVE_NAME}"
 chmod a+x appimagetool-x86_64.AppImage
 
 echo "Building AppImage"
 
-# Add mod files
-cp -Lr "${TEMPLATE_ROOT}/mods/"* "${BUILTDIR}/usr/lib/openra/mods"
+install -d "${BUILTDIR}/usr/bin"
+install -d "${BUILTDIR}/etc/mono/4.5"
+install -d "${BUILTDIR}/usr/lib/mono/4.5"
 
-install -Dm 0755 libSDL2.so "${BUILTDIR}/usr/lib/openra/"
-install -Dm 0644 include/SDL2-CS.dll.config "${BUILTDIR}/usr/lib/openra/"
-install -Dm 0755 libopenal.so "${BUILTDIR}/usr/lib/openra/"
-install -Dm 0644 include/OpenAL-CS.dll.config "${BUILTDIR}/usr/lib/openra/"
-install -Dm 0755 liblua.so "${BUILTDIR}/usr/lib/openra/"
-install -Dm 0644 include/Eluant.dll.config "${BUILTDIR}/usr/lib/openra/"
+install -Dm 0755 usr/bin/mono "${BUILTDIR}/usr/bin/"
+
+install -Dm 0644 /etc/mono/config "${BUILTDIR}/etc/mono/"
+install -Dm 0644 /etc/mono/4.5/machine.config "${BUILTDIR}/etc/mono/4.5"
+
+for f in $(ls usr/lib/mono/4.5/*.dll usr/lib/mono/4.5/*.exe); do install -Dm 0644 "$f" "${BUILTDIR}/usr/lib/mono/4.5/"; done
+for f in $(ls usr/lib/*.so usr/lib/*.so.*); do install -Dm 0755 "$f" "${BUILTDIR}/usr/lib/"; done
+
+rm -rf libs libs.tar.bz2
 
 # Add launcher and icons
 sed "s/{MODID}/${MOD_ID}/g" include/AppRun.in | sed "s/{MODNAME}/${PACKAGING_DISPLAY_NAME}/g" > AppRun.temp
@@ -128,9 +145,9 @@ if [ -f "${PACKAGING_DIR}/mod_scalable.svg" ]; then
 fi
 
 for i in 16x16 32x32 48x48 64x64 128x128 256x256 512x512 1024x1024; do
-  if [ -f "${PACKAGING_DIR}/mod_${i}.png" ]; then
-    install -Dm644 "${PACKAGING_DIR}/mod_${i}.png" "${BUILTDIR}/usr/share/icons/hicolor/${i}/apps/openra-${MOD_ID}.png"
-    install -m644 "${PACKAGING_DIR}/mod_${i}.png" "${BUILTDIR}/openra-${MOD_ID}.png"
+  if [ -f "${ARTWORK_DIR}/icon_${i}.png" ]; then
+    install -Dm644 "${ARTWORK_DIR}/icon_${i}.png" "${BUILTDIR}/usr/share/icons/hicolor/${i}/apps/openra-${MOD_ID}.png"
+    install -m644 "${ARTWORK_DIR}/icon_${i}.png" "${BUILTDIR}/openra-${MOD_ID}.png"
   fi
 done
 
@@ -149,7 +166,7 @@ install -m 0755 include/gtk-dialog.py "${BUILTDIR}/usr/bin/gtk-dialog.py"
 
 # travis-ci doesn't support mounting FUSE filesystems so extract and run the contents manually
 ./appimagetool-x86_64.AppImage --appimage-extract
-ARCH=x86_64 ./squashfs-root/AppRun "${BUILTDIR}" "${OUTPUTDIR}/${PACKAGING_INSTALLER_NAME}-${TAG}.AppImage"
+ARCH=x86_64 ./squashfs-root/AppRun "${BUILTDIR}" "${OUTPUTDIR}/${PACKAGING_INSTALLER_NAME}-${TAG}-x86_64.AppImage"
 
 # Clean up
-rm -rf openra-mod.temp openra-mod-server.temp openra-mod-utility.temp temp.desktop temp.xml AppRun.temp libSDL2.so libopenal.so liblua.so appimagetool-x86_64.AppImage squashfs-root "${PACKAGING_APPIMAGE_DEPENDENCIES_TEMP_ARCHIVE_NAME}" "${BUILTDIR}"
+rm -rf openra-mod.temp openra-mod-server.temp openra-mod-utility.temp temp.desktop temp.xml AppRun.temp appimagetool-x86_64.AppImage squashfs-root "${PACKAGING_APPIMAGE_DEPENDENCIES_TEMP_ARCHIVE_NAME}" "${BUILTDIR}"

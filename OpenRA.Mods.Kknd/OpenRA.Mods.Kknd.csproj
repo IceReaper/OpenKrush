@@ -1,169 +1,43 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{4E5B38F7-4E99-4C92-BB39-9100CC7F3829}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>OpenRA.Mods.Kknd</RootNamespace>
-    <AssemblyName>OpenRA.Mods.Kknd</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <PlatformTarget>x86</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <OutputPath>bin\Debug\</OutputPath>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <TargetFramework>net461</TargetFramework>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <Optimize>true</Optimize>
+    <LangVersion>5</LangVersion>
+    <DebugSymbols>true</DebugSymbols>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <OutputPath>../mods/kknd</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <CodeAnalysisRuleSet>../engine/OpenRA.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
+    <!-- Work around an issue where Rider does not detect files in the project root using the default glob -->
+    <Compile Include="**/*.cs" Exclude="$(DefaultItemExcludes)" />
+  </ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
     <Reference Include="Eluant">
-      <HintPath>..\engine\thirdparty\download\Eluant.dll</HintPath>
+      <HintPath>../engine/thirdparty/download/Eluant.dll</HintPath>
       <Private>False</Private>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Activities\SaboteurEnter.cs" />
-    <Compile Include="Activities\Sacrifice.cs" />
-    <Compile Include="Activities\TankerCycle.cs" />
-    <Compile Include="Activities\TechnicianRepair.cs" />
-    <Compile Include="FileFormats\Mobd.cs" />
-    <Compile Include="FileFormats\MobdAnimation.cs" />
-    <Compile Include="FileFormats\MobdFrame.cs" />
-    <Compile Include="FileFormats\MobdImage.cs" />
-    <Compile Include="FileFormats\MobdPoint.cs" />
-    <Compile Include="FileFormats\MobdRenderFlags.cs" />
-    <Compile Include="FileFormats\Vbc.cs" />
-    <Compile Include="FileFormats\VbcFrame.cs" />
-    <Compile Include="FileSystem\Crypter.cs" />
-    <Compile Include="FileSystem\LvlPackage.cs" />
-    <Compile Include="Graphics\LaserRenderable.cs" />
-    <Compile Include="Graphics\OffsetsSpriteSequence.cs" />
-    <Compile Include="Graphics\StatusBar.cs" />
-    <Compile Include="LoadScreens\GameSelectLoadScreen.cs" />
-    <Compile Include="LoadScreens\LoadScreen.cs" />
-    <Compile Include="Orders\DeployOnActor.cs" />
-    <Compile Include="Orders\PlaceSpecificBuilding.cs" />
-    <Compile Include="Orders\Research.cs" />
-    <Compile Include="Orders\SaboteurEnter.cs" />
-    <Compile Include="Orders\Sacrifice.cs" />
-    <Compile Include="Orders\Sell.cs" />
-    <Compile Include="Orders\TechnicianEnter.cs" />
-    <Compile Include="Projectiles\Laser.cs" />
-    <Compile Include="Projectiles\SourceExplosion.cs" />
-    <Compile Include="SpriteLoaders\MobdLoader.cs" />
-    <Compile Include="Traits\AI\HackedAiShit.cs" />
-    <Compile Include="Traits\Altar\Altar.cs" />
-    <Compile Include="Traits\Altar\Sacrificable.cs" />
-    <Compile Include="Traits\AttackNotifications\AdvancedAttackNotifier.cs" />
-    <Compile Include="Traits\AttackNotifications\AttackNotification.cs" />
-    <Compile Include="Traits\Behavior\DeploysOnActor.cs" />
-    <Compile Include="Traits\Behavior\IgnoreRallyPoint.cs" />
-    <Compile Include="Traits\Behavior\Living.cs" />
-    <Compile Include="Traits\Bunkers\BunkerSettings.cs" />
-    <Compile Include="Traits\Bunkers\TechBunker.cs" />
-    <Compile Include="Traits\Production\AdvancedAirstrikePower.cs" />
-    <Compile Include="Traits\Production\AdvancedBuildable.cs" />
-    <Compile Include="Traits\Production\AdvancedProduction.cs" />
-    <Compile Include="Traits\Production\AdvancedProductionQueue.cs" />
-    <Compile Include="Traits\Production\DeconstructSellable.cs" />
-    <Compile Include="Traits\Production\FocusInUi.cs" />
-    <Compile Include="Traits\Production\SelfConstructing.cs" />
-    <Compile Include="Traits\Production\SelfConstructingProductionQueue.cs" />
-    <Compile Include="Traits\Radar\ProvidesResearchableRadar.cs" />
-    <Compile Include="Traits\Render\AdvancedSelectionDecorations.cs" />
-    <Compile Include="Traits\Render\FrozenOnDeath.cs" />
-    <Compile Include="Traits\Render\OverlayPlayerColorPalette.cs" />
-    <Compile Include="Traits\Render\PaletteFromMobd.cs" />
-    <Compile Include="Traits\Render\WithAimAttackAnimation.cs" />
-    <Compile Include="Traits\Render\WithLoopedTurretAttackAnimation.cs" />
-    <Compile Include="Traits\Repairbay\RepairableVehicle.cs" />
-    <Compile Include="Traits\Repairbay\RepairBay.cs" />
-    <Compile Include="Traits\Research\TechLevel.cs" />
-    <Compile Include="Traits\Research\Researches.cs" />
-    <Compile Include="Traits\Resources\IHaveOil.cs" />
-    <Compile Include="Traits\Resources\OilAmount.cs" />
-    <Compile Include="Traits\Resources\OilpatchBurn.cs" />
-    <Compile Include="Traits\Saboteurs\SaboteurConquerable.cs" />
-    <Compile Include="Traits\Saboteurs\Saboteur.cs" />
-    <Compile Include="Traits\SpritesWithOffsets\OffsetsArmament.cs" />
-    <Compile Include="Traits\Technicians\RepairTask.cs" />
-    <Compile Include="Traits\Technicians\Technician.cs" />
-    <Compile Include="Traits\Technicians\TechnicianRepairable.cs" />
-    <Compile Include="Traits\Resources\Drillrig.cs" />
-    <Compile Include="Traits\Resources\Oilpatch.cs" />
-    <Compile Include="Traits\Resources\PowerStation.cs" />
-    <Compile Include="Traits\Resources\Tanker.cs" />
-    <Compile Include="Traits\SpritesWithOffsets\WithOffsetsSpriteTurret.cs" />
-    <Compile Include="Traits\Research\Researchable.cs" />
-    <Compile Include="Traits\Veterancy\Veterancy.cs" />
-    <Compile Include="Traits\Veterancy\VeterancyVoiced.cs" />
-    <Compile Include="Warheads\ShrapnelCreateEffectWarhead.cs" />
-    <Compile Include="Widgets\GameSelect\GameButton.cs" />
-    <Compile Include="Widgets\GameSelect\GameSelectWidget.cs" />
-    <Compile Include="Widgets\Ingame\Buttons\BomberButtonWidget.cs" />
-    <Compile Include="Widgets\Ingame\Buttons\ButtonWidget.cs" />
-    <Compile Include="Widgets\Ingame\Buttons\OptionsButtonWidget.cs" />
-    <Compile Include="Widgets\Ingame\Buttons\ProductionCategoryButtonWidget.cs" />
-    <Compile Include="Widgets\Ingame\Buttons\ProductionItemButtonWidget.cs" />
-    <Compile Include="Widgets\Ingame\Buttons\RadarButtonWidget.cs" />
-    <Compile Include="Widgets\Ingame\Buttons\RepairButtonWidget.cs" />
-    <Compile Include="Widgets\Ingame\Buttons\ResearchButtonWidget.cs" />
-    <Compile Include="Widgets\Ingame\Buttons\SellButtonWidget.cs" />
-    <Compile Include="Widgets\Ingame\IngameUiWidget.cs" />
-    <Compile Include="Widgets\Ingame\StatusWidget.cs" />
-    <Compile Include="Widgets\Ingame\ProductionPaletteWidget.cs" />
-    <Compile Include="Widgets\Ingame\RadarWidget.cs" />
-    <Compile Include="Widgets\Ingame\SidebarWidget.cs" />
-    <Compile Include="Widgets\Ingame\TooltipWidget.cs" />
-    <Compile Include="Widgets\OverlayColorPreviewManagerWidget.cs" />
-    <Compile Include="Widgets\VbcPlayerWidget.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\engine\OpenRA.Mods.Common\OpenRA.Mods.Common.csproj">
-      <Project>{FE6C8CC0-2F07-442A-B29F-17617B3B7FC6}</Project>
-      <Name>OpenRA.Mods.Common</Name>
+    <ProjectReference Include="../engine/OpenRA.Game/OpenRA.Game.csproj">
       <Private>False</Private>
     </ProjectReference>
-    <ProjectReference Include="..\engine\OpenRA.Game\OpenRA.Game.csproj">
-      <Project>{0DFB103F-2962-400F-8C6D-E2C28CCBA633}</Project>
-      <Name>OpenRA.Game</Name>
+    <ProjectReference Include="../engine/OpenRA.Mods.Common/OpenRA.Mods.Common.csproj">
       <Private>False</Private>
     </ProjectReference>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" />
+    <AdditionalFiles Include="../engine/stylecop.json" />
   </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <Target Name="AfterBuild">
-    <MakeDir Directories="$(SolutionDir)mods/kknd/" />
-    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(SolutionDir)mods/kknd/" />
-    <!--
-        We need to copy OpenRA.Mods.Cnc.pdb (not `.dll.pdb`). This is only necessary on Windows.
-        Mono outputs a `.dll.mdb` so we can just append `.mdb` directly.
-    -->
-    <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFolder="$(SolutionDir)mods/kknd/" Condition="Exists('$(TargetDir)$(TargetName).pdb')" />
-    <Copy SourceFiles="$(TargetPath).mdb" DestinationFolder="$(SolutionDir)mods/kknd/" Condition="Exists('$(TargetPath).mdb')" />
-    <!-- Uncomment these lines when debugging or adding to this target
-    <Message Text="DEBUG OS:                     $(OS)"/>
-    <Message Text="DEBUG SolutionDir:            $(SolutionDir)"/>
-    <Message Text="DEBUG TargetPath:             $(TargetPath)"/>
-    <Message Text="DEBUG TargetDir:              $(TargetDir)"/>
-    <Message Text="DEBUG TargetName:             $(TargetName)"/>
-	-->
+  <Target Name="DisableAnalyzers" BeforeTargets="CoreCompile" Condition="'$(Configuration)'=='Release'">
+    <!-- Disable code style analysis on Release builds to improve compile-time performance -->
+    <ItemGroup Condition="'$(Configuration)'=='Release'">
+      <Analyzer Remove="@(Analyzer)" />
+    </ItemGroup>
   </Target>
 </Project>

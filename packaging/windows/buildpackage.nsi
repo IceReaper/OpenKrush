@@ -1,4 +1,4 @@
-; Copyright 2007-2015 OpenRA developers (see AUTHORS)
+; Copyright 2007-2019 OpenRA developers (see AUTHORS)
 ; This file is part of OpenRA.
 ;
 ;  OpenRA is free software: you can redistribute it and/or modify
@@ -58,14 +58,10 @@ Section "-Reg" Reg
 	WriteRegStr HKLM "Software\${PACKAGING_WINDOWS_REGISTRY_KEY}" "InstallDir" $INSTDIR
 
 	; Join server URL Scheme
-	WriteRegStr HKLM "Software\Classes\openra-kknd1-${TAG}" "" "URL:Join OpenRA server"
-	WriteRegStr HKLM "Software\Classes\openra-kknd2-${TAG}" "" "URL:Join OpenRA server"
-	WriteRegStr HKLM "Software\Classes\openra-kknd1-${TAG}" "URL Protocol" ""
-	WriteRegStr HKLM "Software\Classes\openra-kknd2-${TAG}" "URL Protocol" ""
-	WriteRegStr HKLM "Software\Classes\openra-kknd1-${TAG}\DefaultIcon" "" "$INSTDIR\${MOD_ID}.ico,0"
-	WriteRegStr HKLM "Software\Classes\openra-kknd2-${TAG}\DefaultIcon" "" "$INSTDIR\${MOD_ID}.ico,0"
-	WriteRegStr HKLM "Software\Classes\openra-kknd1-${TAG}\Shell\Open\Command" "" "$INSTDIR\${PACKAGING_WINDOWS_LAUNCHER_NAME}.exe Launch.URI=%1"
-	WriteRegStr HKLM "Software\Classes\openra-kknd2-${TAG}\Shell\Open\Command" "" "$INSTDIR\${PACKAGING_WINDOWS_LAUNCHER_NAME}.exe Launch.URI=%1"
+	WriteRegStr HKLM "Software\Classes\openra-${MOD_ID}-${TAG}" "" "URL:Join OpenRA server"
+	WriteRegStr HKLM "Software\Classes\openra-${MOD_ID}-${TAG}" "URL Protocol" ""
+	WriteRegStr HKLM "Software\Classes\openra-${MOD_ID}-${TAG}\DefaultIcon" "" "$INSTDIR\${MOD_ID}.ico,0"
+	WriteRegStr HKLM "Software\Classes\openra-${MOD_ID}-${TAG}\Shell\Open\Command" "" "$INSTDIR\${PACKAGING_WINDOWS_LAUNCHER_NAME}.exe Launch.URI=%1"
 
 SectionEnd
 
@@ -87,12 +83,10 @@ Section "Game" GAME
 	File "${SRCDIR}\AUTHORS"
 	File "${SRCDIR}\COPYING"
 	File "${SRCDIR}\${MOD_ID}.ico"
-	File "${SRCDIR}\SharpFont.dll"
 	File "${SRCDIR}\SDL2-CS.dll"
 	File "${SRCDIR}\OpenAL-CS.dll"
 	File "${SRCDIR}\global mix database.dat"
-	File "${SRCDIR}\MaxMind.Db.dll"
-	File "${SRCDIR}\GeoLite2-Country.mmdb.gz"
+	File "${SRCDIR}\IP2LOCATION-LITE-DB1.IPV6.BIN.ZIP"
 	File "${SRCDIR}\eluant.dll"
 	File "${SRCDIR}\rix0rrr.BeaconLib.dll"
 	File "${DEPSDIR}\soft_oal.dll"
@@ -120,10 +114,8 @@ Section "Game" GAME
 
 	SetShellVarContext all
 	CreateDirectory "$APPDATA\OpenRA\ModMetadata"
-	nsExec::ExecToLog '"$INSTDIR\OpenRA.Utility.exe" kknd1 --register-mod "$INSTDIR\${PACKAGING_WINDOWS_LAUNCHER_NAME}.exe" system'
-	nsExec::ExecToLog '"$INSTDIR\OpenRA.Utility.exe" kknd2 --register-mod "$INSTDIR\${PACKAGING_WINDOWS_LAUNCHER_NAME}.exe" system'
-	nsExec::ExecToLog '"$INSTDIR\OpenRA.Utility.exe" kknd1 --clear-invalid-mod-registrations system'
-	nsExec::ExecToLog '"$INSTDIR\OpenRA.Utility.exe" kknd2 --clear-invalid-mod-registrations system'
+	nsExec::ExecToLog '"$INSTDIR\OpenRA.Utility.exe" ${MOD_ID} --register-mod "$INSTDIR\${PACKAGING_WINDOWS_LAUNCHER_NAME}.exe" system'
+	nsExec::ExecToLog '"$INSTDIR\OpenRA.Utility.exe" ${MOD_ID} --clear-invalid-mod-registrations system'
 	SetShellVarContext current
 
 SectionEnd
@@ -139,15 +131,12 @@ SectionEnd
 ;***************************
 Section "-DotNet" DotNet
 	ClearErrors
-	ReadRegDWORD $0 HKLM "SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client" "Install"
+	; https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed
+	ReadRegDWORD $0 HKLM "SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" "Release"
 	IfErrors error 0
-	IntCmp $0 1 0 error 0
-	ClearErrors
-	ReadRegDWORD $0 HKLM "SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" "Install"
-	IfErrors error 0
-	IntCmp $0 1 done error done
+	IntCmp $0 394254 done error done
 	error:
-		MessageBox MB_OK ".NET Framework v4.5 or later is required to run OpenRA."
+		MessageBox MB_OK ".NET Framework v4.6.1 or later is required to run OpenRA."
 		Abort
 	done:
 SectionEnd
@@ -171,8 +160,7 @@ SectionEnd
 
 !macro Clean UN
 Function ${UN}Clean
-	nsExec::ExecToLog '"$INSTDIR\OpenRA.Utility.exe" kknd1 --unregister-mod system'
-	nsExec::ExecToLog '"$INSTDIR\OpenRA.Utility.exe" kknd2 --unregister-mod system'
+	nsExec::ExecToLog '"$INSTDIR\OpenRA.Utility.exe" ${MOD_ID} --unregister-mod system'
 
 	RMDir /r $INSTDIR\mods
 	RMDir /r $INSTDIR\maps
@@ -187,15 +175,12 @@ Function ${UN}Clean
 	Delete $INSTDIR\ICSharpCode.SharpZipLib.dll
 	Delete $INSTDIR\FuzzyLogicLibrary.dll
 	Delete $INSTDIR\Open.Nat.dll
-	Delete $INSTDIR\SharpFont.dll
 	Delete $INSTDIR\VERSION
 	Delete $INSTDIR\AUTHORS
 	Delete $INSTDIR\COPYING
 	Delete $INSTDIR\${MOD_ID}.ico
 	Delete "$INSTDIR\global mix database.dat"
-	Delete $INSTDIR\MaxMind.Db.dll
-	Delete $INSTDIR\GeoLite2-Country.mmdb.gz
-	Delete $INSTDIR\KopiLua.dll
+	Delete $INSTDIR\IP2LOCATION-LITE-DB1.IPV6.BIN.ZIP
 	Delete $INSTDIR\soft_oal.dll
 	Delete $INSTDIR\SDL2.dll
 	Delete $INSTDIR\lua51.dll
@@ -207,8 +192,7 @@ Function ${UN}Clean
 	RMDir /r $INSTDIR\Support
 
 	DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PACKAGING_WINDOWS_REGISTRY_KEY}"
-	DeleteRegKey HKLM "Software\Classes\openra-kknd1-${TAG}"
-	DeleteRegKey HKLM "Software\Classes\openra-kknd2-${TAG}"
+	DeleteRegKey HKLM "Software\Classes\openra-${MOD_ID}-${TAG}"
 
 	Delete $INSTDIR\uninstaller.exe
 	RMDir $INSTDIR
