@@ -13,6 +13,7 @@
 
 using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Kknd.Traits.Technicians;
+using OpenRA.Primitives;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.Kknd.Activities
@@ -23,8 +24,8 @@ namespace OpenRA.Mods.Kknd.Activities
         private readonly int duration;
         private readonly string voiceEnter;
 
-        public TechnicianRepair(Actor self, Target target, int amount, int duration, string voiceEnter)
-            : base(self, target)
+        public TechnicianRepair(Actor self, Target target, int amount, int duration, string voiceEnter, Color targetLineColor)
+            : base(self, target, targetLineColor)
         {
             this.amount = amount;
             this.duration = duration;

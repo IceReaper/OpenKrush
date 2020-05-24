@@ -11,9 +11,9 @@
 
 #endregion
 
-using System.Drawing;
 using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Kknd.Traits.Altar;
+using OpenRA.Primitives;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.Kknd.Activities

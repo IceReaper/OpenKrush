@@ -9,9 +9,10 @@
  */
 #endregion
 
-using System.Drawing;
 using System.Linq;
 using OpenRA.Graphics;
+using OpenRA.Mods.Common.Widgets;
+using OpenRA.Primitives;
 using OpenRA.Widgets;
 
 namespace OpenRA.Mods.Kknd.Widgets.GameSelect

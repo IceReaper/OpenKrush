@@ -11,18 +11,18 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using OpenRA.Graphics;
 using OpenRA.Mods.Common.Orders;
 using OpenRA.Mods.Kknd.Traits.Technicians;
+using OpenRA.Orders;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.Kknd.Orders
 {
-	public class TechnicianEnterOrderGenerator : IOrderGenerator
+	public class TechnicianEnterOrderGenerator : UnitOrderGenerator
 	{
 		private IEnumerable<TraitPair<Technician>> technicians;
 
-		public IEnumerable<Order> Order(World world, CPos cell, int2 worldPixel, MouseInput mi)
+		public new IEnumerable<Order> Order(World world, CPos cell, int2 worldPixel, MouseInput mi)
 		{
 			if (mi.Button != Game.Settings.Game.MouseButtonPreference.Action)
 				world.CancelInputMode();
@@ -45,7 +45,7 @@ namespace OpenRA.Mods.Kknd.Orders
 			}
 		}
 
-		public virtual void Tick(World world)
+		public new void Tick(World world)
 		{
 			technicians = world.ActorsWithTrait<Technician>().Where(e => e.Actor.Owner == world.LocalPlayer && e.Actor.IsIdle);
 
@@ -53,10 +53,7 @@ namespace OpenRA.Mods.Kknd.Orders
 				world.CancelInputMode();
 		}
 
-		public IEnumerable<IRenderable> Render(WorldRenderer wr, World world) { yield break; }
-		public IEnumerable<IRenderable> RenderAboveShroud(WorldRenderer wr, World world) { yield break; }
-
-		public string GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)
+		public new string GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)
 		{
 			var actor = world.ActorMap.GetActorsAt(cell).FirstOrDefault(a =>
 			{
@@ -75,10 +72,12 @@ namespace OpenRA.Mods.Kknd.Orders
 		public const string Id = "TechnicianEnter";
 
 		private string cursor;
+		private string blockedCursor;
 
-		public TechnicianEnterOrderTargeter(string cursor) : base(Id, 6, cursor, false, true)
+		public TechnicianEnterOrderTargeter(string cursor, string blockedCursor) : base(Id, 6, cursor, false, true)
 		{
 			this.cursor = cursor;
+			this.blockedCursor = blockedCursor;
 		}
 
 		public override bool CanTargetActor(Actor self, Actor target, TargetModifiers modifiers, ref string cursor)
@@ -89,10 +88,16 @@ namespace OpenRA.Mods.Kknd.Orders
 				return false;
 
 			if (target.Trait<TechnicianRepairable>().IsTraitDisabled)
+			{
+				cursor = blockedCursor;
 				return false;
+			}
 
 			if (self.Owner.Stances[target.Owner] != Stance.Ally)
+			{
+				cursor = blockedCursor;
 				return false;
+			}
 
 			cursor = this.cursor;
 			return true;

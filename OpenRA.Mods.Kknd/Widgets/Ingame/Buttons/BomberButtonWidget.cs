@@ -12,7 +12,7 @@
 using System;
 using System.Linq;
 using OpenRA.Mods.Common.Traits;
-using OpenRA.Widgets;
+using OpenRA.Mods.Common.Widgets;
 
 namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 {
@@ -44,7 +44,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 					if (e.Key != Game.ModData.Hotkeys["Production" + (i + 1)].GetValue().Key || e.Modifiers != Game.ModData.Hotkeys["Production" + (i + 1)].GetValue().Modifiers)
 						continue;
 
-					((ProductionItemButtonWidget)Children[i]).ClickedLeft(new MouseInput(MouseInputEvent.Down, MouseButton.None, 0, int2.Zero, e.Modifiers, 0));
+					((ProductionItemButtonWidget)Children[i]).ClickedLeft(new MouseInput(MouseInputEvent.Down, MouseButton.None, int2.Zero, int2.Zero, e.Modifiers, 0));
 
 					return true;
 				}
@@ -97,7 +97,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 					{
 						Item = power.Info.Icon,
 						Icon = power.Info.Icon,
-						Progress = () => power.Ready ? -1 : (power.TotalTime - power.RemainingTime) * 100 / power.TotalTime,
+						Progress = () => power.Ready ? -1 : (power.TotalTicks - power.RemainingTicks) * 100 / power.TotalTicks,
 						Amount = () => 0,
 						ClickedLeft = mi => power.Target(),
 						ClickedRight = null,

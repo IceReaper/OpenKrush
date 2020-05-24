@@ -9,8 +9,8 @@
  */
 #endregion
 
-using System.Drawing;
 using OpenRA.Mods.Kknd.FileFormats;
+using OpenRA.Primitives;
 using OpenRA.Widgets;
 
 namespace OpenRA.Mods.Kknd.Widgets.GameSelect

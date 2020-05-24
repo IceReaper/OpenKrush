@@ -10,11 +10,10 @@
 #endregion
 
 using System.Collections.Generic;
-using System.Drawing;
 using OpenRA.GameRules;
 using OpenRA.Graphics;
-using OpenRA.Mods.Common.Graphics;
 using OpenRA.Mods.Kknd.Graphics;
+using OpenRA.Primitives;
 using OpenRA.Support;
 using OpenRA.Traits;
 
@@ -72,7 +71,7 @@ namespace OpenRA.Mods.Kknd.Projectiles
 			colors = new Color[info.Radius];
 			for (var i = 0; i < info.Radius; i++)
 			{
-				var color = info.Color == Color.Transparent ? args.SourceActor.Owner.Color.RGB : info.Color;
+				var color = info.Color == Color.Transparent ? args.SourceActor.Owner.Color : info.Color;
 				var bw = (float)((info.InnerLightness - info.OuterLightness) * i / (info.Radius - 1) + info.OuterLightness) / 0xff;
 				var dstR = bw > .5 ? 1 - (1 - 2 * (bw - .5)) * (1 - (float)color.R / 0xff) : 2 * bw * ((float)color.R / 0xff);
 				var dstG = bw > .5 ? 1 - (1 - 2 * (bw - .5)) * (1 - (float)color.G / 0xff) : 2 * bw * ((float)color.G / 0xff);
@@ -127,7 +126,7 @@ namespace OpenRA.Mods.Kknd.Projectiles
 				}
 			}
 
-			args.Weapon.Impact(Target.FromPos(args.PassiveTarget), args.SourceActor, args.DamageModifiers);
+			args.Weapon.Impact(Target.FromPos(args.PassiveTarget), args.SourceActor);
 		}
 
 		public void Tick(World world)

@@ -11,10 +11,10 @@
 
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using OpenRA.Mods.Common.Traits;
-using OpenRA.Widgets;
+using OpenRA.Mods.Common.Widgets;
+using OpenRA.Primitives;
 
 namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 {

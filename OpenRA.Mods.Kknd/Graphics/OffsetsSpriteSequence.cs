@@ -12,11 +12,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using OpenRA.FileFormats;
 using OpenRA.Graphics;
 using OpenRA.Mods.Common.Graphics;
 using OpenRA.Mods.Common.SpriteLoaders;
-using OpenRA.Mods.Kknd.SpriteLoaders;
 
 namespace OpenRA.Mods.Kknd.Graphics
 {

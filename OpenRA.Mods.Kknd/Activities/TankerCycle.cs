@@ -10,8 +10,7 @@
 #endregion
 
 using OpenRA.Activities;
-using OpenRA.Mods.Common.Activities.Docking;
-using OpenRA.Mods.Common.Traits.Docking;
+using OpenRA.Mods.Kknd.Traits.Docking;
 using OpenRA.Mods.Kknd.Traits.Resources;
 
 namespace OpenRA.Mods.Kknd.Activities
@@ -37,14 +36,14 @@ namespace OpenRA.Mods.Kknd.Activities
 				tanker.PowerStation = dockActor;
 		}
 
-		public override Activity Tick(Actor self)
+		public override bool Tick(Actor self)
 		{
 			var result = base.Tick(self);
 
 			if (!abortByCancel && shouldCancel)
 				shouldCancel = false;
 
-			if (result == this || shouldCancel)
+			if (!result || shouldCancel)
 				return result;
 
 			var tanker = (Tanker)Dockable;
@@ -55,7 +54,7 @@ namespace OpenRA.Mods.Kknd.Activities
 					tanker.AssignNearestPowerStation();
 
 				if (tanker.PowerStation == null)
-					return this;
+					return true;
 
 				DockActor = tanker.PowerStation;
 				Dock = DockActor.Trait<Dock>();
@@ -67,17 +66,17 @@ namespace OpenRA.Mods.Kknd.Activities
 					tanker.AssignNearestDrillrig();
 
 				if (tanker.Drillrig == null)
-					return this;
+					return true;
 
 				DockActor = tanker.Drillrig;
 				Dock = DockActor.Trait<Dock>();
 				DockingState = DockingState.Approaching;
 			}
 
-			return this;
+			return false;
 		}
 
-		public override bool Cancel(Actor self, bool keepQueue = false)
+		public new bool Cancel(Actor self, bool keepQueue = false)
 		{
 			abortByCancel = true;
 			return base.Cancel(self, keepQueue);

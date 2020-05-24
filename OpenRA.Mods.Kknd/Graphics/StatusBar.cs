@@ -10,15 +10,14 @@
 #endregion
 
 using System;
-using System.Drawing;
 using OpenRA.Graphics;
 using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.Kknd.Traits.Behavior;
 using OpenRA.Mods.Kknd.Traits.Render;
 using OpenRA.Mods.Kknd.Traits.Research;
 using OpenRA.Mods.Kknd.Traits.Resources;
 using OpenRA.Mods.Kknd.Traits.Saboteurs;
 using OpenRA.Mods.Kknd.Traits.Veterancy;
+using OpenRA.Primitives;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.Kknd.Graphics

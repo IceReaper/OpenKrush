@@ -10,9 +10,9 @@
 #endregion
 
 using System.Collections.Generic;
-using System.Drawing;
 using OpenRA.Graphics;
 using OpenRA.Mods.Common.LoadScreens;
+using OpenRA.Primitives;
 
 namespace OpenRA.Mods.Kknd.LoadScreens
 {
@@ -53,7 +53,7 @@ namespace OpenRA.Mods.Kknd.LoadScreens
 
 			var logoPos = new float2(renderer.Resolution.Width / 2 - 320, renderer.Resolution.Height / 2 - 240);
 
-			renderer.BeginFrame(int2.Zero, 1f);
+			renderer.BeginUI();
 			renderer.RgbaSpriteRenderer.DrawSprite(started ? logo2 : logo1, logoPos);
 			renderer.EndFrame(new NullInputHandler());
 		}

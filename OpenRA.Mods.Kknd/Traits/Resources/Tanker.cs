@@ -11,8 +11,8 @@
 
 using System;
 using System.Linq;
-using OpenRA.Mods.Common.Traits.Docking;
 using OpenRA.Mods.Kknd.Activities;
+using OpenRA.Mods.Kknd.Traits.Docking;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.Kknd.Traits.Resources

@@ -42,7 +42,7 @@ namespace OpenRA.Mods.Kknd.Traits.Production
             {
                 var candidate = new CVec(x, y);
 
-                if (!mobileInfo.CanEnterCell(self.World, self, spawn + candidate, self))
+                if (!mobileInfo.CanEnterCell(self.World, self, spawn + candidate))
                     continue;
 
                 var exitInfo = new ExitInfo();

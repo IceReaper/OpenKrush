@@ -10,13 +10,14 @@
 #endregion
 
 using System;
-using System.Drawing;
 using System.Linq;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common.Traits.Render;
+using OpenRA.Mods.Common.Widgets;
 using OpenRA.Mods.Kknd.Orders;
 using OpenRA.Mods.Kknd.Traits.Production;
 using OpenRA.Mods.Kknd.Widgets.Ingame.Buttons;
+using OpenRA.Primitives;
 using OpenRA.Widgets;
 using ButtonWidget = OpenRA.Mods.Kknd.Widgets.Ingame.Buttons.ButtonWidget;
 
@@ -52,7 +53,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 				if (e.Key != Game.ModData.Hotkeys["Production" + (i + 1)].GetValue().Key)
 					continue;
 
-				((ProductionItemButtonWidget)Children[i]).ClickedLeft(new MouseInput(MouseInputEvent.Down, MouseButton.None, 0, int2.Zero, e.Modifiers, 0));
+				((ProductionItemButtonWidget)Children[i]).ClickedLeft(new MouseInput(MouseInputEvent.Down, MouseButton.None, int2.Zero, int2.Zero, e.Modifiers, 0));
 
 				return true;
 			}
@@ -84,7 +85,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 					}
 				}
 				else if (mi.Event == MouseInputEvent.Scroll)
-					scrollOffset = Math.Max(0, Math.Min(scrollOffset += mi.ScrollDelta < 0 ? 1 : -1, buildableItems.Length - visibleIcons));
+					scrollOffset = Math.Max(0, Math.Min(scrollOffset += mi.Delta.Y < 0 ? 1 : -1, buildableItems.Length - visibleIcons));
 
 				return true;
 			}

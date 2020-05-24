@@ -197,13 +197,13 @@ namespace OpenRA.Mods.Kknd.Traits.Bunkers
 				var newUnit = self.World.CreateActor(actor, td);
 				var move = newUnit.TraitOrDefault<IMove>();
 
-				if (move != null && exit.MoveIntoWorld)
+				if (move != null)
 				{
 					if (exit.ExitDelay > 0)
 						newUnit.QueueActivity(new Wait(exit.ExitDelay, false));
 
-					newUnit.QueueActivity(move.MoveIntoWorld(newUnit, exitLocation));
-					newUnit.QueueActivity(new AttackMoveActivity(newUnit, move.MoveTo(exitLocation, 1)));
+					newUnit.QueueActivity(new Move(newUnit, exitLocation));
+					newUnit.QueueActivity(new AttackMoveActivity(newUnit, () => move.MoveTo(exitLocation, 1)));
 				}
 
 				foreach (var t in self.TraitsImplementing<INotifyProduction>())
@@ -223,7 +223,7 @@ namespace OpenRA.Mods.Kknd.Traits.Bunkers
 			{
 				var candidate = new CVec(x, y);
 
-				if (!mobileInfo.CanEnterCell(self.World, self, spawn + candidate, self))
+				if (!mobileInfo.CanEnterCell(self.World, self, spawn + candidate))
 					continue;
 
 				var exitInfo = new ExitInfo();

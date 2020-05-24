@@ -13,13 +13,14 @@
 
 using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Kknd.Traits.Saboteurs;
+using OpenRA.Primitives;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.Kknd.Activities
 {
     public class SaboteurEnter : Enter
     {
-        public SaboteurEnter(Actor self, Target target) : base(self, target)
+        public SaboteurEnter(Actor self, Target target, Color targetLineColor) : base(self, target, targetLineColor)
         {
         }
 

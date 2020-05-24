@@ -10,7 +10,7 @@
 #endregion
 
 using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.Common.Traits.Docking;
+using OpenRA.Mods.Kknd.Traits.Docking;
 using OpenRA.Mods.Kknd.Traits.Research;
 using OpenRA.Traits;
 

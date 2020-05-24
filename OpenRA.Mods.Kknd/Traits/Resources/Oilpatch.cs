@@ -10,7 +10,6 @@
 #endregion
 
 using System;
-using System.Linq;
 using OpenRA.GameRules;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Primitives;
@@ -128,7 +127,7 @@ namespace OpenRA.Mods.Kknd.Traits.Resources
 						token = ConditionManager.InvalidConditionToken;
 					}
 
-					info.WeaponInfo.Impact(Target.FromPos(self.CenterPosition), self, Enumerable.Empty<int>());
+					info.WeaponInfo.Impact(Target.FromPos(self.CenterPosition), self);
 				}
 			}
 

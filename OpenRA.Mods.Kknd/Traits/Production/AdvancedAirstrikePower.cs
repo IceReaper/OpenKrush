@@ -9,6 +9,7 @@
  */
 #endregion
 
+using System.Linq;
 using OpenRA.Mods.Common.Traits;
 
 namespace OpenRA.Mods.Kknd.Traits.Production
@@ -25,8 +26,8 @@ namespace OpenRA.Mods.Kknd.Traits.Production
 
 		public override void Activate(Actor self, Order order, SupportPowerManager manager)
 		{
-			var facing = (self.World.Map.CenterOfCell(order.TargetLocation) - self.CenterPosition).Yaw.Facing;
-			SendAirstrike(self, self.World.Map.CenterOfCell(order.TargetLocation), false, facing);
+			var target = order.Target.Positions.First();
+			SendAirstrike(self, target, false, (target - self.CenterPosition).Yaw.Facing);
 		}
 	}
 }

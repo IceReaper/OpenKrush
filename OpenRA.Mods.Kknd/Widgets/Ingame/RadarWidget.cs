@@ -10,7 +10,6 @@
 #endregion
 
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using OpenRA.Graphics;
 using OpenRA.Mods.Common.Traits;
@@ -190,7 +189,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 						continue;
 
 					var pos = cell.First.ToMPos(ingameUi.World.Map.Grid.Type);
-					var color = useStanceColor ? Color.FromArgb(e.Actor.Owner.PlayerStanceColor(e.Actor).ToArgb()) : e.Actor.Owner.Color.RGB;
+					var color = useStanceColor ? Color.FromArgb(e.Actor.Owner.PlayerStanceColor(e.Actor).ToArgb()) : e.Actor.Owner.Color;
 
 					WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X + pos.U * size, RenderBounds.Y + pos.V * size, size, size), color);
 				}

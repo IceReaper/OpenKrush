@@ -13,7 +13,6 @@ using System;
 using System.Collections.Generic;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Kknd.Orders;
-using OpenRA.Mods.Kknd.Traits.Production;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.Kknd.Traits.Research

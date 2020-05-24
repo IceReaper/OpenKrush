@@ -18,11 +18,11 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.Kknd.Orders
 {
-	public class ResearchOrderGenerator : IOrderGenerator
+	public class ResearchOrderGenerator : OrderGenerator
 	{
 		private IEnumerable<TraitPair<Researches>> researchActors;
 
-		public IEnumerable<Order> Order(World world, CPos cell, int2 worldPixel, MouseInput mi)
+		protected override IEnumerable<Order> OrderInner(World world, CPos cell, int2 worldPixel, MouseInput mi)
 		{
 			if (mi.Button != Game.Settings.Game.MouseButtonPreference.Action)
 				world.CancelInputMode();
@@ -44,7 +44,7 @@ namespace OpenRA.Mods.Kknd.Orders
 			}
 		}
 
-		public virtual void Tick(World world)
+		protected override void Tick(World world)
 		{
 			researchActors = world.ActorsWithTrait<Researches>().Where(e => e.Actor.Owner == world.LocalPlayer && !e.Trait.IsTraitDisabled);
 
@@ -52,10 +52,11 @@ namespace OpenRA.Mods.Kknd.Orders
 				world.CancelInputMode();
 		}
 
-		public IEnumerable<IRenderable> Render(WorldRenderer wr, World world) { yield break; }
-		public IEnumerable<IRenderable> RenderAboveShroud(WorldRenderer wr, World world) { yield break; }
+		protected override IEnumerable<IRenderable> Render(WorldRenderer wr, World world) { yield break; }
+		protected override IEnumerable<IRenderable> RenderAboveShroud(WorldRenderer wr, World world) { yield break; }
+		protected override IEnumerable<IRenderable> RenderAnnotations(WorldRenderer wr, World world) { yield break; }
 
-		public string GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)
+		protected override string GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)
 		{
 			if (researchActors == null)
 				return null;

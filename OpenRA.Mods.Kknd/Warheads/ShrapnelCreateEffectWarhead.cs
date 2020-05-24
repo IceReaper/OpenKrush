@@ -9,7 +9,6 @@
  */
 #endregion
 
-using System.Collections.Generic;
 using OpenRA.Effects;
 using OpenRA.GameRules;
 using OpenRA.Mods.Common.Effects;
@@ -28,23 +27,20 @@ namespace OpenRA.Mods.Kknd.Warheads
         [Desc("The minimum and maximum distances the shrapnel may travel.")]
         public readonly WDist[] ShrapnelRange = { WDist.Zero, WDist.Zero };
 
-		public override void DoImpact(Target target, Actor firedBy, IEnumerable<int> damageModifiers)
-		{
-			if (!target.IsValidFor(firedBy))
-				return;
-
-			var random = firedBy.World.SharedRandom;
+        public override void DoImpact(Target target, WarheadArgs args)
+        {
+			var random = args.SourceActor.World.SharedRandom;
 			var pos = target.CenterPosition + new WVec(Radius.X == 0 ? 0 : random.Next(-Radius.X, Radius.X), Radius.Y == 0 ? 0 : random.Next(-Radius.Y, Radius.Y), 0);
-			var world = firedBy.World;
+			var world = args.SourceActor.World;
 			var targetTile = world.Map.CellContaining(pos);
-			var isValid = IsValidImpact(pos, firedBy);
+			var isValid = IsValidImpact(pos, args.SourceActor);
 
 			if ((!world.Map.Contains(targetTile)) || (!isValid))
 				return;
 
 			var palette = ExplosionPalette;
 			if (UsePlayerPalette)
-				palette += firedBy.Owner.InternalName;
+				palette += args.SourceActor.Owner.InternalName;
 
 			if (ForceDisplayAtGroundLevel)
 			{
@@ -68,7 +64,7 @@ namespace OpenRA.Mods.Kknd.Warheads
 				var range = world.SharedRandom.Next(ShrapnelRange[0].Length, ShrapnelRange[1].Length);
 				var passiveTarget = pos + new WVec(range, 0, 0).Rotate(rotation);
 
-				var args = new ProjectileArgs
+				var newArgs = new ProjectileArgs
 				{
 					Weapon = weaponInfo,
 					DamageModifiers = new int[0],
@@ -76,29 +72,30 @@ namespace OpenRA.Mods.Kknd.Warheads
 					RangeModifiers = new int[0],
 					Source = pos,
 					CurrentSource = () => pos,
-					SourceActor = firedBy,
+					SourceActor = args.SourceActor,
 					PassiveTarget = passiveTarget,
 					GuidedTarget = target
 				};
 
 				world.AddFrameEndTask(x =>
 				{
-					if (args.Weapon.Projectile != null)
+					if (newArgs.Weapon.Projectile != null)
 					{
-						var projectile = args.Weapon.Projectile.Create(args);
+						var projectile = newArgs.Weapon.Projectile.Create(newArgs);
 						if (projectile != null)
 							world.Add(projectile);
 					}
 					else
 					{
-						foreach (var warhead in args.Weapon.Warheads.Keys)
+						foreach (var warhead in newArgs.Weapon.Warheads)
 						{
 							var wh = warhead; // force the closure to bind to the current warhead
+							var iargs = new WarheadArgs { SourceActor = newArgs.SourceActor };
 
 							if (wh.Delay > 0)
-								firedBy.World.AddFrameEndTask(w => w.Add(new DelayedImpact(wh.Delay, wh, Target.FromPos(args.PassiveTarget), args.SourceActor, new int[0])));
+								args.SourceActor.World.AddFrameEndTask(w => w.Add(new DelayedImpact(wh.Delay, wh, Target.FromPos(newArgs.PassiveTarget), iargs)));
 							else
-								wh.DoImpact(Target.FromPos(args.PassiveTarget), args.SourceActor, new int[0]);
+								wh.DoImpact(Target.FromPos(newArgs.PassiveTarget), iargs);
 						}
 					}
 				});

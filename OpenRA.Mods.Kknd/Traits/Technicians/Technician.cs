@@ -10,10 +10,9 @@
 #endregion
 
 using System.Collections.Generic;
-using System.Drawing;
-using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Kknd.Activities;
 using OpenRA.Mods.Kknd.Orders;
+using OpenRA.Primitives;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.Kknd.Traits.Technicians
@@ -51,7 +50,7 @@ namespace OpenRA.Mods.Kknd.Traits.Technicians
 			this.info = info;
 		}
 
-		public IEnumerable<IOrderTargeter> Orders { get { yield return new TechnicianEnterOrderTargeter(info.Cursor); } }
+		public IEnumerable<IOrderTargeter> Orders { get { yield return new TechnicianEnterOrderTargeter(info.Cursor, info.BlockedCursor); } }
 
 		public Order IssueOrder(Actor self, IOrderTargeter order, Target target, bool queued)
 		{
@@ -72,8 +71,7 @@ namespace OpenRA.Mods.Kknd.Traits.Technicians
 				return;
 
 			self.CancelActivity();
-			self.SetTargetLine(order.Target, Color.Yellow);
-			self.QueueActivity(new TechnicianRepair(self, order.Target, info.Amount, info.Duration, info.VoiceEnter));
+			self.QueueActivity(new TechnicianRepair(self, order.Target, info.Amount, info.Duration, info.VoiceEnter, Color.Yellow));
 		}
 	}
 }

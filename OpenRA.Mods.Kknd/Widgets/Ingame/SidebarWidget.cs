@@ -9,13 +9,13 @@
  */
 #endregion
 
-using System.Drawing;
 using System.Linq;
 using OpenRA.Graphics;
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.Kknd.Traits.Production;
+using OpenRA.Mods.Common.Widgets;
 using OpenRA.Mods.Kknd.Widgets.Ingame.Buttons;
+using OpenRA.Primitives;
 using OpenRA.Widgets;
+using ButtonWidget = OpenRA.Mods.Kknd.Widgets.Ingame.Buttons.ButtonWidget;
 
 namespace OpenRA.Mods.Kknd.Widgets.Ingame
 {

@@ -10,9 +10,9 @@
 #endregion
 
 using System.Linq;
+using OpenRA.Mods.Common.Widgets;
 using OpenRA.Mods.Kknd.Orders;
 using OpenRA.Mods.Kknd.Traits.Production;
-using OpenRA.Widgets;
 
 namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 {

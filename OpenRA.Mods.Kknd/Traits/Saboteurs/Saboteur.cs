@@ -10,10 +10,9 @@
 #endregion
 
 using System.Collections.Generic;
-using System.Drawing;
-using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Kknd.Activities;
 using OpenRA.Mods.Kknd.Orders;
+using OpenRA.Primitives;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.Kknd.Traits.Saboteurs
@@ -81,8 +80,7 @@ namespace OpenRA.Mods.Kknd.Traits.Saboteurs
 				return;
 
 			self.CancelActivity();
-			self.SetTargetLine(order.Target, Color.Yellow);
-			self.QueueActivity(new SaboteurEnter(self, order.Target));
+			self.QueueActivity(new SaboteurEnter(self, order.Target, Color.Yellow));
 		}
 	}
 }

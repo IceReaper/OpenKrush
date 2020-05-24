@@ -12,17 +12,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using OpenRA.Graphics;
+using OpenRA.Mods.Common.Orders;
 using OpenRA.Mods.Kknd.Traits.Production;
 
 namespace OpenRA.Mods.Kknd.Orders
 {
-	public class SellOrderGenerator : IOrderGenerator
+	public class SellOrderGenerator : OrderGenerator
 	{
 		public const string Id = "Sell";
 
 		private IEnumerable<TraitPair<DeconstructSellable>> sellableActors;
 
-		public IEnumerable<Order> Order(World world, CPos cell, int2 worldPixel, MouseInput mi)
+		protected override IEnumerable<Order> OrderInner(World world, CPos cell, int2 worldPixel, MouseInput mi)
 		{
 			if (mi.Button != Game.Settings.Game.MouseButtonPreference.Action)
 				world.CancelInputMode();
@@ -34,7 +35,7 @@ namespace OpenRA.Mods.Kknd.Orders
 			}
 		}
 
-		public virtual void Tick(World world)
+		protected override void Tick(World world)
 		{
 			sellableActors = world.ActorsWithTrait<DeconstructSellable>().Where(e => e.Actor.Owner == world.LocalPlayer && !e.Trait.IsTraitDisabled);
 
@@ -42,10 +43,11 @@ namespace OpenRA.Mods.Kknd.Orders
 				world.CancelInputMode();
 		}
 
-		public IEnumerable<IRenderable> Render(WorldRenderer wr, World world) { yield break; }
-		public IEnumerable<IRenderable> RenderAboveShroud(WorldRenderer wr, World world) { yield break; }
+		protected override IEnumerable<IRenderable> Render(WorldRenderer wr, World world) { yield break; }
+		protected override IEnumerable<IRenderable> RenderAboveShroud(WorldRenderer wr, World world) { yield break; }
+		protected override IEnumerable<IRenderable> RenderAnnotations(WorldRenderer wr, World world) { yield break; }
 
-		public string GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)
+		protected override string GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)
 		{
 			if (sellableActors == null)
 				return null;

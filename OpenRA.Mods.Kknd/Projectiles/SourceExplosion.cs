@@ -26,7 +26,7 @@ namespace OpenRA.Mods.Kknd.Projectiles
     {
         public SourceExplosion(ProjectileArgs args)
         {
-            args.Weapon.Impact(Target.FromPos(args.SourceActor.CenterPosition), args.SourceActor, args.DamageModifiers);
+            args.Weapon.Impact(Target.FromPos(args.SourceActor.CenterPosition), args.SourceActor);
         }
 
         public void Tick(World world) { }

@@ -10,6 +10,7 @@
 #endregion
 
 using OpenRA.Graphics;
+using OpenRA.Primitives;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.Kknd.Traits.Render
@@ -41,16 +42,16 @@ namespace OpenRA.Mods.Kknd.Traits.Render
 			this.info = info;
 		}
 
-		public void LoadPlayerPalettes(WorldRenderer wr, string playerName, HSLColor c, bool replaceExisting)
+		public void LoadPlayerPalettes(WorldRenderer wr, string playerName, Color c, bool replaceExisting)
 		{
 			var pal = new MutablePalette(wr.Palette(info.BasePalette).Palette);
 
 			foreach (var i in info.RemapIndex)
 			{
 				var bw = (float)(((pal[i] & 0xff) + ((pal[i] >> 8) & 0xff) + ((pal[i] >> 16) & 0xff)) / 3) / 0xff;
-				var dstR = bw > .5 ? 1 - (1 - 2 * (bw - .5)) * (1 - (float)c.RGB.R / 0xff) : 2 * bw * ((float)c.RGB.R / 0xff);
-				var dstG = bw > .5 ? 1 - (1 - 2 * (bw - .5)) * (1 - (float)c.RGB.G / 0xff) : 2 * bw * ((float)c.RGB.G / 0xff);
-				var dstB = bw > .5 ? 1 - (1 - 2 * (bw - .5)) * (1 - (float)c.RGB.B / 0xff) : 2 * bw * ((float)c.RGB.B / 0xff);
+				var dstR = bw > .5 ? 1 - (1 - 2 * (bw - .5)) * (1 - (float)c.R / 0xff) : 2 * bw * ((float)c.R / 0xff);
+				var dstG = bw > .5 ? 1 - (1 - 2 * (bw - .5)) * (1 - (float)c.G / 0xff) : 2 * bw * ((float)c.G / 0xff);
+				var dstB = bw > .5 ? 1 - (1 - 2 * (bw - .5)) * (1 - (float)c.B / 0xff) : 2 * bw * ((float)c.B / 0xff);
 				pal[i] = (pal[i] & 0xff000000) | ((uint)(dstR * 0xff) << 16) | ((uint)(dstG * 0xff) << 8) | (uint)(dstB * 0xff);
 			}
 

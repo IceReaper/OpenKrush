@@ -9,7 +9,7 @@
  */
 #endregion
 
-using OpenRA.Mods.Common.Traits.Docking;
+using OpenRA.Mods.Kknd.Traits.Docking;
 
 namespace OpenRA.Mods.Kknd.Traits.Repairbay
 {
