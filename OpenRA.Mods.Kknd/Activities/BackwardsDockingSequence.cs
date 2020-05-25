@@ -56,30 +56,43 @@ namespace OpenRA.Mods.Kknd.Activities
 
 		public override bool Tick(Actor self)
 		{
-			var lastActivity = ChildActivity;
-			var isComplete = ChildActivity.Tick(self);
-
-			if (!isComplete)
-				return false;
-
-			if (shouldCancel)
-				return true;
-
-			if (lastActivity is Move)
+			if (ChildActivity is Move)
 			{
+				var isComplete = ChildActivity.Tick(self);
+
+				if (!isComplete)
+					return false;
+
+				if (shouldCancel)
+					return true;
+
 				if ((dockableActor.World.Map.CellContaining(dockableActor.CenterPosition) - dockEntry).Length != 0)
 					QueueChild(new Move(dockableActor, dockEntry, WDist.Zero));
 				else
 					QueueChild(new Turn(dockableActor, dock.Info.Facing));
+
+				return false;
 			}
 
-			if (lastActivity is Turn)
+			if (ChildActivity is Turn)
+			{
+				var isComplete = ChildActivity.Tick(self);
+
+				if (!isComplete)
+					return false;
+
+				if (shouldCancel)
+					return true;
+
 				QueueChild(new Drag(dockableActor, dockableActor.World.Map.CenterOfCell(dockEntry), dockTarget, distance / speed));
 
-			return false;
+				return false;
+			}
+
+			return ChildActivity == null || ChildActivity.Tick(self);
 		}
 
-		public new bool Cancel(Actor self, bool keepQueue = false)
+		public override void Cancel(Actor self, bool keepQueue = false)
 		{
 			if (!shouldCancel)
 			{
@@ -90,8 +103,6 @@ namespace OpenRA.Mods.Kknd.Activities
 				else if (ChildActivity is Drag && isDocking)
 					QueueChild(new Drag(dockableActor, dockTarget, dockableActor.World.Map.CenterOfCell(dockEntry), distance / speed));
 			}
-
-			return false;
 		}
 	}
 }

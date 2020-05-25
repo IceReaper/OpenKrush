@@ -47,14 +47,13 @@ namespace OpenRA.Mods.Kknd.Activities
 			if (!shouldCancel && (DockActor == null || DockActor.IsDead || !DockActor.IsInWorld || Dock.GetDockAction(DockableActor) == null))
 				shouldCancel = true;
 
-			var isChildActivityRunning = ChildActivity != null;
-
-			if (isChildActivityRunning)
+			if (ChildActivity != null)
 			{
 				if (shouldCancel)
 					ChildActivity.Cancel(self);
-				else
-					isChildActivityRunning = !ChildActivity.Tick(self);
+
+				if (ChildActivity != null)
+					ChildActivity.Tick(self);
 			}
 
 			switch (DockingState)
@@ -67,7 +66,7 @@ namespace OpenRA.Mods.Kknd.Activities
 					}
 
 					// TODO does not null when target reached...?
-					if (isChildActivityRunning)
+					if (ChildActivity != null)
 						break;
 
 					var distance = (DockableActor.CenterPosition - DockActor.CenterPosition).Length;
@@ -92,7 +91,7 @@ namespace OpenRA.Mods.Kknd.Activities
 					break;
 
 				case DockingState.Docking:
-					if (!isChildActivityRunning)
+					if (ChildActivity == null)
 					{
 						if (shouldCancel)
 						{
@@ -115,7 +114,7 @@ namespace OpenRA.Mods.Kknd.Activities
 					break;
 
 				case DockingState.Undocking:
-					if (!isChildActivityRunning)
+					if (ChildActivity == null)
 					{
 						DockingState = DockingState.Undocked;
 						Dock.Remove(DockableActor);
@@ -134,7 +133,7 @@ namespace OpenRA.Mods.Kknd.Activities
 					break;
 			}
 
-			return DockingState == DockingState.Undocked && !isChildActivityRunning;
+			return DockingState == DockingState.Undocked && ChildActivity == null;
 		}
 
 		public void StartDocking()
@@ -153,10 +152,9 @@ namespace OpenRA.Mods.Kknd.Activities
 			QueueChild(dockingSequence);
 		}
 
-		public new bool Cancel(Actor self, bool keepQueue = false)
+		public override void Cancel(Actor self, bool keepQueue = false)
 		{
 			shouldCancel = true;
-			return false;
 		}
 	}
 }

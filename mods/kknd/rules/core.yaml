@@ -91,6 +91,8 @@
 	# No projectiles can pass through a construction.
 	BlocksProjectiles:
 		RequiresCondition: !selfconstructing && !deconstructing
+	# Show preview on placement.
+	ActorPreviewPlaceBuildingPreview:
 
 # Base for all buildings.
 ^CoreBuilding:

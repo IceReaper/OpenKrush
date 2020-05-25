@@ -1,551 +1,667 @@
-logos: uibits/chrome.png
-	logo: 0,0,591,249
+logos:
+	Image: uibits/chrome.png
+	Regions:
+		logo: 0,0,591,249
 
-order-icons: uibits/chrome.png
-	options: 304,32,32,32
-	options-hover: 336,32,32,32
-	options-active: 336,32,32,32
-	options-disabled: 304,32,32,32
+order-icons:
+	Image: uibits/chrome.png
+	Regions:
+		options: 304,32,32,32
+		options-hover: 336,32,32,32
+		options-active: 336,32,32,32
+		options-disabled: 304,32,32,32
 
-command-button: uibits/chrome.png
-	background: 332,428,34,41
-command-button-hover: uibits/chrome.png
-	background: 332,428,34,41
-command-button-pressed: uibits/chrome.png
-	background: 400,428,34,41
-command-button-highlighted: uibits/chrome.png
-	background: 400,428,34,41
-command-button-highlighted-hover: uibits/chrome.png
-	background: 400,428,34,41
-command-button-highlighted-pressed: uibits/chrome.png
-	background: 400,428,34,41
-command-button-disabled: uibits/chrome.png
-	background: 366,428,34,41
-command-button-highlighted-disabled: uibits/chrome.png
-	background: 366,428,34,41
+command-button:
+	Image: uibits/chrome.png
+	Regions:
+		background: 332,428,34,41
+command-button-hover:
+	Image: uibits/chrome.png
+	Regions:
+		background: 332,428,34,41
+command-button-pressed:
+	Image: uibits/chrome.png
+	Regions:
+		background: 400,428,34,41
+command-button-highlighted:
+	Image: uibits/chrome.png
+	Regions:
+		background: 400,428,34,41
+command-button-highlighted-hover:
+	Image: uibits/chrome.png
+	Regions:
+		background: 400,428,34,41
+command-button-highlighted-pressed:
+	Image: uibits/chrome.png
+	Regions:
+		background: 400,428,34,41
+command-button-disabled:
+	Image: uibits/chrome.png
+	Regions:
+		background: 366,428,34,41
+command-button-highlighted-disabled:
+	Image: uibits/chrome.png
+	Regions:
+		background: 366,428,34,41
 
-command-icons: uibits/chrome.png
-	attack-move: 408,144,26,26
-	attack-move-disabled: 408,170,26,26
-	force-move: 434,144,24,24
-	force-move-disabled: 434,170,26,26
-	force-attack: 460,144,26,26
-	force-attack-disabled: 460,170,26,26
-	guard: 486,144,24,24
-	guard-disabled: 486,170,26,26
-	deploy: 408,196,24,24
-	deploy-disabled: 408,222,26,26
-	scatter: 434,196,26,26
-	scatter-disabled: 434,222,26,26
-	stop: 460,196,26,26
-	stop-disabled: 460,222,26,26
-	queue-orders: 486,196,26,26
-	queue-orders-disabled: 486,222,26,26
+command-icons:
+	Image: uibits/chrome.png
+	Regions:
+		attack-move: 408,144,26,26
+		attack-move-disabled: 408,170,26,26
+		force-move: 434,144,24,24
+		force-move-disabled: 434,170,26,26
+		force-attack: 460,144,26,26
+		force-attack-disabled: 460,170,26,26
+		guard: 486,144,24,24
+		guard-disabled: 486,170,26,26
+		deploy: 408,196,24,24
+		deploy-disabled: 408,222,26,26
+		scatter: 434,196,26,26
+		scatter-disabled: 434,222,26,26
+		stop: 460,196,26,26
+		stop-disabled: 460,222,26,26
+		queue-orders: 486,196,26,26
+		queue-orders-disabled: 486,222,26,26
 
-stance-icons: uibits/chrome.png
-	attack-anything: 416,248,16,16
-	attack-anything-disabled: 432,248,16,16
-	attack-anything-active: 448,248,16,16
-	defend: 464,248,16,16
-	defend-disabled: 480,248,16,16
-	defend-active: 496,248,16,16
-	return-fire: 416,264,16,16
-	return-fire-disabled: 432,264,16,16
-	return-fire-active: 448,264,16,16
-	hold-fire: 464,264,16,16
-	hold-fire-disabled: 480,264,16,16
-	hold-fire-active: 496,264,16,16
+stance-icons:
+	Image: uibits/chrome.png
+	Regions:
+		attack-anything: 416,248,16,16
+		attack-anything-disabled: 432,248,16,16
+		attack-anything-active: 448,248,16,16
+		defend: 464,248,16,16
+		defend-disabled: 480,248,16,16
+		defend-active: 496,248,16,16
+		return-fire: 416,264,16,16
+		return-fire-disabled: 432,264,16,16
+		return-fire-active: 448,264,16,16
+		hold-fire: 464,264,16,16
+		hold-fire-disabled: 480,264,16,16
+		hold-fire-active: 496,264,16,16
 
-flags: uibits/buttons.png
-	survivors: 0,114,22,21
-	evolved: 22,114,23,21
-	Random: 67,114,23,21
-	spectator: 67,114,23,21
+flags:
+	Image: uibits/buttons.png
+	Regions:
+		survivors: 0,114,22,21
+		evolved: 22,114,23,21
+		Random: 67,114,23,21
+		spectator: 67,114,23,21
 
 # Used for the main menu background
-dialog: uibits/dialog.png
-	background: 29,25,386,185
-	border-r: 416,25,24,185
-	border-l: 3,25,25,185
-	border-b: 29,211,386,24
-	border-t: 29,0,386,24
-	corner-tl: 3,0,25,24
-	corner-tr: 416,0,24,24
-	corner-bl: 3,211,25,24
-	corner-br: 416,211,24,24
+dialog:
+	Image: uibits/dialog.png
+	Regions:
+		background: 29,25,386,185
+		border-r: 416,25,24,185
+		border-l: 3,25,25,185
+		border-b: 29,211,386,24
+		border-t: 29,0,386,24
+		corner-tl: 3,0,25,24
+		corner-tr: 416,0,24,24
+		corner-bl: 3,211,25,24
+		corner-br: 416,211,24,24
 
 # Same as a normal button
-dialog2: uibits/dialog.png
-	background: 12,281,164,26
-	border-r: 177,281,7,26
-	border-l: 3,281,8,26
-	border-b: 12,308,164,5
-	border-t: 12,275,164,5
-	corner-tl: 3,275,8,5
-	corner-tr: 177,275,7,5
-	corner-bl: 3,308,8,5
-	corner-br: 177,308,7,5
+dialog2:
+	Image: uibits/dialog.png
+	Regions:
+		background: 12,281,164,26
+		border-r: 177,281,7,26
+		border-l: 3,281,8,26
+		border-b: 12,308,164,5
+		border-t: 12,275,164,5
+		corner-tl: 3,275,8,5
+		corner-tr: 177,275,7,5
+		corner-bl: 3,308,8,5
+		corner-br: 177,308,7,5
 
 # Same as a pressed button (it seems to affect mini map background, asset browser background, and most of the main buttons)
-dialog3: uibits/dialog.png
-	background: 642,2,124,124
-	border-r: 766,2,2,124
-	border-l: 640,2,2,124
-	border-b: 642,126,124,2
-	border-t: 642,0,124,2
-	corner-tl: 640,0,2,2
-	corner-tr: 766,0,2,2
-	corner-bl: 640,126,2,2
-	corner-br: 766,126,2,2
+dialog3:
+	Image: uibits/dialog.png
+	Regions:
+		background: 642,2,124,124
+		border-r: 766,2,2,124
+		border-l: 640,2,2,124
+		border-b: 642,126,124,2
+		border-t: 642,0,124,2
+		corner-tl: 640,0,2,2
+		corner-tr: 766,0,2,2
+		corner-bl: 640,126,2,2
+		corner-br: 766,126,2,2
 
-tooltip-separator: uibits/dialog.png
-	border-t: 641,0,126,1
+tooltip-separator:
+	Image: uibits/dialog.png
+	Regions:
+		border-t: 641,0,126,1
 
-sidebar-bits: uibits/chrome.png
-	production-tooltip-time: 480,112,16,16
-	production-tooltip-power: 496,112,16,16
-	production-tooltip-cost: 464,112,16,16
+sidebar-bits:
+	Image: uibits/chrome.png
+	Regions:
+		production-tooltip-time: 480,112,16,16
+		production-tooltip-power: 496,112,16,16
+		production-tooltip-cost: 464,112,16,16
 
 # Same as the half transparent frame used in the Asset Browser (used for main buttons)
-dialog4: uibits/dialog.png
-	background: 29,25,386,185
-	border-r: 416,25,24,185
-	border-l: 3,25,25,185
-	border-b: 29,211,386,24
-	border-t: 29,0,386,24
-	corner-tl: 3,0,25,24
-	corner-tr: 416,0,24,24
-	corner-bl: 3,211,25,24
-	corner-br: 416,211,24,24
+dialog4:
+	Image: uibits/dialog.png
+	Regions:
+		background: 29,25,386,185
+		border-r: 416,25,24,185
+		border-l: 3,25,25,185
+		border-b: 29,211,386,24
+		border-t: 29,0,386,24
+		corner-tl: 3,0,25,24
+		corner-tr: 416,0,24,24
+		corner-bl: 3,211,25,24
+		corner-br: 416,211,24,24
 
-lobby-bits: uibits/buttons.png
-	spawn-unclaimed: 158,5,23,22
-	spawn-claimed: 126,5,23,22
-	admin: 186,5,7,5
-	colorpicker: 126,5,23,22
-	huepicker: 193,0,7,15
-	protected: 200,0,12,13
-	protected-disabled: 211,0,12,13
-	admin-registered: 224,0,16,16
-	admin-anonymous: 240,0,16,16
-	player-registered: 224,16,16,16
-	player-anonymous: 240,16,16,16
+lobby-bits:
+	Image: uibits/buttons.png
+	Regions:
+		spawn-unclaimed: 158,5,23,22
+		spawn-claimed: 126,5,23,22
+		admin: 186,5,7,5
+		colorpicker: 126,5,23,22
+		huepicker: 193,0,7,15
+		protected: 200,0,12,13
+		protected-disabled: 211,0,12,13
+		admin-registered: 224,0,16,16
+		admin-anonymous: 240,0,16,16
+		player-registered: 224,16,16,16
+		player-anonymous: 240,16,16,16
 
-reload-icon: uibits/chrome.png
-	enabled: 416,312,16,16
-	disabled-0: 416,280,16,16
-	disabled-1: 432,280,16,16
-	disabled-2: 448,280,16,16
-	disabled-3: 464,280,16,16
-	disabled-4: 480,280,16,16
-	disabled-5: 496,280,16,16
-	disabled-6: 416,296,16,16
-	disabled-7: 432,296,16,16
-	disabled-8: 448,296,16,16
-	disabled-9: 464,296,16,16
-	disabled-10: 480,296,16,16
-	disabled-11: 496,296,16,16
+reload-icon:
+	Image: uibits/chrome.png
+	Regions:
+		enabled: 416,312,16,16
+		disabled-0: 416,280,16,16
+		disabled-1: 432,280,16,16
+		disabled-2: 448,280,16,16
+		disabled-3: 464,280,16,16
+		disabled-4: 480,280,16,16
+		disabled-5: 496,280,16,16
+		disabled-6: 416,296,16,16
+		disabled-7: 432,296,16,16
+		disabled-8: 448,296,16,16
+		disabled-9: 464,296,16,16
+		disabled-10: 480,296,16,16
+		disabled-11: 496,296,16,16
 
-strategic: buttons.png
-	unowned: 127,5,23,22
-	critical_unowned: 127,27,23,22
-	enemy_owned: 159,27,23,22
-	player_owned: 159,49,23,22
+strategic:
+	Image: buttons.png
+	Regions:
+		unowned: 127,5,23,22
+		critical_unowned: 127,27,23,22
+		enemy_owned: 159,27,23,22
+		player_owned: 159,49,23,22
 
-music: uibits/buttons.png
-	pause: 0,193,25,25
-	stop: 25,193,25,25
-	play: 55,193,25,25
-	next: 82,193,25,25
-	prev: 110,193,25,25
-	fastforward: 131,193,25,25
-	slowmo: 159,193,25,25
+music:
+	Image: uibits/buttons.png
+	Regions:
+		pause: 0,193,25,25
+		stop: 25,193,25,25
+		play: 55,193,25,25
+		next: 82,193,25,25
+		prev: 110,193,25,25
+		fastforward: 131,193,25,25
+		slowmo: 159,193,25,25
 
-scrollbar: uibits/buttons.png
-	down_arrow: 16,140,16,16
-	down_pressed: 16,140,16,16
-	up_arrow: 32,140,16,16
-	up_pressed: 32,140,16,16
+scrollbar:
+	Image: uibits/buttons.png
+	Regions:
+		down_arrow: 16,140,16,16
+		down_pressed: 16,140,16,16
+		up_arrow: 32,140,16,16
+		up_pressed: 32,140,16,16
 
 # A copy of dialog3 (pressed button)
-progressbar-bg: uibits/dialog.png
-	background: 642,2,124,124
-	border-r: 766,2,2,124
-	border-l: 640,2,2,124
-	border-b: 642,126,124,2
-	border-t: 642,0,124,2
-	corner-tl: 640,0,2,2
-	corner-tr: 766,0,2,2
-	corner-bl: 640,126,2,2
-	corner-br: 766,126,2,2
+progressbar-bg:
+	Image: uibits/dialog.png
+	Regions:
+		background: 642,2,124,124
+		border-r: 766,2,2,124
+		border-l: 640,2,2,124
+		border-b: 642,126,124,2
+		border-t: 642,0,124,2
+		corner-tl: 640,0,2,2
+		corner-tr: 766,0,2,2
+		corner-bl: 640,126,2,2
+		corner-br: 766,126,2,2
 
 # A copy of dialog2 (normal button)
-progressbar-thumb: uibits/dialog.png
-	background: 12,281,164,26
-	border-r: 177,281,7,26
-	border-l: 3,281,8,26
-	border-b: 12,308,164,5
-	border-t: 12,275,164,5
-	corner-tl: 3,275,8,5
-	corner-tr: 177,275,7,5
-	corner-bl: 3,308,8,5
-	corner-br: 177,308,7,5
+progressbar-thumb:
+	Image: uibits/dialog.png
+	Regions:
+		background: 12,281,164,26
+		border-r: 177,281,7,26
+		border-l: 3,281,8,26
+		border-b: 12,308,164,5
+		border-t: 12,275,164,5
+		corner-tl: 3,275,8,5
+		corner-tr: 177,275,7,5
+		corner-bl: 3,308,8,5
+		corner-br: 177,308,7,5
 
 # A copy of dialog2 (normal button)
-button: uibits/dialog.png
-	background: 12,281,164,26
-	border-r: 177,281,7,26
-	border-l: 4,281,7,26
-	border-b: 12,308,164,5
-	border-t: 12,275,164,5
-	corner-tl: 4,275,7,5
-	corner-tr: 177,275,7,5
-	corner-bl: 4,308,7,5
-	corner-br: 177,308,7,5
+button:
+	Image: uibits/dialog.png
+	Regions:
+		background: 12,281,164,26
+		border-r: 177,281,7,26
+		border-l: 4,281,7,26
+		border-b: 12,308,164,5
+		border-t: 12,275,164,5
+		corner-tl: 4,275,7,5
+		corner-tr: 177,275,7,5
+		corner-bl: 4,308,7,5
+		corner-br: 177,308,7,5
 
 # 5% lighter than a normal button
-button-hover: uibits/dialog.png
-	background: 12,326,164,26
-	border-r: 177,326,7,26
-	border-l: 4,326,7,26
-	border-b: 12,353,164,5
-	border-t: 12,320,164,5
-	corner-tl: 4,320,7,5
-	corner-tr: 177,320,7,5
-	corner-bl: 4,353,7,5
-	corner-br: 177,353,7,5
+button-hover:
+	Image: uibits/dialog.png
+	Regions:
+		background: 12,326,164,26
+		border-r: 177,326,7,26
+		border-l: 4,326,7,26
+		border-b: 12,353,164,5
+		border-t: 12,320,164,5
+		corner-tl: 4,320,7,5
+		corner-tr: 177,320,7,5
+		corner-bl: 4,353,7,5
+		corner-br: 177,353,7,5
 
 # A copy of dialog3 (pressed button) (the main menu buttons)
-button-pressed: uibits/dialog.png
-	background: 197,281,164,26
-	border-r: 362,281,7,26
-	border-l: 189,281,7,26
-	border-b: 197,308,164,5
-	border-t: 197,275,164,5
-	corner-tl: 189,275,7,5
-	corner-tr: 362,275,7,5
-	corner-bl: 189,308,7,5
-	corner-br: 362,308,7,5
+button-pressed:
+	Image: uibits/dialog.png
+	Regions:
+		background: 197,281,164,26
+		border-r: 362,281,7,26
+		border-l: 189,281,7,26
+		border-b: 197,308,164,5
+		border-t: 197,275,164,5
+		corner-tl: 189,275,7,5
+		corner-tr: 362,275,7,5
+		corner-bl: 189,308,7,5
+		corner-br: 362,308,7,5
 
 # 10% darker than a normal button
-button-disabled: uibits/dialog.png
-	background: 12,371,164,26
-	border-r: 177,371,7,26
-	border-l: 4,371,7,26
-	border-b: 12,398,164,5
-	border-t: 12,365,164,5
-	corner-tl: 4,365,7,5
-	corner-tr: 177,365,7,5
-	corner-bl: 4,398,7,5
-	corner-br: 177,398,7,5
+button-disabled:
+	Image: uibits/dialog.png
+	Regions:
+		background: 12,371,164,26
+		border-r: 177,371,7,26
+		border-l: 4,371,7,26
+		border-b: 12,398,164,5
+		border-t: 12,365,164,5
+		corner-tl: 4,365,7,5
+		corner-tr: 177,365,7,5
+		corner-bl: 4,398,7,5
+		corner-br: 177,398,7,5
 
 # A yellow (normal) button (this is pressed button for Players, Options and Music)
-button-highlighted: uibits/dialog.png
-	background: 12,326,164,26
-	border-r: 177,326,7,26
-	border-l: 4,326,7,26
-	border-b: 12,353,164,5
-	border-t: 12,320,164,5
-	corner-tl: 4,320,7,5
-	corner-tr: 177,320,7,5
-	corner-bl: 4,353,7,5
-	corner-br: 177,353,7,5
+button-highlighted:
+	Image: uibits/dialog.png
+	Regions:
+		background: 12,326,164,26
+		border-r: 177,326,7,26
+		border-l: 4,326,7,26
+		border-b: 12,353,164,5
+		border-t: 12,320,164,5
+		corner-tl: 4,320,7,5
+		corner-tr: 177,320,7,5
+		corner-bl: 4,353,7,5
+		corner-br: 177,353,7,5
 
 # A copy of button-highlighted
-button-highlighted-hover: uibits/dialog.png
-	background: 12,326,164,26
-	border-r: 177,326,7,26
-	border-l: 4,326,7,26
-	border-b: 12,353,164,5
-	border-t: 12,320,164,5
-	corner-tl: 4,320,7,5
-	corner-tr: 177,320,7,5
-	corner-bl: 4,353,7,5
-	corner-br: 177,353,7,5
+button-highlighted-hover:
+	Image: uibits/dialog.png
+	Regions:
+		background: 12,326,164,26
+		border-r: 177,326,7,26
+		border-l: 4,326,7,26
+		border-b: 12,353,164,5
+		border-t: 12,320,164,5
+		corner-tl: 4,320,7,5
+		corner-tr: 177,320,7,5
+		corner-bl: 4,353,7,5
+		corner-br: 177,353,7,5
 
 #background of chat where you actually write something (when button [Player/Option/Music] in lobby is hovered (previously already active) and pressed)
-button-highlighted-pressed: uibits/dialog.png
-	background: 12,371,164,26
-	border-r: 177,371,7,26
-	border-l: 4,371,7,26
-	border-b: 12,398,164,5
-	border-t: 12,365,164,5
-	corner-tl: 4,365,7,5
-	corner-tr: 177,365,7,5
-	corner-bl: 4,398,7,5
-	corner-br: 177,398,7,5
+button-highlighted-pressed:
+	Image: uibits/dialog.png
+	Regions:
+		background: 12,371,164,26
+		border-r: 177,371,7,26
+		border-l: 4,371,7,26
+		border-b: 12,398,164,5
+		border-t: 12,365,164,5
+		corner-tl: 4,365,7,5
+		corner-tr: 177,365,7,5
+		corner-bl: 4,398,7,5
+		corner-br: 177,398,7,5
 
 # A copy of button-highlighted (similar as above, just you don't get anything when clicking already active option, hence it's more darker)
-button-highlighted-disabled: uibits/dialog.png
-	background: 642,258,124,124
-	border-r: 766,258,2,124
-	border-l: 640,258,2,124
-	border-b: 642,382,124,2
-	border-t: 642,256,124,2
-	corner-tl: 640,256,2,2
-	corner-tr: 766,256,2,2
-	corner-bl: 640,382,2,2
-	corner-br: 766,382,2,2
+button-highlighted-disabled:
+	Image: uibits/dialog.png
+	Regions:
+		background: 642,258,124,124
+		border-r: 766,258,2,124
+		border-l: 640,258,2,124
+		border-b: 642,382,124,2
+		border-t: 642,256,124,2
+		corner-tl: 640,256,2,2
+		corner-tr: 766,256,2,2
+		corner-bl: 640,382,2,2
+		corner-br: 766,382,2,2
 
 # A copy of dialog3 (pressed button)
-textfield: uibits/dialog.png
-	background: 642,2,124,124
-	border-r: 766,2,2,124
-	border-l: 640,2,2,124
-	border-b: 642,126,124,2
-	border-t: 642,0,124,2
-	corner-tl: 640,0,2,2
-	corner-tr: 766,0,2,2
-	corner-bl: 640,126,2,2
-	corner-br: 766,126,2,2
+textfield:
+	Image: uibits/dialog.png
+	Regions:
+		background: 642,2,124,124
+		border-r: 766,2,2,124
+		border-l: 640,2,2,124
+		border-b: 642,126,124,2
+		border-t: 642,0,124,2
+		corner-tl: 640,0,2,2
+		corner-tr: 766,0,2,2
+		corner-bl: 640,126,2,2
+		corner-br: 766,126,2,2
 
 # A copy of checkbox-hover
-textfield-hover: uibits/dialog.png
-	background: 642,130,124,124
-	border-r: 766,130,2,124
-	border-l: 640,130,2,124
-	border-b: 642,254,124,2
-	border-t: 642,128,124,2
-	corner-tl: 640,128,2,2
-	corner-tr: 766,128,2,2
-	corner-bl: 640,254,2,2
-	corner-br: 766,254,2,2
+textfield-hover:
+	Image: uibits/dialog.png
+	Regions:
+		background: 642,130,124,124
+		border-r: 766,130,2,124
+		border-l: 640,130,2,124
+		border-b: 642,254,124,2
+		border-t: 642,128,124,2
+		corner-tl: 640,128,2,2
+		corner-tr: 766,128,2,2
+		corner-bl: 640,254,2,2
+		corner-br: 766,254,2,2
 
 # A copy of dialog3 (pressed button)
-textfield-disabled: uibits/dialog.png
-	background: 642,258,124,124
-	border-r: 766,258,2,124
-	border-l: 640,258,2,124
-	border-b: 642,382,124,2
-	border-t: 642,256,124,2
-	corner-tl: 640,256,2,2
-	corner-tr: 766,256,2,2
-	corner-bl: 640,382,2,2
-	corner-br: 766,382,2,2
+textfield-disabled:
+	Image: uibits/dialog.png
+	Regions:
+		background: 642,258,124,124
+		border-r: 766,258,2,124
+		border-l: 640,258,2,124
+		border-b: 642,382,124,2
+		border-t: 642,256,124,2
+		corner-tl: 640,256,2,2
+		corner-tr: 766,256,2,2
+		corner-bl: 640,382,2,2
+		corner-br: 766,382,2,2
 
 # A copy of dialog3 (pressed button) ???????
-textfield-focused: uibits/dialog.png
-	background: 642,2,124,124
-	border-r: 766,2,2,124
-	border-l: 640,2,2,124
-	border-b: 642,126,124,2
-	border-t: 642,0,124,2
-	corner-tl: 640,0,2,2
-	corner-tr: 766,0,2,2
-	corner-bl: 640,126,2,2
-	corner-br: 766,126,2,2
+textfield-focused:
+	Image: uibits/dialog.png
+	Regions:
+		background: 642,2,124,124
+		border-r: 766,2,2,124
+		border-l: 640,2,2,124
+		border-b: 642,126,124,2
+		border-t: 642,0,124,2
+		corner-tl: 640,0,2,2
+		corner-tr: 766,0,2,2
+		corner-bl: 640,126,2,2
+		corner-br: 766,126,2,2
 
 # A copy of dialog3 (pressed button) Scroll panel background
-scrollpanel-bg: uibits/dialog.png
-	background: 642,2,124,124
-	border-r: 766,2,2,124
-	border-l: 640,2,2,124
-	border-b: 642,126,124,2
-	border-t: 642,0,124,2
-	corner-tl: 640,0,2,2
-	corner-tr: 766,0,2,2
-	corner-bl: 640,126,2,2
-	corner-br: 766,126,2,2
+scrollpanel-bg:
+	Image: uibits/dialog.png
+	Regions:
+		background: 642,2,124,124
+		border-r: 766,2,2,124
+		border-l: 640,2,2,124
+		border-b: 642,126,124,2
+		border-t: 642,0,124,2
+		corner-tl: 640,0,2,2
+		corner-tr: 766,0,2,2
+		corner-bl: 640,126,2,2
+		corner-br: 766,126,2,2
 
 # A copy of dialog2 (normal button) (scroll button in asset browser)
-scrollpanel-button: uibits/dialog.png
-	background: 193,368,10,20
-	border-r: 204,368,4,20
-	border-l: 188,368,4,20
-	border-b: 193,389,10,2
-	border-t: 193,365,10,2
-	corner-tl: 188,365,4,2
-	corner-tr: 204,365,4,2
-	corner-bl: 188,389,4,2
-	corner-br: 204,389,4,2
+scrollpanel-button:
+	Image: uibits/dialog.png
+	Regions:
+		background: 193,368,10,20
+		border-r: 204,368,4,20
+		border-l: 188,368,4,20
+		border-b: 193,389,10,2
+		border-t: 193,365,10,2
+		corner-tl: 188,365,4,2
+		corner-tr: 204,365,4,2
+		corner-bl: 188,389,4,2
+		corner-br: 204,389,4,2
 
 # A copy of button-hover (scroll button highlighted)
-scrollpanel-button-hover: uibits/dialog.png
-	background: 217,368,10,20
-	border-r: 228,368,4,20
-	border-l: 212,368,4,20
-	border-b: 217,389,10,2
-	border-t: 217,365,10,2
-	corner-tl: 212,365,4,2
-	corner-tr: 228,365,4,2
-	corner-bl: 212,389,4,2
-	corner-br: 228,389,4,2
+scrollpanel-button-hover:
+	Image: uibits/dialog.png
+	Regions:
+		background: 217,368,10,20
+		border-r: 228,368,4,20
+		border-l: 212,368,4,20
+		border-b: 217,389,10,2
+		border-t: 217,365,10,2
+		corner-tl: 212,365,4,2
+		corner-tr: 228,365,4,2
+		corner-bl: 212,389,4,2
+		corner-br: 228,389,4,2
 
 # A copy of dialog3 (pressed button)
-scrollpanel-button-pressed: uibits/dialog.png
-	background: 241,368,10,20
-	border-r: 252,368,4,20
-	border-l: 236,368,4,20
-	border-b: 241,389,10,2
-	border-t: 241,365,10,2
-	corner-tl: 236,365,4,2
-	corner-tr: 252,365,4,2
-	corner-bl: 236,389,4,2
-	corner-br: 252,389,4,2
+scrollpanel-button-pressed:
+	Image: uibits/dialog.png
+	Regions:
+		background: 241,368,10,20
+		border-r: 252,368,4,20
+		border-l: 236,368,4,20
+		border-b: 241,389,10,2
+		border-t: 241,365,10,2
+		corner-tl: 236,365,4,2
+		corner-tr: 252,365,4,2
+		corner-bl: 236,389,4,2
+		corner-br: 252,389,4,2
 
 # A copy of dialog2 (normal button)
-scrollpanel-button-disabled: uibits/dialog.png
-	background: 241,368,10,20
-	border-r: 252,368,4,20
-	border-l: 236,368,4,20
-	border-b: 241,389,10,2
-	border-t: 241,365,10,2
-	corner-tl: 236,365,4,2
-	corner-tr: 252,365,4,2
-	corner-bl: 236,389,4,2
-	corner-br: 252,389,4,2
+scrollpanel-button-disabled:
+	Image: uibits/dialog.png
+	Regions:
+		background: 241,368,10,20
+		border-r: 252,368,4,20
+		border-l: 236,368,4,20
+		border-b: 241,389,10,2
+		border-t: 241,365,10,2
+		corner-tl: 236,365,4,2
+		corner-tr: 252,365,4,2
+		corner-bl: 236,389,4,2
+		corner-br: 252,389,4,2
 
-slider: uibits/dialog.png
-	tick: 512,1,2,4
+slider:
+	Image: uibits/dialog.png
+	Regions:
+		tick: 512,1,2,4
 
 # A copy of dialog3 (pressed button) This is the slider track in music menu
-slider-track: uibits/dialog.png
-	background: 192,324,129,2
-	border-r: 322,324,2,2
-	border-l: 189,324,2,2
-	border-b: 192,327,129,2
-	border-t: 192,321,129,2
-	corner-tl: 189,321,2,2
-	corner-tr: 322,321,2,2
-	corner-bl: 189,327,2,2
-	corner-br: 322,327,2,2
+slider-track:
+	Image: uibits/dialog.png
+	Regions:
+		background: 192,324,129,2
+		border-r: 322,324,2,2
+		border-l: 189,324,2,2
+		border-b: 192,327,129,2
+		border-t: 192,321,129,2
+		corner-tl: 189,321,2,2
+		corner-tr: 322,321,2,2
+		corner-bl: 189,327,2,2
+		corner-br: 322,327,2,2
 
 # A copy of dialog2 (normal button) This is the slider  in music menu
-slider-thumb: uibits/dialog.png
-	background: 193,368,10,20
-	border-r: 204,368,4,20
-	border-l: 188,368,4,20
-	border-b: 193,389,10,2
-	border-t: 193,365,10,2
-	corner-tl: 188,365,4,2
-	corner-tr: 204,365,4,2
-	corner-bl: 188,389,4,2
-	corner-br: 204,389,4,2
+slider-thumb:
+	Image: uibits/dialog.png
+	Regions:
+		background: 193,368,10,20
+		border-r: 204,368,4,20
+		border-l: 188,368,4,20
+		border-b: 193,389,10,2
+		border-t: 193,365,10,2
+		corner-tl: 188,365,4,2
+		corner-tr: 204,365,4,2
+		corner-bl: 188,389,4,2
+		corner-br: 204,389,4,2
 
 # A copy of button-hover This is the slider in music menu
-slider-thumb-hover: uibits/dialog.png
-	background: 217,368,10,20
-	border-r: 228,368,4,20
-	border-l: 212,368,4,20
-	border-b: 217,389,10,2
-	border-t: 217,365,10,2
-	corner-tl: 212,365,4,2
-	corner-tr: 228,365,4,2
-	corner-bl: 212,389,4,2
-	corner-br: 228,389,4,2
+slider-thumb-hover:
+	Image: uibits/dialog.png
+	Regions:
+		background: 217,368,10,20
+		border-r: 228,368,4,20
+		border-l: 212,368,4,20
+		border-b: 217,389,10,2
+		border-t: 217,365,10,2
+		corner-tl: 212,365,4,2
+		corner-tr: 228,365,4,2
+		corner-bl: 212,389,4,2
+		corner-br: 228,389,4,2
 
 # A copy of dialog3 (pressed button) This is the slider in music menu
-slider-thumb-pressed: uibits/dialog.png
-	background: 241,368,10,20
-	border-r: 252,368,4,20
-	border-l: 236,368,4,20
-	border-b: 241,389,10,2
-	border-t: 241,365,10,2
-	corner-tl: 236,365,4,2
-	corner-tr: 252,365,4,2
-	corner-bl: 236,389,4,2
-	corner-br: 252,389,4,2
+slider-thumb-pressed:
+	Image: uibits/dialog.png
+	Regions:
+		background: 241,368,10,20
+		border-r: 252,368,4,20
+		border-l: 236,368,4,20
+		border-b: 241,389,10,2
+		border-t: 241,365,10,2
+		corner-tl: 236,365,4,2
+		corner-tr: 252,365,4,2
+		corner-bl: 236,389,4,2
+		corner-br: 252,389,4,2
 
 # A copy of dialog2 (normal button)
-slider-thumb-disabled: uibits/dialog.png
-	background: 241,368,10,20
-	border-r: 252,368,4,20
-	border-l: 236,368,4,20
-	border-b: 241,389,10,2
-	border-t: 241,365,10,2
-	corner-tl: 236,365,4,2
-	corner-tr: 252,365,4,2
-	corner-bl: 236,389,4,2
-	corner-br: 252,389,4,2
+slider-thumb-disabled:
+	Image: uibits/dialog.png
+	Regions:
+		background: 241,368,10,20
+		border-r: 252,368,4,20
+		border-l: 236,368,4,20
+		border-b: 241,389,10,2
+		border-t: 241,365,10,2
+		corner-tl: 236,365,4,2
+		corner-tr: 252,365,4,2
+		corner-bl: 236,389,4,2
+		corner-br: 252,389,4,2
 
 # A copy of dialog3 (pressed button)
-checkbox: uibits/dialog.png
-	background: 642,2,124,124
-	border-r: 766,2,2,124
-	border-l: 640,2,2,124
-	border-b: 642,126,124,2
-	border-t: 642,0,124,2
-	corner-tl: 640,0,2,2
-	corner-tr: 766,0,2,2
-	corner-bl: 640,126,2,2
-	corner-br: 766,126,2,2
+checkbox:
+	Image: uibits/dialog.png
+	Regions:
+		background: 642,2,124,124
+		border-r: 766,2,2,124
+		border-l: 640,2,2,124
+		border-b: 642,126,124,2
+		border-t: 642,0,124,2
+		corner-tl: 640,0,2,2
+		corner-tr: 766,0,2,2
+		corner-bl: 640,126,2,2
+		corner-br: 766,126,2,2
 
-checkbox-bits: uibits/buttons.png
-	checked: 0,157,16,16
-	checked-disabled: 0,173,16,16
-	crossed: 16,157,16,16
-	crossed-disabled: 16,173,16,16
+checkbox-bits:
+	Image: uibits/buttons.png
+	Regions:
+		checked: 0,157,16,16
+		checked-disabled: 0,173,16,16
+		crossed: 16,157,16,16
+		crossed-disabled: 16,173,16,16
 
-checkbox-hover: uibits/dialog.png
-	background: 642,130,124,124
-	border-r: 766,130,2,124
-	border-l: 640,130,2,124
-	border-b: 642,254,124,2
-	border-t: 642,128,124,2
-	corner-tl: 640,128,2,2
-	corner-tr: 766,128,2,2
-	corner-bl: 640,254,2,2
-	corner-br: 766,254,2,2
+checkbox-hover:
+	Image: uibits/dialog.png
+	Regions:
+		background: 642,130,124,124
+		border-r: 766,130,2,124
+		border-l: 640,130,2,124
+		border-b: 642,254,124,2
+		border-t: 642,128,124,2
+		corner-tl: 640,128,2,2
+		corner-tr: 766,128,2,2
+		corner-bl: 640,254,2,2
+		corner-br: 766,254,2,2
 
 # Same as a button-disabled-pressed
-checkbox-disabled: uibits/dialog.png
-	background: 642,258,124,124
-	border-r: 766,258,2,124
-	border-l: 640,258,2,124
-	border-b: 642,382,124,2
-	border-t: 642,256,124,2
-	corner-tl: 640,256,2,2
-	corner-tr: 766,256,2,2
-	corner-bl: 640,382,2,2
-	corner-br: 766,382,2,2
+checkbox-disabled:
+	Image: uibits/dialog.png
+	Regions:
+		background: 642,258,124,124
+		border-r: 766,258,2,124
+		border-l: 640,258,2,124
+		border-b: 642,382,124,2
+		border-t: 642,256,124,2
+		corner-tl: 640,256,2,2
+		corner-tr: 766,256,2,2
+		corner-bl: 640,382,2,2
+		corner-br: 766,382,2,2
 
 # Same as button-highlighted-pressed
-checkbox-highlighted: uibits/dialog.png
-	background: 897,1,126,126
-	border-r: 1023,1,1,126
-	border-l: 896,1,1,126
-	border-b: 897,127,126,1
-	border-t: 897,0,126,1
-	corner-tl: 896,0,1,1
-	corner-tr: 1023,0,1,1
-	corner-bl: 896,127,1,1
-	corner-br: 1023,127,1,1
+checkbox-highlighted:
+	Image: uibits/dialog.png
+	Regions:
+		background: 897,1,126,126
+		border-r: 1023,1,1,126
+		border-l: 896,1,1,126
+		border-b: 897,127,126,1
+		border-t: 897,0,126,1
+		corner-tl: 896,0,1,1
+		corner-tr: 1023,0,1,1
+		corner-bl: 896,127,1,1
+		corner-br: 1023,127,1,1
 
 # A copy of dialog3 (pressed button) buttons/items when you select CPU or player
-scrollitem-selected: uibits/dialog.png
-	background: 513,2,124,124
-	border-r: 637,2,2,124
-	border-l: 511,2,2,124
-	border-b: 513,126,124,2
-	border-t: 513,0,124,2
-	corner-tl: 511,0,2,2
-	corner-tr: 637,0,2,2
-	corner-bl: 511,126,2,2
-	corner-br: 637,126,2,2
+scrollitem-selected:
+	Image: uibits/dialog.png
+	Regions:
+		background: 513,2,124,124
+		border-r: 637,2,2,124
+		border-l: 511,2,2,124
+		border-b: 513,126,124,2
+		border-t: 513,0,124,2
+		corner-tl: 511,0,2,2
+		corner-tr: 637,0,2,2
+		corner-bl: 511,126,2,2
+		corner-br: 637,126,2,2
 
 # A copy of dialog2 (normal button) buttons/items when you select CPU or player
-scrollitem-hover: uibits/dialog.png
-	background: 642,130,124,124
-	border-r: 766,130,2,124
-	border-l: 640,130,2,124
-	border-b: 642,254,124,2
-	border-t: 642,128,124,2
-	corner-tl: 640,128,2,2
-	corner-tr: 766,128,2,2
-	corner-bl: 640,254,2,2
-	corner-br: 766,254,2,2
+scrollitem-hover:
+	Image: uibits/dialog.png
+	Regions:
+		background: 642,130,124,124
+		border-r: 766,130,2,124
+		border-l: 640,130,2,124
+		border-b: 642,254,124,2
+		border-t: 642,128,124,2
+		corner-tl: 640,128,2,2
+		corner-tr: 766,128,2,2
+		corner-bl: 640,254,2,2
+		corner-br: 766,254,2,2
 
 # A copy of dialog2 (normal button) buttons/items when you select CPU or player
-scrollheader-selected: uibits/dialog.png
-	background: 513,2,124,124
-	border-r: 637,2,2,124
-	border-l: 511,2,2,124
-	border-b: 513,126,124,2
-	border-t: 513,0,124,2
-	corner-tl: 511,0,2,2
-	corner-tr: 637,0,2,2
-	corner-bl: 511,126,2,2
-	corner-br: 637,126,2,2
+scrollheader-selected:
+	Image: uibits/dialog.png
+	Regions:
+		background: 513,2,124,124
+		border-r: 637,2,2,124
+		border-l: 511,2,2,124
+		border-b: 513,126,124,2
+		border-t: 513,0,124,2
+		corner-tl: 511,0,2,2
+		corner-tr: 637,0,2,2
+		corner-bl: 511,126,2,2
+		corner-br: 637,126,2,2
 
-dropdown: uibits/dialog.png
-	separator: 512,1,1,19
+dropdown:
+	Image: uibits/dialog.png
+	Regions:
+		separator: 512,1,1,19

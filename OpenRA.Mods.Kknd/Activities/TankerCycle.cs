@@ -9,7 +9,6 @@
  */
 #endregion
 
-using OpenRA.Activities;
 using OpenRA.Mods.Kknd.Traits.Docking;
 using OpenRA.Mods.Kknd.Traits.Resources;
 
@@ -43,8 +42,8 @@ namespace OpenRA.Mods.Kknd.Activities
 			if (!abortByCancel && shouldCancel)
 				shouldCancel = false;
 
-			if (!result || shouldCancel)
-				return result;
+			if (result || shouldCancel)
+				return true;
 
 			var tanker = (Tanker)Dockable;
 
@@ -76,10 +75,10 @@ namespace OpenRA.Mods.Kknd.Activities
 			return false;
 		}
 
-		public new bool Cancel(Actor self, bool keepQueue = false)
+		public override void Cancel(Actor self, bool keepQueue = false)
 		{
 			abortByCancel = true;
-			return base.Cancel(self, keepQueue);
+			base.Cancel(self, keepQueue);
 		}
 	}
 }

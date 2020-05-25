@@ -32,7 +32,7 @@ namespace OpenRA.Mods.Kknd.Traits.Render
 		public object Create(ActorInitializer init) { return new AdvancedSelectionDecorations(this); }
 	}
 
-	public class AdvancedSelectionDecorations : ISelectionDecorations, IRenderAboveShroud, INotifyCreated, INotifyOwnerChanged
+	public class AdvancedSelectionDecorations : ISelectionDecorations, IRenderAnnotations, INotifyCreated, INotifyOwnerChanged
 	{
 		private AdvancedSelectionDecorationsInfo info;
 		private StatusBar statusBar;
@@ -48,7 +48,7 @@ namespace OpenRA.Mods.Kknd.Traits.Render
 			health = self.TraitOrDefault<Health>();
 		}
 
-		public IEnumerable<IRenderable> RenderAboveShroud(Actor self, WorldRenderer wr)
+		public IEnumerable<IRenderable> RenderAnnotations(Actor self, WorldRenderer wr)
 		{
 			if (statusBar == null)
 				statusBar = new StatusBar(self, info);
@@ -84,7 +84,7 @@ namespace OpenRA.Mods.Kknd.Traits.Render
 			statusBar.Render(worldRenderer);
 		}
 
-		bool IRenderAboveShroud.SpatiallyPartitionable { get { return true; } }
+		bool IRenderAnnotations.SpatiallyPartitionable { get { return true; } }
 
 		void INotifyOwnerChanged.OnOwnerChanged(Actor self, Player oldOwner, Player newOwner)
 		{

@@ -77,8 +77,8 @@ namespace OpenRA.Mods.Kknd.Graphics
 			var height = (health != null ? thickness : 0) + (saboteurs != null ? thickness : 0) + (researchable != null ? thickness : 0) + (oil != null ? thickness : 0) - 1;
 			var width = info.Width == 0 ? bounds.Width : info.Width;
 
-			DrawRect(bounds, 0, -height - 4, width, height + 4, veteran != null && veteran.Level > 0 ? veteranInfo.Levels[veteran.Level - 1] : Color.FromArgb(255, 206, 206, 206));
-			DrawRect(bounds, 1, -height - 3, width - 2, height + 2, Color.FromArgb(255, 16, 16, 16));
+			DrawRect(wr, bounds, 0, -height - 4, width, height + 4, veteran != null && veteran.Level > 0 ? veteranInfo.Levels[veteran.Level - 1] : Color.FromArgb(255, 206, 206, 206));
+			DrawRect(wr, bounds, 1, -height - 3, width - 2, height + 2, Color.FromArgb(255, 16, 16, 16));
 
 			var current = 0;
 
@@ -86,34 +86,34 @@ namespace OpenRA.Mods.Kknd.Graphics
 			{
 				var progress = (width - 4) * health.HP / health.MaxHP;
 
-				DrawRect(bounds, 2, -height - 2 + current * thickness, width - 4, 1, Color.FromArgb(255, 206, 206, 206));
-				DrawRect(bounds, 2, -height - 1 + current * thickness, width - 4, thickness - 2, Color.FromArgb(255, 49, 49, 49));
+				DrawRect(wr, bounds, 2, -height - 2 + current * thickness, width - 4, 1, Color.FromArgb(255, 206, 206, 206));
+				DrawRect(wr, bounds, 2, -height - 1 + current * thickness, width - 4, thickness - 2, Color.FromArgb(255, 49, 49, 49));
 
 				switch (health.DamageState)
 				{
 					case DamageState.Undamaged:
-						DrawRect(bounds, 2, -height - 2 + current * thickness, progress, 1, Color.FromArgb(255, 0, 255, 0));
-						DrawRect(bounds, 2, -height - 1 + current * thickness, progress, thickness - 2, Color.FromArgb(255, 0, 181, 0));
+						DrawRect(wr, bounds, 2, -height - 2 + current * thickness, progress, 1, Color.FromArgb(255, 0, 255, 0));
+						DrawRect(wr, bounds, 2, -height - 1 + current * thickness, progress, thickness - 2, Color.FromArgb(255, 0, 181, 0));
 						break;
 
 					case DamageState.Light:
-						DrawRect(bounds, 2, -height - 2 + current * thickness, progress, 1, Color.FromArgb(255, 255, 255, 0));
-						DrawRect(bounds, 2, -height - 1 + current * thickness, progress, thickness - 2, Color.FromArgb(255, 141, 184, 28));
+						DrawRect(wr, bounds, 2, -height - 2 + current * thickness, progress, 1, Color.FromArgb(255, 255, 255, 0));
+						DrawRect(wr, bounds, 2, -height - 1 + current * thickness, progress, thickness - 2, Color.FromArgb(255, 141, 184, 28));
 						break;
 
 					case DamageState.Medium:
-						DrawRect(bounds, 2, -height - 2 + current * thickness, progress, 1, Color.FromArgb(255, 255, 156, 0));
-						DrawRect(bounds, 2, -height - 1 + current * thickness, progress, thickness - 2, Color.FromArgb(255, 178, 122, 51));
+						DrawRect(wr, bounds, 2, -height - 2 + current * thickness, progress, 1, Color.FromArgb(255, 255, 156, 0));
+						DrawRect(wr, bounds, 2, -height - 1 + current * thickness, progress, thickness - 2, Color.FromArgb(255, 178, 122, 51));
 						break;
 
 					case DamageState.Heavy:
-						DrawRect(bounds, 2, -height - 2 + current * thickness, progress, 1, Color.FromArgb(255, 230, 0, 0));
-						DrawRect(bounds, 2, -height - 1 + current * thickness, progress, thickness - 2, Color.FromArgb(255, 123, 0, 0));
+						DrawRect(wr, bounds, 2, -height - 2 + current * thickness, progress, 1, Color.FromArgb(255, 230, 0, 0));
+						DrawRect(wr, bounds, 2, -height - 1 + current * thickness, progress, thickness - 2, Color.FromArgb(255, 123, 0, 0));
 						break;
 
 					case DamageState.Critical:
-						DrawRect(bounds, 2, -height - 2 + current * thickness, progress, 1, Color.FromArgb(255, 123, 0, 0));
-						DrawRect(bounds, 2, -height - 1 + current * thickness, progress, thickness - 2, Color.FromArgb(255, 82, 0, 0));
+						DrawRect(wr, bounds, 2, -height - 2 + current * thickness, progress, 1, Color.FromArgb(255, 123, 0, 0));
+						DrawRect(wr, bounds, 2, -height - 1 + current * thickness, progress, thickness - 2, Color.FromArgb(255, 82, 0, 0));
 						break;
 				}
 
@@ -124,14 +124,14 @@ namespace OpenRA.Mods.Kknd.Graphics
 			{
 				var progress = (width - 4) * saboteurs.Population / saboteursInfo.MaxPopulation;
 
-				DrawRect(bounds, 2, -height - 2 + current * thickness, width - 4, 1, Color.FromArgb(255, 206, 206, 206));
-				DrawRect(bounds, 2, -height - 1 + current * thickness, width - 4, thickness - 2, Color.FromArgb(255, 49, 49, 49));
+				DrawRect(wr, bounds, 2, -height - 2 + current * thickness, width - 4, 1, Color.FromArgb(255, 206, 206, 206));
+				DrawRect(wr, bounds, 2, -height - 1 + current * thickness, width - 4, thickness - 2, Color.FromArgb(255, 49, 49, 49));
 
-				DrawRect(bounds, 2, -height - 2 + current * thickness, progress, 1, Color.FromArgb(255, 230, 0, 0));
-				DrawRect(bounds, 2, -height - 1 + current * thickness, progress, thickness - 2, Color.FromArgb(255, 123, 0, 0));
+				DrawRect(wr, bounds, 2, -height - 2 + current * thickness, progress, 1, Color.FromArgb(255, 230, 0, 0));
+				DrawRect(wr, bounds, 2, -height - 1 + current * thickness, progress, thickness - 2, Color.FromArgb(255, 123, 0, 0));
 
 				for (var i = 1; i < saboteursInfo.MaxPopulation; i++)
-					DrawRect(bounds, 2 + (width - 4) * i / saboteursInfo.MaxPopulation, -height - 2 + current * thickness, 1, thickness - 1, Color.FromArgb(255, 16, 16, 16));
+					DrawRect(wr, bounds, 2 + (width - 4) * i / saboteursInfo.MaxPopulation, -height - 2 + current * thickness, 1, thickness - 1, Color.FromArgb(255, 16, 16, 16));
 
 				current++;
 			}
@@ -141,16 +141,16 @@ namespace OpenRA.Mods.Kknd.Graphics
 				var progress = (width - 4) * researchable.Level / researchableInfo.MaxLevel;
 				var unavailable = (width - 4) * Math.Max(0, researchableInfo.MaxLevel - techLevel.TechLevels) / researchableInfo.MaxLevel;
 
-				DrawRect(bounds, 2, -height - 2 + current * thickness, width - 4, 1, Color.FromArgb(255, 206, 206, 206));
-				DrawRect(bounds, 2, -height - 1 + current * thickness, width - 4, thickness - 2, Color.FromArgb(255, 49, 49, 49));
+				DrawRect(wr, bounds, 2, -height - 2 + current * thickness, width - 4, 1, Color.FromArgb(255, 206, 206, 206));
+				DrawRect(wr, bounds, 2, -height - 1 + current * thickness, width - 4, thickness - 2, Color.FromArgb(255, 49, 49, 49));
 
-				DrawRect(bounds, 2, -height - 2 + current * thickness, progress, 1, Color.FromArgb(255, 0, 165, 255));
-				DrawRect(bounds, 2, -height - 1 + current * thickness, progress, thickness - 2, Color.FromArgb(255, 0, 66, 255));
+				DrawRect(wr, bounds, 2, -height - 2 + current * thickness, progress, 1, Color.FromArgb(255, 0, 165, 255));
+				DrawRect(wr, bounds, 2, -height - 1 + current * thickness, progress, thickness - 2, Color.FromArgb(255, 0, 66, 255));
 
-				DrawRect(bounds, width - 2 - unavailable, -height - 2 + current * thickness, unavailable, thickness, Color.FromArgb(255, 16, 16, 16));
+				DrawRect(wr, bounds, width - 2 - unavailable, -height - 2 + current * thickness, unavailable, thickness, Color.FromArgb(255, 16, 16, 16));
 
 				for (var i = 1; i < researchableInfo.MaxLevel; i++)
-					DrawRect(bounds, 2 + (width - 4) * i / researchableInfo.MaxLevel, -height - 2 + current * thickness, 1, thickness - 1, Color.FromArgb(255, 16, 16, 16));
+					DrawRect(wr, bounds, 2 + (width - 4) * i / researchableInfo.MaxLevel, -height - 2 + current * thickness, 1, thickness - 1, Color.FromArgb(255, 16, 16, 16));
 
 				current++;
 			}
@@ -159,21 +159,23 @@ namespace OpenRA.Mods.Kknd.Graphics
 			{
 				var progress = (width - 4) * oil.Current / oil.Maximum;
 
-				DrawRect(bounds, 2, -height - 2 + current * thickness, width - 4, 1, Color.FromArgb(255, 206, 206, 206));
-				DrawRect(bounds, 2, -height - 1 + current * thickness, width - 4, thickness - 2, Color.FromArgb(255, 49, 49, 49));
+				DrawRect(wr, bounds, 2, -height - 2 + current * thickness, width - 4, 1, Color.FromArgb(255, 206, 206, 206));
+				DrawRect(wr, bounds, 2, -height - 1 + current * thickness, width - 4, thickness - 2, Color.FromArgb(255, 49, 49, 49));
 
-				DrawRect(bounds, 2, -height - 2 + current * thickness, progress, 1, Color.FromArgb(255, 0, 165, 255));
-				DrawRect(bounds, 2, -height - 1 + current * thickness, progress, thickness - 2, Color.FromArgb(255, 0, 66, 255));
+				DrawRect(wr, bounds, 2, -height - 2 + current * thickness, progress, 1, Color.FromArgb(255, 0, 165, 255));
+				DrawRect(wr, bounds, 2, -height - 1 + current * thickness, progress, thickness - 2, Color.FromArgb(255, 0, 66, 255));
 			}
 		}
 
-		private void DrawRect(Rectangle bounds, int x, int y, int w, int h, Color c)
+		private void DrawRect(WorldRenderer wr, Rectangle bounds, int x, int y, int w, int h, Color c)
 		{
+			var renderPosition = wr.Viewport.WorldToViewPx(bounds.Location);
+
 			var width = info.Width == 0 ? bounds.Width : info.Width;
 			var center = (bounds.Width - width) / 2;
-			Game.Renderer.WorldRgbaColorRenderer.FillRect(
-				new float3(bounds.X + x + info.Offset.X + center, bounds.Y + y + info.Offset.Y, 0),
-				new float3(bounds.X + x + info.Offset.X + center + w, bounds.Y + y + info.Offset.Y + h, 0),
+			Game.Renderer.RgbaColorRenderer.FillRect(
+				new float3(renderPosition.X + (x + info.Offset.X + center) * wr.Viewport.Zoom, renderPosition.Y + (y + info.Offset.Y) * wr.Viewport.Zoom, 0),
+				new float3(renderPosition.X + (x + info.Offset.X + center + w) * wr.Viewport.Zoom, renderPosition.Y + (y + info.Offset.Y + h) * wr.Viewport.Zoom, 0),
 				c);
 		}
 

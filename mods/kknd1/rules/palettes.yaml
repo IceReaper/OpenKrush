@@ -3,6 +3,9 @@
 		Name: kknd
 		Filename: bits/palette.png
 		CursorPalette: true
+	PaletteFromPng@terrain:
+		Name: terrain
+		Filename: bits/palette.png
 	OverlayPlayerColorPalette@player:
 		BasePalette: kknd
 		RemapIndex: 8, 9, 10, 11, 12, 13

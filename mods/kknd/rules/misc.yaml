@@ -94,6 +94,8 @@ EditorPlayer:
 	DebugVisualizations:
 	# Required for warhead debug overlays.
 	WarheadDebugOverlay:
+	# Required for... not crashing
+	Selection:
 
 # Ingame specific world setup.
 World:

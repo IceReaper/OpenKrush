@@ -21,9 +21,9 @@ MapFolders:
 	kknd1|maps: System
 	~^maps/kknd1: User
 
-StatsFolders:
-	kknd1|stats: System
-	~^stats/kknd1: User
+#StatsFolders:
+#	kknd1|stats: System
+#	~^stats/kknd1: User
 
 Rules:
 	kknd|rules/palettes.yaml
@@ -92,27 +92,27 @@ Assemblies:
 	kknd|OpenRA.Mods.Kknd.dll
 
 ChromeLayout:
-	kknd|chrome/ingame.yaml
+	common|chrome/ingame.yaml
 	common|chrome/ingame-chat.yaml
 	common|chrome/ingame-fmvplayer.yaml
-	kknd|chrome/ingame-menu.yaml
 	common|chrome/ingame-info.yaml
 	common|chrome/ingame-infoscripterror.yaml
 	common|chrome/ingame-infobriefing.yaml
 	common|chrome/ingame-infoobjectives.yaml
 	common|chrome/ingame-infostats.yaml
+	kknd|chrome/ingame-menu.yaml
 	common|chrome/ingame-observer.yaml
-	common|chrome/ingame-observerstats.yaml
 	kknd|chrome/ingame-player.yaml
 	common|chrome/ingame-perf.yaml
 	common|chrome/ingame-debug.yaml
+	common|chrome/ingame-debuginfo.yaml
 	common|chrome/ingame-infochat.yaml
 	kknd|chrome/mainmenu.yaml
+	common|chrome/mainmenu-prompts.yaml
 	kknd|chrome/settings.yaml
 	common|chrome/credits.yaml
 	kknd|chrome/lobby.yaml
 	common|chrome/lobby-mappreview.yaml
-	common|chrome/playerprofile.yaml
 	common|chrome/lobby-players.yaml
 	common|chrome/lobby-options.yaml
 	common|chrome/lobby-music.yaml
@@ -125,15 +125,17 @@ ChromeLayout:
 	common|chrome/multiplayer-createserver.yaml
 	common|chrome/multiplayer-directconnect.yaml
 	common|chrome/connection.yaml
+	common|chrome/replaybrowser.yaml
+	common|chrome/gamesave-browser.yaml
+	common|chrome/gamesave-loading.yaml
 	common|chrome/dropdowns.yaml
 	common|chrome/musicplayer.yaml
 	common|chrome/tooltips.yaml
-	kknd|chrome/assetbrowser.yaml
+	common|chrome/assetbrowser.yaml
 	common|chrome/missionbrowser.yaml
 	common|chrome/confirmation-dialogs.yaml
 	common|chrome/editor.yaml
-	common|chrome/replaybrowser.yaml
-	common|chrome/statseditor.yaml
+	common|chrome/playerprofile.yaml
 
 Weapons:
 	kknd|weapons/misc.yaml
@@ -182,27 +184,35 @@ Fonts:
 	Tiny:
 		Font: kknd|uibits/Unispace.ttf
 		Size: 10
+		Ascender: 8
 	TinyBold:
 		Font: kknd|uibits/UnispaceBold.ttf
 		Size: 10
+		Ascender: 8
 	Small:
 		Font: kknd|uibits/Unispace.ttf
 		Size: 12
+		Ascender: 9
 	SmallBold:
 		Font: kknd|uibits/UnispaceBold.ttf
 		Size: 12
+		Ascender: 9
 	Regular:
 		Font: kknd|uibits/Unispace.ttf
 		Size: 14
+		Ascender: 11
 	Bold:
 		Font: kknd|uibits/UnispaceBold.ttf
 		Size: 14
+		Ascender: 11
 	Medium:
 		Font: kknd|uibits/Unispace.ttf
 		Size: 18
+		Ascender: 14
 	MediumBold:
 		Font: kknd|uibits/UnispaceBold.ttf
 		Size: 18
+		Ascender: 14
 	Title:
 		Font: kknd|uibits/UnispaceBold.ttf
 		Size: 32
@@ -222,6 +232,9 @@ SpriteFormats: Mobd, PngSheet
 SpriteSequenceFormat: OffsetsSpriteSequence
 
 ModelSequenceFormat: PlaceholderModelSequence
+
+AssetBrowser:
+	SupportedExtensions: .mobd, .wav, .vbc
 
 GameSpeeds:
 	slower:

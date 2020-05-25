@@ -7,7 +7,7 @@ Background@SERVER_LOBBY:
 	Children:
 		OverlayColorPreviewManager@COLOR_MANAGER:
 		Label@SERVER_NAME:
-			Y: 15
+			Y: 16
 			Align: Center
 			Width: PARENT_RIGHT
 			Height: 25
@@ -91,32 +91,11 @@ Background@SERVER_LOBBY:
 			Height: 25
 			Text: Change Map
 			Font: Bold
-		Container@STATS:
-			X: 20
-			Y: 321
-			Width: PARENT_RIGHT - 40
-			Height: 25
-			Children:
-				DropDownButton@STATS_DROPDOWNBUTTON:
-					X: 0
-					Y: 0
-					Width: 230
-					Height: 25
-					Font: Bold
-					Text: Default stats
-				TextField@STATS_DESCRIPTION:
-					X: 235
-					Y: 0
-					Disabled: true
-					Width: PARENT_RIGHT - 235
-					Height: 25
-					Font: Bold
-					Text: Using default mod stats.
 		Container@LOBBYCHAT:
 			X: 20
 			Y: PARENT_BOTTOM - HEIGHT - 20
 			Width: PARENT_RIGHT - 40
-			Height: 228
+			Height: 259
 			Children:
 				ScrollPanel@CHAT_DISPLAY:
 					Width: PARENT_RIGHT
@@ -132,21 +111,18 @@ Background@SERVER_LOBBY:
 								Label@TIME:
 									X: 3
 									Width: 50
-									Height: 15
-									VAlign: Top
+									Height: 16
 									Shadow: True
 								Label@NAME:
-									X: 55
+									X: 45
 									Width: 50
-									Height: 15
-									VAlign: Top
+									Height: 16
 									Shadow: True
 								Label@TEXT:
-									X: 65
-									Width: PARENT_RIGHT - 70
-									Height: 15
+									X: 55
+									Width: PARENT_RIGHT - 60
+									Height: 16
 									WordWrap: true
-									VAlign: Top
 									Shadow: True
 				Button@CHAT_MODE:
 					Y: PARENT_BOTTOM - HEIGHT
