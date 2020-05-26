@@ -15,6 +15,14 @@ using OpenRA.Mods.Kknd.Traits.Docking;
 
 namespace OpenRA.Mods.Kknd.Activities
 {
+	internal enum SequenceState
+	{
+		Move,
+		Turn,
+		Drag,
+		Done
+	}
+
 	public class BackwardsDockingSequence : DockingSequence
 	{
 		private Actor dockableActor;
@@ -27,6 +35,7 @@ namespace OpenRA.Mods.Kknd.Activities
 		private int distance;
 
 		private bool isDocking;
+		private SequenceState state = SequenceState.Done;
 		private bool shouldCancel;
 
 		private void Setup(Actor dockableActor, Dockable dockable, Actor dockActor, Dock dock)
@@ -46,50 +55,52 @@ namespace OpenRA.Mods.Kknd.Activities
 			isDocking = true;
 			Setup(dockableActor, dockable, dockActor, dock);
 			QueueChild(new Move(dockableActor, dockEntry, WDist.Zero));
+			state = SequenceState.Move;
 		}
 
 		public override void Undock(Actor dockableActor, Dockable dockable, Actor dockActor, Dock dock)
 		{
 			Setup(dockableActor, dockable, dockActor, dock);
 			QueueChild(new Drag(dockableActor, dockTarget, dockableActor.World.Map.CenterOfCell(dockEntry), distance / speed));
+			state = SequenceState.Drag;
 		}
 
 		public override bool Tick(Actor self)
 		{
-			if (ChildActivity is Move)
+			if (state == SequenceState.Move)
 			{
-				var isComplete = ChildActivity.Tick(self);
-
-				if (!isComplete)
-					return false;
-
 				if (shouldCancel)
 					return true;
 
 				if ((dockableActor.World.Map.CellContaining(dockableActor.CenterPosition) - dockEntry).Length != 0)
 					QueueChild(new Move(dockableActor, dockEntry, WDist.Zero));
 				else
+				{
 					QueueChild(new Turn(dockableActor, dock.Info.Facing));
+					state = SequenceState.Turn;
+				}
 
 				return false;
 			}
 
-			if (ChildActivity is Turn)
+			if (state == SequenceState.Turn)
 			{
-				var isComplete = ChildActivity.Tick(self);
-
-				if (!isComplete)
-					return false;
-
 				if (shouldCancel)
 					return true;
 
 				QueueChild(new Drag(dockableActor, dockableActor.World.Map.CenterOfCell(dockEntry), dockTarget, distance / speed));
+				state = SequenceState.Drag;
 
 				return false;
 			}
 
-			return ChildActivity == null || ChildActivity.Tick(self);
+			if (state == SequenceState.Drag)
+			{
+				state = SequenceState.Done;
+				return false;
+			}
+
+			return true;
 		}
 
 		public override void Cancel(Actor self, bool keepQueue = false)

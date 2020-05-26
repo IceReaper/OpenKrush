@@ -43,7 +43,10 @@ namespace OpenRA.Mods.Kknd.Activities
 			if (!abortByCancel && shouldCancel)
 				shouldCancel = false;
 
-			if (result || shouldCancel)
+			if (!result)
+				return false;
+
+			if (shouldCancel)
 				return true;
 
 			var tanker = (Tanker)Dockable;
