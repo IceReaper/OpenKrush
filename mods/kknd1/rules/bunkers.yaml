@@ -22,8 +22,8 @@ bunker_techbunker:
 	-Selectable:
 	-SelfConstructing:
 	-DeconstructSellable:
-	BlocksProjectiles:
-		-RequiresCondition:
+	#BlocksProjectiles:
+	#	-RequiresCondition:
 	RequiresSpecificOwners:
 		ValidOwnerNames: Neutral
 	GrantExternalConditionToProduced:

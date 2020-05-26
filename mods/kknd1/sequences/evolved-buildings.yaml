@@ -315,6 +315,34 @@ evolved_gasconverter:
 	icon: bits/Buttons.png
 		Start: 100
 
+evolved_windmill:
+	idle: bits/Windmill.png
+		Start: 0
+	damaged-idle: bits/Windmill.png
+		Start: 4
+	critical-idle: bits/Windmill.png
+		Start: 5
+	make0: bits/Windmill.png
+		Start: 1
+	make1: bits/Windmill.png
+		Start: 2
+	make2: bits/Windmill.png
+		Start: 3
+	animation: bits/Windmill.png
+		Start: 6
+		Length: 16
+		Tick: 80
+	damaged-animation: bits/Windmill.png
+		Start: 22
+		Length: 32
+		Tick: 80
+	critical-animation: bits/Windmill.png
+		Start: 54
+		Length: 32
+		Tick: 80
+	icon: bits/Buttons.png
+		Start: 106
+
 evolved_holdingpen:
 	idle: bits/HoldingPen.png
 		Start: 3

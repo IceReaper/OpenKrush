@@ -381,32 +381,21 @@ Actors:
 	Actor143: urban_buildings_2
 		Owner: Neutral
 		Location: 28,48
-	Actor147: evolved_machinegunnest
-		Owner: Creeps
-		Location: 58,47
-		TurretFacing: 92
-	Actor148: evolved_machinegunnest
-		Owner: Creeps
-		Location: 50,47
-		TurretFacing: 92
 	Actor146: campfire
-		Owner: Neutral
 		Location: 55,31
-	Actor149: hut_a
-		Owner: Neutral
-		Location: 57,30
+		Owner: Creeps
 	Actor150: hut_b
-		Owner: Neutral
 		Location: 54,29
+		Owner: Creeps
 	Actor151: hut_d
-		Owner: Neutral
 		Location: 51,31
+		Owner: Creeps
 	Actor152: hut_c
-		Owner: Neutral
 		Location: 57,33
+		Owner: Creeps
 	Actor153: hut_e
-		Owner: Neutral
 		Location: 53,34
+		Owner: Creeps
 	Actor155: tech_drillrig
 		Owner: Neutral
 		Location: 102,46
@@ -707,3 +696,164 @@ Actors:
 	Actor256: oilpatch
 		Owner: Neutral
 		Location: 26,38
+	Actor257: evolved_grapeshotcannon
+		Owner: Creeps
+		Location: 51,48
+		TurretFacing: 24
+	Actor258: evolved_grapeshotcannon
+		Owner: Creeps
+		Location: 57,48
+		TurretFacing: 224
+	Actor259: highland_trees_20
+		Owner: Neutral
+		Location: 28,29
+	Actor260: highland_trees_22
+		Owner: Neutral
+		Location: 80,28
+	Actor261: highland_trees_5
+		Owner: Neutral
+		Location: 77,26
+	Actor262: highland_trees_5
+		Owner: Neutral
+		Location: 82,33
+	Actor263: highland_trees_4
+		Owner: Neutral
+		Location: 33,27
+	Actor264: highland_trees_3
+		Owner: Neutral
+		Location: 27,30
+	Actor265: highland_trees_5
+		Owner: Neutral
+		Location: 26,33
+	Actor266: highland_trees_5
+		Owner: Neutral
+		Location: 35,48
+	Actor267: highland_trees_9
+		Owner: Neutral
+		Location: 75,49
+	Actor268: highland_trees_8
+		Owner: Neutral
+		Location: 78,48
+	Actor269: highland_trees_10
+		Owner: Neutral
+		Location: 28,47
+	Actor270: highland_trees_5
+		Owner: Neutral
+		Location: 39,7
+	Actor271: highland_trees_8
+		Owner: Neutral
+		Location: 70,8
+	Actor272: highland_trees_9
+		Owner: Neutral
+		Location: 66,16
+	Actor273: highland_trees_9
+		Owner: Neutral
+		Location: 40,12
+	Actor274: highland_trees_4
+		Owner: Neutral
+		Location: 47,19
+	Actor275: highland_trees_5
+		Owner: Neutral
+		Location: 43,16
+	Actor276: highland_trees_9
+		Owner: Neutral
+		Location: 61,20
+	Actor277: highland_trees_1
+		Owner: Neutral
+		Location: 72,2
+	Actor278: highland_trees_1
+		Owner: Neutral
+		Location: 69,0
+	Actor279: highland_trees_6
+		Owner: Neutral
+		Location: 37,2
+	Actor280: highland_trees_8
+		Owner: Neutral
+		Location: 40,9
+	Actor281: highland_trees_6
+		Owner: Neutral
+		Location: 64,18
+	Actor282: highland_trees_5
+		Owner: Neutral
+		Location: 68,11
+	Actor283: highland_trees_2
+		Owner: Neutral
+		Location: 52,14
+	Actor284: highland_trees_2
+		Owner: Neutral
+		Location: 65,4
+	Actor285: highland_trees_1
+		Owner: Neutral
+		Location: 49,7
+	Actor286: highland_trees_3
+		Owner: Neutral
+		Location: 56,4
+	Actor287: highland_trees_3
+		Owner: Neutral
+		Location: 60,16
+	Actor288: highland_trees_8
+		Owner: Neutral
+		Location: 69,4
+	Actor289: highland_trees_9
+		Owner: Neutral
+		Location: 41,4
+	Actor290: highland_trees_9
+		Owner: Neutral
+		Location: 38,5
+	Actor291: highland_trees_9
+		Owner: Neutral
+		Location: 59,22
+	Actor292: highland_trees_8
+		Owner: Neutral
+		Location: 51,22
+	Actor293: highland_trees_8
+		Owner: Neutral
+		Location: 55,23
+	Actor294: highland_trees_9
+		Owner: Neutral
+		Location: 53,23
+	Actor295: highland_trees_9
+		Owner: Neutral
+		Location: 53,0
+	Actor296: highland_trees_3
+		Owner: Neutral
+		Location: 55,0
+	Actor297: highland_trees_4
+		Owner: Neutral
+		Location: 43,14
+	Actor298: highland_trees_8
+		Owner: Neutral
+		Location: 40,6
+	Actor299: highland_trees_9
+		Owner: Neutral
+		Location: 66,14
+	Actor300: highland_trees_10
+		Owner: Neutral
+		Location: 71,5
+	Actor301: highland_trees_8
+		Owner: Neutral
+		Location: 108,32
+	Actor302: highland_trees_10
+		Owner: Neutral
+		Location: 1,31
+	Actor305: pillar_g
+		Owner: Neutral
+		Location: 60,48
+	Actor306: pillar_a
+		Owner: Neutral
+		Location: 50,48
+	Actor303: pillar_a
+		Owner: Neutral
+		Location: 50,34
+	Actor304: pillar_g
+		Owner: Neutral
+		Location: 60,35
+	Actor307: pillar_c
+		Owner: Neutral
+		Location: 51,27
+	Actor308: pillar_e
+		Owner: Neutral
+		Location: 60,28
+	Actor309: hut_f
+		Owner: Neutral
+		Location: 57,30

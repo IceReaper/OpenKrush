@@ -472,7 +472,7 @@ evolved_gasconverter:
 		HP: 2000
 	AdvancedBuildable:
 		BuildDuration: 750
-		Level: 3
+		Level: -1
 	Building:
 		Dimensions: 2,2
 		Footprint: xx xx
@@ -493,6 +493,53 @@ evolved_gasconverter:
 		RequiresCondition: !selfconstructing && !deconstructing
 	WithIdleOverlay@Animation2:
 		Sequence: animation-sparks
+		RequiresCondition: !selfconstructing && !deconstructing
+	CashTrickler:
+		Interval: 50
+		Amount: 20
+		ShowTicks: false
+	Explodes:
+		Weapon: dieSmallBuilding
+		EmptyWeapon: dieSmallBuilding
+	ExplosionOnDamageTransition@Heavy:
+		Weapon: breakSmallBuilding
+		DamageState: Heavy
+	ExplosionOnDamageTransition@Critical:
+		Weapon: breakSmallBuilding
+		DamageState: Critical
+	FrozenOnDeath:
+		Duration: 40
+
+evolved_windmill:
+	Inherits: ^EvolvedBuilding
+	Tooltip:
+		Name: Windmill
+	TooltipDescription:
+		Description: Produces additional resources
+	Valued:
+		Cost: 750
+	Health:
+		HP: 2000
+	AdvancedBuildable:
+		BuildDuration: 750
+		Level: 3
+	Building:
+		Dimensions: 2,2
+		Footprint: == xx
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 1024
+		TargetableOffsets: 519,-312,0, 519,312,0, -719,-312,0, -719,312,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
+	Selectable:
+		Bounds: 50, 50, 0, 0
+	AdvancedSelectionDecorations:
+		Offset: 0,-25
+	SaboteurConquerable:
+		Population: 1
+		RequiresCondition: !selfconstructing && !deconstructing
+	WithIdleOverlay@Animation:
+		Sequence: animation
 		RequiresCondition: !selfconstructing && !deconstructing
 	CashTrickler:
 		Interval: 50

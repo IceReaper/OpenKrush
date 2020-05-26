@@ -311,12 +311,18 @@ Actors:
 	Actor302: highland_trees_1
 		Owner: Neutral
 		Location: 23,13
+	Actor304: highland_trees_16
+		Owner: Neutral
+		Location: 76,13
 	Actor305: highland_trees_14
 		Owner: Neutral
 		Location: 77,13
 	Actor306: highland_trees_14
 		Owner: Neutral
 		Location: 93,13
+	Actor307: highland_trees_14
+		Owner: Neutral
+		Location: 94,13
 	Actor308: highland_trees_6
 		Owner: Neutral
 		Location: 24,14
@@ -503,12 +509,24 @@ Actors:
 	Actor544: highland_objects_3
 		Owner: Neutral
 		Location: 90,42
+	Actor557: highland_trees_16
+		Owner: Neutral
+		Location: 65,46
+	Actor558: highland_trees_15
+		Owner: Neutral
+		Location: 105,46
 	Actor564: highland_trees_15
 		Owner: Neutral
 		Location: 65,47
+	Actor565: highland_trees_16
+		Owner: Neutral
+		Location: 105,47
 	Actor567: highland_trees_16
 		Owner: Neutral
 		Location: 64,48
+	Actor568: highland_trees_14
+		Owner: Neutral
+		Location: 65,48
 	Actor569: desert_objects_10
 		Owner: Neutral
 		Location: 81,48
@@ -518,11 +536,29 @@ Actors:
 	Actor571: desert_objects_10
 		Owner: Neutral
 		Location: 89,48
+	Actor572: highland_trees_14
+		Owner: Neutral
+		Location: 105,48
+	Actor573: highland_trees_16
+		Owner: Neutral
+		Location: 106,48
+	Actor592: highland_trees_16
+		Owner: Neutral
+		Location: 65,49
 	Actor593: survivors_4x4pickup
 		Owner: Neutral
 		Facing: 92
 		TurretFacing: 92
 		Location: 84,50
+	Actor594: highland_trees_15
+		Owner: Neutral
+		Location: 105,49
+	Actor597: highland_trees_14
+		Owner: Neutral
+		Location: 65,50
+	Actor598: highland_trees_16
+		Owner: Neutral
+		Location: 105,50
 	Actor605: highland_objects_7
 		Owner: Neutral
 		Location: 80,53
@@ -760,12 +796,18 @@ Actors:
 	Actor771: highland_trees_5
 		Owner: Neutral
 		Location: 22,83
+	Actor772: highland_trees_15
+		Owner: Neutral
+		Location: 76,83
 	Actor773: highland_trees_14
 		Owner: Neutral
 		Location: 77,83
 	Actor774: highland_trees_15
 		Owner: Neutral
 		Location: 93,83
+	Actor775: highland_trees_16
+		Owner: Neutral
+		Location: 94,83
 	Actor776: highland_trees_3
 		Owner: Neutral
 		Location: 144,83
@@ -1198,12 +1240,18 @@ Actors:
 	Actor920: highland_trees_4
 		Owner: Neutral
 		Location: 140,97
+	Actor927: oilpatch
+		Owner: Neutral
+		Location: 135,69
 	Actor926: oilpatch
 		Owner: Neutral
 		Location: 123,81
 	Actor928: oilpatch
 		Owner: Neutral
 		Location: 121,59
+	Actor930: oilpatch
+		Owner: Neutral
+		Location: 133,23
 	Actor932: oilpatch
 		Owner: Neutral
 		Location: 93,78
@@ -1213,6 +1261,12 @@ Actors:
 	Actor934: oilpatch
 		Owner: Neutral
 		Location: 83,36
+	Actor935: oilpatch
+		Owner: Neutral
+		Location: 91,47
+	Actor936: oilpatch
+		Owner: Neutral
+		Location: 75,47
 	Actor937: oilpatch
 		Owner: Neutral
 		Location: 83,58
@@ -1237,12 +1291,18 @@ Actors:
 	Actor944: oilpatch
 		Owner: Neutral
 		Location: 43,81
+	Actor945: oilpatch
+		Owner: Neutral
+		Location: 31,69
 	Actor947: oilpatch
 		Owner: Neutral
 		Location: 45,59
 	Actor949: oilpatch
 		Owner: Neutral
 		Location: 47,29
+	Actor950: oilpatch
+		Owner: Neutral
+		Location: 33,23
 	Actor951: oilpatch
 		Owner: Neutral
 		Location: 44,10
@@ -3126,36 +3186,3 @@ Actors:
 		Location: 86,50
 		SubCell: 1
 		Facing: 92
-	Actor1353: oilpatch
-		Owner: Neutral
-		Location: 134,23
-	Actor1371: oilpatch
-		Owner: Neutral
-		Location: 136,69
-	Actor1372: oilpatch
-		Owner: Neutral
-		Location: 30,69
-	Actor1373: oilpatch
-		Owner: Neutral
-		Location: 30,69
-	Actor1374: oilpatch
-		Owner: Neutral
-		Location: 32,23
-	Actor1375: oilpatch
-		Owner: Neutral
-		Location: 68,47
-	Actor1376: oilpatch
-		Owner: Neutral
-		Location: 98,47
-	Actor1377: highland_trees_15
-		Owner: Neutral
-		Location: 105,47
-	Actor1378: highland_trees_13
-		Owner: Neutral
-		Location: 106,48
-	Actor1379: highland_trees_14
-		Owner: Neutral
-		Location: 105,49
-	Actor1380: highland_trees_13
-		Owner: Neutral
-		Location: 65,49

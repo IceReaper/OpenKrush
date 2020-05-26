@@ -49,6 +49,7 @@
 	OffsetsArmament:
 	AmmoPool:
 	RejectsOrders:
+	-MapEditorData:
 
 ^AutoTargetDefault:
 	AutoTarget:

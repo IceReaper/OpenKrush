@@ -232,6 +232,26 @@ survivors_geothermal:
 	icon: bits/Buttons.png
 		Start: 101
 
+survivors_solarpanel:
+	idle: bits/SolarPanel.png
+		Start: 3
+	damaged-idle: bits/SolarPanel.png
+		Start: 4
+	critical-idle: bits/SolarPanel.png
+		Start: 5
+	make0: bits/SolarPanel.png
+		Start: 0
+	make1: bits/SolarPanel.png
+		Start: 1
+	make2: bits/SolarPanel.png
+		Start: 2
+	animation: bits/SolarPanel.png
+		Start: 6
+		Length: 10
+		Tick: 120
+	icon: bits/Buttons.png
+		Start: 107
+
 survivors_detentioncenter:
 	idle: bits/DetentionCenter.png
 		Start: 3
