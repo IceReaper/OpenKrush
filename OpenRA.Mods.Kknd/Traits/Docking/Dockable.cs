@@ -24,7 +24,8 @@ namespace OpenRA.Mods.Kknd.Traits.Docking
 		public readonly string DockingSequenceActivity = "Backwards";
 
 		[Desc("Voice to use when ordering to dock.")]
-		[VoiceReference] public readonly string Voice = "Action";
+		[VoiceReference]
+		public readonly string Voice = "Action";
 
 		public virtual object Create(ActorInitializer init) { return new Dockable(this); }
 	}

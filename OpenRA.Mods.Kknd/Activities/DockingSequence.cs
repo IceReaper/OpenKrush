@@ -14,9 +14,9 @@ using OpenRA.Mods.Kknd.Traits.Docking;
 
 namespace OpenRA.Mods.Kknd.Activities
 {
-    public abstract class DockingSequence : Activity
-    {
-        public abstract void Dock(Actor dockableActor, Dockable dockable, Actor dockActor, Dock dock);
-        public abstract void Undock(Actor dockableActor, Dockable dockable, Actor dockActor, Dock dock);
-    }
+	public abstract class DockingSequence : Activity
+	{
+		public abstract void Dock(Actor dockableActor, Dockable dockable, Actor dockActor, Dock dock);
+		public abstract void Undock(Actor dockableActor, Dockable dockable, Actor dockActor, Dock dock);
+	}
 }

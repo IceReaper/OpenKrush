@@ -31,7 +31,8 @@ namespace OpenRA.Mods.Kknd.Traits.Technicians
 	{
 		private readonly List<RepairTask> repairTasks = new List<RepairTask>();
 
-		public TechnicianRepairable(ActorInitializer init, TechnicianRepairableInfo info) : base(info)
+		public TechnicianRepairable(ActorInitializer init, TechnicianRepairableInfo info)
+			: base(info)
 		{
 			var rs = init.Self.Trait<RenderSprites>();
 			var body = init.Self.Trait<BodyOrientation>();

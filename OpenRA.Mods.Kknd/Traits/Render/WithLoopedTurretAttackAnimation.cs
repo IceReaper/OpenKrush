@@ -26,7 +26,8 @@ namespace OpenRA.Mods.Kknd.Traits.Render
 		public readonly string Turret = "primary";
 
 		[Desc("Displayed while attacking.")]
-		[SequenceReference] public readonly string Sequence = null;
+		[SequenceReference]
+		public readonly string Sequence = null;
 
 		public override object Create(ActorInitializer init) { return new WithLoopedTurretAttackAnimation(init, this); }
 	}
@@ -36,7 +37,8 @@ namespace OpenRA.Mods.Kknd.Traits.Render
 		readonly WithSpriteTurret wst;
 		private int attacking;
 
-		public WithLoopedTurretAttackAnimation(ActorInitializer init, WithLoopedTurretAttackAnimationInfo info) : base(info)
+		public WithLoopedTurretAttackAnimation(ActorInitializer init, WithLoopedTurretAttackAnimationInfo info)
+			: base(info)
 		{
 			wst = init.Self.TraitsImplementing<WithSpriteTurret>().Single(st => st.Info.Turret == info.Turret);
 		}

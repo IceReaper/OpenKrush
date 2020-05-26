@@ -44,7 +44,8 @@ namespace OpenRA.Mods.Kknd.Traits.Production
 		private int step;
 		private SpawnType spawnType;
 
-		public SelfConstructing(ActorInitializer init, SelfConstructingInfo info) : base(init, info)
+		public SelfConstructing(ActorInitializer init, SelfConstructingInfo info)
+			: base(init, info)
 		{
 			this.info = info;
 			wsb = init.Self.Trait<WithSpriteBody>();

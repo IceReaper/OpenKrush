@@ -16,67 +16,67 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.Kknd.Traits.AttackNotifications
 {
-    [Desc("Attack notifier which supports per actor notifications.")]
-    public class AdvancedAttackNotifierInfo : ITraitInfo
-    {
-        [Desc("Minimum duration (in seconds) between notification events.")]
-        public readonly int NotifyInterval = 30;
+	[Desc("Attack notifier which supports per actor notifications.")]
+	public class AdvancedAttackNotifierInfo : ITraitInfo
+	{
+		[Desc("Minimum duration (in seconds) between notification events.")]
+		public readonly int NotifyInterval = 30;
 
-        public readonly Color RadarPingColor = Color.Red;
+		public readonly Color RadarPingColor = Color.Red;
 
-        [Desc("Length of time (in ticks) to display a location ping in the minimap.")]
-        public readonly int RadarPingDuration = 10 * 25;
+		[Desc("Length of time (in ticks) to display a location ping in the minimap.")]
+		public readonly int RadarPingDuration = 10 * 25;
 
-        public object Create(ActorInitializer init) { return new AdvancedAttackNotifier(init.Self, this); }
-    }
+		public object Create(ActorInitializer init) { return new AdvancedAttackNotifier(init.Self, this); }
+	}
 
-    public class AdvancedAttackNotifier : INotifyDamage
-    {
-        readonly RadarPings radarPings;
-        readonly AdvancedAttackNotifierInfo info;
+	public class AdvancedAttackNotifier : INotifyDamage
+	{
+		readonly RadarPings radarPings;
+		readonly AdvancedAttackNotifierInfo info;
 
-        Dictionary<string, int> lastAttackTimes = new Dictionary<string, int>();
+		Dictionary<string, int> lastAttackTimes = new Dictionary<string, int>();
 
-        public AdvancedAttackNotifier(Actor self, AdvancedAttackNotifierInfo info)
-        {
-            radarPings = self.World.WorldActor.Trait<RadarPings>();
-            this.info = info;
-        }
+		public AdvancedAttackNotifier(Actor self, AdvancedAttackNotifierInfo info)
+		{
+			radarPings = self.World.WorldActor.Trait<RadarPings>();
+			this.info = info;
+		}
 
-        void INotifyDamage.Damaged(Actor self, AttackInfo e)
-        {
-            if (e.Attacker == null)
-                return;
+		void INotifyDamage.Damaged(Actor self, AttackInfo e)
+		{
+			if (e.Attacker == null)
+				return;
 
-            if (e.Attacker.Owner == self.Owner)
-                return;
+			if (e.Attacker.Owner == self.Owner)
+				return;
 
-            if (e.Attacker == self.World.WorldActor)
-                return;
+			if (e.Attacker == self.World.WorldActor)
+				return;
 
-            if (e.Damage.Value == 0)
-                return;
+			if (e.Damage.Value == 0)
+				return;
 
-            var ani = self.Info.TraitInfoOrDefault<AttackNotificationInfo>();
+			var ani = self.Info.TraitInfoOrDefault<AttackNotificationInfo>();
 
-            if (ani == null)
-                return;
+			if (ani == null)
+				return;
 
-            var veterancy = self.TraitOrDefault<Veterancy.Veterancy>();
-            var notification = ani.Notifications[(veterancy == null ? 0 : veterancy.Level) % ani.Notifications.Length];
+			var veterancy = self.TraitOrDefault<Veterancy.Veterancy>();
+			var notification = ani.Notifications[(veterancy == null ? 0 : veterancy.Level) % ani.Notifications.Length];
 
-            if (!lastAttackTimes.ContainsKey(notification))
-                lastAttackTimes.Add(notification, self.World.WorldTick - info.NotifyInterval * 25);
+			if (!lastAttackTimes.ContainsKey(notification))
+				lastAttackTimes.Add(notification, self.World.WorldTick - info.NotifyInterval * 25);
 
-            if (self.World.WorldTick - lastAttackTimes[notification] >= info.NotifyInterval * 25)
-            {
-                Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", notification, self.Owner.Faction.InternalName);
+			if (self.World.WorldTick - lastAttackTimes[notification] >= info.NotifyInterval * 25)
+			{
+				Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", notification, self.Owner.Faction.InternalName);
 
-                if (ani.RadarPings)
-                    radarPings.Add(() => self.Owner.IsAlliedWith(self.World.RenderPlayer), self.CenterPosition, info.RadarPingColor, info.RadarPingDuration);
-            }
+				if (ani.RadarPings)
+					radarPings.Add(() => self.Owner.IsAlliedWith(self.World.RenderPlayer), self.CenterPosition, info.RadarPingColor, info.RadarPingDuration);
+			}
 
-            lastAttackTimes[notification] = self.World.WorldTick;
-        }
-    }
+			lastAttackTimes[notification] = self.World.WorldTick;
+		}
+	}
 }

@@ -23,7 +23,8 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 		private bool researchAvailable;
 		private bool autoResearchEnabled;
 
-		public ResearchButtonWidget(SidebarWidget sidebar) : base(sidebar, "button")
+		public ResearchButtonWidget(SidebarWidget sidebar)
+			: base(sidebar, "button")
 		{
 			TooltipTitle = "Research";
 		}
@@ -31,7 +32,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 		public override bool HandleKeyPress(KeyInput e)
 		{
 			if (IsUsable() && !e.IsRepeat && e.Event == KeyInputEvent.Down
-			    && e.Key == Game.ModData.Hotkeys["Research"].GetValue().Key && e.Modifiers == Game.ModData.Hotkeys["Research"].GetValue().Modifiers)
+				&& e.Key == Game.ModData.Hotkeys["Research"].GetValue().Key && e.Modifiers == Game.ModData.Hotkeys["Research"].GetValue().Modifiers)
 			{
 				Active = !Active;
 

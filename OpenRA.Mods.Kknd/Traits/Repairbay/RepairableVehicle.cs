@@ -18,7 +18,9 @@ namespace OpenRA.Mods.Kknd.Traits.Repairbay
 		public override object Create(ActorInitializer init) { return new RepairableVehicle(this); }
 	}
 
-	public class RepairableVehicle : Dockable {
-		public RepairableVehicle(RepairableVehicleInfo info) : base(info) { }
+	public class RepairableVehicle : Dockable
+	{
+		public RepairableVehicle(RepairableVehicleInfo info)
+			: base(info) { }
 	}
 }

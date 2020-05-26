@@ -36,7 +36,8 @@ namespace OpenRA.Mods.Kknd.Traits.Docking
 		private readonly IEnumerable<DockAction> dockActions;
 		private List<Actor> queue = new List<Actor>();
 
-		public Dock(ActorInitializer init, DockInfo info) : base(info)
+		public Dock(ActorInitializer init, DockInfo info)
+			: base(info)
 		{
 			dockActions = init.Self.TraitsImplementing<DockAction>();
 		}

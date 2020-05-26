@@ -13,20 +13,21 @@ using OpenRA.Mods.Common.Traits;
 
 namespace OpenRA.Mods.Kknd.Traits.Docking
 {
-    public abstract class DockActionInfo : ConditionalTraitInfo
-    {
-        [Desc("Cursor to use when docking is possible.")]
-        public readonly string Cursor = "dock";
-    }
+	public abstract class DockActionInfo : ConditionalTraitInfo
+	{
+		[Desc("Cursor to use when docking is possible.")]
+		public readonly string Cursor = "dock";
+	}
 
-    public abstract class DockAction : ConditionalTrait<DockActionInfo>
-    {
-        public DockAction(DockActionInfo info) : base(info) { }
+	public abstract class DockAction : ConditionalTrait<DockActionInfo>
+	{
+		public DockAction(DockActionInfo info)
+			: base(info) { }
 
-        public abstract bool CanDock(Actor actor, Dockable dockable);
+		public abstract bool CanDock(Actor actor, Dockable dockable);
 
-        public virtual void OnDock() { }
-        public abstract bool Process(Actor actor);
-        public virtual void OnUndock() { }
-    }
+		public virtual void OnDock() { }
+		public abstract bool Process(Actor actor);
+		public virtual void OnUndock() { }
+	}
 }

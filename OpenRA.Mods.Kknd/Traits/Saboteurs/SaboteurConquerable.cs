@@ -38,7 +38,8 @@ namespace OpenRA.Mods.Kknd.Traits.Saboteurs
 		private readonly SaboteurConquerableInfo info;
 		public int Population { get; private set; }
 
-		public SaboteurConquerable(ActorInitializer init, SaboteurConquerableInfo info) : base(info)
+		public SaboteurConquerable(ActorInitializer init, SaboteurConquerableInfo info)
+			: base(info)
 		{
 			this.info = info;
 			Population = info.Population;

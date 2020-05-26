@@ -47,7 +47,8 @@ namespace OpenRA.Mods.Kknd.Traits.Repairbay
 		private int lastRepairTick;
 		private int token = ConditionManager.InvalidConditionToken;
 
-		public Repairbay(ActorInitializer init, RepairbayInfo info) : base(info)
+		public Repairbay(ActorInitializer init, RepairbayInfo info)
+			: base(info)
 		{
 			this.info = info;
 			self = init.Self;

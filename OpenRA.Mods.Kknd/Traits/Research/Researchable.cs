@@ -21,7 +21,8 @@ namespace OpenRA.Mods.Kknd.Traits.Research
 	class ResearchableInfo : ConditionalTraitInfo, Requires<RenderSpritesInfo>, Requires<BodyOrientationInfo>
 	{
 		[Desc("Research sequence name to use.")]
-		[SequenceReference] public readonly string Sequence = "research";
+		[SequenceReference]
+		public readonly string Sequence = "research";
 
 		[Desc("Initial tech level.")]
 		public readonly int Level = 0;
@@ -49,7 +50,8 @@ namespace OpenRA.Mods.Kknd.Traits.Research
 		public int Level;
 		public Researches Researches;
 
-		public Researchable(ActorInitializer init, ResearchableInfo info) : base(info)
+		public Researchable(ActorInitializer init, ResearchableInfo info)
+			: base(info)
 		{
 			this.info = info;
 			Level = info.Level;

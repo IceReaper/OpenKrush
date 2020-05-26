@@ -48,14 +48,15 @@ namespace OpenRA.Mods.Kknd.Traits.Production
 		private int sellTimerTotal;
 		private int refundAmount;
 
-		public DeconstructSellable(ActorInitializer init, DeconstructSellableInfo info) : base(info)
+		public DeconstructSellable(ActorInitializer init, DeconstructSellableInfo info)
+			: base(info)
 		{
 			this.info = info;
 			developerMode = init.Self.Owner.PlayerActor.Trait<DeveloperMode>();
 			wsb = init.Self.Trait<WithSpriteBody>();
 		}
 
-		void INotifyCreated.Created(Actor self)
+		protected override void Created(Actor self)
 		{
 			selfConstructing = self.Info.TraitInfo<SelfConstructingInfo>();
 			conditionManager = self.TraitOrDefault<ConditionManager>();

@@ -33,10 +33,12 @@ namespace OpenRA.Mods.Kknd.Traits.Technicians
 		public readonly string BlockedCursor = "repair-blocked";
 
 		[Desc("Voice used when ordering to repair.")]
-		[VoiceReference] public readonly string VoiceOrder = "Repair";
+		[VoiceReference]
+		public readonly string VoiceOrder = "Repair";
 
 		[Desc("Voice used when entered and starting repair.")]
-		[VoiceReference] public readonly string VoiceEnter = "Repairing";
+		[VoiceReference]
+		public readonly string VoiceEnter = "Repairing";
 
 		public object Create(ActorInitializer init) { return new Technician(init, this); }
 	}

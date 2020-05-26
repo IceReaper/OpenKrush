@@ -23,7 +23,8 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 		public readonly string[] Categories;
 		private Hotkey hotkey;
 
-		public ProductionCategoryButtonWidget(SidebarWidget sidebar, int index, string[] categories, string label) : base(sidebar, "unit")
+		public ProductionCategoryButtonWidget(SidebarWidget sidebar, int index, string[] categories, string label)
+			: base(sidebar, "unit")
 		{
 			Categories = categories;
 			Bounds = new Rectangle(0, index * Size, Size, Size);

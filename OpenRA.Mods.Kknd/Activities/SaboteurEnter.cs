@@ -18,29 +18,30 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.Kknd.Activities
 {
-    public class SaboteurEnter : Enter
-    {
-        public SaboteurEnter(Actor self, Target target, Color targetLineColor) : base(self, target, targetLineColor)
-        {
-        }
+	public class SaboteurEnter : Enter
+	{
+		public SaboteurEnter(Actor self, Target target, Color targetLineColor)
+			: base(self, target, targetLineColor)
+		{
+		}
 
-        protected override void OnEnterComplete(Actor self, Actor targetActor)
-        {
-            var saboteurInfo = self.Info.TraitInfo<SaboteurInfo>();
-            var conquerable = targetActor.Trait<SaboteurConquerable>();
+		protected override void OnEnterComplete(Actor self, Actor targetActor)
+		{
+			var saboteurInfo = self.Info.TraitInfo<SaboteurInfo>();
+			var conquerable = targetActor.Trait<SaboteurConquerable>();
 
-            if (self.Owner == self.World.LocalPlayer)
-            {
-                if (targetActor.Owner.Stances[self.Owner].HasStance(Stance.Ally))
-                    self.PlayVoice(saboteurInfo.VoiceEnterAlly);
-                else if (conquerable.Population == 0)
-                    self.PlayVoice(saboteurInfo.VoiceConquered);
-                else
-                    self.PlayVoice(saboteurInfo.VoiceEnterEnemy);
-            }
+			if (self.Owner == self.World.LocalPlayer)
+			{
+				if (targetActor.Owner.Stances[self.Owner].HasStance(Stance.Ally))
+					self.PlayVoice(saboteurInfo.VoiceEnterAlly);
+				else if (conquerable.Population == 0)
+					self.PlayVoice(saboteurInfo.VoiceConquered);
+				else
+					self.PlayVoice(saboteurInfo.VoiceEnterEnemy);
+			}
 
-            conquerable.Enter(targetActor, self);
-            self.Dispose();
-        }
-    }
+			conquerable.Enter(targetActor, self);
+			self.Dispose();
+		}
+	}
 }

@@ -18,16 +18,17 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.Kknd.Activities
 {
-    public class Sacrifice : Enter
-    {
-        public Sacrifice(Actor self, Target target, Color? targetLineColor = null) : base(self, target, targetLineColor)
-        {
-        }
+	public class Sacrifice : Enter
+	{
+		public Sacrifice(Actor self, Target target, Color? targetLineColor = null)
+			: base(self, target, targetLineColor)
+		{
+		}
 
-        protected override void OnEnterComplete(Actor self, Actor targetActor)
-        {
-            targetActor.Trait<Altar>().Enter(self);
-            self.Dispose();
-        }
-    }
+		protected override void OnEnterComplete(Actor self, Actor targetActor)
+		{
+			targetActor.Trait<Altar>().Enter(self);
+			self.Dispose();
+		}
+	}
 }

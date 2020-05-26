@@ -57,7 +57,8 @@ namespace OpenRA.Mods.Kknd.Traits.Research
 
 		public bool IsResearching { get { return currentTarget != null; } }
 
-		public Researches(ActorInitializer init, ResearchesInfo info) : base(info)
+		public Researches(ActorInitializer init, ResearchesInfo info)
+			: base(info)
 		{
 			this.info = info;
 			researchable = init.Self.Trait<Researchable>();

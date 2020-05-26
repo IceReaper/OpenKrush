@@ -74,7 +74,8 @@ namespace OpenRA.Mods.Kknd.Orders
 		private string cursor;
 		private string blockedCursor;
 
-		public TechnicianEnterOrderTargeter(string cursor, string blockedCursor) : base(Id, 6, cursor, false, true)
+		public TechnicianEnterOrderTargeter(string cursor, string blockedCursor)
+			: base(Id, 6, cursor, false, true)
 		{
 			this.cursor = cursor;
 			this.blockedCursor = blockedCursor;

@@ -18,7 +18,8 @@ using OpenRA.Widgets;
 
 namespace OpenRA.Mods.Kknd.Widgets.Ingame
 {
-	public class StatusWidget : Widget {
+	public class StatusWidget : Widget
+	{
 		private readonly IngameUiWidget ingameUi;
 		private readonly PlayerResources playerResources;
 		private readonly SpriteFont font;

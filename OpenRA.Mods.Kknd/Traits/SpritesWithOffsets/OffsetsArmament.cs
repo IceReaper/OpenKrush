@@ -31,7 +31,8 @@ namespace OpenRA.Mods.Kknd.Traits.SpritesWithOffsets
 		readonly OffsetsArmamentInfo info;
 		readonly WithSpriteBody wsb;
 
-		public OffsetsArmament(Actor self, OffsetsArmamentInfo info) : base(self, info)
+		public OffsetsArmament(Actor self, OffsetsArmamentInfo info)
+			: base(self, info)
 		{
 			this.info = info;
 			wsb = self.Trait<WithSpriteBody>();

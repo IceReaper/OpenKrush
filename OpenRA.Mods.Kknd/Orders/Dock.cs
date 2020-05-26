@@ -15,33 +15,34 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.Kknd.Orders
 {
-    class DockOrderTargeter : UnitOrderTargeter
-    {
-        public const string Id = "Dock";
+	class DockOrderTargeter : UnitOrderTargeter
+	{
+		public const string Id = "Dock";
 
-        public DockOrderTargeter() : base(Id, 6, null, false, true) { }
+		public DockOrderTargeter()
+			: base(Id, 6, null, false, true) { }
 
-        public override bool CanTargetFrozenActor(Actor self, FrozenActor target, TargetModifiers modifiers, ref string cursor) { return false; }
+		public override bool CanTargetFrozenActor(Actor self, FrozenActor target, TargetModifiers modifiers, ref string cursor) { return false; }
 
-        public override bool CanTargetActor(Actor self, Actor target, TargetModifiers modifiers, ref string cursor)
-        {
-            IsQueued = modifiers.HasModifier(TargetModifiers.ForceQueue);
+		public override bool CanTargetActor(Actor self, Actor target, TargetModifiers modifiers, ref string cursor)
+		{
+			IsQueued = modifiers.HasModifier(TargetModifiers.ForceQueue);
 
-            foreach (var dock in target.TraitsImplementing<Dock>())
-            {
-                if (dock.IsTraitDisabled)
-                    continue;
+			foreach (var dock in target.TraitsImplementing<Dock>())
+			{
+				if (dock.IsTraitDisabled)
+					continue;
 
-                var dockAction = dock.GetDockAction(self);
+				var dockAction = dock.GetDockAction(self);
 
-                if (dockAction == null)
-                    continue;
+				if (dockAction == null)
+					continue;
 
-                cursor = dockAction.Info.Cursor;
-                return true;
-            }
+				cursor = dockAction.Info.Cursor;
+				return true;
+			}
 
-            return false;
-        }
-    }
+			return false;
+		}
+	}
 }

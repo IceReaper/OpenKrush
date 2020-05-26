@@ -19,7 +19,8 @@ namespace OpenRA.Mods.Kknd.Orders
 	{
 		public readonly string Name;
 
-		public PlaceSpecificBuildingOrderGenerator(ProductionQueue queue, string name, WorldRenderer worldRenderer) : base(queue, name, worldRenderer)
+		public PlaceSpecificBuildingOrderGenerator(ProductionQueue queue, string name, WorldRenderer worldRenderer)
+			: base(queue, name, worldRenderer)
 		{
 			Name = name;
 		}

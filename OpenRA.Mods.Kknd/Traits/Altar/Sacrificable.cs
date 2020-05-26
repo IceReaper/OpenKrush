@@ -24,7 +24,8 @@ namespace OpenRA.Mods.Kknd.Traits.Altar
 		public readonly string Cursor = "enter";
 
 		[Desc("Voice used when ordering to enter enemy building.")]
-		[VoiceReference] public readonly string Voice = "Sacrifice";
+		[VoiceReference]
+		public readonly string Voice = "Sacrifice";
 
 		public object Create(ActorInitializer init) { return new Sacrificable(init, this); }
 	}

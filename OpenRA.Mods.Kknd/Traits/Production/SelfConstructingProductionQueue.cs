@@ -27,7 +27,8 @@ namespace OpenRA.Mods.Kknd.Traits.Production
 	{
 		private bool expectFakeProductionItemRequest;
 
-		public SelfConstructingProductionQueue(ActorInitializer init, Actor playerActor, SelfConstructingProductionQueueInfo info) : base(init, playerActor, info) { }
+		public SelfConstructingProductionQueue(ActorInitializer init, Actor playerActor, SelfConstructingProductionQueueInfo info)
+			: base(init, playerActor, info) { }
 
 		public override IEnumerable<ProductionItem> AllQueued()
 		{
@@ -123,7 +124,8 @@ namespace OpenRA.Mods.Kknd.Traits.Production
 	{
 		public readonly Actor Actor;
 
-		public SelfConstructingProductionItem(ProductionQueue queue, Actor actor, int cost, PowerManager pm, Action onComplete) : base(queue, actor.Info.Name, cost, pm, onComplete)
+		public SelfConstructingProductionItem(ProductionQueue queue, Actor actor, int cost, PowerManager pm, Action onComplete)
+			: base(queue, actor.Info.Name, cost, pm, onComplete)
 		{
 			Actor = actor;
 		}

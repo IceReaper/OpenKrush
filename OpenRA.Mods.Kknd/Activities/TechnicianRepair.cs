@@ -18,29 +18,28 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.Kknd.Activities
 {
-    public class TechnicianRepair : Enter
-    {
-        private readonly int amount;
-        private readonly int duration;
-        private readonly string voiceEnter;
+	public class TechnicianRepair : Enter
+	{
+		private readonly int amount;
+		private readonly int duration;
+		private readonly string voiceEnter;
 
-        public TechnicianRepair(Actor self, Target target, int amount, int duration, string voiceEnter, Color targetLineColor)
-            : base(self, target, targetLineColor)
-        {
-            this.amount = amount;
-            this.duration = duration;
-            this.voiceEnter = voiceEnter;
-        }
+		public TechnicianRepair(Actor self, Target target, int amount, int duration, string voiceEnter, Color targetLineColor)
+			: base(self, target, targetLineColor)
+		{
+			this.amount = amount;
+			this.duration = duration;
+			this.voiceEnter = voiceEnter;
+		}
 
+		protected override void OnEnterComplete(Actor self, Actor targetActor)
+		{
+			targetActor.Trait<TechnicianRepairable>().Add(amount, duration);
 
-        protected override void OnEnterComplete(Actor self, Actor targetActor)
-        {
-            targetActor.Trait<TechnicianRepairable>().Add(amount, duration);
+			if (self.Owner == self.World.LocalPlayer)
+				self.PlayVoice(voiceEnter);
 
-            if (self.Owner == self.World.LocalPlayer)
-                self.PlayVoice(voiceEnter);
-
-            self.Dispose();
-        }
-    }
+			self.Dispose();
+		}
+	}
 }

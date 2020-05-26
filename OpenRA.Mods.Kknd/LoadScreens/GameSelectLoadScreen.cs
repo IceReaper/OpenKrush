@@ -15,28 +15,28 @@ using OpenRA.Widgets;
 
 namespace OpenRA.Mods.Kknd.LoadScreens
 {
-    public class GameSelectLoadScreen : ILoadScreen
-    {
-        public void Dispose()
-        {
-        }
+	public class GameSelectLoadScreen : ILoadScreen
+	{
+		public void Dispose()
+		{
+		}
 
-        public void Init(ModData m, Dictionary<string, string> info)
-        {
-        }
+		public void Init(ModData m, Dictionary<string, string> info)
+		{
+		}
 
-        public void Display()
-        {
-        }
+		public void Display()
+		{
+		}
 
-        public bool BeforeLoad()
-        {
-            return true;
-        }
+		public bool BeforeLoad()
+		{
+			return true;
+		}
 
-        public void StartGame(Arguments args)
-        {
-            Ui.Root.AddChild(new GameSelectWidget());
-        }
-    }
+		public void StartGame(Arguments args)
+		{
+			Ui.Root.AddChild(new GameSelectWidget());
+		}
+	}
 }

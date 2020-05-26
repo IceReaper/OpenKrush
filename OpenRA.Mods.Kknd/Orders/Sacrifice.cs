@@ -21,7 +21,8 @@ namespace OpenRA.Mods.Kknd.Orders
 
 		private string cursor;
 
-		public SacrificeOrderTargeter(string cursor) : base(Id, 6, cursor, false, true)
+		public SacrificeOrderTargeter(string cursor)
+			: base(Id, 6, cursor, false, true)
 		{
 			this.cursor = cursor;
 		}

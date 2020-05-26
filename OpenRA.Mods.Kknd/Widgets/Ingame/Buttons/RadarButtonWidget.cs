@@ -21,7 +21,8 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 	{
 		private bool hasRadar;
 
-		public RadarButtonWidget(SidebarWidget sidebar) : base(sidebar, "button")
+		public RadarButtonWidget(SidebarWidget sidebar)
+			: base(sidebar, "button")
 		{
 			TooltipTitle = "Radar";
 		}
@@ -29,7 +30,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 		public override bool HandleKeyPress(KeyInput e)
 		{
 			if (IsUsable() && !e.IsRepeat && e.Event == KeyInputEvent.Down
-			    && e.Key == Game.ModData.Hotkeys["Radar"].GetValue().Key && e.Modifiers == Game.ModData.Hotkeys["Radar"].GetValue().Modifiers)
+				&& e.Key == Game.ModData.Hotkeys["Radar"].GetValue().Key && e.Modifiers == Game.ModData.Hotkeys["Radar"].GetValue().Modifiers)
 			{
 				Active = !Active;
 				sidebar.IngameUi.Radar.Visible = Active;

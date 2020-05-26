@@ -20,7 +20,8 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 	{
 		private bool sellableActors;
 
-		public SellButtonWidget(SidebarWidget sidebar) : base(sidebar, "button")
+		public SellButtonWidget(SidebarWidget sidebar)
+			: base(sidebar, "button")
 		{
 			TooltipTitle = "Sell";
 		}
@@ -28,7 +29,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 		public override bool HandleKeyPress(KeyInput e)
 		{
 			if (IsUsable() && !e.IsRepeat && e.Event == KeyInputEvent.Down
-			    && e.Key == Game.ModData.Hotkeys["Sell"].GetValue().Key && e.Modifiers == Game.ModData.Hotkeys["Sell"].GetValue().Modifiers)
+				&& e.Key == Game.ModData.Hotkeys["Sell"].GetValue().Key && e.Modifiers == Game.ModData.Hotkeys["Sell"].GetValue().Modifiers)
 			{
 				Active = !Active;
 

@@ -19,7 +19,8 @@ namespace OpenRA.Mods.Kknd.Orders
 	{
 		private string[] validTargets;
 
-		public DeployOnActorOrderTargeter(string[] validTargets, string cursor) : base("Move", 6, cursor, false, true)
+		public DeployOnActorOrderTargeter(string[] validTargets, string cursor)
+			: base("Move", 6, cursor, false, true)
 		{
 			this.validTargets = validTargets;
 		}

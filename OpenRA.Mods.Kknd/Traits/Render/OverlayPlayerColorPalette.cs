@@ -19,10 +19,12 @@ namespace OpenRA.Mods.Kknd.Traits.Render
 	public class OverlayPlayerColorPaletteInfo : ITraitInfo
 	{
 		[Desc("The name of the palette to base off.")]
-		[PaletteReference] public readonly string BasePalette = null;
+		[PaletteReference]
+		public readonly string BasePalette = null;
 
 		[Desc("The prefix for the resulting player palettes")]
-		[PaletteDefinition(true)] public readonly string BaseName = "player";
+		[PaletteDefinition(true)]
+		public readonly string BaseName = "player";
 
 		[Desc("Remap these indices to player colors.")]
 		public readonly int[] RemapIndex = { };

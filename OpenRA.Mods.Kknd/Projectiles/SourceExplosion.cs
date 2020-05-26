@@ -16,21 +16,21 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.Kknd.Projectiles
 {
-    [Desc("Explodes on the attacker position instead of the target position.")]
-    public class SourceExplosionInfo : IProjectileInfo
-    {
-        public IProjectile Create(ProjectileArgs args) { return new SourceExplosion(args); }
-    }
+	[Desc("Explodes on the attacker position instead of the target position.")]
+	public class SourceExplosionInfo : IProjectileInfo
+	{
+		public IProjectile Create(ProjectileArgs args) { return new SourceExplosion(args); }
+	}
 
-    public class SourceExplosion : IProjectile
-    {
-        public SourceExplosion(ProjectileArgs args)
-        {
-            args.Weapon.Impact(Target.FromPos(args.SourceActor.CenterPosition), args.SourceActor);
-        }
+	public class SourceExplosion : IProjectile
+	{
+		public SourceExplosion(ProjectileArgs args)
+		{
+			args.Weapon.Impact(Target.FromPos(args.SourceActor.CenterPosition), args.SourceActor);
+		}
 
-        public void Tick(World world) { }
+		public void Tick(World world) { }
 
-        public IEnumerable<IRenderable> Render(WorldRenderer r) { return new IRenderable[0]; }
-    }
+		public IEnumerable<IRenderable> Render(WorldRenderer r) { return new IRenderable[0]; }
+	}
 }

@@ -18,10 +18,12 @@ namespace OpenRA.Mods.Kknd.Traits.Render
 	public class WithAimAttackAnimationInfo : ITraitInfo, Requires<WithSpriteBodyInfo>
 	{
 		[Desc("Displayed while attacking.")]
-		[SequenceReference] public readonly string SequenceFire = null;
+		[SequenceReference]
+		public readonly string SequenceFire = null;
 
 		[Desc("Displayed while attacking.")]
-		[SequenceReference] public readonly string SequenceAim = null;
+		[SequenceReference]
+		public readonly string SequenceAim = null;
 
 		public object Create(ActorInitializer init) { return new WithAimAttackAnimation(init, this); }
 	}

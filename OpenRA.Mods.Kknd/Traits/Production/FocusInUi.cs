@@ -26,7 +26,8 @@ namespace OpenRA.Mods.Kknd.Traits.Production
 
 	public class FocusInUi : ConditionalTrait<FocusInUiInfo>, INotifySelected
 	{
-		public FocusInUi(FocusInUiInfo info) : base(info) { }
+		public FocusInUi(FocusInUiInfo info)
+			: base(info) { }
 
 		void INotifySelected.Selected(Actor self)
 		{

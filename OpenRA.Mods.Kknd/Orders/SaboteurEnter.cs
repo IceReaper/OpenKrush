@@ -23,7 +23,8 @@ namespace OpenRA.Mods.Kknd.Orders
 		private string blockedCursor;
 
 		// TODO test if this "7" makes saboteurs saboteur cursor more important than attacking.
-		public SaboteurEnterOrderTargeter(string cursor, string blockedCursor) : base(Id, 7, cursor, false, true)
+		public SaboteurEnterOrderTargeter(string cursor, string blockedCursor)
+			: base(Id, 7, cursor, false, true)
 		{
 			this.cursor = cursor;
 			this.blockedCursor = blockedCursor;

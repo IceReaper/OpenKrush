@@ -37,7 +37,8 @@ namespace OpenRA.Mods.Kknd.Graphics
 
 	public class OffsetsSpriteSequenceLoader : DefaultSpriteSequenceLoader
 	{
-		public OffsetsSpriteSequenceLoader(ModData modData) : base(modData) { }
+		public OffsetsSpriteSequenceLoader(ModData modData)
+			: base(modData) { }
 
 		public override ISpriteSequence CreateSequence(ModData modData, TileSet tileSet, SpriteCache cache, string sequence, string animation, MiniYaml info)
 		{

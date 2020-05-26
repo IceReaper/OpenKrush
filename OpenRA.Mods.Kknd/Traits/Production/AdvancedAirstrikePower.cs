@@ -22,7 +22,8 @@ namespace OpenRA.Mods.Kknd.Traits.Production
 
 	public class AdvancedAirstrikePower : AirstrikePower
 	{
-		public AdvancedAirstrikePower(Actor self, AdvancedAirstrikePowerInfo info) : base(self, info) { }
+		public AdvancedAirstrikePower(Actor self, AdvancedAirstrikePowerInfo info)
+			: base(self, info) { }
 
 		public override void Activate(Actor self, Order order, SupportPowerManager manager)
 		{

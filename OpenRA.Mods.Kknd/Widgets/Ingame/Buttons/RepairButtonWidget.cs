@@ -20,7 +20,8 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 	{
 		private bool technicians;
 
-		public RepairButtonWidget(SidebarWidget sidebar) : base(sidebar, "button")
+		public RepairButtonWidget(SidebarWidget sidebar)
+			: base(sidebar, "button")
 		{
 			TooltipTitle = "Repair";
 		}
@@ -28,7 +29,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 		public override bool HandleKeyPress(KeyInput e)
 		{
 			if (IsUsable() && !e.IsRepeat && e.Event == KeyInputEvent.Down
-			    && e.Key == Game.ModData.Hotkeys["Repair"].GetValue().Key && e.Modifiers == Game.ModData.Hotkeys["Repair"].GetValue().Modifiers)
+				&& e.Key == Game.ModData.Hotkeys["Repair"].GetValue().Key && e.Modifiers == Game.ModData.Hotkeys["Repair"].GetValue().Modifiers)
 			{
 				Active = !Active;
 

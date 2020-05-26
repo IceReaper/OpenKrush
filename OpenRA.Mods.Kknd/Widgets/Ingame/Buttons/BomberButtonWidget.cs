@@ -18,7 +18,8 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 {
 	public sealed class BomberButtonWidget : ButtonWidget
 	{
-		public BomberButtonWidget(SidebarWidget sidebar) : base(sidebar, "button")
+		public BomberButtonWidget(SidebarWidget sidebar)
+			: base(sidebar, "button")
 		{
 			TooltipTitle = "Aircrafts";
 		}

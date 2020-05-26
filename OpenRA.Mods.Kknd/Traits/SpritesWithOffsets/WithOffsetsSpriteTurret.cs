@@ -72,7 +72,8 @@ namespace OpenRA.Mods.Kknd.Traits.SpritesWithOffsets
 	{
 		readonly WithSpriteBody wsb;
 
-		public WithOffsetsSpriteTurret(Actor self, WithSpriteTurretInfo info) : base(self, info)
+		public WithOffsetsSpriteTurret(Actor self, WithSpriteTurretInfo info)
+			: base(self, info)
 		{
 			wsb = self.Trait<WithSpriteBody>();
 		}

@@ -34,7 +34,8 @@ namespace OpenRA.Mods.Kknd.Traits.Resources
 		public Actor Drillrig { get; set; }
 		public Actor PowerStation { get; set; }
 
-		public Tanker(ActorInitializer init, TankerInfo info) : base(info)
+		public Tanker(ActorInitializer init, TankerInfo info)
+			: base(info)
 		{
 			this.info = info;
 			self = init.Self;

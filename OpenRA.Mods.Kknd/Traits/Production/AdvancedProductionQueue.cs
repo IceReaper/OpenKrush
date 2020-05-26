@@ -26,7 +26,8 @@ namespace OpenRA.Mods.Kknd.Traits.Production
 	{
 		private readonly Actor actor;
 
-		public AdvancedProductionQueue(ActorInitializer init, Actor playerActor, AdvancedProductionQueueInfo info) : base(init, playerActor, info)
+		public AdvancedProductionQueue(ActorInitializer init, Actor playerActor, AdvancedProductionQueueInfo info)
+			: base(init, playerActor, info)
 		{
 			actor = init.Self;
 		}

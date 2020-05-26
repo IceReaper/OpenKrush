@@ -20,7 +20,8 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 	{
 		private Widget menu;
 
-		public OptionsButtonWidget(SidebarWidget sidebar) : base(sidebar, "button")
+		public OptionsButtonWidget(SidebarWidget sidebar)
+			: base(sidebar, "button")
 		{
 			TooltipTitle = "Options";
 		}

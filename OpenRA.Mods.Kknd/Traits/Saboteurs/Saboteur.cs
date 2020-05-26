@@ -27,19 +27,24 @@ namespace OpenRA.Mods.Kknd.Traits.Saboteurs
 		public readonly string BlockedCursor = "conquer-blocked";
 
 		[Desc("Voice used when ordering to enter enemy building.")]
-		[VoiceReference] public readonly string VoiceOrderEnemy = "Infiltrate";
+		[VoiceReference]
+		public readonly string VoiceOrderEnemy = "Infiltrate";
 
 		[Desc("Voice used when ordering to enter ally building.")]
-		[VoiceReference] public readonly string VoiceOrderAlly = "Reinforce";
+		[VoiceReference]
+		public readonly string VoiceOrderAlly = "Reinforce";
 
 		[Desc("Voice used when entered enemy building.")]
-		[VoiceReference] public readonly string VoiceEnterEnemy = "Infiltrated";
+		[VoiceReference]
+		public readonly string VoiceEnterEnemy = "Infiltrated";
 
 		[Desc("Voice used when conquered enemy building.")]
-		[VoiceReference] public readonly string VoiceConquered = "Conquered";
+		[VoiceReference]
+		public readonly string VoiceConquered = "Conquered";
 
 		[Desc("Voice used when entered ally building.")]
-		[VoiceReference] public readonly string VoiceEnterAlly = "Reinforced";
+		[VoiceReference]
+		public readonly string VoiceEnterAlly = "Reinforced";
 
 		public object Create(ActorInitializer init) { return new Saboteur(init, this); }
 	}

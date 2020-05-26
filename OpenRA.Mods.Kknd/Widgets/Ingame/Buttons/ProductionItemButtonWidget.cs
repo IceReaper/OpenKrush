@@ -34,7 +34,8 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 		private bool initialized;
 		private Sprite image;
 
-		public ProductionItemButtonWidget(SidebarWidget sidebar) : base(sidebar, "unit") { }
+		public ProductionItemButtonWidget(SidebarWidget sidebar)
+			: base(sidebar, "unit") { }
 
 		protected override bool HandleLeftClick(MouseInput mi)
 		{

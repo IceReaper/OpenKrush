@@ -40,7 +40,8 @@ namespace OpenRA.Mods.Kknd.Traits.Resources
 		ConditionManager conditionManager;
 		int token = ConditionManager.InvalidConditionToken;
 
-		public Drillrig(ActorInitializer init, DrillrigInfo info) : base(info)
+		public Drillrig(ActorInitializer init, DrillrigInfo info)
+			: base(info)
 		{
 			this.info = info;
 			self = init.Self;

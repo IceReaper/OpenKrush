@@ -38,7 +38,8 @@ namespace OpenRA.Mods.Kknd.Traits.Resources
 
 		private readonly Researchable researchable;
 
-		public PowerStation(ActorInitializer init, PowerStationInfo info) : base(info)
+		public PowerStation(ActorInitializer init, PowerStationInfo info)
+			: base(info)
 		{
 			this.info = info;
 			self = init.Self;

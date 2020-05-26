@@ -17,18 +17,18 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.Kknd.Warheads
 {
-    public class ShrapnelCreateEffectWarhead : CreateEffectWarhead
-    {
-	    public readonly int2 Radius = int2.Zero;
+	public class ShrapnelCreateEffectWarhead : CreateEffectWarhead
+	{
+		public readonly int2 Radius = int2.Zero;
 
-        [Desc("Weapon to fire when this warhead triggers.")]
-        public readonly string ShrapnelWeapon = null;
+		[Desc("Weapon to fire when this warhead triggers.")]
+		public readonly string ShrapnelWeapon = null;
 
-        [Desc("The minimum and maximum distances the shrapnel may travel.")]
-        public readonly WDist[] ShrapnelRange = { WDist.Zero, WDist.Zero };
+		[Desc("The minimum and maximum distances the shrapnel may travel.")]
+		public readonly WDist[] ShrapnelRange = { WDist.Zero, WDist.Zero };
 
-        public override void DoImpact(Target target, WarheadArgs args)
-        {
+		public override void DoImpact(Target target, WarheadArgs args)
+		{
 			var random = args.SourceActor.World.SharedRandom;
 			var pos = target.CenterPosition + new WVec(Radius.X == 0 ? 0 : random.Next(-Radius.X, Radius.X), Radius.Y == 0 ? 0 : random.Next(-Radius.Y, Radius.Y), 0);
 			var world = args.SourceActor.World;
@@ -105,5 +105,5 @@ namespace OpenRA.Mods.Kknd.Warheads
 			if (impactSound != null && Game.CosmeticRandom.Next(0, 100) < ImpactSoundChance)
 				Game.Sound.Play(SoundType.World, impactSound, pos);
 		}
-    }
+	}
 }

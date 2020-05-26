@@ -21,7 +21,9 @@ namespace OpenRA.Mods.Kknd.Traits.Behavior
 	[Desc("Deploy when standing on top of a specific actor.")]
 	class DeploysOnActorInfo : ITraitInfo
 	{
-		[Desc("Actor to transform into."), ActorReference, FieldLoader.Require]
+		[Desc("Actor to transform into.")]
+		[ActorReference]
+		[FieldLoader.Require]
 		public readonly string IntoActor = null;
 
 		[Desc("Cursor to display when hovering an oilpatch.")]
