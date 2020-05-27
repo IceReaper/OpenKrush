@@ -191,6 +191,8 @@ survivors_autocannontank:
 	Veterancy:
 		Experience: 3000, 4000
 		ReloadRates: 100, 100
+	WithLoopedAttackSound:
+		Report: sounds_survivors|6.wav
 
 survivors_oiltanker:
 	Inherits: ^SurvivorsVehicle

@@ -160,8 +160,6 @@ survivors_autocannontank:
 	Burst: 1
 	BurstDelays: 0
 	ReloadDelay: 3
-	Report: sounds_survivors|6.wav
-	ReportLooped: true
 	Projectile: InstantHit
 	Warhead@Damage: SpreadDamage
 		Damage: 100

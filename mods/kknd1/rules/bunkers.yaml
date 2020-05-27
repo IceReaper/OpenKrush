@@ -67,6 +67,8 @@ bunker_gorttherobot:
 		VoiceSet: GortVoice
 	RenderSprites:
 		Image: bunker_gorttherobot_modern
+	WithLoopedAttackSound:
+		Report: sounds_survivors|188.wav
 
 bunker_mech:
 	Inherits@1: ^BunkerVehicle

@@ -56,8 +56,6 @@ evolved_rotarycannon:
 	Burst: 10
 	BurstDelays: 3
 	ReloadDelay: 4
-	Report: kknd1|bits/sounds/chaingun.wav #sounds_evolved|4.wav
-	ReportLooped: true
 	Projectile: InstantHit
 	Warhead@Damage: SpreadDamage
 		Damage: 100

@@ -28,7 +28,6 @@ namespace OpenRA.Mods.Kknd.FileFormats
 		public VbcFrame(Stream stream)
 		{
 			// TODO this crashes on kknd1 intro briefings! This is because in addition to audio and video, they context a text chunk!
-
 			stream.ReadUInt32(); // Length
 			var flags = stream.ReadUInt16();
 

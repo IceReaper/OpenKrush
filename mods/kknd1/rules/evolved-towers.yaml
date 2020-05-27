@@ -76,3 +76,5 @@ evolved_rotarycannon:
 		Offset: 0,-5
 	TechnicianRepairable:
 		Offset: 0,-15
+	WithLoopedAttackSound:
+		Report: kknd1|bits/sounds/chaingun.wav #sounds_evolved|4.wav

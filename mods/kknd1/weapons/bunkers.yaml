@@ -3,8 +3,6 @@ bunker_gorttherobot:
 	BurstDelays: 0
 	ReloadDelay: 1
 	Range: 7c0
-	Report: sounds_survivors|188.wav
-	ReportLooped: true
 	Projectile: InstantHit
 		Blockable: true
 	Warhead@Damage: SpreadDamage
