@@ -3,7 +3,7 @@ Sounds:
 	Notifications:
 		Beacon: kknd|bits/beacon
 		ChatLine: kknd|bits/chat
-		ClickSound: kknd|bits/click
+		ClickSound: kknd1|bits/sounds/click
 
 Speech:
 	DefaultVariant: .wav

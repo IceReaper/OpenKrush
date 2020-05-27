@@ -53,7 +53,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 			{
 				tooltipTitleFont.DrawText(TooltipTitle, new int2(
 					RenderBounds.X - Math.Max(tooltipTitleMeasure.X, tooltipTextMeasure.X) - 6,
-					RenderBounds.Y - (tooltipTitleMeasure.Y + tooltipTextMeasure.Y) / 2), Color.White);
+					RenderBounds.Y - (tooltipTitleMeasure.Y + tooltipTextMeasure.Y) / 2 - 5), Color.White);
 			}
 
 			if (TooltipText != null)
