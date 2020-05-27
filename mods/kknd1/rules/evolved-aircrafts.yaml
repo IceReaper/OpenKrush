@@ -16,3 +16,5 @@ evolved_wasp:
 		Weapon: evolved_wasp
 	Voiced:
 		VoiceSet: WaspVoice
+	AmbientSound:
+		SoundFiles: sounds_evolved|162.wav
