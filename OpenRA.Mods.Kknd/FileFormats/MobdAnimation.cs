@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
@@ -7,6 +8,7 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
+
 #endregion
 
 using System.Collections.Generic;
@@ -35,7 +37,7 @@ namespace OpenRA.Mods.Kknd.FileFormats
 
 			// TODO add kknd2 bugged ones here! (Worm projectile, ...)
 
-			/*Unk1 = */stream.ReadUInt32(); // TODO this is likely the animation speed
+			/*Unk1 =*/ stream.ReadUInt32(); // TODO this is likely the animation speed
 
 			var frames = new List<MobdFrame>();
 

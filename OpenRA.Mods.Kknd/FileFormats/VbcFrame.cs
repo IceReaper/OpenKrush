@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
@@ -7,6 +8,7 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
+
 #endregion
 
 using System;
@@ -17,15 +19,17 @@ namespace OpenRA.Mods.Kknd.FileFormats
 {
 	public class VbcFrame
 	{
-		private int2 globalMotion;
-		public byte[] Audio;
-		private SegmentStream video;
-		private SegmentStream colors;
+		private readonly int2 globalMotion;
+		private readonly SegmentStream video;
+		private readonly SegmentStream colors;
+
+		public readonly byte[] Audio;
 
 		public VbcFrame(Stream stream)
 		{
-			// TODO this crashes on kknd1 intro briefings!
-			/*var length = */stream.ReadUInt32();
+			// TODO this crashes on kknd1 intro briefings! This is because in addition to audio and video, they context a text chunk!
+
+			stream.ReadUInt32(); // Length
 			var flags = stream.ReadUInt16();
 
 			if ((flags & 0x0001) != 0)
@@ -49,7 +53,7 @@ namespace OpenRA.Mods.Kknd.FileFormats
 			}
 
 			if ((flags & 0x0020) != 0)
-				/*duration = */stream.ReadUInt16();
+				stream.ReadUInt16(); // Duration
 		}
 
 		public byte[] ApplyFrame(byte[] oldFrame, uint[] palette, int2 size)

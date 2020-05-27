@@ -45,7 +45,7 @@ namespace OpenRA.Mods.Kknd.Traits.Render
 			var colors = new uint[Palette.Size];
 
 			var mobd = new Mobd(fileSystem.Open(Filename) as SegmentStream, Version.KKND2);
-			var frame = mobd.Animations.FirstOrDefault(a => a.Frames.Length > 0) ?? mobd.HardcodedAnimations.FirstOrDefault(a => a.Frames.Length > 0);
+			var frame = mobd.RotationalAnimations.FirstOrDefault(a => a.Frames.Length > 0) ?? mobd.SimpleAnimations.FirstOrDefault(a => a.Frames.Length > 0);
 			var palette = frame.Frames.First().RenderFlags.Palette;
 
 			// TODO when we have all kknd2 palettes done, remove this. It will simply extract palettes for easier determination of player indices.

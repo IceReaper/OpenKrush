@@ -97,10 +97,10 @@ namespace OpenRA.Mods.Kknd.SpriteLoaders
 			var mobd = new Mobd(stream as SegmentStream, version);
 			var tmp = new List<MobdSpriteFrame>();
 
-			tmp.AddRange(from mobdAnimation in mobd.Animations
+			tmp.AddRange(from mobdAnimation in mobd.RotationalAnimations
 				from mobdFrame in mobdAnimation.Frames
 				select new MobdSpriteFrame(mobdFrame));
-			tmp.AddRange(from mobdAnimation in mobd.HardcodedAnimations
+			tmp.AddRange(from mobdAnimation in mobd.SimpleAnimations
 				from mobdFrame in mobdAnimation.Frames
 				select new MobdSpriteFrame(mobdFrame));
 

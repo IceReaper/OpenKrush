@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
@@ -7,6 +8,7 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
+
 #endregion
 
 using System.Collections.Generic;
@@ -26,10 +28,10 @@ namespace OpenRA.Mods.Kknd.FileFormats
 		{
 			OriginX = stream.ReadUInt32();
 			OriginY = stream.ReadUInt32();
-			/*Unk1 = */stream.ReadUInt32();
+			/*Unk1 =*/ stream.ReadUInt32();
 			var renderFlagsOffset = stream.ReadUInt32();
-			/*var boxListOffset = */stream.ReadUInt32(); // we do not read boxes (2 points)
-			/*Unk2 = */stream.ReadUInt32();
+			/*var boxListOffset =*/ stream.ReadUInt32(); // we do not read boxes (2 points)
+			/*Unk2 =*/ stream.ReadUInt32();
 			var pointListOffset = stream.ReadUInt32();
 
 			if (pointListOffset > 0)

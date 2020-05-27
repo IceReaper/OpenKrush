@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
@@ -7,6 +8,7 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
+
 #endregion
 
 using System.Collections.Generic;
@@ -18,12 +20,12 @@ namespace OpenRA.Mods.Kknd.LoadScreens
 {
 	public class LoadScreen : BlankLoadScreen
 	{
-		Renderer renderer;
-		Sheet sheet1;
-		Sheet sheet2;
-		Sprite logo1;
-		Sprite logo2;
-		bool started;
+		private Renderer renderer;
+		private Sheet sheet1;
+		private Sheet sheet2;
+		private Sprite logo1;
+		private Sprite logo2;
+		private bool started;
 
 		public override void Init(ModData modData, Dictionary<string, string> info)
 		{

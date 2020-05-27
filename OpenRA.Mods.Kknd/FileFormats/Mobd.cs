@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
@@ -7,6 +8,7 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
+
 #endregion
 
 using System;
@@ -18,8 +20,8 @@ namespace OpenRA.Mods.Kknd.FileFormats
 {
 	public class Mobd
 	{
-		public readonly MobdAnimation[] Animations;
-		public readonly MobdAnimation[] HardcodedAnimations;
+		public readonly MobdAnimation[] RotationalAnimations;
+		public readonly MobdAnimation[] SimpleAnimations;
 
 		public Mobd(SegmentStream stream, Version version)
 		{
@@ -28,8 +30,8 @@ namespace OpenRA.Mods.Kknd.FileFormats
 			var justReadFrameOffset = false;
 
 			var animationOffsets = new List<uint>();
-			var animations = new List<MobdAnimation>();
-			var hardcodedAnimations = new List<MobdAnimation>();
+			var rotationalAnimations = new List<MobdAnimation>();
+			var simpleAnimations = new List<MobdAnimation>();
 
 			while (stream.Position < firstFrameStart)
 			{
@@ -53,7 +55,7 @@ namespace OpenRA.Mods.Kknd.FileFormats
 					animationOffsets.Remove(value - fileOffset);
 					var returnPosition = stream.Position;
 					stream.Position = value - fileOffset;
-					animations.Add(new MobdAnimation(stream, version));
+					rotationalAnimations.Add(new MobdAnimation(stream, version));
 					stream.Position = returnPosition;
 				}
 				else if (value == 0)
@@ -69,7 +71,7 @@ namespace OpenRA.Mods.Kknd.FileFormats
 				try
 				{
 					stream.Position = animationOffset;
-					hardcodedAnimations.Add(new MobdAnimation(stream, version));
+					simpleAnimations.Add(new MobdAnimation(stream, version));
 				}
 				catch (Exception)
 				{
@@ -77,8 +79,8 @@ namespace OpenRA.Mods.Kknd.FileFormats
 				}
 			}
 
-			Animations = animations.ToArray();
-			HardcodedAnimations = hardcodedAnimations.ToArray();
+			RotationalAnimations = rotationalAnimations.ToArray();
+			SimpleAnimations = simpleAnimations.ToArray();
 		}
 	}
 }

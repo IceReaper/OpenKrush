@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
@@ -7,6 +8,7 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
+
 #endregion
 
 using OpenRA.Mods.Kknd.FileSystem;
@@ -21,7 +23,7 @@ namespace OpenRA.Mods.Kknd.FileFormats
 
 		public MobdRenderFlags(SegmentStream stream, Version version)
 		{
-			/*Type = */stream.ReadASCII(4);
+			/*Type =*/ stream.ReadASCII(4);
 			var flags = stream.ReadUInt32();
 
 			if (version == Version.KKND2)

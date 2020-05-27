@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
@@ -7,6 +8,7 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
+
 #endregion
 
 using System.IO;
@@ -16,19 +18,19 @@ namespace OpenRA.Mods.Kknd.FileFormats
 {
 	public class Vbc
 	{
-		private VbcFrame[] frames;
-		public int2 Size;
+		private readonly VbcFrame[] frames;
 
-		public ushort Frames;
-		public ushort SampleBits;
-		public ushort SampleRate;
+		public readonly int2 Size;
+		public readonly ushort Frames;
+		public readonly ushort SampleBits;
+		public readonly ushort SampleRate;
 
 		public Vbc(Stream stream)
 		{
 			if (stream.ReadASCII(4) != "SIFF")
 				throw new InvalidDataException("Invalid vbc (invalid SIFF section)");
 
-			/*var length = */stream.ReadUInt32();
+			stream.ReadUInt32(); // Length
 
 			if (stream.ReadASCII(4) != "VBV1")
 				throw new InvalidDataException("Invalid vbc (not VBV1)");
@@ -36,8 +38,8 @@ namespace OpenRA.Mods.Kknd.FileFormats
 			if (stream.ReadASCII(4) != "VBHD")
 				throw new InvalidDataException("Invalid vbc (not VBHD)");
 
-			/*var length = */stream.ReadUInt32();
-			stream.ReadUInt16(); // 1 Version?
+			stream.ReadUInt32(); // Length
+			stream.ReadUInt16(); // Version
 			Size = new int2(stream.ReadUInt16(), stream.ReadUInt16());
 			stream.ReadUInt32(); // 0
 			Frames = stream.ReadUInt16();
@@ -51,7 +53,7 @@ namespace OpenRA.Mods.Kknd.FileFormats
 			if (stream.ReadASCII(4) != "BODY")
 				throw new InvalidDataException("Invalid vbc (not BODY)");
 
-			/*var length = */stream.ReadUInt32();
+			stream.ReadUInt32(); // Length
 
 			frames = new VbcFrame[Frames];
 
