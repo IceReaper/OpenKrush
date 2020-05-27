@@ -84,6 +84,9 @@ survivors_barragecraft:
 	idle: sprites|BarrageCraft.mobd
 		Start: 32
 		Facings: -16
+	move: sprites|BarrageCraft.mobd
+		Start: 32
+		Facings: -16
 	turret: sprites|BarrageCraft.mobd
 		Start: 16
 		Facings: -16
