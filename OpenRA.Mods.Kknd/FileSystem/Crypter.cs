@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
@@ -7,6 +8,7 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
+
 #endregion
 
 using System;
@@ -30,7 +32,7 @@ namespace OpenRA.Mods.Kknd.FileSystem
 			encryptedStream.Position = metaOffset;
 			var decryptedSizeMeta = encryptedStream.ReadUInt32();*/
 
-			var decryptedData = new byte[8 + decryptedSizeData/* + 8 + decryptedSizeMeta*/];
+			var decryptedData = new byte[8 + decryptedSizeData /* + 8 + decryptedSizeMeta*/];
 			var decryptedStream = new MemoryStream(decryptedData);
 
 			decryptedStream.WriteArray(Encoding.ASCII.GetBytes("DAT2"));

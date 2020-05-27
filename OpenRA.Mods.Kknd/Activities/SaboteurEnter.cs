@@ -28,19 +28,19 @@ namespace OpenRA.Mods.Kknd.Activities
 		protected override void OnEnterComplete(Actor self, Actor targetActor)
 		{
 			var saboteurInfo = self.Info.TraitInfo<SaboteurInfo>();
-			var conquerable = targetActor.Trait<SaboteurConquerable>();
+			var saboteurConquerable = targetActor.Trait<SaboteurConquerable>();
 
 			if (self.Owner == self.World.LocalPlayer)
 			{
 				if (targetActor.Owner.Stances[self.Owner].HasStance(Stance.Ally))
 					self.PlayVoice(saboteurInfo.VoiceEnterAlly);
-				else if (conquerable.Population == 0)
+				else if (saboteurConquerable.Population == 0)
 					self.PlayVoice(saboteurInfo.VoiceConquered);
 				else
 					self.PlayVoice(saboteurInfo.VoiceEnterEnemy);
 			}
 
-			conquerable.Enter(targetActor, self);
+			saboteurConquerable.Enter(targetActor, self);
 			self.Dispose();
 		}
 	}

@@ -20,7 +20,7 @@ namespace OpenRA.Mods.Kknd.Activities
 {
 	public class Sacrifice : Enter
 	{
-		public Sacrifice(Actor self, Target target, Color? targetLineColor = null)
+		public Sacrifice(Actor self, Target target, Color targetLineColor)
 			: base(self, target, targetLineColor)
 		{
 		}

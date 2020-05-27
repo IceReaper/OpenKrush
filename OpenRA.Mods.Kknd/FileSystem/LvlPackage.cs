@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
@@ -7,6 +8,7 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
+
 #endregion
 
 using System.Collections.Generic;
@@ -18,116 +20,113 @@ using FS = OpenRA.FileSystem.FileSystem;
 
 namespace OpenRA.Mods.Kknd.FileSystem
 {
-	public enum Version { KKND1, KKND2, UNKNOWN }
+	public enum Version
+	{
+		UNKNOWN,
+		KKND1,
+		KKND2
+	}
+
+	// TODO try to get rid of this, but something is disposing the stream!
+	class NonDisposingSegmentStream : SegmentStream
+	{
+		public NonDisposingSegmentStream(Stream stream, long offset, long count)
+			: base(stream, offset, count)
+		{
+		}
+
+		protected override void Dispose(bool disposing)
+		{
+		}
+	}
 
 	public class LvlPackageLoader : IPackageLoader
 	{
-		class NonDisposingSegmentStream : SegmentStream
-		{
-			public NonDisposingSegmentStream(Stream stream, long offset, long count)
-			: base(stream, offset, count) { }
-
-			// TODO try to get rid of this, but something is disposing the stream!
-			protected override void Dispose(bool disposing) { }
-		}
-
 		public sealed class LvlPackage : IReadOnlyPackage
 		{
-			// TODO replace by uint[] for performance
-			public struct Entry
-			{
-				public readonly uint Offset;
-				public readonly uint Length;
+			public string Name { get; private set; }
 
-				public Entry(uint offset, uint length)
-				{
-					Offset = offset;
-					Length = length;
-				}
+			public IEnumerable<string> Contents
+			{
+				get { return index.Keys; }
 			}
 
-			public string Name { get; private set; }
-			public IEnumerable<string> Contents { get { return index.Keys; } }
+			private readonly Dictionary<string, uint[]> index = new Dictionary<string, uint[]>();
+			private readonly Stream stream;
 
-			readonly Dictionary<string, Entry> index = new Dictionary<string, Entry>();
-			readonly Stream s;
-
-			public LvlPackage(Stream sBase, string filename, Dictionary<string, MiniYaml> lvlLookup)
+			public LvlPackage(Stream s, string filename, Dictionary<string, MiniYaml> lvlLookup)
 			{
-				sBase.ReadASCII(4); // DATA
-				var tmp = sBase.ReadBytes(4); // Big-Endian
-				var dataLength = (tmp[0] << 24) | (tmp[1] << 16) | (tmp[2] << 8) | tmp[3];
-				s = new SegmentStream(sBase, 8, dataLength);
+				stream = s;
 				Name = filename;
 
-				var filetypesOffset = s.ReadUInt32();
-				s.Position = filetypesOffset + 4;
-				var firstFilesOffset = s.ReadUInt32();
-				s.Position = filetypesOffset;
+				var fileTypeListOffset = s.ReadUInt32();
+				s.Position = fileTypeListOffset;
 
-				while (true)
+				uint firstFileListOffset = 0;
+
+				for (var i = 0; s.Position < s.Length; i++)
 				{
-					var filetype = s.ReadASCII(4);
-					var filesOffset = s.ReadUInt32();
-					var continueTypePosition = s.Position;
+					s.Position = fileTypeListOffset + i * 8;
+
+					var fileType = s.ReadASCII(4);
+					var fileListOffset = s.ReadUInt32();
+
+					// List terminator reached.
+					if (fileListOffset == 0)
+						break;
+
+					// We need this to calculate the last fileLength.
+					if (firstFileListOffset == 0)
+						firstFileListOffset = fileListOffset;
+
+					// To determine when this list ends, check the next entry
 					s.Position += 4;
-					var nextFilesOffset = s.ReadUInt32();
-					s.Position = filesOffset;
+					var fileListEndOffset = s.ReadUInt32();
 
-					if (nextFilesOffset == 0)
-						nextFilesOffset = filetypesOffset;
+					// List terminator reached, so assume the list goes on till the fileTypeList starts.
+					if (fileListEndOffset == 0)
+						fileListEndOffset = fileTypeListOffset;
 
-					for (var i = 0; s.Position < nextFilesOffset; i++)
+					s.Position = fileListOffset;
+
+					for (var j = 0; s.Position < fileListEndOffset; j++)
 					{
 						var fileOffset = s.ReadUInt32();
-						uint fileLength = 0;
 
-						if (fileOffset != 0)
-						{
-							var continueFilePosition = s.Position;
-
-							while (fileLength == 0)
-							{
-								if (s.Position == filetypesOffset)
-									fileLength = firstFilesOffset - fileOffset;
-								else
-								{
-									var nextFileOffset = s.ReadUInt32();
-
-									if (nextFileOffset != 0)
-										fileLength = nextFileOffset - fileOffset;
-								}
-							}
-
-							s.Position = continueFilePosition;
-						}
-
-						if (fileLength <= 0)
+						// Removed file, still increments fileId.
+						if (fileOffset == 0)
 							continue;
 
-						var assetFileName = i + "." + (filetype.Equals("SOUN") ? "wav" : filetype.ToLower());
+						// As the fileLength is nowhere stored, but files always follow in order, calculate the previous fileLength.
+						if (index.Count > 0)
+						{
+							var entry = index.ElementAt(index.Count - 1).Value;
+							entry[1] = fileOffset - entry[0];
+						}
 
+						var assetFileName = j + "." + (fileType.Equals("SOUN") ? "wav" : fileType.ToLower());
+
+						// Lookup assumed original filename for better readability in yaml files.
 						if (lvlLookup.ContainsKey(filename + "|" + assetFileName))
 							assetFileName = lvlLookup[filename + "|" + assetFileName].Value;
 
-						index.Add(assetFileName, new Entry(fileOffset, fileLength));
+						index.Add(assetFileName, new uint[] { fileOffset, 0 });
 					}
+				}
 
-					s.Position = continueTypePosition;
-
-					if (nextFilesOffset == filetypesOffset)
-						break;
+				// Calculate the last fileLength.
+				if (index.Count > 0)
+				{
+					var entry = index.ElementAt(index.Count - 1).Value;
+					entry[1] = firstFileListOffset - entry[0];
 				}
 			}
 
 			public Stream GetStream(string filename)
 			{
-				Entry entry;
+				uint[] entry;
 
-				if (!index.TryGetValue(filename, out entry))
-					return null;
-
-				return new NonDisposingSegmentStream(s, entry.Offset, entry.Length);
+				return !index.TryGetValue(filename, out entry) ? null : new NonDisposingSegmentStream(stream, entry[0], entry[1]);
 			}
 
 			public IReadOnlyPackage OpenPackage(string filename, FS context)
@@ -143,20 +142,33 @@ namespace OpenRA.Mods.Kknd.FileSystem
 
 			public void Dispose()
 			{
-				s.Dispose();
+				stream.Dispose();
 			}
 		}
 
 		public bool TryParsePackage(Stream s, string filename, FS context, out IReadOnlyPackage package)
 		{
-			if (filename.EndsWith(".lpk"))
+			if (filename.EndsWith(".lpk") // Spritesheet container
+			    || filename.EndsWith(".bpk") // Image container
+			    || filename.EndsWith(".spk") // Sound set
+			    || filename.EndsWith(".lps") // Singleplayer map
+			    || filename.EndsWith(".lpm") // Multiplayer map
+			    || filename.EndsWith(".mpk")) // Matrix set (destroyable map part, tile replacements)
 				s = Crypter.Decrypt(s);
 
 			var signature = s.ReadASCII(4);
-			s.Position -= 4;
 
-			if (!signature.Equals("DATA") && !signature.Equals("DAT2"))
+			var version = Version.UNKNOWN;
+
+			if (signature.Equals("DATA"))
+				version = Version.KKND1;
+
+			if (signature.Equals("DAT2"))
+				version = Version.KKND2;
+
+			if (version == Version.UNKNOWN)
 			{
+				s.Position -= 4;
 				package = null;
 				return false;
 			}
@@ -164,7 +176,11 @@ namespace OpenRA.Mods.Kknd.FileSystem
 			Stream lvlLookup;
 			context.TryOpen("LvlLookup.yaml", out lvlLookup);
 
-			package = new LvlPackage(s, filename, MiniYaml.FromStream(lvlLookup).ToDictionary(x => x.Key, x => x.Value));
+			var tmp = s.ReadBytes(4); // Big-Endian
+			var dataLength = (tmp[0] << 24) | (tmp[1] << 16) | (tmp[2] << 8) | tmp[3];
+
+			package = new LvlPackage(new SegmentStream(s, 8, dataLength), filename,
+				MiniYaml.FromStream(lvlLookup).ToDictionary(x => x.Key, x => x.Value));
 
 			return true;
 		}
