@@ -182,39 +182,39 @@ ChromeMetrics:
 
 Fonts:
 	Tiny:
-		Font: kknd|uibits/Unispace.ttf
+		Font: kknd|uibits/Serpentine_Sans_ICG_Oblique.ttf
 		Size: 10
 		Ascender: 8
 	TinyBold:
-		Font: kknd|uibits/UnispaceBold.ttf
+		Font: kknd|uibits/Serpentine_Sans_ICG_BoldOblique.ttf
 		Size: 10
 		Ascender: 8
 	Small:
-		Font: kknd|uibits/Unispace.ttf
+		Font: kknd|uibits/Serpentine_Sans_ICG_Oblique.ttf
 		Size: 12
 		Ascender: 9
 	SmallBold:
-		Font: kknd|uibits/UnispaceBold.ttf
+		Font: kknd|uibits/Serpentine_Sans_ICG_BoldOblique.ttf
 		Size: 12
 		Ascender: 9
 	Regular:
-		Font: kknd|uibits/Unispace.ttf
+		Font: kknd|uibits/Serpentine_Sans_ICG_Oblique.ttf
 		Size: 14
 		Ascender: 11
 	Bold:
-		Font: kknd|uibits/UnispaceBold.ttf
+		Font: kknd|uibits/Serpentine_Sans_ICG_BoldOblique.ttf
 		Size: 14
 		Ascender: 11
 	Medium:
-		Font: kknd|uibits/Unispace.ttf
+		Font: kknd|uibits/Serpentine_Sans_ICG_Oblique.ttf
 		Size: 18
 		Ascender: 14
 	MediumBold:
-		Font: kknd|uibits/UnispaceBold.ttf
+		Font: kknd|uibits/Serpentine_Sans_ICG_BoldOblique.ttf
 		Size: 18
 		Ascender: 14
 	Title:
-		Font: kknd|uibits/UnispaceBold.ttf
+		Font: kknd|uibits/Serpentine_Sans_ICG_BoldOblique.ttf
 		Size: 32
 
 Missions:
