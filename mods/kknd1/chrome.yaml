@@ -164,8 +164,11 @@ lobby-bits:
 		admin: 186,5,7,5
 		colorpicker: 126,5,23,22
 		huepicker: 193,0,7,15
+		kick: 158,5,23,22
 		protected: 200,0,12,13
 		protected-disabled: 211,0,12,13
+		authentication: 224,16,16,16
+		authentication-disabled: 240,16,16,16
 		admin-registered: 224,0,16,16
 		admin-anonymous: 240,0,16,16
 		player-registered: 224,16,16,16
