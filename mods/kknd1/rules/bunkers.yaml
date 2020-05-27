@@ -69,6 +69,7 @@ bunker_gorttherobot:
 		Image: bunker_gorttherobot_modern
 	WithLoopedAttackSound:
 		Report: sounds_survivors|188.wav
+		Delay: 1
 
 bunker_mech:
 	Inherits@1: ^BunkerVehicle

@@ -193,6 +193,7 @@ survivors_autocannontank:
 		ReloadRates: 100, 100
 	WithLoopedAttackSound:
 		Report: sounds_survivors|6.wav
+		Delay: 3
 
 survivors_oiltanker:
 	Inherits: ^SurvivorsVehicle
