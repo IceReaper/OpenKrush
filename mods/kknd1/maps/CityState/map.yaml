@@ -356,9 +356,6 @@ Actors:
 	Actor99: urban_buildings_7
 		Owner: Neutral
 		Location: 49,62
-	Actor100: oilpatch
-		Owner: Neutral
-		Location: 8,11
 	Actor101: oilpatch
 		Owner: Neutral
 		Location: 19,3
@@ -404,9 +401,6 @@ Actors:
 	Actor116: oilpatch
 		Owner: Neutral
 		Location: 44,52
-	Actor117: oilpatch
-		Owner: Neutral
-		Location: 35,61
 	Actor118: oilpatch
 		Owner: Neutral
 		Location: 25,45
@@ -428,9 +422,6 @@ Actors:
 	Actor125: oilpatch
 		Owner: Neutral
 		Location: 31,79
-	Actor126: oilpatch
-		Owner: Neutral
-		Location: 46,70
 	Actor127: oilpatch
 		Owner: Neutral
 		Location: 57,66
@@ -440,30 +431,18 @@ Actors:
 	Actor129: oilpatch
 		Owner: Neutral
 		Location: 71,70
-	Actor130: oilpatch
-		Owner: Neutral
-		Location: 70,88
 	Actor131: oilpatch
 		Owner: Neutral
 		Location: 58,93
 	Actor132: oilpatch
 		Owner: Neutral
 		Location: 32,93
-	Actor135: mpspawn
-		Owner: Neutral
-		Location: 40,14
 	Actor136: mpspawn
 		Owner: Neutral
 		Location: 43,68
-	Actor137: mpspawn
-		Owner: Neutral
-		Location: 10,26
 	Actor138: mpspawn
 		Owner: Neutral
 		Location: 80,90
-	Actor139: mpspawn
-		Owner: Neutral
-		Location: 84,31
 	Actor140: mpspawn
 		Owner: Neutral
 		Location: 13,71
@@ -473,15 +452,36 @@ Actors:
 	Actor142: bunker_techbunker
 		Owner: Neutral
 		Location: 38,48
-	Actor143: oilpatch
-		Owner: Neutral
-		Location: 40,7
 	Actor144: oilpatch
 		Owner: Neutral
 		Location: 19,74
-	Actor145: oilpatch
-		Owner: Neutral
-		Location: 84,85
 	Actor146: oilpatch
 		Owner: Neutral
 		Location: 87,94
+	Actor147: oilpatch
+		Owner: Neutral
+		Location: 2,16
+	Actor149: mpspawn
+		Owner: Neutral
+		Location: 10,25
+	Actor148: oilpatch
+		Owner: Neutral
+		Location: 67,88
+	Actor150: oilpatch
+		Owner: Neutral
+		Location: 86,85
+	Actor145: mpspawn
+		Owner: Neutral
+		Location: 86,29
+	Actor151: oilpatch
+		Owner: Neutral
+		Location: 49,70
+	Actor152: oilpatch
+		Owner: Neutral
+		Location: 35,58
+	Actor153: oilpatch
+		Owner: Neutral
+		Location: 41,3
+	Actor143: mpspawn
+		Owner: Neutral
+		Location: 38,12

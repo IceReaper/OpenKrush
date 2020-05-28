@@ -125,12 +125,6 @@ Actors:
 	Actor21: oilpatch
 		Owner: Neutral
 		Location: 47,7
-	Actor22: oilpatch
-		Owner: Neutral
-		Location: 85,10
-	Actor23: oilpatch
-		Owner: Neutral
-		Location: 95,15
 	Actor24: oilpatch
 		Owner: Neutral
 		Location: 89,27
@@ -149,9 +143,6 @@ Actors:
 	Actor29: oilpatch
 		Owner: Neutral
 		Location: 5,41
-	Actor30: oilpatch
-		Owner: Neutral
-		Location: 26,44
 	Actor31: oilpatch
 		Owner: Neutral
 		Location: 40,48
@@ -164,9 +155,6 @@ Actors:
 	Actor34: oilpatch
 		Owner: Neutral
 		Location: 3,81
-	Actor35: oilpatch
-		Owner: Neutral
-		Location: 26,83
 	Actor36: oilpatch
 		Owner: Neutral
 		Location: 28,71
@@ -176,18 +164,6 @@ Actors:
 	Actor38: oilpatch
 		Owner: Neutral
 		Location: 58,85
-	Actor39: oilpatch
-		Owner: Neutral
-		Location: 78,86
-	Actor40: oilpatch
-		Owner: Neutral
-		Location: 97,73
-	Actor41: oilpatch
-		Owner: Neutral
-		Location: 93,53
-	Actor42: oilpatch
-		Owner: Neutral
-		Location: 81,58
 	Actor43: oilpatch
 		Owner: Neutral
 		Location: 61,55
@@ -221,3 +197,27 @@ Actors:
 	Actor53: bunker_techbunker
 		Owner: Neutral
 		Location: 57,16
+	Actor54: oilpatch
+		Owner: Creeps
+		Location: 25,44
+	Actor55: oilpatch
+		Owner: Creeps
+		Location: 83,9
+	Actor56: oilpatch
+		Owner: Creeps
+		Location: 96,15
+	Actor57: oilpatch
+		Owner: Creeps
+		Location: 94,76
+	Actor59: oilpatch
+		Owner: Creeps
+		Location: 77,85
+	Actor58: oilpatch
+		Owner: Creeps
+		Location: 27,83
+	Actor60: oilpatch
+		Owner: Creeps
+		Location: 81,56
+	Actor61: oilpatch
+		Owner: Creeps
+		Location: 90,49

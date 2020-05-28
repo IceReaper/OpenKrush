@@ -209,57 +209,21 @@ Actors:
 	Actor50: oilpatch
 		Owner: Neutral
 		Location: 6,13
-	Actor51: oilpatch
-		Owner: Neutral
-		Location: 18,6
 	Actor52: oilpatch
 		Owner: Neutral
 		Location: 27,20
-	Actor53: oilpatch
-		Owner: Neutral
-		Location: 32,3
 	Actor54: oilpatch
 		Owner: Neutral
 		Location: 46,11
-	Actor55: oilpatch
-		Owner: Neutral
-		Location: 71,8
-	Actor56: oilpatch
-		Owner: Neutral
-		Location: 86,9
 	Actor57: oilpatch
 		Owner: Neutral
 		Location: 95,22
-	Actor58: oilpatch
-		Owner: Neutral
-		Location: 93,43
-	Actor59: oilpatch
-		Owner: Neutral
-		Location: 96,55
-	Actor60: oilpatch
-		Owner: Neutral
-		Location: 77,85
-	Actor61: oilpatch
-		Owner: Neutral
-		Location: 75,70
-	Actor62: oilpatch
-		Owner: Neutral
-		Location: 57,75
 	Actor63: oilpatch
 		Owner: Neutral
 		Location: 45,83
 	Actor64: oilpatch
 		Owner: Neutral
 		Location: 18,82
-	Actor65: oilpatch
-		Owner: Neutral
-		Location: 29,77
-	Actor66: oilpatch
-		Owner: Neutral
-		Location: 5,70
-	Actor67: oilpatch
-		Owner: Neutral
-		Location: 21,67
 	Actor68: oilpatch
 		Owner: Neutral
 		Location: 18,51
@@ -269,9 +233,6 @@ Actors:
 	Actor70: oilpatch
 		Owner: Neutral
 		Location: 7,44
-	Actor71: oilpatch
-		Owner: Neutral
-		Location: 15,27
 	Actor72: oilpatch
 		Owner: Neutral
 		Location: 42,28
@@ -287,27 +248,15 @@ Actors:
 	Actor77: oilpatch
 		Owner: Neutral
 		Location: 63,55
-	Actor79: oilpatch
-		Owner: Neutral
-		Location: 74,24
 	Actor78: oilpatch
 		Owner: Neutral
 		Location: 67,40
-	Actor80: mpspawn
-		Owner: Neutral
-		Location: 73,80
 	Actor81: mpspawn
 		Owner: Neutral
 		Location: 29,12
 	Actor82: mpspawn
 		Owner: Neutral
 		Location: 83,17
-	Actor83: mpspawn
-		Owner: Neutral
-		Location: 18,73
-	Actor84: mpspawn
-		Owner: Neutral
-		Location: 90,50
 	Actor85: mpspawn
 		Owner: Neutral
 		Location: 11,36
@@ -317,3 +266,54 @@ Actors:
 	Actor87: bunker_techbunker
 		Owner: Neutral
 		Location: 47,64
+	Actor88: oilpatch
+		Owner: Neutral
+		Location: 34,1
+	Actor89: oilpatch
+		Owner: Neutral
+		Location: 17,3
+	Actor90: oilpatch
+		Owner: Neutral
+		Location: 89,7
+	Actor91: oilpatch
+		Owner: Neutral
+		Location: 73,25
+	Actor92: oilpatch
+		Owner: Neutral
+		Location: 69,6
+	Actor93: oilpatch
+		Owner: Neutral
+		Location: 95,41
+	Actor94: mpspawn
+		Owner: Neutral
+		Location: 88,50
+	Actor95: oilpatch
+		Owner: Neutral
+		Location: 95,54
+	Actor97: oilpatch
+		Owner: Neutral
+		Location: 77,83
+	Actor96: mpspawn
+		Owner: Neutral
+		Location: 70,80
+	Actor98: oilpatch
+		Owner: Neutral
+		Location: 77,68
+	Actor99: oilpatch
+		Owner: Neutral
+		Location: 56,75
+	Actor101: oilpatch
+		Owner: Neutral
+		Location: 25,63
+	Actor102: oilpatch
+		Owner: Neutral
+		Location: 4,70
+	Actor103: mpspawn
+		Owner: Neutral
+		Location: 20,72
+	Actor100: oilpatch
+		Owner: Neutral
+		Location: 30,76
+	Actor104: oilpatch
+		Owner: Neutral
+		Location: 18,27

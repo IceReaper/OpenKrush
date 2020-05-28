@@ -299,9 +299,6 @@ Actors:
 	Actor79: highland_objects_16
 		Owner: Neutral
 		Location: 4,33
-	Actor80: oilpatch
-		Owner: Neutral
-		Location: 14,7
 	Actor81: oilpatch
 		Owner: Neutral
 		Location: 38,14
@@ -311,18 +308,12 @@ Actors:
 	Actor83: oilpatch
 		Owner: Neutral
 		Location: 54,1
-	Actor84: oilpatch
-		Owner: Neutral
-		Location: 51,19
 	Actor85: oilpatch
 		Owner: Neutral
 		Location: 70,8
 	Actor86: oilpatch
 		Owner: Neutral
 		Location: 58,26
-	Actor87: oilpatch
-		Owner: Neutral
-		Location: 52,34
 	Actor88: oilpatch
 		Owner: Neutral
 		Location: 60,43
@@ -332,12 +323,6 @@ Actors:
 	Actor90: oilpatch
 		Owner: Neutral
 		Location: 26,22
-	Actor91: oilpatch
-		Owner: Neutral
-		Location: 0,18
-	Actor93: oilpatch
-		Owner: Neutral
-		Location: 5,46
 	Actor94: oilpatch
 		Owner: Neutral
 		Location: 15,55
@@ -350,27 +335,9 @@ Actors:
 	Actor98: oilpatch
 		Owner: Neutral
 		Location: 69,55
-	Actor99: mpspawn
-		Owner: Neutral
-		Location: 67,13
-	Actor100: mpspawn
-		Owner: Neutral
-		Location: 12,52
-	Actor101: mpspawn
-		Owner: Neutral
-		Location: 64,55
-	Actor102: mpspawn
-		Owner: Neutral
-		Location: 24,9
-	Actor103: mpspawn
-		Owner: Neutral
-		Location: 56,31
 	Actor104: oilpatch
 		Owner: Neutral
 		Location: 14,40
-	Actor105: oilpatch
-		Owner: Neutral
-		Location: 9,28
 	Actor106: mpspawn
 		Owner: Neutral
 		Location: 7,25
@@ -380,3 +347,36 @@ Actors:
 	Actor108: bunker_techbunker
 		Owner: Neutral
 		Location: 14,20
+	Actor110: oilpatch
+		Owner: Neutral
+		Location: 4,43
+	Actor109: mpspawn
+		Owner: Neutral
+		Location: 11,52
+	Actor112: oilpatch
+		Owner: Neutral
+		Location: 2,16
+	Actor111: oilpatch
+		Owner: Neutral
+		Location: 12,30
+	Actor113: oilpatch
+		Owner: Neutral
+		Location: 15,6
+	Actor114: mpspawn
+		Owner: Neutral
+		Location: 29,9
+	Actor115: mpspawn
+		Owner: Neutral
+		Location: 62,13
+	Actor116: oilpatch
+		Owner: Neutral
+		Location: 71,18
+	Actor117: mpspawn
+		Owner: Neutral
+		Location: 60,56
+	Actor118: mpspawn
+		Owner: Neutral
+		Location: 50,32
+	Actor119: oilpatch
+		Owner: Neutral
+		Location: 38,25
