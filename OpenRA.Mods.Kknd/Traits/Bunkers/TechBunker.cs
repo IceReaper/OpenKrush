@@ -74,7 +74,7 @@ namespace OpenRA.Mods.Kknd.Traits.Bunkers
 		Opened
 	}
 
-	class TechBunker : ITick, INotifyCreated
+	class TechBunker : ITick
 	{
 		readonly TechBunkerInfo info;
 		readonly WithSpriteBody wsb;
@@ -152,7 +152,7 @@ namespace OpenRA.Mods.Kknd.Traits.Bunkers
 					break;
 
 				case TechBunkerState.Opened:
-					if (self.World.WorldActor.Trait<BunkerSettings>().Reusable && info.LockAfter != -1 && timer++ >= info.LockAfter)
+					if (self.World.WorldActor.Trait<TechBunkerBehavior>().Behavior == TechBunkerBehaviorType.Reusable && info.LockAfter != -1 && timer++ >= info.LockAfter)
 					{
 						state = TechBunkerState.Closing;
 						timer = 0;
@@ -235,12 +235,6 @@ namespace OpenRA.Mods.Kknd.Traits.Bunkers
 			}
 
 			return exit;
-		}
-
-		void INotifyCreated.Created(Actor self)
-		{
-			if (!self.World.WorldActor.Trait<BunkerSettings>().Enabled)
-				self.Dispose();
 		}
 	}
 }

@@ -1,0 +1,65 @@
+#region Copyright & License Information
+
+/*
+ * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
+ * This file is part of KKnD, which is free software. It is made
+ * available to you under the terms of the GNU General Public License
+ * as published by the Free Software Foundation, either version 3 of
+ * the License, or (at your option) any later version. For more
+ * information, see COPYING.
+ */
+
+#endregion
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using OpenRA.Traits;
+
+namespace OpenRA.Mods.Kknd.Traits.Bunkers
+{
+	public enum TechBunkerBehaviorType
+	{
+		SingleUsage,
+		Reusable
+	}
+
+	[Desc("Tech bunker usage behavior.")]
+	public class TechBunkerBehaviorInfo : ITraitInfo, ILobbyOptions
+	{
+		public const string Id = "TechBunkerBehavior";
+
+		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(Ruleset rules)
+		{
+			yield return new LobbyOption(
+				Id,
+				"Bunker Behavior",
+				"TechBunker behavior.",
+				true,
+				0,
+				new ReadOnlyDictionary<string, string>(new Dictionary<TechBunkerBehaviorType, string>
+				{
+					{ TechBunkerBehaviorType.SingleUsage, "Single-Usage" },
+					{ TechBunkerBehaviorType.Reusable, "Reusable" }
+				}.ToDictionary(e => e.Key.ToString(), e => e.Value)),
+				TechBunkerBehaviorType.Reusable.ToString(),
+				false);
+		}
+
+		public object Create(ActorInitializer init)
+		{
+			return new TechBunkerBehavior();
+		}
+	}
+
+	public class TechBunkerBehavior : INotifyCreated
+	{
+		public TechBunkerBehaviorType Behavior { get; private set; }
+
+		void INotifyCreated.Created(Actor self)
+		{
+			Behavior = (TechBunkerBehaviorType)Enum.Parse(typeof(TechBunkerBehaviorType),
+				self.World.LobbyInfo.GlobalSettings.OptionOrDefault(TechBunkerBehaviorInfo.Id, TechBunkerBehaviorType.Reusable.ToString()));
+		}
+	}
+}
