@@ -193,47 +193,6 @@ tech_drillrig:
 	make1: bits/TechDrillRig.png
 	make2: bits/TechDrillRig.png
 
-tech_windmill:
-	dirt: bits/TechWindmillPowerPlant.png
-		Start: 0 
-		Offset: 5,20
-	idle: bits/TechWindmillPowerPlant.png
-		Start: 1 
-		Offset: 0,-48
-		ZOffset: 1500
-	damaged-idle: bits/TechWindmillPowerPlant.png
-		Start: 2
-		Offset: 0,-48
-		ZOffset: 1500
-	critical-idle: bits/TechWindmillPowerPlant.png
-		Start: 3
-		Offset: 0,-48
-		ZOffset: 1500
-	animation1: bits/TechWindmillPowerPlant.png
-		Start: 10
-		Length: 8
-		Tick: 80
-		Offset: 16,-112
-		ZOffset: 1500
-	animation2: bits/TechWindmillPowerPlant.png
-		Start: 20
-		Length: 40
-		Tick: 60
-		Offset: -5,-26
-		ZOffset: 1500
-	damaged-animation2: bits/TechWindmillPowerPlant.png
-		Start: 60
-		Length: 30
-		Tick: 70
-		Offset: -5,-26
-		ZOffset: 1500
-	critical-animation2: bits/TechWindmillPowerPlant.png
-		Start: 90
-		Length: 30
-		Tick: 70
-		Offset: 3,-21
-		ZOffset: 1500
-
 font:
 	production: bits/FontProduction.png
 		Length: 11
