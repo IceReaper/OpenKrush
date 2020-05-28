@@ -2831,7 +2831,7 @@ Templates:
 		Categories: Dirt Cliff Extra
 		Tiles:
 			0: Dirt
-			1: Dirt
+			1: Cliff
 			2: Cliff
 			3: Cliff
 			4: Cliff
@@ -2973,7 +2973,7 @@ Templates:
 		Tiles:
 			0: Cliff
 			1: Cliff
-			2: Dirt
+			2: Cliff
 			3: Dirt
 			4: Grass
 			5: Grass
