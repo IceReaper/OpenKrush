@@ -1,0 +1,298 @@
+MapFormat: 11
+
+RequiresMod: kknd1
+
+Title: Hardware War
+
+Author: KKND
+
+Tileset: desert
+
+MapSize: 102,92
+
+Bounds: 1,1,100,90
+
+Visibility: Lobby
+
+Categories: Classic
+
+Players:
+	PlayerReference@Neutral:
+		Name: Neutral
+		OwnsWorld: True
+		NonCombatant: True
+		Faction: Random
+	PlayerReference@Creeps:
+		Name: Creeps
+		NonCombatant: True
+		Faction: Random
+		Enemies: Multi0, Multi1, Multi2, Multi3, Multi4, Multi5
+	PlayerReference@Multi0:
+		Name: Multi0
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi1:
+		Name: Multi1
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi2:
+		Name: Multi2
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi3:
+		Name: Multi3
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi4:
+		Name: Multi4
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi5:
+		Name: Multi5
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+
+Actors:
+	Actor0: desert_objects_26
+		Owner: Neutral
+		Location: 18,59
+	Actor2: desert_objects_29
+		Owner: Neutral
+		Location: 48,81
+	Actor3: desert_objects_26
+		Owner: Neutral
+		Location: 69,59
+	Actor4: desert_objects_29
+		Owner: Neutral
+		Location: 71,70
+	Actor5: desert_objects_29
+		Owner: Neutral
+		Location: 74,45
+	Actor6: desert_objects_26
+		Owner: Neutral
+		Location: 86,7
+	Actor7: desert_objects_18
+		Owner: Neutral
+		Location: 38,9
+	Actor8: desert_objects_24
+		Owner: Neutral
+		Location: 37,9
+	Actor9: desert_objects_24
+		Owner: Neutral
+		Location: 36,8
+	Actor11: desert_objects_23
+		Owner: Neutral
+		Location: 37,5
+	Actor14: desert_objects_23
+		Owner: Neutral
+		Location: 36,4
+	Actor12: desert_objects_24
+		Owner: Neutral
+		Location: 36,11
+	Actor13: desert_objects_21
+		Owner: Neutral
+		Location: 40,11
+	Actor15: desert_objects_19
+		Owner: Neutral
+		Location: 35,12
+	Actor16: desert_objects_22
+		Owner: Neutral
+		Location: 37,12
+	Actor17: desert_objects_23
+		Owner: Neutral
+		Location: 60,8
+	Actor18: desert_objects_22
+		Owner: Neutral
+		Location: 63,7
+	Actor19: desert_objects_24
+		Owner: Neutral
+		Location: 62,10
+	Actor20: desert_objects_30
+		Owner: Neutral
+		Location: 74,12
+	Actor21: desert_objects_9
+		Owner: Neutral
+		Location: 99,38
+	Actor22: desert_objects_9
+		Owner: Neutral
+		Location: 96,40
+	Actor23: desert_objects_9
+		Owner: Neutral
+		Location: 83,36
+	Actor24: desert_objects_3
+		Owner: Neutral
+		Location: 81,37
+	Actor25: desert_objects_3
+		Owner: Neutral
+		Location: 80,38
+	Actor26: desert_objects_9
+		Owner: Neutral
+		Location: 82,42
+	Actor27: desert_objects_3
+		Owner: Neutral
+		Location: 87,43
+	Actor28: desert_objects_9
+		Owner: Neutral
+		Location: 87,48
+	Actor29: desert_objects_9
+		Owner: Neutral
+		Location: 85,47
+	Actor30: desert_objects_3
+		Owner: Neutral
+		Location: 98,49
+	Actor32: desert_objects_9
+		Owner: Neutral
+		Location: 98,53
+	Actor33: desert_objects_30
+		Owner: Neutral
+		Location: 94,68
+	Actor34: desert_objects_21
+		Owner: Neutral
+		Location: 34,15
+	Actor35: desert_objects_24
+		Owner: Neutral
+		Location: 34,17
+	Actor36: desert_objects_19
+		Owner: Neutral
+		Location: 33,17
+	Actor37: desert_objects_18
+		Owner: Neutral
+		Location: 35,19
+	Actor38: desert_objects_31
+		Owner: Neutral
+		Location: 28,22
+	Actor39: desert_objects_30
+		Owner: Neutral
+		Location: 4,39
+	Actor40: desert_objects_21
+		Owner: Neutral
+		Location: 16,58
+	Actor41: desert_objects_30
+		Owner: Neutral
+		Location: 9,70
+	Actor42: desert_objects_31
+		Owner: Neutral
+		Location: 40,70
+	Actor43: desert_objects_23
+		Owner: Neutral
+		Location: 52,19
+	Actor44: desert_objects_24
+		Owner: Neutral
+		Location: 54,20
+	Actor45: desert_objects_24
+		Owner: Neutral
+		Location: 55,19
+	Actor46: oilpatch
+		Owner: Neutral
+		Location: 17,3
+	Actor47: oilpatch
+		Owner: Neutral
+		Location: 3,14
+	Actor48: oilpatch
+		Owner: Neutral
+		Location: 34,1
+	Actor49: oilpatch
+		Owner: Neutral
+		Location: 24,15
+	Actor50: oilpatch
+		Owner: Neutral
+		Location: 13,26
+	Actor51: oilpatch
+		Owner: Neutral
+		Location: 26,30
+	Actor52: oilpatch
+		Owner: Neutral
+		Location: 34,20
+	Actor53: oilpatch
+		Owner: Neutral
+		Location: 58,25
+	Actor54: oilpatch
+		Owner: Neutral
+		Location: 49,29
+	Actor57: oilpatch
+		Owner: Neutral
+		Location: 93,29
+	Actor58: oilpatch
+		Owner: Neutral
+		Location: 94,42
+	Actor55: oilpatch
+		Owner: Neutral
+		Location: 87,12
+	Actor56: oilpatch
+		Owner: Neutral
+		Location: 74,4
+	Actor59: oilpatch
+		Owner: Neutral
+		Location: 93,52
+	Actor60: oilpatch
+		Owner: Neutral
+		Location: 85,69
+	Actor61: oilpatch
+		Owner: Neutral
+		Location: 79,84
+	Actor62: oilpatch
+		Owner: Neutral
+		Location: 67,63
+	Actor63: oilpatch
+		Owner: Neutral
+		Location: 59,52
+	Actor64: oilpatch
+		Owner: Neutral
+		Location: 67,48
+	Actor65: oilpatch
+		Owner: Neutral
+		Location: 52,75
+	Actor66: oilpatch
+		Owner: Neutral
+		Location: 42,82
+	Actor67: oilpatch
+		Owner: Neutral
+		Location: 31,79
+	Actor68: oilpatch
+		Owner: Neutral
+		Location: 11,76
+	Actor69: oilpatch
+		Owner: Neutral
+		Location: 3,66
+	Actor71: oilpatch
+		Owner: Neutral
+		Location: 12,53
+	Actor72: oilpatch
+		Owner: Neutral
+		Location: 6,42
+	Actor73: oilpatch
+		Owner: Neutral
+		Location: 27,42
+	Actor74: oilpatch
+		Owner: Neutral
+		Location: 36,58
+	Actor75: mpspawn
+		Owner: Neutral
+		Location: 11,10
+	Actor76: mpspawn
+		Owner: Neutral
+		Location: 91,21
+	Actor77: mpspawn
+		Owner: Neutral
+		Location: 17,73
+	Actor78: mpspawn
+		Owner: Neutral
+		Location: 82,77
+	Actor81: mpspawn
+		Owner: Neutral
+		Location: 62,46
+	Actor82: bunker_techbunker
+		Owner: Neutral
+		Location: 40,45
+	Actor83: bunker_techbunker
+		Owner: Neutral
+		Location: 72,27
+	Actor79: mpspawn
+		Owner: Neutral
+		Location: 32,28
