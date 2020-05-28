@@ -460,56 +460,6 @@ evolved_drillrig:
 	TechnicianRepairable:
 		Offset: 0,-30
 
-evolved_gasconverter:
-	Inherits: ^EvolvedBuilding
-	Tooltip:
-		Name: Gas Converter
-	TooltipDescription:
-		Description: Produces additional resources
-	Valued:
-		Cost: 750
-	Health:
-		HP: 2000
-	AdvancedBuildable:
-		BuildDuration: 750
-		Level: -1
-	Building:
-		Dimensions: 2,2
-		Footprint: xx xx
-	HitShape:
-		Type: Rectangle
-			TopLeft: -1024, -1024
-			BottomRight: 1024, 1024
-		TargetableOffsets: 819,-512,0, 819,512,0, -819,-512,0, -819,512,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
-	Selectable:
-		Bounds: 64, 64, 0, 0
-	AdvancedSelectionDecorations:
-		Offset: 0,-7
-	SaboteurConquerable:
-		Population: 1
-		RequiresCondition: !selfconstructing && !deconstructing
-	WithIdleOverlay@Animation1:
-		Sequence: animation-pigs
-		RequiresCondition: !selfconstructing && !deconstructing
-	WithIdleOverlay@Animation2:
-		Sequence: animation-sparks
-		RequiresCondition: !selfconstructing && !deconstructing
-	CashTrickler:
-		Interval: 50
-		Amount: 20
-		ShowTicks: false
-	Explodes:
-		Weapon: dieSmallBuilding
-		EmptyWeapon: dieSmallBuilding
-	ExplosionOnDamageTransition@Heavy:
-		Weapon: breakSmallBuilding
-		DamageState: Heavy
-	ExplosionOnDamageTransition@Critical:
-		Weapon: breakSmallBuilding
-		DamageState: Critical
-	FrozenOnDeath:
-		Duration: 40
-
 evolved_windmill:
 	Inherits: ^EvolvedBuilding
 	Tooltip:
