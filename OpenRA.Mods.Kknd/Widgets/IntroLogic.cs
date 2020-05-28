@@ -11,6 +11,8 @@
 
 #endregion
 
+using OpenRA.GameRules;
+using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common.Widgets;
 using OpenRA.Mods.Kknd.FileFormats;
 using OpenRA.Primitives;
@@ -24,20 +26,28 @@ namespace OpenRA.Mods.Kknd.Widgets
 
 		private readonly Widget widget;
 		private readonly ModData modData;
+		private readonly World world;
 		private readonly VbcPlayerWidget player;
+		private readonly MusicPlaylist musicPlayList;
+		private MusicInfo song;
 
 		[ObjectCreator.UseCtor]
-		public IntroLogic(Widget widget, ModData modData)
+		public IntroLogic(Widget widget, World world, ModData modData)
 		{
 			if (state != 0)
 				return;
 
 			this.widget = widget;
+			this.world = world;
 			this.modData = modData;
 
 			widget.AddChild(player = new VbcPlayerWidget());
 
 			player.Bounds = new Rectangle(0, 0, Game.Renderer.Resolution.Width, Game.Renderer.Resolution.Height);
+
+			musicPlayList = world.WorldActor.Trait<MusicPlaylist>();
+			song = musicPlayList.CurrentSong();
+			musicPlayList.Stop();
 		}
 
 		public override void Tick()
@@ -50,6 +60,9 @@ namespace OpenRA.Mods.Kknd.Widgets
 			{
 				widget.RemoveChild(player);
 				state++;
+
+				if (song != null)
+					world.WorldActor.Trait<MusicPlaylist>().Play(song);
 			}
 		}
 
