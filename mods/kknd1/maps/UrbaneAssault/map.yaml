@@ -383,15 +383,9 @@ Actors:
 	Actor113: oilpatch
 		Owner: Neutral
 		Location: 10,2
-	Actor114: oilpatch
-		Owner: Neutral
-		Location: 8,15
 	Actor116: oilpatch
 		Owner: Neutral
 		Location: 2,39
-	Actor117: oilpatch
-		Owner: Neutral
-		Location: 18,47
 	Actor118: oilpatch
 		Owner: Neutral
 		Location: 24,39
@@ -404,45 +398,12 @@ Actors:
 	Actor122: oilpatch
 		Owner: Neutral
 		Location: 42,24
-	Actor123: oilpatch
-		Owner: Neutral
-		Location: 12,65
-	Actor126: oilpatch
-		Owner: Neutral
-		Location: 21,88
-	Actor127: oilpatch
-		Owner: Neutral
-		Location: 13,96
-	Actor130: oilpatch
-		Owner: Neutral
-		Location: 40,84
 	Actor131: oilpatch
 		Owner: Neutral
 		Location: 38,72
-	Actor132: oilpatch
-		Owner: Neutral
-		Location: 21,75
-	Actor134: mpspawn
-		Owner: Neutral
-		Location: 37,8
-	Actor135: mpspawn
-		Owner: Neutral
-		Location: 18,93
-	Actor136: mpspawn
-		Owner: Neutral
-		Location: 7,11
-	Actor138: mpspawn
-		Owner: Neutral
-		Location: 46,93
-	Actor139: mpspawn
-		Owner: Neutral
-		Location: 12,47
 	Actor140: mpspawn
 		Owner: Neutral
 		Location: 18,70
-	Actor144: oilpatch
-		Owner: Neutral
-		Location: 45,3
 	Actor145: oilpatch
 		Owner: Neutral
 		Location: 27,48
@@ -464,3 +425,45 @@ Actors:
 	Actor143: bunker_techbunker
 		Owner: Neutral
 		Location: 30,71
+	Actor142: oilpatch
+		Owner: Neutral
+		Location: 48,5
+	Actor144: mpspawn
+		Owner: Neutral
+		Location: 40,10
+	Actor150: mpspawn
+		Owner: Neutral
+		Location: 6,11
+	Actor134: oilpatch
+		Owner: Neutral
+		Location: 10,15
+	Actor136: mpspawn
+		Owner: Neutral
+		Location: 10,50
+	Actor139: oilpatch
+		Owner: Neutral
+		Location: 19,47
+	Actor151: oilpatch
+		Owner: Neutral
+		Location: 23,75
+	Actor152: oilpatch
+		Owner: Neutral
+		Location: 10,63
+	Actor138: mpspawn
+		Owner: Neutral
+		Location: 49,91
+	Actor149: oilpatch
+		Owner: Neutral
+		Location: 40,83
+	Actor153: mpspawn
+		Owner: Neutral
+		Location: 7,97
+	Actor135: oilpatch
+		Owner: Neutral
+		Location: 20,88
+	Actor154: oilpatch
+		Owner: Neutral
+		Location: 5,85
+	Actor155: oilpatch
+		Owner: Neutral
+		Location: 16,96

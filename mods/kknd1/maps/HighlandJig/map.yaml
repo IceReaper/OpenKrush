@@ -248,24 +248,12 @@ Actors:
 	Actor62: highland_trees_2
 		Owner: Neutral
 		Location: 8,18
-	Actor63: oilpatch
-		Owner: Neutral
-		Location: 41,1
 	Actor64: oilpatch
 		Owner: Neutral
 		Location: 23,1
-	Actor65: oilpatch
-		Owner: Neutral
-		Location: 9,6
-	Actor66: oilpatch
-		Owner: Neutral
-		Location: 18,14
 	Actor67: oilpatch
 		Owner: Neutral
 		Location: 29,17
-	Actor68: oilpatch
-		Owner: Neutral
-		Location: 3,24
 	Actor69: oilpatch
 		Owner: Neutral
 		Location: 24,27
@@ -281,9 +269,6 @@ Actors:
 	Actor73: oilpatch
 		Owner: Neutral
 		Location: 39,54
-	Actor74: oilpatch
-		Owner: Neutral
-		Location: 41,68
 	Actor75: oilpatch
 		Owner: Neutral
 		Location: 63,68
@@ -296,42 +281,57 @@ Actors:
 	Actor78: oilpatch
 		Owner: Neutral
 		Location: 40,42
-	Actor79: oilpatch
-		Owner: Neutral
-		Location: 56,37
-	Actor80: oilpatch
-		Owner: Neutral
-		Location: 75,41
-	Actor81: oilpatch
-		Owner: Neutral
-		Location: 54,8
-	Actor82: oilpatch
-		Owner: Neutral
-		Location: 65,17
 	Actor83: oilpatch
 		Owner: Neutral
 		Location: 47,24
 	Actor84: mpspawn
 		Owner: Neutral
 		Location: 58,17
-	Actor85: mpspawn
-		Owner: Neutral
-		Location: 45,62
-	Actor86: mpspawn
-		Owner: Neutral
-		Location: 13,13
 	Actor87: mpspawn
 		Owner: Neutral
 		Location: 67,41
 	Actor88: mpspawn
 		Owner: Neutral
 		Location: 36,5
-	Actor89: mpspawn
-		Owner: Neutral
-		Location: 12,30
 	Actor90: bunker_techbunker
 		Owner: Neutral
 		Location: 2,53
 	Actor91: bunker_techbunker
 		Owner: Neutral
 		Location: 77,3
+	Actor93: mpspawn
+		Owner: Neutral
+		Location: 48,63
+	Actor92: oilpatch
+		Owner: Neutral
+		Location: 38,67
+	Actor94: oilpatch
+		Owner: Neutral
+		Location: 66,17
+	Actor95: oilpatch
+		Owner: Neutral
+		Location: 52,7
+	Actor98: oilpatch
+		Owner: Neutral
+		Location: 5,4
+	Actor97: mpspawn
+		Owner: Neutral
+		Location: 13,12
+	Actor99: oilpatch
+		Owner: Neutral
+		Location: 20,12
+	Actor100: mpspawn
+		Owner: Neutral
+		Location: 14,28
+	Actor101: oilpatch
+		Owner: Neutral
+		Location: 3,22
+	Actor102: oilpatch
+		Owner: Neutral
+		Location: 54,36
+	Actor103: oilpatch
+		Owner: Neutral
+		Location: 76,41
+	Actor96: oilpatch
+		Owner: Neutral
+		Location: 44,1

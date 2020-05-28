@@ -365,33 +365,18 @@ Actors:
 	Actor104: desert_objects_11
 		Owner: Neutral
 		Location: 52,33
-	Actor106: oilpatch
-		Owner: Neutral
-		Location: 12,2
-	Actor107: oilpatch
-		Owner: Neutral
-		Location: 7,4
 	Actor105: oilpatch
 		Owner: Neutral
 		Location: 18,16
 	Actor108: oilpatch
 		Owner: Neutral
 		Location: 40,12
-	Actor109: oilpatch
-		Owner: Neutral
-		Location: 55,5
 	Actor110: oilpatch
 		Owner: Neutral
 		Location: 50,24
 	Actor111: oilpatch
 		Owner: Neutral
 		Location: 46,33
-	Actor112: oilpatch
-		Owner: Neutral
-		Location: 32,23
-	Actor113: oilpatch
-		Owner: Neutral
-		Location: 20,25
 	Actor114: oilpatch
 		Owner: Neutral
 		Location: 1,47
@@ -404,30 +389,15 @@ Actors:
 	Actor117: oilpatch
 		Owner: Neutral
 		Location: 39,62
-	Actor118: oilpatch
-		Owner: Neutral
-		Location: 22,73
 	Actor119: oilpatch
 		Owner: Neutral
 		Location: 47,68
-	Actor120: oilpatch
-		Owner: Neutral
-		Location: 54,46
-	Actor121: mpspawn
-		Owner: Neutral
-		Location: 28,28
 	Actor122: mpspawn
 		Owner: Neutral
 		Location: 55,54
 	Actor123: mpspawn
 		Owner: Neutral
 		Location: 15,11
-	Actor124: mpspawn
-		Owner: Neutral
-		Location: 7,54
-	Actor125: mpspawn
-		Owner: Neutral
-		Location: 33,58
 	Actor126: mpspawn
 		Owner: Neutral
 		Location: 57,14
@@ -437,3 +407,39 @@ Actors:
 	Actor128: bunker_techbunker
 		Owner: Neutral
 		Location: 58,27
+	Actor131: mpspawn
+		Owner: Neutral
+		Location: 28,27
+	Actor132: oilpatch
+		Owner: Neutral
+		Location: 35,22
+	Actor129: oilpatch
+		Owner: Neutral
+		Location: 16,25
+	Actor130: oilpatch
+		Owner: Neutral
+		Location: 55,45
+	Actor133: oilpatch
+		Owner: Neutral
+		Location: 56,62
+	Actor134: mpspawn
+		Owner: Neutral
+		Location: 32,58
+	Actor135: oilpatch
+		Owner: Neutral
+		Location: 22,71
+	Actor136: mpspawn
+		Owner: Neutral
+		Location: 11,51
+	Actor137: oilpatch
+		Owner: Neutral
+		Location: 14,42
+	Actor138: oilpatch
+		Owner: Neutral
+		Location: 3,4
+	Actor139: oilpatch
+		Owner: Neutral
+		Location: 14,1
+	Actor140: oilpatch
+		Owner: Neutral
+		Location: 55,4
