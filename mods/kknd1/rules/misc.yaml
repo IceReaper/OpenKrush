@@ -16,3 +16,17 @@ EditorWorld:
 	EditorActionManager:
 	EditorSelectionLayer:
 		Palette: kknd
+
+terrain_blocker:
+	Interactable:
+	EditorOnlyTooltip:
+		Name: A blocker which occupies space.
+	AlwaysVisible:
+	Immobile:
+		OccupiesSpace: True
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+	BodyOrientation:
+		QuantizedFacings: 1
+	MapEditorData:
+		Categories: System

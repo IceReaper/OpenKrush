@@ -242,3 +242,6 @@ beacon:
 	x: bits/Beacon.png
 		Length: 10
 		Tick: 600
+
+terrain_blocker:
+	idle: bits/Terrain_blocker.png
