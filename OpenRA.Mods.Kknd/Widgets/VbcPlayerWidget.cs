@@ -11,13 +11,14 @@
 
 using System;
 using OpenRA.Graphics;
+using OpenRA.Mods.Common.Widgets;
 using OpenRA.Mods.Kknd.FileFormats;
 using OpenRA.Primitives;
 using OpenRA.Widgets;
 
 namespace OpenRA.Mods.Kknd.Widgets
 {
-	public class VbcPlayerWidget : Widget
+	public class VbcPlayerWidget : ColorBlockWidget
 	{
 		private Vbc video;
 		private byte[] frame;
@@ -52,6 +53,7 @@ namespace OpenRA.Mods.Kknd.Widgets
 		public VbcPlayerWidget()
 		{
 			Visible = false;
+			Color = Color.Black;
 		}
 
 		public void Play(Action onComplete)
@@ -126,11 +128,13 @@ namespace OpenRA.Mods.Kknd.Widgets
 			if (!Visible)
 				return;
 
+			base.Draw();
+
 			var yFactor = video.Size.Y == 240 ? 2 : 1;
-			var scale = Math.Min(Game.Renderer.Resolution.Width / video.Size.X, Game.Renderer.Resolution.Height / (video.Size.Y * yFactor));
+			var scale = Math.Min(Bounds.Width / video.Size.X, Bounds.Height / (video.Size.Y * yFactor));
 			var videoSize = new int2(video.Size.X * scale, video.Size.Y * yFactor * scale);
 			var sheetSize = new int2(videoSprite.Sheet.Size.Width * scale, videoSprite.Sheet.Size.Height * yFactor * scale);
-			var position = new int2((Game.Renderer.Resolution.Width - videoSize.X) / 2, (Game.Renderer.Resolution.Height - videoSize.Y) / 2);
+			var position = new int2((Bounds.Width - videoSize.X) / 2, (Bounds.Height - videoSize.Y) / 2) + Bounds.Location;
 
 			Game.Renderer.RgbaSpriteRenderer.DrawSprite(videoSprite, position, sheetSize);
 		}

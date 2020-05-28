@@ -7,7 +7,7 @@ Metadata:
 PackageFormats: LvlPackage
 
 Packages:
-	~^Content/kknd1/
+	~^Content/kknd1/: content
 	.
 	$kknd: kknd
 	$kknd1: kknd1
