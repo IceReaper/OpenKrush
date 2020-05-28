@@ -47,7 +47,10 @@ namespace OpenRA.Mods.Kknd.Widgets
 			else if (state == 2)
 				PlayVideo("Intro");
 			else if (state == 4)
+			{
 				widget.RemoveChild(player);
+				state++;
+			}
 		}
 
 		private void PlayVideo(string video)
