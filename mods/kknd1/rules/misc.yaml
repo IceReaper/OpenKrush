@@ -11,5 +11,8 @@ Player:
 		RandomFactionMembers: survivors, evolved
 
 EditorWorld:
+	EditorActorLayer:
+	EditorCursorLayer:
+	EditorActionManager:
 	EditorSelectionLayer:
 		Palette: kknd
