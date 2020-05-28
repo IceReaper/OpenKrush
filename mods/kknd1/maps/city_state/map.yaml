@@ -6,7 +6,7 @@ Tileset: urban
 MapSize: 102,102
 Bounds: 1,1,100,100
 Visibility: Lobby
-Categories: Conquest
+Categories: Classic
 Players:
 	PlayerReference@Neutral:
 		Name: Neutral
