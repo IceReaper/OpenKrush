@@ -1,0 +1,223 @@
+MapFormat: 11
+
+RequiresMod: kknd1
+
+Title: Black Ice
+
+Author: KKND
+
+Tileset: highland
+
+MapSize: 102,92
+
+Bounds: 1,1,100,90
+
+Visibility: Lobby
+
+Categories: Classic
+
+Players:
+	PlayerReference@Neutral:
+		Name: Neutral
+		OwnsWorld: True
+		NonCombatant: True
+		Faction: Random
+	PlayerReference@Creeps:
+		Name: Creeps
+		NonCombatant: True
+		Faction: Random
+		Enemies: Multi0, Multi1, Multi2, Multi3, Multi4, Multi5
+	PlayerReference@Multi0:
+		Name: Multi0
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi1:
+		Name: Multi1
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi2:
+		Name: Multi2
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi3:
+		Name: Multi3
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi4:
+		Name: Multi4
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi5:
+		Name: Multi5
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+
+Actors:
+	Actor0: highland_trees_1
+		Owner: Neutral
+		Location: 42,19
+	Actor1: highland_trees_1
+		Owner: Neutral
+		Location: 2,53
+	Actor2: highland_trees_1
+		Owner: Neutral
+		Location: 7,60
+	Actor3: highland_trees_1
+		Owner: Neutral
+		Location: 24,65
+	Actor4: highland_trees_4
+		Owner: Neutral
+		Location: 60,62
+	Actor5: highland_trees_4
+		Owner: Neutral
+		Location: 60,65
+	Actor6: highland_trees_4
+		Owner: Neutral
+		Location: 62,64
+	Actor7: highland_trees_4
+		Owner: Neutral
+		Location: 66,63
+	Actor8: highland_trees_4
+		Owner: Neutral
+		Location: 61,67
+	Actor9: highland_trees_4
+		Owner: Neutral
+		Location: 63,68
+	Actor10: highland_trees_4
+		Owner: Neutral
+		Location: 54,59
+	Actor11: highland_trees_5
+		Owner: Neutral
+		Location: 55,56
+	Actor12: highland_trees_6
+		Owner: Neutral
+		Location: 54,55
+	Actor13: highland_trees_4
+		Owner: Neutral
+		Location: 58,56
+	Actor14: highland_trees_3
+		Owner: Neutral
+		Location: 57,55
+	Actor15: highland_trees_4
+		Owner: Neutral
+		Location: 56,54
+	Actor16: highland_trees_1
+		Owner: Neutral
+		Location: 31,30
+	Actor17: highland_trees_4
+		Owner: Neutral
+		Location: 29,49
+	Actor18: oilpatch
+		Owner: Neutral
+		Location: 2,12
+	Actor19: oilpatch
+		Owner: Neutral
+		Location: 25,2
+	Actor20: oilpatch
+		Owner: Neutral
+		Location: 26,17
+	Actor21: oilpatch
+		Owner: Neutral
+		Location: 47,7
+	Actor22: oilpatch
+		Owner: Neutral
+		Location: 85,10
+	Actor23: oilpatch
+		Owner: Neutral
+		Location: 95,15
+	Actor24: oilpatch
+		Owner: Neutral
+		Location: 89,27
+	Actor25: oilpatch
+		Owner: Neutral
+		Location: 70,38
+	Actor26: oilpatch
+		Owner: Neutral
+		Location: 51,39
+	Actor27: oilpatch
+		Owner: Neutral
+		Location: 42,28
+	Actor28: oilpatch
+		Owner: Neutral
+		Location: 7,27
+	Actor29: oilpatch
+		Owner: Neutral
+		Location: 5,41
+	Actor30: oilpatch
+		Owner: Neutral
+		Location: 26,44
+	Actor31: oilpatch
+		Owner: Neutral
+		Location: 40,48
+	Actor32: oilpatch
+		Owner: Neutral
+		Location: 17,56
+	Actor33: oilpatch
+		Owner: Neutral
+		Location: 3,63
+	Actor34: oilpatch
+		Owner: Neutral
+		Location: 3,81
+	Actor35: oilpatch
+		Owner: Neutral
+		Location: 26,83
+	Actor36: oilpatch
+		Owner: Neutral
+		Location: 28,71
+	Actor37: oilpatch
+		Owner: Neutral
+		Location: 44,85
+	Actor38: oilpatch
+		Owner: Neutral
+		Location: 58,85
+	Actor39: oilpatch
+		Owner: Neutral
+		Location: 78,86
+	Actor40: oilpatch
+		Owner: Neutral
+		Location: 97,73
+	Actor41: oilpatch
+		Owner: Neutral
+		Location: 93,53
+	Actor42: oilpatch
+		Owner: Neutral
+		Location: 81,58
+	Actor43: oilpatch
+		Owner: Neutral
+		Location: 61,55
+	Actor44: oilpatch
+		Owner: Neutral
+		Location: 50,57
+	Actor45: oilpatch
+		Owner: Neutral
+		Location: 49,71
+	Actor46: mpspawn
+		Owner: Neutral
+		Location: 25,11
+	Actor47: mpspawn
+		Owner: Neutral
+		Location: 86,83
+	Actor48: mpspawn
+		Owner: Neutral
+		Location: 23,79
+	Actor49: mpspawn
+		Owner: Neutral
+		Location: 88,17
+	Actor50: mpspawn
+		Owner: Neutral
+		Location: 35,43
+	Actor51: mpspawn
+		Owner: Neutral
+		Location: 80,49
+	Actor52: bunker_techbunker
+		Owner: Neutral
+		Location: 42,66
+	Actor53: bunker_techbunker
+		Owner: Neutral
+		Location: 57,16
