@@ -122,7 +122,7 @@ namespace OpenRA.Mods.Kknd.Activities
 						if (!DockActor.IsDead && DockActor.IsInWorld)
 						{
 							var rallyPoint = DockActor.TraitOrDefault<RallyPoint>();
-							if (rallyPoint != null)
+							if (rallyPoint != null && rallyPoint.Path.Any())
 								DockableActor.QueueActivity(new Move(DockableActor, rallyPoint.Path.First()));
 						}
 					}
