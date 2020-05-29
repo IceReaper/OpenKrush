@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
@@ -7,6 +8,7 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
+
 #endregion
 
 using System.Linq;
@@ -17,7 +19,7 @@ namespace OpenRA.Mods.Kknd.Orders
 {
 	class DeployOnActorOrderTargeter : UnitOrderTargeter
 	{
-		private string[] validTargets;
+		private readonly string[] validTargets;
 
 		public DeployOnActorOrderTargeter(string[] validTargets, string cursor)
 			: base("Move", 6, cursor, false, true)
@@ -32,7 +34,7 @@ namespace OpenRA.Mods.Kknd.Orders
 
 		public override bool CanTargetFrozenActor(Actor self, FrozenActor target, TargetModifiers modifiers, ref string cursor)
 		{
-			return false;
+			return validTargets.Contains(target.Info.Name);
 		}
 	}
 }
