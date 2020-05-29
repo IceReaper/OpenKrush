@@ -24,7 +24,7 @@ survivors_rifleman:
 
 survivors_swat:
 	Range: 4c512
-	ReloadDelay: 13
+	ReloadDelay: 38
 	BurstDelays: 0
 	Burst: 1
 	Report: sounds_survivors|4.wav
@@ -35,9 +35,9 @@ survivors_swat:
 		Spread: 32
 		Falloff: 100, 100
 		Versus:
-			infantry: 48
-			vehicle: 12
-			building: 20
+			infantry: 73
+			vehicle: 18
+			building: 30
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: hit
 		ExplosionPalette: kknd
