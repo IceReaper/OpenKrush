@@ -1,21 +1,23 @@
 #region Copyright & License Information
+
 /*
- * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
+ * Copyright 2016-2020 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
+
 #endregion
 
 using System;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Traits;
 
-namespace OpenRA.Mods.Kknd.Traits.Saboteurs
+namespace OpenRA.Mods.Kknd.Mechanics.Saboteurs.Traits
 {
-	[Desc("KKnD specific saboteur target implementation.")]
+	[Desc("KKnD Saboteur mechanism, attach to the building.")]
 	public class SaboteurConquerableInfo : ConditionalTraitInfo
 	{
 		[Desc("Starting population.")]
@@ -30,38 +32,38 @@ namespace OpenRA.Mods.Kknd.Traits.Saboteurs
 		[Desc("Voice used when enemy conquered a building.")]
 		public readonly string NotificationConquered = "EnemyConquered";
 
-		public override object Create(ActorInitializer init) { return new SaboteurConquerable(init, this); }
+		public override object Create(ActorInitializer init)
+		{
+			return new SaboteurConquerable(this);
+		}
 	}
 
 	public class SaboteurConquerable : ConditionalTrait<SaboteurConquerableInfo>
 	{
-		private readonly SaboteurConquerableInfo info;
-		public int Population { get; private set; }
+		public int Population;
 
-		public SaboteurConquerable(ActorInitializer init, SaboteurConquerableInfo info)
+		public SaboteurConquerable(SaboteurConquerableInfo info)
 			: base(info)
 		{
-			this.info = info;
 			Population = info.Population;
 		}
 
-		public void Enter(Actor self, Actor saboteur)
+		public void Enter(Actor self, Actor target)
 		{
-			if (saboteur.Owner.Stances[self.Owner].HasStance(Stance.Ally))
-				Population = Math.Min(Population + 1, info.MaxPopulation);
+			if (self.Owner.Stances[target.Owner].HasStance(Stance.Ally))
+				Population = Math.Min(Population + 1, Info.MaxPopulation);
+			else if (Population > 0)
+			{
+				Population--;
+				Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", Info.NotificationInfiltrated, self.Owner.Faction.InternalName);
+			}
 			else
 			{
-				if (Population > 0)
-				{
-					Population--;
-					Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", info.NotificationInfiltrated, self.Owner.Faction.InternalName);
-				}
-				else
-				{
-					Population = 1;
-					Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", info.NotificationConquered, self.Owner.Faction.InternalName);
-					self.ChangeOwner(saboteur.Owner);
-				}
+				Population = 1;
+				Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", Info.NotificationConquered, self.Owner.Faction.InternalName);
+				self.ChangeOwner(target.Owner);
+
+				// TODO clear production queues!
 			}
 		}
 	}

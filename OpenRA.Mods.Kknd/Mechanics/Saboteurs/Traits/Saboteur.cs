@@ -1,30 +1,35 @@
 #region Copyright & License Information
+
 /*
- * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
+ * Copyright 2016-2020 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
+
 #endregion
 
 using System.Collections.Generic;
-using OpenRA.Mods.Kknd.Activities;
-using OpenRA.Mods.Kknd.Orders;
+using OpenRA.Mods.Kknd.Mechanics.Saboteurs.Activities;
+using OpenRA.Mods.Kknd.Mechanics.Saboteurs.Orders;
 using OpenRA.Primitives;
 using OpenRA.Traits;
 
-namespace OpenRA.Mods.Kknd.Traits.Saboteurs
+namespace OpenRA.Mods.Kknd.Mechanics.Saboteurs.Traits
 {
-	[Desc("KKnD specific saboteur implementation.")]
-	class SaboteurInfo : ITraitInfo
+	[Desc("KKnD Saboteur mechanism, attach to the unit.")]
+	public class SaboteurInfo : ITraitInfo
 	{
 		[Desc("Cursor used for order.")]
 		public readonly string Cursor = "conquer";
 
 		[Desc("Cursor used for order if building does not need to be enforced.")]
 		public readonly string BlockedCursor = "conquer-blocked";
+
+		[Desc("Target line color.")]
+		public readonly Color TargetLineColor = Color.Yellow;
 
 		[Desc("Voice used when ordering to enter enemy building.")]
 		[VoiceReference]
@@ -46,37 +51,32 @@ namespace OpenRA.Mods.Kknd.Traits.Saboteurs
 		[VoiceReference]
 		public readonly string VoiceEnterAlly = "Reinforced";
 
-		public object Create(ActorInitializer init) { return new Saboteur(init, this); }
+		public object Create(ActorInitializer init)
+		{
+			return new Saboteur(this);
+		}
 	}
 
-	class Saboteur : IIssueOrder, IResolveOrder, IOrderVoice
+	public class Saboteur : IIssueOrder, IResolveOrder, IOrderVoice
 	{
 		private readonly SaboteurInfo info;
 
-		public Saboteur(ActorInitializer init, SaboteurInfo info)
+		public Saboteur(SaboteurInfo info)
 		{
 			this.info = info;
 		}
 
-		public IEnumerable<IOrderTargeter> Orders
+		IEnumerable<IOrderTargeter> IIssueOrder.Orders
 		{
 			get { yield return new SaboteurEnterOrderTargeter(info.Cursor, info.BlockedCursor); }
 		}
 
-		public Order IssueOrder(Actor self, IOrderTargeter order, Target target, bool queued)
+		Order IIssueOrder.IssueOrder(Actor self, IOrderTargeter order, Target target, bool queued)
 		{
 			return order.OrderID == SaboteurEnterOrderTargeter.Id ? new Order(order.OrderID, self, target, queued) : null;
 		}
 
-		public string VoicePhraseForOrder(Actor self, Order order)
-		{
-			if (order.OrderString != SaboteurEnterOrderTargeter.Id)
-				return null;
-
-			return order.Target.Actor.Owner.Stances[self.Owner].HasStance(Stance.Ally) ? info.VoiceOrderAlly : info.VoiceOrderEnemy;
-		}
-
-		public void ResolveOrder(Actor self, Order order)
+		void IResolveOrder.ResolveOrder(Actor self, Order order)
 		{
 			if (order.OrderString != SaboteurEnterOrderTargeter.Id)
 				return;
@@ -84,8 +84,28 @@ namespace OpenRA.Mods.Kknd.Traits.Saboteurs
 			if (order.Target.Type != TargetType.Actor || order.Target.Actor == null)
 				return;
 
-			self.CancelActivity();
-			self.QueueActivity(new SaboteurEnter(self, order.Target, Color.Yellow));
+			self.QueueActivity(order.Queued, new SaboteurEnter(self, order.Target, info.TargetLineColor));
+		}
+
+		string IOrderVoice.VoicePhraseForOrder(Actor self, Order order)
+		{
+			if (order.OrderString != SaboteurEnterOrderTargeter.Id)
+				return null;
+
+			return order.Target.Actor.Owner.Stances[self.Owner].HasStance(Stance.Ally) ? info.VoiceOrderAlly : info.VoiceOrderEnemy;
+		}
+
+		public void Enter(Actor self, Actor targetActor)
+		{
+			if (self.Owner != self.World.LocalPlayer)
+				return;
+
+			if (self.Owner.Stances[targetActor.Owner].HasStance(Stance.Ally))
+				self.PlayVoice(info.VoiceEnterAlly);
+			else if (targetActor.Trait<SaboteurConquerable>().Population > 0)
+				self.PlayVoice(info.VoiceEnterEnemy);
+			else
+				self.PlayVoice(info.VoiceConquered);
 		}
 	}
 }
