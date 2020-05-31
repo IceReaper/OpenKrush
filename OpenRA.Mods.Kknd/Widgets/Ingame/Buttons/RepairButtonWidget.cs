@@ -11,8 +11,9 @@
 
 using System.Linq;
 using OpenRA.Mods.Common.Widgets;
+using OpenRA.Mods.Kknd.Mechanics.Technicians.Orders;
+using OpenRA.Mods.Kknd.Mechanics.Technicians.Traits;
 using OpenRA.Mods.Kknd.Orders;
-using OpenRA.Mods.Kknd.Traits.Technicians;
 
 namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 {
