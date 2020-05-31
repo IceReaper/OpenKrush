@@ -6,9 +6,8 @@ evolved_berserker:
 	Report: sounds_evolved|89.wav
 	Projectile: Bullet
 		Image: projectile
-		# TODO currently broken in openRA lint, while this works, it makes the project build fail -.-
-		#Palette: player
-		#IsPlayerPalette: true
+		Palette: player
+		IsPlayerPalette: true
 		Sequences: arrow
 		Speed: 450
 	Warhead@Damage: SpreadDamage
