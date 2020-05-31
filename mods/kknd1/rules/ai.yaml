@@ -16,7 +16,7 @@ Player:
 					Types: Structure
 	#HarvesterBotModule: TODO replace this one with proper KKnD resource implementation
 	#	RequiresCondition: enable-placeholder-ai
-	BaseBuilderBotModule@placeholder: # TODO replace this by KKnD building implementation
+	HackedBaseBuilderBotModule@placeholder: # TODO replace this by KKnD building implementation
 		RequiresCondition: enable-placeholder-ai
 		ConstructionYardTypes: survivors_outpost, evolved_clanhall
 		RefineryTypes: survivors_powerstation, evolved_powerstation
