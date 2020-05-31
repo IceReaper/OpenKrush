@@ -13,7 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.Kknd.Traits.Research;
+using OpenRA.Mods.Kknd.Mechanics.Researching.Traits;
 
 namespace OpenRA.Mods.Kknd.Traits.Production
 {

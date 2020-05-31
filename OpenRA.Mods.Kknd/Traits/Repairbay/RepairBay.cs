@@ -10,8 +10,8 @@
 #endregion
 
 using OpenRA.Mods.Common.Traits;
+using OpenRA.Mods.Kknd.Mechanics.Researching.Traits;
 using OpenRA.Mods.Kknd.Traits.Docking;
-using OpenRA.Mods.Kknd.Traits.Research;
 using OpenRA.Primitives;
 using OpenRA.Traits;
 

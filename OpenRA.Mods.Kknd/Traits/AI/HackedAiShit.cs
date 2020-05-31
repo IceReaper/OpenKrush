@@ -12,8 +12,9 @@
 using System;
 using System.Linq;
 using OpenRA.Mods.Common.Traits;
+using OpenRA.Mods.Kknd.Mechanics.Researching.Orders;
+using OpenRA.Mods.Kknd.Mechanics.Researching.Traits;
 using OpenRA.Mods.Kknd.Orders;
-using OpenRA.Mods.Kknd.Traits.Research;
 using OpenRA.Mods.Kknd.Traits.Resources;
 using OpenRA.Traits;
 
@@ -46,7 +47,7 @@ namespace OpenRA.Mods.Kknd.Traits.AI
 
 				var researches = a.TraitOrDefault<Researches>();
 
-				return researches != null && !researches.IsTraitDisabled && !researches.IsResearching;
+				return researches != null && !researches.IsTraitDisabled && (researches.GetState() == ResarchState.Available);
 			});
 
 			if (researcher == null)
@@ -62,7 +63,7 @@ namespace OpenRA.Mods.Kknd.Traits.AI
 
 				var researchable = a.TraitOrDefault<Researchable>();
 
-				return researchable != null && !researchable.IsTraitDisabled && researchable.Level < researchable.Info.MaxLevel && researchable.Researches == null;
+				return researchable != null && !researchable.IsTraitDisabled && researchable.Level < researchable.Info.MaxLevel && researchable.ResearchedBy == null;
 			}).ToArray();
 
 			if (researchables.Length == 0)

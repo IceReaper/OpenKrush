@@ -11,8 +11,9 @@
 
 using System.Linq;
 using OpenRA.Mods.Common.Widgets;
+using OpenRA.Mods.Kknd.Mechanics.Researching.Orders;
+using OpenRA.Mods.Kknd.Mechanics.Researching.Traits;
 using OpenRA.Mods.Kknd.Orders;
-using OpenRA.Mods.Kknd.Traits.Research;
 using OpenRA.Primitives;
 using OpenRA.Traits;
 
@@ -85,7 +86,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 
 			if (autoResearchEnabled && sidebar.IngameUi.World.WorldTick % 50 == 0)
 			{
-				var pair = res.FirstOrDefault(r => !r.Trait.IsResearching);
+				var pair = res.FirstOrDefault(r => r.Trait.GetState() != ResarchState.Researching);
 
 				if (pair.Trait == null)
 					return;
@@ -97,7 +98,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 
 					var researchable = a.TraitOrDefault<Researchable>();
 
-					return researchable != null && !researchable.IsTraitDisabled && researchable.Level < researchable.Info.MaxLevel && researchable.Researches == null;
+					return researchable != null && !researchable.IsTraitDisabled && researchable.Level < researchable.Info.MaxLevel && researchable.ResearchedBy == null;
 				}).ToArray();
 
 				if (researchables.Length == 0)

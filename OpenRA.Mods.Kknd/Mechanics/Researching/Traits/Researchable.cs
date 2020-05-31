@@ -1,12 +1,14 @@
 #region Copyright & License Information
+
 /*
- * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
+ * Copyright 2016-2020 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
+
 #endregion
 
 using System;
@@ -15,9 +17,9 @@ using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common.Traits.Render;
 using OpenRA.Traits;
 
-namespace OpenRA.Mods.Kknd.Traits.Research
+namespace OpenRA.Mods.Kknd.Mechanics.Researching.Traits
 {
-	[Desc("Makes an actor researchable.")]
+	[Desc("KKnD Research mechanism, attach to the actor which has tech levels.")]
 	class ResearchableInfo : ConditionalTraitInfo, Requires<RenderSpritesInfo>, Requires<BodyOrientationInfo>
 	{
 		[Desc("Research sequence name to use.")]
@@ -39,43 +41,70 @@ namespace OpenRA.Mods.Kknd.Traits.Research
 		[Desc("Offset for the research sequence.")]
 		public readonly int2 Offset = int2.Zero;
 
-		public override object Create(ActorInitializer init) { return new Researchable(init, this); }
+		public override object Create(ActorInitializer init)
+		{
+			return new Researchable(init, this);
+		}
 	}
 
 	class Researchable : ConditionalTrait<ResearchableInfo>
 	{
 		private readonly ResearchableInfo info;
+		private readonly Actor self;
 
 		private readonly Animation overlay;
+		private readonly int researchSteps;
+
 		public int Level;
-		public Researches Researches;
+		public Researches ResearchedBy;
 
 		public Researchable(ActorInitializer init, ResearchableInfo info)
 			: base(info)
 		{
 			this.info = info;
+			self = init.Self;
 			Level = info.Level;
 
-			var rs = init.Self.Trait<RenderSprites>();
-			var body = init.Self.Trait<BodyOrientation>();
+			var rs = self.Trait<RenderSprites>();
+			var body = self.Trait<BodyOrientation>();
 
-			var hidden = new Func<bool>(() => Researches == null || !init.Self.Owner.IsAlliedWith(init.World.LocalPlayer));
+			var hidden = new Func<bool>(() => ResearchedBy == null || !self.Owner.IsAlliedWith(self.World.LocalPlayer));
 
-			overlay = new Animation(init.World, "indicators", hidden);
-			overlay.PlayRepeating(this.info.Sequence + 0);
+			overlay = new Animation(self.World, "indicators", hidden);
+			overlay.PlayRepeating(info.Sequence + 0);
 
 			var anim = new AnimationWithOffset(overlay,
-				() => body.LocalToWorld(new WVec(info.Offset.Y * -32, info.Offset.X * -32, 0).Rotate(body.QuantizeOrientation(init.Self, init.Self.Orientation))),
+				() => body.LocalToWorld(
+					new WVec(info.Offset.Y * -32, info.Offset.X * -32, 0).Rotate(body.QuantizeOrientation(self, self.Orientation))),
 				hidden,
-				p => RenderUtils.ZOffsetFromCenter(init.Self, p, 1));
+				p => RenderUtils.ZOffsetFromCenter(self, p, 1));
 
 			rs.Add(anim);
+
+			while (overlay.HasSequence(info.Sequence + researchSteps))
+				researchSteps++;
 		}
 
-		public void SetProgress(int progress)
+		public void SetProgress(float progress)
 		{
-			if (overlay.CurrentSequence.Name != info.Sequence + progress)
-				overlay.PlayRepeating(info.Sequence + progress);
+			var sequence = info.Sequence + (int)Math.Floor(researchSteps * progress);
+
+			if (overlay.CurrentSequence.Name != sequence)
+				overlay.PlayRepeating(sequence);
+		}
+
+		public ResarchState GetState()
+		{
+			if (IsTraitDisabled)
+				return ResarchState.Unavailable;
+
+			if (self.IsDead || !self.IsInWorld)
+				return ResarchState.Unavailable;
+
+			if (ResearchedBy != null)
+				return ResarchState.Researching;
+
+			return ResarchState.Available;
 		}
 	}
 }

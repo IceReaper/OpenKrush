@@ -11,8 +11,7 @@
 
 using System.Linq;
 using OpenRA.Mods.Common.Widgets;
-using OpenRA.Mods.Kknd.Traits.Radar;
-using OpenRA.Mods.Kknd.Traits.Research;
+using OpenRA.Mods.Kknd.Mechanics.Researching.Traits;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons

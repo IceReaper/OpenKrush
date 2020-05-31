@@ -14,6 +14,7 @@ Speech:
 		BuildingReady: BuildingReady, BuildingReady2
 		ResearchStarted: ResearchStarted
 		ResearchCompleted: ResearchCompleted1, ResearchCompleted2
+		ResearchCanceled:
 		AirstrikeReady: AirstrikeReady
 		EnemyInfiltrated: EnemyInfiltrated
 		EnemyConquered: EnemyConquered
