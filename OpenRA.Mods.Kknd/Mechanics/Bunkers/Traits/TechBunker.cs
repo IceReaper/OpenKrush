@@ -1,12 +1,14 @@
 #region Copyright & License Information
+
 /*
- * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
+ * Copyright 2016-2020 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
+
 #endregion
 
 using System.Linq;
@@ -18,10 +20,10 @@ using OpenRA.Mods.Common.Traits.Render;
 using OpenRA.Primitives;
 using OpenRA.Traits;
 
-namespace OpenRA.Mods.Kknd.Traits.Bunkers
+namespace OpenRA.Mods.Kknd.Mechanics.Bunkers.Traits
 {
-	[Desc("KKnD specific tech bunker implementation.")]
-	class TechBunkerInfo : ITraitInfo, Requires<WithSpriteBodyInfo>
+	[Desc("KKnD tech bunker mechanism.")]
+	public class TechBunkerInfo : ITraitInfo, Requires<WithSpriteBodyInfo>
 	{
 		[ActorReference]
 		[Desc("Possible ejectable actors.")]
@@ -62,10 +64,13 @@ namespace OpenRA.Mods.Kknd.Traits.Bunkers
 
 		public readonly int MaximumDistance = 3;
 
-		public object Create(ActorInitializer init) { return new TechBunker(init, this); }
+		public object Create(ActorInitializer init)
+		{
+			return new TechBunker(init, this);
+		}
 	}
 
-	internal enum TechBunkerState
+	public enum TechBunkerState
 	{
 		ClosedLocked,
 		ClosedUnlocked,
@@ -74,47 +79,39 @@ namespace OpenRA.Mods.Kknd.Traits.Bunkers
 		Opened
 	}
 
-	class TechBunker : ITick
+	public class TechBunker : ITick
 	{
-		readonly TechBunkerInfo info;
-		readonly WithSpriteBody wsb;
-		int timer;
-		TechBunkerState state;
+		private readonly TechBunkerInfo info;
+		private readonly WithSpriteBody wsb;
+
+		private int timer;
+		private TechBunkerState state = TechBunkerState.ClosedLocked;
 
 		public TechBunker(ActorInitializer init, TechBunkerInfo info)
 		{
 			this.info = info;
 			wsb = init.Self.Trait<WithSpriteBody>();
-			timer = 0;
-			state = TechBunkerState.ClosedLocked;
 
-			var rs = init.Self.Trait<RenderSprites>();
+			AddAnimation(init.Self, info.SequenceLocked, TechBunkerState.ClosedLocked);
+			AddAnimation(init.Self, info.SequenceUnlocked, TechBunkerState.ClosedUnlocked);
+		}
 
-			if (info.SequenceLocked != null)
-			{
-				var overlay = new Animation(init.World, rs.GetImage(init.Self), () => state != TechBunkerState.ClosedLocked);
-				overlay.PlayRepeating(RenderSprites.NormalizeSequence(overlay, init.Self.GetDamageState(), info.SequenceLocked));
+		private void AddAnimation(Actor self, string sequence, TechBunkerState state)
+		{
+			if (sequence == null)
+				return;
 
-				var anim = new AnimationWithOffset(overlay,
-					() => WVec.Zero,
-					() => state != TechBunkerState.ClosedLocked,
-					p => RenderUtils.ZOffsetFromCenter(init.Self, p, 1));
+			var rs = self.Trait<RenderSprites>();
 
-				rs.Add(anim);
-			}
+			var overlay = new Animation(self.World, rs.GetImage(self), () => this.state != state);
+			overlay.PlayRepeating(RenderSprites.NormalizeSequence(overlay, self.GetDamageState(), sequence));
 
-			if (info.SequenceUnlocked != null)
-			{
-				var overlay = new Animation(init.World, rs.GetImage(init.Self), () => state != TechBunkerState.ClosedUnlocked);
-				overlay.PlayRepeating(RenderSprites.NormalizeSequence(overlay, init.Self.GetDamageState(), info.SequenceUnlocked));
+			var anim = new AnimationWithOffset(overlay,
+				() => WVec.Zero,
+				() => this.state != state,
+				p => RenderUtils.ZOffsetFromCenter(self, p, 1));
 
-				var anim = new AnimationWithOffset(overlay,
-					() => WVec.Zero,
-					() => state != TechBunkerState.ClosedUnlocked,
-					p => RenderUtils.ZOffsetFromCenter(init.Self, p, 1));
-
-				rs.Add(anim);
-			}
+			rs.Add(anim);
 		}
 
 		void ITick.Tick(Actor self)
@@ -131,7 +128,8 @@ namespace OpenRA.Mods.Kknd.Traits.Bunkers
 					break;
 
 				case TechBunkerState.ClosedUnlocked:
-					var nearbyActors = self.World.FindActorsInCircle(self.CenterPosition, info.TriggerRadius).Where(actor => !actor.Owner.NonCombatant).ToArray();
+					var nearbyActors = self.World.FindActorsInCircle(self.CenterPosition, info.TriggerRadius).Where(actor => !actor.Owner.NonCombatant)
+						.ToArray();
 					if (!nearbyActors.Any())
 						return;
 
@@ -152,7 +150,8 @@ namespace OpenRA.Mods.Kknd.Traits.Bunkers
 					break;
 
 				case TechBunkerState.Opened:
-					if (self.World.WorldActor.Trait<TechBunkerBehavior>().Behavior == TechBunkerBehaviorType.Reusable && info.LockAfter != -1 && timer++ >= info.LockAfter)
+					if (self.World.WorldActor.Trait<TechBunkerBehavior>().Behavior == TechBunkerBehaviorType.Reusable && info.LockAfter != -1 &&
+					    timer++ >= info.LockAfter)
 					{
 						state = TechBunkerState.Closing;
 						timer = 0;
@@ -171,7 +170,7 @@ namespace OpenRA.Mods.Kknd.Traits.Bunkers
 			}
 		}
 
-		void EjectContents(Actor self, Player owner)
+		private void EjectContents(Actor self, Player owner)
 		{
 			if (info.ContainableMoney > 0 && self.World.SharedRandom.Next(0, info.ContainableActors.Length) == 0)
 			{
@@ -211,7 +210,7 @@ namespace OpenRA.Mods.Kknd.Traits.Bunkers
 			});
 		}
 
-		Exit SelectExit(Actor self, ActorInfo producee)
+		private Exit SelectExit(Actor self, ActorInfo producee)
 		{
 			var mobileInfo = producee.TraitInfoOrDefault<MobileInfo>();
 

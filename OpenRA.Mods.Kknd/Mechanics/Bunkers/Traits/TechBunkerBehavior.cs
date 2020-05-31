@@ -1,7 +1,7 @@
 #region Copyright & License Information
 
 /*
- * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
+ * Copyright 2016-2020 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
@@ -16,7 +16,7 @@ using System.Collections.Generic;
 using System.Linq;
 using OpenRA.Traits;
 
-namespace OpenRA.Mods.Kknd.Traits.Bunkers
+namespace OpenRA.Mods.Kknd.Mechanics.Bunkers.Traits
 {
 	public enum TechBunkerBehaviorType
 	{
