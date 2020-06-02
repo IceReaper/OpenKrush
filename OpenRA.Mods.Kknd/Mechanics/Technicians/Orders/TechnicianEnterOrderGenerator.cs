@@ -21,7 +21,7 @@ namespace OpenRA.Mods.Kknd.Mechanics.Technicians.Orders
 {
 	public class TechnicianEnterOrderGenerator : UnitOrderGenerator
 	{
-		private IEnumerable<Actor> technicians;
+		private IEnumerable<Actor> technicians = new List<Actor>();
 
 		public override void Tick(World world)
 		{
