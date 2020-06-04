@@ -120,6 +120,15 @@ namespace OpenRA.Mods.Kknd.FileSystem
 					var entry = index.ElementAt(index.Count - 1).Value;
 					entry[1] = firstFileListOffset - entry[0];
 				}
+
+				/*if (!Directory.Exists("XTRACT/" + filename))
+					Directory.CreateDirectory("XTRACT/" + filename);
+
+				foreach (var entry in index)
+				{
+					stream.Position = entry.Value[0];
+					File.WriteAllBytes("XTRACT/" + filename + "/" + entry.Key, stream.ReadBytes((int)entry.Value[1]));
+				}*/
 			}
 
 			public Stream GetStream(string filename)
