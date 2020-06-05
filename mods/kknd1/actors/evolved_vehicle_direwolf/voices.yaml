@@ -1,4 +1,5 @@
 evolved_vehicle_direwolf:
+	DefaultVariant: # TODO remove .aud as default from engine!
 	Voices:
 		Create: MUTE.SLV|165.wav
 		Select: MUTE.SLV|165.wav

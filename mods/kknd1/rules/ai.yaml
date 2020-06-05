@@ -53,14 +53,14 @@ Player:
 	#	RequiresCondition: enable-placeholder-ai
 	McvManagerBotModule@placeholder:
 		RequiresCondition: enable-placeholder-ai
-		McvTypes: survivors_mobileoutpost, evolved_clanhallwagon
+		McvTypes: survivors_mobileoutpost, evolved_vehicle_clanhallwagon
 		ConstructionYardTypes: survivors_outpost, evolved_clanhall
 		McvFactoryTypes: survivors_machineshop, evolved_blacksmith, evolved_beastforge
 	SquadManagerBotModule@placeholder:
 		RequiresCondition: enable-placeholder-ai
 		SquadSize: 40
 		RushInterval: 1000
-		ExcludeFromSquadsTypes: survivors_mobileoutpost, evolved_clanhallwagon, survivors_derrick, evolved_derrick, survivors_oiltanker, evolved_oiltanker, survivors_technician, evolved_mekanik
+		ExcludeFromSquadsTypes: survivors_mobileoutpost, evolved_vehicle_clanhallwagon, survivors_derrick, evolved_vehicle_derrick, survivors_oiltanker, evolved_vehicle_oiltanker, survivors_technician, evolved_mekanik
 		ConstructionYardTypes: survivors_outpost, evolved_clanhall
 	UnitBuilderBotModule@placeholder:
 		RequiresCondition: enable-placeholder-ai
@@ -73,13 +73,13 @@ Player:
 			evolved_rioter: 80
 			evolved_bazooka: 90
 			evolved_crazyharry: 100
-			evolved_direwolf: 40
-			evolved_bikeandsidecar: 50
-			evolved_monstertruck: 60
-			evolved_giantscorpion: 70
-			evolved_warmastodon: 80
-			evolved_giantbeetle: 90
-			evolved_missilecrab: 100
+			evolved_vehicle_direwolf: 40
+			evolved_vehicle_bikeandsidecar: 50
+			evolved_vehicle_monstertruck: 60
+			evolved_vehicle_giantscorpion: 70
+			evolved_vehicle_warmastodon: 80
+			evolved_vehicle_giantbeetle: 90
+			evolved_vehicle_missilecrab: 100
 			survivors_rifleman: 50
 			survivors_swat: 60
 			survivors_flamer: 70
@@ -95,9 +95,9 @@ Player:
 			survivors_barragecraft: 90
 			survivors_autocannontank: 100
 		UnitLimits:
-			evolved_direwolf: 5
-			evolved_bikeandsidecar: 10
-			evolved_monstertruck: 10
+			evolved_vehicle_direwolf: 5
+			evolved_vehicle_bikeandsidecar: 10
+			evolved_vehicle_monstertruck: 10
 			survivors_dirtbike: 5
 			survivors_4x4pickup: 10
 			survivors_allterrainvehicle: 10

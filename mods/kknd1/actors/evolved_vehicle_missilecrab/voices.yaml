@@ -1,4 +1,5 @@
-CrabVoice:
+evolved_vehicle_missilecrab:
+	DefaultVariant: # TODO remove .aud as default from engine!
 	Voices:
 		Create: MUTE.SLV|170.wav
 		Select: MUTE.SLV|170.wav, kknd1|actors/evolved_vehicle_missilecrab/sound1.wav
