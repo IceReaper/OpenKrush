@@ -36,7 +36,7 @@ bunker_mech_primary:
 	Burst: 2
 	BurstDelays: 8 # 8 + 8 (secondary weapon)
 	ReloadDelay: 58 # 50 + 8 (secondary weapon)
-	Report: sounds_survivors|87.wav
+	Report: SURV.SLV|87.wav
 	Projectile: Bullet
 		Image: projectile
 		Palette: kknd
@@ -56,7 +56,7 @@ bunker_mech_primary:
 		Image: hit
 		ExplosionPalette: kknd
 		Explosions: laser_round
-		ImpactSounds: sounds_evolved|10.wav
+		ImpactSounds: MUTE.SLV|10.wav
 
 bunker_mech_secondary:
 	Inherits: Smudge
@@ -64,7 +64,7 @@ bunker_mech_secondary:
 	Burst: 1
 	BurstDelays: 0
 	ReloadDelay: 66 # 50 + 2 * 8 (primary weapon)
-	Report: sounds_survivors|14.wav
+	Report: SURV.SLV|14.wav
 	Projectile: Bullet
 		Image: projectile
 		Palette: kknd
@@ -88,7 +88,7 @@ bunker_mech_secondary:
 		Image: explosions
 		ExplosionPalette: kknd
 		Explosions: s
-		ImpactSounds: sounds_survivors|10.wav
+		ImpactSounds: SURV.SLV|10.wav
 
 bunker_plasmatank:
 	Inherits: Smudge
@@ -96,7 +96,7 @@ bunker_plasmatank:
 	Burst: 3
 	BurstDelays: 4
 	ReloadDelay: 25
-	Report: sounds_survivors|87.wav
+	Report: SURV.SLV|87.wav
 	Projectile: Bullet
 		Image: projectile
 		Palette: kknd
@@ -116,7 +116,7 @@ bunker_plasmatank:
 		Image: hit
 		ExplosionPalette: kknd
 		Explosions: laser_round
-		ImpactSounds: sounds_evolved|10.wav
+		ImpactSounds: MUTE.SLV|10.wav
 
 bunker_sentineldroid:
 	Inherits: Smudge
@@ -124,7 +124,7 @@ bunker_sentineldroid:
 	Burst: 2
 	BurstDelays: 13
 	ReloadDelay: 50
-	Report: sounds_survivors|87.wav
+	Report: SURV.SLV|87.wav
 	Projectile: Bullet
 		Image: projectile
 		Palette: kknd
@@ -144,4 +144,4 @@ bunker_sentineldroid:
 		Image: hit
 		ExplosionPalette: kknd
 		Explosions: laser_round
-		ImpactSounds: sounds_evolved|10.wav
+		ImpactSounds: MUTE.SLV|10.wav

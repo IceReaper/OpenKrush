@@ -1,5 +1,5 @@
 survivors_bomber:
-	idle: sprites|WilburBomber.mobd
+	idle: SPRITES.LVL|WilburBomber.mobd
 		Start: 16
 		Facings: -16
 		ZOffset: 3500

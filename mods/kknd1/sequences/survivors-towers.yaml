@@ -1,46 +1,46 @@
 survivors_guardtower:
 	Inherits@muzzle: ^gun_16
-	idle: sprites|SGuardTower.mobd
+	idle: SPRITES.LVL|SGuardTower.mobd
 		Start: 16
 		Offset: 1,-17
 	damaged-idle: bits/SGuardTower.png
 		Offset: 1,-17
-	make0: sprites|SGuardTower.mobd
+	make0: SPRITES.LVL|SGuardTower.mobd
 		Start: 26
 		Offset: 1,-17
-	make1: sprites|SGuardTower.mobd
+	make1: SPRITES.LVL|SGuardTower.mobd
 		Start: 27
 		Offset: 1,-17
-	make2: sprites|SGuardTower.mobd
+	make2: SPRITES.LVL|SGuardTower.mobd
 		Start: 28
 		Offset: 1,-17
-	turret: sprites|SGuardTower.mobd
+	turret: SPRITES.LVL|SGuardTower.mobd
 		Facings: -16
 		Offset: 1,-17
 	icon: bits/Buttons.png
 		Start: 46
 
 survivors_missilebattery:
-	idle: sprites|MissileBattery.mobd
+	idle: SPRITES.LVL|MissileBattery.mobd
 		Start: 26
 		Offset: 0,-16
-	damaged-idle: sprites|MissileBattery.mobd
+	damaged-idle: SPRITES.LVL|MissileBattery.mobd
 		Start: 25
 		Offset: 0,-16
-	make0: sprites|MissileBattery.mobd
+	make0: SPRITES.LVL|MissileBattery.mobd
 		Start: 27
 		Offset: 0,-16
-	make1: sprites|MissileBattery.mobd
+	make1: SPRITES.LVL|MissileBattery.mobd
 		Start: 28
 		Offset: 0,-16
-	make2: sprites|MissileBattery.mobd
+	make2: SPRITES.LVL|MissileBattery.mobd
 		Start: 29
 		Offset: 0,-16
-	turret: sprites|MissileBattery.mobd
+	turret: SPRITES.LVL|MissileBattery.mobd
 		Start: 9
 		Facings: -16
 		Offset: 0,-16
-	turret-reload: sprites|MissileBattery.mobd
+	turret-reload: SPRITES.LVL|MissileBattery.mobd
 		Length: 9
 		Tick: 160
 		Offset: 0,-16
@@ -49,25 +49,25 @@ survivors_missilebattery:
 
 survivors_cannontower:
 	Inherits@muzzle: ^gun_16
-	idle: sprites|CannonTower.mobd
+	idle: SPRITES.LVL|CannonTower.mobd
 		Start: 64
 		Offset: 0,-10
 	damaged-idle: bits/CannonTower.png
 		Offset: 0,-10
-	make0: sprites|CannonTower.mobd
+	make0: SPRITES.LVL|CannonTower.mobd
 		Start: 65
 		Offset: 0,-10
-	make1: sprites|CannonTower.mobd
+	make1: SPRITES.LVL|CannonTower.mobd
 		Start: 66
 		Offset: 0,-10
-	make2: sprites|CannonTower.mobd
+	make2: SPRITES.LVL|CannonTower.mobd
 		Start: 67
 		Offset: 0,-10
-	turret: sprites|CannonTower.mobd
+	turret: SPRITES.LVL|CannonTower.mobd
 		Start: 48
 		Facings: -16
 		Offset: 0,-10
-	shoot: sprites|CannonTower.mobd
+	shoot: SPRITES.LVL|CannonTower.mobd
 		Length: 3
 		Tick: 160
 		Facings: -16

@@ -3,7 +3,7 @@ survivors_guardtower:
 	Burst: 10
 	BurstDelays: 7
 	ReloadDelay: 38
-	Report: kknd1|bits/sounds/machinegun.wav #sounds_survivors|4.wav
+	Report: kknd1|bits/sounds/machinegun.wav #SURV.SLV|4.wav
 	Projectile: InstantHit
 	Warhead@Damage: SpreadDamage
 		Damage: 100
@@ -17,7 +17,7 @@ survivors_guardtower:
 		Image: hit
 		ExplosionPalette: kknd
 		Explosions: bullet_a, bullet_b, bullet_c, bullet_d, bullet_e, bullet_f, bullet_g, bullet_h
-		ImpactSounds: sounds_survivors|11.wav, sounds_survivors|12.wav, sounds_survivors|13.wav
+		ImpactSounds: SURV.SLV|11.wav, SURV.SLV|12.wav, SURV.SLV|13.wav
 		ImpactSoundChance: 10
 		Radius: 250,250
 
@@ -27,7 +27,7 @@ survivors_missilebattery:
 	Burst: 3
 	BurstDelays: 13
 	ReloadDelay: 50
-	Report: sounds_survivors|14.wav
+	Report: SURV.SLV|14.wav
 	Projectile: Bullet
 		Image: projectile
 		Palette: kknd
@@ -51,7 +51,7 @@ survivors_missilebattery:
 		Image: explosions
 		ExplosionPalette: kknd
 		Explosions: s
-		ImpactSounds: sounds_survivors|10.wav
+		ImpactSounds: SURV.SLV|10.wav
 
 survivors_cannontower:
 	Inherits: Smudge
@@ -59,7 +59,7 @@ survivors_cannontower:
 	Burst: 2
 	BurstDelays: 4
 	ReloadDelay: 52
-	Report: sounds_survivors|9.wav
+	Report: SURV.SLV|9.wav
 	Projectile: Bullet
 		Image: projectile
 		Palette: kknd
@@ -80,4 +80,4 @@ survivors_cannontower:
 		Image: explosions
 		ExplosionPalette: kknd
 		Explosions: s
-		ImpactSounds: sounds_survivors|10.wav
+		ImpactSounds: SURV.SLV|10.wav

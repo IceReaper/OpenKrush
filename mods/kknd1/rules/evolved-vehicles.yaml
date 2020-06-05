@@ -330,7 +330,7 @@ evolved_clanhallwagon:
 	RevealsShroud:
 		Range: 11c0
 	Transforms:
-		TransformSounds: sounds_evolved|189.wav
+		TransformSounds: MUTE.SLV|189.wav
 		IntoActor: evolved_clanhall
 		Offset: -1,0
 	MustBeDestroyed:

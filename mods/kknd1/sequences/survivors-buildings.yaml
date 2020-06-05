@@ -1,81 +1,81 @@
 survivors_outpost:
-	idle: sprites|Outpost.mobd
+	idle: SPRITES.LVL|Outpost.mobd
 		Start: 170
 		Offset: -10,-27
-	damaged-idle: sprites|Outpost.mobd
+	damaged-idle: SPRITES.LVL|Outpost.mobd
 		Start: 169
 		Offset: -10,-27
 	critical-idle: bits/Outpost.png
 		Offset: -10,-27
-	animation: sprites|Outpost.mobd
+	animation: SPRITES.LVL|Outpost.mobd
 		Length: 120
 		Tick: 120
 		Offset: -10,-27
-	deploy: sprites|Outpost.mobd
+	deploy: SPRITES.LVL|Outpost.mobd
 		Start: 175
 		Length: 9
 		Tick: 120
 		Offset: -10,-27
-	make0: sprites|Outpost.mobd
+	make0: SPRITES.LVL|Outpost.mobd
 		Start: 171
 		Offset: -10,-27
-	make1: sprites|Outpost.mobd
+	make1: SPRITES.LVL|Outpost.mobd
 		Start: 172
 		Offset: -10,-27
-	make2: sprites|Outpost.mobd
+	make2: SPRITES.LVL|Outpost.mobd
 		Start: 173
 		Offset: -10,-27
 	icon: bits/Buttons.png
 		Start: 37
 
 survivors_machineshop:
-	idle: sprites|MachineShop.mobd
+	idle: SPRITES.LVL|MachineShop.mobd
 		Start: 5
 		Offset: -3,-38
-	damaged-idle: sprites|MachineShop.mobd
+	damaged-idle: SPRITES.LVL|MachineShop.mobd
 		Start: 4
 		Offset: -3,-38
 	critical-idle: bits/MachineShop.png
 		Offset: -3,-38
-	animation: sprites|MachineShop.mobd
+	animation: SPRITES.LVL|MachineShop.mobd
 		Length: 4
 		Tick: 120
 		Offset: -3,-38
-	make0: sprites|MachineShop.mobd
+	make0: SPRITES.LVL|MachineShop.mobd
 		Start: 15
 		Offset: -3,-38
-	make1: sprites|MachineShop.mobd
+	make1: SPRITES.LVL|MachineShop.mobd
 		Start: 16
 		Offset: -3,-38
-	make2: sprites|MachineShop.mobd
+	make2: SPRITES.LVL|MachineShop.mobd
 		Start: 17
 		Offset: -3,-38
 	icon: bits/Buttons.png
 		Start: 38
 
 survivors_repairbay:
-	idle: sprites|RepairBay.mobd
+	idle: SPRITES.LVL|RepairBay.mobd
 		Start: 20
 		Offset: -6,-35
-	damaged-idle: sprites|RepairBay.mobd
+	damaged-idle: SPRITES.LVL|RepairBay.mobd
 		Start: 19
 		Offset: -6,-35
 	critical-idle: bits/RepairBay.png
 		Offset: -6,-35
-	animation: sprites|RepairBay.mobd
+	animation: SPRITES.LVL|RepairBay.mobd
 		Offset: -6,-35
-	repairing-fx: sprites|RepairBay.mobd
+	repairing-fx: SPRITES.LVL|RepairBay.mobd
 		Start: 1
 		Length: 18
 		Tick: 120
 		Offset: -6,-35
-	make0: sprites|RepairBay.mobd
+	make0: SPRITES.LVL|RepairBay.mobd
 		Start: 30
 		Offset: -6,-35
-	make1: sprites|RepairBay.mobd
+	make1: SPRITES.LVL|RepairBay.mobd
 		Start: 31
 		Offset: -6,-35
-	make2: sprites|RepairBay.mobd
+	make2: SPRITES.LVL|RepairBay.mobd
 		Start: 32
 		Offset: -6,-35
 	icon: bits/Buttons.png
@@ -112,69 +112,69 @@ survivors_repairbay_beta: # TODO verify Offset
 		Start: 42
 
 survivors_researchlab:
-	idle: sprites|ResearchLab.mobd
+	idle: SPRITES.LVL|ResearchLab.mobd
 		Start: 5
 		Offset: -1,-32
-	damaged-idle: sprites|ResearchLab.mobd
+	damaged-idle: SPRITES.LVL|ResearchLab.mobd
 		Start: 4
 		Offset: -1,-32
 	critical-idle: bits/ResearchLab.png
 		Offset: -1,-32
-	animation: sprites|ResearchLab.mobd
+	animation: SPRITES.LVL|ResearchLab.mobd
 		Length: 4
 		Tick: 180
 		Offset: -1,-32
-	make0: sprites|ResearchLab.mobd
+	make0: SPRITES.LVL|ResearchLab.mobd
 		Start: 6
 		Offset: -1,-32
-	make1: sprites|ResearchLab.mobd
+	make1: SPRITES.LVL|ResearchLab.mobd
 		Start: 7
 		Offset: -1,-32
-	make2: sprites|ResearchLab.mobd
+	make2: SPRITES.LVL|ResearchLab.mobd
 		Start: 8
 		Offset: -1,-32
 	icon: bits/Buttons.png
 		Start: 40
 
 survivors_powerstation:
-	idle: sprites|SPowerStation.mobd
+	idle: SPRITES.LVL|SPowerStation.mobd
 		Start: 5
 		Offset: -2,-21
-	damaged-idle: sprites|SPowerStation.mobd
+	damaged-idle: SPRITES.LVL|SPowerStation.mobd
 		Start: 4
 		Offset: -2,-21
 	critical-idle: bits/SPowerStation.png
 		Offset: -2,-21
-	animation: sprites|SPowerStation.mobd
+	animation: SPRITES.LVL|SPowerStation.mobd
 		Length: 4
 		Tick: 180
 		Offset: -2,-21
-	make0: sprites|SPowerStation.mobd
+	make0: SPRITES.LVL|SPowerStation.mobd
 		Start: 15
 		Offset: -2,-21
-	make1: sprites|SPowerStation.mobd
+	make1: SPRITES.LVL|SPowerStation.mobd
 		Start: 16
 		Offset: -2,-21
-	make2: sprites|SPowerStation.mobd
+	make2: SPRITES.LVL|SPowerStation.mobd
 		Start: 17
 		Offset: -2,-21
 	icon: bits/Buttons.png
 		Start: 39
 
 survivors_drillrig:
-	idle: sprites|SRig.mobd
+	idle: SPRITES.LVL|SRig.mobd
 		Start: 7
 		Offset: 0,-32
-	damaged-idle: sprites|SRig.mobd
+	damaged-idle: SPRITES.LVL|SRig.mobd
 		Start: 6
 		Offset: 0,-32
 	critical-idle: bits/SRig.png
 		Offset: 0,-32
-	animation: sprites|SRig.mobd
+	animation: SPRITES.LVL|SRig.mobd
 		Length: 6
 		Tick: 160
 		Offset: 0,-32
-	deploy: sprites|SRig.mobd
+	deploy: SPRITES.LVL|SRig.mobd
 		Start: 8
 		Length: 6
 		Tick: 60
@@ -188,7 +188,7 @@ survivors_drillrig:
 	make2: bits/SRig.png
 		Start: 3
 		Offset: 0,-32
-	oil: sprites|Oil.mobd
+	oil: SPRITES.LVL|Oil.mobd
 		Length: 14
 		Tick: 120
 		Offset: 0,-16

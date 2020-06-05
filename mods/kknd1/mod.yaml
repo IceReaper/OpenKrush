@@ -2,7 +2,7 @@ Metadata:
 	Title: Krush Kill 'n' Destroy
 	Version: {DEV_VERSION}
 	Website: https://www.kknd-game.com
-	WebIcon32: https://raw.githubusercontent.com/IceReaper/KKnD/master/packaging/linux/mod_32x32.png
+	WebIcon32: https://raw.githubusercontent.com/IceReaper/KKnD/master/packaging/artwork/icon_32x32.png
 
 PackageFormats: LvlPackage
 
@@ -12,9 +12,9 @@ Packages:
 	$kknd: kknd
 	$kknd1: kknd1
 	./mods/common: common
-	~Sprites/Sprites.lvl: sprites
-	~Sounds/Evolved.lvl: sounds_evolved
-	~Sounds/Survivors.lvl: sounds_survivors
+	../KKND-Xtreme-Demo/LEVELS/640/SPRITES.LVL: SPRITES.LVL
+	../KKND-Xtreme-Demo/LEVELS/MUTE.SLV: MUTE.SLV
+	../KKND-Xtreme-Demo/LEVELS/SURV.SLV: SURV.SLV
 	kknd1|bits/notifications: notifications
 
 MapFolders:
@@ -263,21 +263,13 @@ ColorValidator:
 	HsvValueRange: 0, 1
 
 ModContent:
-	InstallPromptMessage: Krush Kill 'n' Destroy requires artwork and audio from the original game.\n\nQuick Install will automatically download this content (without music\nor videos) from a mirror of the demo release.\n\nAdvanced Install includes options for copying the music\nand the videos from a GoG installation.
-	HeaderMessage: Game content may be copied from GoG digital install.\nOpenRA can also download the base game\nfiles from an online mirror of the Demo release.
-	QuickDownload: demo
+	InstallPromptMessage: Advanced Install includes options for copying the music\nthe videos and the campaign from a GoG installation.
+	HeaderMessage: Additional game content may be copied from GoG digital install.
 	Packages:
-		base: Base Game Files
-			TestFiles: ^Content/kknd1/Sprites/Sprites.lvl
-			Sources: gog_galaxy, gog_offline
-			Required: true
-			Download: demo
 		extra assets: Music and Movies
 			TestFiles: ^Content/kknd1/Movies/Intro.vbc
 			Sources: gog_galaxy, gog_offline
 			Required: false
-	Downloads:
-		kknd1|installer/downloads.yaml
 	Sources:
 		kknd1|installer/gog_galaxy.yaml
 		kknd1|installer/gog_offline.yaml

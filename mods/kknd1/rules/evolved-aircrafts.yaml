@@ -17,4 +17,4 @@ evolved_wasp:
 	Voiced:
 		VoiceSet: WaspVoice
 	AmbientSound:
-		SoundFiles: sounds_evolved|162.wav
+		SoundFiles: MUTE.SLV|162.wav

@@ -1,41 +1,41 @@
 evolved_machinegunnest:
 	Inherits@muzzle: ^gun_16
-	idle: sprites|MGuardTower.mobd
+	idle: SPRITES.LVL|MGuardTower.mobd
 		Start: 16
 		Offset: 1,-14
 	damaged-idle: bits/MGuardTower.png
 		Offset: 1,-14
-	make0: sprites|MGuardTower.mobd
+	make0: SPRITES.LVL|MGuardTower.mobd
 		Start: 17
 		Offset: 1,-14
-	make1: sprites|MGuardTower.mobd
+	make1: SPRITES.LVL|MGuardTower.mobd
 		Start: 18
 		Offset: 1,-14
-	make2: sprites|MGuardTower.mobd
+	make2: SPRITES.LVL|MGuardTower.mobd
 		Start: 19
 		Offset: 1,-14
-	turret: sprites|MGuardTower.mobd
+	turret: SPRITES.LVL|MGuardTower.mobd
 		Facings: -16
 		Offset: 1,-14
 	icon: bits/Buttons.png
 		Start: 10
 
 evolved_grapeshotcannon:
-	idle: sprites|GrapeShotCannon.mobd
+	idle: SPRITES.LVL|GrapeShotCannon.mobd
 		Start: 32
 		Offset: 1,-17
 	damaged-idle: bits/GrapeShotCannon.png
 		Offset: 1,-17
-	make0: sprites|GrapeShotCannon.mobd
+	make0: SPRITES.LVL|GrapeShotCannon.mobd
 		Start: 33
 		Offset: 1,-17
-	make1: sprites|GrapeShotCannon.mobd
+	make1: SPRITES.LVL|GrapeShotCannon.mobd
 		Start: 34
 		Offset: 1,-17
-	make2: sprites|GrapeShotCannon.mobd
+	make2: SPRITES.LVL|GrapeShotCannon.mobd
 		Start: 35
 		Offset: 1,-17
-	turret: sprites|GrapeShotCannon.mobd
+	turret: SPRITES.LVL|GrapeShotCannon.mobd
 		Start: 16
 		Facings: -16
 		Offset: 1,-17
@@ -44,25 +44,25 @@ evolved_grapeshotcannon:
 
 evolved_rotarycannon:
 	Inherits@muzzle: ^gun_16
-	idle: sprites|RotaryCannon.mobd
+	idle: SPRITES.LVL|RotaryCannon.mobd
 		Start: 80
 		Offset: 0,-17
 	damaged-idle: bits/RotaryCannon.png
 		Offset: 0,-17
-	make0: sprites|RotaryCannon.mobd
+	make0: SPRITES.LVL|RotaryCannon.mobd
 		Start: 81
 		Offset: 0,-17
-	make1: sprites|RotaryCannon.mobd
+	make1: SPRITES.LVL|RotaryCannon.mobd
 		Start: 82
 		Offset: 0,-17
-	make2: sprites|RotaryCannon.mobd
+	make2: SPRITES.LVL|RotaryCannon.mobd
 		Start: 83
 		Offset: 0,-17
-	turret: sprites|RotaryCannon.mobd
+	turret: SPRITES.LVL|RotaryCannon.mobd
 		Start: 64
 		Facings: -16
 		Offset: 0,-17
-	shoot: sprites|RotaryCannon.mobd
+	shoot: SPRITES.LVL|RotaryCannon.mobd
 		Length: 4
 		Tick: 40
 		Facings: -16

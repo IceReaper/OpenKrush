@@ -1,16 +1,16 @@
 overlay:
-	build-valid: sprites|Cursors.mobd
+	build-valid: SPRITES.LVL|Cursors.mobd
 		Start: 98
 		Offset: -16, -16
-	build-invalid: sprites|Cursors.mobd
+	build-invalid: SPRITES.LVL|Cursors.mobd
 		Start: 97
 		Offset: -16, -16
 
 editor-overlay:
-	copy: sprites|Cursors.mobd
+	copy: SPRITES.LVL|Cursors.mobd
 		Start: 97
 		Offset: -16, -16
-	paste: sprites|Cursors.mobd
+	paste: SPRITES.LVL|Cursors.mobd
 		Start: 98
 		Offset: -16, -16
 
@@ -25,81 +25,81 @@ shroud:
 		Start: 1
 
 moveflsh:
-	idle: sprites|Cursors.mobd
+	idle: SPRITES.LVL|Cursors.mobd
 		Start: 89
 		Length: 8
 
 indicators:
-	repair: sprites|Cursors.mobd
+	repair: SPRITES.LVL|Cursors.mobd
 		Start: 26
 		Length: 9
 		ZOffset: 2000
-	research0: sprites|Cursors.mobd
+	research0: SPRITES.LVL|Cursors.mobd
 		Start: 105
 		Length: 7
-	research1: sprites|Cursors.mobd
+	research1: SPRITES.LVL|Cursors.mobd
 		Start: 112
 		Length: 7
-	research2: sprites|Cursors.mobd
+	research2: SPRITES.LVL|Cursors.mobd
 		Start: 119
 		Length: 7
-	research3: sprites|Cursors.mobd
+	research3: SPRITES.LVL|Cursors.mobd
 		Start: 126
 		Length: 7
-	research4: sprites|Cursors.mobd
+	research4: SPRITES.LVL|Cursors.mobd
 		Start: 133
 		Length: 7
-	research5: sprites|Cursors.mobd
+	research5: SPRITES.LVL|Cursors.mobd
 		Start: 140
 		Length: 7
 
 crater:
-	a: sprites|Extras.mobd
+	a: SPRITES.LVL|Extras.mobd
 		Start: 362
 		Offset: -16,-16
-	b: sprites|Extras.mobd
+	b: SPRITES.LVL|Extras.mobd
 		Start: 363
 		Offset: -16,-16
-	c: sprites|Extras.mobd
+	c: SPRITES.LVL|Extras.mobd
 		Start: 364
 		Offset: -16,-16
-	d: sprites|Extras.mobd
+	d: SPRITES.LVL|Extras.mobd
 		Start: 365
 		Offset: -16,-16
-	e: sprites|Extras.mobd
+	e: SPRITES.LVL|Extras.mobd
 		Start: 366
 		Offset: -16,-16
-	f: sprites|Extras.mobd
+	f: SPRITES.LVL|Extras.mobd
 		Start: 367
 		Offset: -16,-16
-	g: sprites|Extras.mobd
+	g: SPRITES.LVL|Extras.mobd
 		Start: 368
 		Offset: -16,-16
-	h: sprites|Extras.mobd
+	h: SPRITES.LVL|Extras.mobd
 		Start: 369
 		Offset: -16,-16
-	i: sprites|Extras.mobd
+	i: SPRITES.LVL|Extras.mobd
 		Start: 370
 		Offset: -16,-16
 
 hut_a:
-	idle: sprites|Hut.mobd
+	idle: SPRITES.LVL|Hut.mobd
 		Start: 5
 
 hut_b:
-	idle: sprites|Hut.mobd
+	idle: SPRITES.LVL|Hut.mobd
 		Start: 6
 
 hut_c:
-	idle: sprites|Hut.mobd
+	idle: SPRITES.LVL|Hut.mobd
 		Start: 7
 
 hut_d:
-	idle: sprites|Hut.mobd
+	idle: SPRITES.LVL|Hut.mobd
 		Start: 8
 
 hut_e:
-	idle: sprites|Hut.mobd
+	idle: SPRITES.LVL|Hut.mobd
 		Start: 9
 
 hut_f:
@@ -107,32 +107,32 @@ hut_f:
 		Start: 0
 
 hut_a_rubble:
-	idle: sprites|Hut.mobd
+	idle: SPRITES.LVL|Hut.mobd
 		Start: 0
 		ZOffset: -1000
 
 hut_b_rubble:
-	idle: sprites|Hut.mobd
+	idle: SPRITES.LVL|Hut.mobd
 		Start: 1
 		ZOffset: -1000
 
 hut_c_rubble:
-	idle: sprites|Hut.mobd
+	idle: SPRITES.LVL|Hut.mobd
 		Start: 2
 		ZOffset: -1000
 
 hut_d_rubble:
-	idle: sprites|Hut.mobd
+	idle: SPRITES.LVL|Hut.mobd
 		Start: 3
 		ZOffset: -1000
 
 hut_e_rubble:
-	idle: sprites|Hut.mobd
+	idle: SPRITES.LVL|Hut.mobd
 		Start: 4
 		ZOffset: -1000
 
 campfire:
-	idle: sprites|Hut.mobd
+	idle: SPRITES.LVL|Hut.mobd
 		Start: 10
 		Length: 4
 		Tick: 120
@@ -170,7 +170,7 @@ pillar_h:
 		Start: 8
 
 oilpatch:
-	idle: sprites|Oil.mobd
+	idle: SPRITES.LVL|Oil.mobd
 		Length: 14
 		Tick: 120
 		ZOffset: -2000

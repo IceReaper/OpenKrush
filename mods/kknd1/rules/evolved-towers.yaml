@@ -77,5 +77,5 @@ evolved_rotarycannon:
 	TechnicianRepairable:
 		Offset: 0,-15
 	WithLoopedAttackSound:
-		Report: kknd1|bits/sounds/chaingun.wav #sounds_evolved|4.wav
+		Report: kknd1|bits/sounds/chaingun.wav #MUTE.SLV|4.wav
 		Delay: 4

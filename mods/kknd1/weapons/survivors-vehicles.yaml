@@ -3,7 +3,7 @@ survivors_dirtbike:
 	Burst: 1
 	BurstDelays: 0
 	ReloadDelay: 25
-	Report: kknd1|bits/sounds/pistol.wav #sounds_survivors|5.wav
+	Report: kknd1|bits/sounds/pistol.wav #SURV.SLV|5.wav
 	Projectile: InstantHit
 		Blockable: true
 	Warhead@Damage: SpreadDamage
@@ -18,7 +18,7 @@ survivors_dirtbike:
 		Image: hit
 		ExplosionPalette: kknd
 		Explosions: bullet_a, bullet_b, bullet_c, bullet_d, bullet_e, bullet_f, bullet_g, bullet_h
-		ImpactSounds: sounds_survivors|11.wav, sounds_survivors|12.wav, sounds_survivors|13.wav
+		ImpactSounds: SURV.SLV|11.wav, SURV.SLV|12.wav, SURV.SLV|13.wav
 		ImpactSoundChance: 10
 		Radius: 250,250
 
@@ -27,7 +27,7 @@ survivors_4x4pickup:
 	Burst: 10
 	BurstDelays: 19
 	ReloadDelay: 25
-	Report: sounds_survivors|5.wav
+	Report: SURV.SLV|5.wav
 	Projectile: InstantHit
 		Blockable: true
 	Warhead@Damage: SpreadDamage
@@ -42,7 +42,7 @@ survivors_4x4pickup:
 		Image: hit
 		ExplosionPalette: kknd
 		Explosions: bullet_a, bullet_b, bullet_c, bullet_d, bullet_e, bullet_f, bullet_g, bullet_h
-		ImpactSounds: sounds_survivors|11.wav, sounds_survivors|12.wav, sounds_survivors|13.wav
+		ImpactSounds: SURV.SLV|11.wav, SURV.SLV|12.wav, SURV.SLV|13.wav
 		ImpactSoundChance: 10
 		Radius: 250,250
 
@@ -51,7 +51,7 @@ survivors_allterrainvehicle:
 	Burst: 10
 	BurstDelays: 13
 	ReloadDelay: 38
-	Report: sounds_survivors|8.wav
+	Report: SURV.SLV|8.wav
 	Projectile: InstantHit
 		Blockable: true
 	Warhead@Damage: SpreadDamage
@@ -66,7 +66,7 @@ survivors_allterrainvehicle:
 		Image: hit
 		ExplosionPalette: kknd
 		Explosions: bullet_a, bullet_b, bullet_c, bullet_d, bullet_e, bullet_f, bullet_g, bullet_h
-		ImpactSounds: sounds_survivors|11.wav, sounds_survivors|12.wav, sounds_survivors|13.wav
+		ImpactSounds: SURV.SLV|11.wav, SURV.SLV|12.wav, SURV.SLV|13.wav
 		ImpactSoundChance: 10
 		Radius: 250,250
 
@@ -75,7 +75,7 @@ survivors_flameatv:
 	Burst: 10
 	BurstDelays: 1
 	ReloadDelay: 41
-	Report: sounds_survivors|86.wav
+	Report: SURV.SLV|86.wav
 	Projectile: Bullet
 		Image: projectile
 		Palette: kknd
@@ -97,7 +97,7 @@ survivors_anacondatank:
 	Burst: 1
 	BurstDelays: 0
 	ReloadDelay: 82
-	Report: sounds_survivors|9.wav
+	Report: SURV.SLV|9.wav
 	Projectile: Bullet
 		Image: projectile
 		Palette: kknd
@@ -117,7 +117,7 @@ survivors_anacondatank:
 		Image: explosions
 		ExplosionPalette: kknd
 		Explosions: s
-		ImpactSounds: sounds_survivors|10.wav
+		ImpactSounds: SURV.SLV|10.wav
 
 survivors_barragecraft:
 	Inherits: Smudge
@@ -125,7 +125,7 @@ survivors_barragecraft:
 	Burst: 6
 	BurstDelays: 8
 	ReloadDelay: 200
-	Report: sounds_survivors|14.wav
+	Report: SURV.SLV|14.wav
 	Projectile: Bullet
 		Image: projectile
 		Palette: player
@@ -152,7 +152,7 @@ survivors_barragecraft:
 		Image: explosions
 		ExplosionPalette: kknd
 		Explosions: s
-		ImpactSounds: sounds_survivors|10.wav
+		ImpactSounds: SURV.SLV|10.wav
 
 survivors_autocannontank:
 	Range: 7c0
@@ -172,6 +172,6 @@ survivors_autocannontank:
 		Image: hit
 		ExplosionPalette: kknd
 		Explosions: bullet_a, bullet_b, bullet_c, bullet_d, bullet_e, bullet_f, bullet_g, bullet_h
-		ImpactSounds: sounds_survivors|11.wav, sounds_survivors|12.wav, sounds_survivors|13.wav
+		ImpactSounds: SURV.SLV|11.wav, SURV.SLV|12.wav, SURV.SLV|13.wav
 		ImpactSoundChance: 10
 		Radius: 250,250

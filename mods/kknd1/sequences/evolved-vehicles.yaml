@@ -1,42 +1,42 @@
 evolved_direwolf:
 	Inherits@muzzle: ^gun_16
-	idle: sprites|DireWolf.mobd
+	idle: SPRITES.LVL|DireWolf.mobd
 		Start: 40
 		Facings: -16
-	move: sprites|DireWolf.mobd
+	move: SPRITES.LVL|DireWolf.mobd
 		Start: 136
 		Length: 7
 		Tick: 60
 		Facings: -16
-	shoot: sprites|DireWolf.mobd
+	shoot: SPRITES.LVL|DireWolf.mobd
 		Start: 56
 		Length: 5
 		Tick: 60
 		Facings: -16
-	aim: sprites|DireWolf.mobd
+	aim: SPRITES.LVL|DireWolf.mobd
 		Start: 56
 		Stride: 5
 		Facings: -16
-	die: sprites|DireWolf.mobd
+	die: SPRITES.LVL|DireWolf.mobd
 		Start: 2
 		Length: 13
 		Tick: 120
 	die-explode: bits/DireWolf.png
 		Length: 20
 		Tick: 60
-	die-zap: sprites|DireWolf.mobd
+	die-zap: SPRITES.LVL|DireWolf.mobd
 		Start: 2
 		Length: 13
 		Tick: 120
-	die-burn: sprites|DireWolf.mobd
+	die-burn: SPRITES.LVL|DireWolf.mobd
 		Start: 2
 		Length: 13
 		Tick: 120
-	die-melt: sprites|DireWolf.mobd
+	die-melt: SPRITES.LVL|DireWolf.mobd
 		Start: 2
 		Length: 13
 		Tick: 120
-	die-dissolve: sprites|DireWolf.mobd
+	die-dissolve: SPRITES.LVL|DireWolf.mobd
 		Start: 2
 		Length: 13
 		Tick: 120
@@ -68,33 +68,33 @@ evolved_chopper:
 
 evolved_bikeandsidecar:
 	Inherits@muzzle: ^gun_16
-	idle: sprites|Sidecar.mobd
+	idle: SPRITES.LVL|Sidecar.mobd
 		Start: 16
 		Facings: -16
-	move: sprites|Sidecar.mobd
+	move: SPRITES.LVL|Sidecar.mobd
 		Start: 32
 		Length: 2
 		Tick: 120
 		Facings: -16
-	turret: sprites|Sidecar.mobd
+	turret: SPRITES.LVL|Sidecar.mobd
 		Facings: -16
 	icon: bits/Buttons.png
 		Start: 15
 
 evolved_giantscorpion:
-	idle: sprites|Scorpion.mobd
+	idle: SPRITES.LVL|Scorpion.mobd
 		Facings: -16
-	move: sprites|Scorpion.mobd
+	move: SPRITES.LVL|Scorpion.mobd
 		Start: 80
 		Length: 8
 		Tick: 120
 		Facings: -16
-	shoot: sprites|Scorpion.mobd
+	shoot: SPRITES.LVL|Scorpion.mobd
 		Start: 16
 		Length: 4
 		Tick: 120
 		Facings: -16
-	aim: sprites|Scorpion.mobd
+	aim: SPRITES.LVL|Scorpion.mobd
 		Start: 16
 		Stride: 4
 		Facings: -16
@@ -103,50 +103,50 @@ evolved_giantscorpion:
 
 evolved_monstertruck:
 	Inherits@muzzle: ^gun_16
-	idle: sprites|MonsterTruck.mobd
+	idle: SPRITES.LVL|MonsterTruck.mobd
 		Start: 16
 		Facings: -16
-	move: sprites|MonsterTruck.mobd
+	move: SPRITES.LVL|MonsterTruck.mobd
 		Start: 32
 		Length: 2
 		Tick: 120
 		Facings: -16
-	turret: sprites|MonsterTruck.mobd
+	turret: SPRITES.LVL|MonsterTruck.mobd
 		Facings: -16
 	icon: bits/Buttons.png
 		Start: 17
 
 evolved_warmastodon:
 	#Inherits@muzzle: ^gun_16_dual
-	idle: sprites|Mastodon.mobd
+	idle: SPRITES.LVL|Mastodon.mobd
 		Start: 32
 		Facings: -16
-	move: sprites|Mastodon.mobd
+	move: SPRITES.LVL|Mastodon.mobd
 		Start: 48
 		Length: 10
 		Tick: 120
 		Facings: -16
-	turret: sprites|Mastodon.mobd
+	turret: SPRITES.LVL|Mastodon.mobd
 		Start: 16
 		Facings: -16
 	icon: bits/Buttons.png
 		Start: 22
 
 evolved_giantbeetle:
-	idle: sprites|Beetle.mobd
+	idle: SPRITES.LVL|Beetle.mobd
 		Start: 64
 		Facings: -16
-	move: sprites|Beetle.mobd
+	move: SPRITES.LVL|Beetle.mobd
 		Start: 256
 		Length: 10
 		Tick: 120
 		Facings: -16
-	shoot: sprites|Beetle.mobd
+	shoot: SPRITES.LVL|Beetle.mobd
 		Start: 80
 		Length: 11
 		Tick: 120
 		Facings: -16
-	aim: sprites|Beetle.mobd
+	aim: SPRITES.LVL|Beetle.mobd
 		Start: 80
 		Stride: 11
 		Facings: -16
@@ -154,24 +154,24 @@ evolved_giantbeetle:
 		Start: 23
 
 evolved_missilecrab:
-	idle: sprites|Crab.mobd
+	idle: SPRITES.LVL|Crab.mobd
 		Start: 48
 		Facings: -16
-	move: sprites|Crab.mobd
+	move: SPRITES.LVL|Crab.mobd
 		Start: 64
 		Length: 9
 		Tick: 120
 		Facings: -16
-	turret: sprites|Crab.mobd
+	turret: SPRITES.LVL|Crab.mobd
 		Start: 32
 		Facings: -16
 	icon: bits/Buttons.png
 		Start: 24
 
 evolved_oiltanker:
-	idle: sprites|MOTanker.mobd
+	idle: SPRITES.LVL|MOTanker.mobd
 		Facings: -16
-	move: sprites|MOTanker.mobd
+	move: SPRITES.LVL|MOTanker.mobd
 		Start: 16
 		Length: 2
 		Tick: 120
@@ -191,9 +191,9 @@ evolved_oiltanker:
 #		Start: 16
 
 evolved_derrick:
-	idle: sprites|MDerrick.mobd
+	idle: SPRITES.LVL|MDerrick.mobd
 		Facings: -16
-	move: sprites|MDerrick.mobd
+	move: SPRITES.LVL|MDerrick.mobd
 		Start: 16
 		Length: 2
 		Tick: 120
@@ -202,9 +202,9 @@ evolved_derrick:
 		Start: 103
 
 evolved_clanhallwagon:
-	idle: sprites|ClanhallWagon.mobd
+	idle: SPRITES.LVL|ClanhallWagon.mobd
 		Facings: -16
-	move: sprites|ClanhallWagon.mobd
+	move: SPRITES.LVL|ClanhallWagon.mobd
 		Start: 16
 		Length: 2
 		Tick: 120

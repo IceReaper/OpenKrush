@@ -1,5 +1,5 @@
 Cursors:
-	sprites|Cursors.mobd: kknd
+	SPRITES.LVL|Cursors.mobd: kknd
 		default:
 			Start: 0
 		generic-blocked:

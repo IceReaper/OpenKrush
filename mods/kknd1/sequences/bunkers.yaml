@@ -1,16 +1,16 @@
 bunker_techbunker:
-	idle: sprites|Bunker.mobd
+	idle: SPRITES.LVL|Bunker.mobd
 		Start: 4
 		Offset: -1,-26
-	idle-open: sprites|Bunker.mobd
+	idle-open: SPRITES.LVL|Bunker.mobd
 		Start: 14
 		Offset: -1,-26
-	opening: sprites|Bunker.mobd
+	opening: SPRITES.LVL|Bunker.mobd
 		Start: 5
 		Length: 9
 		Tick: 120
 		Offset: -1,-26
-	openable: sprites|Bunker.mobd
+	openable: SPRITES.LVL|Bunker.mobd
 		Length: 4
 		Tick: 120
 		Offset: -1,-30
@@ -18,20 +18,20 @@ bunker_techbunker:
 		Start: 72
 
 bunker_gorttherobot:
-	idle: sprites|GortTheRobot.mobd
+	idle: SPRITES.LVL|GortTheRobot.mobd
 		Start: 192
 		Facings: -16
-	move: sprites|GortTheRobot.mobd
+	move: SPRITES.LVL|GortTheRobot.mobd
 		Start: 288
 		Length: 11
 		Tick: 120
 		Facings: -16
-	shoot: sprites|GortTheRobot.mobd
+	shoot: SPRITES.LVL|GortTheRobot.mobd
 		Start: 208
 		Length: 5
 		Tick: 120
 		Facings: -16
-	muzzle: sprites|GortTheRobot.mobd
+	muzzle: SPRITES.LVL|GortTheRobot.mobd
 		Length: 12
 		Facings: -16
 		Tick: 120
@@ -58,42 +58,42 @@ bunker_gorttherobot_modern:
 		Start: 76
 
 bunker_plasmatank:
-	idle: sprites|LaserTank.mobd
+	idle: SPRITES.LVL|LaserTank.mobd
 		Start: 32
 		Facings: -16
-	move: sprites|LaserTank.mobd
+	move: SPRITES.LVL|LaserTank.mobd
 		Start: 48
 		Facings: -16
-	turret: sprites|LaserTank.mobd
+	turret: SPRITES.LVL|LaserTank.mobd
 		Start: 16
 		Facings: -16
 	icon: bits/Buttons.png
 		Start: 75
 
 bunker_mech:
-	idle: sprites|Mech.mobd
+	idle: SPRITES.LVL|Mech.mobd
 		Start: 16
 		Facings: -16
-	move: sprites|Mech.mobd
+	move: SPRITES.LVL|Mech.mobd
 		Start: 32
 		Length: 10
 		Tick: 80
 		Facings: -16
-	turret: sprites|Mech.mobd
+	turret: SPRITES.LVL|Mech.mobd
 		Facings: -16
 	icon: bits/Buttons.png
 		Start: 73
 
 bunker_sentineldroid:
-	idle: sprites|SentinelDroid.mobd
+	idle: SPRITES.LVL|SentinelDroid.mobd
 		Start: 80
 		Facings: -16
-	move: sprites|SentinelDroid.mobd
+	move: SPRITES.LVL|SentinelDroid.mobd
 		Start: 96
 		Length: 10
 		Tick: 60
 		Facings: -16
-	turret: sprites|SentinelDroid.mobd
+	turret: SPRITES.LVL|SentinelDroid.mobd
 		Start: 64
 		Facings: -16
 	icon: bits/Buttons.png

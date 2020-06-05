@@ -1,16 +1,16 @@
 survivors_dirtbike:
 	Inherits@muzzle: ^gun_16
-	idle: sprites|Bike.mobd
+	idle: SPRITES.LVL|Bike.mobd
 		Facings: -16
-	move: sprites|Bike.mobd
+	move: SPRITES.LVL|Bike.mobd
 		Start: 48
 		Facings: -16
-	shoot: sprites|Bike.mobd
+	shoot: SPRITES.LVL|Bike.mobd
 		Start: 16
 		Length: 2
 		Tick: 120
 		Facings: -16
-	aim: sprites|Bike.mobd
+	aim: SPRITES.LVL|Bike.mobd
 		Start: 16
 		Stride: 2
 		Facings: -16
@@ -19,93 +19,93 @@ survivors_dirtbike:
 
 survivors_4x4pickup:
 	Inherits@muzzle: ^gun_16
-	idle: sprites|Pickup.mobd
+	idle: SPRITES.LVL|Pickup.mobd
 		Start: 16
 		Facings: -16
-	move: sprites|Pickup.mobd
+	move: SPRITES.LVL|Pickup.mobd
 		Start: 32
 		Length: 2
 		Tick: 120
 		Facings: -16
 	# Original KKnD also uses the MonsterTruck turret, cause the Pickup turret has a broken up-frame.
-	#turret: sprites|Pickup.mobd
+	#turret: SPRITES.LVL|Pickup.mobd
 	#	Facings: -16
-	turret: sprites|MonsterTruck.mobd
+	turret: SPRITES.LVL|MonsterTruck.mobd
 		Facings: -16
 	icon: bits/Buttons.png
 		Start: 52
 
 survivors_allterrainvehicle:
 	Inherits@muzzle: ^gun_16
-	idle: sprites|AllTerrainVehicle.mobd
+	idle: SPRITES.LVL|AllTerrainVehicle.mobd
 		Start: 16
 		Facings: -16
-	move: sprites|AllTerrainVehicle.mobd
+	move: SPRITES.LVL|AllTerrainVehicle.mobd
 		Start: 32
 		Length: 2
 		Tick: 120
 		Facings: -16
-	turret: sprites|AllTerrainVehicle.mobd
+	turret: SPRITES.LVL|AllTerrainVehicle.mobd
 		Facings: -16
 	icon: bits/Buttons.png
 		Start: 53
 
 survivors_flameatv:
-	idle: sprites|FlameAtv.mobd
+	idle: SPRITES.LVL|FlameAtv.mobd
 		Start: 16
 		Facings: -16
-	move: sprites|FlameAtv.mobd
+	move: SPRITES.LVL|FlameAtv.mobd
 		Start: 32
 		Length: 2
 		Tick: 120
 		Facings: -16
-	turret: sprites|FlameAtv.mobd
+	turret: SPRITES.LVL|FlameAtv.mobd
 		Facings: -16
 	icon: bits/Buttons.png
 		Start: 54
 
 survivors_anacondatank:
 	Inherits@muzzle: ^gun_16
-	idle: sprites|Tank.mobd
+	idle: SPRITES.LVL|Tank.mobd
 		Start: 32
 		Facings: -16
-	move: sprites|Tank.mobd
+	move: SPRITES.LVL|Tank.mobd
 		Start: 48
 		Length: 2
 		Tick: 120
 		Facings: -16
-	turret: sprites|Tank.mobd
+	turret: SPRITES.LVL|Tank.mobd
 		Start: 16
 		Facings: -16
 	icon: bits/Buttons.png
 		Start: 55
 
 survivors_barragecraft:
-	idle: sprites|BarrageCraft.mobd
+	idle: SPRITES.LVL|BarrageCraft.mobd
 		Start: 32
 		Facings: -16
-	move: sprites|BarrageCraft.mobd
+	move: SPRITES.LVL|BarrageCraft.mobd
 		Start: 32
 		Facings: -16
-	turret: sprites|BarrageCraft.mobd
+	turret: SPRITES.LVL|BarrageCraft.mobd
 		Start: 16
 		Facings: -16
 	icon: bits/Buttons.png
 		Start: 57
 
 survivors_autocannontank:
-	idle: sprites|CannonTank.mobd
+	idle: SPRITES.LVL|CannonTank.mobd
 		Start: 80
 		Facings: -16
-	move: sprites|CannonTank.mobd
+	move: SPRITES.LVL|CannonTank.mobd
 		Start: 96
 		Length: 2
 		Tick: 120
 		Facings: -16
-	turret: sprites|CannonTank.mobd
+	turret: SPRITES.LVL|CannonTank.mobd
 		Start: 64
 		Facings: -16
-	shoot: sprites|CannonTank.mobd
+	shoot: SPRITES.LVL|CannonTank.mobd
 		Length: 4
 		Tick: 40
 		Facings: -16
@@ -113,9 +113,9 @@ survivors_autocannontank:
 		Start: 58
 
 survivors_oiltanker:
-	idle: sprites|SOTanker.mobd
+	idle: SPRITES.LVL|SOTanker.mobd
 		Facings: -16
-	move: sprites|SOTanker.mobd
+	move: SPRITES.LVL|SOTanker.mobd
 		Start: 16
 		Length: 2
 		Tick: 120
@@ -135,9 +135,9 @@ survivors_oiltanker:
 #		Start: 59
 
 survivors_derrick:
-	idle: sprites|SDerrick.mobd
+	idle: SPRITES.LVL|SDerrick.mobd
 		Facings: -16
-	move: sprites|SDerrick.mobd
+	move: SPRITES.LVL|SDerrick.mobd
 		Start: 17
 		Length: 2
 		Tick: 120
@@ -146,9 +146,9 @@ survivors_derrick:
 		Start: 104
 
 survivors_mobileoutpost:
-	idle: sprites|OutpostMobile.mobd
+	idle: SPRITES.LVL|OutpostMobile.mobd
 		Facings: -16
-	move: sprites|OutpostMobile.mobd
+	move: SPRITES.LVL|OutpostMobile.mobd
 		Start: 16
 		Length: 4
 		Tick: 120

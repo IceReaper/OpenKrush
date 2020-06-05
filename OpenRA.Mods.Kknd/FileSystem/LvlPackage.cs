@@ -54,10 +54,17 @@ namespace OpenRA.Mods.Kknd.FileSystem
 			private readonly Dictionary<string, uint[]> index = new Dictionary<string, uint[]>();
 			private readonly Stream stream;
 
-			public LvlPackage(Stream s, string filename, Dictionary<string, MiniYaml> lvlLookup)
+			public LvlPackage(Stream s, string filename, FS context)
 			{
 				stream = s;
 				Name = filename;
+
+				var lvlLookup = new Dictionary<string, string>();
+				var updateLookup = false;
+
+				Stream s2;
+				if (context.TryOpen(filename + ".yaml", out s2))
+					lvlLookup = MiniYaml.FromStream(s2).ToDictionary(x => x.Key, x => x.Value.Value);
 
 				var fileTypeListOffset = s.ReadUInt32();
 				s.Position = fileTypeListOffset;
@@ -104,11 +111,16 @@ namespace OpenRA.Mods.Kknd.FileSystem
 							entry[1] = fileOffset - entry[0];
 						}
 
-						var assetFileName = j + "." + (fileType.Equals("SOUN") ? "wav" : fileType.ToLower());
+						var assetFileName = j + "." + fileType.ToLower();
 
 						// Lookup assumed original filename for better readability in yaml files.
-						if (lvlLookup.ContainsKey(filename + "|" + assetFileName))
-							assetFileName = lvlLookup[filename + "|" + assetFileName].Value;
+						if (lvlLookup.ContainsKey(assetFileName))
+							assetFileName = lvlLookup[assetFileName];
+						else
+						{
+							lvlLookup.Add(assetFileName, assetFileName);
+							updateLookup = true;
+						}
 
 						index.Add(assetFileName, new uint[] { fileOffset, 0 });
 					}
@@ -120,6 +132,10 @@ namespace OpenRA.Mods.Kknd.FileSystem
 					var entry = index.ElementAt(index.Count - 1).Value;
 					entry[1] = firstFileListOffset - entry[0];
 				}
+
+				if (updateLookup)
+					File.WriteAllText(filename + ".yaml",
+						lvlLookup.Select(e => e.Key + ": " + e.Value).JoinWith("\n") + "\n");
 
 				/*if (!Directory.Exists("XTRACT/" + filename))
 					Directory.CreateDirectory("XTRACT/" + filename);
@@ -182,14 +198,10 @@ namespace OpenRA.Mods.Kknd.FileSystem
 				return false;
 			}
 
-			Stream lvlLookup;
-			context.TryOpen("LvlLookup.yaml", out lvlLookup);
-
 			var tmp = s.ReadBytes(4); // Big-Endian
 			var dataLength = (tmp[0] << 24) | (tmp[1] << 16) | (tmp[2] << 8) | tmp[3];
 
-			package = new LvlPackage(new SegmentStream(s, 8, dataLength), filename,
-				MiniYaml.FromStream(lvlLookup).ToDictionary(x => x.Key, x => x.Value));
+			package = new LvlPackage(new SegmentStream(s, 8, dataLength), filename, context);
 
 			return true;
 		}

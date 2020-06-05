@@ -1,5 +1,5 @@
 ^evolved_infantry_death:
-	die: sprites|Extras.mobd
+	die: SPRITES.LVL|Extras.mobd
 		Start: 323
 		Length: 15
 		Tick: 120
@@ -24,19 +24,19 @@
 
 evolved_berserker:
 	Inherits@death: ^evolved_infantry_death
-	idle: sprites|Berserker.mobd
+	idle: SPRITES.LVL|Berserker.mobd
 		Start: 16
 		Facings: -16
-	move: sprites|Berserker.mobd
+	move: SPRITES.LVL|Berserker.mobd
 		Start: 96
 		Length: 6
 		Tick: 120
 		Facings: -16
-	aim: sprites|Berserker.mobd
+	aim: SPRITES.LVL|Berserker.mobd
 		Start: 32
 		Stride: 4
 		Facings: -16
-	shoot: sprites|Berserker.mobd
+	shoot: SPRITES.LVL|Berserker.mobd
 		Start: 32
 		Length: 4
 		Tick: 120
@@ -50,18 +50,18 @@ evolved_berserker:
 evolved_shotgunner:
 	Inherits@muzzle: ^gun_8
 	Inherits@death: ^evolved_infantry_death
-	idle: sprites|Shotgunner.mobd
+	idle: SPRITES.LVL|Shotgunner.mobd
 		Facings: -16
-	move: sprites|Shotgunner.mobd
+	move: SPRITES.LVL|Shotgunner.mobd
 		Start: 96
 		Length: 6
 		Tick: 120
 		Facings: -16
-	aim: sprites|Shotgunner.mobd
+	aim: SPRITES.LVL|Shotgunner.mobd
 		Start: 16
 		Stride: 5
 		Facings: -16
-	shoot: sprites|Shotgunner.mobd
+	shoot: SPRITES.LVL|Shotgunner.mobd
 		Start: 16
 		Length: 5
 		Tick: 120
@@ -74,18 +74,18 @@ evolved_shotgunner:
 
 evolved_pyromaniac:
 	Inherits@death: ^evolved_infantry_death
-	idle: sprites|Pyromaniac.mobd
+	idle: SPRITES.LVL|Pyromaniac.mobd
 		Facings: -16
-	move: sprites|Pyromaniac.mobd
+	move: SPRITES.LVL|Pyromaniac.mobd
 		Start: 80
 		Length: 6
 		Tick: 120
 		Facings: -16
-	aim: sprites|Pyromaniac.mobd
+	aim: SPRITES.LVL|Pyromaniac.mobd
 		Start: 16
 		Stride: 4
 		Facings: -16
-	shoot: sprites|Pyromaniac.mobd
+	shoot: SPRITES.LVL|Pyromaniac.mobd
 		Start: 16
 		Length: 4
 		Tick: 120
@@ -98,14 +98,14 @@ evolved_pyromaniac:
 
 evolved_rioter:
 	Inherits@death: ^evolved_infantry_death
-	idle: sprites|Rioter.mobd
+	idle: SPRITES.LVL|Rioter.mobd
 		Facings: -16
-	move: sprites|Rioter.mobd
+	move: SPRITES.LVL|Rioter.mobd
 		Start: 112
 		Length: 6
 		Tick: 120
 		Facings: -16
-	shoot: sprites|Rioter.mobd
+	shoot: SPRITES.LVL|Rioter.mobd
 		Start: 16
 		Length: 6
 		Tick: 120
@@ -119,18 +119,18 @@ evolved_rioter:
 evolved_vandal:
 	Inherits@muzzle: ^gun_8
 	Inherits@death: ^evolved_infantry_death
-	idle: sprites|Vandal.mobd
+	idle: SPRITES.LVL|Vandal.mobd
 		Facings: -16
-	move: sprites|Vandal.mobd
+	move: SPRITES.LVL|Vandal.mobd
 		Start: 80
 		Length: 6
 		Tick: 120
 		Facings: -16
-	aim: sprites|Vandal.mobd
+	aim: SPRITES.LVL|Vandal.mobd
 		Start: 16
 		Stride: 4
 		Facings: -16
-	shoot: sprites|Vandal.mobd
+	shoot: SPRITES.LVL|Vandal.mobd
 		Start: 16
 		Length: 4
 		Tick: 120
@@ -143,19 +143,19 @@ evolved_vandal:
 
 evolved_bazooka:
 	Inherits@death: ^evolved_infantry_death
-	idle: sprites|RocketLauncher.mobd
+	idle: SPRITES.LVL|RocketLauncher.mobd
 		Start: 32
 		Facings: -16
-	move: sprites|RocketLauncher.mobd
+	move: SPRITES.LVL|RocketLauncher.mobd
 		Start: 128
 		Length: 6
 		Tick: 120
 		Facings: -16
-	aim: sprites|RocketLauncher.mobd
+	aim: SPRITES.LVL|RocketLauncher.mobd
 		Start: 48
 		Stride: 5
 		Facings: -16
-	shoot: sprites|RocketLauncher.mobd
+	shoot: SPRITES.LVL|RocketLauncher.mobd
 		Start: 48
 		Length: 5
 		Tick: 120
@@ -169,18 +169,18 @@ evolved_bazooka:
 evolved_crazyharry:
 	Inherits@muzzle: ^gun_8
 	Inherits@death: ^evolved_infantry_death
-	idle: sprites|Harry.mobd
+	idle: SPRITES.LVL|Harry.mobd
 		Facings: -16
-	move: sprites|Harry.mobd
+	move: SPRITES.LVL|Harry.mobd
 		Start: 80
 		Length: 6
 		Tick: 120
 		Facings: -16
-	aim: sprites|Harry.mobd
+	aim: SPRITES.LVL|Harry.mobd
 		Start: 16
 		Stride: 4
 		Facings: -16
-	shoot: sprites|Harry.mobd
+	shoot: SPRITES.LVL|Harry.mobd
 		Start: 16
 		Length: 4
 		Tick: 120
@@ -194,18 +194,18 @@ evolved_crazyharry:
 evolved_kingzog:
 	Inherits@muzzle: ^gun_8
 	Inherits@death: ^evolved_infantry_death
-	idle: sprites|KingZog.mobd
+	idle: SPRITES.LVL|KingZog.mobd
 		Facings: -16
-	move: sprites|KingZog.mobd
+	move: SPRITES.LVL|KingZog.mobd
 		Start: 80
 		Length: 6
 		Tick: 120
 		Facings: -16
-	aim: sprites|KingZog.mobd
+	aim: SPRITES.LVL|KingZog.mobd
 		Start: 16
 		Stride: 4
 		Facings: -16
-	shoot: sprites|KingZog.mobd
+	shoot: SPRITES.LVL|KingZog.mobd
 		Start: 16
 		Length: 4
 		Tick: 120
@@ -218,9 +218,9 @@ evolved_kingzog:
 
 evolved_mekanik:
 	Inherits@death: ^evolved_infantry_death
-	idle: sprites|Mekanik.mobd
+	idle: SPRITES.LVL|Mekanik.mobd
 		Facings: -16
-	move: sprites|Mekanik.mobd
+	move: SPRITES.LVL|Mekanik.mobd
 		Start: 16
 		Length: 6
 		Tick: 120

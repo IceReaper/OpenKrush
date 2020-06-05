@@ -6,20 +6,20 @@
 
 ^CoreBuilding:
 	Building:
-		BuildSounds: sounds_survivors|193.wav
+		BuildSounds: SURV.SLV|193.wav
 	SaboteurConquerable:
 		RequiresCondition: !selfconstructing && !deconstructing
 
 ^CoreTower:
 	Building:
-		BuildSounds: sounds_survivors|193.wav
+		BuildSounds: SURV.SLV|193.wav
 	Turreted:
 		InitialFacing: 128
 	-ExplosionOnDamageTransition@Critical:
 
 ^CoreWall:
 	Building:
-		BuildSounds: sounds_survivors|193.wav
+		BuildSounds: SURV.SLV|193.wav
 	-ExplosionOnDamageTransition@Critical:
 
 ^CoreInfantry:

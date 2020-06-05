@@ -1,5 +1,5 @@
 ^survivors_infantry_death:
-	die: sprites|Extras.mobd
+	die: SPRITES.LVL|Extras.mobd
 		Start: 308
 		Length: 15
 		Tick: 120
@@ -25,18 +25,18 @@
 survivors_rifleman:
 	Inherits@muzzle: ^gun_8
 	Inherits@death: ^survivors_infantry_death
-	idle: sprites|Infantry.mobd
+	idle: SPRITES.LVL|Infantry.mobd
 		Facings: -16
-	move: sprites|Infantry.mobd
+	move: SPRITES.LVL|Infantry.mobd
 		Start: 80
 		Length: 6
 		Tick: 120
 		Facings: -16
-	aim: sprites|Infantry.mobd
+	aim: SPRITES.LVL|Infantry.mobd
 		Start: 16
 		Stride: 4
 		Facings: -16
-	shoot: sprites|Infantry.mobd
+	shoot: SPRITES.LVL|Infantry.mobd
 		Start: 16
 		Length: 4
 		Tick: 120
@@ -50,18 +50,18 @@ survivors_rifleman:
 survivors_swat:
 	Inherits@muzzle: ^gun_8
 	Inherits@death: ^survivors_infantry_death
-	idle: sprites|SWAT.mobd
+	idle: SPRITES.LVL|SWAT.mobd
 		Facings: -16
-	move: sprites|SWAT.mobd
+	move: SPRITES.LVL|SWAT.mobd
 		Start: 80
 		Length: 6
 		Tick: 120
 		Facings: -16
-	aim: sprites|SWAT.mobd
+	aim: SPRITES.LVL|SWAT.mobd
 		Start: 16
 		Stride: 4
 		Facings: -16
-	shoot: sprites|SWAT.mobd
+	shoot: SPRITES.LVL|SWAT.mobd
 		Start: 16
 		Length: 4
 		Tick: 120
@@ -99,18 +99,18 @@ survivors_swat_modern:
 
 survivors_flamer:
 	Inherits@death: ^survivors_infantry_death
-	idle: sprites|Flamer.mobd
+	idle: SPRITES.LVL|Flamer.mobd
 		Facings: -16
-	move: sprites|Flamer.mobd
+	move: SPRITES.LVL|Flamer.mobd
 		Start: 80
 		Length: 6
 		Tick: 120
 		Facings: -16
-	aim: sprites|Flamer.mobd
+	aim: SPRITES.LVL|Flamer.mobd
 		Start: 16
 		Stride: 4
 		Facings: -16
-	shoot: sprites|Flamer.mobd
+	shoot: SPRITES.LVL|Flamer.mobd
 		Start: 16
 		Length: 4
 		Tick: 120
@@ -123,15 +123,15 @@ survivors_flamer:
 
 survivors_sapper:
 	Inherits@death: ^survivors_infantry_death
-	idle: sprites|Sapper.mobd
+	idle: SPRITES.LVL|Sapper.mobd
 		Start: 128
 		Facings: -16
-	move: sprites|Sapper.mobd
+	move: SPRITES.LVL|Sapper.mobd
 		Start: 240
 		Length: 6
 		Tick: 120
 		Facings: -16
-	shoot: sprites|Sapper.mobd
+	shoot: SPRITES.LVL|Sapper.mobd
 		Start: 144
 		Length: 6
 		Tick: 120
@@ -145,18 +145,18 @@ survivors_sapper:
 survivors_saboteur:
 	Inherits@muzzle: ^gun_8
 	Inherits@death: ^survivors_infantry_death
-	idle: sprites|Saboteur.mobd
+	idle: SPRITES.LVL|Saboteur.mobd
 		Facings: -16
-	move: sprites|Saboteur.mobd
+	move: SPRITES.LVL|Saboteur.mobd
 		Start: 80
 		Length: 6
 		Tick: 120
 		Facings: -16
-	aim: sprites|Saboteur.mobd
+	aim: SPRITES.LVL|Saboteur.mobd
 		Start: 16
 		Stride: 4
 		Facings: -16
-	shoot: sprites|Saboteur.mobd
+	shoot: SPRITES.LVL|Saboteur.mobd
 		Start: 16
 		Length: 4
 		Tick: 120
@@ -169,18 +169,18 @@ survivors_saboteur:
 
 survivors_rpglauncher:
 	Inherits@death: ^survivors_infantry_death
-	idle: sprites|RocketInfantry.mobd
+	idle: SPRITES.LVL|RocketInfantry.mobd
 		Facings: -16
-	move: sprites|RocketInfantry.mobd
+	move: SPRITES.LVL|RocketInfantry.mobd
 		Start: 96
 		Length: 6
 		Tick: 120
 		Facings: -16
-	aim: sprites|RocketInfantry.mobd
+	aim: SPRITES.LVL|RocketInfantry.mobd
 		Start: 16
 		Stride: 5
 		Facings: -16
-	shoot: sprites|RocketInfantry.mobd
+	shoot: SPRITES.LVL|RocketInfantry.mobd
 		Start: 16
 		Length: 5
 		Tick: 120
@@ -194,18 +194,18 @@ survivors_rpglauncher:
 survivors_sniper:
 	Inherits@muzzle: ^gun_8
 	Inherits@death: ^survivors_infantry_death
-	idle: sprites|Sniper.mobd
+	idle: SPRITES.LVL|Sniper.mobd
 		Facings: -16
-	move: sprites|Sniper.mobd
+	move: SPRITES.LVL|Sniper.mobd
 		Start: 80
 		Length: 6
 		Tick: 120
 		Facings: -16
-	aim: sprites|Sniper.mobd
+	aim: SPRITES.LVL|Sniper.mobd
 		Start: 16
 		Stride: 4
 		Facings: -16
-	shoot: sprites|Sniper.mobd
+	shoot: SPRITES.LVL|Sniper.mobd
 		Start: 16
 		Length: 4
 		Tick: 120
@@ -219,18 +219,18 @@ survivors_sniper:
 survivors_elpresidente:
 	Inherits@muzzle: ^gun_8
 	Inherits@death: ^survivors_infantry_death
-	idle: sprites|ElPresidente.mobd
+	idle: SPRITES.LVL|ElPresidente.mobd
 		Facings: -16
-	move: sprites|ElPresidente.mobd
+	move: SPRITES.LVL|ElPresidente.mobd
 		Start: 80
 		Length: 6
 		Tick: 120
 		Facings: -16
-	aim: sprites|ElPresidente.mobd
+	aim: SPRITES.LVL|ElPresidente.mobd
 		Start: 16
 		Stride: 4
 		Facings: -16
-	shoot: sprites|ElPresidente.mobd
+	shoot: SPRITES.LVL|ElPresidente.mobd
 		Start: 16
 		Length: 4
 		Tick: 120
@@ -243,9 +243,9 @@ survivors_elpresidente:
 
 survivors_technician:
 	Inherits@death: ^survivors_infantry_death
-	idle: sprites|Technician.mobd
+	idle: SPRITES.LVL|Technician.mobd
 		Facings: -16
-	move: sprites|Technician.mobd
+	move: SPRITES.LVL|Technician.mobd
 		Start: 16
 		Length: 6
 		Tick: 120

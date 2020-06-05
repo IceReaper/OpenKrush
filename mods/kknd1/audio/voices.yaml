@@ -1,72 +1,72 @@
 EvolvedVoice:
 	DefaultVariant: .wav
 	Voices:
-		Create: sounds_evolved|125
-		Select: sounds_evolved|116, sounds_evolved|139, sounds_evolved|140, sounds_evolved|142
-		Action: sounds_evolved|91, sounds_evolved|131, sounds_evolved|133, kknd1|bits/sounds/evolved_Yes2
-		Attack: sounds_evolved|92, sounds_evolved|119
+		Create: MUTE.SLV|125
+		Select: MUTE.SLV|116, MUTE.SLV|139, MUTE.SLV|140, MUTE.SLV|142
+		Action: MUTE.SLV|91, MUTE.SLV|131, MUTE.SLV|133, kknd1|bits/sounds/evolved_Yes2
+		Attack: MUTE.SLV|92, MUTE.SLV|119
 		Infiltrate: kknd1|bits/sounds/evolved_Infiltrate
-		Reinforce: sounds_evolved|123
-		Infiltrated: sounds_evolved|105
-		Conquered: sounds_evolved|95, sounds_evolved|97, sounds_evolved|118
+		Reinforce: MUTE.SLV|123
+		Infiltrated: MUTE.SLV|105
+		Conquered: MUTE.SLV|95, MUTE.SLV|97, MUTE.SLV|118
 		Reinforced: # TODO keep it blank or make custom sound
-		Repair: sounds_evolved|124
-		Repairing: sounds_evolved|108
-		Die: sounds_evolved|174, sounds_evolved|175, sounds_evolved|176, sounds_evolved|177, sounds_evolved|178
+		Repair: MUTE.SLV|124
+		Repairing: MUTE.SLV|108
+		Die: MUTE.SLV|174, MUTE.SLV|175, MUTE.SLV|176, MUTE.SLV|177, MUTE.SLV|178
 		Crush: kknd1|bits/sounds/crush
 		Zapped: kknd1|bits/sounds/zapped1, kknd1|bits/sounds/zapped2, kknd1|bits/sounds/zapped3
 
 EvolvedVeteranVoice:
 	DefaultVariant: .wav
 	Voices:
-		Create: sounds_evolved|125 # Using non-veteran one to allow travis to build...
-		Select: kknd1|bits/sounds/evolved_Huh, sounds_evolved|158
-		Action: sounds_evolved|154, sounds_evolved|148
-		Attack: sounds_evolved|153, kknd1|bits/sounds/evolved_IveFoundThePlaymate, kknd1|bits/sounds/evolved_ActionTime
+		Create: MUTE.SLV|125 # Using non-veteran one to allow travis to build...
+		Select: kknd1|bits/sounds/evolved_Huh, MUTE.SLV|158
+		Action: MUTE.SLV|154, MUTE.SLV|148
+		Attack: MUTE.SLV|153, kknd1|bits/sounds/evolved_IveFoundThePlaymate, kknd1|bits/sounds/evolved_ActionTime
 		Infiltrate: kknd1|bits/sounds/evolved_TheBuildingHasBeenFound
 		Reinforce: kknd1|bits/sounds/evolved_Yes
 		Infiltrated: kknd1|bits/sounds/evolved_WereInside
 		Conquered: kknd1|bits/sounds/evolved_WeGotTheirBuilding
 		Reinforced: # TODO keep it blank or make custom sound
-		Repair: sounds_evolved|124
-		Repairing: sounds_evolved|108
-		Die: sounds_evolved|174, sounds_evolved|175, sounds_evolved|176, sounds_evolved|177, sounds_evolved|178
+		Repair: MUTE.SLV|124
+		Repairing: MUTE.SLV|108
+		Die: MUTE.SLV|174, MUTE.SLV|175, MUTE.SLV|176, MUTE.SLV|177, MUTE.SLV|178
 		Crush: kknd1|bits/sounds/crush
 		Zapped: kknd1|bits/sounds/zapped1, kknd1|bits/sounds/zapped2, kknd1|bits/sounds/zapped3
 
 SurvivorsVoice:
 	DefaultVariant: .wav
 	Voices:
-		Create: sounds_survivors|33
-		Select: sounds_survivors|50, sounds_survivors|51, sounds_survivors|53, sounds_survivors|69, sounds_survivors|70
-		Action: sounds_survivors|43, sounds_survivors|49, sounds_survivors|68
-		Attack: sounds_survivors|48, sounds_survivors|59, sounds_survivors|61
+		Create: SURV.SLV|33
+		Select: SURV.SLV|50, SURV.SLV|51, SURV.SLV|53, SURV.SLV|69, SURV.SLV|70
+		Action: SURV.SLV|43, SURV.SLV|49, SURV.SLV|68
+		Attack: SURV.SLV|48, SURV.SLV|59, SURV.SLV|61
 		Infiltrate: kknd1|bits/sounds/survivors_Infiltrate
-		Reinforce: sounds_survivors|45
-		Infiltrated: sounds_survivors|37, sounds_survivors|40
-		Conquered: sounds_survivors|29
+		Reinforce: SURV.SLV|45
+		Infiltrated: SURV.SLV|37, SURV.SLV|40
+		Conquered: SURV.SLV|29
 		Reinforced: # TODO keep it blank or make custom sound
-		Repair: sounds_survivors|45
-		Repairing: sounds_survivors|28
-		Die: sounds_survivors|174, sounds_survivors|175, sounds_survivors|176, sounds_survivors|177, sounds_survivors|178
+		Repair: SURV.SLV|45
+		Repairing: SURV.SLV|28
+		Die: SURV.SLV|174, SURV.SLV|175, SURV.SLV|176, SURV.SLV|177, SURV.SLV|178
 		Crush: kknd1|bits/sounds/crush
 		Zapped: kknd1|bits/sounds/zapped1, kknd1|bits/sounds/zapped2, kknd1|bits/sounds/zapped3
 
 SurvivorsVeteranVoice:
 	DefaultVariant: .wav
 	Voices:
-		Create: sounds_survivors|33 # Using non-veteran one to allow travis to build...
-		Select: sounds_survivors|78, sounds_survivors|85
-		Action: sounds_survivors|76, sounds_survivors|85, sounds_survivors|84
-		Attack: sounds_survivors|73, sounds_survivors|83, sounds_survivors|71
-		Infiltrate: sounds_survivors|71
+		Create: SURV.SLV|33 # Using non-veteran one to allow travis to build...
+		Select: SURV.SLV|78, SURV.SLV|85
+		Action: SURV.SLV|76, SURV.SLV|85, SURV.SLV|84
+		Attack: SURV.SLV|73, SURV.SLV|83, SURV.SLV|71
+		Infiltrate: SURV.SLV|71
 		Reinforce: kknd1|bits/sounds/survivors_Ohhh
 		Infiltrated: kknd1|bits/sounds/survivors_WereInside
-		Conquered: sounds_survivors|77
+		Conquered: SURV.SLV|77
 		Reinforced: # TODO keep it blank or make custom sound
-		Repair: sounds_survivors|45
-		Repairing: sounds_survivors|28
-		Die: sounds_survivors|174, sounds_survivors|175, sounds_survivors|176, sounds_survivors|177, sounds_survivors|178
+		Repair: SURV.SLV|45
+		Repairing: SURV.SLV|28
+		Die: SURV.SLV|174, SURV.SLV|175, SURV.SLV|176, SURV.SLV|177, SURV.SLV|178
 		Crush: kknd1|bits/sounds/crush
 		Zapped: kknd1|bits/sounds/zapped1, kknd1|bits/sounds/zapped2, kknd1|bits/sounds/zapped3
 
@@ -77,7 +77,7 @@ ScoutVoice:
 		Select: kknd1|bits/sounds/scout_Commander, kknd1|bits/sounds/scout_Ammm, kknd1|bits/sounds/scout_Emmm
 		Action: kknd1|bits/sounds/scout_ThanksCommander, kknd1|bits/sounds/scout_Emmm, kknd1|bits/sounds/scout_Ammm, kknd1|bits/sounds/scout_Ok
 		Attack: kknd1|bits/sounds/scout_Attack, kknd1|bits/sounds/scout_Ok
-		Die: sounds_survivors|174, sounds_survivors|175, sounds_survivors|176, sounds_survivors|177, sounds_survivors|178
+		Die: SURV.SLV|174, SURV.SLV|175, SURV.SLV|176, SURV.SLV|177, SURV.SLV|178
 		Crush: kknd1|bits/sounds/crush
 		Zapped: kknd1|bits/sounds/zapped1, kknd1|bits/sounds/zapped2, kknd1|bits/sounds/zapped3
 
@@ -100,43 +100,43 @@ GortVoice:
 WolfVoice:
 	DefaultVariant: .wav
 	Voices:
-		Create: sounds_evolved|165
-		Select: sounds_evolved|165
-		Action: sounds_evolved|164, kknd1|bits/sounds/evolved_Wolf1
+		Create: MUTE.SLV|165
+		Select: MUTE.SLV|165
+		Action: MUTE.SLV|164, kknd1|bits/sounds/evolved_Wolf1
 		Attack: kknd1|bits/sounds/evolved_Wolf3, kknd1|bits/sounds/evolved_Wolf2
-		Die: sounds_evolved|174, sounds_evolved|175, sounds_evolved|176, sounds_evolved|177, sounds_evolved|178
+		Die: MUTE.SLV|174, MUTE.SLV|175, MUTE.SLV|176, MUTE.SLV|177, MUTE.SLV|178
 
 ScorpionVoice:
 	DefaultVariant: .wav
 	Voices:
-		Create: sounds_evolved|172
-		Select: sounds_evolved|172, kknd1|bits/sounds/evolved_Scorpion1
-		Action: sounds_evolved|173, kknd1|bits/sounds/evolved_Scorpion2
-		Attack: sounds_evolved|173, kknd1|bits/sounds/evolved_Scorpion2
+		Create: MUTE.SLV|172
+		Select: MUTE.SLV|172, kknd1|bits/sounds/evolved_Scorpion1
+		Action: MUTE.SLV|173, kknd1|bits/sounds/evolved_Scorpion2
+		Attack: MUTE.SLV|173, kknd1|bits/sounds/evolved_Scorpion2
 
 MastodonVoice:
 	DefaultVariant: .wav
 	Voices:
-		Create: sounds_evolved|160
-		Select: sounds_evolved|160
-		Action: sounds_evolved|159, kknd1|bits/sounds/evolved_Elephant1, kknd1|bits/sounds/evolved_Elephant3
+		Create: MUTE.SLV|160
+		Select: MUTE.SLV|160
+		Action: MUTE.SLV|159, kknd1|bits/sounds/evolved_Elephant1, kknd1|bits/sounds/evolved_Elephant3
 		Attack: kknd1|bits/sounds/evolved_Elephant2
 
 BeetleVoice:
 	DefaultVariant: .wav
 	Voices:
-		Create: sounds_evolved|168
-		Select: sounds_evolved|168, kknd1|bits/sounds/evolved_Beetle1
-		Action: sounds_evolved|169, kknd1|bits/sounds/evolved_Beetle2
-		Attack: sounds_evolved|169, kknd1|bits/sounds/evolved_Beetle2
+		Create: MUTE.SLV|168
+		Select: MUTE.SLV|168, kknd1|bits/sounds/evolved_Beetle1
+		Action: MUTE.SLV|169, kknd1|bits/sounds/evolved_Beetle2
+		Attack: MUTE.SLV|169, kknd1|bits/sounds/evolved_Beetle2
 
 CrabVoice:
 	DefaultVariant: .wav
 	Voices:
-		Create: sounds_evolved|170
-		Select: sounds_evolved|170, kknd1|bits/sounds/evolved_Crab1
-		Action: sounds_evolved|171, kknd1|bits/sounds/evolved_Crab2
-		Attack: sounds_evolved|171, kknd1|bits/sounds/evolved_Crab2
+		Create: MUTE.SLV|170
+		Select: MUTE.SLV|170, kknd1|bits/sounds/evolved_Crab1
+		Action: MUTE.SLV|171, kknd1|bits/sounds/evolved_Crab2
+		Attack: MUTE.SLV|171, kknd1|bits/sounds/evolved_Crab2
 
 WaspVoice:
 	DefaultVariant: .wav
@@ -149,7 +149,7 @@ WaspVoice:
 WilburBomberVoice:
 	DefaultVariant: .wav
 	Voices:
-		Create: sounds_survivors|25, sounds_survivors|58
-		Select: sounds_survivors|25, sounds_survivors|58
-		Action: sounds_survivors|25, sounds_survivors|58
-		Attack: sounds_survivors|25, sounds_survivors|58
+		Create: SURV.SLV|25, SURV.SLV|58
+		Select: SURV.SLV|25, SURV.SLV|58
+		Action: SURV.SLV|25, SURV.SLV|58
+		Attack: SURV.SLV|25, SURV.SLV|58
