@@ -1,0 +1,25 @@
+evolved_vehicle_chopper:
+	Range: 4c0
+	Burst: 1
+	BurstDelays: 0
+	ReloadDelay: 25
+	Report: MUTE.SLV|17.wav
+	AfterFireSound: MUTE.SLV|190.wav
+	AfterFireSoundDelay: 8
+	Projectile: InstantHit
+		Blockable: true
+	Warhead@Damage: SpreadDamage
+		Damage: 100
+		Spread: 32
+		Falloff: 100, 100
+		Versus:
+			infantry: 30
+			vehicle: 11
+			building: 11
+	Warhead@Effect: ShrapnelCreateEffect
+		Image: hit
+		ExplosionPalette: kknd
+		Explosions: bullet_a, bullet_b, bullet_c, bullet_d, bullet_e, bullet_f, bullet_g, bullet_h
+		ImpactSounds: MUTE.SLV|11.wav, MUTE.SLV|12.wav, MUTE.SLV|13.wav
+		ImpactSoundChance: 10
+		Radius: 250,250

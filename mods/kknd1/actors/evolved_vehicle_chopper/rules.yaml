@@ -1,0 +1,24 @@
+evolved_vehicle_chopper:
+	Inherits@1: ^EvolvedVehicle
+	Inherits@2: ^CoreLightVehicle
+	Inherits@3: ^CoreArmedSelf
+	Inherits@4: ^AutoTargetDefault
+	Tooltip:
+		Name: Chopper
+	Valued:
+		Cost: 150
+	Health:
+		HP: 400
+	Mobile:
+		Speed: 115
+		TurnSpeed: 41
+	AdvancedBuildable:
+		BuildDuration: 125
+		Level: -1
+	RevealsShroud:
+		Range: 11c0
+	OffsetsArmament:
+		Weapon: evolved_vehicle_chopper
+	AdvancedSelectionDecorations:
+		Offset: 0,-2
+	Veterancy:
