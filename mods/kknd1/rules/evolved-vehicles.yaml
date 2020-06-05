@@ -1,31 +1,3 @@
-evolved_giantbeetle:
-	Inherits@1: ^EvolvedVehicle
-	Inherits@2: ^CoreArmedSelf
-	Inherits@3: ^AutoTargetDefault
-	Tooltip:
-		Name: Giant Beetle
-	Valued:
-		Cost: 1100
-	Health:
-		HP: 1500
-	Mobile:
-		Speed: 55
-		TurnSpeed: 8
-	AdvancedBuildable:
-		BuildDuration: 850
-		Level: 4
-	RevealsShroud:
-		Range: 7c0
-	-VeterancyVoiced:
-	Voiced:
-		VoiceSet: BeetleVoice
-	OffsetsArmament:
-		Weapon: evolved_giantbeetle
-	AdvancedSelectionDecorations:
-		Offset: 0,-3
-	Veterancy:
-		Experience: 2500, 3500
-
 evolved_missilecrab:
 	Inherits@1: ^EvolvedVehicle
 	Inherits@2: ^CoreHeavyVehicle

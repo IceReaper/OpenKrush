@@ -1,0 +1,20 @@
+evolved_vehicle_giantbeetle:
+	idle: SPRITES.LVL|Beetle.mobd
+		Start: 64
+		Facings: -16
+	move: SPRITES.LVL|Beetle.mobd
+		Start: 256
+		Length: 10
+		Tick: 120
+		Facings: -16
+	shoot: SPRITES.LVL|Beetle.mobd
+		Start: 80
+		Length: 11
+		Tick: 120
+		Facings: -16
+	aim: SPRITES.LVL|Beetle.mobd
+		Start: 80
+		Stride: 11
+		Facings: -16
+	icon: bits/Buttons.png
+		Start: 23
