@@ -1,18 +1,3 @@
-evolved_bikeandsidecar:
-	Inherits@muzzle: ^gun_16
-	idle: SPRITES.LVL|Sidecar.mobd
-		Start: 16
-		Facings: -16
-	move: SPRITES.LVL|Sidecar.mobd
-		Start: 32
-		Length: 2
-		Tick: 120
-		Facings: -16
-	turret: SPRITES.LVL|Sidecar.mobd
-		Facings: -16
-	icon: bits/Buttons.png
-		Start: 15
-
 evolved_giantscorpion:
 	idle: SPRITES.LVL|Scorpion.mobd
 		Facings: -16

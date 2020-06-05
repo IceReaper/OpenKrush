@@ -1,0 +1,27 @@
+evolved_vehicle_bikeandsidecar:
+	Inherits@1: ^EvolvedVehicle
+	Inherits@2: ^CoreLightVehicle
+	Inherits@3: ^CoreTurret
+	Inherits@4: ^HasMuzzle
+	Inherits@5: ^AutoTargetDefault
+	Tooltip:
+		Name: Bike & Sidecar
+	Valued:
+		Cost: 300
+	Health:
+		HP: 800
+	Mobile:
+		Speed: 90
+		TurnSpeed: 8
+	AdvancedBuildable:
+		BuildDuration: 150
+		Level: 0
+	RevealsShroud:
+		Range: 7c0
+	OffsetsArmament:
+		Weapon: evolved_vehicle_bikeandsidecar
+	Turreted:
+		TurnSpeed: 20
+	AdvancedSelectionDecorations:
+		Offset: 0,1
+	Veterancy:

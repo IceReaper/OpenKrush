@@ -1,27 +1,3 @@
-evolved_bikeandsidecar:
-	Range: 4c0
-	Burst: 10
-	BurstDelays: 19
-	ReloadDelay: 25
-	Report: MUTE.SLV|7.wav
-	Projectile: InstantHit
-		Blockable: true
-	Warhead@Damage: SpreadDamage
-		Damage: 100
-		Spread: 32
-		Falloff: 100, 100
-		Versus:
-			infantry: 40
-			vehicle: 25
-			building: 15
-	Warhead@Effect: ShrapnelCreateEffect
-		Image: hit
-		ExplosionPalette: kknd
-		Explosions: bullet_a, bullet_b, bullet_c, bullet_d, bullet_e, bullet_f, bullet_g, bullet_h
-		ImpactSounds: MUTE.SLV|11.wav, MUTE.SLV|12.wav, MUTE.SLV|13.wav
-		ImpactSoundChance: 10
-		Radius: 250,250
-
 evolved_monstertruck:
 	Range: 5c0
 	Burst: 10

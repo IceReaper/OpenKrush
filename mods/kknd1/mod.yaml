@@ -55,6 +55,7 @@ Rules:
 	kknd1|rules/mapobjects-urban.yaml
 	kknd1|actors/evolved_vehicle_direwolf/rules.yaml
 	kknd1|actors/evolved_vehicle_chopper/rules.yaml
+	kknd1|actors/evolved_vehicle_bikeandsidecar/rules.yaml
 
 Sequences:
 	kknd|sequences/misc.yaml
@@ -80,6 +81,7 @@ Sequences:
 	kknd1|sequences/mapobjects-urban.yaml
 	kknd1|actors/evolved_vehicle_direwolf/sequences.yaml
 	kknd1|actors/evolved_vehicle_chopper/sequences.yaml
+	kknd1|actors/evolved_vehicle_bikeandsidecar/sequences.yaml
 
 Weapons:
 	kknd|weapons/misc.yaml
@@ -96,6 +98,7 @@ Weapons:
 	kknd1|weapons/shrapnel.yaml
 	kknd1|actors/evolved_vehicle_direwolf/weapons.yaml
 	kknd1|actors/evolved_vehicle_chopper/weapons.yaml
+	kknd1|actors/evolved_vehicle_bikeandsidecar/weapons.yaml
 
 Voices:
 	kknd1|audio/voices.yaml
