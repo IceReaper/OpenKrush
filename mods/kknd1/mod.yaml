@@ -9,12 +9,13 @@ PackageFormats: LvlPackage
 Packages:
 	~^Content/kknd1/: content
 	.
+	..
 	$kknd: kknd
 	$kknd1: kknd1
 	./mods/common: common
-	../KKND-Xtreme-Demo/LEVELS/640/SPRITES.LVL: SPRITES.LVL
-	../KKND-Xtreme-Demo/LEVELS/MUTE.SLV: MUTE.SLV
-	../KKND-Xtreme-Demo/LEVELS/SURV.SLV: SURV.SLV
+	KKND-Xtreme-Demo/LEVELS/640/SPRITES.LVL: SPRITES.LVL
+	KKND-Xtreme-Demo/LEVELS/MUTE.SLV: MUTE.SLV
+	KKND-Xtreme-Demo/LEVELS/SURV.SLV: SURV.SLV
 	kknd1|bits/notifications: notifications
 
 MapFolders:
@@ -52,6 +53,7 @@ Rules:
 	kknd1|rules/mapobjects-highland.yaml
 	kknd1|rules/mapobjects-desert.yaml
 	kknd1|rules/mapobjects-urban.yaml
+	kknd1|actors/evolved_vehicle_direwolf/rules.yaml
 
 Sequences:
 	kknd|sequences/misc.yaml
@@ -75,6 +77,26 @@ Sequences:
 	kknd1|sequences/mapobjects-highland.yaml
 	kknd1|sequences/mapobjects-desert.yaml
 	kknd1|sequences/mapobjects-urban.yaml
+	kknd1|actors/evolved_vehicle_direwolf/sequences.yaml
+
+Weapons:
+	kknd|weapons/misc.yaml
+	kknd1|weapons/misc.yaml
+	kknd1|weapons/bunkers.yaml
+	kknd1|weapons/survivors-infantry.yaml
+	kknd1|weapons/survivors-vehicles.yaml
+	kknd1|weapons/survivors-aircrafts.yaml
+	kknd1|weapons/survivors-towers.yaml
+	kknd1|weapons/evolved-infantry.yaml
+	kknd1|weapons/evolved-vehicles.yaml
+	kknd1|weapons/evolved-aircrafts.yaml
+	kknd1|weapons/evolved-towers.yaml
+	kknd1|weapons/shrapnel.yaml
+	kknd1|actors/evolved_vehicle_direwolf/weapons.yaml
+
+Voices:
+	kknd1|audio/voices.yaml
+	kknd1|actors/evolved_vehicle_direwolf/voices.yaml
 
 TileSets:
 	kknd1|tilesets/desert/_tileset.yaml
@@ -136,23 +158,6 @@ ChromeLayout:
 	common|chrome/confirmation-dialogs.yaml
 	common|chrome/editor.yaml
 	common|chrome/playerprofile.yaml
-
-Weapons:
-	kknd|weapons/misc.yaml
-	kknd1|weapons/misc.yaml
-	kknd1|weapons/bunkers.yaml
-	kknd1|weapons/survivors-infantry.yaml
-	kknd1|weapons/survivors-vehicles.yaml
-	kknd1|weapons/survivors-aircrafts.yaml
-	kknd1|weapons/survivors-towers.yaml
-	kknd1|weapons/evolved-infantry.yaml
-	kknd1|weapons/evolved-vehicles.yaml
-	kknd1|weapons/evolved-aircrafts.yaml
-	kknd1|weapons/evolved-towers.yaml
-	kknd1|weapons/shrapnel.yaml
-
-Voices:
-	kknd1|audio/voices.yaml
 
 Notifications:
 	kknd1|audio/notifications.yaml

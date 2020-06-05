@@ -1,0 +1,44 @@
+evolved_vehicle_direwolf:
+	Inherits@1: ^EvolvedVehicle
+	Inherits@2: ^CoreLightVehicle
+	Inherits@3: ^CoreArmedSelf
+	Inherits@4: ^HasMuzzle
+	Inherits@5: ^AutoTargetDefault
+	Tooltip:
+		Name: Dire Wolf
+	Valued:
+		Cost: 200
+	Health:
+		HP: 400
+	Mobile:
+		Speed: 115
+		TurnSpeed: 41
+	AdvancedBuildable:
+		BuildDuration: 150
+		Level: 0
+	RevealsShroud:
+		Range: 11c0
+	-VeterancyVoiced:
+	Voiced:
+		VoiceSet: evolved_vehicle_direwolf
+	OffsetsArmament:
+		Weapon: evolved_vehicle_direwolf
+	AdvancedSelectionDecorations:
+		Offset: 0,-2
+	Veterancy:
+	ThrowsShrapnel:
+		Weapons: Blood1, Blood2, Blood3, Blood4, Blood5
+		Pieces: 1, 1
+		Range: 0c512, 1c512
+	-Explodes:
+	-FrozenOnDeath:
+	WithDeathAnimation:
+		FallbackSequence: die
+		DeathTypes:
+			Explosion: -explode
+			Fire: -burn
+			Acid: -melt
+			Electricity: -zap
+			Laser: -dissolve
+	DeathSounds:
+		Voice: Die

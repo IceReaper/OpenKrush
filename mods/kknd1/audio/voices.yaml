@@ -97,15 +97,6 @@ GortVoice:
 		Action: kknd1|bits/sounds/bunker_OnYourCommand, kknd1|bits/sounds/bunker_Affirmative, kknd1|bits/sounds/bunker_Confirmed, kknd1|bits/sounds/bunker_Acknowledged, kknd1|bits/sounds/bunker_AsYouWish, kknd1|bits/sounds/bunker_Locked
 		Attack: kknd1|bits/sounds/bunker_Target, kknd1|bits/sounds/bunker_TargetLocked, kknd1|bits/sounds/bunker_KrushKillAndDestroy, kknd1|bits/sounds/bunker_WithPleasure, kknd1|bits/sounds/bunker_Annihilate, kknd1|bits/sounds/bunker_PowerUp
 
-WolfVoice:
-	DefaultVariant: .wav
-	Voices:
-		Create: MUTE.SLV|165
-		Select: MUTE.SLV|165
-		Action: MUTE.SLV|164, kknd1|bits/sounds/evolved_Wolf1
-		Attack: kknd1|bits/sounds/evolved_Wolf3, kknd1|bits/sounds/evolved_Wolf2
-		Die: MUTE.SLV|174, MUTE.SLV|175, MUTE.SLV|176, MUTE.SLV|177, MUTE.SLV|178
-
 ScorpionVoice:
 	DefaultVariant: .wav
 	Voices:

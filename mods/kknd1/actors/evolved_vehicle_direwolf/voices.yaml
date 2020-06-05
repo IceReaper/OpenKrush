@@ -1,0 +1,8 @@
+evolved_vehicle_direwolf:
+	DefaultVariant: .wav
+	Voices:
+		Create: MUTE.SLV|165
+		Select: MUTE.SLV|165
+		Action: MUTE.SLV|164, kknd1|actors/evolved_vehicle_direwolf/sound1
+		Attack: kknd1|actors/evolved_vehicle_direwolf/sound3, kknd1|actors/evolved_vehicle_direwolf/sound2
+		Die: MUTE.SLV|174, MUTE.SLV|175, MUTE.SLV|176, MUTE.SLV|177, MUTE.SLV|178
