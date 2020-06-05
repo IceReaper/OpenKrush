@@ -1,5 +1,5 @@
 Metrics:
-	ColorPickerActorType-evolved: evolved_oiltanker.colorpicker
+	ColorPickerActorType-evolved: evolved_vehicle_oiltanker.colorpicker
 	ColorPickerActorType-survivors: survivors_oiltanker.colorpicker
 	ColorPickerActorType: bunker_plasmatank.colorpicker
 	ColorPickerRemapIndices: 8, 9, 10, 11, 12, 13

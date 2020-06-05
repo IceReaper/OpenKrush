@@ -1,14 +1,3 @@
-evolved_oiltanker:
-	idle: SPRITES.LVL|MOTanker.mobd
-		Facings: -16
-	move: SPRITES.LVL|MOTanker.mobd
-		Start: 16
-		Length: 2
-		Tick: 120
-		Facings: -16
-	icon: bits/Buttons.png
-		Start: 18
-
 #evolved_derrick_beta:
 #	idle: bits/MDerrickBeta.mobd
 #		Facings: -16
