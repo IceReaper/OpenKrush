@@ -18,21 +18,6 @@ evolved_giantscorpion:
 	icon: bits/Buttons.png
 		Start: 21
 
-evolved_monstertruck:
-	Inherits@muzzle: ^gun_16
-	idle: SPRITES.LVL|MonsterTruck.mobd
-		Start: 16
-		Facings: -16
-	move: SPRITES.LVL|MonsterTruck.mobd
-		Start: 32
-		Length: 2
-		Tick: 120
-		Facings: -16
-	turret: SPRITES.LVL|MonsterTruck.mobd
-		Facings: -16
-	icon: bits/Buttons.png
-		Start: 17
-
 evolved_warmastodon:
 	#Inherits@muzzle: ^gun_16_dual
 	idle: SPRITES.LVL|Mastodon.mobd

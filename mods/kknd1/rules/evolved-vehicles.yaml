@@ -1,30 +1,3 @@
-evolved_monstertruck:
-	Inherits@1: ^EvolvedVehicle
-	Inherits@2: ^CoreTurret
-	Inherits@3: ^HasMuzzle
-	Inherits@4: ^AutoTargetDefault
-	Tooltip:
-		Name: Monster Truck
-	Valued:
-		Cost: 500
-	Health:
-		HP: 1000
-	Mobile:
-		Speed: 70
-		TurnSpeed: 8
-	AdvancedBuildable:
-		BuildDuration: 300
-		Level: 1
-	RevealsShroud:
-		Range: 7c0
-	OffsetsArmament:
-		Weapon: evolved_monstertruck
-	Turreted:
-		TurnSpeed: 20
-	AdvancedSelectionDecorations:
-		Offset: 0,-7
-	Veterancy:
-
 evolved_giantscorpion:
 	Inherits@1: ^EvolvedVehicle
 	Inherits@2: ^CoreArmedSelf
