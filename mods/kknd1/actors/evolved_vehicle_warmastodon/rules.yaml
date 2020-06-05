@@ -1,0 +1,29 @@
+evolved_vehicle_warmastodon:
+	Inherits@1: ^EvolvedVehicle
+	Inherits@2: ^CoreTurret
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: War Mastodon
+	Valued:
+		Cost: 900
+	Health:
+		HP: 1800
+	Mobile:
+		Speed: 55
+		TurnSpeed: 8
+	AdvancedBuildable:
+		BuildDuration: 650
+		Level: 3
+	RevealsShroud:
+		Range: 7c0
+	-VeterancyVoiced:
+	Voiced:
+		VoiceSet: evolved_vehicle_warmastodon
+	OffsetsArmament:
+		Weapon: evolved_vehicle_warmastodon
+	Turreted:
+		TurnSpeed: 20
+	AdvancedSelectionDecorations:
+		Offset: 0,-20
+	Veterancy:
+		Experience: 1500, 2500

@@ -58,6 +58,7 @@ Rules:
 	kknd1|actors/evolved_vehicle_bikeandsidecar/rules.yaml
 	kknd1|actors/evolved_vehicle_monstertruck/rules.yaml
 	kknd1|actors/evolved_vehicle_giantscorpion/rules.yaml
+	kknd1|actors/evolved_vehicle_warmastodon/rules.yaml
 
 Sequences:
 	kknd|sequences/misc.yaml
@@ -86,6 +87,7 @@ Sequences:
 	kknd1|actors/evolved_vehicle_bikeandsidecar/sequences.yaml
 	kknd1|actors/evolved_vehicle_monstertruck/sequences.yaml
 	kknd1|actors/evolved_vehicle_giantscorpion/sequences.yaml
+	kknd1|actors/evolved_vehicle_warmastodon/sequences.yaml
 
 Weapons:
 	kknd|weapons/misc.yaml
@@ -105,11 +107,13 @@ Weapons:
 	kknd1|actors/evolved_vehicle_bikeandsidecar/weapons.yaml
 	kknd1|actors/evolved_vehicle_monstertruck/weapons.yaml
 	kknd1|actors/evolved_vehicle_giantscorpion/weapons.yaml
+	kknd1|actors/evolved_vehicle_warmastodon/weapons.yaml
 
 Voices:
 	kknd1|audio/voices.yaml
 	kknd1|actors/evolved_vehicle_direwolf/voices.yaml
 	kknd1|actors/evolved_vehicle_giantscorpion/voices.yaml
+	kknd1|actors/evolved_vehicle_warmastodon/voices.yaml
 
 TileSets:
 	kknd1|tilesets/desert/_tileset.yaml
