@@ -1,6 +1,6 @@
 evolved_vehicle_warmastodon:
-  Voices:
-    Create: MUTE.SLV|160.wav
-    Select: MUTE.SLV|160.wav
-    Action: MUTE.SLV|159.wav, kknd1|actors/evolved_vehicle_warmastodon/sound1.wav, kknd1|actors/evolved_vehicle_warmastodon/sound3.wav
-    Attack: kknd1|actors/evolved_vehicle_warmastodon/sound2.wav
+	Voices:
+		Create: MUTE.SLV|160.wav
+		Select: MUTE.SLV|160.wav
+		Action: MUTE.SLV|159.wav, kknd1|actors/evolved_vehicle_warmastodon/sound1.wav, kknd1|actors/evolved_vehicle_warmastodon/sound3.wav
+		Attack: kknd1|actors/evolved_vehicle_warmastodon/sound2.wav
