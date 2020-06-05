@@ -1,30 +1,3 @@
-evolved_giantscorpion:
-	Range: 5c0
-	Burst: 1
-	BurstDelays: 0
-	ReloadDelay: 50
-	Report: MUTE.SLV|161.wav
-	Projectile: Bullet
-		Image: projectile
-		Palette: kknd
-		Sequences: splat
-		Speed: 410
-	Warhead@Damage: SpreadDamage
-		Damage: 100
-		DamageTypes: Acid
-		Spread: 512
-		Falloff: 100, 100
-		AffectsParent: true
-		Versus:
-			infantry: 120
-			vehicle: 150
-			building: 90
-	Warhead@Effect: ShrapnelCreateEffect
-		Image: hit
-		ExplosionPalette: kknd
-		Explosions: splat
-		ImpactSounds: MUTE.SLV|161.wav
-
 evolved_warmastodon:
 	Inherits: Smudge
 	Range: 6c0

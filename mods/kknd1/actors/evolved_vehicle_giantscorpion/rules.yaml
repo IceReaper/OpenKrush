@@ -1,0 +1,27 @@
+evolved_vehicle_giantscorpion:
+	Inherits@1: ^EvolvedVehicle
+	Inherits@2: ^CoreArmedSelf
+	Inherits@3: ^AutoTargetDefault
+	Tooltip:
+		Name: Giant Scorpion
+	Valued:
+		Cost: 700
+	Health:
+		HP: 1250
+	Mobile:
+		Speed: 60
+		TurnSpeed: 8
+	AdvancedBuildable:
+		BuildDuration: 300
+		Level: 2
+	RevealsShroud:
+		Range: 7c0
+	-VeterancyVoiced:
+	Voiced:
+		VoiceSet: evolved_vehicle_giantscorpion
+	OffsetsArmament:
+		Weapon: evolved_vehicle_giantscorpion
+	AdvancedSelectionDecorations:
+		Offset: 0,-12
+	Veterancy:
+		Experience: 1200, 2200
