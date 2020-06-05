@@ -21,5 +21,4 @@ evolved_vehicle_giantbeetle:
 		Start: 80
 		Stride: 11
 		Facings: -16
-	icon: bits/Buttons.png
-		Start: 23
+	icon: actors/evolved_vehicle_giantbeetle/icon.png

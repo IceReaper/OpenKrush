@@ -18,5 +18,4 @@ evolved_vehicle_giantscorpion:
 		Length: 8
 		Tick: 120
 		Facings: -16
-	icon: bits/Buttons.png
-		Start: 21
+	icon: actors/evolved_vehicle_giantscorpion/icon.png

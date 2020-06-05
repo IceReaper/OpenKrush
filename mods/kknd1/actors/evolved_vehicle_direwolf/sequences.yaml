@@ -24,5 +24,4 @@ evolved_vehicle_direwolf:
 	die-explode: actors/evolved_vehicle_direwolf/frames.png
 		Length: 20
 		Tick: 60
-	icon: bits/Buttons.png
-		Start: 20
+	icon: actors/evolved_vehicle_direwolf/icon.png

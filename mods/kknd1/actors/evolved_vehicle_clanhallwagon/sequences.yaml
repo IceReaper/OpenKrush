@@ -6,5 +6,4 @@ evolved_vehicle_clanhallwagon:
 		Length: 2
 		Tick: 120
 		Facings: -16
-	icon: bits/Buttons.png
-		Start: 19
+	icon: actors/evolved_vehicle_clanhallwagon/icon.png

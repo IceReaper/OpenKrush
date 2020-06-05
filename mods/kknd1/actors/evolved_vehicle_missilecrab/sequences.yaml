@@ -12,5 +12,4 @@ evolved_vehicle_missilecrab:
 		Length: 9
 		Tick: 120
 		Facings: -16
-	icon: bits/Buttons.png
-		Start: 24
+	icon: actors/evolved_vehicle_missilecrab/icon.png

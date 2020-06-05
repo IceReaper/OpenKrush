@@ -16,5 +16,4 @@ evolved_vehicle_chopper:
 		Length: 3
 		Tick: 60
 		Facings: -16
-	icon: bits/Buttons.png
-		Start: 95
+	icon: actors/evolved_vehicle_chopper/icon.png
