@@ -1,4 +1,4 @@
-evolved_clanhallwagon:
+evolved_vehicle_clanhallwagon:
 	idle: SPRITES.LVL|ClanhallWagon.mobd
 		Facings: -16
 	move: SPRITES.LVL|ClanhallWagon.mobd

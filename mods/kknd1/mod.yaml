@@ -43,7 +43,6 @@ Rules:
 	kknd1|rules/survivors-walls.yaml
 	kknd1|rules/evolved.yaml
 	kknd1|rules/evolved-infantry.yaml
-	kknd1|rules/evolved-vehicles.yaml
 	kknd1|rules/evolved-aircrafts.yaml
 	kknd1|rules/evolved-buildings.yaml
 	kknd1|rules/evolved-towers.yaml
@@ -63,6 +62,7 @@ Rules:
 	kknd1|actors/evolved_vehicle_missilecrab/rules.yaml
 	kknd1|actors/evolved_vehicle_oiltanker/rules.yaml
 	kknd1|actors/evolved_vehicle_derrick/rules.yaml
+	kknd1|actors/evolved_vehicle_clanhallwagon/rules.yaml
 
 Sequences:
 	kknd|sequences/misc.yaml
@@ -78,7 +78,6 @@ Sequences:
 	kknd1|sequences/survivors-walls.yaml
 	kknd1|sequences/evolved.yaml
 	kknd1|sequences/evolved-infantry.yaml
-	kknd1|sequences/evolved-vehicles.yaml
 	kknd1|sequences/evolved-aircrafts.yaml
 	kknd1|sequences/evolved-buildings.yaml
 	kknd1|sequences/evolved-towers.yaml
@@ -96,6 +95,7 @@ Sequences:
 	kknd1|actors/evolved_vehicle_missilecrab/sequences.yaml
 	kknd1|actors/evolved_vehicle_oiltanker/sequences.yaml
 	kknd1|actors/evolved_vehicle_derrick/sequences.yaml
+	kknd1|actors/evolved_vehicle_clanhallwagon/sequences.yaml
 
 Weapons:
 	kknd|weapons/misc.yaml

@@ -1,4 +1,4 @@
-evolved_clanhallwagon:
+evolved_vehicle_clanhallwagon:
 	Inherits@1: ^EvolvedVehicle
 	Inherits@2: ^CoreHeavyVehicle
 	Tooltip:
