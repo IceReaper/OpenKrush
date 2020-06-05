@@ -1,15 +1,15 @@
 evolved_vehicle_missilecrab:
-	Inherits: Smudge
+	Inherits: ^weapon_explosion
 	Range: 7c0
 	Burst: 2
 	BurstDelays: 13
 	ReloadDelay: 38
 	Report: MUTE.SLV|14.wav
 	Projectile: Bullet
-		Image: projectile
+		Image: evolved_vehicle_missilecrab
 		Palette: player
 		IsPlayerPalette: true
-		Sequences: rocket_l
+		Sequences: projectile
 		Speed: 250
 		TrailPalette: kknd
 		TrailImage: hit
@@ -17,17 +17,7 @@ evolved_vehicle_missilecrab:
 		Inaccuracy: 200
 		Blockable: false
 	Warhead@Damage: SpreadDamage
-		Damage: 100
-		DamageTypes: Explosion
-		Spread: 512
-		Falloff: 100, 100
-		AffectsParent: true
 		Versus:
 			infantry: 150
 			vehicle: 180
 			building: 112
-	Warhead@Effect: ShrapnelCreateEffect
-		Image: explosions
-		ExplosionPalette: kknd
-		Explosions: s
-		ImpactSounds: MUTE.SLV|10.wav

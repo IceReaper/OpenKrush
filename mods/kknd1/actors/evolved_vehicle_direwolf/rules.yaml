@@ -36,9 +36,5 @@ evolved_vehicle_direwolf:
 		FallbackSequence: die
 		DeathTypes:
 			Explosion: -explode
-			Fire: -burn
-			Acid: -melt
-			Electricity: -zap
-			Laser: -dissolve
 	DeathSounds:
 		Voice: Die

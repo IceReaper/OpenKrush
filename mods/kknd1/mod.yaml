@@ -111,6 +111,7 @@ Weapons:
 	kknd1|weapons/evolved-towers.yaml
 	kknd1|weapons/shrapnel.yaml
 	kknd1|core/weapon_bullet/weapons.yaml
+	kknd1|core/weapon_explosion/weapons.yaml
 	kknd1|actors/evolved_vehicle_direwolf/weapons.yaml
 	kknd1|actors/evolved_vehicle_chopper/weapons.yaml
 	kknd1|actors/evolved_vehicle_bikeandsidecar/weapons.yaml

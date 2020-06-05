@@ -1,5 +1,7 @@
 evolved_vehicle_bikeandsidecar:
 	Inherits@muzzle: ^gun_16
+	turret: SPRITES.LVL|Sidecar.mobd
+		Facings: -16
 	idle: SPRITES.LVL|Sidecar.mobd
 		Start: 16
 		Facings: -16
@@ -7,8 +9,6 @@ evolved_vehicle_bikeandsidecar:
 		Start: 32
 		Length: 2
 		Tick: 120
-		Facings: -16
-	turret: SPRITES.LVL|Sidecar.mobd
 		Facings: -16
 	icon: bits/Buttons.png
 		Start: 15

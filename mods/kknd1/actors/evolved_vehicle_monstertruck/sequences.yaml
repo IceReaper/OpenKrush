@@ -1,5 +1,7 @@
 evolved_vehicle_monstertruck:
 	Inherits@muzzle: ^gun_16
+	turret: SPRITES.LVL|MonsterTruck.mobd
+		Facings: -16
 	idle: SPRITES.LVL|MonsterTruck.mobd
 		Start: 16
 		Facings: -16
@@ -7,8 +9,6 @@ evolved_vehicle_monstertruck:
 		Start: 32
 		Length: 2
 		Tick: 120
-		Facings: -16
-	turret: SPRITES.LVL|MonsterTruck.mobd
 		Facings: -16
 	icon: bits/Buttons.png
 		Start: 17

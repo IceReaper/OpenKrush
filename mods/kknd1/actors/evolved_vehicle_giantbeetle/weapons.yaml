@@ -5,9 +5,9 @@ evolved_vehicle_giantbeetle:
 	ReloadDelay: 63
 	StartBurstReport: MUTE.SLV|161.wav
 	Projectile: Bullet
-		Image: projectile
+		Image: evolved_vehicle_giantbeetle
 		Palette: kknd
-		Sequences: bubble
+		Sequences: projectile
 		Speed: 250
 		Inaccuracy: 2c0
 		Blockable: false

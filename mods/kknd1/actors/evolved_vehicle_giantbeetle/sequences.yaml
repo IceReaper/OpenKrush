@@ -1,4 +1,9 @@
 evolved_vehicle_giantbeetle:
+	projectile: SPRITES.LVL|Beetle.mobd
+		Length: 4
+		Facings: -16
+		Tick: 120
+		ZOffset: 1000
 	idle: SPRITES.LVL|Beetle.mobd
 		Start: 64
 		Facings: -16

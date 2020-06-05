@@ -5,9 +5,9 @@ evolved_vehicle_giantscorpion:
 	ReloadDelay: 50
 	Report: MUTE.SLV|161.wav
 	Projectile: Bullet
-		Image: projectile
+		Image: evolved_vehicle_giantscorpion
 		Palette: kknd
-		Sequences: splat
+		Sequences: projectile
 		Speed: 410
 	Warhead@Damage: SpreadDamage
 		Damage: 100

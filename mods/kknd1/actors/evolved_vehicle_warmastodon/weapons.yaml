@@ -1,28 +1,18 @@
 evolved_vehicle_warmastodon:
-	Inherits: Smudge
+	Inherits: ^weapon_explosion
 	Range: 6c0
 	Burst: 4
 	BurstDelays: 4
 	ReloadDelay: 67
 	Report: MUTE.SLV|9.wav
 	Projectile: Bullet
-		Image: projectile
+		Image: evolved_vehicle_warmastodon
 		Palette: kknd
-		Sequences: cannon_s
+		Sequences: projectile
 		Speed: 450
 		Inaccuracy: 400
 	Warhead@Damage: SpreadDamage
-		Damage: 100
-		DamageTypes: Explosion
-		Spread: 512
-		Falloff: 100, 100
-		AffectsParent: true
 		Versus:
 			infantry: 36
 			vehicle: 70
 			building: 25
-	Warhead@Effect: ShrapnelCreateEffect
-		Image: explosions
-		ExplosionPalette: kknd
-		Explosions: s
-		ImpactSounds: MUTE.SLV|10.wav

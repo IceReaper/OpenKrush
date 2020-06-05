@@ -1,20 +1,20 @@
 evolved_vehicle_chopper:
 	Inherits@muzzle: ^gun_16
 	idle: actors/evolved_vehicle_chopper/frames.png
-		Start: 0
 		Facings: -16
 	move: actors/evolved_vehicle_chopper/frames.png
 		Start: 16
 		Length: 2
 		Tick: 120
 		Facings: -16
+	aim: actors/evolved_vehicle_chopper/frames.png
+		Start: 48
+		Stride: 3
+		Facings: -16
 	shoot: actors/evolved_vehicle_chopper/frames.png
 		Start: 48
 		Length: 3
 		Tick: 60
-		Facings: -16
-	aim: actors/evolved_vehicle_chopper/frames.png
-		Start: 0
 		Facings: -16
 	icon: bits/Buttons.png
 		Start: 95

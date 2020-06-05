@@ -1,4 +1,9 @@
 evolved_vehicle_missilecrab:
+	projectile: SPRITES.LVL|Crab.mobd
+		Facings: -16
+	turret: SPRITES.LVL|Crab.mobd
+		Start: 32
+		Facings: -16
 	idle: SPRITES.LVL|Crab.mobd
 		Start: 48
 		Facings: -16
@@ -6,9 +11,6 @@ evolved_vehicle_missilecrab:
 		Start: 64
 		Length: 9
 		Tick: 120
-		Facings: -16
-	turret: SPRITES.LVL|Crab.mobd
-		Start: 32
 		Facings: -16
 	icon: bits/Buttons.png
 		Start: 24
