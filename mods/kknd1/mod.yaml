@@ -77,9 +77,9 @@ Sequences:
 	kknd1|sequences/mapobjects-urban.yaml
 
 TileSets:
-	kknd1|tilesets/desert.yaml
-	kknd1|tilesets/highland.yaml
-	kknd1|tilesets/urban.yaml
+	kknd1|tilesets/desert/_tileset.yaml
+	kknd1|tilesets/highland/_tileset.yaml
+	kknd1|tilesets/urban/_tileset.yaml
 
 Cursors:
 	kknd1|cursors.yaml
