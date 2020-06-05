@@ -1,0 +1,31 @@
+evolved_vehicle_derrick:
+	Inherits@1: ^EvolvedVehicle
+	Inherits@2: ^CoreHeavyVehicle
+	Tooltip:
+		Name: Derrick
+	TooltipDescription:
+		Description: Deploys on oilpatch
+	Valued:
+		Cost: 1000
+	Health:
+		HP: 4000
+	Mobile:
+		Speed: 40
+		TurnSpeed: 8
+	AdvancedBuildable:
+		BuildDuration: 500
+		Level: 0
+	RevealsShroud:
+		Range: 7c0
+	Selectable:
+		Priority: 15
+	DeploysOnActor:
+		IntoActor: evolved_drillrig
+		ValidTargets: oilpatch
+		DeployCursor: dock
+		Offset: -2,-2
+	AdvancedSelectionDecorations:
+		Offset: -2,3
+	AttackNotification:
+		Notifications: DrillRigUnderAttack
+	IgnoreRallyPoint:
