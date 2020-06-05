@@ -1,4 +1,4 @@
-evolved_missilecrab:
+evolved_vehicle_missilecrab:
 	Inherits: Smudge
 	Range: 7c0
 	Burst: 2

@@ -1,0 +1,30 @@
+evolved_vehicle_missilecrab:
+	Inherits@1: ^EvolvedVehicle
+	Inherits@2: ^CoreHeavyVehicle
+	Inherits@3: ^CoreTurret
+	Inherits@4: ^AutoTargetDefault
+	Tooltip:
+		Name: Missile Crab
+	Valued:
+		Cost: 1500
+	Health:
+		HP: 2500
+	Mobile:
+		Speed: 45
+		TurnSpeed: 8
+	AdvancedBuildable:
+		BuildDuration: 1000
+		Level: 5
+	RevealsShroud:
+		Range: 7c0
+	-VeterancyVoiced:
+	Voiced:
+		VoiceSet: evolved_vehicle_missilecrab
+	OffsetsArmament:
+		Weapon: evolved_vehicle_missilecrab
+	Turreted:
+		TurnSpeed: 20
+	AdvancedSelectionDecorations:
+		Offset: 0,-3
+	Veterancy:
+		Experience: 3000, 4000

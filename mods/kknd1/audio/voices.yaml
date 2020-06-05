@@ -97,14 +97,6 @@ GortVoice:
 		Action: kknd1|bits/sounds/bunker_OnYourCommand, kknd1|bits/sounds/bunker_Affirmative, kknd1|bits/sounds/bunker_Confirmed, kknd1|bits/sounds/bunker_Acknowledged, kknd1|bits/sounds/bunker_AsYouWish, kknd1|bits/sounds/bunker_Locked
 		Attack: kknd1|bits/sounds/bunker_Target, kknd1|bits/sounds/bunker_TargetLocked, kknd1|bits/sounds/bunker_KrushKillAndDestroy, kknd1|bits/sounds/bunker_WithPleasure, kknd1|bits/sounds/bunker_Annihilate, kknd1|bits/sounds/bunker_PowerUp
 
-CrabVoice:
-	DefaultVariant: .wav
-	Voices:
-		Create: MUTE.SLV|170
-		Select: MUTE.SLV|170, kknd1|bits/sounds/evolved_Crab1
-		Action: MUTE.SLV|171, kknd1|bits/sounds/evolved_Crab2
-		Attack: MUTE.SLV|171, kknd1|bits/sounds/evolved_Crab2
-
 WaspVoice:
 	DefaultVariant: .wav
 	Voices:

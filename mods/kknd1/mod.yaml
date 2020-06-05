@@ -60,6 +60,7 @@ Rules:
 	kknd1|actors/evolved_vehicle_giantscorpion/rules.yaml
 	kknd1|actors/evolved_vehicle_warmastodon/rules.yaml
 	kknd1|actors/evolved_vehicle_giantbeetle/rules.yaml
+	kknd1|actors/evolved_vehicle_missilecrab/rules.yaml
 
 Sequences:
 	kknd|sequences/misc.yaml
@@ -90,6 +91,7 @@ Sequences:
 	kknd1|actors/evolved_vehicle_giantscorpion/sequences.yaml
 	kknd1|actors/evolved_vehicle_warmastodon/sequences.yaml
 	kknd1|actors/evolved_vehicle_giantbeetle/sequences.yaml
+	kknd1|actors/evolved_vehicle_missilecrab/sequences.yaml
 
 Weapons:
 	kknd|weapons/misc.yaml
@@ -100,7 +102,6 @@ Weapons:
 	kknd1|weapons/survivors-aircrafts.yaml
 	kknd1|weapons/survivors-towers.yaml
 	kknd1|weapons/evolved-infantry.yaml
-	kknd1|weapons/evolved-vehicles.yaml
 	kknd1|weapons/evolved-aircrafts.yaml
 	kknd1|weapons/evolved-towers.yaml
 	kknd1|weapons/shrapnel.yaml
@@ -111,6 +112,7 @@ Weapons:
 	kknd1|actors/evolved_vehicle_giantscorpion/weapons.yaml
 	kknd1|actors/evolved_vehicle_warmastodon/weapons.yaml
 	kknd1|actors/evolved_vehicle_giantbeetle/weapons.yaml
+	kknd1|actors/evolved_vehicle_missilecrab/weapons.yaml
 
 Voices:
 	kknd1|audio/voices.yaml
@@ -118,6 +120,7 @@ Voices:
 	kknd1|actors/evolved_vehicle_giantscorpion/voices.yaml
 	kknd1|actors/evolved_vehicle_warmastodon/voices.yaml
 	kknd1|actors/evolved_vehicle_giantbeetle/voices.yaml
+	kknd1|actors/evolved_vehicle_missilecrab/voices.yaml
 
 TileSets:
 	kknd1|tilesets/desert/_tileset.yaml
