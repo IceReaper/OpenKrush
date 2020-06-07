@@ -123,6 +123,22 @@ Blood5:
 		Image: shrapnels
 		Sequences: blood5
 
+GreenBlood:
+	ReloadDelay: 60
+	Range: 1c0
+	Projectile: Bullet
+		Speed: 50,80
+		Blockable: false
+		LaunchAngle: 70, 150
+		Inaccuracy: 2c0
+		Image: shrapnels
+		Palette: kknd
+		Sequences: greenblood
+	Warhead: ShrapnelCreateEffect
+		Image: shrapnels
+		ExplosionPalette: kknd
+		Explosions: green_blood_impact
+
 ShrapnelExplosion:
 	Warhead@1: ShrapnelCreateEffect
 		ShrapnelWeapon: Debris1

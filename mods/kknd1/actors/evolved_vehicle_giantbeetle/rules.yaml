@@ -25,3 +25,7 @@ evolved_vehicle_giantbeetle:
 		Offset: 0,-3
 	Veterancy:
 		Experience: 2500, 3500
+	ThrowsShrapnel:
+		Weapons: GreenBlood
+		Pieces: 5, 5
+		Range: 0c512, 1c512

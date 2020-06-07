@@ -314,3 +314,13 @@ shrapnels:
 		Length: 4
 		Tick: 120
 		ZOffset: -500
+
+	greenblood: bits/GreenBlood.png
+		Length: 5
+		Tick: 120
+		ZOffset: 2500
+
+	green_blood_impact: bits/GreenBloodImpact.png
+		Length: 4
+		Tick: 120
+		ZOffset: -500

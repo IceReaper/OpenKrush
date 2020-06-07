@@ -27,3 +27,7 @@ evolved_vehicle_warmastodon:
 		Offset: 0,-20
 	Veterancy:
 		Experience: 1500, 2500
+	ThrowsShrapnel:
+		Weapons: GreenBlood
+		Pieces: 5, 5
+		Range: 0c512, 1c512

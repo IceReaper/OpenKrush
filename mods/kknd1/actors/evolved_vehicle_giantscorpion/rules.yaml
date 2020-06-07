@@ -25,3 +25,7 @@ evolved_vehicle_giantscorpion:
 		Offset: 0,-12
 	Veterancy:
 		Experience: 1200, 2200
+	ThrowsShrapnel:
+		Weapons: GreenBlood
+		Pieces: 5, 5
+		Range: 0c512, 1c512
