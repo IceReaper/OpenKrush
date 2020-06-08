@@ -51,12 +51,6 @@
 	RejectsOrders:
 	-MapEditorData:
 
-^AutoTargetDefault:
-	AutoTarget:
-	AutoTargetPriority@DEFAULT:
-		ValidTargets: Ground
-		InvalidTargets: NoAutoAttack
-
 World:
 	SmudgeLayer@CRATER:
 		Type: Crater
