@@ -20,6 +20,7 @@ Packages:
 
 MapFolders:
 	kknd1|maps: System
+	kknd1|maps/Classic_Multiplayer: System
 	~^maps/kknd1: User
 
 Rules:
