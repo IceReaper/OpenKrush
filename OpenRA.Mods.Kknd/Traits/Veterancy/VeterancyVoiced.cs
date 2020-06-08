@@ -9,6 +9,7 @@
  */
 #endregion
 
+using System;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.Kknd.Traits.Veterancy
@@ -42,7 +43,7 @@ namespace OpenRA.Mods.Kknd.Traits.Veterancy
 			veterancy = self.TraitOrDefault<Veterancy>();
 		}
 
-		string IVoiced.VoiceSet { get { return info.VoiceSets[veterancy != null ? veterancy.Level : 0]; } }
+		string IVoiced.VoiceSet { get { return info.VoiceSets[veterancy != null ? Math.Min(veterancy.Level, info.VoiceSets.Length - 1) : 0]; } }
 
 		bool IVoiced.PlayVoice(Actor self, string phrase, string variant)
 		{

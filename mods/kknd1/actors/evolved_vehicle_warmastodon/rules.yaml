@@ -16,8 +16,7 @@ evolved_vehicle_warmastodon:
 		Level: 3
 	RevealsShroud:
 		Range: 7c0
-	-VeterancyVoiced:
-	Voiced:
+	VeterancyVoiced:
 		VoiceSet: evolved_vehicle_warmastodon
 	OffsetsArmament:
 		Weapon: evolved_vehicle_warmastodon

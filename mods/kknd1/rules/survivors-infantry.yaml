@@ -238,8 +238,7 @@ survivors_scout:
 	AdvancedBuildable:
 		BuildDuration: 100
 		Level: -1
-	-VeterancyVoiced:
-	Voiced:
+	VeterancyVoiced:
 		VoiceSet: ScoutVoice
 	OffsetsArmament:
 		Weapon: survivors_scout

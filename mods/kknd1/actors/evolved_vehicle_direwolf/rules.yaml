@@ -18,8 +18,7 @@ evolved_vehicle_direwolf:
 		Level: 0
 	RevealsShroud:
 		Range: 11c0
-	-VeterancyVoiced:
-	Voiced:
+	VeterancyVoiced:
 		VoiceSet: evolved_vehicle_direwolf
 	OffsetsArmament:
 		Weapon: evolved_vehicle_direwolf

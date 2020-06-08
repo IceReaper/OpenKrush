@@ -17,8 +17,7 @@ evolved_vehicle_missilecrab:
 		Level: 5
 	RevealsShroud:
 		Range: 7c0
-	-VeterancyVoiced:
-	Voiced:
+	VeterancyVoiced:
 		VoiceSet: evolved_vehicle_missilecrab
 	OffsetsArmament:
 		Weapon: evolved_vehicle_missilecrab
