@@ -1,0 +1,20 @@
+evolved_infantry_pyromaniac:
+	Range: 3c0
+	ReloadDelay: 41
+	Report: MUTE.SLV|86.wav
+	Burst: 10
+	BurstDelays: 1
+	Projectile: Bullet
+		Image: projectile
+		Palette: kknd
+		Sequences: fire
+		Speed: 150
+	Warhead@Damage: SpreadDamage
+		Damage: 100
+		DamageTypes: Fire
+		Spread: 512
+		Falloff: 100, 100
+		Versus:
+			infantry: 17
+			vehicle: 5
+			building: 20

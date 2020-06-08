@@ -1,0 +1,25 @@
+evolved_infantry_crazyharry:
+	Inherits@1: ^CoreInfantry
+	Inherits@2: ^CoreArmedSelf
+	Inherits@3: ^HasMuzzle
+	Tooltip:
+		Name: Crazy Harry
+	Valued:
+		Cost: 250
+	Health:
+		HP: 650
+	Mobile:
+		Speed: 50
+	RevealsShroud:
+		Range: 7c0
+	AdvancedBuildable:
+		Prerequisites: evolved_warriorhall
+		BuildDuration: 300
+		Level: 5
+	OffsetsArmament:
+		Weapon: evolved_infantry_crazyharry
+	Veterancy:
+		HealRates: 1,2
+		Experience: 2000, 3000
+	VeterancyVoiced:
+		VoiceSets: EvolvedVoice, EvolvedVeteranVoice

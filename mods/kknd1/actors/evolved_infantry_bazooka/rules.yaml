@@ -1,0 +1,24 @@
+evolved_infantry_bazooka:
+	Inherits@1: ^CoreInfantry
+	Inherits@2: ^CoreArmedSelf
+	Tooltip:
+		Name: Bazooka
+	Valued:
+		Cost: 165
+	Health:
+		HP: 400
+	Mobile:
+		Speed: 50
+	RevealsShroud:
+		Range: 5c0
+	AdvancedBuildable:
+		Prerequisites: evolved_warriorhall
+		BuildDuration: 200
+		Level: 4
+	OffsetsArmament:
+		Weapon: evolved_infantry_bazooka
+	Veterancy:
+		HealRates: 1,2
+		Experience: 1700, 2700
+	VeterancyVoiced:
+		VoiceSets: EvolvedVoice, EvolvedVeteranVoice

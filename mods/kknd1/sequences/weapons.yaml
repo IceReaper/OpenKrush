@@ -64,11 +64,6 @@ projectile:
 		Facings: -16
 		Tick: 120
 		ZOffset: 1000
-	molotov: bits/Molotov.png
-		Facings: -8
-		Zoffset: 1000
-		Tick: 60
-		Length: 8
 
 hit:
 	bullet_a: SPRITES.LVL|Extras.mobd

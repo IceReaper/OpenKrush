@@ -1,0 +1,12 @@
+evolved_infantry_crazyharry:
+	Inherits: ^weapon_bullet
+	Range: 6c0
+	Burst: 1
+	BurstDelays: 0
+	ReloadDelay: 13
+	Report: MUTE.SLV|8.wav
+	Warhead@Damage: SpreadDamage
+		Versus:
+			infantry: 150
+			vehicle: 17
+			building: 18

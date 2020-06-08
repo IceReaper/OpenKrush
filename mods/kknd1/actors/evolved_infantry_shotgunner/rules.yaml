@@ -1,0 +1,25 @@
+evolved_infantry_shotgunner:
+	Inherits@1: ^CoreInfantry
+	Inherits@2: ^CoreArmedSelf
+	Inherits@3: ^HasMuzzle
+	Tooltip:
+		Name: Shotgunner
+	Valued:
+		Cost: 80
+	Health:
+		HP: 500
+	Mobile:
+		Speed: 50
+	RevealsShroud:
+		Range: 5c0
+	AdvancedBuildable:
+		Prerequisites: evolved_warriorhall
+		BuildDuration: 100
+		Level: 1
+	OffsetsArmament:
+		Weapon: evolved_infantry_shotgunner
+	Veterancy:
+		HealRates: 1,2
+		Experience: 1100, 2100
+	VeterancyVoiced:
+		VoiceSets: EvolvedVoice, EvolvedVeteranVoice

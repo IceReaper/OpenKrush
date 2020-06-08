@@ -1,6 +1,8 @@
 evolved_vehicle_missilecrab:
 	projectile: SPRITES.LVL|Crab.mobd
-		Facings: -32
+		Length: 2
+		Tick: 120
+		Facings: -16
 	turret: SPRITES.LVL|Crab.mobd
 		Start: 32
 		Facings: -16

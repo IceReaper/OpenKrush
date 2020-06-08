@@ -1,0 +1,24 @@
+evolved_infantry_pyromaniac:
+	Inherits@1: ^CoreInfantry
+	Inherits@2: ^CoreArmedSelf
+	Tooltip:
+		Name: Pyromaniac
+	Valued:
+		Cost: 100
+	Health:
+		HP: 400
+	Mobile:
+		Speed: 50
+	RevealsShroud:
+		Range: 5c0
+	AdvancedBuildable:
+		Prerequisites: evolved_warriorhall
+		BuildDuration: 125
+		Level: 2
+	OffsetsArmament:
+		Weapon: evolved_infantry_pyromaniac
+	Veterancy:
+		HealRates: 1,2
+		Experience: 2000, 3000
+	VeterancyVoiced:
+		VoiceSets: EvolvedVoice, EvolvedVeteranVoice

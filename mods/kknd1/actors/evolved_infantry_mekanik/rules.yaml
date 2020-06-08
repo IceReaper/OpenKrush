@@ -1,0 +1,19 @@
+evolved_infantry_mekanik:
+	Inherits@1: ^CoreInfantry
+	Inherits@2: ^Technician
+	Tooltip:
+		Name: Mekanik
+	Valued:
+		Cost: 100
+	Health:
+		HP: 500
+	Mobile:
+		Speed: 60
+	RevealsShroud:
+		Range: 5c0
+	AdvancedBuildable:
+		Prerequisites: evolved_warriorhall
+		BuildDuration: 150
+		Level: 0
+	Voiced:
+		VoiceSet: EvolvedVoice

@@ -1,0 +1,21 @@
+evolved_infantry_bazooka:
+	Inherits: ^weapon_explosion
+	Range: 6c0
+	Burst: 1
+	BurstDelays: 0
+	ReloadDelay: 63
+	Report: MUTE.SLV|14.wav
+	Projectile: Bullet
+		Image: evolved_infantry_bazooka
+		Palette: kknd
+		Sequences: projectile
+		Speed: 200
+		TrailPalette: kknd
+		TrailImage: hit
+		TrailSequences: smoke
+		Inaccuracy: 1500
+	Warhead@Damage: SpreadDamage
+		Versus:
+			infantry: 80
+			vehicle: 150
+			building: 80

@@ -49,6 +49,14 @@ Rules:
 	kknd1|rules/mapobjects-urban.yaml
 	kknd1|actors/temp.yaml
 	kknd1|actors/evolved_infantry_berserker/rules.yaml
+	kknd1|actors/evolved_infantry_shotgunner/rules.yaml
+	kknd1|actors/evolved_infantry_pyromaniac/rules.yaml
+	kknd1|actors/evolved_infantry_rioter/rules.yaml
+	kknd1|actors/evolved_infantry_bazooka/rules.yaml
+	kknd1|actors/evolved_infantry_crazyharry/rules.yaml
+	kknd1|actors/evolved_infantry_kingzog/rules.yaml
+	kknd1|actors/evolved_infantry_mekanik/rules.yaml
+	kknd1|actors/evolved_infantry_vandal/rules.yaml
 	kknd1|actors/evolved_vehicle_direwolf/rules.yaml
 	kknd1|actors/evolved_vehicle_chopper/rules.yaml
 	kknd1|actors/evolved_vehicle_bikeandsidecar/rules.yaml
@@ -83,6 +91,14 @@ Sequences:
 	kknd1|sequences/mapobjects-urban.yaml
 	kknd1|core/weapon_bullet/sequences.yaml
 	kknd1|actors/evolved_infantry_berserker/sequences.yaml
+	kknd1|actors/evolved_infantry_shotgunner/sequences.yaml
+	kknd1|actors/evolved_infantry_pyromaniac/sequences.yaml
+	kknd1|actors/evolved_infantry_rioter/sequences.yaml
+	kknd1|actors/evolved_infantry_bazooka/sequences.yaml
+	kknd1|actors/evolved_infantry_crazyharry/sequences.yaml
+	kknd1|actors/evolved_infantry_kingzog/sequences.yaml
+	kknd1|actors/evolved_infantry_mekanik/sequences.yaml
+	kknd1|actors/evolved_infantry_vandal/sequences.yaml
 	kknd1|actors/evolved_vehicle_direwolf/sequences.yaml
 	kknd1|actors/evolved_vehicle_chopper/sequences.yaml
 	kknd1|actors/evolved_vehicle_bikeandsidecar/sequences.yaml
@@ -109,6 +125,13 @@ Weapons:
 	kknd1|weapons/evolved-towers.yaml
 	kknd1|weapons/shrapnel.yaml
 	kknd1|actors/evolved_infantry_berserker/weapons.yaml
+	kknd1|actors/evolved_infantry_shotgunner/weapons.yaml
+	kknd1|actors/evolved_infantry_pyromaniac/weapons.yaml
+	kknd1|actors/evolved_infantry_rioter/weapons.yaml
+	kknd1|actors/evolved_infantry_bazooka/weapons.yaml
+	kknd1|actors/evolved_infantry_crazyharry/weapons.yaml
+	kknd1|actors/evolved_infantry_kingzog/weapons.yaml
+	kknd1|actors/evolved_infantry_vandal/weapons.yaml
 	kknd1|actors/evolved_vehicle_direwolf/weapons.yaml
 	kknd1|actors/evolved_vehicle_chopper/weapons.yaml
 	kknd1|actors/evolved_vehicle_bikeandsidecar/weapons.yaml

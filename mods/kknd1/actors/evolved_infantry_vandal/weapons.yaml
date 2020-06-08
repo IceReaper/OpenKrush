@@ -1,0 +1,12 @@
+evolved_infantry_vandal:
+	Inherits: ^weapon_bullet
+	Range: 3c0
+	Burst: 1
+	BurstDelays: 0
+	ReloadDelay: 50
+	Report: MUTE.SLV|16.wav
+	Warhead@Damage: SpreadDamage
+		Versus:
+			infantry: 40
+			vehicle: 25
+			building: 15

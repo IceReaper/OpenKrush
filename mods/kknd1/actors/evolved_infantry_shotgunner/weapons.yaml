@@ -1,0 +1,14 @@
+evolved_infantry_shotgunner:
+	Inherits: ^weapon_bullet
+	Range: 4c512
+	Burst: 1
+	BurstDelays: 0
+	ReloadDelay: 38
+	Report: MUTE.SLV|17.wav
+	AfterFireSound: MUTE.SLV|190.wav
+	AfterFireSoundDelay: 8
+	Warhead@Damage: SpreadDamage
+		Versus:
+			infantry: 73
+			vehicle: 18
+			building: 30

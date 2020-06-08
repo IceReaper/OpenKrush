@@ -1,0 +1,23 @@
+evolved_infantry_shotgunner:
+	Inherits@muzzle: ^gun_8
+	Inherits@death: ^evolved_infantry_death
+	idle: SPRITES.LVL|Shotgunner.mobd
+		Facings: -16
+	aim: SPRITES.LVL|Shotgunner.mobd
+		Start: 16
+		Stride: 5
+		Facings: -16
+	shoot: SPRITES.LVL|Shotgunner.mobd
+		Start: 16
+		Length: 5
+		Tick: 120
+		Facings: -16
+	move: SPRITES.LVL|Shotgunner.mobd
+		Start: 96
+		Length: 6
+		Tick: 120
+		Facings: -16
+	bored: actors/evolved_infantry_shotgunner/bored.png
+		Length: 16
+		Tick: 100
+	icon: actors/evolved_infantry_shotgunner/icon.png
