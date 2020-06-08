@@ -1,5 +1,5 @@
-evolved_wasp:
-	Inherits: ^EvolvedAircraft
+evolved_aircraft_wasp:
+	Inherits: ^CoreAircraft
 	Tooltip:
 		Name: Wasp
 	TooltipDescription:
@@ -13,8 +13,8 @@ evolved_wasp:
 		Range: 5c0
 		Type: CenterPosition
 	OffsetsArmament:
-		Weapon: evolved_wasp
+		Weapon: evolved_aircraft_wasp
 	Voiced:
-		VoiceSet: WaspVoice
+		VoiceSet: evolved_aircraft_wasp
 	AmbientSound:
 		SoundFiles: MUTE.SLV|162.wav

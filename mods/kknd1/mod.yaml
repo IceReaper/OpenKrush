@@ -38,7 +38,6 @@ Rules:
 	kknd1|rules/survivors-towers.yaml
 	kknd1|rules/survivors-walls.yaml
 	kknd1|rules/evolved.yaml
-	kknd1|rules/evolved-aircrafts.yaml
 	kknd1|rules/evolved-buildings.yaml
 	kknd1|rules/evolved-towers.yaml
 	kknd1|rules/ai.yaml
@@ -67,6 +66,7 @@ Rules:
 	kknd1|actors/evolved_vehicle_oiltanker/rules.yaml
 	kknd1|actors/evolved_vehicle_derrick/rules.yaml
 	kknd1|actors/evolved_vehicle_clanhallwagon/rules.yaml
+	kknd1|actors/evolved_aircraft_wasp/rules.yaml
 	kknd1|actors/evolved_wall_skeletalwall/rules.yaml
 
 Sequences:
@@ -82,7 +82,6 @@ Sequences:
 	kknd1|sequences/survivors-towers.yaml
 	kknd1|sequences/survivors-walls.yaml
 	kknd1|sequences/evolved.yaml
-	kknd1|sequences/evolved-aircrafts.yaml
 	kknd1|sequences/evolved-buildings.yaml
 	kknd1|sequences/evolved-towers.yaml
 	kknd1|sequences/mapobjects-highland.yaml
@@ -109,6 +108,7 @@ Sequences:
 	kknd1|actors/evolved_vehicle_oiltanker/sequences.yaml
 	kknd1|actors/evolved_vehicle_derrick/sequences.yaml
 	kknd1|actors/evolved_vehicle_clanhallwagon/sequences.yaml
+	kknd1|actors/evolved_aircraft_wasp/sequences.yaml
 	kknd1|actors/evolved_wall_skeletalwall/sequences.yaml
 
 Weapons:
@@ -121,7 +121,6 @@ Weapons:
 	kknd1|weapons/survivors-vehicles.yaml
 	kknd1|weapons/survivors-aircrafts.yaml
 	kknd1|weapons/survivors-towers.yaml
-	kknd1|weapons/evolved-aircrafts.yaml
 	kknd1|weapons/evolved-towers.yaml
 	kknd1|weapons/shrapnel.yaml
 	kknd1|actors/evolved_infantry_berserker/weapons.yaml
@@ -140,6 +139,7 @@ Weapons:
 	kknd1|actors/evolved_vehicle_warmastodon/weapons.yaml
 	kknd1|actors/evolved_vehicle_giantbeetle/weapons.yaml
 	kknd1|actors/evolved_vehicle_missilecrab/weapons.yaml
+	kknd1|actors/evolved_aircraft_wasp/weapons.yaml
 
 Voices:
 	kknd1|audio/voices.yaml
@@ -148,6 +148,7 @@ Voices:
 	kknd1|actors/evolved_vehicle_warmastodon/voices.yaml
 	kknd1|actors/evolved_vehicle_giantbeetle/voices.yaml
 	kknd1|actors/evolved_vehicle_missilecrab/voices.yaml
+	kknd1|actors/evolved_aircraft_wasp/voices.yaml
 
 TileSets:
 	kknd1|tilesets/desert/_tileset.yaml

@@ -1,9 +1,8 @@
-evolved_wasp:
+evolved_aircraft_wasp:
 	idle: SPRITES.LVL|Wasp.mobd
 		Start: 16
 		Length: 3
 		Tick: 50
 		Facings: -16
 		ZOffset: 3500
-	icon: bits/Buttons.png
-		Start: 25
+	icon: actors/evolved_aircraft_wasp/icon.png

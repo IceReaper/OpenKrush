@@ -64,7 +64,3 @@ evolved.colorpicker:
 	AdvancedBuildable:
 		Prerequisites: evolved_clanhall
 
-^EvolvedAircraft:
-	Inherits: ^CoreAircraft
-	Voiced:
-		VoiceSet: EvolvedVoice

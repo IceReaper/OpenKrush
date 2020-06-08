@@ -1,4 +1,4 @@
-evolved_wasp:
+evolved_aircraft_wasp:
 	Inherits: Smudge
 	Range: 1c0 # TODO HACK
 	ReloadDelay: 10000 # TODO HACK

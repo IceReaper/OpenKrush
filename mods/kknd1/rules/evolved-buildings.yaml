@@ -534,9 +534,9 @@ evolved_vespiary:
 	ProvidesPrerequisite:
 		Prerequisite: evolved_vespiary
 	AdvancedAirstrikePower:
-		UnitType: evolved_wasp
+		UnitType: evolved_aircraft_wasp
 		Description: Wasp Bomber
-		Icon: evolved_wasp
+		Icon: evolved_aircraft_wasp
 		ChargeInterval: 7500
 		EndChargeSound: evolved_AirstrikeReady.wav
 		IncomingSound: kknd1|bits/sounds/evolved_AirstrikeOrdered.wav
