@@ -105,7 +105,7 @@ Actors:
 	Actor33: urban_objects_3
 		Owner: Neutral
 		Location: 56,48
-	Actor38: evolved_kingzog
+	Actor38: evolved_infantry_kingzog
 		Owner: Neutral
 		Location: 48,83
 		SubCell: 3

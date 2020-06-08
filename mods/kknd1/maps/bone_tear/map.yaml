@@ -1748,12 +1748,12 @@ Actors:
 	Actor584: desert_objects_5
 		Owner: Neutral
 		Location: 48,-1
-	Actor585: evolved_monstertruck
+	Actor585: evolved_vehicle_monstertruck
 		Owner: Neutral
 		Location: 47,59
 		Facing: 92
 		TurretFacing: 92
-	Actor588: evolved_kingzog
+	Actor588: evolved_infantry_kingzog
 		Owner: Neutral
 		Location: 49,59
 		SubCell: 3

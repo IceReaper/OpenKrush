@@ -66,13 +66,13 @@ Player:
 		RequiresCondition: enable-placeholder-ai
 		UnitQueues: infantry, vehicle, beast
 		UnitsToBuild:
-			evolved_berserker: 50
-			evolved_shotgunner: 60
-			evolved_pyromaniac: 70
-			#evolved_vandal: 75
-			evolved_rioter: 80
-			evolved_bazooka: 90
-			evolved_crazyharry: 100
+			evolved_infantry_berserker: 50
+			evolved_infantry_shotgunner: 60
+			evolved_infantry_pyromaniac: 70
+			#evolved_infantry_vandal: 75
+			evolved_infantry_rioter: 80
+			evolved_infantry_bazooka: 90
+			evolved_infantry_crazyharry: 100
 			evolved_vehicle_direwolf: 40
 			evolved_vehicle_bikeandsidecar: 50
 			evolved_vehicle_monstertruck: 60

@@ -3181,7 +3181,7 @@ Actors:
 	Actor1370: highland_trees_14
 		Owner: Neutral
 		Location: 82,-1
-	Actor1352: evolved_kingzog
+	Actor1352: evolved_infantry_kingzog
 		Owner: Neutral
 		Location: 86,50
 		SubCell: 1
