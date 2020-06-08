@@ -22,14 +22,6 @@ projectile:
 		Length: 13
 		Tick: 120
 		ZOffset: 2000
-	bubble: SPRITES.LVL|Beetle.mobd
-		Length: 4
-		Facings: -16
-		Tick: 120
-		ZOffset: 1000
-	cannon_s: SPRITES.LVL|Mastodon.mobd
-		Facings: -16
-		ZOffset: 1000
 	cannon_l: SPRITES.LVL|Tank.mobd
 		Facings: -16
 		ZOffset: 1000
@@ -71,14 +63,6 @@ projectile:
 		Length: 2
 		Facings: -16
 		Tick: 120
-		ZOffset: 1000
-	rocket_l: SPRITES.LVL|Crab.mobd
-		Length: 2
-		Facings: -16
-		Tick: 120
-		ZOffset: 1000
-	splat: SPRITES.LVL|Snot.mobd
-		Facings: -16
 		ZOffset: 1000
 	molotov: bits/Molotov.png
 		Facings: -8
