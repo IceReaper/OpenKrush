@@ -22,10 +22,6 @@ MapFolders:
 	kknd1|maps: System
 	~^maps/kknd1: User
 
-#StatsFolders:
-#	kknd1|stats: System
-#	~^stats/kknd1: User
-
 Rules:
 	kknd|rules/palettes.yaml
 	kknd|rules/core.yaml
