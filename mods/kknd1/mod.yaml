@@ -38,7 +38,6 @@ Rules:
 	kknd1|rules/survivors-towers.yaml
 	kknd1|rules/survivors-walls.yaml
 	kknd1|rules/evolved.yaml
-	kknd1|rules/evolved-infantry.yaml
 	kknd1|rules/evolved-aircrafts.yaml
 	kknd1|rules/evolved-buildings.yaml
 	kknd1|rules/evolved-towers.yaml
@@ -49,6 +48,7 @@ Rules:
 	kknd1|rules/mapobjects-desert.yaml
 	kknd1|rules/mapobjects-urban.yaml
 	kknd1|actors/temp.yaml
+	kknd1|actors/evolved_infantry_berserker/rules.yaml
 	kknd1|actors/evolved_vehicle_direwolf/rules.yaml
 	kknd1|actors/evolved_vehicle_chopper/rules.yaml
 	kknd1|actors/evolved_vehicle_bikeandsidecar/rules.yaml
@@ -74,7 +74,6 @@ Sequences:
 	kknd1|sequences/survivors-towers.yaml
 	kknd1|sequences/survivors-walls.yaml
 	kknd1|sequences/evolved.yaml
-	kknd1|sequences/evolved-infantry.yaml
 	kknd1|sequences/evolved-aircrafts.yaml
 	kknd1|sequences/evolved-buildings.yaml
 	kknd1|sequences/evolved-towers.yaml
@@ -83,6 +82,7 @@ Sequences:
 	kknd1|sequences/mapobjects-desert.yaml
 	kknd1|sequences/mapobjects-urban.yaml
 	kknd1|core/weapon_bullet/sequences.yaml
+	kknd1|actors/evolved_infantry_berserker/sequences.yaml
 	kknd1|actors/evolved_vehicle_direwolf/sequences.yaml
 	kknd1|actors/evolved_vehicle_chopper/sequences.yaml
 	kknd1|actors/evolved_vehicle_bikeandsidecar/sequences.yaml
@@ -105,10 +105,10 @@ Weapons:
 	kknd1|weapons/survivors-vehicles.yaml
 	kknd1|weapons/survivors-aircrafts.yaml
 	kknd1|weapons/survivors-towers.yaml
-	kknd1|weapons/evolved-infantry.yaml
 	kknd1|weapons/evolved-aircrafts.yaml
 	kknd1|weapons/evolved-towers.yaml
 	kknd1|weapons/shrapnel.yaml
+	kknd1|actors/evolved_infantry_berserker/weapons.yaml
 	kknd1|actors/evolved_vehicle_direwolf/weapons.yaml
 	kknd1|actors/evolved_vehicle_chopper/weapons.yaml
 	kknd1|actors/evolved_vehicle_bikeandsidecar/weapons.yaml

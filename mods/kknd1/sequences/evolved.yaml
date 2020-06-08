@@ -1,3 +1,27 @@
+^evolved_infantry_death:
+	die: SPRITES.LVL|Extras.mobd
+		Start: 323
+		Length: 15
+		Tick: 120
+	die-explode: bits/MExplode.png
+		Length: 17
+		Tick: 60
+	die-burn: bits/MBurn.png
+		Length: 24
+		Tick: 70
+	die-melt: bits/MMelt.png
+		Length: 16
+		Tick: 60
+	die-zap: bits/MZap.png
+		Length: 16
+		Tick: 60
+	die-dissolve: bits/MDissolve.png
+		Length: 16
+		Tick: 50
+	die-crush: bits/Crush.png
+		Tick: 2000
+		ZOffset: -2000
+
 icon-evolved:
 	button: bits/Buttons.png
 		Start: 77

@@ -1,0 +1,24 @@
+evolved_infantry_berserker:
+	Inherits@1: ^CoreInfantry
+	Inherits@2: ^CoreArmedSelf
+	Tooltip:
+		Name: Berserker
+	Valued:
+		Cost: 50
+	Health:
+		HP: 400
+	Mobile:
+		Speed: 50
+	RevealsShroud:
+		Range: 5c0
+	AdvancedBuildable:
+		Prerequisites: evolved_warriorhall
+		BuildDuration: 75
+		Level: 0
+	OffsetsArmament:
+		Weapon: evolved_infantry_berserker
+	Veterancy:
+		HealRates: 1,2
+		Experience: 500, 1000
+	VeterancyVoiced:
+		VoiceSets: EvolvedVoice, EvolvedVeteranVoice

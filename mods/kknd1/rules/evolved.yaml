@@ -19,7 +19,7 @@ World:
 		Class: light
 		ClassName: Light support
 		BaseActor: evolved_vehicle_clanhallwagon
-		SupportActors: evolved_vehicle_derrick, evolved_berserker, evolved_berserker, evolved_berserker, evolved_berserker, evolved_berserker
+		SupportActors: evolved_vehicle_derrick, evolved_infantry_berserker, evolved_infantry_berserker, evolved_infantry_berserker, evolved_infantry_berserker, evolved_infantry_berserker
 		InnerSupportRadius: 4
 		OuterSupportRadius: 6
 		Factions: evolved
@@ -68,13 +68,6 @@ evolved.colorpicker:
 	Inherits@2: ^CoreTurret
 	AdvancedBuildable:
 		Prerequisites: evolved_clanhall
-
-^EvolvedInfantry:
-	Inherits: ^CoreInfantry
-	AdvancedBuildable:
-		Prerequisites: evolved_warriorhall
-	VeterancyVoiced:
-		VoiceSets: EvolvedVoice, EvolvedVeteranVoice
 
 ^EvolvedAircraft:
 	Inherits: ^CoreAircraft

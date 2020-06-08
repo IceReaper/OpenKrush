@@ -17,9 +17,6 @@
 		Tick: 60
 
 projectile:
-	arrow: SPRITES.LVL|Berserker.mobd
-		Facings: -16
-		ZOffset: 1000
 	bomb: SPRITES.LVL|WilburBomber.mobd
 		Start: 32
 		Length: 13
