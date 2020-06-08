@@ -1,9 +1,8 @@
 evolved_vehicle_bikeandsidecar:
-	Inherits@1: ^EvolvedVehicle
-	Inherits@2: ^CoreLightVehicle
-	Inherits@3: ^CoreTurret
+	Inherits@1: ^CoreVehicle
+	Inherits@2: ^CoreTurret
+	Inherits@3: ^CoreLightVehicle
 	Inherits@4: ^HasMuzzle
-	Inherits@5: ^AutoTargetDefault
 	Tooltip:
 		Name: Bike & Sidecar
 	Valued:
@@ -14,6 +13,7 @@ evolved_vehicle_bikeandsidecar:
 		Speed: 90
 		TurnSpeed: 8
 	AdvancedBuildable:
+		Prerequisites: evolved_beastforge
 		BuildDuration: 150
 		Level: 0
 	RevealsShroud:
@@ -25,3 +25,5 @@ evolved_vehicle_bikeandsidecar:
 	AdvancedSelectionDecorations:
 		Offset: 0,1
 	Veterancy:
+	VeterancyVoiced:
+		VoiceSets: EvolvedVoice, EvolvedVeteranVoice

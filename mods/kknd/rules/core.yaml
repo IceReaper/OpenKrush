@@ -434,6 +434,9 @@
 	# If it has a turret, it should attack with its turret only, meaning it can aim and fire with it while moving.
 	AttackTurreted:
 		Voice: Attack
+	# Auto target enemies nearby.
+	AutoTarget:
+	AutoTargetPriority:
 
 # Grouped traits for standard non-turreted behavior.
 ^CoreArmedSelf:
@@ -444,6 +447,9 @@
 	WithAimAttackAnimation:
 		SequenceFire: shoot
 		SequenceAim: aim
+	# Auto target enemies nearby.
+	AutoTarget:
+	AutoTargetPriority:
 
 # Oil resource.
 oilpatch:

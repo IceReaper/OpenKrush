@@ -1,10 +1,7 @@
 evolved_vehicle_clanhallwagon:
-	Inherits@1: ^EvolvedVehicle
-	Inherits@2: ^CoreHeavyVehicle
+	Inherits: ^MobileBase
 	Tooltip:
 		Name: Clanhall Wagon
-	TooltipDescription:
-		Description: Mobile base
 	Valued:
 		Cost: 1500
 	Health:
@@ -13,19 +10,15 @@ evolved_vehicle_clanhallwagon:
 		Speed: 40
 		TurnSpeed: 5
 	AdvancedBuildable:
+		Prerequisites: evolved_beastforge
 		BuildDuration: 1000
 		Level: 3
 	RevealsShroud:
 		Range: 11c0
 	Transforms:
-		TransformSounds: MUTE.SLV|189.wav
 		IntoActor: evolved_clanhall
-		Offset: -1,0
-	MustBeDestroyed:
-		RequiredForShortGame: true
-	Selectable:
-		Priority: 15
+		TransformSounds: MUTE.SLV|189.wav
 	AdvancedSelectionDecorations:
 		Offset: 0,-14
-	IgnoreRallyPoint:
-	BaseBuilding:
+	Voiced:
+		VoiceSet: EvolvedVoice

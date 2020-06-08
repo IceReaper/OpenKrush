@@ -52,7 +52,6 @@ bunker_techbunker:
 bunker_gorttherobot:
 	Inherits@1: ^BunkerVehicle
 	Inherits@2: ^CoreTurret
-	Inherits@3: ^AutoTargetDefault
 	Tooltip:
 		Name: Gort The Robot
 	OffsetsArmament:
@@ -74,7 +73,6 @@ bunker_gorttherobot:
 bunker_mech:
 	Inherits@1: ^BunkerVehicle
 	Inherits@2: ^CoreTurret
-	Inherits@3: ^AutoTargetDefault
 	Tooltip:
 		Name: Mech
 	OffsetsArmament@primary:
@@ -91,7 +89,6 @@ bunker_mech:
 bunker_plasmatank:
 	Inherits@1: ^BunkerVehicle
 	Inherits@2: ^CoreTurret
-	Inherits@3: ^AutoTargetDefault
 	Tooltip:
 		Name: Plasma Tank
 	OffsetsArmament:
@@ -114,7 +111,6 @@ bunker_plasmatank.colorpicker:
 bunker_sentineldroid:
 	Inherits@1: ^BunkerVehicle
 	Inherits@2: ^CoreTurret
-	Inherits@3: ^AutoTargetDefault
 	Tooltip:
 		Name: Sentinel Droid
 	OffsetsArmament:

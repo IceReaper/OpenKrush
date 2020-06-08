@@ -3,7 +3,6 @@ survivors_dirtbike:
 	Inherits@2: ^CoreLightVehicle
 	Inherits@3: ^CoreArmedSelf
 	Inherits@4: ^HasMuzzle
-	Inherits@5: ^AutoTargetDefault
 	Tooltip:
 		Name: Dirt Bike
 	Valued:
@@ -29,7 +28,6 @@ survivors_4x4pickup:
 	Inherits@2: ^CoreLightVehicle
 	Inherits@3: ^CoreTurret
 	Inherits@4: ^HasMuzzle
-	Inherits@5: ^AutoTargetDefault
 	Tooltip:
 		Name: 4x4 Pickup
 	Valued:
@@ -56,7 +54,6 @@ survivors_allterrainvehicle:
 	Inherits@1: ^SurvivorsVehicle
 	Inherits@2: ^CoreTurret
 	Inherits@3: ^HasMuzzle
-	Inherits@4: ^AutoTargetDefault
 	Tooltip:
 		Name: All-Terrain Vehicle
 	Valued:
@@ -82,7 +79,6 @@ survivors_allterrainvehicle:
 survivors_flameatv:
 	Inherits@1: ^SurvivorsVehicle
 	Inherits@2: ^CoreTurret
-	Inherits@3: ^AutoTargetDefault
 	Tooltip:
 		Name: Flame ATV
 	Valued:
@@ -110,7 +106,6 @@ survivors_anacondatank:
 	Inherits@1: ^SurvivorsVehicle
 	Inherits@2: ^CoreTurret
 	Inherits@3: ^HasMuzzle
-	Inherits@4: ^AutoTargetDefault
 	Tooltip:
 		Name: Anaconda Tank
 	Valued:
@@ -137,7 +132,6 @@ survivors_anacondatank:
 survivors_barragecraft:
 	Inherits@1: ^SurvivorsVehicle
 	Inherits@2: ^CoreTurret
-	Inherits@3: ^AutoTargetDefault
 	Tooltip:
 		Name: Barrage Craft
 	Valued:
@@ -165,7 +159,6 @@ survivors_autocannontank:
 	Inherits@1: ^SurvivorsVehicle
 	Inherits@2: ^CoreHeavyVehicle
 	Inherits@3: ^CoreTurret
-	Inherits@4: ^AutoTargetDefault
 	Tooltip:
 		Name: Autocannon Tank
 	Valued:

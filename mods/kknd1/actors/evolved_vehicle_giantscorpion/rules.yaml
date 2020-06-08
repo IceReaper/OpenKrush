@@ -1,7 +1,6 @@
 evolved_vehicle_giantscorpion:
-	Inherits@1: ^EvolvedVehicle
+	Inherits@1: ^CoreVehicle
 	Inherits@2: ^CoreArmedSelf
-	Inherits@3: ^AutoTargetDefault
 	Tooltip:
 		Name: Giant Scorpion
 	Valued:
@@ -12,11 +11,12 @@ evolved_vehicle_giantscorpion:
 		Speed: 60
 		TurnSpeed: 8
 	AdvancedBuildable:
+		Prerequisites: evolved_beastforge
 		BuildDuration: 300
 		Level: 2
 	RevealsShroud:
 		Range: 7c0
-	VeterancyVoiced:
+	Voiced:
 		VoiceSet: evolved_vehicle_giantscorpion
 	OffsetsArmament:
 		Weapon: evolved_vehicle_giantscorpion

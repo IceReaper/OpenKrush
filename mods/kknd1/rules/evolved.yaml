@@ -40,6 +40,16 @@ World:
 		OuterSupportRadius: 6
 		Factions: evolved
 
+evolved.colorpicker:
+	Inherits: evolved_vehicle_oiltanker
+	Mobile:
+		InitialFacing: 128
+	RenderSprites:
+		Image: evolved_vehicle_oiltanker
+		Palette: colorpicker
+	-AdvancedBuildable:
+	-MapEditorData:
+
 ^EvolvedBuilding:
 	Inherits: ^CoreBuilding
 	AdvancedBuildable:
@@ -64,14 +74,7 @@ World:
 	AdvancedBuildable:
 		Prerequisites: evolved_warriorhall
 	VeterancyVoiced:
-		VoiceSets: EvolvedVoice, EvolvedVeteranVoice, EvolvedVeteranVoice
-
-^EvolvedVehicle:
-	Inherits: ^CoreVehicle
-	AdvancedBuildable:
-		Prerequisites: evolved_beastforge
-	VeterancyVoiced:
-		VoiceSets: EvolvedVoice, EvolvedVeteranVoice, EvolvedVeteranVoice
+		VoiceSets: EvolvedVoice, EvolvedVeteranVoice
 
 ^EvolvedAircraft:
 	Inherits: ^CoreAircraft

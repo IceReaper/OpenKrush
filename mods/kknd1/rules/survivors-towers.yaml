@@ -1,7 +1,6 @@
 survivors_guardtower:
 	Inherits@1: ^SurvivorsTower
 	Inherits@2: ^HasMuzzle
-	Inherits@3: ^AutoTargetDefault
 	Tooltip:
 		Name: Guard Tower
 	Valued:
@@ -25,7 +24,6 @@ survivors_guardtower:
 
 survivors_missilebattery:
 	Inherits@1: ^SurvivorsTower
-	Inherits@2: ^AutoTargetDefault
 	Tooltip:
 		Name: Missile Battery
 	Valued:
@@ -50,7 +48,6 @@ survivors_missilebattery:
 survivors_cannontower:
 	Inherits@1: ^SurvivorsTower
 	Inherits@2: ^HasMuzzle
-	Inherits@3: ^AutoTargetDefault
 	Tooltip:
 		Name: Cannon Tower
 	Valued:

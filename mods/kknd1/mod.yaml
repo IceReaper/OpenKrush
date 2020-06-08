@@ -52,6 +52,7 @@ Rules:
 	kknd1|rules/mapobjects-highland.yaml
 	kknd1|rules/mapobjects-desert.yaml
 	kknd1|rules/mapobjects-urban.yaml
+	kknd1|actors/temp.yaml
 	kknd1|actors/evolved_vehicle_direwolf/rules.yaml
 	kknd1|actors/evolved_vehicle_chopper/rules.yaml
 	kknd1|actors/evolved_vehicle_bikeandsidecar/rules.yaml
@@ -99,6 +100,8 @@ Sequences:
 	kknd1|actors/evolved_vehicle_clanhallwagon/sequences.yaml
 
 Weapons:
+	kknd1|core/weapon_bullet/weapons.yaml
+	kknd1|core/weapon_explosion/weapons.yaml
 	kknd|weapons/misc.yaml
 	kknd1|weapons/misc.yaml
 	kknd1|weapons/bunkers.yaml
@@ -110,8 +113,6 @@ Weapons:
 	kknd1|weapons/evolved-aircrafts.yaml
 	kknd1|weapons/evolved-towers.yaml
 	kknd1|weapons/shrapnel.yaml
-	kknd1|core/weapon_bullet/weapons.yaml
-	kknd1|core/weapon_explosion/weapons.yaml
 	kknd1|actors/evolved_vehicle_direwolf/weapons.yaml
 	kknd1|actors/evolved_vehicle_chopper/weapons.yaml
 	kknd1|actors/evolved_vehicle_bikeandsidecar/weapons.yaml

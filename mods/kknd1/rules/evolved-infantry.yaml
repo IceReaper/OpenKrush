@@ -1,7 +1,6 @@
 evolved_berserker:
 	Inherits@1: ^EvolvedInfantry
 	Inherits@2: ^CoreArmedSelf
-	Inherits@3: ^AutoTargetDefault
 	Tooltip:
 		Name: Berserker
 	Valued:
@@ -25,7 +24,6 @@ evolved_shotgunner:
 	Inherits@1: ^EvolvedInfantry
 	Inherits@2: ^CoreArmedSelf
 	Inherits@3: ^HasMuzzle
-	Inherits@4: ^AutoTargetDefault
 	Tooltip:
 		Name: Shotgunner
 	Valued:
@@ -48,7 +46,6 @@ evolved_shotgunner:
 evolved_pyromaniac:
 	Inherits@1: ^EvolvedInfantry
 	Inherits@2: ^CoreArmedSelf
-	Inherits@3: ^AutoTargetDefault
 	Tooltip:
 		Name: Pyromaniac
 	Valued:
@@ -71,7 +68,6 @@ evolved_pyromaniac:
 evolved_rioter:
 	Inherits@1: ^EvolvedInfantry
 	Inherits@2: ^CoreArmedSelf
-	Inherits@3: ^AutoTargetDefault
 	Tooltip:
 		Name: Rioter
 	Valued:
@@ -98,7 +94,6 @@ evolved_rioter:
 evolved_bazooka:
 	Inherits@1: ^EvolvedInfantry
 	Inherits@2: ^CoreArmedSelf
-	Inherits@3: ^AutoTargetDefault
 	Tooltip:
 		Name: Bazooka
 	Valued:
@@ -122,7 +117,6 @@ evolved_crazyharry:
 	Inherits@1: ^EvolvedInfantry
 	Inherits@2: ^CoreArmedSelf
 	Inherits@3: ^HasMuzzle
-	Inherits@4: ^AutoTargetDefault
 	Tooltip:
 		Name: Crazy Harry
 	Valued:
@@ -146,7 +140,6 @@ evolved_kingzog:
 	Inherits@1: ^EvolvedInfantry
 	Inherits@2: ^CoreArmedSelf
 	Inherits@3: ^HasMuzzle
-	Inherits@4: ^AutoTargetDefault
 	Tooltip:
 		Name: King Zog
 	Valued:
@@ -192,7 +185,6 @@ evolved_vandal:
 	Inherits@1: ^EvolvedInfantry
 	Inherits@2: ^CoreArmedSelf
 	Inherits@3: ^HasMuzzle
-	Inherits@4: ^AutoTargetDefault
 	Tooltip:
 		Name: Vandal
 	TooltipDescription:

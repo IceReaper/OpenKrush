@@ -1,8 +1,7 @@
 evolved_vehicle_monstertruck:
-	Inherits@1: ^EvolvedVehicle
+	Inherits@1: ^CoreVehicle
 	Inherits@2: ^CoreTurret
 	Inherits@3: ^HasMuzzle
-	Inherits@4: ^AutoTargetDefault
 	Tooltip:
 		Name: Monster Truck
 	Valued:
@@ -13,6 +12,7 @@ evolved_vehicle_monstertruck:
 		Speed: 70
 		TurnSpeed: 8
 	AdvancedBuildable:
+		Prerequisites: evolved_beastforge
 		BuildDuration: 300
 		Level: 1
 	RevealsShroud:
@@ -24,3 +24,5 @@ evolved_vehicle_monstertruck:
 	AdvancedSelectionDecorations:
 		Offset: 0,-7
 	Veterancy:
+	VeterancyVoiced:
+		VoiceSets: EvolvedVoice, EvolvedVeteranVoice

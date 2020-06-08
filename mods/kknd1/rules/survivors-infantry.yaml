@@ -2,7 +2,6 @@ survivors_rifleman:
 	Inherits@1: ^SurvivorsInfantry
 	Inherits@2: ^CoreArmedSelf
 	Inherits@3: ^HasMuzzle
-	Inherits@4: ^AutoTargetDefault
 	Tooltip:
 		Name: Rifleman
 	Valued:
@@ -25,7 +24,6 @@ survivors_rifleman:
 survivors_swat:
 	Inherits@1: ^SurvivorsInfantry
 	Inherits@2: ^CoreArmedSelf
-	Inherits@3: ^AutoTargetDefault
 	Tooltip:
 		Name: SWAT
 	Valued:
@@ -50,7 +48,6 @@ survivors_swat:
 survivors_flamer:
 	Inherits@1: ^SurvivorsInfantry
 	Inherits@2: ^CoreArmedSelf
-	Inherits@3: ^AutoTargetDefault
 	Tooltip:
 		Name: Flamer
 	Valued:
@@ -73,7 +70,6 @@ survivors_flamer:
 survivors_sapper:
 	Inherits@1: ^SurvivorsInfantry
 	Inherits@2: ^CoreArmedSelf
-	Inherits@3: ^AutoTargetDefault
 	Tooltip:
 		Name: Sapper
 	Valued:
@@ -100,7 +96,6 @@ survivors_sapper:
 survivors_rpglauncher:
 	Inherits@1: ^SurvivorsInfantry
 	Inherits@2: ^CoreArmedSelf
-	Inherits@3: ^AutoTargetDefault
 	Tooltip:
 		Name: RPG Launcher
 	Valued:
@@ -124,7 +119,6 @@ survivors_sniper:
 	Inherits@1: ^SurvivorsInfantry
 	Inherits@2: ^CoreArmedSelf
 	Inherits@3: ^HasMuzzle
-	Inherits@4: ^AutoTargetDefault
 	Tooltip:
 		Name: Sniper
 	Valued:
@@ -148,7 +142,6 @@ survivors_elpresidente:
 	Inherits@1: ^SurvivorsInfantry
 	Inherits@2: ^CoreArmedSelf
 	Inherits@3: ^HasMuzzle
-	Inherits@4: ^AutoTargetDefault
 	Tooltip:
 		Name: El Presidente
 	Valued:
@@ -194,7 +187,6 @@ survivors_saboteur:
 	Inherits@1: ^SurvivorsInfantry
 	Inherits@2: ^CoreArmedSelf
 	Inherits@3: ^HasMuzzle
-	Inherits@4: ^AutoTargetDefault
 	Tooltip:
 		Name: Saboteur
 	TooltipDescription:
@@ -222,7 +214,6 @@ survivors_saboteur:
 survivors_scout:
 	Inherits@1: ^SurvivorsInfantry
 	Inherits@2: ^CoreArmedSelf
-	Inherits@3: ^AutoTargetDefault
 	Tooltip:
 		Name: Scout
 	TooltipDescription:

@@ -1,9 +1,8 @@
 evolved_vehicle_direwolf:
-	Inherits@1: ^EvolvedVehicle
-	Inherits@2: ^CoreLightVehicle
-	Inherits@3: ^CoreArmedSelf
+	Inherits@1: ^CoreVehicle
+	Inherits@2: ^CoreArmedSelf
+	Inherits@3: ^CoreLightVehicle
 	Inherits@4: ^HasMuzzle
-	Inherits@5: ^AutoTargetDefault
 	Tooltip:
 		Name: Dire Wolf
 	Valued:
@@ -14,17 +13,19 @@ evolved_vehicle_direwolf:
 		Speed: 115
 		TurnSpeed: 41
 	AdvancedBuildable:
+		Prerequisites: evolved_beastforge
 		BuildDuration: 150
 		Level: 0
 	RevealsShroud:
 		Range: 11c0
-	VeterancyVoiced:
+	Voiced:
 		VoiceSet: evolved_vehicle_direwolf
 	OffsetsArmament:
 		Weapon: evolved_vehicle_direwolf
 	AdvancedSelectionDecorations:
 		Offset: 0,-2
 	Veterancy:
+	# Dire Wolf actualy has death animations and does not explode.
 	ThrowsShrapnel:
 		Weapons: Blood1, Blood2, Blood3, Blood4, Blood5
 		Pieces: 1, 1

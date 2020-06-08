@@ -1,7 +1,6 @@
 evolved_machinegunnest:
 	Inherits@1: ^EvolvedTower
 	Inherits@2: ^HasMuzzle
-	Inherits@3: ^AutoTargetDefault
 	Tooltip:
 		Name: Machinegun Nest
 	Valued:
@@ -25,7 +24,6 @@ evolved_machinegunnest:
 
 evolved_grapeshotcannon:
 	Inherits@1: ^EvolvedTower
-	Inherits@2: ^AutoTargetDefault
 	Tooltip:
 		Name: GrapeShot Cannon
 	Valued:
@@ -53,7 +51,6 @@ evolved_grapeshotcannon:
 evolved_rotarycannon:
 	Inherits@1: ^EvolvedTower
 	Inherits@2: ^HasMuzzle
-	Inherits@3: ^AutoTargetDefault
 	Tooltip:
 		Name: Rotary Cannon
 	Valued:

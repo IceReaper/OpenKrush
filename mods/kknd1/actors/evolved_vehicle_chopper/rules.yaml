@@ -1,8 +1,7 @@
 evolved_vehicle_chopper:
-	Inherits@1: ^EvolvedVehicle
-	Inherits@2: ^CoreLightVehicle
-	Inherits@3: ^CoreArmedSelf
-	Inherits@4: ^AutoTargetDefault
+	Inherits@1: ^CoreVehicle
+	Inherits@2: ^CoreArmedSelf
+	Inherits@3: ^CoreLightVehicle
 	Tooltip:
 		Name: Chopper
 	Valued:
@@ -13,6 +12,7 @@ evolved_vehicle_chopper:
 		Speed: 115
 		TurnSpeed: 41
 	AdvancedBuildable:
+		Prerequisites: evolved_beastforge
 		BuildDuration: 125
 		Level: -1
 	RevealsShroud:
@@ -22,3 +22,5 @@ evolved_vehicle_chopper:
 	AdvancedSelectionDecorations:
 		Offset: 0,-2
 	Veterancy:
+	VeterancyVoiced:
+		VoiceSets: EvolvedVoice, EvolvedVeteranVoice

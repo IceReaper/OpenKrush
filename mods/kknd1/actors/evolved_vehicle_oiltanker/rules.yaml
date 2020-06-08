@@ -1,9 +1,7 @@
 evolved_vehicle_oiltanker:
-	Inherits: ^EvolvedVehicle
+	Inherits: ^OilTanker
 	Tooltip:
 		Name: Oil Tanker
-	TooltipDescription:
-		Description: Transports oil
 	Valued:
 		Cost: 750
 	Health:
@@ -12,26 +10,12 @@ evolved_vehicle_oiltanker:
 		Speed: 45
 		TurnSpeed: 8
 	AdvancedBuildable:
+		Prerequisites: evolved_beastforge
 		BuildDuration: 600
 		Level: 2
 	RevealsShroud:
 		Range: 7c0
-	Selectable:
-		Priority: 15
-	Tanker:
-		DockingActivity: TankerCycle
 	AdvancedSelectionDecorations:
 		Offset: 0,-1
-	AttackNotification:
-		Notifications: TankerUnderAttack
-	IgnoreRallyPoint:
-
-evolved_vehicle_oiltanker.colorpicker:
-	Inherits: evolved_vehicle_oiltanker
-	Mobile:
-		InitialFacing: 128
-	RenderSprites:
-		Image: evolved_vehicle_oiltanker
-		Palette: colorpicker
-	-AdvancedBuildable:
-	-MapEditorData:
+	Voiced:
+		VoiceSet: EvolvedVoice

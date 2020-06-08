@@ -1,7 +1,6 @@
 evolved_vehicle_giantbeetle:
-	Inherits@1: ^EvolvedVehicle
+	Inherits@1: ^CoreVehicle
 	Inherits@2: ^CoreArmedSelf
-	Inherits@3: ^AutoTargetDefault
 	Tooltip:
 		Name: Giant Beetle
 	Valued:
@@ -12,11 +11,12 @@ evolved_vehicle_giantbeetle:
 		Speed: 55
 		TurnSpeed: 8
 	AdvancedBuildable:
+		Prerequisites: evolved_beastforge
 		BuildDuration: 850
 		Level: 4
 	RevealsShroud:
 		Range: 7c0
-	VeterancyVoiced:
+	Voiced:
 		VoiceSet: evolved_vehicle_giantbeetle
 	OffsetsArmament:
 		Weapon: evolved_vehicle_giantbeetle

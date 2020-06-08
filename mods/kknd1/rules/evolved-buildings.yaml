@@ -393,7 +393,7 @@ evolved_powerstation:
 		Sequence: animation
 		RequiresCondition: !selfconstructing && !deconstructing
 	FreeActor:
-		Actor: evolved_oiltanker
+		Actor: evolved_vehicle_oiltanker
 		SpawnOffset: 1,1
 		Facing: 96
 		RequiresCondition: !selfconstructing && !deconstructing
