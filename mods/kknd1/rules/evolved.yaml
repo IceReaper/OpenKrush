@@ -57,10 +57,3 @@ evolved.colorpicker:
 	ProvidesPrerequisite@Generic:
 		Prerequisite: evolved_building
 		RequiresCondition: !selfconstructing && !deconstructing
-
-^EvolvedTower:
-	Inherits@1: ^CoreTower
-	Inherits@2: ^CoreTurret
-	AdvancedBuildable:
-		Prerequisites: evolved_clanhall
-

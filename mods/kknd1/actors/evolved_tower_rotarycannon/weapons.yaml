@@ -1,0 +1,13 @@
+evolved_tower_rotarycannon:
+	Inherits: ^weapon_bullet
+	Range: 7c0
+	Burst: 10
+	BurstDelays: 3
+	ReloadDelay: 4
+	Projectile: InstantHit
+		Blockable: false
+	Warhead@Damage: SpreadDamage
+		Versus:
+			infantry: 45
+			vehicle: 30
+			building: 13

@@ -35,9 +35,6 @@ projectile:
 		Facings: -16
 		Tick: 60
 		ZOffset: 1000
-	grapeshot: SPRITES.LVL|GrapeShotCannon.mobd
-		Facings: -16
-		ZOffset: 1000
 	grenade: SPRITES.LVL|Sapper.mobd
 		Length: 8
 		Facings: -16

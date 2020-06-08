@@ -45,9 +45,9 @@ Player:
 			#evolved_powerstation: 1
 			evolved_gasconverter: 25
 			evolved_alchemyhall: 100
-			evolved_machinegunnest: 50
-			evolved_grapeshotcannon: 75
-			evolved_rotarycannon: 100
+			evolved_tower_machinegunnest: 50
+			evolved_tower_grapeshotcannon: 75
+			evolved_tower_rotarycannon: 100
 			evolved_vespiary: 100
 	#BuildingRepairBotModule: # TODO implement KKnD repair implementation
 	#	RequiresCondition: enable-placeholder-ai

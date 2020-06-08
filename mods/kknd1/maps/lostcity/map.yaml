@@ -174,19 +174,19 @@ Actors:
 	Actor420: bunker_techbunker
 		Owner: Neutral
 		Location: 62,62
-	Actor421: evolved_rotarycannon
+	Actor421: evolved_tower_rotarycannon
 		Owner: Creeps
 		Location: 65,64
 		TurretFacing: 166
-	Actor422: evolved_rotarycannon
+	Actor422: evolved_tower_rotarycannon
 		Owner: Creeps
 		Location: 65,59
 		TurretFacing: 222
-	Actor423: evolved_rotarycannon
+	Actor423: evolved_tower_rotarycannon
 		Owner: Creeps
 		Location: 60,59
 		TurretFacing: 29
-	Actor424: evolved_rotarycannon
+	Actor424: evolved_tower_rotarycannon
 		Owner: Creeps
 		Location: 60,64
 		TurretFacing: 88

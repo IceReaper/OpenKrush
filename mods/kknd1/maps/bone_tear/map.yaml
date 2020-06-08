@@ -1935,11 +1935,11 @@ Actors:
 	Actor658: tech_drillrig
 		Owner: Neutral
 		Location: 47,42
-	Actor648: evolved_rotarycannon
+	Actor648: evolved_tower_rotarycannon
 		Owner: Creeps
 		Location: 53,8
 		TurretFacing: 92
-	Actor649: evolved_rotarycannon
+	Actor649: evolved_tower_rotarycannon
 		Owner: Creeps
 		Location: 42,8
 		TurretFacing: 92

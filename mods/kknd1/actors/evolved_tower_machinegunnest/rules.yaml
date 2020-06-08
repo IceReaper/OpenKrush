@@ -1,0 +1,25 @@
+evolved_tower_machinegunnest:
+	Inherits@1: ^CoreTower
+	Inherits@2: ^CoreTurret
+	Inherits@2: ^HasMuzzle
+	Tooltip:
+		Name: Machinegun Nest
+	Valued:
+		Cost: 750
+	Health:
+		HP: 1500
+	AdvancedBuildable:
+		Prerequisites: evolved_clanhall
+		BuildDuration: 500
+		Level: 1
+	RevealsShroud:
+		Range: 10c0
+	OffsetsArmament:
+		Weapon: evolved_tower_machinegunnest
+		LocalOffset: 0,25,450
+	Turreted:
+		TurnSpeed: 20
+	AdvancedSelectionDecorations:
+		Offset: -2,-20
+	TechnicianRepairable:
+		Offset: 0,-15

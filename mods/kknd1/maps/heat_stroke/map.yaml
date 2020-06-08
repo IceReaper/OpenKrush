@@ -159,11 +159,11 @@ Actors:
 	Actor60: oilpatch
 		Owner: Neutral
 		Location: 70,17
-	Actor55: evolved_grapeshotcannon
+	Actor55: evolved_tower_grapeshotcannon
 		Owner: Creeps
 		Location: 57,16
 		TurretFacing: 92
-	Actor56: evolved_grapeshotcannon
+	Actor56: evolved_tower_grapeshotcannon
 		Owner: Creeps
 		Location: 48,16
 		TurretFacing: 92

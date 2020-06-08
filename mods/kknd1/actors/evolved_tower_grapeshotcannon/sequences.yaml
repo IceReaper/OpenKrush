@@ -1,0 +1,23 @@
+evolved_tower_grapeshotcannon:
+	projectile: SPRITES.LVL|GrapeShotCannon.mobd
+		Facings: -16
+		ZOffset: 1000
+	turret: SPRITES.LVL|GrapeShotCannon.mobd
+		Start: 16
+		Facings: -16
+		Offset: 1,-17
+	idle: SPRITES.LVL|GrapeShotCannon.mobd
+		Start: 32
+		Offset: 1,-17
+	make0: SPRITES.LVL|GrapeShotCannon.mobd
+		Start: 33
+		Offset: 1,-17
+	make1: SPRITES.LVL|GrapeShotCannon.mobd
+		Start: 34
+		Offset: 1,-17
+	make2: SPRITES.LVL|GrapeShotCannon.mobd
+		Start: 35
+		Offset: 1,-17
+	damaged-idle: actors/evolved_tower_grapeshotcannon/frames.png
+		Offset: 1,-17
+	icon: actors/evolved_tower_grapeshotcannon/icon.png

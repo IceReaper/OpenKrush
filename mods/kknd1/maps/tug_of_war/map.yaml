@@ -185,11 +185,11 @@ Actors:
 	Actor69: urban_trees_5
 		Owner: Neutral
 		Location: 45,5
-	Actor71: evolved_rotarycannon
+	Actor71: evolved_tower_rotarycannon
 		Owner: Creeps
 		Location: 43,10
 		TurretFacing: 92
-	Actor72: evolved_rotarycannon
+	Actor72: evolved_tower_rotarycannon
 		Owner: Creeps
 		Location: 52,10
 		TurretFacing: 92

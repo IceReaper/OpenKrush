@@ -1,0 +1,20 @@
+evolved_tower_grapeshotcannon:
+	Inherits: ^weapon_explosion
+	Range: 7c0
+	Burst: 5
+	BurstDelays: 1
+	ReloadDelay: 50
+	StartBurstReport: kknd1|actors/evolved_tower_grapeshotcannon/sound.wav
+	#Report: MUTE.SLV|9.wav
+	Projectile: Bullet
+		Image: evolved_tower_grapeshotcannon
+		Palette: kknd
+		Sequences: projectile
+		Speed: 655
+		Inaccuracy: 1c0
+		Blockable: false
+	Warhead@Damage: SpreadDamage
+		Versus:
+			infantry: 20
+			vehicle: 17
+			building: 12

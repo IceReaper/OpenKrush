@@ -1175,11 +1175,11 @@ Actors:
 	Actor451: oilpatch
 		Owner: Neutral
 		Location: 7,49
-	Actor454: evolved_machinegunnest
+	Actor454: evolved_tower_machinegunnest
 		Owner: Creeps
 		Location: 45,10
 		TurretFacing: 92
-	Actor455: evolved_machinegunnest
+	Actor455: evolved_tower_machinegunnest
 		Owner: Creeps
 		Location: 50,10
 		TurretFacing: 92
@@ -1201,11 +1201,11 @@ Actors:
 	Actor461: bunker_techbunker
 		Owner: Neutral
 		Location: 47,65
-	Actor462: evolved_rotarycannon
+	Actor462: evolved_tower_rotarycannon
 		Owner: Creeps
 		Location: 51,67
 		TurretFacing: 92
-	Actor463: evolved_rotarycannon
+	Actor463: evolved_tower_rotarycannon
 		Owner: Creeps
 		Location: 44,67
 		TurretFacing: 92
