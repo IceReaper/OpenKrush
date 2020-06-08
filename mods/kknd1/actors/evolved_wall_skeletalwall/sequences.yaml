@@ -1,0 +1,13 @@
+evolved_wall_skeletalwall:
+	idle: actors/evolved_wall_skeletalwall/frames.png
+		Length: 16
+	damaged-idle: actors/evolved_wall_skeletalwall/frames.png
+		Start: 16
+		Length: 16
+	make0: actors/evolved_wall_skeletalwall/frames.png
+		Start: 32
+	make1: actors/evolved_wall_skeletalwall/frames.png
+		Start: 33
+	make2: actors/evolved_wall_skeletalwall/frames.png
+		Start: 34
+	icon: actors/evolved_wall_skeletalwall/icon.png

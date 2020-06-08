@@ -174,55 +174,55 @@ Actors:
 	Actor44: highland_trees_3
 		Owner: Neutral
 		Location: 64,50
-	Actor51: evolved_skeletalwall
+	Actor51: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 57,44
-	Actor52: evolved_skeletalwall
+	Actor52: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 56,44
-	Actor53: evolved_skeletalwall
+	Actor53: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 55,44
-	Actor54: evolved_skeletalwall
+	Actor54: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 54,44
-	Actor55: evolved_skeletalwall
+	Actor55: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 54,44
-	Actor56: evolved_skeletalwall
+	Actor56: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 53,44
-	Actor57: evolved_skeletalwall
+	Actor57: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 52,44
-	Actor58: evolved_skeletalwall
+	Actor58: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 58,45
-	Actor59: evolved_skeletalwall
+	Actor59: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 57,45
-	Actor60: evolved_skeletalwall
+	Actor60: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 56,45
-	Actor61: evolved_skeletalwall
+	Actor61: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 55,45
-	Actor62: evolved_skeletalwall
+	Actor62: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 55,45
-	Actor63: evolved_skeletalwall
+	Actor63: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 54,45
-	Actor64: evolved_skeletalwall
+	Actor64: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 53,45
-	Actor65: evolved_skeletalwall
+	Actor65: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 52,45
-	Actor66: evolved_skeletalwall
+	Actor66: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 52,45
-	Actor67: evolved_skeletalwall
+	Actor67: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 51,45
 	Actor68: urban_objects_16
@@ -633,61 +633,61 @@ Actors:
 	Actor215: oilpatch
 		Owner: Neutral
 		Location: 104,25
-	Actor208: evolved_skeletalwall
+	Actor208: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 50,45
-	Actor216: evolved_skeletalwall
+	Actor216: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 59,45
-	Actor239: evolved_skeletalwall
+	Actor239: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 59,46
-	Actor240: evolved_skeletalwall
+	Actor240: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 50,46
-	Actor241: evolved_skeletalwall
+	Actor241: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 51,46
-	Actor242: evolved_skeletalwall
+	Actor242: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 51,46
-	Actor243: evolved_skeletalwall
+	Actor243: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 52,46
-	Actor244: evolved_skeletalwall
+	Actor244: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 53,46
-	Actor245: evolved_skeletalwall
+	Actor245: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 53,46
-	Actor246: evolved_skeletalwall
+	Actor246: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 54,46
-	Actor247: evolved_skeletalwall
+	Actor247: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 54,46
-	Actor248: evolved_skeletalwall
+	Actor248: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 56,46
-	Actor249: evolved_skeletalwall
+	Actor249: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 56,46
-	Actor250: evolved_skeletalwall
+	Actor250: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 57,46
-	Actor251: evolved_skeletalwall
+	Actor251: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 55,46
-	Actor252: evolved_skeletalwall
+	Actor252: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 55,46
-	Actor253: evolved_skeletalwall
+	Actor253: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 57,46
-	Actor254: evolved_skeletalwall
+	Actor254: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 58,46
-	Actor255: evolved_skeletalwall
+	Actor255: evolved_wall_skeletalwall
 		Owner: Creeps
 		Location: 58,46
 	Actor236: oilpatch

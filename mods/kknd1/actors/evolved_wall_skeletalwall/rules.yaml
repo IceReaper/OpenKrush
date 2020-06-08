@@ -1,5 +1,5 @@
-evolved_skeletalwall:
-	Inherits: ^EvolvedWall
+evolved_wall_skeletalwall:
+	Inherits: ^CoreWall
 	Tooltip:
 		Name: Skeletal Wall
 	Valued:
@@ -10,4 +10,6 @@ evolved_skeletalwall:
 		BuildDuration: 150
 		Level: 2
 	WithWallSpriteBody:
-		Type: evolved_barbedwire
+		Type: evolved_wall_skeletalwall
+	AdvancedBuildable:
+		Prerequisites: evolved_clanhall
