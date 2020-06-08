@@ -19,8 +19,8 @@ Packages:
 	kknd1|bits/notifications: notifications
 
 MapFolders:
-	kknd1|maps: System
-	kknd1|maps/Classic_Multiplayer: System
+	kknd1|maps/classic: System
+	kknd1|maps/multiplayer: System
 	~^maps/kknd1: User
 
 Rules:
