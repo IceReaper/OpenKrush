@@ -12,7 +12,7 @@ evolved_infantry_mekanik:
 	RevealsShroud:
 		Range: 5c0
 	AdvancedBuildable:
-		Prerequisites: evolved_warriorhall
+		Prerequisites: evolved_infantry
 		BuildDuration: 150
 		Level: 0
 	Voiced:

@@ -10,13 +10,13 @@ evolved_vehicle_clanhallwagon:
 		Speed: 40
 		TurnSpeed: 5
 	AdvancedBuildable:
-		Prerequisites: evolved_beastforge
+		Prerequisites: evolved_vehicles
 		BuildDuration: 1000
 		Level: 3
 	RevealsShroud:
 		Range: 11c0
 	Transforms:
-		IntoActor: evolved_clanhall
+		IntoActor: evolved_building_clanhall
 		TransformSounds: MUTE.SLV|189.wav
 	AdvancedSelectionDecorations:
 		Offset: 0,-14

@@ -12,7 +12,7 @@ evolved_vehicle_monstertruck:
 		Speed: 70
 		TurnSpeed: 8
 	AdvancedBuildable:
-		Prerequisites: evolved_beastforge
+		Prerequisites: evolved_vehicles
 		BuildDuration: 300
 		Level: 1
 	RevealsShroud:

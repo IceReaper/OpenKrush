@@ -1,0 +1,38 @@
+evolved_building_powerstation:
+	Inherits@1: ^CoreBuilding
+	Inherits@2: ^ProcessesOil
+	Inherits@3: ^AnimatedBuilding
+	Tooltip:
+		Name: Power Station
+	Valued:
+		Cost: 1500
+	Health:
+		HP: 4000
+	AdvancedBuildable:
+		Prerequisites: evolved_buildings
+		BuildDuration: 850
+		BuildLimit: 8
+	Building:
+		Dimensions: 4,3
+		Footprint: xxxx xxx= ====
+	HitShape:
+		Type: Rectangle
+			TopLeft: -2048, -1536
+			BottomRight: 2048, -512
+		TargetableOffsets: 1638,-1536,0, 1638,-512,0, 1638,512,0, 1638,1536,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
+	Selectable:
+		Bounds: 160, 32, 0, -32
+	FreeActor:
+		Actor: evolved_vehicle_oiltanker
+		SpawnOffset: 1,1
+		Facing: 96
+		RequiresCondition: !selfconstructing && !deconstructing
+	Researchable:
+		Offset: 4,-128
+		RequiresCondition: !selfconstructing && !deconstructing
+	AdvancedSelectionDecorations:
+		Offset: -4,-44
+	TechnicianRepairable:
+		Offset: 5,-30
+	Dock:
+		Position: -800,96,0

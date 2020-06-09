@@ -13,7 +13,7 @@ evolved_infantry_kingzog:
 	RevealsShroud:
 		Range: 5c0
 	AdvancedBuildable:
-		Prerequisites: evolved_warriorhall
+		Prerequisites: evolved_infantry
 		BuildDuration: 250
 		Level: -1
 	OffsetsArmament:

@@ -11,7 +11,7 @@ evolved_vehicle_giantscorpion:
 		Speed: 60
 		TurnSpeed: 8
 	AdvancedBuildable:
-		Prerequisites: evolved_beastforge
+		Prerequisites: evolved_beasts
 		BuildDuration: 300
 		Level: 2
 	RevealsShroud:

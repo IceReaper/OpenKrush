@@ -49,11 +49,3 @@ evolved.colorpicker:
 		Palette: colorpicker
 	-AdvancedBuildable:
 	-MapEditorData:
-
-^EvolvedBuilding:
-	Inherits: ^CoreBuilding
-	AdvancedBuildable:
-		Prerequisites: evolved_clanhall
-	ProvidesPrerequisite@Generic:
-		Prerequisite: evolved_building
-		RequiresCondition: !selfconstructing && !deconstructing

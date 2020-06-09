@@ -12,7 +12,7 @@ evolved_vehicle_chopper:
 		Speed: 115
 		TurnSpeed: 41
 	AdvancedBuildable:
-		Prerequisites: evolved_beastforge
+		Prerequisites: evolved_vehicles
 		BuildDuration: 125
 		Level: -1
 	RevealsShroud:

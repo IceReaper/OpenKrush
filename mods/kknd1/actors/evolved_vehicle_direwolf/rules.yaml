@@ -13,7 +13,7 @@ evolved_vehicle_direwolf:
 		Speed: 115
 		TurnSpeed: 41
 	AdvancedBuildable:
-		Prerequisites: evolved_beastforge
+		Prerequisites: evolved_beasts
 		BuildDuration: 150
 		Level: 0
 	RevealsShroud:

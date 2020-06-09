@@ -9,6 +9,8 @@
 		BuildSounds: SURV.SLV|193.wav
 	SaboteurConquerable:
 		RequiresCondition: !selfconstructing && !deconstructing
+	TechnicianRepairable:
+		RequiresCondition: !selfconstructing && !deconstructing
 
 ^CoreTower:
 	Building:

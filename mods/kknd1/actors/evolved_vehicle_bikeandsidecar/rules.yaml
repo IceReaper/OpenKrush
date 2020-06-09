@@ -13,7 +13,7 @@ evolved_vehicle_bikeandsidecar:
 		Speed: 90
 		TurnSpeed: 8
 	AdvancedBuildable:
-		Prerequisites: evolved_beastforge
+		Prerequisites: evolved_vehicles
 		BuildDuration: 150
 		Level: 0
 	RevealsShroud:

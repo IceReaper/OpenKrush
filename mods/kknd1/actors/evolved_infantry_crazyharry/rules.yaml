@@ -13,7 +13,7 @@ evolved_infantry_crazyharry:
 	RevealsShroud:
 		Range: 7c0
 	AdvancedBuildable:
-		Prerequisites: evolved_warriorhall
+		Prerequisites: evolved_infantry
 		BuildDuration: 300
 		Level: 5
 	OffsetsArmament:

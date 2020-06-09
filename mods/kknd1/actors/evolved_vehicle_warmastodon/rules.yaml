@@ -11,7 +11,7 @@ evolved_vehicle_warmastodon:
 		Speed: 55
 		TurnSpeed: 8
 	AdvancedBuildable:
-		Prerequisites: evolved_beastforge
+		Prerequisites: evolved_beasts
 		BuildDuration: 650
 		Level: 3
 	RevealsShroud:

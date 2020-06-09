@@ -12,7 +12,7 @@ evolved_vehicle_missilecrab:
 		Speed: 45
 		TurnSpeed: 8
 	AdvancedBuildable:
-		Prerequisites: evolved_beastforge
+		Prerequisites: evolved_beasts
 		BuildDuration: 1000
 		Level: 5
 	RevealsShroud:

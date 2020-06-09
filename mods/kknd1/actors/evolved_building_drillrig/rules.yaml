@@ -1,0 +1,33 @@
+evolved_building_drillrig:
+	Inherits@1: ^CoreBuilding
+	Inherits@2: ^AnimatedBuilding
+	Inherits@3: ^ExtractsOil
+	Tooltip:
+		Name: Drill Rig
+	Valued:
+		Cost: 1000
+	Health:
+		HP: 4000
+	AdvancedBuildable:
+		Prerequisites: evolved_buildings
+		BuildDuration: 625
+		Level: -1
+	Building:
+		LocalCenterOffset: 0,512,0
+		Dimensions: 5,5
+		Footprint: ===== ==x== =xxx= =x=== =====
+	HitShape:
+		Type: Rectangle
+			TopLeft: -512, -1536
+			BottomRight: 512, -512
+		TargetableOffsets: 819,0,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
+	Selectable:
+		Bounds: 64, 64, 0, -32
+	Dock:
+		Position: -1000,400,0
+	AdvancedSelectionDecorations:
+		Offset: -3,-12
+	GivesBuildableArea:
+		AreaTypes: defence
+	TechnicianRepairable:
+		Offset: 0,-30

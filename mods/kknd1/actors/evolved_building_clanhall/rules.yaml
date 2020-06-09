@@ -1,0 +1,35 @@
+evolved_building_clanhall:
+	Inherits@1: ^CoreBuilding
+	Inherits@2: ^ProducesBuildings
+	Inherits@3: ^AnimatedBuilding
+	Tooltip:
+		Name: Clanhall
+	Valued:
+		Cost: 1250
+	Health:
+		HP: 6000
+	ProvidesPrerequisite@buildings:
+		Prerequisite: evolved_buildings
+		RequiresCondition: !selfconstructing && !deconstructing
+	ProvidesPrerequisite@towers:
+		Prerequisite: evolved_towers
+		RequiresCondition: !selfconstructing && !deconstructing
+	ProvidesPrerequisite@walls:
+		Prerequisite: evolved_walls
+		RequiresCondition: !selfconstructing && !deconstructing
+	Building:
+		Dimensions: 5,4
+		Footprint: =xxx= xxxx= xxxx= =====
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1536, -2048
+			BottomRight: 1536, 1024
+		TargetableOffsets: -819,-1024,0, -819,0,0, -819,1024,0, 819,-1024,0, 819,0,0, 819,1024,0, 2458,-1024,0, 2458,0,0, 2458,1024,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
+	Selectable:
+		Bounds: 96, 96, 0, -16
+	AdvancedSelectionDecorations:
+		Offset: -12,-12
+	Researchable:
+		Offset: 11,-102
+	TechnicianRepairable:
+		Offset: 0,-50

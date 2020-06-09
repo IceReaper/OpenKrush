@@ -1,0 +1,41 @@
+evolved_building_beastforge:
+	Inherits@1: ^CoreBuilding
+	Inherits@2: ^ProducesVehicles
+	Inherits@3: ^AnimatedBuilding
+	Tooltip:
+		Name: Beast Forge
+	TooltipDescription:
+		Description: Produces vehicles & beasts
+	Valued:
+		Cost: 1500
+	Health:
+		HP: 4000
+	AdvancedBuildable:
+		Prerequisites: evolved_buildings
+		BuildDuration: 1000
+	ProvidesPrerequisite@vehicles:
+		Prerequisite: evolved_vehicles
+	ProvidesPrerequisite@beasts:
+		Prerequisite: evolved_beasts
+	Building:
+		Dimensions: 5,4
+		Footprint: =xxx= xxxxx ===== =====
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1536, -2048
+			BottomRight: 1536, 0
+		TargetableOffsets: 819,-1024,0, 819,0,0, 819,1024,0, 2458,-1024,0, 2458,0,0, 2458,1024,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
+	Selectable:
+		Bounds: 128, 96, 0, -32
+	AdvancedSelectionDecorations:
+		Offset: -1,-7
+	Researchable:
+		Offset: 0,-119
+	TechnicianRepairable:
+		Offset: 10,-50
+	Exit:
+		SpawnOffset: -1c0,0c50,0
+		ExitCell: 0,2
+		Facing: 75
+	RallyPoint:
+		Offset: 0,2

@@ -1,0 +1,19 @@
+evolved_building_warriorhall:
+	make0: actors/evolved_building_warriorhall/frames.png
+		Offset: 12,-22
+	make1: actors/evolved_building_warriorhall/frames.png
+		Start: 1
+		Offset: 12,-22
+	make2: actors/evolved_building_warriorhall/frames.png
+		Start: 2
+		Offset: 12,-22
+	idle: actors/evolved_building_warriorhall/frames.png
+		Start: 3
+		Offset: 12,-22
+	damaged-idle: actors/evolved_building_warriorhall/frames.png
+		Start: 4
+		Offset: 12,-22
+	critical-idle: actors/evolved_building_warriorhall/frames.png
+		Start: 5
+		Offset: 12,-22
+	icon: actors/evolved_building_warriorhall/icon.png

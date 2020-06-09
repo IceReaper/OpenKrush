@@ -12,4 +12,4 @@ evolved_wall_skeletalwall:
 	WithWallSpriteBody:
 		Type: evolved_wall_skeletalwall
 	AdvancedBuildable:
-		Prerequisites: evolved_clanhall
+		Prerequisites: evolved_walls

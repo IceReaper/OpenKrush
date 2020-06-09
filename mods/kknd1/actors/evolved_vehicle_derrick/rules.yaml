@@ -10,13 +10,13 @@ evolved_vehicle_derrick:
 		Speed: 40
 		TurnSpeed: 8
 	AdvancedBuildable:
-		Prerequisites: evolved_beastforge
+		Prerequisites: evolved_vehicles
 		BuildDuration: 500
 		Level: 0
 	RevealsShroud:
 		Range: 7c0
 	DeploysOnActor:
-		IntoActor: evolved_drillrig
+		IntoActor: evolved_building_drillrig
 	AdvancedSelectionDecorations:
 		Offset: -2,3
 	Voiced:

@@ -1,0 +1,23 @@
+evolved_building_blacksmith:
+	animation: SPRITES.LVL|Blacksmith.mobd
+		Length: 4
+		Tick: 120
+		Offset: -7,-34
+	damaged-idle: SPRITES.LVL|Blacksmith.mobd
+		Start: 4
+		Offset: -7,-34
+	idle: SPRITES.LVL|Blacksmith.mobd
+		Start: 5
+		Offset: -7,-34
+	make0: SPRITES.LVL|Blacksmith.mobd
+		Start: 6
+		Offset: -7,-34
+	make1: SPRITES.LVL|Blacksmith.mobd
+		Start: 7
+		Offset: -7,-34
+	make2: SPRITES.LVL|Blacksmith.mobd
+		Start: 8
+		Offset: -7,-34
+	critical-idle: actors/evolved_building_blacksmith/frames.png
+		Offset: -7,-34
+	icon: actors/evolved_building_blacksmith/icon.png

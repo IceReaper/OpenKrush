@@ -10,7 +10,7 @@ evolved_vehicle_oiltanker:
 		Speed: 45
 		TurnSpeed: 8
 	AdvancedBuildable:
-		Prerequisites: evolved_beastforge
+		Prerequisites: evolved_vehicles
 		BuildDuration: 600
 		Level: 2
 	RevealsShroud:
