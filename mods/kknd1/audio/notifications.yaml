@@ -1,29 +1,23 @@
-Sounds:
-	DefaultVariant: .wav
-	Notifications:
-		Beacon: kknd|bits/beacon
-		ChatLine: kknd|bits/chat
-		ClickSound: kknd1|bits/sounds/click
-
+# TODO split
 Speech:
-	DefaultVariant: .wav
+	DefaultVariant: # TODO remove .aud as default from engine!
 	Prefixes:
 		survivors: survivors_
 		evolved: evolved_
 	Notifications:
-		BuildingReady: BuildingReady, BuildingReady2
-		ResearchStarted: ResearchStarted
-		ResearchCompleted: ResearchCompleted1, ResearchCompleted2
+		BuildingReady: BuildingReady.wav, BuildingReady2.wav
+		ResearchStarted: ResearchStarted.wav
+		ResearchCompleted: ResearchCompleted1.wav, ResearchCompleted2.wav
 		ResearchCanceled:
-		AirstrikeReady: AirstrikeReady
-		EnemyInfiltrated: EnemyInfiltrated
-		EnemyConquered: EnemyConquered
-		BuildingLost: BuildingLost
-		BuildingUnderAttack: BuildingUnderAttack
-		UnitUnderAttack: UnitUnderAttack
-		UnitUnderAttackVeteran: UnitUnderAttackVeteran
-		TankerUnderAttack: TankerUnderAttack
-		DrillRigUnderAttack: DrillRigUnderAttack
-		BunkerUnderAttack: BunkerUnderAttack
-		DrillrigLow: DrillrigLow, DrillrigLow2
-		DrillrigEmpty: DrillrigEmpty
+		AirstrikeReady: AirstrikeReady.wav
+		EnemyInfiltrated: EnemyInfiltrated.wav
+		EnemyConquered: EnemyConquered.wav
+		BuildingLost: BuildingLost.wav
+		BuildingUnderAttack: BuildingUnderAttack.wav
+		UnitUnderAttack: UnitUnderAttack.wav
+		UnitUnderAttackVeteran: UnitUnderAttackVeteran.wav
+		TankerUnderAttack: TankerUnderAttack.wav
+		DrillRigUnderAttack: DrillRigUnderAttack.wav
+		BunkerUnderAttack: BunkerUnderAttack.wav
+		DrillrigLow: DrillrigLow.wav, DrillrigLow2.wav
+		DrillrigEmpty: DrillrigEmpty.wav

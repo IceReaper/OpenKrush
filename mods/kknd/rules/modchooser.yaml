@@ -1,6 +1,0 @@
-World:
-	AlwaysVisible:
-	PaletteFromPng:
-		Name: cursor
-		Filename: bits/cursor.png
-		CursorPalette: true

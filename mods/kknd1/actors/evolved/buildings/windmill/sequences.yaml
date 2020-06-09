@@ -1,0 +1,26 @@
+evolved_building_windmill:
+	idle: actors/evolved/buildings/windmill/frames.png
+		Start: 0
+	make0: actors/evolved/buildings/windmill/frames.png
+		Start: 1
+	make1: actors/evolved/buildings/windmill/frames.png
+		Start: 2
+	make2: actors/evolved/buildings/windmill/frames.png
+		Start: 3
+	damaged-idle: actors/evolved/buildings/windmill/frames.png
+		Start: 4
+	critical-idle: actors/evolved/buildings/windmill/frames.png
+		Start: 5
+	animation: actors/evolved/buildings/windmill/frames.png
+		Start: 6
+		Length: 16
+		Tick: 80
+	damaged-animation: actors/evolved/buildings/windmill/frames.png
+		Start: 22
+		Length: 32
+		Tick: 80
+	critical-animation: actors/evolved/buildings/windmill/frames.png
+		Start: 54
+		Length: 32
+		Tick: 80
+	icon: actors/evolved/buildings/windmill/icon.png

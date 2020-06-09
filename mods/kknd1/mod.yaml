@@ -38,49 +38,50 @@ Rules:
 	kknd1|rules/survivors-buildings.yaml
 	kknd1|rules/survivors-towers.yaml
 	kknd1|rules/survivors-walls.yaml
-	kknd1|rules/evolved.yaml
 	kknd1|rules/ai.yaml
 	kknd1|rules/mapobjects-neutral.yaml
 	kknd1|rules/mapobjects-highland.yaml
 	kknd1|rules/mapobjects-desert.yaml
 	kknd1|rules/mapobjects-urban.yaml
-	kknd1|actors/temp.yaml
-	kknd1|actors/evolved_infantry_berserker/rules.yaml
-	kknd1|actors/evolved_infantry_shotgunner/rules.yaml
-	kknd1|actors/evolved_infantry_pyromaniac/rules.yaml
-	kknd1|actors/evolved_infantry_rioter/rules.yaml
-	kknd1|actors/evolved_infantry_bazooka/rules.yaml
-	kknd1|actors/evolved_infantry_crazyharry/rules.yaml
-	kknd1|actors/evolved_infantry_kingzog/rules.yaml
-	kknd1|actors/evolved_infantry_mekanik/rules.yaml
-	kknd1|actors/evolved_infantry_vandal/rules.yaml
-	kknd1|actors/evolved_vehicle_direwolf/rules.yaml
-	kknd1|actors/evolved_vehicle_chopper/rules.yaml
-	kknd1|actors/evolved_vehicle_bikeandsidecar/rules.yaml
-	kknd1|actors/evolved_vehicle_monstertruck/rules.yaml
-	kknd1|actors/evolved_vehicle_giantscorpion/rules.yaml
-	kknd1|actors/evolved_vehicle_warmastodon/rules.yaml
-	kknd1|actors/evolved_vehicle_giantbeetle/rules.yaml
-	kknd1|actors/evolved_vehicle_missilecrab/rules.yaml
-	kknd1|actors/evolved_vehicle_oiltanker/rules.yaml
-	kknd1|actors/evolved_vehicle_derrick/rules.yaml
-	kknd1|actors/evolved_vehicle_clanhallwagon/rules.yaml
-	kknd1|actors/evolved_aircraft_wasp/rules.yaml
-	kknd1|actors/evolved_building_clanhall/rules.yaml
-	kknd1|actors/evolved_building_warriorhall/rules.yaml
-	kknd1|actors/evolved_building_beastenclosure/rules.yaml
-	kknd1|actors/evolved_building_blacksmith/rules.yaml
-	kknd1|actors/evolved_building_beastforge/rules.yaml
-	kknd1|actors/evolved_building_menagerie/rules.yaml
-	kknd1|actors/evolved_building_alchemyhall/rules.yaml
-	kknd1|actors/evolved_building_powerstation/rules.yaml
-	kknd1|actors/evolved_building_drillrig/rules.yaml
-	kknd1|actors/evolved_building_windmill/rules.yaml
-	kknd1|actors/evolved_building_vespiary/rules.yaml
-	kknd1|actors/evolved_tower_machinegunnest/rules.yaml
-	kknd1|actors/evolved_tower_grapeshotcannon/rules.yaml
-	kknd1|actors/evolved_tower_rotarycannon/rules.yaml
-	kknd1|actors/evolved_wall_skeletalwall/rules.yaml
+	# TODO refactor above
+	kknd1|core/mechanics.yaml
+	kknd1|actors/evolved/rules.yaml
+	kknd1|actors/evolved/infantry/berserker/rules.yaml
+	kknd1|actors/evolved/infantry/shotgunner/rules.yaml
+	kknd1|actors/evolved/infantry/pyromaniac/rules.yaml
+	kknd1|actors/evolved/infantry/rioter/rules.yaml
+	kknd1|actors/evolved/infantry/bazooka/rules.yaml
+	kknd1|actors/evolved/infantry/crazyharry/rules.yaml
+	kknd1|actors/evolved/infantry/kingzog/rules.yaml
+	kknd1|actors/evolved/infantry/mekanik/rules.yaml
+	kknd1|actors/evolved/infantry/vandal/rules.yaml
+	kknd1|actors/evolved/vehicles/direwolf/rules.yaml
+	kknd1|actors/evolved/vehicles/chopper/rules.yaml
+	kknd1|actors/evolved/vehicles/bikeandsidecar/rules.yaml
+	kknd1|actors/evolved/vehicles/monstertruck/rules.yaml
+	kknd1|actors/evolved/vehicles/giantscorpion/rules.yaml
+	kknd1|actors/evolved/vehicles/warmastodon/rules.yaml
+	kknd1|actors/evolved/vehicles/giantbeetle/rules.yaml
+	kknd1|actors/evolved/vehicles/missilecrab/rules.yaml
+	kknd1|actors/evolved/vehicles/oiltanker/rules.yaml
+	kknd1|actors/evolved/vehicles/derrick/rules.yaml
+	kknd1|actors/evolved/vehicles/clanhallwagon/rules.yaml
+	kknd1|actors/evolved/aircrafts/wasp/rules.yaml
+	kknd1|actors/evolved/buildings/clanhall/rules.yaml
+	kknd1|actors/evolved/buildings/warriorhall/rules.yaml
+	kknd1|actors/evolved/buildings/beastenclosure/rules.yaml
+	kknd1|actors/evolved/buildings/blacksmith/rules.yaml
+	kknd1|actors/evolved/buildings/beastforge/rules.yaml
+	kknd1|actors/evolved/buildings/menagerie/rules.yaml
+	kknd1|actors/evolved/buildings/alchemyhall/rules.yaml
+	kknd1|actors/evolved/buildings/powerstation/rules.yaml
+	kknd1|actors/evolved/buildings/drillrig/rules.yaml
+	kknd1|actors/evolved/buildings/windmill/rules.yaml
+	kknd1|actors/evolved/buildings/vespiary/rules.yaml
+	kknd1|actors/evolved/towers/machinegunnest/rules.yaml
+	kknd1|actors/evolved/towers/grapeshotcannon/rules.yaml
+	kknd1|actors/evolved/towers/rotarycannon/rules.yaml
+	kknd1|actors/evolved/walls/skeletalwall/rules.yaml
 
 Sequences:
 	kknd|sequences/misc.yaml
@@ -99,47 +100,47 @@ Sequences:
 	kknd1|sequences/mapobjects-desert.yaml
 	kknd1|sequences/mapobjects-urban.yaml
 	kknd1|core/weapon_bullet/sequences.yaml
-	kknd1|actors/evolved_infantry_berserker/sequences.yaml
-	kknd1|actors/evolved_infantry_shotgunner/sequences.yaml
-	kknd1|actors/evolved_infantry_pyromaniac/sequences.yaml
-	kknd1|actors/evolved_infantry_rioter/sequences.yaml
-	kknd1|actors/evolved_infantry_bazooka/sequences.yaml
-	kknd1|actors/evolved_infantry_crazyharry/sequences.yaml
-	kknd1|actors/evolved_infantry_kingzog/sequences.yaml
-	kknd1|actors/evolved_infantry_mekanik/sequences.yaml
-	kknd1|actors/evolved_infantry_vandal/sequences.yaml
-	kknd1|actors/evolved_vehicle_direwolf/sequences.yaml
-	kknd1|actors/evolved_vehicle_chopper/sequences.yaml
-	kknd1|actors/evolved_vehicle_bikeandsidecar/sequences.yaml
-	kknd1|actors/evolved_vehicle_monstertruck/sequences.yaml
-	kknd1|actors/evolved_vehicle_giantscorpion/sequences.yaml
-	kknd1|actors/evolved_vehicle_warmastodon/sequences.yaml
-	kknd1|actors/evolved_vehicle_giantbeetle/sequences.yaml
-	kknd1|actors/evolved_vehicle_missilecrab/sequences.yaml
-	kknd1|actors/evolved_vehicle_oiltanker/sequences.yaml
-	kknd1|actors/evolved_vehicle_derrick/sequences.yaml
-	kknd1|actors/evolved_vehicle_clanhallwagon/sequences.yaml
-	kknd1|actors/evolved_aircraft_wasp/sequences.yaml
-	kknd1|actors/evolved_building_clanhall/sequences.yaml
-	kknd1|actors/evolved_building_warriorhall/sequences.yaml
-	kknd1|actors/evolved_building_beastenclosure/sequences.yaml
-	kknd1|actors/evolved_building_blacksmith/sequences.yaml
-	kknd1|actors/evolved_building_beastforge/sequences.yaml
-	kknd1|actors/evolved_building_menagerie/sequences.yaml
-	kknd1|actors/evolved_building_alchemyhall/sequences.yaml
-	kknd1|actors/evolved_building_powerstation/sequences.yaml
-	kknd1|actors/evolved_building_drillrig/sequences.yaml
-	kknd1|actors/evolved_building_windmill/sequences.yaml
-	kknd1|actors/evolved_building_vespiary/sequences.yaml
-	kknd1|actors/evolved_tower_machinegunnest/sequences.yaml
-	kknd1|actors/evolved_tower_grapeshotcannon/sequences.yaml
-	kknd1|actors/evolved_tower_rotarycannon/sequences.yaml
-	kknd1|actors/evolved_wall_skeletalwall/sequences.yaml
+	# TODO refactor above
+	kknd1|actors/evolved/infantry/berserker/sequences.yaml
+	kknd1|actors/evolved/infantry/shotgunner/sequences.yaml
+	kknd1|actors/evolved/infantry/pyromaniac/sequences.yaml
+	kknd1|actors/evolved/infantry/rioter/sequences.yaml
+	kknd1|actors/evolved/infantry/bazooka/sequences.yaml
+	kknd1|actors/evolved/infantry/crazyharry/sequences.yaml
+	kknd1|actors/evolved/infantry/kingzog/sequences.yaml
+	kknd1|actors/evolved/infantry/mekanik/sequences.yaml
+	kknd1|actors/evolved/infantry/vandal/sequences.yaml
+	kknd1|actors/evolved/vehicles/direwolf/sequences.yaml
+	kknd1|actors/evolved/vehicles/chopper/sequences.yaml
+	kknd1|actors/evolved/vehicles/bikeandsidecar/sequences.yaml
+	kknd1|actors/evolved/vehicles/monstertruck/sequences.yaml
+	kknd1|actors/evolved/vehicles/giantscorpion/sequences.yaml
+	kknd1|actors/evolved/vehicles/warmastodon/sequences.yaml
+	kknd1|actors/evolved/vehicles/giantbeetle/sequences.yaml
+	kknd1|actors/evolved/vehicles/missilecrab/sequences.yaml
+	kknd1|actors/evolved/vehicles/oiltanker/sequences.yaml
+	kknd1|actors/evolved/vehicles/derrick/sequences.yaml
+	kknd1|actors/evolved/vehicles/clanhallwagon/sequences.yaml
+	kknd1|actors/evolved/aircrafts/wasp/sequences.yaml
+	kknd1|actors/evolved/buildings/clanhall/sequences.yaml
+	kknd1|actors/evolved/buildings/warriorhall/sequences.yaml
+	kknd1|actors/evolved/buildings/beastenclosure/sequences.yaml
+	kknd1|actors/evolved/buildings/blacksmith/sequences.yaml
+	kknd1|actors/evolved/buildings/beastforge/sequences.yaml
+	kknd1|actors/evolved/buildings/menagerie/sequences.yaml
+	kknd1|actors/evolved/buildings/alchemyhall/sequences.yaml
+	kknd1|actors/evolved/buildings/powerstation/sequences.yaml
+	kknd1|actors/evolved/buildings/drillrig/sequences.yaml
+	kknd1|actors/evolved/buildings/windmill/sequences.yaml
+	kknd1|actors/evolved/buildings/vespiary/sequences.yaml
+	kknd1|actors/evolved/towers/machinegunnest/sequences.yaml
+	kknd1|actors/evolved/towers/grapeshotcannon/sequences.yaml
+	kknd1|actors/evolved/towers/rotarycannon/sequences.yaml
+	kknd1|actors/evolved/walls/skeletalwall/sequences.yaml
 
 Weapons:
 	kknd1|core/weapon_bullet/weapons.yaml
 	kknd1|core/weapon_explosion/weapons.yaml
-	kknd|weapons/misc.yaml
 	kknd1|weapons/misc.yaml
 	kknd1|weapons/bunkers.yaml
 	kknd1|weapons/survivors-infantry.yaml
@@ -147,43 +148,47 @@ Weapons:
 	kknd1|weapons/survivors-aircrafts.yaml
 	kknd1|weapons/survivors-towers.yaml
 	kknd1|weapons/shrapnel.yaml
-	kknd1|actors/evolved_infantry_berserker/weapons.yaml
-	kknd1|actors/evolved_infantry_shotgunner/weapons.yaml
-	kknd1|actors/evolved_infantry_pyromaniac/weapons.yaml
-	kknd1|actors/evolved_infantry_rioter/weapons.yaml
-	kknd1|actors/evolved_infantry_bazooka/weapons.yaml
-	kknd1|actors/evolved_infantry_crazyharry/weapons.yaml
-	kknd1|actors/evolved_infantry_kingzog/weapons.yaml
-	kknd1|actors/evolved_infantry_vandal/weapons.yaml
-	kknd1|actors/evolved_vehicle_direwolf/weapons.yaml
-	kknd1|actors/evolved_vehicle_chopper/weapons.yaml
-	kknd1|actors/evolved_vehicle_bikeandsidecar/weapons.yaml
-	kknd1|actors/evolved_vehicle_monstertruck/weapons.yaml
-	kknd1|actors/evolved_vehicle_giantscorpion/weapons.yaml
-	kknd1|actors/evolved_vehicle_warmastodon/weapons.yaml
-	kknd1|actors/evolved_vehicle_giantbeetle/weapons.yaml
-	kknd1|actors/evolved_vehicle_missilecrab/weapons.yaml
-	kknd1|actors/evolved_tower_machinegunnest/weapons.yaml
-	kknd1|actors/evolved_tower_grapeshotcannon/weapons.yaml
-	kknd1|actors/evolved_tower_rotarycannon/weapons.yaml
-	kknd1|actors/evolved_aircraft_wasp/weapons.yaml
+	# TODO refactor above
+	kknd1|actors/evolved/infantry/berserker/weapons.yaml
+	kknd1|actors/evolved/infantry/shotgunner/weapons.yaml
+	kknd1|actors/evolved/infantry/pyromaniac/weapons.yaml
+	kknd1|actors/evolved/infantry/rioter/weapons.yaml
+	kknd1|actors/evolved/infantry/bazooka/weapons.yaml
+	kknd1|actors/evolved/infantry/crazyharry/weapons.yaml
+	kknd1|actors/evolved/infantry/kingzog/weapons.yaml
+	kknd1|actors/evolved/infantry/vandal/weapons.yaml
+	kknd1|actors/evolved/vehicles/direwolf/weapons.yaml
+	kknd1|actors/evolved/vehicles/chopper/weapons.yaml
+	kknd1|actors/evolved/vehicles/bikeandsidecar/weapons.yaml
+	kknd1|actors/evolved/vehicles/monstertruck/weapons.yaml
+	kknd1|actors/evolved/vehicles/giantscorpion/weapons.yaml
+	kknd1|actors/evolved/vehicles/warmastodon/weapons.yaml
+	kknd1|actors/evolved/vehicles/giantbeetle/weapons.yaml
+	kknd1|actors/evolved/vehicles/missilecrab/weapons.yaml
+	kknd1|actors/evolved/towers/machinegunnest/weapons.yaml
+	kknd1|actors/evolved/towers/grapeshotcannon/weapons.yaml
+	kknd1|actors/evolved/towers/rotarycannon/weapons.yaml
+	kknd1|actors/evolved/aircrafts/wasp/weapons.yaml
 
 Voices:
 	kknd1|audio/voices.yaml
-	kknd1|actors/evolved_vehicle_direwolf/voices.yaml
-	kknd1|actors/evolved_vehicle_giantscorpion/voices.yaml
-	kknd1|actors/evolved_vehicle_warmastodon/voices.yaml
-	kknd1|actors/evolved_vehicle_giantbeetle/voices.yaml
-	kknd1|actors/evolved_vehicle_missilecrab/voices.yaml
-	kknd1|actors/evolved_aircraft_wasp/voices.yaml
+	# TODO refactor above
+	kknd1|actors/survivors/voices.yaml
+	kknd1|actors/evolved/voices.yaml
+	kknd1|actors/evolved/vehicles/direwolf/voices.yaml
+	kknd1|actors/evolved/vehicles/giantscorpion/voices.yaml
+	kknd1|actors/evolved/vehicles/warmastodon/voices.yaml
+	kknd1|actors/evolved/vehicles/giantbeetle/voices.yaml
+	kknd1|actors/evolved/vehicles/missilecrab/voices.yaml
+	kknd1|actors/evolved/aircrafts/wasp/voices.yaml
 
 TileSets:
-	kknd1|tilesets/desert/_tileset.yaml
-	kknd1|tilesets/highland/_tileset.yaml
-	kknd1|tilesets/urban/_tileset.yaml
+	kknd1|tilesets/desert/tileset.yaml
+	kknd1|tilesets/highland/tileset.yaml
+	kknd1|tilesets/urban/tileset.yaml
 
 Cursors:
-	kknd1|cursors.yaml
+	kknd1|core/cursors.yaml
 
 Chrome:
 	kknd1|chrome.yaml
@@ -240,9 +245,11 @@ ChromeLayout:
 
 Notifications:
 	kknd1|audio/notifications.yaml
+	kknd1|core/notifications.yaml
 
 Music:
-	kknd1|audio/music.yaml
+	kknd1|actors/evolved/music.yaml
+	kknd1|actors/survivors/music.yaml
 
 Translations:
 
@@ -345,15 +352,3 @@ GameSpeeds:
 ColorValidator:
 	HsvSaturationRange: 0, 1
 	HsvValueRange: 0, 1
-
-ModContent:
-	InstallPromptMessage: Advanced Install includes options for copying the music\nthe videos and the campaign from a GoG installation.
-	HeaderMessage: Additional game content may be copied from GoG digital install.
-	Packages:
-		extra assets: Music and Movies
-			TestFiles: ^Content/kknd1/Movies/Intro.vbc
-			Sources: gog_galaxy, gog_offline
-			Required: false
-	Sources:
-		kknd1|installer/gog_galaxy.yaml
-		kknd1|installer/gog_offline.yaml

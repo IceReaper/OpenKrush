@@ -1,0 +1,23 @@
+evolved_infantry_vandal:
+	Inherits@muzzle: ^gun_8
+	Inherits@death: ^evolved_infantry_death
+	idle: SPRITES.LVL|Vandal.mobd
+		Facings: -16
+	aim: SPRITES.LVL|Vandal.mobd
+		Start: 16
+		Stride: 4
+		Facings: -16
+	shoot: SPRITES.LVL|Vandal.mobd
+		Start: 16
+		Length: 4
+		Tick: 120
+		Facings: -16
+	move: SPRITES.LVL|Vandal.mobd
+		Start: 80
+		Length: 6
+		Tick: 120
+		Facings: -16
+	bored: actors/evolved/infantry/vandal/bored.png
+		Length: 25
+		Tick: 60
+	icon: actors/evolved/infantry/vandal/icon.png

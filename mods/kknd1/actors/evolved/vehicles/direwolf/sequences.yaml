@@ -1,0 +1,27 @@
+evolved_vehicle_direwolf:
+	Inherits@muzzle: ^gun_16
+	idle: SPRITES.LVL|DireWolf.mobd
+		Start: 40
+		Facings: -16
+	aim: SPRITES.LVL|DireWolf.mobd
+		Start: 56
+		Stride: 5
+		Facings: -16
+	shoot: SPRITES.LVL|DireWolf.mobd
+		Start: 56
+		Length: 5
+		Tick: 60
+		Facings: -16
+	move: SPRITES.LVL|DireWolf.mobd
+		Start: 136
+		Length: 7
+		Tick: 60
+		Facings: -16
+	die: SPRITES.LVL|DireWolf.mobd
+		Start: 2
+		Length: 13
+		Tick: 120
+	die-explode: actors/evolved/vehicles/direwolf/frames.png
+		Length: 20
+		Tick: 60
+	icon: actors/evolved/vehicles/direwolf/icon.png

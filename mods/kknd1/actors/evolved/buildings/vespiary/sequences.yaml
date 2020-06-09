@@ -1,0 +1,14 @@
+evolved_building_vespiary:
+	make0: actors/evolved/buildings/vespiary/frames.png
+		Start: 0
+	make1: actors/evolved/buildings/vespiary/frames.png
+		Start: 1
+	make2: actors/evolved/buildings/vespiary/frames.png
+		Start: 2
+	idle: actors/evolved/buildings/vespiary/frames.png
+		Start: 3
+	damaged-idle: actors/evolved/buildings/vespiary/frames.png
+		Start: 4
+	critical-idle: actors/evolved/buildings/vespiary/frames.png
+		Start: 5
+	icon: actors/evolved/buildings/vespiary/icon.png

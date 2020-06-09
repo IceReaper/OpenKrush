@@ -1,0 +1,7 @@
+evolved_vehicle_warmastodon:
+	DefaultVariant: # TODO remove .aud as default from engine!
+	Voices:
+		Create: MUTE.SLV|160.wav
+		Select: MUTE.SLV|160.wav
+		Action: MUTE.SLV|159.wav, kknd1|actors/evolved/vehicles/warmastodon/sound1.wav, kknd1|actors/evolved/vehicles/warmastodon/sound3.wav
+		Attack: kknd1|actors/evolved/vehicles/warmastodon/sound2.wav

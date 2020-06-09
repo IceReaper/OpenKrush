@@ -1,9 +1,0 @@
-evolved_vehicle_clanhallwagon:
-	idle: SPRITES.LVL|ClanhallWagon.mobd
-		Facings: -16
-	move: SPRITES.LVL|ClanhallWagon.mobd
-		Start: 16
-		Length: 2
-		Tick: 120
-		Facings: -16
-	icon: actors/evolved_vehicle_clanhallwagon/icon.png

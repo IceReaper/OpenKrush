@@ -1,0 +1,9 @@
+evolved_vehicle_oiltanker:
+	idle: SPRITES.LVL|MOTanker.mobd
+		Facings: -16
+	move: SPRITES.LVL|MOTanker.mobd
+		Start: 16
+		Length: 2
+		Tick: 120
+		Facings: -16
+	icon: actors/evolved/vehicles/oiltanker/icon.png

@@ -1,0 +1,23 @@
+evolved_infantry_kingzog:
+	Inherits@muzzle: ^gun_8
+	Inherits@death: ^evolved_infantry_death
+	idle: SPRITES.LVL|KingZog.mobd
+		Facings: -16
+	aim: SPRITES.LVL|KingZog.mobd
+		Start: 16
+		Stride: 4
+		Facings: -16
+	shoot: SPRITES.LVL|KingZog.mobd
+		Start: 16
+		Length: 4
+		Tick: 120
+		Facings: -16
+	move: SPRITES.LVL|KingZog.mobd
+		Start: 80
+		Length: 6
+		Tick: 120
+		Facings: -16
+	bored: actors/evolved/infantry/kingzog/bored.png
+		Length: 9
+		Tick: 80
+	icon: actors/evolved/infantry/kingzog/icon.png

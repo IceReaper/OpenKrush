@@ -1,8 +1,0 @@
-demo: Demo Files
-	MirrorList: http://www.kknd-game.com/packages/KKNDKrossfireDemo.txt
-	Extract:
-		^Content/kknd2/Sounds/Evolved.lpk: LEVELS/ENGLISH/MUTE.SPK
-		^Content/kknd2/Sounds/Survivors.lpk: LEVELS/ENGLISH/SURV.SPK
-		^Content/kknd2/Sounds/Series9.lpk: LEVELS/ENGLISH/ROBO.SPK
-		^Content/kknd2/Sprites/Sprites.lpk: LEVELS/ENGLISH/GAMESPRT.LPK
-		^Content/kknd2/Movies/Melbourne House.vbc: FMV/MH.VBC

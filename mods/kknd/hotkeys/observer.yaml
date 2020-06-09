@@ -1,59 +1,59 @@
-# TODO does this work?
 ObserverCombinedView: MINUS
 	Description: All Players
-	Types: Observer
+	Types: Observer, Spectator
 
-# TODO does this work?
 ObserverWorldView: EQUALS
 	Description: Disable Shroud
-	Types: Observer
+	Types: Observer, Spectator
 
-# TODO does this work?
 ReplaySpeedSlow: F9
 	Description: Slow speed
-	Types: Replay
+	Types: Replay, Spectator
 
-# TODO does this work?
 ReplaySpeedRegular: F10
 	Description: Regular speed
-	Types: Replay
+	Types: Replay, Spectator
 
-# TODO does this work?
 ReplaySpeedFast: F11
 	Description: Fast speed
-	Types: Replay
+	Types: Replay, Spectator
 
-# TODO does this work?
 ReplaySpeedMax: F12
 	Description: Maximum speed
-	Types: Replay
+	Types: Replay, Spectator
 
-# TODO does this work?
-StatisticsBasic: F1
+StatisticsNone: F1
+	Description: Disable statistics
+	Types: Observer, Replay
+
+StatisticsBasic: F2
 	Description: Basic statistics
-	Types: Observer, Replay
+	Types: Observer, Replay, Spectator
 
-# TODO does this work?
-StatisticsEconomy: F2
+StatisticsEconomy: F3
 	Description: Economy statistics
-	Types: Observer, Replay
+	Types: Observer, Replay, Spectator
 
-# TODO does this work?
-StatisticsProduction: F3
+StatisticsProduction: F4
 	Description: Production statistics
+	Types: Observer, Replay, Spectator
+
+StatisticsSupportPowers: F5
+	Description: Support Power statistics
 	Types: Observer, Replay
 
-# TODO does this work?
-StatisticsCombat: F4
+StatisticsCombat: F6
 	Description: Combat statistics
-	Types: Observer, Replay
+	Types: Observer, Replay, Spectator
 
-# TODO does this work?
-StatisticsGraph: F5
+StatisticsArmy: F7
+	Description: Army statistics
+	Types: Observer, Replay, Spectator
+
+StatisticsGraph:
 	Description: Statistics graph
-	Types: Observer, Replay
+	Types: Observer, Replay, Spectator
 
-# TODO does this work?
-StatisticsArmyGraph: F6
+StatisticsArmyGraph:
 	Description: Army value graph
-	Types: Observer, Replay
+	Types: Observer, Replay, Spectator

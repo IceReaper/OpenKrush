@@ -1,0 +1,6 @@
+World:
+	AlwaysVisible:
+	PaletteFromPng:
+		Name: cursor
+		Filename: cursor.png
+		CursorPalette: true
