@@ -11,4 +11,4 @@ Description: Custom building spritesheet.
 **sound.wav**
 Author: Beam Software
 Source: Unused beta asset.
-Description: Bomber incomming sound.
+Description: Bomber incoming sound.

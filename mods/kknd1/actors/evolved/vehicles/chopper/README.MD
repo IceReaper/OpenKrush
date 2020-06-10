@@ -5,5 +5,5 @@ Description: Sidebar thumbnail.
 
 **frames.png**
 Author: Dzierzan
-Source: Self-made.
+Source: Self-made based on demo Dire Wolf and Bike&Sidecar.
 Description: Custom unit spritesheet.
