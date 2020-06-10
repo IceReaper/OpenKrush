@@ -4,7 +4,7 @@ evolved_vehicle_monstertruck:
 	Burst: 10
 	BurstDelays: 13
 	ReloadDelay: 38
-	Report: kknd1|actors/evolved/vehicles/monstertruck/weapon.wav
+	Report: MUTE.SLV|5.wav
 	Warhead@Damage: SpreadDamage
 		Versus:
 			infantry: 45

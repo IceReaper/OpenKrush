@@ -2,6 +2,6 @@ evolved_vehicle_giantbeetle:
 	DefaultVariant: # TODO remove .aud as default from engine!
 	Voices:
 		Create: MUTE.SLV|168.wav
-		Select: MUTE.SLV|168.wav, kknd1|actors/evolved/vehicles/giantbeetle/sound1.wav
-		Action: MUTE.SLV|169.wav, kknd1|actors/evolved/vehicles/giantbeetle/sound2.wav
-		Attack: MUTE.SLV|169.wav, kknd1|actors/evolved/vehicles/giantbeetle/sound2.wav
+		Select: MUTE.SLV|168.wav
+		Action: MUTE.SLV|169.wav
+		Attack: MUTE.SLV|169.wav

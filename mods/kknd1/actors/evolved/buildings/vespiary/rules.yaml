@@ -28,7 +28,7 @@ evolved_building_vespiary:
 		Icon: evolved_aircraft_wasp
 		ChargeInterval: 7500
 		EndChargeSound: evolved_AirstrikeReady.wav
-		IncomingSound: kknd1|bits/sounds/evolved_AirstrikeOrdered.wav
-		LaunchSound: kknd1|bits/sounds/evolved_AirstrikeOrdered.wav
+		IncomingSound: kknd1|actors/evolved/buildings/vespiary/sound.wav
+		LaunchSound: kknd1|actors/evolved/buildings/vespiary/sound.wav
 	AdvancedSelectionDecorations:
 		Offset: -3,-5

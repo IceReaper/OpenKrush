@@ -3,6 +3,6 @@ evolved_vehicle_direwolf:
 	Voices:
 		Create: MUTE.SLV|165.wav
 		Select: MUTE.SLV|165.wav
-		Action: MUTE.SLV|164.wav, kknd1|actors/evolved/vehicles/direwolf/sound1.wav
-		Attack: kknd1|actors/evolved/vehicles/direwolf/sound3.wav, kknd1|actors/evolved/vehicles/direwolf/sound2.wav
+		Action: MUTE.SLV|164.wav
+		Attack: MUTE.SLV|164.wav
 		Die: MUTE.SLV|174.wav, MUTE.SLV|175.wav, MUTE.SLV|176.wav, MUTE.SLV|177.wav, MUTE.SLV|178.wav
