@@ -8,6 +8,10 @@ survivors_building_outpost:
 		Cost: 1250
 	Health:
 		HP: 6000
+	AdvancedBuildable:
+		Prerequisites: survivors_buildings
+		BuildDuration: 1000
+		Level: -1
 	ProvidesPrerequisite@buildings:
 		Prerequisite: survivors_buildings
 		RequiresCondition: !selfconstructing && !deconstructing
