@@ -1,0 +1,24 @@
+survivors_tower_missilebattery:
+	Inherits@1: ^CoreTower
+	Inherits@2: ^CoreTurret
+	Tooltip:
+		Name: Missile Battery
+	Valued:
+		Cost: 1500
+	Health:
+		HP: 2000
+	AdvancedBuildable:
+		Prerequisites: survivors_towers
+		BuildDuration: 850
+		Level: 3
+	RevealsShroud:
+		Range: 10c0
+	OffsetsArmament:
+		Weapon: survivors_tower_missilebattery
+		LocalOffset: 0,0,500
+	Turreted:
+		TurnSpeed: 20
+	AdvancedSelectionDecorations:
+		Offset: -1,-16
+	TechnicianRepairable:
+		Offset: 0,-15

@@ -1,0 +1,26 @@
+survivors_tower_cannontower:
+	Inherits@muzzle: ^gun_16
+	shoot: SPRITES.LVL|CannonTower.mobd
+		Length: 3
+		Tick: 160
+		Facings: -16
+		Offset: 0,-10
+	turret: SPRITES.LVL|CannonTower.mobd
+		Start: 48
+		Facings: -16
+		Offset: 0,-10
+	idle: SPRITES.LVL|CannonTower.mobd
+		Start: 64
+		Offset: 0,-10
+	make0: SPRITES.LVL|CannonTower.mobd
+		Start: 65
+		Offset: 0,-10
+	make1: SPRITES.LVL|CannonTower.mobd
+		Start: 66
+		Offset: 0,-10
+	make2: SPRITES.LVL|CannonTower.mobd
+		Start: 67
+		Offset: 0,-10
+	damaged-idle: actors/survivors/towers/cannontower/frames.png
+		Offset: 0,-10
+	icon: actors/survivors/towers/cannontower/icon.png

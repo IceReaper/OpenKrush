@@ -1,0 +1,25 @@
+survivors_tower_missilebattery:
+	turret-reload: SPRITES.LVL|MissileBattery.mobd
+		Length: 9
+		Tick: 160
+		Offset: 0,-16
+	turret: SPRITES.LVL|MissileBattery.mobd
+		Start: 9
+		Facings: -16
+		Offset: 0,-16
+	damaged-idle: SPRITES.LVL|MissileBattery.mobd
+		Start: 25
+		Offset: 0,-16
+	idle: SPRITES.LVL|MissileBattery.mobd
+		Start: 26
+		Offset: 0,-16
+	make0: SPRITES.LVL|MissileBattery.mobd
+		Start: 27
+		Offset: 0,-16
+	make1: SPRITES.LVL|MissileBattery.mobd
+		Start: 28
+		Offset: 0,-16
+	make2: SPRITES.LVL|MissileBattery.mobd
+		Start: 29
+		Offset: 0,-16
+	icon: actors/survivors/towers/missilebattery/icon.png

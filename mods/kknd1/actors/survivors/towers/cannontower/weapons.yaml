@@ -1,0 +1,18 @@
+survivors_tower_cannontower:
+	Inherits: ^weapon_explosion
+	Range: 7c0
+	Burst: 2
+	BurstDelays: 4
+	ReloadDelay: 52
+	Report: SURV.SLV|9.wav
+	Projectile: Bullet
+		Image: projectile
+		Palette: kknd
+		Sequences: cannon_l
+		Speed: 450
+		Blockable: false
+	Warhead@Damage: SpreadDamage
+		Versus:
+			infantry: 172
+			vehicle: 258
+			building: 110

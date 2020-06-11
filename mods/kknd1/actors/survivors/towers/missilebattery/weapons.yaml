@@ -1,0 +1,21 @@
+survivors_tower_missilebattery:
+	Inherits: ^weapon_explosion
+	Range: 7c0
+	Burst: 3
+	BurstDelays: 13
+	ReloadDelay: 50
+	Report: SURV.SLV|14.wav
+	Projectile: Bullet
+		Image: projectile
+		Palette: kknd
+		Sequences: rocket_m
+		Speed: 250
+		TrailPalette: kknd
+		TrailImage: hit
+		TrailSequences: smoke
+		Blockable: false
+	Warhead@Damage: SpreadDamage
+		Versus:
+			infantry: 150
+			vehicle: 150
+			building: 100

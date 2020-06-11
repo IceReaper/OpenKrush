@@ -35,9 +35,9 @@ Player:
 			#survivors_building_powerstation: 1
 			survivors_geothermal: 25
 			survivors_building_researchlab: 100
-			survivors_guardtower: 50
-			survivors_missilebattery: 75
-			survivors_cannontower: 100
+			survivors_tower_guardtower: 50
+			survivors_tower_missilebattery: 75
+			survivors_tower_cannontower: 100
 			survivors_building_airfield: 100
 			evolved_building_warriorhall: 75
 			evolved_building_beastenclosure: 50

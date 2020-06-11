@@ -1,0 +1,26 @@
+survivors_tower_cannontower:
+	Inherits@1: ^CoreTower
+	Inherits@2: ^CoreTurret
+	Inherits@2: ^HasMuzzle
+	Tooltip:
+		Name: Cannon Tower
+	Valued:
+		Cost: 2500
+	Health:
+		HP: 2500
+	AdvancedBuildable:
+		Prerequisites: survivors_towers
+		BuildDuration: 1200
+		Level: 4
+	RevealsShroud:
+		Range: 10c0
+	OffsetsArmament:
+		Weapon: survivors_tower_cannontower
+		LocalOffset: 0,0,350
+		BurstOffsets: 0, 1, 0, 1
+	Turreted:
+		TurnSpeed: 20
+	AdvancedSelectionDecorations:
+		Offset: 0,1
+	TechnicianRepairable:
+		Offset: 0,-15

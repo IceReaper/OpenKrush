@@ -1,0 +1,12 @@
+survivors_tower_guardtower:
+	Inherits: ^weapon_bullet
+	Range: 7c0
+	Burst: 10
+	BurstDelays: 7
+	ReloadDelay: 38
+	Report: kknd1|bits/sounds/machinegun.wav #SURV.SLV|4.wav
+	Warhead@Damage: SpreadDamage
+		Versus:
+			infantry: 45
+			vehicle: 30
+			building: 15

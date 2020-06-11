@@ -1,0 +1,13 @@
+survivors_wall_barricade:
+	idle: actors/survivors/walls/barricade/frames.png
+		Length: 16
+	damaged-idle: actors/survivors/walls/barricade/frames.png
+		Start: 16
+		Length: 16
+	make0: actors/survivors/walls/barricade/frames.png
+		Start: 32
+	make1: actors/survivors/walls/barricade/frames.png
+		Start: 33
+	make2: actors/survivors/walls/barricade/frames.png
+		Start: 34
+	icon: actors/survivors/walls/barricade/icon.png

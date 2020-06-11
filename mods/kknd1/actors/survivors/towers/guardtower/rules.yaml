@@ -1,0 +1,25 @@
+survivors_tower_guardtower:
+	Inherits@1: ^CoreTower
+	Inherits@2: ^CoreTurret
+	Inherits@2: ^HasMuzzle
+	Tooltip:
+		Name: Guard Tower
+	Valued:
+		Cost: 750
+	Health:
+		HP: 1500
+	AdvancedBuildable:
+		Prerequisites: survivors_towers
+		BuildDuration: 500
+		Level: 1
+	RevealsShroud:
+		Range: 10c0
+	OffsetsArmament:
+		Weapon: survivors_tower_guardtower
+		LocalOffset: 0,0,500
+	Turreted:
+		TurnSpeed: 20
+	AdvancedSelectionDecorations:
+		Offset: -1,-23
+	TechnicianRepairable:
+		Offset: 0,-15

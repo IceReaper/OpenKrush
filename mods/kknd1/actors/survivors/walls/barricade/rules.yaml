@@ -1,4 +1,4 @@
-survivors_barricade:
+survivors_wall_barricade:
 	Inherits: ^SurvivorsWall
 	Tooltip:
 		Name: Barricade
@@ -10,4 +10,6 @@ survivors_barricade:
 		BuildDuration: 150
 		Level: 2
 	WithWallSpriteBody:
-		Type: survivors_wall
+		Type: survivors_wall_barricade
+	AdvancedBuildable:
+		Prerequisites: survivors_walls
