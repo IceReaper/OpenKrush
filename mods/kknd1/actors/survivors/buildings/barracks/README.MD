@@ -4,6 +4,6 @@ Source: Self-made, based on frames.png.
 Description: Sidebar thumbnail.
 
 **frames.png**
-Author: Dzierzan, IceReaper
-Source: Self-made based on demo detention center frames.
+Author: Beam Software, Dzierzan
+Source: Unused beta asset. Additional critical damage state sprite by Dzierzan.
 Description: Custom building spritesheet.

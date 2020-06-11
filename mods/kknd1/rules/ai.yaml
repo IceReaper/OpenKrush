@@ -19,18 +19,18 @@ Player:
 	#	RequiresCondition: enable-placeholder-ai
 	HackedBaseBuilderBotModule@placeholder: # TODO replace this by KKnD building implementation
 		RequiresCondition: enable-placeholder-ai
-		ConstructionYardTypes: survivors_building_outpost, evolved_clanhall
-		RefineryTypes: survivors_powerstation, evolved_powerstation
-		BarracksTypes: survivors_building_outpost, evolved_clanhall, survivors_barracks, evolved_warriorhall
-		VehiclesFactoryTypes: survivors_machineshop, evolved_beastenclosure, evolved_blacksmith, evolved_beastforge
-		ProductionTypes: survivors_building_outpost, evolved_clanhall, survivors_barracks, evolved_warriorhall, survivors_machineshop, evolved_beastenclosure, evolved_blacksmith, evolved_beastforge
+		ConstructionYardTypes: survivors_building_outpost, evolved_building_clanhall
+		RefineryTypes: survivors_powerstation, evolved_building_powerstation
+		BarracksTypes: survivors_building_outpost, evolved_building_clanhall, survivors_building_barracks, evolved_building_warriorhall
+		VehiclesFactoryTypes: survivors_machineshop, evolved_building_beastenclosure, evolved_building_blacksmith, evolved_building_beastforge
+		ProductionTypes: survivors_building_outpost, evolved_building_clanhall, survivors_building_barracks, evolved_building_warriorhall, survivors_machineshop, evolved_building_beastenclosure, evolved_building_blacksmith, evolved_building_beastforge
 		BuildingQueues: building
 		DefenseQueues: tower
 		BuildingLimits:
 			survivors_machineshop: 3
-			evolved_beastforge: 3
+			evolved_building_beastforge: 3
 		BuildingFractions:
-			survivors_barracks: 75
+			survivors_building_barracks: 75
 			survivors_machineshop: 50
 			#survivors_powerstation: 1
 			survivors_geothermal: 25
@@ -39,30 +39,30 @@ Player:
 			survivors_missilebattery: 75
 			survivors_cannontower: 100
 			survivors_airfield: 100
-			evolved_warriorhall: 75
-			evolved_beastenclosure: 50
-			evolved_blacksmith: 50
-			evolved_beastforge: 50
-			#evolved_powerstation: 1
-			evolved_gasconverter: 25
-			evolved_alchemyhall: 100
+			evolved_building_warriorhall: 75
+			evolved_building_beastenclosure: 50
+			evolved_building_blacksmith: 50
+			evolved_building_beastforge: 50
+			#evolved_building_powerstation: 1
+			evolved_building_gasconverter: 25
+			evolved_building_alchemyhall: 100
 			evolved_tower_machinegunnest: 50
 			evolved_tower_grapeshotcannon: 75
 			evolved_tower_rotarycannon: 100
-			evolved_vespiary: 100
+			evolved_building_vespiary: 100
 	#BuildingRepairBotModule: # TODO implement KKnD repair implementation
 	#	RequiresCondition: enable-placeholder-ai
 	McvManagerBotModule@placeholder:
 		RequiresCondition: enable-placeholder-ai
 		McvTypes: survivors_mobileoutpost, evolved_vehicle_clanhallwagon
-		ConstructionYardTypes: survivors_building_outpost, evolved_clanhall
-		McvFactoryTypes: survivors_machineshop, evolved_blacksmith, evolved_beastforge
+		ConstructionYardTypes: survivors_building_outpost, evolved_building_clanhall
+		McvFactoryTypes: survivors_machineshop, evolved_building_blacksmith, evolved_building_beastforge
 	SquadManagerBotModule@placeholder:
 		RequiresCondition: enable-placeholder-ai
 		SquadSize: 40
 		RushInterval: 1000
-		ExcludeFromSquadsTypes: survivors_mobileoutpost, evolved_vehicle_clanhallwagon, survivors_derrick, evolved_vehicle_derrick, survivors_oiltanker, evolved_vehicle_oiltanker, survivors_technician, evolved_mekanik
-		ConstructionYardTypes: survivors_building_outpost, evolved_clanhall
+		ExcludeFromSquadsTypes: survivors_mobileoutpost, evolved_vehicle_clanhallwagon, survivors_derrick, evolved_vehicle_derrick, survivors_oiltanker, evolved_vehicle_oiltanker, survivors_technician, evolved_infantry_mekanik
+		ConstructionYardTypes: survivors_building_outpost, evolved_building_clanhall
 	UnitBuilderBotModule@placeholder:
 		RequiresCondition: enable-placeholder-ai
 		UnitQueues: infantry, vehicle, beast
@@ -103,7 +103,7 @@ Player:
 			survivors_4x4pickup: 10
 			survivors_allterrainvehicle: 10
 	#CaptureManagerBotModule@placeholder:
-	#	CapturingActorTypes: evolved_vandal, survivors_saboteur
+	#	CapturingActorTypes: evolved_infantry_vandal, survivors_saboteur
 	#	CapturableActorTypes: tech_drillrig
 	#	MinimumCaptureDelay: 400
 	#	MaximumCaptureTargetOptions: 2
