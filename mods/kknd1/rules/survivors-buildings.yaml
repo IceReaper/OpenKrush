@@ -416,9 +416,9 @@ survivors_airfield:
 	ProvidesPrerequisite:
 		Prerequisite: survivors_airfield
 	AdvancedAirstrikePower:
-		UnitType: survivors_bomber
+		UnitType: survivors_aircraft_bomber
 		Description: Wilbur Bomber
-		Icon: survivors_bomber
+		Icon: survivors_aircraft_bomber
 		ChargeInterval: 7500
 		EndChargeSound: survivors_AirstrikeReady.wav
 		IncomingSound: survivors_AirstrikeOrdered.wav

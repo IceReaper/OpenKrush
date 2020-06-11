@@ -1,8 +1,8 @@
-survivors_bomber:
+^weapon_nuke:
 	Inherits: Smudge
 	Range: 1c0 # TODO HACK
 	ReloadDelay: 10000 # TODO HACK
-	Report: SURV.SLV|163.wav
+	Report: MUTE.SLV|163.wav
 	Projectile: GravityBomb
 		Image: projectile
 		Palette: kknd
@@ -23,7 +23,7 @@ survivors_bomber:
 		Image: explosions
 		ExplosionPalette: kknd
 		Explosions: xl
-		ImpactSounds: SURV.SLV|3.wav
+		ImpactSounds: MUTE.SLV|3.wav
 	Warhead@2: ShrapnelCreateEffect
 		Image: explosions
 		Explosions: s

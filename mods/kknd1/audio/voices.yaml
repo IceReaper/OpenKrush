@@ -24,11 +24,3 @@ GortVoice:
 		Select: kknd1|bits/sounds/bunker_SystemsReady, kknd1|bits/sounds/bunker_Verified, kknd1|bits/sounds/bunker_Receiving, kknd1|bits/sounds/bunker_Online
 		Action: kknd1|bits/sounds/bunker_OnYourCommand, kknd1|bits/sounds/bunker_Affirmative, kknd1|bits/sounds/bunker_Confirmed, kknd1|bits/sounds/bunker_Acknowledged, kknd1|bits/sounds/bunker_AsYouWish, kknd1|bits/sounds/bunker_Locked
 		Attack: kknd1|bits/sounds/bunker_Target, kknd1|bits/sounds/bunker_TargetLocked, kknd1|bits/sounds/bunker_KrushKillAndDestroy, kknd1|bits/sounds/bunker_WithPleasure, kknd1|bits/sounds/bunker_Annihilate, kknd1|bits/sounds/bunker_PowerUp
-
-WilburBomberVoice:
-	DefaultVariant: .wav
-	Voices:
-		Create: SURV.SLV|25, SURV.SLV|58
-		Select: SURV.SLV|25, SURV.SLV|58
-		Action: SURV.SLV|25, SURV.SLV|58
-		Attack: SURV.SLV|25, SURV.SLV|58

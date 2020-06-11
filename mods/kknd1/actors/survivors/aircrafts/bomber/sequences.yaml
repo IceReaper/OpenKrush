@@ -1,7 +1,6 @@
-survivors_bomber:
+survivors_aircraft_bomber:
 	idle: SPRITES.LVL|WilburBomber.mobd
 		Start: 16
 		Facings: -16
 		ZOffset: 3500
-	icon: bits/Buttons.png
-		Start: 61
+	icon: actors/survivors/aircrafts/bomber/icon.png

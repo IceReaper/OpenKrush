@@ -1,0 +1,2 @@
+survivors_aircraft_bomber:
+	Inherits: ^weapon_nuke

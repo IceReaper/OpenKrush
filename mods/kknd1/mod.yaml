@@ -82,6 +82,7 @@ Rules:
 	kknd1|actors/evolved/towers/grapeshotcannon/rules.yaml
 	kknd1|actors/evolved/towers/rotarycannon/rules.yaml
 	kknd1|actors/evolved/walls/skeletalwall/rules.yaml
+	kknd1|actors/survivors/aircrafts/bomber/rules.yaml
 
 Sequences:
 	kknd|sequences/misc.yaml
@@ -99,8 +100,8 @@ Sequences:
 	kknd1|sequences/mapobjects-highland.yaml
 	kknd1|sequences/mapobjects-desert.yaml
 	kknd1|sequences/mapobjects-urban.yaml
-	kknd1|core/weapon_bullet/sequences.yaml
 	# TODO refactor above
+	kknd1|core/weapon_bullet/sequences.yaml
 	kknd1|actors/evolved/infantry/berserker/sequences.yaml
 	kknd1|actors/evolved/infantry/shotgunner/sequences.yaml
 	kknd1|actors/evolved/infantry/pyromaniac/sequences.yaml
@@ -137,10 +138,9 @@ Sequences:
 	kknd1|actors/evolved/towers/grapeshotcannon/sequences.yaml
 	kknd1|actors/evolved/towers/rotarycannon/sequences.yaml
 	kknd1|actors/evolved/walls/skeletalwall/sequences.yaml
+	kknd1|actors/survivors/aircrafts/bomber/sequences.yaml
 
 Weapons:
-	kknd1|core/weapon_bullet/weapons.yaml
-	kknd1|core/weapon_explosion/weapons.yaml
 	kknd1|weapons/misc.yaml
 	kknd1|weapons/bunkers.yaml
 	kknd1|weapons/survivors-infantry.yaml
@@ -149,6 +149,9 @@ Weapons:
 	kknd1|weapons/survivors-towers.yaml
 	kknd1|weapons/shrapnel.yaml
 	# TODO refactor above
+	kknd1|core/weapon_bullet/weapons.yaml
+	kknd1|core/weapon_explosion/weapons.yaml
+	kknd1|core/weapon_nuke/weapons.yaml
 	kknd1|actors/evolved/infantry/berserker/weapons.yaml
 	kknd1|actors/evolved/infantry/shotgunner/weapons.yaml
 	kknd1|actors/evolved/infantry/pyromaniac/weapons.yaml
@@ -169,6 +172,7 @@ Weapons:
 	kknd1|actors/evolved/towers/grapeshotcannon/weapons.yaml
 	kknd1|actors/evolved/towers/rotarycannon/weapons.yaml
 	kknd1|actors/evolved/aircrafts/wasp/weapons.yaml
+	kknd1|actors/survivors/aircrafts/bomber/weapons.yaml
 
 Voices:
 	kknd1|audio/voices.yaml
@@ -181,6 +185,7 @@ Voices:
 	kknd1|actors/evolved/vehicles/giantbeetle/voices.yaml
 	kknd1|actors/evolved/vehicles/missilecrab/voices.yaml
 	kknd1|actors/evolved/aircrafts/wasp/voices.yaml
+	kknd1|actors/survivors/aircrafts/bomber/voices.yaml
 
 TileSets:
 	kknd1|tilesets/desert/tileset.yaml

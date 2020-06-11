@@ -1,5 +1,5 @@
-survivors_bomber:
-	Inherits: ^SurvivorsAircraft
+survivors_aircraft_bomber:
+	Inherits: ^CoreAircraft
 	Tooltip:
 		Name: Bomber
 	TooltipDescription:
@@ -13,7 +13,6 @@ survivors_bomber:
 		Range: 5c0	
 		Type: CenterPosition	
 	OffsetsArmament:
-		Weapon: survivors_bomber
+		Weapon: survivors_aircraft_bomber
 	Voiced:
-		VoiceSet: WilburBomberVoice
-
+		VoiceSet: survivors_aircraft_bomber
