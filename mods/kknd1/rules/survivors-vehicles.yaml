@@ -1,3 +1,10 @@
+^SurvivorsVehicle:
+	Inherits: ^CoreVehicle
+	AdvancedBuildable:
+		Prerequisites: survivors_vehicles
+	VeterancyVoiced:
+		VoiceSets: SurvivorsVoice, SurvivorsVeteranVoice, SurvivorsVeteranVoice
+
 survivors_dirtbike:
 	Inherits@1: ^SurvivorsVehicle
 	Inherits@2: ^CoreLightVehicle
@@ -215,16 +222,6 @@ survivors_oiltanker:
 	AttackNotification:
 		Notifications: TankerUnderAttack
 	IgnoreRallyPoint:
-
-survivors_oiltanker.colorpicker:
-	Inherits: survivors_oiltanker
-	Mobile:
-		InitialFacing: 128
-	RenderSprites:
-		Image: survivors_oiltanker
-		Palette: colorpicker
-	-AdvancedBuildable:
-	-MapEditorData:
 
 survivors_derrick:
 	Inherits@1: ^SurvivorsVehicle

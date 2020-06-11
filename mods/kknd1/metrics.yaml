@@ -1,6 +1,6 @@
 Metrics:
 	ColorPickerActorType-evolved: evolved.colorpicker
-	ColorPickerActorType-survivors: survivors_oiltanker.colorpicker
+	ColorPickerActorType-survivors: survivors.colorpicker
 	ColorPickerActorType: bunker_plasmatank.colorpicker
 	ColorPickerRemapIndices: 8, 9, 10, 11, 12, 13
 	ClickSound: ClickSound

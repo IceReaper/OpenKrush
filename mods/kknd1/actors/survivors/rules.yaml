@@ -40,20 +40,12 @@ World:
 		OuterSupportRadius: 6
 		Factions: survivors
 
-^SurvivorsWall:
-	Inherits: ^CoreWall
-	AdvancedBuildable:
-		Prerequisites: survivors_walls
-
-^SurvivorsTower:
-	Inherits@1: ^CoreTower
-	Inherits@2: ^CoreTurret
-	AdvancedBuildable:
-		Prerequisites: survivors_towers
-
-^SurvivorsVehicle:
-	Inherits: ^CoreVehicle
-	AdvancedBuildable:
-		Prerequisites: survivors_vehicles
-	VeterancyVoiced:
-		VoiceSets: SurvivorsVoice, SurvivorsVeteranVoice, SurvivorsVeteranVoice
+survivors.colorpicker:
+	Inherits: survivors_oiltanker
+	Mobile:
+		InitialFacing: 128
+	RenderSprites:
+		Image: survivors_oiltanker
+		Palette: colorpicker
+	-AdvancedBuildable:
+	-MapEditorData:

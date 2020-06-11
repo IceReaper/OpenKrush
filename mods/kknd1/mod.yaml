@@ -9,6 +9,7 @@ PackageFormats: LvlPackage
 Packages:
 	~^Content/kknd1/: content
 	.
+	# TODO remove this one
 	..
 	$kknd: kknd
 	$kknd1: kknd1
@@ -16,6 +17,7 @@ Packages:
 	KKND-Xtreme-Demo/LEVELS/640/SPRITES.LVL: SPRITES.LVL
 	KKND-Xtreme-Demo/LEVELS/MUTE.SLV: MUTE.SLV
 	KKND-Xtreme-Demo/LEVELS/SURV.SLV: SURV.SLV
+	# TODO remove this one
 	kknd1|bits/notifications: notifications
 
 MapFolders:
@@ -31,7 +33,6 @@ Rules:
 	kknd1|rules/core.yaml
 	kknd1|rules/misc.yaml
 	kknd1|rules/bunkers.yaml
-	kknd1|rules/survivors.yaml
 	kknd1|rules/survivors-vehicles.yaml
 	kknd1|rules/ai.yaml
 	kknd1|rules/mapobjects-neutral.yaml
@@ -77,6 +78,7 @@ Rules:
 	kknd1|actors/evolved/towers/grapeshotcannon/rules.yaml
 	kknd1|actors/evolved/towers/rotarycannon/rules.yaml
 	kknd1|actors/evolved/walls/skeletalwall/rules.yaml
+	kknd1|actors/survivors/rules.yaml
 	kknd1|actors/survivors/infantry/rifleman/rules.yaml
 	kknd1|actors/survivors/infantry/swat/rules.yaml
 	kknd1|actors/survivors/infantry/flamer/rules.yaml
