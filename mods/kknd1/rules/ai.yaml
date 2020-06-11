@@ -34,7 +34,7 @@ Player:
 			survivors_building_machineshop: 50
 			#survivors_powerstation: 1
 			survivors_geothermal: 25
-			survivors_researchlab: 100
+			survivors_building_researchlab: 100
 			survivors_guardtower: 50
 			survivors_missilebattery: 75
 			survivors_cannontower: 100
