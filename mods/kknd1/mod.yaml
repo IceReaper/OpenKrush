@@ -86,6 +86,7 @@ Rules:
 	kknd1|actors/survivors/buildings/outpost/rules.yaml
 	kknd1|actors/survivors/buildings/barracks/rules.yaml
 	kknd1|actors/survivors/buildings/machineshop/rules.yaml
+	kknd1|actors/survivors/buildings/repairbay/rules.yaml
 
 Sequences:
 	kknd|sequences/misc.yaml
@@ -145,6 +146,7 @@ Sequences:
 	kknd1|actors/survivors/buildings/outpost/sequences.yaml
 	kknd1|actors/survivors/buildings/barracks/sequences.yaml
 	kknd1|actors/survivors/buildings/machineshop/sequences.yaml
+	kknd1|actors/survivors/buildings/repairbay/sequences.yaml
 
 Weapons:
 	kknd1|weapons/misc.yaml

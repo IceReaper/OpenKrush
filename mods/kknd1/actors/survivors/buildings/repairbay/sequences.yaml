@@ -1,0 +1,26 @@
+survivors_building_repairbay:
+	animation-idle: SPRITES.LVL|RepairBay.mobd
+		Offset: -6,-35
+	animation-repairing: SPRITES.LVL|RepairBay.mobd
+		Start: 1
+		Length: 18
+		Tick: 120
+		Offset: -6,-35
+	damaged-idle: SPRITES.LVL|RepairBay.mobd
+		Start: 19
+		Offset: -6,-35
+	idle: SPRITES.LVL|RepairBay.mobd
+		Start: 20
+		Offset: -6,-35
+	make0: SPRITES.LVL|RepairBay.mobd
+		Start: 30
+		Offset: -6,-35
+	make1: SPRITES.LVL|RepairBay.mobd
+		Start: 31
+		Offset: -6,-35
+	make2: SPRITES.LVL|RepairBay.mobd
+		Start: 32
+		Offset: -6,-35
+	critical-idle: actors/survivors/buildings/repairbay/frames.png
+		Offset: -6,-35
+	icon: actors/survivors/buildings/repairbay/icon.png

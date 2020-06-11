@@ -24,7 +24,6 @@ evolved_building_menagerie:
 	Researchable:
 		MaxLevel: 3
 		Offset: 5,-125
-		RequiresCondition: !selfconstructing && !deconstructing
 	AdvancedSelectionDecorations:
 		Offset: 1,-27
 	Dock:
