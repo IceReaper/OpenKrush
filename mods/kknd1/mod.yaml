@@ -176,7 +176,6 @@ Weapons:
 	kknd1|weapons/misc.yaml
 	kknd1|weapons/bunkers.yaml
 	kknd1|weapons/survivors-vehicles.yaml
-	kknd1|weapons/survivors-aircrafts.yaml
 	kknd1|weapons/survivors-towers.yaml
 	kknd1|weapons/shrapnel.yaml
 	# TODO refactor above

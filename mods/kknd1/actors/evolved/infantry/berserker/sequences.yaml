@@ -20,7 +20,7 @@ evolved_infantry_berserker:
 		Length: 6
 		Tick: 120
 		Facings: -16
-	bored: actors/evolved/infantry/berserker/bored.png
+	bored: actors/evolved/infantry/berserker/frames.png
 		Length: 12
 		Tick: 60
 	icon: actors/evolved/infantry/berserker/icon.png

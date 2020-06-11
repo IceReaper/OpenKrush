@@ -8,7 +8,7 @@ Author: Dzierzan
 Source: Self-made.
 Description: A projectile thrown by Rioter.
 
-**bored.png**
+**frames.png**
 Author: Dzierzan
 Source: Self-made based on demo idle frame.
 Description: Bored animation.

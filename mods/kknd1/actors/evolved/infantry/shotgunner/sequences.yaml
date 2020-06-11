@@ -17,7 +17,7 @@ evolved_infantry_shotgunner:
 		Length: 6
 		Tick: 120
 		Facings: -16
-	bored: actors/evolved/infantry/shotgunner/bored.png
+	bored: actors/evolved/infantry/shotgunner/frames.png
 		Length: 16
 		Tick: 100
 	icon: actors/evolved/infantry/shotgunner/icon.png

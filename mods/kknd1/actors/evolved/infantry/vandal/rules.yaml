@@ -2,10 +2,9 @@ evolved_infantry_vandal:
 	Inherits@1: ^CoreInfantry
 	Inherits@2: ^CoreArmedSelf
 	Inherits@3: ^HasMuzzle
+	Inherits@4: ^Saboteur
 	Tooltip:
 		Name: Vandal
-	TooltipDescription:
-		Description: Conquers buildings
 	Valued:
 		Cost: 150
 	Health:
@@ -21,10 +20,8 @@ evolved_infantry_vandal:
 	OffsetsArmament:
 		Weapon: evolved_infantry_vandal
 		LocalOffset: 350,50,450
-	Saboteur:
 	Veterancy:
 		HealRates: 1,2
 		Experience: 250, 500
-	IgnoreRallyPoint:
 	VeterancyVoiced:
 		VoiceSets: EvolvedVoice, EvolvedVeteranVoice

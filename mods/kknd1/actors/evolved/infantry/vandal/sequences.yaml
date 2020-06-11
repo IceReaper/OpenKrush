@@ -17,7 +17,7 @@ evolved_infantry_vandal:
 		Length: 6
 		Tick: 120
 		Facings: -16
-	bored: actors/evolved/infantry/vandal/bored.png
+	bored: actors/evolved/infantry/vandal/frames.png
 		Length: 25
 		Tick: 60
 	icon: actors/evolved/infantry/vandal/icon.png

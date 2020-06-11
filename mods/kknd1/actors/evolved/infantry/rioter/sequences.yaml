@@ -2,6 +2,8 @@ evolved_infantry_rioter:
 	Inherits@death: ^evolved_infantry_death
 	idle: SPRITES.LVL|Rioter.mobd
 		Facings: -16
+	aim: SPRITES.LVL|Rioter.mobd
+		Facings: -16
 	shoot: SPRITES.LVL|Rioter.mobd
 		Start: 16
 		Length: 6
@@ -17,7 +19,7 @@ evolved_infantry_rioter:
 		Tick: 60
 		Facings: -8
 		Zoffset: 1000
-	bored: actors/evolved/infantry/rioter/bored.png
+	bored: actors/evolved/infantry/rioter/frames.png
 		Length: 20
 		Tick: 70
 	icon: actors/evolved/infantry/rioter/icon.png

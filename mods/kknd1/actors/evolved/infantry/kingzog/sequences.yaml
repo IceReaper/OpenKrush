@@ -17,7 +17,7 @@ evolved_infantry_kingzog:
 		Length: 6
 		Tick: 120
 		Facings: -16
-	bored: actors/evolved/infantry/kingzog/bored.png
+	bored: actors/evolved/infantry/kingzog/frames.png
 		Length: 9
 		Tick: 80
 	icon: actors/evolved/infantry/kingzog/icon.png

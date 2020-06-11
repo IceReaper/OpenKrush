@@ -40,33 +40,20 @@ World:
 		OuterSupportRadius: 6
 		Factions: survivors
 
-^SurvivorsBuilding:
-	Inherits: ^CoreBuilding
-	AdvancedBuildable:
-		Prerequisites: survivors_building_outpost
-	ProvidesPrerequisite@Generic:
-		Prerequisite: survivors_building
-		RequiresCondition: !selfconstructing && !deconstructing
-
 ^SurvivorsWall:
 	Inherits: ^CoreWall
 	AdvancedBuildable:
-		Prerequisites: survivors_building_outpost
+		Prerequisites: survivors_walls
 
 ^SurvivorsTower:
 	Inherits@1: ^CoreTower
 	Inherits@2: ^CoreTurret
 	AdvancedBuildable:
-		Prerequisites: survivors_building_outpost
+		Prerequisites: survivors_towers
 
 ^SurvivorsVehicle:
 	Inherits: ^CoreVehicle
 	AdvancedBuildable:
-		Prerequisites: survivors_building_machineshop
+		Prerequisites: survivors_vehicles
 	VeterancyVoiced:
 		VoiceSets: SurvivorsVoice, SurvivorsVeteranVoice, SurvivorsVeteranVoice
-
-^SurvivorsAircraft:
-	Inherits: ^CoreAircraft
-	Voiced:
-		VoiceSet: SurvivorsVoice

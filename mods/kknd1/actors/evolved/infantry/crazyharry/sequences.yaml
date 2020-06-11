@@ -17,7 +17,7 @@ evolved_infantry_crazyharry:
 		Length: 6
 		Tick: 120
 		Facings: -16
-	bored: actors/evolved/infantry/crazyharry/bored.png
+	bored: actors/evolved/infantry/crazyharry/frames.png
 		Length: 9
 		Tick: 70
 	icon: actors/evolved/infantry/crazyharry/icon.png

@@ -21,7 +21,7 @@ evolved_infantry_bazooka:
 		Length: 6
 		Tick: 120
 		Facings: -16
-	bored: actors/evolved/infantry/bazooka/bored.png
+	bored: actors/evolved/infantry/bazooka/frames.png
 		Length: 14
 		Tick: 80
 	icon: actors/evolved/infantry/bazooka/icon.png

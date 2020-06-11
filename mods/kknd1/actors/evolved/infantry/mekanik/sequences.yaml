@@ -7,7 +7,7 @@ evolved_infantry_mekanik:
 		Length: 6
 		Tick: 120
 		Facings: -16
-	bored: actors/evolved/infantry/mekanik/bored.png
+	bored: actors/evolved/infantry/mekanik/frames.png
 		Length: 11
 		Tick: 80
 	icon: actors/evolved/infantry/mekanik/icon.png

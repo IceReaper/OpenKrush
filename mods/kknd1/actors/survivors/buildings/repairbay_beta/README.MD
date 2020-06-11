@@ -5,5 +5,5 @@ Description: Sidebar thumbnail.
 
 **frames.png**
 Author: Beam Software, Dzierzan
-Source: Unused beta asset. Additional critical damage state sprite by Dzierzan.
+Source: Self-made by Dzierzan based on demo assets. Additional repair arm from the beta demo.
 Description: Custom building spritesheet.
