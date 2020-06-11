@@ -1,0 +1,23 @@
+survivors_building_powerstation:
+	animation: SPRITES.LVL|SPowerStation.mobd
+		Length: 4
+		Tick: 180
+		Offset: -2,-21
+	damaged-idle: SPRITES.LVL|SPowerStation.mobd
+		Start: 4
+		Offset: -2,-21
+	idle: SPRITES.LVL|SPowerStation.mobd
+		Start: 5
+		Offset: -2,-21
+	make0: SPRITES.LVL|SPowerStation.mobd
+		Start: 15
+		Offset: -2,-21
+	make1: SPRITES.LVL|SPowerStation.mobd
+		Start: 16
+		Offset: -2,-21
+	make2: SPRITES.LVL|SPowerStation.mobd
+		Start: 17
+		Offset: -2,-21
+	critical-idle: actors/survivors/buildings/powerstation/frames.png
+		Offset: -2,-21
+	icon: actors/survivors/buildings/powerstation/icon.png

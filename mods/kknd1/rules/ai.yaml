@@ -20,7 +20,7 @@ Player:
 	HackedBaseBuilderBotModule@placeholder: # TODO replace this by KKnD building implementation
 		RequiresCondition: enable-placeholder-ai
 		ConstructionYardTypes: survivors_building_outpost, evolved_building_clanhall
-		RefineryTypes: survivors_powerstation, evolved_building_powerstation
+		RefineryTypes: survivors_building_powerstation, evolved_building_powerstation
 		BarracksTypes: survivors_building_outpost, evolved_building_clanhall, survivors_building_barracks, evolved_building_warriorhall
 		VehiclesFactoryTypes: survivors_building_machineshop, evolved_building_beastenclosure, evolved_building_blacksmith, evolved_building_beastforge
 		ProductionTypes: survivors_building_outpost, evolved_building_clanhall, survivors_building_barracks, evolved_building_warriorhall, survivors_building_machineshop, evolved_building_beastenclosure, evolved_building_blacksmith, evolved_building_beastforge
@@ -32,7 +32,7 @@ Player:
 		BuildingFractions:
 			survivors_building_barracks: 75
 			survivors_building_machineshop: 50
-			#survivors_powerstation: 1
+			#survivors_building_powerstation: 1
 			survivors_geothermal: 25
 			survivors_building_researchlab: 100
 			survivors_guardtower: 50

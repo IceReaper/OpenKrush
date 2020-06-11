@@ -1,28 +1,3 @@
-survivors_powerstation:
-	idle: SPRITES.LVL|SPowerStation.mobd
-		Start: 5
-		Offset: -2,-21
-	damaged-idle: SPRITES.LVL|SPowerStation.mobd
-		Start: 4
-		Offset: -2,-21
-	critical-idle: bits/SPowerStation.png
-		Offset: -2,-21
-	animation: SPRITES.LVL|SPowerStation.mobd
-		Length: 4
-		Tick: 180
-		Offset: -2,-21
-	make0: SPRITES.LVL|SPowerStation.mobd
-		Start: 15
-		Offset: -2,-21
-	make1: SPRITES.LVL|SPowerStation.mobd
-		Start: 16
-		Offset: -2,-21
-	make2: SPRITES.LVL|SPowerStation.mobd
-		Start: 17
-		Offset: -2,-21
-	icon: bits/Buttons.png
-		Start: 39
-
 survivors_drillrig:
 	idle: SPRITES.LVL|SRig.mobd
 		Start: 7

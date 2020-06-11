@@ -1,4 +1,4 @@
-evolved_building_powerstation:
+survivors_building_powerstation:
 	Inherits@1: ^CoreBuilding
 	Inherits@2: ^ProcessesOil
 	Inherits@3: ^AnimatedBuilding
@@ -9,29 +9,29 @@ evolved_building_powerstation:
 	Health:
 		HP: 4000
 	AdvancedBuildable:
-		Prerequisites: evolved_buildings
+		Prerequisites: survivors_buildings
 		BuildDuration: 850
 		BuildLimit: 8
 	Building:
 		Dimensions: 4,3
-		Footprint: xxxx xxx= ====
+		Footprint: xxxx xxxx ====
 	HitShape:
 		Type: Rectangle
-			TopLeft: -2048, -1536
-			BottomRight: 2048, -512
-		TargetableOffsets: 1638,-1536,0, 1638,-512,0, 1638,512,0, 1638,1536,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
+			TopLeft: -1024, -1536
+			BottomRight: 1024, -512
+		TargetableOffsets: 1638,-512,0, 1638,512,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
 	Selectable:
-		Bounds: 160, 32, 0, -32
+		Bounds: 80, 64, -8, -32
 	FreeActor:
-		Actor: evolved_vehicle_oiltanker
-		SpawnOffset: 1,1
+		Actor: survivors_oiltanker
+		SpawnOffset: 1,2
 		Facing: 96
 		RequiresCondition: !selfconstructing && !deconstructing
 	Researchable:
-		Offset: 4,-128
+		Offset: 8,-131
 	AdvancedSelectionDecorations:
-		Offset: -4,-44
+		Offset: 0,-31
 	TechnicianRepairable:
-		Offset: 5,-30
+		Offset: 0,-30
 	Dock:
-		Position: -800,96,0
+		Position: -128,352,0
