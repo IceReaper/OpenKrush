@@ -1,14 +1,14 @@
-survivors_airfield:
-	Inherits: ^SurvivorsBuilding
+survivors_building_airfield:
+	Inherits@1: ^CoreBuilding
+	Inherits@2: ^GrantsSuperweapon
 	Tooltip:
 		Name: Airfield
-	TooltipDescription:
-		Description: Grants bombers
 	Valued:
 		Cost: 2500
 	Health:
 		HP: 5000
 	AdvancedBuildable:
+		Prerequisites: survivors_buildings
 		BuildDuration: 1500
 		BuildLimit: 1
 		Level: 5
@@ -22,23 +22,13 @@ survivors_airfield:
 		TargetableOffsets: -819,-512,0, -819,512,0, 819,-512,0, 819,512,0, 2458,-512,0, 2458,512,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
 	Selectable:
 		Bounds: 96, 96, 0, -16
-	ProvidesPrerequisite:
-		Prerequisite: survivors_airfield
 	AdvancedAirstrikePower:
 		UnitType: survivors_aircraft_bomber
 		Description: Wilbur Bomber
 		Icon: survivors_aircraft_bomber
 		ChargeInterval: 7500
-		EndChargeSound: survivors_AirstrikeReady.wav
-		IncomingSound: survivors_AirstrikeOrdered.wav
-		LaunchSound: survivors_AirstrikeOrdered.wav
-		RequiresCondition: !selfconstructing && !deconstructing
-		#DisplayBeacon: True # CRASH on clock - fix me!
-		#BeaconPoster: x
-		AllowMultiple: true
-		Cursor: attack
+		EndChargeSound: SURV.SLV|66.wav
+		IncomingSound: SURV.SLV|42.wav
+		LaunchSound: SURV.SLV|42.wav
 	AdvancedSelectionDecorations:
 		Offset: -2,0
-	SaboteurConquerable:
-		Population: 2
-		RequiresCondition: !selfconstructing && !deconstructing

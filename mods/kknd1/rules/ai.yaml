@@ -38,7 +38,7 @@ Player:
 			survivors_guardtower: 50
 			survivors_missilebattery: 75
 			survivors_cannontower: 100
-			survivors_airfield: 100
+			survivors_building_airfield: 100
 			evolved_building_warriorhall: 75
 			evolved_building_beastenclosure: 50
 			evolved_building_blacksmith: 50

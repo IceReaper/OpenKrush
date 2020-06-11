@@ -34,8 +34,6 @@ Rules:
 	kknd1|rules/survivors.yaml
 	kknd1|rules/survivors-infantry.yaml
 	kknd1|rules/survivors-vehicles.yaml
-	kknd1|rules/survivors-aircrafts.yaml
-	kknd1|rules/survivors-buildings.yaml
 	kknd1|rules/survivors-towers.yaml
 	kknd1|rules/survivors-walls.yaml
 	kknd1|rules/ai.yaml
@@ -91,6 +89,7 @@ Rules:
 	kknd1|actors/survivors/buildings/powerstation/rules.yaml
 	kknd1|actors/survivors/buildings/drillrig/rules.yaml
 	kknd1|actors/survivors/buildings/solarpanel/rules.yaml
+	kknd1|actors/survivors/buildings/airfield/rules.yaml
 
 Sequences:
 	kknd|sequences/misc.yaml
@@ -100,8 +99,6 @@ Sequences:
 	kknd1|sequences/survivors.yaml
 	kknd1|sequences/survivors-infantry.yaml
 	kknd1|sequences/survivors-vehicles.yaml
-	kknd1|sequences/survivors-aircrafts.yaml
-	kknd1|sequences/survivors-buildings.yaml
 	kknd1|sequences/survivors-towers.yaml
 	kknd1|sequences/survivors-walls.yaml
 	kknd1|sequences/evolved.yaml
@@ -155,6 +152,7 @@ Sequences:
 	kknd1|actors/survivors/buildings/powerstation/sequences.yaml
 	kknd1|actors/survivors/buildings/drillrig/sequences.yaml
 	kknd1|actors/survivors/buildings/solarpanel/sequences.yaml
+	kknd1|actors/survivors/buildings/airfield/sequences.yaml
 
 Weapons:
 	kknd1|weapons/misc.yaml
