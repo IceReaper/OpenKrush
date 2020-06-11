@@ -69,7 +69,7 @@ World:
 ^SurvivorsVehicle:
 	Inherits: ^CoreVehicle
 	AdvancedBuildable:
-		Prerequisites: survivors_machineshop
+		Prerequisites: survivors_building_machineshop
 	VeterancyVoiced:
 		VoiceSets: SurvivorsVoice, SurvivorsVeteranVoice, SurvivorsVeteranVoice
 

@@ -1,28 +1,3 @@
-survivors_machineshop:
-	idle: SPRITES.LVL|MachineShop.mobd
-		Start: 5
-		Offset: -3,-38
-	damaged-idle: SPRITES.LVL|MachineShop.mobd
-		Start: 4
-		Offset: -3,-38
-	critical-idle: bits/MachineShop.png
-		Offset: -3,-38
-	animation: SPRITES.LVL|MachineShop.mobd
-		Length: 4
-		Tick: 120
-		Offset: -3,-38
-	make0: SPRITES.LVL|MachineShop.mobd
-		Start: 15
-		Offset: -3,-38
-	make1: SPRITES.LVL|MachineShop.mobd
-		Start: 16
-		Offset: -3,-38
-	make2: SPRITES.LVL|MachineShop.mobd
-		Start: 17
-		Offset: -3,-38
-	icon: bits/Buttons.png
-		Start: 38
-
 survivors_repairbay:
 	idle: SPRITES.LVL|RepairBay.mobd
 		Start: 20

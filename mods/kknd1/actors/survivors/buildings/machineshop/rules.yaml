@@ -1,0 +1,37 @@
+survivors_building_machineshop:
+	Inherits@1: ^CoreBuilding
+	Inherits@2: ^ProducesVehicles
+	Inherits@3: ^AnimatedBuilding
+	Tooltip:
+		Name: Machine Shop
+	Valued:
+		Cost: 1500
+	Health:
+		HP: 4000
+	AdvancedBuildable:
+		Prerequisites: survivors_buildings
+		BuildDuration: 1000
+	ProvidesPrerequisite:
+		Prerequisite: survivors_vehicles
+	Building:
+		Dimensions: 4,4
+		Footprint: xxxx xxxx ==== ====
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1024, -2048
+			BottomRight: 1024, 0
+		TargetableOffsets: 819,-512,0, 819,512,0, 2458,-512,0, 2458,512,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
+	Selectable:
+		Bounds: 96, 64, 0, -48
+	AdvancedSelectionDecorations:
+		Offset: -5,-9
+	Researchable:
+		Offset: 5,-123
+	TechnicianRepairable:
+		Offset: 10,-60
+	Exit:
+		SpawnOffset: -1c-330,0c60,500
+		ExitCell: -1,2
+		Facing: 75
+	RallyPoint:
+		Offset: 0,3
