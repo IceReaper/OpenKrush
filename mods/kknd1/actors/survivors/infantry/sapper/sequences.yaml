@@ -1,0 +1,24 @@
+survivors_infantry_sapper:
+	Inherits@death: ^survivors_infantry_death
+	projectile: SPRITES.LVL|Sapper.mobd
+		Length: 8
+		Facings: -16
+	idle: SPRITES.LVL|Sapper.mobd
+		Start: 128
+		Facings: -16
+	aim: SPRITES.LVL|Sapper.mobd
+		Start: 128
+		Facings: -16
+	shoot: SPRITES.LVL|Sapper.mobd
+		Start: 144
+		Length: 6
+		Tick: 120
+		Facings: -16
+	move: SPRITES.LVL|Sapper.mobd
+		Start: 240
+		Length: 6
+		Tick: 120
+		Facings: -16
+	bored: actors/survivors/infantry/sapper/frames.png
+		Tick: 80
+	icon: actors/survivors/infantry/sapper/icon.png

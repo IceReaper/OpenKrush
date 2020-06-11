@@ -1,14 +1,3 @@
-ScoutVoice:
-	DefaultVariant: .wav
-	Voices:
-		Create: kknd1|bits/sounds/scout_Commander
-		Select: kknd1|bits/sounds/scout_Commander, kknd1|bits/sounds/scout_Ammm, kknd1|bits/sounds/scout_Emmm
-		Action: kknd1|bits/sounds/scout_ThanksCommander, kknd1|bits/sounds/scout_Emmm, kknd1|bits/sounds/scout_Ammm, kknd1|bits/sounds/scout_Ok
-		Attack: kknd1|bits/sounds/scout_Attack, kknd1|bits/sounds/scout_Ok
-		Die: SURV.SLV|174, SURV.SLV|175, SURV.SLV|176, SURV.SLV|177, SURV.SLV|178
-		Crush: kknd1|bits/sounds/crush
-		Zapped: kknd1|bits/sounds/zapped1, kknd1|bits/sounds/zapped2, kknd1|bits/sounds/zapped3
-
 BunkerVoice:
 	DefaultVariant: .wav
 	Voices:

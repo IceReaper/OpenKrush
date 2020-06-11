@@ -1,0 +1,25 @@
+survivors_infantry_elpresidente:
+	Inherits@1: ^CoreInfantry
+	Inherits@2: ^CoreArmedSelf
+	Inherits@3: ^HasMuzzle
+	Tooltip:
+		Name: El Presidente
+	Valued:
+		Cost: 450
+	Health:
+		HP: 600
+	Mobile:
+		Speed: 50
+	RevealsShroud:
+		Range: 5c0
+	AdvancedBuildable:
+		Prerequisites: survivors_infantry
+		BuildDuration: 250
+		Level: -1
+	OffsetsArmament:
+		Weapon: survivors_infantry_elpresidente
+	Veterancy:
+		HealRates: 1,2
+		Experience: 500, 1000
+	VeterancyVoiced:
+		VoiceSets: SurvivorsVoice, SurvivorsVeteranVoice

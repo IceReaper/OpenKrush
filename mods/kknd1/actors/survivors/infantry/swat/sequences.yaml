@@ -1,0 +1,23 @@
+survivors_infantry_swat:
+	Inherits@death: ^survivors_infantry_death
+	idle: actors/survivors/infantry/swat/frames.png
+		Facings: -4
+	move: actors/survivors/infantry/swat/frames.png
+		Start: 4
+		Length: 6
+		Tick: 120
+		Facings: -8
+	aim: actors/survivors/infantry/swat/frames.png
+		Start: 52
+		Stride: 4
+		Facings: -8
+	shoot: actors/survivors/infantry/swat/frames.png
+		Start: 52
+		Length: 4
+		Tick: 60
+		Facings: -8
+	bored: actors/survivors/infantry/swat/frames.png
+		Start: 83
+		Length: 10
+		Tick: 80
+	icon: actors/survivors/infantry/swat/icon.png

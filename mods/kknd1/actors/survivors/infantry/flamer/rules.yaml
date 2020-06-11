@@ -1,0 +1,24 @@
+survivors_infantry_flamer:
+	Inherits@1: ^CoreInfantry
+	Inherits@2: ^CoreArmedSelf
+	Tooltip:
+		Name: Flamer
+	Valued:
+		Cost: 100
+	Health:
+		HP: 400
+	Mobile:
+		Speed: 50
+	RevealsShroud:
+		Range: 5c0
+	AdvancedBuildable:
+		Prerequisites: survivors_infantry
+		BuildDuration: 125
+		Level: 2
+	OffsetsArmament:
+		Weapon: survivors_infantry_flamer
+	Veterancy:
+		HealRates: 1,2
+		Experience: 2000, 3000
+	VeterancyVoiced:
+		VoiceSets: SurvivorsVoice, SurvivorsVeteranVoice

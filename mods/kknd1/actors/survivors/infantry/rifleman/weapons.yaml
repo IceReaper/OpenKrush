@@ -1,0 +1,12 @@
+survivors_infantry_rifleman:
+	Inherits: ^weapon_bullet
+	Range: 4c0
+	Burst: 1
+	BurstDelays: 0
+	ReloadDelay: 25
+	Report: SURV.SLV|4.wav
+	Warhead@Damage: SpreadDamage
+		Versus:
+			infantry: 40
+			vehicle: 8
+			building: 15

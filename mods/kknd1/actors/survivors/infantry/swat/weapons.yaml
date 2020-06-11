@@ -1,0 +1,12 @@
+survivors_infantry_swat:
+	Inherits: ^weapon_bullet
+	Range: 4c512
+	ReloadDelay: 13
+	BurstDelays: 0
+	Burst: 1
+	Report: SURV.SLV|4.wav
+	Warhead@Damage: SpreadDamage
+		Versus:
+			infantry: 48
+			vehicle: 12
+			building: 20

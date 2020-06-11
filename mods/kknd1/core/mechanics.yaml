@@ -47,6 +47,14 @@
 	TooltipDescription:
 		Description: Repairs buildings
 
+^Saboteur:
+	Selectable:
+		Priority: 15
+	Saboteur:
+	IgnoreRallyPoint:
+	TooltipDescription:
+		Description: Conquers buildings
+
 ^AnimatedBuilding:
 	WithIdleOverlay@Animation:
 		Sequence: animation

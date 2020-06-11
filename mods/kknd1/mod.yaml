@@ -32,7 +32,6 @@ Rules:
 	kknd1|rules/misc.yaml
 	kknd1|rules/bunkers.yaml
 	kknd1|rules/survivors.yaml
-	kknd1|rules/survivors-infantry.yaml
 	kknd1|rules/survivors-vehicles.yaml
 	kknd1|rules/survivors-towers.yaml
 	kknd1|rules/survivors-walls.yaml
@@ -80,6 +79,16 @@ Rules:
 	kknd1|actors/evolved/towers/grapeshotcannon/rules.yaml
 	kknd1|actors/evolved/towers/rotarycannon/rules.yaml
 	kknd1|actors/evolved/walls/skeletalwall/rules.yaml
+	kknd1|actors/survivors/infantry/rifleman/rules.yaml
+	kknd1|actors/survivors/infantry/swat/rules.yaml
+	kknd1|actors/survivors/infantry/flamer/rules.yaml
+	kknd1|actors/survivors/infantry/sapper/rules.yaml
+	kknd1|actors/survivors/infantry/rpglauncher/rules.yaml
+	kknd1|actors/survivors/infantry/sniper/rules.yaml
+	kknd1|actors/survivors/infantry/technician/rules.yaml
+	kknd1|actors/survivors/infantry/saboteur/rules.yaml
+	kknd1|actors/survivors/infantry/elpresidente/rules.yaml
+	kknd1|actors/survivors/infantry/scout/rules.yaml
 	kknd1|actors/survivors/aircrafts/bomber/rules.yaml
 	kknd1|actors/survivors/buildings/outpost/rules.yaml
 	kknd1|actors/survivors/buildings/barracks/rules.yaml
@@ -97,7 +106,6 @@ Sequences:
 	kknd1|sequences/weapons.yaml
 	kknd1|sequences/bunkers.yaml
 	kknd1|sequences/survivors.yaml
-	kknd1|sequences/survivors-infantry.yaml
 	kknd1|sequences/survivors-vehicles.yaml
 	kknd1|sequences/survivors-towers.yaml
 	kknd1|sequences/survivors-walls.yaml
@@ -143,6 +151,16 @@ Sequences:
 	kknd1|actors/evolved/towers/grapeshotcannon/sequences.yaml
 	kknd1|actors/evolved/towers/rotarycannon/sequences.yaml
 	kknd1|actors/evolved/walls/skeletalwall/sequences.yaml
+	kknd1|actors/survivors/infantry/rifleman/sequences.yaml
+	kknd1|actors/survivors/infantry/swat/sequences.yaml
+	kknd1|actors/survivors/infantry/flamer/sequences.yaml
+	kknd1|actors/survivors/infantry/sapper/sequences.yaml
+	kknd1|actors/survivors/infantry/rpglauncher/sequences.yaml
+	kknd1|actors/survivors/infantry/sniper/sequences.yaml
+	kknd1|actors/survivors/infantry/technician/sequences.yaml
+	kknd1|actors/survivors/infantry/saboteur/sequences.yaml
+	kknd1|actors/survivors/infantry/elpresidente/sequences.yaml
+	kknd1|actors/survivors/infantry/scout/sequences.yaml
 	kknd1|actors/survivors/aircrafts/bomber/sequences.yaml
 	kknd1|actors/survivors/buildings/outpost/sequences.yaml
 	kknd1|actors/survivors/buildings/barracks/sequences.yaml
@@ -157,7 +175,6 @@ Sequences:
 Weapons:
 	kknd1|weapons/misc.yaml
 	kknd1|weapons/bunkers.yaml
-	kknd1|weapons/survivors-infantry.yaml
 	kknd1|weapons/survivors-vehicles.yaml
 	kknd1|weapons/survivors-aircrafts.yaml
 	kknd1|weapons/survivors-towers.yaml
@@ -186,6 +203,15 @@ Weapons:
 	kknd1|actors/evolved/towers/grapeshotcannon/weapons.yaml
 	kknd1|actors/evolved/towers/rotarycannon/weapons.yaml
 	kknd1|actors/evolved/aircrafts/wasp/weapons.yaml
+	kknd1|actors/survivors/infantry/rifleman/weapons.yaml
+	kknd1|actors/survivors/infantry/swat/weapons.yaml
+	kknd1|actors/survivors/infantry/flamer/weapons.yaml
+	kknd1|actors/survivors/infantry/sapper/weapons.yaml
+	kknd1|actors/survivors/infantry/rpglauncher/weapons.yaml
+	kknd1|actors/survivors/infantry/sniper/weapons.yaml
+	kknd1|actors/survivors/infantry/saboteur/weapons.yaml
+	kknd1|actors/survivors/infantry/elpresidente/weapons.yaml
+	kknd1|actors/survivors/infantry/scout/weapons.yaml
 	kknd1|actors/survivors/aircrafts/bomber/weapons.yaml
 
 Voices:
@@ -199,6 +225,7 @@ Voices:
 	kknd1|actors/evolved/vehicles/giantbeetle/voices.yaml
 	kknd1|actors/evolved/vehicles/missilecrab/voices.yaml
 	kknd1|actors/evolved/aircrafts/wasp/voices.yaml
+	kknd1|actors/survivors/infantry/scout/voices.yaml
 	kknd1|actors/survivors/aircrafts/bomber/voices.yaml
 
 TileSets:

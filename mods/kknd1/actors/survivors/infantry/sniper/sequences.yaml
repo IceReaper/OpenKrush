@@ -1,0 +1,22 @@
+survivors_infantry_sniper:
+	Inherits@muzzle: ^gun_8
+	Inherits@death: ^survivors_infantry_death
+	idle: SPRITES.LVL|Sniper.mobd
+		Facings: -16
+	aim: SPRITES.LVL|Sniper.mobd
+		Start: 16
+		Stride: 4
+		Facings: -16
+	shoot: SPRITES.LVL|Sniper.mobd
+		Start: 16
+		Length: 4
+		Tick: 120
+		Facings: -16
+	move: SPRITES.LVL|Sniper.mobd
+		Start: 80
+		Length: 6
+		Tick: 120
+		Facings: -16
+	bored: actors/survivors/infantry/sniper/frames.png
+		Tick: 80
+	icon: actors/survivors/infantry/sniper/icon.png

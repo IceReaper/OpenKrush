@@ -2016,7 +2016,7 @@ Actors:
 	Actor698: desert_objects_9
 		Owner: Neutral
 		Location: 5,15
-	Actor699: survivors_elpresidente
+	Actor699: survivors_infantry_elpresidente
 		Owner: Neutral
 		Location: 66,50
 		SubCell: 1

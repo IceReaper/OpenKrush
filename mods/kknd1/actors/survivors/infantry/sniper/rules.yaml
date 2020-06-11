@@ -1,0 +1,25 @@
+survivors_infantry_sniper:
+	Inherits@1: ^CoreInfantry
+	Inherits@2: ^CoreArmedSelf
+	Inherits@3: ^HasMuzzle
+	Tooltip:
+		Name: Sniper
+	Valued:
+		Cost: 250
+	Health:
+		HP: 550
+	Mobile:
+		Speed: 50
+	RevealsShroud:
+		Range: 7c0
+	AdvancedBuildable:
+		Prerequisites: survivors_infantry
+		BuildDuration: 300
+		Level: 5
+	OffsetsArmament:
+		Weapon: survivors_infantry_sniper
+	Veterancy:
+		HealRates: 1,2
+		Experience: 2000, 3000
+	VeterancyVoiced:
+		VoiceSets: SurvivorsVoice, SurvivorsVeteranVoice

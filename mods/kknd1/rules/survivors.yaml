@@ -19,7 +19,7 @@ World:
 		Class: light
 		ClassName: Light support
 		BaseActor: survivors_mobileoutpost
-		SupportActors: survivors_derrick, survivors_rifleman, survivors_rifleman, survivors_rifleman, survivors_rifleman, survivors_rifleman
+		SupportActors: survivors_derrick, survivors_infantry_rifleman, survivors_infantry_rifleman, survivors_infantry_rifleman, survivors_infantry_rifleman, survivors_infantry_rifleman
 		InnerSupportRadius: 4
 		OuterSupportRadius: 6
 		Factions: survivors
@@ -58,13 +58,6 @@ World:
 	Inherits@2: ^CoreTurret
 	AdvancedBuildable:
 		Prerequisites: survivors_building_outpost
-
-^SurvivorsInfantry:
-	Inherits: ^CoreInfantry
-	AdvancedBuildable:
-		Prerequisites: survivors_building_barracks
-	VeterancyVoiced:
-		VoiceSets: SurvivorsVoice, SurvivorsVeteranVoice, SurvivorsVeteranVoice
 
 ^SurvivorsVehicle:
 	Inherits: ^CoreVehicle

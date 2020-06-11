@@ -1,0 +1,22 @@
+survivors_infantry_rpglauncher:
+	Inherits@death: ^survivors_infantry_death
+	idle: SPRITES.LVL|RocketInfantry.mobd
+		Facings: -16
+	aim: SPRITES.LVL|RocketInfantry.mobd
+		Start: 16
+		Stride: 5
+		Facings: -16
+	shoot: SPRITES.LVL|RocketInfantry.mobd
+		Start: 16
+		Length: 5
+		Tick: 120
+		Facings: -16
+	move: SPRITES.LVL|RocketInfantry.mobd
+		Start: 96
+		Length: 6
+		Tick: 120
+		Facings: -16
+	bored: actors/survivors/infantry/rpglauncher/frames.png
+		Length: 16
+		Tick: 90
+	icon: actors/survivors/infantry/rpglauncher/icon.png

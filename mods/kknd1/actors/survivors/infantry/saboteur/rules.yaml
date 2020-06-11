@@ -1,0 +1,26 @@
+survivors_infantry_saboteur:
+	Inherits@1: ^CoreInfantry
+	Inherits@2: ^CoreArmedSelf
+	Inherits@3: ^HasMuzzle
+	Inherits@4: ^Saboteur
+	Tooltip:
+		Name: Saboteur
+	Valued:
+		Cost: 150
+	Health:
+		HP: 500
+	Mobile:
+		Speed: 60
+	RevealsShroud:
+		Range: 5c0
+	AdvancedBuildable:
+		Prerequisites: survivors_infantry
+		BuildDuration: 150
+		Level: 1
+	OffsetsArmament:
+		Weapon: survivors_infantry_saboteur
+	Veterancy:
+		HealRates: 1,2
+		Experience: 250, 500
+	VeterancyVoiced:
+		VoiceSets: SurvivorsVoice, SurvivorsVeteranVoice

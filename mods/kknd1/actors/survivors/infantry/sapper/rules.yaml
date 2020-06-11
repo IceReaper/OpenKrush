@@ -1,0 +1,26 @@
+survivors_infantry_sapper:
+	Inherits@1: ^CoreInfantry
+	Inherits@2: ^CoreArmedSelf
+	Tooltip:
+		Name: Sapper
+	Valued:
+		Cost: 135
+	Health:
+		HP: 525
+	Mobile:
+		Speed: 50
+	RevealsShroud:
+		Range: 5c0
+	AdvancedBuildable:
+		Prerequisites: survivors_infantry
+		BuildDuration: 175
+		Level: 3
+	OffsetsArmament:
+		Weapon: survivors_infantry_sapper
+		FireDelay: 8
+		LocalOffset: 250,0,0
+	Veterancy:
+		HealRates: 1,2
+		Experience: 1500, 2500
+	VeterancyVoiced:
+		VoiceSets: SurvivorsVoice, SurvivorsVeteranVoice

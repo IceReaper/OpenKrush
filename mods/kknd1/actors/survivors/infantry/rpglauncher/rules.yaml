@@ -1,0 +1,24 @@
+survivors_infantry_rpglauncher:
+	Inherits@1: ^CoreInfantry
+	Inherits@2: ^CoreArmedSelf
+	Tooltip:
+		Name: RPG Launcher
+	Valued:
+		Cost: 165
+	Health:
+		HP: 400
+	Mobile:
+		Speed: 50
+	RevealsShroud:
+		Range: 5c0
+	AdvancedBuildable:
+		Prerequisites: survivors_infantry
+		BuildDuration: 200
+		Level: 4
+	OffsetsArmament:
+		Weapon: survivors_infantry_rpglauncher
+	Veterancy:
+		HealRates: 1,2
+		Experience: 1700, 2700
+	VeterancyVoiced:
+		VoiceSets: SurvivorsVoice, SurvivorsVeteranVoice

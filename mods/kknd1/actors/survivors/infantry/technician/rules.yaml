@@ -1,0 +1,19 @@
+survivors_infantry_technician:
+	Inherits: ^CoreInfantry
+	Inherits@2: ^Technician
+	Tooltip:
+		Name: Technician
+	Valued:
+		Cost: 100
+	Health:
+		HP: 500
+	Mobile:
+		Speed: 60
+	RevealsShroud:
+		Range: 5c0
+	AdvancedBuildable:
+		Prerequisites: survivors_infantry
+		BuildDuration: 150
+		Level: 0
+	Voiced:
+		VoiceSet: SurvivorsVoice

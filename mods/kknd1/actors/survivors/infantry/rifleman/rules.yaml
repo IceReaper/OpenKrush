@@ -1,0 +1,25 @@
+survivors_infantry_rifleman:
+	Inherits@1: ^CoreInfantry
+	Inherits@2: ^CoreArmedSelf
+	Inherits@3: ^HasMuzzle
+	Tooltip:
+		Name: Rifleman
+	Valued:
+		Cost: 50
+	Health:
+		HP: 400
+	Mobile:
+		Speed: 50
+	RevealsShroud:
+		Range: 5c0
+	AdvancedBuildable:
+		Prerequisites: survivors_infantry
+		BuildDuration: 75
+		Level: 0
+	OffsetsArmament:
+		Weapon: survivors_infantry_rifleman
+	Veterancy:
+		HealRates: 1,2
+		Experience: 500, 1000
+	VeterancyVoiced:
+		VoiceSets: SurvivorsVoice, SurvivorsVeteranVoice

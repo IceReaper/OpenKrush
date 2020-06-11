@@ -61,7 +61,7 @@ Player:
 		RequiresCondition: enable-placeholder-ai
 		SquadSize: 40
 		RushInterval: 1000
-		ExcludeFromSquadsTypes: survivors_mobileoutpost, evolved_vehicle_clanhallwagon, survivors_derrick, evolved_vehicle_derrick, survivors_oiltanker, evolved_vehicle_oiltanker, survivors_technician, evolved_infantry_mekanik
+		ExcludeFromSquadsTypes: survivors_mobileoutpost, evolved_vehicle_clanhallwagon, survivors_derrick, evolved_vehicle_derrick, survivors_oiltanker, evolved_vehicle_oiltanker, survivors_infantry_technician, evolved_infantry_mekanik
 		ConstructionYardTypes: survivors_building_outpost, evolved_building_clanhall
 	UnitBuilderBotModule@placeholder:
 		RequiresCondition: enable-placeholder-ai
@@ -81,13 +81,13 @@ Player:
 			evolved_vehicle_warmastodon: 80
 			evolved_vehicle_giantbeetle: 90
 			evolved_vehicle_missilecrab: 100
-			survivors_rifleman: 50
-			survivors_swat: 60
-			survivors_flamer: 70
-			#survivors_saboteur: 75
-			survivors_sapper: 80
-			survivors_rpglauncher: 90
-			survivors_sniper: 100
+			survivors_infantry_rifleman: 50
+			survivors_infantry_swat: 60
+			survivors_infantry_flamer: 70
+			#survivors_infantry_saboteur: 75
+			survivors_infantry_sapper: 80
+			survivors_infantry_rpglauncher: 90
+			survivors_infantry_sniper: 100
 			survivors_dirtbike: 40
 			survivors_4x4pickup: 50
 			survivors_allterrainvehicle: 60
@@ -103,7 +103,7 @@ Player:
 			survivors_4x4pickup: 10
 			survivors_allterrainvehicle: 10
 	#CaptureManagerBotModule@placeholder:
-	#	CapturingActorTypes: evolved_infantry_vandal, survivors_saboteur
+	#	CapturingActorTypes: evolved_infantry_vandal, survivors_infantry_saboteur
 	#	CapturableActorTypes: tech_drillrig
 	#	MinimumCaptureDelay: 400
 	#	MaximumCaptureTargetOptions: 2
