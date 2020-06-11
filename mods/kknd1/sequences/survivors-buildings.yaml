@@ -1,33 +1,3 @@
-survivors_outpost:
-	idle: SPRITES.LVL|Outpost.mobd
-		Start: 170
-		Offset: -10,-27
-	damaged-idle: SPRITES.LVL|Outpost.mobd
-		Start: 169
-		Offset: -10,-27
-	critical-idle: bits/Outpost.png
-		Offset: -10,-27
-	animation: SPRITES.LVL|Outpost.mobd
-		Length: 120
-		Tick: 120
-		Offset: -10,-27
-	deploy: SPRITES.LVL|Outpost.mobd
-		Start: 175
-		Length: 9
-		Tick: 120
-		Offset: -10,-27
-	make0: SPRITES.LVL|Outpost.mobd
-		Start: 171
-		Offset: -10,-27
-	make1: SPRITES.LVL|Outpost.mobd
-		Start: 172
-		Offset: -10,-27
-	make2: SPRITES.LVL|Outpost.mobd
-		Start: 173
-		Offset: -10,-27
-	icon: bits/Buttons.png
-		Start: 37
-
 survivors_machineshop:
 	idle: SPRITES.LVL|MachineShop.mobd
 		Start: 5

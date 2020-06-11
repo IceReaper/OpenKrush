@@ -1,0 +1,35 @@
+survivors_building_outpost:
+	Inherits@1: ^CoreBuilding
+	Inherits@2: ^ProducesBuildings
+	Inherits@3: ^AnimatedBuilding
+	Tooltip:
+		Name: Outpost
+	Valued:
+		Cost: 1250
+	Health:
+		HP: 6000
+	ProvidesPrerequisite@buildings:
+		Prerequisite: survivors_buildings
+		RequiresCondition: !selfconstructing && !deconstructing
+	ProvidesPrerequisite@towers:
+		Prerequisite: survivors_towers
+		RequiresCondition: !selfconstructing && !deconstructing
+	ProvidesPrerequisite@walls:
+		Prerequisite: survivors_walls
+		RequiresCondition: !selfconstructing && !deconstructing
+	Building:
+		Dimensions: 4,3
+		Footprint: =xx= xxx= ====
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1024, -1536
+			BottomRight: 1024, 512
+		TargetableOffsets: 0,-512,0, 0,512,0, 1638,-512,0, 1638,512,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
+	Selectable:
+		Bounds: 80, 96, -8, -32
+	AdvancedSelectionDecorations:
+		Offset: -2,-16
+	Researchable:
+		Offset: 10,-133
+	TechnicianRepairable:
+		Offset: 10,-30

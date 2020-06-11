@@ -19,11 +19,11 @@ Player:
 	#	RequiresCondition: enable-placeholder-ai
 	HackedBaseBuilderBotModule@placeholder: # TODO replace this by KKnD building implementation
 		RequiresCondition: enable-placeholder-ai
-		ConstructionYardTypes: survivors_outpost, evolved_clanhall
+		ConstructionYardTypes: survivors_building_outpost, evolved_clanhall
 		RefineryTypes: survivors_powerstation, evolved_powerstation
-		BarracksTypes: survivors_outpost, evolved_clanhall, survivors_barracks, evolved_warriorhall
+		BarracksTypes: survivors_building_outpost, evolved_clanhall, survivors_barracks, evolved_warriorhall
 		VehiclesFactoryTypes: survivors_machineshop, evolved_beastenclosure, evolved_blacksmith, evolved_beastforge
-		ProductionTypes: survivors_outpost, evolved_clanhall, survivors_barracks, evolved_warriorhall, survivors_machineshop, evolved_beastenclosure, evolved_blacksmith, evolved_beastforge
+		ProductionTypes: survivors_building_outpost, evolved_clanhall, survivors_barracks, evolved_warriorhall, survivors_machineshop, evolved_beastenclosure, evolved_blacksmith, evolved_beastforge
 		BuildingQueues: building
 		DefenseQueues: tower
 		BuildingLimits:
@@ -55,14 +55,14 @@ Player:
 	McvManagerBotModule@placeholder:
 		RequiresCondition: enable-placeholder-ai
 		McvTypes: survivors_mobileoutpost, evolved_vehicle_clanhallwagon
-		ConstructionYardTypes: survivors_outpost, evolved_clanhall
+		ConstructionYardTypes: survivors_building_outpost, evolved_clanhall
 		McvFactoryTypes: survivors_machineshop, evolved_blacksmith, evolved_beastforge
 	SquadManagerBotModule@placeholder:
 		RequiresCondition: enable-placeholder-ai
 		SquadSize: 40
 		RushInterval: 1000
 		ExcludeFromSquadsTypes: survivors_mobileoutpost, evolved_vehicle_clanhallwagon, survivors_derrick, evolved_vehicle_derrick, survivors_oiltanker, evolved_vehicle_oiltanker, survivors_technician, evolved_mekanik
-		ConstructionYardTypes: survivors_outpost, evolved_clanhall
+		ConstructionYardTypes: survivors_building_outpost, evolved_clanhall
 	UnitBuilderBotModule@placeholder:
 		RequiresCondition: enable-placeholder-ai
 		UnitQueues: infantry, vehicle, beast

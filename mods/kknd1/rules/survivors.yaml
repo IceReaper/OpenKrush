@@ -43,7 +43,7 @@ World:
 ^SurvivorsBuilding:
 	Inherits: ^CoreBuilding
 	AdvancedBuildable:
-		Prerequisites: survivors_outpost
+		Prerequisites: survivors_building_outpost
 	ProvidesPrerequisite@Generic:
 		Prerequisite: survivors_building
 		RequiresCondition: !selfconstructing && !deconstructing
@@ -51,13 +51,13 @@ World:
 ^SurvivorsWall:
 	Inherits: ^CoreWall
 	AdvancedBuildable:
-		Prerequisites: survivors_outpost
+		Prerequisites: survivors_building_outpost
 
 ^SurvivorsTower:
 	Inherits@1: ^CoreTower
 	Inherits@2: ^CoreTurret
 	AdvancedBuildable:
-		Prerequisites: survivors_outpost
+		Prerequisites: survivors_building_outpost
 
 ^SurvivorsInfantry:
 	Inherits: ^CoreInfantry

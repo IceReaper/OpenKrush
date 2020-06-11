@@ -279,7 +279,7 @@ survivors_mobileoutpost:
 		Range: 11c0
 	Transforms:
 		TransformSounds: SURV.SLV|189.wav
-		IntoActor: survivors_outpost
+		IntoActor: survivors_building_outpost
 		Offset: -1,0
 	MustBeDestroyed:
 		RequiredForShortGame: true
