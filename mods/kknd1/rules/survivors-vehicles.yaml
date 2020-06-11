@@ -248,7 +248,7 @@ survivors_derrick:
 	Selectable:
 		Priority: 15
 	DeploysOnActor:
-		IntoActor: survivors_drillrig
+		IntoActor: survivors_building_drillrig
 		ValidTargets: oilpatch
 		DeployCursor: dock
 		Offset: -2,-2

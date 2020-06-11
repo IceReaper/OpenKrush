@@ -1,38 +1,3 @@
-survivors_drillrig:
-	idle: SPRITES.LVL|SRig.mobd
-		Start: 7
-		Offset: 0,-32
-	damaged-idle: SPRITES.LVL|SRig.mobd
-		Start: 6
-		Offset: 0,-32
-	critical-idle: bits/SRig.png
-		Offset: 0,-32
-	animation: SPRITES.LVL|SRig.mobd
-		Length: 6
-		Tick: 160
-		Offset: 0,-32
-	deploy: SPRITES.LVL|SRig.mobd
-		Start: 8
-		Length: 6
-		Tick: 60
-		Offset: 0,-32
-	make0: bits/SRig.png
-		Start: 1
-		Offset: 0,-32
-	make1: bits/SRig.png
-		Start: 2
-		Offset: 0,-32
-	make2: bits/SRig.png
-		Start: 3
-		Offset: 0,-32
-	oil: SPRITES.LVL|Oil.mobd
-		Length: 14
-		Tick: 120
-		Offset: 0,-16
-		ZOffset: -2000
-	icon: bits/Buttons.png
-		Start: 44
-
 survivors_airfield:
 	idle: bits/Airfield.png
 		Start: 3

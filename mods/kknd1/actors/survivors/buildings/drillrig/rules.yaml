@@ -1,4 +1,4 @@
-evolved_building_drillrig:
+survivors_building_drillrig:
 	Inherits@1: ^CoreBuilding
 	Inherits@2: ^AnimatedBuilding
 	Inherits@3: ^ExtractsOil
@@ -9,7 +9,7 @@ evolved_building_drillrig:
 	Health:
 		HP: 4000
 	AdvancedBuildable:
-		Prerequisites: evolved_buildings
+		Prerequisites: survivors_buildings
 		BuildDuration: 625
 		Level: -1
 	Building:
@@ -26,6 +26,6 @@ evolved_building_drillrig:
 	Dock:
 		Position: -1000,400,0
 	AdvancedSelectionDecorations:
-		Offset: -3,-12
+		Offset: -3,-31
 	TechnicianRepairable:
-		Offset: 0,-30
+		Offset: 0,-40

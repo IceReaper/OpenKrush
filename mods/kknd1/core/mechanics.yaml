@@ -135,6 +135,8 @@
 		RequiresCondition: !selfconstructing && !deconstructing
 	AttackNotification:
 		Notifications: DrillRigUnderAttack
+	GivesBuildableArea:
+		AreaTypes: defence
 	TooltipDescription:
 		Description: Extracts oil
 
