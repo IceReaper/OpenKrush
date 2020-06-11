@@ -221,25 +221,3 @@ survivors_solarpanel:
 		Tick: 120
 	icon: bits/Buttons.png
 		Start: 107
-
-survivors_detentioncenter:
-	idle: bits/DetentionCenter.png
-		Start: 3
-		Offset: 2,-24
-	damaged-idle: bits/DetentionCenter.png
-		Start: 4
-		Offset: 2,-24
-	critical-idle: bits/DetentionCenter.png
-		Start: 5
-		Offset: 2,-24
-	make0: bits/DetentionCenter.png
-		Start: 0
-		Offset: 2,-24
-	make1: bits/DetentionCenter.png
-		Start: 1
-		Offset: 2,-24
-	make2: bits/DetentionCenter.png
-		Start: 2
-		Offset: 2,-24
-	icon: bits/Buttons.png
-		Start: 43

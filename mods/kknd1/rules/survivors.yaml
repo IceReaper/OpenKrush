@@ -62,7 +62,7 @@ World:
 ^SurvivorsInfantry:
 	Inherits: ^CoreInfantry
 	AdvancedBuildable:
-		Prerequisites: survivors_barracks
+		Prerequisites: survivors_building_barracks
 	VeterancyVoiced:
 		VoiceSets: SurvivorsVoice, SurvivorsVeteranVoice, SurvivorsVeteranVoice
 
