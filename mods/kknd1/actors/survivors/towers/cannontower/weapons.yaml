@@ -3,7 +3,7 @@ survivors_tower_cannontower:
 	Range: 7c0
 	Burst: 2
 	BurstDelays: 4
-	ReloadDelay: 52
+	ReloadDelay: 60
 	Report: SURV.SLV|9.wav
 	Projectile: Bullet
 		Image: projectile

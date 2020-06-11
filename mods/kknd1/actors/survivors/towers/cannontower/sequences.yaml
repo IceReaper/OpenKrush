@@ -1,5 +1,4 @@
 survivors_tower_cannontower:
-	Inherits@muzzle: ^gun_16
 	shoot: SPRITES.LVL|CannonTower.mobd
 		Length: 3
 		Tick: 160
