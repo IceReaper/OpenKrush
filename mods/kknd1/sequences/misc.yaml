@@ -1,3 +1,6 @@
+mpspawn:
+	idle: bits/mpspawn.png
+
 overlay:
 	build-valid: SPRITES.LVL|Cursors.mobd
 		Start: 98

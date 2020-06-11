@@ -1,5 +1,5 @@
 survivors_infantry_scout:
-  DefaultVariant: # TODO remove .aud as default from engine!
+	DefaultVariant: # TODO remove .aud as default from engine!
 	Voices:
 		Create: kknd1|actors/survivors/infantry/scout/sound2.wav
 		Select: kknd1|actors/survivors/infantry/scout/sound2.wav, kknd1|actors/survivors/infantry/scout/sound1.wav, kknd1|actors/survivors/infantry/scout/sound4.wav

@@ -1,0 +1,7 @@
+bunker_vehicle_gorttherobot:
+	DefaultVariant: # TODO remove .aud as default from engine!
+	Voices:
+		Create: kknd1|actors/bunker/vehicles/gorttherobot/sound.wav
+		Select: kknd1|actors/bunker/SystemsReady.wav, kknd1|actors/bunker/Verified.wav, kknd1|actors/bunker/Receiving.wav, kknd1|actors/bunker/Online.wav
+		Action: kknd1|actors/bunker/OnYourCommand.wav, kknd1|actors/bunker/Affirmative.wav, kknd1|actors/bunker/Confirmed.wav, kknd1|actors/bunker/Acknowledged.wav, kknd1|actors/bunker/AsYouWish.wav, kknd1|actors/bunker/Locked.wav
+		Attack: kknd1|actors/bunker/Target.wav, kknd1|actors/bunker/TargetLocked.wav, kknd1|actors/bunker/KrushKillAndDestroy.wav, kknd1|actors/bunker/WithPleasure.wav, kknd1|actors/bunker/Annihilate.wav, kknd1|actors/bunker/PowerUp.wav

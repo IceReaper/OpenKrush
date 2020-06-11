@@ -63,7 +63,7 @@ bunker_gorttherobot:
 	AdvancedSelectionDecorations:
 		Offset: 0,-47
 	Voiced:
-		VoiceSet: GortVoice
+		VoiceSet: bunker_vehicle_gorttherobot
 	RenderSprites:
 		Image: bunker_gorttherobot_modern
 	WithLoopedAttackSound:
