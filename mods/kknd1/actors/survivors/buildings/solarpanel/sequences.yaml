@@ -1,0 +1,18 @@
+survivors_building_solarpanel:
+	make0: actors/survivors/buildings/solarpanel/frames.png
+		Start: 0
+	make1: actors/survivors/buildings/solarpanel/frames.png
+		Start: 1
+	make2: actors/survivors/buildings/solarpanel/frames.png
+		Start: 2
+	idle: actors/survivors/buildings/solarpanel/frames.png
+		Start: 3
+	damaged-idle: actors/survivors/buildings/solarpanel/frames.png
+		Start: 4
+	critical-idle: actors/survivors/buildings/solarpanel/frames.png
+		Start: 5
+	animation: actors/survivors/buildings/solarpanel/frames.png
+		Start: 6
+		Length: 10
+		Tick: 120
+	icon: actors/survivors/buildings/solarpanel/icon.png

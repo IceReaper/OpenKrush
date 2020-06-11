@@ -1,0 +1,41 @@
+survivors_building_solarpanel:
+	Inherits@1: ^CoreBuilding
+	Inherits@2: ^ProducesResources
+	Inherits@3: ^AnimatedBuilding
+	Tooltip:
+		Name: Solar Panel
+	Valued:
+		Cost: 750
+	Health:
+		HP: 2000
+	AdvancedBuildable:
+		Prerequisites: survivors_buildings
+		BuildDuration: 750
+		Level: 3
+	Building:
+		Dimensions: 2,2
+		Footprint: == xx
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 1024
+		TargetableOffsets: 519,-312,0, 519,312,0, -719,-312,0, -719,312,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
+	Selectable:
+		Bounds: 50, 50, 0, 0
+	AdvancedSelectionDecorations:
+		Offset: 0,-25
+	CashTrickler:
+		Interval: 50
+		Amount: 20
+	# Building too small for regular explosions.
+	Explodes:
+		Weapon: dieSmallBuilding
+		EmptyWeapon: dieSmallBuilding
+	ExplosionOnDamageTransition@Heavy:
+		Weapon: breakSmallBuilding
+		DamageState: Heavy
+	ExplosionOnDamageTransition@Critical:
+		Weapon: breakSmallBuilding
+		DamageState: Critical
+	FrozenOnDeath:
+		Duration: 40
