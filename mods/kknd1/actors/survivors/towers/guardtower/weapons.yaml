@@ -4,7 +4,7 @@ survivors_tower_guardtower:
 	Burst: 10
 	BurstDelays: 7
 	ReloadDelay: 38
-	Report: kknd1|bits/sounds/machinegun.wav #SURV.SLV|4.wav
+	Report: kknd1|actors/survivors/towers/guardtower/sound.wav #SURV.SLV|4.wav
 	Warhead@Damage: SpreadDamage
 		Versus:
 			infantry: 45
