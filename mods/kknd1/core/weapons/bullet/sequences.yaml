@@ -14,26 +14,26 @@ weapon_bullet:
 		Length: 4
 		Tick: 120
 		ZOffset: 1500
-	hit_d: core/weapon_bullet/frames.png
+	hit_d: core/weapons/bullet/frames.png
 		Length: 4
 		Tick: 120
 		ZOffset: 1500
-	hit_e: core/weapon_bullet/frames.png
+	hit_e: core/weapons/bullet/frames.png
 		Start: 4
 		Length: 4
 		Tick: 120
 		ZOffset: 1500
-	hit_f: core/weapon_bullet/frames.png
+	hit_f: core/weapons/bullet/frames.png
 		Start: 8
 		Length: 4
 		Tick: 120
 		ZOffset: 1500
-	hit_g: core/weapon_bullet/frames.png
+	hit_g: core/weapons/bullet/frames.png
 		Start: 12
 		Length: 4
 		Tick: 120
 		ZOffset: 1500
-	hit_h: core/weapon_bullet/frames.png
+	hit_h: core/weapons/bullet/frames.png
 		Start: 16
 		Length: 4
 		Tick: 120

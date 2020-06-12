@@ -1,5 +1,5 @@
 survivors_wall_barricade:
-	Inherits: ^SurvivorsWall
+	Inherits: ^CoreWall
 	Tooltip:
 		Name: Barricade
 	Valued:
