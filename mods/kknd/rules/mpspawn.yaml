@@ -1,0 +1,21 @@
+# The spawnpoint for player actors.
+mpspawn:
+	# This actor is not affected by shroud or fog.
+	AlwaysVisible:
+	# Required for the mpspawn to have an location in the world, but not occupy it for anything.
+	Immobile:
+		OccupiesSpace: false
+	# Use simple sprite based marker in editor.
+	WithSpriteBody:
+	# Prevent the spawnpoint to be seen ingame.
+	RenderSpritesEditorOnly:
+		Palette: mpspawn
+	# Move spawnpoint in special system category in editor.
+	MapEditorData:
+		Categories: System
+
+# Default palette for the mpspawn.
+^Palettes:
+	PaletteFromPng@mpspawn:
+		Name: mpspawn
+		Filename: bits/mpspawn.png

@@ -29,6 +29,7 @@ Rules:
 	kknd|rules/palettes.yaml
 	kknd|rules/core.yaml
 	kknd|rules/misc.yaml
+	kknd|rules/mpspawn.yaml
 	kknd1|rules/palettes.yaml
 	kknd1|rules/core.yaml
 	kknd1|rules/misc.yaml
@@ -132,6 +133,7 @@ Rules:
 	kknd1|actors/survivors/walls/barricade/rules.yaml
 
 Sequences:
+	kknd|sequences/mpspawn.yaml
 	kknd1|sequences/misc.yaml
 	kknd1|sequences/weapons.yaml
 	kknd1|sequences/survivors.yaml
@@ -141,12 +143,15 @@ Sequences:
 	kknd1|sequences/mapobjects-urban.yaml
 	# TODO refactor above
 	kknd1|core/sequences/muzzle.yaml
+	kknd1|core/font.yaml
+	kknd1|core/sidebar.yaml
 	kknd1|core/weapons/bullet/sequences.yaml
 	kknd1|actors/bunker/techbunker/sequences.yaml
 	kknd1|actors/bunker/vehicles/gorttherobot/sequences.yaml
 	kknd1|actors/bunker/vehicles/mech/sequences.yaml
 	kknd1|actors/bunker/vehicles/plasmatank/sequences.yaml
 	kknd1|actors/bunker/vehicles/sentineldroid/sequences.yaml
+	kknd1|actors/evolved/sidebar.yaml
 	kknd1|actors/evolved/infantry/berserker/sequences.yaml
 	kknd1|actors/evolved/infantry/shotgunner/sequences.yaml
 	kknd1|actors/evolved/infantry/pyromaniac/sequences.yaml
@@ -183,6 +188,7 @@ Sequences:
 	kknd1|actors/evolved/towers/grapeshotcannon/sequences.yaml
 	kknd1|actors/evolved/towers/rotarycannon/sequences.yaml
 	kknd1|actors/evolved/walls/skeletalwall/sequences.yaml
+	kknd1|actors/survivors/sidebar.yaml
 	kknd1|actors/survivors/infantry/rifleman/sequences.yaml
 	kknd1|actors/survivors/infantry/swat/sequences.yaml
 	kknd1|actors/survivors/infantry/flamer/sequences.yaml
@@ -373,6 +379,8 @@ ServerTraits:
 ChromeMetrics:
 	common|metrics.yaml
 	kknd1|metrics.yaml
+	kknd1|actors/evolved/metrics.yaml
+	kknd1|actors/survivors/metrics.yaml
 
 Fonts:
 	Tiny:

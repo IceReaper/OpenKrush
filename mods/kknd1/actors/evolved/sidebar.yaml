@@ -1,0 +1,14 @@
+sidebar-evolved:
+	Inherits: sidebar
+	infantry: actors/evolved/sidebar.png
+		Start: 0
+	vehicle: actors/evolved/sidebar.png
+		Start: 1
+	aircraft: actors/evolved/sidebar.png
+		Start: 2
+	building: actors/evolved/sidebar.png
+		Start: 3
+	tower: actors/evolved/sidebar.png
+		Start: 4
+	wall: actors/evolved/sidebar.png
+		Start: 5

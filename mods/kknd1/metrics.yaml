@@ -1,10 +1,6 @@
 Metrics:
-	ColorPickerActorType-evolved: evolved.colorpicker
-	ColorPickerActorType-survivors: survivors.colorpicker
 	ColorPickerActorType: colorpicker
 	ColorPickerRemapIndices: 8, 9, 10, 11, 12, 13
 	ClickSound: ClickSound
 	ClickDisabledSound: ClickSound
 	ChatLineSound: ChatLine
-	ButtonArea-survivors: 4, 4, 40, 40
-	ButtonArea-evolved: 4, 4, 40, 40

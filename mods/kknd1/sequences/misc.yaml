@@ -1,6 +1,3 @@
-mpspawn:
-	idle: bits/mpspawn.png
-
 overlay:
 	build-valid: SPRITES.LVL|Cursors.mobd
 		Start: 98
@@ -195,10 +192,6 @@ tech_drillrig:
 	make0: bits/TechDrillRig.png
 	make1: bits/TechDrillRig.png
 	make2: bits/TechDrillRig.png
-
-font:
-	production: bits/FontProduction.png
-		Length: 11
 
 beacon:
 	x: bits/Beacon.png

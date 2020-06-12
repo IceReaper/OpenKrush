@@ -39,7 +39,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 			IngameUi = ingameUi;
 			Id = "KKND_SIDEBAR";
 
-			Buttons = new Animation(IngameUi.World, "icon-" + IngameUi.World.LocalPlayer.Faction.InternalName);
+			Buttons = new Animation(IngameUi.World, "sidebar-" + IngameUi.World.LocalPlayer.Faction.InternalName);
 			Font = new Animation(IngameUi.World, "font");
 
 			ChromeMetrics.TryGet("ButtonArea-" + IngameUi.World.LocalPlayer.Faction.InternalName, out ButtonArea);

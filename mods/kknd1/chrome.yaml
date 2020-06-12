@@ -80,6 +80,7 @@ stance-icons:
 		hold-fire-disabled: 480,264,16,16
 		hold-fire-active: 496,264,16,16
 
+# TODO split this!
 flags:
 	Image: uibits/buttons.png
 	Regions:
@@ -192,7 +193,7 @@ reload-icon:
 		disabled-11: 496,296,16,16
 
 strategic:
-	Image: buttons.png
+	Image: uibits/buttons.png
 	Regions:
 		unowned: 127,5,23,22
 		critical_unowned: 127,27,23,22

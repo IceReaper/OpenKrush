@@ -1,0 +1,14 @@
+sidebar-survivors:
+	Inherits: sidebar
+	infantry: actors/survivors/sidebar.png
+		Start: 0
+	vehicle: actors/survivors/sidebar.png
+		Start: 1
+	aircraft: actors/survivors/sidebar.png
+		Start: 2
+	building: actors/survivors/sidebar.png
+		Start: 3
+	tower: actors/survivors/sidebar.png
+		Start: 4
+	wall: actors/survivors/sidebar.png
+		Start: 5

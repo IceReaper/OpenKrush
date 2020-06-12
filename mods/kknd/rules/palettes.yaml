@@ -7,7 +7,3 @@
 		G: 0
 		B: 0
 		A: 128
-	# Default palette for the mpspawn, as its not part of the KKnD assets.
-	PaletteFromPng@mpspawn:
-		Name: mpspawn
-		Filename: bits/mpspawn.png

@@ -7,3 +7,8 @@ Description: Custom building spritesheet.
 Author: Dzierzan
 Source: Self-made based on demo frames.
 Description: Sidebar thumbnails.
+
+**font.png**
+Author: Dzierzan
+Source: Self-made.
+Description: Sidebar production numbers.
