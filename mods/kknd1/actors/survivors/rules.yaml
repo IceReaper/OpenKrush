@@ -5,47 +5,47 @@ World:
 	MPStartUnits@survivors0:
 		Class: none
 		ClassName: Mobile Base
-		BaseActor: survivors_mobileoutpost
+		BaseActor: survivors_vehicle_mobileoutpost
 		Factions: survivors
 	MPStartUnits@survivors1:
 		Class: support
 		ClassName: With Derrick
-		BaseActor: survivors_mobileoutpost
-		SupportActors: survivors_derrick
+		BaseActor: survivors_vehicle_mobileoutpost
+		SupportActors: survivors_vehicle_derrick
 		InnerSupportRadius: 4
 		OuterSupportRadius: 6
 		Factions: survivors
 	MPStartUnits@survivors2:
 		Class: light
 		ClassName: Light support
-		BaseActor: survivors_mobileoutpost
-		SupportActors: survivors_derrick, survivors_infantry_rifleman, survivors_infantry_rifleman, survivors_infantry_rifleman, survivors_infantry_rifleman, survivors_infantry_rifleman
+		BaseActor: survivors_vehicle_mobileoutpost
+		SupportActors: survivors_vehicle_derrick, survivors_infantry_rifleman, survivors_infantry_rifleman, survivors_infantry_rifleman, survivors_infantry_rifleman, survivors_infantry_rifleman
 		InnerSupportRadius: 4
 		OuterSupportRadius: 6
 		Factions: survivors
 	MPStartUnits@survivors3:
 		Class: heavy
 		ClassName: Heavy support
-		BaseActor: survivors_mobileoutpost
-		SupportActors: survivors_derrick, survivors_dirtbike, survivors_4x4pickup, survivors_allterrainvehicle, survivors_flameatv
+		BaseActor: survivors_vehicle_mobileoutpost
+		SupportActors: survivors_vehicle_derrick, survivors_vehicle_dirtbike, survivors_vehicle_4x4pickup, survivors_vehicle_allterrainvehicle, survivors_vehicle_flameatv
 		InnerSupportRadius: 4
 		OuterSupportRadius: 6
 		Factions: survivors
 	MPStartUnits@survivors4:
 		Class: eco
 		ClassName: Eco support
-		BaseActor: survivors_mobileoutpost
-		SupportActors: survivors_derrick, survivors_derrick, survivors_oiltanker, survivors_oiltanker
+		BaseActor: survivors_vehicle_mobileoutpost
+		SupportActors: survivors_vehicle_derrick, survivors_vehicle_derrick, survivors_vehicle_oiltanker, survivors_vehicle_oiltanker
 		InnerSupportRadius: 4
 		OuterSupportRadius: 6
 		Factions: survivors
 
 survivors.colorpicker:
-	Inherits: survivors_oiltanker
+	Inherits: survivors_vehicle_oiltanker
 	Mobile:
 		InitialFacing: 128
 	RenderSprites:
-		Image: survivors_oiltanker
+		Image: survivors_vehicle_oiltanker
 		Palette: colorpicker
 	-AdvancedBuildable:
 	-MapEditorData:

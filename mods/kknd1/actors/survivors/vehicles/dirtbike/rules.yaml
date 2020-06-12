@@ -1,0 +1,27 @@
+survivors_vehicle_dirtbike:
+	Inherits@1: ^CoreVehicle
+	Inherits@2: ^CoreLightVehicle
+	Inherits@3: ^CoreArmedSelf
+	Inherits@4: ^HasMuzzle
+	Tooltip:
+		Name: Dirt Bike
+	Valued:
+		Cost: 200
+	Health:
+		HP: 400
+	Mobile:
+		Speed: 115
+		TurnSpeed: 41
+	AdvancedBuildable:
+		Prerequisites: survivors_vehicles
+		BuildDuration: 150
+		Level: 0
+	RevealsShroud:
+		Range: 11c0
+	OffsetsArmament:
+		Weapon: survivors_vehicle_dirtbike
+	AdvancedSelectionDecorations:
+		Offset: 0,4
+	Veterancy:
+	VeterancyVoiced:
+		VoiceSets: SurvivorsVoice, SurvivorsVeteranVoice, SurvivorsVeteranVoice

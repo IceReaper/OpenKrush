@@ -1,0 +1,24 @@
+survivors_vehicle_mobileoutpost:
+	Inherits: ^mobile_base
+	Tooltip:
+		Name: Mobile Outpost
+	Valued:
+		Cost: 1500
+	Health:
+		HP: 6000
+	Mobile:
+		Speed: 40
+		TurnSpeed: 5
+	AdvancedBuildable:
+		Prerequisites: survivors_vehicles
+		BuildDuration: 1000
+		Level: 3
+	RevealsShroud:
+		Range: 11c0
+	Transforms:
+		IntoActor: survivors_building_outpost
+		TransformSounds: SURV.SLV|189.wav
+	AdvancedSelectionDecorations:
+		Offset: 0,2
+	Voiced:
+		VoiceSet: SurvivorsVoice

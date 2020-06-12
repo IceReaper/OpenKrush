@@ -1,0 +1,29 @@
+survivors_vehicle_4x4pickup:
+	Inherits@1: ^CoreVehicle
+	Inherits@2: ^CoreLightVehicle
+	Inherits@3: ^CoreTurret
+	Inherits@4: ^HasMuzzle
+	Tooltip:
+		Name: 4x4 Pickup
+	Valued:
+		Cost: 300
+	Health:
+		HP: 800
+	Mobile:
+		Speed: 90
+		TurnSpeed: 8
+	AdvancedBuildable:
+		Prerequisites: survivors_vehicles
+		BuildDuration: 150
+		Level: 0
+	RevealsShroud:
+		Range: 7c0
+	OffsetsArmament:
+		Weapon: survivors_vehicle_4x4pickup
+	Turreted:
+		TurnSpeed: 20
+	AdvancedSelectionDecorations:
+		Offset: 0,-6
+	Veterancy:
+	VeterancyVoiced:
+		VoiceSets: SurvivorsVoice, SurvivorsVeteranVoice, SurvivorsVeteranVoice

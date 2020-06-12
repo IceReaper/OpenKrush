@@ -1,0 +1,12 @@
+survivors_vehicle_4x4pickup:
+	Inherits: ^weapon_bullet
+	Range: 4c0
+	Burst: 10
+	BurstDelays: 19
+	ReloadDelay: 25
+	Report: SURV.SLV|5.wav
+	Warhead@Damage: SpreadDamage
+		Versus:
+			infantry: 40
+			vehicle: 25
+			building: 15

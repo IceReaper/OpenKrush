@@ -1,0 +1,29 @@
+survivors_vehicle_anacondatank:
+	Inherits@1: ^CoreVehicle
+	Inherits@2: ^CoreTurret
+	Inherits@3: ^HasMuzzle
+	Tooltip:
+		Name: Anaconda Tank
+	Valued:
+		Cost: 900
+	Health:
+		HP: 1800
+	Mobile:
+		Speed: 55
+		TurnSpeed: 8
+	AdvancedBuildable:
+		Prerequisites: survivors_vehicles
+		BuildDuration: 650
+		Level: 3
+	RevealsShroud:
+		Range: 7c0
+	OffsetsArmament:
+		Weapon: survivors_vehicle_anacondatank
+	Turreted:
+		TurnSpeed: 20
+	AdvancedSelectionDecorations:
+		Offset: 0,-10
+	Veterancy:
+		Experience: 1500, 2500
+	VeterancyVoiced:
+		VoiceSets: SurvivorsVoice, SurvivorsVeteranVoice, SurvivorsVeteranVoice

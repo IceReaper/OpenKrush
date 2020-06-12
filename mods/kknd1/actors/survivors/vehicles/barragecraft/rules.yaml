@@ -1,0 +1,28 @@
+survivors_vehicle_barragecraft:
+	Inherits@1: ^CoreVehicle
+	Inherits@2: ^CoreTurret
+	Tooltip:
+		Name: Barrage Craft
+	Valued:
+		Cost: 1100
+	Health:
+		HP: 1500
+	Mobile:
+		Speed: 45
+		TurnSpeed: 8
+	AdvancedBuildable:
+		Prerequisites: survivors_vehicles
+		BuildDuration: 850
+		Level: 4
+	RevealsShroud:
+		Range: 7c0
+	OffsetsArmament:
+		Weapon: survivors_vehicle_barragecraft
+	Turreted:
+		TurnSpeed: 20
+	AdvancedSelectionDecorations:
+		Offset: -1,-9
+	Veterancy:
+		Experience: 2500, 3500
+	VeterancyVoiced:
+		VoiceSets: SurvivorsVoice, SurvivorsVeteranVoice, SurvivorsVeteranVoice

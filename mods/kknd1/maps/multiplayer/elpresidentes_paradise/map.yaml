@@ -571,7 +571,7 @@ Actors:
 	Actor213: highland_trees_4
 		Owner: Neutral
 		Location: 35,88
-	Actor214: survivors_4x4pickup
+	Actor214: survivors_vehicle_4x4pickup
 		Owner: Neutral
 		Location: 64,50
 		Facing: 92

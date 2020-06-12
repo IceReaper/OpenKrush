@@ -1,0 +1,9 @@
+survivors_vehicle_derrick:
+	idle: SPRITES.LVL|SDerrick.mobd
+		Facings: -16
+	move: SPRITES.LVL|SDerrick.mobd
+		Start: 17
+		Length: 2
+		Tick: 120
+		Facings: -16
+	icon: actors/survivors/vehicles/derrick/icon.png

@@ -1,0 +1,12 @@
+survivors_vehicle_dirtbike:
+	Inherits: ^weapon_bullet
+	Range: 4c0
+	Burst: 1
+	BurstDelays: 0
+	ReloadDelay: 25
+	Report: kknd1|bits/sounds/pistol.wav #SURV.SLV|5.wav
+	Warhead@Damage: SpreadDamage
+		Versus:
+			infantry: 30
+			vehicle: 11
+			building: 11

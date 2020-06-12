@@ -1,0 +1,24 @@
+survivors_vehicle_barragecraft:
+	Inherits: ^weapon_explosion
+	Range: 8c512
+	Burst: 6
+	BurstDelays: 8
+	ReloadDelay: 200
+	Report: SURV.SLV|14.wav
+	Projectile: Bullet
+		Image: survivors_vehicle_barragecraft
+		Palette: player
+		IsPlayerPalette: true
+		Sequences: projectile
+		Speed: 200
+		TrailPalette: kknd
+		TrailImage: hit
+		TrailSequences: smoke
+		Inaccuracy: 2000
+		LaunchAngle: 50
+		Blockable: false
+	Warhead@Damage: SpreadDamage
+		Versus:
+			infantry: 150
+			vehicle: 200
+			building: 120

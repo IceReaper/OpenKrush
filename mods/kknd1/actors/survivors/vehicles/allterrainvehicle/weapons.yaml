@@ -1,0 +1,12 @@
+survivors_vehicle_allterrainvehicle:
+	Inherits: ^weapon_bullet
+	Range: 5c0
+	Burst: 10
+	BurstDelays: 13
+	ReloadDelay: 38
+	Report: SURV.SLV|8.wav
+	Warhead@Damage: SpreadDamage
+		Versus:
+			infantry: 45
+			vehicle: 25
+			building: 15

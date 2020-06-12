@@ -54,14 +54,14 @@ Player:
 	#	RequiresCondition: enable-placeholder-ai
 	McvManagerBotModule@placeholder:
 		RequiresCondition: enable-placeholder-ai
-		McvTypes: survivors_mobileoutpost, evolved_vehicle_clanhallwagon
+		McvTypes: survivors_vehicle_mobileoutpost, evolved_vehicle_clanhallwagon
 		ConstructionYardTypes: survivors_building_outpost, evolved_building_clanhall
 		McvFactoryTypes: survivors_building_machineshop, evolved_building_blacksmith, evolved_building_beastforge
 	SquadManagerBotModule@placeholder:
 		RequiresCondition: enable-placeholder-ai
 		SquadSize: 40
 		RushInterval: 1000
-		ExcludeFromSquadsTypes: survivors_mobileoutpost, evolved_vehicle_clanhallwagon, survivors_derrick, evolved_vehicle_derrick, survivors_oiltanker, evolved_vehicle_oiltanker, survivors_infantry_technician, evolved_infantry_mekanik
+		ExcludeFromSquadsTypes: survivors_vehicle_mobileoutpost, evolved_vehicle_clanhallwagon, survivors_vehicle_derrick, evolved_vehicle_derrick, survivors_vehicle_oiltanker, evolved_vehicle_oiltanker, survivors_infantry_technician, evolved_infantry_mekanik
 		ConstructionYardTypes: survivors_building_outpost, evolved_building_clanhall
 	UnitBuilderBotModule@placeholder:
 		RequiresCondition: enable-placeholder-ai
@@ -88,20 +88,20 @@ Player:
 			survivors_infantry_sapper: 80
 			survivors_infantry_rpglauncher: 90
 			survivors_infantry_sniper: 100
-			survivors_dirtbike: 40
-			survivors_4x4pickup: 50
-			survivors_allterrainvehicle: 60
+			survivors_vehicle_dirtbike: 40
+			survivors_vehicle_4x4pickup: 50
+			survivors_vehicle_allterrainvehicle: 60
 			survivors_atvflamethrower: 70
-			survivors_anacondatank: 80
-			survivors_barragecraft: 90
-			survivors_autocannontank: 100
+			survivors_vehicle_anacondatank: 80
+			survivors_vehicle_barragecraft: 90
+			survivors_vehicle_autocannontank: 100
 		UnitLimits:
 			evolved_vehicle_direwolf: 5
 			evolved_vehicle_bikeandsidecar: 10
 			evolved_vehicle_monstertruck: 10
-			survivors_dirtbike: 5
-			survivors_4x4pickup: 10
-			survivors_allterrainvehicle: 10
+			survivors_vehicle_dirtbike: 5
+			survivors_vehicle_4x4pickup: 10
+			survivors_vehicle_allterrainvehicle: 10
 	#CaptureManagerBotModule@placeholder:
 	#	CapturingActorTypes: evolved_infantry_vandal, survivors_infantry_saboteur
 	#	CapturableActorTypes: tech_drillrig

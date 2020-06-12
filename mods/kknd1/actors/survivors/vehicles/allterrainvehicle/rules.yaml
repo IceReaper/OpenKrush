@@ -1,0 +1,28 @@
+survivors_vehicle_allterrainvehicle:
+	Inherits@1: ^CoreVehicle
+	Inherits@2: ^CoreTurret
+	Inherits@3: ^HasMuzzle
+	Tooltip:
+		Name: All-Terrain Vehicle
+	Valued:
+		Cost: 500
+	Health:
+		HP: 1000
+	Mobile:
+		Speed: 70
+		TurnSpeed: 8
+	AdvancedBuildable:
+		Prerequisites: survivors_vehicles
+		BuildDuration: 300
+		Level: 1
+	RevealsShroud:
+		Range: 7c0
+	OffsetsArmament:
+		Weapon: survivors_vehicle_allterrainvehicle
+	Turreted:
+		TurnSpeed: 20
+	AdvancedSelectionDecorations:
+		Offset: 0,-10
+	Veterancy:
+	VeterancyVoiced:
+		VoiceSets: SurvivorsVoice, SurvivorsVeteranVoice, SurvivorsVeteranVoice

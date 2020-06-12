@@ -1,0 +1,23 @@
+survivors_vehicle_derrick:
+	Inherits: ^oil_derrick
+	Tooltip:
+		Name: Derrick
+	Valued:
+		Cost: 1000
+	Health:
+		HP: 4000
+	Mobile:
+		Speed: 40
+		TurnSpeed: 8
+	AdvancedBuildable:
+		Prerequisites: survivors_vehicles
+		BuildDuration: 500
+		Level: 0
+	RevealsShroud:
+		Range: 7c0
+	DeploysOnActor:
+		IntoActor: survivors_building_drillrig
+	AdvancedSelectionDecorations:
+		Offset: 0,-1
+	Voiced:
+		VoiceSet: SurvivorsVoice

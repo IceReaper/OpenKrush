@@ -1,0 +1,28 @@
+survivors_vehicle_flameatv:
+	Inherits@1: ^CoreVehicle
+	Inherits@2: ^CoreTurret
+	Tooltip:
+		Name: Flame ATV
+	Valued:
+		Cost: 700
+	Health:
+		HP: 1250
+	Mobile:
+		Speed: 60
+		TurnSpeed: 8
+	AdvancedBuildable:
+		Prerequisites: survivors_vehicles
+		BuildDuration: 450
+		Level: 2
+	RevealsShroud:
+		Range: 7c0
+	OffsetsArmament:
+		Weapon: survivors_vehicle_flameatv
+	Turreted:
+		TurnSpeed: 20
+	AdvancedSelectionDecorations:
+		Offset: 0,-10
+	Veterancy:
+		Experience: 2000, 4000
+	VeterancyVoiced:
+		VoiceSets: SurvivorsVoice, SurvivorsVeteranVoice, SurvivorsVeteranVoice

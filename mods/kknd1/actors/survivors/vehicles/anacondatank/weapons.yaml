@@ -1,0 +1,17 @@
+survivors_vehicle_anacondatank:
+	Inherits: ^weapon_explosion
+	Range: 6c0
+	Burst: 1
+	BurstDelays: 0
+	ReloadDelay: 82
+	Report: SURV.SLV|9.wav
+	Projectile: Bullet
+		Image: survivors_vehicle_anacondatank
+		Palette: kknd
+		Sequences: projectile
+		Speed: 450
+	Warhead@Damage: SpreadDamage
+		Versus:
+			infantry: 150
+			vehicle: 300
+			building: 100

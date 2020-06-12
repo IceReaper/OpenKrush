@@ -1,0 +1,21 @@
+survivors_vehicle_oiltanker:
+	Inherits: ^oil_tanker
+	Tooltip:
+		Name: Oil Tanker
+	Valued:
+		Cost: 750
+	Health:
+		HP: 3500
+	Mobile:
+		Speed: 45
+		TurnSpeed: 8
+	AdvancedBuildable:
+		Prerequisites: survivors_vehicles
+		BuildDuration: 600
+		Level: 2
+	RevealsShroud:
+		Range: 7c0
+	AdvancedSelectionDecorations:
+		Offset: 0,-1
+	Voiced:
+		VoiceSet: SurvivorsVoice

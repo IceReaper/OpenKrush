@@ -1,0 +1,12 @@
+survivors_vehicle_flameatv:
+	turret: SPRITES.LVL|FlameAtv.mobd
+		Facings: -16
+	idle: SPRITES.LVL|FlameAtv.mobd
+		Start: 16
+		Facings: -16
+	move: SPRITES.LVL|FlameAtv.mobd
+		Start: 32
+		Length: 2
+		Tick: 120
+		Facings: -16
+	icon: actors/survivors/vehicles/flameatv/icon.png

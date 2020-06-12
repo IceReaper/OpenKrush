@@ -1,0 +1,13 @@
+survivors_vehicle_allterrainvehicle:
+	Inherits@muzzle: ^gun_16
+	turret: SPRITES.LVL|AllTerrainVehicle.mobd
+		Facings: -16
+	idle: SPRITES.LVL|AllTerrainVehicle.mobd
+		Start: 16
+		Facings: -16
+	move: SPRITES.LVL|AllTerrainVehicle.mobd
+		Start: 32
+		Length: 2
+		Tick: 120
+		Facings: -16
+	icon: actors/survivors/vehicles/allterrainvehicle/icon.png

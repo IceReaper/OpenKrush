@@ -1,0 +1,11 @@
+survivors_vehicle_autocannontank:
+	Inherits: ^weapon_bullet
+	Range: 7c0
+	Burst: 1
+	BurstDelays: 0
+	ReloadDelay: 3
+	Warhead@Damage: SpreadDamage
+		Versus:
+			infantry: 50
+			vehicle: 33
+			building: 13

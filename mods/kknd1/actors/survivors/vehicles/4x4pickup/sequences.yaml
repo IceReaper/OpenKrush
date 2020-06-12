@@ -1,0 +1,15 @@
+survivors_vehicle_4x4pickup:
+	Inherits@muzzle: ^gun_16
+	# Original KKnD also uses the MonsterTruck turret, cause the Pickup turret has a broken north-frame.
+	#turret: SPRITES.LVL|Pickup.mobd
+	turret: SPRITES.LVL|MonsterTruck.mobd
+		Facings: -16
+	idle: SPRITES.LVL|Pickup.mobd
+		Start: 16
+		Facings: -16
+	move: SPRITES.LVL|Pickup.mobd
+		Start: 32
+		Length: 2
+		Tick: 120
+		Facings: -16
+	icon: actors/survivors/vehicles/4x4pickup/icon.png

@@ -1,0 +1,35 @@
+survivors_vehicle_autocannontank:
+	Inherits@1: ^CoreVehicle
+	Inherits@2: ^CoreHeavyVehicle
+	Inherits@3: ^CoreTurret
+	Tooltip:
+		Name: Autocannon Tank
+	Valued:
+		Cost: 1500
+	Health:
+		HP: 2500
+	Mobile:
+		Speed: 45
+		TurnSpeed: 8
+	AdvancedBuildable:
+		Prerequisites: survivors_vehicles
+		BuildDuration: 1000
+		Level: 5
+	RevealsShroud:
+		Range: 7c0
+	WithTurretAttackAnimation:
+		Sequence: shoot
+	OffsetsArmament:
+		Weapon: survivors_vehicle_autocannontank
+	Turreted:
+		TurnSpeed: 20
+	AdvancedSelectionDecorations:
+		Offset: 1,-1
+	Veterancy:
+		Experience: 3000, 4000
+		ReloadRates: 100, 100
+	WithLoopedAttackSound:
+		Report: SURV.SLV|6.wav
+	VeterancyVoiced:
+		VoiceSets: SurvivorsVoice, SurvivorsVeteranVoice, SurvivorsVeteranVoice
+		Delay: 3

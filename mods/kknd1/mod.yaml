@@ -33,7 +33,6 @@ Rules:
 	kknd1|rules/core.yaml
 	kknd1|rules/misc.yaml
 	kknd1|rules/bunkers.yaml
-	kknd1|rules/survivors-vehicles.yaml
 	kknd1|rules/ai.yaml
 	kknd1|rules/mapobjects-neutral.yaml
 	kknd1|rules/mapobjects-highland.yaml
@@ -103,6 +102,16 @@ Rules:
 	kknd1|actors/survivors/infantry/saboteur/rules.yaml
 	kknd1|actors/survivors/infantry/elpresidente/rules.yaml
 	kknd1|actors/survivors/infantry/scout/rules.yaml
+	kknd1|actors/survivors/vehicles/dirtbike/rules.yaml
+	kknd1|actors/survivors/vehicles/4x4pickup/rules.yaml
+	kknd1|actors/survivors/vehicles/allterrainvehicle/rules.yaml
+	kknd1|actors/survivors/vehicles/flameatv/rules.yaml
+	kknd1|actors/survivors/vehicles/anacondatank/rules.yaml
+	kknd1|actors/survivors/vehicles/barragecraft/rules.yaml
+	kknd1|actors/survivors/vehicles/autocannontank/rules.yaml
+	kknd1|actors/survivors/vehicles/oiltanker/rules.yaml
+	kknd1|actors/survivors/vehicles/derrick/rules.yaml
+	kknd1|actors/survivors/vehicles/mobileoutpost/rules.yaml
 	kknd1|actors/survivors/aircrafts/bomber/rules.yaml
 	kknd1|actors/survivors/buildings/outpost/rules.yaml
 	kknd1|actors/survivors/buildings/barracks/rules.yaml
@@ -123,7 +132,6 @@ Sequences:
 	kknd1|sequences/weapons.yaml
 	kknd1|sequences/bunkers.yaml
 	kknd1|sequences/survivors.yaml
-	kknd1|sequences/survivors-vehicles.yaml
 	kknd1|sequences/evolved.yaml
 	kknd1|sequences/mapobjects-highland.yaml
 	kknd1|sequences/mapobjects-desert.yaml
@@ -176,6 +184,16 @@ Sequences:
 	kknd1|actors/survivors/infantry/saboteur/sequences.yaml
 	kknd1|actors/survivors/infantry/elpresidente/sequences.yaml
 	kknd1|actors/survivors/infantry/scout/sequences.yaml
+	kknd1|actors/survivors/vehicles/dirtbike/sequences.yaml
+	kknd1|actors/survivors/vehicles/4x4pickup/sequences.yaml
+	kknd1|actors/survivors/vehicles/allterrainvehicle/sequences.yaml
+	kknd1|actors/survivors/vehicles/flameatv/sequences.yaml
+	kknd1|actors/survivors/vehicles/anacondatank/sequences.yaml
+	kknd1|actors/survivors/vehicles/barragecraft/sequences.yaml
+	kknd1|actors/survivors/vehicles/autocannontank/sequences.yaml
+	kknd1|actors/survivors/vehicles/oiltanker/sequences.yaml
+	kknd1|actors/survivors/vehicles/derrick/sequences.yaml
+	kknd1|actors/survivors/vehicles/mobileoutpost/sequences.yaml
 	kknd1|actors/survivors/aircrafts/bomber/sequences.yaml
 	kknd1|actors/survivors/buildings/outpost/sequences.yaml
 	kknd1|actors/survivors/buildings/barracks/sequences.yaml
@@ -194,7 +212,6 @@ Sequences:
 Weapons:
 	kknd1|weapons/misc.yaml
 	kknd1|weapons/bunkers.yaml
-	kknd1|weapons/survivors-vehicles.yaml
 	kknd1|weapons/shrapnel.yaml
 	# TODO refactor above
 	kknd1|core/weapons/bullet/weapons.yaml
@@ -229,6 +246,13 @@ Weapons:
 	kknd1|actors/survivors/infantry/saboteur/weapons.yaml
 	kknd1|actors/survivors/infantry/elpresidente/weapons.yaml
 	kknd1|actors/survivors/infantry/scout/weapons.yaml
+	kknd1|actors/survivors/vehicles/dirtbike/weapons.yaml
+	kknd1|actors/survivors/vehicles/4x4pickup/weapons.yaml
+	kknd1|actors/survivors/vehicles/allterrainvehicle/weapons.yaml
+	kknd1|actors/survivors/vehicles/flameatv/weapons.yaml
+	kknd1|actors/survivors/vehicles/anacondatank/weapons.yaml
+	kknd1|actors/survivors/vehicles/barragecraft/weapons.yaml
+	kknd1|actors/survivors/vehicles/autocannontank/weapons.yaml
 	kknd1|actors/survivors/aircrafts/bomber/weapons.yaml
 	kknd1|actors/survivors/towers/guardtower/weapons.yaml
 	kknd1|actors/survivors/towers/missilebattery/weapons.yaml

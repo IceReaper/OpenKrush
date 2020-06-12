@@ -23,7 +23,7 @@ survivors_building_powerstation:
 	Selectable:
 		Bounds: 80, 64, -8, -32
 	FreeActor:
-		Actor: survivors_oiltanker
+		Actor: survivors_vehicle_oiltanker
 		SpawnOffset: 1,2
 		Facing: 96
 		RequiresCondition: !selfconstructing && !deconstructing
