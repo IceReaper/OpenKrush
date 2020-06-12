@@ -1,0 +1,71 @@
+urban_trees_1:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+
+urban_trees_2:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+
+urban_trees_3:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+
+urban_trees_4:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 2,2
+		Footprint: == xx
+
+urban_trees_5:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 2,2
+		Footprint: == xx
+
+urban_trees_6:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 2,2
+		Footprint: == xx
+
+urban_trees_7:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 3,2
+		Footprint: === xxx
+
+urban_trees_8:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 2,2
+		Footprint: == xx
+
+urban_trees_9:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 3,2
+		Footprint: === xxx
+
+urban_trees_10:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+
+urban_trees_11:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+
+urban_trees_12:
+	Inherits: ^CoreDecoration
+	Building:
+		Dimensions: 1,2
+		Footprint: =x

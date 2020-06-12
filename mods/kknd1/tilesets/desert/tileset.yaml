@@ -45,7 +45,7 @@ Terrain:
 Templates:
 	Template@349:
 		Id: 349
-		Images: tilesets/desert/Terrain_Dirt.png
+		Images: tilesets/desert/tiles/Terrain_Dirt.png
 		Size: 1,1
 		PickAny: true
 		Categories: Terrain
@@ -89,7 +89,7 @@ Templates:
 
 	Template@350:
 		Id: 350
-		Images: tilesets/desert/Terrain_Sand.png
+		Images: tilesets/desert/tiles/Terrain_Sand.png
 		Size: 1,1
 		PickAny: true
 		Categories: Terrain
@@ -133,7 +133,7 @@ Templates:
 
 	Template@1742:
 		Id: 1742
-		Images: tilesets/desert/Terrain_Water.png
+		Images: tilesets/desert/tiles/Terrain_Water.png
 		Size: 1,1
 		PickAny: true
 		Categories: Terrain
@@ -177,7 +177,7 @@ Templates:
 
 	Template@351:
 		Id: 351
-		Images: tilesets/desert/Terrain_Grass.png
+		Images: tilesets/desert/tiles/Terrain_Grass.png
 		Size: 1,1
 		PickAny: true
 		Categories: Terrain
@@ -221,7 +221,7 @@ Templates:
 
 	Template@957:
 		Id: 957
-		Images: tilesets/desert/Terrain_Dirt1.png
+		Images: tilesets/desert/tiles/Terrain_Dirt1.png
 		Size: 1,1
 		Categories: Terrain
 		Tiles:
@@ -229,7 +229,7 @@ Templates:
 
 	Template@959:
 		Id: 959
-		Images: tilesets/desert/Terrain_Dirt2.png
+		Images: tilesets/desert/tiles/Terrain_Dirt2.png
 		Size: 1,1
 		Categories: Terrain
 		Tiles:
@@ -237,7 +237,7 @@ Templates:
 
 	Template@960:
 		Id: 960
-		Images: tilesets/desert/Terrain_Dirt3.png
+		Images: tilesets/desert/tiles/Terrain_Dirt3.png
 		Size: 4,2
 		Categories: Terrain
 		Tiles:
@@ -252,7 +252,7 @@ Templates:
 
 	Template@963:
 		Id: 963
-		Images: tilesets/desert/Terrain_Dirt4.png
+		Images: tilesets/desert/tiles/Terrain_Dirt4.png
 		Size: 2,4
 		Categories: Terrain
 		Tiles:
@@ -267,7 +267,7 @@ Templates:
 
 	Template@964:
 		Id: 964
-		Images: tilesets/desert/Terrain_Dirt5.png
+		Images: tilesets/desert/tiles/Terrain_Dirt5.png
 		Size: 4,3
 		Categories: Terrain
 		Tiles:
@@ -286,7 +286,7 @@ Templates:
 
 	Template@965:
 		Id: 965
-		Images: tilesets/desert/Terrain_Dirt6.png
+		Images: tilesets/desert/tiles/Terrain_Dirt6.png
 		Size: 5,4
 		Categories: Terrain
 		Tiles:
@@ -313,7 +313,7 @@ Templates:
 
 	Template@966:
 		Id: 966
-		Images: tilesets/desert/Terrain_Dirt7.png
+		Images: tilesets/desert/tiles/Terrain_Dirt7.png
 		Size: 2,2
 		Categories: Terrain
 		Tiles:
@@ -324,7 +324,7 @@ Templates:
 
 	Template@967:
 		Id: 967
-		Images: tilesets/desert/Terrain_Dirt8.png
+		Images: tilesets/desert/tiles/Terrain_Dirt8.png
 		Size: 1,1
 		Categories: Terrain
 		Tiles:
@@ -332,7 +332,7 @@ Templates:
 
 	Template@968:
 		Id: 968
-		Images: tilesets/desert/Terrain_Dirt9.png
+		Images: tilesets/desert/tiles/Terrain_Dirt9.png
 		Size: 1,1
 		Categories: Terrain
 		Tiles:
@@ -340,7 +340,7 @@ Templates:
 
 	Template@973:
 		Id: 973
-		Images: tilesets/desert/Terrain_Dirt10.png
+		Images: tilesets/desert/tiles/Terrain_Dirt10.png
 		Size: 1,2
 		Categories: Terrain
 		Tiles:
@@ -349,7 +349,7 @@ Templates:
 
 	Template@974:
 		Id: 974
-		Images: tilesets/desert/Terrain_Dirt11.png
+		Images: tilesets/desert/tiles/Terrain_Dirt11.png
 		Size: 1,2
 		Categories: Terrain
 		Tiles:
@@ -358,7 +358,7 @@ Templates:
 
 	Template@977:
 		Id: 977
-		Images: tilesets/desert/Terrain_Dirt12.png
+		Images: tilesets/desert/tiles/Terrain_Dirt12.png
 		Size: 2,2
 		Categories: Terrain
 		Tiles:
@@ -369,7 +369,7 @@ Templates:
 
 	Template@978:
 		Id: 978
-		Images: tilesets/desert/Terrain_Dirt13.png
+		Images: tilesets/desert/tiles/Terrain_Dirt13.png
 		Size: 1,1
 		Categories: Terrain
 		Tiles:
@@ -377,7 +377,7 @@ Templates:
 
 	Template@979:
 		Id: 979
-		Images: tilesets/desert/Terrain_Dirt14.png
+		Images: tilesets/desert/tiles/Terrain_Dirt14.png
 		Size: 1,1
 		Categories: Terrain
 		Tiles:
@@ -385,7 +385,7 @@ Templates:
 
 	Template@980:
 		Id: 980
-		Images: tilesets/desert/Terrain_Dirt15.png
+		Images: tilesets/desert/tiles/Terrain_Dirt15.png
 		Size: 1,1
 		Categories: Terrain
 		Tiles:
@@ -393,7 +393,7 @@ Templates:
 
 	Template@982:
 		Id: 982
-		Images: tilesets/desert/Terrain_Dirt16.png
+		Images: tilesets/desert/tiles/Terrain_Dirt16.png
 		Size: 2,2
 		Categories: Terrain
 		Tiles:
@@ -404,7 +404,7 @@ Templates:
 
 	Template@983:
 		Id: 983
-		Images: tilesets/desert/Terrain_Dirt17.png
+		Images: tilesets/desert/tiles/Terrain_Dirt17.png
 		Size: 2,3
 		Categories: Terrain
 		Tiles:
@@ -417,7 +417,7 @@ Templates:
 
 	Template@986:
 		Id: 986
-		Images: tilesets/desert/Terrain_Grass1.png
+		Images: tilesets/desert/tiles/Terrain_Grass1.png
 		Size: 3,3
 		Categories: Terrain
 		Tiles:
@@ -433,7 +433,7 @@ Templates:
 
 	Template@988:
 		Id: 988
-		Images: tilesets/desert/Terrain_Grass2.png
+		Images: tilesets/desert/tiles/Terrain_Grass2.png
 		Size: 4,3
 		Categories: Terrain
 		Tiles:
@@ -452,7 +452,7 @@ Templates:
 
 	Template@990:
 		Id: 990
-		Images: tilesets/desert/Terrain_Grass3.png
+		Images: tilesets/desert/tiles/Terrain_Grass3.png
 		Size: 3,3
 		Categories: Terrain
 		Tiles:
@@ -468,7 +468,7 @@ Templates:
 
 	Template@992:
 		Id: 992
-		Images: tilesets/desert/Terrain_Grass4.png
+		Images: tilesets/desert/tiles/Terrain_Grass4.png
 		Size: 3,3
 		Categories: Terrain
 		Tiles:
@@ -484,7 +484,7 @@ Templates:
 
 	Template@993:
 		Id: 993
-		Images: tilesets/desert/Terrain_Grass5.png
+		Images: tilesets/desert/tiles/Terrain_Grass5.png
 		Size: 4,4
 		Categories: Terrain
 		Tiles:
@@ -507,7 +507,7 @@ Templates:
 
 	Template@994:
 		Id: 994
-		Images: tilesets/desert/Terrain_Grass6.png
+		Images: tilesets/desert/tiles/Terrain_Grass6.png
 		Size: 5,3
 		Categories: Terrain
 		Tiles:
@@ -529,7 +529,7 @@ Templates:
 
 	Template@995:
 		Id: 995
-		Images: tilesets/desert/Terrain_Grass7.png
+		Images: tilesets/desert/tiles/Terrain_Grass7.png
 		Size: 3,3
 		Categories: Terrain
 		Tiles:
@@ -545,7 +545,7 @@ Templates:
 
 	Template@996:
 		Id: 996
-		Images: tilesets/desert/Terrain_Grass8.png
+		Images: tilesets/desert/tiles/Terrain_Grass8.png
 		Size: 3,4
 		Categories: Terrain
 		Tiles:
@@ -564,7 +564,7 @@ Templates:
 
 	Template@998:
 		Id: 998
-		Images: tilesets/desert/Terrain_Sand1.png
+		Images: tilesets/desert/tiles/Terrain_Sand1.png
 		Size: 2,4
 		Categories: Terrain
 		Tiles:
@@ -579,7 +579,7 @@ Templates:
 
 	Template@1000:
 		Id: 1000
-		Images: tilesets/desert/Terrain_Sand2.png
+		Images: tilesets/desert/tiles/Terrain_Sand2.png
 		Size: 2,2
 		Categories: Terrain
 		Tiles:
@@ -590,7 +590,7 @@ Templates:
 
 	Template@1333:
 		Id: 1333
-		Images: tilesets/desert/Terrain_Sand3.png
+		Images: tilesets/desert/tiles/Terrain_Sand3.png
 		Size: 2,3
 		Categories: Terrain
 		Tiles:
@@ -603,7 +603,7 @@ Templates:
 
 	Template@1699:
 		Id: 1699
-		Images: tilesets/desert/Beach_1.png
+		Images: tilesets/desert/tiles/Beach_1.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -620,7 +620,7 @@ Templates:
 
 	Template@1700:
 		Id: 1700
-		Images: tilesets/desert/Beach_2.png
+		Images: tilesets/desert/tiles/Beach_2.png
 		Size: 2,4
 		Categories: Beach
 		Tiles:
@@ -635,7 +635,7 @@ Templates:
 
 	Template@1702:
 		Id: 1702
-		Images: tilesets/desert/Beach_3.png
+		Images: tilesets/desert/tiles/Beach_3.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -652,7 +652,7 @@ Templates:
 
 	Template@1704:
 		Id: 1704
-		Images: tilesets/desert/Beach_4.png
+		Images: tilesets/desert/tiles/Beach_4.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -669,7 +669,7 @@ Templates:
 
 	Template@1705:
 		Id: 1705
-		Images: tilesets/desert/Beach_5.png
+		Images: tilesets/desert/tiles/Beach_5.png
 		Size: 4,2
 		Categories: Beach
 		Tiles:
@@ -684,7 +684,7 @@ Templates:
 
 	Template@1707:
 		Id: 1707
-		Images: tilesets/desert/Beach_6.png
+		Images: tilesets/desert/tiles/Beach_6.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -701,7 +701,7 @@ Templates:
 
 	Template@1708:
 		Id: 1708
-		Images: tilesets/desert/Beach_7.png
+		Images: tilesets/desert/tiles/Beach_7.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -718,7 +718,7 @@ Templates:
 
 	Template@1709:
 		Id: 1709
-		Images: tilesets/desert/Beach_8.png
+		Images: tilesets/desert/tiles/Beach_8.png
 		Size: 2,4
 		Categories: Beach
 		Tiles:
@@ -733,7 +733,7 @@ Templates:
 
 	Template@1710:
 		Id: 1710
-		Images: tilesets/desert/Beach_9.png
+		Images: tilesets/desert/tiles/Beach_9.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -750,7 +750,7 @@ Templates:
 
 	Template@1711:
 		Id: 1711
-		Images: tilesets/desert/Beach_10.png
+		Images: tilesets/desert/tiles/Beach_10.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -767,7 +767,7 @@ Templates:
 
 	Template@1712:
 		Id: 1712
-		Images: tilesets/desert/Beach_11.png
+		Images: tilesets/desert/tiles/Beach_11.png
 		Size: 4,2
 		Categories: Beach
 		Tiles:
@@ -782,7 +782,7 @@ Templates:
 
 	Template@1713:
 		Id: 1713
-		Images: tilesets/desert/Beach_12.png
+		Images: tilesets/desert/tiles/Beach_12.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -799,7 +799,7 @@ Templates:
 
 	Template@1714:
 		Id: 1714
-		Images: tilesets/desert/Beach_13.png
+		Images: tilesets/desert/tiles/Beach_13.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -821,7 +821,7 @@ Templates:
 
 	Template@1715:
 		Id: 1715
-		Images: tilesets/desert/Beach_14.png
+		Images: tilesets/desert/tiles/Beach_14.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -843,7 +843,7 @@ Templates:
 
 	Template@1717:
 		Id: 1717
-		Images: tilesets/desert/Beach_16.png
+		Images: tilesets/desert/tiles/Beach_16.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -865,7 +865,7 @@ Templates:
 
 	Template@1718:
 		Id: 1718
-		Images: tilesets/desert/Beach_15.png
+		Images: tilesets/desert/tiles/Beach_15.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -887,7 +887,7 @@ Templates:
 
 	Template@1719:
 		Id: 1719
-		Images: tilesets/desert/Beach_17.png
+		Images: tilesets/desert/tiles/Beach_17.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -904,7 +904,7 @@ Templates:
 
 	Template@1720:
 		Id: 1720
-		Images: tilesets/desert/Beach_18.png
+		Images: tilesets/desert/tiles/Beach_18.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -921,7 +921,7 @@ Templates:
 
 	Template@1722:
 		Id: 1722
-		Images: tilesets/desert/Beach_19.png
+		Images: tilesets/desert/tiles/Beach_19.png
 		Size: 4,3
 		Categories: Beach
 		Tiles:
@@ -934,7 +934,7 @@ Templates:
 
 	Template@1724:
 		Id: 1724
-		Images: tilesets/desert/Beach_20.png
+		Images: tilesets/desert/tiles/Beach_20.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -951,7 +951,7 @@ Templates:
 
 	Template@1726:
 		Id: 1726
-		Images: tilesets/desert/Beach_21.png
+		Images: tilesets/desert/tiles/Beach_21.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -968,7 +968,7 @@ Templates:
 
 	Template@1727:
 		Id: 1727
-		Images: tilesets/desert/Beach_22.png
+		Images: tilesets/desert/tiles/Beach_22.png
 		Size: 4,3
 		Categories: Beach
 		Tiles:
@@ -981,7 +981,7 @@ Templates:
 
 	Template@1728:
 		Id: 1728
-		Images: tilesets/desert/Beach_23.png
+		Images: tilesets/desert/tiles/Beach_23.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -998,7 +998,7 @@ Templates:
 
 	Template@1729:
 		Id: 1729
-		Images: tilesets/desert/Beach_24.png
+		Images: tilesets/desert/tiles/Beach_24.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -1015,7 +1015,7 @@ Templates:
 
 	Template@1731:
 		Id: 1731
-		Images: tilesets/desert/Beach_25.png
+		Images: tilesets/desert/tiles/Beach_25.png
 		Size: 4,3
 		Categories: Beach
 		Tiles:
@@ -1028,7 +1028,7 @@ Templates:
 
 	Template@1732:
 		Id: 1732
-		Images: tilesets/desert/Beach_26.png
+		Images: tilesets/desert/tiles/Beach_26.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -1045,7 +1045,7 @@ Templates:
 
 	Template@1735:
 		Id: 1735
-		Images: tilesets/desert/Beach_27.png
+		Images: tilesets/desert/tiles/Beach_27.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -1062,7 +1062,7 @@ Templates:
 
 	Template@1736:
 		Id: 1736
-		Images: tilesets/desert/Beach_28.png
+		Images: tilesets/desert/tiles/Beach_28.png
 		Size: 4,3
 		Categories: Beach
 		Tiles:
@@ -1075,7 +1075,7 @@ Templates:
 
 	Template@1737:
 		Id: 1737
-		Images: tilesets/desert/Beach_29.png
+		Images: tilesets/desert/tiles/Beach_29.png
 		Size: 3,3
 		Categories: Beach
 		Tiles:
@@ -1091,7 +1091,7 @@ Templates:
 
 	Template@1738:
 		Id: 1738
-		Images: tilesets/desert/Beach_30.png
+		Images: tilesets/desert/tiles/Beach_30.png
 		Size: 3,3
 		Categories: Beach
 		Tiles:
@@ -1107,7 +1107,7 @@ Templates:
 
 	Template@1739:
 		Id: 1739
-		Images: tilesets/desert/Beach_32.png
+		Images: tilesets/desert/tiles/Beach_32.png
 		Size: 3,3
 		Categories: Beach
 		Tiles:
@@ -1123,7 +1123,7 @@ Templates:
 
 	Template@1740:
 		Id: 1740
-		Images: tilesets/desert/Beach_31.png
+		Images: tilesets/desert/tiles/Beach_31.png
 		Size: 3,3
 		Categories: Beach
 		Tiles:
@@ -1139,7 +1139,7 @@ Templates:
 
 	Template@269:
 		Id: 269
-		Images: tilesets/desert/Cliff_N_A.png
+		Images: tilesets/desert/tiles/Cliff_N_A.png
 		Size: 4,2
 		Categories: Cliff
 		Tiles:
@@ -1154,7 +1154,7 @@ Templates:
 
 	Template@270:
 		Id: 270
-		Images: tilesets/desert/Cliff_N_B.png
+		Images: tilesets/desert/tiles/Cliff_N_B.png
 		Size: 4,2
 		Categories: Cliff
 		Tiles:
@@ -1169,7 +1169,7 @@ Templates:
 
 	Template@271:
 		Id: 271
-		Images: tilesets/desert/Cliff_NE.png
+		Images: tilesets/desert/tiles/Cliff_NE.png
 		Size: 3,1
 		Categories: Cliff
 		Tiles:
@@ -1179,7 +1179,7 @@ Templates:
 
 	Template@272:
 		Id: 272
-		Images: tilesets/desert/Cliff_E_A.png
+		Images: tilesets/desert/tiles/Cliff_E_A.png
 		Size: 3,4
 		Categories: Cliff
 		Tiles:
@@ -1198,7 +1198,7 @@ Templates:
 
 	Template@273:
 		Id: 273
-		Images: tilesets/desert/Cliff_E_B.png
+		Images: tilesets/desert/tiles/Cliff_E_B.png
 		Size: 3,4
 		Categories: Cliff
 		Tiles:
@@ -1217,7 +1217,7 @@ Templates:
 
 	Template@274:
 		Id: 274
-		Images: tilesets/desert/Cliff_S_A.png
+		Images: tilesets/desert/tiles/Cliff_S_A.png
 		Size: 4,4
 		Categories: Cliff
 		Tiles:
@@ -1240,7 +1240,7 @@ Templates:
 
 	Template@275:
 		Id: 275
-		Images: tilesets/desert/Cliff_S_B.png
+		Images: tilesets/desert/tiles/Cliff_S_B.png
 		Size: 4,4
 		Categories: Cliff
 		Tiles:
@@ -1263,7 +1263,7 @@ Templates:
 
 	Template@276:
 		Id: 276
-		Images: tilesets/desert/Cliff_SW.png
+		Images: tilesets/desert/tiles/Cliff_SW.png
 		Size: 1,6
 		Categories: Cliff
 		Tiles:
@@ -1276,7 +1276,7 @@ Templates:
 
 	Template@277:
 		Id: 277
-		Images: tilesets/desert/Cliff_SE.png
+		Images: tilesets/desert/tiles/Cliff_SE.png
 		Size: 1,6
 		Categories: Cliff
 		Tiles:
@@ -1289,7 +1289,7 @@ Templates:
 
 	Template@278:
 		Id: 278
-		Images: tilesets/desert/Cliff_NW.png
+		Images: tilesets/desert/tiles/Cliff_NW.png
 		Size: 3,1
 		Categories: Cliff
 		Tiles:
@@ -1299,7 +1299,7 @@ Templates:
 
 	Template@279:
 		Id: 279
-		Images: tilesets/desert/Cliff_W_A.png
+		Images: tilesets/desert/tiles/Cliff_W_A.png
 		Size: 3,4
 		Categories: Cliff
 		Tiles:
@@ -1318,7 +1318,7 @@ Templates:
 
 	Template@280:
 		Id: 280
-		Images: tilesets/desert/Cliff_W_B.png
+		Images: tilesets/desert/tiles/Cliff_W_B.png
 		Size: 3,4
 		Categories: Cliff
 		Tiles:
@@ -1337,7 +1337,7 @@ Templates:
 
 	Template@281:
 		Id: 281
-		Images: tilesets/desert/Cliff_N2E.png
+		Images: tilesets/desert/tiles/Cliff_N2E.png
 		Size: 3,3
 		Categories: Cliff
 		Tiles:
@@ -1353,7 +1353,7 @@ Templates:
 
 	Template@283:
 		Id: 283
-		Images: tilesets/desert/Cliff_S2W.png
+		Images: tilesets/desert/tiles/Cliff_S2W.png
 		Size: 3,6
 		Categories: Cliff
 		Tiles:
@@ -1378,7 +1378,7 @@ Templates:
 
 	Template@284:
 		Id: 284
-		Images: tilesets/desert/Cliff_N2W.png
+		Images: tilesets/desert/tiles/Cliff_N2W.png
 		Size: 3,3
 		Categories: Cliff
 		Tiles:
@@ -1394,7 +1394,7 @@ Templates:
 
 	Template@285:
 		Id: 285
-		Images: tilesets/desert/Cliff_N2NE.png
+		Images: tilesets/desert/tiles/Cliff_N2NE.png
 		Size: 3,2
 		Categories: Cliff
 		Tiles:
@@ -1406,7 +1406,7 @@ Templates:
 
 	Template@286:
 		Id: 286
-		Images: tilesets/desert/Cliff_N2NW.png
+		Images: tilesets/desert/tiles/Cliff_N2NW.png
 		Size: 3,2
 		Categories: Cliff
 		Tiles:
@@ -1418,7 +1418,7 @@ Templates:
 
 	Template@287:
 		Id: 287
-		Images: tilesets/desert/Cliff_W2NW.png
+		Images: tilesets/desert/tiles/Cliff_W2NW.png
 		Size: 2,1
 		Categories: Cliff
 		Tiles:
@@ -1427,7 +1427,7 @@ Templates:
 
 	Template@288:
 		Id: 288
-		Images: tilesets/desert/Cliff_E2NE.png
+		Images: tilesets/desert/tiles/Cliff_E2NE.png
 		Size: 2,1
 		Categories: Cliff
 		Tiles:
@@ -1436,7 +1436,7 @@ Templates:
 
 	Template@289:
 		Id: 289
-		Images: tilesets/desert/Cliff_E2SE.png
+		Images: tilesets/desert/tiles/Cliff_E2SE.png
 		Size: 3,6
 		Categories: Cliff
 		Tiles:
@@ -1461,7 +1461,7 @@ Templates:
 
 	Template@290:
 		Id: 290
-		Images: tilesets/desert/Cliff_S2SE.png
+		Images: tilesets/desert/tiles/Cliff_S2SE.png
 		Size: 2,5
 		Categories: Cliff
 		Tiles:
@@ -1478,7 +1478,7 @@ Templates:
 
 	Template@291:
 		Id: 291
-		Images: tilesets/desert/Cliff_S2SW.png
+		Images: tilesets/desert/tiles/Cliff_S2SW.png
 		Size: 2,5
 		Categories: Cliff
 		Tiles:
@@ -1495,7 +1495,7 @@ Templates:
 
 	Template@301:
 		Id: 301
-		Images: tilesets/desert/Cliff_W2S.png
+		Images: tilesets/desert/tiles/Cliff_W2S.png
 		Size: 3,5
 		Categories: Cliff
 		Tiles:
@@ -1517,7 +1517,7 @@ Templates:
 
 	Template@302:
 		Id: 302
-		Images: tilesets/desert/Cliff_E2S.png
+		Images: tilesets/desert/tiles/Cliff_E2S.png
 		Size: 3,5
 		Categories: Cliff
 		Tiles:
@@ -1539,7 +1539,7 @@ Templates:
 
 	Template@303:
 		Id: 303
-		Images: tilesets/desert/Cliff_E2N.png
+		Images: tilesets/desert/tiles/Cliff_E2N.png
 		Size: 3,3
 		Categories: Cliff
 		Tiles:
@@ -1555,7 +1555,7 @@ Templates:
 
 	Template@304:
 		Id: 304
-		Images: tilesets/desert/Cliff_W2N.png
+		Images: tilesets/desert/tiles/Cliff_W2N.png
 		Size: 3,3
 		Categories: Cliff
 		Tiles:
@@ -1571,7 +1571,7 @@ Templates:
 
 	Template@307:
 		Id: 307
-		Images: tilesets/desert/Cliff_SE2S.png
+		Images: tilesets/desert/tiles/Cliff_SE2S.png
 		Size: 3,5
 		Categories: Cliff
 		Tiles:
@@ -1593,7 +1593,7 @@ Templates:
 
 	Template@308:
 		Id: 308
-		Images: tilesets/desert/Cliff_SW2S.png
+		Images: tilesets/desert/tiles/Cliff_SW2S.png
 		Size: 3,5
 		Categories: Cliff
 		Tiles:
@@ -1615,7 +1615,7 @@ Templates:
 
 	Template@309:
 		Id: 309
-		Images: tilesets/desert/Cliff_NE2E.png
+		Images: tilesets/desert/tiles/Cliff_NE2E.png
 		Size: 2,1
 		Categories: Cliff
 		Tiles:
@@ -1624,7 +1624,7 @@ Templates:
 
 	Template@310:
 		Id: 310
-		Images: tilesets/desert/Cliff_NW2W.png
+		Images: tilesets/desert/tiles/Cliff_NW2W.png
 		Size: 2,1
 		Categories: Cliff
 		Tiles:
@@ -1633,7 +1633,7 @@ Templates:
 
 	Template@311:
 		Id: 311
-		Images: tilesets/desert/Cliff_NE2N.png
+		Images: tilesets/desert/tiles/Cliff_NE2N.png
 		Size: 2,1
 		Categories: Cliff
 		Tiles:
@@ -1642,7 +1642,7 @@ Templates:
 
 	Template@312:
 		Id: 312
-		Images: tilesets/desert/Cliff_NW2N.png
+		Images: tilesets/desert/tiles/Cliff_NW2N.png
 		Size: 2,1
 		Categories: Cliff
 		Tiles:
@@ -1651,7 +1651,7 @@ Templates:
 
 	Template@1327:
 		Id: 1327
-		Images: tilesets/desert/Cliff_S2E.png
+		Images: tilesets/desert/tiles/Cliff_S2E.png
 		Size: 3,6
 		Categories: Cliff
 		Tiles:
@@ -1676,7 +1676,7 @@ Templates:
 
 	Template@1331:
 		Id: 1331
-		Images: tilesets/desert/Cliff_W2SW.png
+		Images: tilesets/desert/tiles/Cliff_W2SW.png
 		Size: 3,6
 		Categories: Cliff
 		Tiles:
@@ -1701,7 +1701,7 @@ Templates:
 
 	Template@1244:
 		Id: 1244
-		Images: tilesets/desert/CliffExtra_1.png
+		Images: tilesets/desert/tiles/CliffExtra_1.png
 		Size: 5,2
 		Categories: Cliff Extra
 		Tiles:
@@ -1718,7 +1718,7 @@ Templates:
 
 	Template@1245:
 		Id: 1245
-		Images: tilesets/desert/CliffExtra_2.png
+		Images: tilesets/desert/tiles/CliffExtra_2.png
 		Size: 5,2
 		Categories: Cliff Extra
 		Tiles:
@@ -1735,7 +1735,7 @@ Templates:
 
 	Template@1246:
 		Id: 1246
-		Images: tilesets/desert/CliffExtra_3.png
+		Images: tilesets/desert/tiles/CliffExtra_3.png
 		Size: 2,2
 		Categories: Cliff Extra
 		Tiles:
@@ -1746,7 +1746,7 @@ Templates:
 
 	Template@1247:
 		Id: 1247
-		Images: tilesets/desert/CliffExtra_4.png
+		Images: tilesets/desert/tiles/CliffExtra_4.png
 		Size: 2,2
 		Categories: Cliff Extra
 		Tiles:
@@ -1757,7 +1757,7 @@ Templates:
 
 	Template@1249:
 		Id: 1249
-		Images: tilesets/desert/CliffExtra_5.png
+		Images: tilesets/desert/tiles/CliffExtra_5.png
 		Size: 2,2
 		Categories: Cliff Extra
 		Tiles:
@@ -1768,7 +1768,7 @@ Templates:
 
 	Template@1250:
 		Id: 1250
-		Images: tilesets/desert/CliffExtra_6.png
+		Images: tilesets/desert/tiles/CliffExtra_6.png
 		Size: 4,4
 		Categories: Cliff Extra
 		Tiles:
@@ -1785,7 +1785,7 @@ Templates:
 
 	Template@1251:
 		Id: 1251
-		Images: tilesets/desert/CliffExtra_7.png
+		Images: tilesets/desert/tiles/CliffExtra_7.png
 		Size: 3,3
 		Categories: Cliff Extra
 		Tiles:
@@ -1798,7 +1798,7 @@ Templates:
 
 	Template@1253:
 		Id: 1253
-		Images: tilesets/desert/CliffExtra_8.png
+		Images: tilesets/desert/tiles/CliffExtra_8.png
 		Size: 3,6
 		Categories: Cliff Extra
 		Tiles:
@@ -1823,7 +1823,7 @@ Templates:
 
 	Template@1254:
 		Id: 1254
-		Images: tilesets/desert/CliffExtra_9.png
+		Images: tilesets/desert/tiles/CliffExtra_9.png
 		Size: 3,7
 		Categories: Cliff Extra
 		Tiles:
@@ -1851,7 +1851,7 @@ Templates:
 
 	Template@1255:
 		Id: 1255
-		Images: tilesets/desert/CliffExtra_10.png
+		Images: tilesets/desert/tiles/CliffExtra_10.png
 		Size: 3,6
 		Categories: Cliff Extra
 		Tiles:
@@ -1876,7 +1876,7 @@ Templates:
 
 	Template@1256:
 		Id: 1256
-		Images: tilesets/desert/CliffExtra_11.png
+		Images: tilesets/desert/tiles/CliffExtra_11.png
 		Size: 4,7
 		Categories: Cliff Extra
 		Tiles:
@@ -1906,7 +1906,7 @@ Templates:
 
 	Template@1258:
 		Id: 1258
-		Images: tilesets/desert/CliffExtra_12.png
+		Images: tilesets/desert/tiles/CliffExtra_12.png
 		Size: 4,6
 		Categories: Cliff Extra
 		Tiles:
@@ -1934,7 +1934,7 @@ Templates:
 
 	Template@1259:
 		Id: 1259
-		Images: tilesets/desert/CliffExtra_13.png
+		Images: tilesets/desert/tiles/CliffExtra_13.png
 		Size: 3,6
 		Categories: Cliff Extra
 		Tiles:
@@ -1959,7 +1959,7 @@ Templates:
 
 	Template@1260:
 		Id: 1260
-		Images: tilesets/desert/CliffExtra_14.png
+		Images: tilesets/desert/tiles/CliffExtra_14.png
 		Size: 3,6
 		Categories: Cliff Extra
 		Tiles:
@@ -1984,7 +1984,7 @@ Templates:
 
 	Template@1261:
 		Id: 1261
-		Images: tilesets/desert/CliffExtra_15.png
+		Images: tilesets/desert/tiles/CliffExtra_15.png
 		Size: 3,3
 		Categories: Cliff Extra
 		Tiles:
@@ -1997,7 +1997,7 @@ Templates:
 
 	Template@1262:
 		Id: 1262
-		Images: tilesets/desert/CliffExtra_16.png
+		Images: tilesets/desert/tiles/CliffExtra_16.png
 		Size: 4,4
 		Categories: Cliff Extra
 		Tiles:
@@ -2014,7 +2014,7 @@ Templates:
 
 	Template@1263:
 		Id: 1263
-		Images: tilesets/desert/CliffExtra_17.png
+		Images: tilesets/desert/tiles/CliffExtra_17.png
 		Size: 2,2
 		Categories: Cliff Extra
 		Tiles:
@@ -2025,7 +2025,7 @@ Templates:
 
 	Template@1264:
 		Id: 1264
-		Images: tilesets/desert/CliffExtra_18.png
+		Images: tilesets/desert/tiles/CliffExtra_18.png
 		Size: 2,2
 		Categories: Cliff Extra
 		Tiles:
@@ -2036,7 +2036,7 @@ Templates:
 
 	Template@1265:
 		Id: 1265
-		Images: tilesets/desert/CliffExtra_19.png
+		Images: tilesets/desert/tiles/CliffExtra_19.png
 		Size: 2,2
 		Categories: Cliff Extra
 		Tiles:
@@ -2047,7 +2047,7 @@ Templates:
 
 	Template@1266:
 		Id: 1266
-		Images: tilesets/desert/CliffExtra_20.png
+		Images: tilesets/desert/tiles/CliffExtra_20.png
 		Size: 4,4
 		Categories: Cliff Extra
 		Tiles:
@@ -2070,7 +2070,7 @@ Templates:
 
 	Template@1267:
 		Id: 1267
-		Images: tilesets/desert/CliffExtra_21.png
+		Images: tilesets/desert/tiles/CliffExtra_21.png
 		Size: 4,4
 		Categories: Cliff Extra
 		Tiles:
@@ -2093,7 +2093,7 @@ Templates:
 
 	Template@1268:
 		Id: 1268
-		Images: tilesets/desert/CliffExtra_22.png
+		Images: tilesets/desert/tiles/CliffExtra_22.png
 		Size: 4,5
 		Categories: Cliff Extra
 		Tiles:
@@ -2120,7 +2120,7 @@ Templates:
 
 	Template@1269:
 		Id: 1269
-		Images: tilesets/desert/CliffExtra_23.png
+		Images: tilesets/desert/tiles/CliffExtra_23.png
 		Size: 5,6
 		Categories: Cliff Extra
 		Tiles:
@@ -2157,7 +2157,7 @@ Templates:
 
 	Template@1270:
 		Id: 1270
-		Images: tilesets/desert/CliffExtra_24.png
+		Images: tilesets/desert/tiles/CliffExtra_24.png
 		Size: 3,6
 		Categories: Cliff Extra
 		Tiles:
@@ -2180,7 +2180,7 @@ Templates:
 
 	Template@1272:
 		Id: 1272
-		Images: tilesets/desert/CliffExtra_25.png
+		Images: tilesets/desert/tiles/CliffExtra_25.png
 		Size: 6,5
 		Categories: Cliff Extra
 		Tiles:
@@ -2217,7 +2217,7 @@ Templates:
 
 	Template@1273:
 		Id: 1273
-		Images: tilesets/desert/CliffExtra_26.png
+		Images: tilesets/desert/tiles/CliffExtra_26.png
 		Size: 4,5
 		Categories: Cliff Extra
 		Tiles:
@@ -2244,7 +2244,7 @@ Templates:
 
 	Template@1275:
 		Id: 1275
-		Images: tilesets/desert/CliffExtra_28.png
+		Images: tilesets/desert/tiles/CliffExtra_28.png
 		Size: 3,5
 		Categories: Cliff Extra
 		Tiles:
@@ -2266,7 +2266,7 @@ Templates:
 
 	Template@1276:
 		Id: 1276
-		Images: tilesets/desert/CliffExtra_29.png
+		Images: tilesets/desert/tiles/CliffExtra_29.png
 		Size: 3,5
 		Categories: Cliff Extra
 		Tiles:
@@ -2288,7 +2288,7 @@ Templates:
 
 	Template@1277:
 		Id: 1277
-		Images: tilesets/desert/CliffExtra_30.png
+		Images: tilesets/desert/tiles/CliffExtra_30.png
 		Size: 4,7
 		Categories: Cliff Extra
 		Tiles:
@@ -2317,7 +2317,7 @@ Templates:
 
 	Template@1278:
 		Id: 1278
-		Images: tilesets/desert/CliffExtra_31.png
+		Images: tilesets/desert/tiles/CliffExtra_31.png
 		Size: 6,5
 		Categories: Cliff Extra
 		Tiles:
@@ -2354,7 +2354,7 @@ Templates:
 
 	Template@1279:
 		Id: 1279
-		Images: tilesets/desert/CliffExtra_32.png
+		Images: tilesets/desert/tiles/CliffExtra_32.png
 		Size: 6,5
 		Categories: Cliff Extra
 		Tiles:
@@ -2391,7 +2391,7 @@ Templates:
 
 	Template@1280:
 		Id: 1280
-		Images: tilesets/desert/CliffExtra_33.png
+		Images: tilesets/desert/tiles/CliffExtra_33.png
 		Size: 2,5
 		Categories: Cliff Extra
 		Tiles:
@@ -2408,7 +2408,7 @@ Templates:
 
 	Template@1282:
 		Id: 1282
-		Images: tilesets/desert/CliffExtra_34.png
+		Images: tilesets/desert/tiles/CliffExtra_34.png
 		Size: 5,6
 		Categories: Cliff Extra
 		Tiles:
@@ -2445,7 +2445,7 @@ Templates:
 
 	Template@1284:
 		Id: 1284
-		Images: tilesets/desert/CliffExtra_35.png
+		Images: tilesets/desert/tiles/CliffExtra_35.png
 		Size: 4,6
 		Categories: Cliff Extra
 		Tiles:
@@ -2476,7 +2476,7 @@ Templates:
 
 	Template@1347:
 		Id: 1347
-		Images: tilesets/desert/CliffExtra_36.png
+		Images: tilesets/desert/tiles/CliffExtra_36.png
 		Size: 3,7
 		Categories: Cliff Extra
 		Tiles:
@@ -2504,7 +2504,7 @@ Templates:
 
 	Template@1348:
 		Id: 1348
-		Images: tilesets/desert/CliffExtra_37.png
+		Images: tilesets/desert/tiles/CliffExtra_37.png
 		Size: 3,4
 		Categories: Cliff Extra
 		Tiles:
@@ -2523,7 +2523,7 @@ Templates:
 
 	Template@1349:
 		Id: 1349
-		Images: tilesets/desert/CliffExtra_38.png
+		Images: tilesets/desert/tiles/CliffExtra_38.png
 		Size: 3,3
 		Categories: Cliff Extra
 		Tiles:
@@ -2539,7 +2539,7 @@ Templates:
 
 	Template@1688:
 		Id: 1688
-		Images: tilesets/desert/CliffExtra_39.png
+		Images: tilesets/desert/tiles/CliffExtra_39.png
 		Size: 2,5
 		Categories: Cliff Extra
 		Tiles:
@@ -2556,7 +2556,7 @@ Templates:
 
 	Template@1758:
 		Id: 1758
-		Images: tilesets/desert/CliffExtra_40.png
+		Images: tilesets/desert/tiles/CliffExtra_40.png
 		Size: 3,5
 		Categories: Cliff Extra
 		Tiles:
@@ -2578,7 +2578,7 @@ Templates:
 
 	Template@293:
 		Id: 293
-		Images: tilesets/desert/CliffRamp_SE.png
+		Images: tilesets/desert/tiles/CliffRamp_SE.png
 		Size: 3,6
 		Categories: Cliff Ramp
 		Tiles:
@@ -2603,7 +2603,7 @@ Templates:
 
 	Template@294:
 		Id: 294
-		Images: tilesets/desert/CliffRamp_SW.png
+		Images: tilesets/desert/tiles/CliffRamp_SW.png
 		Size: 3,6
 		Categories: Cliff Ramp
 		Tiles:
@@ -2628,7 +2628,7 @@ Templates:
 
 	Template@295:
 		Id: 295
-		Images: tilesets/desert/CliffRamp_NE.png
+		Images: tilesets/desert/tiles/CliffRamp_NE.png
 		Size: 4,7
 		Categories: Cliff Ramp
 		Tiles:
@@ -2663,7 +2663,7 @@ Templates:
 
 	Template@296:
 		Id: 296
-		Images: tilesets/desert/CliffRamp_NW.png
+		Images: tilesets/desert/tiles/CliffRamp_NW.png
 		Size: 4,7
 		Categories: Cliff Ramp
 		Tiles:
@@ -2698,7 +2698,7 @@ Templates:
 
 	Template@297:
 		Id: 297
-		Images: tilesets/desert/CliffRamp_WS.png
+		Images: tilesets/desert/tiles/CliffRamp_WS.png
 		Size: 3,5
 		Categories: Cliff Ramp
 		Tiles:
@@ -2720,7 +2720,7 @@ Templates:
 
 	Template@298:
 		Id: 298
-		Images: tilesets/desert/CliffRamp_WN.png
+		Images: tilesets/desert/tiles/CliffRamp_WN.png
 		Size: 3,3
 		Categories: Cliff Ramp
 		Tiles:
@@ -2736,7 +2736,7 @@ Templates:
 
 	Template@299:
 		Id: 299
-		Images: tilesets/desert/CliffRamp_ES.png
+		Images: tilesets/desert/tiles/CliffRamp_ES.png
 		Size: 3,5
 		Categories: Cliff Ramp
 		Tiles:
@@ -2758,7 +2758,7 @@ Templates:
 
 	Template@300:
 		Id: 300
-		Images: tilesets/desert/CliffRamp_EN.png
+		Images: tilesets/desert/tiles/CliffRamp_EN.png
 		Size: 3,3
 		Categories: Cliff Ramp
 		Tiles:
@@ -2774,7 +2774,7 @@ Templates:
 
 	Template@1274:
 		Id: 1274
-		Images: tilesets/desert/CliffRamp_6.png
+		Images: tilesets/desert/tiles/CliffRamp_6.png
 		Size: 6,6
 		Categories: Cliff Ramp
 		Tiles:
@@ -2817,7 +2817,7 @@ Templates:
 
 	Template@1286:
 		Id: 1286
-		Images: tilesets/desert/CliffRamp_1.png
+		Images: tilesets/desert/tiles/CliffRamp_1.png
 		Size: 3,7
 		Categories: Cliff Ramp
 		Tiles:
@@ -2841,7 +2841,7 @@ Templates:
 
 	Template@1287:
 		Id: 1287
-		Images: tilesets/desert/CliffRamp_2.png
+		Images: tilesets/desert/tiles/CliffRamp_2.png
 		Size: 4,6
 		Categories: Cliff Ramp
 		Tiles:
@@ -2872,7 +2872,7 @@ Templates:
 
 	Template@1684:
 		Id: 1684
-		Images: tilesets/desert/CliffRamp_3.png
+		Images: tilesets/desert/tiles/CliffRamp_3.png
 		Size: 6,6
 		Categories: Cliff Ramp
 		Tiles:
@@ -2915,7 +2915,7 @@ Templates:
 
 	Template@1686:
 		Id: 1686
-		Images: tilesets/desert/CliffRamp_4.png
+		Images: tilesets/desert/tiles/CliffRamp_4.png
 		Size: 6,6
 		Categories: Cliff Ramp
 		Tiles:
@@ -2958,7 +2958,7 @@ Templates:
 
 	Template@1687:
 		Id: 1687
-		Images: tilesets/desert/CliffRamp_5.png
+		Images: tilesets/desert/tiles/CliffRamp_5.png
 		Size: 4,6
 		Categories: Cliff Ramp
 		Tiles:
@@ -2989,7 +2989,7 @@ Templates:
 
 	Template@1002:
 		Id: 1002
-		Images: tilesets/desert/Decoration_1.png
+		Images: tilesets/desert/tiles/Decoration_1.png
 		Size: 7,13
 		Categories: Decoration
 		Tiles:
@@ -3059,7 +3059,7 @@ Templates:
 
 	Template@1003:
 		Id: 1003
-		Images: tilesets/desert/Decoration_2.png
+		Images: tilesets/desert/tiles/Decoration_2.png
 		Size: 7,11
 		Categories: Decoration
 		Tiles:
@@ -3116,7 +3116,7 @@ Templates:
 
 	Template@1004:
 		Id: 1004
-		Images: tilesets/desert/Decoration_3.png
+		Images: tilesets/desert/tiles/Decoration_3.png
 		Size: 11,13
 		Categories: Decoration
 		Tiles:
@@ -3226,7 +3226,7 @@ Templates:
 
 	Template@1005:
 		Id: 1005
-		Images: tilesets/desert/Decoration_4.png
+		Images: tilesets/desert/tiles/Decoration_4.png
 		Size: 11,13
 		Categories: Decoration
 		Tiles:
@@ -3336,7 +3336,7 @@ Templates:
 
 	Template@1006:
 		Id: 1006
-		Images: tilesets/desert/Decoration_5.png
+		Images: tilesets/desert/tiles/Decoration_5.png
 		Size: 7,11
 		Categories: Decoration
 		Tiles:
@@ -3393,7 +3393,7 @@ Templates:
 
 	Template@1007:
 		Id: 1007
-		Images: tilesets/desert/Decoration_6.png
+		Images: tilesets/desert/tiles/Decoration_6.png
 		Size: 7,13
 		Categories: Decoration
 		Tiles:
@@ -3463,7 +3463,7 @@ Templates:
 
 	Template@1008:
 		Id: 1008
-		Images: tilesets/desert/Decoration_7.png
+		Images: tilesets/desert/tiles/Decoration_7.png
 		Size: 8,9
 		Categories: Decoration
 		Tiles:
@@ -3517,7 +3517,7 @@ Templates:
 
 	Template@1009:
 		Id: 1009
-		Images: tilesets/desert/Decoration_8.png
+		Images: tilesets/desert/tiles/Decoration_8.png
 		Size: 8,9
 		Categories: Decoration
 		Tiles:
@@ -3571,7 +3571,7 @@ Templates:
 
 	Template@1010:
 		Id: 1010
-		Images: tilesets/desert/Decoration_9.png
+		Images: tilesets/desert/tiles/Decoration_9.png
 		Size: 4,4
 		Categories: Decoration
 		Tiles:
@@ -3594,7 +3594,7 @@ Templates:
 
 	Template@1011:
 		Id: 1011
-		Images: tilesets/desert/Decoration_10.png
+		Images: tilesets/desert/tiles/Decoration_10.png
 		Size: 3,2
 		Categories: Decoration
 		Tiles:
@@ -3607,7 +3607,7 @@ Templates:
 
 	Template@1012:
 		Id: 1012
-		Images: tilesets/desert/Decoration_11.png
+		Images: tilesets/desert/tiles/Decoration_11.png
 		Size: 3,2
 		Categories: Decoration
 		Tiles:
@@ -3620,7 +3620,7 @@ Templates:
 
 	Template@1013:
 		Id: 1013
-		Images: tilesets/desert/Decoration_12.png
+		Images: tilesets/desert/tiles/Decoration_12.png
 		Size: 4,4
 		Categories: Decoration
 		Tiles:
@@ -3643,7 +3643,7 @@ Templates:
 
 	Template@1015:
 		Id: 1015
-		Images: tilesets/desert/Decoration_13.png
+		Images: tilesets/desert/tiles/Decoration_13.png
 		Size: 3,3
 		Categories: Decoration
 		Tiles:
@@ -3659,7 +3659,7 @@ Templates:
 
 	Template@1017:
 		Id: 1017
-		Images: tilesets/desert/Decoration_14.png
+		Images: tilesets/desert/tiles/Decoration_14.png
 		Size: 3,3
 		Categories: Decoration
 		Tiles:
@@ -3675,7 +3675,7 @@ Templates:
 
 	Template@1018:
 		Id: 1018
-		Images: tilesets/desert/Decoration_15.png
+		Images: tilesets/desert/tiles/Decoration_15.png
 		Size: 7,5
 		Categories: Decoration
 		Tiles:
@@ -3717,7 +3717,7 @@ Templates:
 
 	Template@1019:
 		Id: 1019
-		Images: tilesets/desert/Decoration_16.png
+		Images: tilesets/desert/tiles/Decoration_16.png
 		Size: 2,2
 		Categories: Decoration
 		Tiles:
@@ -3728,7 +3728,7 @@ Templates:
 
 	Template@1022:
 		Id: 1022
-		Images: tilesets/desert/Decoration_17.png
+		Images: tilesets/desert/tiles/Decoration_17.png
 		Size: 4,2
 		Categories: Decoration
 		Tiles:
@@ -3743,7 +3743,7 @@ Templates:
 
 	Template@1023:
 		Id: 1023
-		Images: tilesets/desert/Decoration_18.png
+		Images: tilesets/desert/tiles/Decoration_18.png
 		Size: 4,2
 		Categories: Decoration
 		Tiles:
@@ -3758,7 +3758,7 @@ Templates:
 
 	Template@1024:
 		Id: 1024
-		Images: tilesets/desert/Decoration_19.png
+		Images: tilesets/desert/tiles/Decoration_19.png
 		Size: 2,2
 		Categories: Decoration
 		Tiles:
@@ -3769,7 +3769,7 @@ Templates:
 
 	Template@1025:
 		Id: 1025
-		Images: tilesets/desert/Decoration_20.png
+		Images: tilesets/desert/tiles/Decoration_20.png
 		Size: 7,5
 		Categories: Decoration
 		Tiles:
@@ -3811,7 +3811,7 @@ Templates:
 
 	Template@1026:
 		Id: 1026
-		Images: tilesets/desert/Decoration_21.png
+		Images: tilesets/desert/tiles/Decoration_21.png
 		Size: 9,7
 		Categories: Decoration
 		Tiles:
@@ -3877,7 +3877,7 @@ Templates:
 
 	Template@1027:
 		Id: 1027
-		Images: tilesets/desert/Decoration_22.png
+		Images: tilesets/desert/tiles/Decoration_22.png
 		Size: 2,2
 		Categories: Decoration
 		Tiles:
@@ -3888,7 +3888,7 @@ Templates:
 
 	Template@1028:
 		Id: 1028
-		Images: tilesets/desert/Decoration_23.png
+		Images: tilesets/desert/tiles/Decoration_23.png
 		Size: 2,3
 		Categories: Decoration
 		Tiles:
@@ -3901,7 +3901,7 @@ Templates:
 
 	Template@1029:
 		Id: 1029
-		Images: tilesets/desert/Decoration_24.png
+		Images: tilesets/desert/tiles/Decoration_24.png
 		Size: 2,2
 		Categories: Decoration
 		Tiles:
@@ -3912,7 +3912,7 @@ Templates:
 
 	Template@1031:
 		Id: 1031
-		Images: tilesets/desert/Decoration_25.png
+		Images: tilesets/desert/tiles/Decoration_25.png
 		Size: 3,3
 		Categories: Decoration
 		Tiles:
@@ -3928,7 +3928,7 @@ Templates:
 
 	Template@1032:
 		Id: 1032
-		Images: tilesets/desert/Decoration_26.png
+		Images: tilesets/desert/tiles/Decoration_26.png
 		Size: 3,3
 		Categories: Decoration
 		Tiles:
@@ -3944,7 +3944,7 @@ Templates:
 
 	Template@1034:
 		Id: 1034
-		Images: tilesets/desert/Decoration_27.png
+		Images: tilesets/desert/tiles/Decoration_27.png
 		Size: 3,3
 		Categories: Decoration
 		Tiles:
@@ -3960,7 +3960,7 @@ Templates:
 
 	Template@1035:
 		Id: 1035
-		Images: tilesets/desert/Decoration_28.png
+		Images: tilesets/desert/tiles/Decoration_28.png
 		Size: 6,4
 		Categories: Decoration
 		Tiles:
@@ -3983,7 +3983,7 @@ Templates:
 
 	Template@1036:
 		Id: 1036
-		Images: tilesets/desert/Decoration_29.png
+		Images: tilesets/desert/tiles/Decoration_29.png
 		Size: 2,3
 		Categories: Decoration
 		Tiles:
@@ -3996,7 +3996,7 @@ Templates:
 
 	Template@1039:
 		Id: 1039
-		Images: tilesets/desert/Decoration_30.png
+		Images: tilesets/desert/tiles/Decoration_30.png
 		Size: 2,1
 		Categories: Decoration
 		Tiles:
@@ -4005,7 +4005,7 @@ Templates:
 
 	Template@1040:
 		Id: 1040
-		Images: tilesets/desert/Decoration_31.png
+		Images: tilesets/desert/tiles/Decoration_31.png
 		Size: 1,1
 		Categories: Decoration
 		Tiles:
@@ -4013,7 +4013,7 @@ Templates:
 
 	Template@1041:
 		Id: 1041
-		Images: tilesets/desert/Decoration_32.png
+		Images: tilesets/desert/tiles/Decoration_32.png
 		Size: 2,2
 		Categories: Decoration
 		Tiles:
@@ -4024,7 +4024,7 @@ Templates:
 
 	Template@1042:
 		Id: 1042
-		Images: tilesets/desert/Decoration_33.png
+		Images: tilesets/desert/tiles/Decoration_33.png
 		Size: 4,5
 		Categories: Decoration
 		Tiles:
@@ -4051,7 +4051,7 @@ Templates:
 
 	Template@1043:
 		Id: 1043
-		Images: tilesets/desert/Decoration_34.png
+		Images: tilesets/desert/tiles/Decoration_34.png
 		Size: 3,6
 		Categories: Decoration
 		Tiles:
@@ -4076,7 +4076,7 @@ Templates:
 
 	Template@1044:
 		Id: 1044
-		Images: tilesets/desert/Decoration_35.png
+		Images: tilesets/desert/tiles/Decoration_35.png
 		Size: 3,3
 		Categories: Decoration
 		Tiles:
@@ -4092,7 +4092,7 @@ Templates:
 
 	Template@1045:
 		Id: 1045
-		Images: tilesets/desert/Decoration_36.png
+		Images: tilesets/desert/tiles/Decoration_36.png
 		Size: 10,4
 		Categories: Decoration
 		Tiles:
@@ -4136,7 +4136,7 @@ Templates:
 
 	Template@1046:
 		Id: 1046
-		Images: tilesets/desert/Decoration_37.png
+		Images: tilesets/desert/tiles/Decoration_37.png
 		Size: 11,14
 		Categories: Decoration
 		Tiles:
@@ -4229,7 +4229,7 @@ Templates:
 
 	Template@1047:
 		Id: 1047
-		Images: tilesets/desert/Decoration_38.png
+		Images: tilesets/desert/tiles/Decoration_38.png
 		Size: 1,1
 		Categories: Decoration
 		Tiles:
@@ -4237,7 +4237,7 @@ Templates:
 
 	Template@1048:
 		Id: 1048
-		Images: tilesets/desert/Decoration_39.png
+		Images: tilesets/desert/tiles/Decoration_39.png
 		Size: 1,1
 		Categories: Decoration
 		Tiles:
@@ -4245,7 +4245,7 @@ Templates:
 
 	Template@1050:
 		Id: 1050
-		Images: tilesets/desert/Path_1.png
+		Images: tilesets/desert/tiles/Path_1.png
 		Size: 4,3
 		Categories: Path
 		Tiles:
@@ -4264,7 +4264,7 @@ Templates:
 
 	Template@1051:
 		Id: 1051
-		Images: tilesets/desert/Path_2.png
+		Images: tilesets/desert/tiles/Path_2.png
 		Size: 3,3
 		Categories: Path
 		Tiles:
@@ -4278,7 +4278,7 @@ Templates:
 
 	Template@1054:
 		Id: 1054
-		Images: tilesets/desert/Path_3.png
+		Images: tilesets/desert/tiles/Path_3.png
 		Size: 2,2
 		Categories: Path
 		Tiles:
@@ -4288,7 +4288,7 @@ Templates:
 
 	Template@1056:
 		Id: 1056
-		Images: tilesets/desert/Path_4.png
+		Images: tilesets/desert/tiles/Path_4.png
 		Size: 4,3
 		Categories: Path
 		Tiles:
@@ -4303,7 +4303,7 @@ Templates:
 
 	Template@1057:
 		Id: 1057
-		Images: tilesets/desert/Path_5.png
+		Images: tilesets/desert/tiles/Path_5.png
 		Size: 3,5
 		Categories: Path
 		Tiles:
@@ -4325,7 +4325,7 @@ Templates:
 
 	Template@1058:
 		Id: 1058
-		Images: tilesets/desert/Path_6.png
+		Images: tilesets/desert/tiles/Path_6.png
 		Size: 4,3
 		Categories: Path
 		Tiles:
@@ -4340,7 +4340,7 @@ Templates:
 
 	Template@1059:
 		Id: 1059
-		Images: tilesets/desert/Path_7.png
+		Images: tilesets/desert/tiles/Path_7.png
 		Size: 2,2
 		Categories: Path
 		Tiles:
@@ -4350,7 +4350,7 @@ Templates:
 
 	Template@1060:
 		Id: 1060
-		Images: tilesets/desert/Path_8.png
+		Images: tilesets/desert/tiles/Path_8.png
 		Size: 3,3
 		Categories: Path
 		Tiles:
@@ -4364,7 +4364,7 @@ Templates:
 
 	Template@1062:
 		Id: 1062
-		Images: tilesets/desert/Path_9.png
+		Images: tilesets/desert/tiles/Path_9.png
 		Size: 4,3
 		Categories: Path
 		Tiles:
@@ -4383,7 +4383,7 @@ Templates:
 
 	Template@1063:
 		Id: 1063
-		Images: tilesets/desert/Path_10.png
+		Images: tilesets/desert/tiles/Path_10.png
 		Size: 3,3
 		Categories: Path
 		Tiles:
@@ -4397,7 +4397,7 @@ Templates:
 
 	Template@1064:
 		Id: 1064
-		Images: tilesets/desert/Path_11.png
+		Images: tilesets/desert/tiles/Path_11.png
 		Size: 2,2
 		Categories: Path
 		Tiles:
@@ -4407,7 +4407,7 @@ Templates:
 
 	Template@1065:
 		Id: 1065
-		Images: tilesets/desert/Path_12.png
+		Images: tilesets/desert/tiles/Path_12.png
 		Size: 4,3
 		Categories: Path
 		Tiles:
@@ -4422,7 +4422,7 @@ Templates:
 
 	Template@1066:
 		Id: 1066
-		Images: tilesets/desert/Path_13.png
+		Images: tilesets/desert/tiles/Path_13.png
 		Size: 3,5
 		Categories: Path
 		Tiles:
@@ -4444,7 +4444,7 @@ Templates:
 
 	Template@1067:
 		Id: 1067
-		Images: tilesets/desert/Path_14.png
+		Images: tilesets/desert/tiles/Path_14.png
 		Size: 4,3
 		Categories: Path
 		Tiles:
@@ -4459,7 +4459,7 @@ Templates:
 
 	Template@1069:
 		Id: 1069
-		Images: tilesets/desert/Path_15.png
+		Images: tilesets/desert/tiles/Path_15.png
 		Size: 2,2
 		Categories: Path
 		Tiles:
@@ -4469,7 +4469,7 @@ Templates:
 
 	Template@1070:
 		Id: 1070
-		Images: tilesets/desert/Path_16.png
+		Images: tilesets/desert/tiles/Path_16.png
 		Size: 3,3
 		Categories: Path
 		Tiles:
@@ -4483,7 +4483,7 @@ Templates:
 
 	Template@1071:
 		Id: 1071
-		Images: tilesets/desert/Path_17.png
+		Images: tilesets/desert/tiles/Path_17.png
 		Size: 4,3
 		Categories: Path
 		Tiles:
@@ -4502,7 +4502,7 @@ Templates:
 
 	Template@1073:
 		Id: 1073
-		Images: tilesets/desert/Path_18.png
+		Images: tilesets/desert/tiles/Path_18.png
 		Size: 4,3
 		Categories: Path
 		Tiles:
@@ -4521,7 +4521,7 @@ Templates:
 
 	Template@1074:
 		Id: 1074
-		Images: tilesets/desert/Path_19.png
+		Images: tilesets/desert/tiles/Path_19.png
 		Size: 4,3
 		Categories: Path
 		Tiles:
@@ -4540,7 +4540,7 @@ Templates:
 
 	Template@1075:
 		Id: 1075
-		Images: tilesets/desert/Path_20.png
+		Images: tilesets/desert/tiles/Path_20.png
 		Size: 4,3
 		Categories: Path
 		Tiles:
@@ -4559,7 +4559,7 @@ Templates:
 
 	Template@1077:
 		Id: 1077
-		Images: tilesets/desert/Path_21.png
+		Images: tilesets/desert/tiles/Path_21.png
 		Size: 3,3
 		Categories: Path
 		Tiles:
@@ -4575,7 +4575,7 @@ Templates:
 
 	Template@1078:
 		Id: 1078
-		Images: tilesets/desert/Path_22.png
+		Images: tilesets/desert/tiles/Path_22.png
 		Size: 3,3
 		Categories: Path
 		Tiles:
@@ -4591,7 +4591,7 @@ Templates:
 
 	Template@1079:
 		Id: 1079
-		Images: tilesets/desert/Path_23.png
+		Images: tilesets/desert/tiles/Path_23.png
 		Size: 3,3
 		Categories: Path
 		Tiles:
@@ -4607,7 +4607,7 @@ Templates:
 
 	Template@1080:
 		Id: 1080
-		Images: tilesets/desert/Path_24.png
+		Images: tilesets/desert/tiles/Path_24.png
 		Size: 3,3
 		Categories: Path
 		Tiles:
@@ -4623,7 +4623,7 @@ Templates:
 
 	Template@1081:
 		Id: 1081
-		Images: tilesets/desert/Path_25.png
+		Images: tilesets/desert/tiles/Path_25.png
 		Size: 3,3
 		Categories: Path
 		Tiles:
@@ -4639,7 +4639,7 @@ Templates:
 
 	Template@1082:
 		Id: 1082
-		Images: tilesets/desert/Path_26.png
+		Images: tilesets/desert/tiles/Path_26.png
 		Size: 3,2
 		Categories: Path
 		Tiles:
@@ -4652,7 +4652,7 @@ Templates:
 
 	Template@1083:
 		Id: 1083
-		Images: tilesets/desert/Path_27.png
+		Images: tilesets/desert/tiles/Path_27.png
 		Size: 2,3
 		Categories: Path
 		Tiles:
@@ -4665,7 +4665,7 @@ Templates:
 
 	Template@1084:
 		Id: 1084
-		Images: tilesets/desert/Path_28.png
+		Images: tilesets/desert/tiles/Path_28.png
 		Size: 3,2
 		Categories: Path
 		Tiles:
@@ -4678,7 +4678,7 @@ Templates:
 
 	Template@1085:
 		Id: 1085
-		Images: tilesets/desert/Path_29.png
+		Images: tilesets/desert/tiles/Path_29.png
 		Size: 2,3
 		Categories: Path
 		Tiles:
@@ -4691,7 +4691,7 @@ Templates:
 
 	Template@1087:
 		Id: 1087
-		Images: tilesets/desert/PathExtra_1.png
+		Images: tilesets/desert/tiles/PathExtra_1.png
 		Size: 4,4
 		Categories: Path Extra
 		Tiles:
@@ -4714,7 +4714,7 @@ Templates:
 
 	Template@1088:
 		Id: 1088
-		Images: tilesets/desert/PathExtra_2.png
+		Images: tilesets/desert/tiles/PathExtra_2.png
 		Size: 4,4
 		Categories: Path Extra
 		Tiles:
@@ -4737,7 +4737,7 @@ Templates:
 
 	Template@1089:
 		Id: 1089
-		Images: tilesets/desert/PathExtra_3.png
+		Images: tilesets/desert/tiles/PathExtra_3.png
 		Size: 4,4
 		Categories: Path Extra
 		Tiles:
@@ -4760,7 +4760,7 @@ Templates:
 
 	Template@1090:
 		Id: 1090
-		Images: tilesets/desert/PathExtra_4.png
+		Images: tilesets/desert/tiles/PathExtra_4.png
 		Size: 4,4
 		Categories: Path Extra
 		Tiles:
@@ -4783,7 +4783,7 @@ Templates:
 
 	Template@1091:
 		Id: 1091
-		Images: tilesets/desert/PathExtra_5.png
+		Images: tilesets/desert/tiles/PathExtra_5.png
 		Size: 6,3
 		Categories: Path Extra
 		Tiles:
@@ -4808,7 +4808,7 @@ Templates:
 
 	Template@1092:
 		Id: 1092
-		Images: tilesets/desert/PathExtra_6.png
+		Images: tilesets/desert/tiles/PathExtra_6.png
 		Size: 6,3
 		Categories: Path Extra
 		Tiles:
@@ -4833,7 +4833,7 @@ Templates:
 
 	Template@1093:
 		Id: 1093
-		Images: tilesets/desert/PathExtra_7.png
+		Images: tilesets/desert/tiles/PathExtra_7.png
 		Size: 6,3
 		Categories: Path Extra
 		Tiles:
@@ -4858,7 +4858,7 @@ Templates:
 
 	Template@1094:
 		Id: 1094
-		Images: tilesets/desert/PathExtra_8.png
+		Images: tilesets/desert/tiles/PathExtra_8.png
 		Size: 6,3
 		Categories: Path Extra
 		Tiles:
@@ -4883,7 +4883,7 @@ Templates:
 
 	Template@1095:
 		Id: 1095
-		Images: tilesets/desert/PathExtra_9.png
+		Images: tilesets/desert/tiles/PathExtra_9.png
 		Size: 5,3
 		Categories: Path Extra
 		Tiles:
@@ -4904,7 +4904,7 @@ Templates:
 
 	Template@1096:
 		Id: 1096
-		Images: tilesets/desert/PathExtra_10.png
+		Images: tilesets/desert/tiles/PathExtra_10.png
 		Size: 5,3
 		Categories: Path Extra
 		Tiles:
@@ -4925,7 +4925,7 @@ Templates:
 
 	Template@1097:
 		Id: 1097
-		Images: tilesets/desert/PathExtra_11.png
+		Images: tilesets/desert/tiles/PathExtra_11.png
 		Size: 3,6
 		Categories: Path Extra
 		Tiles:
@@ -4950,7 +4950,7 @@ Templates:
 
 	Template@1101:
 		Id: 1101
-		Images: tilesets/desert/PathExtra_12.png
+		Images: tilesets/desert/tiles/PathExtra_12.png
 		Size: 3,6
 		Categories: Path Extra
 		Tiles:
@@ -4975,7 +4975,7 @@ Templates:
 
 	Template@1102:
 		Id: 1102
-		Images: tilesets/desert/PathExtra_13.png
+		Images: tilesets/desert/tiles/PathExtra_13.png
 		Size: 5,3
 		Categories: Path Extra
 		Tiles:
@@ -4997,7 +4997,7 @@ Templates:
 
 	Template@1104:
 		Id: 1104
-		Images: tilesets/desert/PathExtra_14.png
+		Images: tilesets/desert/tiles/PathExtra_14.png
 		Size: 2,2
 		Categories: Path Extra
 		Tiles:
@@ -5008,7 +5008,7 @@ Templates:
 
 	Template@1105:
 		Id: 1105
-		Images: tilesets/desert/PathExtra_15.png
+		Images: tilesets/desert/tiles/PathExtra_15.png
 		Size: 2,2
 		Categories: Path Extra
 		Tiles:
@@ -5019,7 +5019,7 @@ Templates:
 
 	Template@1109:
 		Id: 1109
-		Images: tilesets/desert/PathExtra_16.png
+		Images: tilesets/desert/tiles/PathExtra_16.png
 		Size: 2,2
 		Categories: Path Extra
 		Tiles:
@@ -5030,7 +5030,7 @@ Templates:
 
 	Template@1110:
 		Id: 1110
-		Images: tilesets/desert/PathExtra_17.png
+		Images: tilesets/desert/tiles/PathExtra_17.png
 		Size: 2,2
 		Categories: Path Extra
 		Tiles:
@@ -5041,7 +5041,7 @@ Templates:
 
 	Template@1111:
 		Id: 1111
-		Images: tilesets/desert/PathExtra_18.png
+		Images: tilesets/desert/tiles/PathExtra_18.png
 		Size: 2,2
 		Categories: Path Extra
 		Tiles:
@@ -5052,7 +5052,7 @@ Templates:
 
 	Template@1115:
 		Id: 1115
-		Images: tilesets/desert/PathExtra_19.png
+		Images: tilesets/desert/tiles/PathExtra_19.png
 		Size: 2,2
 		Categories: Path Extra
 		Tiles:
@@ -5063,7 +5063,7 @@ Templates:
 
 	Template@1116:
 		Id: 1116
-		Images: tilesets/desert/PathExtra_20.png
+		Images: tilesets/desert/tiles/PathExtra_20.png
 		Size: 2,2
 		Categories: Path Extra
 		Tiles:
@@ -5074,7 +5074,7 @@ Templates:
 
 	Template@1117:
 		Id: 1117
-		Images: tilesets/desert/PathExtra_21.png
+		Images: tilesets/desert/tiles/PathExtra_21.png
 		Size: 2,2
 		Categories: Path Extra
 		Tiles:
@@ -5085,7 +5085,7 @@ Templates:
 
 	Template@1118:
 		Id: 1118
-		Images: tilesets/desert/PathExtra_22.png
+		Images: tilesets/desert/tiles/PathExtra_22.png
 		Size: 2,2
 		Categories: Path Extra
 		Tiles:
@@ -5096,7 +5096,7 @@ Templates:
 
 	Template@1119:
 		Id: 1119
-		Images: tilesets/desert/PathExtra_23.png
+		Images: tilesets/desert/tiles/PathExtra_23.png
 		Size: 2,2
 		Categories: Path Extra
 		Tiles:
@@ -5107,7 +5107,7 @@ Templates:
 
 	Template@1120:
 		Id: 1120
-		Images: tilesets/desert/PathExtra_24.png
+		Images: tilesets/desert/tiles/PathExtra_24.png
 		Size: 2,2
 		Categories: Path Extra
 		Tiles:
@@ -5118,7 +5118,7 @@ Templates:
 
 	Template@1122:
 		Id: 1122
-		Images: tilesets/desert/PathExtra_25.png
+		Images: tilesets/desert/tiles/PathExtra_25.png
 		Size: 2,2
 		Categories: Path Extra
 		Tiles:
@@ -5129,7 +5129,7 @@ Templates:
 
 	Template@1124:
 		Id: 1124
-		Images: tilesets/desert/Street_1.png
+		Images: tilesets/desert/tiles/Street_1.png
 		Size: 7,4
 		Categories: Street
 		Tiles:
@@ -5164,7 +5164,7 @@ Templates:
 
 	Template@1127:
 		Id: 1127
-		Images: tilesets/desert/Street_2.png
+		Images: tilesets/desert/tiles/Street_2.png
 		Size: 3,5
 		Categories: Street
 		Tiles:
@@ -5184,7 +5184,7 @@ Templates:
 
 	Template@1128:
 		Id: 1128
-		Images: tilesets/desert/Street_3.png
+		Images: tilesets/desert/tiles/Street_3.png
 		Size: 4,4
 		Categories: Street
 		Tiles:
@@ -5198,7 +5198,7 @@ Templates:
 
 	Template@1129:
 		Id: 1129
-		Images: tilesets/desert/Street_4.png
+		Images: tilesets/desert/tiles/Street_4.png
 		Size: 5,4
 		Categories: Street
 		Tiles:
@@ -5221,7 +5221,7 @@ Templates:
 
 	Template@1130:
 		Id: 1130
-		Images: tilesets/desert/Street_5.png
+		Images: tilesets/desert/tiles/Street_5.png
 		Size: 6,7
 		Categories: Street
 		Tiles:
@@ -5270,7 +5270,7 @@ Templates:
 
 	Template@1131:
 		Id: 1131
-		Images: tilesets/desert/Street_6.png
+		Images: tilesets/desert/tiles/Street_6.png
 		Size: 5,4
 		Categories: Street
 		Tiles:
@@ -5293,7 +5293,7 @@ Templates:
 
 	Template@1133:
 		Id: 1133
-		Images: tilesets/desert/Street_7.png
+		Images: tilesets/desert/tiles/Street_7.png
 		Size: 4,4
 		Categories: Street
 		Tiles:
@@ -5307,7 +5307,7 @@ Templates:
 
 	Template@1134:
 		Id: 1134
-		Images: tilesets/desert/Street_8.png
+		Images: tilesets/desert/tiles/Street_8.png
 		Size: 3,6
 		Categories: Street
 		Tiles:
@@ -5329,7 +5329,7 @@ Templates:
 
 	Template@1135:
 		Id: 1135
-		Images: tilesets/desert/Street_9.png
+		Images: tilesets/desert/tiles/Street_9.png
 		Size: 3,6
 		Categories: Street
 		Tiles:
@@ -5351,7 +5351,7 @@ Templates:
 
 	Template@1136:
 		Id: 1136
-		Images: tilesets/desert/Street_10.png
+		Images: tilesets/desert/tiles/Street_10.png
 		Size: 4,4
 		Categories: Street
 		Tiles:
@@ -5365,7 +5365,7 @@ Templates:
 
 	Template@1137:
 		Id: 1137
-		Images: tilesets/desert/Street_11.png
+		Images: tilesets/desert/tiles/Street_11.png
 		Size: 5,4
 		Categories: Street
 		Tiles:
@@ -5388,7 +5388,7 @@ Templates:
 
 	Template@1138:
 		Id: 1138
-		Images: tilesets/desert/Street_12.png
+		Images: tilesets/desert/tiles/Street_12.png
 		Size: 5,4
 		Categories: Street
 		Tiles:
@@ -5411,7 +5411,7 @@ Templates:
 
 	Template@1139:
 		Id: 1139
-		Images: tilesets/desert/Street_13.png
+		Images: tilesets/desert/tiles/Street_13.png
 		Size: 4,4
 		Categories: Street
 		Tiles:
@@ -5425,7 +5425,7 @@ Templates:
 
 	Template@1142:
 		Id: 1142
-		Images: tilesets/desert/Street_14.png
+		Images: tilesets/desert/tiles/Street_14.png
 		Size: 3,5
 		Categories: Street
 		Tiles:
@@ -5445,7 +5445,7 @@ Templates:
 
 	Template@1143:
 		Id: 1143
-		Images: tilesets/desert/Street_15.png
+		Images: tilesets/desert/tiles/Street_15.png
 		Size: 4,3
 		Categories: Street
 		Tiles:
@@ -5463,7 +5463,7 @@ Templates:
 
 	Template@1144:
 		Id: 1144
-		Images: tilesets/desert/Street_16.png
+		Images: tilesets/desert/tiles/Street_16.png
 		Size: 4,3
 		Categories: Street
 		Tiles:
@@ -5481,7 +5481,7 @@ Templates:
 
 	Template@1145:
 		Id: 1145
-		Images: tilesets/desert/Street_17.png
+		Images: tilesets/desert/tiles/Street_17.png
 		Size: 4,3
 		Categories: Street
 		Tiles:
@@ -5499,7 +5499,7 @@ Templates:
 
 	Template@1146:
 		Id: 1146
-		Images: tilesets/desert/Street_18.png
+		Images: tilesets/desert/tiles/Street_18.png
 		Size: 4,3
 		Categories: Street
 		Tiles:
@@ -5517,7 +5517,7 @@ Templates:
 
 	Template@1147:
 		Id: 1147
-		Images: tilesets/desert/Street_19.png
+		Images: tilesets/desert/tiles/Street_19.png
 		Size: 4,5
 		Categories: Street
 		Tiles:
@@ -5538,7 +5538,7 @@ Templates:
 
 	Template@1148:
 		Id: 1148
-		Images: tilesets/desert/Street_20.png
+		Images: tilesets/desert/tiles/Street_20.png
 		Size: 4,5
 		Categories: Street
 		Tiles:
@@ -5559,7 +5559,7 @@ Templates:
 
 	Template@1150:
 		Id: 1150
-		Images: tilesets/desert/Street_21.png
+		Images: tilesets/desert/tiles/Street_21.png
 		Size: 4,5
 		Categories: Street
 		Tiles:
@@ -5580,7 +5580,7 @@ Templates:
 
 	Template@1151:
 		Id: 1151
-		Images: tilesets/desert/Street_22.png
+		Images: tilesets/desert/tiles/Street_22.png
 		Size: 4,5
 		Categories: Street
 		Tiles:
@@ -5601,7 +5601,7 @@ Templates:
 
 	Template@1152:
 		Id: 1152
-		Images: tilesets/desert/Street_23.png
+		Images: tilesets/desert/tiles/Street_23.png
 		Size: 4,4
 		Categories: Street
 		Tiles:
@@ -5624,7 +5624,7 @@ Templates:
 
 	Template@1153:
 		Id: 1153
-		Images: tilesets/desert/Street_24.png
+		Images: tilesets/desert/tiles/Street_24.png
 		Size: 4,4
 		Categories: Street
 		Tiles:
@@ -5647,7 +5647,7 @@ Templates:
 
 	Template@1155:
 		Id: 1155
-		Images: tilesets/desert/Street_25.png
+		Images: tilesets/desert/tiles/Street_25.png
 		Size: 4,4
 		Categories: Street
 		Tiles:
@@ -5670,7 +5670,7 @@ Templates:
 
 	Template@1156:
 		Id: 1156
-		Images: tilesets/desert/Street_26.png
+		Images: tilesets/desert/tiles/Street_26.png
 		Size: 4,4
 		Categories: Street
 		Tiles:
@@ -5693,7 +5693,7 @@ Templates:
 
 	Template@1157:
 		Id: 1157
-		Images: tilesets/desert/Street_27.png
+		Images: tilesets/desert/tiles/Street_27.png
 		Size: 4,4
 		Categories: Street
 		Tiles:
@@ -5716,7 +5716,7 @@ Templates:
 
 	Template@1158:
 		Id: 1158
-		Images: tilesets/desert/Street_28.png
+		Images: tilesets/desert/tiles/Street_28.png
 		Size: 4,4
 		Categories: Street
 		Tiles:
@@ -5739,7 +5739,7 @@ Templates:
 
 	Template@1160:
 		Id: 1160
-		Images: tilesets/desert/Street_29.png
+		Images: tilesets/desert/tiles/Street_29.png
 		Size: 4,4
 		Categories: Street
 		Tiles:
@@ -5762,7 +5762,7 @@ Templates:
 
 	Template@1162:
 		Id: 1162
-		Images: tilesets/desert/Street_30.png
+		Images: tilesets/desert/tiles/Street_30.png
 		Size: 4,4
 		Categories: Street
 		Tiles:
@@ -5785,7 +5785,7 @@ Templates:
 
 	Template@1163:
 		Id: 1163
-		Images: tilesets/desert/Street_31.png
+		Images: tilesets/desert/tiles/Street_31.png
 		Size: 4,4
 		Categories: Street
 		Tiles:
@@ -5808,7 +5808,7 @@ Templates:
 
 	Template@1164:
 		Id: 1164
-		Images: tilesets/desert/StreetExtra_1.png
+		Images: tilesets/desert/tiles/StreetExtra_1.png
 		Size: 6,1
 		Categories: Street Extra
 		Tiles:
@@ -5821,7 +5821,7 @@ Templates:
 
 	Template@1165:
 		Id: 1165
-		Images: tilesets/desert/StreetExtra_2.png
+		Images: tilesets/desert/tiles/StreetExtra_2.png
 		Size: 1,6
 		Categories: Street Extra
 		Tiles:
@@ -5834,7 +5834,7 @@ Templates:
 
 	Template@1166:
 		Id: 1166
-		Images: tilesets/desert/StreetExtra_3.png
+		Images: tilesets/desert/tiles/StreetExtra_3.png
 		Size: 4,4
 		Categories: Street Extra
 		Tiles:
@@ -5848,7 +5848,7 @@ Templates:
 
 	Template@1167:
 		Id: 1167
-		Images: tilesets/desert/StreetExtra_4.png
+		Images: tilesets/desert/tiles/StreetExtra_4.png
 		Size: 4,4
 		Categories: Street Extra
 		Tiles:
@@ -5862,7 +5862,7 @@ Templates:
 
 	Template@1168:
 		Id: 1168
-		Images: tilesets/desert/StreetExtra_5.png
+		Images: tilesets/desert/tiles/StreetExtra_5.png
 		Size: 4,4
 		Categories: Street Extra
 		Tiles:
@@ -5876,7 +5876,7 @@ Templates:
 
 	Template@1169:
 		Id: 1169
-		Images: tilesets/desert/StreetExtra_6.png
+		Images: tilesets/desert/tiles/StreetExtra_6.png
 		Size: 4,4
 		Categories: Street Extra
 		Tiles:
@@ -5890,7 +5890,7 @@ Templates:
 
 	Template@1171:
 		Id: 1171
-		Images: tilesets/desert/StreetExtra_7.png
+		Images: tilesets/desert/tiles/StreetExtra_7.png
 		Size: 4,4
 		Categories: Street Extra
 		Tiles:
@@ -5904,7 +5904,7 @@ Templates:
 
 	Template@1172:
 		Id: 1172
-		Images: tilesets/desert/StreetExtra_8.png
+		Images: tilesets/desert/tiles/StreetExtra_8.png
 		Size: 4,4
 		Categories: Street Extra
 		Tiles:
@@ -5918,7 +5918,7 @@ Templates:
 
 	Template@1173:
 		Id: 1173
-		Images: tilesets/desert/StreetExtra_9.png
+		Images: tilesets/desert/tiles/StreetExtra_9.png
 		Size: 4,4
 		Categories: Street Extra
 		Tiles:
@@ -5932,7 +5932,7 @@ Templates:
 
 	Template@1174:
 		Id: 1174
-		Images: tilesets/desert/StreetExtra_10.png
+		Images: tilesets/desert/tiles/StreetExtra_10.png
 		Size: 4,4
 		Categories: Street Extra
 		Tiles:
@@ -5946,7 +5946,7 @@ Templates:
 
 	Template@1175:
 		Id: 1175
-		Images: tilesets/desert/StreetExtra_11.png
+		Images: tilesets/desert/tiles/StreetExtra_11.png
 		Size: 6,6
 		Categories: Street Extra
 		Tiles:
@@ -5978,7 +5978,7 @@ Templates:
 
 	Template@1176:
 		Id: 1176
-		Images: tilesets/desert/StreetExtra_12.png
+		Images: tilesets/desert/tiles/StreetExtra_12.png
 		Size: 6,6
 		Categories: Street Extra
 		Tiles:
@@ -6010,7 +6010,7 @@ Templates:
 
 	Template@1177:
 		Id: 1177
-		Images: tilesets/desert/StreetExtra_13.png
+		Images: tilesets/desert/tiles/StreetExtra_13.png
 		Size: 6,6
 		Categories: Street Extra
 		Tiles:
@@ -6042,7 +6042,7 @@ Templates:
 
 	Template@1178:
 		Id: 1178
-		Images: tilesets/desert/StreetExtra_14.png
+		Images: tilesets/desert/tiles/StreetExtra_14.png
 		Size: 6,6
 		Categories: Street Extra
 		Tiles:
@@ -6074,7 +6074,7 @@ Templates:
 
 	Template@1179:
 		Id: 1179
-		Images: tilesets/desert/StreetExtra_15.png
+		Images: tilesets/desert/tiles/StreetExtra_15.png
 		Size: 2,4
 		Categories: Street Extra
 		Tiles:
@@ -6089,7 +6089,7 @@ Templates:
 
 	Template@1180:
 		Id: 1180
-		Images: tilesets/desert/StreetExtra_16.png
+		Images: tilesets/desert/tiles/StreetExtra_16.png
 		Size: 2,4
 		Categories: Street Extra
 		Tiles:
@@ -6104,7 +6104,7 @@ Templates:
 
 	Template@1181:
 		Id: 1181
-		Images: tilesets/desert/StreetExtra_17.png
+		Images: tilesets/desert/tiles/StreetExtra_17.png
 		Size: 6,5
 		Categories: Street Extra
 		Tiles:
@@ -6136,7 +6136,7 @@ Templates:
 
 	Template@1182:
 		Id: 1182
-		Images: tilesets/desert/StreetExtra_18.png
+		Images: tilesets/desert/tiles/StreetExtra_18.png
 		Size: 5,3
 		Categories: Street Extra
 		Tiles:
@@ -6158,7 +6158,7 @@ Templates:
 
 	Template@1183:
 		Id: 1183
-		Images: tilesets/desert/StreetExtra_19.png
+		Images: tilesets/desert/tiles/StreetExtra_19.png
 		Size: 2,4
 		Categories: Street Extra
 		Tiles:
@@ -6173,7 +6173,7 @@ Templates:
 
 	Template@1185:
 		Id: 1185
-		Images: tilesets/desert/StreetExtra_20.png
+		Images: tilesets/desert/tiles/StreetExtra_20.png
 		Size: 6,2
 		Categories: Street Extra
 		Tiles:
@@ -6192,7 +6192,7 @@ Templates:
 
 	Template@1186:
 		Id: 1186
-		Images: tilesets/desert/StreetExtra_21.png
+		Images: tilesets/desert/tiles/StreetExtra_21.png
 		Size: 4,3
 		Categories: Street Extra
 		Tiles:
@@ -6211,7 +6211,7 @@ Templates:
 
 	Template@1188:
 		Id: 1188
-		Images: tilesets/desert/StreetExtra_22.png
+		Images: tilesets/desert/tiles/StreetExtra_22.png
 		Size: 3,4
 		Categories: Street Extra
 		Tiles:
@@ -6230,7 +6230,7 @@ Templates:
 
 	Template@1189:
 		Id: 1189
-		Images: tilesets/desert/StreetExtra_23.png
+		Images: tilesets/desert/tiles/StreetExtra_23.png
 		Size: 4,3
 		Categories: Street Extra
 		Tiles:
@@ -6249,7 +6249,7 @@ Templates:
 
 	Template@1190:
 		Id: 1190
-		Images: tilesets/desert/StreetExtra_24.png
+		Images: tilesets/desert/tiles/StreetExtra_24.png
 		Size: 3,4
 		Categories: Street Extra
 		Tiles:
@@ -6268,7 +6268,7 @@ Templates:
 
 	Template@313:
 		Id: 313
-		Images: tilesets/desert/TransitionDirtSand_SE.png
+		Images: tilesets/desert/tiles/TransitionDirtSand_SE.png
 		Size: 4,3
 		Categories: Transition Dirt Sand
 		Tiles:
@@ -6281,7 +6281,7 @@ Templates:
 
 	Template@314:
 		Id: 314
-		Images: tilesets/desert/TransitionDirtSand_SW.png
+		Images: tilesets/desert/tiles/TransitionDirtSand_SW.png
 		Size: 4,3
 		Categories: Transition Dirt Sand
 		Tiles:
@@ -6294,7 +6294,7 @@ Templates:
 
 	Template@315:
 		Id: 315
-		Images: tilesets/desert/TransitionDirtSand_NE.png
+		Images: tilesets/desert/tiles/TransitionDirtSand_NE.png
 		Size: 4,3
 		Categories: Transition Dirt Sand
 		Tiles:
@@ -6307,7 +6307,7 @@ Templates:
 
 	Template@316:
 		Id: 316
-		Images: tilesets/desert/TransitionDirtSand_NW.png
+		Images: tilesets/desert/tiles/TransitionDirtSand_NW.png
 		Size: 4,3
 		Categories: Transition Dirt Sand
 		Tiles:
@@ -6320,7 +6320,7 @@ Templates:
 
 	Template@317:
 		Id: 317
-		Images: tilesets/desert/TransitionDirtSand_NW2N.png
+		Images: tilesets/desert/tiles/TransitionDirtSand_NW2N.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
 		Tiles:
@@ -6337,7 +6337,7 @@ Templates:
 
 	Template@318:
 		Id: 318
-		Images: tilesets/desert/TransitionDirtSand_NE2N.png
+		Images: tilesets/desert/tiles/TransitionDirtSand_NE2N.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
 		Tiles:
@@ -6354,7 +6354,7 @@ Templates:
 
 	Template@319:
 		Id: 319
-		Images: tilesets/desert/TransitionDirtSand_NE2E.png
+		Images: tilesets/desert/tiles/TransitionDirtSand_NE2E.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
 		Tiles:
@@ -6371,7 +6371,7 @@ Templates:
 
 	Template@320:
 		Id: 320
-		Images: tilesets/desert/TransitionDirtSand_NW2W.png
+		Images: tilesets/desert/tiles/TransitionDirtSand_NW2W.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
 		Tiles:
@@ -6388,7 +6388,7 @@ Templates:
 
 	Template@321:
 		Id: 321
-		Images: tilesets/desert/TransitionDirtSand_SE2E.png
+		Images: tilesets/desert/tiles/TransitionDirtSand_SE2E.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
 		Tiles:
@@ -6405,7 +6405,7 @@ Templates:
 
 	Template@322:
 		Id: 322
-		Images: tilesets/desert/TransitionDirtSand_SW2W.png
+		Images: tilesets/desert/tiles/TransitionDirtSand_SW2W.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
 		Tiles:
@@ -6422,7 +6422,7 @@ Templates:
 
 	Template@323:
 		Id: 323
-		Images: tilesets/desert/TransitionDirtSand_SE2S.png
+		Images: tilesets/desert/tiles/TransitionDirtSand_SE2S.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
 		Tiles:
@@ -6439,7 +6439,7 @@ Templates:
 
 	Template@324:
 		Id: 324
-		Images: tilesets/desert/TransitionDirtSand_SW2S.png
+		Images: tilesets/desert/tiles/TransitionDirtSand_SW2S.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
 		Tiles:
@@ -6456,7 +6456,7 @@ Templates:
 
 	Template@325:
 		Id: 325
-		Images: tilesets/desert/TransitionDirtSand_W2S.png
+		Images: tilesets/desert/tiles/TransitionDirtSand_W2S.png
 		Size: 3,3
 		Categories: Transition Dirt Sand
 		Tiles:
@@ -6472,7 +6472,7 @@ Templates:
 
 	Template@326:
 		Id: 326
-		Images: tilesets/desert/TransitionDirtSand_E2S.png
+		Images: tilesets/desert/tiles/TransitionDirtSand_E2S.png
 		Size: 3,3
 		Categories: Transition Dirt Sand
 		Tiles:
@@ -6488,7 +6488,7 @@ Templates:
 
 	Template@327:
 		Id: 327
-		Images: tilesets/desert/TransitionDirtSand_E2N.png
+		Images: tilesets/desert/tiles/TransitionDirtSand_E2N.png
 		Size: 3,3
 		Categories: Transition Dirt Sand
 		Tiles:
@@ -6504,7 +6504,7 @@ Templates:
 
 	Template@328:
 		Id: 328
-		Images: tilesets/desert/TransitionDirtSand_W2N.png
+		Images: tilesets/desert/tiles/TransitionDirtSand_W2N.png
 		Size: 3,3
 		Categories: Transition Dirt Sand
 		Tiles:
@@ -6520,7 +6520,7 @@ Templates:
 
 	Template@329:
 		Id: 329
-		Images: tilesets/desert/TransitionDirtSand_W.png
+		Images: tilesets/desert/tiles/TransitionDirtSand_W.png
 		Size: 4,2
 		Categories: Transition Dirt Sand
 		Tiles:
@@ -6535,7 +6535,7 @@ Templates:
 
 	Template@330:
 		Id: 330
-		Images: tilesets/desert/TransitionDirtSand_N.png
+		Images: tilesets/desert/tiles/TransitionDirtSand_N.png
 		Size: 2,4
 		Categories: Transition Dirt Sand
 		Tiles:
@@ -6550,7 +6550,7 @@ Templates:
 
 	Template@331:
 		Id: 331
-		Images: tilesets/desert/TransitionDirtSand_E.png
+		Images: tilesets/desert/tiles/TransitionDirtSand_E.png
 		Size: 4,2
 		Categories: Transition Dirt Sand
 		Tiles:
@@ -6565,7 +6565,7 @@ Templates:
 
 	Template@332:
 		Id: 332
-		Images: tilesets/desert/TransitionDirtSand_S.png
+		Images: tilesets/desert/tiles/TransitionDirtSand_S.png
 		Size: 2,4
 		Categories: Transition Dirt Sand
 		Tiles:
@@ -6580,7 +6580,7 @@ Templates:
 
 	Template@333:
 		Id: 333
-		Images: tilesets/desert/TransitionDirtSand_N2E.png
+		Images: tilesets/desert/tiles/TransitionDirtSand_N2E.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
 		Tiles:
@@ -6602,7 +6602,7 @@ Templates:
 
 	Template@334:
 		Id: 334
-		Images: tilesets/desert/TransitionDirtSand_S2E.png
+		Images: tilesets/desert/tiles/TransitionDirtSand_S2E.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
 		Tiles:
@@ -6624,7 +6624,7 @@ Templates:
 
 	Template@335:
 		Id: 335
-		Images: tilesets/desert/TransitionDirtSand_S2W.png
+		Images: tilesets/desert/tiles/TransitionDirtSand_S2W.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
 		Tiles:
@@ -6646,7 +6646,7 @@ Templates:
 
 	Template@336:
 		Id: 336
-		Images: tilesets/desert/TransitionDirtSand_N2W.png
+		Images: tilesets/desert/tiles/TransitionDirtSand_N2W.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
 		Tiles:
@@ -6668,7 +6668,7 @@ Templates:
 
 	Template@337:
 		Id: 337
-		Images: tilesets/desert/TransitionDirtSand_N2NE.png
+		Images: tilesets/desert/tiles/TransitionDirtSand_N2NE.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
 		Tiles:
@@ -6685,7 +6685,7 @@ Templates:
 
 	Template@338:
 		Id: 338
-		Images: tilesets/desert/TransitionDirtSand_E2NE.png
+		Images: tilesets/desert/tiles/TransitionDirtSand_E2NE.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
 		Tiles:
@@ -6702,7 +6702,7 @@ Templates:
 
 	Template@339:
 		Id: 339
-		Images: tilesets/desert/TransitionDirtSand_E2SE.png
+		Images: tilesets/desert/tiles/TransitionDirtSand_E2SE.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
 		Tiles:
@@ -6719,7 +6719,7 @@ Templates:
 
 	Template@340:
 		Id: 340
-		Images: tilesets/desert/TransitionDirtSand_S2SE.png
+		Images: tilesets/desert/tiles/TransitionDirtSand_S2SE.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
 		Tiles:
@@ -6736,7 +6736,7 @@ Templates:
 
 	Template@341:
 		Id: 341
-		Images: tilesets/desert/TransitionDirtSand_S2SW.png
+		Images: tilesets/desert/tiles/TransitionDirtSand_S2SW.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
 		Tiles:
@@ -6753,7 +6753,7 @@ Templates:
 
 	Template@342:
 		Id: 342
-		Images: tilesets/desert/TransitionDirtSand_W2SW.png
+		Images: tilesets/desert/tiles/TransitionDirtSand_W2SW.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
 		Tiles:
@@ -6770,7 +6770,7 @@ Templates:
 
 	Template@343:
 		Id: 343
-		Images: tilesets/desert/TransitionDirtSand_W2NW.png
+		Images: tilesets/desert/tiles/TransitionDirtSand_W2NW.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
 		Tiles:
@@ -6787,7 +6787,7 @@ Templates:
 
 	Template@344:
 		Id: 344
-		Images: tilesets/desert/TransitionDirtSand_N2NW.png
+		Images: tilesets/desert/tiles/TransitionDirtSand_N2NW.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
 		Tiles:
@@ -6804,7 +6804,7 @@ Templates:
 
 	Template@1191:
 		Id: 1191
-		Images: tilesets/desert/TransitionDirtSandExtra_1.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_1.png
 		Size: 6,3
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -6829,7 +6829,7 @@ Templates:
 
 	Template@1192:
 		Id: 1192
-		Images: tilesets/desert/TransitionDirtSandExtra_2.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_2.png
 		Size: 6,3
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -6854,7 +6854,7 @@ Templates:
 
 	Template@1193:
 		Id: 1193
-		Images: tilesets/desert/TransitionDirtSandExtra_3.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_3.png
 		Size: 3,2
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -6867,7 +6867,7 @@ Templates:
 
 	Template@1194:
 		Id: 1194
-		Images: tilesets/desert/TransitionDirtSandExtra_4.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_4.png
 		Size: 4,4
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -6884,7 +6884,7 @@ Templates:
 
 	Template@1195:
 		Id: 1195
-		Images: tilesets/desert/TransitionDirtSandExtra_5.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_5.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -6898,7 +6898,7 @@ Templates:
 
 	Template@1197:
 		Id: 1197
-		Images: tilesets/desert/TransitionDirtSandExtra_6.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_6.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -6912,7 +6912,7 @@ Templates:
 
 	Template@1199:
 		Id: 1199
-		Images: tilesets/desert/TransitionDirtSandExtra_7.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_7.png
 		Size: 3,4
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -6931,7 +6931,7 @@ Templates:
 
 	Template@1200:
 		Id: 1200
-		Images: tilesets/desert/TransitionDirtSandExtra_8.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_8.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -6945,7 +6945,7 @@ Templates:
 
 	Template@1201:
 		Id: 1201
-		Images: tilesets/desert/TransitionDirtSandExtra_9.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_9.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -6959,7 +6959,7 @@ Templates:
 
 	Template@1203:
 		Id: 1203
-		Images: tilesets/desert/TransitionDirtSandExtra_10.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_10.png
 		Size: 4,4
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -6976,7 +6976,7 @@ Templates:
 
 	Template@1204:
 		Id: 1204
-		Images: tilesets/desert/TransitionDirtSandExtra_11.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_11.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -6991,7 +6991,7 @@ Templates:
 
 	Template@1205:
 		Id: 1205
-		Images: tilesets/desert/TransitionDirtSandExtra_12.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_12.png
 		Size: 6,3
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -7016,7 +7016,7 @@ Templates:
 
 	Template@1206:
 		Id: 1206
-		Images: tilesets/desert/TransitionDirtSandExtra_13.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_13.png
 		Size: 6,3
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -7041,7 +7041,7 @@ Templates:
 
 	Template@1207:
 		Id: 1207
-		Images: tilesets/desert/TransitionDirtSandExtra_14.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_14.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -7056,7 +7056,7 @@ Templates:
 
 	Template@1208:
 		Id: 1208
-		Images: tilesets/desert/TransitionDirtSandExtra_15.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_15.png
 		Size: 4,4
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -7073,7 +7073,7 @@ Templates:
 
 	Template@1210:
 		Id: 1210
-		Images: tilesets/desert/TransitionDirtSandExtra_16.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_16.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -7087,7 +7087,7 @@ Templates:
 
 	Template@1211:
 		Id: 1211
-		Images: tilesets/desert/TransitionDirtSandExtra_17.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_17.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -7101,7 +7101,7 @@ Templates:
 
 	Template@1212:
 		Id: 1212
-		Images: tilesets/desert/TransitionDirtSandExtra_18.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_18.png
 		Size: 3,4
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -7120,7 +7120,7 @@ Templates:
 
 	Template@1213:
 		Id: 1213
-		Images: tilesets/desert/TransitionDirtSandExtra_19.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_19.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -7134,7 +7134,7 @@ Templates:
 
 	Template@1215:
 		Id: 1215
-		Images: tilesets/desert/TransitionDirtSandExtra_20.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_20.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -7148,7 +7148,7 @@ Templates:
 
 	Template@1216:
 		Id: 1216
-		Images: tilesets/desert/TransitionDirtSandExtra_21.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_21.png
 		Size: 4,4
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -7165,7 +7165,7 @@ Templates:
 
 	Template@1217:
 		Id: 1217
-		Images: tilesets/desert/TransitionDirtSandExtra_22.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_22.png
 		Size: 3,2
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -7178,7 +7178,7 @@ Templates:
 
 	Template@1218:
 		Id: 1218
-		Images: tilesets/desert/TransitionDirtSandExtra_23.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_23.png
 		Size: 4,4
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -7200,7 +7200,7 @@ Templates:
 
 	Template@1219:
 		Id: 1219
-		Images: tilesets/desert/TransitionDirtSandExtra_24.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_24.png
 		Size: 4,4
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -7222,7 +7222,7 @@ Templates:
 
 	Template@1221:
 		Id: 1221
-		Images: tilesets/desert/TransitionDirtSandExtra_25.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_25.png
 		Size: 4,4
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -7244,7 +7244,7 @@ Templates:
 
 	Template@1222:
 		Id: 1222
-		Images: tilesets/desert/TransitionDirtSandExtra_26.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_26.png
 		Size: 4,4
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -7266,7 +7266,7 @@ Templates:
 
 	Template@1224:
 		Id: 1224
-		Images: tilesets/desert/TransitionDirtSandExtra_27.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_27.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -7282,7 +7282,7 @@ Templates:
 
 	Template@1225:
 		Id: 1225
-		Images: tilesets/desert/TransitionDirtSandExtra_28.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_28.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -7298,7 +7298,7 @@ Templates:
 
 	Template@1226:
 		Id: 1226
-		Images: tilesets/desert/TransitionDirtSandExtra_29.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_29.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -7314,7 +7314,7 @@ Templates:
 
 	Template@1227:
 		Id: 1227
-		Images: tilesets/desert/TransitionDirtSandExtra_30.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_30.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -7330,7 +7330,7 @@ Templates:
 
 	Template@1228:
 		Id: 1228
-		Images: tilesets/desert/TransitionDirtSandExtra_31.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_31.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -7346,7 +7346,7 @@ Templates:
 
 	Template@1229:
 		Id: 1229
-		Images: tilesets/desert/TransitionDirtSandExtra_32.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_32.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -7362,7 +7362,7 @@ Templates:
 
 	Template@1234:
 		Id: 1234
-		Images: tilesets/desert/TransitionDirtSandExtra_33.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_33.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -7378,7 +7378,7 @@ Templates:
 
 	Template@1235:
 		Id: 1235
-		Images: tilesets/desert/TransitionDirtSandExtra_34.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_34.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -7394,7 +7394,7 @@ Templates:
 
 	Template@1236:
 		Id: 1236
-		Images: tilesets/desert/TransitionDirtSandExtra_35.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_35.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -7410,7 +7410,7 @@ Templates:
 
 	Template@1237:
 		Id: 1237
-		Images: tilesets/desert/TransitionDirtSandExtra_36.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_36.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -7426,7 +7426,7 @@ Templates:
 
 	Template@1238:
 		Id: 1238
-		Images: tilesets/desert/TransitionDirtSandExtra_37.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_37.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -7442,7 +7442,7 @@ Templates:
 
 	Template@1239:
 		Id: 1239
-		Images: tilesets/desert/TransitionDirtSandExtra_38.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_38.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -7458,7 +7458,7 @@ Templates:
 
 	Template@1240:
 		Id: 1240
-		Images: tilesets/desert/TransitionDirtSandExtra_39.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_39.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -7474,7 +7474,7 @@ Templates:
 
 	Template@1241:
 		Id: 1241
-		Images: tilesets/desert/TransitionDirtSandExtra_40.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_40.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -7490,7 +7490,7 @@ Templates:
 
 	Template@1242:
 		Id: 1242
-		Images: tilesets/desert/TransitionDirtSandExtra_41.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_41.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -7506,7 +7506,7 @@ Templates:
 
 	Template@1243:
 		Id: 1243
-		Images: tilesets/desert/TransitionDirtSandExtra_42.png
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_42.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
 		Tiles:
@@ -7522,7 +7522,7 @@ Templates:
 
 	Template@1288:
 		Id: 1288
-		Images: tilesets/desert/TransitionGrassDirt_1.png
+		Images: tilesets/desert/tiles/TransitionGrassDirt_1.png
 		Size: 4,2
 		Categories: Transition Grass Dirt
 		Tiles:
@@ -7537,7 +7537,7 @@ Templates:
 
 	Template@1289:
 		Id: 1289
-		Images: tilesets/desert/TransitionGrassDirt_2.png
+		Images: tilesets/desert/tiles/TransitionGrassDirt_2.png
 		Size: 4,2
 		Categories: Transition Grass Dirt
 		Tiles:
@@ -7552,7 +7552,7 @@ Templates:
 
 	Template@1291:
 		Id: 1291
-		Images: tilesets/desert/TransitionGrassDirt_3.png
+		Images: tilesets/desert/tiles/TransitionGrassDirt_3.png
 		Size: 2,2
 		Categories: Transition Grass Dirt
 		Tiles:
@@ -7563,7 +7563,7 @@ Templates:
 
 	Template@1292:
 		Id: 1292
-		Images: tilesets/desert/TransitionGrassDirt_4.png
+		Images: tilesets/desert/tiles/TransitionGrassDirt_4.png
 		Size: 3,2
 		Categories: Transition Grass Dirt
 		Tiles:
@@ -7574,7 +7574,7 @@ Templates:
 
 	Template@1293:
 		Id: 1293
-		Images: tilesets/desert/TransitionGrassDirt_5.png
+		Images: tilesets/desert/tiles/TransitionGrassDirt_5.png
 		Size: 2,4
 		Categories: Transition Grass Dirt
 		Tiles:
@@ -7589,7 +7589,7 @@ Templates:
 
 	Template@1294:
 		Id: 1294
-		Images: tilesets/desert/TransitionGrassDirt_6.png
+		Images: tilesets/desert/tiles/TransitionGrassDirt_6.png
 		Size: 2,4
 		Categories: Transition Grass Dirt
 		Tiles:
@@ -7604,7 +7604,7 @@ Templates:
 
 	Template@1295:
 		Id: 1295
-		Images: tilesets/desert/TransitionGrassDirt_7.png
+		Images: tilesets/desert/tiles/TransitionGrassDirt_7.png
 		Size: 3,2
 		Categories: Transition Grass Dirt
 		Tiles:
@@ -7615,7 +7615,7 @@ Templates:
 
 	Template@1296:
 		Id: 1296
-		Images: tilesets/desert/TransitionGrassDirt_8.png
+		Images: tilesets/desert/tiles/TransitionGrassDirt_8.png
 		Size: 2,2
 		Categories: Transition Grass Dirt
 		Tiles:
@@ -7626,7 +7626,7 @@ Templates:
 
 	Template@1297:
 		Id: 1297
-		Images: tilesets/desert/TransitionGrassDirt_9.png
+		Images: tilesets/desert/tiles/TransitionGrassDirt_9.png
 		Size: 4,2
 		Categories: Transition Grass Dirt
 		Tiles:
@@ -7641,7 +7641,7 @@ Templates:
 
 	Template@1301:
 		Id: 1301
-		Images: tilesets/desert/TransitionGrassDirt_10.png
+		Images: tilesets/desert/tiles/TransitionGrassDirt_10.png
 		Size: 4,2
 		Categories: Transition Grass Dirt
 		Tiles:
@@ -7656,7 +7656,7 @@ Templates:
 
 	Template@1302:
 		Id: 1302
-		Images: tilesets/desert/TransitionGrassDirt_11.png
+		Images: tilesets/desert/tiles/TransitionGrassDirt_11.png
 		Size: 2,2
 		Categories: Transition Grass Dirt
 		Tiles:
@@ -7667,7 +7667,7 @@ Templates:
 
 	Template@1303:
 		Id: 1303
-		Images: tilesets/desert/TransitionGrassDirt_12.png
+		Images: tilesets/desert/tiles/TransitionGrassDirt_12.png
 		Size: 3,2
 		Categories: Transition Grass Dirt
 		Tiles:
@@ -7678,7 +7678,7 @@ Templates:
 
 	Template@1304:
 		Id: 1304
-		Images: tilesets/desert/TransitionGrassDirt_13.png
+		Images: tilesets/desert/tiles/TransitionGrassDirt_13.png
 		Size: 2,4
 		Categories: Transition Grass Dirt
 		Tiles:
@@ -7693,7 +7693,7 @@ Templates:
 
 	Template@1305:
 		Id: 1305
-		Images: tilesets/desert/TransitionGrassDirt_14.png
+		Images: tilesets/desert/tiles/TransitionGrassDirt_14.png
 		Size: 2,4
 		Categories: Transition Grass Dirt
 		Tiles:
@@ -7708,7 +7708,7 @@ Templates:
 
 	Template@1307:
 		Id: 1307
-		Images: tilesets/desert/TransitionGrassDirt_15.png
+		Images: tilesets/desert/tiles/TransitionGrassDirt_15.png
 		Size: 3,2
 		Categories: Transition Grass Dirt
 		Tiles:
@@ -7719,7 +7719,7 @@ Templates:
 
 	Template@1308:
 		Id: 1308
-		Images: tilesets/desert/TransitionGrassDirt_16.png
+		Images: tilesets/desert/tiles/TransitionGrassDirt_16.png
 		Size: 2,2
 		Categories: Transition Grass Dirt
 		Tiles:
@@ -7730,7 +7730,7 @@ Templates:
 
 	Template@1311:
 		Id: 1311
-		Images: tilesets/desert/TransitionGrassDirt_17.png
+		Images: tilesets/desert/tiles/TransitionGrassDirt_17.png
 		Size: 3,3
 		Categories: Transition Grass Dirt
 		Tiles:
@@ -7746,7 +7746,7 @@ Templates:
 
 	Template@1312:
 		Id: 1312
-		Images: tilesets/desert/TransitionGrassDirt_18.png
+		Images: tilesets/desert/tiles/TransitionGrassDirt_18.png
 		Size: 3,3
 		Categories: Transition Grass Dirt
 		Tiles:
@@ -7762,7 +7762,7 @@ Templates:
 
 	Template@1313:
 		Id: 1313
-		Images: tilesets/desert/TransitionGrassDirt_19.png
+		Images: tilesets/desert/tiles/TransitionGrassDirt_19.png
 		Size: 3,3
 		Categories: Transition Grass Dirt
 		Tiles:
@@ -7778,7 +7778,7 @@ Templates:
 
 	Template@1314:
 		Id: 1314
-		Images: tilesets/desert/TransitionGrassDirt_20.png
+		Images: tilesets/desert/tiles/TransitionGrassDirt_20.png
 		Size: 3,3
 		Categories: Transition Grass Dirt
 		Tiles:
@@ -7794,7 +7794,7 @@ Templates:
 
 	Template@1337:
 		Id: 1337
-		Images: tilesets/desert/TransitionGrassDirt_21.png
+		Images: tilesets/desert/tiles/TransitionGrassDirt_21.png
 		Size: 2,2
 		Categories: Transition Grass Dirt
 		Tiles:
@@ -7805,7 +7805,7 @@ Templates:
 
 	Template@1339:
 		Id: 1339
-		Images: tilesets/desert/TransitionGrassDirt_22.png
+		Images: tilesets/desert/tiles/TransitionGrassDirt_22.png
 		Size: 2,2
 		Categories: Transition Grass Dirt
 		Tiles:
@@ -7816,7 +7816,7 @@ Templates:
 
 	Template@1341:
 		Id: 1341
-		Images: tilesets/desert/TransitionGrassDirt_23.png
+		Images: tilesets/desert/tiles/TransitionGrassDirt_23.png
 		Size: 2,2
 		Categories: Transition Grass Dirt
 		Tiles:
@@ -7827,7 +7827,7 @@ Templates:
 
 	Template@1343:
 		Id: 1343
-		Images: tilesets/desert/TransitionGrassDirt_24.png
+		Images: tilesets/desert/tiles/TransitionGrassDirt_24.png
 		Size: 2,2
 		Categories: Transition Grass Dirt
 		Tiles:

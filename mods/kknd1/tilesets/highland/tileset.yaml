@@ -40,7 +40,7 @@ Terrain:
 Templates:
 	Template@147:
 		Id: 147
-		Images: tilesets/highland/Terrain_Grass.png
+		Images: tilesets/highland/tiles/Terrain_Grass.png
 		Size: 1,1
 		PickAny: true
 		Categories: Terrain
@@ -84,7 +84,7 @@ Templates:
 
 	Template@148:
 		Id: 148
-		Images: tilesets/highland/Terrain_Dirt.png
+		Images: tilesets/highland/tiles/Terrain_Dirt.png
 		Size: 1,1
 		PickAny: true
 		Categories: Terrain
@@ -128,7 +128,7 @@ Templates:
 
 	Template@835:
 		Id: 835
-		Images: tilesets/highland/Terrain_Dirt1.png
+		Images: tilesets/highland/tiles/Terrain_Dirt1.png
 		Size: 3,3
 		Categories: Terrain
 		Tiles:
@@ -144,7 +144,7 @@ Templates:
 
 	Template@837:
 		Id: 837
-		Images: tilesets/highland/Terrain_Dirt2.png
+		Images: tilesets/highland/tiles/Terrain_Dirt2.png
 		Size: 4,4
 		Categories: Terrain
 		Tiles:
@@ -167,7 +167,7 @@ Templates:
 
 	Template@838:
 		Id: 838
-		Images: tilesets/highland/Terrain_Dirt3.png
+		Images: tilesets/highland/tiles/Terrain_Dirt3.png
 		Size: 4,4
 		Categories: Terrain
 		Tiles:
@@ -189,7 +189,7 @@ Templates:
 
 	Template@839:
 		Id: 839
-		Images: tilesets/highland/Terrain_Dirt4.png
+		Images: tilesets/highland/tiles/Terrain_Dirt4.png
 		Size: 2,2
 		Categories: Terrain
 		Tiles:
@@ -200,7 +200,7 @@ Templates:
 
 	Template@840:
 		Id: 840
-		Images: tilesets/highland/Terrain_Dirt5.png
+		Images: tilesets/highland/tiles/Terrain_Dirt5.png
 		Size: 2,2
 		Categories: Terrain
 		Tiles:
@@ -211,7 +211,7 @@ Templates:
 
 	Template@841:
 		Id: 841
-		Images: tilesets/highland/Terrain_Dirt6.png
+		Images: tilesets/highland/tiles/Terrain_Dirt6.png
 		Size: 2,2
 		Categories: Terrain
 		Tiles:
@@ -222,7 +222,7 @@ Templates:
 
 	Template@842:
 		Id: 842
-		Images: tilesets/highland/Terrain_Dirt7.png
+		Images: tilesets/highland/tiles/Terrain_Dirt7.png
 		Size: 2,2
 		Categories: Terrain
 		Tiles:
@@ -233,7 +233,7 @@ Templates:
 
 	Template@843:
 		Id: 843
-		Images: tilesets/highland/Terrain_Dirt8.png
+		Images: tilesets/highland/tiles/Terrain_Dirt8.png
 		Size: 3,2
 		Categories: Terrain
 		Tiles:
@@ -246,7 +246,7 @@ Templates:
 
 	Template@845:
 		Id: 845
-		Images: tilesets/highland/Terrain_Dirt9.png
+		Images: tilesets/highland/tiles/Terrain_Dirt9.png
 		Size: 3,2
 		Categories: Terrain
 		Tiles:
@@ -259,7 +259,7 @@ Templates:
 
 	Template@849:
 		Id: 849
-		Images: tilesets/highland/Terrain_Dirt10.png
+		Images: tilesets/highland/tiles/Terrain_Dirt10.png
 		Size: 2,1
 		Categories: Terrain
 		Tiles:
@@ -268,7 +268,7 @@ Templates:
 
 	Template@852:
 		Id: 852
-		Images: tilesets/highland/Terrain_Dirt12.png
+		Images: tilesets/highland/tiles/Terrain_Dirt12.png
 		Size: 2,1
 		Categories: Terrain
 		Tiles:
@@ -277,7 +277,7 @@ Templates:
 
 	Template@855:
 		Id: 855
-		Images: tilesets/highland/Terrain_Dirt11.png
+		Images: tilesets/highland/tiles/Terrain_Dirt11.png
 		Size: 2,1
 		Categories: Terrain
 		Tiles:
@@ -286,7 +286,7 @@ Templates:
 
 	Template@856:
 		Id: 856
-		Images: tilesets/highland/Terrain_Dirt13.png
+		Images: tilesets/highland/tiles/Terrain_Dirt13.png
 		Size: 2,1
 		Categories: Terrain
 		Tiles:
@@ -295,7 +295,7 @@ Templates:
 
 	Template@857:
 		Id: 857
-		Images: tilesets/highland/Terrain_Grass1.png
+		Images: tilesets/highland/tiles/Terrain_Grass1.png
 		Size: 3,3
 		Categories: Terrain
 		Tiles:
@@ -311,7 +311,7 @@ Templates:
 
 	Template@858:
 		Id: 858
-		Images: tilesets/highland/Terrain_Grass2.png
+		Images: tilesets/highland/tiles/Terrain_Grass2.png
 		Size: 3,3
 		Categories: Terrain
 		Tiles:
@@ -327,7 +327,7 @@ Templates:
 
 	Template@859:
 		Id: 859
-		Images: tilesets/highland/Terrain_Grass3.png
+		Images: tilesets/highland/tiles/Terrain_Grass3.png
 		Size: 4,3
 		Categories: Terrain
 		Tiles:
@@ -346,7 +346,7 @@ Templates:
 
 	Template@861:
 		Id: 861
-		Images: tilesets/highland/Terrain_Grass4.png
+		Images: tilesets/highland/tiles/Terrain_Grass4.png
 		Size: 1,2
 		Categories: Terrain
 		Tiles:
@@ -355,7 +355,7 @@ Templates:
 
 	Template@862:
 		Id: 862
-		Images: tilesets/highland/Terrain_Grass5.png
+		Images: tilesets/highland/tiles/Terrain_Grass5.png
 		Size: 2,2
 		Categories: Terrain
 		Tiles:
@@ -366,7 +366,7 @@ Templates:
 
 	Template@863:
 		Id: 863
-		Images: tilesets/highland/Terrain_Grass6.png
+		Images: tilesets/highland/tiles/Terrain_Grass6.png
 		Size: 2,2
 		Categories: Terrain
 		Tiles:
@@ -377,7 +377,7 @@ Templates:
 
 	Template@864:
 		Id: 864
-		Images: tilesets/highland/Decoration_Mountain1.png
+		Images: tilesets/highland/tiles/Decoration_Mountain1.png
 		Size: 12,13
 		Categories: Decoration
 		Tiles:
@@ -515,7 +515,7 @@ Templates:
 
 	Template@867:
 		Id: 867
-		Images: tilesets/highland/Decoration_Mountain2.png
+		Images: tilesets/highland/tiles/Decoration_Mountain2.png
 		Size: 12,12
 		Categories: Decoration
 		Tiles:
@@ -635,7 +635,7 @@ Templates:
 
 	Template@868:
 		Id: 868
-		Images: tilesets/highland/Decoration_Mountain3.png
+		Images: tilesets/highland/tiles/Decoration_Mountain3.png
 		Size: 12,11
 		Categories: Decoration
 		Tiles:
@@ -750,7 +750,7 @@ Templates:
 
 	Template@869:
 		Id: 869
-		Images: tilesets/highland/Decoration_Mountain4.png
+		Images: tilesets/highland/tiles/Decoration_Mountain4.png
 		Size: 12,11
 		Categories: Decoration
 		Tiles:
@@ -863,7 +863,7 @@ Templates:
 
 	Template@870:
 		Id: 870
-		Images: tilesets/highland/Decoration_Crater1.png
+		Images: tilesets/highland/tiles/Decoration_Crater1.png
 		Size: 8,8
 		Categories: Decoration
 		Tiles:
@@ -911,7 +911,7 @@ Templates:
 
 	Template@871:
 		Id: 871
-		Images: tilesets/highland/Decoration_Crater2.png
+		Images: tilesets/highland/tiles/Decoration_Crater2.png
 		Size: 12,15
 		Categories: Decoration
 		Tiles:
@@ -1006,7 +1006,7 @@ Templates:
 
 	Template@873:
 		Id: 873
-		Images: tilesets/highland/Decoration_Rock9.png
+		Images: tilesets/highland/tiles/Decoration_Rock9.png
 		Size: 2,3
 		Categories: Decoration
 		Tiles:
@@ -1019,7 +1019,7 @@ Templates:
 
 	Template@874:
 		Id: 874
-		Images: tilesets/highland/Decoration_Rock10.png
+		Images: tilesets/highland/tiles/Decoration_Rock10.png
 		Size: 3,2
 		Categories: Decoration
 		Tiles:
@@ -1032,7 +1032,7 @@ Templates:
 
 	Template@875:
 		Id: 875
-		Images: tilesets/highland/Decoration_Crack2.png
+		Images: tilesets/highland/tiles/Decoration_Crack2.png
 		Size: 5,6
 		Categories: Decoration
 		Tiles:
@@ -1063,7 +1063,7 @@ Templates:
 
 	Template@877:
 		Id: 877
-		Images: tilesets/highland/Decoration_Fence23.png
+		Images: tilesets/highland/tiles/Decoration_Fence23.png
 		Size: 3,2
 		Categories: Decoration
 		Tiles:
@@ -1076,7 +1076,7 @@ Templates:
 
 	Template@878:
 		Id: 878
-		Images: tilesets/highland/Decoration_Fence5.png
+		Images: tilesets/highland/tiles/Decoration_Fence5.png
 		Size: 3,4
 		Categories: Decoration
 		Tiles:
@@ -1090,7 +1090,7 @@ Templates:
 
 	Template@879:
 		Id: 879
-		Images: tilesets/highland/Decoration_Fence6.png
+		Images: tilesets/highland/tiles/Decoration_Fence6.png
 		Size: 3,4
 		Categories: Decoration
 		Tiles:
@@ -1104,7 +1104,7 @@ Templates:
 
 	Template@880:
 		Id: 880
-		Images: tilesets/highland/Decoration_Fence1.png
+		Images: tilesets/highland/tiles/Decoration_Fence1.png
 		Size: 5,2
 		Categories: Decoration
 		Tiles:
@@ -1121,7 +1121,7 @@ Templates:
 
 	Template@881:
 		Id: 881
-		Images: tilesets/highland/Decoration_Fence2.png
+		Images: tilesets/highland/tiles/Decoration_Fence2.png
 		Size: 5,2
 		Categories: Decoration
 		Tiles:
@@ -1138,7 +1138,7 @@ Templates:
 
 	Template@883:
 		Id: 883
-		Images: tilesets/highland/Decoration_Fence4.png
+		Images: tilesets/highland/tiles/Decoration_Fence4.png
 		Size: 5,2
 		Categories: Decoration
 		Tiles:
@@ -1155,7 +1155,7 @@ Templates:
 
 	Template@884:
 		Id: 884
-		Images: tilesets/highland/Decoration_Fence3.png
+		Images: tilesets/highland/tiles/Decoration_Fence3.png
 		Size: 5,2
 		Categories: Decoration
 		Tiles:
@@ -1172,7 +1172,7 @@ Templates:
 
 	Template@885:
 		Id: 885
-		Images: tilesets/highland/Decoration_Crack1.png
+		Images: tilesets/highland/tiles/Decoration_Crack1.png
 		Size: 5,10
 		Categories: Decoration
 		Tiles:
@@ -1216,7 +1216,7 @@ Templates:
 
 	Template@886:
 		Id: 886
-		Images: tilesets/highland/Decoration_Fence12.png
+		Images: tilesets/highland/tiles/Decoration_Fence12.png
 		Size: 3,3
 		Categories: Decoration
 		Tiles:
@@ -1229,7 +1229,7 @@ Templates:
 
 	Template@887:
 		Id: 887
-		Images: tilesets/highland/Decoration_Fence13.png
+		Images: tilesets/highland/tiles/Decoration_Fence13.png
 		Size: 3,3
 		Categories: Decoration
 		Tiles:
@@ -1242,7 +1242,7 @@ Templates:
 
 	Template@888:
 		Id: 888
-		Images: tilesets/highland/Decoration_Fence14.png
+		Images: tilesets/highland/tiles/Decoration_Fence14.png
 		Size: 1,2
 		Categories: Decoration
 		Tiles:
@@ -1251,7 +1251,7 @@ Templates:
 
 	Template@889:
 		Id: 889
-		Images: tilesets/highland/Decoration_Fence15.png
+		Images: tilesets/highland/tiles/Decoration_Fence15.png
 		Size: 1,2
 		Categories: Decoration
 		Tiles:
@@ -1260,7 +1260,7 @@ Templates:
 
 	Template@891:
 		Id: 891
-		Images: tilesets/highland/Decoration_Fence16.png
+		Images: tilesets/highland/tiles/Decoration_Fence16.png
 		Size: 1,2
 		Categories: Decoration
 		Tiles:
@@ -1269,7 +1269,7 @@ Templates:
 
 	Template@892:
 		Id: 892
-		Images: tilesets/highland/Decoration_Fence17.png
+		Images: tilesets/highland/tiles/Decoration_Fence17.png
 		Size: 1,2
 		Categories: Decoration
 		Tiles:
@@ -1278,7 +1278,7 @@ Templates:
 
 	Template@893:
 		Id: 893
-		Images: tilesets/highland/Decoration_Fence18.png
+		Images: tilesets/highland/tiles/Decoration_Fence18.png
 		Size: 3,3
 		Categories: Decoration
 		Tiles:
@@ -1293,7 +1293,7 @@ Templates:
 
 	Template@894:
 		Id: 894
-		Images: tilesets/highland/Decoration_Fence7.png
+		Images: tilesets/highland/tiles/Decoration_Fence7.png
 		Size: 1,2
 		Categories: Decoration
 		Tiles:
@@ -1302,7 +1302,7 @@ Templates:
 
 	Template@895:
 		Id: 895
-		Images: tilesets/highland/Decoration_Fence8.png
+		Images: tilesets/highland/tiles/Decoration_Fence8.png
 		Size: 1,2
 		Categories: Decoration
 		Tiles:
@@ -1311,7 +1311,7 @@ Templates:
 
 	Template@896:
 		Id: 896
-		Images: tilesets/highland/Decoration_Fence9.png
+		Images: tilesets/highland/tiles/Decoration_Fence9.png
 		Size: 1,2
 		Categories: Decoration
 		Tiles:
@@ -1320,7 +1320,7 @@ Templates:
 
 	Template@898:
 		Id: 898
-		Images: tilesets/highland/Decoration_Rock7.png
+		Images: tilesets/highland/tiles/Decoration_Rock7.png
 		Size: 2,3
 		Categories: Decoration
 		Tiles:
@@ -1333,7 +1333,7 @@ Templates:
 
 	Template@899:
 		Id: 899
-		Images: tilesets/highland/Decoration_Fence19.png
+		Images: tilesets/highland/tiles/Decoration_Fence19.png
 		Size: 3,3
 		Categories: Decoration
 		Tiles:
@@ -1348,7 +1348,7 @@ Templates:
 
 	Template@900:
 		Id: 900
-		Images: tilesets/highland/Decoration_Fence20.png
+		Images: tilesets/highland/tiles/Decoration_Fence20.png
 		Size: 6,3
 		Categories: Decoration
 		Tiles:
@@ -1370,7 +1370,7 @@ Templates:
 
 	Template@901:
 		Id: 901
-		Images: tilesets/highland/Decoration_Fence21.png
+		Images: tilesets/highland/tiles/Decoration_Fence21.png
 		Size: 3,3
 		Categories: Decoration
 		Tiles:
@@ -1383,7 +1383,7 @@ Templates:
 
 	Template@902:
 		Id: 902
-		Images: tilesets/highland/Decoration_Fence22.png
+		Images: tilesets/highland/tiles/Decoration_Fence22.png
 		Size: 3,3
 		Categories: Decoration
 		Tiles:
@@ -1396,7 +1396,7 @@ Templates:
 
 	Template@903:
 		Id: 903
-		Images: tilesets/highland/Decoration_Fence23.png
+		Images: tilesets/highland/tiles/Decoration_Fence23.png
 		Size: 3,2
 		Categories: Decoration
 		Tiles:
@@ -1409,7 +1409,7 @@ Templates:
 
 	Template@904:
 		Id: 904
-		Images: tilesets/highland/Decoration_Fence24.png
+		Images: tilesets/highland/tiles/Decoration_Fence24.png
 		Size: 3,2
 		Categories: Decoration
 		Tiles:
@@ -1422,7 +1422,7 @@ Templates:
 
 	Template@905:
 		Id: 905
-		Images: tilesets/highland/Decoration_Rock8.png
+		Images: tilesets/highland/tiles/Decoration_Rock8.png
 		Size: 3,2
 		Categories: Decoration
 		Tiles:
@@ -1435,7 +1435,7 @@ Templates:
 
 	Template@906:
 		Id: 906
-		Images: tilesets/highland/Decoration_SmallTree1.png
+		Images: tilesets/highland/tiles/Decoration_SmallTree1.png
 		Size: 1,1
 		Categories: Decoration
 		Tiles:
@@ -1443,7 +1443,7 @@ Templates:
 
 	Template@907:
 		Id: 907
-		Images: tilesets/highland/Decoration_SmallTree2.png
+		Images: tilesets/highland/tiles/Decoration_SmallTree2.png
 		Size: 1,1
 		Categories: Decoration
 		Tiles:
@@ -1451,7 +1451,7 @@ Templates:
 
 	Template@908:
 		Id: 908
-		Images: tilesets/highland/Decoration_SmallTree3.png
+		Images: tilesets/highland/tiles/Decoration_SmallTree3.png
 		Size: 1,2
 		Categories: Decoration
 		Tiles:
@@ -1460,7 +1460,7 @@ Templates:
 
 	Template@909:
 		Id: 909
-		Images: tilesets/highland/Decoration_Rock1.png
+		Images: tilesets/highland/tiles/Decoration_Rock1.png
 		Size: 2,3
 		Categories: Decoration
 		Tiles:
@@ -1473,7 +1473,7 @@ Templates:
 
 	Template@910:
 		Id: 910
-		Images: tilesets/highland/Decoration_Rock2.png
+		Images: tilesets/highland/tiles/Decoration_Rock2.png
 		Size: 2,3
 		Categories: Decoration
 		Tiles:
@@ -1485,7 +1485,7 @@ Templates:
 
 	Template@912:
 		Id: 912
-		Images: tilesets/highland/Decoration_Rock3.png
+		Images: tilesets/highland/tiles/Decoration_Rock3.png
 		Size: 1,2
 		Categories: Decoration
 		Tiles:
@@ -1494,7 +1494,7 @@ Templates:
 
 	Template@913:
 		Id: 913
-		Images: tilesets/highland/Decoration_Rock4.png
+		Images: tilesets/highland/tiles/Decoration_Rock4.png
 		Size: 2,1
 		Categories: Decoration
 		Tiles:
@@ -1503,7 +1503,7 @@ Templates:
 
 	Template@914:
 		Id: 914
-		Images: tilesets/highland/Decoration_Rock5.png
+		Images: tilesets/highland/tiles/Decoration_Rock5.png
 		Size: 1,1
 		Categories: Decoration
 		Tiles:
@@ -1511,7 +1511,7 @@ Templates:
 
 	Template@915:
 		Id: 915
-		Images: tilesets/highland/Decoration_Crater3.png
+		Images: tilesets/highland/tiles/Decoration_Crater3.png
 		Size: 3,2
 		Categories: Decoration
 		Tiles:
@@ -1524,7 +1524,7 @@ Templates:
 
 	Template@916:
 		Id: 916
-		Images: tilesets/highland/Decoration_Crack5.png
+		Images: tilesets/highland/tiles/Decoration_Crack5.png
 		Size: 5,6
 		Categories: Decoration
 		Tiles:
@@ -1551,7 +1551,7 @@ Templates:
 
 	Template@917:
 		Id: 917
-		Images: tilesets/highland/Decoration_Crack4.png
+		Images: tilesets/highland/tiles/Decoration_Crack4.png
 		Size: 11,5
 		Categories: Decoration
 		Tiles:
@@ -1606,7 +1606,7 @@ Templates:
 
 	Template@918:
 		Id: 918
-		Images: tilesets/highland/Decoration_Crack3.png
+		Images: tilesets/highland/tiles/Decoration_Crack3.png
 		Size: 5,6
 		Categories: Decoration
 		Tiles:
@@ -1637,7 +1637,7 @@ Templates:
 
 	Template@919:
 		Id: 919
-		Images: tilesets/highland/Decoration_Dam.png
+		Images: tilesets/highland/tiles/Decoration_Dam.png
 		Size: 8,9
 		Categories: Decoration
 		Tiles:
@@ -1702,7 +1702,7 @@ Templates:
 
 	Template@920:
 		Id: 920
-		Images: tilesets/highland/Decoration_Water1.png
+		Images: tilesets/highland/tiles/Decoration_Water1.png
 		Size: 7,5
 		Categories: Decoration
 		Tiles:
@@ -1736,7 +1736,7 @@ Templates:
 
 	Template@921:
 		Id: 921
-		Images: tilesets/highland/Decoration_Water2.png
+		Images: tilesets/highland/tiles/Decoration_Water2.png
 		Size: 7,5
 		Categories: Decoration
 		Tiles:
@@ -1770,7 +1770,7 @@ Templates:
 
 	Template@922:
 		Id: 922
-		Images: tilesets/highland/Decoration_Water3.png
+		Images: tilesets/highland/tiles/Decoration_Water3.png
 		Size: 4,3
 		Categories: Decoration
 		Tiles:
@@ -1789,7 +1789,7 @@ Templates:
 
 	Template@923:
 		Id: 923
-		Images: tilesets/highland/Decoration_Water4.png
+		Images: tilesets/highland/tiles/Decoration_Water4.png
 		Size: 4,3
 		Categories: Decoration
 		Tiles:
@@ -1808,7 +1808,7 @@ Templates:
 
 	Template@924:
 		Id: 924
-		Images: tilesets/highland/Decoration_Water5.png
+		Images: tilesets/highland/tiles/Decoration_Water5.png
 		Size: 8,5
 		Categories: Decoration
 		Tiles:
@@ -1844,7 +1844,7 @@ Templates:
 
 	Template@925:
 		Id: 925
-		Images: tilesets/highland/Decoration_Water7.png
+		Images: tilesets/highland/tiles/Decoration_Water7.png
 		Size: 7,6
 		Categories: Decoration
 		Tiles:
@@ -1886,7 +1886,7 @@ Templates:
 
 	Template@926:
 		Id: 926
-		Images: tilesets/highland/Decoration_Water6.png
+		Images: tilesets/highland/tiles/Decoration_Water6.png
 		Size: 8,5
 		Categories: Decoration
 		Tiles:
@@ -1922,7 +1922,7 @@ Templates:
 
 	Template@927:
 		Id: 927
-		Images: tilesets/highland/Decoration_Water8.png
+		Images: tilesets/highland/tiles/Decoration_Water8.png
 		Size: 7,4
 		Categories: Decoration
 		Tiles:
@@ -1952,7 +1952,7 @@ Templates:
 
 	Template@928:
 		Id: 928
-		Images: tilesets/highland/Decoration_Water9.png
+		Images: tilesets/highland/tiles/Decoration_Water9.png
 		Size: 7,6
 		Categories: Decoration
 		Tiles:
@@ -1994,7 +1994,7 @@ Templates:
 
 	Template@929:
 		Id: 929
-		Images: tilesets/highland/Decoration_Water10.png
+		Images: tilesets/highland/tiles/Decoration_Water10.png
 		Size: 7,4
 		Categories: Decoration
 		Tiles:
@@ -2024,7 +2024,7 @@ Templates:
 
 	Template@931:
 		Id: 931
-		Images: tilesets/highland/Decoration_Water12.png
+		Images: tilesets/highland/tiles/Decoration_Water12.png
 		Size: 7,4
 		Categories: Decoration
 		Tiles:
@@ -2054,7 +2054,7 @@ Templates:
 
 	Template@950:
 		Id: 950
-		Images: tilesets/highland/Decoration_Fence10.png
+		Images: tilesets/highland/tiles/Decoration_Fence10.png
 		Size: 1,2
 		Categories: Decoration
 		Tiles:
@@ -2063,7 +2063,7 @@ Templates:
 
 	Template@951:
 		Id: 951
-		Images: tilesets/highland/Decoration_Water11.png
+		Images: tilesets/highland/tiles/Decoration_Water11.png
 		Size: 7,4
 		Categories: Decoration
 		Tiles:
@@ -2093,7 +2093,7 @@ Templates:
 
 	Template@932:
 		Id: 932
-		Images: tilesets/highland/DecorationDirt_Mine16.png
+		Images: tilesets/highland/tiles/DecorationDirt_Mine16.png
 		Size: 8,6
 		Categories: Decoration Dirt
 		Tiles:
@@ -2142,7 +2142,7 @@ Templates:
 
 	Template@933:
 		Id: 933
-		Images: tilesets/highland/DecorationDirt_Mine17.png
+		Images: tilesets/highland/tiles/DecorationDirt_Mine17.png
 		Size: 5,5
 		Categories: Decoration Dirt
 		Tiles:
@@ -2171,7 +2171,7 @@ Templates:
 
 	Template@934:
 		Id: 934
-		Images: tilesets/highland/DecorationDirt_Mine18.png
+		Images: tilesets/highland/tiles/DecorationDirt_Mine18.png
 		Size: 3,3
 		Categories: Decoration Dirt
 		Tiles:
@@ -2187,7 +2187,7 @@ Templates:
 
 	Template@935:
 		Id: 935
-		Images: tilesets/highland/DecorationDirt_Mine1.png
+		Images: tilesets/highland/tiles/DecorationDirt_Mine1.png
 		Size: 2,2
 		Categories: Decoration Dirt
 		Tiles:
@@ -2197,7 +2197,7 @@ Templates:
 
 	Template@936:
 		Id: 936
-		Images: tilesets/highland/DecorationDirt_Mine2.png
+		Images: tilesets/highland/tiles/DecorationDirt_Mine2.png
 		Size: 2,2
 		Categories: Decoration Dirt
 		Tiles:
@@ -2207,7 +2207,7 @@ Templates:
 
 	Template@937:
 		Id: 937
-		Images: tilesets/highland/DecorationDirt_Mine3.png
+		Images: tilesets/highland/tiles/DecorationDirt_Mine3.png
 		Size: 2,3
 		Categories: Decoration Dirt
 		Tiles:
@@ -2220,7 +2220,7 @@ Templates:
 
 	Template@938:
 		Id: 938
-		Images: tilesets/highland/DecorationDirt_Mine4.png
+		Images: tilesets/highland/tiles/DecorationDirt_Mine4.png
 		Size: 2,3
 		Categories: Decoration Dirt
 		Tiles:
@@ -2233,7 +2233,7 @@ Templates:
 
 	Template@939:
 		Id: 939
-		Images: tilesets/highland/DecorationDirt_Mine5.png
+		Images: tilesets/highland/tiles/DecorationDirt_Mine5.png
 		Size: 2,3
 		Categories: Decoration Dirt
 		Tiles:
@@ -2246,7 +2246,7 @@ Templates:
 
 	Template@940:
 		Id: 940
-		Images: tilesets/highland/DecorationDirt_Mine7.png
+		Images: tilesets/highland/tiles/DecorationDirt_Mine7.png
 		Size: 2,2
 		Categories: Decoration Dirt
 		Tiles:
@@ -2257,7 +2257,7 @@ Templates:
 
 	Template@941:
 		Id: 941
-		Images: tilesets/highland/DecorationDirt_Mine19.png
+		Images: tilesets/highland/tiles/DecorationDirt_Mine19.png
 		Size: 2,2
 		Categories: Decoration Dirt
 		Tiles:
@@ -2268,7 +2268,7 @@ Templates:
 
 	Template@942:
 		Id: 942
-		Images: tilesets/highland/DecorationDirt_Mine8.png
+		Images: tilesets/highland/tiles/DecorationDirt_Mine8.png
 		Size: 3,2
 		Categories: Decoration Dirt
 		Tiles:
@@ -2281,7 +2281,7 @@ Templates:
 
 	Template@943:
 		Id: 943
-		Images: tilesets/highland/DecorationDirt_Mine9.png
+		Images: tilesets/highland/tiles/DecorationDirt_Mine9.png
 		Size: 3,3
 		Categories: Decoration Dirt
 		Tiles:
@@ -2295,7 +2295,7 @@ Templates:
 
 	Template@944:
 		Id: 944
-		Images: tilesets/highland/DecorationDirt_Mine10.png
+		Images: tilesets/highland/tiles/DecorationDirt_Mine10.png
 		Size: 3,3
 		Categories: Decoration Dirt
 		Tiles:
@@ -2309,7 +2309,7 @@ Templates:
 
 	Template@945:
 		Id: 945
-		Images: tilesets/highland/DecorationDirt_Mine11.png
+		Images: tilesets/highland/tiles/DecorationDirt_Mine11.png
 		Size: 2,2
 		Categories: Decoration Dirt
 		Tiles:
@@ -2320,7 +2320,7 @@ Templates:
 
 	Template@946:
 		Id: 946
-		Images: tilesets/highland/DecorationDirt_Mine12.png
+		Images: tilesets/highland/tiles/DecorationDirt_Mine12.png
 		Size: 1,1
 		Categories: Decoration Dirt
 		Tiles:
@@ -2328,7 +2328,7 @@ Templates:
 
 	Template@947:
 		Id: 947
-		Images: tilesets/highland/DecorationDirt_Mine13.png
+		Images: tilesets/highland/tiles/DecorationDirt_Mine13.png
 		Size: 1,1
 		Categories: Decoration Dirt
 		Tiles:
@@ -2336,7 +2336,7 @@ Templates:
 
 	Template@948:
 		Id: 948
-		Images: tilesets/highland/DecorationDirt_Mine14.png
+		Images: tilesets/highland/tiles/DecorationDirt_Mine14.png
 		Size: 1,1
 		Categories: Decoration Dirt
 		Tiles:
@@ -2344,7 +2344,7 @@ Templates:
 
 	Template@949:
 		Id: 949
-		Images: tilesets/highland/DecorationDirt_Mine15.png
+		Images: tilesets/highland/tiles/DecorationDirt_Mine15.png
 		Size: 1,1
 		Categories: Decoration Dirt
 		Tiles:
@@ -2352,7 +2352,7 @@ Templates:
 
 	Template@193:
 		Id: 193
-		Images: tilesets/highland/DirtCliff_N_A.png
+		Images: tilesets/highland/tiles/DirtCliff_N_A.png
 		Size: 4,2
 		Categories: Dirt Cliff
 		Tiles:
@@ -2367,7 +2367,7 @@ Templates:
 
 	Template@194:
 		Id: 194
-		Images: tilesets/highland/DirtCliff_N_B.png
+		Images: tilesets/highland/tiles/DirtCliff_N_B.png
 		Size: 4,2
 		Categories: Dirt Cliff
 		Tiles:
@@ -2382,7 +2382,7 @@ Templates:
 
 	Template@195:
 		Id: 195
-		Images: tilesets/highland/DirtCliff_NE.png
+		Images: tilesets/highland/tiles/DirtCliff_NE.png
 		Size: 2,1
 		Categories: Dirt Cliff
 		Tiles:
@@ -2391,7 +2391,7 @@ Templates:
 
 	Template@196:
 		Id: 196
-		Images: tilesets/highland/DirtCliff_E_A.png
+		Images: tilesets/highland/tiles/DirtCliff_E_A.png
 		Size: 2,4
 		Categories: Dirt Cliff
 		Tiles:
@@ -2406,7 +2406,7 @@ Templates:
 
 	Template@197:
 		Id: 197
-		Images: tilesets/highland/DirtCliff_E_B.png
+		Images: tilesets/highland/tiles/DirtCliff_E_B.png
 		Size: 2,4
 		Categories: Dirt Cliff
 		Tiles:
@@ -2421,7 +2421,7 @@ Templates:
 
 	Template@198:
 		Id: 198
-		Images: tilesets/highland/DirtCliff_S_A.png
+		Images: tilesets/highland/tiles/DirtCliff_S_A.png
 		Size: 4,3
 		Categories: Dirt Cliff
 		Tiles:
@@ -2440,7 +2440,7 @@ Templates:
 
 	Template@199:
 		Id: 199
-		Images: tilesets/highland/DirtCliff_S_B.png
+		Images: tilesets/highland/tiles/DirtCliff_S_B.png
 		Size: 4,3
 		Categories: Dirt Cliff
 		Tiles:
@@ -2459,7 +2459,7 @@ Templates:
 
 	Template@200:
 		Id: 200
-		Images: tilesets/highland/DirtCliff_SW.png
+		Images: tilesets/highland/tiles/DirtCliff_SW.png
 		Size: 1,3
 		Categories: Dirt Cliff
 		Tiles:
@@ -2469,7 +2469,7 @@ Templates:
 
 	Template@201:
 		Id: 201
-		Images: tilesets/highland/DirtCliff_SE.png
+		Images: tilesets/highland/tiles/DirtCliff_SE.png
 		Size: 1,3
 		Categories: Dirt Cliff
 		Tiles:
@@ -2479,7 +2479,7 @@ Templates:
 
 	Template@202:
 		Id: 202
-		Images: tilesets/highland/DirtCliff_NW.png
+		Images: tilesets/highland/tiles/DirtCliff_NW.png
 		Size: 2,1
 		Categories: Dirt Cliff
 		Tiles:
@@ -2488,7 +2488,7 @@ Templates:
 
 	Template@203:
 		Id: 203
-		Images: tilesets/highland/DirtCliff_W_A.png
+		Images: tilesets/highland/tiles/DirtCliff_W_A.png
 		Size: 2,4
 		Categories: Dirt Cliff
 		Tiles:
@@ -2503,7 +2503,7 @@ Templates:
 
 	Template@204:
 		Id: 204
-		Images: tilesets/highland/DirtCliff_W_B.png
+		Images: tilesets/highland/tiles/DirtCliff_W_B.png
 		Size: 2,4
 		Categories: Dirt Cliff
 		Tiles:
@@ -2518,7 +2518,7 @@ Templates:
 
 	Template@205:
 		Id: 205
-		Images: tilesets/highland/DirtCliff_N2E.png
+		Images: tilesets/highland/tiles/DirtCliff_N2E.png
 		Size: 2,3
 		Categories: Dirt Cliff
 		Tiles:
@@ -2531,7 +2531,7 @@ Templates:
 
 	Template@206:
 		Id: 206
-		Images: tilesets/highland/DirtCliff_S2E.png
+		Images: tilesets/highland/tiles/DirtCliff_S2E.png
 		Size: 3,4
 		Categories: Dirt Cliff
 		Tiles:
@@ -2548,7 +2548,7 @@ Templates:
 
 	Template@207:
 		Id: 207
-		Images: tilesets/highland/DirtCliff_S2W.png
+		Images: tilesets/highland/tiles/DirtCliff_S2W.png
 		Size: 3,4
 		Categories: Dirt Cliff
 		Tiles:
@@ -2565,7 +2565,7 @@ Templates:
 
 	Template@208:
 		Id: 208
-		Images: tilesets/highland/DirtCliff_N2W.png
+		Images: tilesets/highland/tiles/DirtCliff_N2W.png
 		Size: 2,3
 		Categories: Dirt Cliff
 		Tiles:
@@ -2578,7 +2578,7 @@ Templates:
 
 	Template@209:
 		Id: 209
-		Images: tilesets/highland/DirtCliff_N2NE.png
+		Images: tilesets/highland/tiles/DirtCliff_N2NE.png
 		Size: 2,2
 		Categories: Dirt Cliff
 		Tiles:
@@ -2588,7 +2588,7 @@ Templates:
 
 	Template@210:
 		Id: 210
-		Images: tilesets/highland/DirtCliff_N2NW.png
+		Images: tilesets/highland/tiles/DirtCliff_N2NW.png
 		Size: 2,2
 		Categories: Dirt Cliff
 		Tiles:
@@ -2598,7 +2598,7 @@ Templates:
 
 	Template@211:
 		Id: 211
-		Images: tilesets/highland/DirtCliff_W2NW.png
+		Images: tilesets/highland/tiles/DirtCliff_W2NW.png
 		Size: 2,3
 		Categories: Dirt Cliff
 		Tiles:
@@ -2610,7 +2610,7 @@ Templates:
 
 	Template@212:
 		Id: 212
-		Images: tilesets/highland/DirtCliff_E2NE.png
+		Images: tilesets/highland/tiles/DirtCliff_E2NE.png
 		Size: 2,3
 		Categories: Dirt Cliff
 		Tiles:
@@ -2622,7 +2622,7 @@ Templates:
 
 	Template@213:
 		Id: 213
-		Images: tilesets/highland/DirtCliff_E2SE.png
+		Images: tilesets/highland/tiles/DirtCliff_E2SE.png
 		Size: 2,4
 		Categories: Dirt Cliff
 		Tiles:
@@ -2636,7 +2636,7 @@ Templates:
 
 	Template@214:
 		Id: 214
-		Images: tilesets/highland/DirtCliff_S2SE.png
+		Images: tilesets/highland/tiles/DirtCliff_S2SE.png
 		Size: 2,4
 		Categories: Dirt Cliff
 		Tiles:
@@ -2650,7 +2650,7 @@ Templates:
 
 	Template@215:
 		Id: 215
-		Images: tilesets/highland/DirtCliff_S2SW.png
+		Images: tilesets/highland/tiles/DirtCliff_S2SW.png
 		Size: 2,4
 		Categories: Dirt Cliff
 		Tiles:
@@ -2664,7 +2664,7 @@ Templates:
 
 	Template@216:
 		Id: 216
-		Images: tilesets/highland/DirtCliff_W2SW.png
+		Images: tilesets/highland/tiles/DirtCliff_W2SW.png
 		Size: 2,4
 		Categories: Dirt Cliff
 		Tiles:
@@ -2678,7 +2678,7 @@ Templates:
 
 	Template@225:
 		Id: 225
-		Images: tilesets/highland/DirtCliff_W2S.png
+		Images: tilesets/highland/tiles/DirtCliff_W2S.png
 		Size: 3,3
 		Categories: Dirt Cliff
 		Tiles:
@@ -2693,7 +2693,7 @@ Templates:
 
 	Template@226:
 		Id: 226
-		Images: tilesets/highland/DirtCliff_E2S.png
+		Images: tilesets/highland/tiles/DirtCliff_E2S.png
 		Size: 3,3
 		Categories: Dirt Cliff
 		Tiles:
@@ -2708,7 +2708,7 @@ Templates:
 
 	Template@227:
 		Id: 227
-		Images: tilesets/highland/DirtCliff_E2N.png
+		Images: tilesets/highland/tiles/DirtCliff_E2N.png
 		Size: 3,3
 		Categories: Dirt Cliff
 		Tiles:
@@ -2724,7 +2724,7 @@ Templates:
 
 	Template@228:
 		Id: 228
-		Images: tilesets/highland/DirtCliff_W2N.png
+		Images: tilesets/highland/tiles/DirtCliff_W2N.png
 		Size: 3,3
 		Categories: Dirt Cliff
 		Tiles:
@@ -2740,7 +2740,7 @@ Templates:
 
 	Template@229:
 		Id: 229
-		Images: tilesets/highland/DirtCliff_SE2E.png
+		Images: tilesets/highland/tiles/DirtCliff_SE2E.png
 		Size: 2,3
 		Categories: Dirt Cliff
 		Tiles:
@@ -2752,7 +2752,7 @@ Templates:
 
 	Template@230:
 		Id: 230
-		Images: tilesets/highland/DirtCliff_SW2W.png
+		Images: tilesets/highland/tiles/DirtCliff_SW2W.png
 		Size: 2,3
 		Categories: Dirt Cliff
 		Tiles:
@@ -2764,7 +2764,7 @@ Templates:
 
 	Template@231:
 		Id: 231
-		Images: tilesets/highland/DirtCliff_SE2S.png
+		Images: tilesets/highland/tiles/DirtCliff_SE2S.png
 		Size: 1,3
 		Categories: Dirt Cliff
 		Tiles:
@@ -2774,7 +2774,7 @@ Templates:
 
 	Template@232:
 		Id: 232
-		Images: tilesets/highland/DirtCliff_SW2S.png
+		Images: tilesets/highland/tiles/DirtCliff_SW2S.png
 		Size: 1,3
 		Categories: Dirt Cliff
 		Tiles:
@@ -2784,7 +2784,7 @@ Templates:
 
 	Template@233:
 		Id: 233
-		Images: tilesets/highland/DirtCliff_NE2E.png
+		Images: tilesets/highland/tiles/DirtCliff_NE2E.png
 		Size: 2,2
 		Categories: Dirt Cliff
 		Tiles:
@@ -2794,7 +2794,7 @@ Templates:
 
 	Template@234:
 		Id: 234
-		Images: tilesets/highland/DirtCliff_NW2W.png
+		Images: tilesets/highland/tiles/DirtCliff_NW2W.png
 		Size: 2,2
 		Categories: Dirt Cliff
 		Tiles:
@@ -2804,7 +2804,7 @@ Templates:
 
 	Template@235:
 		Id: 235
-		Images: tilesets/highland/DirtCliff_NE2N.png
+		Images: tilesets/highland/tiles/DirtCliff_NE2N.png
 		Size: 2,2
 		Categories: Dirt Cliff
 		Tiles:
@@ -2815,7 +2815,7 @@ Templates:
 
 	Template@236:
 		Id: 236
-		Images: tilesets/highland/DirtCliff_NW2N.png
+		Images: tilesets/highland/tiles/DirtCliff_NW2N.png
 		Size: 2,2
 		Categories: Dirt Cliff
 		Tiles:
@@ -2826,7 +2826,7 @@ Templates:
 
 	Template@384:
 		Id: 384
-		Images: tilesets/highland/DirtCliffExtra_6.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_6.png
 		Size: 4,2
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -2841,7 +2841,7 @@ Templates:
 
 	Template@385:
 		Id: 385
-		Images: tilesets/highland/DirtCliffExtra_7.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_7.png
 		Size: 5,3
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -2860,7 +2860,7 @@ Templates:
 
 	Template@386:
 		Id: 386
-		Images: tilesets/highland/DirtCliffExtra_1.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_1.png
 		Size: 3,3
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -2873,7 +2873,7 @@ Templates:
 
 	Template@387:
 		Id: 387
-		Images: tilesets/highland/DirtCliffExtra_2.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_2.png
 		Size: 3,2
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -2885,7 +2885,7 @@ Templates:
 
 	Template@389:
 		Id: 389
-		Images: tilesets/highland/DirtCliffExtra_3.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_3.png
 		Size: 6,2
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -2904,7 +2904,7 @@ Templates:
 
 	Template@390:
 		Id: 390
-		Images: tilesets/highland/DirtCliffExtra_8.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_8.png
 		Size: 6,2
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -2923,7 +2923,7 @@ Templates:
 
 	Template@391:
 		Id: 391
-		Images: tilesets/highland/DirtCliffExtra_4.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_4.png
 		Size: 3,2
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -2935,7 +2935,7 @@ Templates:
 
 	Template@393:
 		Id: 393
-		Images: tilesets/highland/DirtCliffExtra_9.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_9.png
 		Size: 5,3
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -2954,7 +2954,7 @@ Templates:
 
 	Template@395:
 		Id: 395
-		Images: tilesets/highland/DirtCliffExtra_5.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_5.png
 		Size: 3,3
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -2967,7 +2967,7 @@ Templates:
 
 	Template@396:
 		Id: 396
-		Images: tilesets/highland/DirtCliffExtra_10.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_10.png
 		Size: 4,2
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -2982,7 +2982,7 @@ Templates:
 
 	Template@397:
 		Id: 397
-		Images: tilesets/highland/DirtCliffExtra_16.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_16.png
 		Size: 4,3
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -2998,7 +2998,7 @@ Templates:
 
 	Template@398:
 		Id: 398
-		Images: tilesets/highland/DirtCliffExtra_15.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_15.png
 		Size: 3,3
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3012,7 +3012,7 @@ Templates:
 
 	Template@400:
 		Id: 400
-		Images: tilesets/highland/DirtCliffExtra_20.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_20.png
 		Size: 3,4
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3030,7 +3030,7 @@ Templates:
 
 	Template@401:
 		Id: 401
-		Images: tilesets/highland/DirtCliffExtra_19.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_19.png
 		Size: 2,2
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3041,7 +3041,7 @@ Templates:
 
 	Template@403:
 		Id: 403
-		Images: tilesets/highland/DirtCliffExtra_26.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_26.png
 		Size: 2,3
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3054,7 +3054,7 @@ Templates:
 
 	Template@405:
 		Id: 405
-		Images: tilesets/highland/DirtCliffExtra_27.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_27.png
 		Size: 3,3
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3070,7 +3070,7 @@ Templates:
 
 	Template@406:
 		Id: 406
-		Images: tilesets/highland/DirtCliffExtra_28.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_28.png
 		Size: 2,3
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3082,7 +3082,7 @@ Templates:
 
 	Template@411:
 		Id: 411
-		Images: tilesets/highland/DirtCliffExtra_32.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_32.png
 		Size: 6,6
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3110,7 +3110,7 @@ Templates:
 
 	Template@413:
 		Id: 413
-		Images: tilesets/highland/DirtCliffExtra_41.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_41.png
 		Size: 4,7
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3135,7 +3135,7 @@ Templates:
 
 	Template@415:
 		Id: 415
-		Images: tilesets/highland/DirtCliffExtra_40.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_40.png
 		Size: 3,3
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3150,7 +3150,7 @@ Templates:
 
 	Template@416:
 		Id: 416
-		Images: tilesets/highland/DirtCliffExtra_39.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_39.png
 		Size: 3,3
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3165,7 +3165,7 @@ Templates:
 
 	Template@417:
 		Id: 417
-		Images: tilesets/highland/DirtCliffExtra_35.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_35.png
 		Size: 3,4
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3182,7 +3182,7 @@ Templates:
 
 	Template@418:
 		Id: 418
-		Images: tilesets/highland/DirtCliffExtra_46.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_46.png
 		Size: 3,4
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3199,7 +3199,7 @@ Templates:
 
 	Template@419:
 		Id: 419
-		Images: tilesets/highland/DirtCliffExtra_47.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_47.png
 		Size: 4,4
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3222,7 +3222,7 @@ Templates:
 
 	Template@420:
 		Id: 420
-		Images: tilesets/highland/DirtCliffExtra_53.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_53.png
 		Size: 6,3
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3244,7 +3244,7 @@ Templates:
 
 	Template@421:
 		Id: 421
-		Images: tilesets/highland/DirtCliffExtra_58.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_58.png
 		Size: 2,4
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3259,7 +3259,7 @@ Templates:
 
 	Template@423:
 		Id: 423
-		Images: tilesets/highland/DirtCliffExtra_52.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_52.png
 		Size: 2,5
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3276,7 +3276,7 @@ Templates:
 
 	Template@424:
 		Id: 424
-		Images: tilesets/highland/DirtCliffExtra_57.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_57.png
 		Size: 3,3
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3291,7 +3291,7 @@ Templates:
 
 	Template@425:
 		Id: 425
-		Images: tilesets/highland/DirtCliffExtra_56.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_56.png
 		Size: 5,2
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3308,7 +3308,7 @@ Templates:
 
 	Template@426:
 		Id: 426
-		Images: tilesets/highland/DirtCliffExtra_60.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_60.png
 		Size: 4,5
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3331,7 +3331,7 @@ Templates:
 
 	Template@427:
 		Id: 427
-		Images: tilesets/highland/DirtCliffExtra_50.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_50.png
 		Size: 3,5
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3348,7 +3348,7 @@ Templates:
 
 	Template@428:
 		Id: 428
-		Images: tilesets/highland/DirtCliffExtra_51.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_51.png
 		Size: 3,5
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3365,7 +3365,7 @@ Templates:
 
 	Template@430:
 		Id: 430
-		Images: tilesets/highland/DirtCliffExtra_45.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_45.png
 		Size: 4,3
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3382,7 +3382,7 @@ Templates:
 
 	Template@431:
 		Id: 431
-		Images: tilesets/highland/DirtCliffExtra_44.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_44.png
 		Size: 4,3
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3399,7 +3399,7 @@ Templates:
 
 	Template@432:
 		Id: 432
-		Images: tilesets/highland/DirtCliffExtra_38.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_38.png
 		Size: 3,3
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3414,7 +3414,7 @@ Templates:
 
 	Template@433:
 		Id: 433
-		Images: tilesets/highland/DirtCliffExtra_34.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_34.png
 		Size: 6,4
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3443,7 +3443,7 @@ Templates:
 
 	Template@434:
 		Id: 434
-		Images: tilesets/highland/DirtCliffExtra_30.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_30.png
 		Size: 5,5
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3472,7 +3472,7 @@ Templates:
 
 	Template@436:
 		Id: 436
-		Images: tilesets/highland/DirtCliffExtra_33.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_33.png
 		Size: 3,4
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3489,7 +3489,7 @@ Templates:
 
 	Template@437:
 		Id: 437
-		Images: tilesets/highland/DirtCliffExtra_31.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_31.png
 		Size: 5,5
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3518,7 +3518,7 @@ Templates:
 
 	Template@438:
 		Id: 438
-		Images: tilesets/highland/DirtCliffExtra_29.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_29.png
 		Size: 6,6
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3546,7 +3546,7 @@ Templates:
 
 	Template@439:
 		Id: 439
-		Images: tilesets/highland/DirtCliffExtra_22.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_22.png
 		Size: 3,3
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3562,7 +3562,7 @@ Templates:
 
 	Template@440:
 		Id: 440
-		Images: tilesets/highland/DirtCliffExtra_17.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_17.png
 		Size: 3,4
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3580,7 +3580,7 @@ Templates:
 
 	Template@441:
 		Id: 441
-		Images: tilesets/highland/DirtCliffExtra_18.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_18.png
 		Size: 2,2
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3591,7 +3591,7 @@ Templates:
 
 	Template@443:
 		Id: 443
-		Images: tilesets/highland/DirtCliffExtra_23.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_23.png
 		Size: 2,3
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3604,7 +3604,7 @@ Templates:
 
 	Template@444:
 		Id: 444
-		Images: tilesets/highland/DirtCliffExtra_21.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_21.png
 		Size: 2,3
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3616,7 +3616,7 @@ Templates:
 
 	Template@445:
 		Id: 445
-		Images: tilesets/highland/DirtCliffExtra_36.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_36.png
 		Size: 4,7
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3641,7 +3641,7 @@ Templates:
 
 	Template@446:
 		Id: 446
-		Images: tilesets/highland/DirtCliffExtra_37.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_37.png
 		Size: 3,3
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3656,7 +3656,7 @@ Templates:
 
 	Template@447:
 		Id: 447
-		Images: tilesets/highland/DirtCliffExtra_43.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_43.png
 		Size: 3,4
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3673,7 +3673,7 @@ Templates:
 
 	Template@450:
 		Id: 450
-		Images: tilesets/highland/DirtCliffExtra_42.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_42.png
 		Size: 4,4
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3696,7 +3696,7 @@ Templates:
 
 	Template@452:
 		Id: 452
-		Images: tilesets/highland/DirtCliffExtra_48.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_48.png
 		Size: 6,3
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3718,7 +3718,7 @@ Templates:
 
 	Template@453:
 		Id: 453
-		Images: tilesets/highland/DirtCliffExtra_49.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_49.png
 		Size: 2,5
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3735,7 +3735,7 @@ Templates:
 
 	Template@454:
 		Id: 454
-		Images: tilesets/highland/DirtCliffExtra_54.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_54.png
 		Size: 2,4
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3750,7 +3750,7 @@ Templates:
 
 	Template@455:
 		Id: 455
-		Images: tilesets/highland/DirtCliffExtra_55.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_55.png
 		Size: 3,3
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3765,7 +3765,7 @@ Templates:
 
 	Template@456:
 		Id: 456
-		Images: tilesets/highland/DirtCliffExtra_59.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_59.png
 		Size: 4,5
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3788,7 +3788,7 @@ Templates:
 
 	Template@457:
 		Id: 457
-		Images: tilesets/highland/DirtCliffExtra_24.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_24.png
 		Size: 4,4
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3808,7 +3808,7 @@ Templates:
 
 	Template@460:
 		Id: 460
-		Images: tilesets/highland/DirtCliffExtra_14.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_14.png
 		Size: 4,5
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3829,7 +3829,7 @@ Templates:
 
 	Template@461:
 		Id: 461
-		Images: tilesets/highland/DirtCliffExtra_25.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_25.png
 		Size: 4,4
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3849,7 +3849,7 @@ Templates:
 
 	Template@531:
 		Id: 531
-		Images: tilesets/highland/DirtCliffExtra_11.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_11.png
 		Size: 4,3
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3865,7 +3865,7 @@ Templates:
 
 	Template@532:
 		Id: 532
-		Images: tilesets/highland/DirtCliffExtra_12.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_12.png
 		Size: 3,3
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3879,7 +3879,7 @@ Templates:
 
 	Template@535:
 		Id: 535
-		Images: tilesets/highland/DirtCliffExtra_13.png
+		Images: tilesets/highland/tiles/DirtCliffExtra_13.png
 		Size: 4,5
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3900,7 +3900,7 @@ Templates:
 
 	Template@217:
 		Id: 217
-		Images: tilesets/highland/DirtCliffRamp_SE.png
+		Images: tilesets/highland/tiles/DirtCliffRamp_SE.png
 		Size: 2,5
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -3917,7 +3917,7 @@ Templates:
 
 	Template@218:
 		Id: 218
-		Images: tilesets/highland/DirtCliffRamp_SW.png
+		Images: tilesets/highland/tiles/DirtCliffRamp_SW.png
 		Size: 2,5
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -3934,7 +3934,7 @@ Templates:
 
 	Template@219:
 		Id: 219
-		Images: tilesets/highland/DirtCliffRamp_NE.png
+		Images: tilesets/highland/tiles/DirtCliffRamp_NE.png
 		Size: 2,4
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -3949,7 +3949,7 @@ Templates:
 
 	Template@220:
 		Id: 220
-		Images: tilesets/highland/DirtCliffRamp_NW.png
+		Images: tilesets/highland/tiles/DirtCliffRamp_NW.png
 		Size: 2,4
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -3964,7 +3964,7 @@ Templates:
 
 	Template@221:
 		Id: 221
-		Images: tilesets/highland/DirtCliffRamp_WS.png
+		Images: tilesets/highland/tiles/DirtCliffRamp_WS.png
 		Size: 4,3
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -3983,7 +3983,7 @@ Templates:
 
 	Template@222:
 		Id: 222
-		Images: tilesets/highland/DirtCliffRamp_WN.png
+		Images: tilesets/highland/tiles/DirtCliffRamp_WN.png
 		Size: 4,2
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -3998,7 +3998,7 @@ Templates:
 
 	Template@223:
 		Id: 223
-		Images: tilesets/highland/DirtCliffRamp_ES.png
+		Images: tilesets/highland/tiles/DirtCliffRamp_ES.png
 		Size: 4,3
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -4017,7 +4017,7 @@ Templates:
 
 	Template@224:
 		Id: 224
-		Images: tilesets/highland/DirtCliffRamp_EN.png
+		Images: tilesets/highland/tiles/DirtCliffRamp_EN.png
 		Size: 4,2
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -4032,7 +4032,7 @@ Templates:
 
 	Template@368:
 		Id: 368
-		Images: tilesets/highland/DirtCliffRamp_1.png
+		Images: tilesets/highland/tiles/DirtCliffRamp_1.png
 		Size: 2,5
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -4049,7 +4049,7 @@ Templates:
 
 	Template@371:
 		Id: 371
-		Images: tilesets/highland/DirtCliffRamp_2.png
+		Images: tilesets/highland/tiles/DirtCliffRamp_2.png
 		Size: 2,5
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -4066,7 +4066,7 @@ Templates:
 
 	Template@373:
 		Id: 373
-		Images: tilesets/highland/DirtCliffRamp_3.png
+		Images: tilesets/highland/tiles/DirtCliffRamp_3.png
 		Size: 4,3
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -4085,7 +4085,7 @@ Templates:
 
 	Template@374:
 		Id: 374
-		Images: tilesets/highland/DirtCliffRamp_4.png
+		Images: tilesets/highland/tiles/DirtCliffRamp_4.png
 		Size: 4,3
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -4104,7 +4104,7 @@ Templates:
 
 	Template@375:
 		Id: 375
-		Images: tilesets/highland/DirtCliffRamp_6.png
+		Images: tilesets/highland/tiles/DirtCliffRamp_6.png
 		Size: 3,4
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -4121,7 +4121,7 @@ Templates:
 
 	Template@378:
 		Id: 378
-		Images: tilesets/highland/DirtCliffRamp_5.png
+		Images: tilesets/highland/tiles/DirtCliffRamp_5.png
 		Size: 3,4
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -4138,7 +4138,7 @@ Templates:
 
 	Template@379:
 		Id: 379
-		Images: tilesets/highland/DirtCliffRamp_7.png
+		Images: tilesets/highland/tiles/DirtCliffRamp_7.png
 		Size: 3,4
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -4157,7 +4157,7 @@ Templates:
 
 	Template@381:
 		Id: 381
-		Images: tilesets/highland/DirtCliffRamp_8.png
+		Images: tilesets/highland/tiles/DirtCliffRamp_8.png
 		Size: 3,4
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -4176,7 +4176,7 @@ Templates:
 
 	Template@382:
 		Id: 382
-		Images: tilesets/highland/DirtCliffRamp_9.png
+		Images: tilesets/highland/tiles/DirtCliffRamp_9.png
 		Size: 4,2
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -4191,7 +4191,7 @@ Templates:
 
 	Template@383:
 		Id: 383
-		Images: tilesets/highland/DirtCliffRamp_10.png
+		Images: tilesets/highland/tiles/DirtCliffRamp_10.png
 		Size: 4,2
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -4206,7 +4206,7 @@ Templates:
 
 	Template@149:
 		Id: 149
-		Images: tilesets/highland/GrassCliff_N_A.png
+		Images: tilesets/highland/tiles/GrassCliff_N_A.png
 		Size: 4,2
 		Categories: Grass Cliff
 		Tiles:
@@ -4221,7 +4221,7 @@ Templates:
 
 	Template@150:
 		Id: 150
-		Images: tilesets/highland/GrassCliff_N_B.png
+		Images: tilesets/highland/tiles/GrassCliff_N_B.png
 		Size: 4,2
 		Categories: Grass Cliff
 		Tiles:
@@ -4236,7 +4236,7 @@ Templates:
 
 	Template@151:
 		Id: 151
-		Images: tilesets/highland/GrassCliff_NE.png
+		Images: tilesets/highland/tiles/GrassCliff_NE.png
 		Size: 1,2
 		Categories: Grass Cliff
 		Tiles:
@@ -4245,7 +4245,7 @@ Templates:
 
 	Template@152:
 		Id: 152
-		Images: tilesets/highland/GrassCliff_E_A.png
+		Images: tilesets/highland/tiles/GrassCliff_E_A.png
 		Size: 2,4
 		Categories: Grass Cliff
 		Tiles:
@@ -4260,7 +4260,7 @@ Templates:
 
 	Template@153:
 		Id: 153
-		Images: tilesets/highland/GrassCliff_E_B.png
+		Images: tilesets/highland/tiles/GrassCliff_E_B.png
 		Size: 2,4
 		Categories: Grass Cliff
 		Tiles:
@@ -4275,7 +4275,7 @@ Templates:
 
 	Template@154:
 		Id: 154
-		Images: tilesets/highland/GrassCliff_S_A.png
+		Images: tilesets/highland/tiles/GrassCliff_S_A.png
 		Size: 4,3
 		Categories: Grass Cliff
 		Tiles:
@@ -4294,7 +4294,7 @@ Templates:
 
 	Template@155:
 		Id: 155
-		Images: tilesets/highland/GrassCliff_S_B.png
+		Images: tilesets/highland/tiles/GrassCliff_S_B.png
 		Size: 4,3
 		Categories: Grass Cliff
 		Tiles:
@@ -4313,7 +4313,7 @@ Templates:
 
 	Template@156:
 		Id: 156
-		Images: tilesets/highland/GrassCliff_SW.png
+		Images: tilesets/highland/tiles/GrassCliff_SW.png
 		Size: 2,5
 		Categories: Grass Cliff
 		Tiles:
@@ -4328,7 +4328,7 @@ Templates:
 
 	Template@157:
 		Id: 157
-		Images: tilesets/highland/GrassCliff_SE.png
+		Images: tilesets/highland/tiles/GrassCliff_SE.png
 		Size: 2,5
 		Categories: Grass Cliff
 		Tiles:
@@ -4343,7 +4343,7 @@ Templates:
 
 	Template@158:
 		Id: 158
-		Images: tilesets/highland/GrassCliff_NW.png
+		Images: tilesets/highland/tiles/GrassCliff_NW.png
 		Size: 1,2
 		Categories: Grass Cliff
 		Tiles:
@@ -4352,7 +4352,7 @@ Templates:
 
 	Template@159:
 		Id: 159
-		Images: tilesets/highland/GrassCliff_W_A.png
+		Images: tilesets/highland/tiles/GrassCliff_W_A.png
 		Size: 2,4
 		Categories: Grass Cliff
 		Tiles:
@@ -4367,7 +4367,7 @@ Templates:
 
 	Template@160:
 		Id: 160
-		Images: tilesets/highland/GrassCliff_W_B.png
+		Images: tilesets/highland/tiles/GrassCliff_W_B.png
 		Size: 2,4
 		Categories: Grass Cliff
 		Tiles:
@@ -4382,7 +4382,7 @@ Templates:
 
 	Template@161:
 		Id: 161
-		Images: tilesets/highland/GrassCliff_N2E.png
+		Images: tilesets/highland/tiles/GrassCliff_N2E.png
 		Size: 3,3
 		Categories: Grass Cliff
 		Tiles:
@@ -4398,7 +4398,7 @@ Templates:
 
 	Template@162:
 		Id: 162
-		Images: tilesets/highland/GrassCliff_S2E.png
+		Images: tilesets/highland/tiles/GrassCliff_S2E.png
 		Size: 3,4
 		Categories: Grass Cliff
 		Tiles:
@@ -4414,7 +4414,7 @@ Templates:
 
 	Template@163:
 		Id: 163
-		Images: tilesets/highland/GrassCliff_S2W.png
+		Images: tilesets/highland/tiles/GrassCliff_S2W.png
 		Size: 3,4
 		Categories: Grass Cliff
 		Tiles:
@@ -4430,7 +4430,7 @@ Templates:
 
 	Template@164:
 		Id: 164
-		Images: tilesets/highland/GrassCliff_N2W.png
+		Images: tilesets/highland/tiles/GrassCliff_N2W.png
 		Size: 3,3
 		Categories: Grass Cliff
 		Tiles:
@@ -4446,7 +4446,7 @@ Templates:
 
 	Template@165:
 		Id: 165
-		Images: tilesets/highland/GrassCliff_N2NE.png
+		Images: tilesets/highland/tiles/GrassCliff_N2NE.png
 		Size: 2,2
 		Categories: Grass Cliff
 		Tiles:
@@ -4457,7 +4457,7 @@ Templates:
 
 	Template@166:
 		Id: 166
-		Images: tilesets/highland/GrassCliff_N2NW.png
+		Images: tilesets/highland/tiles/GrassCliff_N2NW.png
 		Size: 2,2
 		Categories: Grass Cliff
 		Tiles:
@@ -4468,7 +4468,7 @@ Templates:
 
 	Template@167:
 		Id: 167
-		Images: tilesets/highland/GrassCliff_W2NW.png
+		Images: tilesets/highland/tiles/GrassCliff_W2NW.png
 		Size: 2,2
 		Categories: Grass Cliff
 		Tiles:
@@ -4479,7 +4479,7 @@ Templates:
 
 	Template@168:
 		Id: 168
-		Images: tilesets/highland/GrassCliff_E2NE.png
+		Images: tilesets/highland/tiles/GrassCliff_E2NE.png
 		Size: 2,2
 		Categories: Grass Cliff
 		Tiles:
@@ -4490,7 +4490,7 @@ Templates:
 
 	Template@169:
 		Id: 169
-		Images: tilesets/highland/GrassCliff_E2SE.png
+		Images: tilesets/highland/tiles/GrassCliff_E2SE.png
 		Size: 2,3
 		Categories: Grass Cliff
 		Tiles:
@@ -4502,7 +4502,7 @@ Templates:
 
 	Template@170:
 		Id: 170
-		Images: tilesets/highland/GrassCliff_S2SE.png
+		Images: tilesets/highland/tiles/GrassCliff_S2SE.png
 		Size: 1,4
 		Categories: Grass Cliff
 		Tiles:
@@ -4513,7 +4513,7 @@ Templates:
 
 	Template@171:
 		Id: 171
-		Images: tilesets/highland/GrassCliff_S2SW.png
+		Images: tilesets/highland/tiles/GrassCliff_S2SW.png
 		Size: 1,4
 		Categories: Grass Cliff
 		Tiles:
@@ -4524,7 +4524,7 @@ Templates:
 
 	Template@172:
 		Id: 172
-		Images: tilesets/highland/GrassCliff_W2SW.png
+		Images: tilesets/highland/tiles/GrassCliff_W2SW.png
 		Size: 2,3
 		Categories: Grass Cliff
 		Tiles:
@@ -4536,7 +4536,7 @@ Templates:
 
 	Template@181:
 		Id: 181
-		Images: tilesets/highland/GrassCliff_W2S.png
+		Images: tilesets/highland/tiles/GrassCliff_W2S.png
 		Size: 3,3
 		Categories: Grass Cliff
 		Tiles:
@@ -4552,7 +4552,7 @@ Templates:
 
 	Template@182:
 		Id: 182
-		Images: tilesets/highland/GrassCliff_E2S.png
+		Images: tilesets/highland/tiles/GrassCliff_E2S.png
 		Size: 3,3
 		Categories: Grass Cliff
 		Tiles:
@@ -4568,7 +4568,7 @@ Templates:
 
 	Template@183:
 		Id: 183
-		Images: tilesets/highland/GrassCliff_E2N.png
+		Images: tilesets/highland/tiles/GrassCliff_E2N.png
 		Size: 3,2
 		Categories: Grass Cliff
 		Tiles:
@@ -4581,7 +4581,7 @@ Templates:
 
 	Template@184:
 		Id: 184
-		Images: tilesets/highland/GrassCliff_W2N.png
+		Images: tilesets/highland/tiles/GrassCliff_W2N.png
 		Size: 3,2
 		Categories: Grass Cliff
 		Tiles:
@@ -4594,7 +4594,7 @@ Templates:
 
 	Template@185:
 		Id: 185
-		Images: tilesets/highland/GrassCliff_SE2E.png
+		Images: tilesets/highland/tiles/GrassCliff_SE2E.png
 		Size: 2,3
 		Categories: Grass Cliff
 		Tiles:
@@ -4607,7 +4607,7 @@ Templates:
 
 	Template@186:
 		Id: 186
-		Images: tilesets/highland/GrassCliff_SW2W.png
+		Images: tilesets/highland/tiles/GrassCliff_SW2W.png
 		Size: 2,3
 		Categories: Grass Cliff
 		Tiles:
@@ -4620,7 +4620,7 @@ Templates:
 
 	Template@187:
 		Id: 187
-		Images: tilesets/highland/GrassCliff_SE2S.png
+		Images: tilesets/highland/tiles/GrassCliff_SE2S.png
 		Size: 2,4
 		Categories: Grass Cliff
 		Tiles:
@@ -4634,7 +4634,7 @@ Templates:
 
 	Template@188:
 		Id: 188
-		Images: tilesets/highland/GrassCliff_SW2S.png
+		Images: tilesets/highland/tiles/GrassCliff_SW2S.png
 		Size: 2,4
 		Categories: Grass Cliff
 		Tiles:
@@ -4648,7 +4648,7 @@ Templates:
 
 	Template@189:
 		Id: 189
-		Images: tilesets/highland/GrassCliff_NE2E.png
+		Images: tilesets/highland/tiles/GrassCliff_NE2E.png
 		Size: 2,1
 		Categories: Grass Cliff
 		Tiles:
@@ -4657,7 +4657,7 @@ Templates:
 
 	Template@190:
 		Id: 190
-		Images: tilesets/highland/GrassCliff_NW2W.png
+		Images: tilesets/highland/tiles/GrassCliff_NW2W.png
 		Size: 2,1
 		Categories: Grass Cliff
 		Tiles:
@@ -4666,7 +4666,7 @@ Templates:
 
 	Template@191:
 		Id: 191
-		Images: tilesets/highland/GrassCliff_NE2N.png
+		Images: tilesets/highland/tiles/GrassCliff_NE2N.png
 		Size: 1,2
 		Categories: Grass Cliff
 		Tiles:
@@ -4675,7 +4675,7 @@ Templates:
 
 	Template@192:
 		Id: 192
-		Images: tilesets/highland/GrassCliff_NW2N.png
+		Images: tilesets/highland/tiles/GrassCliff_NW2N.png
 		Size: 1,2
 		Categories: Grass Cliff
 		Tiles:
@@ -4684,7 +4684,7 @@ Templates:
 
 	Template@463:
 		Id: 463
-		Images: tilesets/highland/GrassCliffExtra_1.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_1.png
 		Size: 3,3
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -4697,7 +4697,7 @@ Templates:
 
 	Template@466:
 		Id: 466
-		Images: tilesets/highland/GrassCliffExtra_2.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_2.png
 		Size: 3,3
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -4710,7 +4710,7 @@ Templates:
 
 	Template@467:
 		Id: 467
-		Images: tilesets/highland/GrassCliffExtra_8.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_8.png
 		Size: 3,3
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -4724,7 +4724,7 @@ Templates:
 
 	Template@468:
 		Id: 468
-		Images: tilesets/highland/GrassCliffExtra_16.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_16.png
 		Size: 2,4
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -4737,7 +4737,7 @@ Templates:
 
 	Template@469:
 		Id: 469
-		Images: tilesets/highland/GrassCliffExtra_15.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_15.png
 		Size: 2,5
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -4754,7 +4754,7 @@ Templates:
 
 	Template@470:
 		Id: 470
-		Images: tilesets/highland/GrassCliffExtra_7.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_7.png
 		Size: 3,5
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -4772,7 +4772,7 @@ Templates:
 
 	Template@472:
 		Id: 472
-		Images: tilesets/highland/GrassCliffExtra_6.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_6.png
 		Size: 3,3
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -4788,7 +4788,7 @@ Templates:
 
 	Template@474:
 		Id: 474
-		Images: tilesets/highland/GrassCliffExtra_13.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_13.png
 		Size: 3,3
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -4804,7 +4804,7 @@ Templates:
 
 	Template@477:
 		Id: 477
-		Images: tilesets/highland/GrassCliffExtra_14.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_14.png
 		Size: 3,4
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -4823,7 +4823,7 @@ Templates:
 
 	Template@478:
 		Id: 478
-		Images: tilesets/highland/GrassCliffExtra_18.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_18.png
 		Size: 3,3
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -4839,7 +4839,7 @@ Templates:
 
 	Template@480:
 		Id: 480
-		Images: tilesets/highland/GrassCliffExtra_21.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_21.png
 		Size: 4,4
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -4861,7 +4861,7 @@ Templates:
 
 	Template@481:
 		Id: 481
-		Images: tilesets/highland/GrassCliffExtra_22.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_22.png
 		Size: 4,3
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -4880,7 +4880,7 @@ Templates:
 
 	Template@484:
 		Id: 484
-		Images: tilesets/highland/GrassCliffExtra_5.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_5.png
 		Size: 3,3
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -4896,7 +4896,7 @@ Templates:
 
 	Template@485:
 		Id: 485
-		Images: tilesets/highland/GrassCliffExtra_12.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_12.png
 		Size: 3,3
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -4912,7 +4912,7 @@ Templates:
 
 	Template@487:
 		Id: 487
-		Images: tilesets/highland/GrassCliffExtra_17.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_17.png
 		Size: 3,3
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -4928,7 +4928,7 @@ Templates:
 
 	Template@488:
 		Id: 488
-		Images: tilesets/highland/GrassCliffExtra_4.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_4.png
 		Size: 3,5
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -4946,7 +4946,7 @@ Templates:
 
 	Template@489:
 		Id: 489
-		Images: tilesets/highland/GrassCliffExtra_3.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_3.png
 		Size: 3,3
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -4960,7 +4960,7 @@ Templates:
 
 	Template@490:
 		Id: 490
-		Images: tilesets/highland/GrassCliffExtra_10.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_10.png
 		Size: 2,5
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -4977,7 +4977,7 @@ Templates:
 
 	Template@491:
 		Id: 491
-		Images: tilesets/highland/GrassCliffExtra_11.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_11.png
 		Size: 3,4
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -4996,7 +4996,7 @@ Templates:
 
 	Template@493:
 		Id: 493
-		Images: tilesets/highland/GrassCliffExtra_9.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_9.png
 		Size: 2,4
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -5009,7 +5009,7 @@ Templates:
 
 	Template@494:
 		Id: 494
-		Images: tilesets/highland/GrassCliffExtra_119.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_119.png
 		Size: 4,3
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -5028,7 +5028,7 @@ Templates:
 
 	Template@495:
 		Id: 495
-		Images: tilesets/highland/GrassCliffExtra_20.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_20.png
 		Size: 4,4
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -5050,7 +5050,7 @@ Templates:
 
 	Template@496:
 		Id: 496
-		Images: tilesets/highland/GrassCliffExtra_23.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_23.png
 		Size: 4,4
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -5071,7 +5071,7 @@ Templates:
 
 	Template@497:
 		Id: 497
-		Images: tilesets/highland/GrassCliffExtra_24.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_24.png
 		Size: 4,4
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -5091,7 +5091,7 @@ Templates:
 
 	Template@498:
 		Id: 498
-		Images: tilesets/highland/GrassCliffExtra_28.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_28.png
 		Size: 6,5
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -5122,7 +5122,7 @@ Templates:
 
 	Template@499:
 		Id: 499
-		Images: tilesets/highland/GrassCliffExtra_27.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_27.png
 		Size: 4,6
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -5145,7 +5145,7 @@ Templates:
 
 	Template@500:
 		Id: 500
-		Images: tilesets/highland/GrassCliffExtra_31.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_31.png
 		Size: 3,4
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -5162,7 +5162,7 @@ Templates:
 
 	Template@501:
 		Id: 501
-		Images: tilesets/highland/GrassCliffExtra_33.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_33.png
 		Size: 3,5
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -5181,7 +5181,7 @@ Templates:
 
 	Template@502:
 		Id: 502
-		Images: tilesets/highland/GrassCliffExtra_35.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_35.png
 		Size: 3,4
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -5198,7 +5198,7 @@ Templates:
 
 	Template@503:
 		Id: 503
-		Images: tilesets/highland/GrassCliffExtra_29.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_29.png
 		Size: 6,5
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -5229,7 +5229,7 @@ Templates:
 
 	Template@504:
 		Id: 504
-		Images: tilesets/highland/GrassCliffExtra_25.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_25.png
 		Size: 4,4
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -5249,7 +5249,7 @@ Templates:
 
 	Template@505:
 		Id: 505
-		Images: tilesets/highland/GrassCliffExtra_26.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_26.png
 		Size: 4,4
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -5270,7 +5270,7 @@ Templates:
 
 	Template@506:
 		Id: 506
-		Images: tilesets/highland/GrassCliffExtra_30.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_30.png
 		Size: 4,6
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -5293,7 +5293,7 @@ Templates:
 
 	Template@507:
 		Id: 507
-		Images: tilesets/highland/GrassCliffExtra_32.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_32.png
 		Size: 3,4
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -5310,7 +5310,7 @@ Templates:
 
 	Template@508:
 		Id: 508
-		Images: tilesets/highland/GrassCliffExtra_34.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_34.png
 		Size: 3,5
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -5329,7 +5329,7 @@ Templates:
 
 	Template@510:
 		Id: 510
-		Images: tilesets/highland/GrassCliffExtra_36.png
+		Images: tilesets/highland/tiles/GrassCliffExtra_36.png
 		Size: 3,4
 		Categories: Grass Cliff Extra
 		Tiles:
@@ -5346,7 +5346,7 @@ Templates:
 
 	Template@173:
 		Id: 173
-		Images: tilesets/highland/GrassCliffRamp_SE.png
+		Images: tilesets/highland/tiles/GrassCliffRamp_SE.png
 		Size: 2,4
 		Categories: Grass Cliff Ramp
 		Tiles:
@@ -5361,7 +5361,7 @@ Templates:
 
 	Template@174:
 		Id: 174
-		Images: tilesets/highland/GrassCliffRamp_SW.png
+		Images: tilesets/highland/tiles/GrassCliffRamp_SW.png
 		Size: 2,4
 		Categories: Grass Cliff Ramp
 		Tiles:
@@ -5376,7 +5376,7 @@ Templates:
 
 	Template@175:
 		Id: 175
-		Images: tilesets/highland/GrassCliffRamp_NE.png
+		Images: tilesets/highland/tiles/GrassCliffRamp_NE.png
 		Size: 2,3
 		Categories: Grass Cliff Ramp
 		Tiles:
@@ -5389,7 +5389,7 @@ Templates:
 
 	Template@176:
 		Id: 176
-		Images: tilesets/highland/GrassCliffRamp_NW.png
+		Images: tilesets/highland/tiles/GrassCliffRamp_NW.png
 		Size: 2,3
 		Categories: Grass Cliff Ramp
 		Tiles:
@@ -5402,7 +5402,7 @@ Templates:
 
 	Template@177:
 		Id: 177
-		Images: tilesets/highland/GrassCliffRamp_WS.png
+		Images: tilesets/highland/tiles/GrassCliffRamp_WS.png
 		Size: 2,4
 		Categories: Grass Cliff Ramp
 		Tiles:
@@ -5417,7 +5417,7 @@ Templates:
 
 	Template@178:
 		Id: 178
-		Images: tilesets/highland/GrassCliffRamp_WN.png
+		Images: tilesets/highland/tiles/GrassCliffRamp_WN.png
 		Size: 3,3
 		Categories: Grass Cliff Ramp
 		Tiles:
@@ -5433,7 +5433,7 @@ Templates:
 
 	Template@179:
 		Id: 179
-		Images: tilesets/highland/GrassCliffRamp_ES.png
+		Images: tilesets/highland/tiles/GrassCliffRamp_ES.png
 		Size: 2,4
 		Categories: Grass Cliff Ramp
 		Tiles:
@@ -5448,7 +5448,7 @@ Templates:
 
 	Template@180:
 		Id: 180
-		Images: tilesets/highland/GrassCliffRamp_EN.png
+		Images: tilesets/highland/tiles/GrassCliffRamp_EN.png
 		Size: 3,3
 		Categories: Grass Cliff Ramp
 		Tiles:
@@ -5464,7 +5464,7 @@ Templates:
 
 	Template@511:
 		Id: 511
-		Images: tilesets/highland/GrassCliffRamp_1.png
+		Images: tilesets/highland/tiles/GrassCliffRamp_1.png
 		Size: 3,2
 		Categories: Grass Cliff Ramp
 		Tiles:
@@ -5477,7 +5477,7 @@ Templates:
 
 	Template@513:
 		Id: 513
-		Images: tilesets/highland/GrassCliffRamp_2.png
+		Images: tilesets/highland/tiles/GrassCliffRamp_2.png
 		Size: 3,2
 		Categories: Grass Cliff Ramp
 		Tiles:
@@ -5490,7 +5490,7 @@ Templates:
 
 	Template@514:
 		Id: 514
-		Images: tilesets/highland/GrassCliffRamp_4.png
+		Images: tilesets/highland/tiles/GrassCliffRamp_4.png
 		Size: 2,2
 		Categories: Grass Cliff Ramp
 		Tiles:
@@ -5501,7 +5501,7 @@ Templates:
 
 	Template@515:
 		Id: 515
-		Images: tilesets/highland/GrassCliffRamp_3.png
+		Images: tilesets/highland/tiles/GrassCliffRamp_3.png
 		Size: 2,2
 		Categories: Grass Cliff Ramp
 		Tiles:
@@ -5512,7 +5512,7 @@ Templates:
 
 	Template@516:
 		Id: 516
-		Images: tilesets/highland/GrassCliffRamp_5.png
+		Images: tilesets/highland/tiles/GrassCliffRamp_5.png
 		Size: 2,3
 		Categories: Grass Cliff Ramp
 		Tiles:
@@ -5525,7 +5525,7 @@ Templates:
 
 	Template@518:
 		Id: 518
-		Images: tilesets/highland/GrassCliffRamp_6.png
+		Images: tilesets/highland/tiles/GrassCliffRamp_6.png
 		Size: 2,3
 		Categories: Grass Cliff Ramp
 		Tiles:
@@ -5538,7 +5538,7 @@ Templates:
 
 	Template@519:
 		Id: 519
-		Images: tilesets/highland/GrassCliffRamp_7.png
+		Images: tilesets/highland/tiles/GrassCliffRamp_7.png
 		Size: 3,2
 		Categories: Grass Cliff Ramp
 		Tiles:
@@ -5551,7 +5551,7 @@ Templates:
 
 	Template@520:
 		Id: 520
-		Images: tilesets/highland/GrassCliffRamp_8.png
+		Images: tilesets/highland/tiles/GrassCliffRamp_8.png
 		Size: 3,2
 		Categories: Grass Cliff Ramp
 		Tiles:
@@ -5564,7 +5564,7 @@ Templates:
 
 	Template@521:
 		Id: 521
-		Images: tilesets/highland/GrassCliffRamp_10.png
+		Images: tilesets/highland/tiles/GrassCliffRamp_10.png
 		Size: 2,3
 		Categories: Grass Cliff Ramp
 		Tiles:
@@ -5577,7 +5577,7 @@ Templates:
 
 	Template@522:
 		Id: 522
-		Images: tilesets/highland/GrassCliffRamp_9.png
+		Images: tilesets/highland/tiles/GrassCliffRamp_9.png
 		Size: 2,3
 		Categories: Grass Cliff Ramp
 		Tiles:
@@ -5590,7 +5590,7 @@ Templates:
 
 	Template@524:
 		Id: 524
-		Images: tilesets/highland/GrassCliffRamp_12.png
+		Images: tilesets/highland/tiles/GrassCliffRamp_12.png
 		Size: 2,3
 		Categories: Grass Cliff Ramp
 		Tiles:
@@ -5603,7 +5603,7 @@ Templates:
 
 	Template@525:
 		Id: 525
-		Images: tilesets/highland/GrassCliffRamp_11.png
+		Images: tilesets/highland/tiles/GrassCliffRamp_11.png
 		Size: 2,3
 		Categories: Grass Cliff Ramp
 		Tiles:
@@ -5616,7 +5616,7 @@ Templates:
 
 	Template@527:
 		Id: 527
-		Images: tilesets/highland/GrassCliffRamp_13.png
+		Images: tilesets/highland/tiles/GrassCliffRamp_13.png
 		Size: 2,3
 		Categories: Grass Cliff Ramp
 		Tiles:
@@ -5629,7 +5629,7 @@ Templates:
 
 	Template@528:
 		Id: 528
-		Images: tilesets/highland/GrassCliffRamp_14.png
+		Images: tilesets/highland/tiles/GrassCliffRamp_14.png
 		Size: 2,3
 		Categories: Grass Cliff Ramp
 		Tiles:
@@ -5642,7 +5642,7 @@ Templates:
 
 	Template@529:
 		Id: 529
-		Images: tilesets/highland/GrassCliffRamp_15.png
+		Images: tilesets/highland/tiles/GrassCliffRamp_15.png
 		Size: 3,4
 		Categories: Grass Cliff Ramp
 		Tiles:
@@ -5659,7 +5659,7 @@ Templates:
 
 	Template@530:
 		Id: 530
-		Images: tilesets/highland/GrassCliffRamp_16.png
+		Images: tilesets/highland/tiles/GrassCliffRamp_16.png
 		Size: 3,4
 		Categories: Grass Cliff Ramp
 		Tiles:
@@ -5676,7 +5676,7 @@ Templates:
 
 	Template@760:
 		Id: 760
-		Images: tilesets/highland/NarrowPath_16.png
+		Images: tilesets/highland/tiles/NarrowPath_16.png
 		Size: 3,3
 		Categories: Narrow Path
 		Tiles:
@@ -5690,7 +5690,7 @@ Templates:
 
 	Template@761:
 		Id: 761
-		Images: tilesets/highland/NarrowPath_1.png
+		Images: tilesets/highland/tiles/NarrowPath_1.png
 		Size: 5,2
 		Categories: Narrow Path
 		Tiles:
@@ -5707,7 +5707,7 @@ Templates:
 
 	Template@762:
 		Id: 762
-		Images: tilesets/highland/NarrowPath_2.png
+		Images: tilesets/highland/tiles/NarrowPath_2.png
 		Size: 3,3
 		Categories: Narrow Path
 		Tiles:
@@ -5721,7 +5721,7 @@ Templates:
 
 	Template@763:
 		Id: 763
-		Images: tilesets/highland/NarrowPath_3.png
+		Images: tilesets/highland/tiles/NarrowPath_3.png
 		Size: 2,2
 		Categories: Narrow Path
 		Tiles:
@@ -5732,7 +5732,7 @@ Templates:
 
 	Template@764:
 		Id: 764
-		Images: tilesets/highland/NarrowPath_28.png
+		Images: tilesets/highland/tiles/NarrowPath_28.png
 		Size: 3,2
 		Categories: Narrow Path
 		Tiles:
@@ -5744,7 +5744,7 @@ Templates:
 
 	Template@765:
 		Id: 765
-		Images: tilesets/highland/NarrowPath_4.png
+		Images: tilesets/highland/tiles/NarrowPath_4.png
 		Size: 3,2
 		Categories: Narrow Path
 		Tiles:
@@ -5756,7 +5756,7 @@ Templates:
 
 	Template@767:
 		Id: 767
-		Images: tilesets/highland/NarrowPath_18.png
+		Images: tilesets/highland/tiles/NarrowPath_18.png
 		Size: 3,3
 		Categories: Narrow Path
 		Tiles:
@@ -5769,7 +5769,7 @@ Templates:
 
 	Template@770:
 		Id: 770
-		Images: tilesets/highland/NarrowPath_17.png
+		Images: tilesets/highland/tiles/NarrowPath_17.png
 		Size: 3,3
 		Categories: Narrow Path
 		Tiles:
@@ -5782,7 +5782,7 @@ Templates:
 
 	Template@774:
 		Id: 774
-		Images: tilesets/highland/NarrowPath_6.png
+		Images: tilesets/highland/tiles/NarrowPath_6.png
 		Size: 3,2
 		Categories: Narrow Path
 		Tiles:
@@ -5794,7 +5794,7 @@ Templates:
 
 	Template@776:
 		Id: 776
-		Images: tilesets/highland/NarrowPath_29.png
+		Images: tilesets/highland/tiles/NarrowPath_29.png
 		Size: 3,2
 		Categories: Narrow Path
 		Tiles:
@@ -5806,7 +5806,7 @@ Templates:
 
 	Template@777:
 		Id: 777
-		Images: tilesets/highland/NarrowPath_7.png
+		Images: tilesets/highland/tiles/NarrowPath_7.png
 		Size: 2,2
 		Categories: Narrow Path
 		Tiles:
@@ -5817,7 +5817,7 @@ Templates:
 
 	Template@778:
 		Id: 778
-		Images: tilesets/highland/NarrowPath_19.png
+		Images: tilesets/highland/tiles/NarrowPath_19.png
 		Size: 3,3
 		Categories: Narrow Path
 		Tiles:
@@ -5830,7 +5830,7 @@ Templates:
 
 	Template@780:
 		Id: 780
-		Images: tilesets/highland/NarrowPath_8.png
+		Images: tilesets/highland/tiles/NarrowPath_8.png
 		Size: 3,3
 		Categories: Narrow Path
 		Tiles:
@@ -5844,7 +5844,7 @@ Templates:
 
 	Template@781:
 		Id: 781
-		Images: tilesets/highland/NarrowPath_20.png
+		Images: tilesets/highland/tiles/NarrowPath_20.png
 		Size: 3,3
 		Categories: Narrow Path
 		Tiles:
@@ -5857,7 +5857,7 @@ Templates:
 
 	Template@782:
 		Id: 782
-		Images: tilesets/highland/NarrowPath_10.png
+		Images: tilesets/highland/tiles/NarrowPath_10.png
 		Size: 3,3
 		Categories: Narrow Path
 		Tiles:
@@ -5871,7 +5871,7 @@ Templates:
 
 	Template@783:
 		Id: 783
-		Images: tilesets/highland/NarrowPath_9.png
+		Images: tilesets/highland/tiles/NarrowPath_9.png
 		Size: 5,2
 		Categories: Narrow Path
 		Tiles:
@@ -5888,7 +5888,7 @@ Templates:
 
 	Template@788:
 		Id: 788
-		Images: tilesets/highland/NarrowPath_15.png
+		Images: tilesets/highland/tiles/NarrowPath_15.png
 		Size: 2,2
 		Categories: Narrow Path
 		Tiles:
@@ -5899,7 +5899,7 @@ Templates:
 
 	Template@789:
 		Id: 789
-		Images: tilesets/highland/NarrowPath_27.png
+		Images: tilesets/highland/tiles/NarrowPath_27.png
 		Size: 3,2
 		Categories: Narrow Path
 		Tiles:
@@ -5911,7 +5911,7 @@ Templates:
 
 	Template@791:
 		Id: 791
-		Images: tilesets/highland/NarrowPath_14.png
+		Images: tilesets/highland/tiles/NarrowPath_14.png
 		Size: 3,2
 		Categories: Narrow Path
 		Tiles:
@@ -5923,7 +5923,7 @@ Templates:
 
 	Template@792:
 		Id: 792
-		Images: tilesets/highland/NarrowPath_13.png
+		Images: tilesets/highland/tiles/NarrowPath_13.png
 		Size: 2,3
 		Categories: Narrow Path
 		Tiles:
@@ -5936,7 +5936,7 @@ Templates:
 
 	Template@793:
 		Id: 793
-		Images: tilesets/highland/NarrowPath_12.png
+		Images: tilesets/highland/tiles/NarrowPath_12.png
 		Size: 3,2
 		Categories: Narrow Path
 		Tiles:
@@ -5948,7 +5948,7 @@ Templates:
 
 	Template@794:
 		Id: 794
-		Images: tilesets/highland/NarrowPath_30.png
+		Images: tilesets/highland/tiles/NarrowPath_30.png
 		Size: 3,2
 		Categories: Narrow Path
 		Tiles:
@@ -5960,7 +5960,7 @@ Templates:
 
 	Template@795:
 		Id: 795
-		Images: tilesets/highland/NarrowPath_11.png
+		Images: tilesets/highland/tiles/NarrowPath_11.png
 		Size: 2,2
 		Categories: Narrow Path
 		Tiles:
@@ -5971,7 +5971,7 @@ Templates:
 
 	Template@825:
 		Id: 825
-		Images: tilesets/highland/NarrowPath_25.png
+		Images: tilesets/highland/tiles/NarrowPath_25.png
 		Size: 2,2
 		Categories: Narrow Path
 		Tiles:
@@ -5982,7 +5982,7 @@ Templates:
 
 	Template@826:
 		Id: 826
-		Images: tilesets/highland/NarrowPath_22.png
+		Images: tilesets/highland/tiles/NarrowPath_22.png
 		Size: 2,2
 		Categories: Narrow Path
 		Tiles:
@@ -5993,7 +5993,7 @@ Templates:
 
 	Template@827:
 		Id: 827
-		Images: tilesets/highland/NarrowPath_23.png
+		Images: tilesets/highland/tiles/NarrowPath_23.png
 		Size: 2,2
 		Categories: Narrow Path
 		Tiles:
@@ -6004,7 +6004,7 @@ Templates:
 
 	Template@828:
 		Id: 828
-		Images: tilesets/highland/NarrowPath_24.png
+		Images: tilesets/highland/tiles/NarrowPath_24.png
 		Size: 2,2
 		Categories: Narrow Path
 		Tiles:
@@ -6015,7 +6015,7 @@ Templates:
 
 	Template@831:
 		Id: 831
-		Images: tilesets/highland/NarrowPath_21.png
+		Images: tilesets/highland/tiles/NarrowPath_21.png
 		Size: 6,6
 		Categories: Narrow Path
 		Tiles:
@@ -6042,7 +6042,7 @@ Templates:
 
 	Template@833:
 		Id: 833
-		Images: tilesets/highland/NarrowPath_5.png
+		Images: tilesets/highland/tiles/NarrowPath_5.png
 		Size: 2,3
 		Categories: Narrow Path
 		Tiles:
@@ -6055,7 +6055,7 @@ Templates:
 
 	Template@766:
 		Id: 766
-		Images: tilesets/highland/NarrowPathExtra_4.png
+		Images: tilesets/highland/tiles/NarrowPathExtra_4.png
 		Size: 3,2
 		Categories: Narrow Path Extra
 		Tiles:
@@ -6068,7 +6068,7 @@ Templates:
 
 	Template@771:
 		Id: 771
-		Images: tilesets/highland/NarrowPathExtra_2.png
+		Images: tilesets/highland/tiles/NarrowPathExtra_2.png
 		Size: 3,3
 		Categories: Narrow Path Extra
 		Tiles:
@@ -6084,7 +6084,7 @@ Templates:
 
 	Template@772:
 		Id: 772
-		Images: tilesets/highland/NarrowPathExtra_3.png
+		Images: tilesets/highland/tiles/NarrowPathExtra_3.png
 		Size: 3,3
 		Categories: Narrow Path Extra
 		Tiles:
@@ -6100,7 +6100,7 @@ Templates:
 
 	Template@773:
 		Id: 773
-		Images: tilesets/highland/NarrowPathExtra_6.png
+		Images: tilesets/highland/tiles/NarrowPathExtra_6.png
 		Size: 3,2
 		Categories: Narrow Path Extra
 		Tiles:
@@ -6113,7 +6113,7 @@ Templates:
 
 	Template@784:
 		Id: 784
-		Images: tilesets/highland/NarrowPathExtra_5.png
+		Images: tilesets/highland/tiles/NarrowPathExtra_5.png
 		Size: 3,2
 		Categories: Narrow Path Extra
 		Tiles:
@@ -6126,7 +6126,7 @@ Templates:
 
 	Template@785:
 		Id: 785
-		Images: tilesets/highland/NarrowPathExtra_1.png
+		Images: tilesets/highland/tiles/NarrowPathExtra_1.png
 		Size: 3,2
 		Categories: Narrow Path Extra
 		Tiles:
@@ -6139,7 +6139,7 @@ Templates:
 
 	Template@796:
 		Id: 796
-		Images: tilesets/highland/NarrowPathExtra_7.png
+		Images: tilesets/highland/tiles/NarrowPathExtra_7.png
 		Size: 3,4
 		Categories: Narrow Path Extra
 		Tiles:
@@ -6156,7 +6156,7 @@ Templates:
 
 	Template@797:
 		Id: 797
-		Images: tilesets/highland/NarrowPathExtra_8.png
+		Images: tilesets/highland/tiles/NarrowPathExtra_8.png
 		Size: 3,4
 		Categories: Narrow Path Extra
 		Tiles:
@@ -6173,7 +6173,7 @@ Templates:
 
 	Template@798:
 		Id: 798
-		Images: tilesets/highland/NarrowPathExtra_9.png
+		Images: tilesets/highland/tiles/NarrowPathExtra_9.png
 		Size: 3,4
 		Categories: Narrow Path Extra
 		Tiles:
@@ -6187,7 +6187,7 @@ Templates:
 
 	Template@799:
 		Id: 799
-		Images: tilesets/highland/NarrowPathExtra_10.png
+		Images: tilesets/highland/tiles/NarrowPathExtra_10.png
 		Size: 3,4
 		Categories: Narrow Path Extra
 		Tiles:
@@ -6201,7 +6201,7 @@ Templates:
 
 	Template@800:
 		Id: 800
-		Images: tilesets/highland/NarrowPathExtra_11.png
+		Images: tilesets/highland/tiles/NarrowPathExtra_11.png
 		Size: 2,3
 		Categories: Narrow Path Extra
 		Tiles:
@@ -6214,7 +6214,7 @@ Templates:
 
 	Template@801:
 		Id: 801
-		Images: tilesets/highland/NarrowPathExtra_12.png
+		Images: tilesets/highland/tiles/NarrowPathExtra_12.png
 		Size: 2,3
 		Categories: Narrow Path Extra
 		Tiles:
@@ -6227,7 +6227,7 @@ Templates:
 
 	Template@802:
 		Id: 802
-		Images: tilesets/highland/NarrowPathExtra_17.png
+		Images: tilesets/highland/tiles/NarrowPathExtra_17.png
 		Size: 4,2
 		Categories: Narrow Path Extra
 		Tiles:
@@ -6241,7 +6241,7 @@ Templates:
 
 	Template@803:
 		Id: 803
-		Images: tilesets/highland/NarrowPathExtra_15.png
+		Images: tilesets/highland/tiles/NarrowPathExtra_15.png
 		Size: 3,3
 		Categories: Narrow Path Extra
 		Tiles:
@@ -6256,7 +6256,7 @@ Templates:
 
 	Template@804:
 		Id: 804
-		Images: tilesets/highland/NarrowPathExtra_16.png
+		Images: tilesets/highland/tiles/NarrowPathExtra_16.png
 		Size: 3,3
 		Categories: Narrow Path Extra
 		Tiles:
@@ -6271,7 +6271,7 @@ Templates:
 
 	Template@805:
 		Id: 805
-		Images: tilesets/highland/NarrowPathExtra_14.png
+		Images: tilesets/highland/tiles/NarrowPathExtra_14.png
 		Size: 4,3
 		Categories: Narrow Path Extra
 		Tiles:
@@ -6285,7 +6285,7 @@ Templates:
 
 	Template@806:
 		Id: 806
-		Images: tilesets/highland/NarrowPathExtra_13.png
+		Images: tilesets/highland/tiles/NarrowPathExtra_13.png
 		Size: 4,3
 		Categories: Narrow Path Extra
 		Tiles:
@@ -6299,7 +6299,7 @@ Templates:
 
 	Template@807:
 		Id: 807
-		Images: tilesets/highland/NarrowPathExtra_18.png
+		Images: tilesets/highland/tiles/NarrowPathExtra_18.png
 		Size: 3,2
 		Categories: Narrow Path Extra
 		Tiles:
@@ -6312,7 +6312,7 @@ Templates:
 
 	Template@808:
 		Id: 808
-		Images: tilesets/highland/NarrowPathExtra_19.png
+		Images: tilesets/highland/tiles/NarrowPathExtra_19.png
 		Size: 3,3
 		Categories: Narrow Path Extra
 		Tiles:
@@ -6328,7 +6328,7 @@ Templates:
 
 	Template@809:
 		Id: 809
-		Images: tilesets/highland/NarrowPathExtra_20.png
+		Images: tilesets/highland/tiles/NarrowPathExtra_20.png
 		Size: 3,3
 		Categories: Narrow Path Extra
 		Tiles:
@@ -6344,7 +6344,7 @@ Templates:
 
 	Template@810:
 		Id: 810
-		Images: tilesets/highland/NarrowPathExtra_21.png
+		Images: tilesets/highland/tiles/NarrowPathExtra_21.png
 		Size: 3,3
 		Categories: Narrow Path Extra
 		Tiles:
@@ -6359,7 +6359,7 @@ Templates:
 
 	Template@811:
 		Id: 811
-		Images: tilesets/highland/NarrowPathExtra_22.png
+		Images: tilesets/highland/tiles/NarrowPathExtra_22.png
 		Size: 3,3
 		Categories: Narrow Path Extra
 		Tiles:
@@ -6374,7 +6374,7 @@ Templates:
 
 	Template@812:
 		Id: 812
-		Images: tilesets/highland/NarrowPathExtra_23.png
+		Images: tilesets/highland/tiles/NarrowPathExtra_23.png
 		Size: 3,2
 		Categories: Narrow Path Extra
 		Tiles:
@@ -6387,7 +6387,7 @@ Templates:
 
 	Template@813:
 		Id: 813
-		Images: tilesets/highland/NarrowPathExtra_24.png
+		Images: tilesets/highland/tiles/NarrowPathExtra_24.png
 		Size: 2,3
 		Categories: Narrow Path Extra
 		Tiles:
@@ -6400,7 +6400,7 @@ Templates:
 
 	Template@814:
 		Id: 814
-		Images: tilesets/highland/NarrowPathExtra_26.png
+		Images: tilesets/highland/tiles/NarrowPathExtra_26.png
 		Size: 3,2
 		Categories: Narrow Path Extra
 		Tiles:
@@ -6413,7 +6413,7 @@ Templates:
 
 	Template@815:
 		Id: 815
-		Images: tilesets/highland/NarrowPathExtra_25.png
+		Images: tilesets/highland/tiles/NarrowPathExtra_25.png
 		Size: 2,3
 		Categories: Narrow Path Extra
 		Tiles:
@@ -6426,7 +6426,7 @@ Templates:
 
 	Template@816:
 		Id: 816
-		Images: tilesets/highland/NarrowPathExtra_28.png
+		Images: tilesets/highland/tiles/NarrowPathExtra_28.png
 		Size: 2,2
 		Categories: Narrow Path Extra
 		Tiles:
@@ -6437,7 +6437,7 @@ Templates:
 
 	Template@817:
 		Id: 817
-		Images: tilesets/highland/NarrowPathExtra_27.png
+		Images: tilesets/highland/tiles/NarrowPathExtra_27.png
 		Size: 2,2
 		Categories: Narrow Path Extra
 		Tiles:
@@ -6448,7 +6448,7 @@ Templates:
 
 	Template@818:
 		Id: 818
-		Images: tilesets/highland/NarrowPathExtra_30.png
+		Images: tilesets/highland/tiles/NarrowPathExtra_30.png
 		Size: 2,2
 		Categories: Narrow Path Extra
 		Tiles:
@@ -6459,7 +6459,7 @@ Templates:
 
 	Template@819:
 		Id: 819
-		Images: tilesets/highland/NarrowPathExtra_29.png
+		Images: tilesets/highland/tiles/NarrowPathExtra_29.png
 		Size: 2,2
 		Categories: Narrow Path Extra
 		Tiles:
@@ -6470,7 +6470,7 @@ Templates:
 
 	Template@820:
 		Id: 820
-		Images: tilesets/highland/NarrowPathExtra_32.png
+		Images: tilesets/highland/tiles/NarrowPathExtra_32.png
 		Size: 2,2
 		Categories: Narrow Path Extra
 		Tiles:
@@ -6481,7 +6481,7 @@ Templates:
 
 	Template@821:
 		Id: 821
-		Images: tilesets/highland/NarrowPathExtra_31.png
+		Images: tilesets/highland/tiles/NarrowPathExtra_31.png
 		Size: 2,2
 		Categories: Narrow Path Extra
 		Tiles:
@@ -6492,7 +6492,7 @@ Templates:
 
 	Template@822:
 		Id: 822
-		Images: tilesets/highland/NarrowPathExtra_33.png
+		Images: tilesets/highland/tiles/NarrowPathExtra_33.png
 		Size: 2,2
 		Categories: Narrow Path Extra
 		Tiles:
@@ -6503,7 +6503,7 @@ Templates:
 
 	Template@823:
 		Id: 823
-		Images: tilesets/highland/NarrowPathExtra_34.png
+		Images: tilesets/highland/tiles/NarrowPathExtra_34.png
 		Size: 2,2
 		Categories: Narrow Path Extra
 		Tiles:
@@ -6514,7 +6514,7 @@ Templates:
 
 	Template@538:
 		Id: 538
-		Images: tilesets/highland/River_1.png
+		Images: tilesets/highland/tiles/River_1.png
 		Size: 6,3
 		Categories: River
 		Tiles:
@@ -6539,7 +6539,7 @@ Templates:
 
 	Template@543:
 		Id: 543
-		Images: tilesets/highland/River_2.png
+		Images: tilesets/highland/tiles/River_2.png
 		Size: 6,3
 		Categories: River
 		Tiles:
@@ -6564,7 +6564,7 @@ Templates:
 
 	Template@546:
 		Id: 546
-		Images: tilesets/highland/River_4.png
+		Images: tilesets/highland/tiles/River_4.png
 		Size: 4,4
 		Categories: River
 		Tiles:
@@ -6583,7 +6583,7 @@ Templates:
 
 	Template@550:
 		Id: 550
-		Images: tilesets/highland/River_3.png
+		Images: tilesets/highland/tiles/River_3.png
 		Size: 4,4
 		Categories: River
 		Tiles:
@@ -6602,7 +6602,7 @@ Templates:
 
 	Template@554:
 		Id: 554
-		Images: tilesets/highland/River_5.png
+		Images: tilesets/highland/tiles/River_5.png
 		Size: 4,4
 		Categories: River
 		Tiles:
@@ -6619,7 +6619,7 @@ Templates:
 
 	Template@555:
 		Id: 555
-		Images: tilesets/highland/River_7.png
+		Images: tilesets/highland/tiles/River_7.png
 		Size: 4,4
 		Categories: River
 		Tiles:
@@ -6637,7 +6637,7 @@ Templates:
 
 	Template@571:
 		Id: 571
-		Images: tilesets/highland/River_18.png
+		Images: tilesets/highland/tiles/River_18.png
 		Size: 4,4
 		Categories: River
 		Tiles:
@@ -6655,7 +6655,7 @@ Templates:
 
 	Template@572:
 		Id: 572
-		Images: tilesets/highland/River_10.png
+		Images: tilesets/highland/tiles/River_10.png
 		Size: 3,6
 		Categories: River
 		Tiles:
@@ -6680,7 +6680,7 @@ Templates:
 
 	Template@573:
 		Id: 573
-		Images: tilesets/highland/River_8.png
+		Images: tilesets/highland/tiles/River_8.png
 		Size: 4,4
 		Categories: River
 		Tiles:
@@ -6698,7 +6698,7 @@ Templates:
 
 	Template@574:
 		Id: 574
-		Images: tilesets/highland/River_6.png
+		Images: tilesets/highland/tiles/River_6.png
 		Size: 4,4
 		Categories: River
 		Tiles:
@@ -6715,7 +6715,7 @@ Templates:
 
 	Template@577:
 		Id: 577
-		Images: tilesets/highland/River_17.png
+		Images: tilesets/highland/tiles/River_17.png
 		Size: 4,4
 		Categories: River
 		Tiles:
@@ -6732,7 +6732,7 @@ Templates:
 
 	Template@583:
 		Id: 583
-		Images: tilesets/highland/River_14.png
+		Images: tilesets/highland/tiles/River_14.png
 		Size: 6,3
 		Categories: River
 		Tiles:
@@ -6757,7 +6757,7 @@ Templates:
 
 	Template@586:
 		Id: 586
-		Images: tilesets/highland/River_9.png
+		Images: tilesets/highland/tiles/River_9.png
 		Size: 3,6
 		Categories: River
 		Tiles:
@@ -6782,7 +6782,7 @@ Templates:
 
 	Template@587:
 		Id: 587
-		Images: tilesets/highland/River_11.png
+		Images: tilesets/highland/tiles/River_11.png
 		Size: 4,4
 		Categories: River
 		Tiles:
@@ -6800,7 +6800,7 @@ Templates:
 
 	Template@588:
 		Id: 588
-		Images: tilesets/highland/River_12.png
+		Images: tilesets/highland/tiles/River_12.png
 		Size: 4,4
 		Categories: River
 		Tiles:
@@ -6817,7 +6817,7 @@ Templates:
 
 	Template@589:
 		Id: 589
-		Images: tilesets/highland/River_15.png
+		Images: tilesets/highland/tiles/River_15.png
 		Size: 4,4
 		Categories: River
 		Tiles:
@@ -6836,7 +6836,7 @@ Templates:
 
 	Template@591:
 		Id: 591
-		Images: tilesets/highland/River_13.png
+		Images: tilesets/highland/tiles/River_13.png
 		Size: 4,4
 		Categories: River
 		Tiles:
@@ -6855,7 +6855,7 @@ Templates:
 
 	Template@624:
 		Id: 624
-		Images: tilesets/highland/RiverCrossing_2.png
+		Images: tilesets/highland/tiles/RiverCrossing_2.png
 		Size: 9,3
 		Categories: River Crossing
 		Tiles:
@@ -6889,7 +6889,7 @@ Templates:
 
 	Template@625:
 		Id: 625
-		Images: tilesets/highland/RiverCrossing_3.png
+		Images: tilesets/highland/tiles/RiverCrossing_3.png
 		Size: 8,6
 		Categories: River Crossing
 		Tiles:
@@ -6921,7 +6921,7 @@ Templates:
 
 	Template@626:
 		Id: 626
-		Images: tilesets/highland/RiverCrossing_1.png
+		Images: tilesets/highland/tiles/RiverCrossing_1.png
 		Size: 8,6
 		Categories: River Crossing
 		Tiles:
@@ -6954,7 +6954,7 @@ Templates:
 
 	Template@627:
 		Id: 627
-		Images: tilesets/highland/RiverCrossing_5.png
+		Images: tilesets/highland/tiles/RiverCrossing_5.png
 		Size: 3,3
 		Categories: River Crossing
 		Tiles:
@@ -6970,7 +6970,7 @@ Templates:
 
 	Template@628:
 		Id: 628
-		Images: tilesets/highland/RiverCrossing_6.png
+		Images: tilesets/highland/tiles/RiverCrossing_6.png
 		Size: 3,3
 		Categories: River Crossing
 		Tiles:
@@ -6986,7 +6986,7 @@ Templates:
 
 	Template@629:
 		Id: 629
-		Images: tilesets/highland/RiverCrossing_4.png
+		Images: tilesets/highland/tiles/RiverCrossing_4.png
 		Size: 4,4
 		Categories: River Crossing
 		Tiles:
@@ -7007,7 +7007,7 @@ Templates:
 
 	Template@631:
 		Id: 631
-		Images: tilesets/highland/RiverCrossing_26.png
+		Images: tilesets/highland/tiles/RiverCrossing_26.png
 		Size: 3,9
 		Categories: River Crossing
 		Tiles:
@@ -7041,7 +7041,7 @@ Templates:
 
 	Template@632:
 		Id: 632
-		Images: tilesets/highland/RiverCrossing_8.png
+		Images: tilesets/highland/tiles/RiverCrossing_8.png
 		Size: 2,3
 		Categories: River Crossing
 		Tiles:
@@ -7054,7 +7054,7 @@ Templates:
 
 	Template@633:
 		Id: 633
-		Images: tilesets/highland/RiverCrossing_9.png
+		Images: tilesets/highland/tiles/RiverCrossing_9.png
 		Size: 2,4
 		Categories: River Crossing
 		Tiles:
@@ -7069,7 +7069,7 @@ Templates:
 
 	Template@634:
 		Id: 634
-		Images: tilesets/highland/RiverCrossing_10.png
+		Images: tilesets/highland/tiles/RiverCrossing_10.png
 		Size: 2,2
 		Categories: River Crossing
 		Tiles:
@@ -7080,7 +7080,7 @@ Templates:
 
 	Template@635:
 		Id: 635
-		Images: tilesets/highland/RiverCrossing_11.png
+		Images: tilesets/highland/tiles/RiverCrossing_11.png
 		Size: 2,2
 		Categories: River Crossing
 		Tiles:
@@ -7091,7 +7091,7 @@ Templates:
 
 	Template@636:
 		Id: 636
-		Images: tilesets/highland/RiverCrossing_7.png
+		Images: tilesets/highland/tiles/RiverCrossing_7.png
 		Size: 4,4
 		Categories: River Crossing
 		Tiles:
@@ -7112,7 +7112,7 @@ Templates:
 
 	Template@637:
 		Id: 637
-		Images: tilesets/highland/RiverCrossing_14.png
+		Images: tilesets/highland/tiles/RiverCrossing_14.png
 		Size: 3,9
 		Categories: River Crossing
 		Tiles:
@@ -7146,7 +7146,7 @@ Templates:
 
 	Template@638:
 		Id: 638
-		Images: tilesets/highland/RiverCrossing_12.png
+		Images: tilesets/highland/tiles/RiverCrossing_12.png
 		Size: 2,4
 		Categories: River Crossing
 		Tiles:
@@ -7161,7 +7161,7 @@ Templates:
 
 	Template@639:
 		Id: 639
-		Images: tilesets/highland/RiverCrossing_13.png
+		Images: tilesets/highland/tiles/RiverCrossing_13.png
 		Size: 2,3
 		Categories: River Crossing
 		Tiles:
@@ -7174,7 +7174,7 @@ Templates:
 
 	Template@640:
 		Id: 640
-		Images: tilesets/highland/RiverCrossing_18.png
+		Images: tilesets/highland/tiles/RiverCrossing_18.png
 		Size: 4,4
 		Categories: River Crossing
 		Tiles:
@@ -7194,7 +7194,7 @@ Templates:
 
 	Template@643:
 		Id: 643
-		Images: tilesets/highland/RiverCrossing_15.png
+		Images: tilesets/highland/tiles/RiverCrossing_15.png
 		Size: 4,4
 		Categories: River Crossing
 		Tiles:
@@ -7214,7 +7214,7 @@ Templates:
 
 	Template@645:
 		Id: 645
-		Images: tilesets/highland/RiverCrossing_16.png
+		Images: tilesets/highland/tiles/RiverCrossing_16.png
 		Size: 3,3
 		Categories: River Crossing
 		Tiles:
@@ -7230,7 +7230,7 @@ Templates:
 
 	Template@646:
 		Id: 646
-		Images: tilesets/highland/RiverCrossing_17.png
+		Images: tilesets/highland/tiles/RiverCrossing_17.png
 		Size: 3,3
 		Categories: River Crossing
 		Tiles:
@@ -7246,7 +7246,7 @@ Templates:
 
 	Template@647:
 		Id: 647
-		Images: tilesets/highland/RiverCrossing_19.png
+		Images: tilesets/highland/tiles/RiverCrossing_19.png
 		Size: 3,3
 		Categories: River Crossing
 		Tiles:
@@ -7262,7 +7262,7 @@ Templates:
 
 	Template@648:
 		Id: 648
-		Images: tilesets/highland/RiverCrossing_20.png
+		Images: tilesets/highland/tiles/RiverCrossing_20.png
 		Size: 3,3
 		Categories: River Crossing
 		Tiles:
@@ -7278,7 +7278,7 @@ Templates:
 
 	Template@650:
 		Id: 650
-		Images: tilesets/highland/RiverCrossing_22.png
+		Images: tilesets/highland/tiles/RiverCrossing_22.png
 		Size: 9,3
 		Categories: River Crossing
 		Tiles:
@@ -7312,7 +7312,7 @@ Templates:
 
 	Template@651:
 		Id: 651
-		Images: tilesets/highland/RiverCrossing_21.png
+		Images: tilesets/highland/tiles/RiverCrossing_21.png
 		Size: 8,6
 		Categories: River Crossing
 		Tiles:
@@ -7344,7 +7344,7 @@ Templates:
 
 	Template@652:
 		Id: 652
-		Images: tilesets/highland/RiverCrossing_23.png
+		Images: tilesets/highland/tiles/RiverCrossing_23.png
 		Size: 8,6
 		Categories: River Crossing
 		Tiles:
@@ -7376,7 +7376,7 @@ Templates:
 
 	Template@954:
 		Id: 954
-		Images: tilesets/highland/RiverCrossing_24.png
+		Images: tilesets/highland/tiles/RiverCrossing_24.png
 		Size: 3,3
 		Categories: River Crossing
 		Tiles:
@@ -7392,7 +7392,7 @@ Templates:
 
 	Template@955:
 		Id: 955
-		Images: tilesets/highland/RiverCrossing_25.png
+		Images: tilesets/highland/tiles/RiverCrossing_25.png
 		Size: 3,3
 		Categories: River Crossing
 		Tiles:
@@ -7408,7 +7408,7 @@ Templates:
 
 	Template@1682:
 		Id: 1682
-		Images: tilesets/highland/RiverCrossing_27.png
+		Images: tilesets/highland/tiles/RiverCrossing_27.png
 		Size: 3,3
 		Categories: River Crossing
 		Tiles:
@@ -7424,7 +7424,7 @@ Templates:
 
 	Template@1683:
 		Id: 1683
-		Images: tilesets/highland/RiverCrossing_28.png
+		Images: tilesets/highland/tiles/RiverCrossing_28.png
 		Size: 3,3
 		Categories: River Crossing
 		Tiles:
@@ -7440,7 +7440,7 @@ Templates:
 
 	Template@542:
 		Id: 542
-		Images: tilesets/highland/RiverExtra_2.png
+		Images: tilesets/highland/tiles/RiverExtra_2.png
 		Size: 2,2
 		Categories: River Extra
 		Tiles:
@@ -7451,7 +7451,7 @@ Templates:
 
 	Template@547:
 		Id: 547
-		Images: tilesets/highland/RiverExtra_4.png
+		Images: tilesets/highland/tiles/RiverExtra_4.png
 		Size: 3,4
 		Categories: River Extra
 		Tiles:
@@ -7469,7 +7469,7 @@ Templates:
 
 	Template@549:
 		Id: 549
-		Images: tilesets/highland/RiverExtra_1.png
+		Images: tilesets/highland/tiles/RiverExtra_1.png
 		Size: 2,2
 		Categories: River Extra
 		Tiles:
@@ -7480,7 +7480,7 @@ Templates:
 
 	Template@552:
 		Id: 552
-		Images: tilesets/highland/RiverExtra_3.png
+		Images: tilesets/highland/tiles/RiverExtra_3.png
 		Size: 3,4
 		Categories: River Extra
 		Tiles:
@@ -7498,7 +7498,7 @@ Templates:
 
 	Template@553:
 		Id: 553
-		Images: tilesets/highland/RiverExtra_5.png
+		Images: tilesets/highland/tiles/RiverExtra_5.png
 		Size: 4,4
 		Categories: River Extra
 		Tiles:
@@ -7518,7 +7518,7 @@ Templates:
 
 	Template@556:
 		Id: 556
-		Images: tilesets/highland/RiverExtra_7.png
+		Images: tilesets/highland/tiles/RiverExtra_7.png
 		Size: 4,5
 		Categories: River Extra
 		Tiles:
@@ -7540,7 +7540,7 @@ Templates:
 
 	Template@558:
 		Id: 558
-		Images: tilesets/highland/RiverExtra_8.png
+		Images: tilesets/highland/tiles/RiverExtra_8.png
 		Size: 4,4
 		Categories: River Extra
 		Tiles:
@@ -7560,7 +7560,7 @@ Templates:
 
 	Template@559:
 		Id: 559
-		Images: tilesets/highland/RiverExtra_11.png
+		Images: tilesets/highland/tiles/RiverExtra_11.png
 		Size: 4,4
 		Categories: River Extra
 		Tiles:
@@ -7580,7 +7580,7 @@ Templates:
 
 	Template@560:
 		Id: 560
-		Images: tilesets/highland/RiverExtra_12.png
+		Images: tilesets/highland/tiles/RiverExtra_12.png
 		Size: 3,4
 		Categories: River Extra
 		Tiles:
@@ -7597,7 +7597,7 @@ Templates:
 
 	Template@562:
 		Id: 562
-		Images: tilesets/highland/RiverExtra_10.png
+		Images: tilesets/highland/tiles/RiverExtra_10.png
 		Size: 3,4
 		Categories: River Extra
 		Tiles:
@@ -7614,7 +7614,7 @@ Templates:
 
 	Template@563:
 		Id: 563
-		Images: tilesets/highland/RiverExtra_15.png
+		Images: tilesets/highland/tiles/RiverExtra_15.png
 		Size: 3,3
 		Categories: River Extra
 		Tiles:
@@ -7629,7 +7629,7 @@ Templates:
 
 	Template@565:
 		Id: 565
-		Images: tilesets/highland/RiverExtra_16.png
+		Images: tilesets/highland/tiles/RiverExtra_16.png
 		Size: 2,4
 		Categories: River Extra
 		Tiles:
@@ -7643,7 +7643,7 @@ Templates:
 
 	Template@566:
 		Id: 566
-		Images: tilesets/highland/RiverExtra_17.png
+		Images: tilesets/highland/tiles/RiverExtra_17.png
 		Size: 3,3
 		Categories: River Extra
 		Tiles:
@@ -7658,7 +7658,7 @@ Templates:
 
 	Template@567:
 		Id: 567
-		Images: tilesets/highland/RiverExtra_20.png
+		Images: tilesets/highland/tiles/RiverExtra_20.png
 		Size: 3,4
 		Categories: River Extra
 		Tiles:
@@ -7676,7 +7676,7 @@ Templates:
 
 	Template@569:
 		Id: 569
-		Images: tilesets/highland/RiverExtra_19.png
+		Images: tilesets/highland/tiles/RiverExtra_19.png
 		Size: 2,4
 		Categories: River Extra
 		Tiles:
@@ -7690,7 +7690,7 @@ Templates:
 
 	Template@570:
 		Id: 570
-		Images: tilesets/highland/RiverExtra_13.png
+		Images: tilesets/highland/tiles/RiverExtra_13.png
 		Size: 4,7
 		Categories: River Extra
 		Tiles:
@@ -7720,7 +7720,7 @@ Templates:
 
 	Template@575:
 		Id: 575
-		Images: tilesets/highland/RiverExtra_6.png
+		Images: tilesets/highland/tiles/RiverExtra_6.png
 		Size: 4,4
 		Categories: River Extra
 		Tiles:
@@ -7740,7 +7740,7 @@ Templates:
 
 	Template@578:
 		Id: 578
-		Images: tilesets/highland/RiverExtra_28.png
+		Images: tilesets/highland/tiles/RiverExtra_28.png
 		Size: 4,4
 		Categories: River Extra
 		Tiles:
@@ -7760,7 +7760,7 @@ Templates:
 
 	Template@580:
 		Id: 580
-		Images: tilesets/highland/RiverExtra_27.png
+		Images: tilesets/highland/tiles/RiverExtra_27.png
 		Size: 2,6
 		Categories: River Extra
 		Tiles:
@@ -7778,7 +7778,7 @@ Templates:
 
 	Template@582:
 		Id: 582
-		Images: tilesets/highland/RiverExtra_35.png
+		Images: tilesets/highland/tiles/RiverExtra_35.png
 		Size: 2,4
 		Categories: River Extra
 		Tiles:
@@ -7793,7 +7793,7 @@ Templates:
 
 	Template@584:
 		Id: 584
-		Images: tilesets/highland/RiverExtra_18.png
+		Images: tilesets/highland/tiles/RiverExtra_18.png
 		Size: 3,4
 		Categories: River Extra
 		Tiles:
@@ -7811,7 +7811,7 @@ Templates:
 
 	Template@585:
 		Id: 585
-		Images: tilesets/highland/RiverExtra_14.png
+		Images: tilesets/highland/tiles/RiverExtra_14.png
 		Size: 4,7
 		Categories: River Extra
 		Tiles:
@@ -7841,7 +7841,7 @@ Templates:
 
 	Template@592:
 		Id: 592
-		Images: tilesets/highland/RiverExtra_21.png
+		Images: tilesets/highland/tiles/RiverExtra_21.png
 		Size: 4,4
 		Categories: River Extra
 		Tiles:
@@ -7861,7 +7861,7 @@ Templates:
 
 	Template@593:
 		Id: 593
-		Images: tilesets/highland/RiverExtra_22.png
+		Images: tilesets/highland/tiles/RiverExtra_22.png
 		Size: 2,6
 		Categories: River Extra
 		Tiles:
@@ -7879,7 +7879,7 @@ Templates:
 
 	Template@594:
 		Id: 594
-		Images: tilesets/highland/RiverExtra_23.png
+		Images: tilesets/highland/tiles/RiverExtra_23.png
 		Size: 4,3
 		Categories: River Extra
 		Tiles:
@@ -7896,7 +7896,7 @@ Templates:
 
 	Template@595:
 		Id: 595
-		Images: tilesets/highland/RiverExtra_24.png
+		Images: tilesets/highland/tiles/RiverExtra_24.png
 		Size: 2,4
 		Categories: River Extra
 		Tiles:
@@ -7911,7 +7911,7 @@ Templates:
 
 	Template@596:
 		Id: 596
-		Images: tilesets/highland/RiverExtra_25.png
+		Images: tilesets/highland/tiles/RiverExtra_25.png
 		Size: 2,4
 		Categories: River Extra
 		Tiles:
@@ -7926,7 +7926,7 @@ Templates:
 
 	Template@597:
 		Id: 597
-		Images: tilesets/highland/RiverExtra_26.png
+		Images: tilesets/highland/tiles/RiverExtra_26.png
 		Size: 4,3
 		Categories: River Extra
 		Tiles:
@@ -7943,7 +7943,7 @@ Templates:
 
 	Template@598:
 		Id: 598
-		Images: tilesets/highland/RiverExtra_29.png
+		Images: tilesets/highland/tiles/RiverExtra_29.png
 		Size: 2,4
 		Categories: River Extra
 		Tiles:
@@ -7958,7 +7958,7 @@ Templates:
 
 	Template@599:
 		Id: 599
-		Images: tilesets/highland/RiverExtra_36.png
+		Images: tilesets/highland/tiles/RiverExtra_36.png
 		Size: 2,3
 		Categories: River Extra
 		Tiles:
@@ -7971,7 +7971,7 @@ Templates:
 
 	Template@600:
 		Id: 600
-		Images: tilesets/highland/RiverExtra_38.png
+		Images: tilesets/highland/tiles/RiverExtra_38.png
 		Size: 3,4
 		Categories: River Extra
 		Tiles:
@@ -7985,7 +7985,7 @@ Templates:
 
 	Template@601:
 		Id: 601
-		Images: tilesets/highland/RiverExtra_30.png
+		Images: tilesets/highland/tiles/RiverExtra_30.png
 		Size: 3,6
 		Categories: River Extra
 		Tiles:
@@ -8010,7 +8010,7 @@ Templates:
 
 	Template@602:
 		Id: 602
-		Images: tilesets/highland/RiverExtra_31.png
+		Images: tilesets/highland/tiles/RiverExtra_31.png
 		Size: 5,4
 		Categories: River Extra
 		Tiles:
@@ -8034,7 +8034,7 @@ Templates:
 
 	Template@603:
 		Id: 603
-		Images: tilesets/highland/RiverExtra_32.png
+		Images: tilesets/highland/tiles/RiverExtra_32.png
 		Size: 5,4
 		Categories: River Extra
 		Tiles:
@@ -8058,7 +8058,7 @@ Templates:
 
 	Template@604:
 		Id: 604
-		Images: tilesets/highland/RiverExtra_33.png
+		Images: tilesets/highland/tiles/RiverExtra_33.png
 		Size: 3,6
 		Categories: River Extra
 		Tiles:
@@ -8083,7 +8083,7 @@ Templates:
 
 	Template@606:
 		Id: 606
-		Images: tilesets/highland/RiverExtra_34.png
+		Images: tilesets/highland/tiles/RiverExtra_34.png
 		Size: 3,4
 		Categories: River Extra
 		Tiles:
@@ -8097,7 +8097,7 @@ Templates:
 
 	Template@608:
 		Id: 608
-		Images: tilesets/highland/RiverExtra_39.png
+		Images: tilesets/highland/tiles/RiverExtra_39.png
 		Size: 2,3
 		Categories: River Extra
 		Tiles:
@@ -8110,7 +8110,7 @@ Templates:
 
 	Template@609:
 		Id: 609
-		Images: tilesets/highland/RiverExtra_40.png
+		Images: tilesets/highland/tiles/RiverExtra_40.png
 		Size: 4,3
 		Categories: River Extra
 		Tiles:
@@ -8127,7 +8127,7 @@ Templates:
 
 	Template@610:
 		Id: 610
-		Images: tilesets/highland/RiverExtra_41.png
+		Images: tilesets/highland/tiles/RiverExtra_41.png
 		Size: 3,3
 		Categories: River Extra
 		Tiles:
@@ -8142,7 +8142,7 @@ Templates:
 
 	Template@612:
 		Id: 612
-		Images: tilesets/highland/RiverExtra_42.png
+		Images: tilesets/highland/tiles/RiverExtra_42.png
 		Size: 3,3
 		Categories: River Extra
 		Tiles:
@@ -8157,7 +8157,7 @@ Templates:
 
 	Template@613:
 		Id: 613
-		Images: tilesets/highland/RiverExtra_43.png
+		Images: tilesets/highland/tiles/RiverExtra_43.png
 		Size: 4,3
 		Categories: River Extra
 		Tiles:
@@ -8174,7 +8174,7 @@ Templates:
 
 	Template@614:
 		Id: 614
-		Images: tilesets/highland/RiverExtra_44.png
+		Images: tilesets/highland/tiles/RiverExtra_44.png
 		Size: 3,3
 		Categories: River Extra
 		Tiles:
@@ -8189,7 +8189,7 @@ Templates:
 
 	Template@615:
 		Id: 615
-		Images: tilesets/highland/RiverExtra_45.png
+		Images: tilesets/highland/tiles/RiverExtra_45.png
 		Size: 3,3
 		Categories: River Extra
 		Tiles:
@@ -8204,7 +8204,7 @@ Templates:
 
 	Template@616:
 		Id: 616
-		Images: tilesets/highland/RiverExtra_46.png
+		Images: tilesets/highland/tiles/RiverExtra_46.png
 		Size: 4,4
 		Categories: River Extra
 		Tiles:
@@ -8223,7 +8223,7 @@ Templates:
 
 	Template@617:
 		Id: 617
-		Images: tilesets/highland/RiverExtra_47.png
+		Images: tilesets/highland/tiles/RiverExtra_47.png
 		Size: 4,4
 		Categories: River Extra
 		Tiles:
@@ -8242,7 +8242,7 @@ Templates:
 
 	Template@619:
 		Id: 619
-		Images: tilesets/highland/RiverExtra_48.png
+		Images: tilesets/highland/tiles/RiverExtra_48.png
 		Size: 4,4
 		Categories: River Extra
 		Tiles:
@@ -8261,7 +8261,7 @@ Templates:
 
 	Template@620:
 		Id: 620
-		Images: tilesets/highland/RiverExtra_49.png
+		Images: tilesets/highland/tiles/RiverExtra_49.png
 		Size: 4,4
 		Categories: River Extra
 		Tiles:
@@ -8280,7 +8280,7 @@ Templates:
 
 	Template@621:
 		Id: 621
-		Images: tilesets/highland/RiverExtra_9.png
+		Images: tilesets/highland/tiles/RiverExtra_9.png
 		Size: 4,5
 		Categories: River Extra
 		Tiles:
@@ -8302,7 +8302,7 @@ Templates:
 
 	Template@656:
 		Id: 656
-		Images: tilesets/highland/Street_1.png
+		Images: tilesets/highland/tiles/Street_1.png
 		Size: 7,2
 		Categories: Street
 		Tiles:
@@ -8323,7 +8323,7 @@ Templates:
 
 	Template@657:
 		Id: 657
-		Images: tilesets/highland/Street_3.png
+		Images: tilesets/highland/tiles/Street_3.png
 		Size: 3,2
 		Categories: Street
 		Tiles:
@@ -8336,7 +8336,7 @@ Templates:
 
 	Template@658:
 		Id: 658
-		Images: tilesets/highland/Street_4.png
+		Images: tilesets/highland/tiles/Street_4.png
 		Size: 3,2
 		Categories: Street
 		Tiles:
@@ -8349,7 +8349,7 @@ Templates:
 
 	Template@659:
 		Id: 659
-		Images: tilesets/highland/Street_5.png
+		Images: tilesets/highland/tiles/Street_5.png
 		Size: 3,4
 		Categories: Street
 		Tiles:
@@ -8367,7 +8367,7 @@ Templates:
 
 	Template@660:
 		Id: 660
-		Images: tilesets/highland/Street_7.png
+		Images: tilesets/highland/tiles/Street_7.png
 		Size: 2,2
 		Categories: Street
 		Tiles:
@@ -8377,7 +8377,7 @@ Templates:
 
 	Template@661:
 		Id: 661
-		Images: tilesets/highland/Street_10.png
+		Images: tilesets/highland/tiles/Street_10.png
 		Size: 3,2
 		Categories: Street
 		Tiles:
@@ -8389,7 +8389,7 @@ Templates:
 
 	Template@663:
 		Id: 663
-		Images: tilesets/highland/Street_11.png
+		Images: tilesets/highland/tiles/Street_11.png
 		Size: 3,2
 		Categories: Street
 		Tiles:
@@ -8401,7 +8401,7 @@ Templates:
 
 	Template@664:
 		Id: 664
-		Images: tilesets/highland/Street_17.png
+		Images: tilesets/highland/tiles/Street_17.png
 		Size: 3,2
 		Categories: Street
 		Tiles:
@@ -8413,7 +8413,7 @@ Templates:
 
 	Template@665:
 		Id: 665
-		Images: tilesets/highland/Street_16.png
+		Images: tilesets/highland/tiles/Street_16.png
 		Size: 3,2
 		Categories: Street
 		Tiles:
@@ -8425,7 +8425,7 @@ Templates:
 
 	Template@667:
 		Id: 667
-		Images: tilesets/highland/Street_12.png
+		Images: tilesets/highland/tiles/Street_12.png
 		Size: 3,3
 		Categories: Street
 		Tiles:
@@ -8438,7 +8438,7 @@ Templates:
 
 	Template@668:
 		Id: 668
-		Images: tilesets/highland/Street_13.png
+		Images: tilesets/highland/tiles/Street_13.png
 		Size: 2,7
 		Categories: Street
 		Tiles:
@@ -8459,7 +8459,7 @@ Templates:
 
 	Template@669:
 		Id: 669
-		Images: tilesets/highland/Street_14.png
+		Images: tilesets/highland/tiles/Street_14.png
 		Size: 2,7
 		Categories: Street
 		Tiles:
@@ -8480,7 +8480,7 @@ Templates:
 
 	Template@670:
 		Id: 670
-		Images: tilesets/highland/Street_24.png
+		Images: tilesets/highland/tiles/Street_24.png
 		Size: 3,4
 		Categories: Street
 		Tiles:
@@ -8498,7 +8498,7 @@ Templates:
 
 	Template@672:
 		Id: 672
-		Images: tilesets/highland/Street_18.png
+		Images: tilesets/highland/tiles/Street_18.png
 		Size: 3,3
 		Categories: Street
 		Tiles:
@@ -8512,7 +8512,7 @@ Templates:
 
 	Template@673:
 		Id: 673
-		Images: tilesets/highland/Street_20.png
+		Images: tilesets/highland/tiles/Street_20.png
 		Size: 2,2
 		Categories: Street
 		Tiles:
@@ -8522,7 +8522,7 @@ Templates:
 
 	Template@674:
 		Id: 674
-		Images: tilesets/highland/Street_23.png
+		Images: tilesets/highland/tiles/Street_23.png
 		Size: 3,2
 		Categories: Street
 		Tiles:
@@ -8535,7 +8535,7 @@ Templates:
 
 	Template@675:
 		Id: 675
-		Images: tilesets/highland/Street_22.png
+		Images: tilesets/highland/tiles/Street_22.png
 		Size: 3,2
 		Categories: Street
 		Tiles:
@@ -8548,7 +8548,7 @@ Templates:
 
 	Template@676:
 		Id: 676
-		Images: tilesets/highland/Street_19.png
+		Images: tilesets/highland/tiles/Street_19.png
 		Size: 2,2
 		Categories: Street
 		Tiles:
@@ -8558,7 +8558,7 @@ Templates:
 
 	Template@677:
 		Id: 677
-		Images: tilesets/highland/Street_15.png
+		Images: tilesets/highland/tiles/Street_15.png
 		Size: 3,3
 		Categories: Street
 		Tiles:
@@ -8572,7 +8572,7 @@ Templates:
 
 	Template@680:
 		Id: 680
-		Images: tilesets/highland/Street_9.png
+		Images: tilesets/highland/tiles/Street_9.png
 		Size: 3,3
 		Categories: Street
 		Tiles:
@@ -8585,7 +8585,7 @@ Templates:
 
 	Template@681:
 		Id: 681
-		Images: tilesets/highland/Street_6.png
+		Images: tilesets/highland/tiles/Street_6.png
 		Size: 2,2
 		Categories: Street
 		Tiles:
@@ -8595,7 +8595,7 @@ Templates:
 
 	Template@682:
 		Id: 682
-		Images: tilesets/highland/Street_2.png
+		Images: tilesets/highland/tiles/Street_2.png
 		Size: 3,4
 		Categories: Street
 		Tiles:
@@ -8613,7 +8613,7 @@ Templates:
 
 	Template@683:
 		Id: 683
-		Images: tilesets/highland/Street_25.png
+		Images: tilesets/highland/tiles/Street_25.png
 		Size: 7,2
 		Categories: Street
 		Tiles:
@@ -8634,7 +8634,7 @@ Templates:
 
 	Template@684:
 		Id: 684
-		Images: tilesets/highland/Street_26.png
+		Images: tilesets/highland/tiles/Street_26.png
 		Size: 7,2
 		Categories: Street
 		Tiles:
@@ -8655,7 +8655,7 @@ Templates:
 
 	Template@685:
 		Id: 685
-		Images: tilesets/highland/Street_27.png
+		Images: tilesets/highland/tiles/Street_27.png
 		Size: 5,6
 		Categories: Street
 		Tiles:
@@ -8686,7 +8686,7 @@ Templates:
 
 	Template@686:
 		Id: 686
-		Images: tilesets/highland/Street_28.png
+		Images: tilesets/highland/tiles/Street_28.png
 		Size: 2,4
 		Categories: Street
 		Tiles:
@@ -8701,7 +8701,7 @@ Templates:
 
 	Template@688:
 		Id: 688
-		Images: tilesets/highland/Street_39.png
+		Images: tilesets/highland/tiles/Street_39.png
 		Size: 4,2
 		Categories: Street
 		Tiles:
@@ -8716,7 +8716,7 @@ Templates:
 
 	Template@689:
 		Id: 689
-		Images: tilesets/highland/Street_30.png
+		Images: tilesets/highland/tiles/Street_30.png
 		Size: 4,3
 		Categories: Street
 		Tiles:
@@ -8735,7 +8735,7 @@ Templates:
 
 	Template@690:
 		Id: 690
-		Images: tilesets/highland/Street_31.png
+		Images: tilesets/highland/tiles/Street_31.png
 		Size: 3,4
 		Categories: Street
 		Tiles:
@@ -8754,7 +8754,7 @@ Templates:
 
 	Template@691:
 		Id: 691
-		Images: tilesets/highland/Street_32.png
+		Images: tilesets/highland/tiles/Street_32.png
 		Size: 4,4
 		Categories: Street
 		Tiles:
@@ -8777,7 +8777,7 @@ Templates:
 
 	Template@692:
 		Id: 692
-		Images: tilesets/highland/Street_33.png
+		Images: tilesets/highland/tiles/Street_33.png
 		Size: 3,4
 		Categories: Street
 		Tiles:
@@ -8796,7 +8796,7 @@ Templates:
 
 	Template@693:
 		Id: 693
-		Images: tilesets/highland/Street_34.png
+		Images: tilesets/highland/tiles/Street_34.png
 		Size: 4,3
 		Categories: Street
 		Tiles:
@@ -8815,7 +8815,7 @@ Templates:
 
 	Template@696:
 		Id: 696
-		Images: tilesets/highland/Street_35.png
+		Images: tilesets/highland/tiles/Street_35.png
 		Size: 2,2
 		Categories: Street
 		Tiles:
@@ -8826,7 +8826,7 @@ Templates:
 
 	Template@697:
 		Id: 697
-		Images: tilesets/highland/Street_38.png
+		Images: tilesets/highland/tiles/Street_38.png
 		Size: 2,2
 		Categories: Street
 		Tiles:
@@ -8837,7 +8837,7 @@ Templates:
 
 	Template@698:
 		Id: 698
-		Images: tilesets/highland/Street_37.png
+		Images: tilesets/highland/tiles/Street_37.png
 		Size: 2,2
 		Categories: Street
 		Tiles:
@@ -8848,7 +8848,7 @@ Templates:
 
 	Template@699:
 		Id: 699
-		Images: tilesets/highland/Street_36.png
+		Images: tilesets/highland/tiles/Street_36.png
 		Size: 2,2
 		Categories: Street
 		Tiles:
@@ -8859,7 +8859,7 @@ Templates:
 
 	Template@700:
 		Id: 700
-		Images: tilesets/highland/Street_29.png
+		Images: tilesets/highland/tiles/Street_29.png
 		Size: 1,2
 		Categories: Street
 		Tiles:
@@ -8868,7 +8868,7 @@ Templates:
 
 	Template@701:
 		Id: 701
-		Images: tilesets/highland/Street_21.png
+		Images: tilesets/highland/tiles/Street_21.png
 		Size: 3,4
 		Categories: Street
 		Tiles:
@@ -8886,7 +8886,7 @@ Templates:
 
 	Template@237:
 		Id: 237
-		Images: tilesets/highland/Transition_SE.png
+		Images: tilesets/highland/tiles/Transition_SE.png
 		Size: 4,3
 		Categories: Transition
 		Tiles:
@@ -8899,7 +8899,7 @@ Templates:
 
 	Template@238:
 		Id: 238
-		Images: tilesets/highland/Transition_SW.png
+		Images: tilesets/highland/tiles/Transition_SW.png
 		Size: 4,3
 		Categories: Transition
 		Tiles:
@@ -8912,7 +8912,7 @@ Templates:
 
 	Template@239:
 		Id: 239
-		Images: tilesets/highland/Transition_NE.png
+		Images: tilesets/highland/tiles/Transition_NE.png
 		Size: 4,3
 		Categories: Transition
 		Tiles:
@@ -8925,7 +8925,7 @@ Templates:
 
 	Template@240:
 		Id: 240
-		Images: tilesets/highland/Transition_NW.png
+		Images: tilesets/highland/tiles/Transition_NW.png
 		Size: 4,3
 		Categories: Transition
 		Tiles:
@@ -8938,7 +8938,7 @@ Templates:
 
 	Template@241:
 		Id: 241
-		Images: tilesets/highland/Transition_NW2N.png
+		Images: tilesets/highland/tiles/Transition_NW2N.png
 		Size: 4,4
 		Categories: Transition
 		Tiles:
@@ -8955,7 +8955,7 @@ Templates:
 
 	Template@242:
 		Id: 242
-		Images: tilesets/highland/Transition_NE2N.png
+		Images: tilesets/highland/tiles/Transition_NE2N.png
 		Size: 4,4
 		Categories: Transition
 		Tiles:
@@ -8972,7 +8972,7 @@ Templates:
 
 	Template@243:
 		Id: 243
-		Images: tilesets/highland/Transition_NE2E.png
+		Images: tilesets/highland/tiles/Transition_NE2E.png
 		Size: 4,4
 		Categories: Transition
 		Tiles:
@@ -8989,7 +8989,7 @@ Templates:
 
 	Template@244:
 		Id: 244
-		Images: tilesets/highland/Transition_NW2W.png
+		Images: tilesets/highland/tiles/Transition_NW2W.png
 		Size: 4,4
 		Categories: Transition
 		Tiles:
@@ -9006,7 +9006,7 @@ Templates:
 
 	Template@245:
 		Id: 245
-		Images: tilesets/highland/Transition_SE2E.png
+		Images: tilesets/highland/tiles/Transition_SE2E.png
 		Size: 4,4
 		Categories: Transition
 		Tiles:
@@ -9023,7 +9023,7 @@ Templates:
 
 	Template@246:
 		Id: 246
-		Images: tilesets/highland/Transition_SW2W.png
+		Images: tilesets/highland/tiles/Transition_SW2W.png
 		Size: 4,4
 		Categories: Transition
 		Tiles:
@@ -9040,7 +9040,7 @@ Templates:
 
 	Template@247:
 		Id: 247
-		Images: tilesets/highland/Transition_SE2S.png
+		Images: tilesets/highland/tiles/Transition_SE2S.png
 		Size: 4,4
 		Categories: Transition
 		Tiles:
@@ -9057,7 +9057,7 @@ Templates:
 
 	Template@248:
 		Id: 248
-		Images: tilesets/highland/Transition_SW2S.png
+		Images: tilesets/highland/tiles/Transition_SW2S.png
 		Size: 4,4
 		Categories: Transition
 		Tiles:
@@ -9074,7 +9074,7 @@ Templates:
 
 	Template@249:
 		Id: 249
-		Images: tilesets/highland/Transition_W2S.png
+		Images: tilesets/highland/tiles/Transition_W2S.png
 		Size: 3,3
 		Categories: Transition
 		Tiles:
@@ -9090,7 +9090,7 @@ Templates:
 
 	Template@250:
 		Id: 250
-		Images: tilesets/highland/Transition_E2S.png
+		Images: tilesets/highland/tiles/Transition_E2S.png
 		Size: 3,3
 		Categories: Transition
 		Tiles:
@@ -9106,7 +9106,7 @@ Templates:
 
 	Template@251:
 		Id: 251
-		Images: tilesets/highland/Transition_E2N.png
+		Images: tilesets/highland/tiles/Transition_E2N.png
 		Size: 3,3
 		Categories: Transition
 		Tiles:
@@ -9122,7 +9122,7 @@ Templates:
 
 	Template@252:
 		Id: 252
-		Images: tilesets/highland/Transition_W2N.png
+		Images: tilesets/highland/tiles/Transition_W2N.png
 		Size: 3,3
 		Categories: Transition
 		Tiles:
@@ -9138,7 +9138,7 @@ Templates:
 
 	Template@253:
 		Id: 253
-		Images: tilesets/highland/Transition_W.png
+		Images: tilesets/highland/tiles/Transition_W.png
 		Size: 4,2
 		Categories: Transition
 		Tiles:
@@ -9153,7 +9153,7 @@ Templates:
 
 	Template@254:
 		Id: 254
-		Images: tilesets/highland/Transition_N.png
+		Images: tilesets/highland/tiles/Transition_N.png
 		Size: 2,4
 		Categories: Transition
 		Tiles:
@@ -9168,7 +9168,7 @@ Templates:
 
 	Template@255:
 		Id: 255
-		Images: tilesets/highland/Transition_E.png
+		Images: tilesets/highland/tiles/Transition_E.png
 		Size: 4,2
 		Categories: Transition
 		Tiles:
@@ -9183,7 +9183,7 @@ Templates:
 
 	Template@256:
 		Id: 256
-		Images: tilesets/highland/Transition_S.png
+		Images: tilesets/highland/tiles/Transition_S.png
 		Size: 2,4
 		Categories: Transition
 		Tiles:
@@ -9198,7 +9198,7 @@ Templates:
 
 	Template@257:
 		Id: 257
-		Images: tilesets/highland/Transition_N2E.png
+		Images: tilesets/highland/tiles/Transition_N2E.png
 		Size: 4,4
 		Categories: Transition
 		Tiles:
@@ -9220,7 +9220,7 @@ Templates:
 
 	Template@258:
 		Id: 258
-		Images: tilesets/highland/Transition_S2E.png
+		Images: tilesets/highland/tiles/Transition_S2E.png
 		Size: 4,4
 		Categories: Transition
 		Tiles:
@@ -9242,7 +9242,7 @@ Templates:
 
 	Template@259:
 		Id: 259
-		Images: tilesets/highland/Transition_S2W.png
+		Images: tilesets/highland/tiles/Transition_S2W.png
 		Size: 4,4
 		Categories: Transition
 		Tiles:
@@ -9264,7 +9264,7 @@ Templates:
 
 	Template@260:
 		Id: 260
-		Images: tilesets/highland/Transition_N2W.png
+		Images: tilesets/highland/tiles/Transition_N2W.png
 		Size: 4,4
 		Categories: Transition
 		Tiles:
@@ -9286,7 +9286,7 @@ Templates:
 
 	Template@261:
 		Id: 261
-		Images: tilesets/highland/Transition_N2NE.png
+		Images: tilesets/highland/tiles/Transition_N2NE.png
 		Size: 4,4
 		Categories: Transition
 		Tiles:
@@ -9303,7 +9303,7 @@ Templates:
 
 	Template@262:
 		Id: 262
-		Images: tilesets/highland/Transition_E2NE.png
+		Images: tilesets/highland/tiles/Transition_E2NE.png
 		Size: 4,4
 		Categories: Transition
 		Tiles:
@@ -9320,7 +9320,7 @@ Templates:
 
 	Template@263:
 		Id: 263
-		Images: tilesets/highland/Transition_E2SE.png
+		Images: tilesets/highland/tiles/Transition_E2SE.png
 		Size: 4,4
 		Categories: Transition
 		Tiles:
@@ -9337,7 +9337,7 @@ Templates:
 
 	Template@264:
 		Id: 264
-		Images: tilesets/highland/Transition_S2SE.png
+		Images: tilesets/highland/tiles/Transition_S2SE.png
 		Size: 4,4
 		Categories: Transition
 		Tiles:
@@ -9354,7 +9354,7 @@ Templates:
 
 	Template@265:
 		Id: 265
-		Images: tilesets/highland/Transition_S2SW.png
+		Images: tilesets/highland/tiles/Transition_S2SW.png
 		Size: 4,4
 		Categories: Transition
 		Tiles:
@@ -9371,7 +9371,7 @@ Templates:
 
 	Template@266:
 		Id: 266
-		Images: tilesets/highland/Transition_W2SW.png
+		Images: tilesets/highland/tiles/Transition_W2SW.png
 		Size: 4,4
 		Categories: Transition
 		Tiles:
@@ -9388,7 +9388,7 @@ Templates:
 
 	Template@267:
 		Id: 267
-		Images: tilesets/highland/Transition_W2NW.png
+		Images: tilesets/highland/tiles/Transition_W2NW.png
 		Size: 4,4
 		Categories: Transition
 		Tiles:
@@ -9405,7 +9405,7 @@ Templates:
 
 	Template@268:
 		Id: 268
-		Images: tilesets/highland/Transition_N2NW.png
+		Images: tilesets/highland/tiles/Transition_N2NW.png
 		Size: 4,4
 		Categories: Transition
 		Tiles:
@@ -9422,7 +9422,7 @@ Templates:
 
 	Template@703:
 		Id: 703
-		Images: tilesets/highland/WidePath_3.png
+		Images: tilesets/highland/tiles/WidePath_3.png
 		Size: 3,3
 		Categories: Wide Path
 		Tiles:
@@ -9436,7 +9436,7 @@ Templates:
 
 	Template@704:
 		Id: 704
-		Images: tilesets/highland/WidePath_1.png
+		Images: tilesets/highland/tiles/WidePath_1.png
 		Size: 7,3
 		Categories: Wide Path
 		Tiles:
@@ -9464,7 +9464,7 @@ Templates:
 
 	Template@706:
 		Id: 706
-		Images: tilesets/highland/WidePath_2.png
+		Images: tilesets/highland/tiles/WidePath_2.png
 		Size: 3,3
 		Categories: Wide Path
 		Tiles:
@@ -9478,7 +9478,7 @@ Templates:
 
 	Template@710:
 		Id: 710
-		Images: tilesets/highland/WidePath_4.png
+		Images: tilesets/highland/tiles/WidePath_4.png
 		Size: 4,2
 		Categories: Wide Path
 		Tiles:
@@ -9491,7 +9491,7 @@ Templates:
 
 	Template@711:
 		Id: 711
-		Images: tilesets/highland/WidePath_17.png
+		Images: tilesets/highland/tiles/WidePath_17.png
 		Size: 4,2
 		Categories: Wide Path
 		Tiles:
@@ -9504,7 +9504,7 @@ Templates:
 
 	Template@712:
 		Id: 712
-		Images: tilesets/highland/WidePath_18.png
+		Images: tilesets/highland/tiles/WidePath_18.png
 		Size: 4,4
 		Categories: Wide Path
 		Tiles:
@@ -9523,7 +9523,7 @@ Templates:
 
 	Template@713:
 		Id: 713
-		Images: tilesets/highland/WidePath_19.png
+		Images: tilesets/highland/tiles/WidePath_19.png
 		Size: 4,4
 		Categories: Wide Path
 		Tiles:
@@ -9542,7 +9542,7 @@ Templates:
 
 	Template@718:
 		Id: 718
-		Images: tilesets/highland/WidePath_16.png
+		Images: tilesets/highland/tiles/WidePath_16.png
 		Size: 4,3
 		Categories: Wide Path
 		Tiles:
@@ -9557,7 +9557,7 @@ Templates:
 
 	Template@720:
 		Id: 720
-		Images: tilesets/highland/WidePath_15.png
+		Images: tilesets/highland/tiles/WidePath_15.png
 		Size: 3,6
 		Categories: Wide Path
 		Tiles:
@@ -9582,7 +9582,7 @@ Templates:
 
 	Template@721:
 		Id: 721
-		Images: tilesets/highland/WidePath_14.png
+		Images: tilesets/highland/tiles/WidePath_14.png
 		Size: 3,6
 		Categories: Wide Path
 		Tiles:
@@ -9607,7 +9607,7 @@ Templates:
 
 	Template@726:
 		Id: 726
-		Images: tilesets/highland/WidePath_5.png
+		Images: tilesets/highland/tiles/WidePath_5.png
 		Size: 4,3
 		Categories: Wide Path
 		Tiles:
@@ -9622,7 +9622,7 @@ Templates:
 
 	Template@729:
 		Id: 729
-		Images: tilesets/highland/WidePath_6.png
+		Images: tilesets/highland/tiles/WidePath_6.png
 		Size: 3,6
 		Categories: Wide Path
 		Tiles:
@@ -9647,7 +9647,7 @@ Templates:
 
 	Template@737:
 		Id: 737
-		Images: tilesets/highland/WidePath_13.png
+		Images: tilesets/highland/tiles/WidePath_13.png
 		Size: 4,3
 		Categories: Wide Path
 		Tiles:
@@ -9662,7 +9662,7 @@ Templates:
 
 	Template@738:
 		Id: 738
-		Images: tilesets/highland/WidePath_21.png
+		Images: tilesets/highland/tiles/WidePath_21.png
 		Size: 4,4
 		Categories: Wide Path
 		Tiles:
@@ -9681,7 +9681,7 @@ Templates:
 
 	Template@740:
 		Id: 740
-		Images: tilesets/highland/WidePath_20.png
+		Images: tilesets/highland/tiles/WidePath_20.png
 		Size: 4,4
 		Categories: Wide Path
 		Tiles:
@@ -9700,7 +9700,7 @@ Templates:
 
 	Template@741:
 		Id: 741
-		Images: tilesets/highland/WidePath_7.png
+		Images: tilesets/highland/tiles/WidePath_7.png
 		Size: 4,3
 		Categories: Wide Path
 		Tiles:
@@ -9715,7 +9715,7 @@ Templates:
 
 	Template@742:
 		Id: 742
-		Images: tilesets/highland/WidePath_8.png
+		Images: tilesets/highland/tiles/WidePath_8.png
 		Size: 4,2
 		Categories: Wide Path
 		Tiles:
@@ -9728,7 +9728,7 @@ Templates:
 
 	Template@743:
 		Id: 743
-		Images: tilesets/highland/WidePath_12.png
+		Images: tilesets/highland/tiles/WidePath_12.png
 		Size: 4,2
 		Categories: Wide Path
 		Tiles:
@@ -9741,7 +9741,7 @@ Templates:
 
 	Template@745:
 		Id: 745
-		Images: tilesets/highland/WidePath_11.png
+		Images: tilesets/highland/tiles/WidePath_11.png
 		Size: 3,3
 		Categories: Wide Path
 		Tiles:
@@ -9755,7 +9755,7 @@ Templates:
 
 	Template@746:
 		Id: 746
-		Images: tilesets/highland/WidePath_10.png
+		Images: tilesets/highland/tiles/WidePath_10.png
 		Size: 7,3
 		Categories: Wide Path
 		Tiles:
@@ -9783,7 +9783,7 @@ Templates:
 
 	Template@748:
 		Id: 748
-		Images: tilesets/highland/WidePath_9.png
+		Images: tilesets/highland/tiles/WidePath_9.png
 		Size: 3,3
 		Categories: Wide Path
 		Tiles:
@@ -9797,7 +9797,7 @@ Templates:
 
 	Template@751:
 		Id: 751
-		Images: tilesets/highland/WidePath_22.png
+		Images: tilesets/highland/tiles/WidePath_22.png
 		Size: 3,2
 		Categories: Wide Path
 		Tiles:
@@ -9810,7 +9810,7 @@ Templates:
 
 	Template@753:
 		Id: 753
-		Images: tilesets/highland/WidePath_23.png
+		Images: tilesets/highland/tiles/WidePath_23.png
 		Size: 2,3
 		Categories: Wide Path
 		Tiles:
@@ -9823,7 +9823,7 @@ Templates:
 
 	Template@755:
 		Id: 755
-		Images: tilesets/highland/WidePath_24.png
+		Images: tilesets/highland/tiles/WidePath_24.png
 		Size: 2,3
 		Categories: Wide Path
 		Tiles:
@@ -9836,7 +9836,7 @@ Templates:
 
 	Template@756:
 		Id: 756
-		Images: tilesets/highland/WidePath_25.png
+		Images: tilesets/highland/tiles/WidePath_25.png
 		Size: 3,2
 		Categories: Wide Path
 		Tiles:
@@ -9849,7 +9849,7 @@ Templates:
 
 	Template@830:
 		Id: 830
-		Images: tilesets/highland/WidePath_26.png
+		Images: tilesets/highland/tiles/WidePath_26.png
 		Size: 7,7
 		Categories: Wide Path
 		Tiles:
@@ -9889,7 +9889,7 @@ Templates:
 
 	Template@702:
 		Id: 702
-		Images: tilesets/highland/WidePathExtra_1.png
+		Images: tilesets/highland/tiles/WidePathExtra_1.png
 		Size: 4,4
 		Categories: Wide Path Extra
 		Tiles:
@@ -9911,7 +9911,7 @@ Templates:
 
 	Template@709:
 		Id: 709
-		Images: tilesets/highland/WidePathExtra_2.png
+		Images: tilesets/highland/tiles/WidePathExtra_2.png
 		Size: 4,4
 		Categories: Wide Path Extra
 		Tiles:
@@ -9933,7 +9933,7 @@ Templates:
 
 	Template@714:
 		Id: 714
-		Images: tilesets/highland/WidePathExtra_6.png
+		Images: tilesets/highland/tiles/WidePathExtra_6.png
 		Size: 2,4
 		Categories: Wide Path Extra
 		Tiles:
@@ -9947,7 +9947,7 @@ Templates:
 
 	Template@715:
 		Id: 715
-		Images: tilesets/highland/WidePathExtra_7.png
+		Images: tilesets/highland/tiles/WidePathExtra_7.png
 		Size: 2,4
 		Categories: Wide Path Extra
 		Tiles:
@@ -9961,7 +9961,7 @@ Templates:
 
 	Template@716:
 		Id: 716
-		Images: tilesets/highland/WidePathExtra_8.png
+		Images: tilesets/highland/tiles/WidePathExtra_8.png
 		Size: 3,3
 		Categories: Wide Path Extra
 		Tiles:
@@ -9975,7 +9975,7 @@ Templates:
 
 	Template@717:
 		Id: 717
-		Images: tilesets/highland/WidePathExtra_5.png
+		Images: tilesets/highland/tiles/WidePathExtra_5.png
 		Size: 3,3
 		Categories: Wide Path Extra
 		Tiles:
@@ -9989,7 +9989,7 @@ Templates:
 
 	Template@719:
 		Id: 719
-		Images: tilesets/highland/WidePathExtra_3.png
+		Images: tilesets/highland/tiles/WidePathExtra_3.png
 		Size: 5,3
 		Categories: Wide Path Extra
 		Tiles:
@@ -10006,7 +10006,7 @@ Templates:
 
 	Template@722:
 		Id: 722
-		Images: tilesets/highland/WidePathExtra_10.png
+		Images: tilesets/highland/tiles/WidePathExtra_10.png
 		Size: 3,3
 		Categories: Wide Path Extra
 		Tiles:
@@ -10020,7 +10020,7 @@ Templates:
 
 	Template@723:
 		Id: 723
-		Images: tilesets/highland/WidePathExtra_11.png
+		Images: tilesets/highland/tiles/WidePathExtra_11.png
 		Size: 2,4
 		Categories: Wide Path Extra
 		Tiles:
@@ -10034,7 +10034,7 @@ Templates:
 
 	Template@724:
 		Id: 724
-		Images: tilesets/highland/WidePathExtra_12.png
+		Images: tilesets/highland/tiles/WidePathExtra_12.png
 		Size: 2,4
 		Categories: Wide Path Extra
 		Tiles:
@@ -10048,7 +10048,7 @@ Templates:
 
 	Template@725:
 		Id: 725
-		Images: tilesets/highland/WidePathExtra_13.png
+		Images: tilesets/highland/tiles/WidePathExtra_13.png
 		Size: 3,3
 		Categories: Wide Path Extra
 		Tiles:
@@ -10062,7 +10062,7 @@ Templates:
 
 	Template@728:
 		Id: 728
-		Images: tilesets/highland/WidePathExtra_4.png
+		Images: tilesets/highland/tiles/WidePathExtra_4.png
 		Size: 5,3
 		Categories: Wide Path Extra
 		Tiles:
@@ -10079,7 +10079,7 @@ Templates:
 
 	Template@731:
 		Id: 731
-		Images: tilesets/highland/WidePathExtra_9.png
+		Images: tilesets/highland/tiles/WidePathExtra_9.png
 		Size: 4,3
 		Categories: Wide Path Extra
 		Tiles:
@@ -10098,7 +10098,7 @@ Templates:
 
 	Template@733:
 		Id: 733
-		Images: tilesets/highland/WidePathExtra_14.png
+		Images: tilesets/highland/tiles/WidePathExtra_14.png
 		Size: 5,3
 		Categories: Wide Path Extra
 		Tiles:
@@ -10115,7 +10115,7 @@ Templates:
 
 	Template@736:
 		Id: 736
-		Images: tilesets/highland/WidePathExtra_15.png
+		Images: tilesets/highland/tiles/WidePathExtra_15.png
 		Size: 5,3
 		Categories: Wide Path Extra
 		Tiles:
@@ -10132,7 +10132,7 @@ Templates:
 
 	Template@744:
 		Id: 744
-		Images: tilesets/highland/WidePathExtra_16.png
+		Images: tilesets/highland/tiles/WidePathExtra_16.png
 		Size: 4,4
 		Categories: Wide Path Extra
 		Tiles:
@@ -10154,7 +10154,7 @@ Templates:
 
 	Template@749:
 		Id: 749
-		Images: tilesets/highland/WidePathExtra_17.png
+		Images: tilesets/highland/tiles/WidePathExtra_17.png
 		Size: 4,4
 		Categories: Wide Path Extra
 		Tiles:

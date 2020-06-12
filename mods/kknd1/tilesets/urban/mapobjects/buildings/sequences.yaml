@@ -1,0 +1,228 @@
+urban_buildings_1:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 0
+
+urban_buildings_2:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 1
+
+urban_buildings_3:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 2
+
+urban_buildings_4:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 3
+
+urban_buildings_5:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 4
+
+urban_buildings_6:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 5
+
+urban_buildings_7:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 6
+
+urban_buildings_8:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 7
+
+urban_buildings_9:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 8
+
+urban_buildings_10:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 9
+
+urban_buildings_11:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 10
+
+urban_buildings_12:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 11
+
+urban_buildings_13:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 12
+
+urban_buildings_14:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 13
+
+urban_buildings_15:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 14
+
+urban_buildings_16:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 15
+
+urban_buildings_17:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 16
+
+urban_buildings_18:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 17
+
+urban_buildings_19:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 18
+
+urban_buildings_20:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 19
+
+urban_buildings_21:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 20
+
+urban_buildings_22:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 21
+
+urban_buildings_23:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 22
+
+urban_buildings_24:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 23
+
+urban_buildings_25:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 24
+
+urban_buildings_26:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 25
+
+urban_buildings_27:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 26
+
+urban_buildings_28:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 27
+
+urban_buildings_29:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 28
+
+urban_buildings_30:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 29
+
+urban_buildings_31:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 30
+
+urban_buildings_32:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 31
+
+urban_buildings_33:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 32
+
+urban_buildings_34:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 33
+
+urban_buildings_35:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 34
+
+urban_buildings_36:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 35
+
+urban_buildings_37:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 36
+
+urban_buildings_38:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 37
+
+urban_buildings_39:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 38
+
+urban_buildings_40:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 39
+
+urban_buildings_41:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 40
+
+urban_buildings_42:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 41
+
+urban_buildings_43:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 42
+
+urban_buildings_44:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 43
+
+urban_buildings_45:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 44
+
+urban_buildings_46:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 45
+
+urban_buildings_47:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 46
+
+urban_buildings_48:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 47
+
+urban_buildings_49:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 48
+
+urban_buildings_50:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 49
+
+urban_buildings_51:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 50
+
+urban_buildings_52:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 51
+
+urban_buildings_53:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 52
+
+urban_buildings_54:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 53
+		ZOffset: -5000
+
+urban_buildings_55:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 54
+
+urban_buildings_56:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 55
+
+urban_buildings_57:
+	idle: tilesets/urban/mapobjects/buildings/frames.png
+		Start: 56

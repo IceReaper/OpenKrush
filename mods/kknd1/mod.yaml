@@ -35,9 +35,6 @@ Rules:
 	kknd1|rules/misc.yaml
 	kknd1|rules/ai.yaml
 	kknd1|rules/mapobjects-neutral.yaml
-	kknd1|rules/mapobjects-highland.yaml
-	kknd1|rules/mapobjects-desert.yaml
-	kknd1|rules/mapobjects-urban.yaml
 	# TODO refactor above
 	kknd1|core/rules/mechanics/animated_building.yaml
 	kknd1|core/rules/mechanics/extracts_oil.yaml
@@ -131,6 +128,12 @@ Rules:
 	kknd1|actors/survivors/towers/missilebattery/rules.yaml
 	kknd1|actors/survivors/towers/cannontower/rules.yaml
 	kknd1|actors/survivors/walls/barricade/rules.yaml
+	kknd1|tilesets/desert/mapobjects/objects/rules.yaml
+	kknd1|tilesets/highland/mapobjects/objects/rules.yaml
+	kknd1|tilesets/highland/mapobjects/trees/rules.yaml
+	kknd1|tilesets/urban/mapobjects/buildings/rules.yaml
+	kknd1|tilesets/urban/mapobjects/objects/rules.yaml
+	kknd1|tilesets/urban/mapobjects/trees/rules.yaml
 
 Sequences:
 	kknd|sequences/mpspawn.yaml
@@ -138,9 +141,6 @@ Sequences:
 	kknd1|sequences/weapons.yaml
 	kknd1|sequences/survivors.yaml
 	kknd1|sequences/evolved.yaml
-	kknd1|sequences/mapobjects-highland.yaml
-	kknd1|sequences/mapobjects-desert.yaml
-	kknd1|sequences/mapobjects-urban.yaml
 	# TODO refactor above
 	kknd1|core/sequences/muzzle.yaml
 	kknd1|core/font.yaml
@@ -223,6 +223,12 @@ Sequences:
 	kknd1|actors/survivors/towers/missilebattery/sequences.yaml
 	kknd1|actors/survivors/towers/cannontower/sequences.yaml
 	kknd1|actors/survivors/walls/barricade/sequences.yaml
+	kknd1|tilesets/desert/mapobjects/objects/sequences.yaml
+	kknd1|tilesets/highland/mapobjects/objects/sequences.yaml
+	kknd1|tilesets/highland/mapobjects/trees/sequences.yaml
+	kknd1|tilesets/urban/mapobjects/buildings/sequences.yaml
+	kknd1|tilesets/urban/mapobjects/objects/sequences.yaml
+	kknd1|tilesets/urban/mapobjects/trees/sequences.yaml
 
 Weapons:
 	kknd1|weapons/misc.yaml

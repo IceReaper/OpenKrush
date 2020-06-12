@@ -1,0 +1,87 @@
+highland_trees_1:
+	idle: tilesets/highland/mapobjects/trees/frames.png
+		Start: 0
+
+highland_trees_2:
+	idle: tilesets/highland/mapobjects/trees/frames.png
+		Start: 1
+
+highland_trees_3:
+	idle: tilesets/highland/mapobjects/trees/frames.png
+		Start: 2
+
+highland_trees_4:
+	idle: tilesets/highland/mapobjects/trees/frames.png
+		Start: 3
+
+highland_trees_5:
+	idle: tilesets/highland/mapobjects/trees/frames.png
+		Start: 4
+
+highland_trees_6:
+	idle: tilesets/highland/mapobjects/trees/frames.png
+		Start: 5
+
+highland_trees_7:
+	idle: tilesets/highland/mapobjects/trees/frames.png
+		Start: 6
+
+highland_trees_8:
+	idle: tilesets/highland/mapobjects/trees/frames.png
+		Start: 7
+
+highland_trees_9:
+	idle: tilesets/highland/mapobjects/trees/frames.png
+		Start: 8
+
+highland_trees_10:
+	idle: tilesets/highland/mapobjects/trees/frames.png
+		Start: 9
+
+highland_trees_11:
+	idle: tilesets/highland/mapobjects/trees/frames.png
+		Start: 10
+
+highland_trees_12:
+	idle: tilesets/highland/mapobjects/trees/frames.png
+		Start: 11
+
+highland_trees_13:
+	idle: tilesets/highland/mapobjects/trees/frames.png
+		Start: 12
+
+highland_trees_14:
+	idle: tilesets/highland/mapobjects/trees/frames.png
+		Start: 13
+
+highland_trees_15:
+	idle: tilesets/highland/mapobjects/trees/frames.png
+		Start: 14
+
+highland_trees_16:
+	idle: tilesets/highland/mapobjects/trees/frames.png
+		Start: 15
+
+highland_trees_17:
+	idle: tilesets/highland/mapobjects/trees/frames.png
+		Start: 16
+
+highland_trees_18:
+	idle: tilesets/highland/mapobjects/trees/frames.png
+		Start: 17
+
+highland_trees_19:
+	idle: tilesets/highland/mapobjects/trees/frames.png
+		Start: 18
+
+highland_trees_20:
+	idle: tilesets/highland/mapobjects/trees/frames.png
+		Start: 19
+
+highland_trees_21:
+	idle: tilesets/highland/mapobjects/trees/frames.png
+		Start: 20
+
+highland_trees_22:
+	idle: tilesets/highland/mapobjects/trees/frames.png
+		Start: 21

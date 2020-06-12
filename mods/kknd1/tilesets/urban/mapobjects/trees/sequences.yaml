@@ -1,0 +1,47 @@
+urban_trees_1:
+	idle: tilesets/urban/mapobjects/trees/frames.png
+		Start: 0
+
+urban_trees_2:
+	idle: tilesets/urban/mapobjects/trees/frames.png
+		Start: 1
+
+urban_trees_3:
+	idle: tilesets/urban/mapobjects/trees/frames.png
+		Start: 2
+
+urban_trees_4:
+	idle: tilesets/urban/mapobjects/trees/frames.png
+		Start: 3
+
+urban_trees_5:
+	idle: tilesets/urban/mapobjects/trees/frames.png
+		Start: 4
+
+urban_trees_6:
+	idle: tilesets/urban/mapobjects/trees/frames.png
+		Start: 5
+
+urban_trees_7:
+	idle: tilesets/urban/mapobjects/trees/frames.png
+		Start: 6
+
+urban_trees_8:
+	idle: tilesets/urban/mapobjects/trees/frames.png
+		Start: 7
+
+urban_trees_9:
+	idle: tilesets/urban/mapobjects/trees/frames.png
+		Start: 8
+
+urban_trees_10:
+	idle: tilesets/urban/mapobjects/trees/frames.png
+		Start: 9
+
+urban_trees_11:
+	idle: tilesets/urban/mapobjects/trees/frames.png
+		Start: 10
+
+urban_trees_12:
+	idle: tilesets/urban/mapobjects/trees/frames.png
+		Start: 11

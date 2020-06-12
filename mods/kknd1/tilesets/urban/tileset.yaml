@@ -35,7 +35,7 @@ Terrain:
 Templates:
 	Template@2:
 		Id: 2
-		Images: tilesets/urban/Terrain_Dirt.png
+		Images: tilesets/urban/tiles/Terrain_Dirt.png
 		Size: 1,1
 		PickAny: true
 		Categories: Terrain
@@ -79,7 +79,7 @@ Templates:
 
 	Template@4:
 		Id: 4
-		Images: tilesets/urban/Terrain_Water.png
+		Images: tilesets/urban/tiles/Terrain_Water.png
 		Size: 1,1
 		PickAny: true
 		Categories: Terrain
@@ -123,7 +123,7 @@ Templates:
 
 	Template@1425:
 		Id: 1425
-		Images: tilesets/urban/Terrain_1.png
+		Images: tilesets/urban/tiles/Terrain_1.png
 		Size: 3,3
 		Categories: Terrain
 		Tiles:
@@ -139,7 +139,7 @@ Templates:
 
 	Template@1428:
 		Id: 1428
-		Images: tilesets/urban/Terrain_2.png
+		Images: tilesets/urban/tiles/Terrain_2.png
 		Size: 3,3
 		Categories: Terrain
 		Tiles:
@@ -155,7 +155,7 @@ Templates:
 
 	Template@1429:
 		Id: 1429
-		Images: tilesets/urban/Terrain_3.png
+		Images: tilesets/urban/tiles/Terrain_3.png
 		Size: 3,3
 		Categories: Terrain
 		Tiles:
@@ -171,7 +171,7 @@ Templates:
 
 	Template@1430:
 		Id: 1430
-		Images: tilesets/urban/Terrain_4.png
+		Images: tilesets/urban/tiles/Terrain_4.png
 		Size: 2,3
 		Categories: Terrain
 		Tiles:
@@ -184,7 +184,7 @@ Templates:
 
 	Template@1431:
 		Id: 1431
-		Images: tilesets/urban/Terrain_5.png
+		Images: tilesets/urban/tiles/Terrain_5.png
 		Size: 4,3
 		Categories: Terrain
 		Tiles:
@@ -203,7 +203,7 @@ Templates:
 
 	Template@1432:
 		Id: 1432
-		Images: tilesets/urban/Terrain_6.png
+		Images: tilesets/urban/tiles/Terrain_6.png
 		Size: 3,3
 		Categories: Terrain
 		Tiles:
@@ -219,7 +219,7 @@ Templates:
 
 	Template@1433:
 		Id: 1433
-		Images: tilesets/urban/Terrain_7.png
+		Images: tilesets/urban/tiles/Terrain_7.png
 		Size: 3,4
 		Categories: Terrain
 		Tiles:
@@ -238,7 +238,7 @@ Templates:
 
 	Template@103:
 		Id: 103
-		Images: tilesets/urban/Beach_SE.png
+		Images: tilesets/urban/tiles/Beach_SE.png
 		Size: 4,3
 		Categories: Beach
 		Tiles:
@@ -251,7 +251,7 @@ Templates:
 
 	Template@104:
 		Id: 104
-		Images: tilesets/urban/Beach_SW.png
+		Images: tilesets/urban/tiles/Beach_SW.png
 		Size: 4,3
 		Categories: Beach
 		Tiles:
@@ -264,7 +264,7 @@ Templates:
 
 	Template@105:
 		Id: 105
-		Images: tilesets/urban/Beach_NE.png
+		Images: tilesets/urban/tiles/Beach_NE.png
 		Size: 4,3
 		Categories: Beach
 		Tiles:
@@ -277,7 +277,7 @@ Templates:
 
 	Template@108:
 		Id: 108
-		Images: tilesets/urban/Beach_NW.png
+		Images: tilesets/urban/tiles/Beach_NW.png
 		Size: 4,3
 		Categories: Beach
 		Tiles:
@@ -290,7 +290,7 @@ Templates:
 
 	Template@111:
 		Id: 111
-		Images: tilesets/urban/Beach_NW2N.png
+		Images: tilesets/urban/tiles/Beach_NW2N.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -307,7 +307,7 @@ Templates:
 
 	Template@112:
 		Id: 112
-		Images: tilesets/urban/Beach_NE2N.png
+		Images: tilesets/urban/tiles/Beach_NE2N.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -324,7 +324,7 @@ Templates:
 
 	Template@113:
 		Id: 113
-		Images: tilesets/urban/Beach_NE2E.png
+		Images: tilesets/urban/tiles/Beach_NE2E.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -341,7 +341,7 @@ Templates:
 
 	Template@114:
 		Id: 114
-		Images: tilesets/urban/Beach_NW2W.png
+		Images: tilesets/urban/tiles/Beach_NW2W.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -358,7 +358,7 @@ Templates:
 
 	Template@116:
 		Id: 116
-		Images: tilesets/urban/Beach_SE2E.png
+		Images: tilesets/urban/tiles/Beach_SE2E.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -375,7 +375,7 @@ Templates:
 
 	Template@117:
 		Id: 117
-		Images: tilesets/urban/Beach_SW2W.png
+		Images: tilesets/urban/tiles/Beach_SW2W.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -392,7 +392,7 @@ Templates:
 
 	Template@118:
 		Id: 118
-		Images: tilesets/urban/Beach_SE2S.png
+		Images: tilesets/urban/tiles/Beach_SE2S.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -409,7 +409,7 @@ Templates:
 
 	Template@119:
 		Id: 119
-		Images: tilesets/urban/Beach_SW2S.png
+		Images: tilesets/urban/tiles/Beach_SW2S.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -426,7 +426,7 @@ Templates:
 
 	Template@121:
 		Id: 121
-		Images: tilesets/urban/Beach_W2S.png
+		Images: tilesets/urban/tiles/Beach_W2S.png
 		Size: 3,3
 		Categories: Beach
 		Tiles:
@@ -442,7 +442,7 @@ Templates:
 
 	Template@122:
 		Id: 122
-		Images: tilesets/urban/Beach_E2S.png
+		Images: tilesets/urban/tiles/Beach_E2S.png
 		Size: 3,3
 		Categories: Beach
 		Tiles:
@@ -458,7 +458,7 @@ Templates:
 
 	Template@123:
 		Id: 123
-		Images: tilesets/urban/Beach_E2N.png
+		Images: tilesets/urban/tiles/Beach_E2N.png
 		Size: 3,3
 		Categories: Beach
 		Tiles:
@@ -474,7 +474,7 @@ Templates:
 
 	Template@124:
 		Id: 124
-		Images: tilesets/urban/Beach_W2N.png
+		Images: tilesets/urban/tiles/Beach_W2N.png
 		Size: 3,3
 		Categories: Beach
 		Tiles:
@@ -490,7 +490,7 @@ Templates:
 
 	Template@125:
 		Id: 125
-		Images: tilesets/urban/Beach_W.png
+		Images: tilesets/urban/tiles/Beach_W.png
 		Size: 4,2
 		Categories: Beach
 		Tiles:
@@ -505,7 +505,7 @@ Templates:
 
 	Template@126:
 		Id: 126
-		Images: tilesets/urban/Beach_N.png
+		Images: tilesets/urban/tiles/Beach_N.png
 		Size: 2,4
 		Categories: Beach
 		Tiles:
@@ -520,7 +520,7 @@ Templates:
 
 	Template@127:
 		Id: 127
-		Images: tilesets/urban/Beach_E.png
+		Images: tilesets/urban/tiles/Beach_E.png
 		Size: 4,2
 		Categories: Beach
 		Tiles:
@@ -535,7 +535,7 @@ Templates:
 
 	Template@128:
 		Id: 128
-		Images: tilesets/urban/Beach_S.png
+		Images: tilesets/urban/tiles/Beach_S.png
 		Size: 2,4
 		Categories: Beach
 		Tiles:
@@ -550,7 +550,7 @@ Templates:
 
 	Template@131:
 		Id: 131
-		Images: tilesets/urban/Beach_N2E.png
+		Images: tilesets/urban/tiles/Beach_N2E.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -572,7 +572,7 @@ Templates:
 
 	Template@133:
 		Id: 133
-		Images: tilesets/urban/Beach_S2E.png
+		Images: tilesets/urban/tiles/Beach_S2E.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -594,7 +594,7 @@ Templates:
 
 	Template@134:
 		Id: 134
-		Images: tilesets/urban/Beach_S2W.png
+		Images: tilesets/urban/tiles/Beach_S2W.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -616,7 +616,7 @@ Templates:
 
 	Template@135:
 		Id: 135
-		Images: tilesets/urban/Beach_N2W.png
+		Images: tilesets/urban/tiles/Beach_N2W.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -638,7 +638,7 @@ Templates:
 
 	Template@136:
 		Id: 136
-		Images: tilesets/urban/Beach_N2NE.png
+		Images: tilesets/urban/tiles/Beach_N2NE.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -655,7 +655,7 @@ Templates:
 
 	Template@139:
 		Id: 139
-		Images: tilesets/urban/Beach_E2NE.png
+		Images: tilesets/urban/tiles/Beach_E2NE.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -672,7 +672,7 @@ Templates:
 
 	Template@140:
 		Id: 140
-		Images: tilesets/urban/Beach_E2SE.png
+		Images: tilesets/urban/tiles/Beach_E2SE.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -689,7 +689,7 @@ Templates:
 
 	Template@141:
 		Id: 141
-		Images: tilesets/urban/Beach_S2SE.png
+		Images: tilesets/urban/tiles/Beach_S2SE.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -706,7 +706,7 @@ Templates:
 
 	Template@142:
 		Id: 142
-		Images: tilesets/urban/Beach_S2SW.png
+		Images: tilesets/urban/tiles/Beach_S2SW.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -723,7 +723,7 @@ Templates:
 
 	Template@143:
 		Id: 143
-		Images: tilesets/urban/Beach_W2SW.png
+		Images: tilesets/urban/tiles/Beach_W2SW.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -740,7 +740,7 @@ Templates:
 
 	Template@145:
 		Id: 145
-		Images: tilesets/urban/Beach_W2NW.png
+		Images: tilesets/urban/tiles/Beach_W2NW.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -757,7 +757,7 @@ Templates:
 
 	Template@146:
 		Id: 146
-		Images: tilesets/urban/Beach_N2NW.png
+		Images: tilesets/urban/tiles/Beach_N2NW.png
 		Size: 4,4
 		Categories: Beach
 		Tiles:
@@ -774,7 +774,7 @@ Templates:
 
 	Template@1630:
 		Id: 1630
-		Images: tilesets/urban/Bridge_1.png
+		Images: tilesets/urban/tiles/Bridge_1.png
 		Size: 4,8
 		Categories: Bridge
 		Tiles:
@@ -813,7 +813,7 @@ Templates:
 
 	Template@1631:
 		Id: 1631
-		Images: tilesets/urban/Bridge_2.png
+		Images: tilesets/urban/tiles/Bridge_2.png
 		Size: 4,8
 		Categories: Bridge
 		Tiles:
@@ -852,7 +852,7 @@ Templates:
 
 	Template@1632:
 		Id: 1632
-		Images: tilesets/urban/Bridge_3.png
+		Images: tilesets/urban/tiles/Bridge_3.png
 		Size: 4,7
 		Categories: Bridge
 		Tiles:
@@ -887,7 +887,7 @@ Templates:
 
 	Template@1633:
 		Id: 1633
-		Images: tilesets/urban/Bridge_4.png
+		Images: tilesets/urban/tiles/Bridge_4.png
 		Size: 4,7
 		Categories: Bridge
 		Tiles:
@@ -922,7 +922,7 @@ Templates:
 
 	Template@1634:
 		Id: 1634
-		Images: tilesets/urban/Bridge_5.png
+		Images: tilesets/urban/tiles/Bridge_5.png
 		Size: 4,7
 		Categories: Bridge
 		Tiles:
@@ -957,7 +957,7 @@ Templates:
 
 	Template@1635:
 		Id: 1635
-		Images: tilesets/urban/Bridge_6.png
+		Images: tilesets/urban/tiles/Bridge_6.png
 		Size: 4,7
 		Categories: Bridge
 		Tiles:
@@ -992,7 +992,7 @@ Templates:
 
 	Template@1636:
 		Id: 1636
-		Images: tilesets/urban/Bridge_7.png
+		Images: tilesets/urban/tiles/Bridge_7.png
 		Size: 1,5
 		Categories: Bridge
 		Tiles:
@@ -1004,7 +1004,7 @@ Templates:
 
 	Template@1637:
 		Id: 1637
-		Images: tilesets/urban/Bridge_8.png
+		Images: tilesets/urban/tiles/Bridge_8.png
 		Size: 1,5
 		Categories: Bridge
 		Tiles:
@@ -1016,7 +1016,7 @@ Templates:
 
 	Template@1638:
 		Id: 1638
-		Images: tilesets/urban/Bridge_9.png
+		Images: tilesets/urban/tiles/Bridge_9.png
 		Size: 1,5
 		Categories: Bridge
 		Tiles:
@@ -1028,7 +1028,7 @@ Templates:
 
 	Template@1640:
 		Id: 1640
-		Images: tilesets/urban/Bridge_10.png
+		Images: tilesets/urban/tiles/Bridge_10.png
 		Size: 5,5
 		Categories: Bridge
 		Tiles:
@@ -1060,7 +1060,7 @@ Templates:
 
 	Template@1641:
 		Id: 1641
-		Images: tilesets/urban/Bridge_16.png
+		Images: tilesets/urban/tiles/Bridge_16.png
 		Size: 10,6
 		Categories: Bridge
 		Tiles:
@@ -1127,7 +1127,7 @@ Templates:
 
 	Template@1642:
 		Id: 1642
-		Images: tilesets/urban/Bridge_17.png
+		Images: tilesets/urban/tiles/Bridge_17.png
 		Size: 10,1
 		Categories: Bridge
 		Tiles:
@@ -1144,7 +1144,7 @@ Templates:
 
 	Template@1643:
 		Id: 1643
-		Images: tilesets/urban/Bridge_18.png
+		Images: tilesets/urban/tiles/Bridge_18.png
 		Size: 10,3
 		Categories: Bridge
 		Tiles:
@@ -1181,7 +1181,7 @@ Templates:
 
 	Template@1644:
 		Id: 1644
-		Images: tilesets/urban/Bridge_19.png
+		Images: tilesets/urban/tiles/Bridge_19.png
 		Size: 10,6
 		Categories: Bridge
 		Tiles:
@@ -1248,7 +1248,7 @@ Templates:
 
 	Template@1645:
 		Id: 1645
-		Images: tilesets/urban/Bridge_20.png
+		Images: tilesets/urban/tiles/Bridge_20.png
 		Size: 10,1
 		Categories: Bridge
 		Tiles:
@@ -1265,7 +1265,7 @@ Templates:
 
 	Template@1646:
 		Id: 1646
-		Images: tilesets/urban/Bridge_21.png
+		Images: tilesets/urban/tiles/Bridge_21.png
 		Size: 10,3
 		Categories: Bridge
 		Tiles:
@@ -1302,7 +1302,7 @@ Templates:
 
 	Template@1647:
 		Id: 1647
-		Images: tilesets/urban/Bridge_22.png
+		Images: tilesets/urban/tiles/Bridge_22.png
 		Size: 10,6
 		Categories: Bridge
 		Tiles:
@@ -1369,7 +1369,7 @@ Templates:
 
 	Template@1648:
 		Id: 1648
-		Images: tilesets/urban/Bridge_23.png
+		Images: tilesets/urban/tiles/Bridge_23.png
 		Size: 10,1
 		Categories: Bridge
 		Tiles:
@@ -1386,7 +1386,7 @@ Templates:
 
 	Template@1649:
 		Id: 1649
-		Images: tilesets/urban/Bridge_24.png
+		Images: tilesets/urban/tiles/Bridge_24.png
 		Size: 10,3
 		Categories: Bridge
 		Tiles:
@@ -1423,7 +1423,7 @@ Templates:
 
 	Template@1650:
 		Id: 1650
-		Images: tilesets/urban/Bridge_25.png
+		Images: tilesets/urban/tiles/Bridge_25.png
 		Size: 10,6
 		Categories: Bridge
 		Tiles:
@@ -1490,7 +1490,7 @@ Templates:
 
 	Template@1651:
 		Id: 1651
-		Images: tilesets/urban/Bridge_26.png
+		Images: tilesets/urban/tiles/Bridge_26.png
 		Size: 10,1
 		Categories: Bridge
 		Tiles:
@@ -1507,7 +1507,7 @@ Templates:
 
 	Template@1652:
 		Id: 1652
-		Images: tilesets/urban/Bridge_27.png
+		Images: tilesets/urban/tiles/Bridge_27.png
 		Size: 10,3
 		Categories: Bridge
 		Tiles:
@@ -1544,7 +1544,7 @@ Templates:
 
 	Template@1653:
 		Id: 1653
-		Images: tilesets/urban/Bridge_28.png
+		Images: tilesets/urban/tiles/Bridge_28.png
 		Size: 9,5
 		Categories: Bridge
 		Tiles:
@@ -1596,7 +1596,7 @@ Templates:
 
 	Template@1655:
 		Id: 1655
-		Images: tilesets/urban/Bridge_29.png
+		Images: tilesets/urban/tiles/Bridge_29.png
 		Size: 8,1
 		Categories: Bridge
 		Tiles:
@@ -1611,7 +1611,7 @@ Templates:
 
 	Template@1657:
 		Id: 1657
-		Images: tilesets/urban/Bridge_30.png
+		Images: tilesets/urban/tiles/Bridge_30.png
 		Size: 9,3
 		Categories: Bridge
 		Tiles:
@@ -1645,7 +1645,7 @@ Templates:
 
 	Template@1658:
 		Id: 1658
-		Images: tilesets/urban/Bridge_31.png
+		Images: tilesets/urban/tiles/Bridge_31.png
 		Size: 9,5
 		Categories: Bridge
 		Tiles:
@@ -1697,7 +1697,7 @@ Templates:
 
 	Template@1659:
 		Id: 1659
-		Images: tilesets/urban/Bridge_32.png
+		Images: tilesets/urban/tiles/Bridge_32.png
 		Size: 8,1
 		Categories: Bridge
 		Tiles:
@@ -1712,7 +1712,7 @@ Templates:
 
 	Template@1661:
 		Id: 1661
-		Images: tilesets/urban/Bridge_33.png
+		Images: tilesets/urban/tiles/Bridge_33.png
 		Size: 9,3
 		Categories: Bridge
 		Tiles:
@@ -1746,7 +1746,7 @@ Templates:
 
 	Template@1670:
 		Id: 1670
-		Images: tilesets/urban/Bridge_11.png
+		Images: tilesets/urban/tiles/Bridge_11.png
 		Size: 6,5
 		Categories: Bridge
 		Tiles:
@@ -1783,7 +1783,7 @@ Templates:
 
 	Template@1671:
 		Id: 1671
-		Images: tilesets/urban/Bridge_12.png
+		Images: tilesets/urban/tiles/Bridge_12.png
 		Size: 4,1
 		Categories: Bridge
 		Tiles:
@@ -1794,7 +1794,7 @@ Templates:
 
 	Template@1672:
 		Id: 1672
-		Images: tilesets/urban/Bridge_13.png
+		Images: tilesets/urban/tiles/Bridge_13.png
 		Size: 4,1
 		Categories: Bridge
 		Tiles:
@@ -1805,7 +1805,7 @@ Templates:
 
 	Template@1673:
 		Id: 1673
-		Images: tilesets/urban/Bridge_14.png
+		Images: tilesets/urban/tiles/Bridge_14.png
 		Size: 4,1
 		Categories: Bridge
 		Tiles:
@@ -1816,7 +1816,7 @@ Templates:
 
 	Template@1674:
 		Id: 1674
-		Images: tilesets/urban/Bridge_15.png
+		Images: tilesets/urban/tiles/Bridge_15.png
 		Size: 6,3
 		Categories: Bridge
 		Tiles:
@@ -1841,7 +1841,7 @@ Templates:
 
 	Template@1676:
 		Id: 1676
-		Images: tilesets/urban/Bridge_34.png
+		Images: tilesets/urban/tiles/Bridge_34.png
 		Size: 10,6
 		Categories: Bridge
 		Tiles:
@@ -1908,7 +1908,7 @@ Templates:
 
 	Template@1677:
 		Id: 1677
-		Images: tilesets/urban/Bridge_35.png
+		Images: tilesets/urban/tiles/Bridge_35.png
 		Size: 10,6
 		Categories: Bridge
 		Tiles:
@@ -1975,7 +1975,7 @@ Templates:
 
 	Template@1678:
 		Id: 1678
-		Images: tilesets/urban/Bridge_36.png
+		Images: tilesets/urban/tiles/Bridge_36.png
 		Size: 10,6
 		Categories: Bridge
 		Tiles:
@@ -2042,7 +2042,7 @@ Templates:
 
 	Template@1679:
 		Id: 1679
-		Images: tilesets/urban/Bridge_37.png
+		Images: tilesets/urban/tiles/Bridge_37.png
 		Size: 10,6
 		Categories: Bridge
 		Tiles:
@@ -2109,7 +2109,7 @@ Templates:
 
 	Template@1680:
 		Id: 1680
-		Images: tilesets/urban/Bridge_38.png
+		Images: tilesets/urban/tiles/Bridge_38.png
 		Size: 9,5
 		Categories: Bridge
 		Tiles:
@@ -2161,7 +2161,7 @@ Templates:
 
 	Template@1681:
 		Id: 1681
-		Images: tilesets/urban/Bridge_39.png
+		Images: tilesets/urban/tiles/Bridge_39.png
 		Size: 9,5
 		Categories: Bridge
 		Tiles:
@@ -2213,7 +2213,7 @@ Templates:
 
 	Template@1690:
 		Id: 1690
-		Images: tilesets/urban/Bridge_40.png
+		Images: tilesets/urban/tiles/Bridge_40.png
 		Size: 10,8
 		Categories: Bridge
 		Tiles:
@@ -2300,7 +2300,7 @@ Templates:
 
 	Template@1691:
 		Id: 1691
-		Images: tilesets/urban/Bridge_41.png
+		Images: tilesets/urban/tiles/Bridge_41.png
 		Size: 10,8
 		Categories: Bridge
 		Tiles:
@@ -2387,7 +2387,7 @@ Templates:
 
 	Template@1692:
 		Id: 1692
-		Images: tilesets/urban/Bridge_42.png
+		Images: tilesets/urban/tiles/Bridge_42.png
 		Size: 10,8
 		Categories: Bridge
 		Tiles:
@@ -2474,7 +2474,7 @@ Templates:
 
 	Template@1693:
 		Id: 1693
-		Images: tilesets/urban/Bridge_43.png
+		Images: tilesets/urban/tiles/Bridge_43.png
 		Size: 10,8
 		Categories: Bridge
 		Tiles:
@@ -2561,7 +2561,7 @@ Templates:
 
 	Template@1695:
 		Id: 1695
-		Images: tilesets/urban/Bridge_44.png
+		Images: tilesets/urban/tiles/Bridge_44.png
 		Size: 9,7
 		Categories: Bridge
 		Tiles:
@@ -2631,7 +2631,7 @@ Templates:
 
 	Template@1696:
 		Id: 1696
-		Images: tilesets/urban/Bridge_45.png
+		Images: tilesets/urban/tiles/Bridge_45.png
 		Size: 9,7
 		Categories: Bridge
 		Tiles:
@@ -2701,7 +2701,7 @@ Templates:
 
 	Template@1435:
 		Id: 1435
-		Images: tilesets/urban/Decoration_1.png
+		Images: tilesets/urban/tiles/Decoration_1.png
 		Size: 3,3
 		Categories: Decoration
 		Tiles:
@@ -2717,7 +2717,7 @@ Templates:
 
 	Template@1436:
 		Id: 1436
-		Images: tilesets/urban/Decoration_2.png
+		Images: tilesets/urban/tiles/Decoration_2.png
 		Size: 4,3
 		Categories: Decoration
 		Tiles:
@@ -2736,7 +2736,7 @@ Templates:
 
 	Template@1437:
 		Id: 1437
-		Images: tilesets/urban/Decoration_3.png
+		Images: tilesets/urban/tiles/Decoration_3.png
 		Size: 5,4
 		Categories: Decoration
 		Tiles:
@@ -2763,7 +2763,7 @@ Templates:
 
 	Template@1438:
 		Id: 1438
-		Images: tilesets/urban/Decoration_4.png
+		Images: tilesets/urban/tiles/Decoration_4.png
 		Size: 2,2
 		Categories: Decoration
 		Tiles:
@@ -2774,7 +2774,7 @@ Templates:
 
 	Template@1439:
 		Id: 1439
-		Images: tilesets/urban/Decoration_5.png
+		Images: tilesets/urban/tiles/Decoration_5.png
 		Size: 2,2
 		Categories: Decoration
 		Tiles:
@@ -2785,7 +2785,7 @@ Templates:
 
 	Template@1440:
 		Id: 1440
-		Images: tilesets/urban/Decoration_6.png
+		Images: tilesets/urban/tiles/Decoration_6.png
 		Size: 2,2
 		Categories: Decoration
 		Tiles:
@@ -2796,7 +2796,7 @@ Templates:
 
 	Template@1442:
 		Id: 1442
-		Images: tilesets/urban/Decoration_7.png
+		Images: tilesets/urban/tiles/Decoration_7.png
 		Size: 2,2
 		Categories: Decoration
 		Tiles:
@@ -2807,7 +2807,7 @@ Templates:
 
 	Template@1443:
 		Id: 1443
-		Images: tilesets/urban/Decoration_8.png
+		Images: tilesets/urban/tiles/Decoration_8.png
 		Size: 1,1
 		Categories: Decoration
 		Tiles:
@@ -2815,7 +2815,7 @@ Templates:
 
 	Template@1444:
 		Id: 1444
-		Images: tilesets/urban/Decoration_9.png
+		Images: tilesets/urban/tiles/Decoration_9.png
 		Size: 7,7
 		Categories: Decoration
 		Tiles:
@@ -2866,7 +2866,7 @@ Templates:
 
 	Template@1445:
 		Id: 1445
-		Images: tilesets/urban/Decoration_10.png
+		Images: tilesets/urban/tiles/Decoration_10.png
 		Size: 9,7
 		Categories: Decoration
 		Tiles:
@@ -2924,7 +2924,7 @@ Templates:
 
 	Template@1446:
 		Id: 1446
-		Images: tilesets/urban/Decoration_11.png
+		Images: tilesets/urban/tiles/Decoration_11.png
 		Size: 10,8
 		Categories: Decoration
 		Tiles:
@@ -2993,7 +2993,7 @@ Templates:
 
 	Template@1447:
 		Id: 1447
-		Images: tilesets/urban/Decoration_12.png
+		Images: tilesets/urban/tiles/Decoration_12.png
 		Size: 10,8
 		Categories: Decoration
 		Tiles:
@@ -3062,7 +3062,7 @@ Templates:
 
 	Template@1448:
 		Id: 1448
-		Images: tilesets/urban/Decoration_13.png
+		Images: tilesets/urban/tiles/Decoration_13.png
 		Size: 10,8
 		Categories: Decoration
 		Tiles:
@@ -3134,7 +3134,7 @@ Templates:
 
 	Template@1449:
 		Id: 1449
-		Images: tilesets/urban/Decoration_14.png
+		Images: tilesets/urban/tiles/Decoration_14.png
 		Size: 6,5
 		Categories: Decoration
 		Tiles:
@@ -3166,7 +3166,7 @@ Templates:
 
 	Template@1450:
 		Id: 1450
-		Images: tilesets/urban/Decoration_15.png
+		Images: tilesets/urban/tiles/Decoration_15.png
 		Size: 7,4
 		Categories: Decoration
 		Tiles:
@@ -3197,7 +3197,7 @@ Templates:
 
 	Template@1451:
 		Id: 1451
-		Images: tilesets/urban/Decoration_16.png
+		Images: tilesets/urban/tiles/Decoration_16.png
 		Size: 18,8
 		Categories: Decoration
 		Tiles:
@@ -3308,7 +3308,7 @@ Templates:
 
 	Template@1454:
 		Id: 1454
-		Images: tilesets/urban/Decoration_17.png
+		Images: tilesets/urban/tiles/Decoration_17.png
 		Size: 5,6
 		Categories: Decoration
 		Tiles:
@@ -3339,7 +3339,7 @@ Templates:
 
 	Template@1456:
 		Id: 1456
-		Images: tilesets/urban/Decoration_18.png
+		Images: tilesets/urban/tiles/Decoration_18.png
 		Size: 5,6
 		Categories: Decoration
 		Tiles:
@@ -3371,7 +3371,7 @@ Templates:
 
 	Template@1457:
 		Id: 1457
-		Images: tilesets/urban/Decoration_26.png
+		Images: tilesets/urban/tiles/Decoration_26.png
 		Size: 2,2
 		Categories: Decoration
 		Tiles:
@@ -3382,7 +3382,7 @@ Templates:
 
 	Template@1458:
 		Id: 1458
-		Images: tilesets/urban/Decoration_19.png
+		Images: tilesets/urban/tiles/Decoration_19.png
 		Size: 1,1
 		Categories: Decoration
 		Tiles:
@@ -3390,7 +3390,7 @@ Templates:
 
 	Template@1459:
 		Id: 1459
-		Images: tilesets/urban/Decoration_20.png
+		Images: tilesets/urban/tiles/Decoration_20.png
 		Size: 2,2
 		Categories: Decoration
 		Tiles:
@@ -3401,7 +3401,7 @@ Templates:
 
 	Template@1460:
 		Id: 1460
-		Images: tilesets/urban/Decoration_21.png
+		Images: tilesets/urban/tiles/Decoration_21.png
 		Size: 1,2
 		Categories: Decoration
 		Tiles:
@@ -3410,7 +3410,7 @@ Templates:
 
 	Template@1461:
 		Id: 1461
-		Images: tilesets/urban/Decoration_22.png
+		Images: tilesets/urban/tiles/Decoration_22.png
 		Size: 1,2
 		Categories: Decoration
 		Tiles:
@@ -3419,7 +3419,7 @@ Templates:
 
 	Template@1462:
 		Id: 1462
-		Images: tilesets/urban/Decoration_23.png
+		Images: tilesets/urban/tiles/Decoration_23.png
 		Size: 2,2
 		Categories: Decoration
 		Tiles:
@@ -3430,7 +3430,7 @@ Templates:
 
 	Template@1463:
 		Id: 1463
-		Images: tilesets/urban/Decoration_24.png
+		Images: tilesets/urban/tiles/Decoration_24.png
 		Size: 1,2
 		Categories: Decoration
 		Tiles:
@@ -3439,7 +3439,7 @@ Templates:
 
 	Template@1464:
 		Id: 1464
-		Images: tilesets/urban/Decoration_25.png
+		Images: tilesets/urban/tiles/Decoration_25.png
 		Size: 2,2
 		Categories: Decoration
 		Tiles:
@@ -3450,7 +3450,7 @@ Templates:
 
 	Template@1466:
 		Id: 1466
-		Images: tilesets/urban/Decoration_27.png
+		Images: tilesets/urban/tiles/Decoration_27.png
 		Size: 1,2
 		Categories: Decoration
 		Tiles:
@@ -3459,7 +3459,7 @@ Templates:
 
 	Template@1468:
 		Id: 1468
-		Images: tilesets/urban/Decoration_28.png
+		Images: tilesets/urban/tiles/Decoration_28.png
 		Size: 1,1
 		Categories: Decoration
 		Tiles:
@@ -3467,7 +3467,7 @@ Templates:
 
 	Template@6:
 		Id: 6
-		Images: tilesets/urban/DirtCliff_N_A.png
+		Images: tilesets/urban/tiles/DirtCliff_N_A.png
 		Size: 4,2
 		Categories: Dirt Cliff
 		Tiles:
@@ -3482,7 +3482,7 @@ Templates:
 
 	Template@7:
 		Id: 7
-		Images: tilesets/urban/DirtCliff_N_B.png
+		Images: tilesets/urban/tiles/DirtCliff_N_B.png
 		Size: 4,2
 		Categories: Dirt Cliff
 		Tiles:
@@ -3497,7 +3497,7 @@ Templates:
 
 	Template@8:
 		Id: 8
-		Images: tilesets/urban/DirtCliff_NE.png
+		Images: tilesets/urban/tiles/DirtCliff_NE.png
 		Size: 3,2
 		Categories: Dirt Cliff
 		Tiles:
@@ -3508,7 +3508,7 @@ Templates:
 
 	Template@9:
 		Id: 9
-		Images: tilesets/urban/DirtCliff_E_A.png
+		Images: tilesets/urban/tiles/DirtCliff_E_A.png
 		Size: 3,4
 		Categories: Dirt Cliff
 		Tiles:
@@ -3527,7 +3527,7 @@ Templates:
 
 	Template@10:
 		Id: 10
-		Images: tilesets/urban/DirtCliff_E_B.png
+		Images: tilesets/urban/tiles/DirtCliff_E_B.png
 		Size: 3,4
 		Categories: Dirt Cliff
 		Tiles:
@@ -3546,7 +3546,7 @@ Templates:
 
 	Template@11:
 		Id: 11
-		Images: tilesets/urban/DirtCliff_S_A.png
+		Images: tilesets/urban/tiles/DirtCliff_S_A.png
 		Size: 4,3
 		Categories: Dirt Cliff
 		Tiles:
@@ -3565,7 +3565,7 @@ Templates:
 
 	Template@12:
 		Id: 12
-		Images: tilesets/urban/DirtCliff_S_B.png
+		Images: tilesets/urban/tiles/DirtCliff_S_B.png
 		Size: 4,3
 		Categories: Dirt Cliff
 		Tiles:
@@ -3584,7 +3584,7 @@ Templates:
 
 	Template@13:
 		Id: 13
-		Images: tilesets/urban/DirtCliff_SW.png
+		Images: tilesets/urban/tiles/DirtCliff_SW.png
 		Size: 3,2
 		Categories: Dirt Cliff
 		Tiles:
@@ -3595,7 +3595,7 @@ Templates:
 
 	Template@14:
 		Id: 14
-		Images: tilesets/urban/DirtCliff_SE.png
+		Images: tilesets/urban/tiles/DirtCliff_SE.png
 		Size: 3,2
 		Categories: Dirt Cliff
 		Tiles:
@@ -3606,7 +3606,7 @@ Templates:
 
 	Template@15:
 		Id: 15
-		Images: tilesets/urban/DirtCliff_NW.png
+		Images: tilesets/urban/tiles/DirtCliff_NW.png
 		Size: 3,2
 		Categories: Dirt Cliff
 		Tiles:
@@ -3617,7 +3617,7 @@ Templates:
 
 	Template@16:
 		Id: 16
-		Images: tilesets/urban/DirtCliff_W_A.png
+		Images: tilesets/urban/tiles/DirtCliff_W_A.png
 		Size: 3,4
 		Categories: Dirt Cliff
 		Tiles:
@@ -3636,7 +3636,7 @@ Templates:
 
 	Template@17:
 		Id: 17
-		Images: tilesets/urban/DirtCliff_W_B.png
+		Images: tilesets/urban/tiles/DirtCliff_W_B.png
 		Size: 3,4
 		Categories: Dirt Cliff
 		Tiles:
@@ -3655,7 +3655,7 @@ Templates:
 
 	Template@18:
 		Id: 18
-		Images: tilesets/urban/DirtCliff_N2E.png
+		Images: tilesets/urban/tiles/DirtCliff_N2E.png
 		Size: 3,3
 		Categories: Dirt Cliff
 		Tiles:
@@ -3671,7 +3671,7 @@ Templates:
 
 	Template@20:
 		Id: 20
-		Images: tilesets/urban/DirtCliff_S2E.png
+		Images: tilesets/urban/tiles/DirtCliff_S2E.png
 		Size: 3,4
 		Categories: Dirt Cliff
 		Tiles:
@@ -3687,7 +3687,7 @@ Templates:
 
 	Template@21:
 		Id: 21
-		Images: tilesets/urban/DirtCliff_S2W.png
+		Images: tilesets/urban/tiles/DirtCliff_S2W.png
 		Size: 3,4
 		Categories: Dirt Cliff
 		Tiles:
@@ -3703,7 +3703,7 @@ Templates:
 
 	Template@22:
 		Id: 22
-		Images: tilesets/urban/DirtCliff_N2W.png
+		Images: tilesets/urban/tiles/DirtCliff_N2W.png
 		Size: 3,3
 		Categories: Dirt Cliff
 		Tiles:
@@ -3719,7 +3719,7 @@ Templates:
 
 	Template@23:
 		Id: 23
-		Images: tilesets/urban/DirtCliff_N2NE.png
+		Images: tilesets/urban/tiles/DirtCliff_N2NE.png
 		Size: 2,2
 		Categories: Dirt Cliff
 		Tiles:
@@ -3730,7 +3730,7 @@ Templates:
 
 	Template@24:
 		Id: 24
-		Images: tilesets/urban/DirtCliff_N2NW.png
+		Images: tilesets/urban/tiles/DirtCliff_N2NW.png
 		Size: 2,2
 		Categories: Dirt Cliff
 		Tiles:
@@ -3741,7 +3741,7 @@ Templates:
 
 	Template@25:
 		Id: 25
-		Images: tilesets/urban/DirtCliff_W2NW.png
+		Images: tilesets/urban/tiles/DirtCliff_W2NW.png
 		Size: 3,3
 		Categories: Dirt Cliff
 		Tiles:
@@ -3756,7 +3756,7 @@ Templates:
 
 	Template@26:
 		Id: 26
-		Images: tilesets/urban/DirtCliff_E2NE.png
+		Images: tilesets/urban/tiles/DirtCliff_E2NE.png
 		Size: 3,3
 		Categories: Dirt Cliff
 		Tiles:
@@ -3771,7 +3771,7 @@ Templates:
 
 	Template@28:
 		Id: 28
-		Images: tilesets/urban/DirtCliff_E2SE.png
+		Images: tilesets/urban/tiles/DirtCliff_E2SE.png
 		Size: 3,2
 		Categories: Dirt Cliff
 		Tiles:
@@ -3783,7 +3783,7 @@ Templates:
 
 	Template@29:
 		Id: 29
-		Images: tilesets/urban/DirtCliff_S2SE.png
+		Images: tilesets/urban/tiles/DirtCliff_S2SE.png
 		Size: 2,3
 		Categories: Dirt Cliff
 		Tiles:
@@ -3794,7 +3794,7 @@ Templates:
 
 	Template@30:
 		Id: 30
-		Images: tilesets/urban/DirtCliff_S2SW.png
+		Images: tilesets/urban/tiles/DirtCliff_S2SW.png
 		Size: 2,3
 		Categories: Dirt Cliff
 		Tiles:
@@ -3805,7 +3805,7 @@ Templates:
 
 	Template@31:
 		Id: 31
-		Images: tilesets/urban/DirtCliff_W2SW.png
+		Images: tilesets/urban/tiles/DirtCliff_W2SW.png
 		Size: 3,2
 		Categories: Dirt Cliff
 		Tiles:
@@ -3817,7 +3817,7 @@ Templates:
 
 	Template@44:
 		Id: 44
-		Images: tilesets/urban/DirtCliff_W2S.png
+		Images: tilesets/urban/tiles/DirtCliff_W2S.png
 		Size: 3,3
 		Categories: Dirt Cliff
 		Tiles:
@@ -3833,7 +3833,7 @@ Templates:
 
 	Template@45:
 		Id: 45
-		Images: tilesets/urban/DirtCliff_E2S.png
+		Images: tilesets/urban/tiles/DirtCliff_E2S.png
 		Size: 3,3
 		Categories: Dirt Cliff
 		Tiles:
@@ -3849,7 +3849,7 @@ Templates:
 
 	Template@47:
 		Id: 47
-		Images: tilesets/urban/DirtCliff_E2N.png
+		Images: tilesets/urban/tiles/DirtCliff_E2N.png
 		Size: 3,3
 		Categories: Dirt Cliff
 		Tiles:
@@ -3865,7 +3865,7 @@ Templates:
 
 	Template@48:
 		Id: 48
-		Images: tilesets/urban/DirtCliff_W2N.png
+		Images: tilesets/urban/tiles/DirtCliff_W2N.png
 		Size: 3,3
 		Categories: Dirt Cliff
 		Tiles:
@@ -3881,7 +3881,7 @@ Templates:
 
 	Template@50:
 		Id: 50
-		Images: tilesets/urban/DirtCliff_SE2E.png
+		Images: tilesets/urban/tiles/DirtCliff_SE2E.png
 		Size: 3,2
 		Categories: Dirt Cliff
 		Tiles:
@@ -3894,7 +3894,7 @@ Templates:
 
 	Template@51:
 		Id: 51
-		Images: tilesets/urban/DirtCliff_SW2W.png
+		Images: tilesets/urban/tiles/DirtCliff_SW2W.png
 		Size: 3,2
 		Categories: Dirt Cliff
 		Tiles:
@@ -3907,7 +3907,7 @@ Templates:
 
 	Template@52:
 		Id: 52
-		Images: tilesets/urban/DirtCliff_SE2S.png
+		Images: tilesets/urban/tiles/DirtCliff_SE2S.png
 		Size: 2,2
 		Categories: Dirt Cliff
 		Tiles:
@@ -3917,7 +3917,7 @@ Templates:
 
 	Template@54:
 		Id: 54
-		Images: tilesets/urban/DirtCliff_SW2S.png
+		Images: tilesets/urban/tiles/DirtCliff_SW2S.png
 		Size: 2,2
 		Categories: Dirt Cliff
 		Tiles:
@@ -3927,7 +3927,7 @@ Templates:
 
 	Template@55:
 		Id: 55
-		Images: tilesets/urban/DirtCliff_NE2E.png
+		Images: tilesets/urban/tiles/DirtCliff_NE2E.png
 		Size: 2,2
 		Categories: Dirt Cliff
 		Tiles:
@@ -3938,7 +3938,7 @@ Templates:
 
 	Template@56:
 		Id: 56
-		Images: tilesets/urban/DirtCliff_NW2W.png
+		Images: tilesets/urban/tiles/DirtCliff_NW2W.png
 		Size: 2,2
 		Categories: Dirt Cliff
 		Tiles:
@@ -3949,7 +3949,7 @@ Templates:
 
 	Template@57:
 		Id: 57
-		Images: tilesets/urban/DirtCliff_NE2N.png
+		Images: tilesets/urban/tiles/DirtCliff_NE2N.png
 		Size: 1,2
 		Categories: Dirt Cliff
 		Tiles:
@@ -3958,7 +3958,7 @@ Templates:
 
 	Template@58:
 		Id: 58
-		Images: tilesets/urban/DirtCliff_NW2N.png
+		Images: tilesets/urban/tiles/DirtCliff_NW2N.png
 		Size: 1,2
 		Categories: Dirt Cliff
 		Tiles:
@@ -3967,7 +3967,7 @@ Templates:
 
 	Template@1516:
 		Id: 1516
-		Images: tilesets/urban/DirtCliffExtra_1.png
+		Images: tilesets/urban/tiles/DirtCliffExtra_1.png
 		Size: 8,2
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -3990,7 +3990,7 @@ Templates:
 
 	Template@1517:
 		Id: 1517
-		Images: tilesets/urban/DirtCliffExtra_2.png
+		Images: tilesets/urban/tiles/DirtCliffExtra_2.png
 		Size: 6,2
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -4009,7 +4009,7 @@ Templates:
 
 	Template@1518:
 		Id: 1518
-		Images: tilesets/urban/DirtCliffExtra_3.png
+		Images: tilesets/urban/tiles/DirtCliffExtra_3.png
 		Size: 5,3
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -4027,7 +4027,7 @@ Templates:
 
 	Template@1519:
 		Id: 1519
-		Images: tilesets/urban/DirtCliffExtra_4.png
+		Images: tilesets/urban/tiles/DirtCliffExtra_4.png
 		Size: 5,3
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -4045,7 +4045,7 @@ Templates:
 
 	Template@1520:
 		Id: 1520
-		Images: tilesets/urban/DirtCliffExtra_5.png
+		Images: tilesets/urban/tiles/DirtCliffExtra_5.png
 		Size: 3,2
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -4058,7 +4058,7 @@ Templates:
 
 	Template@1521:
 		Id: 1521
-		Images: tilesets/urban/DirtCliffExtra_6.png
+		Images: tilesets/urban/tiles/DirtCliffExtra_6.png
 		Size: 3,4
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -4077,7 +4077,7 @@ Templates:
 
 	Template@1522:
 		Id: 1522
-		Images: tilesets/urban/DirtCliffExtra_7.png
+		Images: tilesets/urban/tiles/DirtCliffExtra_7.png
 		Size: 3,4
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -4096,7 +4096,7 @@ Templates:
 
 	Template@1523:
 		Id: 1523
-		Images: tilesets/urban/DirtCliffExtra_8.png
+		Images: tilesets/urban/tiles/DirtCliffExtra_8.png
 		Size: 3,2
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -4109,7 +4109,7 @@ Templates:
 
 	Template@1524:
 		Id: 1524
-		Images: tilesets/urban/DirtCliffExtra_9.png
+		Images: tilesets/urban/tiles/DirtCliffExtra_9.png
 		Size: 5,3
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -4129,7 +4129,7 @@ Templates:
 
 	Template@1525:
 		Id: 1525
-		Images: tilesets/urban/DirtCliffExtra_10.png
+		Images: tilesets/urban/tiles/DirtCliffExtra_10.png
 		Size: 3,5
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -4151,7 +4151,7 @@ Templates:
 
 	Template@1526:
 		Id: 1526
-		Images: tilesets/urban/DirtCliffExtra_11.png
+		Images: tilesets/urban/tiles/DirtCliffExtra_11.png
 		Size: 3,5
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -4173,7 +4173,7 @@ Templates:
 
 	Template@1527:
 		Id: 1527
-		Images: tilesets/urban/DirtCliffExtra_12.png
+		Images: tilesets/urban/tiles/DirtCliffExtra_12.png
 		Size: 5,3
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -4193,7 +4193,7 @@ Templates:
 
 	Template@1528:
 		Id: 1528
-		Images: tilesets/urban/DirtCliffExtra_13.png
+		Images: tilesets/urban/tiles/DirtCliffExtra_13.png
 		Size: 6,4
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -4218,7 +4218,7 @@ Templates:
 
 	Template@1531:
 		Id: 1531
-		Images: tilesets/urban/DirtCliffExtra_14.png
+		Images: tilesets/urban/tiles/DirtCliffExtra_14.png
 		Size: 7,3
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -4246,7 +4246,7 @@ Templates:
 
 	Template@1533:
 		Id: 1533
-		Images: tilesets/urban/DirtCliffExtra_15.png
+		Images: tilesets/urban/tiles/DirtCliffExtra_15.png
 		Size: 6,4
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -4271,7 +4271,7 @@ Templates:
 
 	Template@1535:
 		Id: 1535
-		Images: tilesets/urban/DirtCliffExtra_16.png
+		Images: tilesets/urban/tiles/DirtCliffExtra_16.png
 		Size: 3,6
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -4296,7 +4296,7 @@ Templates:
 
 	Template@1536:
 		Id: 1536
-		Images: tilesets/urban/DirtCliffExtra_17.png
+		Images: tilesets/urban/tiles/DirtCliffExtra_17.png
 		Size: 3,6
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -4321,7 +4321,7 @@ Templates:
 
 	Template@1537:
 		Id: 1537
-		Images: tilesets/urban/DirtCliffExtra_18.png
+		Images: tilesets/urban/tiles/DirtCliffExtra_18.png
 		Size: 5,5
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -4353,7 +4353,7 @@ Templates:
 
 	Template@1538:
 		Id: 1538
-		Images: tilesets/urban/DirtCliffExtra_19.png
+		Images: tilesets/urban/tiles/DirtCliffExtra_19.png
 		Size: 5,5
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -4385,7 +4385,7 @@ Templates:
 
 	Template@1539:
 		Id: 1539
-		Images: tilesets/urban/DirtCliffExtra_20.png
+		Images: tilesets/urban/tiles/DirtCliffExtra_20.png
 		Size: 5,5
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -4417,7 +4417,7 @@ Templates:
 
 	Template@1540:
 		Id: 1540
-		Images: tilesets/urban/DirtCliffExtra_21.png
+		Images: tilesets/urban/tiles/DirtCliffExtra_21.png
 		Size: 3,5
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -4439,7 +4439,7 @@ Templates:
 
 	Template@1541:
 		Id: 1541
-		Images: tilesets/urban/DirtCliffExtra_22.png
+		Images: tilesets/urban/tiles/DirtCliffExtra_22.png
 		Size: 4,5
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -4466,7 +4466,7 @@ Templates:
 
 	Template@1542:
 		Id: 1542
-		Images: tilesets/urban/DirtCliffExtra_23.png
+		Images: tilesets/urban/tiles/DirtCliffExtra_23.png
 		Size: 4,5
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -4493,7 +4493,7 @@ Templates:
 
 	Template@1543:
 		Id: 1543
-		Images: tilesets/urban/DirtCliffExtra_24.png
+		Images: tilesets/urban/tiles/DirtCliffExtra_24.png
 		Size: 3,5
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -4515,7 +4515,7 @@ Templates:
 
 	Template@1544:
 		Id: 1544
-		Images: tilesets/urban/DirtCliffExtra_25.png
+		Images: tilesets/urban/tiles/DirtCliffExtra_25.png
 		Size: 5,5
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -4547,7 +4547,7 @@ Templates:
 
 	Template@1545:
 		Id: 1545
-		Images: tilesets/urban/DirtCliffExtra_26.png
+		Images: tilesets/urban/tiles/DirtCliffExtra_26.png
 		Size: 5,4
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -4574,7 +4574,7 @@ Templates:
 
 	Template@1546:
 		Id: 1546
-		Images: tilesets/urban/DirtCliffExtra_27.png
+		Images: tilesets/urban/tiles/DirtCliffExtra_27.png
 		Size: 3,4
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -4593,7 +4593,7 @@ Templates:
 
 	Template@1547:
 		Id: 1547
-		Images: tilesets/urban/DirtCliffExtra_28.png
+		Images: tilesets/urban/tiles/DirtCliffExtra_28.png
 		Size: 3,4
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -4612,7 +4612,7 @@ Templates:
 
 	Template@1548:
 		Id: 1548
-		Images: tilesets/urban/DirtCliffExtra_29.png
+		Images: tilesets/urban/tiles/DirtCliffExtra_29.png
 		Size: 5,4
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -4639,7 +4639,7 @@ Templates:
 
 	Template@1754:
 		Id: 1754
-		Images: tilesets/urban/DirtCliffExtra_30.png
+		Images: tilesets/urban/tiles/DirtCliffExtra_30.png
 		Size: 5,3
 		Categories: Dirt Cliff Extra
 		Tiles:
@@ -4661,7 +4661,7 @@ Templates:
 
 	Template@33:
 		Id: 33
-		Images: tilesets/urban/DirtCliffRamp_SE.png
+		Images: tilesets/urban/tiles/DirtCliffRamp_SE.png
 		Size: 2,4
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -4676,7 +4676,7 @@ Templates:
 
 	Template@34:
 		Id: 34
-		Images: tilesets/urban/DirtCliffRamp_SW.png
+		Images: tilesets/urban/tiles/DirtCliffRamp_SW.png
 		Size: 2,4
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -4691,7 +4691,7 @@ Templates:
 
 	Template@35:
 		Id: 35
-		Images: tilesets/urban/DirtCliffRamp_NE.png
+		Images: tilesets/urban/tiles/DirtCliffRamp_NE.png
 		Size: 2,4
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -4706,7 +4706,7 @@ Templates:
 
 	Template@36:
 		Id: 36
-		Images: tilesets/urban/DirtCliffRamp_NW.png
+		Images: tilesets/urban/tiles/DirtCliffRamp_NW.png
 		Size: 2,4
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -4721,7 +4721,7 @@ Templates:
 
 	Template@37:
 		Id: 37
-		Images: tilesets/urban/DirtCliffRamp_WS.png
+		Images: tilesets/urban/tiles/DirtCliffRamp_WS.png
 		Size: 3,2
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -4734,7 +4734,7 @@ Templates:
 
 	Template@38:
 		Id: 38
-		Images: tilesets/urban/DirtCliffRamp_WN.png
+		Images: tilesets/urban/tiles/DirtCliffRamp_WN.png
 		Size: 3,3
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -4750,7 +4750,7 @@ Templates:
 
 	Template@39:
 		Id: 39
-		Images: tilesets/urban/DirtCliffRamp_ES.png
+		Images: tilesets/urban/tiles/DirtCliffRamp_ES.png
 		Size: 3,2
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -4763,7 +4763,7 @@ Templates:
 
 	Template@40:
 		Id: 40
-		Images: tilesets/urban/DirtCliffRamp_EN.png
+		Images: tilesets/urban/tiles/DirtCliffRamp_EN.png
 		Size: 3,3
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -4779,7 +4779,7 @@ Templates:
 
 	Template@1550:
 		Id: 1550
-		Images: tilesets/urban/DirtCliffRamp_1.png
+		Images: tilesets/urban/tiles/DirtCliffRamp_1.png
 		Size: 2,3
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -4792,7 +4792,7 @@ Templates:
 
 	Template@1551:
 		Id: 1551
-		Images: tilesets/urban/DirtCliffRamp_2.png
+		Images: tilesets/urban/tiles/DirtCliffRamp_2.png
 		Size: 2,3
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -4805,7 +4805,7 @@ Templates:
 
 	Template@1552:
 		Id: 1552
-		Images: tilesets/urban/DirtCliffRamp_3.png
+		Images: tilesets/urban/tiles/DirtCliffRamp_3.png
 		Size: 2,4
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -4820,7 +4820,7 @@ Templates:
 
 	Template@1553:
 		Id: 1553
-		Images: tilesets/urban/DirtCliffRamp_4.png
+		Images: tilesets/urban/tiles/DirtCliffRamp_4.png
 		Size: 2,4
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -4835,7 +4835,7 @@ Templates:
 
 	Template@1554:
 		Id: 1554
-		Images: tilesets/urban/DirtCliffRamp_5.png
+		Images: tilesets/urban/tiles/DirtCliffRamp_5.png
 		Size: 3,1
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -4845,7 +4845,7 @@ Templates:
 
 	Template@1555:
 		Id: 1555
-		Images: tilesets/urban/DirtCliffRamp_6.png
+		Images: tilesets/urban/tiles/DirtCliffRamp_6.png
 		Size: 3,1
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -4855,7 +4855,7 @@ Templates:
 
 	Template@1556:
 		Id: 1556
-		Images: tilesets/urban/DirtCliffRamp_7.png
+		Images: tilesets/urban/tiles/DirtCliffRamp_7.png
 		Size: 3,2
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -4868,7 +4868,7 @@ Templates:
 
 	Template@1557:
 		Id: 1557
-		Images: tilesets/urban/DirtCliffRamp_8.png
+		Images: tilesets/urban/tiles/DirtCliffRamp_8.png
 		Size: 3,2
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -4881,7 +4881,7 @@ Templates:
 
 	Template@1558:
 		Id: 1558
-		Images: tilesets/urban/DirtCliffRamp_9.png
+		Images: tilesets/urban/tiles/DirtCliffRamp_9.png
 		Size: 3,3
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -4897,7 +4897,7 @@ Templates:
 
 	Template@1559:
 		Id: 1559
-		Images: tilesets/urban/DirtCliffRamp_10.png
+		Images: tilesets/urban/tiles/DirtCliffRamp_10.png
 		Size: 3,3
 		Categories: Dirt Cliff Ramp
 		Tiles:
@@ -4913,7 +4913,7 @@ Templates:
 
 	Template@1471:
 		Id: 1471
-		Images: tilesets/urban/Path_1.png
+		Images: tilesets/urban/tiles/Path_1.png
 		Size: 5,2
 		Categories: Path
 		Tiles:
@@ -4930,7 +4930,7 @@ Templates:
 
 	Template@1472:
 		Id: 1472
-		Images: tilesets/urban/Path_2.png
+		Images: tilesets/urban/tiles/Path_2.png
 		Size: 2,2
 		Categories: Path
 		Tiles:
@@ -4941,7 +4941,7 @@ Templates:
 
 	Template@1473:
 		Id: 1473
-		Images: tilesets/urban/Path_3.png
+		Images: tilesets/urban/tiles/Path_3.png
 		Size: 3,3
 		Categories: Path
 		Tiles:
@@ -4954,7 +4954,7 @@ Templates:
 
 	Template@1474:
 		Id: 1474
-		Images: tilesets/urban/Path_4.png
+		Images: tilesets/urban/tiles/Path_4.png
 		Size: 3,2
 		Categories: Path
 		Tiles:
@@ -4967,7 +4967,7 @@ Templates:
 
 	Template@1476:
 		Id: 1476
-		Images: tilesets/urban/Path_5.png
+		Images: tilesets/urban/tiles/Path_5.png
 		Size: 2,5
 		Categories: Path
 		Tiles:
@@ -4984,7 +4984,7 @@ Templates:
 
 	Template@1477:
 		Id: 1477
-		Images: tilesets/urban/Path_6.png
+		Images: tilesets/urban/tiles/Path_6.png
 		Size: 3,2
 		Categories: Path
 		Tiles:
@@ -4997,7 +4997,7 @@ Templates:
 
 	Template@1478:
 		Id: 1478
-		Images: tilesets/urban/Path_7.png
+		Images: tilesets/urban/tiles/Path_7.png
 		Size: 3,3
 		Categories: Path
 		Tiles:
@@ -5010,7 +5010,7 @@ Templates:
 
 	Template@1480:
 		Id: 1480
-		Images: tilesets/urban/Path_8.png
+		Images: tilesets/urban/tiles/Path_8.png
 		Size: 2,3
 		Categories: Path
 		Tiles:
@@ -5023,7 +5023,7 @@ Templates:
 
 	Template@1481:
 		Id: 1481
-		Images: tilesets/urban/Path_9.png
+		Images: tilesets/urban/tiles/Path_9.png
 		Size: 5,2
 		Categories: Path
 		Tiles:
@@ -5040,7 +5040,7 @@ Templates:
 
 	Template@1482:
 		Id: 1482
-		Images: tilesets/urban/Path_10.png
+		Images: tilesets/urban/tiles/Path_10.png
 		Size: 2,3
 		Categories: Path
 		Tiles:
@@ -5053,7 +5053,7 @@ Templates:
 
 	Template@1483:
 		Id: 1483
-		Images: tilesets/urban/Path_11.png
+		Images: tilesets/urban/tiles/Path_11.png
 		Size: 3,3
 		Categories: Path
 		Tiles:
@@ -5066,7 +5066,7 @@ Templates:
 
 	Template@1484:
 		Id: 1484
-		Images: tilesets/urban/Path_12.png
+		Images: tilesets/urban/tiles/Path_12.png
 		Size: 3,2
 		Categories: Path
 		Tiles:
@@ -5079,7 +5079,7 @@ Templates:
 
 	Template@1486:
 		Id: 1486
-		Images: tilesets/urban/Path_13.png
+		Images: tilesets/urban/tiles/Path_13.png
 		Size: 2,5
 		Categories: Path
 		Tiles:
@@ -5096,7 +5096,7 @@ Templates:
 
 	Template@1487:
 		Id: 1487
-		Images: tilesets/urban/Path_14.png
+		Images: tilesets/urban/tiles/Path_14.png
 		Size: 3,2
 		Categories: Path
 		Tiles:
@@ -5109,7 +5109,7 @@ Templates:
 
 	Template@1488:
 		Id: 1488
-		Images: tilesets/urban/Path_15.png
+		Images: tilesets/urban/tiles/Path_15.png
 		Size: 3,3
 		Categories: Path
 		Tiles:
@@ -5122,7 +5122,7 @@ Templates:
 
 	Template@1489:
 		Id: 1489
-		Images: tilesets/urban/Path_16.png
+		Images: tilesets/urban/tiles/Path_16.png
 		Size: 2,2
 		Categories: Path
 		Tiles:
@@ -5133,7 +5133,7 @@ Templates:
 
 	Template@1491:
 		Id: 1491
-		Images: tilesets/urban/Path_29.png
+		Images: tilesets/urban/tiles/Path_29.png
 		Size: 2,2
 		Categories: Path
 		Tiles:
@@ -5144,7 +5144,7 @@ Templates:
 
 	Template@1494:
 		Id: 1494
-		Images: tilesets/urban/Path_17.png
+		Images: tilesets/urban/tiles/Path_17.png
 		Size: 2,2
 		Categories: Path
 		Tiles:
@@ -5155,7 +5155,7 @@ Templates:
 
 	Template@1495:
 		Id: 1495
-		Images: tilesets/urban/Path_18.png
+		Images: tilesets/urban/tiles/Path_18.png
 		Size: 2,2
 		Categories: Path
 		Tiles:
@@ -5166,7 +5166,7 @@ Templates:
 
 	Template@1496:
 		Id: 1496
-		Images: tilesets/urban/Path_19.png
+		Images: tilesets/urban/tiles/Path_19.png
 		Size: 2,2
 		Categories: Path
 		Tiles:
@@ -5177,7 +5177,7 @@ Templates:
 
 	Template@1497:
 		Id: 1497
-		Images: tilesets/urban/Path_20.png
+		Images: tilesets/urban/tiles/Path_20.png
 		Size: 4,4
 		Categories: Path
 		Tiles:
@@ -5196,7 +5196,7 @@ Templates:
 
 	Template@1607:
 		Id: 1607
-		Images: tilesets/urban/Path_25.png
+		Images: tilesets/urban/tiles/Path_25.png
 		Size: 3,3
 		Categories: Path
 		Tiles:
@@ -5212,7 +5212,7 @@ Templates:
 
 	Template@1609:
 		Id: 1609
-		Images: tilesets/urban/Path_26.png
+		Images: tilesets/urban/tiles/Path_26.png
 		Size: 3,3
 		Categories: Path
 		Tiles:
@@ -5228,7 +5228,7 @@ Templates:
 
 	Template@1610:
 		Id: 1610
-		Images: tilesets/urban/Path_27.png
+		Images: tilesets/urban/tiles/Path_27.png
 		Size: 3,3
 		Categories: Path
 		Tiles:
@@ -5244,7 +5244,7 @@ Templates:
 
 	Template@1611:
 		Id: 1611
-		Images: tilesets/urban/Path_28.png
+		Images: tilesets/urban/tiles/Path_28.png
 		Size: 3,3
 		Categories: Path
 		Tiles:
@@ -5260,7 +5260,7 @@ Templates:
 
 	Template@1615:
 		Id: 1615
-		Images: tilesets/urban/Path_21.png
+		Images: tilesets/urban/tiles/Path_21.png
 		Size: 3,4
 		Categories: Path
 		Tiles:
@@ -5277,7 +5277,7 @@ Templates:
 
 	Template@1618:
 		Id: 1618
-		Images: tilesets/urban/Path_22.png
+		Images: tilesets/urban/tiles/Path_22.png
 		Size: 3,4
 		Categories: Path
 		Tiles:
@@ -5294,7 +5294,7 @@ Templates:
 
 	Template@1619:
 		Id: 1619
-		Images: tilesets/urban/Path_23.png
+		Images: tilesets/urban/tiles/Path_23.png
 		Size: 4,3
 		Categories: Path
 		Tiles:
@@ -5311,7 +5311,7 @@ Templates:
 
 	Template@1620:
 		Id: 1620
-		Images: tilesets/urban/Path_24.png
+		Images: tilesets/urban/tiles/Path_24.png
 		Size: 4,3
 		Categories: Path
 		Tiles:
@@ -5328,7 +5328,7 @@ Templates:
 
 	Template@1499:
 		Id: 1499
-		Images: tilesets/urban/PathExtra_1.png
+		Images: tilesets/urban/tiles/PathExtra_1.png
 		Size: 3,3
 		Categories: Path Extra
 		Tiles:
@@ -5341,7 +5341,7 @@ Templates:
 
 	Template@1500:
 		Id: 1500
-		Images: tilesets/urban/PathExtra_2.png
+		Images: tilesets/urban/tiles/PathExtra_2.png
 		Size: 3,3
 		Categories: Path Extra
 		Tiles:
@@ -5354,7 +5354,7 @@ Templates:
 
 	Template@1501:
 		Id: 1501
-		Images: tilesets/urban/PathExtra_3.png
+		Images: tilesets/urban/tiles/PathExtra_3.png
 		Size: 3,3
 		Categories: Path Extra
 		Tiles:
@@ -5367,7 +5367,7 @@ Templates:
 
 	Template@1502:
 		Id: 1502
-		Images: tilesets/urban/PathExtra_4.png
+		Images: tilesets/urban/tiles/PathExtra_4.png
 		Size: 3,3
 		Categories: Path Extra
 		Tiles:
@@ -5380,7 +5380,7 @@ Templates:
 
 	Template@1503:
 		Id: 1503
-		Images: tilesets/urban/PathExtra_5.png
+		Images: tilesets/urban/tiles/PathExtra_5.png
 		Size: 6,3
 		Categories: Path Extra
 		Tiles:
@@ -5402,7 +5402,7 @@ Templates:
 
 	Template@1504:
 		Id: 1504
-		Images: tilesets/urban/PathExtra_6.png
+		Images: tilesets/urban/tiles/PathExtra_6.png
 		Size: 6,3
 		Categories: Path Extra
 		Tiles:
@@ -5424,7 +5424,7 @@ Templates:
 
 	Template@1507:
 		Id: 1507
-		Images: tilesets/urban/PathExtra_7.png
+		Images: tilesets/urban/tiles/PathExtra_7.png
 		Size: 6,4
 		Categories: Path Extra
 		Tiles:
@@ -5455,7 +5455,7 @@ Templates:
 
 	Template@1509:
 		Id: 1509
-		Images: tilesets/urban/PathExtra_8.png
+		Images: tilesets/urban/tiles/PathExtra_8.png
 		Size: 6,4
 		Categories: Path Extra
 		Tiles:
@@ -5486,7 +5486,7 @@ Templates:
 
 	Template@1512:
 		Id: 1512
-		Images: tilesets/urban/PathExtra_9.png
+		Images: tilesets/urban/tiles/PathExtra_9.png
 		Size: 6,5
 		Categories: Path Extra
 		Tiles:
@@ -5523,7 +5523,7 @@ Templates:
 
 	Template@1513:
 		Id: 1513
-		Images: tilesets/urban/PathExtra_10.png
+		Images: tilesets/urban/tiles/PathExtra_10.png
 		Size: 6,5
 		Categories: Path Extra
 		Tiles:
@@ -5560,7 +5560,7 @@ Templates:
 
 	Template@1514:
 		Id: 1514
-		Images: tilesets/urban/PathExtra_11.png
+		Images: tilesets/urban/tiles/PathExtra_11.png
 		Size: 4,4
 		Categories: Path Extra
 		Tiles:
@@ -5583,7 +5583,7 @@ Templates:
 
 	Template@1515:
 		Id: 1515
-		Images: tilesets/urban/PathExtra_12.png
+		Images: tilesets/urban/tiles/PathExtra_12.png
 		Size: 4,4
 		Categories: Path Extra
 		Tiles:
@@ -5606,7 +5606,7 @@ Templates:
 
 	Template@1747:
 		Id: 1747
-		Images: tilesets/urban/PathExtra_13.png
+		Images: tilesets/urban/tiles/PathExtra_13.png
 		Size: 5,5
 		Categories: Path Extra
 		Tiles:
@@ -5638,7 +5638,7 @@ Templates:
 
 	Template@1748:
 		Id: 1748
-		Images: tilesets/urban/PathExtra_14.png
+		Images: tilesets/urban/tiles/PathExtra_14.png
 		Size: 5,5
 		Categories: Path Extra
 		Tiles:
@@ -5670,7 +5670,7 @@ Templates:
 
 	Template@1749:
 		Id: 1749
-		Images: tilesets/urban/PathExtra_15.png
+		Images: tilesets/urban/tiles/PathExtra_15.png
 		Size: 7,8
 		Categories: Path Extra
 		Tiles:
@@ -5717,7 +5717,7 @@ Templates:
 
 	Template@1750:
 		Id: 1750
-		Images: tilesets/urban/PathExtra_16.png
+		Images: tilesets/urban/tiles/PathExtra_16.png
 		Size: 7,8
 		Categories: Path Extra
 		Tiles:
@@ -5764,7 +5764,7 @@ Templates:
 
 	Template@1751:
 		Id: 1751
-		Images: tilesets/urban/PathExtra_17.png
+		Images: tilesets/urban/tiles/PathExtra_17.png
 		Size: 5,4
 		Categories: Path Extra
 		Tiles:
@@ -5791,7 +5791,7 @@ Templates:
 
 	Template@1753:
 		Id: 1753
-		Images: tilesets/urban/PathExtra_18.png
+		Images: tilesets/urban/tiles/PathExtra_18.png
 		Size: 5,4
 		Categories: Path Extra
 		Tiles:
@@ -5818,7 +5818,7 @@ Templates:
 
 	Template@1755:
 		Id: 1755
-		Images: tilesets/urban/PathExtra_19.png
+		Images: tilesets/urban/tiles/PathExtra_19.png
 		Size: 5,4
 		Categories: Path Extra
 		Tiles:
@@ -5845,7 +5845,7 @@ Templates:
 
 	Template@1756:
 		Id: 1756
-		Images: tilesets/urban/PathExtra_20.png
+		Images: tilesets/urban/tiles/PathExtra_20.png
 		Size: 5,4
 		Categories: Path Extra
 		Tiles:
@@ -5872,7 +5872,7 @@ Templates:
 
 	Template@1350:
 		Id: 1350
-		Images: tilesets/urban/Street_1.png
+		Images: tilesets/urban/tiles/Street_1.png
 		Size: 7,4
 		Categories: Street
 		Tiles:
@@ -5907,7 +5907,7 @@ Templates:
 
 	Template@1351:
 		Id: 1351
-		Images: tilesets/urban/Street_2.png
+		Images: tilesets/urban/tiles/Street_2.png
 		Size: 3,5
 		Categories: Street
 		Tiles:
@@ -5924,7 +5924,7 @@ Templates:
 
 	Template@1352:
 		Id: 1352
-		Images: tilesets/urban/Street_3.png
+		Images: tilesets/urban/tiles/Street_3.png
 		Size: 3,3
 		Categories: Street
 		Tiles:
@@ -5937,7 +5937,7 @@ Templates:
 
 	Template@1353:
 		Id: 1353
-		Images: tilesets/urban/Street_4.png
+		Images: tilesets/urban/tiles/Street_4.png
 		Size: 3,3
 		Categories: Street
 		Tiles:
@@ -5952,7 +5952,7 @@ Templates:
 
 	Template@1355:
 		Id: 1355
-		Images: tilesets/urban/Street_5.png
+		Images: tilesets/urban/tiles/Street_5.png
 		Size: 4,7
 		Categories: Street
 		Tiles:
@@ -5987,7 +5987,7 @@ Templates:
 
 	Template@1356:
 		Id: 1356
-		Images: tilesets/urban/Street_6.png
+		Images: tilesets/urban/tiles/Street_6.png
 		Size: 3,3
 		Categories: Street
 		Tiles:
@@ -6003,7 +6003,7 @@ Templates:
 
 	Template@1358:
 		Id: 1358
-		Images: tilesets/urban/Street_7.png
+		Images: tilesets/urban/tiles/Street_7.png
 		Size: 3,3
 		Categories: Street
 		Tiles:
@@ -6016,7 +6016,7 @@ Templates:
 
 	Template@1359:
 		Id: 1359
-		Images: tilesets/urban/Street_8.png
+		Images: tilesets/urban/tiles/Street_8.png
 		Size: 3,3
 		Categories: Street
 		Tiles:
@@ -6032,7 +6032,7 @@ Templates:
 
 	Template@1360:
 		Id: 1360
-		Images: tilesets/urban/Street_9.png
+		Images: tilesets/urban/tiles/Street_9.png
 		Size: 7,4
 		Categories: Street
 		Tiles:
@@ -6067,7 +6067,7 @@ Templates:
 
 	Template@1361:
 		Id: 1361
-		Images: tilesets/urban/Street_10.png
+		Images: tilesets/urban/tiles/Street_10.png
 		Size: 3,3
 		Categories: Street
 		Tiles:
@@ -6083,7 +6083,7 @@ Templates:
 
 	Template@1363:
 		Id: 1363
-		Images: tilesets/urban/Street_11.png
+		Images: tilesets/urban/tiles/Street_11.png
 		Size: 3,3
 		Categories: Street
 		Tiles:
@@ -6096,7 +6096,7 @@ Templates:
 
 	Template@1364:
 		Id: 1364
-		Images: tilesets/urban/Street_12.png
+		Images: tilesets/urban/tiles/Street_12.png
 		Size: 3,3
 		Categories: Street
 		Tiles:
@@ -6111,7 +6111,7 @@ Templates:
 
 	Template@1366:
 		Id: 1366
-		Images: tilesets/urban/Street_13.png
+		Images: tilesets/urban/tiles/Street_13.png
 		Size: 4,7
 		Categories: Street
 		Tiles:
@@ -6146,7 +6146,7 @@ Templates:
 
 	Template@1367:
 		Id: 1367
-		Images: tilesets/urban/Street_14.png
+		Images: tilesets/urban/tiles/Street_14.png
 		Size: 4,3
 		Categories: Street
 		Tiles:
@@ -6162,7 +6162,7 @@ Templates:
 
 	Template@1368:
 		Id: 1368
-		Images: tilesets/urban/Street_15.png
+		Images: tilesets/urban/tiles/Street_15.png
 		Size: 3,3
 		Categories: Street
 		Tiles:
@@ -6175,7 +6175,7 @@ Templates:
 
 	Template@1369:
 		Id: 1369
-		Images: tilesets/urban/Street_16.png
+		Images: tilesets/urban/tiles/Street_16.png
 		Size: 3,5
 		Categories: Street
 		Tiles:
@@ -6192,7 +6192,7 @@ Templates:
 
 	Template@1370:
 		Id: 1370
-		Images: tilesets/urban/Street_17.png
+		Images: tilesets/urban/tiles/Street_17.png
 		Size: 4,5
 		Categories: Street
 		Tiles:
@@ -6213,7 +6213,7 @@ Templates:
 
 	Template@1371:
 		Id: 1371
-		Images: tilesets/urban/Street_18.png
+		Images: tilesets/urban/tiles/Street_18.png
 		Size: 4,5
 		Categories: Street
 		Tiles:
@@ -6234,7 +6234,7 @@ Templates:
 
 	Template@1374:
 		Id: 1374
-		Images: tilesets/urban/Street_19.png
+		Images: tilesets/urban/tiles/Street_19.png
 		Size: 4,5
 		Categories: Street
 		Tiles:
@@ -6255,7 +6255,7 @@ Templates:
 
 	Template@1375:
 		Id: 1375
-		Images: tilesets/urban/Street_20.png
+		Images: tilesets/urban/tiles/Street_20.png
 		Size: 4,5
 		Categories: Street
 		Tiles:
@@ -6276,7 +6276,7 @@ Templates:
 
 	Template@1376:
 		Id: 1376
-		Images: tilesets/urban/Street_21.png
+		Images: tilesets/urban/tiles/Street_21.png
 		Size: 4,3
 		Categories: Street
 		Tiles:
@@ -6294,7 +6294,7 @@ Templates:
 
 	Template@1377:
 		Id: 1377
-		Images: tilesets/urban/Street_22.png
+		Images: tilesets/urban/tiles/Street_22.png
 		Size: 4,3
 		Categories: Street
 		Tiles:
@@ -6312,7 +6312,7 @@ Templates:
 
 	Template@1378:
 		Id: 1378
-		Images: tilesets/urban/Street_23.png
+		Images: tilesets/urban/tiles/Street_23.png
 		Size: 4,3
 		Categories: Street
 		Tiles:
@@ -6330,7 +6330,7 @@ Templates:
 
 	Template@1379:
 		Id: 1379
-		Images: tilesets/urban/Street_24.png
+		Images: tilesets/urban/tiles/Street_24.png
 		Size: 4,3
 		Categories: Street
 		Tiles:
@@ -6348,7 +6348,7 @@ Templates:
 
 	Template@1381:
 		Id: 1381
-		Images: tilesets/urban/Street_25.png
+		Images: tilesets/urban/tiles/Street_25.png
 		Size: 4,4
 		Categories: Street
 		Tiles:
@@ -6371,7 +6371,7 @@ Templates:
 
 	Template@1382:
 		Id: 1382
-		Images: tilesets/urban/Street_26.png
+		Images: tilesets/urban/tiles/Street_26.png
 		Size: 4,4
 		Categories: Street
 		Tiles:
@@ -6394,7 +6394,7 @@ Templates:
 
 	Template@1383:
 		Id: 1383
-		Images: tilesets/urban/Street_27.png
+		Images: tilesets/urban/tiles/Street_27.png
 		Size: 4,4
 		Categories: Street
 		Tiles:
@@ -6417,7 +6417,7 @@ Templates:
 
 	Template@1384:
 		Id: 1384
-		Images: tilesets/urban/Street_28.png
+		Images: tilesets/urban/tiles/Street_28.png
 		Size: 4,4
 		Categories: Street
 		Tiles:
@@ -6440,7 +6440,7 @@ Templates:
 
 	Template@1385:
 		Id: 1385
-		Images: tilesets/urban/Street_29.png
+		Images: tilesets/urban/tiles/Street_29.png
 		Size: 4,4
 		Categories: Street
 		Tiles:
@@ -6463,7 +6463,7 @@ Templates:
 
 	Template@1386:
 		Id: 1386
-		Images: tilesets/urban/Street_30.png
+		Images: tilesets/urban/tiles/Street_30.png
 		Size: 2,2
 		Categories: Street
 		Tiles:
@@ -6474,7 +6474,7 @@ Templates:
 
 	Template@1387:
 		Id: 1387
-		Images: tilesets/urban/Street_31.png
+		Images: tilesets/urban/tiles/Street_31.png
 		Size: 2,2
 		Categories: Street
 		Tiles:
@@ -6485,7 +6485,7 @@ Templates:
 
 	Template@1388:
 		Id: 1388
-		Images: tilesets/urban/Street_32.png
+		Images: tilesets/urban/tiles/Street_32.png
 		Size: 2,2
 		Categories: Street
 		Tiles:
@@ -6496,7 +6496,7 @@ Templates:
 
 	Template@1389:
 		Id: 1389
-		Images: tilesets/urban/Street_33.png
+		Images: tilesets/urban/tiles/Street_33.png
 		Size: 2,2
 		Categories: Street
 		Tiles:
@@ -6507,7 +6507,7 @@ Templates:
 
 	Template@1391:
 		Id: 1391
-		Images: tilesets/urban/StreetExtra_1.png
+		Images: tilesets/urban/tiles/StreetExtra_1.png
 		Size: 8,2
 		Categories: Street Extra
 		Tiles:
@@ -6530,7 +6530,7 @@ Templates:
 
 	Template@1394:
 		Id: 1394
-		Images: tilesets/urban/StreetExtra_2.png
+		Images: tilesets/urban/tiles/StreetExtra_2.png
 		Size: 2,8
 		Categories: Street Extra
 		Tiles:
@@ -6553,7 +6553,7 @@ Templates:
 
 	Template@1396:
 		Id: 1396
-		Images: tilesets/urban/StreetExtra_3.png
+		Images: tilesets/urban/tiles/StreetExtra_3.png
 		Size: 2,2
 		Categories: Street Extra
 		Tiles:
@@ -6564,7 +6564,7 @@ Templates:
 
 	Template@1397:
 		Id: 1397
-		Images: tilesets/urban/StreetExtra_4.png
+		Images: tilesets/urban/tiles/StreetExtra_4.png
 		Size: 2,2
 		Categories: Street Extra
 		Tiles:
@@ -6575,7 +6575,7 @@ Templates:
 
 	Template@1399:
 		Id: 1399
-		Images: tilesets/urban/StreetExtra_5.png
+		Images: tilesets/urban/tiles/StreetExtra_5.png
 		Size: 1,4
 		Categories: Street Extra
 		Tiles:
@@ -6586,7 +6586,7 @@ Templates:
 
 	Template@1401:
 		Id: 1401
-		Images: tilesets/urban/StreetExtra_6.png
+		Images: tilesets/urban/tiles/StreetExtra_6.png
 		Size: 1,4
 		Categories: Street Extra
 		Tiles:
@@ -6597,7 +6597,7 @@ Templates:
 
 	Template@1402:
 		Id: 1402
-		Images: tilesets/urban/StreetExtra_7.png
+		Images: tilesets/urban/tiles/StreetExtra_7.png
 		Size: 1,4
 		Categories: Street Extra
 		Tiles:
@@ -6608,7 +6608,7 @@ Templates:
 
 	Template@1403:
 		Id: 1403
-		Images: tilesets/urban/StreetExtra_8.png
+		Images: tilesets/urban/tiles/StreetExtra_8.png
 		Size: 1,4
 		Categories: Street Extra
 		Tiles:
@@ -6619,7 +6619,7 @@ Templates:
 
 	Template@1404:
 		Id: 1404
-		Images: tilesets/urban/StreetExtra_9.png
+		Images: tilesets/urban/tiles/StreetExtra_9.png
 		Size: 1,4
 		Categories: Street Extra
 		Tiles:
@@ -6630,7 +6630,7 @@ Templates:
 
 	Template@1405:
 		Id: 1405
-		Images: tilesets/urban/StreetExtra_10.png
+		Images: tilesets/urban/tiles/StreetExtra_10.png
 		Size: 1,4
 		Categories: Street Extra
 		Tiles:
@@ -6641,7 +6641,7 @@ Templates:
 
 	Template@1406:
 		Id: 1406
-		Images: tilesets/urban/StreetExtra_11.png
+		Images: tilesets/urban/tiles/StreetExtra_11.png
 		Size: 4,1
 		Categories: Street Extra
 		Tiles:
@@ -6652,7 +6652,7 @@ Templates:
 
 	Template@1407:
 		Id: 1407
-		Images: tilesets/urban/StreetExtra_12.png
+		Images: tilesets/urban/tiles/StreetExtra_12.png
 		Size: 4,1
 		Categories: Street Extra
 		Tiles:
@@ -6663,7 +6663,7 @@ Templates:
 
 	Template@1408:
 		Id: 1408
-		Images: tilesets/urban/StreetExtra_13.png
+		Images: tilesets/urban/tiles/StreetExtra_13.png
 		Size: 4,1
 		Categories: Street Extra
 		Tiles:
@@ -6674,7 +6674,7 @@ Templates:
 
 	Template@1409:
 		Id: 1409
-		Images: tilesets/urban/StreetExtra_14.png
+		Images: tilesets/urban/tiles/StreetExtra_14.png
 		Size: 4,1
 		Categories: Street Extra
 		Tiles:
@@ -6685,7 +6685,7 @@ Templates:
 
 	Template@1410:
 		Id: 1410
-		Images: tilesets/urban/StreetExtra_15.png
+		Images: tilesets/urban/tiles/StreetExtra_15.png
 		Size: 4,1
 		Categories: Street Extra
 		Tiles:
@@ -6696,7 +6696,7 @@ Templates:
 
 	Template@1411:
 		Id: 1411
-		Images: tilesets/urban/StreetExtra_16.png
+		Images: tilesets/urban/tiles/StreetExtra_16.png
 		Size: 4,1
 		Categories: Street Extra
 		Tiles:
@@ -6707,7 +6707,7 @@ Templates:
 
 	Template@1412:
 		Id: 1412
-		Images: tilesets/urban/StreetExtra_17.png
+		Images: tilesets/urban/tiles/StreetExtra_17.png
 		Size: 2,2
 		Categories: Street Extra
 		Tiles:
@@ -6718,7 +6718,7 @@ Templates:
 
 	Template@1413:
 		Id: 1413
-		Images: tilesets/urban/StreetExtra_18.png
+		Images: tilesets/urban/tiles/StreetExtra_18.png
 		Size: 2,2
 		Categories: Street Extra
 		Tiles:
@@ -6729,7 +6729,7 @@ Templates:
 
 	Template@1414:
 		Id: 1414
-		Images: tilesets/urban/StreetExtra_19.png
+		Images: tilesets/urban/tiles/StreetExtra_19.png
 		Size: 2,2
 		Categories: Street Extra
 		Tiles:
@@ -6740,7 +6740,7 @@ Templates:
 
 	Template@1416:
 		Id: 1416
-		Images: tilesets/urban/StreetExtra_20.png
+		Images: tilesets/urban/tiles/StreetExtra_20.png
 		Size: 2,2
 		Categories: Street Extra
 		Tiles:
@@ -6751,7 +6751,7 @@ Templates:
 
 	Template@1417:
 		Id: 1417
-		Images: tilesets/urban/StreetExtra_21.png
+		Images: tilesets/urban/tiles/StreetExtra_21.png
 		Size: 2,4
 		Categories: Street Extra
 		Tiles:
@@ -6765,7 +6765,7 @@ Templates:
 
 	Template@1419:
 		Id: 1419
-		Images: tilesets/urban/StreetExtra_22.png
+		Images: tilesets/urban/tiles/StreetExtra_22.png
 		Size: 2,4
 		Categories: Street Extra
 		Tiles:
@@ -6779,7 +6779,7 @@ Templates:
 
 	Template@1420:
 		Id: 1420
-		Images: tilesets/urban/StreetExtra_23.png
+		Images: tilesets/urban/tiles/StreetExtra_23.png
 		Size: 3,3
 		Categories: Street Extra
 		Tiles:
@@ -6792,7 +6792,7 @@ Templates:
 
 	Template@1421:
 		Id: 1421
-		Images: tilesets/urban/StreetExtra_24.png
+		Images: tilesets/urban/tiles/StreetExtra_24.png
 		Size: 3,3
 		Categories: Street Extra
 		Tiles:
@@ -6805,7 +6805,7 @@ Templates:
 
 	Template@1422:
 		Id: 1422
-		Images: tilesets/urban/StreetExtra_25.png
+		Images: tilesets/urban/tiles/StreetExtra_25.png
 		Size: 3,3
 		Categories: Street Extra
 		Tiles:
@@ -6818,7 +6818,7 @@ Templates:
 
 	Template@1423:
 		Id: 1423
-		Images: tilesets/urban/StreetExtra_26.png
+		Images: tilesets/urban/tiles/StreetExtra_26.png
 		Size: 3,3
 		Categories: Street Extra
 		Tiles:
@@ -6831,7 +6831,7 @@ Templates:
 
 	Template@1621:
 		Id: 1621
-		Images: tilesets/urban/StreetExtra_27.png
+		Images: tilesets/urban/tiles/StreetExtra_27.png
 		Size: 2,4
 		Categories: Street Extra
 		Tiles:
@@ -6846,7 +6846,7 @@ Templates:
 
 	Template@1745:
 		Id: 1745
-		Images: tilesets/urban/StreetExtra_28.png
+		Images: tilesets/urban/tiles/StreetExtra_28.png
 		Size: 6,11
 		Categories: Street Extra
 		Tiles:
@@ -6919,7 +6919,7 @@ Templates:
 
 	Template@1746:
 		Id: 1746
-		Images: tilesets/urban/StreetExtra_29.png
+		Images: tilesets/urban/tiles/StreetExtra_29.png
 		Size: 6,11
 		Categories: Street Extra
 		Tiles:
@@ -6992,7 +6992,7 @@ Templates:
 
 	Template@59:
 		Id: 59
-		Images: tilesets/urban/WaterCliff_N_A.png
+		Images: tilesets/urban/tiles/WaterCliff_N_A.png
 		Size: 4,2
 		Categories: Water Cliff
 		Tiles:
@@ -7007,7 +7007,7 @@ Templates:
 
 	Template@60:
 		Id: 60
-		Images: tilesets/urban/WaterCliff_N_B.png
+		Images: tilesets/urban/tiles/WaterCliff_N_B.png
 		Size: 4,2
 		Categories: Water Cliff
 		Tiles:
@@ -7022,7 +7022,7 @@ Templates:
 
 	Template@61:
 		Id: 61
-		Images: tilesets/urban/WaterCliff_NE.png
+		Images: tilesets/urban/tiles/WaterCliff_NE.png
 		Size: 3,2
 		Categories: Water Cliff
 		Tiles:
@@ -7033,7 +7033,7 @@ Templates:
 
 	Template@62:
 		Id: 62
-		Images: tilesets/urban/WaterCliff_E_A.png
+		Images: tilesets/urban/tiles/WaterCliff_E_A.png
 		Size: 3,4
 		Categories: Water Cliff
 		Tiles:
@@ -7052,7 +7052,7 @@ Templates:
 
 	Template@63:
 		Id: 63
-		Images: tilesets/urban/WaterCliff_E_B.png
+		Images: tilesets/urban/tiles/WaterCliff_E_B.png
 		Size: 3,4
 		Categories: Water Cliff
 		Tiles:
@@ -7071,7 +7071,7 @@ Templates:
 
 	Template@64:
 		Id: 64
-		Images: tilesets/urban/WaterCliff_S_A.png
+		Images: tilesets/urban/tiles/WaterCliff_S_A.png
 		Size: 4,4
 		Categories: Water Cliff
 		Tiles:
@@ -7094,7 +7094,7 @@ Templates:
 
 	Template@65:
 		Id: 65
-		Images: tilesets/urban/WaterCliff_S_B.png
+		Images: tilesets/urban/tiles/WaterCliff_S_B.png
 		Size: 4,4
 		Categories: Water Cliff
 		Tiles:
@@ -7117,7 +7117,7 @@ Templates:
 
 	Template@66:
 		Id: 66
-		Images: tilesets/urban/WaterCliff_SW.png
+		Images: tilesets/urban/tiles/WaterCliff_SW.png
 		Size: 3,3
 		Categories: Water Cliff
 		Tiles:
@@ -7129,7 +7129,7 @@ Templates:
 
 	Template@67:
 		Id: 67
-		Images: tilesets/urban/WaterCliff_SE.png
+		Images: tilesets/urban/tiles/WaterCliff_SE.png
 		Size: 3,3
 		Categories: Water Cliff
 		Tiles:
@@ -7141,7 +7141,7 @@ Templates:
 
 	Template@68:
 		Id: 68
-		Images: tilesets/urban/WaterCliff_NW.png
+		Images: tilesets/urban/tiles/WaterCliff_NW.png
 		Size: 3,2
 		Categories: Water Cliff
 		Tiles:
@@ -7152,7 +7152,7 @@ Templates:
 
 	Template@69:
 		Id: 69
-		Images: tilesets/urban/WaterCliff_W_A.png
+		Images: tilesets/urban/tiles/WaterCliff_W_A.png
 		Size: 3,4
 		Categories: Water Cliff
 		Tiles:
@@ -7171,7 +7171,7 @@ Templates:
 
 	Template@70:
 		Id: 70
-		Images: tilesets/urban/WaterCliff_W_B.png
+		Images: tilesets/urban/tiles/WaterCliff_W_B.png
 		Size: 3,4
 		Categories: Water Cliff
 		Tiles:
@@ -7190,7 +7190,7 @@ Templates:
 
 	Template@71:
 		Id: 71
-		Images: tilesets/urban/WaterCliff_N2E.png
+		Images: tilesets/urban/tiles/WaterCliff_N2E.png
 		Size: 3,3
 		Categories: Water Cliff
 		Tiles:
@@ -7206,7 +7206,7 @@ Templates:
 
 	Template@72:
 		Id: 72
-		Images: tilesets/urban/WaterCliff_S2E.png
+		Images: tilesets/urban/tiles/WaterCliff_S2E.png
 		Size: 3,5
 		Categories: Water Cliff
 		Tiles:
@@ -7224,7 +7224,7 @@ Templates:
 
 	Template@73:
 		Id: 73
-		Images: tilesets/urban/WaterCliff_S2W.png
+		Images: tilesets/urban/tiles/WaterCliff_S2W.png
 		Size: 3,5
 		Categories: Water Cliff
 		Tiles:
@@ -7242,7 +7242,7 @@ Templates:
 
 	Template@74:
 		Id: 74
-		Images: tilesets/urban/WaterCliff_N2W.png
+		Images: tilesets/urban/tiles/WaterCliff_N2W.png
 		Size: 3,3
 		Categories: Water Cliff
 		Tiles:
@@ -7258,7 +7258,7 @@ Templates:
 
 	Template@75:
 		Id: 75
-		Images: tilesets/urban/WaterCliff_N2NE.png
+		Images: tilesets/urban/tiles/WaterCliff_N2NE.png
 		Size: 2,2
 		Categories: Water Cliff
 		Tiles:
@@ -7269,7 +7269,7 @@ Templates:
 
 	Template@76:
 		Id: 76
-		Images: tilesets/urban/WaterCliff_N2NW.png
+		Images: tilesets/urban/tiles/WaterCliff_N2NW.png
 		Size: 2,2
 		Categories: Water Cliff
 		Tiles:
@@ -7280,7 +7280,7 @@ Templates:
 
 	Template@77:
 		Id: 77
-		Images: tilesets/urban/WaterCliff_W2NW.png
+		Images: tilesets/urban/tiles/WaterCliff_W2NW.png
 		Size: 3,3
 		Categories: Water Cliff
 		Tiles:
@@ -7295,7 +7295,7 @@ Templates:
 
 	Template@78:
 		Id: 78
-		Images: tilesets/urban/WaterCliff_E2NE.png
+		Images: tilesets/urban/tiles/WaterCliff_E2NE.png
 		Size: 3,3
 		Categories: Water Cliff
 		Tiles:
@@ -7310,7 +7310,7 @@ Templates:
 
 	Template@79:
 		Id: 79
-		Images: tilesets/urban/WaterCliff_E2SE.png
+		Images: tilesets/urban/tiles/WaterCliff_E2SE.png
 		Size: 3,2
 		Categories: Water Cliff
 		Tiles:
@@ -7322,7 +7322,7 @@ Templates:
 
 	Template@80:
 		Id: 80
-		Images: tilesets/urban/WaterCliff_S2SE.png
+		Images: tilesets/urban/tiles/WaterCliff_S2SE.png
 		Size: 2,4
 		Categories: Water Cliff
 		Tiles:
@@ -7335,7 +7335,7 @@ Templates:
 
 	Template@81:
 		Id: 81
-		Images: tilesets/urban/WaterCliff_S2SW.png
+		Images: tilesets/urban/tiles/WaterCliff_S2SW.png
 		Size: 2,4
 		Categories: Water Cliff
 		Tiles:
@@ -7348,7 +7348,7 @@ Templates:
 
 	Template@82:
 		Id: 82
-		Images: tilesets/urban/WaterCliff_W2SW.png
+		Images: tilesets/urban/tiles/WaterCliff_W2SW.png
 		Size: 3,2
 		Categories: Water Cliff
 		Tiles:
@@ -7360,7 +7360,7 @@ Templates:
 
 	Template@91:
 		Id: 91
-		Images: tilesets/urban/WaterCliff_W2S.png
+		Images: tilesets/urban/tiles/WaterCliff_W2S.png
 		Size: 3,3
 		Categories: Water Cliff
 		Tiles:
@@ -7376,7 +7376,7 @@ Templates:
 
 	Template@92:
 		Id: 92
-		Images: tilesets/urban/WaterCliff_E2S.png
+		Images: tilesets/urban/tiles/WaterCliff_E2S.png
 		Size: 3,3
 		Categories: Water Cliff
 		Tiles:
@@ -7392,7 +7392,7 @@ Templates:
 
 	Template@93:
 		Id: 93
-		Images: tilesets/urban/WaterCliff_E2N.png
+		Images: tilesets/urban/tiles/WaterCliff_E2N.png
 		Size: 3,3
 		Categories: Water Cliff
 		Tiles:
@@ -7408,7 +7408,7 @@ Templates:
 
 	Template@94:
 		Id: 94
-		Images: tilesets/urban/WaterCliff_W2N.png
+		Images: tilesets/urban/tiles/WaterCliff_W2N.png
 		Size: 3,3
 		Categories: Water Cliff
 		Tiles:
@@ -7424,7 +7424,7 @@ Templates:
 
 	Template@95:
 		Id: 95
-		Images: tilesets/urban/WaterCliff_SE2E.png
+		Images: tilesets/urban/tiles/WaterCliff_SE2E.png
 		Size: 4,4
 		Categories: Water Cliff
 		Tiles:
@@ -7441,7 +7441,7 @@ Templates:
 
 	Template@96:
 		Id: 96
-		Images: tilesets/urban/WaterCliff_SW2W.png
+		Images: tilesets/urban/tiles/WaterCliff_SW2W.png
 		Size: 4,4
 		Categories: Water Cliff
 		Tiles:
@@ -7458,7 +7458,7 @@ Templates:
 
 	Template@97:
 		Id: 97
-		Images: tilesets/urban/WaterCliff_SE2S.png
+		Images: tilesets/urban/tiles/WaterCliff_SE2S.png
 		Size: 2,2
 		Categories: Water Cliff
 		Tiles:
@@ -7468,7 +7468,7 @@ Templates:
 
 	Template@98:
 		Id: 98
-		Images: tilesets/urban/WaterCliff_SW2S.png
+		Images: tilesets/urban/tiles/WaterCliff_SW2S.png
 		Size: 2,2
 		Categories: Water Cliff
 		Tiles:
@@ -7478,7 +7478,7 @@ Templates:
 
 	Template@99:
 		Id: 99
-		Images: tilesets/urban/WaterCliff_NE2E.png
+		Images: tilesets/urban/tiles/WaterCliff_NE2E.png
 		Size: 3,2
 		Categories: Water Cliff
 		Tiles:
@@ -7490,7 +7490,7 @@ Templates:
 
 	Template@100:
 		Id: 100
-		Images: tilesets/urban/WaterCliff_NW2W.png
+		Images: tilesets/urban/tiles/WaterCliff_NW2W.png
 		Size: 3,2
 		Categories: Water Cliff
 		Tiles:
@@ -7502,7 +7502,7 @@ Templates:
 
 	Template@101:
 		Id: 101
-		Images: tilesets/urban/WaterCliff_NE2N.png
+		Images: tilesets/urban/tiles/WaterCliff_NE2N.png
 		Size: 1,2
 		Categories: Water Cliff
 		Tiles:
@@ -7511,7 +7511,7 @@ Templates:
 
 	Template@102:
 		Id: 102
-		Images: tilesets/urban/WaterCliff_NW2N.png
+		Images: tilesets/urban/tiles/WaterCliff_NW2N.png
 		Size: 1,2
 		Categories: Water Cliff
 		Tiles:
@@ -7520,7 +7520,7 @@ Templates:
 
 	Template@1561:
 		Id: 1561
-		Images: tilesets/urban/WaterCliffExtra_1.png
+		Images: tilesets/urban/tiles/WaterCliffExtra_1.png
 		Size: 3,7
 		Categories: Water Cliff Extra
 		Tiles:
@@ -7548,7 +7548,7 @@ Templates:
 
 	Template@1562:
 		Id: 1562
-		Images: tilesets/urban/WaterCliffExtra_2.png
+		Images: tilesets/urban/tiles/WaterCliffExtra_2.png
 		Size: 2,4
 		Categories: Water Cliff Extra
 		Tiles:
@@ -7561,7 +7561,7 @@ Templates:
 
 	Template@1563:
 		Id: 1563
-		Images: tilesets/urban/WaterCliffExtra_3.png
+		Images: tilesets/urban/tiles/WaterCliffExtra_3.png
 		Size: 3,8
 		Categories: Water Cliff Extra
 		Tiles:
@@ -7592,7 +7592,7 @@ Templates:
 
 	Template@1564:
 		Id: 1564
-		Images: tilesets/urban/WaterCliffExtra_4.png
+		Images: tilesets/urban/tiles/WaterCliffExtra_4.png
 		Size: 6,2
 		Categories: Water Cliff Extra
 		Tiles:
@@ -7611,7 +7611,7 @@ Templates:
 
 	Template@1565:
 		Id: 1565
-		Images: tilesets/urban/WaterCliffExtra_5.png
+		Images: tilesets/urban/tiles/WaterCliffExtra_5.png
 		Size: 3,8
 		Categories: Water Cliff Extra
 		Tiles:
@@ -7642,7 +7642,7 @@ Templates:
 
 	Template@1566:
 		Id: 1566
-		Images: tilesets/urban/WaterCliffExtra_6.png
+		Images: tilesets/urban/tiles/WaterCliffExtra_6.png
 		Size: 2,4
 		Categories: Water Cliff Extra
 		Tiles:
@@ -7655,7 +7655,7 @@ Templates:
 
 	Template@1567:
 		Id: 1567
-		Images: tilesets/urban/WaterCliffExtra_7.png
+		Images: tilesets/urban/tiles/WaterCliffExtra_7.png
 		Size: 3,7
 		Categories: Water Cliff Extra
 		Tiles:
@@ -7683,7 +7683,7 @@ Templates:
 
 	Template@1568:
 		Id: 1568
-		Images: tilesets/urban/WaterCliffExtra_8.png
+		Images: tilesets/urban/tiles/WaterCliffExtra_8.png
 		Size: 5,4
 		Categories: Water Cliff Extra
 		Tiles:
@@ -7704,7 +7704,7 @@ Templates:
 
 	Template@1569:
 		Id: 1569
-		Images: tilesets/urban/WaterCliffExtra_32.png
+		Images: tilesets/urban/tiles/WaterCliffExtra_32.png
 		Size: 5,4
 		Categories: Water Cliff Extra
 		Tiles:
@@ -7725,7 +7725,7 @@ Templates:
 
 	Template@1570:
 		Id: 1570
-		Images: tilesets/urban/WaterCliffExtra_9.png
+		Images: tilesets/urban/tiles/WaterCliffExtra_9.png
 		Size: 3,2
 		Categories: Water Cliff Extra
 		Tiles:
@@ -7738,7 +7738,7 @@ Templates:
 
 	Template@1571:
 		Id: 1571
-		Images: tilesets/urban/WaterCliffExtra_10.png
+		Images: tilesets/urban/tiles/WaterCliffExtra_10.png
 		Size: 3,5
 		Categories: Water Cliff Extra
 		Tiles:
@@ -7760,7 +7760,7 @@ Templates:
 
 	Template@1572:
 		Id: 1572
-		Images: tilesets/urban/WaterCliffExtra_11.png
+		Images: tilesets/urban/tiles/WaterCliffExtra_11.png
 		Size: 3,6
 		Categories: Water Cliff Extra
 		Tiles:
@@ -7785,7 +7785,7 @@ Templates:
 
 	Template@1573:
 		Id: 1573
-		Images: tilesets/urban/WaterCliffExtra_12.png
+		Images: tilesets/urban/tiles/WaterCliffExtra_12.png
 		Size: 3,6
 		Categories: Water Cliff Extra
 		Tiles:
@@ -7810,7 +7810,7 @@ Templates:
 
 	Template@1574:
 		Id: 1574
-		Images: tilesets/urban/WaterCliffExtra_13.png
+		Images: tilesets/urban/tiles/WaterCliffExtra_13.png
 		Size: 3,5
 		Categories: Water Cliff Extra
 		Tiles:
@@ -7832,7 +7832,7 @@ Templates:
 
 	Template@1575:
 		Id: 1575
-		Images: tilesets/urban/WaterCliffExtra_14.png
+		Images: tilesets/urban/tiles/WaterCliffExtra_14.png
 		Size: 3,2
 		Categories: Water Cliff Extra
 		Tiles:
@@ -7845,7 +7845,7 @@ Templates:
 
 	Template@1576:
 		Id: 1576
-		Images: tilesets/urban/WaterCliffExtra_15.png
+		Images: tilesets/urban/tiles/WaterCliffExtra_15.png
 		Size: 4,3
 		Categories: Water Cliff Extra
 		Tiles:
@@ -7864,7 +7864,7 @@ Templates:
 
 	Template@1577:
 		Id: 1577
-		Images: tilesets/urban/WaterCliffExtra_16.png
+		Images: tilesets/urban/tiles/WaterCliffExtra_16.png
 		Size: 4,3
 		Categories: Water Cliff Extra
 		Tiles:
@@ -7883,7 +7883,7 @@ Templates:
 
 	Template@1578:
 		Id: 1578
-		Images: tilesets/urban/WaterCliffExtra_17.png
+		Images: tilesets/urban/tiles/WaterCliffExtra_17.png
 		Size: 4,6
 		Categories: Water Cliff Extra
 		Tiles:
@@ -7911,7 +7911,7 @@ Templates:
 
 	Template@1579:
 		Id: 1579
-		Images: tilesets/urban/WaterCliffExtra_18.png
+		Images: tilesets/urban/tiles/WaterCliffExtra_18.png
 		Size: 4,6
 		Categories: Water Cliff Extra
 		Tiles:
@@ -7940,7 +7940,7 @@ Templates:
 
 	Template@1581:
 		Id: 1581
-		Images: tilesets/urban/WaterCliffExtra_19.png
+		Images: tilesets/urban/tiles/WaterCliffExtra_19.png
 		Size: 3,6
 		Categories: Water Cliff Extra
 		Tiles:
@@ -7965,7 +7965,7 @@ Templates:
 
 	Template@1582:
 		Id: 1582
-		Images: tilesets/urban/WaterCliffExtra_20.png
+		Images: tilesets/urban/tiles/WaterCliffExtra_20.png
 		Size: 6,5
 		Categories: Water Cliff Extra
 		Tiles:
@@ -8002,7 +8002,7 @@ Templates:
 
 	Template@1583:
 		Id: 1583
-		Images: tilesets/urban/WaterCliffExtra_21.png
+		Images: tilesets/urban/tiles/WaterCliffExtra_21.png
 		Size: 3,6
 		Categories: Water Cliff Extra
 		Tiles:
@@ -8027,7 +8027,7 @@ Templates:
 
 	Template@1584:
 		Id: 1584
-		Images: tilesets/urban/WaterCliffExtra_22.png
+		Images: tilesets/urban/tiles/WaterCliffExtra_22.png
 		Size: 4,6
 		Categories: Water Cliff Extra
 		Tiles:
@@ -8056,7 +8056,7 @@ Templates:
 
 	Template@1585:
 		Id: 1585
-		Images: tilesets/urban/WaterCliffExtra_23.png
+		Images: tilesets/urban/tiles/WaterCliffExtra_23.png
 		Size: 4,6
 		Categories: Water Cliff Extra
 		Tiles:
@@ -8084,7 +8084,7 @@ Templates:
 
 	Template@1586:
 		Id: 1586
-		Images: tilesets/urban/WaterCliffExtra_24.png
+		Images: tilesets/urban/tiles/WaterCliffExtra_24.png
 		Size: 5,5
 		Categories: Water Cliff Extra
 		Tiles:
@@ -8113,7 +8113,7 @@ Templates:
 
 	Template@1588:
 		Id: 1588
-		Images: tilesets/urban/WaterCliffExtra_25.png
+		Images: tilesets/urban/tiles/WaterCliffExtra_25.png
 		Size: 6,5
 		Categories: Water Cliff Extra
 		Tiles:
@@ -8145,7 +8145,7 @@ Templates:
 
 	Template@1589:
 		Id: 1589
-		Images: tilesets/urban/WaterCliffExtra_26.png
+		Images: tilesets/urban/tiles/WaterCliffExtra_26.png
 		Size: 6,5
 		Categories: Water Cliff Extra
 		Tiles:
@@ -8177,7 +8177,7 @@ Templates:
 
 	Template@1590:
 		Id: 1590
-		Images: tilesets/urban/WaterCliffExtra_27.png
+		Images: tilesets/urban/tiles/WaterCliffExtra_27.png
 		Size: 5,5
 		Categories: Water Cliff Extra
 		Tiles:
@@ -8206,7 +8206,7 @@ Templates:
 
 	Template@1591:
 		Id: 1591
-		Images: tilesets/urban/WaterCliffExtra_28.png
+		Images: tilesets/urban/tiles/WaterCliffExtra_28.png
 		Size: 5,5
 		Categories: Water Cliff Extra
 		Tiles:
@@ -8238,7 +8238,7 @@ Templates:
 
 	Template@1592:
 		Id: 1592
-		Images: tilesets/urban/WaterCliffExtra_29.png
+		Images: tilesets/urban/tiles/WaterCliffExtra_29.png
 		Size: 3,5
 		Categories: Water Cliff Extra
 		Tiles:
@@ -8260,7 +8260,7 @@ Templates:
 
 	Template@1593:
 		Id: 1593
-		Images: tilesets/urban/WaterCliffExtra_30.png
+		Images: tilesets/urban/tiles/WaterCliffExtra_30.png
 		Size: 8,5
 		Categories: Water Cliff Extra
 		Tiles:
@@ -8307,7 +8307,7 @@ Templates:
 
 	Template@1594:
 		Id: 1594
-		Images: tilesets/urban/WaterCliffExtra_31.png
+		Images: tilesets/urban/tiles/WaterCliffExtra_31.png
 		Size: 5,5
 		Categories: Water Cliff Extra
 		Tiles:
@@ -8339,7 +8339,7 @@ Templates:
 
 	Template@83:
 		Id: 83
-		Images: tilesets/urban/WaterCliffRamp_SE.png
+		Images: tilesets/urban/tiles/WaterCliffRamp_SE.png
 		Size: 2,5
 		Categories: Water Cliff Ramp
 		Tiles:
@@ -8356,7 +8356,7 @@ Templates:
 
 	Template@84:
 		Id: 84
-		Images: tilesets/urban/WaterCliffRamp_SW.png
+		Images: tilesets/urban/tiles/WaterCliffRamp_SW.png
 		Size: 2,5
 		Categories: Water Cliff Ramp
 		Tiles:
@@ -8373,7 +8373,7 @@ Templates:
 
 	Template@85:
 		Id: 85
-		Images: tilesets/urban/WaterCliffRamp_NE.png
+		Images: tilesets/urban/tiles/WaterCliffRamp_NE.png
 		Size: 2,4
 		Categories: Water Cliff Ramp
 		Tiles:
@@ -8388,7 +8388,7 @@ Templates:
 
 	Template@86:
 		Id: 86
-		Images: tilesets/urban/WaterCliffRamp_NW.png
+		Images: tilesets/urban/tiles/WaterCliffRamp_NW.png
 		Size: 2,4
 		Categories: Water Cliff Ramp
 		Tiles:
@@ -8403,7 +8403,7 @@ Templates:
 
 	Template@87:
 		Id: 87
-		Images: tilesets/urban/WaterCliffRamp_WS.png
+		Images: tilesets/urban/tiles/WaterCliffRamp_WS.png
 		Size: 4,3
 		Categories: Water Cliff Ramp
 		Tiles:
@@ -8422,7 +8422,7 @@ Templates:
 
 	Template@88:
 		Id: 88
-		Images: tilesets/urban/WaterCliffRamp_WN.png
+		Images: tilesets/urban/tiles/WaterCliffRamp_WN.png
 		Size: 4,3
 		Categories: Water Cliff Ramp
 		Tiles:
@@ -8441,7 +8441,7 @@ Templates:
 
 	Template@89:
 		Id: 89
-		Images: tilesets/urban/WaterCliffRamp_ES.png
+		Images: tilesets/urban/tiles/WaterCliffRamp_ES.png
 		Size: 4,3
 		Categories: Water Cliff Ramp
 		Tiles:
@@ -8460,7 +8460,7 @@ Templates:
 
 	Template@90:
 		Id: 90
-		Images: tilesets/urban/WaterCliffRamp_EN.png
+		Images: tilesets/urban/tiles/WaterCliffRamp_EN.png
 		Size: 4,3
 		Categories: Water Cliff Ramp
 		Tiles:
@@ -8479,7 +8479,7 @@ Templates:
 
 	Template@1595:
 		Id: 1595
-		Images: tilesets/urban/WaterCliffRamp_1.png
+		Images: tilesets/urban/tiles/WaterCliffRamp_1.png
 		Size: 2,5
 		Categories: Water Cliff Ramp
 		Tiles:
@@ -8495,7 +8495,7 @@ Templates:
 
 	Template@1596:
 		Id: 1596
-		Images: tilesets/urban/WaterCliffRamp_2.png
+		Images: tilesets/urban/tiles/WaterCliffRamp_2.png
 		Size: 2,5
 		Categories: Water Cliff Ramp
 		Tiles:
@@ -8511,7 +8511,7 @@ Templates:
 
 	Template@1597:
 		Id: 1597
-		Images: tilesets/urban/WaterCliffRamp_3.png
+		Images: tilesets/urban/tiles/WaterCliffRamp_3.png
 		Size: 4,4
 		Categories: Water Cliff Ramp
 		Tiles:
@@ -8532,7 +8532,7 @@ Templates:
 
 	Template@1598:
 		Id: 1598
-		Images: tilesets/urban/WaterCliffRamp_4.png
+		Images: tilesets/urban/tiles/WaterCliffRamp_4.png
 		Size: 4,4
 		Categories: Water Cliff Ramp
 		Tiles:
@@ -8553,7 +8553,7 @@ Templates:
 
 	Template@1599:
 		Id: 1599
-		Images: tilesets/urban/WaterCliffRamp_5.png
+		Images: tilesets/urban/tiles/WaterCliffRamp_5.png
 		Size: 5,7
 		Categories: Water Cliff Ramp
 		Tiles:
@@ -8595,7 +8595,7 @@ Templates:
 
 	Template@1600:
 		Id: 1600
-		Images: tilesets/urban/WaterCliffRamp_6.png
+		Images: tilesets/urban/tiles/WaterCliffRamp_6.png
 		Size: 5,7
 		Categories: Water Cliff Ramp
 		Tiles:
@@ -8637,7 +8637,7 @@ Templates:
 
 	Template@1601:
 		Id: 1601
-		Images: tilesets/urban/WaterCliffRamp_7.png
+		Images: tilesets/urban/tiles/WaterCliffRamp_7.png
 		Size: 2,5
 		Categories: Water Cliff Ramp
 		Tiles:
@@ -8654,7 +8654,7 @@ Templates:
 
 	Template@1602:
 		Id: 1602
-		Images: tilesets/urban/WaterCliffRamp_8.png
+		Images: tilesets/urban/tiles/WaterCliffRamp_8.png
 		Size: 2,5
 		Categories: Water Cliff Ramp
 		Tiles:
@@ -8671,7 +8671,7 @@ Templates:
 
 	Template@1603:
 		Id: 1603
-		Images: tilesets/urban/WaterCliffRamp_9.png
+		Images: tilesets/urban/tiles/WaterCliffRamp_9.png
 		Size: 4,3
 		Categories: Water Cliff Ramp
 		Tiles:
@@ -8690,7 +8690,7 @@ Templates:
 
 	Template@1604:
 		Id: 1604
-		Images: tilesets/urban/WaterCliffRamp_10.png
+		Images: tilesets/urban/tiles/WaterCliffRamp_10.png
 		Size: 4,3
 		Categories: Water Cliff Ramp
 		Tiles:
@@ -8709,7 +8709,7 @@ Templates:
 
 	Template@1605:
 		Id: 1605
-		Images: tilesets/urban/WaterCliffRamp_11.png
+		Images: tilesets/urban/tiles/WaterCliffRamp_11.png
 		Size: 4,3
 		Categories: Water Cliff Ramp
 		Tiles:
@@ -8728,7 +8728,7 @@ Templates:
 
 	Template@1606:
 		Id: 1606
-		Images: tilesets/urban/WaterCliffRamp_12.png
+		Images: tilesets/urban/tiles/WaterCliffRamp_12.png
 		Size: 4,3
 		Categories: Water Cliff Ramp
 		Tiles:
@@ -8747,7 +8747,7 @@ Templates:
 
 	Template@1697:
 		Id: 1697
-		Images: tilesets/urban/WaterCliffRamp_13.png
+		Images: tilesets/urban/tiles/WaterCliffRamp_13.png
 		Size: 5,7
 		Categories: Water Cliff Ramp
 		Tiles:
@@ -8789,7 +8789,7 @@ Templates:
 
 	Template@1698:
 		Id: 1698
-		Images: tilesets/urban/WaterCliffRamp_14.png
+		Images: tilesets/urban/tiles/WaterCliffRamp_14.png
 		Size: 5,7
 		Categories: Water Cliff Ramp
 		Tiles:

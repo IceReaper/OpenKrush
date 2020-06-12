@@ -1,0 +1,87 @@
+highland_objects_1:
+	idle: tilesets/highland/mapobjects/objects/frames.png
+		Start: 0
+
+highland_objects_2:
+	idle: tilesets/highland/mapobjects/objects/frames.png
+		Start: 1
+
+highland_objects_3:
+	idle: tilesets/highland/mapobjects/objects/frames.png
+		Start: 2
+
+highland_objects_4:
+	idle: tilesets/highland/mapobjects/objects/frames.png
+		Start: 3
+
+highland_objects_5:
+	idle: tilesets/highland/mapobjects/objects/frames.png
+		Start: 4
+
+highland_objects_6:
+	idle: tilesets/highland/mapobjects/objects/frames.png
+		Start: 5
+
+highland_objects_7:
+	idle: tilesets/highland/mapobjects/objects/frames.png
+		Start: 6
+
+highland_objects_8:
+	idle: tilesets/highland/mapobjects/objects/frames.png
+		Start: 7
+
+highland_objects_9:
+	idle: tilesets/highland/mapobjects/objects/frames.png
+		Start: 8
+
+highland_objects_10:
+	idle: tilesets/highland/mapobjects/objects/frames.png
+		Start: 9
+
+highland_objects_11:
+	idle: tilesets/highland/mapobjects/objects/frames.png
+		Start: 10
+
+highland_objects_12:
+	idle: tilesets/highland/mapobjects/objects/frames.png
+		Start: 11
+
+highland_objects_13:
+	idle: tilesets/highland/mapobjects/objects/frames.png
+		Start: 12
+
+highland_objects_14:
+	idle: tilesets/highland/mapobjects/objects/frames.png
+		Start: 13
+
+highland_objects_15:
+	idle: tilesets/highland/mapobjects/objects/frames.png
+		Start: 14
+
+highland_objects_16:
+	idle: tilesets/highland/mapobjects/objects/frames.png
+		Start: 15
+
+highland_objects_17:
+	idle: tilesets/highland/mapobjects/objects/frames.png
+		Start: 16
+
+highland_objects_18:
+	idle: tilesets/highland/mapobjects/objects/frames.png
+		Start: 17
+
+highland_objects_19:
+	idle: tilesets/highland/mapobjects/objects/frames.png
+		Start: 18
+
+highland_objects_20:
+	idle: tilesets/highland/mapobjects/objects/frames.png
+		Start: 19
+
+highland_objects_21:
+	idle: tilesets/highland/mapobjects/objects/frames.png
+		Start: 20
+
+highland_objects_22:
+	idle: tilesets/highland/mapobjects/objects/frames.png
+		Start: 21
