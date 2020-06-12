@@ -32,7 +32,6 @@ Rules:
 	kknd1|rules/palettes.yaml
 	kknd1|rules/core.yaml
 	kknd1|rules/misc.yaml
-	kknd1|rules/bunkers.yaml
 	kknd1|rules/ai.yaml
 	kknd1|rules/mapobjects-neutral.yaml
 	kknd1|rules/mapobjects-highland.yaml
@@ -55,6 +54,10 @@ Rules:
 	kknd1|core/rules/mechanics/saboteur.yaml
 	kknd1|core/rules/mechanics/technician.yaml
 	kknd1|actors/bunker/techbunker/rules.yaml
+	kknd1|actors/bunker/vehicles/gorttherobot/rules.yaml
+	kknd1|actors/bunker/vehicles/mech/rules.yaml
+	kknd1|actors/bunker/vehicles/plasmatank/rules.yaml
+	kknd1|actors/bunker/vehicles/sentineldroid/rules.yaml
 	kknd1|actors/evolved/rules.yaml
 	kknd1|actors/evolved/infantry/berserker/rules.yaml
 	kknd1|actors/evolved/infantry/shotgunner/rules.yaml
@@ -131,7 +134,6 @@ Rules:
 Sequences:
 	kknd1|sequences/misc.yaml
 	kknd1|sequences/weapons.yaml
-	kknd1|sequences/bunkers.yaml
 	kknd1|sequences/survivors.yaml
 	kknd1|sequences/evolved.yaml
 	kknd1|sequences/mapobjects-highland.yaml
@@ -141,6 +143,10 @@ Sequences:
 	kknd1|core/sequences/muzzle.yaml
 	kknd1|core/weapons/bullet/sequences.yaml
 	kknd1|actors/bunker/techbunker/sequences.yaml
+	kknd1|actors/bunker/vehicles/gorttherobot/sequences.yaml
+	kknd1|actors/bunker/vehicles/mech/sequences.yaml
+	kknd1|actors/bunker/vehicles/plasmatank/sequences.yaml
+	kknd1|actors/bunker/vehicles/sentineldroid/sequences.yaml
 	kknd1|actors/evolved/infantry/berserker/sequences.yaml
 	kknd1|actors/evolved/infantry/shotgunner/sequences.yaml
 	kknd1|actors/evolved/infantry/pyromaniac/sequences.yaml
@@ -214,12 +220,15 @@ Sequences:
 
 Weapons:
 	kknd1|weapons/misc.yaml
-	kknd1|weapons/bunkers.yaml
 	kknd1|weapons/shrapnel.yaml
 	# TODO refactor above
 	kknd1|core/weapons/bullet/weapons.yaml
 	kknd1|core/weapons/explosion.yaml
 	kknd1|core/weapons/nuke.yaml
+	kknd1|actors/bunker/vehicles/gorttherobot/weapons.yaml
+	kknd1|actors/bunker/vehicles/mech/weapons.yaml
+	kknd1|actors/bunker/vehicles/plasmatank/weapons.yaml
+	kknd1|actors/bunker/vehicles/sentineldroid/weapons.yaml
 	kknd1|actors/evolved/infantry/berserker/weapons.yaml
 	kknd1|actors/evolved/infantry/shotgunner/weapons.yaml
 	kknd1|actors/evolved/infantry/pyromaniac/weapons.yaml
@@ -262,6 +271,8 @@ Weapons:
 	kknd1|actors/survivors/towers/cannontower/weapons.yaml
 
 Voices:
+	kknd1|actors/bunker/voices.yaml
+	kknd1|actors/bunker/vehicles/gorttherobot/voices.yaml
 	kknd1|actors/survivors/voices.yaml
 	kknd1|actors/evolved/voices.yaml
 	kknd1|actors/evolved/vehicles/direwolf/voices.yaml
@@ -272,8 +283,6 @@ Voices:
 	kknd1|actors/evolved/aircrafts/wasp/voices.yaml
 	kknd1|actors/survivors/infantry/scout/voices.yaml
 	kknd1|actors/survivors/aircrafts/bomber/voices.yaml
-	kknd1|actors/bunker/voices.yaml
-	kknd1|actors/bunker/vehicles/gorttherobot/voices.yaml
 
 TileSets:
 	kknd1|tilesets/desert/tileset.yaml

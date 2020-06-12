@@ -1,0 +1,18 @@
+bunker_vehicles_sentineldroid:
+	projectile: SPRITES.LVL|SentinelDroid.mobd
+		Length: 4
+		Facings: -16
+		Tick: 60
+		ZOffset: 1000
+	turret: SPRITES.LVL|SentinelDroid.mobd
+		Start: 64
+		Facings: -16
+	idle: SPRITES.LVL|SentinelDroid.mobd
+		Start: 80
+		Facings: -16
+	move: SPRITES.LVL|SentinelDroid.mobd
+		Start: 96
+		Length: 10
+		Tick: 60
+		Facings: -16
+	icon: actors/bunker/vehicles/sentineldroid/icon.png

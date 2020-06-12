@@ -1,0 +1,28 @@
+bunker_vehicles_sentineldroid:
+	Inherits@1: ^CoreVehicle
+	Inherits@2: ^CoreTurret
+	Tooltip:
+		Name: Sentinel Droid
+	OffsetsArmament:
+		Weapon: bunker_vehicles_sentineldroid
+	Turreted:
+		TurnSpeed: 8
+	Voiced:
+		VoiceSet: BunkerVoice
+	AdvancedBuildable:
+		Level: -1
+	MapEditorData:
+		Categories: Bunker
+	Veterancy:
+		Experience: 7500, 15000
+	AttackNotification:
+		Notifications: BunkerUnderAttack
+	Health:
+		HP: 6000
+	Mobile:
+		Speed: 50
+		TurnSpeed: 8
+	RevealsShroud:
+		Range: 8c0
+	AdvancedSelectionDecorations:
+		Offset: 0,-7

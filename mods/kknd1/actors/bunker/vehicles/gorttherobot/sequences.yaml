@@ -1,0 +1,17 @@
+bunker_vehicles_gorttherobot:
+	idle: actors/bunker/vehicles/gorttherobot/frames.png
+		Facings: -16
+	move: actors/bunker/vehicles/gorttherobot/frames.png
+		Start: 16
+		Length: 11
+		Tick: 120
+		Facings: -16
+	turret: actors/bunker/vehicles/gorttherobot/frames.png
+		Start: 192
+		Facings: -16
+	shoot: actors/bunker/vehicles/gorttherobot/frames.png
+		Start: 208
+		Length: 12
+		Tick: 50
+		Facings: -16
+	icon: actors/bunker/vehicles/gorttherobot/icon.png

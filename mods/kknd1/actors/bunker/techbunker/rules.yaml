@@ -10,11 +10,9 @@ bunker_techbunker:
 			BottomRight: 1536, 0
 		TargetableOffsets: 819,-1024,0, 819,0,0, 819,1024,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
 	TechBunker:
-		ContainableActors: bunker_gorttherobot, bunker_mech, bunker_plasmatank, bunker_sentineldroid
+		ContainableActors: bunker_vehicles_gorttherobot, bunker_vehicles_mech, bunker_vehicles_plasmatank, bunker_vehicles_sentineldroid
 		SoundOpen: MUTE.SLV|189.wav
 		SequenceUnlocked: unlocked
-		UnlockAfter: 1
-		UnlockChance: 1
 	Exit:
 		SpawnOffset: 0c-700,-0c150,0
 		ExitCell: -1,1 
