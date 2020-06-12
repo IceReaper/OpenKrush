@@ -1,107 +1,11 @@
-^gun_8:
-	muzzle: SPRITES.LVL|Extras.mobd
-		Start: 32
-		Length: 2
-		Facings: -16
-		Tick: 60
-^gun_16:
-	muzzle: SPRITES.LVL|Extras.mobd
-		Length: 2
-		Facings: -16
-		Tick: 60
-^gun_16_dual:
-	muzzle: SPRITES.LVL|Extras.mobd
-		Start: 64
-		Length: 8
-		Facings: -16
-		Tick: 60
-
 projectile:
-	bomb: SPRITES.LVL|WilburBomber.mobd
-		Start: 32
-		Length: 13
-		Tick: 120
-		ZOffset: 2000
-	cannon_l: SPRITES.LVL|Tank.mobd
-		Facings: -16
-		ZOffset: 1000
-	fire: SPRITES.LVL|Extras.mobd # There is another broken fire 281 - length only 11
+	fire: SPRITES.LVL|Extras.mobd
 		Start: 292
 		Length: 16
 		Tick: 100
 		ZOffset: 1000
-	flame: SPRITES.LVL|Flame.mobd
-		Length: 9
-		Facings: -16
-		Tick: 60
-		ZOffset: 1000
-	grenade: SPRITES.LVL|Sapper.mobd
-		Length: 8
-		Facings: -16
-		Tick: 120
-		ZOffset: 1000
-	laser_beam: SPRITES.LVL|LaserTank.mobd
-		Facings: -16
-		ZOffset: 1000
-	laser_rotating_s: SPRITES.LVL|Mech.mobd
-		Start: 192
-		Length: 4
-		Tick: 60
-		ZOffset: 1000
-	laser_rotating_l: SPRITES.LVL|SentinelDroid.mobd
-		Length: 4
-		Facings: -16
-		Tick: 60
-		ZOffset: 1000
-	rocket_s: SPRITES.LVL|BarrageCraft.mobd
-		Facings: -16
-		ZOffset: 1000
-	rocket_m: SPRITES.LVL|RocketLauncher.mobd
-		Length: 2
-		Facings: -16
-		Tick: 120
-		ZOffset: 1000
 
 hit:
-	bullet_a: SPRITES.LVL|Extras.mobd
-		Start: 261
-		Length: 6
-		Tick: 120
-		ZOffset: 1500
-	bullet_b: SPRITES.LVL|Extras.mobd
-		Start: 267
-		Length: 4
-		Tick: 120
-		ZOffset: 1500
-	bullet_c: SPRITES.LVL|Extras.mobd
-		Start: 271
-		Length: 4
-		Tick: 120
-		ZOffset: 1500
-	bullet_d: bits/Ricochet.png
-		Length: 4
-		Tick: 120
-		ZOffset: 1500
-	bullet_e: bits/Ricochet.png
-		Start: 4
-		Length: 4
-		Tick: 120
-		ZOffset: 1500
-	bullet_f: bits/Ricochet.png
-		Start: 8
-		Length: 4
-		Tick: 120
-		ZOffset: 1500
-	bullet_g: bits/Ricochet.png
-		Start: 12
-		Length: 4
-		Tick: 120
-		ZOffset: 1500
-	bullet_h: bits/Ricochet.png
-		Start: 16
-		Length: 4
-		Tick: 120
-		ZOffset: 1500
 	electrified_s1: SPRITES.LVL|Extras.mobd
 		Start: 344
 		ZOffset: 1500
@@ -171,7 +75,7 @@ hit:
 		Length: 5
 		Tick: 60
 		ZOffset: 1500
-	laser_star: SPRITES.LVL|LaserTank.mobd #Currently unused
+	laser_star: SPRITES.LVL|LaserTank.mobd #Currently unused, should we add it as explosion to the actor?
 		Start: 64
 		Length: 4
 		Tick: 60

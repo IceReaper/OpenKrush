@@ -6,9 +6,9 @@ survivors_tower_missilebattery:
 	ReloadDelay: 50
 	Report: SURV.SLV|14.wav
 	Projectile: Bullet
-		Image: projectile
+		Image: evolved_infantry_bazooka
 		Palette: kknd
-		Sequences: rocket_m
+		Sequences: projectile
 		Speed: 250
 		TrailPalette: kknd
 		TrailImage: hit

@@ -1,5 +1,5 @@
 survivors_infantry_sniper:
-	Inherits@muzzle: ^gun_8
+	Inherits@muzzle: ^muzzle_8_directions
 	Inherits@death: ^survivors_infantry_death
 	idle: SPRITES.LVL|Sniper.mobd
 		Facings: -16

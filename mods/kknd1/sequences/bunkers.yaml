@@ -58,6 +58,9 @@ bunker_gorttherobot_modern:
 		Start: 76
 
 bunker_plasmatank:
+	projectile: SPRITES.LVL|LaserTank.mobd
+		Facings: -16
+		ZOffset: 1000
 	idle: SPRITES.LVL|LaserTank.mobd
 		Start: 32
 		Facings: -16
@@ -79,12 +82,22 @@ bunker_mech:
 		Length: 10
 		Tick: 80
 		Facings: -16
+	projectile: SPRITES.LVL|Mech.mobd
+		Start: 192
+		Length: 4
+		Tick: 60
+		ZOffset: 1000
 	turret: SPRITES.LVL|Mech.mobd
 		Facings: -16
 	icon: bits/Buttons.png
 		Start: 73
 
 bunker_sentineldroid:
+	projectile: SPRITES.LVL|SentinelDroid.mobd
+		Length: 4
+		Facings: -16
+		Tick: 60
+		ZOffset: 1000
 	idle: SPRITES.LVL|SentinelDroid.mobd
 		Start: 80
 		Facings: -16

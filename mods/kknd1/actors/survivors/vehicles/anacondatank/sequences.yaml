@@ -1,5 +1,5 @@
 survivors_vehicle_anacondatank:
-	Inherits@muzzle: ^gun_16
+	Inherits@muzzle: ^muzzle_16_directions
 	projectile: SPRITES.LVL|Tank.mobd
 		Facings: -16
 	turret: SPRITES.LVL|Tank.mobd

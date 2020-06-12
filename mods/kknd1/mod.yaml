@@ -137,6 +137,7 @@ Sequences:
 	kknd1|sequences/mapobjects-desert.yaml
 	kknd1|sequences/mapobjects-urban.yaml
 	# TODO refactor above
+	kknd1|core/sequences/muzzle.yaml
 	kknd1|core/weapons/bullet/sequences.yaml
 	kknd1|actors/evolved/infantry/berserker/sequences.yaml
 	kknd1|actors/evolved/infantry/shotgunner/sequences.yaml

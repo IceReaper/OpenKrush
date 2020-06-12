@@ -1,5 +1,5 @@
 evolved_infantry_shotgunner:
-	Inherits@muzzle: ^gun_8
+	Inherits@muzzle: ^muzzle_8_directions
 	Inherits@death: ^evolved_infantry_death
 	idle: SPRITES.LVL|Shotgunner.mobd
 		Facings: -16

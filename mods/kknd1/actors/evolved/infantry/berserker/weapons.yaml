@@ -19,8 +19,8 @@ evolved_infantry_berserker:
 			vehicle: 8
 			building: 15
 	Warhead@Effect: ShrapnelCreateEffect
-		Image: hit
+		Image: weapon_bullet
 		ExplosionPalette: kknd
-		Explosions: bullet_a
+		Explosions: hit_a
 		ImpactSounds: MUTE.SLV|90.wav
 		Radius: 250,250

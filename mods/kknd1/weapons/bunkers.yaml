@@ -38,9 +38,9 @@ bunker_mech_primary:
 	ReloadDelay: 58 # 50 + 8 (secondary weapon)
 	Report: SURV.SLV|87.wav
 	Projectile: Bullet
-		Image: projectile
+		Image: bunker_mech
 		Palette: kknd
-		Sequences: laser_rotating_s
+		Sequences: projectile
 		Speed: 500
 	Warhead@Damage: SpreadDamage
 		Damage: 100
@@ -66,9 +66,9 @@ bunker_mech_secondary:
 	ReloadDelay: 66 # 50 + 2 * 8 (primary weapon)
 	Report: SURV.SLV|14.wav
 	Projectile: Bullet
-		Image: projectile
+		Image: evolved_infantry_bazooka
 		Palette: kknd
-		Sequences: rocket_m
+		Sequences: projectile
 		Speed: 300
 		TrailPalette: kknd
 		TrailImage: hit
@@ -98,9 +98,9 @@ bunker_plasmatank:
 	ReloadDelay: 25
 	Report: SURV.SLV|87.wav
 	Projectile: Bullet
-		Image: projectile
+		Image: bunker_plasmatank
 		Palette: kknd
-		Sequences: laser_beam
+		Sequences: projectile
 		Speed: 600
 	Warhead@Damage: SpreadDamage
 		Damage: 100
@@ -126,9 +126,9 @@ bunker_sentineldroid:
 	ReloadDelay: 50
 	Report: SURV.SLV|87.wav
 	Projectile: Bullet
-		Image: projectile
+		Image: bunker_sentineldroid
 		Palette: kknd
-		Sequences: laser_rotating_l
+		Sequences: projectile
 		Speed: 600
 	Warhead@Damage: SpreadDamage
 		Damage: 100

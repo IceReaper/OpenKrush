@@ -1,5 +1,5 @@
 evolved_tower_machinegunnest:
-	Inherits@muzzle: ^gun_16
+	Inherits@muzzle: ^muzzle_16_directions
 	turret: SPRITES.LVL|MGuardTower.mobd
 		Facings: -16
 		Offset: 1,-14

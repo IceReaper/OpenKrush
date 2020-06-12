@@ -4,9 +4,9 @@
 	ReloadDelay: 10000 # TODO HACK
 	Report: MUTE.SLV|163.wav
 	Projectile: GravityBomb
-		Image: projectile
+		Image: survivors_aircraft_bomber
 		Palette: kknd
-		Sequences: bomb
+		Sequences: projectile
 		Velocity: 0, 0, -82
 		Acceleration: 0, 0, 0
 	Warhead@Damage: SpreadDamage
@@ -66,8 +66,8 @@
 		ExplosionPalette: kknd
 		Delay: 26
 	Warhead@9: ShrapnelCreateEffect
-		Image: projectile
-		Explosions: fire
+		Image: explosions
+		Explosions: xs
 		ExplosionPalette: kknd
 		Delay: 27
 		Radius: 4000,4000
@@ -84,8 +84,8 @@
 		Delay: 29
 		Radius: 4000,4000
 	Warhead@12: ShrapnelCreateEffect
-		Image: projectile
-		Explosions: fire
+		Image: explosions
+		Explosions: xs
 		ExplosionPalette: kknd
 		Delay: 30
 		Radius: 4000,4000
@@ -96,8 +96,8 @@
 		Delay: 31
 		Radius: 4000,4000
 	Warhead@14: ShrapnelCreateEffect
-		Image: projectile
-		Explosions: fire
+		Image: explosions
+		Explosions: xs
 		ExplosionPalette: kknd
 		Delay: 32
 		Radius: 4000,4000
@@ -108,50 +108,50 @@
 		Delay: 33
 		Radius: 4000,4000
 	Warhead@16: ShrapnelCreateEffect
-		Image: projectile
-		Explosions: fire
+		Image: explosions
+		Explosions: xs
 		ExplosionPalette: kknd
 		Delay: 34
 		Radius: 4000,4000
 	Warhead@17: ShrapnelCreateEffect
-		Image: projectile
-		Explosions: fire
+		Image: explosions
+		Explosions: xs
 		ExplosionPalette: kknd
 		Delay: 35
 		Radius: 4000,4000
 	Warhead@18: ShrapnelCreateEffect
-		Image: projectile
-		Explosions: fire
+		Image: explosions
+		Explosions: xs
 		ExplosionPalette: kknd
 		Delay: 36
 		Radius: 4000,4000
 	Warhead@19: ShrapnelCreateEffect
-		Image: projectile
-		Explosions: fire
+		Image: explosions
+		Explosions: xs
 		ExplosionPalette: kknd
 		Delay: 37
 		Radius: 4000,4000
 	Warhead@20: ShrapnelCreateEffect
-		Image: projectile
-		Explosions: fire
+		Image: explosions
+		Explosions: xs
 		ExplosionPalette: kknd
 		Delay: 38
 		Radius: 4000,4000
 	Warhead@21: ShrapnelCreateEffect
-		Image: projectile
-		Explosions: fire
+		Image: explosions
+		Explosions: xs
 		ExplosionPalette: kknd
 		Delay: 39
 		Radius: 4000,4000
 	Warhead@22: ShrapnelCreateEffect
-		Image: projectile
-		Explosions: fire
+		Image: explosions
+		Explosions: xs
 		ExplosionPalette: kknd
 		Delay: 40
 		Radius: 4000,4000
 	Warhead@23: ShrapnelCreateEffect
-		Image: projectile
-		Explosions: fire
+		Image: explosions
+		Explosions: xs
 		ExplosionPalette: kknd
 		Delay: 41
 		Radius: 4000,4000

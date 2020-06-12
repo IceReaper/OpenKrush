@@ -6,9 +6,9 @@ survivors_infantry_rpglauncher:
 	ReloadDelay: 63
 	Report: SURV.SLV|14.wav
 	Projectile: Bullet
-		Image: projectile
+		Image: evolved_infantry_bazooka
 		Palette: kknd
-		Sequences: rocket_m
+		Sequences: projectile
 		Speed: 200
 		TrailPalette: kknd
 		TrailImage: hit

@@ -1,89 +1,89 @@
-**Acknowledged.png**
+**Acknowledged.wav**
 Author: IceReaper
 Source: Self-made using OSX Zarvox voice.
 Description: Unit voice.
 
-**Affirmative.png**
+**Affirmative.wav**
 Author: IceReaper
 Source: Self-made using OSX Zarvox voice.
 Description: Unit voice.
 
-**Annihilate.png**
+**Annihilate.wav**
 Author: IceReaper
 Source: Self-made using OSX Zarvox voice.
 Description: Unit voice.
 
-**AsYouWish.png**
+**AsYouWish.wav**
 Author: IceReaper
 Source: Self-made using OSX Zarvox voice.
 Description: Unit voice.
 
-**Confirmed.png**
+**Confirmed.wav**
 Author: IceReaper
 Source: Self-made using OSX Zarvox voice.
 Description: Unit voice.
 
-**KrushKillAndDestroy.png**
+**KrushKillAndDestroy.wav**
 Author: IceReaper
 Source: Self-made using OSX Zarvox voice.
 Description: Unit voice.
 
-**Locked.png**
+**Locked.wav**
 Author: IceReaper
 Source: Self-made using OSX Zarvox voice.
 Description: Unit voice.
 
-**Online.png**
+**Online.wav**
 Author: IceReaper
 Source: Self-made using OSX Zarvox voice.
 Description: Unit voice.
 
-**OnYourCommand.png**
+**OnYourCommand.wav**
 Author: IceReaper
 Source: Self-made using OSX Zarvox voice.
 Description: Unit voice.
 
-**PowerUp.png**
+**PowerUp.wav**
 Author: IceReaper
 Source: Self-made using OSX Zarvox voice.
 Description: Unit voice.
 
-**Receiving.png**
+**Receiving.wav**
 Author: IceReaper
 Source: Self-made using OSX Zarvox voice.
 Description: Unit voice.
 
-**SystemsActivated.png**
+**SystemsActivated.wav**
 Author: IceReaper
 Source: Self-made using OSX Zarvox voice.
 Description: Unit voice.
 
-**SystemsReady.png**
+**SystemsReady.wav**
 Author: IceReaper
 Source: Self-made using OSX Zarvox voice.
 Description: Unit voice.
 
-**Target.png**
+**Target.wav**
 Author: IceReaper
 Source: Self-made using OSX Zarvox voice.
 Description: Unit voice.
 
-**TargetLocked.png**
+**TargetLocked.wav**
 Author: IceReaper
 Source: Self-made using OSX Zarvox voice.
 Description: Unit voice.
 
-**UnitReady.png**
+**UnitReady.wav**
 Author: IceReaper
 Source: Self-made using OSX Zarvox voice.
 Description: Unit voice.
 
-**Verified.png**
+**Verified.wav**
 Author: IceReaper
 Source: Self-made using OSX Zarvox voice.
 Description: Unit voice.
 
-**WithPleasure.png**
+**WithPleasure.wav**
 Author: IceReaper
 Source: Self-made using OSX Zarvox voice.
 Description: Unit voice.

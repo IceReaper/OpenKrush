@@ -1,5 +1,5 @@
 survivors_infantry_saboteur:
-	Inherits@muzzle: ^gun_8
+	Inherits@muzzle: ^muzzle_8_directions
 	Inherits@death: ^survivors_infantry_death
 	idle: SPRITES.LVL|Saboteur.mobd
 		Facings: -16

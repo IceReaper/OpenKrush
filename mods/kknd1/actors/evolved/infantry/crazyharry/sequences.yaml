@@ -1,5 +1,5 @@
 evolved_infantry_crazyharry:
-	Inherits@muzzle: ^gun_8
+	Inherits@muzzle: ^muzzle_8_directions
 	Inherits@death: ^evolved_infantry_death
 	idle: SPRITES.LVL|Harry.mobd
 		Facings: -16

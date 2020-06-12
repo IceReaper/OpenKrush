@@ -1,5 +1,5 @@
 evolved_vehicle_monstertruck:
-	Inherits@muzzle: ^gun_16
+	Inherits@muzzle: ^muzzle_16_directions
 	turret: SPRITES.LVL|MonsterTruck.mobd
 		Facings: -16
 	idle: SPRITES.LVL|MonsterTruck.mobd

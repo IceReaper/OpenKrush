@@ -1,5 +1,5 @@
 survivors_vehicle_dirtbike:
-	Inherits@muzzle: ^gun_16
+	Inherits@muzzle: ^muzzle_16_directions
 	idle: SPRITES.LVL|Bike.mobd
 		Facings: -16
 	shoot: SPRITES.LVL|Bike.mobd

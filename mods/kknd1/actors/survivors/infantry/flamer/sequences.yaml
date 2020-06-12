@@ -1,4 +1,5 @@
 survivors_infantry_flamer:
+	Inherits@muzzle: ^muzzle_flamethrower
 	Inherits@death: ^survivors_infantry_death
 	idle: SPRITES.LVL|Flamer.mobd
 		Facings: -16

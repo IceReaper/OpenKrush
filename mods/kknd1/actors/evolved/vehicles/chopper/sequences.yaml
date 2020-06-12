@@ -1,5 +1,5 @@
 evolved_vehicle_chopper:
-	Inherits@muzzle: ^gun_16
+	Inherits@muzzle: ^muzzle_16_directions
 	idle: actors/evolved/vehicles/chopper/frames.png
 		Facings: -16
 	move: actors/evolved/vehicles/chopper/frames.png

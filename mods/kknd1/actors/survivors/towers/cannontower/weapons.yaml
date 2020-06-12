@@ -6,9 +6,9 @@ survivors_tower_cannontower:
 	ReloadDelay: 60
 	Report: SURV.SLV|9.wav
 	Projectile: Bullet
-		Image: projectile
+		Image: survivors_vehicle_anacondatank
 		Palette: kknd
-		Sequences: cannon_l
+		Sequences: projectile
 		Speed: 450
 		Blockable: false
 	Warhead@Damage: SpreadDamage

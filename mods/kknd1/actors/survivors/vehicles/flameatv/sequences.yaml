@@ -1,4 +1,5 @@
 survivors_vehicle_flameatv:
+	Inherits@muzzle: ^muzzle_flamethrower
 	turret: SPRITES.LVL|FlameAtv.mobd
 		Facings: -16
 	idle: SPRITES.LVL|FlameAtv.mobd

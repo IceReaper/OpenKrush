@@ -3,4 +3,9 @@ survivors_aircraft_bomber:
 		Start: 16
 		Facings: -16
 		ZOffset: 3500
+	projectile: SPRITES.LVL|WilburBomber.mobd
+		Start: 32
+		Length: 13
+		Tick: 120
+		ZOffset: 2000
 	icon: actors/survivors/aircrafts/bomber/icon.png

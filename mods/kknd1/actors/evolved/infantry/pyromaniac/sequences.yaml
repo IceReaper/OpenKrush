@@ -1,4 +1,5 @@
 evolved_infantry_pyromaniac:
+	Inherits@muzzle: ^muzzle_flamethrower
 	Inherits@death: ^evolved_infantry_death
 	idle: SPRITES.LVL|Pyromaniac.mobd
 		Facings: -16

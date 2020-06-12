@@ -1,5 +1,5 @@
 evolved_vehicle_direwolf:
-	Inherits@muzzle: ^gun_16
+	Inherits@muzzle: ^muzzle_16_directions
 	idle: SPRITES.LVL|DireWolf.mobd
 		Start: 40
 		Facings: -16

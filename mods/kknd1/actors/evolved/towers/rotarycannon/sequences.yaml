@@ -1,5 +1,5 @@
 evolved_tower_rotarycannon:
-	Inherits@muzzle: ^gun_16
+	Inherits@muzzle: ^muzzle_16_directions
 	shoot: SPRITES.LVL|RotaryCannon.mobd
 		Length: 4
 		Tick: 40
