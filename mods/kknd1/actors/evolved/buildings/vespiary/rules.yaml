@@ -1,6 +1,6 @@
 evolved_building_vespiary:
 	Inherits@1: ^CoreBuilding
-	Inherits@2: ^GrantsSuperweapon
+	Inherits@2: ^grants_superweapon
 	Tooltip:
 		Name: Vespiary
 	Valued:

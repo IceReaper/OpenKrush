@@ -1,7 +1,7 @@
 evolved_building_clanhall:
 	Inherits@1: ^CoreBuilding
-	Inherits@2: ^ProducesBuildings
-	Inherits@3: ^AnimatedBuilding
+	Inherits@2: ^produces_buildings
+	Inherits@3: ^animated_building
 	Tooltip:
 		Name: Clanhall
 	Valued:

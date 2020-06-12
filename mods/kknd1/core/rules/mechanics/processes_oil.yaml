@@ -1,0 +1,6 @@
+^processes_oil:
+	PowerStation:
+	Dock:
+		RequiresCondition: !selfconstructing && !deconstructing
+	TooltipDescription:
+		Description: Processes oil

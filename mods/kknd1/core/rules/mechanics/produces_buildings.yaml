@@ -1,0 +1,11 @@
+^produces_buildings:
+	ProvidesResearchableRadar:
+		RequiresCondition: !selfconstructing && !deconstructing
+	Production:
+		Produces: building, tower, wall
+		RequiresCondition: !selfconstructing && !deconstructing
+	Researchable:
+		RequiresCondition: !selfconstructing && !deconstructing
+	BaseBuilding:
+	TooltipDescription:
+		Description: Produces buildings

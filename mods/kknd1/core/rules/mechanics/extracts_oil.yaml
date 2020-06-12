@@ -1,0 +1,15 @@
+^extracts_oil:
+	WithIdleOverlay@Animation:
+		PauseOnCondition: !HasOil
+	WithIdleOverlay@FakeOil:
+		Sequence: oil
+		RequiresCondition: HasOil && (selfconstructing || deconstructing)
+	Drillrig:
+	Dock:
+		RequiresCondition: !selfconstructing && !deconstructing
+	AttackNotification:
+		Notifications: DrillRigUnderAttack
+	GivesBuildableArea:
+		AreaTypes: defence
+	TooltipDescription:
+		Description: Extracts oil

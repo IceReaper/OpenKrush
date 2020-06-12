@@ -1,0 +1,11 @@
+^oil_tanker:
+	Inherits: ^CoreVehicle
+	Tanker:
+		DockingActivity: TankerCycle
+	AttackNotification:
+		Notifications: TankerUnderAttack
+	IgnoreRallyPoint:
+	Selectable:
+		Priority: 15
+	TooltipDescription:
+		Description: Transports oil

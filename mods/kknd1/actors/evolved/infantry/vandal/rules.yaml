@@ -2,7 +2,7 @@ evolved_infantry_vandal:
 	Inherits@1: ^CoreInfantry
 	Inherits@2: ^CoreArmedSelf
 	Inherits@3: ^HasMuzzle
-	Inherits@4: ^Saboteur
+	Inherits@4: ^saboteur
 	Tooltip:
 		Name: Vandal
 	Valued:

@@ -1,7 +1,7 @@
 survivors_building_solarpanel:
 	Inherits@1: ^CoreBuilding
-	Inherits@2: ^ProducesResources
-	Inherits@3: ^AnimatedBuilding
+	Inherits@2: ^produces_resources
+	Inherits@3: ^animated_building
 	Tooltip:
 		Name: Solar Panel
 	Valued:

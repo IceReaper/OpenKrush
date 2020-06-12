@@ -1,0 +1,5 @@
+^researches_buildings:
+	Researches:
+		RequiresCondition: !selfconstructing && !deconstructing
+	TooltipDescription:
+		Description: Researches buildings

@@ -1,0 +1,7 @@
+^saboteur:
+	Selectable:
+		Priority: 15
+	Saboteur:
+	IgnoreRallyPoint:
+	TooltipDescription:
+		Description: Conquers buildings

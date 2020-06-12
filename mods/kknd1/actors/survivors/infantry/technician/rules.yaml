@@ -1,6 +1,6 @@
 survivors_infantry_technician:
 	Inherits: ^CoreInfantry
-	Inherits@2: ^Technician
+	Inherits@2: ^technician
 	Tooltip:
 		Name: Technician
 	Valued:

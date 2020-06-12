@@ -1,7 +1,7 @@
 evolved_building_drillrig:
 	Inherits@1: ^CoreBuilding
-	Inherits@2: ^AnimatedBuilding
-	Inherits@3: ^ExtractsOil
+	Inherits@2: ^animated_building
+	Inherits@3: ^extracts_oil
 	Tooltip:
 		Name: Drill Rig
 	Valued:

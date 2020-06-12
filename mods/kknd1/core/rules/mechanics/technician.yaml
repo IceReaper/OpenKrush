@@ -1,0 +1,7 @@
+^technician:
+	Selectable:
+		Priority: 15
+	Technician:
+	IgnoreRallyPoint:
+	TooltipDescription:
+		Description: Repairs buildings

@@ -1,6 +1,6 @@
 evolved_building_warriorhall:
 	Inherits@1: ^CoreBuilding
-	Inherits@2: ^ProducesInfantry
+	Inherits@2: ^produces_infantry
 	Tooltip:
 		Name: Warrior Hall
 	Valued:

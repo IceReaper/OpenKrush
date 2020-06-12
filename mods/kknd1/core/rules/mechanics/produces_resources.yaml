@@ -1,0 +1,5 @@
+^produces_resources:
+	CashTrickler:
+		ShowTicks: false
+	TooltipDescription:
+		Description: Produces additional resources

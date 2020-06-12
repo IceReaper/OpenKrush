@@ -1,7 +1,7 @@
 survivors_building_machineshop:
 	Inherits@1: ^CoreBuilding
-	Inherits@2: ^ProducesVehicles
-	Inherits@3: ^AnimatedBuilding
+	Inherits@2: ^produces_vehicles
+	Inherits@3: ^animated_building
 	Tooltip:
 		Name: Machine Shop
 	Valued:

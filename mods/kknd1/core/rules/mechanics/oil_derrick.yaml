@@ -1,0 +1,14 @@
+^oil_derrick:
+	Inherits@1: ^CoreVehicle
+	Inherits@2: ^CoreHeavyVehicle
+	AttackNotification:
+		Notifications: DrillRigUnderAttack
+	IgnoreRallyPoint:
+	Selectable:
+		Priority: 15
+	DeploysOnActor:
+		ValidTargets: oilpatch
+		DeployCursor: dock
+		Offset: -2,-2
+	TooltipDescription:
+		Description: Deploys on oilpatch

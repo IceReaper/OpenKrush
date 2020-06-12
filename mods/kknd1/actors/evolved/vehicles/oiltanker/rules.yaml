@@ -1,5 +1,5 @@
 evolved_vehicle_oiltanker:
-	Inherits: ^OilTanker
+	Inherits: ^oil_tanker
 	Tooltip:
 		Name: Oil Tanker
 	Valued:

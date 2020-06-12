@@ -1,0 +1,17 @@
+^produces_vehicles:
+	AdvancedProduction:
+		Produces: vehicle
+		RequiresCondition: !selfconstructing && !deconstructing
+	AdvancedProductionQueue:
+		Type: vehicle
+		InfiniteBuildLimit: 10
+	FocusInUi:
+		Category: vehicle
+		RequiresCondition: !selfconstructing && !deconstructing
+	RallyPoint:
+		Cursor: move
+		Image:
+	GrantExternalConditionToProduced:
+		Condition: produced
+	TooltipDescription:
+		Description: Produces vehicles

@@ -40,7 +40,21 @@ Rules:
 	kknd1|rules/mapobjects-desert.yaml
 	kknd1|rules/mapobjects-urban.yaml
 	# TODO refactor above
-	kknd1|core/mechanics.yaml
+	kknd1|core/rules/mechanics/animated_building.yaml
+	kknd1|core/rules/mechanics/extracts_oil.yaml
+	kknd1|core/rules/mechanics/grants_superweapon.yaml
+	kknd1|core/rules/mechanics/mobile_base.yaml
+	kknd1|core/rules/mechanics/oil_derrick.yaml
+	kknd1|core/rules/mechanics/oil_tanker.yaml
+	kknd1|core/rules/mechanics/processes_oil.yaml
+	kknd1|core/rules/mechanics/produces_buildings.yaml
+	kknd1|core/rules/mechanics/produces_infantry.yaml
+	kknd1|core/rules/mechanics/produces_resources.yaml
+	kknd1|core/rules/mechanics/produces_vehicles.yaml
+	kknd1|core/rules/mechanics/repairs_vehicles.yaml
+	kknd1|core/rules/mechanics/researches_buildings.yaml
+	kknd1|core/rules/mechanics/saboteur.yaml
+	kknd1|core/rules/mechanics/technician.yaml
 	kknd1|actors/evolved/rules.yaml
 	kknd1|actors/evolved/infantry/berserker/rules.yaml
 	kknd1|actors/evolved/infantry/shotgunner/rules.yaml
@@ -183,9 +197,9 @@ Weapons:
 	kknd1|weapons/survivors-vehicles.yaml
 	kknd1|weapons/shrapnel.yaml
 	# TODO refactor above
-	kknd1|core/weapon_bullet/weapons.yaml
-	kknd1|core/weapon_explosion/weapons.yaml
-	kknd1|core/weapon_nuke/weapons.yaml
+	kknd1|core/weapons/bullet/weapons.yaml
+	kknd1|core/weapons/explosion.yaml
+	kknd1|core/weapons/nuke.yaml
 	kknd1|actors/evolved/infantry/berserker/weapons.yaml
 	kknd1|actors/evolved/infantry/shotgunner/weapons.yaml
 	kknd1|actors/evolved/infantry/pyromaniac/weapons.yaml

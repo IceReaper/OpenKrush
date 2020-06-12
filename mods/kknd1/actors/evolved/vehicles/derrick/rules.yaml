@@ -1,5 +1,5 @@
 evolved_vehicle_derrick:
-	Inherits: ^OilDerrick
+	Inherits: ^oil_derrick
 	Tooltip:
 		Name: Derrick
 	Valued:

@@ -1,0 +1,17 @@
+^produces_infantry:
+	AdvancedProduction:
+		Produces: infantry
+		RequiresCondition: !selfconstructing && !deconstructing
+	AdvancedProductionQueue:
+		Type: infantry
+		InfiniteBuildLimit: 10
+	FocusInUi:
+		Category: infantry
+		RequiresCondition: !selfconstructing && !deconstructing
+	RallyPoint:
+		Cursor: move
+		Image:
+	GrantExternalConditionToProduced:
+		Condition: produced
+	TooltipDescription:
+		Description: Produces infantry

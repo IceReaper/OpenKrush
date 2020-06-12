@@ -1,6 +1,6 @@
 evolved_infantry_mekanik:
 	Inherits@1: ^CoreInfantry
-	Inherits@2: ^Technician
+	Inherits@2: ^technician
 	Tooltip:
 		Name: Mekanik
 	Valued:

@@ -1,6 +1,6 @@
 survivors_building_airfield:
 	Inherits@1: ^CoreBuilding
-	Inherits@2: ^GrantsSuperweapon
+	Inherits@2: ^grants_superweapon
 	Tooltip:
 		Name: Airfield
 	Valued:

@@ -1,6 +1,6 @@
 survivors_building_repairbay:
 	Inherits@1: ^CoreBuilding
-	Inherits@2: ^RepairsVehicles
+	Inherits@2: ^repairs_vehicles
 	Tooltip:
 		Name: Repair Bay
 	Valued:

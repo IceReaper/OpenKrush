@@ -1,0 +1,4 @@
+^animated_building:
+	WithIdleOverlay@Animation:
+		Sequence: animation
+		RequiresCondition: !selfconstructing && !deconstructing

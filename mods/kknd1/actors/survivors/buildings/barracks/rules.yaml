@@ -1,6 +1,6 @@
 survivors_building_barracks:
 	Inherits@1: ^CoreBuilding
-	Inherits@2: ^ProducesInfantry
+	Inherits@2: ^produces_infantry
 	Tooltip:
 		Name: Barracks
 	Valued:

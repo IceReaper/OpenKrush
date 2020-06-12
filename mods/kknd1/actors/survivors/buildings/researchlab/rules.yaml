@@ -1,7 +1,7 @@
 survivors_building_researchlab:
 	Inherits@1: ^CoreBuilding
-	Inherits@2: ^ResearchesBuildings
-	Inherits@3: ^AnimatedBuilding
+	Inherits@2: ^researches_buildings
+	Inherits@3: ^animated_building
 	Tooltip:
 		Name: Research Lab
 	Valued:

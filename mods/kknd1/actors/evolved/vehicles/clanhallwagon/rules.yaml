@@ -1,5 +1,5 @@
 evolved_vehicle_clanhallwagon:
-	Inherits: ^MobileBase
+	Inherits: ^mobile_base
 	Tooltip:
 		Name: Clanhall Wagon
 	Valued:

@@ -1,0 +1,10 @@
+^repairs_vehicles:
+	Dock:
+		RequiresCondition: !selfconstructing && !deconstructing
+	Repairbay:
+		Cursor: repair
+	RallyPoint:
+		Cursor: move
+		Image:
+	TooltipDescription:
+		Description: Repairs vehicles
