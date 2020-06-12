@@ -11,12 +11,14 @@
 
 #endregion
 
+using System;
 using System.Linq;
 using OpenRA.Graphics;
 using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common.Traits.Render;
+using OpenRA.Mods.Kknd.Graphics;
 using OpenRA.Primitives;
 using OpenRA.Traits;
 
@@ -92,23 +94,34 @@ namespace OpenRA.Mods.Kknd.Mechanics.Bunkers.Traits
 			this.info = info;
 			wsb = init.Self.Trait<WithSpriteBody>();
 
-			AddAnimation(init.Self, info.SequenceLocked, TechBunkerState.ClosedLocked);
-			AddAnimation(init.Self, info.SequenceUnlocked, TechBunkerState.ClosedUnlocked);
+			AddAnimation(init.Self, info.SequenceLocked, () => state != TechBunkerState.ClosedLocked);
+			AddAnimation(init.Self, info.SequenceUnlocked, () => state == TechBunkerState.ClosedLocked);
 		}
 
-		private void AddAnimation(Actor self, string sequence, TechBunkerState state)
+		private void AddAnimation(Actor self, string sequence, Func<bool> hideWhen)
 		{
 			if (sequence == null)
 				return;
 
 			var rs = self.Trait<RenderSprites>();
 
-			var overlay = new Animation(self.World, rs.GetImage(self), () => this.state != state);
+			var overlay = new Animation(self.World, rs.GetImage(self), hideWhen);
 			overlay.PlayRepeating(RenderSprites.NormalizeSequence(overlay, self.GetDamageState(), sequence));
 
 			var anim = new AnimationWithOffset(overlay,
-				() => WVec.Zero,
-				() => this.state != state,
+				() =>
+				{
+					var currentSequence = wsb.DefaultAnimation.CurrentSequence as OffsetsSpriteSequence;
+					var sprite = wsb.DefaultAnimation.Image;
+
+					if (currentSequence == null || !currentSequence.EmbeddedOffsets.ContainsKey(sprite) || currentSequence.EmbeddedOffsets[sprite] == null)
+						return WVec.Zero;
+
+					var point = currentSequence.EmbeddedOffsets[sprite].FirstOrDefault(p => p.Id == 0);
+
+					return point != null ? new WVec(point.X * 32, point.Y * 32, 0) : WVec.Zero;
+				},
+				hideWhen,
 				p => RenderUtils.ZOffsetFromCenter(self, p, 1));
 
 			rs.Add(anim);

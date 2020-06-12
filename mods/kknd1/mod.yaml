@@ -54,6 +54,7 @@ Rules:
 	kknd1|core/rules/mechanics/researches_buildings.yaml
 	kknd1|core/rules/mechanics/saboteur.yaml
 	kknd1|core/rules/mechanics/technician.yaml
+	kknd1|actors/bunker/techbunker/rules.yaml
 	kknd1|actors/evolved/rules.yaml
 	kknd1|actors/evolved/infantry/berserker/rules.yaml
 	kknd1|actors/evolved/infantry/shotgunner/rules.yaml
@@ -139,6 +140,7 @@ Sequences:
 	# TODO refactor above
 	kknd1|core/sequences/muzzle.yaml
 	kknd1|core/weapons/bullet/sequences.yaml
+	kknd1|actors/bunker/techbunker/sequences.yaml
 	kknd1|actors/evolved/infantry/berserker/sequences.yaml
 	kknd1|actors/evolved/infantry/shotgunner/sequences.yaml
 	kknd1|actors/evolved/infantry/pyromaniac/sequences.yaml

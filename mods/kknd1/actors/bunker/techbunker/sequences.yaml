@@ -1,0 +1,17 @@
+bunker_techbunker:
+	unlocked: SPRITES.LVL|Bunker.mobd
+		Length: 4
+		Tick: 120
+		Offset: -1,-26
+	idle: SPRITES.LVL|Bunker.mobd
+		Start: 4
+		Offset: -1,-26
+	opening: SPRITES.LVL|Bunker.mobd
+		Start: 5
+		Length: 9
+		Tick: 120
+		Offset: -1,-26
+	idle-open: SPRITES.LVL|Bunker.mobd
+		Start: 14
+		Offset: -1,-26
+	icon: actors/bunker/techbunker/icon.png
