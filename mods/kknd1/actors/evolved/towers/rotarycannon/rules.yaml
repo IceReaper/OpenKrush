@@ -26,5 +26,5 @@ evolved_tower_rotarycannon:
 	TechnicianRepairable:
 		Offset: 0,-15
 	WithLoopedAttackSound:
-		Report: MUTE.SLV|4.wav
+		Report: kknd1|actors\evolved\towers\rotarycannon\sound.wav
 		Delay: 4
