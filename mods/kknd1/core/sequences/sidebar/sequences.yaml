@@ -2,7 +2,7 @@ sidebar:
 	button: core/sequences/sidebar/frames.png
 		Start: 0
 	button-down: core/sequences/sidebar/frames.png
-		Start: 1
+		Start: 10
 	radar: core/sequences/sidebar/frames.png
 		Start: 4
 	options: core/sequences/sidebar/frames.png
@@ -14,7 +14,7 @@ sidebar:
 	research: core/sequences/sidebar/frames.png
 		Start: 9
 	unit: core/sequences/sidebar/frames.png
-		Start: 10
+		Start: 1
 	unit-down: core/sequences/sidebar/frames.png
 		Start: 11
 	button-small: core/sequences/sidebar/frames.png
