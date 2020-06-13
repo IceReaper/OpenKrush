@@ -1,0 +1,27 @@
+sidebar:
+	button: core/sequences/sidebar/frames.png
+		Start: 0
+	button-down: core/sequences/sidebar/frames.png
+		Start: 1
+	radar: core/sequences/sidebar/frames.png
+		Start: 4
+	options: core/sequences/sidebar/frames.png
+		Start: 5
+	sell: core/sequences/sidebar/frames.png
+		Start: 7
+	oil: core/sequences/sidebar/frames.png
+		Start: 8
+	research: core/sequences/sidebar/frames.png
+		Start: 9
+	unit: core/sequences/sidebar/frames.png
+		Start: 10
+	unit-down: core/sequences/sidebar/frames.png
+		Start: 11
+	button-small: core/sequences/sidebar/frames.png
+		Start: 12
+	button-small-up: core/sequences/sidebar/frames.png
+		Start: 13
+	button-small-down: core/sequences/sidebar/frames.png
+		Start: 14
+	repair: core/sequences/sidebar/frames.png
+		Start: 15

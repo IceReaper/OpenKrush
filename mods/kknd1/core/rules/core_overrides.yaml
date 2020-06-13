@@ -1,31 +1,21 @@
-^HasMuzzle:
-	OffsetsArmament:
-		MuzzleSequence: muzzle
-		MuzzlePalette: kknd
-	WithMuzzleOverlay:
-
-^CoreBuilding:
+^CoreConstruction:
+	ActorPreviewPlaceBuildingPreview:
+		Palette: kknd
+		LineBuildSegmentPalette: kknd
 	Building:
 		BuildSounds: SURV.SLV|193.wav
+
+^CoreBuilding:
 	SaboteurConquerable:
-		RequiresCondition: !selfconstructing && !deconstructing
-	TechnicianRepairable:
 		RequiresCondition: !selfconstructing && !deconstructing
 
 ^CoreTower:
-	Building:
-		BuildSounds: SURV.SLV|193.wav
-	Turreted:
-		InitialFacing: 128
 	-ExplosionOnDamageTransition@Critical:
 
 ^CoreWall:
-	Building:
-		BuildSounds: SURV.SLV|193.wav
 	-ExplosionOnDamageTransition@Critical:
 
 ^CoreInfantry:
-	Crushable:
 	WithDeathAnimation:
 		FallbackSequence: die
 		DeathTypes:
@@ -53,13 +43,10 @@
 	RejectsOrders:
 	-MapEditorData:
 
-World:
-	SmudgeLayer@CRATER:
-		Type: Crater
-		Palette: kknd
-		Sequence: crater
-		SmokePercentage: -1
-
-^CoreDecoration:
-	RenderSprites:
-		Palette: kknd
+^CoreWorld:
+	ShroudRenderer:
+		ShroudPalette: kknd
+		Index: 0, 15, 3, 6, 12, 9, 11, 7, 14, 13, 1, 2, 4, 8, 5, 10
+	Faction@Random:
+		# TODO split this
+		RandomFactionMembers: survivors, evolved

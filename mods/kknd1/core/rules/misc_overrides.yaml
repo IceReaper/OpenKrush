@@ -1,0 +1,11 @@
+Player:
+	PlaceBuilding:
+		Palette: kknd
+		LineBuildSegmentPalette: kknd
+
+World:
+	SmudgeLayer@CRATER:
+		Palette: kknd
+
+EditorWorld:
+		Palette: kknd

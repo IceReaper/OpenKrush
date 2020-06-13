@@ -2,7 +2,7 @@ evolved_vehicle_bikeandsidecar:
 	Inherits@1: ^CoreVehicle
 	Inherits@2: ^CoreTurret
 	Inherits@3: ^CoreLightVehicle
-	Inherits@4: ^HasMuzzle
+	Inherits@4: ^has_muzzle
 	Tooltip:
 		Name: Bike & Sidecar
 	Valued:

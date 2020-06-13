@@ -1,7 +1,7 @@
 survivors_tower_guardtower:
 	Inherits@1: ^CoreTower
 	Inherits@2: ^CoreTurret
-	Inherits@2: ^HasMuzzle
+	Inherits@2: ^has_muzzle
 	Tooltip:
 		Name: Guard Tower
 	Valued:

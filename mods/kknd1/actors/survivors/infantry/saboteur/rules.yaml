@@ -1,7 +1,7 @@
 survivors_infantry_saboteur:
 	Inherits@1: ^CoreInfantry
 	Inherits@2: ^CoreArmedSelf
-	Inherits@3: ^HasMuzzle
+	Inherits@3: ^has_muzzle
 	Inherits@4: ^saboteur
 	Tooltip:
 		Name: Saboteur

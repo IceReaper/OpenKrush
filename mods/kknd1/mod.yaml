@@ -34,19 +34,23 @@ Includes:
 	tilesets/urban/mod.yaml
 
 Rules:
-	kknd|rules/palettes.yaml
 	kknd|rules/core.yaml
 	kknd|rules/misc.yaml
-	kknd|rules/mpspawn.yaml
-	kknd1|rules/palettes.yaml
-	kknd1|rules/core.yaml
-	kknd1|rules/misc.yaml
+	kknd|rules/palettes.yaml
+	kknd|actors/oilpatch.yaml
+	kknd|actors/mpspawn/rules.yaml
+	# TODO refactor below
 	kknd1|rules/ai.yaml
 	kknd1|rules/mapobjects-neutral.yaml
 	# TODO refactor above
+	kknd1|core/rules/colorpicker.yaml
+	kknd1|core/rules/core_overrides.yaml
+	kknd1|core/rules/misc_overrides.yaml
+	kknd1|core/rules/palettes.yaml
 	kknd1|core/rules/mechanics/animated_building.yaml
 	kknd1|core/rules/mechanics/extracts_oil.yaml
 	kknd1|core/rules/mechanics/grants_superweapon.yaml
+	kknd1|core/rules/mechanics/has_muzzle.yaml
 	kknd1|core/rules/mechanics/mobile_base.yaml
 	kknd1|core/rules/mechanics/oil_derrick.yaml
 	kknd1|core/rules/mechanics/oil_tanker.yaml
@@ -61,24 +65,30 @@ Rules:
 	kknd1|core/rules/mechanics/technician.yaml
 
 Sequences:
-	kknd|sequences/mpspawn.yaml
+	kknd|actors/mpspawn/sequences.yaml
+	# TODO refactor below
 	kknd1|sequences/misc.yaml
-	kknd1|sequences/weapons.yaml
 	kknd1|sequences/survivors.yaml
 	kknd1|sequences/evolved.yaml
+	kknd1|sequences/weapons.yaml
 	# TODO refactor above
-	kknd1|core/sequences/muzzle.yaml
 	kknd1|core/font.yaml
-	kknd1|core/sidebar.yaml
+	kknd1|core/sequences/muzzle.yaml
+	kknd1|core/sequences/font/frames.yaml
+	kknd1|core/sequences/shroud/frames.yaml
+	kknd1|core/sequences/sidebar/frames.yaml
+	kknd1|core/weapons/blood/sequences.yaml
 	kknd1|core/weapons/bullet/sequences.yaml
+	kknd1|actors/oilpatch/sequences.yaml
 
 Weapons:
-	kknd1|weapons/misc.yaml
-	kknd1|weapons/shrapnel.yaml
-	# TODO refactor above
-	kknd1|core/weapons/bullet/weapons.yaml
+	kknd1|core/weapons/damage_explosions.yaml
+	kknd1|core/weapons/damage_shrapnels.yaml
 	kknd1|core/weapons/explosion.yaml
 	kknd1|core/weapons/nuke.yaml
+	kknd1|core/weapons/blood/weapons.yaml
+	kknd1|core/weapons/bullet/weapons.yaml
+	kknd1|actors/oilpatch/weapons.yaml
 
 Cursors:
 	kknd1|core/cursors.yaml

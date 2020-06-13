@@ -1,0 +1,8 @@
+oilpatch:
+	idle: SPRITES.LVL|Oil.mobd
+		Length: 14
+		Tick: 120
+		ZOffset: -2000
+	burn: actors/oilpatch/frames.png
+		Length: 4
+		Tick: 120

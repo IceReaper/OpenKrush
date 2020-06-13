@@ -1,0 +1,35 @@
+Blood1:
+	ReloadDelay: 60
+	Range: 1c0
+	Projectile: Bullet
+		Speed: 40, 70
+		Blockable: false
+		LaunchAngle: 70, 110
+		Inaccuracy: 1c0
+		Image: weapons_blood
+		Palette: kknd
+		Sequences: blood1
+	Warhead: ShrapnelCreateEffect
+		Image: weapons_blood
+		ExplosionPalette: kknd
+		Explosions: blood_impact
+
+Blood2:
+	Inherits: Blood1
+	Projectile: Bullet
+		Sequences: blood2
+
+Blood3:
+	Inherits: Blood1
+	Projectile: Bullet
+		Sequences: blood3
+
+Blood4:
+	Inherits: Blood1
+	Projectile: Bullet
+		Sequences: blood4
+
+Blood5:
+	Inherits: Blood1
+	Projectile: Bullet
+		Sequences: blood5

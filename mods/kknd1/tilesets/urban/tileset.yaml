@@ -1,7 +1,6 @@
 General:
 	Name: Urban
 	Id: urban
-	Palette: kknd
 	EditorTemplateOrder: Terrain, Beach, Bridge, Decoration, Dirt Cliff, Dirt Cliff Extra, Dirt Cliff Ramp, Path, Path Extra, Street, Street Extra, Water Cliff, Water Cliff Extra, Water Cliff Ramp
 	SheetSize: 2048
 
@@ -39,6 +38,7 @@ Templates:
 		Size: 1,1
 		PickAny: true
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -83,6 +83,7 @@ Templates:
 		Size: 1,1
 		PickAny: true
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -126,6 +127,7 @@ Templates:
 		Images: tilesets/urban/tiles/Terrain_1.png
 		Size: 3,3
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -142,6 +144,7 @@ Templates:
 		Images: tilesets/urban/tiles/Terrain_2.png
 		Size: 3,3
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -158,6 +161,7 @@ Templates:
 		Images: tilesets/urban/tiles/Terrain_3.png
 		Size: 3,3
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -174,6 +178,7 @@ Templates:
 		Images: tilesets/urban/tiles/Terrain_4.png
 		Size: 2,3
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -187,6 +192,7 @@ Templates:
 		Images: tilesets/urban/tiles/Terrain_5.png
 		Size: 4,3
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -206,6 +212,7 @@ Templates:
 		Images: tilesets/urban/tiles/Terrain_6.png
 		Size: 3,3
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -222,6 +229,7 @@ Templates:
 		Images: tilesets/urban/tiles/Terrain_7.png
 		Size: 3,4
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -241,6 +249,7 @@ Templates:
 		Images: tilesets/urban/tiles/Beach_SE.png
 		Size: 4,3
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -254,6 +263,7 @@ Templates:
 		Images: tilesets/urban/tiles/Beach_SW.png
 		Size: 4,3
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			2: Dirt
 			3: Dirt
@@ -267,6 +277,7 @@ Templates:
 		Images: tilesets/urban/tiles/Beach_NE.png
 		Size: 4,3
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			2: Water
 			3: Water
@@ -280,6 +291,7 @@ Templates:
 		Images: tilesets/urban/tiles/Beach_NW.png
 		Size: 4,3
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -293,6 +305,7 @@ Templates:
 		Images: tilesets/urban/tiles/Beach_NW2N.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Water
 			4: Water
@@ -310,6 +323,7 @@ Templates:
 		Images: tilesets/urban/tiles/Beach_NE2N.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			3: Water
 			6: Water
@@ -327,6 +341,7 @@ Templates:
 		Images: tilesets/urban/tiles/Beach_NE2E.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -344,6 +359,7 @@ Templates:
 		Images: tilesets/urban/tiles/Beach_NW2W.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -361,6 +377,7 @@ Templates:
 		Images: tilesets/urban/tiles/Beach_SE2E.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			4: Dirt
@@ -378,6 +395,7 @@ Templates:
 		Images: tilesets/urban/tiles/Beach_SW2W.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			3: Dirt
 			6: Dirt
@@ -395,6 +413,7 @@ Templates:
 		Images: tilesets/urban/tiles/Beach_SE2S.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -412,6 +431,7 @@ Templates:
 		Images: tilesets/urban/tiles/Beach_SW2S.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -429,6 +449,7 @@ Templates:
 		Images: tilesets/urban/tiles/Beach_W2S.png
 		Size: 3,3
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -445,6 +466,7 @@ Templates:
 		Images: tilesets/urban/tiles/Beach_E2S.png
 		Size: 3,3
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -461,6 +483,7 @@ Templates:
 		Images: tilesets/urban/tiles/Beach_E2N.png
 		Size: 3,3
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -477,6 +500,7 @@ Templates:
 		Images: tilesets/urban/tiles/Beach_W2N.png
 		Size: 3,3
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Dirt
@@ -493,6 +517,7 @@ Templates:
 		Images: tilesets/urban/tiles/Beach_W.png
 		Size: 4,2
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -508,6 +533,7 @@ Templates:
 		Images: tilesets/urban/tiles/Beach_N.png
 		Size: 2,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -523,6 +549,7 @@ Templates:
 		Images: tilesets/urban/tiles/Beach_E.png
 		Size: 4,2
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -538,6 +565,7 @@ Templates:
 		Images: tilesets/urban/tiles/Beach_S.png
 		Size: 2,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -553,6 +581,7 @@ Templates:
 		Images: tilesets/urban/tiles/Beach_N2E.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -575,6 +604,7 @@ Templates:
 		Images: tilesets/urban/tiles/Beach_S2E.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -597,6 +627,7 @@ Templates:
 		Images: tilesets/urban/tiles/Beach_S2W.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -619,6 +650,7 @@ Templates:
 		Images: tilesets/urban/tiles/Beach_N2W.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			1: Water
 			2: Water
@@ -641,6 +673,7 @@ Templates:
 		Images: tilesets/urban/tiles/Beach_N2NE.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -658,6 +691,7 @@ Templates:
 		Images: tilesets/urban/tiles/Beach_E2NE.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			3: Water
 			6: Water
@@ -675,6 +709,7 @@ Templates:
 		Images: tilesets/urban/tiles/Beach_E2SE.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -692,6 +727,7 @@ Templates:
 		Images: tilesets/urban/tiles/Beach_S2SE.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			4: Dirt
@@ -709,6 +745,7 @@ Templates:
 		Images: tilesets/urban/tiles/Beach_S2SW.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			3: Dirt
 			6: Dirt
@@ -726,6 +763,7 @@ Templates:
 		Images: tilesets/urban/tiles/Beach_W2SW.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -743,6 +781,7 @@ Templates:
 		Images: tilesets/urban/tiles/Beach_W2NW.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Water
 			4: Water
@@ -760,6 +799,7 @@ Templates:
 		Images: tilesets/urban/tiles/Beach_N2NW.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -777,6 +817,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_1.png
 		Size: 4,8
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -816,6 +857,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_2.png
 		Size: 4,8
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -855,6 +897,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_3.png
 		Size: 4,7
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -890,6 +933,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_4.png
 		Size: 4,7
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -925,6 +969,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_5.png
 		Size: 4,7
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -960,6 +1005,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_6.png
 		Size: 4,7
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -995,6 +1041,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_7.png
 		Size: 1,5
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -1007,6 +1054,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_8.png
 		Size: 1,5
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -1019,6 +1067,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_9.png
 		Size: 1,5
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -1031,6 +1080,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_10.png
 		Size: 5,5
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -1063,6 +1113,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_16.png
 		Size: 10,6
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -1130,6 +1181,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_17.png
 		Size: 10,1
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -1147,6 +1199,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_18.png
 		Size: 10,3
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -1184,6 +1237,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_19.png
 		Size: 10,6
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -1251,6 +1305,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_20.png
 		Size: 10,1
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -1268,6 +1323,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_21.png
 		Size: 10,3
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -1305,6 +1361,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_22.png
 		Size: 10,6
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -1372,6 +1429,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_23.png
 		Size: 10,1
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -1389,6 +1447,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_24.png
 		Size: 10,3
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -1426,6 +1485,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_25.png
 		Size: 10,6
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -1493,6 +1553,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_26.png
 		Size: 10,1
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -1510,6 +1571,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_27.png
 		Size: 10,3
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -1547,6 +1609,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_28.png
 		Size: 9,5
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -1599,6 +1662,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_29.png
 		Size: 8,1
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -1614,6 +1678,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_30.png
 		Size: 9,3
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -1648,6 +1713,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_31.png
 		Size: 9,5
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -1700,6 +1766,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_32.png
 		Size: 8,1
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -1715,6 +1782,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_33.png
 		Size: 9,3
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -1749,6 +1817,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_11.png
 		Size: 6,5
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -1786,6 +1855,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_12.png
 		Size: 4,1
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Street
@@ -1797,6 +1867,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_13.png
 		Size: 4,1
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Street
@@ -1808,6 +1879,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_14.png
 		Size: 4,1
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Street
@@ -1819,6 +1891,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_15.png
 		Size: 6,3
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -1844,6 +1917,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_34.png
 		Size: 10,6
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -1911,6 +1985,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_35.png
 		Size: 10,6
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -1978,6 +2053,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_36.png
 		Size: 10,6
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -2045,6 +2121,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_37.png
 		Size: 10,6
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -2112,6 +2189,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_38.png
 		Size: 9,5
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -2164,6 +2242,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_39.png
 		Size: 9,5
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -2216,6 +2295,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_40.png
 		Size: 10,8
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -2303,6 +2383,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_41.png
 		Size: 10,8
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -2390,6 +2471,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_42.png
 		Size: 10,8
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -2477,6 +2559,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_43.png
 		Size: 10,8
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -2564,6 +2647,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_44.png
 		Size: 9,7
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -2634,6 +2718,7 @@ Templates:
 		Images: tilesets/urban/tiles/Bridge_45.png
 		Size: 9,7
 		Categories: Bridge
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -2704,6 +2789,7 @@ Templates:
 		Images: tilesets/urban/tiles/Decoration_1.png
 		Size: 3,3
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2720,6 +2806,7 @@ Templates:
 		Images: tilesets/urban/tiles/Decoration_2.png
 		Size: 4,3
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2739,6 +2826,7 @@ Templates:
 		Images: tilesets/urban/tiles/Decoration_3.png
 		Size: 5,4
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -2766,6 +2854,7 @@ Templates:
 		Images: tilesets/urban/tiles/Decoration_4.png
 		Size: 2,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -2777,6 +2866,7 @@ Templates:
 		Images: tilesets/urban/tiles/Decoration_5.png
 		Size: 2,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -2788,6 +2878,7 @@ Templates:
 		Images: tilesets/urban/tiles/Decoration_6.png
 		Size: 2,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -2799,6 +2890,7 @@ Templates:
 		Images: tilesets/urban/tiles/Decoration_7.png
 		Size: 2,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -2810,6 +2902,7 @@ Templates:
 		Images: tilesets/urban/tiles/Decoration_8.png
 		Size: 1,1
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Dirt
 
@@ -2818,6 +2911,7 @@ Templates:
 		Images: tilesets/urban/tiles/Decoration_9.png
 		Size: 7,7
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			1: Cliff
 			2: Cliff
@@ -2869,6 +2963,7 @@ Templates:
 		Images: tilesets/urban/tiles/Decoration_10.png
 		Size: 9,7
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			2: Cliff
 			3: Cliff
@@ -2927,6 +3022,7 @@ Templates:
 		Images: tilesets/urban/tiles/Decoration_11.png
 		Size: 10,8
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			2: Cliff
 			3: Cliff
@@ -2996,6 +3092,7 @@ Templates:
 		Images: tilesets/urban/tiles/Decoration_12.png
 		Size: 10,8
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			2: Cliff
 			3: Cliff
@@ -3065,6 +3162,7 @@ Templates:
 		Images: tilesets/urban/tiles/Decoration_13.png
 		Size: 10,8
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			2: Cliff
 			3: Cliff
@@ -3137,6 +3235,7 @@ Templates:
 		Images: tilesets/urban/tiles/Decoration_14.png
 		Size: 6,5
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			2: Dirt
 			3: Dirt
@@ -3169,6 +3268,7 @@ Templates:
 		Images: tilesets/urban/tiles/Decoration_15.png
 		Size: 7,4
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			1: Dirt
 			2: Dirt
@@ -3200,6 +3300,7 @@ Templates:
 		Images: tilesets/urban/tiles/Decoration_16.png
 		Size: 18,8
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			10: Dirt
 			11: Dirt
@@ -3311,6 +3412,7 @@ Templates:
 		Images: tilesets/urban/tiles/Decoration_17.png
 		Size: 5,6
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			1: Dirt
 			2: Dirt
@@ -3342,6 +3444,7 @@ Templates:
 		Images: tilesets/urban/tiles/Decoration_18.png
 		Size: 5,6
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			1: Dirt
 			2: Dirt
@@ -3374,6 +3477,7 @@ Templates:
 		Images: tilesets/urban/tiles/Decoration_26.png
 		Size: 2,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3385,6 +3489,7 @@ Templates:
 		Images: tilesets/urban/tiles/Decoration_19.png
 		Size: 1,1
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Dirt
 
@@ -3393,6 +3498,7 @@ Templates:
 		Images: tilesets/urban/tiles/Decoration_20.png
 		Size: 2,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -3404,6 +3510,7 @@ Templates:
 		Images: tilesets/urban/tiles/Decoration_21.png
 		Size: 1,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -3413,6 +3520,7 @@ Templates:
 		Images: tilesets/urban/tiles/Decoration_22.png
 		Size: 1,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -3422,6 +3530,7 @@ Templates:
 		Images: tilesets/urban/tiles/Decoration_23.png
 		Size: 2,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -3433,6 +3542,7 @@ Templates:
 		Images: tilesets/urban/tiles/Decoration_24.png
 		Size: 1,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -3442,6 +3552,7 @@ Templates:
 		Images: tilesets/urban/tiles/Decoration_25.png
 		Size: 2,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -3453,6 +3564,7 @@ Templates:
 		Images: tilesets/urban/tiles/Decoration_27.png
 		Size: 1,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -3462,6 +3574,7 @@ Templates:
 		Images: tilesets/urban/tiles/Decoration_28.png
 		Size: 1,1
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Water
 
@@ -3470,6 +3583,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_N_A.png
 		Size: 4,2
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3485,6 +3599,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_N_B.png
 		Size: 4,2
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3500,6 +3615,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_NE.png
 		Size: 3,2
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			1: Cliff
 			2: Dirt
@@ -3511,6 +3627,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_E_A.png
 		Size: 3,4
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -3530,6 +3647,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_E_B.png
 		Size: 3,4
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -3549,6 +3667,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_S_A.png
 		Size: 4,3
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3568,6 +3687,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_S_B.png
 		Size: 4,3
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3587,6 +3707,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_SW.png
 		Size: 3,2
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			1: Cliff
 			2: Cliff
@@ -3598,6 +3719,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_SE.png
 		Size: 3,2
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3609,6 +3731,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_NW.png
 		Size: 3,2
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -3620,6 +3743,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_W_A.png
 		Size: 3,4
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3639,6 +3763,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_W_B.png
 		Size: 3,4
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3658,6 +3783,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_N2E.png
 		Size: 3,3
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3674,6 +3800,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_S2E.png
 		Size: 3,4
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3690,6 +3817,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_S2W.png
 		Size: 3,4
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -3706,6 +3834,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_N2W.png
 		Size: 3,3
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -3722,6 +3851,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_N2NE.png
 		Size: 2,2
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3733,6 +3863,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_N2NW.png
 		Size: 2,2
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3744,6 +3875,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_W2NW.png
 		Size: 3,3
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -3759,6 +3891,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_E2NE.png
 		Size: 3,3
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			1: Cliff
 			2: Dirt
@@ -3774,6 +3907,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_E2SE.png
 		Size: 3,2
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3786,6 +3920,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_S2SE.png
 		Size: 2,3
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			2: Cliff
@@ -3797,6 +3932,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_S2SW.png
 		Size: 2,3
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			1: Cliff
 			2: Dirt
@@ -3808,6 +3944,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_W2SW.png
 		Size: 3,2
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -3820,6 +3957,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_W2S.png
 		Size: 3,3
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3836,6 +3974,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_E2S.png
 		Size: 3,3
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3852,6 +3991,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_E2N.png
 		Size: 3,3
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -3868,6 +4008,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_W2N.png
 		Size: 3,3
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3884,6 +4025,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_SE2E.png
 		Size: 3,2
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3897,6 +4039,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_SW2W.png
 		Size: 3,2
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3910,6 +4053,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_SE2S.png
 		Size: 2,2
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3920,6 +4064,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_SW2S.png
 		Size: 2,2
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3930,6 +4075,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_NE2E.png
 		Size: 2,2
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3941,6 +4087,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_NW2W.png
 		Size: 2,2
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3952,6 +4099,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_NE2N.png
 		Size: 1,2
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Dirt
@@ -3961,6 +4109,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliff_NW2N.png
 		Size: 1,2
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Dirt
@@ -3970,6 +4119,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffExtra_1.png
 		Size: 8,2
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3993,6 +4143,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffExtra_2.png
 		Size: 6,2
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4012,6 +4163,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffExtra_3.png
 		Size: 5,3
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4030,6 +4182,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffExtra_4.png
 		Size: 5,3
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			2: Cliff
 			3: Cliff
@@ -4048,6 +4201,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffExtra_5.png
 		Size: 3,2
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -4061,6 +4215,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffExtra_6.png
 		Size: 3,4
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -4080,6 +4235,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffExtra_7.png
 		Size: 3,4
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4099,6 +4255,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffExtra_8.png
 		Size: 3,2
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4112,6 +4269,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffExtra_9.png
 		Size: 5,3
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -4132,6 +4290,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffExtra_10.png
 		Size: 3,5
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4154,6 +4313,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffExtra_11.png
 		Size: 3,5
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -4176,6 +4336,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffExtra_12.png
 		Size: 5,3
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4196,6 +4357,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffExtra_13.png
 		Size: 6,4
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			2: Dirt
 			3: Cliff
@@ -4221,6 +4383,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffExtra_14.png
 		Size: 7,3
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4249,6 +4412,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffExtra_15.png
 		Size: 6,4
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4274,6 +4438,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffExtra_16.png
 		Size: 3,6
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4299,6 +4464,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffExtra_17.png
 		Size: 3,6
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -4324,6 +4490,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffExtra_18.png
 		Size: 5,5
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4356,6 +4523,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffExtra_19.png
 		Size: 5,5
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4388,6 +4556,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffExtra_20.png
 		Size: 5,5
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4420,6 +4589,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffExtra_21.png
 		Size: 3,5
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4442,6 +4612,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffExtra_22.png
 		Size: 4,5
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4469,6 +4640,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffExtra_23.png
 		Size: 4,5
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4496,6 +4668,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffExtra_24.png
 		Size: 3,5
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4518,6 +4691,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffExtra_25.png
 		Size: 5,5
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4550,6 +4724,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffExtra_26.png
 		Size: 5,4
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4577,6 +4752,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffExtra_27.png
 		Size: 3,4
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -4596,6 +4772,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffExtra_28.png
 		Size: 3,4
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Dirt
@@ -4615,6 +4792,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffExtra_29.png
 		Size: 5,4
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -4642,6 +4820,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffExtra_30.png
 		Size: 5,3
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4664,6 +4843,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffRamp_SE.png
 		Size: 2,4
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -4679,6 +4859,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffRamp_SW.png
 		Size: 2,4
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -4694,6 +4875,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffRamp_NE.png
 		Size: 2,4
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Dirt
@@ -4709,6 +4891,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffRamp_NW.png
 		Size: 2,4
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -4724,6 +4907,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffRamp_WS.png
 		Size: 3,2
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4737,6 +4921,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffRamp_WN.png
 		Size: 3,3
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -4753,6 +4938,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffRamp_ES.png
 		Size: 3,2
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4766,6 +4952,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffRamp_EN.png
 		Size: 3,3
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4782,6 +4969,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffRamp_1.png
 		Size: 2,3
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4795,6 +4983,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffRamp_2.png
 		Size: 2,3
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4808,6 +4997,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffRamp_3.png
 		Size: 2,4
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -4823,6 +5013,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffRamp_4.png
 		Size: 2,4
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -4838,6 +5029,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffRamp_5.png
 		Size: 3,1
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4848,6 +5040,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffRamp_6.png
 		Size: 3,1
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -4858,6 +5051,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffRamp_7.png
 		Size: 3,2
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4871,6 +5065,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffRamp_8.png
 		Size: 3,2
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4884,6 +5079,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffRamp_9.png
 		Size: 3,3
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -4900,6 +5096,7 @@ Templates:
 		Images: tilesets/urban/tiles/DirtCliffRamp_10.png
 		Size: 3,3
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4916,6 +5113,7 @@ Templates:
 		Images: tilesets/urban/tiles/Path_1.png
 		Size: 5,2
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -4933,6 +5131,7 @@ Templates:
 		Images: tilesets/urban/tiles/Path_2.png
 		Size: 2,2
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -4944,6 +5143,7 @@ Templates:
 		Images: tilesets/urban/tiles/Path_3.png
 		Size: 3,3
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			1: Path
 			3: Path
@@ -4957,6 +5157,7 @@ Templates:
 		Images: tilesets/urban/tiles/Path_4.png
 		Size: 3,2
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -4970,6 +5171,7 @@ Templates:
 		Images: tilesets/urban/tiles/Path_5.png
 		Size: 2,5
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -4987,6 +5189,7 @@ Templates:
 		Images: tilesets/urban/tiles/Path_6.png
 		Size: 3,2
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Path
@@ -5000,6 +5203,7 @@ Templates:
 		Images: tilesets/urban/tiles/Path_7.png
 		Size: 3,3
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			1: Path
 			2: Path
@@ -5013,6 +5217,7 @@ Templates:
 		Images: tilesets/urban/tiles/Path_8.png
 		Size: 2,3
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Path
@@ -5026,6 +5231,7 @@ Templates:
 		Images: tilesets/urban/tiles/Path_9.png
 		Size: 5,2
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5043,6 +5249,7 @@ Templates:
 		Images: tilesets/urban/tiles/Path_10.png
 		Size: 2,3
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Dirt
@@ -5056,6 +5263,7 @@ Templates:
 		Images: tilesets/urban/tiles/Path_11.png
 		Size: 3,3
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5069,6 +5277,7 @@ Templates:
 		Images: tilesets/urban/tiles/Path_12.png
 		Size: 3,2
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5082,6 +5291,7 @@ Templates:
 		Images: tilesets/urban/tiles/Path_13.png
 		Size: 2,5
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5099,6 +5309,7 @@ Templates:
 		Images: tilesets/urban/tiles/Path_14.png
 		Size: 3,2
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5112,6 +5323,7 @@ Templates:
 		Images: tilesets/urban/tiles/Path_15.png
 		Size: 3,3
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			1: Path
 			3: Path
@@ -5125,6 +5337,7 @@ Templates:
 		Images: tilesets/urban/tiles/Path_16.png
 		Size: 2,2
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5136,6 +5349,7 @@ Templates:
 		Images: tilesets/urban/tiles/Path_29.png
 		Size: 2,2
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5147,6 +5361,7 @@ Templates:
 		Images: tilesets/urban/tiles/Path_17.png
 		Size: 2,2
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5158,6 +5373,7 @@ Templates:
 		Images: tilesets/urban/tiles/Path_18.png
 		Size: 2,2
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5169,6 +5385,7 @@ Templates:
 		Images: tilesets/urban/tiles/Path_19.png
 		Size: 2,2
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5180,6 +5397,7 @@ Templates:
 		Images: tilesets/urban/tiles/Path_20.png
 		Size: 4,4
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			1: Path
 			2: Path
@@ -5199,6 +5417,7 @@ Templates:
 		Images: tilesets/urban/tiles/Path_25.png
 		Size: 3,3
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5215,6 +5434,7 @@ Templates:
 		Images: tilesets/urban/tiles/Path_26.png
 		Size: 3,3
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5231,6 +5451,7 @@ Templates:
 		Images: tilesets/urban/tiles/Path_27.png
 		Size: 3,3
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5247,6 +5468,7 @@ Templates:
 		Images: tilesets/urban/tiles/Path_28.png
 		Size: 3,3
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5263,6 +5485,7 @@ Templates:
 		Images: tilesets/urban/tiles/Path_21.png
 		Size: 3,4
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			1: Path
 			2: Path
@@ -5280,6 +5503,7 @@ Templates:
 		Images: tilesets/urban/tiles/Path_22.png
 		Size: 3,4
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5297,6 +5521,7 @@ Templates:
 		Images: tilesets/urban/tiles/Path_23.png
 		Size: 4,3
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			1: Path
 			2: Path
@@ -5314,6 +5539,7 @@ Templates:
 		Images: tilesets/urban/tiles/Path_24.png
 		Size: 4,3
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5331,6 +5557,7 @@ Templates:
 		Images: tilesets/urban/tiles/PathExtra_1.png
 		Size: 3,3
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -5344,6 +5571,7 @@ Templates:
 		Images: tilesets/urban/tiles/PathExtra_2.png
 		Size: 3,3
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			1: Dirt
 			2: Dirt
@@ -5357,6 +5585,7 @@ Templates:
 		Images: tilesets/urban/tiles/PathExtra_3.png
 		Size: 3,3
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			1: Path
 			3: Path
@@ -5370,6 +5599,7 @@ Templates:
 		Images: tilesets/urban/tiles/PathExtra_4.png
 		Size: 3,3
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			1: Path
 			3: Dirt
@@ -5383,6 +5613,7 @@ Templates:
 		Images: tilesets/urban/tiles/PathExtra_5.png
 		Size: 6,3
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Path
@@ -5405,6 +5636,7 @@ Templates:
 		Images: tilesets/urban/tiles/PathExtra_6.png
 		Size: 6,3
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			3: Dirt
 			4: Path
@@ -5427,6 +5659,7 @@ Templates:
 		Images: tilesets/urban/tiles/PathExtra_7.png
 		Size: 6,4
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -5458,6 +5691,7 @@ Templates:
 		Images: tilesets/urban/tiles/PathExtra_8.png
 		Size: 6,4
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Path
@@ -5489,6 +5723,7 @@ Templates:
 		Images: tilesets/urban/tiles/PathExtra_9.png
 		Size: 6,5
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5526,6 +5761,7 @@ Templates:
 		Images: tilesets/urban/tiles/PathExtra_10.png
 		Size: 6,5
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -5563,6 +5799,7 @@ Templates:
 		Images: tilesets/urban/tiles/PathExtra_11.png
 		Size: 4,4
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Path
@@ -5586,6 +5823,7 @@ Templates:
 		Images: tilesets/urban/tiles/PathExtra_12.png
 		Size: 4,4
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5609,6 +5847,7 @@ Templates:
 		Images: tilesets/urban/tiles/PathExtra_13.png
 		Size: 5,5
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -5641,6 +5880,7 @@ Templates:
 		Images: tilesets/urban/tiles/PathExtra_14.png
 		Size: 5,5
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5673,6 +5913,7 @@ Templates:
 		Images: tilesets/urban/tiles/PathExtra_15.png
 		Size: 7,8
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5720,6 +5961,7 @@ Templates:
 		Images: tilesets/urban/tiles/PathExtra_16.png
 		Size: 7,8
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -5767,6 +6009,7 @@ Templates:
 		Images: tilesets/urban/tiles/PathExtra_17.png
 		Size: 5,4
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5794,6 +6037,7 @@ Templates:
 		Images: tilesets/urban/tiles/PathExtra_18.png
 		Size: 5,4
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -5821,6 +6065,7 @@ Templates:
 		Images: tilesets/urban/tiles/PathExtra_19.png
 		Size: 5,4
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -5848,6 +6093,7 @@ Templates:
 		Images: tilesets/urban/tiles/PathExtra_20.png
 		Size: 5,4
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Path
@@ -5875,6 +6121,7 @@ Templates:
 		Images: tilesets/urban/tiles/Street_1.png
 		Size: 7,4
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -5910,6 +6157,7 @@ Templates:
 		Images: tilesets/urban/tiles/Street_2.png
 		Size: 3,5
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -5927,6 +6175,7 @@ Templates:
 		Images: tilesets/urban/tiles/Street_3.png
 		Size: 3,3
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			2: Dirt
 			4: Street
@@ -5940,6 +6189,7 @@ Templates:
 		Images: tilesets/urban/tiles/Street_4.png
 		Size: 3,3
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			1: Street
 			2: Dirt
@@ -5955,6 +6205,7 @@ Templates:
 		Images: tilesets/urban/tiles/Street_5.png
 		Size: 4,7
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Street
@@ -5990,6 +6241,7 @@ Templates:
 		Images: tilesets/urban/tiles/Street_6.png
 		Size: 3,3
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Street
@@ -6006,6 +6258,7 @@ Templates:
 		Images: tilesets/urban/tiles/Street_7.png
 		Size: 3,3
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Street
@@ -6019,6 +6272,7 @@ Templates:
 		Images: tilesets/urban/tiles/Street_8.png
 		Size: 3,3
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -6035,6 +6289,7 @@ Templates:
 		Images: tilesets/urban/tiles/Street_9.png
 		Size: 7,4
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -6070,6 +6325,7 @@ Templates:
 		Images: tilesets/urban/tiles/Street_10.png
 		Size: 3,3
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Dirt
@@ -6086,6 +6342,7 @@ Templates:
 		Images: tilesets/urban/tiles/Street_11.png
 		Size: 3,3
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -6099,6 +6356,7 @@ Templates:
 		Images: tilesets/urban/tiles/Street_12.png
 		Size: 3,3
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -6114,6 +6372,7 @@ Templates:
 		Images: tilesets/urban/tiles/Street_13.png
 		Size: 4,7
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Street
@@ -6149,6 +6408,7 @@ Templates:
 		Images: tilesets/urban/tiles/Street_14.png
 		Size: 4,3
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Street
@@ -6165,6 +6425,7 @@ Templates:
 		Images: tilesets/urban/tiles/Street_15.png
 		Size: 3,3
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			3: Street
@@ -6178,6 +6439,7 @@ Templates:
 		Images: tilesets/urban/tiles/Street_16.png
 		Size: 3,5
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			1: Dirt
 			2: Dirt
@@ -6195,6 +6457,7 @@ Templates:
 		Images: tilesets/urban/tiles/Street_17.png
 		Size: 4,5
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			2: Dirt
 			3: Street
@@ -6216,6 +6479,7 @@ Templates:
 		Images: tilesets/urban/tiles/Street_18.png
 		Size: 4,5
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			2: Dirt
 			3: Street
@@ -6237,6 +6501,7 @@ Templates:
 		Images: tilesets/urban/tiles/Street_19.png
 		Size: 4,5
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Dirt
@@ -6258,6 +6523,7 @@ Templates:
 		Images: tilesets/urban/tiles/Street_20.png
 		Size: 4,5
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Dirt
@@ -6279,6 +6545,7 @@ Templates:
 		Images: tilesets/urban/tiles/Street_21.png
 		Size: 4,3
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -6297,6 +6564,7 @@ Templates:
 		Images: tilesets/urban/tiles/Street_22.png
 		Size: 4,3
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -6315,6 +6583,7 @@ Templates:
 		Images: tilesets/urban/tiles/Street_23.png
 		Size: 4,3
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -6333,6 +6602,7 @@ Templates:
 		Images: tilesets/urban/tiles/Street_24.png
 		Size: 4,3
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			1: Street
 			2: Dirt
@@ -6351,6 +6621,7 @@ Templates:
 		Images: tilesets/urban/tiles/Street_25.png
 		Size: 4,4
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Street
@@ -6374,6 +6645,7 @@ Templates:
 		Images: tilesets/urban/tiles/Street_26.png
 		Size: 4,4
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Street
@@ -6397,6 +6669,7 @@ Templates:
 		Images: tilesets/urban/tiles/Street_27.png
 		Size: 4,4
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Street
@@ -6420,6 +6693,7 @@ Templates:
 		Images: tilesets/urban/tiles/Street_28.png
 		Size: 4,4
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -6443,6 +6717,7 @@ Templates:
 		Images: tilesets/urban/tiles/Street_29.png
 		Size: 4,4
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Street
@@ -6466,6 +6741,7 @@ Templates:
 		Images: tilesets/urban/tiles/Street_30.png
 		Size: 2,2
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -6477,6 +6753,7 @@ Templates:
 		Images: tilesets/urban/tiles/Street_31.png
 		Size: 2,2
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -6488,6 +6765,7 @@ Templates:
 		Images: tilesets/urban/tiles/Street_32.png
 		Size: 2,2
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -6499,6 +6777,7 @@ Templates:
 		Images: tilesets/urban/tiles/Street_33.png
 		Size: 2,2
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -6510,6 +6789,7 @@ Templates:
 		Images: tilesets/urban/tiles/StreetExtra_1.png
 		Size: 8,2
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -6533,6 +6813,7 @@ Templates:
 		Images: tilesets/urban/tiles/StreetExtra_2.png
 		Size: 2,8
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -6556,6 +6837,7 @@ Templates:
 		Images: tilesets/urban/tiles/StreetExtra_3.png
 		Size: 2,2
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Dirt
@@ -6567,6 +6849,7 @@ Templates:
 		Images: tilesets/urban/tiles/StreetExtra_4.png
 		Size: 2,2
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -6578,6 +6861,7 @@ Templates:
 		Images: tilesets/urban/tiles/StreetExtra_5.png
 		Size: 1,4
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Street
@@ -6589,6 +6873,7 @@ Templates:
 		Images: tilesets/urban/tiles/StreetExtra_6.png
 		Size: 1,4
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Street
@@ -6600,6 +6885,7 @@ Templates:
 		Images: tilesets/urban/tiles/StreetExtra_7.png
 		Size: 1,4
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Street
@@ -6611,6 +6897,7 @@ Templates:
 		Images: tilesets/urban/tiles/StreetExtra_8.png
 		Size: 1,4
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Street
@@ -6622,6 +6909,7 @@ Templates:
 		Images: tilesets/urban/tiles/StreetExtra_9.png
 		Size: 1,4
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Street
@@ -6633,6 +6921,7 @@ Templates:
 		Images: tilesets/urban/tiles/StreetExtra_10.png
 		Size: 1,4
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Street
@@ -6644,6 +6933,7 @@ Templates:
 		Images: tilesets/urban/tiles/StreetExtra_11.png
 		Size: 4,1
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Street
@@ -6655,6 +6945,7 @@ Templates:
 		Images: tilesets/urban/tiles/StreetExtra_12.png
 		Size: 4,1
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Street
@@ -6666,6 +6957,7 @@ Templates:
 		Images: tilesets/urban/tiles/StreetExtra_13.png
 		Size: 4,1
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Street
@@ -6677,6 +6969,7 @@ Templates:
 		Images: tilesets/urban/tiles/StreetExtra_14.png
 		Size: 4,1
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Street
@@ -6688,6 +6981,7 @@ Templates:
 		Images: tilesets/urban/tiles/StreetExtra_15.png
 		Size: 4,1
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Street
@@ -6699,6 +6993,7 @@ Templates:
 		Images: tilesets/urban/tiles/StreetExtra_16.png
 		Size: 4,1
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Street
@@ -6710,6 +7005,7 @@ Templates:
 		Images: tilesets/urban/tiles/StreetExtra_17.png
 		Size: 2,2
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -6721,6 +7017,7 @@ Templates:
 		Images: tilesets/urban/tiles/StreetExtra_18.png
 		Size: 2,2
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -6732,6 +7029,7 @@ Templates:
 		Images: tilesets/urban/tiles/StreetExtra_19.png
 		Size: 2,2
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -6743,6 +7041,7 @@ Templates:
 		Images: tilesets/urban/tiles/StreetExtra_20.png
 		Size: 2,2
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -6754,6 +7053,7 @@ Templates:
 		Images: tilesets/urban/tiles/StreetExtra_21.png
 		Size: 2,4
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			2: Cliff
@@ -6768,6 +7068,7 @@ Templates:
 		Images: tilesets/urban/tiles/StreetExtra_22.png
 		Size: 2,4
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			2: Cliff
@@ -6782,6 +7083,7 @@ Templates:
 		Images: tilesets/urban/tiles/StreetExtra_23.png
 		Size: 3,3
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -6795,6 +7097,7 @@ Templates:
 		Images: tilesets/urban/tiles/StreetExtra_24.png
 		Size: 3,3
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Street
@@ -6808,6 +7111,7 @@ Templates:
 		Images: tilesets/urban/tiles/StreetExtra_25.png
 		Size: 3,3
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			2: Dirt
 			4: Street
@@ -6821,6 +7125,7 @@ Templates:
 		Images: tilesets/urban/tiles/StreetExtra_26.png
 		Size: 3,3
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			3: Street
@@ -6834,6 +7139,7 @@ Templates:
 		Images: tilesets/urban/tiles/StreetExtra_27.png
 		Size: 2,4
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -6849,6 +7155,7 @@ Templates:
 		Images: tilesets/urban/tiles/StreetExtra_28.png
 		Size: 6,11
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Path
@@ -6922,6 +7229,7 @@ Templates:
 		Images: tilesets/urban/tiles/StreetExtra_29.png
 		Size: 6,11
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -6995,6 +7303,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_N_A.png
 		Size: 4,2
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -7010,6 +7319,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_N_B.png
 		Size: 4,2
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -7025,6 +7335,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_NE.png
 		Size: 3,2
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			1: Cliff
 			2: Water
@@ -7036,6 +7347,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_E_A.png
 		Size: 3,4
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -7055,6 +7367,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_E_B.png
 		Size: 3,4
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -7074,6 +7387,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_S_A.png
 		Size: 4,4
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -7097,6 +7411,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_S_B.png
 		Size: 4,4
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -7120,6 +7435,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_SW.png
 		Size: 3,3
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			1: Cliff
 			2: Cliff
@@ -7132,6 +7448,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_SE.png
 		Size: 3,3
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -7144,6 +7461,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_NW.png
 		Size: 3,2
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Cliff
@@ -7155,6 +7473,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_W_A.png
 		Size: 3,4
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -7174,6 +7493,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_W_B.png
 		Size: 3,4
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -7193,6 +7513,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_N2E.png
 		Size: 3,3
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -7209,6 +7530,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_S2E.png
 		Size: 3,5
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -7227,6 +7549,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_S2W.png
 		Size: 3,5
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Cliff
@@ -7245,6 +7568,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_N2W.png
 		Size: 3,3
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Cliff
@@ -7261,6 +7585,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_N2NE.png
 		Size: 2,2
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -7272,6 +7597,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_N2NW.png
 		Size: 2,2
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -7283,6 +7609,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_W2NW.png
 		Size: 3,3
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Cliff
@@ -7298,6 +7625,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_E2NE.png
 		Size: 3,3
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			1: Cliff
 			2: Water
@@ -7313,6 +7641,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_E2SE.png
 		Size: 3,2
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -7325,6 +7654,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_S2SE.png
 		Size: 2,4
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			2: Cliff
@@ -7338,6 +7668,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_S2SW.png
 		Size: 2,4
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			1: Cliff
 			2: Water
@@ -7351,6 +7682,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_W2SW.png
 		Size: 3,2
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Cliff
@@ -7363,6 +7695,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_W2S.png
 		Size: 3,3
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -7379,6 +7712,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_E2S.png
 		Size: 3,3
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -7395,6 +7729,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_E2N.png
 		Size: 3,3
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -7411,6 +7746,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_W2N.png
 		Size: 3,3
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Cliff
@@ -7427,6 +7763,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_SE2E.png
 		Size: 4,4
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -7444,6 +7781,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_SW2W.png
 		Size: 4,4
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			1: Cliff
 			2: Cliff
@@ -7461,6 +7799,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_SE2S.png
 		Size: 2,2
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -7471,6 +7810,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_SW2S.png
 		Size: 2,2
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -7481,6 +7821,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_NE2E.png
 		Size: 3,2
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -7493,6 +7834,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_NW2W.png
 		Size: 3,2
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Cliff
@@ -7505,6 +7847,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_NE2N.png
 		Size: 1,2
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Dirt
@@ -7514,6 +7857,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliff_NW2N.png
 		Size: 1,2
 		Categories: Water Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Dirt
@@ -7523,6 +7867,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffExtra_1.png
 		Size: 3,7
 		Categories: Water Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -7551,6 +7896,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffExtra_2.png
 		Size: 2,4
 		Categories: Water Cliff Extra
+		Palette: kknd
 		Tiles:
 			1: Cliff
 			2: Water
@@ -7564,6 +7910,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffExtra_3.png
 		Size: 3,8
 		Categories: Water Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -7595,6 +7942,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffExtra_4.png
 		Size: 6,2
 		Categories: Water Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -7614,6 +7962,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffExtra_5.png
 		Size: 3,8
 		Categories: Water Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -7645,6 +7994,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffExtra_6.png
 		Size: 2,4
 		Categories: Water Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			2: Cliff
@@ -7658,6 +8008,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffExtra_7.png
 		Size: 3,7
 		Categories: Water Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -7686,6 +8037,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffExtra_8.png
 		Size: 5,4
 		Categories: Water Cliff Extra
+		Palette: kknd
 		Tiles:
 			2: Water
 			3: Cliff
@@ -7707,6 +8059,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffExtra_32.png
 		Size: 5,4
 		Categories: Water Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -7728,6 +8081,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffExtra_9.png
 		Size: 3,2
 		Categories: Water Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -7741,6 +8095,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffExtra_10.png
 		Size: 3,5
 		Categories: Water Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Dirt
@@ -7763,6 +8118,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffExtra_11.png
 		Size: 3,6
 		Categories: Water Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Cliff
@@ -7788,6 +8144,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffExtra_12.png
 		Size: 3,6
 		Categories: Water Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -7813,6 +8170,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffExtra_13.png
 		Size: 3,5
 		Categories: Water Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -7835,6 +8193,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffExtra_14.png
 		Size: 3,2
 		Categories: Water Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -7848,6 +8207,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffExtra_15.png
 		Size: 4,3
 		Categories: Water Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -7867,6 +8227,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffExtra_16.png
 		Size: 4,3
 		Categories: Water Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Water
@@ -7886,6 +8247,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffExtra_17.png
 		Size: 4,6
 		Categories: Water Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Dirt
@@ -7914,6 +8276,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffExtra_18.png
 		Size: 4,6
 		Categories: Water Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -7943,6 +8306,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffExtra_19.png
 		Size: 3,6
 		Categories: Water Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -7968,6 +8332,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffExtra_20.png
 		Size: 6,5
 		Categories: Water Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -8005,6 +8370,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffExtra_21.png
 		Size: 3,6
 		Categories: Water Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -8030,6 +8396,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffExtra_22.png
 		Size: 4,6
 		Categories: Water Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -8059,6 +8426,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffExtra_23.png
 		Size: 4,6
 		Categories: Water Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -8087,6 +8455,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffExtra_24.png
 		Size: 5,5
 		Categories: Water Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -8116,6 +8485,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffExtra_25.png
 		Size: 6,5
 		Categories: Water Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -8148,6 +8518,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffExtra_26.png
 		Size: 6,5
 		Categories: Water Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -8180,6 +8551,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffExtra_27.png
 		Size: 5,5
 		Categories: Water Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -8209,6 +8581,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffExtra_28.png
 		Size: 5,5
 		Categories: Water Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -8241,6 +8614,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffExtra_29.png
 		Size: 3,5
 		Categories: Water Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -8263,6 +8637,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffExtra_30.png
 		Size: 8,5
 		Categories: Water Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -8310,6 +8685,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffExtra_31.png
 		Size: 5,5
 		Categories: Water Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -8342,6 +8718,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffRamp_SE.png
 		Size: 2,5
 		Categories: Water Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -8359,6 +8736,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffRamp_SW.png
 		Size: 2,5
 		Categories: Water Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Dirt
@@ -8376,6 +8754,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffRamp_NE.png
 		Size: 2,4
 		Categories: Water Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Water
@@ -8391,6 +8770,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffRamp_NW.png
 		Size: 2,4
 		Categories: Water Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Cliff
@@ -8406,6 +8786,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffRamp_WS.png
 		Size: 4,3
 		Categories: Water Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -8425,6 +8806,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffRamp_WN.png
 		Size: 4,3
 		Categories: Water Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Cliff
@@ -8444,6 +8826,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffRamp_ES.png
 		Size: 4,3
 		Categories: Water Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -8463,6 +8846,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffRamp_EN.png
 		Size: 4,3
 		Categories: Water Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -8482,6 +8866,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffRamp_1.png
 		Size: 2,5
 		Categories: Water Cliff Ramp
+		Palette: kknd
 		Tiles:
 			1: Dirt
 			2: Cliff
@@ -8498,6 +8883,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffRamp_2.png
 		Size: 2,5
 		Categories: Water Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			2: Dirt
@@ -8514,6 +8900,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffRamp_3.png
 		Size: 4,4
 		Categories: Water Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -8535,6 +8922,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffRamp_4.png
 		Size: 4,4
 		Categories: Water Cliff Ramp
+		Palette: kknd
 		Tiles:
 			1: Dirt
 			2: Cliff
@@ -8556,6 +8944,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffRamp_5.png
 		Size: 5,7
 		Categories: Water Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -8598,6 +8987,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffRamp_6.png
 		Size: 5,7
 		Categories: Water Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -8640,6 +9030,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffRamp_7.png
 		Size: 2,5
 		Categories: Water Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -8657,6 +9048,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffRamp_8.png
 		Size: 2,5
 		Categories: Water Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -8674,6 +9066,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffRamp_9.png
 		Size: 4,3
 		Categories: Water Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -8693,6 +9086,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffRamp_10.png
 		Size: 4,3
 		Categories: Water Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -8712,6 +9106,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffRamp_11.png
 		Size: 4,3
 		Categories: Water Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -8731,6 +9126,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffRamp_12.png
 		Size: 4,3
 		Categories: Water Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -8750,6 +9146,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffRamp_13.png
 		Size: 5,7
 		Categories: Water Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Dirt
@@ -8792,6 +9189,7 @@ Templates:
 		Images: tilesets/urban/tiles/WaterCliffRamp_14.png
 		Size: 5,7
 		Categories: Water Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Dirt

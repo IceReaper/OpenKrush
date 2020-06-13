@@ -1,7 +1,7 @@
 evolved_infantry_shotgunner:
 	Inherits@1: ^CoreInfantry
 	Inherits@2: ^CoreArmedSelf
-	Inherits@3: ^HasMuzzle
+	Inherits@3: ^has_muzzle
 	Tooltip:
 		Name: Shotgunner
 	Valued:

@@ -1,0 +1,9 @@
+colorpicker:
+	Inherits: bunker_vehicles_plasmatank
+	Mobile:
+		InitialFacing: 128
+	RenderSprites:
+		Image: bunker_vehicles_plasmatank
+		Palette: colorpicker
+	-AdvancedBuildable:
+	-MapEditorData:

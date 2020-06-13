@@ -80,6 +80,11 @@ EditorPlayer:
 	WarheadDebugOverlay:
 	# Required for... not crashing
 	Selection:
+	# Smudge support.
+	SmudgeLayer@CRATER:
+		Type: Crater
+		Sequence: crater
+		SmokePercentage: -1
 
 # Ingame specific world setup.
 World:
@@ -128,3 +133,7 @@ EditorWorld:
 	EditorActorLayer:
 	# Selecting, Copying, Pasting Support for map editor.
 	EditorSelectionLayer:
+	# Cursor attached stuff.
+	EditorCursorLayer:
+	# Undo / Redo support.
+	EditorActionManager:

@@ -14,16 +14,6 @@ editor-overlay:
 		Start: 98
 		Offset: -16, -16
 
-shroud:
-	shroud: bits/shroud.png
-		Length: 16
-	shroudfull: bits/shroud.png
-		Start: 1
-	fog: bits/shroud.png
-		Length: 16
-	fogfull: bits/shroud.png
-		Start: 1
-
 moveflsh:
 	idle: SPRITES.LVL|Cursors.mobd
 		Start: 89
@@ -168,15 +158,6 @@ pillar_g:
 pillar_h:
 	idle: bits/Neutral_objects.png
 		Start: 8
-
-oilpatch:
-	idle: SPRITES.LVL|Oil.mobd
-		Length: 14
-		Tick: 120
-		ZOffset: -2000
-	burn: bits/Oil.png
-		Length: 4
-		Tick: 120
 
 tech_drillrig:
 	idle: bits/TechDrillRig.png

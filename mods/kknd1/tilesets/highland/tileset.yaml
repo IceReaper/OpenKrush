@@ -1,7 +1,6 @@
 General:
 	Name: Highland
 	Id: highland
-	Palette: kknd
 	EditorTemplateOrder: Terrain, Decoration, Decoration Dirt, Dirt Cliff, Dirt Cliff Extra, Dirt Cliff Ramp, Grass Cliff, Grass Cliff Extra, Grass Cliff Ramp, Narrow Path, Narrow Path Extra, River, River Crossing, River Extra, Street, Transition, Wide Path, Wide Path Extra
 	SheetSize: 2048
 
@@ -44,6 +43,7 @@ Templates:
 		Size: 1,1
 		PickAny: true
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -88,6 +88,7 @@ Templates:
 		Size: 1,1
 		PickAny: true
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -131,6 +132,7 @@ Templates:
 		Images: tilesets/highland/tiles/Terrain_Dirt1.png
 		Size: 3,3
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -147,6 +149,7 @@ Templates:
 		Images: tilesets/highland/tiles/Terrain_Dirt2.png
 		Size: 4,4
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -170,6 +173,7 @@ Templates:
 		Images: tilesets/highland/tiles/Terrain_Dirt3.png
 		Size: 4,4
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -192,6 +196,7 @@ Templates:
 		Images: tilesets/highland/tiles/Terrain_Dirt4.png
 		Size: 2,2
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -203,6 +208,7 @@ Templates:
 		Images: tilesets/highland/tiles/Terrain_Dirt5.png
 		Size: 2,2
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -214,6 +220,7 @@ Templates:
 		Images: tilesets/highland/tiles/Terrain_Dirt6.png
 		Size: 2,2
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -225,6 +232,7 @@ Templates:
 		Images: tilesets/highland/tiles/Terrain_Dirt7.png
 		Size: 2,2
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -236,6 +244,7 @@ Templates:
 		Images: tilesets/highland/tiles/Terrain_Dirt8.png
 		Size: 3,2
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -249,6 +258,7 @@ Templates:
 		Images: tilesets/highland/tiles/Terrain_Dirt9.png
 		Size: 3,2
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -262,6 +272,7 @@ Templates:
 		Images: tilesets/highland/tiles/Terrain_Dirt10.png
 		Size: 2,1
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -271,6 +282,7 @@ Templates:
 		Images: tilesets/highland/tiles/Terrain_Dirt12.png
 		Size: 2,1
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -280,6 +292,7 @@ Templates:
 		Images: tilesets/highland/tiles/Terrain_Dirt11.png
 		Size: 2,1
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -289,6 +302,7 @@ Templates:
 		Images: tilesets/highland/tiles/Terrain_Dirt13.png
 		Size: 2,1
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -298,6 +312,7 @@ Templates:
 		Images: tilesets/highland/tiles/Terrain_Grass1.png
 		Size: 3,3
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -314,6 +329,7 @@ Templates:
 		Images: tilesets/highland/tiles/Terrain_Grass2.png
 		Size: 3,3
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -330,6 +346,7 @@ Templates:
 		Images: tilesets/highland/tiles/Terrain_Grass3.png
 		Size: 4,3
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -349,6 +366,7 @@ Templates:
 		Images: tilesets/highland/tiles/Terrain_Grass4.png
 		Size: 1,2
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -358,6 +376,7 @@ Templates:
 		Images: tilesets/highland/tiles/Terrain_Grass5.png
 		Size: 2,2
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -369,6 +388,7 @@ Templates:
 		Images: tilesets/highland/tiles/Terrain_Grass6.png
 		Size: 2,2
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -380,6 +400,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Mountain1.png
 		Size: 12,13
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			1: Cliff
 			2: Cliff
@@ -518,6 +539,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Mountain2.png
 		Size: 12,12
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			1: Cliff
 			2: Cliff
@@ -638,6 +660,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Mountain3.png
 		Size: 12,11
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			1: Cliff
 			2: Cliff
@@ -753,6 +776,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Mountain4.png
 		Size: 12,11
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			1: Cliff
 			2: Cliff
@@ -866,6 +890,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Crater1.png
 		Size: 8,8
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			3: Grass
 			4: Grass
@@ -914,6 +939,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Crater2.png
 		Size: 12,15
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			6: Grass
 			7: Grass
@@ -1009,6 +1035,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Rock9.png
 		Size: 2,3
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -1022,6 +1049,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Rock10.png
 		Size: 3,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1035,6 +1063,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Crack2.png
 		Size: 5,6
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			1: Grass
 			2: Cliff
@@ -1066,6 +1095,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Fence23.png
 		Size: 3,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -1079,6 +1109,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Fence5.png
 		Size: 3,4
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			2: Cliff
 			4: Cliff
@@ -1093,6 +1124,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Fence6.png
 		Size: 3,4
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			3: Cliff
@@ -1107,6 +1139,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Fence1.png
 		Size: 5,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1124,6 +1157,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Fence2.png
 		Size: 5,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1141,6 +1175,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Fence4.png
 		Size: 5,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1158,6 +1193,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Fence3.png
 		Size: 5,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1175,6 +1211,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Crack1.png
 		Size: 5,10
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			3: Grass
 			7: Cliff
@@ -1219,6 +1256,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Fence12.png
 		Size: 3,3
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1232,6 +1270,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Fence13.png
 		Size: 3,3
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			1: Cliff
 			2: Cliff
@@ -1245,6 +1284,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Fence14.png
 		Size: 1,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1254,6 +1294,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Fence15.png
 		Size: 1,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1263,6 +1304,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Fence16.png
 		Size: 1,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1272,6 +1314,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Fence17.png
 		Size: 1,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1281,6 +1324,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Fence18.png
 		Size: 3,3
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			1: Grass
 			2: Cliff
@@ -1296,6 +1340,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Fence7.png
 		Size: 1,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1305,6 +1350,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Fence8.png
 		Size: 1,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1314,6 +1360,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Fence9.png
 		Size: 1,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1323,6 +1370,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Rock7.png
 		Size: 2,3
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1336,6 +1384,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Fence19.png
 		Size: 3,3
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Grass
@@ -1351,6 +1400,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Fence20.png
 		Size: 6,3
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1373,6 +1423,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Fence21.png
 		Size: 3,3
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			2: Cliff
 			4: Cliff
@@ -1386,6 +1437,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Fence22.png
 		Size: 3,3
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			3: Cliff
@@ -1399,6 +1451,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Fence23.png
 		Size: 3,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1412,6 +1465,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Fence24.png
 		Size: 3,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1425,6 +1479,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Rock8.png
 		Size: 3,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1438,6 +1493,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_SmallTree1.png
 		Size: 1,1
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 
@@ -1446,6 +1502,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_SmallTree2.png
 		Size: 1,1
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 
@@ -1454,6 +1511,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_SmallTree3.png
 		Size: 1,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1463,6 +1521,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Rock1.png
 		Size: 2,3
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1476,6 +1535,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Rock2.png
 		Size: 2,3
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Grass
@@ -1488,6 +1548,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Rock3.png
 		Size: 1,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1497,6 +1558,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Rock4.png
 		Size: 2,1
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -1506,6 +1568,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Rock5.png
 		Size: 1,1
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Grass
 
@@ -1514,6 +1577,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Crater3.png
 		Size: 3,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1527,6 +1591,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Crack5.png
 		Size: 5,6
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			1: Cliff
 			2: Cliff
@@ -1554,6 +1619,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Crack4.png
 		Size: 11,5
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -1609,6 +1675,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Crack3.png
 		Size: 5,6
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1640,6 +1707,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Dam.png
 		Size: 8,9
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			1: Cliff
 			2: Cliff
@@ -1705,6 +1773,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Water1.png
 		Size: 7,5
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Water
@@ -1739,6 +1808,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Water2.png
 		Size: 7,5
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			1: Grass
 			2: Grass
@@ -1773,6 +1843,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Water3.png
 		Size: 4,3
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -1792,6 +1863,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Water4.png
 		Size: 4,3
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -1811,6 +1883,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Water5.png
 		Size: 8,5
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -1847,6 +1920,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Water7.png
 		Size: 7,6
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -1889,6 +1963,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Water6.png
 		Size: 8,5
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			1: Grass
 			2: Grass
@@ -1925,6 +2000,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Water8.png
 		Size: 7,4
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			1: Grass
 			2: Water
@@ -1955,6 +2031,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Water9.png
 		Size: 7,6
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			1: Grass
 			2: Grass
@@ -1997,6 +2074,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Water10.png
 		Size: 7,4
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Water
@@ -2027,6 +2105,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Water12.png
 		Size: 7,4
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			1: Grass
 			2: Grass
@@ -2057,6 +2136,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Fence10.png
 		Size: 1,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2066,6 +2146,7 @@ Templates:
 		Images: tilesets/highland/tiles/Decoration_Water11.png
 		Size: 7,4
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -2096,6 +2177,7 @@ Templates:
 		Images: tilesets/highland/tiles/DecorationDirt_Mine16.png
 		Size: 8,6
 		Categories: Decoration Dirt
+		Palette: kknd
 		Tiles:
 			2: Dirt
 			3: Dirt
@@ -2145,6 +2227,7 @@ Templates:
 		Images: tilesets/highland/tiles/DecorationDirt_Mine17.png
 		Size: 5,5
 		Categories: Decoration Dirt
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -2174,6 +2257,7 @@ Templates:
 		Images: tilesets/highland/tiles/DecorationDirt_Mine18.png
 		Size: 3,3
 		Categories: Decoration Dirt
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2190,6 +2274,7 @@ Templates:
 		Images: tilesets/highland/tiles/DecorationDirt_Mine1.png
 		Size: 2,2
 		Categories: Decoration Dirt
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Dirt
@@ -2200,6 +2285,7 @@ Templates:
 		Images: tilesets/highland/tiles/DecorationDirt_Mine2.png
 		Size: 2,2
 		Categories: Decoration Dirt
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -2210,6 +2296,7 @@ Templates:
 		Images: tilesets/highland/tiles/DecorationDirt_Mine3.png
 		Size: 2,3
 		Categories: Decoration Dirt
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2223,6 +2310,7 @@ Templates:
 		Images: tilesets/highland/tiles/DecorationDirt_Mine4.png
 		Size: 2,3
 		Categories: Decoration Dirt
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2236,6 +2324,7 @@ Templates:
 		Images: tilesets/highland/tiles/DecorationDirt_Mine5.png
 		Size: 2,3
 		Categories: Decoration Dirt
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2249,6 +2338,7 @@ Templates:
 		Images: tilesets/highland/tiles/DecorationDirt_Mine7.png
 		Size: 2,2
 		Categories: Decoration Dirt
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2260,6 +2350,7 @@ Templates:
 		Images: tilesets/highland/tiles/DecorationDirt_Mine19.png
 		Size: 2,2
 		Categories: Decoration Dirt
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2271,6 +2362,7 @@ Templates:
 		Images: tilesets/highland/tiles/DecorationDirt_Mine8.png
 		Size: 3,2
 		Categories: Decoration Dirt
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2284,6 +2376,7 @@ Templates:
 		Images: tilesets/highland/tiles/DecorationDirt_Mine9.png
 		Size: 3,3
 		Categories: Decoration Dirt
+		Palette: kknd
 		Tiles:
 			1: Cliff
 			2: Cliff
@@ -2298,6 +2391,7 @@ Templates:
 		Images: tilesets/highland/tiles/DecorationDirt_Mine10.png
 		Size: 3,3
 		Categories: Decoration Dirt
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2312,6 +2406,7 @@ Templates:
 		Images: tilesets/highland/tiles/DecorationDirt_Mine11.png
 		Size: 2,2
 		Categories: Decoration Dirt
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -2323,6 +2418,7 @@ Templates:
 		Images: tilesets/highland/tiles/DecorationDirt_Mine12.png
 		Size: 1,1
 		Categories: Decoration Dirt
+		Palette: kknd
 		Tiles:
 			0: Dirt
 
@@ -2331,6 +2427,7 @@ Templates:
 		Images: tilesets/highland/tiles/DecorationDirt_Mine13.png
 		Size: 1,1
 		Categories: Decoration Dirt
+		Palette: kknd
 		Tiles:
 			0: Dirt
 
@@ -2339,6 +2436,7 @@ Templates:
 		Images: tilesets/highland/tiles/DecorationDirt_Mine14.png
 		Size: 1,1
 		Categories: Decoration Dirt
+		Palette: kknd
 		Tiles:
 			0: Dirt
 
@@ -2347,6 +2445,7 @@ Templates:
 		Images: tilesets/highland/tiles/DecorationDirt_Mine15.png
 		Size: 1,1
 		Categories: Decoration Dirt
+		Palette: kknd
 		Tiles:
 			0: Dirt
 
@@ -2355,6 +2454,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_N_A.png
 		Size: 4,2
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2370,6 +2470,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_N_B.png
 		Size: 4,2
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2385,6 +2486,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_NE.png
 		Size: 2,1
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2394,6 +2496,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_E_A.png
 		Size: 2,4
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2409,6 +2512,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_E_B.png
 		Size: 2,4
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2424,6 +2528,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_S_A.png
 		Size: 4,3
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2443,6 +2548,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_S_B.png
 		Size: 4,3
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2462,6 +2568,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_SW.png
 		Size: 1,3
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2472,6 +2579,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_SE.png
 		Size: 1,3
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2482,6 +2590,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_NW.png
 		Size: 2,1
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2491,6 +2600,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_W_A.png
 		Size: 2,4
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2506,6 +2616,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_W_B.png
 		Size: 2,4
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2521,6 +2632,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_N2E.png
 		Size: 2,3
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Dirt
@@ -2534,6 +2646,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_S2E.png
 		Size: 3,4
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			1: Cliff
 			2: Cliff
@@ -2551,6 +2664,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_S2W.png
 		Size: 3,4
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2568,6 +2682,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_N2W.png
 		Size: 2,3
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -2581,6 +2696,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_N2NE.png
 		Size: 2,2
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Dirt
@@ -2591,6 +2707,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_N2NW.png
 		Size: 2,2
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -2601,6 +2718,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_W2NW.png
 		Size: 2,3
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			2: Cliff
@@ -2613,6 +2731,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_E2NE.png
 		Size: 2,3
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			1: Dirt
 			2: Cliff
@@ -2625,6 +2744,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_E2SE.png
 		Size: 2,4
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2639,6 +2759,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_S2SE.png
 		Size: 2,4
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			1: Cliff
 			2: Cliff
@@ -2653,6 +2774,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_S2SW.png
 		Size: 2,4
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			2: Cliff
@@ -2667,6 +2789,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_W2SW.png
 		Size: 2,4
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2681,6 +2804,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_W2S.png
 		Size: 3,3
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2696,6 +2820,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_E2S.png
 		Size: 3,3
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			1: Cliff
 			2: Cliff
@@ -2711,6 +2836,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_E2N.png
 		Size: 3,3
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2727,6 +2853,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_W2N.png
 		Size: 3,3
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -2743,6 +2870,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_SE2E.png
 		Size: 2,3
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			1: Cliff
 			2: Grass
@@ -2755,6 +2883,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_SW2W.png
 		Size: 2,3
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			2: Cliff
@@ -2767,6 +2896,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_SE2S.png
 		Size: 1,3
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2777,6 +2907,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_SW2S.png
 		Size: 1,3
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2787,6 +2918,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_NE2E.png
 		Size: 2,2
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2797,6 +2929,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_NW2W.png
 		Size: 2,2
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2807,6 +2940,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_NE2N.png
 		Size: 2,2
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2818,6 +2952,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliff_NW2N.png
 		Size: 2,2
 		Categories: Dirt Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2829,6 +2964,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_6.png
 		Size: 4,2
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -2844,6 +2980,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_7.png
 		Size: 5,3
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			2: Dirt
 			3: Dirt
@@ -2863,6 +3000,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_1.png
 		Size: 3,3
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -2876,6 +3014,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_2.png
 		Size: 3,2
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			1: Cliff
 			2: Cliff
@@ -2888,6 +3027,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_3.png
 		Size: 6,2
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2907,6 +3047,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_8.png
 		Size: 6,2
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2926,6 +3067,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_4.png
 		Size: 3,2
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2938,6 +3080,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_9.png
 		Size: 5,3
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Dirt
@@ -2957,6 +3100,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_5.png
 		Size: 3,3
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			1: Dirt
 			2: Dirt
@@ -2970,6 +3114,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_10.png
 		Size: 4,2
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2985,6 +3130,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_16.png
 		Size: 4,3
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3001,6 +3147,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_15.png
 		Size: 3,3
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Dirt
@@ -3015,6 +3162,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_20.png
 		Size: 3,4
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			1: Cliff
 			2: Cliff
@@ -3033,6 +3181,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_19.png
 		Size: 2,2
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3044,6 +3193,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_26.png
 		Size: 2,3
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3057,6 +3207,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_27.png
 		Size: 3,3
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -3073,6 +3224,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_28.png
 		Size: 2,3
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3085,6 +3237,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_32.png
 		Size: 6,6
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			5: Grass
 			8: Grass
@@ -3113,6 +3266,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_41.png
 		Size: 4,7
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			2: Cliff
 			3: Cliff
@@ -3138,6 +3292,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_40.png
 		Size: 3,3
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			1: Cliff
 			2: Cliff
@@ -3153,6 +3308,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_39.png
 		Size: 3,3
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			1: Grass
 			2: Cliff
@@ -3168,6 +3324,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_35.png
 		Size: 3,4
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -3185,6 +3342,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_46.png
 		Size: 3,4
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			1: Grass
 			2: Cliff
@@ -3202,6 +3360,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_47.png
 		Size: 4,4
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -3225,6 +3384,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_53.png
 		Size: 6,3
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -3247,6 +3407,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_58.png
 		Size: 2,4
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Dirt
@@ -3262,6 +3423,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_52.png
 		Size: 2,5
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Dirt
@@ -3279,6 +3441,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_57.png
 		Size: 3,3
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			1: Grass
 			2: Cliff
@@ -3294,6 +3457,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_56.png
 		Size: 5,2
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3311,6 +3475,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_60.png
 		Size: 4,5
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			2: Grass
 			3: Cliff
@@ -3334,6 +3499,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_50.png
 		Size: 3,5
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			1: Cliff
 			2: Cliff
@@ -3351,6 +3517,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_51.png
 		Size: 3,5
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3368,6 +3535,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_45.png
 		Size: 4,3
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3385,6 +3553,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_44.png
 		Size: 4,3
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3402,6 +3571,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_38.png
 		Size: 3,3
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Grass
@@ -3417,6 +3587,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_34.png
 		Size: 6,4
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -3446,6 +3617,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_30.png
 		Size: 5,5
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -3475,6 +3647,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_33.png
 		Size: 3,4
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3492,6 +3665,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_31.png
 		Size: 5,5
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -3521,6 +3695,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_29.png
 		Size: 6,6
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			6: Cliff
@@ -3549,6 +3724,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_22.png
 		Size: 3,3
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -3565,6 +3741,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_17.png
 		Size: 3,4
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3583,6 +3760,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_18.png
 		Size: 2,2
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3594,6 +3772,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_23.png
 		Size: 2,3
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3607,6 +3786,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_21.png
 		Size: 2,3
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3619,6 +3799,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_36.png
 		Size: 4,7
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3644,6 +3825,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_37.png
 		Size: 3,3
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3659,6 +3841,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_43.png
 		Size: 3,4
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Grass
@@ -3676,6 +3859,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_42.png
 		Size: 4,4
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Dirt
@@ -3699,6 +3883,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_48.png
 		Size: 6,3
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			3: Cliff
 			4: Cliff
@@ -3721,6 +3906,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_49.png
 		Size: 2,5
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -3738,6 +3924,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_54.png
 		Size: 2,4
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -3753,6 +3940,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_55.png
 		Size: 3,3
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Grass
@@ -3768,6 +3956,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_59.png
 		Size: 4,5
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Grass
@@ -3791,6 +3980,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_24.png
 		Size: 4,4
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3811,6 +4001,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_14.png
 		Size: 4,5
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			1: Cliff
 			2: Dirt
@@ -3832,6 +4023,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_25.png
 		Size: 4,4
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -3852,6 +4044,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_11.png
 		Size: 4,3
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -3868,6 +4061,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_12.png
 		Size: 3,3
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			1: Dirt
 			2: Cliff
@@ -3882,6 +4076,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffExtra_13.png
 		Size: 4,5
 		Categories: Dirt Cliff Extra
+		Palette: kknd
 		Tiles:
 			1: Dirt
 			2: Cliff
@@ -3903,6 +4098,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffRamp_SE.png
 		Size: 2,5
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -3920,6 +4116,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffRamp_SW.png
 		Size: 2,5
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -3937,6 +4134,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffRamp_NE.png
 		Size: 2,4
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3952,6 +4150,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffRamp_NW.png
 		Size: 2,4
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3967,6 +4166,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffRamp_WS.png
 		Size: 4,3
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3986,6 +4186,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffRamp_WN.png
 		Size: 4,2
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -4001,6 +4202,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffRamp_ES.png
 		Size: 4,3
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4020,6 +4222,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffRamp_EN.png
 		Size: 4,2
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4035,6 +4238,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffRamp_1.png
 		Size: 2,5
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Dirt
@@ -4052,6 +4256,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffRamp_2.png
 		Size: 2,5
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -4069,6 +4274,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffRamp_3.png
 		Size: 4,3
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4088,6 +4294,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffRamp_4.png
 		Size: 4,3
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4107,6 +4314,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffRamp_6.png
 		Size: 3,4
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -4124,6 +4332,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffRamp_5.png
 		Size: 3,4
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			1: Grass
 			2: Grass
@@ -4141,6 +4350,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffRamp_7.png
 		Size: 3,4
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Grass
@@ -4160,6 +4370,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffRamp_8.png
 		Size: 3,4
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -4179,6 +4390,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffRamp_9.png
 		Size: 4,2
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Dirt
@@ -4194,6 +4406,7 @@ Templates:
 		Images: tilesets/highland/tiles/DirtCliffRamp_10.png
 		Size: 4,2
 		Categories: Dirt Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -4209,6 +4422,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_N_A.png
 		Size: 4,2
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4224,6 +4438,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_N_B.png
 		Size: 4,2
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4239,6 +4454,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_NE.png
 		Size: 1,2
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4248,6 +4464,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_E_A.png
 		Size: 2,4
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -4263,6 +4480,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_E_B.png
 		Size: 2,4
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -4278,6 +4496,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_S_A.png
 		Size: 4,3
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4297,6 +4516,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_S_B.png
 		Size: 4,3
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4316,6 +4536,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_SW.png
 		Size: 2,5
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Grass
 			2: Cliff
@@ -4331,6 +4552,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_SE.png
 		Size: 2,5
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			1: Grass
 			2: Grass
@@ -4346,6 +4568,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_NW.png
 		Size: 1,2
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4355,6 +4578,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_W_A.png
 		Size: 2,4
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Grass
@@ -4370,6 +4594,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_W_B.png
 		Size: 2,4
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Grass
@@ -4385,6 +4610,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_N2E.png
 		Size: 3,3
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4401,6 +4627,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_S2E.png
 		Size: 3,4
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -4417,6 +4644,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_S2W.png
 		Size: 3,4
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4433,6 +4661,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_N2W.png
 		Size: 3,3
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4449,6 +4678,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_N2NE.png
 		Size: 2,2
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4460,6 +4690,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_N2NW.png
 		Size: 2,2
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4471,6 +4702,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_W2NW.png
 		Size: 2,2
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4482,6 +4714,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_E2NE.png
 		Size: 2,2
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4493,6 +4726,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_E2SE.png
 		Size: 2,3
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4505,6 +4739,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_S2SE.png
 		Size: 1,4
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -4516,6 +4751,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_S2SW.png
 		Size: 1,4
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -4527,6 +4763,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_W2SW.png
 		Size: 2,3
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4539,6 +4776,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_W2S.png
 		Size: 3,3
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4555,6 +4793,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_E2S.png
 		Size: 3,3
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -4571,6 +4810,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_E2N.png
 		Size: 3,2
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4584,6 +4824,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_W2N.png
 		Size: 3,2
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -4597,6 +4838,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_SE2E.png
 		Size: 2,3
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -4610,6 +4852,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_SW2W.png
 		Size: 2,3
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Grass
@@ -4623,6 +4866,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_SE2S.png
 		Size: 2,4
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4637,6 +4881,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_SW2S.png
 		Size: 2,4
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4651,6 +4896,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_NE2E.png
 		Size: 2,1
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4660,6 +4906,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_NW2W.png
 		Size: 2,1
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4669,6 +4916,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_NE2N.png
 		Size: 1,2
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Grass
@@ -4678,6 +4926,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliff_NW2N.png
 		Size: 1,2
 		Categories: Grass Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Grass
@@ -4687,6 +4936,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_1.png
 		Size: 3,3
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4700,6 +4950,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_2.png
 		Size: 3,3
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4713,6 +4964,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_8.png
 		Size: 3,3
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Grass
@@ -4727,6 +4979,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_16.png
 		Size: 2,4
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4740,6 +4993,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_15.png
 		Size: 2,5
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4757,6 +5011,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_7.png
 		Size: 3,5
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -4775,6 +5030,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_6.png
 		Size: 3,3
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -4791,6 +5047,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_13.png
 		Size: 3,3
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4807,6 +5064,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_14.png
 		Size: 3,4
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -4826,6 +5084,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_18.png
 		Size: 3,3
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -4842,6 +5101,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_21.png
 		Size: 4,4
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			1: Cliff
 			2: Cliff
@@ -4864,6 +5124,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_22.png
 		Size: 4,3
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -4883,6 +5144,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_5.png
 		Size: 3,3
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4899,6 +5161,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_12.png
 		Size: 3,3
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4915,6 +5178,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_17.png
 		Size: 3,3
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4931,6 +5195,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_4.png
 		Size: 3,5
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			1: Cliff
 			2: Grass
@@ -4949,6 +5214,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_3.png
 		Size: 3,3
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			1: Grass
 			2: Cliff
@@ -4963,6 +5229,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_10.png
 		Size: 2,5
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4980,6 +5247,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_11.png
 		Size: 3,4
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4999,6 +5267,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_9.png
 		Size: 2,4
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -5012,6 +5281,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_119.png
 		Size: 4,3
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -5031,6 +5301,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_20.png
 		Size: 4,4
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -5053,6 +5324,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_23.png
 		Size: 4,4
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Grass
@@ -5074,6 +5346,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_24.png
 		Size: 4,4
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			1: Cliff
 			2: Grass
@@ -5094,6 +5367,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_28.png
 		Size: 6,5
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Grass
@@ -5125,6 +5399,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_27.png
 		Size: 4,6
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -5148,6 +5423,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_31.png
 		Size: 3,4
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Grass
@@ -5165,6 +5441,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_33.png
 		Size: 3,5
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -5184,6 +5461,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_35.png
 		Size: 3,4
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			1: Cliff
 			2: Cliff
@@ -5201,6 +5479,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_29.png
 		Size: 6,5
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			3: Grass
 			4: Grass
@@ -5232,6 +5511,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_25.png
 		Size: 4,4
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -5252,6 +5532,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_26.png
 		Size: 4,4
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -5273,6 +5554,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_30.png
 		Size: 4,6
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			1: Grass
 			2: Cliff
@@ -5296,6 +5578,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_32.png
 		Size: 3,4
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			1: Grass
 			2: Cliff
@@ -5313,6 +5596,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_34.png
 		Size: 3,5
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -5332,6 +5616,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffExtra_36.png
 		Size: 3,4
 		Categories: Grass Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -5349,6 +5634,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffRamp_SE.png
 		Size: 2,4
 		Categories: Grass Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -5364,6 +5650,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffRamp_SW.png
 		Size: 2,4
 		Categories: Grass Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -5379,6 +5666,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffRamp_NE.png
 		Size: 2,3
 		Categories: Grass Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -5392,6 +5680,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffRamp_NW.png
 		Size: 2,3
 		Categories: Grass Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -5405,6 +5694,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffRamp_WS.png
 		Size: 2,4
 		Categories: Grass Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -5420,6 +5710,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffRamp_WN.png
 		Size: 3,3
 		Categories: Grass Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -5436,6 +5727,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffRamp_ES.png
 		Size: 2,4
 		Categories: Grass Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -5451,6 +5743,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffRamp_EN.png
 		Size: 3,3
 		Categories: Grass Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -5467,6 +5760,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffRamp_1.png
 		Size: 3,2
 		Categories: Grass Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -5480,6 +5774,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffRamp_2.png
 		Size: 3,2
 		Categories: Grass Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -5493,6 +5788,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffRamp_4.png
 		Size: 2,2
 		Categories: Grass Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -5504,6 +5800,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffRamp_3.png
 		Size: 2,2
 		Categories: Grass Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -5515,6 +5812,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffRamp_5.png
 		Size: 2,3
 		Categories: Grass Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -5528,6 +5826,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffRamp_6.png
 		Size: 2,3
 		Categories: Grass Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -5541,6 +5840,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffRamp_7.png
 		Size: 3,2
 		Categories: Grass Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -5554,6 +5854,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffRamp_8.png
 		Size: 3,2
 		Categories: Grass Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -5567,6 +5868,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffRamp_10.png
 		Size: 2,3
 		Categories: Grass Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -5580,6 +5882,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffRamp_9.png
 		Size: 2,3
 		Categories: Grass Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -5593,6 +5896,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffRamp_12.png
 		Size: 2,3
 		Categories: Grass Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -5606,6 +5910,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffRamp_11.png
 		Size: 2,3
 		Categories: Grass Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -5619,6 +5924,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffRamp_13.png
 		Size: 2,3
 		Categories: Grass Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -5632,6 +5938,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffRamp_14.png
 		Size: 2,3
 		Categories: Grass Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -5645,6 +5952,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffRamp_15.png
 		Size: 3,4
 		Categories: Grass Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -5662,6 +5970,7 @@ Templates:
 		Images: tilesets/highland/tiles/GrassCliffRamp_16.png
 		Size: 3,4
 		Categories: Grass Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -5679,6 +5988,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPath_16.png
 		Size: 3,3
 		Categories: Narrow Path
+		Palette: kknd
 		Tiles:
 			1: Path
 			2: Path
@@ -5693,6 +6003,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPath_1.png
 		Size: 5,2
 		Categories: Narrow Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5710,6 +6021,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPath_2.png
 		Size: 3,3
 		Categories: Narrow Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5724,6 +6036,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPath_3.png
 		Size: 2,2
 		Categories: Narrow Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5735,6 +6048,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPath_28.png
 		Size: 3,2
 		Categories: Narrow Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5747,6 +6061,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPath_4.png
 		Size: 3,2
 		Categories: Narrow Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5759,6 +6074,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPath_18.png
 		Size: 3,3
 		Categories: Narrow Path
+		Palette: kknd
 		Tiles:
 			1: Path
 			3: Path
@@ -5772,6 +6088,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPath_17.png
 		Size: 3,3
 		Categories: Narrow Path
+		Palette: kknd
 		Tiles:
 			1: Path
 			3: Path
@@ -5785,6 +6102,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPath_6.png
 		Size: 3,2
 		Categories: Narrow Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5797,6 +6115,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPath_29.png
 		Size: 3,2
 		Categories: Narrow Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5809,6 +6128,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPath_7.png
 		Size: 2,2
 		Categories: Narrow Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5820,6 +6140,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPath_19.png
 		Size: 3,3
 		Categories: Narrow Path
+		Palette: kknd
 		Tiles:
 			1: Path
 			2: Path
@@ -5833,6 +6154,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPath_8.png
 		Size: 3,3
 		Categories: Narrow Path
+		Palette: kknd
 		Tiles:
 			1: Path
 			2: Path
@@ -5847,6 +6169,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPath_20.png
 		Size: 3,3
 		Categories: Narrow Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5860,6 +6183,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPath_10.png
 		Size: 3,3
 		Categories: Narrow Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5874,6 +6198,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPath_9.png
 		Size: 5,2
 		Categories: Narrow Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5891,6 +6216,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPath_15.png
 		Size: 2,2
 		Categories: Narrow Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5902,6 +6228,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPath_27.png
 		Size: 3,2
 		Categories: Narrow Path
+		Palette: kknd
 		Tiles:
 			1: Path
 			2: Path
@@ -5914,6 +6241,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPath_14.png
 		Size: 3,2
 		Categories: Narrow Path
+		Palette: kknd
 		Tiles:
 			1: Path
 			2: Path
@@ -5926,6 +6254,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPath_13.png
 		Size: 2,3
 		Categories: Narrow Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5939,6 +6268,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPath_12.png
 		Size: 3,2
 		Categories: Narrow Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5951,6 +6281,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPath_30.png
 		Size: 3,2
 		Categories: Narrow Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5963,6 +6294,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPath_11.png
 		Size: 2,2
 		Categories: Narrow Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5974,6 +6306,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPath_25.png
 		Size: 2,2
 		Categories: Narrow Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5985,6 +6318,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPath_22.png
 		Size: 2,2
 		Categories: Narrow Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5996,6 +6330,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPath_23.png
 		Size: 2,2
 		Categories: Narrow Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -6007,6 +6342,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPath_24.png
 		Size: 2,2
 		Categories: Narrow Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -6018,6 +6354,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPath_21.png
 		Size: 6,6
 		Categories: Narrow Path
+		Palette: kknd
 		Tiles:
 			2: Path
 			3: Path
@@ -6045,6 +6382,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPath_5.png
 		Size: 2,3
 		Categories: Narrow Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -6058,6 +6396,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPathExtra_4.png
 		Size: 3,2
 		Categories: Narrow Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -6071,6 +6410,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPathExtra_2.png
 		Size: 3,3
 		Categories: Narrow Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -6087,6 +6427,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPathExtra_3.png
 		Size: 3,3
 		Categories: Narrow Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -6103,6 +6444,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPathExtra_6.png
 		Size: 3,2
 		Categories: Narrow Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -6116,6 +6458,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPathExtra_5.png
 		Size: 3,2
 		Categories: Narrow Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -6129,6 +6472,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPathExtra_1.png
 		Size: 3,2
 		Categories: Narrow Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -6142,6 +6486,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPathExtra_7.png
 		Size: 3,4
 		Categories: Narrow Path Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			3: Path
@@ -6159,6 +6504,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPathExtra_8.png
 		Size: 3,4
 		Categories: Narrow Path Extra
+		Palette: kknd
 		Tiles:
 			2: Grass
 			3: Path
@@ -6176,6 +6522,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPathExtra_9.png
 		Size: 3,4
 		Categories: Narrow Path Extra
+		Palette: kknd
 		Tiles:
 			1: Path
 			2: Path
@@ -6190,6 +6537,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPathExtra_10.png
 		Size: 3,4
 		Categories: Narrow Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -6204,6 +6552,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPathExtra_11.png
 		Size: 2,3
 		Categories: Narrow Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -6217,6 +6566,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPathExtra_12.png
 		Size: 2,3
 		Categories: Narrow Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -6230,6 +6580,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPathExtra_17.png
 		Size: 4,2
 		Categories: Narrow Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -6244,6 +6595,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPathExtra_15.png
 		Size: 3,3
 		Categories: Narrow Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -6259,6 +6611,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPathExtra_16.png
 		Size: 3,3
 		Categories: Narrow Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -6274,6 +6627,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPathExtra_14.png
 		Size: 4,3
 		Categories: Narrow Path Extra
+		Palette: kknd
 		Tiles:
 			2: Path
 			5: Path
@@ -6288,6 +6642,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPathExtra_13.png
 		Size: 4,3
 		Categories: Narrow Path Extra
+		Palette: kknd
 		Tiles:
 			1: Path
 			4: Path
@@ -6302,6 +6657,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPathExtra_18.png
 		Size: 3,2
 		Categories: Narrow Path Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Path
@@ -6315,6 +6671,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPathExtra_19.png
 		Size: 3,3
 		Categories: Narrow Path Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Path
@@ -6331,6 +6688,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPathExtra_20.png
 		Size: 3,3
 		Categories: Narrow Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -6347,6 +6705,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPathExtra_21.png
 		Size: 3,3
 		Categories: Narrow Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -6362,6 +6721,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPathExtra_22.png
 		Size: 3,3
 		Categories: Narrow Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -6377,6 +6737,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPathExtra_23.png
 		Size: 3,2
 		Categories: Narrow Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -6390,6 +6751,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPathExtra_24.png
 		Size: 2,3
 		Categories: Narrow Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -6403,6 +6765,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPathExtra_26.png
 		Size: 3,2
 		Categories: Narrow Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -6416,6 +6779,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPathExtra_25.png
 		Size: 2,3
 		Categories: Narrow Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -6429,6 +6793,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPathExtra_28.png
 		Size: 2,2
 		Categories: Narrow Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -6440,6 +6805,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPathExtra_27.png
 		Size: 2,2
 		Categories: Narrow Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -6451,6 +6817,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPathExtra_30.png
 		Size: 2,2
 		Categories: Narrow Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -6462,6 +6829,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPathExtra_29.png
 		Size: 2,2
 		Categories: Narrow Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -6473,6 +6841,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPathExtra_32.png
 		Size: 2,2
 		Categories: Narrow Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -6484,6 +6853,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPathExtra_31.png
 		Size: 2,2
 		Categories: Narrow Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -6495,6 +6865,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPathExtra_33.png
 		Size: 2,2
 		Categories: Narrow Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -6506,6 +6877,7 @@ Templates:
 		Images: tilesets/highland/tiles/NarrowPathExtra_34.png
 		Size: 2,2
 		Categories: Narrow Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -6517,6 +6889,7 @@ Templates:
 		Images: tilesets/highland/tiles/River_1.png
 		Size: 6,3
 		Categories: River
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -6542,6 +6915,7 @@ Templates:
 		Images: tilesets/highland/tiles/River_2.png
 		Size: 6,3
 		Categories: River
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -6567,6 +6941,7 @@ Templates:
 		Images: tilesets/highland/tiles/River_4.png
 		Size: 4,4
 		Categories: River
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -6586,6 +6961,7 @@ Templates:
 		Images: tilesets/highland/tiles/River_3.png
 		Size: 4,4
 		Categories: River
+		Palette: kknd
 		Tiles:
 			1: Dirt
 			2: Water
@@ -6605,6 +6981,7 @@ Templates:
 		Images: tilesets/highland/tiles/River_5.png
 		Size: 4,4
 		Categories: River
+		Palette: kknd
 		Tiles:
 			1: Dirt
 			2: Water
@@ -6622,6 +6999,7 @@ Templates:
 		Images: tilesets/highland/tiles/River_7.png
 		Size: 4,4
 		Categories: River
+		Palette: kknd
 		Tiles:
 			1: Dirt
 			4: Dirt
@@ -6640,6 +7018,7 @@ Templates:
 		Images: tilesets/highland/tiles/River_18.png
 		Size: 4,4
 		Categories: River
+		Palette: kknd
 		Tiles:
 			1: Water
 			2: Water
@@ -6658,6 +7037,7 @@ Templates:
 		Images: tilesets/highland/tiles/River_10.png
 		Size: 3,6
 		Categories: River
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -6683,6 +7063,7 @@ Templates:
 		Images: tilesets/highland/tiles/River_8.png
 		Size: 4,4
 		Categories: River
+		Palette: kknd
 		Tiles:
 			2: Dirt
 			5: Water
@@ -6701,6 +7082,7 @@ Templates:
 		Images: tilesets/highland/tiles/River_6.png
 		Size: 4,4
 		Categories: River
+		Palette: kknd
 		Tiles:
 			1: Water
 			2: Dirt
@@ -6718,6 +7100,7 @@ Templates:
 		Images: tilesets/highland/tiles/River_17.png
 		Size: 4,4
 		Categories: River
+		Palette: kknd
 		Tiles:
 			1: Dirt
 			2: Water
@@ -6735,6 +7118,7 @@ Templates:
 		Images: tilesets/highland/tiles/River_14.png
 		Size: 6,3
 		Categories: River
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -6760,6 +7144,7 @@ Templates:
 		Images: tilesets/highland/tiles/River_9.png
 		Size: 3,6
 		Categories: River
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -6785,6 +7170,7 @@ Templates:
 		Images: tilesets/highland/tiles/River_11.png
 		Size: 4,4
 		Categories: River
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -6803,6 +7189,7 @@ Templates:
 		Images: tilesets/highland/tiles/River_12.png
 		Size: 4,4
 		Categories: River
+		Palette: kknd
 		Tiles:
 			1: Water
 			2: Dirt
@@ -6820,6 +7207,7 @@ Templates:
 		Images: tilesets/highland/tiles/River_15.png
 		Size: 4,4
 		Categories: River
+		Palette: kknd
 		Tiles:
 			1: Dirt
 			4: Water
@@ -6839,6 +7227,7 @@ Templates:
 		Images: tilesets/highland/tiles/River_13.png
 		Size: 4,4
 		Categories: River
+		Palette: kknd
 		Tiles:
 			2: Dirt
 			4: Water
@@ -6858,6 +7247,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverCrossing_2.png
 		Size: 9,3
 		Categories: River Crossing
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -6892,6 +7282,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverCrossing_3.png
 		Size: 8,6
 		Categories: River Crossing
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -6924,6 +7315,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverCrossing_1.png
 		Size: 8,6
 		Categories: River Crossing
+		Palette: kknd
 		Tiles:
 			6: Dirt
 			7: Dirt
@@ -6957,6 +7349,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverCrossing_5.png
 		Size: 3,3
 		Categories: River Crossing
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -6973,6 +7366,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverCrossing_6.png
 		Size: 3,3
 		Categories: River Crossing
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -6989,6 +7383,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverCrossing_4.png
 		Size: 4,4
 		Categories: River Crossing
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -7010,6 +7405,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverCrossing_26.png
 		Size: 3,9
 		Categories: River Crossing
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -7044,6 +7440,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverCrossing_8.png
 		Size: 2,3
 		Categories: River Crossing
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -7057,6 +7454,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverCrossing_9.png
 		Size: 2,4
 		Categories: River Crossing
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -7072,6 +7470,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverCrossing_10.png
 		Size: 2,2
 		Categories: River Crossing
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -7083,6 +7482,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverCrossing_11.png
 		Size: 2,2
 		Categories: River Crossing
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -7094,6 +7494,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverCrossing_7.png
 		Size: 4,4
 		Categories: River Crossing
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -7115,6 +7516,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverCrossing_14.png
 		Size: 3,9
 		Categories: River Crossing
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -7149,6 +7551,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverCrossing_12.png
 		Size: 2,4
 		Categories: River Crossing
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -7164,6 +7567,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverCrossing_13.png
 		Size: 2,3
 		Categories: River Crossing
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -7177,6 +7581,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverCrossing_18.png
 		Size: 4,4
 		Categories: River Crossing
+		Palette: kknd
 		Tiles:
 			2: Dirt
 			3: Dirt
@@ -7197,6 +7602,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverCrossing_15.png
 		Size: 4,4
 		Categories: River Crossing
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -7217,6 +7623,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverCrossing_16.png
 		Size: 3,3
 		Categories: River Crossing
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -7233,6 +7640,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverCrossing_17.png
 		Size: 3,3
 		Categories: River Crossing
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -7249,6 +7657,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverCrossing_19.png
 		Size: 3,3
 		Categories: River Crossing
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -7265,6 +7674,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverCrossing_20.png
 		Size: 3,3
 		Categories: River Crossing
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -7281,6 +7691,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverCrossing_22.png
 		Size: 9,3
 		Categories: River Crossing
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -7315,6 +7726,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverCrossing_21.png
 		Size: 8,6
 		Categories: River Crossing
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -7347,6 +7759,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverCrossing_23.png
 		Size: 8,6
 		Categories: River Crossing
+		Palette: kknd
 		Tiles:
 			6: Dirt
 			7: Dirt
@@ -7379,6 +7792,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverCrossing_24.png
 		Size: 3,3
 		Categories: River Crossing
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -7395,6 +7809,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverCrossing_25.png
 		Size: 3,3
 		Categories: River Crossing
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -7411,6 +7826,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverCrossing_27.png
 		Size: 3,3
 		Categories: River Crossing
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -7427,6 +7843,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverCrossing_28.png
 		Size: 3,3
 		Categories: River Crossing
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -7443,6 +7860,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_2.png
 		Size: 2,2
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -7454,6 +7872,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_4.png
 		Size: 3,4
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -7472,6 +7891,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_1.png
 		Size: 2,2
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -7483,6 +7903,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_3.png
 		Size: 3,4
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -7501,6 +7922,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_5.png
 		Size: 4,4
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			1: Water
 			2: Water
@@ -7521,6 +7943,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_7.png
 		Size: 4,5
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			2: Water
 			3: Water
@@ -7543,6 +7966,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_8.png
 		Size: 4,4
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -7563,6 +7987,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_11.png
 		Size: 4,4
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			1: Water
 			2: Water
@@ -7583,6 +8008,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_12.png
 		Size: 3,4
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Dirt
@@ -7600,6 +8026,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_10.png
 		Size: 3,4
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			1: Dirt
 			2: Water
@@ -7617,6 +8044,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_15.png
 		Size: 3,3
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -7632,6 +8060,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_16.png
 		Size: 2,4
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Dirt
@@ -7646,6 +8075,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_17.png
 		Size: 3,3
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -7661,6 +8091,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_20.png
 		Size: 3,4
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -7679,6 +8110,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_19.png
 		Size: 2,4
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Water
@@ -7693,6 +8125,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_13.png
 		Size: 4,7
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -7723,6 +8156,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_6.png
 		Size: 4,4
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			1: Water
 			2: Water
@@ -7743,6 +8177,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_28.png
 		Size: 4,4
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -7763,6 +8198,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_27.png
 		Size: 2,6
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			0: Water
 			2: Water
@@ -7781,6 +8217,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_35.png
 		Size: 2,4
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -7796,6 +8233,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_18.png
 		Size: 3,4
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -7814,6 +8252,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_14.png
 		Size: 4,7
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			1: Dirt
 			2: Water
@@ -7844,6 +8283,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_21.png
 		Size: 4,4
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			1: Water
 			2: Water
@@ -7864,6 +8304,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_22.png
 		Size: 2,6
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			1: Water
 			2: Water
@@ -7882,6 +8323,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_23.png
 		Size: 4,3
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -7899,6 +8341,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_24.png
 		Size: 2,4
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -7914,6 +8357,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_25.png
 		Size: 2,4
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -7929,6 +8373,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_26.png
 		Size: 4,3
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -7946,6 +8391,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_29.png
 		Size: 2,4
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -7961,6 +8407,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_36.png
 		Size: 2,3
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -7974,6 +8421,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_38.png
 		Size: 3,4
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			0: Water
 			3: Water
@@ -7988,6 +8436,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_30.png
 		Size: 3,6
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -8013,6 +8462,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_31.png
 		Size: 5,4
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -8037,6 +8487,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_32.png
 		Size: 5,4
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			1: Dirt
 			2: Water
@@ -8061,6 +8512,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_33.png
 		Size: 3,6
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Water
@@ -8086,6 +8538,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_34.png
 		Size: 3,4
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			2: Water
 			4: Water
@@ -8100,6 +8553,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_39.png
 		Size: 2,3
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -8113,6 +8567,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_40.png
 		Size: 4,3
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -8130,6 +8585,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_41.png
 		Size: 3,3
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			1: Water
 			2: Water
@@ -8145,6 +8601,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_42.png
 		Size: 3,3
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -8160,6 +8617,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_43.png
 		Size: 4,3
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			1: Dirt
 			2: Water
@@ -8177,6 +8635,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_44.png
 		Size: 3,3
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -8192,6 +8651,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_45.png
 		Size: 3,3
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -8207,6 +8667,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_46.png
 		Size: 4,4
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			1: Water
 			2: Water
@@ -8226,6 +8687,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_47.png
 		Size: 4,4
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			1: Water
 			2: Dirt
@@ -8245,6 +8707,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_48.png
 		Size: 4,4
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			1: Dirt
 			2: Water
@@ -8264,6 +8727,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_49.png
 		Size: 4,4
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			1: Water
 			2: Water
@@ -8283,6 +8747,7 @@ Templates:
 		Images: tilesets/highland/tiles/RiverExtra_9.png
 		Size: 4,5
 		Categories: River Extra
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -8305,6 +8770,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_1.png
 		Size: 7,2
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -8326,6 +8792,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_3.png
 		Size: 3,2
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Street
@@ -8339,6 +8806,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_4.png
 		Size: 3,2
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -8352,6 +8820,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_5.png
 		Size: 3,4
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -8370,6 +8839,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_7.png
 		Size: 2,2
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -8380,6 +8850,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_10.png
 		Size: 3,2
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -8392,6 +8863,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_11.png
 		Size: 3,2
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -8404,6 +8876,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_17.png
 		Size: 3,2
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			1: Street
 			2: Street
@@ -8416,6 +8889,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_16.png
 		Size: 3,2
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -8428,6 +8902,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_12.png
 		Size: 3,3
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			1: Street
 			3: Street
@@ -8441,6 +8916,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_13.png
 		Size: 2,7
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -8462,6 +8938,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_14.png
 		Size: 2,7
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -8483,6 +8960,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_24.png
 		Size: 3,4
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			1: Dirt
 			2: Street
@@ -8501,6 +8979,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_18.png
 		Size: 3,3
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -8515,6 +8994,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_20.png
 		Size: 2,2
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -8525,6 +9005,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_23.png
 		Size: 3,2
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -8538,6 +9019,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_22.png
 		Size: 3,2
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -8551,6 +9033,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_19.png
 		Size: 2,2
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -8561,6 +9044,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_15.png
 		Size: 3,3
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -8575,6 +9059,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_9.png
 		Size: 3,3
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			1: Street
 			3: Street
@@ -8588,6 +9073,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_6.png
 		Size: 2,2
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -8598,6 +9084,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_2.png
 		Size: 3,4
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -8616,6 +9103,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_25.png
 		Size: 7,2
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -8637,6 +9125,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_26.png
 		Size: 7,2
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -8658,6 +9147,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_27.png
 		Size: 5,6
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -8689,6 +9179,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_28.png
 		Size: 2,4
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -8704,6 +9195,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_39.png
 		Size: 4,2
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -8719,6 +9211,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_30.png
 		Size: 4,3
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Street
@@ -8738,6 +9231,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_31.png
 		Size: 3,4
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Street
@@ -8757,6 +9251,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_32.png
 		Size: 4,4
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Street
@@ -8780,6 +9275,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_33.png
 		Size: 3,4
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -8799,6 +9295,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_34.png
 		Size: 4,3
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -8818,6 +9315,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_35.png
 		Size: 2,2
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Street
@@ -8829,6 +9327,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_38.png
 		Size: 2,2
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -8840,6 +9339,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_37.png
 		Size: 2,2
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Dirt
@@ -8851,6 +9351,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_36.png
 		Size: 2,2
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -8862,6 +9363,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_29.png
 		Size: 1,2
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Street
@@ -8871,6 +9373,7 @@ Templates:
 		Images: tilesets/highland/tiles/Street_21.png
 		Size: 3,4
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Dirt
@@ -8889,6 +9392,7 @@ Templates:
 		Images: tilesets/highland/tiles/Transition_SE.png
 		Size: 4,3
 		Categories: Transition
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -8902,6 +9406,7 @@ Templates:
 		Images: tilesets/highland/tiles/Transition_SW.png
 		Size: 4,3
 		Categories: Transition
+		Palette: kknd
 		Tiles:
 			2: Grass
 			3: Grass
@@ -8915,6 +9420,7 @@ Templates:
 		Images: tilesets/highland/tiles/Transition_NE.png
 		Size: 4,3
 		Categories: Transition
+		Palette: kknd
 		Tiles:
 			2: Dirt
 			3: Dirt
@@ -8928,6 +9434,7 @@ Templates:
 		Images: tilesets/highland/tiles/Transition_NW.png
 		Size: 4,3
 		Categories: Transition
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -8941,6 +9448,7 @@ Templates:
 		Images: tilesets/highland/tiles/Transition_NW2N.png
 		Size: 4,4
 		Categories: Transition
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			4: Dirt
@@ -8958,6 +9466,7 @@ Templates:
 		Images: tilesets/highland/tiles/Transition_NE2N.png
 		Size: 4,4
 		Categories: Transition
+		Palette: kknd
 		Tiles:
 			3: Dirt
 			6: Dirt
@@ -8975,6 +9484,7 @@ Templates:
 		Images: tilesets/highland/tiles/Transition_NE2E.png
 		Size: 4,4
 		Categories: Transition
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -8992,6 +9502,7 @@ Templates:
 		Images: tilesets/highland/tiles/Transition_NW2W.png
 		Size: 4,4
 		Categories: Transition
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -9009,6 +9520,7 @@ Templates:
 		Images: tilesets/highland/tiles/Transition_SE2E.png
 		Size: 4,4
 		Categories: Transition
+		Palette: kknd
 		Tiles:
 			0: Grass
 			4: Grass
@@ -9026,6 +9538,7 @@ Templates:
 		Images: tilesets/highland/tiles/Transition_SW2W.png
 		Size: 4,4
 		Categories: Transition
+		Palette: kknd
 		Tiles:
 			3: Grass
 			6: Grass
@@ -9043,6 +9556,7 @@ Templates:
 		Images: tilesets/highland/tiles/Transition_SE2S.png
 		Size: 4,4
 		Categories: Transition
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -9060,6 +9574,7 @@ Templates:
 		Images: tilesets/highland/tiles/Transition_SW2S.png
 		Size: 4,4
 		Categories: Transition
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -9077,6 +9592,7 @@ Templates:
 		Images: tilesets/highland/tiles/Transition_W2S.png
 		Size: 3,3
 		Categories: Transition
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -9093,6 +9609,7 @@ Templates:
 		Images: tilesets/highland/tiles/Transition_E2S.png
 		Size: 3,3
 		Categories: Transition
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -9109,6 +9626,7 @@ Templates:
 		Images: tilesets/highland/tiles/Transition_E2N.png
 		Size: 3,3
 		Categories: Transition
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -9125,6 +9643,7 @@ Templates:
 		Images: tilesets/highland/tiles/Transition_W2N.png
 		Size: 3,3
 		Categories: Transition
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Grass
@@ -9141,6 +9660,7 @@ Templates:
 		Images: tilesets/highland/tiles/Transition_W.png
 		Size: 4,2
 		Categories: Transition
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -9156,6 +9676,7 @@ Templates:
 		Images: tilesets/highland/tiles/Transition_N.png
 		Size: 2,4
 		Categories: Transition
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -9171,6 +9692,7 @@ Templates:
 		Images: tilesets/highland/tiles/Transition_E.png
 		Size: 4,2
 		Categories: Transition
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -9186,6 +9708,7 @@ Templates:
 		Images: tilesets/highland/tiles/Transition_S.png
 		Size: 2,4
 		Categories: Transition
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -9201,6 +9724,7 @@ Templates:
 		Images: tilesets/highland/tiles/Transition_N2E.png
 		Size: 4,4
 		Categories: Transition
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -9223,6 +9747,7 @@ Templates:
 		Images: tilesets/highland/tiles/Transition_S2E.png
 		Size: 4,4
 		Categories: Transition
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -9245,6 +9770,7 @@ Templates:
 		Images: tilesets/highland/tiles/Transition_S2W.png
 		Size: 4,4
 		Categories: Transition
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -9267,6 +9793,7 @@ Templates:
 		Images: tilesets/highland/tiles/Transition_N2W.png
 		Size: 4,4
 		Categories: Transition
+		Palette: kknd
 		Tiles:
 			1: Dirt
 			2: Dirt
@@ -9289,6 +9816,7 @@ Templates:
 		Images: tilesets/highland/tiles/Transition_N2NE.png
 		Size: 4,4
 		Categories: Transition
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -9306,6 +9834,7 @@ Templates:
 		Images: tilesets/highland/tiles/Transition_E2NE.png
 		Size: 4,4
 		Categories: Transition
+		Palette: kknd
 		Tiles:
 			3: Dirt
 			6: Dirt
@@ -9323,6 +9852,7 @@ Templates:
 		Images: tilesets/highland/tiles/Transition_E2SE.png
 		Size: 4,4
 		Categories: Transition
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -9340,6 +9870,7 @@ Templates:
 		Images: tilesets/highland/tiles/Transition_S2SE.png
 		Size: 4,4
 		Categories: Transition
+		Palette: kknd
 		Tiles:
 			0: Grass
 			4: Grass
@@ -9357,6 +9888,7 @@ Templates:
 		Images: tilesets/highland/tiles/Transition_S2SW.png
 		Size: 4,4
 		Categories: Transition
+		Palette: kknd
 		Tiles:
 			3: Grass
 			6: Grass
@@ -9374,6 +9906,7 @@ Templates:
 		Images: tilesets/highland/tiles/Transition_W2SW.png
 		Size: 4,4
 		Categories: Transition
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -9391,6 +9924,7 @@ Templates:
 		Images: tilesets/highland/tiles/Transition_W2NW.png
 		Size: 4,4
 		Categories: Transition
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			4: Dirt
@@ -9408,6 +9942,7 @@ Templates:
 		Images: tilesets/highland/tiles/Transition_N2NW.png
 		Size: 4,4
 		Categories: Transition
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -9425,6 +9960,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePath_3.png
 		Size: 3,3
 		Categories: Wide Path
+		Palette: kknd
 		Tiles:
 			1: Grass
 			2: Path
@@ -9439,6 +9975,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePath_1.png
 		Size: 7,3
 		Categories: Wide Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -9467,6 +10004,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePath_2.png
 		Size: 3,3
 		Categories: Wide Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Grass
@@ -9481,6 +10019,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePath_4.png
 		Size: 4,2
 		Categories: Wide Path
+		Palette: kknd
 		Tiles:
 			1: Path
 			2: Path
@@ -9494,6 +10033,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePath_17.png
 		Size: 4,2
 		Categories: Wide Path
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Path
@@ -9507,6 +10047,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePath_18.png
 		Size: 4,4
 		Categories: Wide Path
+		Palette: kknd
 		Tiles:
 			2: Grass
 			3: Path
@@ -9526,6 +10067,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePath_19.png
 		Size: 4,4
 		Categories: Wide Path
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Path
@@ -9545,6 +10087,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePath_16.png
 		Size: 4,3
 		Categories: Wide Path
+		Palette: kknd
 		Tiles:
 			1: Path
 			4: Path
@@ -9560,6 +10103,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePath_15.png
 		Size: 3,6
 		Categories: Wide Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -9585,6 +10129,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePath_14.png
 		Size: 3,6
 		Categories: Wide Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -9610,6 +10155,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePath_5.png
 		Size: 4,3
 		Categories: Wide Path
+		Palette: kknd
 		Tiles:
 			2: Path
 			4: Path
@@ -9625,6 +10171,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePath_6.png
 		Size: 3,6
 		Categories: Wide Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -9650,6 +10197,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePath_13.png
 		Size: 4,3
 		Categories: Wide Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -9665,6 +10213,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePath_21.png
 		Size: 4,4
 		Categories: Wide Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -9684,6 +10233,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePath_20.png
 		Size: 4,4
 		Categories: Wide Path
+		Palette: kknd
 		Tiles:
 			1: Path
 			2: Path
@@ -9703,6 +10253,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePath_7.png
 		Size: 4,3
 		Categories: Wide Path
+		Palette: kknd
 		Tiles:
 			1: Path
 			2: Path
@@ -9718,6 +10269,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePath_8.png
 		Size: 4,2
 		Categories: Wide Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -9731,6 +10283,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePath_12.png
 		Size: 4,2
 		Categories: Wide Path
+		Palette: kknd
 		Tiles:
 			1: Path
 			2: Path
@@ -9744,6 +10297,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePath_11.png
 		Size: 3,3
 		Categories: Wide Path
+		Palette: kknd
 		Tiles:
 			1: Path
 			2: Path
@@ -9758,6 +10312,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePath_10.png
 		Size: 7,3
 		Categories: Wide Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -9786,6 +10341,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePath_9.png
 		Size: 3,3
 		Categories: Wide Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -9800,6 +10356,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePath_22.png
 		Size: 3,2
 		Categories: Wide Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -9813,6 +10370,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePath_23.png
 		Size: 2,3
 		Categories: Wide Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -9826,6 +10384,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePath_24.png
 		Size: 2,3
 		Categories: Wide Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -9839,6 +10398,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePath_25.png
 		Size: 3,2
 		Categories: Wide Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -9852,6 +10412,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePath_26.png
 		Size: 7,7
 		Categories: Wide Path
+		Palette: kknd
 		Tiles:
 			2: Path
 			3: Path
@@ -9892,6 +10453,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePathExtra_1.png
 		Size: 4,4
 		Categories: Wide Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -9914,6 +10476,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePathExtra_2.png
 		Size: 4,4
 		Categories: Wide Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -9936,6 +10499,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePathExtra_6.png
 		Size: 2,4
 		Categories: Wide Path Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Path
@@ -9950,6 +10514,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePathExtra_7.png
 		Size: 2,4
 		Categories: Wide Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Grass
@@ -9964,6 +10529,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePathExtra_8.png
 		Size: 3,3
 		Categories: Wide Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -9978,6 +10544,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePathExtra_5.png
 		Size: 3,3
 		Categories: Wide Path Extra
+		Palette: kknd
 		Tiles:
 			1: Path
 			2: Path
@@ -9992,6 +10559,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePathExtra_3.png
 		Size: 5,3
 		Categories: Wide Path Extra
+		Palette: kknd
 		Tiles:
 			2: Path
 			3: Path
@@ -10009,6 +10577,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePathExtra_10.png
 		Size: 3,3
 		Categories: Wide Path Extra
+		Palette: kknd
 		Tiles:
 			1: Path
 			2: Path
@@ -10023,6 +10592,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePathExtra_11.png
 		Size: 2,4
 		Categories: Wide Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			2: Path
@@ -10037,6 +10607,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePathExtra_12.png
 		Size: 2,4
 		Categories: Wide Path Extra
+		Palette: kknd
 		Tiles:
 			1: Path
 			2: Path
@@ -10051,6 +10622,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePathExtra_13.png
 		Size: 3,3
 		Categories: Wide Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -10065,6 +10637,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePathExtra_4.png
 		Size: 5,3
 		Categories: Wide Path Extra
+		Palette: kknd
 		Tiles:
 			1: Path
 			2: Path
@@ -10082,6 +10655,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePathExtra_9.png
 		Size: 4,3
 		Categories: Wide Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -10101,6 +10675,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePathExtra_14.png
 		Size: 5,3
 		Categories: Wide Path Extra
+		Palette: kknd
 		Tiles:
 			1: Path
 			2: Path
@@ -10118,6 +10693,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePathExtra_15.png
 		Size: 5,3
 		Categories: Wide Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -10135,6 +10711,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePathExtra_16.png
 		Size: 4,4
 		Categories: Wide Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -10157,6 +10734,7 @@ Templates:
 		Images: tilesets/highland/tiles/WidePathExtra_17.png
 		Size: 4,4
 		Categories: Wide Path Extra
+		Palette: kknd
 		Tiles:
 			1: Path
 			2: Path

@@ -2,7 +2,7 @@ survivors_vehicle_dirtbike:
 	Inherits@1: ^CoreVehicle
 	Inherits@2: ^CoreLightVehicle
 	Inherits@3: ^CoreArmedSelf
-	Inherits@4: ^HasMuzzle
+	Inherits@4: ^has_muzzle
 	Tooltip:
 		Name: Dirt Bike
 	Valued:

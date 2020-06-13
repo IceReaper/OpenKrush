@@ -1,8 +1,3 @@
-Smudge:
-	Warhead@Smudge: LeaveSmudge
-		Chance: 35
-		SmudgeType: Crater
-
 Debris1:
 	ReloadDelay: 60
 	Range: 1c0
@@ -22,38 +17,27 @@ Debris1:
 Debris2:
 	Inherits: Debris1
 	Projectile: Bullet
-		Image: shrapnels
 		Sequences: debris2
 
 Debris3:
 	Inherits: Debris1
 	Projectile: Bullet
-		Image: shrapnels
 		Sequences: debris3
 
 Debris4:
 	Inherits: Debris1
 	Projectile: Bullet
-		Image: shrapnels
 		Sequences: debris4
 
 Debris5:
 	Inherits: Debris1
 	Projectile: Bullet
-		Image: shrapnels
 		Sequences: debris5
 
 Debris6:
 	Inherits: Debris1
 	Projectile: Bullet
-		Image: shrapnels
 		Sequences: debris6
-
-Debris7:
-	Inherits: Debris1
-	Projectile: Bullet
-		Image: shrapnels
-		Sequences: debris7
 
 Spark1:
 	ReloadDelay: 60
@@ -74,54 +58,12 @@ Spark1:
 Spark2:
 	Inherits: Spark1
 	Projectile: Bullet
-		Image: shrapnels
 		Sequences: spark2
 
 Spark3:
 	Inherits: Spark1
 	Projectile: Bullet
-		Image: shrapnels
 		Sequences: spark3
-
-Blood1:
-	ReloadDelay: 60
-	Range: 1c0
-	Projectile: Bullet
-		Speed: 40, 70
-		Blockable: false
-		LaunchAngle: 70, 110
-		Inaccuracy: 1c0
-		Image: shrapnels
-		Palette: kknd
-		Sequences: blood1
-	Warhead: ShrapnelCreateEffect
-		Image: shrapnels
-		ExplosionPalette: kknd
-		Explosions: blood_impact
-
-Blood2:
-	Inherits: Blood1
-	Projectile: Bullet
-		Image: shrapnels
-		Sequences: blood2
-
-Blood3:
-	Inherits: Blood1
-	Projectile: Bullet
-		Image: shrapnels
-		Sequences: blood3
-
-Blood4:
-	Inherits: Blood1
-	Projectile: Bullet
-		Image: shrapnels
-		Sequences: blood4
-
-Blood5:
-	Inherits: Blood1
-	Projectile: Bullet
-		Image: shrapnels
-		Sequences: blood5
 
 ShrapnelExplosion:
 	Warhead@1: ShrapnelCreateEffect

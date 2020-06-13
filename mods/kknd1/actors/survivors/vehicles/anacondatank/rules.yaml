@@ -1,7 +1,7 @@
 survivors_vehicle_anacondatank:
 	Inherits@1: ^CoreVehicle
 	Inherits@2: ^CoreTurret
-	Inherits@3: ^HasMuzzle
+	Inherits@3: ^has_muzzle
 	Tooltip:
 		Name: Anaconda Tank
 	Valued:

@@ -160,34 +160,3 @@ shrapnels:
 		Length: 2
 		Tick: 120
 		ZOffset: 2500
-
-	blood1: SPRITES.LVL|Shrapnels.mobd
-		Start: 164
-		Length: 1
-		Tick: 120
-		ZOffset: 2500
-	blood2: SPRITES.LVL|Shrapnels.mobd
-		Start: 165
-		Length: 1
-		Tick: 120
-		ZOffset: 2500
-	blood3: SPRITES.LVL|Shrapnels.mobd
-		Start: 166
-		Length: 1
-		Tick: 120
-		ZOffset: 2500
-	blood4: SPRITES.LVL|Shrapnels.mobd
-		Start: 167
-		Length: 3
-		Tick: 120
-		ZOffset: 2500
-	blood5: SPRITES.LVL|Shrapnels.mobd
-		Start: 170
-		Length: 3
-		Tick: 120
-		ZOffset: 2500
-
-	blood_impact: bits/BloodImpact.png
-		Length: 4
-		Tick: 120
-		ZOffset: -500

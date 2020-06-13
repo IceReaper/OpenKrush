@@ -1,0 +1,9 @@
+shroud:
+	shroud: bits/shroud.png
+		Length: 16
+	shroudfull: bits/shroud.png
+		Start: 1
+	fog: bits/shroud.png
+		Length: 16
+	fogfull: bits/shroud.png
+		Start: 1

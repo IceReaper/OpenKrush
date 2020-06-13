@@ -1,5 +1,4 @@
 ^weapon_nuke:
-	Inherits: Smudge
 	Range: 1c0 # TODO HACK
 	ReloadDelay: 10000 # TODO HACK
 	Report: MUTE.SLV|163.wav
@@ -9,6 +8,9 @@
 		Sequences: projectile
 		Velocity: 0, 0, -82
 		Acceleration: 0, 0, 0
+	Warhead@Smudge: LeaveSmudge
+		Chance: 100
+		SmudgeType: Crater
 	Warhead@Damage: SpreadDamage
 		Damage: 100
 		DamageTypes: Explosion

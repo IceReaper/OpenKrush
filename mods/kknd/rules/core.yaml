@@ -11,6 +11,25 @@
 	# Required to see debug overlays.
 	CombatDebugOverlay:
 
+# Map decoration actors.
+^CoreDecoration:
+	Inherits: ^CoreVisibleActor
+	# Always visible, no special shroud logic here.
+	-HiddenUnderFog:
+	FrozenUnderFog:
+	# Decorations  have sprites but do not use facing for them.
+	WithSpriteBody:
+	# Default setting makes decorations take 1x1 tiles.
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	# Put decorations in own catgegory in map editor.
+	MapEditorData:
+		Categories: Decorations
+	# Enforce neutral ownership.
+	RequiresSpecificOwners:
+		ValidOwnerNames: Neutral
+
 # Base for all movable units.
 ^CoreUnit:
 	Inherits: ^CoreVisibleActor
@@ -217,6 +236,9 @@
 	-BlocksProjectiles:
 	# Render the tower a little bit when destroyed.
 	FrozenOnDeath:
+	# Default looking south
+	Turreted:
+		InitialFacing: 128
 
 # Base for all walls.
 ^CoreWall:
@@ -450,57 +472,3 @@
 	# Auto target enemies nearby.
 	AutoTarget:
 	AutoTargetPriority:
-
-# Oil resource.
-oilpatch:
-	Inherits: ^CoreConstruction
-	# KKnD oilpatch behavior.
-	Oilpatch:
-	# Put oil in resources catgegory in map editor.
-	MapEditorData:
-		Categories: Resource
-	# Should not be auto attacked.
-	Targetable@NoAutoAttack:
-		TargetTypes: NoAutoAttack
-	# Required for burning effect.
-	WithIdleOverlay@Animation: # TODO add burning damage
-		Sequence: burn
-		RequiresCondition: Burning
-	# An oilpatch is a construction, occupying 3x3 cells for buildings but not units.
-	Building:
-		TerrainTypes: Clear
-		Dimensions: 5,5
-		Footprint: ===== ===== ===== ===== =====
-	# Oilpatch hitshape is only the center cell.
-	HitShape:
-		Type: Rectangle
-			TopLeft: -512, -512
-			BottomRight: 512, 512
-	Selectable:
-		Bounds: 32, 32, 0, 0
-	# Oil has a healthbar when hovered, which shows the oil amount.
-	AdvancedSelectionDecorations:
-	# Not build or sellable.
-	-SelfConstructing:
-	-DeconstructSellable:
-	# Not blocking projectiles.
-	-BlocksProjectiles:
-
-# Map decoration actors.
-^CoreDecoration:
-	Inherits: ^CoreVisibleActor
-	# Always visible, no special shroud logic here.
-	-HiddenUnderFog:
-	FrozenUnderFog:
-	# Decorations  have sprites but do not use facing for them.
-	WithSpriteBody:
-	# Default setting makes decorations take 1x1 tiles.
-	Building:
-		Dimensions: 1,1
-		Footprint: x
-	# Put decorations in own catgegory in map editor.
-	MapEditorData:
-		Categories: Decorations
-	# Enforce neutral ownership.
-	RequiresSpecificOwners:
-		ValidOwnerNames: Neutral

@@ -1,0 +1,5 @@
+^has_muzzle:
+	OffsetsArmament:
+		MuzzleSequence: muzzle
+		MuzzlePalette: kknd
+	WithMuzzleOverlay:

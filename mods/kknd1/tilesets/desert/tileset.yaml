@@ -1,7 +1,6 @@
 General:
 	Name: Desert
 	Id: desert
-	Palette: kknd
 	EditorTemplateOrder: Terrain, Beach, Cliff, Cliff Extra, Cliff Ramp, Decoration, Path, Path Extra, Street, Street Extra, Transition Dirt Sand, Transition Dirt Sand Extra, Transition Grass Dirt
 	SheetSize: 2048
 
@@ -49,6 +48,7 @@ Templates:
 		Size: 1,1
 		PickAny: true
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -93,6 +93,7 @@ Templates:
 		Size: 1,1
 		PickAny: true
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -137,6 +138,7 @@ Templates:
 		Size: 1,1
 		PickAny: true
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -181,6 +183,7 @@ Templates:
 		Size: 1,1
 		PickAny: true
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -224,6 +227,7 @@ Templates:
 		Images: tilesets/desert/tiles/Terrain_Dirt1.png
 		Size: 1,1
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 
@@ -232,6 +236,7 @@ Templates:
 		Images: tilesets/desert/tiles/Terrain_Dirt2.png
 		Size: 1,1
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 
@@ -240,6 +245,7 @@ Templates:
 		Images: tilesets/desert/tiles/Terrain_Dirt3.png
 		Size: 4,2
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -255,6 +261,7 @@ Templates:
 		Images: tilesets/desert/tiles/Terrain_Dirt4.png
 		Size: 2,4
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -270,6 +277,7 @@ Templates:
 		Images: tilesets/desert/tiles/Terrain_Dirt5.png
 		Size: 4,3
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -289,6 +297,7 @@ Templates:
 		Images: tilesets/desert/tiles/Terrain_Dirt6.png
 		Size: 5,4
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -316,6 +325,7 @@ Templates:
 		Images: tilesets/desert/tiles/Terrain_Dirt7.png
 		Size: 2,2
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -327,6 +337,7 @@ Templates:
 		Images: tilesets/desert/tiles/Terrain_Dirt8.png
 		Size: 1,1
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 
@@ -335,6 +346,7 @@ Templates:
 		Images: tilesets/desert/tiles/Terrain_Dirt9.png
 		Size: 1,1
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 
@@ -343,6 +355,7 @@ Templates:
 		Images: tilesets/desert/tiles/Terrain_Dirt10.png
 		Size: 1,2
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -352,6 +365,7 @@ Templates:
 		Images: tilesets/desert/tiles/Terrain_Dirt11.png
 		Size: 1,2
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -361,6 +375,7 @@ Templates:
 		Images: tilesets/desert/tiles/Terrain_Dirt12.png
 		Size: 2,2
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -372,6 +387,7 @@ Templates:
 		Images: tilesets/desert/tiles/Terrain_Dirt13.png
 		Size: 1,1
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 
@@ -380,6 +396,7 @@ Templates:
 		Images: tilesets/desert/tiles/Terrain_Dirt14.png
 		Size: 1,1
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 
@@ -388,6 +405,7 @@ Templates:
 		Images: tilesets/desert/tiles/Terrain_Dirt15.png
 		Size: 1,1
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 
@@ -396,6 +414,7 @@ Templates:
 		Images: tilesets/desert/tiles/Terrain_Dirt16.png
 		Size: 2,2
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -407,6 +426,7 @@ Templates:
 		Images: tilesets/desert/tiles/Terrain_Dirt17.png
 		Size: 2,3
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -420,6 +440,7 @@ Templates:
 		Images: tilesets/desert/tiles/Terrain_Grass1.png
 		Size: 3,3
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -436,6 +457,7 @@ Templates:
 		Images: tilesets/desert/tiles/Terrain_Grass2.png
 		Size: 4,3
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -455,6 +477,7 @@ Templates:
 		Images: tilesets/desert/tiles/Terrain_Grass3.png
 		Size: 3,3
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -471,6 +494,7 @@ Templates:
 		Images: tilesets/desert/tiles/Terrain_Grass4.png
 		Size: 3,3
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -487,6 +511,7 @@ Templates:
 		Images: tilesets/desert/tiles/Terrain_Grass5.png
 		Size: 4,4
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -510,6 +535,7 @@ Templates:
 		Images: tilesets/desert/tiles/Terrain_Grass6.png
 		Size: 5,3
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -532,6 +558,7 @@ Templates:
 		Images: tilesets/desert/tiles/Terrain_Grass7.png
 		Size: 3,3
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -548,6 +575,7 @@ Templates:
 		Images: tilesets/desert/tiles/Terrain_Grass8.png
 		Size: 3,4
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -567,6 +595,7 @@ Templates:
 		Images: tilesets/desert/tiles/Terrain_Sand1.png
 		Size: 2,4
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -582,6 +611,7 @@ Templates:
 		Images: tilesets/desert/tiles/Terrain_Sand2.png
 		Size: 2,2
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -593,6 +623,7 @@ Templates:
 		Images: tilesets/desert/tiles/Terrain_Sand3.png
 		Size: 2,3
 		Categories: Terrain
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -606,6 +637,7 @@ Templates:
 		Images: tilesets/desert/tiles/Beach_1.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -623,6 +655,7 @@ Templates:
 		Images: tilesets/desert/tiles/Beach_2.png
 		Size: 2,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -638,6 +671,7 @@ Templates:
 		Images: tilesets/desert/tiles/Beach_3.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -655,6 +689,7 @@ Templates:
 		Images: tilesets/desert/tiles/Beach_4.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			3: Water
 			6: Water
@@ -672,6 +707,7 @@ Templates:
 		Images: tilesets/desert/tiles/Beach_5.png
 		Size: 4,2
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -687,6 +723,7 @@ Templates:
 		Images: tilesets/desert/tiles/Beach_6.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -704,6 +741,7 @@ Templates:
 		Images: tilesets/desert/tiles/Beach_7.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Sand
 			4: Sand
@@ -721,6 +759,7 @@ Templates:
 		Images: tilesets/desert/tiles/Beach_8.png
 		Size: 2,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -736,6 +775,7 @@ Templates:
 		Images: tilesets/desert/tiles/Beach_9.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			3: Sand
 			6: Sand
@@ -753,6 +793,7 @@ Templates:
 		Images: tilesets/desert/tiles/Beach_10.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -770,6 +811,7 @@ Templates:
 		Images: tilesets/desert/tiles/Beach_11.png
 		Size: 4,2
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -785,6 +827,7 @@ Templates:
 		Images: tilesets/desert/tiles/Beach_12.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Water
 			4: Water
@@ -802,6 +845,7 @@ Templates:
 		Images: tilesets/desert/tiles/Beach_13.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			1: Water
 			2: Water
@@ -824,6 +868,7 @@ Templates:
 		Images: tilesets/desert/tiles/Beach_14.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -846,6 +891,7 @@ Templates:
 		Images: tilesets/desert/tiles/Beach_16.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -868,6 +914,7 @@ Templates:
 		Images: tilesets/desert/tiles/Beach_15.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -890,6 +937,7 @@ Templates:
 		Images: tilesets/desert/tiles/Beach_17.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -907,6 +955,7 @@ Templates:
 		Images: tilesets/desert/tiles/Beach_18.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -924,6 +973,7 @@ Templates:
 		Images: tilesets/desert/tiles/Beach_19.png
 		Size: 4,3
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			2: Sand
 			3: Sand
@@ -937,6 +987,7 @@ Templates:
 		Images: tilesets/desert/tiles/Beach_20.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			3: Sand
 			6: Sand
@@ -954,6 +1005,7 @@ Templates:
 		Images: tilesets/desert/tiles/Beach_21.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -971,6 +1023,7 @@ Templates:
 		Images: tilesets/desert/tiles/Beach_22.png
 		Size: 4,3
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Water
@@ -984,6 +1037,7 @@ Templates:
 		Images: tilesets/desert/tiles/Beach_23.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Water
 			4: Water
@@ -1001,6 +1055,7 @@ Templates:
 		Images: tilesets/desert/tiles/Beach_24.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			3: Water
 			6: Water
@@ -1018,6 +1073,7 @@ Templates:
 		Images: tilesets/desert/tiles/Beach_25.png
 		Size: 4,3
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			2: Water
 			3: Water
@@ -1031,6 +1087,7 @@ Templates:
 		Images: tilesets/desert/tiles/Beach_26.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -1048,6 +1105,7 @@ Templates:
 		Images: tilesets/desert/tiles/Beach_27.png
 		Size: 4,4
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Sand
 			4: Sand
@@ -1065,6 +1123,7 @@ Templates:
 		Images: tilesets/desert/tiles/Beach_28.png
 		Size: 4,3
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -1078,6 +1137,7 @@ Templates:
 		Images: tilesets/desert/tiles/Beach_29.png
 		Size: 3,3
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -1094,6 +1154,7 @@ Templates:
 		Images: tilesets/desert/tiles/Beach_30.png
 		Size: 3,3
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -1110,6 +1171,7 @@ Templates:
 		Images: tilesets/desert/tiles/Beach_32.png
 		Size: 3,3
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Water
 			1: Sand
@@ -1126,6 +1188,7 @@ Templates:
 		Images: tilesets/desert/tiles/Beach_31.png
 		Size: 3,3
 		Categories: Beach
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -1142,6 +1205,7 @@ Templates:
 		Images: tilesets/desert/tiles/Cliff_N_A.png
 		Size: 4,2
 		Categories: Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1157,6 +1221,7 @@ Templates:
 		Images: tilesets/desert/tiles/Cliff_N_B.png
 		Size: 4,2
 		Categories: Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1172,6 +1237,7 @@ Templates:
 		Images: tilesets/desert/tiles/Cliff_NE.png
 		Size: 3,1
 		Categories: Cliff
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -1182,6 +1248,7 @@ Templates:
 		Images: tilesets/desert/tiles/Cliff_E_A.png
 		Size: 3,4
 		Categories: Cliff
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -1201,6 +1268,7 @@ Templates:
 		Images: tilesets/desert/tiles/Cliff_E_B.png
 		Size: 3,4
 		Categories: Cliff
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -1220,6 +1288,7 @@ Templates:
 		Images: tilesets/desert/tiles/Cliff_S_A.png
 		Size: 4,4
 		Categories: Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1243,6 +1312,7 @@ Templates:
 		Images: tilesets/desert/tiles/Cliff_S_B.png
 		Size: 4,4
 		Categories: Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1266,6 +1336,7 @@ Templates:
 		Images: tilesets/desert/tiles/Cliff_SW.png
 		Size: 1,6
 		Categories: Cliff
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -1279,6 +1350,7 @@ Templates:
 		Images: tilesets/desert/tiles/Cliff_SE.png
 		Size: 1,6
 		Categories: Cliff
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -1292,6 +1364,7 @@ Templates:
 		Images: tilesets/desert/tiles/Cliff_NW.png
 		Size: 3,1
 		Categories: Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1302,6 +1375,7 @@ Templates:
 		Images: tilesets/desert/tiles/Cliff_W_A.png
 		Size: 3,4
 		Categories: Cliff
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -1321,6 +1395,7 @@ Templates:
 		Images: tilesets/desert/tiles/Cliff_W_B.png
 		Size: 3,4
 		Categories: Cliff
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -1340,6 +1415,7 @@ Templates:
 		Images: tilesets/desert/tiles/Cliff_N2E.png
 		Size: 3,3
 		Categories: Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1356,6 +1432,7 @@ Templates:
 		Images: tilesets/desert/tiles/Cliff_S2W.png
 		Size: 3,6
 		Categories: Cliff
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -1381,6 +1458,7 @@ Templates:
 		Images: tilesets/desert/tiles/Cliff_N2W.png
 		Size: 3,3
 		Categories: Cliff
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -1397,6 +1475,7 @@ Templates:
 		Images: tilesets/desert/tiles/Cliff_N2NE.png
 		Size: 3,2
 		Categories: Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1409,6 +1488,7 @@ Templates:
 		Images: tilesets/desert/tiles/Cliff_N2NW.png
 		Size: 3,2
 		Categories: Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1421,6 +1501,7 @@ Templates:
 		Images: tilesets/desert/tiles/Cliff_W2NW.png
 		Size: 2,1
 		Categories: Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1430,6 +1511,7 @@ Templates:
 		Images: tilesets/desert/tiles/Cliff_E2NE.png
 		Size: 2,1
 		Categories: Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1439,6 +1521,7 @@ Templates:
 		Images: tilesets/desert/tiles/Cliff_E2SE.png
 		Size: 3,6
 		Categories: Cliff
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -1464,6 +1547,7 @@ Templates:
 		Images: tilesets/desert/tiles/Cliff_S2SE.png
 		Size: 2,5
 		Categories: Cliff
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -1481,6 +1565,7 @@ Templates:
 		Images: tilesets/desert/tiles/Cliff_S2SW.png
 		Size: 2,5
 		Categories: Cliff
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -1498,6 +1583,7 @@ Templates:
 		Images: tilesets/desert/tiles/Cliff_W2S.png
 		Size: 3,5
 		Categories: Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1520,6 +1606,7 @@ Templates:
 		Images: tilesets/desert/tiles/Cliff_E2S.png
 		Size: 3,5
 		Categories: Cliff
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -1542,6 +1629,7 @@ Templates:
 		Images: tilesets/desert/tiles/Cliff_E2N.png
 		Size: 3,3
 		Categories: Cliff
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -1558,6 +1646,7 @@ Templates:
 		Images: tilesets/desert/tiles/Cliff_W2N.png
 		Size: 3,3
 		Categories: Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1574,6 +1663,7 @@ Templates:
 		Images: tilesets/desert/tiles/Cliff_SE2S.png
 		Size: 3,5
 		Categories: Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1596,6 +1686,7 @@ Templates:
 		Images: tilesets/desert/tiles/Cliff_SW2S.png
 		Size: 3,5
 		Categories: Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1618,6 +1709,7 @@ Templates:
 		Images: tilesets/desert/tiles/Cliff_NE2E.png
 		Size: 2,1
 		Categories: Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1627,6 +1719,7 @@ Templates:
 		Images: tilesets/desert/tiles/Cliff_NW2W.png
 		Size: 2,1
 		Categories: Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1636,6 +1729,7 @@ Templates:
 		Images: tilesets/desert/tiles/Cliff_NE2N.png
 		Size: 2,1
 		Categories: Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1645,6 +1739,7 @@ Templates:
 		Images: tilesets/desert/tiles/Cliff_NW2N.png
 		Size: 2,1
 		Categories: Cliff
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1654,6 +1749,7 @@ Templates:
 		Images: tilesets/desert/tiles/Cliff_S2E.png
 		Size: 3,6
 		Categories: Cliff
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -1679,6 +1775,7 @@ Templates:
 		Images: tilesets/desert/tiles/Cliff_W2SW.png
 		Size: 3,6
 		Categories: Cliff
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -1704,6 +1801,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_1.png
 		Size: 5,2
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1721,6 +1819,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_2.png
 		Size: 5,2
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1738,6 +1837,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_3.png
 		Size: 2,2
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1749,6 +1849,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_4.png
 		Size: 2,2
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Dirt
@@ -1760,6 +1861,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_5.png
 		Size: 2,2
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -1771,6 +1873,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_6.png
 		Size: 4,4
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1788,6 +1891,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_7.png
 		Size: 3,3
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1801,6 +1905,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_8.png
 		Size: 3,6
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -1826,6 +1931,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_9.png
 		Size: 3,7
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -1854,6 +1960,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_10.png
 		Size: 3,6
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -1879,6 +1986,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_11.png
 		Size: 4,7
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			2: Grass
 			3: Grass
@@ -1909,6 +2017,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_12.png
 		Size: 4,6
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -1937,6 +2046,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_13.png
 		Size: 3,6
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -1962,6 +2072,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_14.png
 		Size: 3,6
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -1987,6 +2098,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_15.png
 		Size: 3,3
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			1: Cliff
 			2: Cliff
@@ -2000,6 +2112,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_16.png
 		Size: 4,4
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			2: Cliff
 			3: Cliff
@@ -2017,6 +2130,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_17.png
 		Size: 2,2
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Grass
@@ -2028,6 +2142,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_18.png
 		Size: 2,2
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -2039,6 +2154,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_19.png
 		Size: 2,2
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2050,6 +2166,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_20.png
 		Size: 4,4
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -2073,6 +2190,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_21.png
 		Size: 4,4
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -2096,6 +2214,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_22.png
 		Size: 4,5
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -2123,6 +2242,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_23.png
 		Size: 5,6
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2160,6 +2280,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_24.png
 		Size: 3,6
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -2183,6 +2304,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_25.png
 		Size: 6,5
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -2220,6 +2342,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_26.png
 		Size: 4,5
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Grass
@@ -2247,6 +2370,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_28.png
 		Size: 3,5
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2269,6 +2393,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_29.png
 		Size: 3,5
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Grass
@@ -2291,6 +2416,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_30.png
 		Size: 4,7
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -2320,6 +2446,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_31.png
 		Size: 6,5
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -2357,6 +2484,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_32.png
 		Size: 6,5
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2394,6 +2522,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_33.png
 		Size: 2,5
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -2411,6 +2540,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_34.png
 		Size: 5,6
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2448,6 +2578,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_35.png
 		Size: 4,6
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2479,6 +2610,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_36.png
 		Size: 3,7
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -2507,6 +2639,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_37.png
 		Size: 3,4
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -2526,6 +2659,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_38.png
 		Size: 3,3
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2542,6 +2676,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_39.png
 		Size: 2,5
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2559,6 +2694,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffExtra_40.png
 		Size: 3,5
 		Categories: Cliff Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -2581,6 +2717,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffRamp_SE.png
 		Size: 3,6
 		Categories: Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -2606,6 +2743,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffRamp_SW.png
 		Size: 3,6
 		Categories: Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -2631,6 +2769,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffRamp_NE.png
 		Size: 4,7
 		Categories: Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2666,6 +2805,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffRamp_NW.png
 		Size: 4,7
 		Categories: Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -2701,6 +2841,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffRamp_WS.png
 		Size: 3,5
 		Categories: Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -2723,6 +2864,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffRamp_WN.png
 		Size: 3,3
 		Categories: Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -2739,6 +2881,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffRamp_ES.png
 		Size: 3,5
 		Categories: Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -2761,6 +2904,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffRamp_EN.png
 		Size: 3,3
 		Categories: Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -2777,6 +2921,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffRamp_6.png
 		Size: 6,6
 		Categories: Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -2820,6 +2965,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffRamp_1.png
 		Size: 3,7
 		Categories: Cliff Ramp
+		Palette: kknd
 		Tiles:
 			1: Cliff
 			2: Cliff
@@ -2844,6 +2990,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffRamp_2.png
 		Size: 4,6
 		Categories: Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -2875,6 +3022,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffRamp_3.png
 		Size: 6,6
 		Categories: Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -2918,6 +3066,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffRamp_4.png
 		Size: 6,6
 		Categories: Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -2961,6 +3110,7 @@ Templates:
 		Images: tilesets/desert/tiles/CliffRamp_5.png
 		Size: 4,6
 		Categories: Cliff Ramp
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -2992,6 +3142,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_1.png
 		Size: 7,13
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			2: Sand
 			3: Sand
@@ -3062,6 +3213,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_2.png
 		Size: 7,11
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			3: Sand
 			4: Sand
@@ -3119,6 +3271,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_3.png
 		Size: 11,13
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			6: Sand
 			7: Sand
@@ -3229,6 +3382,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_4.png
 		Size: 11,13
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -3339,6 +3493,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_5.png
 		Size: 7,11
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			1: Sand
 			2: Sand
@@ -3396,6 +3551,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_6.png
 		Size: 7,13
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			1: Sand
 			2: Sand
@@ -3466,6 +3622,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_7.png
 		Size: 8,9
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			3: Sand
 			4: Sand
@@ -3520,6 +3677,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_8.png
 		Size: 8,9
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			1: Sand
 			2: Sand
@@ -3574,6 +3732,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_9.png
 		Size: 4,4
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3597,6 +3756,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_10.png
 		Size: 3,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3610,6 +3770,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_11.png
 		Size: 3,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Cliff
@@ -3623,6 +3784,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_12.png
 		Size: 4,4
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -3646,6 +3808,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_13.png
 		Size: 3,3
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3662,6 +3825,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_14.png
 		Size: 3,3
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -3678,6 +3842,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_15.png
 		Size: 7,5
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -3720,6 +3885,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_16.png
 		Size: 2,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -3731,6 +3897,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_17.png
 		Size: 4,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -3746,6 +3913,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_18.png
 		Size: 4,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -3761,6 +3929,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_19.png
 		Size: 2,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -3772,6 +3941,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_20.png
 		Size: 7,5
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -3814,6 +3984,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_21.png
 		Size: 9,7
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			1: Dirt
 			2: Cliff
@@ -3880,6 +4051,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_22.png
 		Size: 2,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3891,6 +4063,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_23.png
 		Size: 2,3
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3904,6 +4077,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_24.png
 		Size: 2,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3915,6 +4089,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_25.png
 		Size: 3,3
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3931,6 +4106,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_26.png
 		Size: 3,3
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -3947,6 +4123,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_27.png
 		Size: 3,3
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -3963,6 +4140,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_28.png
 		Size: 6,4
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			2: Dirt
 			3: Dirt
@@ -3986,6 +4164,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_29.png
 		Size: 2,3
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -3999,6 +4178,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_30.png
 		Size: 2,1
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -4008,6 +4188,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_31.png
 		Size: 1,1
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Dirt
 
@@ -4016,6 +4197,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_32.png
 		Size: 2,2
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4027,6 +4209,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_33.png
 		Size: 4,5
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -4054,6 +4237,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_34.png
 		Size: 3,6
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -4079,6 +4263,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_35.png
 		Size: 3,3
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4095,6 +4280,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_36.png
 		Size: 10,4
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Cliff
@@ -4139,6 +4325,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_37.png
 		Size: 11,14
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			5: Grass
 			6: Grass
@@ -4232,6 +4419,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_38.png
 		Size: 1,1
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 
@@ -4240,6 +4428,7 @@ Templates:
 		Images: tilesets/desert/tiles/Decoration_39.png
 		Size: 1,1
 		Categories: Decoration
+		Palette: kknd
 		Tiles:
 			0: Cliff
 
@@ -4248,6 +4437,7 @@ Templates:
 		Images: tilesets/desert/tiles/Path_1.png
 		Size: 4,3
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -4267,6 +4457,7 @@ Templates:
 		Images: tilesets/desert/tiles/Path_2.png
 		Size: 3,3
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -4281,6 +4472,7 @@ Templates:
 		Images: tilesets/desert/tiles/Path_3.png
 		Size: 2,2
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -4291,6 +4483,7 @@ Templates:
 		Images: tilesets/desert/tiles/Path_4.png
 		Size: 4,3
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			2: Grass
 			5: Path
@@ -4306,6 +4499,7 @@ Templates:
 		Images: tilesets/desert/tiles/Path_5.png
 		Size: 3,5
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -4328,6 +4522,7 @@ Templates:
 		Images: tilesets/desert/tiles/Path_6.png
 		Size: 4,3
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Path
@@ -4343,6 +4538,7 @@ Templates:
 		Images: tilesets/desert/tiles/Path_7.png
 		Size: 2,2
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			2: Path
@@ -4353,6 +4549,7 @@ Templates:
 		Images: tilesets/desert/tiles/Path_8.png
 		Size: 3,3
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -4367,6 +4564,7 @@ Templates:
 		Images: tilesets/desert/tiles/Path_9.png
 		Size: 4,3
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -4386,6 +4584,7 @@ Templates:
 		Images: tilesets/desert/tiles/Path_10.png
 		Size: 3,3
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			1: Path
 			2: Path
@@ -4400,6 +4599,7 @@ Templates:
 		Images: tilesets/desert/tiles/Path_11.png
 		Size: 2,2
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			1: Path
 			2: Path
@@ -4410,6 +4610,7 @@ Templates:
 		Images: tilesets/desert/tiles/Path_12.png
 		Size: 4,3
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -4425,6 +4626,7 @@ Templates:
 		Images: tilesets/desert/tiles/Path_13.png
 		Size: 3,5
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -4447,6 +4649,7 @@ Templates:
 		Images: tilesets/desert/tiles/Path_14.png
 		Size: 4,3
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			1: Grass
 			4: Grass
@@ -4462,6 +4665,7 @@ Templates:
 		Images: tilesets/desert/tiles/Path_15.png
 		Size: 2,2
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -4472,6 +4676,7 @@ Templates:
 		Images: tilesets/desert/tiles/Path_16.png
 		Size: 3,3
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			1: Path
 			2: Path
@@ -4486,6 +4691,7 @@ Templates:
 		Images: tilesets/desert/tiles/Path_17.png
 		Size: 4,3
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -4505,6 +4711,7 @@ Templates:
 		Images: tilesets/desert/tiles/Path_18.png
 		Size: 4,3
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -4524,6 +4731,7 @@ Templates:
 		Images: tilesets/desert/tiles/Path_19.png
 		Size: 4,3
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -4543,6 +4751,7 @@ Templates:
 		Images: tilesets/desert/tiles/Path_20.png
 		Size: 4,3
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -4562,6 +4771,7 @@ Templates:
 		Images: tilesets/desert/tiles/Path_21.png
 		Size: 3,3
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -4578,6 +4788,7 @@ Templates:
 		Images: tilesets/desert/tiles/Path_22.png
 		Size: 3,3
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Path
@@ -4594,6 +4805,7 @@ Templates:
 		Images: tilesets/desert/tiles/Path_23.png
 		Size: 3,3
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -4610,6 +4822,7 @@ Templates:
 		Images: tilesets/desert/tiles/Path_24.png
 		Size: 3,3
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -4626,6 +4839,7 @@ Templates:
 		Images: tilesets/desert/tiles/Path_25.png
 		Size: 3,3
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -4642,6 +4856,7 @@ Templates:
 		Images: tilesets/desert/tiles/Path_26.png
 		Size: 3,2
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -4655,6 +4870,7 @@ Templates:
 		Images: tilesets/desert/tiles/Path_27.png
 		Size: 2,3
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -4668,6 +4884,7 @@ Templates:
 		Images: tilesets/desert/tiles/Path_28.png
 		Size: 3,2
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -4681,6 +4898,7 @@ Templates:
 		Images: tilesets/desert/tiles/Path_29.png
 		Size: 2,3
 		Categories: Path
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -4694,6 +4912,7 @@ Templates:
 		Images: tilesets/desert/tiles/PathExtra_1.png
 		Size: 4,4
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -4717,6 +4936,7 @@ Templates:
 		Images: tilesets/desert/tiles/PathExtra_2.png
 		Size: 4,4
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -4740,6 +4960,7 @@ Templates:
 		Images: tilesets/desert/tiles/PathExtra_3.png
 		Size: 4,4
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -4763,6 +4984,7 @@ Templates:
 		Images: tilesets/desert/tiles/PathExtra_4.png
 		Size: 4,4
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Path
@@ -4786,6 +5008,7 @@ Templates:
 		Images: tilesets/desert/tiles/PathExtra_5.png
 		Size: 6,3
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -4811,6 +5034,7 @@ Templates:
 		Images: tilesets/desert/tiles/PathExtra_6.png
 		Size: 6,3
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -4836,6 +5060,7 @@ Templates:
 		Images: tilesets/desert/tiles/PathExtra_7.png
 		Size: 6,3
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Path
@@ -4861,6 +5086,7 @@ Templates:
 		Images: tilesets/desert/tiles/PathExtra_8.png
 		Size: 6,3
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -4886,6 +5112,7 @@ Templates:
 		Images: tilesets/desert/tiles/PathExtra_9.png
 		Size: 5,3
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -4907,6 +5134,7 @@ Templates:
 		Images: tilesets/desert/tiles/PathExtra_10.png
 		Size: 5,3
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -4928,6 +5156,7 @@ Templates:
 		Images: tilesets/desert/tiles/PathExtra_11.png
 		Size: 3,6
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -4953,6 +5182,7 @@ Templates:
 		Images: tilesets/desert/tiles/PathExtra_12.png
 		Size: 3,6
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -4978,6 +5208,7 @@ Templates:
 		Images: tilesets/desert/tiles/PathExtra_13.png
 		Size: 5,3
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5000,6 +5231,7 @@ Templates:
 		Images: tilesets/desert/tiles/PathExtra_14.png
 		Size: 2,2
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5011,6 +5243,7 @@ Templates:
 		Images: tilesets/desert/tiles/PathExtra_15.png
 		Size: 2,2
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5022,6 +5255,7 @@ Templates:
 		Images: tilesets/desert/tiles/PathExtra_16.png
 		Size: 2,2
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5033,6 +5267,7 @@ Templates:
 		Images: tilesets/desert/tiles/PathExtra_17.png
 		Size: 2,2
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5044,6 +5279,7 @@ Templates:
 		Images: tilesets/desert/tiles/PathExtra_18.png
 		Size: 2,2
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5055,6 +5291,7 @@ Templates:
 		Images: tilesets/desert/tiles/PathExtra_19.png
 		Size: 2,2
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5066,6 +5303,7 @@ Templates:
 		Images: tilesets/desert/tiles/PathExtra_20.png
 		Size: 2,2
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5077,6 +5315,7 @@ Templates:
 		Images: tilesets/desert/tiles/PathExtra_21.png
 		Size: 2,2
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5088,6 +5327,7 @@ Templates:
 		Images: tilesets/desert/tiles/PathExtra_22.png
 		Size: 2,2
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5099,6 +5339,7 @@ Templates:
 		Images: tilesets/desert/tiles/PathExtra_23.png
 		Size: 2,2
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5110,6 +5351,7 @@ Templates:
 		Images: tilesets/desert/tiles/PathExtra_24.png
 		Size: 2,2
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5121,6 +5363,7 @@ Templates:
 		Images: tilesets/desert/tiles/PathExtra_25.png
 		Size: 2,2
 		Categories: Path Extra
+		Palette: kknd
 		Tiles:
 			0: Path
 			1: Path
@@ -5132,6 +5375,7 @@ Templates:
 		Images: tilesets/desert/tiles/Street_1.png
 		Size: 7,4
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -5167,6 +5411,7 @@ Templates:
 		Images: tilesets/desert/tiles/Street_2.png
 		Size: 3,5
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -5187,6 +5432,7 @@ Templates:
 		Images: tilesets/desert/tiles/Street_3.png
 		Size: 4,4
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			2: Grass
 			3: Grass
@@ -5201,6 +5447,7 @@ Templates:
 		Images: tilesets/desert/tiles/Street_4.png
 		Size: 5,4
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			2: Grass
 			3: Grass
@@ -5224,6 +5471,7 @@ Templates:
 		Images: tilesets/desert/tiles/Street_5.png
 		Size: 6,7
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -5273,6 +5521,7 @@ Templates:
 		Images: tilesets/desert/tiles/Street_6.png
 		Size: 5,4
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -5296,6 +5545,7 @@ Templates:
 		Images: tilesets/desert/tiles/Street_7.png
 		Size: 4,4
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Grass
 			4: Grass
@@ -5310,6 +5560,7 @@ Templates:
 		Images: tilesets/desert/tiles/Street_8.png
 		Size: 3,6
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -5332,6 +5583,7 @@ Templates:
 		Images: tilesets/desert/tiles/Street_9.png
 		Size: 3,6
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			1: Grass
 			2: Grass
@@ -5354,6 +5606,7 @@ Templates:
 		Images: tilesets/desert/tiles/Street_10.png
 		Size: 4,4
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			3: Grass
 			6: Street
@@ -5368,6 +5621,7 @@ Templates:
 		Images: tilesets/desert/tiles/Street_11.png
 		Size: 5,4
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Street
@@ -5391,6 +5645,7 @@ Templates:
 		Images: tilesets/desert/tiles/Street_12.png
 		Size: 5,4
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			1: Grass
 			2: Grass
@@ -5414,6 +5669,7 @@ Templates:
 		Images: tilesets/desert/tiles/Street_13.png
 		Size: 4,4
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -5428,6 +5684,7 @@ Templates:
 		Images: tilesets/desert/tiles/Street_14.png
 		Size: 3,5
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -5448,6 +5705,7 @@ Templates:
 		Images: tilesets/desert/tiles/Street_15.png
 		Size: 4,3
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -5466,6 +5724,7 @@ Templates:
 		Images: tilesets/desert/tiles/Street_16.png
 		Size: 4,3
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -5484,6 +5743,7 @@ Templates:
 		Images: tilesets/desert/tiles/Street_17.png
 		Size: 4,3
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			1: Street
 			2: Grass
@@ -5502,6 +5762,7 @@ Templates:
 		Images: tilesets/desert/tiles/Street_18.png
 		Size: 4,3
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Street
@@ -5520,6 +5781,7 @@ Templates:
 		Images: tilesets/desert/tiles/Street_19.png
 		Size: 4,5
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Grass
@@ -5541,6 +5803,7 @@ Templates:
 		Images: tilesets/desert/tiles/Street_20.png
 		Size: 4,5
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			2: Grass
 			3: Street
@@ -5562,6 +5825,7 @@ Templates:
 		Images: tilesets/desert/tiles/Street_21.png
 		Size: 4,5
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			2: Grass
 			3: Street
@@ -5583,6 +5847,7 @@ Templates:
 		Images: tilesets/desert/tiles/Street_22.png
 		Size: 4,5
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Street
 			1: Grass
@@ -5604,6 +5869,7 @@ Templates:
 		Images: tilesets/desert/tiles/Street_23.png
 		Size: 4,4
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Street
@@ -5627,6 +5893,7 @@ Templates:
 		Images: tilesets/desert/tiles/Street_24.png
 		Size: 4,4
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Street
@@ -5650,6 +5917,7 @@ Templates:
 		Images: tilesets/desert/tiles/Street_25.png
 		Size: 4,4
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -5673,6 +5941,7 @@ Templates:
 		Images: tilesets/desert/tiles/Street_26.png
 		Size: 4,4
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Street
@@ -5696,6 +5965,7 @@ Templates:
 		Images: tilesets/desert/tiles/Street_27.png
 		Size: 4,4
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Street
@@ -5719,6 +5989,7 @@ Templates:
 		Images: tilesets/desert/tiles/Street_28.png
 		Size: 4,4
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -5742,6 +6013,7 @@ Templates:
 		Images: tilesets/desert/tiles/Street_29.png
 		Size: 4,4
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -5765,6 +6037,7 @@ Templates:
 		Images: tilesets/desert/tiles/Street_30.png
 		Size: 4,4
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Street
@@ -5788,6 +6061,7 @@ Templates:
 		Images: tilesets/desert/tiles/Street_31.png
 		Size: 4,4
 		Categories: Street
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -5811,6 +6085,7 @@ Templates:
 		Images: tilesets/desert/tiles/StreetExtra_1.png
 		Size: 6,1
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -5824,6 +6099,7 @@ Templates:
 		Images: tilesets/desert/tiles/StreetExtra_2.png
 		Size: 1,6
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -5837,6 +6113,7 @@ Templates:
 		Images: tilesets/desert/tiles/StreetExtra_3.png
 		Size: 4,4
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			2: Grass
 			3: Grass
@@ -5851,6 +6128,7 @@ Templates:
 		Images: tilesets/desert/tiles/StreetExtra_4.png
 		Size: 4,4
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			2: Grass
 			3: Grass
@@ -5865,6 +6143,7 @@ Templates:
 		Images: tilesets/desert/tiles/StreetExtra_5.png
 		Size: 4,4
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -5879,6 +6158,7 @@ Templates:
 		Images: tilesets/desert/tiles/StreetExtra_6.png
 		Size: 4,4
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -5893,6 +6173,7 @@ Templates:
 		Images: tilesets/desert/tiles/StreetExtra_7.png
 		Size: 4,4
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			3: Grass
 			6: Street
@@ -5907,6 +6188,7 @@ Templates:
 		Images: tilesets/desert/tiles/StreetExtra_8.png
 		Size: 4,4
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			3: Grass
 			6: Street
@@ -5921,6 +6203,7 @@ Templates:
 		Images: tilesets/desert/tiles/StreetExtra_9.png
 		Size: 4,4
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			4: Grass
@@ -5935,6 +6218,7 @@ Templates:
 		Images: tilesets/desert/tiles/StreetExtra_10.png
 		Size: 4,4
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			4: Grass
@@ -5949,6 +6233,7 @@ Templates:
 		Images: tilesets/desert/tiles/StreetExtra_11.png
 		Size: 6,6
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			3: Path
 			4: Path
@@ -5981,6 +6266,7 @@ Templates:
 		Images: tilesets/desert/tiles/StreetExtra_12.png
 		Size: 6,6
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			1: Path
 			2: Path
@@ -6013,6 +6299,7 @@ Templates:
 		Images: tilesets/desert/tiles/StreetExtra_13.png
 		Size: 6,6
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			1: Path
 			2: Path
@@ -6045,6 +6332,7 @@ Templates:
 		Images: tilesets/desert/tiles/StreetExtra_14.png
 		Size: 6,6
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			2: Grass
 			3: Path
@@ -6077,6 +6365,7 @@ Templates:
 		Images: tilesets/desert/tiles/StreetExtra_15.png
 		Size: 2,4
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Cliff
 			1: Grass
@@ -6092,6 +6381,7 @@ Templates:
 		Images: tilesets/desert/tiles/StreetExtra_16.png
 		Size: 2,4
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Cliff
@@ -6107,6 +6397,7 @@ Templates:
 		Images: tilesets/desert/tiles/StreetExtra_17.png
 		Size: 6,5
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			1: Grass
 			2: Grass
@@ -6139,6 +6430,7 @@ Templates:
 		Images: tilesets/desert/tiles/StreetExtra_18.png
 		Size: 5,3
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Street
@@ -6161,6 +6453,7 @@ Templates:
 		Images: tilesets/desert/tiles/StreetExtra_19.png
 		Size: 2,4
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -6176,6 +6469,7 @@ Templates:
 		Images: tilesets/desert/tiles/StreetExtra_20.png
 		Size: 6,2
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -6195,6 +6489,7 @@ Templates:
 		Images: tilesets/desert/tiles/StreetExtra_21.png
 		Size: 4,3
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -6214,6 +6509,7 @@ Templates:
 		Images: tilesets/desert/tiles/StreetExtra_22.png
 		Size: 3,4
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -6233,6 +6529,7 @@ Templates:
 		Images: tilesets/desert/tiles/StreetExtra_23.png
 		Size: 4,3
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Street
@@ -6252,6 +6549,7 @@ Templates:
 		Images: tilesets/desert/tiles/StreetExtra_24.png
 		Size: 3,4
 		Categories: Street Extra
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -6271,6 +6569,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSand_SE.png
 		Size: 4,3
 		Categories: Transition Dirt Sand
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -6284,6 +6583,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSand_SW.png
 		Size: 4,3
 		Categories: Transition Dirt Sand
+		Palette: kknd
 		Tiles:
 			2: Dirt
 			3: Dirt
@@ -6297,6 +6597,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSand_NE.png
 		Size: 4,3
 		Categories: Transition Dirt Sand
+		Palette: kknd
 		Tiles:
 			2: Sand
 			3: Sand
@@ -6310,6 +6611,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSand_NW.png
 		Size: 4,3
 		Categories: Transition Dirt Sand
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -6323,6 +6625,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSand_NW2N.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
+		Palette: kknd
 		Tiles:
 			0: Sand
 			4: Sand
@@ -6340,6 +6643,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSand_NE2N.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
+		Palette: kknd
 		Tiles:
 			3: Sand
 			6: Sand
@@ -6357,6 +6661,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSand_NE2E.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -6374,6 +6679,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSand_NW2W.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -6391,6 +6697,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSand_SE2E.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			4: Dirt
@@ -6408,6 +6715,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSand_SW2W.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
+		Palette: kknd
 		Tiles:
 			3: Dirt
 			6: Dirt
@@ -6425,6 +6733,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSand_SE2S.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -6442,6 +6751,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSand_SW2S.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -6459,6 +6769,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSand_W2S.png
 		Size: 3,3
 		Categories: Transition Dirt Sand
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -6475,6 +6786,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSand_E2S.png
 		Size: 3,3
 		Categories: Transition Dirt Sand
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -6491,6 +6803,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSand_E2N.png
 		Size: 3,3
 		Categories: Transition Dirt Sand
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Sand
@@ -6507,6 +6820,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSand_W2N.png
 		Size: 3,3
 		Categories: Transition Dirt Sand
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -6523,6 +6837,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSand_W.png
 		Size: 4,2
 		Categories: Transition Dirt Sand
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -6538,6 +6853,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSand_N.png
 		Size: 2,4
 		Categories: Transition Dirt Sand
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -6553,6 +6869,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSand_E.png
 		Size: 4,2
 		Categories: Transition Dirt Sand
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -6568,6 +6885,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSand_S.png
 		Size: 2,4
 		Categories: Transition Dirt Sand
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -6583,6 +6901,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSand_N2E.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -6605,6 +6924,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSand_S2E.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -6627,6 +6947,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSand_S2W.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -6649,6 +6970,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSand_N2W.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
+		Palette: kknd
 		Tiles:
 			1: Sand
 			2: Sand
@@ -6671,6 +6993,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSand_N2NE.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -6688,6 +7011,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSand_E2NE.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
+		Palette: kknd
 		Tiles:
 			3: Sand
 			6: Sand
@@ -6705,6 +7029,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSand_E2SE.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -6722,6 +7047,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSand_S2SE.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			4: Dirt
@@ -6739,6 +7065,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSand_S2SW.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
+		Palette: kknd
 		Tiles:
 			3: Dirt
 			6: Dirt
@@ -6756,6 +7083,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSand_W2SW.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -6773,6 +7101,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSand_W2NW.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
+		Palette: kknd
 		Tiles:
 			0: Sand
 			4: Sand
@@ -6790,6 +7119,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSand_N2NW.png
 		Size: 4,4
 		Categories: Transition Dirt Sand
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -6807,6 +7137,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_1.png
 		Size: 6,3
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -6832,6 +7163,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_2.png
 		Size: 6,3
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -6857,6 +7189,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_3.png
 		Size: 3,2
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -6870,6 +7203,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_4.png
 		Size: 4,4
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -6887,6 +7221,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_5.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Dirt
@@ -6901,6 +7236,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_6.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Dirt
@@ -6915,6 +7251,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_7.png
 		Size: 3,4
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -6934,6 +7271,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_8.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -6948,6 +7286,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_9.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			1: Sand
 			2: Sand
@@ -6962,6 +7301,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_10.png
 		Size: 4,4
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			3: Sand
 			6: Sand
@@ -6979,6 +7319,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_11.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -6994,6 +7335,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_12.png
 		Size: 6,3
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -7019,6 +7361,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_13.png
 		Size: 6,3
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -7044,6 +7387,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_14.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -7059,6 +7403,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_15.png
 		Size: 4,4
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Sand
 			4: Sand
@@ -7076,6 +7421,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_16.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -7090,6 +7436,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_17.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Sand
@@ -7104,6 +7451,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_18.png
 		Size: 3,4
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Sand
@@ -7123,6 +7471,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_19.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			1: Dirt
 			2: Sand
@@ -7137,6 +7486,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_20.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			1: Dirt
 			2: Sand
@@ -7151,6 +7501,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_21.png
 		Size: 4,4
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Sand
@@ -7168,6 +7519,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_22.png
 		Size: 3,2
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Sand
@@ -7181,6 +7533,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_23.png
 		Size: 4,4
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -7203,6 +7556,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_24.png
 		Size: 4,4
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -7225,6 +7579,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_25.png
 		Size: 4,4
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -7247,6 +7602,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_26.png
 		Size: 4,4
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			1: Dirt
 			2: Sand
@@ -7269,6 +7625,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_27.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -7285,6 +7642,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_28.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Dirt
@@ -7301,6 +7659,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_29.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -7317,6 +7676,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_30.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -7333,6 +7693,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_31.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Sand
@@ -7349,6 +7710,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_32.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -7365,6 +7727,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_33.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -7381,6 +7744,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_34.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -7397,6 +7761,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_35.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Sand
@@ -7413,6 +7778,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_36.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -7429,6 +7795,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_37.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -7445,6 +7812,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_38.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -7461,6 +7829,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_39.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Sand
@@ -7477,6 +7846,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_40.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -7493,6 +7863,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_41.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -7509,6 +7880,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionDirtSandExtra_42.png
 		Size: 3,3
 		Categories: Transition Dirt Sand Extra
+		Palette: kknd
 		Tiles:
 			0: Sand
 			1: Sand
@@ -7525,6 +7897,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionGrassDirt_1.png
 		Size: 4,2
 		Categories: Transition Grass Dirt
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -7540,6 +7913,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionGrassDirt_2.png
 		Size: 4,2
 		Categories: Transition Grass Dirt
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -7555,6 +7929,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionGrassDirt_3.png
 		Size: 2,2
 		Categories: Transition Grass Dirt
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Dirt
@@ -7566,6 +7941,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionGrassDirt_4.png
 		Size: 3,2
 		Categories: Transition Grass Dirt
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Dirt
@@ -7577,6 +7953,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionGrassDirt_5.png
 		Size: 2,4
 		Categories: Transition Grass Dirt
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Dirt
@@ -7592,6 +7969,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionGrassDirt_6.png
 		Size: 2,4
 		Categories: Transition Grass Dirt
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Dirt
@@ -7607,6 +7985,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionGrassDirt_7.png
 		Size: 3,2
 		Categories: Transition Grass Dirt
+		Palette: kknd
 		Tiles:
 			1: Grass
 			2: Dirt
@@ -7618,6 +7997,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionGrassDirt_8.png
 		Size: 2,2
 		Categories: Transition Grass Dirt
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -7629,6 +8009,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionGrassDirt_9.png
 		Size: 4,2
 		Categories: Transition Grass Dirt
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -7644,6 +8025,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionGrassDirt_10.png
 		Size: 4,2
 		Categories: Transition Grass Dirt
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -7659,6 +8041,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionGrassDirt_11.png
 		Size: 2,2
 		Categories: Transition Grass Dirt
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -7670,6 +8053,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionGrassDirt_12.png
 		Size: 3,2
 		Categories: Transition Grass Dirt
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Grass
@@ -7681,6 +8065,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionGrassDirt_13.png
 		Size: 2,4
 		Categories: Transition Grass Dirt
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Grass
@@ -7696,6 +8081,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionGrassDirt_14.png
 		Size: 2,4
 		Categories: Transition Grass Dirt
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Grass
@@ -7711,6 +8097,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionGrassDirt_15.png
 		Size: 3,2
 		Categories: Transition Grass Dirt
+		Palette: kknd
 		Tiles:
 			1: Dirt
 			2: Grass
@@ -7722,6 +8109,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionGrassDirt_16.png
 		Size: 2,2
 		Categories: Transition Grass Dirt
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Grass
@@ -7733,6 +8121,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionGrassDirt_17.png
 		Size: 3,3
 		Categories: Transition Grass Dirt
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -7749,6 +8138,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionGrassDirt_18.png
 		Size: 3,3
 		Categories: Transition Grass Dirt
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -7765,6 +8155,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionGrassDirt_19.png
 		Size: 3,3
 		Categories: Transition Grass Dirt
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -7781,6 +8172,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionGrassDirt_20.png
 		Size: 3,3
 		Categories: Transition Grass Dirt
+		Palette: kknd
 		Tiles:
 			0: Dirt
 			1: Dirt
@@ -7797,6 +8189,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionGrassDirt_21.png
 		Size: 2,2
 		Categories: Transition Grass Dirt
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -7808,6 +8201,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionGrassDirt_22.png
 		Size: 2,2
 		Categories: Transition Grass Dirt
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -7819,6 +8213,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionGrassDirt_23.png
 		Size: 2,2
 		Categories: Transition Grass Dirt
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
@@ -7830,6 +8225,7 @@ Templates:
 		Images: tilesets/desert/tiles/TransitionGrassDirt_24.png
 		Size: 2,2
 		Categories: Transition Grass Dirt
+		Palette: kknd
 		Tiles:
 			0: Grass
 			1: Grass
