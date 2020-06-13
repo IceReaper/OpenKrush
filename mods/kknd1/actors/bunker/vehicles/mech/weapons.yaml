@@ -20,9 +20,9 @@ bunker_vehicles_mech_primary:
 			vehicle: 300
 			building: 180
 	Warhead@Effect: ShrapnelCreateEffect
-		Image: hit
+		Image: projectiles
 		ExplosionPalette: kknd
-		Explosions: laser_round
+		Explosions: laser
 		ImpactSounds: MUTE.SLV|10.wav
 
 bunker_vehicles_mech_secondary:
@@ -38,7 +38,7 @@ bunker_vehicles_mech_secondary:
 		Sequences: projectile
 		Speed: 300
 		TrailPalette: kknd
-		TrailImage: hit
+		TrailImage: projectiles
 		TrailSequences: smoke
 		Inaccuracy: 300
 	Warhead@Damage: SpreadDamage

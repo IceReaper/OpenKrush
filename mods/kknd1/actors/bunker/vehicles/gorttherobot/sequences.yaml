@@ -15,3 +15,61 @@ bunker_vehicles_gorttherobot:
 		Tick: 50
 		Facings: -16
 	icon: actors/bunker/vehicles/gorttherobot/icon.png
+
+bunker_vehicles_gorttherobot_small:
+	electrified1: SPRITES.LVL|Extras.mobd
+		Start: 344
+		ZOffset: 1500
+	electrified2: SPRITES.LVL|Extras.mobd
+		Start: 345
+		ZOffset: 1500
+	electrified3: SPRITES.LVL|Extras.mobd
+		Start: 346
+		ZOffset: 1500
+	electrified4: SPRITES.LVL|Extras.mobd
+		Start: 347
+		ZOffset: 1500
+	electrified5: SPRITES.LVL|Extras.mobd
+		Start: 348
+		ZOffset: 1500
+	electrified6: SPRITES.LVL|Extras.mobd
+		Start: 349
+		ZOffset: 1500
+	electrified7: SPRITES.LVL|Extras.mobd
+		Start: 350
+		ZOffset: 1500
+	electrified8: SPRITES.LVL|Extras.mobd
+		Start: 351
+		ZOffset: 1500
+	electrified9: SPRITES.LVL|Extras.mobd
+		Start: 352
+		ZOffset: 1500
+
+bunker_vehicles_gorttherobot_large:
+	electrified1: SPRITES.LVL|Extras.mobd
+		Start: 353
+		ZOffset: 1500
+	electrified2: SPRITES.LVL|Extras.mobd
+		Start: 354
+		ZOffset: 1500
+	electrified3: SPRITES.LVL|Extras.mobd
+		Start: 355
+		ZOffset: 1500
+	electrified4: SPRITES.LVL|Extras.mobd
+		Start: 356
+		ZOffset: 1500
+	electrified5: SPRITES.LVL|Extras.mobd
+		Start: 357
+		ZOffset: 1500
+	electrified6: SPRITES.LVL|Extras.mobd
+		Start: 358
+		ZOffset: 1500
+	electrified7: SPRITES.LVL|Extras.mobd
+		Start: 359
+		ZOffset: 1500
+	electrified8: SPRITES.LVL|Extras.mobd
+		Start: 360
+		ZOffset: 1500
+	electrified9: SPRITES.LVL|Extras.mobd
+		Start: 361
+		ZOffset: 1500

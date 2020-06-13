@@ -12,7 +12,7 @@ evolved_vehicle_missilecrab:
 		Sequences: projectile
 		Speed: 250
 		TrailPalette: kknd
-		TrailImage: hit
+		TrailImage: projectiles
 		TrailSequences: smoke
 		Inaccuracy: 200
 		Blockable: false

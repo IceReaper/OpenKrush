@@ -26,6 +26,7 @@ MapFolders:
 	~^maps/kknd1: User
 
 Includes:
+	core/mod.yaml
 	actors/bunker/mod.yaml
 	actors/evolved/mod.yaml
 	actors/survivors/mod.yaml
@@ -43,53 +44,22 @@ Rules:
 	kknd1|rules/ai.yaml
 	kknd1|rules/mapobjects-neutral.yaml
 	# TODO refactor above
-	kknd1|core/rules/colorpicker.yaml
-	kknd1|core/rules/core_overrides.yaml
-	kknd1|core/rules/misc_overrides.yaml
-	kknd1|core/rules/palettes.yaml
-	kknd1|core/rules/mechanics/animated_building.yaml
-	kknd1|core/rules/mechanics/extracts_oil.yaml
-	kknd1|core/rules/mechanics/grants_superweapon.yaml
-	kknd1|core/rules/mechanics/has_muzzle.yaml
-	kknd1|core/rules/mechanics/mobile_base.yaml
-	kknd1|core/rules/mechanics/oil_derrick.yaml
-	kknd1|core/rules/mechanics/oil_tanker.yaml
-	kknd1|core/rules/mechanics/processes_oil.yaml
-	kknd1|core/rules/mechanics/produces_buildings.yaml
-	kknd1|core/rules/mechanics/produces_infantry.yaml
-	kknd1|core/rules/mechanics/produces_resources.yaml
-	kknd1|core/rules/mechanics/produces_vehicles.yaml
-	kknd1|core/rules/mechanics/repairs_vehicles.yaml
-	kknd1|core/rules/mechanics/researches_buildings.yaml
-	kknd1|core/rules/mechanics/saboteur.yaml
-	kknd1|core/rules/mechanics/technician.yaml
 
 Sequences:
 	kknd|actors/mpspawn/sequences.yaml
 	# TODO refactor below
+	kknd1|sequences/mapobjects-neutral.yaml
 	kknd1|sequences/misc.yaml
-	kknd1|sequences/weapons.yaml
 	# TODO refactor above
-	kknd1|core/font.yaml
-	kknd1|core/sequences/muzzle.yaml
-	kknd1|core/sequences/font/frames.yaml
-	kknd1|core/sequences/shroud/frames.yaml
-	kknd1|core/sequences/sidebar/frames.yaml
-	kknd1|core/weapons/blood/sequences.yaml
-	kknd1|core/weapons/bullet/sequences.yaml
 	kknd1|actors/oilpatch/sequences.yaml
 
 Weapons:
-	kknd1|core/weapons/damage_explosions.yaml
-	kknd1|core/weapons/damage_shrapnels.yaml
-	kknd1|core/weapons/explosion.yaml
-	kknd1|core/weapons/nuke.yaml
-	kknd1|core/weapons/blood/weapons.yaml
-	kknd1|core/weapons/bullet/weapons.yaml
 	kknd1|actors/oilpatch/weapons.yaml
 
-Cursors:
-	kknd1|core/cursors.yaml
+Notifications:
+	# TODO refactor below
+	kknd1|notifications.yaml
+	# TODO refactor above
 
 Chrome:
 	kknd1|chrome.yaml
@@ -143,11 +113,6 @@ ChromeLayout:
 	common|chrome/confirmation-dialogs.yaml
 	common|chrome/editor.yaml
 	common|chrome/playerprofile.yaml
-
-Notifications:
-	kknd1|notifications.yaml
-	# TODO refactor above
-	kknd1|core/notifications.yaml
 
 Translations:
 

@@ -1,4 +1,4 @@
-weapons_blood:
+weapon_blood:
 	blood1: SPRITES.LVL|Shrapnels.mobd
 		Start: 164
 		Length: 1
@@ -24,7 +24,6 @@ weapons_blood:
 		Length: 3
 		Tick: 120
 		ZOffset: 2500
-
 	blood_impact: core/weapons/blood/frames.png
 		Length: 4
 		Tick: 120

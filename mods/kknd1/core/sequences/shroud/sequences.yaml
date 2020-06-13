@@ -1,9 +1,9 @@
 shroud:
-	shroud: bits/shroud.png
+	shroud: core/sequences/shroud/frames.png
 		Length: 16
-	shroudfull: bits/shroud.png
+	fog: core/sequences/shroud/frames.png
+		Length: 16
+	shroudfull: core/sequences/shroud/frames.png
 		Start: 1
-	fog: bits/shroud.png
-		Length: 16
-	fogfull: bits/shroud.png
+	fogfull: core/sequences/shroud/frames.png
 		Start: 1

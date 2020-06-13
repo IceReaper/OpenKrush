@@ -26,7 +26,7 @@ Background@SETTINGS_PANEL:
 				Template: TWO_COLUMN
 				Types: Music
 	X: (WINDOW_RIGHT - WIDTH) / 2
-	Y: (WINDOW_BOTTOM -  HEIGHT) / 2
+	Y: (WINDOW_BOTTOM - HEIGHT) / 2
 	Width: 600
 	Height: 400
 	Children:

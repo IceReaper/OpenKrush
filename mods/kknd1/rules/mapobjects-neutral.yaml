@@ -17,8 +17,8 @@ hut_a:
 	Selectable:
 		Bounds: 64, 64, 0, 0
 	Explodes:
-		Weapon: dieVehicle
-		EmptyWeapon: dieVehicle
+		Weapon: dieWall
+		EmptyWeapon: dieWall
 	SpawnActorOnDeath:
 		Actor: hut_a_rubble
 
@@ -66,6 +66,9 @@ hut_f:
 	SpawnActorOnDeath:
 		Actor: hut_d_rubble
 
+hut_f_rubble:
+	Inherits: hut_d_rubble
+
 campfire:
 	Inherits: ^CoreDecoration
 	Tooltip:
@@ -109,8 +112,8 @@ pillar_a:
 	Selectable:
 		Bounds: 40, 40, 0, 0
 	Explodes:
-		Weapon: dieVehicle
-		EmptyWeapon: dieVehicle
+		Weapon: dieWall
+		EmptyWeapon: dieWall
 
 pillar_b:
 	Inherits: pillar_a

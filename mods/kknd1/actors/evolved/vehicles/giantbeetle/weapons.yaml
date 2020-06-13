@@ -23,7 +23,7 @@ evolved_vehicle_giantbeetle:
 			vehicle: 60
 			building: 30
 	Warhead@Effect: ShrapnelCreateEffect
-		Image: hit
+		Image: projectiles
 		ExplosionPalette: kknd
 		Explosions: splat
 		ImpactSounds: MUTE.SLV|161.wav

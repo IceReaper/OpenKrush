@@ -17,7 +17,7 @@
 	# Always visible, no special shroud logic here.
 	-HiddenUnderFog:
 	FrozenUnderFog:
-	# Decorations  have sprites but do not use facing for them.
+	# Decorations have sprites but do not use facing for them.
 	WithSpriteBody:
 	# Default setting makes decorations take 1x1 tiles.
 	Building:
@@ -128,7 +128,7 @@
 	AdvancedSelectionDecorations:
 		Width: 64
 		BigVariant: true
-	# Enemy buildings  have to be destroyed to win, even when short game option is used.
+	# Enemy buildings have to be destroyed to win, even when short game option is used.
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	# If a building is destroyed, it should play an animation...

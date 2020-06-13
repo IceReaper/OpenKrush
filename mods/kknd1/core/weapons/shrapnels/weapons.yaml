@@ -1,4 +1,4 @@
-Debris1:
+^debris1:
 	ReloadDelay: 60
 	Range: 1c0
 	Projectile: Bullet
@@ -6,40 +6,40 @@ Debris1:
 		Blockable: false
 		LaunchAngle: 70, 150
 		Inaccuracy: 2c0
-		Image: shrapnels
+		Image: weapon_shrapnels
 		Palette: kknd
 		Sequences: debris1
 	Warhead: ShrapnelCreateEffect
-		Image: hit
+		Image: projectiles
 		ExplosionPalette: kknd
 		Explosions: smoke
 
-Debris2:
-	Inherits: Debris1
+^debris2:
+	Inherits: ^debris1
 	Projectile: Bullet
 		Sequences: debris2
 
-Debris3:
-	Inherits: Debris1
+^debris3:
+	Inherits: ^debris1
 	Projectile: Bullet
 		Sequences: debris3
 
-Debris4:
-	Inherits: Debris1
+^debris4:
+	Inherits: ^debris1
 	Projectile: Bullet
 		Sequences: debris4
 
-Debris5:
-	Inherits: Debris1
+^debris5:
+	Inherits: ^debris1
 	Projectile: Bullet
 		Sequences: debris5
 
-Debris6:
-	Inherits: Debris1
+^debris6:
+	Inherits: ^debris1
 	Projectile: Bullet
 		Sequences: debris6
 
-Spark1:
+^spark1:
 	ReloadDelay: 60
 	Range: 1c0
 	Projectile: Bullet
@@ -47,76 +47,76 @@ Spark1:
 		Blockable: false
 		LaunchAngle: 70, 150
 		Inaccuracy: 2c0
-		Image: shrapnels
+		Image: weapon_shrapnels
 		Palette: kknd
 		Sequences: spark1
 	Warhead: ShrapnelCreateEffect
-		Image: hit
+		Image: projectiles
 		ExplosionPalette: kknd
 		Explosions: smoke
 
-Spark2:
-	Inherits: Spark1
+^spark2:
+	Inherits: ^spark1
 	Projectile: Bullet
 		Sequences: spark2
 
-Spark3:
-	Inherits: Spark1
+^spark3:
+	Inherits: ^spark1
 	Projectile: Bullet
 		Sequences: spark3
 
-ShrapnelExplosion:
+weapon_shrapnels:
 	Warhead@1: ShrapnelCreateEffect
-		ShrapnelWeapon: Debris1
+		ShrapnelWeapon: ^debris1
 		ShrapnelRange: 1c0, 2c0
 	Warhead@2: ShrapnelCreateEffect
-		ShrapnelWeapon: Debris2
+		ShrapnelWeapon: ^debris2
 		ShrapnelRange: 1c0, 2c0
 	Warhead@3: ShrapnelCreateEffect
-		ShrapnelWeapon: Debris3
+		ShrapnelWeapon: ^debris3
 		ShrapnelRange: 1c0, 2c0
 	Warhead@4: ShrapnelCreateEffect
-		ShrapnelWeapon: Debris4
+		ShrapnelWeapon: ^debris4
 		ShrapnelRange: 1c0, 2c0
 	Warhead@5: ShrapnelCreateEffect
-		ShrapnelWeapon: Debris5
+		ShrapnelWeapon: ^debris5
 		ShrapnelRange: 1c0, 2c0
 	Warhead@6: ShrapnelCreateEffect
-		ShrapnelWeapon: Debris6
+		ShrapnelWeapon: ^debris6
 		ShrapnelRange: 1c0, 2c0
 	Warhead@7: ShrapnelCreateEffect
-		ShrapnelWeapon: Debris1
+		ShrapnelWeapon: ^debris1
 		ShrapnelRange: 1c0, 2c0
 	Warhead@8: ShrapnelCreateEffect
-		ShrapnelWeapon: Debris2
+		ShrapnelWeapon: ^debris2
 		ShrapnelRange: 1c0, 2c0
 	Warhead@9: ShrapnelCreateEffect
-		ShrapnelWeapon: Debris3
+		ShrapnelWeapon: ^debris3
 		ShrapnelRange: 1c0, 2c0
 	Warhead@10: ShrapnelCreateEffect
-		ShrapnelWeapon: Spark1
+		ShrapnelWeapon: ^spark1
 		ShrapnelRange: 1c0, 2c0
 	Warhead@11: ShrapnelCreateEffect
-		ShrapnelWeapon: Spark2
+		ShrapnelWeapon: ^spark2
 		ShrapnelRange: 1c0, 2c0
 	Warhead@12: ShrapnelCreateEffect
-		ShrapnelWeapon: Spark3
+		ShrapnelWeapon: ^spark3
 		ShrapnelRange: 1c0, 2c0
 	Warhead@13: ShrapnelCreateEffect
-		ShrapnelWeapon: Spark1
+		ShrapnelWeapon: ^spark1
 		ShrapnelRange: 1c0, 2c0
 	Warhead@14: ShrapnelCreateEffect
-		ShrapnelWeapon: Spark2
+		ShrapnelWeapon: ^spark2
 		ShrapnelRange: 1c0, 2c0
 	Warhead@15: ShrapnelCreateEffect
-		ShrapnelWeapon: Spark3
+		ShrapnelWeapon: ^spark3
 		ShrapnelRange: 1c0, 2c0
 	Warhead@16: ShrapnelCreateEffect
-		ShrapnelWeapon: Spark1
+		ShrapnelWeapon: ^spark1
 		ShrapnelRange: 1c0, 2c0
 	Warhead@17: ShrapnelCreateEffect
-		ShrapnelWeapon: Spark2
+		ShrapnelWeapon: ^spark2
 		ShrapnelRange: 1c0, 2c0
 	Warhead@18: ShrapnelCreateEffect
-		ShrapnelWeapon: Spark3
+		ShrapnelWeapon: ^spark3
 		ShrapnelRange: 1c0, 2c0

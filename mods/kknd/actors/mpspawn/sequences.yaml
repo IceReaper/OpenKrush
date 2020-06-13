@@ -1,2 +1,2 @@
 mpspawn:
-	idle: bits/mpspawn.png
+	idle: actors/mpspawn/frames.png

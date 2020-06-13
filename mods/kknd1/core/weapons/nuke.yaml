@@ -22,137 +22,137 @@
 			vehicle: 2500
 			building: 2500
 	Warhead@1: ShrapnelCreateEffect
-		Image: explosions
+		Image: weapon_explosions
 		ExplosionPalette: kknd
 		Explosions: xl
 		ImpactSounds: MUTE.SLV|3.wav
 	Warhead@2: ShrapnelCreateEffect
-		Image: explosions
+		Image: weapon_explosions
 		Explosions: s
 		ExplosionPalette: kknd
 		Delay: 20
 		Radius: 4000,4000
 	Warhead@3: ShrapnelCreateEffect
-		Image: explosions
+		Image: weapon_explosions
 		Explosions: s
 		ExplosionPalette: kknd
 		Delay: 21
 		Radius: 4000,4000
 	Warhead@4: ShrapnelCreateEffect
-		Image: explosions
+		Image: weapon_explosions
 		Explosions: s
 		ExplosionPalette: kknd
 		Delay: 22
 		Radius: 4000,4000
 	Warhead@5: ShrapnelCreateEffect
-		Image: explosions
+		Image: weapon_explosions
 		Explosions: s
 		ExplosionPalette: kknd
 		Delay: 23
 		Radius: 4000,4000
 	Warhead@6: ShrapnelCreateEffect
-		Image: explosions
+		Image: weapon_explosions
 		Explosions: s
 		ExplosionPalette: kknd
 		Delay: 24
 		Radius: 4000,4000
 	Warhead@7: ShrapnelCreateEffect
-		Image: explosions
+		Image: weapon_explosions
 		Explosions: s
 		ExplosionPalette: kknd
 		Delay: 25
 		Radius: 4000,4000
 	Warhead@8: ShrapnelCreateEffect
-		Image: explosions
+		Image: weapon_explosions
 		Explosions: s
 		ExplosionPalette: kknd
 		Delay: 26
 	Warhead@9: ShrapnelCreateEffect
-		Image: explosions
+		Image: weapon_explosions
 		Explosions: xs
 		ExplosionPalette: kknd
 		Delay: 27
 		Radius: 4000,4000
 	Warhead@10: ShrapnelCreateEffect
-		Image: explosions
+		Image: weapon_explosions
 		Explosions: s
 		ExplosionPalette: kknd
 		Delay: 28
 		Radius: 4000,4000
 	Warhead@11: ShrapnelCreateEffect
-		Image: explosions
+		Image: weapon_explosions
 		Explosions: s
 		ExplosionPalette: kknd
 		Delay: 29
 		Radius: 4000,4000
 	Warhead@12: ShrapnelCreateEffect
-		Image: explosions
+		Image: weapon_explosions
 		Explosions: xs
 		ExplosionPalette: kknd
 		Delay: 30
 		Radius: 4000,4000
 	Warhead@13: ShrapnelCreateEffect
-		Image: explosions
+		Image: weapon_explosions
 		Explosions: s
 		ExplosionPalette: kknd
 		Delay: 31
 		Radius: 4000,4000
 	Warhead@14: ShrapnelCreateEffect
-		Image: explosions
+		Image: weapon_explosions
 		Explosions: xs
 		ExplosionPalette: kknd
 		Delay: 32
 		Radius: 4000,4000
 	Warhead@15: ShrapnelCreateEffect
-		Image: explosions
+		Image: weapon_explosions
 		Explosions: s
 		ExplosionPalette: kknd
 		Delay: 33
 		Radius: 4000,4000
 	Warhead@16: ShrapnelCreateEffect
-		Image: explosions
+		Image: weapon_explosions
 		Explosions: xs
 		ExplosionPalette: kknd
 		Delay: 34
 		Radius: 4000,4000
 	Warhead@17: ShrapnelCreateEffect
-		Image: explosions
+		Image: weapon_explosions
 		Explosions: xs
 		ExplosionPalette: kknd
 		Delay: 35
 		Radius: 4000,4000
 	Warhead@18: ShrapnelCreateEffect
-		Image: explosions
+		Image: weapon_explosions
 		Explosions: xs
 		ExplosionPalette: kknd
 		Delay: 36
 		Radius: 4000,4000
 	Warhead@19: ShrapnelCreateEffect
-		Image: explosions
+		Image: weapon_explosions
 		Explosions: xs
 		ExplosionPalette: kknd
 		Delay: 37
 		Radius: 4000,4000
 	Warhead@20: ShrapnelCreateEffect
-		Image: explosions
+		Image: weapon_explosions
 		Explosions: xs
 		ExplosionPalette: kknd
 		Delay: 38
 		Radius: 4000,4000
 	Warhead@21: ShrapnelCreateEffect
-		Image: explosions
+		Image: weapon_explosions
 		Explosions: xs
 		ExplosionPalette: kknd
 		Delay: 39
 		Radius: 4000,4000
 	Warhead@22: ShrapnelCreateEffect
-		Image: explosions
+		Image: weapon_explosions
 		Explosions: xs
 		ExplosionPalette: kknd
 		Delay: 40
 		Radius: 4000,4000
 	Warhead@23: ShrapnelCreateEffect
-		Image: explosions
+		Image: weapon_explosions
 		Explosions: xs
 		ExplosionPalette: kknd
 		Delay: 41

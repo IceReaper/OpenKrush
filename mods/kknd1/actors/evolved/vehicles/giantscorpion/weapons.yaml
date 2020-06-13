@@ -20,7 +20,7 @@ evolved_vehicle_giantscorpion:
 			vehicle: 150
 			building: 90
 	Warhead@Effect: ShrapnelCreateEffect
-		Image: hit
+		Image: projectiles
 		ExplosionPalette: kknd
 		Explosions: splat
 		ImpactSounds: MUTE.SLV|161.wav

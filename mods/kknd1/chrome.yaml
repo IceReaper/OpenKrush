@@ -504,7 +504,7 @@ slider-track:
 		corner-bl: 189,327,2,2
 		corner-br: 322,327,2,2
 
-# A copy of dialog2 (normal button) This is the slider  in music menu
+# A copy of dialog2 (normal button) This is the slider in music menu
 slider-thumb:
 	Image: uibits/dialog.png
 	Regions:

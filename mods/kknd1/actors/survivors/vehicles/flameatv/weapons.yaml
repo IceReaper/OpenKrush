@@ -5,9 +5,9 @@ survivors_vehicle_flameatv:
 	ReloadDelay: 41
 	Report: SURV.SLV|86.wav
 	Projectile: Bullet
-		Image: projectile
+		Image: projectiles
 		Palette: kknd
-		Sequences: fire
+		Sequences: projectile
 		Speed: 150
 	Warhead@Damage: SpreadDamage
 		Damage: 100

@@ -20,7 +20,7 @@ bunker_vehicles_plasmatank:
 			vehicle: 150
 			building: 90
 	Warhead@Effect: ShrapnelCreateEffect
-		Image: hit
+		Image: projectiles
 		ExplosionPalette: kknd
-		Explosions: laser_round
+		Explosions: laser
 		ImpactSounds: MUTE.SLV|10.wav

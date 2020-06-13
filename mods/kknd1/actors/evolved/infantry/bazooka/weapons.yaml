@@ -11,7 +11,7 @@ evolved_infantry_bazooka:
 		Sequences: projectile
 		Speed: 200
 		TrailPalette: kknd
-		TrailImage: hit
+		TrailImage: projectiles
 		TrailSequences: smoke
 		Inaccuracy: 1500
 	Warhead@Damage: SpreadDamage

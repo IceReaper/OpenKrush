@@ -20,7 +20,7 @@ bunker_vehicles_sentineldroid:
 			vehicle: 430
 			building: 260
 	Warhead@Effect: ShrapnelCreateEffect
-		Image: hit
+		Image: projectiles
 		ExplosionPalette: kknd
-		Explosions: laser_round
+		Explosions: laser
 		ImpactSounds: MUTE.SLV|10.wav

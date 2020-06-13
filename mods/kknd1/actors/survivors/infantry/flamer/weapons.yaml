@@ -5,9 +5,9 @@ survivors_infantry_flamer:
 	Burst: 10
 	BurstDelays: 1
 	Projectile: Bullet
-		Image: projectile
+		Image: projectiles
 		Palette: kknd
-		Sequences: fire
+		Sequences: projectile
 		Speed: 150
 	Warhead@Damage: SpreadDamage
 		Damage: 100

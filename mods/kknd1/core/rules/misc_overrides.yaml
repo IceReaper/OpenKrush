@@ -8,4 +8,5 @@ World:
 		Palette: kknd
 
 EditorWorld:
+	EditorSelectionLayer:
 		Palette: kknd

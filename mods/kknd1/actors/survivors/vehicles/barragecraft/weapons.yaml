@@ -12,7 +12,7 @@ survivors_vehicle_barragecraft:
 		Sequences: projectile
 		Speed: 200
 		TrailPalette: kknd
-		TrailImage: hit
+		TrailImage: projectiles
 		TrailSequences: smoke
 		Inaccuracy: 2000
 		LaunchAngle: 50

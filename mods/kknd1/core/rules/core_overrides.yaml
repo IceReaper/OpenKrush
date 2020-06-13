@@ -32,7 +32,7 @@
 		Voice: Zapped
 		DeathTypes: Electricity
 	ThrowsShrapnel:
-		Weapons: Blood1, Blood2, Blood3, Blood4, Blood5
+		Weapons: weapon_blood1, weapon_blood2, weapon_blood3, weapon_blood4, weapon_blood5
 		Pieces: 1, 1
 		Range: 0c512, 1c256
 
