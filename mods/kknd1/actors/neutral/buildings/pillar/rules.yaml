@@ -1,0 +1,42 @@
+neutral_building_pillar_a:
+	Inherits: ^CoreDecoration
+	Tooltip:
+		Name: Evolved Pillar
+	Targetable:
+		TargetTypes: Ground
+	Health:
+		HP: 700
+	Building:
+		Dimensions: 1,2
+		Footprint: =x
+	AdvancedSelectionDecorations:
+		Offset: -2,-8
+	HitShape:
+		Type: Circle
+			Radius: 700
+	Selectable:
+		Bounds: 40, 40, 0, 0
+	Explodes:
+		Weapon: dieWall
+		EmptyWeapon: dieWall
+
+neutral_building_pillar_b:
+	Inherits: neutral_building_pillar_a
+
+neutral_building_pillar_c:
+	Inherits: neutral_building_pillar_a
+
+neutral_building_pillar_d:
+	Inherits: neutral_building_pillar_a
+
+neutral_building_pillar_e:
+	Inherits: neutral_building_pillar_a
+
+neutral_building_pillar_f:
+	Inherits: neutral_building_pillar_a
+
+neutral_building_pillar_g:
+	Inherits: neutral_building_pillar_a
+
+neutral_building_pillar_h:
+	Inherits: neutral_building_pillar_a

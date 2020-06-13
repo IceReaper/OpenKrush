@@ -1,0 +1,30 @@
+neutral_building_pillar_a:
+	idle: actors/neutral/buildings/pillar/frames.png
+
+neutral_building_pillar_b:
+	idle: actors/neutral/buildings/pillar/frames.png
+		Start: 1
+
+neutral_building_pillar_c:
+	idle: actors/neutral/buildings/pillar/frames.png
+		Start: 2
+
+neutral_building_pillar_d:
+	idle: actors/neutral/buildings/pillar/frames.png
+		Start: 3
+
+neutral_building_pillar_e:
+	idle: actors/neutral/buildings/pillar/frames.png
+		Start: 4
+
+neutral_building_pillar_f:
+	idle: actors/neutral/buildings/pillar/frames.png
+		Start: 5
+
+neutral_building_pillar_g:
+	idle: actors/neutral/buildings/pillar/frames.png
+		Start: 6
+
+neutral_building_pillar_h:
+	idle: actors/neutral/buildings/pillar/frames.png
+		Start: 7

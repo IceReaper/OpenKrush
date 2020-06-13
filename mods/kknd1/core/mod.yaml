@@ -21,8 +21,11 @@ Rules:
 	kknd1|core/rules/mechanics/technician.yaml
 
 Sequences:
+	kknd1|core/sequences/craters.yaml
+	kknd1|core/sequences/misc.yaml
 	kknd1|core/sequences/muzzle.yaml
 	kknd1|core/sequences/projectiles.yaml
+	kknd1|core/sequences/beacon/sequences.yaml
 	kknd1|core/sequences/font/sequences.yaml
 	kknd1|core/sequences/shroud/sequences.yaml
 	kknd1|core/sequences/sidebar/sequences.yaml

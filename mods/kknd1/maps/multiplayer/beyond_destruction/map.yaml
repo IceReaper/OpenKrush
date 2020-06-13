@@ -35,13 +35,13 @@ Actors:
 	Actor1: mpspawn
 		Owner: Neutral
 		Location: 19,43
-	Actor2: tech_drillrig
+	Actor2: neutral_building_drillrig
 		Owner: Neutral
 		Location: 42,66
-	Actor4: tech_drillrig
+	Actor4: neutral_building_drillrig
 		Owner: Neutral
 		Location: 92,5
-	Actor6: tech_drillrig
+	Actor6: neutral_building_drillrig
 		Owner: Neutral
 		Location: 15,5
 	Actor7: urban_objects_18
@@ -386,7 +386,7 @@ Actors:
 	Actor130: bunker_techbunker
 		Owner: Neutral
 		Location: 53,43
-	Actor131: tech_drillrig
+	Actor131: neutral_building_drillrig
 		Owner: Neutral
 		Location: 64,66
 	Actor132: urban_trees_12

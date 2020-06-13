@@ -354,13 +354,13 @@ Actors:
 	Actor135: highland_objects_3
 		Owner: Neutral
 		Location: 34,32
-	Actor136: tech_drillrig
+	Actor136: neutral_building_drillrig
 		Owner: Neutral
 		Location: 3,4
 	Actor137: oilpatch
 		Owner: Neutral
 		Location: 83,1
-	Actor129: tech_drillrig
+	Actor129: neutral_building_drillrig
 		Owner: Neutral
 		Location: 104,4
 	Actor140: oilpatch
@@ -381,25 +381,25 @@ Actors:
 	Actor143: urban_buildings_2
 		Owner: Neutral
 		Location: 28,48
-	Actor146: campfire
+	Actor146: neutral_building_campfire
 		Location: 55,31
 		Owner: Creeps
-	Actor150: hut_b
+	Actor150: neutral_building_hut_b
 		Location: 54,29
 		Owner: Creeps
-	Actor151: hut_d
+	Actor151: neutral_building_hut_d
 		Location: 51,31
 		Owner: Creeps
-	Actor152: hut_c
+	Actor152: neutral_building_hut_c
 		Location: 57,33
 		Owner: Creeps
-	Actor153: hut_e
+	Actor153: neutral_building_hut_e
 		Location: 53,34
 		Owner: Creeps
-	Actor155: tech_drillrig
+	Actor155: neutral_building_drillrig
 		Owner: Neutral
 		Location: 102,46
-	Actor154: tech_drillrig
+	Actor154: neutral_building_drillrig
 		Owner: Neutral
 		Location: 5,46
 	Actor156: highland_trees_20
@@ -836,24 +836,24 @@ Actors:
 	Actor302: highland_trees_10
 		Owner: Neutral
 		Location: 1,31
-	Actor305: pillar_g
+	Actor305: neutral_building_pillar_g
 		Owner: Neutral
 		Location: 60,48
-	Actor306: pillar_a
+	Actor306: neutral_building_pillar_a
 		Owner: Neutral
 		Location: 50,48
-	Actor303: pillar_a
+	Actor303: neutral_building_pillar_a
 		Owner: Neutral
 		Location: 50,34
-	Actor304: pillar_g
+	Actor304: neutral_building_pillar_g
 		Owner: Neutral
 		Location: 60,35
-	Actor307: pillar_c
+	Actor307: neutral_building_pillar_c
 		Owner: Neutral
 		Location: 51,27
-	Actor308: pillar_e
+	Actor308: neutral_building_pillar_e
 		Owner: Neutral
 		Location: 60,28
-	Actor309: hut_f
+	Actor309: neutral_building_hut_f
 		Owner: Neutral
 		Location: 57,30

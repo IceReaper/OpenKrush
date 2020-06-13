@@ -29,10 +29,10 @@ Players:
 		Faction: Random
 		Enemies: Creeps
 Actors:
-	Actor0: tech_drillrig
+	Actor0: neutral_building_drillrig
 		Owner: Neutral
 		Location: 3,60
-	Actor1: tech_drillrig
+	Actor1: neutral_building_drillrig
 		Owner: Neutral
 		Location: 92,60
 	Actor2: bunker_techbunker

@@ -17,8 +17,6 @@ Packages:
 	KKND-Xtreme-Demo/LEVELS/640/SPRITES.LVL: SPRITES.LVL
 	KKND-Xtreme-Demo/LEVELS/MUTE.SLV: MUTE.SLV
 	KKND-Xtreme-Demo/LEVELS/SURV.SLV: SURV.SLV
-	# TODO remove this one
-	kknd1|bits/notifications: notifications
 
 MapFolders:
 	kknd1|maps/classic: System
@@ -30,6 +28,7 @@ Includes:
 	actors/bunker/mod.yaml
 	actors/evolved/mod.yaml
 	actors/survivors/mod.yaml
+	actors/neutral/mod.yaml
 	tilesets/desert/mod.yaml
 	tilesets/highland/mod.yaml
 	tilesets/urban/mod.yaml
@@ -41,16 +40,11 @@ Rules:
 	kknd|actors/oilpatch.yaml
 	kknd|actors/mpspawn/rules.yaml
 	# TODO refactor below
-	kknd1|rules/ai.yaml
-	kknd1|rules/mapobjects-neutral.yaml
+	kknd1|ai.yaml
 	# TODO refactor above
 
 Sequences:
 	kknd|actors/mpspawn/sequences.yaml
-	# TODO refactor below
-	kknd1|sequences/mapobjects-neutral.yaml
-	kknd1|sequences/misc.yaml
-	# TODO refactor above
 	kknd1|actors/oilpatch/sequences.yaml
 
 Weapons:

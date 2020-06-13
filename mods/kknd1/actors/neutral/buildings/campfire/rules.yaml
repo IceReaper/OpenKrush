@@ -1,0 +1,23 @@
+neutral_building_campfire:
+	Inherits: ^CoreDecoration
+	Tooltip:
+		Name: Campfire
+	Targetable:
+		TargetTypes: Ground
+	Health:
+		HP: 350
+	Building:
+		LocalCenterOffset: -500,500,0
+	AdvancedSelectionDecorations:
+		Offset: 0,-10
+		Width: 16
+	HitShape:
+		Type: Circle
+			Radius: 256
+	Selectable:
+		Bounds: 16, 16, 15, 20
+	Explodes:
+		Weapon: dieWall
+		EmptyWeapon: dieWall
+	FrozenOnDeath:
+		Duration: 10

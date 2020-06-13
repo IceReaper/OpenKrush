@@ -250,16 +250,16 @@ Actors:
 	Actor457: oilpatch
 		Owner: Neutral
 		Location: 23,68
-	Actor458: tech_drillrig
+	Actor458: neutral_building_drillrig
 		Owner: Neutral
 		Location: 5,118
-	Actor459: tech_drillrig
+	Actor459: neutral_building_drillrig
 		Owner: Neutral
 		Location: 118,118
-	Actor460: tech_drillrig
+	Actor460: neutral_building_drillrig
 		Owner: Neutral
 		Location: 118,4
-	Actor461: tech_drillrig
+	Actor461: neutral_building_drillrig
 		Owner: Neutral
 		Location: 5,4
 	Actor446: oilpatch

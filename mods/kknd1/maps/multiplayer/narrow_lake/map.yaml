@@ -39,16 +39,16 @@ Players:
 		Faction: Random
 		Enemies: Creeps
 Actors:
-	Actor0: tech_drillrig
+	Actor0: neutral_building_drillrig
 		Owner: Neutral
 		Location: 67,57
-	Actor1: tech_drillrig
+	Actor1: neutral_building_drillrig
 		Owner: Neutral
 		Location: 2,57
-	Actor2: tech_drillrig
+	Actor2: neutral_building_drillrig
 		Owner: Neutral
 		Location: 2,2
-	Actor3: tech_drillrig
+	Actor3: neutral_building_drillrig
 		Owner: Neutral
 		Location: 67,2
 	Actor8: mpspawn

@@ -39,16 +39,16 @@ Players:
 		Faction: Random
 		Enemies: Creeps
 Actors:
-	Actor4: hut_a
+	Actor4: neutral_building_hut_a
 		Owner: Neutral
 		Location: 55,6
-	Actor5: hut_d
+	Actor5: neutral_building_hut_d
 		Owner: Neutral
 		Location: 49,6
-	Actor6: hut_e
+	Actor6: neutral_building_hut_e
 		Owner: Neutral
 		Location: 57,10
-	Actor7: hut_b
+	Actor7: neutral_building_hut_b
 		Owner: Neutral
 		Location: 48,10
 	Actor8: bunker_techbunker
@@ -194,7 +194,7 @@ Actors:
 	Actor68: oilpatch
 		Owner: Neutral
 		Location: 41,36
-	Actor66: tech_drillrig
+	Actor66: neutral_building_drillrig
 		Owner: Neutral
 		Location: 52,60
 	Actor69: oilpatch

@@ -276,7 +276,7 @@ Actors:
 	Actor159: bunker_techbunker
 		Owner: Neutral
 		Location: 45,52
-	Actor182: hut_d
+	Actor182: neutral_building_hut_d
 		Owner: Neutral
 		Location: 48,58
 	Actor191: desert_objects_5
@@ -330,56 +330,56 @@ Actors:
 	Actor199: urban_objects_28
 		Owner: Neutral
 		Location: 29,46
-	Actor183: hut_d
+	Actor183: neutral_building_hut_d
 		Owner: Neutral
 		Location: 43,25
-	Actor161: hut_e
+	Actor161: neutral_building_hut_e
 		Owner: Neutral
 		Location: 42,22
-	Actor184: hut_c
+	Actor184: neutral_building_hut_c
 		Owner: Neutral
 		Location: 46,22
-	Actor187: hut_b
+	Actor187: neutral_building_hut_b
 		Owner: Neutral
 		Location: 47,25
-	Actor180: campfire
+	Actor180: neutral_building_campfire
 		Owner: Neutral
 		Location: 45,23
-	Actor188: hut_e
+	Actor188: neutral_building_hut_e
 		Owner: Neutral
 		Location: 44,55
-	Actor208: hut_c
+	Actor208: neutral_building_hut_c
 		Owner: Neutral
 		Location: 47,55
-	Actor209: campfire
+	Actor209: neutral_building_campfire
 		Owner: Neutral
 		Location: 46,56
-	Actor210: hut_b
+	Actor210: neutral_building_hut_b
 		Owner: Neutral
 		Location: 51,23
-	Actor211: hut_a
+	Actor211: neutral_building_hut_a
 		Owner: Neutral
 		Location: 39,25
-	Actor214: hut_b
+	Actor214: neutral_building_hut_b
 		Owner: Neutral
 		Location: 40,56
 		Health: 100
-	Actor181: hut_a
+	Actor181: neutral_building_hut_a
 		Owner: Neutral
 		Location: 43,58
-	Actor212: hut_b
+	Actor212: neutral_building_hut_b
 		Owner: Neutral
 		Location: 51,54
-	Actor205: tech_drillrig
+	Actor205: neutral_building_drillrig
 		Owner: Neutral
 		Location: 5,39
-	Actor213: tech_drillrig
+	Actor213: neutral_building_drillrig
 		Owner: Neutral
 		Location: 85,39
-	Actor200: tech_drillrig
+	Actor200: neutral_building_drillrig
 		Owner: Neutral
 		Location: 45,74
-	Actor216: tech_drillrig
+	Actor216: neutral_building_drillrig
 		Owner: Neutral
 		Location: 44,4
 	Actor122: oilpatch

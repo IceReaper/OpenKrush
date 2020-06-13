@@ -104,7 +104,7 @@ Player:
 			survivors_vehicle_allterrainvehicle: 10
 	#CaptureManagerBotModule@placeholder:
 	#	CapturingActorTypes: evolved_infantry_vandal, survivors_infantry_saboteur
-	#	CapturableActorTypes: tech_drillrig
+	#	CapturableActorTypes: neutral_building_drillrig
 	#	MinimumCaptureDelay: 400
 	#	MaximumCaptureTargetOptions: 2
 	#	CheckCaptureTargetsForVisibility: False

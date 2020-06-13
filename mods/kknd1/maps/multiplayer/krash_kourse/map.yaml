@@ -63,34 +63,34 @@ Actors:
 	Actor12: oilpatch
 		Owner: Neutral
 		Location: 14,26
-	Actor18: campfire
+	Actor18: neutral_building_campfire
 		Owner: Neutral
 		Location: 48,11
-	Actor19: hut_c
+	Actor19: neutral_building_hut_c
 		Owner: Neutral
 		Location: 49,10
-	Actor20: hut_e
+	Actor20: neutral_building_hut_e
 		Owner: Neutral
 		Location: 45,10
-	Actor22: hut_a
+	Actor22: neutral_building_hut_a
 		Owner: Neutral
 		Location: 46,13
-	Actor23: hut_b
+	Actor23: neutral_building_hut_b
 		Owner: Neutral
 		Location: 49,13
-	Actor21: hut_d
+	Actor21: neutral_building_hut_d
 		Owner: Neutral
 		Location: 46,81
-	Actor24: campfire
+	Actor24: neutral_building_campfire
 		Owner: Neutral
 		Location: 48,83
-	Actor25: hut_a
+	Actor25: neutral_building_hut_a
 		Owner: Neutral
 		Location: 50,83
-	Actor26: hut_b
+	Actor26: neutral_building_hut_b
 		Owner: Neutral
 		Location: 45,85
-	Actor27: hut_e
+	Actor27: neutral_building_hut_e
 		Owner: Neutral
 		Location: 49,86
 	Actor29: urban_objects_10

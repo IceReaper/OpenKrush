@@ -5,7 +5,7 @@ SurvivorsVoice:
 		Select: SURV.SLV|50.wav, SURV.SLV|51.wav, SURV.SLV|53.wav, SURV.SLV|69.wav, SURV.SLV|70.wav
 		Action: SURV.SLV|43.wav, SURV.SLV|49.wav, SURV.SLV|68.wav
 		Attack: SURV.SLV|48.wav, SURV.SLV|59.wav, SURV.SLV|61.wav
-		Infiltrate: kknd1|bits/sounds/survivors_Infiltrate.wav
+		Infiltrate: kknd1|actors/survivors/Infiltrate.wav
 		Reinforce: SURV.SLV|45.wav
 		Infiltrated: SURV.SLV|37.wav, SURV.SLV|40.wav
 		Conquered: SURV.SLV|29.wav
@@ -13,8 +13,8 @@ SurvivorsVoice:
 		Repair: SURV.SLV|45.wav
 		Repairing: SURV.SLV|28.wav
 		Die: SURV.SLV|174.wav, SURV.SLV|175.wav, SURV.SLV|176.wav, SURV.SLV|177.wav, SURV.SLV|178.wav
-		Crush: kknd1|bits/sounds/crush.wav
-		Zapped: kknd1|bits/sounds/zapped1.wav, kknd1|bits/sounds/zapped2.wav, kknd1|bits/sounds/zapped3.wav
+		Crush: kknd1|core/crush.wav, kknd1|core/crush.wav
+		Zapped: kknd1|core/zapped1.wav, kknd1|core/zapped2.wav, kknd1|core/zapped3.wav
 
 SurvivorsVeteranVoice:
 	DefaultVariant: # TODO remove .aud as default from engine!
@@ -24,12 +24,12 @@ SurvivorsVeteranVoice:
 		Action: SURV.SLV|76.wav, SURV.SLV|85.wav, SURV.SLV|84.wav
 		Attack: SURV.SLV|73.wav, SURV.SLV|83.wav, SURV.SLV|71.wav
 		Infiltrate: SURV.SLV|71.wav
-		Reinforce: kknd1|bits/sounds/survivors_Ohhh.wav
-		Infiltrated: kknd1|bits/sounds/survivors_WereInside.wav
+		Reinforce: kknd1|actors/survivors/Ohhh.wav
+		Infiltrated: kknd1|actors/survivors/WereInside.wav
 		Conquered: SURV.SLV|77.wav
 		Reinforced: # TODO keep it blank or make custom sound
 		Repair: SURV.SLV|45.wav
 		Repairing: SURV.SLV|28.wav
 		Die: SURV.SLV|174.wav, SURV.SLV|175.wav, SURV.SLV|176.wav, SURV.SLV|177.wav, SURV.SLV|178.wav
-		Crush: kknd1|bits/sounds/crush.wav
-		Zapped: kknd1|bits/sounds/zapped1.wav, kknd1|bits/sounds/zapped2.wav, kknd1|bits/sounds/zapped3.wav
+		Crush: kknd1|core/crush.wav, kknd1|core/crush.wav
+		Zapped: kknd1|core/zapped1.wav, kknd1|core/zapped2.wav, kknd1|core/zapped3.wav

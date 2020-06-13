@@ -3,9 +3,9 @@ EvolvedVoice:
 	Voices:
 		Create: MUTE.SLV|125.wav
 		Select: MUTE.SLV|116.wav, MUTE.SLV|139.wav, MUTE.SLV|140.wav, MUTE.SLV|142.wav
-		Action: MUTE.SLV|91.wav, MUTE.SLV|131.wav, MUTE.SLV|133.wav, kknd1|bits/sounds/evolved_Yes2.wav
+		Action: MUTE.SLV|91.wav, MUTE.SLV|131.wav, MUTE.SLV|133.wav, kknd1|actors/evolved/Yes2.wav
 		Attack: MUTE.SLV|92.wav, MUTE.SLV|119.wav
-		Infiltrate: kknd1|bits/sounds/evolved_Infiltrate.wav
+		Infiltrate: kknd1|actors/evolved/Infiltrate.wav
 		Reinforce: MUTE.SLV|123.wav
 		Infiltrated: MUTE.SLV|105.wav
 		Conquered: MUTE.SLV|95.wav, MUTE.SLV|97.wav, MUTE.SLV|118.wav
@@ -13,23 +13,23 @@ EvolvedVoice:
 		Repair: MUTE.SLV|124.wav
 		Repairing: MUTE.SLV|108.wav
 		Die: MUTE.SLV|174.wav, MUTE.SLV|175.wav, MUTE.SLV|176.wav, MUTE.SLV|177.wav, MUTE.SLV|178.wav
-		Crush: kknd1|bits/sounds/crush.wav
-		Zapped: kknd1|bits/sounds/zapped1.wav, kknd1|bits/sounds/zapped2.wav, kknd1|bits/sounds/zapped3.wav
+		Crush: kknd1|core/crush.wav, kknd1|core/crush.wav
+		Zapped: kknd1|core/zapped1.wav, kknd1|core/zapped2.wav, kknd1|core/zapped3.wav
 
 EvolvedVeteranVoice:
 	DefaultVariant: # TODO remove .aud as default from engine!
 	Voices:
 		Create: MUTE.SLV|125.wav # Using non-veteran one to allow travis to build...
-		Select: kknd1|bits/sounds/evolved_Huh.wav, MUTE.SLV|158.wav
+		Select: kknd1|actors/evolved/Huh.wav, MUTE.SLV|158.wav
 		Action: MUTE.SLV|154.wav, MUTE.SLV|148.wav
-		Attack: MUTE.SLV|153.wav, kknd1|bits/sounds/evolved_IveFoundThePlaymate.wav, kknd1|bits/sounds/evolved_ActionTime.wav
-		Infiltrate: kknd1|bits/sounds/evolved_TheBuildingHasBeenFound.wav
-		Reinforce: kknd1|bits/sounds/evolved_Yes.wav
-		Infiltrated: kknd1|bits/sounds/evolved_WereInside.wav
-		Conquered: kknd1|bits/sounds/evolved_WeGotTheirBuilding.wav
+		Attack: MUTE.SLV|153.wav, kknd1|actors/evolved/IveFoundThePlaymate.wav, kknd1|actors/evolved/ActionTime.wav
+		Infiltrate: kknd1|actors/evolved/TheBuildingHasBeenFound.wav
+		Reinforce: kknd1|actors/evolved/Yes.wav
+		Infiltrated: kknd1|actors/evolved/WereInside.wav
+		Conquered: kknd1|actors/evolved/WeGotTheirBuilding.wav
 		Reinforced: # TODO keep it blank or make custom sound
 		Repair: MUTE.SLV|124.wav
 		Repairing: MUTE.SLV|108.wav
 		Die: MUTE.SLV|174.wav, MUTE.SLV|175.wav, MUTE.SLV|176.wav, MUTE.SLV|177.wav, MUTE.SLV|178.wav
-		Crush: kknd1|bits/sounds/crush.wav
-		Zapped: kknd1|bits/sounds/zapped1.wav, kknd1|bits/sounds/zapped2.wav, kknd1|bits/sounds/zapped3.wav
+		Crush: kknd1|core/crush.wav, kknd1|core/crush.wav
+		Zapped: kknd1|core/zapped1.wav, kknd1|core/zapped2.wav, kknd1|core/zapped3.wav

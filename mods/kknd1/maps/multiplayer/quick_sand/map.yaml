@@ -29,19 +29,19 @@ Players:
 		Faction: Random
 		Enemies: Creeps
 Actors:
-	Actor1: hut_e
+	Actor1: neutral_building_hut_e
 		Owner: Neutral
 		Location: 47,25
-	Actor2: hut_b
+	Actor2: neutral_building_hut_b
 		Owner: Neutral
 		Location: 50,28
-	Actor3: campfire
+	Actor3: neutral_building_campfire
 		Owner: Neutral
 		Location: 48,27
-	Actor5: hut_a
+	Actor5: neutral_building_hut_a
 		Owner: Neutral
 		Location: 45,27
-	Actor6: hut_c
+	Actor6: neutral_building_hut_c
 		Owner: Neutral
 		Location: 48,30
 	Actor7: urban_objects_28
@@ -122,7 +122,7 @@ Actors:
 	Actor42: mpspawn
 		Owner: Neutral
 		Location: 77,48
-	Actor36: tech_drillrig
+	Actor36: neutral_building_drillrig
 		Owner: Neutral
 		Location: 47,9
 	Actor37: desert_objects_6
@@ -1145,10 +1145,10 @@ Actors:
 	Actor441: desert_objects_14
 		Owner: Neutral
 		Location: 27,1
-	Actor442: tech_drillrig
+	Actor442: neutral_building_drillrig
 		Owner: Neutral
 		Location: 8,6
-	Actor443: tech_drillrig
+	Actor443: neutral_building_drillrig
 		Owner: Neutral
 		Location: 86,6
 	Actor444: urban_objects_17
@@ -1209,7 +1209,7 @@ Actors:
 		Owner: Creeps
 		Location: 44,67
 		TurretFacing: 92
-	Actor464: tech_drillrig
+	Actor464: neutral_building_drillrig
 		Owner: Neutral
 		Location: 47,47
 	Actor465: desert_objects_23

@@ -42,37 +42,3 @@ indicators:
 	research5: SPRITES.LVL|Cursors.mobd
 		Start: 140
 		Length: 7
-
-crater:
-	a: SPRITES.LVL|Extras.mobd
-		Start: 362
-		Offset: -16,-16
-	b: SPRITES.LVL|Extras.mobd
-		Start: 363
-		Offset: -16,-16
-	c: SPRITES.LVL|Extras.mobd
-		Start: 364
-		Offset: -16,-16
-	d: SPRITES.LVL|Extras.mobd
-		Start: 365
-		Offset: -16,-16
-	e: SPRITES.LVL|Extras.mobd
-		Start: 366
-		Offset: -16,-16
-	f: SPRITES.LVL|Extras.mobd
-		Start: 367
-		Offset: -16,-16
-	g: SPRITES.LVL|Extras.mobd
-		Start: 368
-		Offset: -16,-16
-	h: SPRITES.LVL|Extras.mobd
-		Start: 369
-		Offset: -16,-16
-	i: SPRITES.LVL|Extras.mobd
-		Start: 370
-		Offset: -16,-16
-
-beacon:
-	x: bits/Beacon.png
-		Length: 10
-		Tick: 600
