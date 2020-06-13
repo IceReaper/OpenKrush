@@ -37,6 +37,7 @@ Rules:
 
 Sequences:
 	kknd1|actors/survivors/sidebar.yaml
+	kknd1|actors/survivors/infantry/sequences.yaml
 	kknd1|actors/survivors/infantry/rifleman/sequences.yaml
 	kknd1|actors/survivors/infantry/swat/sequences.yaml
 	kknd1|actors/survivors/infantry/flamer/sequences.yaml

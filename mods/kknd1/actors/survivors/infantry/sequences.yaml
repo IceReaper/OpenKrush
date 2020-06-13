@@ -1,0 +1,23 @@
+^survivors_infantry_death:
+	die: SPRITES.LVL|Extras.mobd
+		Start: 308
+		Length: 15
+		Tick: 120
+	die-burn: actors/survivors/infantry/burn.png
+		Length: 24
+		Tick: 70
+	die-crush: actors/survivors/infantry/crush.png
+		Tick: 2000
+		ZOffset: -2000
+	die-dissolve: actors/survivors/infantry/dissolve.png
+		Length: 16
+		Tick: 50
+	die-explode: actors/survivors/infantry/explode.png
+		Length: 17
+		Tick: 60
+	die-melt: actors/survivors/infantry/melt.png
+		Length: 16
+		Tick: 60
+	die-zap: actors/survivors/infantry/zap.png
+		Length: 16
+		Tick: 60

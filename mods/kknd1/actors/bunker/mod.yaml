@@ -19,5 +19,5 @@ Weapons:
 	kknd1|actors/bunker/vehicles/sentineldroid/weapons.yaml
 
 Voices:
-	kknd1|actors/bunker/voices.yaml
+	kknd1|actors/bunker/vehicles/voices.yaml
 	kknd1|actors/bunker/vehicles/gorttherobot/voices.yaml

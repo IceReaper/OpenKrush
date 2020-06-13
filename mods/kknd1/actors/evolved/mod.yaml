@@ -39,6 +39,7 @@ Rules:
 
 Sequences:
 	kknd1|actors/evolved/sidebar.yaml
+	kknd1|actors/evolved/infantry/sequences.yaml
 	kknd1|actors/evolved/infantry/berserker/sequences.yaml
 	kknd1|actors/evolved/infantry/shotgunner/sequences.yaml
 	kknd1|actors/evolved/infantry/pyromaniac/sequences.yaml

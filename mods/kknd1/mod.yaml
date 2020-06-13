@@ -68,8 +68,6 @@ Sequences:
 	kknd|actors/mpspawn/sequences.yaml
 	# TODO refactor below
 	kknd1|sequences/misc.yaml
-	kknd1|sequences/survivors.yaml
-	kknd1|sequences/evolved.yaml
 	kknd1|sequences/weapons.yaml
 	# TODO refactor above
 	kknd1|core/font.yaml
