@@ -1,6 +1,6 @@
 Sounds:
 	DefaultVariant: # TODO remove .aud as default from engine!
 	Notifications:
-		Beacon: kknd1|bits/sounds/beacon.wav
-		ChatLine: kknd1|bits/sounds/chat.wav
-		ClickSound: kknd1|bits/sounds/click.wav
+		Beacon: kknd1|core/beacon.wav
+		ChatLine: kknd1|core/chat.wav
+		ClickSound: kknd1|core/click.wav
