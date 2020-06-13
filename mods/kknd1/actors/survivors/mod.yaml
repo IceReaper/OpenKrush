@@ -1,0 +1,106 @@
+Rules:
+	kknd1|actors/survivors/rules.yaml
+	kknd1|actors/survivors/infantry/rifleman/rules.yaml
+	kknd1|actors/survivors/infantry/swat/rules.yaml
+	kknd1|actors/survivors/infantry/flamer/rules.yaml
+	kknd1|actors/survivors/infantry/sapper/rules.yaml
+	kknd1|actors/survivors/infantry/rpglauncher/rules.yaml
+	kknd1|actors/survivors/infantry/sniper/rules.yaml
+	kknd1|actors/survivors/infantry/technician/rules.yaml
+	kknd1|actors/survivors/infantry/saboteur/rules.yaml
+	kknd1|actors/survivors/infantry/elpresidente/rules.yaml
+	kknd1|actors/survivors/infantry/scout/rules.yaml
+	kknd1|actors/survivors/vehicles/dirtbike/rules.yaml
+	kknd1|actors/survivors/vehicles/4x4pickup/rules.yaml
+	kknd1|actors/survivors/vehicles/allterrainvehicle/rules.yaml
+	kknd1|actors/survivors/vehicles/flameatv/rules.yaml
+	kknd1|actors/survivors/vehicles/anacondatank/rules.yaml
+	kknd1|actors/survivors/vehicles/barragecraft/rules.yaml
+	kknd1|actors/survivors/vehicles/autocannontank/rules.yaml
+	kknd1|actors/survivors/vehicles/oiltanker/rules.yaml
+	kknd1|actors/survivors/vehicles/derrick/rules.yaml
+	kknd1|actors/survivors/vehicles/mobileoutpost/rules.yaml
+	kknd1|actors/survivors/aircrafts/bomber/rules.yaml
+	kknd1|actors/survivors/buildings/outpost/rules.yaml
+	kknd1|actors/survivors/buildings/barracks/rules.yaml
+	kknd1|actors/survivors/buildings/machineshop/rules.yaml
+	kknd1|actors/survivors/buildings/repairbay/rules.yaml
+	kknd1|actors/survivors/buildings/researchlab/rules.yaml
+	kknd1|actors/survivors/buildings/powerstation/rules.yaml
+	kknd1|actors/survivors/buildings/drillrig/rules.yaml
+	kknd1|actors/survivors/buildings/solarpanel/rules.yaml
+	kknd1|actors/survivors/buildings/airfield/rules.yaml
+	kknd1|actors/survivors/towers/guardtower/rules.yaml
+	kknd1|actors/survivors/towers/missilebattery/rules.yaml
+	kknd1|actors/survivors/towers/cannontower/rules.yaml
+	kknd1|actors/survivors/walls/barricade/rules.yaml
+
+Sequences:
+	kknd1|actors/survivors/sidebar.yaml
+	kknd1|actors/survivors/infantry/rifleman/sequences.yaml
+	kknd1|actors/survivors/infantry/swat/sequences.yaml
+	kknd1|actors/survivors/infantry/flamer/sequences.yaml
+	kknd1|actors/survivors/infantry/sapper/sequences.yaml
+	kknd1|actors/survivors/infantry/rpglauncher/sequences.yaml
+	kknd1|actors/survivors/infantry/sniper/sequences.yaml
+	kknd1|actors/survivors/infantry/technician/sequences.yaml
+	kknd1|actors/survivors/infantry/saboteur/sequences.yaml
+	kknd1|actors/survivors/infantry/elpresidente/sequences.yaml
+	kknd1|actors/survivors/infantry/scout/sequences.yaml
+	kknd1|actors/survivors/vehicles/dirtbike/sequences.yaml
+	kknd1|actors/survivors/vehicles/4x4pickup/sequences.yaml
+	kknd1|actors/survivors/vehicles/allterrainvehicle/sequences.yaml
+	kknd1|actors/survivors/vehicles/flameatv/sequences.yaml
+	kknd1|actors/survivors/vehicles/anacondatank/sequences.yaml
+	kknd1|actors/survivors/vehicles/barragecraft/sequences.yaml
+	kknd1|actors/survivors/vehicles/autocannontank/sequences.yaml
+	kknd1|actors/survivors/vehicles/oiltanker/sequences.yaml
+	kknd1|actors/survivors/vehicles/derrick/sequences.yaml
+	kknd1|actors/survivors/vehicles/mobileoutpost/sequences.yaml
+	kknd1|actors/survivors/aircrafts/bomber/sequences.yaml
+	kknd1|actors/survivors/buildings/outpost/sequences.yaml
+	kknd1|actors/survivors/buildings/barracks/sequences.yaml
+	kknd1|actors/survivors/buildings/machineshop/sequences.yaml
+	kknd1|actors/survivors/buildings/repairbay/sequences.yaml
+	kknd1|actors/survivors/buildings/researchlab/sequences.yaml
+	kknd1|actors/survivors/buildings/powerstation/sequences.yaml
+	kknd1|actors/survivors/buildings/drillrig/sequences.yaml
+	kknd1|actors/survivors/buildings/solarpanel/sequences.yaml
+	kknd1|actors/survivors/buildings/airfield/sequences.yaml
+	kknd1|actors/survivors/towers/guardtower/sequences.yaml
+	kknd1|actors/survivors/towers/missilebattery/sequences.yaml
+	kknd1|actors/survivors/towers/cannontower/sequences.yaml
+	kknd1|actors/survivors/walls/barricade/sequences.yaml
+
+Weapons:
+	kknd1|actors/survivors/infantry/rifleman/weapons.yaml
+	kknd1|actors/survivors/infantry/swat/weapons.yaml
+	kknd1|actors/survivors/infantry/flamer/weapons.yaml
+	kknd1|actors/survivors/infantry/sapper/weapons.yaml
+	kknd1|actors/survivors/infantry/rpglauncher/weapons.yaml
+	kknd1|actors/survivors/infantry/sniper/weapons.yaml
+	kknd1|actors/survivors/infantry/saboteur/weapons.yaml
+	kknd1|actors/survivors/infantry/elpresidente/weapons.yaml
+	kknd1|actors/survivors/infantry/scout/weapons.yaml
+	kknd1|actors/survivors/vehicles/dirtbike/weapons.yaml
+	kknd1|actors/survivors/vehicles/4x4pickup/weapons.yaml
+	kknd1|actors/survivors/vehicles/allterrainvehicle/weapons.yaml
+	kknd1|actors/survivors/vehicles/flameatv/weapons.yaml
+	kknd1|actors/survivors/vehicles/anacondatank/weapons.yaml
+	kknd1|actors/survivors/vehicles/barragecraft/weapons.yaml
+	kknd1|actors/survivors/vehicles/autocannontank/weapons.yaml
+	kknd1|actors/survivors/aircrafts/bomber/weapons.yaml
+	kknd1|actors/survivors/towers/guardtower/weapons.yaml
+	kknd1|actors/survivors/towers/missilebattery/weapons.yaml
+	kknd1|actors/survivors/towers/cannontower/weapons.yaml
+
+Voices:
+	kknd1|actors/survivors/voices.yaml
+	kknd1|actors/survivors/infantry/scout/voices.yaml
+	kknd1|actors/survivors/aircrafts/bomber/voices.yaml
+
+Music:
+	kknd1|actors/survivors/music.yaml
+
+ChromeMetrics:
+	kknd1|actors/survivors/metrics.yaml

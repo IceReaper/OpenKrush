@@ -1,0 +1,23 @@
+Rules:
+	kknd1|actors/bunker/techbunker/rules.yaml
+	kknd1|actors/bunker/vehicles/gorttherobot/rules.yaml
+	kknd1|actors/bunker/vehicles/mech/rules.yaml
+	kknd1|actors/bunker/vehicles/plasmatank/rules.yaml
+	kknd1|actors/bunker/vehicles/sentineldroid/rules.yaml
+
+Sequences:
+	kknd1|actors/bunker/techbunker/sequences.yaml
+	kknd1|actors/bunker/vehicles/gorttherobot/sequences.yaml
+	kknd1|actors/bunker/vehicles/mech/sequences.yaml
+	kknd1|actors/bunker/vehicles/plasmatank/sequences.yaml
+	kknd1|actors/bunker/vehicles/sentineldroid/sequences.yaml
+
+Weapons:
+	kknd1|actors/bunker/vehicles/gorttherobot/weapons.yaml
+	kknd1|actors/bunker/vehicles/mech/weapons.yaml
+	kknd1|actors/bunker/vehicles/plasmatank/weapons.yaml
+	kknd1|actors/bunker/vehicles/sentineldroid/weapons.yaml
+
+Voices:
+	kknd1|actors/bunker/voices.yaml
+	kknd1|actors/bunker/vehicles/gorttherobot/voices.yaml

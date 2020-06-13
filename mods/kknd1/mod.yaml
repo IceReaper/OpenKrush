@@ -25,6 +25,14 @@ MapFolders:
 	kknd1|maps/multiplayer: System
 	~^maps/kknd1: User
 
+Includes:
+	actors/bunker/mod.yaml
+	actors/evolved/mod.yaml
+	actors/survivors/mod.yaml
+	tilesets/desert/mod.yaml
+	tilesets/highland/mod.yaml
+	tilesets/urban/mod.yaml
+
 Rules:
 	kknd|rules/palettes.yaml
 	kknd|rules/core.yaml
@@ -51,89 +59,6 @@ Rules:
 	kknd1|core/rules/mechanics/researches_buildings.yaml
 	kknd1|core/rules/mechanics/saboteur.yaml
 	kknd1|core/rules/mechanics/technician.yaml
-	kknd1|actors/bunker/techbunker/rules.yaml
-	kknd1|actors/bunker/vehicles/gorttherobot/rules.yaml
-	kknd1|actors/bunker/vehicles/mech/rules.yaml
-	kknd1|actors/bunker/vehicles/plasmatank/rules.yaml
-	kknd1|actors/bunker/vehicles/sentineldroid/rules.yaml
-	kknd1|actors/evolved/rules.yaml
-	kknd1|actors/evolved/infantry/berserker/rules.yaml
-	kknd1|actors/evolved/infantry/shotgunner/rules.yaml
-	kknd1|actors/evolved/infantry/pyromaniac/rules.yaml
-	kknd1|actors/evolved/infantry/rioter/rules.yaml
-	kknd1|actors/evolved/infantry/bazooka/rules.yaml
-	kknd1|actors/evolved/infantry/crazyharry/rules.yaml
-	kknd1|actors/evolved/infantry/kingzog/rules.yaml
-	kknd1|actors/evolved/infantry/mekanik/rules.yaml
-	kknd1|actors/evolved/infantry/vandal/rules.yaml
-	kknd1|actors/evolved/vehicles/direwolf/rules.yaml
-	kknd1|actors/evolved/vehicles/chopper/rules.yaml
-	kknd1|actors/evolved/vehicles/bikeandsidecar/rules.yaml
-	kknd1|actors/evolved/vehicles/monstertruck/rules.yaml
-	kknd1|actors/evolved/vehicles/giantscorpion/rules.yaml
-	kknd1|actors/evolved/vehicles/warmastodon/rules.yaml
-	kknd1|actors/evolved/vehicles/giantbeetle/rules.yaml
-	kknd1|actors/evolved/vehicles/missilecrab/rules.yaml
-	kknd1|actors/evolved/vehicles/oiltanker/rules.yaml
-	kknd1|actors/evolved/vehicles/derrick/rules.yaml
-	kknd1|actors/evolved/vehicles/clanhallwagon/rules.yaml
-	kknd1|actors/evolved/aircrafts/wasp/rules.yaml
-	kknd1|actors/evolved/buildings/clanhall/rules.yaml
-	kknd1|actors/evolved/buildings/warriorhall/rules.yaml
-	kknd1|actors/evolved/buildings/beastenclosure/rules.yaml
-	kknd1|actors/evolved/buildings/blacksmith/rules.yaml
-	kknd1|actors/evolved/buildings/beastforge/rules.yaml
-	kknd1|actors/evolved/buildings/menagerie/rules.yaml
-	kknd1|actors/evolved/buildings/alchemyhall/rules.yaml
-	kknd1|actors/evolved/buildings/powerstation/rules.yaml
-	kknd1|actors/evolved/buildings/drillrig/rules.yaml
-	kknd1|actors/evolved/buildings/windmill/rules.yaml
-	kknd1|actors/evolved/buildings/vespiary/rules.yaml
-	kknd1|actors/evolved/towers/machinegunnest/rules.yaml
-	kknd1|actors/evolved/towers/grapeshotcannon/rules.yaml
-	kknd1|actors/evolved/towers/rotarycannon/rules.yaml
-	kknd1|actors/evolved/walls/skeletalwall/rules.yaml
-	kknd1|actors/survivors/rules.yaml
-	kknd1|actors/survivors/infantry/rifleman/rules.yaml
-	kknd1|actors/survivors/infantry/swat/rules.yaml
-	kknd1|actors/survivors/infantry/flamer/rules.yaml
-	kknd1|actors/survivors/infantry/sapper/rules.yaml
-	kknd1|actors/survivors/infantry/rpglauncher/rules.yaml
-	kknd1|actors/survivors/infantry/sniper/rules.yaml
-	kknd1|actors/survivors/infantry/technician/rules.yaml
-	kknd1|actors/survivors/infantry/saboteur/rules.yaml
-	kknd1|actors/survivors/infantry/elpresidente/rules.yaml
-	kknd1|actors/survivors/infantry/scout/rules.yaml
-	kknd1|actors/survivors/vehicles/dirtbike/rules.yaml
-	kknd1|actors/survivors/vehicles/4x4pickup/rules.yaml
-	kknd1|actors/survivors/vehicles/allterrainvehicle/rules.yaml
-	kknd1|actors/survivors/vehicles/flameatv/rules.yaml
-	kknd1|actors/survivors/vehicles/anacondatank/rules.yaml
-	kknd1|actors/survivors/vehicles/barragecraft/rules.yaml
-	kknd1|actors/survivors/vehicles/autocannontank/rules.yaml
-	kknd1|actors/survivors/vehicles/oiltanker/rules.yaml
-	kknd1|actors/survivors/vehicles/derrick/rules.yaml
-	kknd1|actors/survivors/vehicles/mobileoutpost/rules.yaml
-	kknd1|actors/survivors/aircrafts/bomber/rules.yaml
-	kknd1|actors/survivors/buildings/outpost/rules.yaml
-	kknd1|actors/survivors/buildings/barracks/rules.yaml
-	kknd1|actors/survivors/buildings/machineshop/rules.yaml
-	kknd1|actors/survivors/buildings/repairbay/rules.yaml
-	kknd1|actors/survivors/buildings/researchlab/rules.yaml
-	kknd1|actors/survivors/buildings/powerstation/rules.yaml
-	kknd1|actors/survivors/buildings/drillrig/rules.yaml
-	kknd1|actors/survivors/buildings/solarpanel/rules.yaml
-	kknd1|actors/survivors/buildings/airfield/rules.yaml
-	kknd1|actors/survivors/towers/guardtower/rules.yaml
-	kknd1|actors/survivors/towers/missilebattery/rules.yaml
-	kknd1|actors/survivors/towers/cannontower/rules.yaml
-	kknd1|actors/survivors/walls/barricade/rules.yaml
-	kknd1|tilesets/desert/mapobjects/objects/rules.yaml
-	kknd1|tilesets/highland/mapobjects/objects/rules.yaml
-	kknd1|tilesets/highland/mapobjects/trees/rules.yaml
-	kknd1|tilesets/urban/mapobjects/buildings/rules.yaml
-	kknd1|tilesets/urban/mapobjects/objects/rules.yaml
-	kknd1|tilesets/urban/mapobjects/trees/rules.yaml
 
 Sequences:
 	kknd|sequences/mpspawn.yaml
@@ -146,89 +71,6 @@ Sequences:
 	kknd1|core/font.yaml
 	kknd1|core/sidebar.yaml
 	kknd1|core/weapons/bullet/sequences.yaml
-	kknd1|actors/bunker/techbunker/sequences.yaml
-	kknd1|actors/bunker/vehicles/gorttherobot/sequences.yaml
-	kknd1|actors/bunker/vehicles/mech/sequences.yaml
-	kknd1|actors/bunker/vehicles/plasmatank/sequences.yaml
-	kknd1|actors/bunker/vehicles/sentineldroid/sequences.yaml
-	kknd1|actors/evolved/sidebar.yaml
-	kknd1|actors/evolved/infantry/berserker/sequences.yaml
-	kknd1|actors/evolved/infantry/shotgunner/sequences.yaml
-	kknd1|actors/evolved/infantry/pyromaniac/sequences.yaml
-	kknd1|actors/evolved/infantry/rioter/sequences.yaml
-	kknd1|actors/evolved/infantry/bazooka/sequences.yaml
-	kknd1|actors/evolved/infantry/crazyharry/sequences.yaml
-	kknd1|actors/evolved/infantry/kingzog/sequences.yaml
-	kknd1|actors/evolved/infantry/mekanik/sequences.yaml
-	kknd1|actors/evolved/infantry/vandal/sequences.yaml
-	kknd1|actors/evolved/vehicles/direwolf/sequences.yaml
-	kknd1|actors/evolved/vehicles/chopper/sequences.yaml
-	kknd1|actors/evolved/vehicles/bikeandsidecar/sequences.yaml
-	kknd1|actors/evolved/vehicles/monstertruck/sequences.yaml
-	kknd1|actors/evolved/vehicles/giantscorpion/sequences.yaml
-	kknd1|actors/evolved/vehicles/warmastodon/sequences.yaml
-	kknd1|actors/evolved/vehicles/giantbeetle/sequences.yaml
-	kknd1|actors/evolved/vehicles/missilecrab/sequences.yaml
-	kknd1|actors/evolved/vehicles/oiltanker/sequences.yaml
-	kknd1|actors/evolved/vehicles/derrick/sequences.yaml
-	kknd1|actors/evolved/vehicles/clanhallwagon/sequences.yaml
-	kknd1|actors/evolved/aircrafts/wasp/sequences.yaml
-	kknd1|actors/evolved/buildings/clanhall/sequences.yaml
-	kknd1|actors/evolved/buildings/warriorhall/sequences.yaml
-	kknd1|actors/evolved/buildings/beastenclosure/sequences.yaml
-	kknd1|actors/evolved/buildings/blacksmith/sequences.yaml
-	kknd1|actors/evolved/buildings/beastforge/sequences.yaml
-	kknd1|actors/evolved/buildings/menagerie/sequences.yaml
-	kknd1|actors/evolved/buildings/alchemyhall/sequences.yaml
-	kknd1|actors/evolved/buildings/powerstation/sequences.yaml
-	kknd1|actors/evolved/buildings/drillrig/sequences.yaml
-	kknd1|actors/evolved/buildings/windmill/sequences.yaml
-	kknd1|actors/evolved/buildings/vespiary/sequences.yaml
-	kknd1|actors/evolved/towers/machinegunnest/sequences.yaml
-	kknd1|actors/evolved/towers/grapeshotcannon/sequences.yaml
-	kknd1|actors/evolved/towers/rotarycannon/sequences.yaml
-	kknd1|actors/evolved/walls/skeletalwall/sequences.yaml
-	kknd1|actors/survivors/sidebar.yaml
-	kknd1|actors/survivors/infantry/rifleman/sequences.yaml
-	kknd1|actors/survivors/infantry/swat/sequences.yaml
-	kknd1|actors/survivors/infantry/flamer/sequences.yaml
-	kknd1|actors/survivors/infantry/sapper/sequences.yaml
-	kknd1|actors/survivors/infantry/rpglauncher/sequences.yaml
-	kknd1|actors/survivors/infantry/sniper/sequences.yaml
-	kknd1|actors/survivors/infantry/technician/sequences.yaml
-	kknd1|actors/survivors/infantry/saboteur/sequences.yaml
-	kknd1|actors/survivors/infantry/elpresidente/sequences.yaml
-	kknd1|actors/survivors/infantry/scout/sequences.yaml
-	kknd1|actors/survivors/vehicles/dirtbike/sequences.yaml
-	kknd1|actors/survivors/vehicles/4x4pickup/sequences.yaml
-	kknd1|actors/survivors/vehicles/allterrainvehicle/sequences.yaml
-	kknd1|actors/survivors/vehicles/flameatv/sequences.yaml
-	kknd1|actors/survivors/vehicles/anacondatank/sequences.yaml
-	kknd1|actors/survivors/vehicles/barragecraft/sequences.yaml
-	kknd1|actors/survivors/vehicles/autocannontank/sequences.yaml
-	kknd1|actors/survivors/vehicles/oiltanker/sequences.yaml
-	kknd1|actors/survivors/vehicles/derrick/sequences.yaml
-	kknd1|actors/survivors/vehicles/mobileoutpost/sequences.yaml
-	kknd1|actors/survivors/aircrafts/bomber/sequences.yaml
-	kknd1|actors/survivors/buildings/outpost/sequences.yaml
-	kknd1|actors/survivors/buildings/barracks/sequences.yaml
-	kknd1|actors/survivors/buildings/machineshop/sequences.yaml
-	kknd1|actors/survivors/buildings/repairbay/sequences.yaml
-	kknd1|actors/survivors/buildings/researchlab/sequences.yaml
-	kknd1|actors/survivors/buildings/powerstation/sequences.yaml
-	kknd1|actors/survivors/buildings/drillrig/sequences.yaml
-	kknd1|actors/survivors/buildings/solarpanel/sequences.yaml
-	kknd1|actors/survivors/buildings/airfield/sequences.yaml
-	kknd1|actors/survivors/towers/guardtower/sequences.yaml
-	kknd1|actors/survivors/towers/missilebattery/sequences.yaml
-	kknd1|actors/survivors/towers/cannontower/sequences.yaml
-	kknd1|actors/survivors/walls/barricade/sequences.yaml
-	kknd1|tilesets/desert/mapobjects/objects/sequences.yaml
-	kknd1|tilesets/highland/mapobjects/objects/sequences.yaml
-	kknd1|tilesets/highland/mapobjects/trees/sequences.yaml
-	kknd1|tilesets/urban/mapobjects/buildings/sequences.yaml
-	kknd1|tilesets/urban/mapobjects/objects/sequences.yaml
-	kknd1|tilesets/urban/mapobjects/trees/sequences.yaml
 
 Weapons:
 	kknd1|weapons/misc.yaml
@@ -237,69 +79,6 @@ Weapons:
 	kknd1|core/weapons/bullet/weapons.yaml
 	kknd1|core/weapons/explosion.yaml
 	kknd1|core/weapons/nuke.yaml
-	kknd1|actors/bunker/vehicles/gorttherobot/weapons.yaml
-	kknd1|actors/bunker/vehicles/mech/weapons.yaml
-	kknd1|actors/bunker/vehicles/plasmatank/weapons.yaml
-	kknd1|actors/bunker/vehicles/sentineldroid/weapons.yaml
-	kknd1|actors/evolved/infantry/berserker/weapons.yaml
-	kknd1|actors/evolved/infantry/shotgunner/weapons.yaml
-	kknd1|actors/evolved/infantry/pyromaniac/weapons.yaml
-	kknd1|actors/evolved/infantry/rioter/weapons.yaml
-	kknd1|actors/evolved/infantry/bazooka/weapons.yaml
-	kknd1|actors/evolved/infantry/crazyharry/weapons.yaml
-	kknd1|actors/evolved/infantry/kingzog/weapons.yaml
-	kknd1|actors/evolved/infantry/vandal/weapons.yaml
-	kknd1|actors/evolved/vehicles/direwolf/weapons.yaml
-	kknd1|actors/evolved/vehicles/chopper/weapons.yaml
-	kknd1|actors/evolved/vehicles/bikeandsidecar/weapons.yaml
-	kknd1|actors/evolved/vehicles/monstertruck/weapons.yaml
-	kknd1|actors/evolved/vehicles/giantscorpion/weapons.yaml
-	kknd1|actors/evolved/vehicles/warmastodon/weapons.yaml
-	kknd1|actors/evolved/vehicles/giantbeetle/weapons.yaml
-	kknd1|actors/evolved/vehicles/missilecrab/weapons.yaml
-	kknd1|actors/evolved/towers/machinegunnest/weapons.yaml
-	kknd1|actors/evolved/towers/grapeshotcannon/weapons.yaml
-	kknd1|actors/evolved/towers/rotarycannon/weapons.yaml
-	kknd1|actors/evolved/aircrafts/wasp/weapons.yaml
-	kknd1|actors/survivors/infantry/rifleman/weapons.yaml
-	kknd1|actors/survivors/infantry/swat/weapons.yaml
-	kknd1|actors/survivors/infantry/flamer/weapons.yaml
-	kknd1|actors/survivors/infantry/sapper/weapons.yaml
-	kknd1|actors/survivors/infantry/rpglauncher/weapons.yaml
-	kknd1|actors/survivors/infantry/sniper/weapons.yaml
-	kknd1|actors/survivors/infantry/saboteur/weapons.yaml
-	kknd1|actors/survivors/infantry/elpresidente/weapons.yaml
-	kknd1|actors/survivors/infantry/scout/weapons.yaml
-	kknd1|actors/survivors/vehicles/dirtbike/weapons.yaml
-	kknd1|actors/survivors/vehicles/4x4pickup/weapons.yaml
-	kknd1|actors/survivors/vehicles/allterrainvehicle/weapons.yaml
-	kknd1|actors/survivors/vehicles/flameatv/weapons.yaml
-	kknd1|actors/survivors/vehicles/anacondatank/weapons.yaml
-	kknd1|actors/survivors/vehicles/barragecraft/weapons.yaml
-	kknd1|actors/survivors/vehicles/autocannontank/weapons.yaml
-	kknd1|actors/survivors/aircrafts/bomber/weapons.yaml
-	kknd1|actors/survivors/towers/guardtower/weapons.yaml
-	kknd1|actors/survivors/towers/missilebattery/weapons.yaml
-	kknd1|actors/survivors/towers/cannontower/weapons.yaml
-
-Voices:
-	kknd1|actors/bunker/voices.yaml
-	kknd1|actors/bunker/vehicles/gorttherobot/voices.yaml
-	kknd1|actors/survivors/voices.yaml
-	kknd1|actors/evolved/voices.yaml
-	kknd1|actors/evolved/vehicles/direwolf/voices.yaml
-	kknd1|actors/evolved/vehicles/giantscorpion/voices.yaml
-	kknd1|actors/evolved/vehicles/warmastodon/voices.yaml
-	kknd1|actors/evolved/vehicles/giantbeetle/voices.yaml
-	kknd1|actors/evolved/vehicles/missilecrab/voices.yaml
-	kknd1|actors/evolved/aircrafts/wasp/voices.yaml
-	kknd1|actors/survivors/infantry/scout/voices.yaml
-	kknd1|actors/survivors/aircrafts/bomber/voices.yaml
-
-TileSets:
-	kknd1|tilesets/desert/tileset.yaml
-	kknd1|tilesets/highland/tileset.yaml
-	kknd1|tilesets/urban/tileset.yaml
 
 Cursors:
 	kknd1|core/cursors.yaml
@@ -362,10 +141,6 @@ Notifications:
 	# TODO refactor above
 	kknd1|core/notifications.yaml
 
-Music:
-	kknd1|actors/evolved/music.yaml
-	kknd1|actors/survivors/music.yaml
-
 Translations:
 
 Hotkeys:
@@ -385,8 +160,6 @@ ServerTraits:
 ChromeMetrics:
 	common|metrics.yaml
 	kknd1|metrics.yaml
-	kknd1|actors/evolved/metrics.yaml
-	kknd1|actors/survivors/metrics.yaml
 
 Fonts:
 	Tiny:

@@ -1,0 +1,12 @@
+Rules:
+	kknd1|tilesets/urban/mapobjects/buildings/rules.yaml
+	kknd1|tilesets/urban/mapobjects/objects/rules.yaml
+	kknd1|tilesets/urban/mapobjects/trees/rules.yaml
+
+Sequences:
+	kknd1|tilesets/urban/mapobjects/buildings/sequences.yaml
+	kknd1|tilesets/urban/mapobjects/objects/sequences.yaml
+	kknd1|tilesets/urban/mapobjects/trees/sequences.yaml
+
+TileSets:
+	kknd1|tilesets/urban/tileset.yaml
