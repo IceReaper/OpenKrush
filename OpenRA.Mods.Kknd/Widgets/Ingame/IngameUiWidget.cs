@@ -45,7 +45,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 			IgnoreChildMouseOver = true;
 			IgnoreMouseOver = true;
 
-			Palette = WorldRenderer.Palette("kknd");
+			Palette = WorldRenderer.Palette("player" + World.LocalPlayer.InternalName);
 
 			AddChild(Status = new StatusWidget(this));
 			AddChild(Radar = new RadarWidget(this));

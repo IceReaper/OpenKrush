@@ -30,6 +30,6 @@ survivors_vehicle_autocannontank:
 		ReloadRates: 100, 100
 	WithLoopedAttackSound:
 		Report: SURV.SLV|6.wav
+		Delay: 3
 	VeterancyVoiced:
 		VoiceSets: SurvivorsVoice, SurvivorsVeteranVoice, SurvivorsVeteranVoice
-		Delay: 3
