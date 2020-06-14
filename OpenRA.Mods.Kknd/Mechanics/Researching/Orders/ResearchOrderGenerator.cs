@@ -75,5 +75,10 @@ namespace OpenRA.Mods.Kknd.Mechanics.Researching.Orders
 
 			return null;
 		}
+
+		public override bool InputOverridesSelection(World world, int2 xy, MouseInput mi)
+		{
+			return true;
+		}
 	}
 }

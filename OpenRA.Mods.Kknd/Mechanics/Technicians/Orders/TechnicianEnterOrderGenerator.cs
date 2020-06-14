@@ -59,5 +59,10 @@ namespace OpenRA.Mods.Kknd.Mechanics.Technicians.Orders
 
 			return actor != null ? info.Cursor : info.BlockedCursor;
 		}
+
+		public override bool InputOverridesSelection(World world, int2 xy, MouseInput mi)
+		{
+			return true;
+		}
 	}
 }
