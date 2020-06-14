@@ -44,7 +44,7 @@ namespace OpenRA.Mods.Kknd.Mechanics.Technicians.Orders
 
 		public override bool CanTargetFrozenActor(Actor self, FrozenActor target, TargetModifiers modifiers, ref string cursor)
 		{
-			return CanTargetActor(self, target.Actor, modifiers, ref cursor);
+			return false;
 		}
 	}
 }
