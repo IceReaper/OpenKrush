@@ -106,6 +106,7 @@ function build_platform()
 	make core
 
 	cp -Lr mods/* "${BUILTDIR}/mods"
+	cp -Lr KKND-Xtreme-Demo "${BUILTDIR}/KKND-Xtreme-Demo"
 
 	popd > /dev/null
 

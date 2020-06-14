@@ -134,6 +134,7 @@ popd > /dev/null
 echo "Building mod files"
 make core
 cp -LR mods/* "${BUILTDIR}/OpenRA.app/Contents/Resources/mods"
+cp -LR KKND-Xtreme-Demo "${BUILTDIR}/OpenRA.app/Contents/Resources/KKND-Xtreme-Demo"
 
 popd > /dev/null
 

@@ -97,6 +97,7 @@ popd > /dev/null
 echo "Building mod files"
 make core
 cp -Lr mods/* "${BUILTDIR}/usr/lib/openra/mods"
+cp -Lr KKND-Xtreme-Demo "${BUILTDIR}/usr/lib/openra/KKND-Xtreme-Demo"
 
 popd > /dev/null
 

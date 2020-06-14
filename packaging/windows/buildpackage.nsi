@@ -70,6 +70,7 @@ Section "Game" GAME
 
 	SetOutPath "$INSTDIR"
 	File /r "${SRCDIR}\mods"
+	File /r "${SRCDIR}\KKND-Xtreme-Demo"
 	File "${SRCDIR}\${PACKAGING_WINDOWS_LAUNCHER_NAME}.exe"
 	File "${SRCDIR}\OpenRA.Game.exe"
 	File "${SRCDIR}\OpenRA.Game.exe.config"
@@ -162,6 +163,7 @@ SectionEnd
 Function ${UN}Clean
 	nsExec::ExecToLog '"$INSTDIR\OpenRA.Utility.exe" ${MOD_ID} --unregister-mod system'
 
+	RMDir /r $INSTDIR\KKND-Xtreme-Demo
 	RMDir /r $INSTDIR\mods
 	RMDir /r $INSTDIR\maps
 	RMDir /r $INSTDIR\glsl
