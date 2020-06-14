@@ -49,7 +49,11 @@ namespace OpenRA.Mods.Kknd.Mechanics.Technicians.Orders
 
 		public override string GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)
 		{
-			var technician = technicians.OrderBy(e => (e.CenterPosition - world.Map.CenterOfCell(cell)).Length).First();
+			var technician = technicians.OrderBy(e => (e.CenterPosition - world.Map.CenterOfCell(cell)).Length).FirstOrDefault();
+
+			if (technician == null)
+				return null;
+
 			var actor = world.ActorMap.GetActorsAt(cell).FirstOrDefault(a => TechnicianUtils.CanEnter(technician, a));
 			var info = technician.Info.TraitInfo<TechnicianInfo>();
 
