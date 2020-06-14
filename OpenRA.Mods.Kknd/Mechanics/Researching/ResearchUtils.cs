@@ -19,12 +19,15 @@ namespace OpenRA.Mods.Kknd.Mechanics.Researching
 	{
 		public static ResearchAction GetAction(Actor self, Actor target)
 		{
-			var researches = self.Trait<Researches>();
-
-			if (researches == null)
+			if (target.Disposed)
 				return ResearchAction.None;
 
 			if (target.Owner != self.Owner)
+				return ResearchAction.None;
+
+			var researches = self.Trait<Researches>();
+
+			if (researches == null)
 				return ResearchAction.None;
 
 			var researchesState = researches.GetState();
