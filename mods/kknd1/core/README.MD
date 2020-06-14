@@ -5,18 +5,18 @@ Description: Custom building spritesheet.
 
 **beacon.wav**
 Author: Beam Software, Dzierzan
-Source: Ripped from the video sequences.
-Description: Ui beacon sound.
+Source: Ripped from FMV briefing.
+Description: Beacon sound.
 
 **chat.wav**
 Author: GameDevC
 Source: https://freesound.org/people/GameDevC/sounds/422836/
-Description: Ui chat sound.
+Description: UI chat sound.
 
 **click.wav**
 Author: Beam Software
-Source: Dos version installer.
-Description: Ui click sound.
+Source: KKND DOS installer.
+Description: UI click sound.
 
 **crush1.wav**
 Author: Dzierzan, CGEffex, MWLANDI
