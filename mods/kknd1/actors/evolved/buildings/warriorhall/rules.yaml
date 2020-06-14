@@ -10,6 +10,8 @@ evolved_building_warriorhall:
 	AdvancedBuildable:
 		BuildDuration: 500
 		Prerequisites: evolved_buildings
+	SaboteurConquerable:
+		Population: 2
 	ProvidesPrerequisite:
 		Prerequisite: evolved_infantry
 	Building:

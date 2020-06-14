@@ -13,6 +13,8 @@ evolved_building_beastforge:
 	AdvancedBuildable:
 		Prerequisites: evolved_buildings
 		BuildDuration: 1000
+	SaboteurConquerable:
+		Population: 2
 	ProvidesPrerequisite@vehicles:
 		Prerequisite: evolved_vehicles
 	ProvidesPrerequisite@beasts:

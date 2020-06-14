@@ -12,6 +12,8 @@ evolved_building_windmill:
 		Prerequisites: evolved_buildings
 		BuildDuration: 750
 		Level: 3
+	SaboteurConquerable:
+		Population: 1
 	Building:
 		Dimensions: 2,2
 		Footprint: == xx

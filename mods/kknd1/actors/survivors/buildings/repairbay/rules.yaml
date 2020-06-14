@@ -11,6 +11,8 @@ survivors_building_repairbay:
 		Prerequisites: survivors_buildings
 		BuildDuration: 750
 		Level: 1
+	SaboteurConquerable:
+		Population: 1
 	Building:
 		Dimensions: 4,4
 		Footprint: xxxx xxxx ==== ====

@@ -12,6 +12,8 @@ survivors_building_researchlab:
 		Prerequisites: survivors_buildings
 		BuildDuration: 500
 		BuildLimit: 1
+	SaboteurConquerable:
+		Population: 1
 	Building:
 		Dimensions: 4,3
 		Footprint: =xx= xxx= ====

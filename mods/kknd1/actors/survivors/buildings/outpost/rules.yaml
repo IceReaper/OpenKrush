@@ -12,6 +12,8 @@ survivors_building_outpost:
 		Prerequisites: survivors_buildings
 		BuildDuration: 1000
 		Level: -1
+	SaboteurConquerable:
+		Population: 3
 	ProvidesPrerequisite@buildings:
 		Prerequisite: survivors_buildings
 		RequiresCondition: !selfconstructing && !deconstructing

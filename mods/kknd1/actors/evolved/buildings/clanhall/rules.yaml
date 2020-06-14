@@ -12,6 +12,8 @@ evolved_building_clanhall:
 		Prerequisites: evolved_buildings
 		BuildDuration: 1000
 		Level: -1
+	SaboteurConquerable:
+		Population: 3
 	ProvidesPrerequisite@buildings:
 		Prerequisite: evolved_buildings
 		RequiresCondition: !selfconstructing && !deconstructing

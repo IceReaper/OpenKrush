@@ -8,6 +8,8 @@ evolved_building_alchemyhall:
 		Cost: 500
 	Health:
 		HP: 3000
+	SaboteurConquerable:
+		Population: 1
 	AdvancedBuildable:
 		Prerequisites: evolved_buildings
 		BuildDuration: 500

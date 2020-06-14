@@ -10,6 +10,8 @@ survivors_building_barracks:
 	AdvancedBuildable:
 		BuildDuration: 500
 		Prerequisites: survivors_buildings
+	SaboteurConquerable:
+		Population: 2
 	ProvidesPrerequisite:
 		Prerequisite: survivors_infantry
 	Building:

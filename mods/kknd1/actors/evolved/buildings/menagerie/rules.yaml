@@ -11,6 +11,8 @@ evolved_building_menagerie:
 		Prerequisites: evolved_buildings
 		BuildDuration: 750
 		Level: 1
+	SaboteurConquerable:
+		Population: 1
 	Building:
 		Dimensions: 4,4
 		Footprint: =xx= xxx= ==== ====

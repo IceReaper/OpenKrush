@@ -14,6 +14,8 @@ evolved_building_beastenclosure:
 		Prerequisites: evolved_buildings
 		BuildDuration: 1000
 		Level: -1
+	SaboteurConquerable:
+		Population: 2
 	ProvidesPrerequisite:
 		Prerequisite: evolved_beasts
 	Building:

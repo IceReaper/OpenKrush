@@ -12,6 +12,8 @@ survivors_building_drillrig:
 		Prerequisites: survivors_buildings
 		BuildDuration: 625
 		Level: -1
+	SaboteurConquerable:
+		Population: 2
 	Building:
 		LocalCenterOffset: 0,512,0
 		Dimensions: 5,5

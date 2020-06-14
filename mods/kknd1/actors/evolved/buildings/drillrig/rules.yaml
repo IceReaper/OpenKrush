@@ -12,6 +12,8 @@ evolved_building_drillrig:
 		Prerequisites: evolved_buildings
 		BuildDuration: 625
 		Level: -1
+	SaboteurConquerable:
+		Population: 2
 	Building:
 		LocalCenterOffset: 0,512,0
 		Dimensions: 5,5

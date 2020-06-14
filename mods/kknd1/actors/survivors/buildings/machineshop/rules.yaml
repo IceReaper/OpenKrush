@@ -11,6 +11,8 @@ survivors_building_machineshop:
 	AdvancedBuildable:
 		Prerequisites: survivors_buildings
 		BuildDuration: 1000
+	SaboteurConquerable:
+		Population: 2
 	ProvidesPrerequisite:
 		Prerequisite: survivors_vehicles
 	Building:

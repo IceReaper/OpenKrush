@@ -12,6 +12,8 @@ evolved_building_vespiary:
 		BuildDuration: 1500
 		BuildLimit: 1
 		Level: 5
+	SaboteurConquerable:
+		Population: 2
 	Building:
 		Dimensions: 4,4
 		Footprint: ==== xxxx xxxx ====

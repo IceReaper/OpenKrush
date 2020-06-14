@@ -12,6 +12,8 @@ evolved_building_powerstation:
 		Prerequisites: evolved_buildings
 		BuildDuration: 850
 		BuildLimit: 8
+	SaboteurConquerable:
+		Population: 2
 	Building:
 		Dimensions: 4,3
 		Footprint: xxxx xxx= ====
