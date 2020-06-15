@@ -3,10 +3,6 @@ Player:
 		Palette: kknd
 		LineBuildSegmentPalette: kknd
 
-World:
-	SmudgeLayer@CRATER:
-		Palette: kknd
-
 EditorWorld:
 	EditorSelectionLayer:
 		Palette: kknd

@@ -50,3 +50,5 @@
 	Faction@Random:
 		# TODO split this
 		RandomFactionMembers: survivors, evolved
+	SmudgeLayer@CRATER:
+		Palette: kknd
