@@ -169,7 +169,9 @@ namespace OpenRA.Mods.Kknd.Mechanics.Researching.Traits
 			if (Researching == null)
 				return;
 
-			Researching.Trait<Researchable>().ResearchedBy = null;
+			if (!Researching.Disposed)
+				Researching.Trait<Researchable>().ResearchedBy = null;
+
 			Researching = null;
 
 			if (isCanceled)
