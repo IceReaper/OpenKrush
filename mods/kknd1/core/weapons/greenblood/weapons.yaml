@@ -1,0 +1,15 @@
+weapon_greenblood:
+	ReloadDelay: 60
+	Range: 1c0
+	Projectile: Bullet
+		Speed: 40, 70
+		Blockable: false
+		LaunchAngle: 70, 110
+		Inaccuracy: 1c0
+		Image: weapon_greenblood
+		Palette: kknd
+		Sequences: greenblood
+	Warhead: ShrapnelCreateEffect
+		Image: weapon_greenblood
+		ExplosionPalette: kknd
+		Explosions: greenblood_impact

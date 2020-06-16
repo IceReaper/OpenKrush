@@ -30,6 +30,7 @@ Sequences:
 	kknd1|core/sequences/shroud/sequences.yaml
 	kknd1|core/sequences/sidebar/sequences.yaml
 	kknd1|core/weapons/blood/sequences.yaml
+	kknd1|core/weapons/greenblood/sequences.yaml
 	kknd1|core/weapons/bullet/sequences.yaml
 	kknd1|core/weapons/explosions/sequences.yaml
 	kknd1|core/weapons/shrapnels/sequences.yaml
@@ -38,6 +39,7 @@ Weapons:
 	kknd1|core/weapons/explosion.yaml
 	kknd1|core/weapons/nuke.yaml
 	kknd1|core/weapons/blood/weapons.yaml
+	kknd1|core/weapons/greenblood/weapons.yaml
 	kknd1|core/weapons/bullet/weapons.yaml
 	kknd1|core/weapons/explosions/weapons.yaml
 	kknd1|core/weapons/shrapnels/weapons.yaml

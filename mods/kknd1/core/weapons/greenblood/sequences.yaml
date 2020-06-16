@@ -1,0 +1,9 @@
+weapon_greenblood:
+	greenblood: core/weapons/greenblood/frames1.png
+		Length: 5
+		Tick: 120
+		ZOffset: 2500
+	greenblood_impact: core/weapons/greenblood/frames2.png
+		Length: 4
+		Tick: 120
+		ZOffset: -500

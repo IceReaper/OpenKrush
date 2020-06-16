@@ -27,3 +27,7 @@ evolved_vehicle_missilecrab:
 		Offset: 0,-3
 	Veterancy:
 		Experience: 3000, 4000
+	ThrowsShrapnel:
+		Weapons: weapon_greenblood
+		Pieces: 7, 7
+		Range: 0c512, 1c512
