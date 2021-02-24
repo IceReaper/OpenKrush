@@ -16,4 +16,9 @@ survivors_building_barracks:
 	critical-idle: actors/survivors/buildings/barracks/frames.png
 		Start: 5
 		Offset: 2,-24
+	animation: actors/survivors/buildings/barracks/frames.png
+		Start: 6
+		Length: 7
+		Tick: 120
+		Offset: 2,-24
 	icon: actors/survivors/buildings/barracks/icon.png

@@ -1,6 +1,7 @@
 survivors_building_barracks:
 	Inherits@1: ^CoreBuilding
 	Inherits@2: ^produces_infantry
+	Inherits@3: ^animated_building
 	Tooltip:
 		Name: Barracks
 	Valued:
@@ -19,19 +20,19 @@ survivors_building_barracks:
 		Footprint: xxxx xxxx ====
 	HitShape:
 		Type: Rectangle
-			TopLeft: -1024, -1536
-			BottomRight: 1024, 512
-		TargetableOffsets: 0,-512,0, 0,512,0, 1638,-512,0, 1638,512,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
+			TopLeft: -1024, -1736
+			BottomRight: 1024, 256
+		TargetableOffsets: 400,-512,0, 400,512,0, 1838,-512,0, 1838,512,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
 	Selectable:
 		Bounds: 96, 64, 0, -16
 	AdvancedSelectionDecorations:
-		Offset: -7,-16
+		Offset: 0,-25
 	Researchable:
-		Offset: 7,-84
+		Offset: 0,-98
 	TechnicianRepairable:
-		Offset: 0,-30
+		Offset: 0,-25
 	Exit:
-		SpawnOffset: 0c-700,-0c220,0
+		SpawnOffset: -0c500,-0c220,0
 		ExitCell: -1,2
 		Facing: 64
 	RallyPoint:
