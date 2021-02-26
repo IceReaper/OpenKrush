@@ -30,6 +30,7 @@ Rules:
 	kknd1|actors/survivors/buildings/drillrig/rules.yaml
 	kknd1|actors/survivors/buildings/solarpanel/rules.yaml
 	kknd1|actors/survivors/buildings/airfield/rules.yaml
+	kknd1|actors/survivors/buildings/detention_center/rules.yaml
 	kknd1|actors/survivors/towers/guardtower/rules.yaml
 	kknd1|actors/survivors/towers/missilebattery/rules.yaml
 	kknd1|actors/survivors/towers/cannontower/rules.yaml
@@ -68,6 +69,7 @@ Sequences:
 	kknd1|actors/survivors/buildings/drillrig/sequences.yaml
 	kknd1|actors/survivors/buildings/solarpanel/sequences.yaml
 	kknd1|actors/survivors/buildings/airfield/sequences.yaml
+	kknd1|actors/survivors/buildings/detention_center/sequences.yaml
 	kknd1|actors/survivors/towers/guardtower/sequences.yaml
 	kknd1|actors/survivors/towers/missilebattery/sequences.yaml
 	kknd1|actors/survivors/towers/cannontower/sequences.yaml
