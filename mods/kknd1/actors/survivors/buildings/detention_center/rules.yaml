@@ -1,0 +1,36 @@
+survivors_detention_center:
+	Inherits@1: ^CoreBuilding
+	Tooltip:
+		Name: Detention Center
+	Valued:
+		Cost: 500
+	Health:
+		HP: 3000
+	AdvancedBuildable:
+		BuildDuration: 500
+		Prerequisites: survivors_buildings, ~disabled
+	SaboteurConquerable:
+		Population: 2
+	ProvidesPrerequisite:
+		Prerequisite: survivors_infantry
+	Building:
+		Dimensions: 4,3
+		Footprint: xxxx xxxx ====
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1024, -1536
+			BottomRight: 1024, 512
+		TargetableOffsets: 0,-512,0, 0,512,0, 1638,-512,0, 1638,512,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
+	Selectable:
+		Bounds: 96, 64, 0, -16
+	AdvancedSelectionDecorations:
+		Offset: -7,-16
+	TechnicianRepairable:
+		Offset: 0,-30
+	Exit:
+		SpawnOffset: 0c-700,-0c220,0
+		ExitCell: -1,2
+		Facing: 64
+	RallyPoint:
+		Offset: -1,2
+		Image:
