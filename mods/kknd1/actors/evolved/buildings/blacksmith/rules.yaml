@@ -2,6 +2,7 @@ evolved_building_blacksmith:
 	Inherits@1: ^CoreBuilding
 	Inherits@2: ^produces_vehicles
 	Inherits@3: ^animated_building
+	Inherits@4: ^Researchable
 	Tooltip:
 		Name: Blacksmith
 	Valued:

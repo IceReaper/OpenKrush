@@ -2,6 +2,7 @@ evolved_building_beastforge:
 	Inherits@1: ^CoreBuilding
 	Inherits@2: ^produces_vehicles
 	Inherits@3: ^animated_building
+	Inherits@4: ^Researchable
 	Tooltip:
 		Name: Beast Forge
 	TooltipDescription:
