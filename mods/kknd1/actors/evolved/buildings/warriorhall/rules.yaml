@@ -17,23 +17,23 @@ evolved_building_warriorhall:
 		Prerequisite: evolved_infantry
 	Building:
 		Dimensions: 4,3
-		Footprint: xxxx xxx= ====
+		Footprint: =xx= xxxx =xx=
 	HitShape:
 		Type: Rectangle
-			TopLeft: -2048, -1536
-			BottomRight: 1024, 512
-		TargetableOffsets: 0,-1536,0, 0,-512,0, 0,512,0, 1638,-1536,0, 1638,-512,0, 1638,512,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
+			TopLeft: -1024, -1336
+			BottomRight: 1024, 656
+		TargetableOffsets: 0,-512,0, 0,512,0, 1438,-512,0, 1438,512,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
 	Selectable:
 		Bounds: 96, 64, -16, -16
 	AdvancedSelectionDecorations:
-		Offset: 19,-14
+		Offset: 19,-10
 	Researchable:
-		Offset: -3,-80
+		Offset: -3,-76
 	TechnicianRepairable:
 		Offset: 10,-30
 	Exit:
-		SpawnOffset: 0c-700,-0c220,0
+		SpawnOffset: 0c-1000,0c800,0
 		ExitCell: -1,2
 		Facing: 64
 	RallyPoint:
-		Offset: -1,2
+		Offset: -2,5
