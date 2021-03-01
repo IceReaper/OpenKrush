@@ -28,12 +28,12 @@ evolved_building_warriorhall:
 	AdvancedSelectionDecorations:
 		Offset: 19,-10
 	Researchable:
-		Offset: -3,-76
+		Offset: -3,-73
 	TechnicianRepairable:
 		Offset: 10,-30
 	Exit:
-		SpawnOffset: 0c-1000,0c800,0
+		SpawnOffset: 0c-1100,0c1000,0
 		ExitCell: -1,2
 		Facing: 64
 	RallyPoint:
-		Offset: -2,5
+		Offset: 0,1
