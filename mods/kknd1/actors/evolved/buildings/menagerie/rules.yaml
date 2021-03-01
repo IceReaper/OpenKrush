@@ -21,7 +21,7 @@ evolved_building_menagerie:
 		Type: Rectangle
 			TopLeft: -1024, -2048
 			BottomRight: 1024, 0
-		TargetableOffsets: 819,-512,0, 819,512,0, 2458,-512,0, 2458,512,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
+		TargetableOffsets: 819,-512,0, 819,512,0, 2300,-512,0, 2458,512,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
 	Selectable:
 		Bounds: 80, 64, -8, -32
 	Researchable:

@@ -31,7 +31,7 @@ evolved_building_clanhall:
 		Type: Rectangle
 			TopLeft: -1536, -2048
 			BottomRight: 1536, 1024
-		TargetableOffsets: -819,-1024,0, -819,0,0, -819,1024,0, 819,-1024,0, 819,0,0, 819,1024,0, 2458,-1024,0, 2458,0,0, 2458,1024,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
+		TargetableOffsets: -300,-800,0, 300,-300,0, 900,500,0, 1300,-300,0, 1600,400,0, 1800,1024,0, 2458,100,0, 2800,700,0, 2500,1224,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
 	Selectable:
 		Bounds: 96, 96, 0, -16
 	AdvancedSelectionDecorations:
