@@ -6,13 +6,8 @@ survivors_detention_center:
 		Cost: 500
 	Health:
 		HP: 3000
-	AdvancedBuildable:
-		BuildDuration: 500
-		Prerequisites: survivors_buildings, ~disabled
 	SaboteurConquerable:
 		Population: 2
-	ProvidesPrerequisite:
-		Prerequisite: survivors_infantry
 	Building:
 		Dimensions: 4,3
 		Footprint: xxxx xxxx ====
