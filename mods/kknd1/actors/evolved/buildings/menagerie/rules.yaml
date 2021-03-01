@@ -1,6 +1,7 @@
 evolved_building_menagerie:
 	Inherits@1: ^CoreBuilding
 	Inherits@2: ^repairs_vehicles
+	Inherits@3: ^researchable
 	Tooltip:
 		Name: Menagerie
 	Valued:

@@ -16,6 +16,7 @@ Rules:
 	kknd1|core/rules/mechanics/produces_resources.yaml
 	kknd1|core/rules/mechanics/produces_vehicles.yaml
 	kknd1|core/rules/mechanics/repairs_vehicles.yaml
+	kknd1|core/rules/mechanics/researchable.yaml
 	kknd1|core/rules/mechanics/researches_buildings.yaml
 	kknd1|core/rules/mechanics/saboteur.yaml
 	kknd1|core/rules/mechanics/technician.yaml
