@@ -2,7 +2,7 @@ evolved_building_beastenclosure:
 	Inherits@1: ^CoreBuilding
 	Inherits@2: ^produces_vehicles
 	Inherits@3: ^animated_building
-	Inherits@4: ^Researchable
+	Inherits@4: ^researchable
 	Tooltip:
 		Name: Beast Enclosure
 	TooltipDescription:

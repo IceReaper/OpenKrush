@@ -1,7 +1,7 @@
 survivors_building_repairbay:
 	Inherits@1: ^CoreBuilding
 	Inherits@2: ^repairs_vehicles
-	Inherits@3: ^Researchable
+	Inherits@3: ^researchable
 	Tooltip:
 		Name: Repair Bay
 	Valued:

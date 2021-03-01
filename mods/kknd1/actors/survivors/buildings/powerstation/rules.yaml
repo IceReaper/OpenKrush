@@ -2,7 +2,7 @@ survivors_building_powerstation:
 	Inherits@1: ^CoreBuilding
 	Inherits@2: ^processes_oil
 	Inherits@3: ^animated_building
-	Inherits@4: ^Researchable
+	Inherits@4: ^researchable
 	Tooltip:
 		Name: Power Station
 	Valued:

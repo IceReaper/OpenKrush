@@ -2,7 +2,7 @@ survivors_building_barracks:
 	Inherits@1: ^CoreBuilding
 	Inherits@2: ^produces_infantry
 	Inherits@3: ^animated_building
-	Inherits@4: ^Researchable
+	Inherits@4: ^researchable
 	Tooltip:
 		Name: Barracks
 	Valued:

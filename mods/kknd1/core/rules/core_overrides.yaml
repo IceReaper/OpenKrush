@@ -9,10 +9,6 @@
 	SaboteurConquerable:
 		RequiresCondition: !selfconstructing && !deconstructing
 
-^Researchable:
-	Researchable:
-		RequiresCondition: !selfconstructing && !deconstructing
-
 ^CoreTower:
 	-ExplosionOnDamageTransition@Critical:
 
