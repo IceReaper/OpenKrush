@@ -77,7 +77,7 @@ namespace OpenRA.Mods.Kknd.Mechanics.Bunkers.Traits
 				self.World.LobbyInfo.GlobalSettings.OptionOrDefault(TechBunkerAmountInfo.Id, TechBunkerAmountType.All.ToString()));
 		}
 
-		public bool PreventMapSpawn(World world, ActorReference actorReference)
+		bool IPreventMapSpawn.PreventMapSpawn(World world, ActorReference actorReference)
 		{
 			if (actorReference.Type != info.ActorType)
 				return false;

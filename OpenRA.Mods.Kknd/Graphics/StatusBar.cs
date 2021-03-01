@@ -71,10 +71,11 @@ namespace OpenRA.Mods.Kknd.Graphics
 			if (health == null && saboteurs == null && oil == null && researchable == null)
 				return;
 
+			var bounds = actor.Trait<IMouseBounds>().MouseoverBounds(actor, wr).BoundingRect;
+
 			var thickness = info.BigVariant ? 4 : 3;
 			var height = (health != null ? thickness : 0) + (saboteurs != null ? thickness : 0) + (researchable != null ? thickness : 0) + (oil != null ? thickness : 0) - 1;
-			var width = info.Width;
-			var bounds = new Rectangle(0, 0, width, height);
+			var width = info.Width == 0 ? bounds.Width : info.Width;
 
 			DrawRect(wr, bounds, 0, -height - 4, width, height + 4, veteran != null && veteran.Level > 0 ? veteranInfo.Levels[veteran.Level - 1] : Color.FromArgb(255, 206, 206, 206));
 			DrawRect(wr, bounds, 1, -height - 3, width - 2, height + 2, Color.FromArgb(255, 16, 16, 16));
