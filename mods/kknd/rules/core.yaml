@@ -33,8 +33,6 @@
 # Base for all movable units.
 ^CoreUnit:
 	Inherits: ^CoreVisibleActor
-	# Required for the below condition stuff
-	ConditionManager:
 	# Required to trigger VoiceAnnouncement only after producing.
 	ExternalCondition@PRODUCED:
 		Condition: produced
@@ -77,8 +75,6 @@
 # Base for all buildings, towers and walls.
 ^CoreConstruction:
 	Inherits: ^CoreVisibleActor
-	# As buildings have complexer states then just live / be dead, they require conditon support.
-	ConditionManager:
 	# Last seen state of a building will be rendered under fog, instead of using the default hiding behavior.
 	-HiddenUnderFog:
 	FrozenUnderFog:

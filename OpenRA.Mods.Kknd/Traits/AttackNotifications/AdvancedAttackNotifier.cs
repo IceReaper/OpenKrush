@@ -1,6 +1,6 @@
 #region Copyright & License Information
 /*
- * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
+ * Copyright 2007-2021 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
@@ -17,7 +17,7 @@ using OpenRA.Traits;
 namespace OpenRA.Mods.Kknd.Traits.AttackNotifications
 {
 	[Desc("Attack notifier which supports per actor notifications.")]
-	public class AdvancedAttackNotifierInfo : ITraitInfo
+	public class AdvancedAttackNotifierInfo : TraitInfo
 	{
 		[Desc("Minimum duration (in seconds) between notification events.")]
 		public readonly int NotifyInterval = 30;
@@ -27,7 +27,7 @@ namespace OpenRA.Mods.Kknd.Traits.AttackNotifications
 		[Desc("Length of time (in ticks) to display a location ping in the minimap.")]
 		public readonly int RadarPingDuration = 10 * 25;
 
-		public object Create(ActorInitializer init) { return new AdvancedAttackNotifier(init.Self, this); }
+		public override object Create(ActorInitializer init) { return new AdvancedAttackNotifier(init.Self, this); }
 	}
 
 	public class AdvancedAttackNotifier : INotifyDamage

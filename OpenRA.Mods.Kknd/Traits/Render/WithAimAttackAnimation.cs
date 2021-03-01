@@ -1,6 +1,6 @@
 #region Copyright & License Information
 /*
- * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
+ * Copyright 2007-2021 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
@@ -15,7 +15,7 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.Kknd.Traits.Render
 {
-	public class WithAimAttackAnimationInfo : ITraitInfo, Requires<WithSpriteBodyInfo>
+	public class WithAimAttackAnimationInfo : TraitInfo, Requires<WithSpriteBodyInfo>
 	{
 		[Desc("Displayed while attacking.")]
 		[SequenceReference]
@@ -25,7 +25,7 @@ namespace OpenRA.Mods.Kknd.Traits.Render
 		[SequenceReference]
 		public readonly string SequenceAim = null;
 
-		public object Create(ActorInitializer init) { return new WithAimAttackAnimation(init, this); }
+		public override object Create(ActorInitializer init) { return new WithAimAttackAnimation(init, this); }
 	}
 
 	public class WithAimAttackAnimation : ITick, INotifyAttack, INotifyAiming
@@ -40,12 +40,12 @@ namespace OpenRA.Mods.Kknd.Traits.Render
 			wsb = init.Self.Trait<WithSpriteBody>();
 		}
 
-		void INotifyAttack.Attacking(Actor self, Target target, Armament a, Barrel barrel)
+		void INotifyAttack.Attacking(Actor self, in Target target, Armament a, Barrel barrel)
 		{
 			wsb.PlayCustomAnimation(self, info.SequenceFire);
 		}
 
-		void INotifyAttack.PreparingAttack(Actor self, Target target, Armament a, Barrel barrel) { }
+		void INotifyAttack.PreparingAttack(Actor self, in Target target, Armament a, Barrel barrel) { }
 
 		void ITick.Tick(Actor self)
 		{

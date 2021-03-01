@@ -7,13 +7,14 @@ Metadata:
 PackageFormats: LvlPackage
 
 Packages:
+	^EngineDir
 	~^Content/kknd1/: content
 	.
 	# TODO remove this one
-	..
+	../../
 	$kknd: kknd
 	$kknd1: kknd1
-	./mods/common: common
+	^EngineDir|mods/common: common
 	KKND-Xtreme-Demo/LEVELS/640/SPRITES.LVL: SPRITES.LVL
 	KKND-Xtreme-Demo/LEVELS/MUTE.SLV: MUTE.SLV
 	KKND-Xtreme-Demo/LEVELS/SURV.SLV: SURV.SLV
@@ -22,16 +23,6 @@ MapFolders:
 	kknd1|maps/classic: System
 	kknd1|maps/multiplayer: System
 	~^maps/kknd1: User
-
-Includes:
-	core/mod.yaml
-	actors/bunker/mod.yaml
-	actors/evolved/mod.yaml
-	actors/survivors/mod.yaml
-	actors/neutral/mod.yaml
-	tilesets/desert/mod.yaml
-	tilesets/highland/mod.yaml
-	tilesets/urban/mod.yaml
 
 Rules:
 	kknd|rules/core.yaml
@@ -55,12 +46,21 @@ Notifications:
 	kknd1|notifications.yaml
 	# TODO refactor above
 
+Include: core/mod.yaml
+Include: actors/bunker/mod.yaml
+Include: actors/evolved/mod.yaml
+Include: actors/survivors/mod.yaml
+Include: actors/neutral/mod.yaml
+Include: tilesets/desert/mod.yaml
+Include: tilesets/highland/mod.yaml
+Include: tilesets/urban/mod.yaml
+
 Chrome:
 	kknd1|chrome.yaml
 
 Assemblies:
-	common|OpenRA.Mods.Common.dll
-	kknd|OpenRA.Mods.Kknd.dll
+	^BinDir|OpenRA.Mods.Common.dll
+	^BinDir|OpenRA.Mods.Kknd.dll
 
 ChromeLayout:
 	common|chrome/ingame.yaml

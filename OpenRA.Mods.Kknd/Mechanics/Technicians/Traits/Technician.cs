@@ -1,17 +1,16 @@
 #region Copyright & License Information
-
 /*
- * Copyright 2016-2020 The KKnD Developers (see AUTHORS)
+ * Copyright 2007-2021 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-
 #endregion
 
 using System.Collections.Generic;
+using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Kknd.Mechanics.Technicians.Activities;
 using OpenRA.Mods.Kknd.Mechanics.Technicians.Orders;
 using OpenRA.Primitives;
@@ -20,7 +19,7 @@ using OpenRA.Traits;
 namespace OpenRA.Mods.Kknd.Mechanics.Technicians.Traits
 {
 	[Desc("KKnD Technician mechanism, attach to the unit.")]
-	public class TechnicianInfo : ITraitInfo
+	public class TechnicianInfo : TraitInfo
 	{
 		[Desc("Cursor used for order.")]
 		public readonly string Cursor = "repair";
@@ -39,7 +38,7 @@ namespace OpenRA.Mods.Kknd.Mechanics.Technicians.Traits
 		[VoiceReference]
 		public readonly string VoiceEnter = "Repairing";
 
-		public object Create(ActorInitializer init)
+		public override object Create(ActorInitializer init)
 		{
 			return new Technician(this);
 		}
@@ -59,7 +58,7 @@ namespace OpenRA.Mods.Kknd.Mechanics.Technicians.Traits
 			get { yield return new TechnicianEnterOrderTargeter(info.Cursor, info.BlockedCursor); }
 		}
 
-		Order IIssueOrder.IssueOrder(Actor self, IOrderTargeter order, Target target, bool queued)
+		Order IIssueOrder.IssueOrder(Actor self, IOrderTargeter order, in Target target, bool queued)
 		{
 			return order.OrderID == TechnicianEnterOrderTargeter.Id ? new Order(order.OrderID, self, target, queued) : null;
 		}
@@ -85,7 +84,7 @@ namespace OpenRA.Mods.Kknd.Mechanics.Technicians.Traits
 			if (self.Owner != self.World.LocalPlayer)
 				return;
 
-			if (self.Owner.Stances[targetActor.Owner].HasStance(Stance.Ally))
+			if (self.Owner.RelationshipWith(targetActor.Owner).HasStance(PlayerRelationship.Ally))
 				self.PlayVoice(info.VoiceEnter);
 		}
 	}

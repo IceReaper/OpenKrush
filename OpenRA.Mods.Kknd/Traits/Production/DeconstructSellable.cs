@@ -1,6 +1,6 @@
 #region Copyright & License Information
 /*
- * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
+ * Copyright 2007-2021 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
@@ -41,8 +41,7 @@ namespace OpenRA.Mods.Kknd.Traits.Production
 
 		private SelfConstructingInfo selfConstructing;
 
-		private ConditionManager conditionManager;
-		private int token = ConditionManager.InvalidConditionToken;
+		private int token = Actor.InvalidConditionToken;
 
 		private int sellTimer;
 		private int sellTimerTotal;
@@ -59,7 +58,6 @@ namespace OpenRA.Mods.Kknd.Traits.Production
 		protected override void Created(Actor self)
 		{
 			selfConstructing = self.Info.TraitInfo<SelfConstructingInfo>();
-			conditionManager = self.TraitOrDefault<ConditionManager>();
 		}
 
 		void ITick.Tick(Actor self)
@@ -67,7 +65,7 @@ namespace OpenRA.Mods.Kknd.Traits.Production
 			if (self.IsDead)
 				return;
 
-			if (token != ConditionManager.InvalidConditionToken)
+			if (token != Actor.InvalidConditionToken)
 			{
 				sellTimer = developerMode.FastBuild ? 0 : sellTimer - 1;
 
@@ -94,8 +92,8 @@ namespace OpenRA.Mods.Kknd.Traits.Production
 			if (order.OrderString != SellOrderGenerator.Id)
 				return;
 
-			if (conditionManager != null && !string.IsNullOrEmpty(info.Condition) && token == ConditionManager.InvalidConditionToken)
-				token = conditionManager.GrantCondition(self, info.Condition);
+			if (!string.IsNullOrEmpty(info.Condition) && token == Actor.InvalidConditionToken)
+				token = self.GrantCondition(info.Condition);
 
 			var productionItem = self.Trait<SelfConstructing>().TryAbort(self);
 			var valued = self.Info.TraitInfoOrDefault<ValuedInfo>();

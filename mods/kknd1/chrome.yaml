@@ -665,7 +665,18 @@ scrollheader-selected:
 		corner-bl: 511,126,2,2
 		corner-br: 637,126,2,2
 
-dropdown:
+scrollpanel-decorations:
+	Image: uibits/buttons.png
+	Regions:
+		down: 16,140,16,16
+		up: 32,140,16,16
+
+dropdown-decorations:
+	Image: uibits/buttons.png
+	Regions:
+		marker: 16,140,16,16
+
+dropdown-separators:
 	Image: uibits/dialog.png
 	Regions:
 		separator: 512,1,1,19

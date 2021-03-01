@@ -1,6 +1,6 @@
 #region Copyright & License Information
 /*
- * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
+ * Copyright 2007-2021 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
@@ -18,7 +18,7 @@ using OpenRA.Traits;
 namespace OpenRA.Mods.Kknd.Traits.Resources
 {
 	[Desc("KKnD specific oilpatch implementation.")]
-	class OilpatchInfo : IRulesetLoaded, IHealthInfo, Requires<ConditionManagerInfo>
+	class OilpatchInfo : TraitInfo, IRulesetLoaded, IHealthInfo
 	{
 		[Desc("How many oil will be burned per tick.")]
 		public readonly int BurnAmount = 5;
@@ -41,7 +41,7 @@ namespace OpenRA.Mods.Kknd.Traits.Resources
 
 		public WeaponInfo WeaponInfo { get; private set; }
 
-		public object Create(ActorInitializer init) { return new Oilpatch(init, this); }
+		public override object Create(ActorInitializer init) { return new Oilpatch(init, this); }
 
 		public void RulesetLoaded(Ruleset rules, ActorInfo ai)
 		{
@@ -68,8 +68,7 @@ namespace OpenRA.Mods.Kknd.Traits.Resources
 		public int DisplayHP { get { return HP; } }
 		public bool IsDead { get { return resources == 0; } }
 
-		private ConditionManager conditionManager;
-		private int token = ConditionManager.InvalidConditionToken;
+		private int token = Actor.InvalidConditionToken;
 
 		private int burnTotal;
 		private int burnLeft;
@@ -79,7 +78,6 @@ namespace OpenRA.Mods.Kknd.Traits.Resources
 			this.info = info;
 			resources = info.Amount == 0 ? init.World.WorldActor.Trait<OilAmount>().Amount : info.Amount;
 			burnTotal = this.info.FullAmount * init.World.WorldActor.Trait<OilpatchBurn>().Amount / 100;
-			conditionManager = init.Self.TraitOrDefault<ConditionManager>();
 		}
 
 		public int Current { get { return resources == -1 ? info.FullAmount : resources; } }
@@ -105,12 +103,12 @@ namespace OpenRA.Mods.Kknd.Traits.Resources
 
 		void ITick.Tick(Actor self)
 		{
-			if (token != ConditionManager.InvalidConditionToken)
+			if (token != Actor.InvalidConditionToken)
 			{
 				if (!self.IsInWorld)
 				{
-					conditionManager.RevokeCondition(self, token);
-					token = ConditionManager.InvalidConditionToken;
+					self.RevokeCondition(token);
+					token = Actor.InvalidConditionToken;
 					burnLeft = 0;
 				}
 				else
@@ -123,8 +121,8 @@ namespace OpenRA.Mods.Kknd.Traits.Resources
 
 					if (burnLeft == 0)
 					{
-						conditionManager.RevokeCondition(self, token);
-						token = ConditionManager.InvalidConditionToken;
+						self.RevokeCondition(token);
+						token = Actor.InvalidConditionToken;
 					}
 
 					info.WeaponInfo.Impact(Target.FromPos(self.CenterPosition), self);
@@ -142,8 +140,8 @@ namespace OpenRA.Mods.Kknd.Traits.Resources
 
 			burnLeft = burnTotal;
 
-			if (!string.IsNullOrEmpty(info.Condition) && token == ConditionManager.InvalidConditionToken)
-				token = conditionManager.GrantCondition(self, info.Condition);
+			if (!string.IsNullOrEmpty(info.Condition) && token == Actor.InvalidConditionToken)
+				token = self.GrantCondition(info.Condition);
 		}
 
 		void IHealth.Kill(Actor self, Actor attacker, BitSet<DamageType> damageTypes)

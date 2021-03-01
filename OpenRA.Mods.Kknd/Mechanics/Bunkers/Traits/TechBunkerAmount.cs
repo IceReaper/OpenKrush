@@ -1,14 +1,12 @@
 #region Copyright & License Information
-
 /*
- * Copyright 2016-2020 The KKnD Developers (see AUTHORS)
+ * Copyright 2007-2021 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-
 #endregion
 
 using System;
@@ -30,7 +28,7 @@ namespace OpenRA.Mods.Kknd.Mechanics.Bunkers.Traits
 	}
 
 	[Desc("Tech bunker amount.")]
-	public class TechBunkerAmountInfo : ITraitInfo, ILobbyOptions
+	public class TechBunkerAmountInfo : TraitInfo, ILobbyOptions
 	{
 		public const string Id = "TechBunkerAmount";
 
@@ -56,7 +54,7 @@ namespace OpenRA.Mods.Kknd.Mechanics.Bunkers.Traits
 				false);
 		}
 
-		public object Create(ActorInitializer init)
+		public override object Create(ActorInitializer init)
 		{
 			return new TechBunkerAmount(this);
 		}
@@ -65,7 +63,7 @@ namespace OpenRA.Mods.Kknd.Mechanics.Bunkers.Traits
 	public class TechBunkerAmount : INotifyCreated, IPreventMapSpawn, IWorldLoaded
 	{
 		private readonly TechBunkerAmountInfo info;
-		private readonly List<TypeDictionary> bunkers = new List<TypeDictionary>();
+		private readonly List<ActorReference> bunkers = new List<ActorReference>();
 		private TechBunkerAmountType behavior;
 
 		public TechBunkerAmount(TechBunkerAmountInfo info)
@@ -84,7 +82,7 @@ namespace OpenRA.Mods.Kknd.Mechanics.Bunkers.Traits
 			if (actorReference.Type != info.ActorType)
 				return false;
 
-			bunkers.Add(actorReference.InitDict);
+			bunkers.Add(actorReference);
 			return true;
 		}
 
@@ -101,7 +99,7 @@ namespace OpenRA.Mods.Kknd.Mechanics.Bunkers.Traits
 			for (var i = 0; i < numBunkers && bunkers.Count > 0; i++)
 			{
 				var random = w.SharedRandom.Next(0, bunkers.Count);
-				w.CreateActor(info.ActorType, bunkers[random]);
+				w.CreateActor(true, bunkers[random]);
 				bunkers.RemoveAt(random);
 			}
 		}

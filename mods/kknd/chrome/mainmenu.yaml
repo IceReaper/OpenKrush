@@ -233,6 +233,38 @@ Container@MAINMENU:
 							Y: 5
 							Width: 200
 							Height: 200
+		Background@NEWS_BG:
+			X: (WINDOW_RIGHT - WIDTH) / 2
+			Y: 35
+			Width: 430
+			Height: 55
+			Children:
+				DropDownButton@NEWS_BUTTON:
+					Background: newsbutton
+					X: 15
+					Y: 15
+					Width: 400
+					Height: 25
+					Text: Battlefield News
+					Font: Bold
+		Container@UPDATE_NOTICE:
+			X: (WINDOW_RIGHT - WIDTH) / 2
+			Y: 95
+			Width: 128
+			Children:
+				Label@A:
+					Width: PARENT_RIGHT
+					Height: 25
+					Align: Center
+					Shadow: true
+					Text: You are running an outdated version of OpenRA.
+				Label@B:
+					Y: 20
+					Width: PARENT_RIGHT
+					Height: 25
+					Align: Center
+					Shadow: true
+					Text: Download the latest version from www.openra.net
 		Container@PLAYER_PROFILE_CONTAINER:
 			X: 25
 			Y: 25

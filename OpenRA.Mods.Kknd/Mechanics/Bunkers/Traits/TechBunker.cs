@@ -1,14 +1,12 @@
 #region Copyright & License Information
-
 /*
- * Copyright 2016-2020 The KKnD Developers (see AUTHORS)
+ * Copyright 2007-2021 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-
 #endregion
 
 using System;
@@ -25,7 +23,7 @@ using OpenRA.Traits;
 namespace OpenRA.Mods.Kknd.Mechanics.Bunkers.Traits
 {
 	[Desc("KKnD tech bunker mechanism.")]
-	public class TechBunkerInfo : ITraitInfo, Requires<WithSpriteBodyInfo>
+	public class TechBunkerInfo : TraitInfo, Requires<WithSpriteBodyInfo>
 	{
 		[ActorReference]
 		[Desc("Possible ejectable actors.")]
@@ -66,7 +64,7 @@ namespace OpenRA.Mods.Kknd.Mechanics.Bunkers.Traits
 
 		public readonly int MaximumDistance = 3;
 
-		public object Create(ActorInitializer init)
+		public override object Create(ActorInitializer init)
 		{
 			return new TechBunker(init, this);
 		}
@@ -202,9 +200,11 @@ namespace OpenRA.Mods.Kknd.Mechanics.Bunkers.Traits
 				{
 					new OwnerInit(owner),
 					new LocationInit(exitLocation),
-					new CenterPositionInit(self.CenterPosition + exit.SpawnOffset),
-					new FacingInit(exit.Facing)
+					new CenterPositionInit(self.CenterPosition + exit.SpawnOffset)
 				};
+
+				if (exit.Facing != null)
+					td.Add(new FacingInit(exit.Facing.Value));
 
 				var newUnit = self.World.CreateActor(actor, td);
 				var move = newUnit.TraitOrDefault<IMove>();

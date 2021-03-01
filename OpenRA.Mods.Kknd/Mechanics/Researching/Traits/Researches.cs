@@ -1,14 +1,12 @@
 #region Copyright & License Information
-
 /*
- * Copyright 2016-2020 The KKnD Developers (see AUTHORS)
+ * Copyright 2007-2021 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-
 #endregion
 
 using System;
@@ -77,7 +75,7 @@ namespace OpenRA.Mods.Kknd.Mechanics.Researching.Traits
 			get { yield return new ResearchOrderTargeter(info.Cursor, info.BlockedCursor); }
 		}
 
-		Order IIssueOrder.IssueOrder(Actor self, IOrderTargeter order, Target target, bool queued)
+		Order IIssueOrder.IssueOrder(Actor self, IOrderTargeter order, in Target target, bool queued)
 		{
 			return order.OrderID == ResearchOrderTargeter.Id ? new Order(order.OrderID, self, target, queued) : null;
 		}

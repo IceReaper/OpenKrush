@@ -1,6 +1,5 @@
 Player:
 	HackedAiShit:
-	ConditionManager:
 	ModularBot@PlaceholderAI:
 		Name: Placeholder AI
 		Type: placeholder

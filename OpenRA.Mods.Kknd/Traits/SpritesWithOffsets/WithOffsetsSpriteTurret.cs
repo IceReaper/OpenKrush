@@ -1,6 +1,6 @@
 #region Copyright & License Information
 /*
- * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
+ * Copyright 2007-2021 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
@@ -47,14 +47,14 @@ namespace OpenRA.Mods.Kknd.Traits.SpritesWithOffsets
 					offset = () => new WVec(point.X * 32, point.Y * 32, 0);
 			}
 
-			var turretFacing = Turreted.TurretFacingFromInit(init, t.InitialFacing, Turret);
+			var turretFacing = t.WorldFacingFromInit(init);
 			var anim = new Animation(init.World, image, turretFacing);
 			anim.Play(RenderSprites.NormalizeSequence(anim, init.GetDamageState(), Sequence));
 
 			if (offset == null)
 			{
-				Func<int> facing = init.GetFacing();
-				Func<WRot> orientation = () => body.QuantizeOrientation(WRot.FromFacing(facing()), facings);
+				Func<WAngle> facing = init.GetFacing();
+				Func<WRot> orientation = () => body.QuantizeOrientation(WRot.FromFacing(facing().Facing), facings);
 				offset = () => body.LocalToWorld(t.Offset.Rotate(orientation()));
 			}
 

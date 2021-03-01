@@ -1,6 +1,6 @@
 #region Copyright & License Information
 /*
- * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
+ * Copyright 2007-2021 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
@@ -59,7 +59,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 		public override void Tick()
 		{
 			hasRadar = false;
-			var showStances = Stance.None;
+			var showStances = PlayerRelationship.None;
 
 			foreach (var e in sidebar.IngameUi.World.ActorsHavingTrait<ProvidesResearchableRadar>().Where(a => a.Owner == sidebar.IngameUi.World.LocalPlayer))
 			{
@@ -72,10 +72,10 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 				hasRadar = true;
 
 				if (researchable.Level >= providesResearchableRadarInfo.AllyLevel)
-					showStances |= Stance.Ally;
+					showStances |= PlayerRelationship.Ally;
 
 				if (researchable.Level >= providesResearchableRadarInfo.EnemyLevel)
-					showStances |= Stance.Enemy;
+					showStances |= PlayerRelationship.Enemy;
 			}
 
 			sidebar.IngameUi.Radar.ShowStances = showStances;

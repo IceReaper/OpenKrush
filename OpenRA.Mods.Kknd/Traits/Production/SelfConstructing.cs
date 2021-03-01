@@ -1,6 +1,6 @@
 ﻿#region Copyright & License Information
 /*
- * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
+ * Copyright 2007-2021 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
@@ -20,12 +20,12 @@ namespace OpenRA.Mods.Kknd.Traits.Production
 {
 	public enum SpawnType { PlaceBuilding, Deploy, Other }
 
-	public class SelfConstructingInfo : WithMakeAnimationInfo, ITraitInfo, Requires<ConditionManagerInfo>, Requires<IHealthInfo>
+	public class SelfConstructingInfo : WithMakeAnimationInfo, Requires<IHealthInfo>
 	{
 		[Desc("Number of make sequences.")]
 		public readonly int Steps = 3;
 
-		public new object Create(ActorInitializer init) { return new SelfConstructing(init, this); }
+		public override object Create(ActorInitializer init) { return new SelfConstructing(init, this); }
 	}
 
 	public class SelfConstructing : WithMakeAnimation, ITick, INotifyRemovedFromWorld, INotifyCreated, INotifyDamageStateChanged, INotifyKilled
@@ -34,8 +34,7 @@ namespace OpenRA.Mods.Kknd.Traits.Production
 
 		private readonly WithSpriteBody wsb;
 
-		private readonly ConditionManager conditionManager;
-		private int token = ConditionManager.InvalidConditionToken;
+		private int token = Actor.InvalidConditionToken;
 
 		private ProductionItem productionItem;
 
@@ -49,12 +48,11 @@ namespace OpenRA.Mods.Kknd.Traits.Production
 		{
 			this.info = info;
 			wsb = init.Self.Trait<WithSpriteBody>();
-			conditionManager = init.Self.Trait<ConditionManager>();
 
-			if (!string.IsNullOrEmpty(this.info.Condition) && token == ConditionManager.InvalidConditionToken)
-				token = conditionManager.GrantCondition(init.Self, this.info.Condition);
+			if (!string.IsNullOrEmpty(this.info.Condition) && token == Actor.InvalidConditionToken)
+				token = init.Self.GrantCondition(this.info.Condition);
 
-			spawnType = init.Contains<PlaceBuildingInit>() ? SpawnType.PlaceBuilding : init.Contains<SpawnedByMapInit>() ? SpawnType.Other : SpawnType.Deploy;
+			spawnType = init.Contains<PlaceBuildingInit>(null) ? SpawnType.PlaceBuilding : init.Contains<SpawnedByMapInit>() ? SpawnType.Other : SpawnType.Deploy;
 		}
 
 		void INotifyCreated.Created(Actor self)
@@ -88,8 +86,8 @@ namespace OpenRA.Mods.Kknd.Traits.Production
 
 		private void OnComplete(Actor self)
 		{
-			if (token != ConditionManager.InvalidConditionToken)
-				token = conditionManager.RevokeCondition(self, token);
+			if (token != Actor.InvalidConditionToken)
+				token = self.RevokeCondition(token);
 		}
 
 		void ITick.Tick(Actor self)

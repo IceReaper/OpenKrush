@@ -1,6 +1,6 @@
 #region Copyright & License Information
 /*
- * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
+ * Copyright 2007-2021 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
@@ -22,9 +22,9 @@ namespace OpenRA.Mods.Kknd.Traits.AI
 {
 	// TODO replace this completely when AI is modular!
 	[Desc("Ugly ugly hack to give the ai cash and make it research random buildings.")]
-	public class HackedAiShitInfo : ITraitInfo
+	public class HackedAiShitInfo : TraitInfo
 	{
-		public object Create(ActorInitializer init) { return new HackedAiShit(); }
+		public override object Create(ActorInitializer init) { return new HackedAiShit(); }
 	}
 
 	public class HackedAiShit : ITick

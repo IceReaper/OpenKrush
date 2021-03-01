@@ -1,7 +1,7 @@
 #region Copyright & License Information
 /*
- * Copyright 2007-2020 The OpenRA Developers (see AUTHORS)
- * This file is part of OpenRA, which is free software. It is made
+ * Copyright 2007-2021 The KKnD Developers (see AUTHORS)
+ * This file is part of KKnD, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
  * the License, or (at your option) any later version. For more
@@ -412,7 +412,7 @@ namespace OpenRA.Mods.Kknd.Traits.AI
 				case BuildingType.Defense:
 
 					// Build near the closest enemy structure
-					var closestEnemy = world.ActorsHavingTrait<Building>().Where(a => !a.Disposed && player.Stances[a.Owner] == Stance.Enemy)
+					var closestEnemy = world.ActorsHavingTrait<Building>().Where(a => !a.Disposed && player.RelationshipWith(a.Owner) == PlayerRelationship.Enemy)
 						.ClosestTo(world.Map.CenterOfCell(baseBuilder.DefenseCenter));
 
 					var targetCell = closestEnemy != null ? closestEnemy.Location : baseCenter;
