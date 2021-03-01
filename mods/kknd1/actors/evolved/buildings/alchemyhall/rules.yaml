@@ -2,6 +2,7 @@ evolved_building_alchemyhall:
 	Inherits@1: ^CoreBuilding
 	Inherits@2: ^researches_buildings
 	Inherits@3: ^animated_building
+	Inherits@4: ^researchable
 	Tooltip:
 		Name: Alchemy Hall
 	Valued:

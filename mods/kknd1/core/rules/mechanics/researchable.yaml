@@ -1,0 +1,3 @@
+^researchable:
+	Researchable:
+		RequiresCondition: !selfconstructing && !deconstructing
