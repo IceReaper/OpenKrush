@@ -32,6 +32,7 @@ Rules:
 	kknd1|actors/evolved/buildings/drillrig/rules.yaml
 	kknd1|actors/evolved/buildings/windmill/rules.yaml
 	kknd1|actors/evolved/buildings/vespiary/rules.yaml
+	kknd1|actors/evolved/buildings/holding_pen/rules.yaml
 	kknd1|actors/evolved/towers/machinegunnest/rules.yaml
 	kknd1|actors/evolved/towers/grapeshotcannon/rules.yaml
 	kknd1|actors/evolved/towers/rotarycannon/rules.yaml
@@ -72,6 +73,7 @@ Sequences:
 	kknd1|actors/evolved/buildings/drillrig/sequences.yaml
 	kknd1|actors/evolved/buildings/windmill/sequences.yaml
 	kknd1|actors/evolved/buildings/vespiary/sequences.yaml
+	kknd1|actors/evolved/buildings/holding_pen/sequences.yaml
 	kknd1|actors/evolved/towers/machinegunnest/sequences.yaml
 	kknd1|actors/evolved/towers/grapeshotcannon/sequences.yaml
 	kknd1|actors/evolved/towers/rotarycannon/sequences.yaml

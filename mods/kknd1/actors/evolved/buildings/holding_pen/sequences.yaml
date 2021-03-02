@@ -1,0 +1,19 @@
+evolved_building_holding_pen:
+	make0: actors/evolved/buildings/holding_pen/frames.png
+		Offset: 12,-22
+	make1: actors/evolved/buildings/holding_pen/frames.png
+		Start: 1
+		Offset: 12,-22
+	make2: actors/evolved/buildings/holding_pen/frames.png
+		Start: 2
+		Offset: 12,-22
+	idle: actors/evolved/buildings/holding_pen/frames.png
+		Start: 3
+		Offset: 12,-22
+	damaged-idle: actors/evolved/buildings/holding_pen/frames.png
+		Start: 4
+		Offset: 12,-22
+	critical-idle: actors/evolved/buildings/holding_pen/frames.png
+		Start: 5
+		Offset: 12,-22
+	icon: actors/evolved/buildings/holding_pen/icon.png

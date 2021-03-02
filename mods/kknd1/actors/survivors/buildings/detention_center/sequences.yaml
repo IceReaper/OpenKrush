@@ -1,4 +1,4 @@
-survivors_detention_center:
+survivors_building_detention_center:
 	make0: actors/survivors/buildings/detention_center/frames.png
 		Offset: 2,-24
 	make1: actors/survivors/buildings/detention_center/frames.png
