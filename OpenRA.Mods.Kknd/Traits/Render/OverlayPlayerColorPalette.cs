@@ -1,6 +1,6 @@
 #region Copyright & License Information
 /*
- * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
+ * Copyright 2007-2021 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
@@ -16,7 +16,7 @@ using OpenRA.Traits;
 namespace OpenRA.Mods.Kknd.Traits.Render
 {
 	[Desc("More beautiful variant of the PlayerColorPalette by using the overlay blend mode.")]
-	public class OverlayPlayerColorPaletteInfo : ITraitInfo
+	public class OverlayPlayerColorPaletteInfo : TraitInfo
 	{
 		[Desc("The name of the palette to base off.")]
 		[PaletteReference]
@@ -32,7 +32,7 @@ namespace OpenRA.Mods.Kknd.Traits.Render
 		[Desc("Allow palette modifiers to change the palette.")]
 		public readonly bool AllowModifiers = true;
 
-		public object Create(ActorInitializer init) { return new OverlayPlayerColorPalette(this); }
+		public override object Create(ActorInitializer init) { return new OverlayPlayerColorPalette(this); }
 	}
 
 	public class OverlayPlayerColorPalette : ILoadsPlayerPalettes

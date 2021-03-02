@@ -1,6 +1,6 @@
 #region Copyright & License Information
 /*
- * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
+ * Copyright 2007-2021 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
@@ -131,8 +131,8 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 					};
 					actorPreviewWidget.SetPreview(sidebar.IngameUi.World.Map.Rules.Actors[Item], new TypeDictionary
 					{
-						new FacingInit(96),
-						new TurretFacingInit(96),
+						new FacingInit(WAngle.FromFacing(96)),
+						new TurretFacingInit(WAngle.FromFacing(96)),
 						new OwnerInit(sidebar.IngameUi.World.LocalPlayer),
 						new FactionInit(sidebar.IngameUi.World.LocalPlayer.Faction.Name)
 					});

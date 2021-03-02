@@ -1,6 +1,6 @@
 #region Copyright & License Information
 /*
- * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
+ * Copyright 2007-2021 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
@@ -13,12 +13,13 @@ using System.Collections.Generic;
 using OpenRA.Graphics;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Kknd.Graphics;
+using OpenRA.Primitives;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.Kknd.Traits.Render
 {
 	[Desc("Add KKnD style healthbar box.")]
-	public class AdvancedSelectionDecorationsInfo : ITraitInfo
+	public class AdvancedSelectionDecorationsInfo : TraitInfo
 	{
 		[Desc("Width for the decoration bar.")]
 		public readonly int Width = 32;
@@ -29,18 +30,18 @@ namespace OpenRA.Mods.Kknd.Traits.Render
 		[Desc("Offset for the decoration bar.")]
 		public readonly int2 Offset = int2.Zero;
 
-		public object Create(ActorInitializer init) { return new AdvancedSelectionDecorations(this); }
+		public override object Create(ActorInitializer init) { return new AdvancedSelectionDecorations(this); }
 	}
 
 	public class AdvancedSelectionDecorations : ISelectionDecorations, IRenderAnnotations, INotifyCreated, INotifyOwnerChanged
 	{
-		private AdvancedSelectionDecorationsInfo info;
+		public AdvancedSelectionDecorationsInfo Info;
 		private StatusBar statusBar;
 		private Health health;
 
 		public AdvancedSelectionDecorations(AdvancedSelectionDecorationsInfo info)
 		{
-			this.info = info;
+			Info = info;
 		}
 
 		void INotifyCreated.Created(Actor self)
@@ -51,7 +52,7 @@ namespace OpenRA.Mods.Kknd.Traits.Render
 		public IEnumerable<IRenderable> RenderAnnotations(Actor self, WorldRenderer wr)
 		{
 			if (statusBar == null)
-				statusBar = new StatusBar(self, info);
+				statusBar = new StatusBar(self, Info);
 
 			if (!self.CanBeViewedByPlayer(self.World.LocalPlayer))
 				yield break;
@@ -76,19 +77,21 @@ namespace OpenRA.Mods.Kknd.Traits.Render
 			yield return statusBar;
 		}
 
-		void ISelectionDecorations.DrawRollover(Actor self, WorldRenderer worldRenderer)
+		public IEnumerable<IRenderable> RenderSelectionAnnotations(Actor self, WorldRenderer worldRenderer, Color color)
 		{
-			if (statusBar == null)
-				statusBar = new StatusBar(self, info);
+			yield break;
+		}
 
-			statusBar.Render(worldRenderer);
+		public int2 GetDecorationOrigin(Actor self, WorldRenderer wr, string pos, int2 margin)
+		{
+			return GetDecorationOrigin(self, wr, pos, margin);
 		}
 
 		bool IRenderAnnotations.SpatiallyPartitionable { get { return true; } }
 
 		void INotifyOwnerChanged.OnOwnerChanged(Actor self, Player oldOwner, Player newOwner)
 		{
-			statusBar = new StatusBar(self, info);
+			statusBar = new StatusBar(self, Info);
 		}
 	}
 }

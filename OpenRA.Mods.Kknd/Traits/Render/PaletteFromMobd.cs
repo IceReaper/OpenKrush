@@ -1,6 +1,6 @@
 #region Copyright & License Information
 /*
- * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
+ * Copyright 2007-2021 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
@@ -24,7 +24,7 @@ namespace OpenRA.Mods.Kknd.Traits.Render
 {
 	// TODO see PaletteFromEmbeddedSpritePalette
 	[Desc("Load palette from KKnD2 MOBD file.")]
-	class PaletteFromMobdInfo : ITraitInfo, IProvidesCursorPaletteInfo
+	class PaletteFromMobdInfo : TraitInfo, IProvidesCursorPaletteInfo
 	{
 		[FieldLoader.Require]
 		[PaletteDefinition]
@@ -37,7 +37,7 @@ namespace OpenRA.Mods.Kknd.Traits.Render
 
 		public readonly bool AllowModifiers = true;
 
-		public object Create(ActorInitializer init) { return new PaletteFromMobd(init.World, this); }
+		public override object Create(ActorInitializer init) { return new PaletteFromMobd(init.World, this); }
 
 		string IProvidesCursorPaletteInfo.Palette { get { return Name; } }
 		ImmutablePalette IProvidesCursorPaletteInfo.ReadPalette(IReadOnlyFileSystem fileSystem)

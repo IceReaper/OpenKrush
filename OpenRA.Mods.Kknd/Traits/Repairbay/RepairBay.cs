@@ -1,6 +1,6 @@
 #region Copyright & License Information
 /*
- * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
+ * Copyright 2007-2021 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
@@ -42,10 +42,9 @@ namespace OpenRA.Mods.Kknd.Traits.Repairbay
 		private readonly RepairbayInfo info;
 		private readonly Actor self;
 		private readonly Researchable researchable;
-		private ConditionManager conditionManager;
 
 		private int lastRepairTick;
-		private int token = ConditionManager.InvalidConditionToken;
+		private int token = Actor.InvalidConditionToken;
 
 		public Repairbay(ActorInitializer init, RepairbayInfo info)
 			: base(info)
@@ -58,8 +57,6 @@ namespace OpenRA.Mods.Kknd.Traits.Repairbay
 		protected override void Created(Actor self)
 		{
 			base.Created(self);
-
-			conditionManager = self.Trait<ConditionManager>();
 		}
 
 		public override bool CanDock(Actor target, Dockable dockable)
@@ -75,8 +72,8 @@ namespace OpenRA.Mods.Kknd.Traits.Repairbay
 
 		public override bool Process(Actor target)
 		{
-			if (!string.IsNullOrEmpty(info.Condition) && token == ConditionManager.InvalidConditionToken)
-				token = conditionManager.GrantCondition(self, info.Condition);
+			if (!string.IsNullOrEmpty(info.Condition) && token == Actor.InvalidConditionToken)
+				token = self.GrantCondition(info.Condition);
 
 			lastRepairTick = target.World.WorldTick;
 			var health = target.Trait<Health>();
@@ -89,8 +86,8 @@ namespace OpenRA.Mods.Kknd.Traits.Repairbay
 
 		void ITick.Tick(Actor self)
 		{
-			if (token != ConditionManager.InvalidConditionToken && self.World.WorldTick - 1 > lastRepairTick)
-				token = conditionManager.RevokeCondition(self, token);
+			if (token != Actor.InvalidConditionToken && self.World.WorldTick - 1 > lastRepairTick)
+				token = self.RevokeCondition(token);
 		}
 	}
 }

@@ -1,6 +1,6 @@
 #region Copyright & License Information
 /*
- * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
+ * Copyright 2007-2021 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
@@ -10,6 +10,7 @@
 #endregion
 
 using System.Collections.Generic;
+using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Kknd.Activities;
 using OpenRA.Mods.Kknd.Orders;
 using OpenRA.Primitives;
@@ -18,7 +19,7 @@ using OpenRA.Traits;
 namespace OpenRA.Mods.Kknd.Traits.Altar
 {
 	[Desc("Actor can be sacrificed.")]
-	class SacrificableInfo : ITraitInfo
+	class SacrificableInfo : TraitInfo
 	{
 		[Desc("Cursor used for order.")]
 		public readonly string Cursor = "enter";
@@ -27,7 +28,7 @@ namespace OpenRA.Mods.Kknd.Traits.Altar
 		[VoiceReference]
 		public readonly string Voice = "Sacrifice";
 
-		public object Create(ActorInitializer init) { return new Sacrificable(init, this); }
+		public override object Create(ActorInitializer init) { return new Sacrificable(init, this); }
 	}
 
 	class Sacrificable : IIssueOrder, IResolveOrder, IOrderVoice
@@ -44,7 +45,7 @@ namespace OpenRA.Mods.Kknd.Traits.Altar
 			get { yield return new SacrificeOrderTargeter(info.Cursor); }
 		}
 
-		public Order IssueOrder(Actor self, IOrderTargeter order, Target target, bool queued)
+		public Order IssueOrder(Actor self, IOrderTargeter order, in Target target, bool queued)
 		{
 			return order.OrderID == SacrificeOrderTargeter.Id ? new Order(order.OrderID, self, target, queued) : null;
 		}

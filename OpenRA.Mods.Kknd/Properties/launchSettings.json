@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "KKnD": {
+      "commandName": "Executable",
+      "executablePath": "../../engine/bin/OpenRA.exe",
+      "commandLineArgs": "Game.Mod=\"kknd1\" Engine.EngineDir=\"..\" Engine.ModSearchPaths=\"../../mods,../mods\""
+    }
+  }
+}

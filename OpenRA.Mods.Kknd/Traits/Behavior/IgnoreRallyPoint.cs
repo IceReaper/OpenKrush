@@ -1,6 +1,6 @@
 #region Copyright & License Information
 /*
- * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
+ * Copyright 2007-2021 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
@@ -15,9 +15,9 @@ using OpenRA.Traits;
 namespace OpenRA.Mods.Kknd.Traits.Behavior
 {
 	[Desc("Makes specific actors ignore the rally point when created.")]
-	public class IgnoreRallyPointInfo : ITraitInfo
+	public class IgnoreRallyPointInfo : TraitInfo
 	{
-		public object Create(ActorInitializer init) { return new IgnoreRallyPoint(); }
+		public override object Create(ActorInitializer init) { return new IgnoreRallyPoint(); }
 	}
 
 	public class IgnoreRallyPoint : INotifyCreated

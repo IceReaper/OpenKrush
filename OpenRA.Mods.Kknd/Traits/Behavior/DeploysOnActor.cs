@@ -1,6 +1,6 @@
 #region Copyright & License Information
 /*
- * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
+ * Copyright 2007-2021 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
@@ -19,7 +19,7 @@ using OpenRA.Traits;
 namespace OpenRA.Mods.Kknd.Traits.Behavior
 {
 	[Desc("Deploy when standing on top of a specific actor.")]
-	class DeploysOnActorInfo : ITraitInfo
+	class DeploysOnActorInfo : TraitInfo
 	{
 		[Desc("Actor to transform into.")]
 		[ActorReference]
@@ -34,7 +34,7 @@ namespace OpenRA.Mods.Kknd.Traits.Behavior
 
 		public readonly CVec Offset = CVec.Zero;
 
-		public object Create(ActorInitializer init) { return new DeploysOnActor(init, this); }
+		public override object Create(ActorInitializer init) { return new DeploysOnActor(init, this); }
 	}
 
 	class DeploysOnActor : IIssueOrder, ITick
@@ -49,7 +49,7 @@ namespace OpenRA.Mods.Kknd.Traits.Behavior
 
 		IEnumerable<IOrderTargeter> IIssueOrder.Orders { get { yield return new DeployOnActorOrderTargeter(info.ValidTargets, info.DeployCursor); } }
 
-		public Order IssueOrder(Actor self, IOrderTargeter order, Target target, bool queued)
+		public Order IssueOrder(Actor self, IOrderTargeter order, in Target target, bool queued)
 		{
 			return order is DeployOnActorOrderTargeter ? new Order("Move", self, Target.FromCell(self.World, self.World.Map.CellContaining(target.CenterPosition)), queued) : null;
 		}

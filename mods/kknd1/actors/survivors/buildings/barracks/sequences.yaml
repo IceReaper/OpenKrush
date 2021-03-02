@@ -1,24 +1,24 @@
 survivors_building_barracks:
 	make0: actors/survivors/buildings/barracks/frames.png
-		Offset: 2,-24
+		Offset: -5,0
 	make1: actors/survivors/buildings/barracks/frames.png
 		Start: 1
-		Offset: 2,-24
+		Offset: -5,0
 	make2: actors/survivors/buildings/barracks/frames.png
 		Start: 2
-		Offset: 2,-24
+		Offset: -5,0
 	idle: actors/survivors/buildings/barracks/frames.png
 		Start: 3
-		Offset: 2,-24
+		Offset: -5,0
 	damaged-idle: actors/survivors/buildings/barracks/frames.png
 		Start: 4
-		Offset: 2,-24
+		Offset: -5,0
 	critical-idle: actors/survivors/buildings/barracks/frames.png
 		Start: 5
-		Offset: 2,-24
+		Offset: -5,0
 	animation: actors/survivors/buildings/barracks/frames.png
 		Start: 6
 		Length: 7
 		Tick: 120
-		Offset: 2,-24
+		Offset: -5,0
 	icon: actors/survivors/buildings/barracks/icon.png

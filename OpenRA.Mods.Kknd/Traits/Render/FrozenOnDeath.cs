@@ -1,6 +1,6 @@
 #region Copyright & License Information
 /*
- * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
+ * Copyright 2007-2021 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
@@ -15,12 +15,12 @@ using OpenRA.Traits;
 namespace OpenRA.Mods.Kknd.Traits.Render
 {
 	[Desc("This actor will be visible for a particular time when being killed.")]
-	public class FrozenOnDeathInfo : ITraitInfo, Requires<HealthInfo>
+	public class FrozenOnDeathInfo : TraitInfo, Requires<HealthInfo>
 	{
 		[Desc("The amount of ticks the death state will be visible.")]
 		public readonly int Duration = 25;
 
-		public object Create(ActorInitializer init) { return new FrozenOnDeath(init, this); }
+		public override object Create(ActorInitializer init) { return new FrozenOnDeath(init, this); }
 	}
 
 	public class FrozenOnDeath : ITick

@@ -1,6 +1,6 @@
 #region Copyright & License Information
 /*
- * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
+ * Copyright 2007-2021 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
@@ -16,7 +16,7 @@ using OpenRA.Traits;
 namespace OpenRA.Mods.Kknd.Traits.Behavior
 {
 	[Desc("Makes infantry feel more alive by randomly rotating or playing an animation when idle.")]
-	class LivingInfo : ITraitInfo, Requires<MobileInfo>, Requires<WithSpriteBodyInfo>
+	class LivingInfo : TraitInfo, Requires<MobileInfo>, Requires<WithSpriteBodyInfo>
 	{
 		[Desc("Chance per tick the actor rotates to a random direction.")]
 		public readonly int RotationChance = 1000;
@@ -27,7 +27,7 @@ namespace OpenRA.Mods.Kknd.Traits.Behavior
 		[Desc("Sequence to play when idle.")]
 		public readonly string BoredSequence = "bored";
 
-		public object Create(ActorInitializer init) { return new Living(init, this); }
+		public override object Create(ActorInitializer init) { return new Living(init, this); }
 	}
 
 	class Living : ITick
@@ -48,7 +48,7 @@ namespace OpenRA.Mods.Kknd.Traits.Behavior
 			if (self.CurrentActivity == null)
 			{
 				if (info.RotationChance > 0 && self.World.SharedRandom.Next(1, info.RotationChance) == 1)
-					mobile.Facing = self.World.SharedRandom.Next(0x00, 0xff);
+					mobile.Facing = WAngle.FromFacing(self.World.SharedRandom.Next(0x00, 0xff));
 
 				if (info.BoredSequence != null && self.World.SharedRandom.Next(1, info.BoredChance) == 1)
 					wsb.PlayCustomAnimation(self, info.BoredSequence);

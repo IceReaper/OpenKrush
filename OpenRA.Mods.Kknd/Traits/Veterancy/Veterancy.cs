@@ -1,6 +1,6 @@
 #region Copyright & License Information
 /*
- * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
+ * Copyright 2007-2021 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
@@ -16,7 +16,7 @@ using OpenRA.Traits;
 namespace OpenRA.Mods.Kknd.Traits.Veterancy
 {
 	[Desc("KKnD specific unit veterancy.")]
-	public class VeterancyInfo : ITraitInfo
+	public class VeterancyInfo : TraitInfo
 	{
 		[Desc("Amount of experience (damage made on enemies) required for levelup.")]
 		public readonly int[] Experience = { 1000, 2000 };
@@ -48,7 +48,7 @@ namespace OpenRA.Mods.Kknd.Traits.Veterancy
 		[Desc("Apply the selfhealing using these damagetypes.")]
 		public readonly BitSet<DamageType> DamageTypes = default(BitSet<DamageType>);
 
-		public object Create(ActorInitializer init) { return new Veterancy(init, this); }
+		public override object Create(ActorInitializer init) { return new Veterancy(init, this); }
 	}
 
 	public class Veterancy : INotifyAppliedDamage, IDamageModifier, IInaccuracyModifier, IRangeModifier, IReloadModifier, ISpeedModifier, ITick
@@ -70,7 +70,7 @@ namespace OpenRA.Mods.Kknd.Traits.Veterancy
 			if (Level == info.Levels.Length)
 				return;
 
-			if (self.Owner.Stances[damaged.Owner] != Stance.Enemy)
+			if (self.Owner.RelationshipWith(damaged.Owner) != PlayerRelationship.Enemy)
 				return;
 
 			experience += e.Damage.Value;

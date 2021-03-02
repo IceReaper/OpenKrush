@@ -1,6 +1,6 @@
 #region Copyright & License Information
 /*
- * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
+ * Copyright 2007-2021 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
@@ -27,15 +27,14 @@ namespace OpenRA.Mods.Kknd.Warheads
 		[Desc("The minimum and maximum distances the shrapnel may travel.")]
 		public readonly WDist[] ShrapnelRange = { WDist.Zero, WDist.Zero };
 
-		public override void DoImpact(Target target, WarheadArgs args)
+		public override void DoImpact(in Target target, WarheadArgs args)
 		{
 			var random = args.SourceActor.World.SharedRandom;
 			var pos = target.CenterPosition + new WVec(Radius.X == 0 ? 0 : random.Next(-Radius.X, Radius.X), Radius.Y == 0 ? 0 : random.Next(-Radius.Y, Radius.Y), 0);
 			var world = args.SourceActor.World;
 			var targetTile = world.Map.CellContaining(pos);
-			var isValid = IsValidImpact(pos, args.SourceActor);
 
-			if ((!world.Map.Contains(targetTile)) || (!isValid))
+			if ((!world.Map.Contains(targetTile)))
 				return;
 
 			var palette = ExplosionPalette;

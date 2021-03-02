@@ -1,6 +1,6 @@
 #region Copyright & License Information
 /*
- * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
+ * Copyright 2007-2021 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
@@ -32,7 +32,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 		private int size = 2;
 		private bool useStanceColor = false;
 
-		public Stance ShowStances { get; set; }
+		public PlayerRelationship ShowStances { get; set; }
 
 		public RadarWidget(IngameUiWidget ingameUi)
 		{
@@ -77,9 +77,9 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 				for (var x = 0; x < ingameUi.World.Map.MapSize.X; x++)
 				{
 					var type = ingameUi.World.Map.Rules.TileSet.GetTileInfo(ingameUi.World.Map.Tiles[new MPos(x, y)]);
-					radarData[(y * radarSheet.Size.Width + x) * 4] = type.LeftColor.B;
-					radarData[(y * radarSheet.Size.Width + x) * 4 + 1] = type.LeftColor.G;
-					radarData[(y * radarSheet.Size.Width + x) * 4 + 2] = type.LeftColor.R;
+					radarData[(y * radarSheet.Size.Width + x) * 4] = type.MinColor.B;
+					radarData[(y * radarSheet.Size.Width + x) * 4 + 1] = type.MinColor.G;
+					radarData[(y * radarSheet.Size.Width + x) * 4 + 2] = type.MinColor.R;
 					radarData[(y * radarSheet.Size.Width + x) * 4 + 3] = 0xff;
 				}
 			}
@@ -167,17 +167,17 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 			Game.Renderer.RgbaSpriteRenderer.DrawSprite(terrainSprite, new int2(RenderBounds.X, RenderBounds.Y), new int2(RenderBounds.Width, RenderBounds.Height));
 			Game.Renderer.RgbaSpriteRenderer.DrawSprite(shroudSprite, new int2(RenderBounds.X, RenderBounds.Y), new int2(RenderBounds.Width, RenderBounds.Height));
 
-			var cells = new List<Pair<CPos, Color>>();
+			var cells = new List<(CPos, Color)>();
 
 			foreach (var e in ingameUi.World.ActorsWithTrait<IRadarSignature>())
 			{
 				if (!e.Actor.IsInWorld || e.Actor.IsDead || ingameUi.World.FogObscures(e.Actor) || e.Actor.Owner == null)
 					continue;
 
-				if (!ShowStances.HasStance(Stance.Ally) && e.Actor.Owner.Stances[ingameUi.World.LocalPlayer].HasStance(Stance.Ally))
+				if (!ShowStances.HasStance(PlayerRelationship.Ally) && e.Actor.Owner.RelationshipWith(ingameUi.World.LocalPlayer).HasStance(PlayerRelationship.Ally))
 					continue;
 
-				if (!ShowStances.HasStance(Stance.Enemy) && e.Actor.Owner.Stances[ingameUi.World.LocalPlayer].HasStance(Stance.Enemy))
+				if (!ShowStances.HasStance(PlayerRelationship.Enemy) && e.Actor.Owner.RelationshipWith(ingameUi.World.LocalPlayer).HasStance(PlayerRelationship.Enemy))
 					continue;
 
 				cells.Clear();
@@ -185,10 +185,10 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 
 				foreach (var cell in cells)
 				{
-					if (!ingameUi.World.Map.Contains(cell.First))
+					if (!ingameUi.World.Map.Contains(cell.Item1))
 						continue;
 
-					var pos = cell.First.ToMPos(ingameUi.World.Map.Grid.Type);
+					var pos = cell.Item1.ToMPos(ingameUi.World.Map.Grid.Type);
 					var color = useStanceColor ? Color.FromArgb(e.Actor.Owner.PlayerStanceColor(e.Actor).ToArgb()) : e.Actor.Owner.Color;
 
 					WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X + pos.U * size, RenderBounds.Y + pos.V * size, size, size), color);

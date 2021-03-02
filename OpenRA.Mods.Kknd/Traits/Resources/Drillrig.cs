@@ -1,6 +1,6 @@
 #region Copyright & License Information
 /*
- * Copyright 2016-2018 The KKnD Developers (see AUTHORS)
+ * Copyright 2007-2021 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
@@ -37,8 +37,7 @@ namespace OpenRA.Mods.Kknd.Traits.Resources
 		private Actor oilpatchActor;
 		private Oilpatch oilpatch;
 
-		ConditionManager conditionManager;
-		int token = ConditionManager.InvalidConditionToken;
+		int token = Actor.InvalidConditionToken;
 
 		public Drillrig(ActorInitializer init, DrillrigInfo info)
 			: base(info)
@@ -60,10 +59,8 @@ namespace OpenRA.Mods.Kknd.Traits.Resources
 				oilpatch = oilpatchActor.Trait<Oilpatch>();
 			}
 
-			conditionManager = self.Trait<ConditionManager>();
-
 			if (oilpatch != null)
-				token = conditionManager.GrantCondition(self, info.Condition);
+				token = self.GrantCondition(info.Condition);
 		}
 
 		public int Current { get { return oilpatch == null ? 0 : oilpatch.Current; } }
@@ -114,8 +111,8 @@ namespace OpenRA.Mods.Kknd.Traits.Resources
 			Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", "DrillrigEmpty", self.Owner.Faction.InternalName);
 			oilpatchActor = null;
 			oilpatch = null;
-			conditionManager.RevokeCondition(self, token);
-			token = ConditionManager.InvalidConditionToken;
+			self.RevokeCondition(token);
+			token = Actor.InvalidConditionToken;
 		}
 
 		void INotifySold.Selling(Actor self) { }
