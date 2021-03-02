@@ -48,3 +48,7 @@ Notifications:
 
 Cursors:
 	kknd1|core/cursors.yaml
+
+ModCredits:
+	ModCreditsFile: kknd1|CREDITS
+	ModTabTitle: OpenRA KKND
