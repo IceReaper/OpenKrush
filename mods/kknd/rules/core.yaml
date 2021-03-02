@@ -40,7 +40,7 @@
 	VoiceAnnouncement:
 		RequiresCondition: produced
 		Voice: Create
-		ValidStances: Neutral
+		ValidRelationships: Neutral
 	# Default set which fits for most units: Occupy exactly 1 cell / 32x32 pixel tile.
 	HitShape:
 		Type: Circle
