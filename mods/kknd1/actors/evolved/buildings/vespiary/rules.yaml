@@ -21,7 +21,7 @@ evolved_building_vespiary:
 		Type: Rectangle
 			TopLeft: -2048, -1024
 			BottomRight: 2048, 1024
-		TargetableOffsets: -819,-1536,0, -819,-512,0, -819,512,0, -819,1536,0, 819,-1536,0, 819,-512,0, 819,512,0, 819,1536,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
+		TargetableOffsets: -819,-1536,0, -819,-512,0, -819,512,0, -819,1536,0, 819,-1400,0, 819,-512,0, 819,512,0, 819,1400,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
 	Selectable:
 		Bounds: 128, 96, 0, 0
 	AdvancedAirstrikePower:

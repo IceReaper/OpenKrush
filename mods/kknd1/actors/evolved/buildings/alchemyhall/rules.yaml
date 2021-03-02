@@ -20,9 +20,9 @@ evolved_building_alchemyhall:
 		Footprint: xxx ===
 	HitShape:
 		Type: Rectangle
-			TopLeft: -1536, -1024
-			BottomRight: 1536, 0
-		TargetableOffsets: 819,-1024,0, 819,0,0, 819,1024,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
+			TopLeft: -1024, -1736
+			BottomRight: 1024, 256
+		TargetableOffsets: 700,-512,0, 400,512,0, 1900,-512,0, 1900,512,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
 	Selectable:
 		Bounds: 96, 64, 0, -32
 	Researchable:
