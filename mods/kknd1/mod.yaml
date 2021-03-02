@@ -9,15 +9,12 @@ PackageFormats: LvlPackage
 Packages:
 	^EngineDir
 	~^Content/kknd1/: content
-	.
-	# TODO remove this one
-	../../
 	$kknd: kknd
 	$kknd1: kknd1
 	^EngineDir|mods/common: common
-	KKND-Xtreme-Demo/LEVELS/640/SPRITES.LVL: SPRITES.LVL
-	KKND-Xtreme-Demo/LEVELS/MUTE.SLV: MUTE.SLV
-	KKND-Xtreme-Demo/LEVELS/SURV.SLV: SURV.SLV
+	kknd1|KKND-Xtreme-Demo/LEVELS/640/SPRITES.LVL: SPRITES.LVL
+	kknd1|KKND-Xtreme-Demo/LEVELS/MUTE.SLV: MUTE.SLV
+	kknd1|KKND-Xtreme-Demo/LEVELS/SURV.SLV: SURV.SLV
 
 MapFolders:
 	kknd1|maps/classic: System

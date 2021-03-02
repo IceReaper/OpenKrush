@@ -134,9 +134,11 @@
 	ExplosionOnDamageTransition@Heavy:
 		Weapon: breakBuilding
 		DamageState: Heavy
+		RequiresCondition: !selfconstructing && !deconstructing
 	ExplosionOnDamageTransition@Critical:
 		Weapon: breakBuilding
 		DamageState: Critical
+		RequiresCondition: !selfconstructing && !deconstructing
 	# ... and Shake the screen.
 	ShakeOnDeath:
 		Intensity: 10
@@ -216,9 +218,11 @@
 	ExplosionOnDamageTransition@Heavy:
 		Weapon: breakTower
 		DamageState: Heavy
+		RequiresCondition: !selfconstructing && !deconstructing
 	ExplosionOnDamageTransition@Critical:
 		Weapon: breakTower
 		DamageState: Critical
+		RequiresCondition: !selfconstructing && !deconstructing
 	# Do not show turret when being constructed or deconstructed...
 	WithOffsetsSpriteTurret:
 		RequiresCondition: !selfconstructing && !deconstructing
@@ -260,9 +264,11 @@
 	ExplosionOnDamageTransition@Heavy:
 		Weapon: breakWall
 		DamageState: Heavy
+		RequiresCondition: !selfconstructing && !deconstructing
 	ExplosionOnDamageTransition@Critical:
 		Weapon: breakWall
 		DamageState: Critical
+		RequiresCondition: !selfconstructing && !deconstructing
 	# Group all walls in the map editor.
 	MapEditorData:
 		Categories: Walls

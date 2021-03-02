@@ -70,7 +70,7 @@ namespace OpenRA.Mods.Kknd.Traits.Production
 				for (var i = 0; i <= info.Steps; i++)
 					healthSteps.Add(health.MaxHP * (i + 1) / (info.Steps + 1));
 
-				health.InflictDamage(self, self, new Damage(health.MaxHP - healthSteps[0]), true);
+				self.World.AddFrameEndTask(world => health.InflictDamage(self, self, new Damage(health.MaxHP - healthSteps[0]), true));
 
 				wsb.CancelCustomAnimation(self);
 				wsb.PlayCustomAnimationRepeating(self, info.Sequence + 0);
