@@ -8,6 +8,7 @@ evolved_vehicle_warmastodon:
 	Projectile: Bullet
 		Image: evolved_vehicle_warmastodon
 		Palette: kknd
+		TrailPalette: kknd
 		Sequences: projectile
 		Speed: 450
 		Inaccuracy: 400

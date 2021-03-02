@@ -16,6 +16,7 @@ survivors_infantry_flamer:
 		BuildDuration: 125
 		Level: 2
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: survivors_infantry_flamer
 	Veterancy:
 		HealRates: 1,2

@@ -7,6 +7,7 @@ evolved_infantry_berserker:
 	Projectile: Bullet
 		Image: evolved_infantry_berserker
 		Palette: player
+		TrailPalette: kknd
 		IsPlayerPalette: true
 		Sequences: projectile
 		Speed: 450

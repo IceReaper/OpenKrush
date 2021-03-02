@@ -9,12 +9,12 @@
  */
 #endregion
 
-using OpenRA.Traits;
+using OpenRA.Mods.Common.Traits;
 
 namespace OpenRA.Mods.Kknd.Mechanics.Researching.Traits
 {
 	[Desc("This actor enables the radar minimap.")]
-	public class ProvidesResearchableRadarInfo : TraitInfo
+	public class ProvidesResearchableRadarInfo : ConditionalTraitInfo
 	{
 		[Desc("The tech level required to enable radar.")]
 		public readonly int Level = 1;
@@ -27,11 +27,15 @@ namespace OpenRA.Mods.Kknd.Mechanics.Researching.Traits
 
 		public override object Create(ActorInitializer init)
 		{
-			return new ProvidesResearchableRadar();
+			return new ProvidesResearchableRadar(this);
 		}
 	}
 
-	public class ProvidesResearchableRadar
+	public class ProvidesResearchableRadar : ConditionalTrait<ProvidesResearchableRadarInfo>
 	{
+		public ProvidesResearchableRadar(ProvidesResearchableRadarInfo info)
+			: base(info)
+		{
+		}
 	}
 }

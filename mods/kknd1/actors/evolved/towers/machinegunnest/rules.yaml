@@ -15,10 +15,11 @@ evolved_tower_machinegunnest:
 	RevealsShroud:
 		Range: 10c0
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: evolved_tower_machinegunnest
 		LocalOffset: 0,25,450
 	Turreted:
-		TurnSpeed: 20
+		TurnSpeed: 80
 	AdvancedSelectionDecorations:
 		Offset: -2,-20
 	TechnicianRepairable:

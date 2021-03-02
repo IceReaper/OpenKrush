@@ -1,7 +1,7 @@
 colorpicker:
 	Inherits: bunker_vehicles_plasmatank
 	Mobile:
-		InitialFacing: 128
+		InitialFacing: 512
 	RenderSprites:
 		Image: bunker_vehicles_plasmatank
 		Palette: colorpicker

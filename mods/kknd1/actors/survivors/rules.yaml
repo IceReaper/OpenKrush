@@ -43,7 +43,7 @@ World:
 survivors.colorpicker:
 	Inherits: survivors_vehicle_oiltanker
 	Mobile:
-		InitialFacing: 128
+		InitialFacing: 512
 	RenderSprites:
 		Image: survivors_vehicle_oiltanker
 		Palette: colorpicker

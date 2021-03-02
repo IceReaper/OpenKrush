@@ -35,6 +35,6 @@ survivors_building_barracks:
 	Exit:
 		SpawnOffset: -0c300,-0c850,0
 		ExitCell: -1,2
-		Facing: 64
+		Facing: 256
 	RallyPoint:
-		Offset: -1,2
+		Path: -1,2

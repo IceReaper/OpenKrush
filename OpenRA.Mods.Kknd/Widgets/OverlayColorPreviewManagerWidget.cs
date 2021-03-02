@@ -22,7 +22,7 @@ namespace OpenRA.Mods.Kknd.Widgets
 		WorldRenderer worldRenderer;
 		IPalette preview;
 
-		[ObjectCreator.UseCtor]
+		[ObjectCreator.UseCtorAttribute]
 		public OverlayColorPreviewManagerWidget(WorldRenderer worldRenderer)
 			: base(worldRenderer)
 		{

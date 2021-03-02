@@ -17,6 +17,7 @@ evolved_infantry_crazyharry:
 		BuildDuration: 300
 		Level: 5
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: evolved_infantry_crazyharry
 	Veterancy:
 		HealRates: 1,2

@@ -14,10 +14,11 @@ survivors_tower_missilebattery:
 	RevealsShroud:
 		Range: 10c0
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: survivors_tower_missilebattery
 		LocalOffset: 0,0,500
 	Turreted:
-		TurnSpeed: 20
+		TurnSpeed: 80
 	AdvancedSelectionDecorations:
 		Offset: -1,-16
 	TechnicianRepairable:

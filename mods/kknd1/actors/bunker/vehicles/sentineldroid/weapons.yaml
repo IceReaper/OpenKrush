@@ -7,6 +7,7 @@ bunker_vehicles_sentineldroid:
 	Projectile: Bullet
 		Image: bunker_vehicles_sentineldroid
 		Palette: kknd
+		TrailPalette: kknd
 		Sequences: projectile
 		Speed: 600
 	Warhead@Damage: SpreadDamage

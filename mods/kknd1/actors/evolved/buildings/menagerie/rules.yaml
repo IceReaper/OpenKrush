@@ -32,6 +32,6 @@ evolved_building_menagerie:
 	Dock:
 		Position: -500,-100,500
 	RallyPoint:
-		Offset: 0,2
+		Path: 0,2
 	TechnicianRepairable:
 		Offset: -10,-50

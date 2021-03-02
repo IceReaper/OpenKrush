@@ -7,6 +7,7 @@ bunker_vehicles_mech_primary:
 	Projectile: Bullet
 		Image: bunker_vehicles_mech
 		Palette: kknd
+		TrailPalette: kknd
 		Sequences: projectile
 		Speed: 500
 	Warhead@Damage: SpreadDamage

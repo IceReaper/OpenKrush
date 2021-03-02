@@ -84,7 +84,8 @@ EditorPlayer:
 	SmudgeLayer@CRATER:
 		Type: Crater
 		Sequence: crater
-		SmokePercentage: -1
+		SmokeChance: -1
+		SmokePalette:
 
 # Ingame specific world setup.
 World:

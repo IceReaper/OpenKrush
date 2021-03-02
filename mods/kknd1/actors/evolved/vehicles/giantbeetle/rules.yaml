@@ -9,7 +9,7 @@ evolved_vehicle_giantbeetle:
 		HP: 1500
 	Mobile:
 		Speed: 55
-		TurnSpeed: 8
+		TurnSpeed: 32
 	AdvancedBuildable:
 		Prerequisites: evolved_beasts
 		BuildDuration: 850
@@ -19,6 +19,7 @@ evolved_vehicle_giantbeetle:
 	Voiced:
 		VoiceSet: evolved_vehicle_giantbeetle
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: evolved_vehicle_giantbeetle
 	AdvancedSelectionDecorations:
 		Offset: 0,-3

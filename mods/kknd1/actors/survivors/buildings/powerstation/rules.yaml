@@ -28,7 +28,7 @@ survivors_building_powerstation:
 	FreeActor:
 		Actor: survivors_vehicle_oiltanker
 		SpawnOffset: 1,2
-		Facing: 96
+		Facing: 384
 		RequiresCondition: !selfconstructing && !deconstructing
 	Researchable:
 		Offset: 8,-131

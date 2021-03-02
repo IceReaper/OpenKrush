@@ -18,7 +18,7 @@ namespace OpenRA.Mods.Kknd.Activities
 	{
 		private bool abortByCancel;
 
-		[ObjectCreator.UseCtor]
+		[ObjectCreator.UseCtorAttribute]
 		public TankerCycle(Actor dockableActor, Dockable dockable, Actor dockActor, Dock dock)
 			: base(dockableActor, dockable, dockActor, dock)
 		{

@@ -4,9 +4,10 @@ bunker_vehicles_sentineldroid:
 	Tooltip:
 		Name: Sentinel Droid
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: bunker_vehicles_sentineldroid
 	Turreted:
-		TurnSpeed: 8
+		TurnSpeed: 32
 	Voiced:
 		VoiceSet: BunkerVoice
 	AdvancedBuildable:
@@ -21,7 +22,7 @@ bunker_vehicles_sentineldroid:
 		HP: 6000
 	Mobile:
 		Speed: 50
-		TurnSpeed: 8
+		TurnSpeed: 32
 	RevealsShroud:
 		Range: 8c0
 	AdvancedSelectionDecorations:

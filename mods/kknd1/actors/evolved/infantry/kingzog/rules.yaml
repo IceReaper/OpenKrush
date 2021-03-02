@@ -17,6 +17,7 @@ evolved_infantry_kingzog:
 		BuildDuration: 250
 		Level: -1
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: evolved_infantry_kingzog
 	Veterancy:
 		HealRates: 1,2

@@ -15,10 +15,11 @@ survivors_tower_guardtower:
 	RevealsShroud:
 		Range: 10c0
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: survivors_tower_guardtower
 		LocalOffset: 0,0,500
 	Turreted:
-		TurnSpeed: 20
+		TurnSpeed: 80
 	AdvancedSelectionDecorations:
 		Offset: -1,-23
 	TechnicianRepairable:

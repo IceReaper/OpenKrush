@@ -8,6 +8,7 @@ weapon_blood1:
 		Inaccuracy: 1c0
 		Image: weapon_blood
 		Palette: kknd
+		TrailPalette: kknd
 		Sequences: blood1
 	Warhead: ShrapnelCreateEffect
 		Image: weapon_blood

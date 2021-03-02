@@ -83,7 +83,7 @@ namespace OpenRA.Mods.Kknd.Traits.Production
 					self.Dispose();
 				}
 				else
-					wsb.PlayCustomAnimationRepeating(self, selfConstructing.Sequence + Math.Min(sellTimer * selfConstructing.Steps / sellTimerTotal, selfConstructing.Steps - 1));
+					wsb.PlayCustomAnimationRepeating(self, selfConstructing.Sequence.Substring(0, selfConstructing.Sequence.Length - 1) + Math.Min(sellTimer * selfConstructing.Steps / sellTimerTotal, selfConstructing.Steps - 1));
 			}
 		}
 

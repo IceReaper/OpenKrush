@@ -14,12 +14,14 @@ bunker_techbunker:
 	Exit:
 		SpawnOffset: 0c-700,-0c150,0
 		ExitCell: -1,1 
-		Facing: 75
+		Facing: 300
 	MapEditorData:
 		Categories: Bunker
 	-Selectable:
 	-SelfConstructing:
 	-DeconstructSellable:
+	BlocksProjectiles:
+		-RequiresCondition:
 	RequiresSpecificOwners:
 		ValidOwnerNames: Neutral
 	GrantExternalConditionToProduced:

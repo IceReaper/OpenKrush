@@ -34,6 +34,6 @@ evolved_building_warriorhall:
 	Exit:
 		SpawnOffset: 0c-1100,0c1000,0
 		ExitCell: -1,2
-		Facing: 64
+		Facing: 256
 	RallyPoint:
-		Offset: 0,1
+		Path: 0,1

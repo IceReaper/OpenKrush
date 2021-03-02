@@ -73,7 +73,7 @@ namespace OpenRA.Mods.Kknd.Traits.Production
 				self.World.AddFrameEndTask(world => health.InflictDamage(self, self, new Damage(health.MaxHP - healthSteps[0]), true));
 
 				wsb.CancelCustomAnimation(self);
-				wsb.PlayCustomAnimationRepeating(self, info.Sequence + 0);
+				wsb.PlayCustomAnimationRepeating(self, info.Sequence.Substring(0, info.Sequence.Length - 1) + 0);
 			}
 			else if (spawnType == SpawnType.Deploy)
 			{
@@ -115,7 +115,7 @@ namespace OpenRA.Mods.Kknd.Traits.Production
 				while (step < progress)
 					health.InflictDamage(self, self, new Damage(healthSteps[step] - healthSteps[++step]), true);
 
-				wsb.PlayCustomAnimationRepeating(self, info.Sequence + step);
+				wsb.PlayCustomAnimationRepeating(self, info.Sequence.Substring(0, info.Sequence.Length - 1) + step);
 			}
 		}
 
@@ -144,7 +144,7 @@ namespace OpenRA.Mods.Kknd.Traits.Production
 			if (productionItem == null)
 				return;
 
-			wsb.PlayCustomAnimationRepeating(self, info.Sequence + step);
+			wsb.PlayCustomAnimationRepeating(self, info.Sequence.Substring(0, info.Sequence.Length - 1) + step);
 		}
 
 		void INotifyKilled.Killed(Actor self, AttackInfo e)

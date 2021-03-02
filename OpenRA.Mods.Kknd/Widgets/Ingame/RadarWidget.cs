@@ -73,15 +73,13 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 		{
 			// TODO instead of using this colors, try a correct thumbnail variant.
 			for (var y = 0; y < ingameUi.World.Map.MapSize.Y; y++)
+			for (var x = 0; x < ingameUi.World.Map.MapSize.X; x++)
 			{
-				for (var x = 0; x < ingameUi.World.Map.MapSize.X; x++)
-				{
-					var type = ingameUi.World.Map.Rules.TerrainInfo.GetTerrainInfo(ingameUi.World.Map.Tiles[new MPos(x, y)]);
-					radarData[(y * radarSheet.Size.Width + x) * 4] = type.MinColor.B;
-					radarData[(y * radarSheet.Size.Width + x) * 4 + 1] = type.MinColor.G;
-					radarData[(y * radarSheet.Size.Width + x) * 4 + 2] = type.MinColor.R;
-					radarData[(y * radarSheet.Size.Width + x) * 4 + 3] = 0xff;
-				}
+				var type = ingameUi.World.Map.Rules.TerrainInfo.GetTerrainInfo(ingameUi.World.Map.Tiles[new MPos(x, y)]);
+				radarData[(y * radarSheet.Size.Width + x) * 4] = type.MinColor.B;
+				radarData[(y * radarSheet.Size.Width + x) * 4 + 1] = type.MinColor.G;
+				radarData[(y * radarSheet.Size.Width + x) * 4 + 2] = type.MinColor.R;
+				radarData[(y * radarSheet.Size.Width + x) * 4 + 3] = 0xff;
 			}
 		}
 
@@ -90,25 +88,23 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 			var rp = ingameUi.World.RenderPlayer;
 
 			for (var y = 0; y < ingameUi.World.Map.MapSize.Y; y++)
+			for (var x = 0; x < ingameUi.World.Map.MapSize.X; x++)
 			{
-				for (var x = 0; x < ingameUi.World.Map.MapSize.X; x++)
+				var color = Color.FromArgb(0, Color.Black);
+
+				if (rp != null)
 				{
-					var color = Color.FromArgb(0, Color.Black);
-
-					if (rp != null)
-					{
-						var pos = new MPos(x, y);
-						if (!rp.Shroud.IsExplored(pos))
-							color = Color.FromArgb(255, Color.Black);
-						else if (!rp.Shroud.IsVisible(pos))
-							color = Color.FromArgb(128, Color.Black);
-					}
-
-					radarData[radarSheet.Size.Width * ingameUi.World.Map.MapSize.Y * 4 + (y * radarSheet.Size.Width + x) * 4] = color.B;
-					radarData[radarSheet.Size.Width * ingameUi.World.Map.MapSize.Y * 4 + (y * radarSheet.Size.Width + x) * 4 + 1] = color.G;
-					radarData[radarSheet.Size.Width * ingameUi.World.Map.MapSize.Y * 4 + (y * radarSheet.Size.Width + x) * 4 + 2] = color.R;
-					radarData[radarSheet.Size.Width * ingameUi.World.Map.MapSize.Y * 4 + (y * radarSheet.Size.Width + x) * 4 + 3] = color.A;
+					var pos = new MPos(x, y);
+					if (!rp.Shroud.IsExplored(pos))
+						color = Color.FromArgb(255, Color.Black);
+					else if (!rp.Shroud.IsVisible(pos))
+						color = Color.FromArgb(128, Color.Black);
 				}
+
+				radarData[radarSheet.Size.Width * ingameUi.World.Map.MapSize.Y * 4 + (y * radarSheet.Size.Width + x) * 4] = color.B;
+				radarData[radarSheet.Size.Width * ingameUi.World.Map.MapSize.Y * 4 + (y * radarSheet.Size.Width + x) * 4 + 1] = color.G;
+				radarData[radarSheet.Size.Width * ingameUi.World.Map.MapSize.Y * 4 + (y * radarSheet.Size.Width + x) * 4 + 2] = color.R;
+				radarData[radarSheet.Size.Width * ingameUi.World.Map.MapSize.Y * 4 + (y * radarSheet.Size.Width + x) * 4 + 3] = color.A;
 			}
 		}
 
@@ -137,22 +133,22 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 			if ((mi.Event == MouseInputEvent.Down || mi.Event == MouseInputEvent.Move) && mi.Button == Game.Settings.Game.MouseButtonPreference.Cancel)
 				ingameUi.WorldRenderer.Viewport.Center(pos);
 
-			if (mi.Event == MouseInputEvent.Down && mi.Button == Game.Settings.Game.MouseButtonPreference.Action)
-			{
-				var location = ingameUi.WorldRenderer.Viewport.WorldToViewPx(ingameUi.WorldRenderer.ScreenPxPosition(pos));
-				var fakemi = new MouseInput
-				{
-					Event = MouseInputEvent.Down,
-					Button = Game.Settings.Game.MouseButtonPreference.Action,
-					Modifiers = mi.Modifiers,
-					Location = location
-				};
+			if (mi.Event != MouseInputEvent.Down || mi.Button != Game.Settings.Game.MouseButtonPreference.Action)
+				return true;
 
-				var controller = Ui.Root.Get<WorldInteractionControllerWidget>("INTERACTION_CONTROLLER");
-				controller.HandleMouseInput(fakemi);
-				fakemi.Event = MouseInputEvent.Up;
-				controller.HandleMouseInput(fakemi);
-			}
+			var location = ingameUi.WorldRenderer.Viewport.WorldToViewPx(ingameUi.WorldRenderer.ScreenPxPosition(pos));
+			var fakemi = new MouseInput
+			{
+				Event = MouseInputEvent.Down,
+				Button = Game.Settings.Game.MouseButtonPreference.Action,
+				Modifiers = mi.Modifiers,
+				Location = location
+			};
+
+			var controller = Ui.Root.Get<WorldInteractionControllerWidget>("INTERACTION_CONTROLLER");
+			controller.HandleMouseInput(fakemi);
+			fakemi.Event = MouseInputEvent.Up;
+			controller.HandleMouseInput(fakemi);
 
 			return true;
 		}
@@ -171,7 +167,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 
 			foreach (var e in ingameUi.World.ActorsWithTrait<IRadarSignature>())
 			{
-				if (!e.Actor.IsInWorld || e.Actor.IsDead || ingameUi.World.FogObscures(e.Actor) || e.Actor.Owner == null)
+				if (!e.Actor.IsInWorld || e.Actor.IsDead || ingameUi.World.ShroudObscures(e.Actor.CenterPosition) || ingameUi.World.FogObscures(e.Actor) || e.Actor.Owner == null)
 					continue;
 
 				if (!ShowStances.HasRelationship(PlayerRelationship.Ally) && e.Actor.Owner.RelationshipWith(ingameUi.World.LocalPlayer).HasRelationship(PlayerRelationship.Ally))

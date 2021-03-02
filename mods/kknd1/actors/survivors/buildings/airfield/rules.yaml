@@ -27,7 +27,8 @@ survivors_building_airfield:
 	AdvancedAirstrikePower:
 		UnitType: survivors_aircraft_bomber
 		Description: Wilbur Bomber
-		Icon: survivors_aircraft_bomber
+		IconImage: survivors_aircraft_bomber
+		Icon: icon
 		ChargeInterval: 7500
 		EndChargeSound: SURV.SLV|66.wav
 		IncomingSound: SURV.SLV|42.wav

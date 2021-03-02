@@ -8,6 +8,7 @@ survivors_tower_cannontower:
 	Projectile: Bullet
 		Image: survivors_vehicle_anacondatank
 		Palette: kknd
+		TrailPalette: kknd
 		Sequences: projectile
 		Speed: 450
 		Blockable: false

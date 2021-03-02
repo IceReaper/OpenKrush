@@ -27,7 +27,7 @@ evolved_building_vespiary:
 	AdvancedAirstrikePower:
 		UnitType: evolved_aircraft_wasp
 		Description: Wasp Bomber
-		Icon: evolved_aircraft_wasp
+		IconImage: evolved_aircraft_wasp
 		ChargeInterval: 7500
 		EndChargeSound: SURV.SLV|136.wav
 		IncomingSound: kknd1|actors/evolved/buildings/vespiary/sound.wav

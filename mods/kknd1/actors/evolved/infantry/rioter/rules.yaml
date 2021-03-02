@@ -16,6 +16,7 @@ evolved_infantry_rioter:
 		BuildDuration: 175
 		Level: 3
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: evolved_infantry_rioter
 		FireDelay: 8
 		LocalOffset: 250,0,0

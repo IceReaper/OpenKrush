@@ -11,7 +11,7 @@ survivors_vehicle_dirtbike:
 		HP: 400
 	Mobile:
 		Speed: 115
-		TurnSpeed: 41
+		TurnSpeed: 164
 	AdvancedBuildable:
 		Prerequisites: survivors_vehicles
 		BuildDuration: 150
@@ -19,6 +19,7 @@ survivors_vehicle_dirtbike:
 	RevealsShroud:
 		Range: 11c0
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: survivors_vehicle_dirtbike
 	AdvancedSelectionDecorations:
 		Offset: 0,4

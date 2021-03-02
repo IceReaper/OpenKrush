@@ -61,20 +61,19 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 			hasRadar = false;
 			var showStances = PlayerRelationship.None;
 
-			foreach (var e in sidebar.IngameUi.World.ActorsHavingTrait<ProvidesResearchableRadar>().Where(a => a.Owner == sidebar.IngameUi.World.LocalPlayer))
+			foreach (var e in sidebar.IngameUi.World.ActorsWithTrait<ProvidesResearchableRadar>().Where(p => p.Actor.Owner == sidebar.IngameUi.World.LocalPlayer && !p.Trait.IsTraitDisabled))
 			{
-				var providesResearchableRadarInfo = e.Info.TraitInfo<ProvidesResearchableRadarInfo>();
-				var researchable = e.Trait<Researchable>();
+				var researchable = e.Actor.Trait<Researchable>();
 
-				if (researchable.Level < providesResearchableRadarInfo.Level)
+				if (researchable.Level < e.Trait.Info.Level)
 					continue;
 
 				hasRadar = true;
 
-				if (researchable.Level >= providesResearchableRadarInfo.AllyLevel)
+				if (researchable.Level >= e.Trait.Info.AllyLevel)
 					showStances |= PlayerRelationship.Ally;
 
-				if (researchable.Level >= providesResearchableRadarInfo.EnemyLevel)
+				if (researchable.Level >= e.Trait.Info.EnemyLevel)
 					showStances |= PlayerRelationship.Enemy;
 			}
 

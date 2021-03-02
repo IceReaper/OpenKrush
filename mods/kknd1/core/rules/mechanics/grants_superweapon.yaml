@@ -2,6 +2,8 @@
 	AdvancedAirstrikePower:
 		#DisplayBeacon: True # CRASH on clock - fix me!
 		#BeaconPoster: x
+		IconPalette: kknd
+		BeaconPosterPalette:
 		AllowMultiple: true
 		Cursor: attack
 		RequiresCondition: !selfconstructing && !deconstructing

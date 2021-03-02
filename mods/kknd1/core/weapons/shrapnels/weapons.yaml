@@ -8,6 +8,7 @@
 		Inaccuracy: 2c0
 		Image: weapon_shrapnels
 		Palette: kknd
+		TrailPalette: kknd
 		Sequences: debris1
 	Warhead: ShrapnelCreateEffect
 		Image: projectiles
@@ -49,6 +50,7 @@
 		Inaccuracy: 2c0
 		Image: weapon_shrapnels
 		Palette: kknd
+		TrailPalette: kknd
 		Sequences: spark1
 	Warhead: ShrapnelCreateEffect
 		Image: projectiles

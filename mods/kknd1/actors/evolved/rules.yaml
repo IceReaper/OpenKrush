@@ -43,7 +43,7 @@ World:
 evolved.colorpicker:
 	Inherits: evolved_vehicle_oiltanker
 	Mobile:
-		InitialFacing: 128
+		InitialFacing: 512
 	RenderSprites:
 		Image: evolved_vehicle_oiltanker
 		Palette: colorpicker

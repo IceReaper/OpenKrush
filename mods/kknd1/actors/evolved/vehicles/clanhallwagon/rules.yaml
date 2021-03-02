@@ -8,7 +8,7 @@ evolved_vehicle_clanhallwagon:
 		HP: 6000
 	Mobile:
 		Speed: 40
-		TurnSpeed: 5
+		TurnSpeed: 20
 	AdvancedBuildable:
 		Prerequisites: evolved_vehicles
 		BuildDuration: 1000

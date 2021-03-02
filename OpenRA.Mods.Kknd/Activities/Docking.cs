@@ -31,7 +31,7 @@ namespace OpenRA.Mods.Kknd.Activities
 		public DockingState DockingState { get; protected set; }
 		protected bool shouldCancel;
 
-		[ObjectCreator.UseCtor]
+		[ObjectCreator.UseCtorAttribute]
 		public Docking(Actor dockableActor, Dockable dockable, Actor dockActor, Dock dock)
 		{
 			DockableActor = dockableActor;

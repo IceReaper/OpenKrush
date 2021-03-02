@@ -13,7 +13,6 @@ using System.Linq;
 using OpenRA.Mods.Common.Widgets;
 using OpenRA.Mods.Kknd.Mechanics.Researching.Orders;
 using OpenRA.Mods.Kknd.Mechanics.Researching.Traits;
-using OpenRA.Mods.Kknd.Orders;
 using OpenRA.Primitives;
 using OpenRA.Traits;
 

@@ -9,7 +9,7 @@ survivors_vehicle_flameatv:
 		HP: 1250
 	Mobile:
 		Speed: 60
-		TurnSpeed: 8
+		TurnSpeed: 32
 	AdvancedBuildable:
 		Prerequisites: survivors_vehicles
 		BuildDuration: 450
@@ -17,9 +17,10 @@ survivors_vehicle_flameatv:
 	RevealsShroud:
 		Range: 7c0
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: survivors_vehicle_flameatv
 	Turreted:
-		TurnSpeed: 20
+		TurnSpeed: 80
 	AdvancedSelectionDecorations:
 		Offset: 0,-10
 	Veterancy:

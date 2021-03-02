@@ -1,7 +1,6 @@
 ^CoreConstruction:
 	ActorPreviewPlaceBuildingPreview:
 		Palette: kknd
-		LineBuildSegmentPalette: kknd
 	Building:
 		BuildSounds: SURV.SLV|193.wav
 
@@ -17,6 +16,7 @@
 
 ^CoreInfantry:
 	WithDeathAnimation:
+		CrushedSequencePalette: kknd
 		FallbackSequence: die
 		DeathTypes:
 			Explosion: -explode
@@ -39,6 +39,7 @@
 ^CoreAircraft:
 	AttackBomber:
 	OffsetsArmament:
+		MuzzlePalette:
 	AmmoPool:
 	RejectsOrders:
 	-MapEditorData:

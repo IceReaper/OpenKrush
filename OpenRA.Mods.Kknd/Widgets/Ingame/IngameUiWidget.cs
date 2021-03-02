@@ -35,7 +35,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 
 		private ISound oilSound;
 
-		[ObjectCreator.UseCtor]
+		[ObjectCreator.UseCtorAttribute]
 		public IngameUiWidget(World world, WorldRenderer worldRenderer)
 		{
 			World = world;

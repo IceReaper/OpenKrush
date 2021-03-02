@@ -17,6 +17,7 @@ survivors_infantry_elpresidente:
 		BuildDuration: 250
 		Level: -1
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: survivors_infantry_elpresidente
 	Veterancy:
 		HealRates: 1,2

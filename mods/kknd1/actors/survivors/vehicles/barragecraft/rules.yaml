@@ -9,7 +9,7 @@ survivors_vehicle_barragecraft:
 		HP: 1500
 	Mobile:
 		Speed: 45
-		TurnSpeed: 8
+		TurnSpeed: 32
 	AdvancedBuildable:
 		Prerequisites: survivors_vehicles
 		BuildDuration: 850
@@ -17,9 +17,10 @@ survivors_vehicle_barragecraft:
 	RevealsShroud:
 		Range: 7c0
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: survivors_vehicle_barragecraft
 	Turreted:
-		TurnSpeed: 20
+		TurnSpeed: 80
 	AdvancedSelectionDecorations:
 		Offset: -1,-9
 	Veterancy:

@@ -7,6 +7,7 @@ survivors_infantry_sapper:
 	Projectile: Bullet
 		Image: survivors_infantry_sapper
 		Palette: kknd
+		TrailPalette: kknd
 		Sequences: projectile
 		Inaccuracy: 750
 		Speed: 150

@@ -96,8 +96,8 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 				{
 					button = new ProductionItemButtonWidget(sidebar)
 					{
-						Item = power.Info.Icon,
-						Icon = power.Info.Icon,
+						Item = power.Info.IconImage,
+						Icon = power.Info.IconImage,
 						Progress = () => power.Ready ? -1 : (power.TotalTicks - power.RemainingTicks) * 100 / power.TotalTicks,
 						Amount = () => 0,
 						ClickedLeft = mi => power.Target(),

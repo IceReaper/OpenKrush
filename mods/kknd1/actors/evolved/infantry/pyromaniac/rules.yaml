@@ -16,6 +16,7 @@ evolved_infantry_pyromaniac:
 		BuildDuration: 125
 		Level: 2
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: evolved_infantry_pyromaniac
 	Veterancy:
 		HealRates: 1,2

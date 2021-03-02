@@ -16,6 +16,7 @@ evolved_infantry_berserker:
 		BuildDuration: 75
 		Level: 0
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: evolved_infantry_berserker
 	Veterancy:
 		HealRates: 1,2

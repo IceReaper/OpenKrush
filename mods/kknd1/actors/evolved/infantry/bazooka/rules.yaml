@@ -16,6 +16,7 @@ evolved_infantry_bazooka:
 		BuildDuration: 200
 		Level: 4
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: evolved_infantry_bazooka
 	Veterancy:
 		HealRates: 1,2

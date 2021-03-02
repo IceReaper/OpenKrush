@@ -39,6 +39,6 @@ evolved_building_beastforge:
 	Exit:
 		SpawnOffset: -1c0,0c50,0
 		ExitCell: 0,2
-		Facing: 75
+		Facing: 300
 	RallyPoint:
-		Offset: 0,2
+		Path: 0,2

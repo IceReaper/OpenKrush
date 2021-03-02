@@ -35,6 +35,6 @@ survivors_building_machineshop:
 	Exit:
 		SpawnOffset: -1c-330,0c60,500
 		ExitCell: -1,2
-		Facing: 75
+		Facing: 300
 	RallyPoint:
-		Offset: 0,3
+		Path: 0,3

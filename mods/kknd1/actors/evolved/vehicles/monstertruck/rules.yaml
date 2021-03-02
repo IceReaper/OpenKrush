@@ -10,7 +10,7 @@ evolved_vehicle_monstertruck:
 		HP: 1000
 	Mobile:
 		Speed: 70
-		TurnSpeed: 8
+		TurnSpeed: 32
 	AdvancedBuildable:
 		Prerequisites: evolved_vehicles
 		BuildDuration: 300
@@ -18,9 +18,10 @@ evolved_vehicle_monstertruck:
 	RevealsShroud:
 		Range: 7c0
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: evolved_vehicle_monstertruck
 	Turreted:
-		TurnSpeed: 20
+		TurnSpeed: 80
 	AdvancedSelectionDecorations:
 		Offset: 0,-7
 	Veterancy:

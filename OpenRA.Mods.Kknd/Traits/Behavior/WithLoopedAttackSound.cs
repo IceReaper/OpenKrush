@@ -17,7 +17,7 @@ namespace OpenRA.Mods.Kknd.Traits.Behavior
 	[Desc("Play together with an attack.")]
 	public class WithLoopedAttackSoundInfo : TraitInfo
 	{
-		[FieldLoader.Require]
+		[FieldLoader.RequireAttribute]
 		[Desc("Sound filename to use")]
 		public readonly string[] Report = null;
 

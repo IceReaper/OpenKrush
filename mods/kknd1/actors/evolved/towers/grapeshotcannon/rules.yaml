@@ -14,13 +14,15 @@ evolved_tower_grapeshotcannon:
 	RevealsShroud:
 		Range: 10c0
 	OffsetsArmament@primary:
+		MuzzlePalette:
 		Weapon: evolved_tower_grapeshotcannon
 		LocalOffset: 0,-25,500
 	OffsetsArmament@secondary:
+		MuzzlePalette:
 		Weapon: evolved_tower_grapeshotcannon
 		LocalOffset: 0,-128,500
 	Turreted:
-		TurnSpeed: 20
+		TurnSpeed: 80
 	AdvancedSelectionDecorations:
 		Offset: -2,-11
 	TechnicianRepairable:

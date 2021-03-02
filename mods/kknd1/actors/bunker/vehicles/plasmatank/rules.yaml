@@ -4,9 +4,10 @@ bunker_vehicles_plasmatank:
 	Tooltip:
 		Name: Plasma Tank
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: bunker_vehicles_plasmatank
 	Turreted:
-		TurnSpeed: 8
+		TurnSpeed: 32
 	Voiced:
 		VoiceSet: BunkerVoice
 	AdvancedBuildable:
@@ -21,7 +22,7 @@ bunker_vehicles_plasmatank:
 		HP: 6000
 	Mobile:
 		Speed: 50
-		TurnSpeed: 8
+		TurnSpeed: 32
 	RevealsShroud:
 		Range: 8c0
 	AdvancedSelectionDecorations:

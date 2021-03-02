@@ -7,6 +7,7 @@ evolved_vehicle_giantscorpion:
 	Projectile: Bullet
 		Image: evolved_vehicle_giantscorpion
 		Palette: kknd
+		TrailPalette: kknd
 		Sequences: projectile
 		Speed: 410
 	Warhead@Damage: SpreadDamage

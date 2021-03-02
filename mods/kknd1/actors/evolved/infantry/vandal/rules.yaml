@@ -18,6 +18,7 @@ evolved_infantry_vandal:
 		BuildDuration: 150
 		Level: 1
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: evolved_infantry_vandal
 		LocalOffset: 350,50,450
 	Veterancy:

@@ -8,7 +8,7 @@ survivors_vehicle_mobileoutpost:
 		HP: 6000
 	Mobile:
 		Speed: 40
-		TurnSpeed: 5
+		TurnSpeed: 20
 	AdvancedBuildable:
 		Prerequisites: survivors_vehicles
 		BuildDuration: 1000

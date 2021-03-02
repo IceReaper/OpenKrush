@@ -10,7 +10,7 @@ survivors_vehicle_autocannontank:
 		HP: 2500
 	Mobile:
 		Speed: 45
-		TurnSpeed: 8
+		TurnSpeed: 32
 	AdvancedBuildable:
 		Prerequisites: survivors_vehicles
 		BuildDuration: 1000
@@ -20,9 +20,10 @@ survivors_vehicle_autocannontank:
 	WithTurretAttackAnimation:
 		Sequence: shoot
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: survivors_vehicle_autocannontank
 	Turreted:
-		TurnSpeed: 20
+		TurnSpeed: 80
 	AdvancedSelectionDecorations:
 		Offset: 1,-1
 	Veterancy:

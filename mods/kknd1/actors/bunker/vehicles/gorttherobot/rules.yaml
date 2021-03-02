@@ -4,11 +4,12 @@ bunker_vehicles_gorttherobot:
 	Tooltip:
 		Name: Gort The Robot
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: bunker_vehicles_gorttherobot
 	WithLoopedTurretAttackAnimation:
 		Sequence: shoot
 	Turreted:
-		TurnSpeed: 8
+		TurnSpeed: 32
 	Voiced:
 		VoiceSet: bunker_vehicle_gorttherobot
 	AdvancedBuildable:
@@ -23,7 +24,7 @@ bunker_vehicles_gorttherobot:
 		HP: 6000
 	Mobile:
 		Speed: 50
-		TurnSpeed: 8
+		TurnSpeed: 32
 	RevealsShroud:
 		Range: 8c0
 	AdvancedSelectionDecorations:

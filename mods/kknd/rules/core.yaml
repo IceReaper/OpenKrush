@@ -70,7 +70,7 @@
 		Notifications: UnitUnderAttack, UnitUnderAttackVeteran, UnitUnderAttackVeteran
 	# Show control group numbers when selected.
 	WithTextControlGroupDecoration:
-		ReferencePoint: Bottom, Right
+		Position: BottomRight
 
 # Base for all buildings, towers and walls.
 ^CoreConstruction:
@@ -94,6 +94,7 @@
 	# Implement KKnD style construction logic.
 	SelfConstructing:
 		Condition: selfconstructing
+		Sequence: make0
 	# Also implement reverse deconstruction for selling.
 	DeconstructSellable:
 		Condition: deconstructing
@@ -153,6 +154,7 @@
 		Queue: building
 		BuildDurationModifier: 100
 		BuildLimit: 4
+		IconPalette:
 	# Group all buildings in the map editor.
 	MapEditorData:
 		Categories: Building
@@ -187,6 +189,7 @@
 		Queue: tower
 		BuildDurationModifier: 100
 		BuildLimit: 8
+		IconPalette:
 	# Group all towers in the map editor.
 	MapEditorData:
 		Categories: Tower
@@ -238,7 +241,8 @@
 	FrozenOnDeath:
 	# Default looking south
 	Turreted:
-		InitialFacing: 128
+		InitialFacing: 512
+		RealignDelay: -1
 
 # Base for all walls.
 ^CoreWall:
@@ -279,6 +283,7 @@
 	AdvancedBuildable:
 		Queue: wall
 		BuildDurationModifier: 100
+		IconPalette:
 	# Require other actor nearby which provides buildable area in order to place a wall.
 	RequiresBuildableArea:
 		AreaTypes: defence
@@ -325,6 +330,7 @@
 	AdvancedBuildable:
 		Queue: infantry
 		BuildDurationModifier: 100
+		IconPalette:
 	# Infantry has a smaller healthbar.
 	AdvancedSelectionDecorations:
 		Width: 16
@@ -370,6 +376,7 @@
 	AdvancedBuildable:
 		Queue: vehicle
 		BuildDurationModifier: 100
+		IconPalette:
 	# Can be repaired using repairbays.
 	RepairableVehicle:
 	# Render the vehicle a little bit when destroyed.
@@ -413,6 +420,7 @@
 	AdvancedBuildable:
 		Queue: aircraft
 		BuildDurationModifier: 100
+		IconPalette:
 
 # Special light vehicles
 ^CoreLightVehicle:

@@ -9,6 +9,7 @@ evolved_tower_grapeshotcannon:
 	Projectile: Bullet
 		Image: evolved_tower_grapeshotcannon
 		Palette: kknd
+		TrailPalette: kknd
 		Sequences: projectile
 		Speed: 655
 		Inaccuracy: 1c0

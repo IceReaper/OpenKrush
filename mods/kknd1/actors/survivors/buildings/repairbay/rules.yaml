@@ -32,7 +32,7 @@ survivors_building_repairbay:
 	Dock:
 		Position: -576,64,0
 	RallyPoint:
-		Offset: 0,2
+		Path: 0,2
 	TechnicianRepairable:
 		Offset: 5,-40
 	WithIdleOverlay@idle:
@@ -41,3 +41,5 @@ survivors_building_repairbay:
 	WithIdleOverlay@repairing:
 		Sequence: animation-repairing
 		RequiresCondition: repairing
+	Repairbay:
+		Condition: repairing

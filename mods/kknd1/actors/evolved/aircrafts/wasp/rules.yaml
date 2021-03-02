@@ -8,11 +8,12 @@ evolved_aircraft_wasp:
 		HP: 1500
 	Aircraft:
 		Speed: 200
-		TurnSpeed: 3
+		TurnSpeed: 12
 	RevealsShroud:
 		Range: 5c0
 		Type: CenterPosition
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: evolved_aircraft_wasp
 	Voiced:
 		VoiceSet: evolved_aircraft_wasp

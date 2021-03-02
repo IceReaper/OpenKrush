@@ -21,7 +21,6 @@ namespace OpenRA.Mods.Kknd.Mechanics.Researching.Traits
 	class ResearchableInfo : ConditionalTraitInfo, Requires<RenderSpritesInfo>, Requires<BodyOrientationInfo>
 	{
 		[Desc("Research sequence name to use.")]
-		[SequenceReference]
 		public readonly string Sequence = "research";
 
 		[Desc("Initial tech level.")]

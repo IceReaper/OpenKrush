@@ -18,7 +18,7 @@ namespace OpenRA.Mods.Kknd.Traits.Veterancy
 	[Desc("This actor has a different voice for each veterancy level.")]
 	public class VeterancyVoicedInfo : TraitInfo
 	{
-		[FieldLoader.Require]
+		[FieldLoader.RequireAttribute]
 		[Desc("Which voice sets to use.")]
 		[VoiceSetReference]
 		public readonly string[] VoiceSets = { };

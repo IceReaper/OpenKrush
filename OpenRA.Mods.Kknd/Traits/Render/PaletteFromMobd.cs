@@ -26,12 +26,12 @@ namespace OpenRA.Mods.Kknd.Traits.Render
 	[Desc("Load palette from KKnD2 MOBD file.")]
 	class PaletteFromMobdInfo : TraitInfo, IProvidesCursorPaletteInfo
 	{
-		[FieldLoader.Require]
+		[FieldLoader.RequireAttribute]
 		[PaletteDefinition]
 		[Desc("Internal palette name")]
 		public readonly string Name = null;
 
-		[FieldLoader.Require]
+		[FieldLoader.RequireAttribute]
 		[Desc("Filename to load")]
 		public readonly string Filename = null;
 

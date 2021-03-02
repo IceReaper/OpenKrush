@@ -11,7 +11,7 @@ evolved_vehicle_direwolf:
 		HP: 400
 	Mobile:
 		Speed: 115
-		TurnSpeed: 41
+		TurnSpeed: 164
 	AdvancedBuildable:
 		Prerequisites: evolved_beasts
 		BuildDuration: 150
@@ -21,6 +21,7 @@ evolved_vehicle_direwolf:
 	Voiced:
 		VoiceSet: evolved_vehicle_direwolf
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: evolved_vehicle_direwolf
 	AdvancedSelectionDecorations:
 		Offset: 0,-2
@@ -33,6 +34,7 @@ evolved_vehicle_direwolf:
 	-Explodes:
 	-FrozenOnDeath:
 	WithDeathAnimation:
+		CrushedSequencePalette:
 		FallbackSequence: die
 		DeathTypes:
 			Explosion: -explode

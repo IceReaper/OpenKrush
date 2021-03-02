@@ -8,7 +8,7 @@ survivors_vehicle_derrick:
 		HP: 4000
 	Mobile:
 		Speed: 40
-		TurnSpeed: 8
+		TurnSpeed: 32
 	AdvancedBuildable:
 		Prerequisites: survivors_vehicles
 		BuildDuration: 500

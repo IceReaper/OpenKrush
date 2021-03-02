@@ -115,7 +115,8 @@ Translations:
 Hotkeys:
 	kknd|hotkeys/game.yaml
 	kknd|hotkeys/observer.yaml
-	kknd|hotkeys/production.yaml
+	kknd|hotkeys/production-common.yaml
+	kknd|hotkeys/supportpowers.yaml
 	kknd|hotkeys/viewport.yaml
 
 LoadScreen: LoadScreen

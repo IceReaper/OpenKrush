@@ -25,7 +25,7 @@ evolved_building_holding_pen:
 	Exit:
 		SpawnOffset: 0c-700,-0c220,0
 		ExitCell: -1,2
-		Facing: 64
+		Facing: 256
 	RallyPoint:
-		Offset: -1,2
+		Path: -1,2
 		Image:

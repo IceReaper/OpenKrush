@@ -8,11 +8,12 @@ survivors_aircraft_bomber:
 		HP: 1500
 	Aircraft:
 		Speed: 200
-		TurnSpeed: 3
+		TurnSpeed: 12
 	RevealsShroud:
 		Range: 5c0	
 		Type: CenterPosition	
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: survivors_aircraft_bomber
 	Voiced:
 		VoiceSet: survivors_aircraft_bomber

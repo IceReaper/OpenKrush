@@ -15,12 +15,13 @@ evolved_tower_rotarycannon:
 	RevealsShroud:
 		Range: 10c0
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: evolved_tower_rotarycannon
 		LocalOffset: 0,0,500
 	WithTurretAttackAnimation:
 		Sequence: shoot
 	Turreted:
-		TurnSpeed: 20
+		TurnSpeed: 80
 	AdvancedSelectionDecorations:
 		Offset: 0,-5
 	TechnicianRepairable:

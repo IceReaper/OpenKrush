@@ -9,7 +9,7 @@ evolved_vehicle_giantscorpion:
 		HP: 1250
 	Mobile:
 		Speed: 60
-		TurnSpeed: 8
+		TurnSpeed: 32
 	AdvancedBuildable:
 		Prerequisites: evolved_beasts
 		BuildDuration: 300
@@ -19,6 +19,7 @@ evolved_vehicle_giantscorpion:
 	Voiced:
 		VoiceSet: evolved_vehicle_giantscorpion
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: evolved_vehicle_giantscorpion
 	AdvancedSelectionDecorations:
 		Offset: 0,-12

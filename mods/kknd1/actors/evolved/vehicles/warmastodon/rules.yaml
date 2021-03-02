@@ -9,7 +9,7 @@ evolved_vehicle_warmastodon:
 		HP: 1800
 	Mobile:
 		Speed: 55
-		TurnSpeed: 8
+		TurnSpeed: 32
 	AdvancedBuildable:
 		Prerequisites: evolved_beasts
 		BuildDuration: 650
@@ -19,9 +19,10 @@ evolved_vehicle_warmastodon:
 	Voiced:
 		VoiceSet: evolved_vehicle_warmastodon
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: evolved_vehicle_warmastodon
 	Turreted:
-		TurnSpeed: 20
+		TurnSpeed: 80
 	AdvancedSelectionDecorations:
 		Offset: 0,-20
 	Veterancy:

@@ -11,7 +11,6 @@
 
 using System;
 using OpenRA.GameRules;
-using OpenRA.Mods.Common.Traits;
 using OpenRA.Primitives;
 using OpenRA.Traits;
 

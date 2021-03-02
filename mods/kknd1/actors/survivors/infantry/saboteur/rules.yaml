@@ -18,6 +18,7 @@ survivors_infantry_saboteur:
 		BuildDuration: 150
 		Level: 1
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: survivors_infantry_saboteur
 	Veterancy:
 		HealRates: 1,2

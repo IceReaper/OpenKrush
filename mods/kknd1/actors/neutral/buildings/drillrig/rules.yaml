@@ -35,3 +35,9 @@ neutral_building_drillrig:
 	-Production:
 	-SelfConstructing:
 	-DeconstructSellable:
+	ExplosionOnDamageTransition@Heavy:
+		-RequiresCondition:
+	ExplosionOnDamageTransition@Critical:
+		-RequiresCondition:
+	BlocksProjectiles:
+		-RequiresCondition:

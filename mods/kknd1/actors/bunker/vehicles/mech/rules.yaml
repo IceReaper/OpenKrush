@@ -4,13 +4,15 @@ bunker_vehicles_mech:
 	Tooltip:
 		Name: Mech
 	OffsetsArmament@primary:
+		MuzzlePalette:
 		Weapon: bunker_vehicles_mech_primary
 	OffsetsArmament@secondary:
+		MuzzlePalette:
 		Weapon: bunker_vehicles_mech_secondary
 		FireDelay: 16
 		LocalOffset: 0,-960,0
 	Turreted:
-		TurnSpeed: 8
+		TurnSpeed: 32
 	Voiced:
 		VoiceSet: BunkerVoice
 	AdvancedBuildable:
@@ -25,7 +27,7 @@ bunker_vehicles_mech:
 		HP: 6000
 	Mobile:
 		Speed: 50
-		TurnSpeed: 8
+		TurnSpeed: 32
 	RevealsShroud:
 		Range: 8c0
 	AdvancedSelectionDecorations:

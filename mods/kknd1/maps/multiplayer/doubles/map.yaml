@@ -383,19 +383,19 @@ Actors:
 		Location: 28,48
 	Actor146: neutral_building_campfire
 		Location: 55,31
-		Owner: Creeps
+		Owner: Neutral
 	Actor150: neutral_building_hut_b
 		Location: 54,29
-		Owner: Creeps
+		Owner: Neutral
 	Actor151: neutral_building_hut_d
 		Location: 51,31
-		Owner: Creeps
+		Owner: Neutral
 	Actor152: neutral_building_hut_c
 		Location: 57,33
-		Owner: Creeps
+		Owner: Neutral
 	Actor153: neutral_building_hut_e
 		Location: 53,34
-		Owner: Creeps
+		Owner: Neutral
 	Actor155: neutral_building_drillrig
 		Owner: Neutral
 		Location: 102,46

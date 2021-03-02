@@ -11,7 +11,7 @@ evolved_vehicle_bikeandsidecar:
 		HP: 800
 	Mobile:
 		Speed: 90
-		TurnSpeed: 8
+		TurnSpeed: 32
 	AdvancedBuildable:
 		Prerequisites: evolved_vehicles
 		BuildDuration: 150
@@ -19,9 +19,10 @@ evolved_vehicle_bikeandsidecar:
 	RevealsShroud:
 		Range: 7c0
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: evolved_vehicle_bikeandsidecar
 	Turreted:
-		TurnSpeed: 20
+		TurnSpeed: 80
 	AdvancedSelectionDecorations:
 		Offset: 0,1
 	Veterancy:

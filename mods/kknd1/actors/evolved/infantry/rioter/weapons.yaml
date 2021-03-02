@@ -7,6 +7,7 @@ evolved_infantry_rioter:
 	Projectile: Bullet
 		Image: evolved_infantry_rioter
 		Palette: kknd
+		TrailPalette: kknd
 		Sequences: projectile
 		Inaccuracy: 750
 		Speed: 150

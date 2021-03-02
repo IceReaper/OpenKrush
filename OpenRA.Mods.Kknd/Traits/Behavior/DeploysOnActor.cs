@@ -23,7 +23,7 @@ namespace OpenRA.Mods.Kknd.Traits.Behavior
 	{
 		[Desc("Actor to transform into.")]
 		[ActorReference]
-		[FieldLoader.Require]
+		[FieldLoader.RequireAttribute]
 		public readonly string IntoActor = null;
 
 		[Desc("Cursor to display when hovering an oilpatch.")]

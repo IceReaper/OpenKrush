@@ -8,7 +8,7 @@ survivors_vehicle_oiltanker:
 		HP: 3500
 	Mobile:
 		Speed: 45
-		TurnSpeed: 8
+		TurnSpeed: 32
 	AdvancedBuildable:
 		Prerequisites: survivors_vehicles
 		BuildDuration: 600

@@ -11,7 +11,7 @@ survivors_vehicle_4x4pickup:
 		HP: 800
 	Mobile:
 		Speed: 90
-		TurnSpeed: 8
+		TurnSpeed: 32
 	AdvancedBuildable:
 		Prerequisites: survivors_vehicles
 		BuildDuration: 150
@@ -19,9 +19,10 @@ survivors_vehicle_4x4pickup:
 	RevealsShroud:
 		Range: 7c0
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: survivors_vehicle_4x4pickup
 	Turreted:
-		TurnSpeed: 20
+		TurnSpeed: 80
 	AdvancedSelectionDecorations:
 		Offset: 0,-6
 	Veterancy:

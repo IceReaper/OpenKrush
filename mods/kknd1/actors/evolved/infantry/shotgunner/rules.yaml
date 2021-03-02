@@ -17,6 +17,7 @@ evolved_infantry_shotgunner:
 		BuildDuration: 100
 		Level: 1
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: evolved_infantry_shotgunner
 	Veterancy:
 		HealRates: 1,2

@@ -28,7 +28,7 @@ evolved_building_powerstation:
 	FreeActor:
 		Actor: evolved_vehicle_oiltanker
 		SpawnOffset: 1,1
-		Facing: 96
+		Facing: 384
 		RequiresCondition: !selfconstructing && !deconstructing
 	Researchable:
 		Offset: 4,-128

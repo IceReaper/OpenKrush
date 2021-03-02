@@ -14,16 +14,18 @@ survivors_tower_cannontower:
 	RevealsShroud:
 		Range: 10c0
 	OffsetsArmament@1:
+		MuzzlePalette:
 		Weapon: survivors_tower_cannontower
 		LocalOffset: 0,0,350
 	OffsetsArmament@2:
+		MuzzlePalette:
 		Name: secondary
 		Weapon: survivors_tower_cannontower
 		LocalOffset: 0,200,350
 	WithTurretAttackAnimation:
 		Sequence: shoot
 	Turreted:
-		TurnSpeed: 20
+		TurnSpeed: 80
 	AdvancedSelectionDecorations:
 		Offset: 0,1
 	TechnicianRepairable:

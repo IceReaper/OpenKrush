@@ -11,7 +11,6 @@
 
 using OpenRA.GameRules;
 using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.Common.Widgets;
 using OpenRA.Mods.Kknd.FileFormats;
 using OpenRA.Primitives;
 using OpenRA.Widgets;
@@ -29,7 +28,7 @@ namespace OpenRA.Mods.Kknd.Widgets
 		private readonly MusicPlaylist musicPlayList;
 		private MusicInfo song;
 
-		[ObjectCreator.UseCtor]
+		[ObjectCreator.UseCtorAttribute]
 		public IntroLogic(Widget widget, World world, ModData modData)
 		{
 			if (state != 0)

@@ -31,7 +31,7 @@ namespace OpenRA.Mods.Kknd.Traits.Altar
 		[Desc("Duration of the summoning.")]
 		public readonly int SummonDelay = 50;
 
-		[FieldLoader.Require]
+		[FieldLoader.RequireAttribute]
 		[Desc("The unit which is granted upon sacrificing.")]
 		public readonly string Summon = null;
 

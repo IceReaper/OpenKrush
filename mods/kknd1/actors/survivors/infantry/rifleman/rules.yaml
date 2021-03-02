@@ -17,6 +17,7 @@ survivors_infantry_rifleman:
 		BuildDuration: 75
 		Level: 0
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: survivors_infantry_rifleman
 	Veterancy:
 		HealRates: 1,2

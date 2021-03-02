@@ -40,6 +40,6 @@ evolved_building_blacksmith:
 	Exit:
 		SpawnOffset: 0c100,-1c-1450,1000
 		ExitCell: 0,1
-		Facing: 75
+		Facing: 300
 	RallyPoint:
-		Offset: 0,1
+		Path: 0,1

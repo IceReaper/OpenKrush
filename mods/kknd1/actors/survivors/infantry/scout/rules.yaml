@@ -16,9 +16,10 @@ survivors_infantry_scout:
 		BuildDuration: 100
 		Level: -1
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: survivors_infantry_scout
 	Veterancy:
 		HealRates: 1,2
 		Experience: 500, 1000
 	VeterancyVoiced:
-		VoiceSets: ScoutVoice
+		VoiceSets: survivors_infantry_scout

@@ -16,6 +16,7 @@ survivors_infantry_rpglauncher:
 		BuildDuration: 200
 		Level: 4
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: survivors_infantry_rpglauncher
 	Veterancy:
 		HealRates: 1,2

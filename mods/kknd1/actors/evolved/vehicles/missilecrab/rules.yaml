@@ -10,7 +10,7 @@ evolved_vehicle_missilecrab:
 		HP: 2500
 	Mobile:
 		Speed: 45
-		TurnSpeed: 8
+		TurnSpeed: 32
 	AdvancedBuildable:
 		Prerequisites: evolved_beasts
 		BuildDuration: 1000
@@ -20,9 +20,10 @@ evolved_vehicle_missilecrab:
 	Voiced:
 		VoiceSet: evolved_vehicle_missilecrab
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: evolved_vehicle_missilecrab
 	Turreted:
-		TurnSpeed: 20
+		TurnSpeed: 80
 	AdvancedSelectionDecorations:
 		Offset: 0,-3
 	Veterancy:

@@ -16,6 +16,7 @@ survivors_infantry_swat:
 		BuildDuration: 100
 		Level: 1
 	OffsetsArmament:
+		MuzzlePalette:
 		Weapon: survivors_infantry_swat
 	Veterancy:
 		HealRates: 1,2
