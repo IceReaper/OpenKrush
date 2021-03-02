@@ -76,7 +76,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 			{
 				for (var x = 0; x < ingameUi.World.Map.MapSize.X; x++)
 				{
-					var type = ingameUi.World.Map.Rules.TileSet.GetTileInfo(ingameUi.World.Map.Tiles[new MPos(x, y)]);
+					var type = ingameUi.World.Map.Rules.TerrainInfo.GetTerrainInfo(ingameUi.World.Map.Tiles[new MPos(x, y)]);
 					radarData[(y * radarSheet.Size.Width + x) * 4] = type.MinColor.B;
 					radarData[(y * radarSheet.Size.Width + x) * 4 + 1] = type.MinColor.G;
 					radarData[(y * radarSheet.Size.Width + x) * 4 + 2] = type.MinColor.R;
@@ -174,10 +174,10 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 				if (!e.Actor.IsInWorld || e.Actor.IsDead || ingameUi.World.FogObscures(e.Actor) || e.Actor.Owner == null)
 					continue;
 
-				if (!ShowStances.HasStance(PlayerRelationship.Ally) && e.Actor.Owner.RelationshipWith(ingameUi.World.LocalPlayer).HasStance(PlayerRelationship.Ally))
+				if (!ShowStances.HasRelationship(PlayerRelationship.Ally) && e.Actor.Owner.RelationshipWith(ingameUi.World.LocalPlayer).HasRelationship(PlayerRelationship.Ally))
 					continue;
 
-				if (!ShowStances.HasStance(PlayerRelationship.Enemy) && e.Actor.Owner.RelationshipWith(ingameUi.World.LocalPlayer).HasStance(PlayerRelationship.Enemy))
+				if (!ShowStances.HasRelationship(PlayerRelationship.Enemy) && e.Actor.Owner.RelationshipWith(ingameUi.World.LocalPlayer).HasRelationship(PlayerRelationship.Enemy))
 					continue;
 
 				cells.Clear();
@@ -189,7 +189,7 @@ namespace OpenRA.Mods.Kknd.Widgets.Ingame
 						continue;
 
 					var pos = cell.Item1.ToMPos(ingameUi.World.Map.Grid.Type);
-					var color = useStanceColor ? Color.FromArgb(e.Actor.Owner.PlayerStanceColor(e.Actor).ToArgb()) : e.Actor.Owner.Color;
+					var color = useStanceColor ? Color.FromArgb(e.Actor.Owner.PlayerRelationshipColor(e.Actor).ToArgb()) : e.Actor.Owner.Color;
 
 					WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X + pos.U * size, RenderBounds.Y + pos.V * size, size, size), color);
 				}

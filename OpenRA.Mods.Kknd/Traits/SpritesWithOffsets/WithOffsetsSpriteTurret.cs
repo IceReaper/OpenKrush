@@ -25,7 +25,7 @@ namespace OpenRA.Mods.Kknd.Traits.SpritesWithOffsets
 	{
 		public override object Create(ActorInitializer init) { return new WithOffsetsSpriteTurret(init.Self, this); }
 
-		public new IEnumerable<IActorPreview> RenderPreviewSprites(ActorPreviewInitializer init, RenderSpritesInfo rs, string image, int facings, PaletteReference p)
+		public new IEnumerable<IActorPreview> RenderPreviewSprites(ActorPreviewInitializer init, string image, int facings, PaletteReference p)
 		{
 			if (!EnabledByDefault)
 				yield break;
@@ -53,8 +53,8 @@ namespace OpenRA.Mods.Kknd.Traits.SpritesWithOffsets
 
 			if (offset == null)
 			{
-				Func<WAngle> facing = init.GetFacing();
-				Func<WRot> orientation = () => body.QuantizeOrientation(WRot.FromFacing(facing().Facing), facings);
+				var facing = init.GetFacing();
+				Func<WRot> orientation = () => body.QuantizeOrientation(WRot.FromYaw(facing()), facings);
 				offset = () => body.LocalToWorld(t.Offset.Rotate(orientation()));
 			}
 
@@ -64,7 +64,12 @@ namespace OpenRA.Mods.Kknd.Traits.SpritesWithOffsets
 				return -(tmpOffset.Y + tmpOffset.Z) + 1;
 			};
 
-			yield return new SpriteActorPreview(anim, offset, zOffset, p, rs.Scale);
+			if (IsPlayerPalette)
+				p = init.WorldRenderer.Palette(Palette + init.Get<OwnerInit>().InternalName);
+			else if (Palette != null)
+				p = init.WorldRenderer.Palette(Palette);
+
+			yield return new SpriteActorPreview(anim, offset, zOffset, p);
 		}
 	}
 

@@ -79,8 +79,13 @@ ChromeLayout:
 	common|chrome/ingame-debuginfo.yaml
 	common|chrome/ingame-infochat.yaml
 	kknd|chrome/mainmenu.yaml
-	common|chrome/mainmenu-prompts.yaml
-	kknd|chrome/settings.yaml
+	kknd|chrome/mainmenu-prompts.yaml
+	common|chrome/settings.yaml
+	kknd|chrome/settings-display.yaml
+	common|chrome/settings-audio.yaml
+	common|chrome/settings-input.yaml
+	common|chrome/settings-hotkeys.yaml
+	common|chrome/settings-advanced.yaml
 	common|chrome/credits.yaml
 	kknd|chrome/lobby.yaml
 	common|chrome/lobby-mappreview.yaml
@@ -102,7 +107,7 @@ ChromeLayout:
 	common|chrome/dropdowns.yaml
 	common|chrome/musicplayer.yaml
 	common|chrome/tooltips.yaml
-	common|chrome/assetbrowser.yaml
+	kknd|chrome/assetbrowser.yaml
 	common|chrome/missionbrowser.yaml
 	common|chrome/confirmation-dialogs.yaml
 	common|chrome/editor.yaml
@@ -177,12 +182,16 @@ SoundFormats: Wav
 
 SpriteFormats: Mobd, PngSheet
 
+VideoFormats: Vbc
+
+TerrainFormat: DefaultTerrain
+
 SpriteSequenceFormat: OffsetsSpriteSequence
 
 ModelSequenceFormat: PlaceholderModelSequence
 
 AssetBrowser:
-	SupportedExtensions: .mobd
+	SupportedExtensions: .mobd, vbc
 
 GameSpeeds:
 	slower:
@@ -209,3 +218,4 @@ GameSpeeds:
 ColorValidator:
 	HsvSaturationRange: 0, 1
 	HsvValueRange: 0, 1
+	TeamColorPresets: 9023cd, f53333, ffae00, fff830, 87f506, f872ad, da06f3, ddb8ff, def7b2, 39c46f, 200738, 280df6, 2f86f2, 76d2f8, 498221, 392929

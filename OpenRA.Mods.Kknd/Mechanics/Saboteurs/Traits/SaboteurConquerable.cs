@@ -48,7 +48,7 @@ namespace OpenRA.Mods.Kknd.Mechanics.Saboteurs.Traits
 
 		public void Enter(Actor self, Actor target)
 		{
-			if (self.Owner.RelationshipWith(target.Owner).HasStance(PlayerRelationship.Ally))
+			if (self.Owner.RelationshipWith(target.Owner).HasRelationship(PlayerRelationship.Ally))
 				Population = Math.Min(Population + 1, Info.MaxPopulation);
 			else if (Population > 0)
 			{

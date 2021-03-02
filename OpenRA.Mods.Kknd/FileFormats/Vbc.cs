@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The KKnD Developers (see AUTHORS)
  * This file is part of KKnD, which is free software. It is made
@@ -7,71 +8,101 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
+
 #endregion
 
 using System.IO;
 using System.Linq;
+using OpenRA.Video;
 
 namespace OpenRA.Mods.Kknd.FileFormats
 {
-	public class Vbc
-	{
-		private readonly VbcFrame[] frames;
+    public class Vbc : IVideo
+    {
+        public ushort Frames { get; }
+        public byte Framerate { get; }
+        public ushort Width { get; }
+        public ushort Height { get; }
+        public uint[,] FrameData { get; private set; }
+        public int CurrentFrame { get; private set; }
+        public bool HasAudio => true;
+        public byte[] AudioData { get; }
+        public int AudioChannels => 1;
+        public int SampleBits { get; }
+        public int SampleRate { get; }
 
-		public readonly int2 Size;
-		public readonly ushort Frames;
-		public readonly ushort SampleBits;
-		public readonly ushort SampleRate;
+        private readonly VbcFrame[] frames;
+        private uint[] palette;
 
-		public Vbc(Stream stream)
-		{
-			if (stream.ReadASCII(4) != "SIFF")
-				throw new InvalidDataException("Invalid vbc (invalid SIFF section)");
+        public Vbc(Stream stream)
+        {
+            if (stream.ReadASCII(4) != "SIFF")
+                throw new InvalidDataException("Invalid vbc (invalid SIFF section)");
 
-			stream.ReadUInt32(); // Length
+            stream.ReadUInt32(); // Length
 
-			if (stream.ReadASCII(4) != "VBV1")
-				throw new InvalidDataException("Invalid vbc (not VBV1)");
+            if (stream.ReadASCII(4) != "VBV1")
+                throw new InvalidDataException("Invalid vbc (not VBV1)");
 
-			if (stream.ReadASCII(4) != "VBHD")
-				throw new InvalidDataException("Invalid vbc (not VBHD)");
+            if (stream.ReadASCII(4) != "VBHD")
+                throw new InvalidDataException("Invalid vbc (not VBHD)");
 
-			stream.ReadUInt32(); // Length
-			stream.ReadUInt16(); // Version
-			Size = new int2(stream.ReadUInt16(), stream.ReadUInt16());
-			stream.ReadUInt32(); // 0
-			Frames = stream.ReadUInt16();
-			SampleBits = stream.ReadUInt16();
-			SampleRate = stream.ReadUInt16();
-			stream.ReadUInt32(); // 0
-			stream.ReadUInt32(); // 0
-			stream.ReadUInt32(); // 0
-			stream.ReadUInt32(); // 0
+            stream.ReadUInt32(); // Length
+            stream.ReadUInt16(); // Version
+            Width = stream.ReadUInt16();
+            Height = stream.ReadUInt16();
+            stream.ReadUInt32(); // 0
+            Frames = stream.ReadUInt16();
+            SampleBits = stream.ReadUInt16();
+            SampleRate = stream.ReadUInt16();
+            stream.ReadUInt32(); // 0
+            stream.ReadUInt32(); // 0
+            stream.ReadUInt32(); // 0
+            stream.ReadUInt32(); // 0
 
-			if (stream.ReadASCII(4) != "BODY")
-				throw new InvalidDataException("Invalid vbc (not BODY)");
+            if (stream.ReadASCII(4) != "BODY")
+                throw new InvalidDataException("Invalid vbc (not BODY)");
 
-			stream.ReadUInt32(); // Length
+            stream.ReadUInt32(); // Length
 
-			frames = new VbcFrame[Frames];
+            frames = new VbcFrame[Frames];
 
-			for (var i = 0; i < Frames; i++)
-				frames[i] = new VbcFrame(stream);
-		}
+            for (var i = 0; i < Frames; i++)
+                frames[i] = new VbcFrame(stream);
 
-		public byte[] GetAudio()
-		{
-			var audio = new MemoryStream();
+            var audio = new MemoryStream();
 
-			foreach (var frame in frames.Where(f => f.Audio != null))
-				audio.WriteArray(frame.Audio);
+            foreach (var frame in frames.Where(f => f.Audio != null))
+                audio.WriteArray(frame.Audio);
 
-			return audio.ToArray();
-		}
+            AudioData = audio.ToArray();
+            var a = audio.Length / (SampleRate * 1 * (SampleBits / 8));
+            Framerate = (byte)(Frames / a);
 
-		public byte[] ApplyFrame(int frameId, byte[] frame, uint[] palette)
-		{
-			return frames[frameId].ApplyFrame(frame, palette, Size);
-		}
-	}
+            Reset();
+        }
+
+        public void AdvanceFrame()
+        {
+            CurrentFrame++;
+            LoadFrame();
+        }
+
+        public void Reset()
+        {
+            CurrentFrame = 0;
+            LoadFrame();
+        }
+
+        private void LoadFrame()
+        {
+            if (CurrentFrame == 0)
+            {
+                FrameData = new uint[Exts.NextPowerOf2(Width), Exts.NextPowerOf2(Height)];
+                palette = new uint[256];
+            }
+            else
+                FrameData = frames[CurrentFrame - 1].ApplyFrame(FrameData, ref palette, Width, Height);
+        }
+    }
 }

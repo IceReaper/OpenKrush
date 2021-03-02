@@ -14,15 +14,12 @@ using OpenRA.Graphics;
 using OpenRA.Mods.Common.Widgets;
 using OpenRA.Mods.Kknd.FileFormats;
 using OpenRA.Primitives;
-using OpenRA.Widgets;
 
 namespace OpenRA.Mods.Kknd.Widgets
 {
 	public class VbcPlayerWidget : ColorBlockWidget
 	{
 		private Vbc video;
-		private byte[] frame;
-		private uint[] palette;
 
 		private Sprite videoSprite;
 
@@ -41,10 +38,8 @@ namespace OpenRA.Mods.Kknd.Widgets
 			set
 			{
 				video = value;
-				frame = new byte[video.Size.X * video.Size.Y];
-				palette = new uint[256];
 
-				var size = new Size(Exts.NextPowerOf2(video.Size.X), Exts.NextPowerOf2(video.Size.Y));
+				var size = new Size(Exts.NextPowerOf2(video.Width), Exts.NextPowerOf2(video.Height));
 				videoSprite = new Sprite(new Sheet(SheetType.BGRA, size), new Rectangle(0, 0, size.Width, size.Height), TextureChannel.RGBA);
 				videoSprite.Sheet.GetTexture().ScaleFilter = TextureScaleFilter.Linear;
 			}
@@ -65,20 +60,15 @@ namespace OpenRA.Mods.Kknd.Widgets
 			lastFrame = 0;
 			UpdateFrame();
 
-			var audio = Video.GetAudio();
+			var audio = Video.AudioData;
 			duration = audio.Length * 1000L / (video.SampleRate * 1 * (video.SampleBits / 8));
 			Game.Sound.PlayVideo(audio, 1, Video.SampleBits, Video.SampleRate);
 		}
 
 		private void UpdateFrame()
 		{
-			frame = Video.ApplyFrame(lastFrame, frame, palette);
-			var data = new uint[videoSprite.Sheet.Size.Height, videoSprite.Sheet.Size.Width];
-
-			for (var i = 0; i < frame.Length; i++)
-				data[i / video.Size.X, i % video.Size.X] = palette[frame[i]];
-
-			videoSprite.Sheet.GetTexture().SetData(data);
+			Video.AdvanceFrame();
+			videoSprite.Sheet.GetTexture().SetData(Video.FrameData);
 		}
 
 		public void Stop()
@@ -130,9 +120,9 @@ namespace OpenRA.Mods.Kknd.Widgets
 
 			base.Draw();
 
-			var yFactor = video.Size.Y == 240 ? 2 : 1;
-			var scale = Math.Min(Bounds.Width / video.Size.X, Bounds.Height / (video.Size.Y * yFactor));
-			var videoSize = new int2(video.Size.X * scale, video.Size.Y * yFactor * scale);
+			var yFactor = video.Height == 240 ? 2 : 1;
+			var scale = Math.Min(Bounds.Width / video.Width, Bounds.Height / (video.Height * yFactor));
+			var videoSize = new int2(video.Width * scale, video.Height * yFactor * scale);
 			var sheetSize = new int2(videoSprite.Sheet.Size.Width * scale, videoSprite.Sheet.Size.Height * yFactor * scale);
 			var position = new int2((Bounds.Width - videoSize.X) / 2, (Bounds.Height - videoSize.Y) / 2) + Bounds.Location;
 

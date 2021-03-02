@@ -100,11 +100,11 @@ World:
 	# Default game settings: gamespeed, techlevel, shortgame.
 	MapOptions:
 	# Required for spawnpoint support.
-	MPStartLocations:
+	MapStartingLocations:
 	# Required to setup the players in lobby.
-	CreateMPPlayers:
+	CreateMapPlayers:
 	# Required to spawn player units at spawnpoint.
-	SpawnMPUnits:
+	SpawnStartingUnits:
 		DropdownLabel: Units
 		StartingUnitsClass: support
 	# Cheat protection.

@@ -91,7 +91,7 @@ namespace OpenRA.Mods.Kknd.Mechanics.Saboteurs.Traits
 			if (order.OrderString != SaboteurEnterOrderTargeter.Id)
 				return null;
 
-			return order.Target.Actor.Owner.RelationshipWith(self.Owner).HasStance(PlayerRelationship.Ally) ? info.VoiceOrderAlly : info.VoiceOrderEnemy;
+			return order.Target.Actor.Owner.RelationshipWith(self.Owner).HasRelationship(PlayerRelationship.Ally) ? info.VoiceOrderAlly : info.VoiceOrderEnemy;
 		}
 
 		public void Enter(Actor self, Actor targetActor)
@@ -99,7 +99,7 @@ namespace OpenRA.Mods.Kknd.Mechanics.Saboteurs.Traits
 			if (self.Owner != self.World.LocalPlayer)
 				return;
 
-			if (self.Owner.RelationshipWith(targetActor.Owner).HasStance(PlayerRelationship.Ally))
+			if (self.Owner.RelationshipWith(targetActor.Owner).HasRelationship(PlayerRelationship.Ally))
 				self.PlayVoice(info.VoiceEnterAlly);
 			else if (targetActor.Trait<SaboteurConquerable>().Population > 0)
 				self.PlayVoice(info.VoiceEnterEnemy);

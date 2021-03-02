@@ -84,7 +84,7 @@ namespace OpenRA.Mods.Kknd.Mechanics.Technicians.Traits
 			if (self.Owner != self.World.LocalPlayer)
 				return;
 
-			if (self.Owner.RelationshipWith(targetActor.Owner).HasStance(PlayerRelationship.Ally))
+			if (self.Owner.RelationshipWith(targetActor.Owner).HasRelationship(PlayerRelationship.Ally))
 				self.PlayVoice(info.VoiceEnter);
 		}
 	}

@@ -53,10 +53,9 @@ namespace OpenRA.Mods.Kknd.FileFormats
 				stream.ReadUInt16(); // Duration
 		}
 
-		public byte[] ApplyFrame(byte[] oldFrame, uint[] palette, int2 size)
+		public uint[,] ApplyFrame(uint[,] oldFrame, ref uint[] palette, ushort width, ushort height)
 		{
-			var newFrame = new byte[oldFrame.Length];
-			var offset = globalMotion.X + globalMotion.Y * size.X;
+			var newFrame = new uint[oldFrame.GetLength(0), oldFrame.GetLength(1)];
 
 			int[] patterns =
 			{
@@ -83,8 +82,8 @@ namespace OpenRA.Mods.Kknd.FileFormats
 
 			video.Position = 0;
 
-			for (var by = 0; by < size.Y / 4; by++)
-			for (var bx = 0; bx < size.X / 4;)
+			for (var by = 0; by < height / 4; by++)
+			for (var bx = 0; bx < width / 4;)
 			{
 				var blockTypes = video.ReadUInt8();
 
@@ -97,10 +96,8 @@ namespace OpenRA.Mods.Kknd.FileFormats
 						case 0:
 						{
 							for (var y = 0; y < 4; y++)
-							{
-								var dst = (by * 4 + y) * size.X + bx * 4;
-								Array.Copy(oldFrame, dst + offset, newFrame, dst, 4);
-							}
+							for (var x = 0; x < 4; x++)
+								newFrame[bx * 4 + x, by * 4 + y] = oldFrame[bx * 4 + x + globalMotion.X, by * 4 + y + globalMotion.Y];
 
 							break;
 						}
@@ -112,7 +109,8 @@ namespace OpenRA.Mods.Kknd.FileFormats
 							if (motion == 0)
 							{
 								for (var y = 0; y < 4; y++)
-									Array.Copy(video.ReadBytes(4), 0, newFrame, (by * 4 + y) * size.X + bx * 4, 4);
+								for (var x = 0; x < 4; x++)
+									newFrame[bx * 4 + x, by * 4 + y] = palette[video.ReadByte()];
 							}
 							else
 							{
@@ -120,10 +118,8 @@ namespace OpenRA.Mods.Kknd.FileFormats
 								var motionY = ((motion >> 4) ^ 8) - 8;
 
 								for (var y = 0; y < 4; y++)
-								{
-									var dst = (by * 4 + y) * size.X + bx * 4;
-									Array.Copy(oldFrame, dst + offset + motionY * size.X + motionX, newFrame, dst, 4);
-								}
+								for (var x = 0; x < 4; x++)
+									newFrame[bx * 4 + x, by * 4 + y] = oldFrame[bx * 4 + x + globalMotion.X + motionX, by * 4 + y + globalMotion.Y + motionY];
 							}
 
 							break;
@@ -131,11 +127,11 @@ namespace OpenRA.Mods.Kknd.FileFormats
 
 						case 2:
 						{
-							var color = video.ReadUInt8();
+							var color = palette[video.ReadUInt8()];
 
 							for (var y = 0; y < 4; y++)
 							for (var x = 0; x < 4; x++)
-								newFrame[(by * 4 + y) * size.X + bx * 4 + x] = color;
+								newFrame[bx * 4 + x, by * 4 + y] = color;
 							break;
 						}
 
@@ -149,28 +145,27 @@ namespace OpenRA.Mods.Kknd.FileFormats
 							{
 								case 0:
 								{
-									var pixel0 = video.ReadUInt8();
-									var pixel1 = video.ReadUInt8();
+									var pixel0 = palette[video.ReadUInt8()];
+									var pixel1 = palette[video.ReadUInt8()];
 
 									for (var y = 0; y < 4; y++)
 									for (var x = 0; x < 4; x++)
-										newFrame[(by * 4 + y) * size.X + bx * 4 + x] = ((pattern >> (y * 4 + x)) & 1) == 0 ? pixel0 : pixel1;
+										newFrame[bx * 4 + x, by * 4 + y] = ((pattern >> (y * 4 + x)) & 1) == 0 ? pixel0 : pixel1;
+
 									break;
 								}
 
 								case 1:
 								{
-									var pixel = video.ReadUInt8();
+									var pixel = palette[video.ReadUInt8()];
 
 									for (var y = 0; y < 4; y++)
 									for (var x = 0; x < 4; x++)
 									{
-										var dst = (by * 4 + y) * size.X + bx * 4 + x;
-
 										if (((pattern >> (y * 4 + x)) & 1) == 0)
-											newFrame[dst] = oldFrame[dst + offset];
+											newFrame[bx * 4 + x, by * 4 + y] = oldFrame[bx * 4 + x + globalMotion.X, by * 4 + y + globalMotion.Y];
 										else
-											newFrame[dst] = pixel;
+											newFrame[bx * 4 + x, by * 4 + y] = pixel;
 									}
 
 									break;
@@ -178,17 +173,15 @@ namespace OpenRA.Mods.Kknd.FileFormats
 
 								case 2:
 								{
-									var pixel = video.ReadUInt8();
+									var pixel = palette[video.ReadUInt8()];
 
 									for (var y = 0; y < 4; y++)
 									for (var x = 0; x < 4; x++)
 									{
-										var dst = (by * 4 + y) * size.X + bx * 4 + x;
-
 										if (((pattern >> (y * 4 + x)) & 1) == 1)
-											newFrame[dst] = oldFrame[dst + offset];
+											newFrame[bx * 4 + x, by * 4 + y] = oldFrame[bx * 4 + x + globalMotion.X, by * 4 + y + globalMotion.Y];
 										else
-											newFrame[dst] = pixel;
+											newFrame[bx * 4 + x, by * 4 + y] = pixel;
 									}
 
 									break;

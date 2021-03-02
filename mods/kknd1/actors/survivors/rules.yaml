@@ -2,12 +2,12 @@ World:
 	Faction@Survivors:
 		Name: Survivors
 		InternalName: survivors
-	MPStartUnits@survivors0:
+	StartingUnits@survivors0:
 		Class: none
 		ClassName: Mobile Base
 		BaseActor: survivors_vehicle_mobileoutpost
 		Factions: survivors
-	MPStartUnits@survivors1:
+	StartingUnits@survivors1:
 		Class: support
 		ClassName: With Derrick
 		BaseActor: survivors_vehicle_mobileoutpost
@@ -15,7 +15,7 @@ World:
 		InnerSupportRadius: 4
 		OuterSupportRadius: 6
 		Factions: survivors
-	MPStartUnits@survivors2:
+	StartingUnits@survivors2:
 		Class: light
 		ClassName: Light support
 		BaseActor: survivors_vehicle_mobileoutpost
@@ -23,7 +23,7 @@ World:
 		InnerSupportRadius: 4
 		OuterSupportRadius: 6
 		Factions: survivors
-	MPStartUnits@survivors3:
+	StartingUnits@survivors3:
 		Class: heavy
 		ClassName: Heavy support
 		BaseActor: survivors_vehicle_mobileoutpost
@@ -31,7 +31,7 @@ World:
 		InnerSupportRadius: 4
 		OuterSupportRadius: 6
 		Factions: survivors
-	MPStartUnits@survivors4:
+	StartingUnits@survivors4:
 		Class: eco
 		ClassName: Eco support
 		BaseActor: survivors_vehicle_mobileoutpost

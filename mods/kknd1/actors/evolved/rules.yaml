@@ -2,12 +2,12 @@ World:
 	Faction@Evolved:
 		Name: Evolved
 		InternalName: evolved
-	MPStartUnits@evolved0:
+	StartingUnits@evolved0:
 		Class: none
 		ClassName: Mobile Base
 		BaseActor: evolved_vehicle_clanhallwagon
 		Factions: evolved
-	MPStartUnits@evolved1:
+	StartingUnits@evolved1:
 		Class: support
 		ClassName: With Derrick
 		BaseActor: evolved_vehicle_clanhallwagon
@@ -15,7 +15,7 @@ World:
 		InnerSupportRadius: 4
 		OuterSupportRadius: 6
 		Factions: evolved
-	MPStartUnits@evolved2:
+	StartingUnits@evolved2:
 		Class: light
 		ClassName: Light support
 		BaseActor: evolved_vehicle_clanhallwagon
@@ -23,7 +23,7 @@ World:
 		InnerSupportRadius: 4
 		OuterSupportRadius: 6
 		Factions: evolved
-	MPStartUnits@evolved3:
+	StartingUnits@evolved3:
 		Class: heavy
 		ClassName: Heavy support
 		BaseActor: evolved_vehicle_clanhallwagon
@@ -31,7 +31,7 @@ World:
 		InnerSupportRadius: 4
 		OuterSupportRadius: 6
 		Factions: evolved
-	MPStartUnits@evolved4:
+	StartingUnits@evolved4:
 		Class: eco
 		ClassName: Eco support
 		BaseActor: evolved_vehicle_clanhallwagon
