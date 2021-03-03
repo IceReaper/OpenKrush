@@ -34,9 +34,9 @@ bunker_vehicles_mech_secondary:
 	ReloadDelay: 66 # 50 + 2 * 8 (primary weapon)
 	Report: SURV.SLV|14.wav
 	Projectile: Bullet
-		Image: evolved_infantry_bazooka
+		Image: bunker_vehicles_mech
 		Palette: kknd
-		Sequences: projectile
+		Sequences: projectile2
 		Speed: 300
 		TrailPalette: kknd
 		TrailImage: projectiles

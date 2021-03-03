@@ -14,4 +14,8 @@ bunker_vehicles_mech:
 		Length: 4
 		Tick: 60
 		ZOffset: 1000
+	projectile2: SPRITES.LVL|RocketLauncher.mobd
+		Length: 2
+		Tick: 120
+		Facings: -16
 	icon: actors/bunker/vehicles/mech/icon.png
