@@ -13,9 +13,10 @@ using System.Collections.Generic;
 using System.Linq;
 using OpenRA.Graphics;
 using OpenRA.Mods.Common.Orders;
+using OpenRA.Mods.Kknd.Mechanics.Construction.Traits;
 using OpenRA.Mods.Kknd.Traits.Production;
 
-namespace OpenRA.Mods.Kknd.Orders
+namespace OpenRA.Mods.Kknd.Mechanics.Construction.Orders
 {
 	public class SellOrderGenerator : OrderGenerator
 	{
@@ -54,10 +55,7 @@ namespace OpenRA.Mods.Kknd.Orders
 
 			var actor = world.ActorMap.GetActorsAt(cell).FirstOrDefault(a => sellableActors.Any(e => e.Actor == a));
 
-			if (actor != null)
-				return "sell";
-
-			return null;
+			return actor != null ? "sell" : null;
 		}
 	}
 }

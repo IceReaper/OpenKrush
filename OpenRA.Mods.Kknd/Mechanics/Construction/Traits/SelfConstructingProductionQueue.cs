@@ -14,8 +14,9 @@ using System.Collections.Generic;
 using System.Linq;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Kknd.Mechanics.Researching.Traits;
+using OpenRA.Mods.Kknd.Traits.Production;
 
-namespace OpenRA.Mods.Kknd.Traits.Production
+namespace OpenRA.Mods.Kknd.Mechanics.Construction.Traits
 {
 	[Desc("This special production queue implements a fake AllQueued, used to instantly place self constructing buildings.")]
 	public class SelfConstructingProductionQueueInfo : AdvancedProductionQueueInfo

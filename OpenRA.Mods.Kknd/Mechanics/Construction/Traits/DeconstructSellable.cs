@@ -12,10 +12,10 @@
 using System;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common.Traits.Render;
-using OpenRA.Mods.Kknd.Orders;
+using OpenRA.Mods.Kknd.Mechanics.Construction.Orders;
 using OpenRA.Traits;
 
-namespace OpenRA.Mods.Kknd.Traits.Production
+namespace OpenRA.Mods.Kknd.Mechanics.Construction.Traits
 {
 	public class DeconstructSellableInfo : ConditionalTraitInfo, Requires<WithSpriteBodyInfo>
 	{
@@ -39,7 +39,7 @@ namespace OpenRA.Mods.Kknd.Traits.Production
 		private readonly DeveloperMode developerMode;
 		private readonly WithSpriteBody wsb;
 
-		private SelfConstructingInfo selfConstructing;
+		private SelfConstructing selfConstructing;
 
 		private int token = Actor.InvalidConditionToken;
 
@@ -57,7 +57,7 @@ namespace OpenRA.Mods.Kknd.Traits.Production
 
 		protected override void Created(Actor self)
 		{
-			selfConstructing = self.Info.TraitInfo<SelfConstructingInfo>();
+			selfConstructing = self.Trait<SelfConstructing>();
 		}
 
 		void ITick.Tick(Actor self)
@@ -65,26 +65,26 @@ namespace OpenRA.Mods.Kknd.Traits.Production
 			if (self.IsDead)
 				return;
 
-			if (token != Actor.InvalidConditionToken)
+			if (token == Actor.InvalidConditionToken)
+				return;
+
+			sellTimer = developerMode.FastBuild ? 0 : sellTimer - 1;
+
+			if (sellTimer <= 0)
 			{
-				sellTimer = developerMode.FastBuild ? 0 : sellTimer - 1;
+				foreach (var notifySold in self.TraitsImplementing<INotifySold>())
+					notifySold.Sold(self);
 
-				if (sellTimer <= 0)
-				{
-					foreach (var notifySold in self.TraitsImplementing<INotifySold>())
-						notifySold.Sold(self);
+				var pr = self.Owner.PlayerActor.Trait<PlayerResources>();
+				var valued = self.Info.TraitInfoOrDefault<ValuedInfo>();
 
-					var pr = self.Owner.PlayerActor.Trait<PlayerResources>();
-					var valued = self.Info.TraitInfoOrDefault<ValuedInfo>();
+				if (valued != null)
+					pr.GiveCash(refundAmount * info.RefundPercent / 100);
 
-					if (valued != null)
-						pr.GiveCash(refundAmount * info.RefundPercent / 100);
-
-					self.Dispose();
-				}
-				else
-					wsb.PlayCustomAnimationRepeating(self, selfConstructing.Sequence.Substring(0, selfConstructing.Sequence.Length - 1) + Math.Min(sellTimer * selfConstructing.Steps / sellTimerTotal, selfConstructing.Steps - 1));
+				self.Dispose();
 			}
+			else
+				wsb.PlayCustomAnimationRepeating(self, selfConstructing.Info.Sequence.Substring(0, selfConstructing.Info.Sequence.Length - 1) + Math.Min(sellTimer * selfConstructing.Steps / sellTimerTotal, selfConstructing.Steps - 1));
 		}
 
 		void IResolveOrder.ResolveOrder(Actor self, Order order)
