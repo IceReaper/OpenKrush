@@ -37,4 +37,4 @@ survivors_building_barracks:
 		ExitCell: -1,2
 		Facing: 256
 	RallyPoint:
-		Path: -1,2
+		Path: 1,3
