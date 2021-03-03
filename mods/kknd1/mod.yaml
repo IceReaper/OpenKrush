@@ -12,9 +12,11 @@ Packages:
 	$kknd: kknd
 	$kknd1: kknd1
 	^EngineDir|mods/common: common
-	kknd1|KKND-Xtreme-Demo/LEVELS/640/SPRITES.LVL: SPRITES.LVL
-	kknd1|KKND-Xtreme-Demo/LEVELS/MUTE.SLV: MUTE.SLV
-	kknd1|KKND-Xtreme-Demo/LEVELS/SURV.SLV: SURV.SLV
+	# TODO populate from install dir!
+	kknd1|KKND-Xtreme-Demo/: installation
+	installation|LEVELS/640/SPRITES.LVL: SPRITES.LVL
+	installation|LEVELS/MUTE.SLV: MUTE.SLV
+	installation|LEVELS/SURV.SLV: SURV.SLV
 
 MapFolders:
 	kknd1|maps/classic: System

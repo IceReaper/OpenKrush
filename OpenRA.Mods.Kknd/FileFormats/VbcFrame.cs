@@ -96,7 +96,7 @@ namespace OpenRA.Mods.Kknd.FileFormats
 						{
 							for (var y = 0; y < 4; y++)
 							for (var x = 0; x < 4; x++)
-								newFrame[bx * 4 + x, by * 4 + y] = oldFrame[bx * 4 + x + globalMotion.X, by * 4 + y + globalMotion.Y];
+								newFrame[by * 4 + y, bx * 4 + x] = oldFrame[by * 4 + y + globalMotion.Y, bx * 4 + x + globalMotion.X];
 
 							break;
 						}
@@ -109,7 +109,7 @@ namespace OpenRA.Mods.Kknd.FileFormats
 							{
 								for (var y = 0; y < 4; y++)
 								for (var x = 0; x < 4; x++)
-									newFrame[bx * 4 + x, by * 4 + y] = palette[video.ReadByte()];
+									newFrame[by * 4 + y, bx * 4 + x] = palette[video.ReadByte()];
 							}
 							else
 							{
@@ -118,7 +118,7 @@ namespace OpenRA.Mods.Kknd.FileFormats
 
 								for (var y = 0; y < 4; y++)
 								for (var x = 0; x < 4; x++)
-									newFrame[bx * 4 + x, by * 4 + y] = oldFrame[bx * 4 + x + globalMotion.X + motionX, by * 4 + y + globalMotion.Y + motionY];
+									newFrame[by * 4 + y, bx * 4 + x] = oldFrame[by * 4 + y + globalMotion.Y + motionY, bx * 4 + x + globalMotion.X + motionX];
 							}
 
 							break;
@@ -130,7 +130,7 @@ namespace OpenRA.Mods.Kknd.FileFormats
 
 							for (var y = 0; y < 4; y++)
 							for (var x = 0; x < 4; x++)
-								newFrame[bx * 4 + x, by * 4 + y] = color;
+								newFrame[by * 4 + y, bx * 4 + x] = color;
 							break;
 						}
 
@@ -149,7 +149,7 @@ namespace OpenRA.Mods.Kknd.FileFormats
 
 									for (var y = 0; y < 4; y++)
 									for (var x = 0; x < 4; x++)
-										newFrame[bx * 4 + x, by * 4 + y] = ((pattern >> (y * 4 + x)) & 1) == 0 ? pixel0 : pixel1;
+										newFrame[by * 4 + y, bx * 4 + x] = ((pattern >> (y * 4 + x)) & 1) == 0 ? pixel0 : pixel1;
 
 									break;
 								}
@@ -162,9 +162,9 @@ namespace OpenRA.Mods.Kknd.FileFormats
 									for (var x = 0; x < 4; x++)
 									{
 										if (((pattern >> (y * 4 + x)) & 1) == 0)
-											newFrame[bx * 4 + x, by * 4 + y] = oldFrame[bx * 4 + x + globalMotion.X, by * 4 + y + globalMotion.Y];
+											newFrame[by * 4 + y, bx * 4 + x] = oldFrame[by * 4 + y + globalMotion.Y, bx * 4 + x + globalMotion.X];
 										else
-											newFrame[bx * 4 + x, by * 4 + y] = pixel;
+											newFrame[by * 4 + y, bx * 4 + x] = pixel;
 									}
 
 									break;
@@ -178,9 +178,9 @@ namespace OpenRA.Mods.Kknd.FileFormats
 									for (var x = 0; x < 4; x++)
 									{
 										if (((pattern >> (y * 4 + x)) & 1) == 1)
-											newFrame[bx * 4 + x, by * 4 + y] = oldFrame[bx * 4 + x + globalMotion.X, by * 4 + y + globalMotion.Y];
+											newFrame[by * 4 + y, bx * 4 + x] = oldFrame[by * 4 + y + globalMotion.Y, bx * 4 + x + globalMotion.X];
 										else
-											newFrame[bx * 4 + x, by * 4 + y] = pixel;
+											newFrame[by * 4 + y, bx * 4 + x] = pixel;
 									}
 
 									break;

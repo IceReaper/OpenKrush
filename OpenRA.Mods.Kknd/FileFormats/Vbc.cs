@@ -98,7 +98,7 @@ namespace OpenRA.Mods.Kknd.FileFormats
         {
             if (CurrentFrame == 0)
             {
-                FrameData = new uint[Exts.NextPowerOf2(Width), Exts.NextPowerOf2(Height)];
+                FrameData = new uint[Exts.NextPowerOf2(Height), Exts.NextPowerOf2(Width)];
                 palette = new uint[256];
             }
             else

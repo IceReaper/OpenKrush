@@ -50,10 +50,14 @@ namespace OpenRA.Mods.Kknd.Widgets
 		public override void Tick()
 		{
 			if (state == 0)
-				PlayVideo("Melbourne House");
+				PlayVideo("FMV/MH_FMV.VBC");
 			else if (state == 2)
-				PlayVideo("Intro");
+				PlayVideo("fmv/MH.VBC");
 			else if (state == 4)
+				PlayVideo("FMV/INTRO.VBC");
+			else if (state == 6)
+				PlayVideo("fmv/INTO.VBC");
+			else if (state == 8)
 			{
 				widget.RemoveChild(player);
 				state++;
@@ -67,13 +71,13 @@ namespace OpenRA.Mods.Kknd.Widgets
 		{
 			state++;
 
-			if (!modData.ModFiles.Exists("content|Movies/" + video + ".vbc"))
+			if (!modData.ModFiles.TryOpen("installation|" + video, out var stream))
 			{
 				state++;
 				return;
 			}
 
-			player.Video = new Vbc(modData.ModFiles.Open("content|Movies/" + video + ".vbc"));
+			player.Video = new Vbc(stream);
 			player.Play(() => state++);
 		}
 	}
