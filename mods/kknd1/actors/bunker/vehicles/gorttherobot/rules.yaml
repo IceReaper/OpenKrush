@@ -4,10 +4,10 @@ bunker_vehicles_gorttherobot:
 	Tooltip:
 		Name: Gort The Robot
 	OffsetsArmament:
-		MuzzlePalette:
+		MuzzlePalette: kknd
 		Weapon: bunker_vehicles_gorttherobot
-	WithLoopedTurretAttackAnimation:
-		Sequence: shoot
+		MuzzleSequence: shoot
+	WithLoopedMuzzleOverlay:
 	Turreted:
 		TurnSpeed: 32
 	Voiced:
