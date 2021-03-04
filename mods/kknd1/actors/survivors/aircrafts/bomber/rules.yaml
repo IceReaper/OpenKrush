@@ -1,5 +1,6 @@
 survivors_aircraft_bomber:
-	Inherits: ^CoreAircraft
+	Inherits@1: ^CoreAircraft
+	Inherits@2: ^superweapon_bomber
 	Tooltip:
 		Name: Bomber
 	TooltipDescription:

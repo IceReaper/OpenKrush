@@ -40,4 +40,3 @@ neutral_building_drillrig:
 	ExplosionOnDamageTransition@Critical:
 		-RequiresCondition:
 	BlocksProjectiles:
-		-RequiresCondition:

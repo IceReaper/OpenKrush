@@ -1,0 +1,7 @@
+^superweapon_bomber:
+	AttackBomber:
+	OffsetsArmament:
+		MuzzlePalette:
+	AmmoPool:
+	RejectsOrders:
+	-MapEditorData:

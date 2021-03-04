@@ -1,5 +1,6 @@
 evolved_aircraft_wasp:
-	Inherits: ^CoreAircraft
+	Inherits@1: ^CoreAircraft
+	Inherits@2: ^superweapon_bomber
 	Tooltip:
 		Name: Wasp
 	TooltipDescription:

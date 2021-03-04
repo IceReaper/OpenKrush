@@ -60,6 +60,7 @@
 	AppearsOnRadar:
 	# Allow units to use the AttackMove and AssaultMove commands.
 	AttackMove:
+	# Use their center position instead of their footprint for fog hiding logic.
 	HiddenUnderFog:
 		Type: CenterPosition
 	# Units should die when owner lost the game.
@@ -106,9 +107,13 @@
 		Action: Kill
 	# No projectiles can pass through a construction.
 	BlocksProjectiles:
-		RequiresCondition: !selfconstructing && !deconstructing
 	# Show preview on placement.
 	ActorPreviewPlaceBuildingPreview:
+	# Constructions can be repaired by technicians.
+	TechnicianRepairable:
+		RequiresCondition: !selfconstructing && !deconstructing
+	# Buildings have healthbars.
+	AdvancedSelectionDecorations:
 
 # Base for all buildings.
 ^CoreBuilding:
@@ -143,9 +148,6 @@
 	# ... and Shake the screen.
 	ShakeOnDeath:
 		Intensity: 10
-	# Buildings can be repaired by technicians.
-	TechnicianRepairable:
-		RequiresCondition: !selfconstructing && !deconstructing
 	# The view radius of buildings.
 	RevealsShroud:
 		Range: 5c0
@@ -154,7 +156,7 @@
 		Queue: building
 		BuildDurationModifier: 100
 		BuildLimit: 4
-		IconPalette:
+		IconPalette: # TODO remove this
 	# Group all buildings in the map editor.
 	MapEditorData:
 		Categories: Building
@@ -171,14 +173,15 @@
 	# Notify when building lost.
 	ActorLostNotification:
 		Notification: BuildingLost
-	# TODO remove this, if it works with hit shapes!
-	-BlocksProjectiles:
 	# Target "Structure" target for ai bombers.
 	Targetable:
 		TargetTypes: Ground, Structure
 	# Render the building a little bit when destroyed.
 	FrozenOnDeath:
 		Duration: 60
+	# Can be conquered by saboteurs.
+	SaboteurConquerable:
+		RequiresCondition: !selfconstructing && !deconstructing
 
 # Base for all towers.
 ^CoreTower:
@@ -193,11 +196,6 @@
 	# Group all towers in the map editor.
 	MapEditorData:
 		Categories: Tower
-	# Towers can be repaired by technicians.
-	TechnicianRepairable:
-		RequiresCondition: !selfconstructing && !deconstructing
-	# Towers have the same healthbar as units when selected or hovered.
-	AdvancedSelectionDecorations:
 	# Towers in KKnD are always 2x2 in size.
 	Building:
 		Dimensions: 2,2
@@ -207,7 +205,7 @@
 		Type: Rectangle
 			TopLeft: -1024, -1024
 			BottomRight: 1024, 0
-		TargetableOffsets: 819,-512,0, 819,512,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
+		TargetableOffsets: 819,-512,0, 819,512,0
 	Selectable:
 		Bounds: 64, 64, 0, -16
 	# Require other actor nearby which provides buildable area in order to place a tower.
@@ -235,8 +233,6 @@
 	# Towers also have to be destroyed when short game option is used.
 	MustBeDestroyed:
 		RequiredForShortGame: true
-	# TODO remove this, if it works with hit shapes!
-	-BlocksProjectiles:
 	# Render the tower a little bit when destroyed.
 	FrozenOnDeath:
 	# Default looking south
@@ -292,11 +288,12 @@
 	LineBuildNode: # TODO replace this by continuous placing implementation!
 	LineBuild:
 		Range: 5
-	# Wall will use the standard unit healthbar.
-	AdvancedSelectionDecorations:
 	# Should not be auto attacked.
 	Targetable@NoAutoAttack:
 		TargetTypes: NoAutoAttack
+	# Does only block projectiles when fully build up.
+	BlocksProjectiles:
+		RequiresCondition: !selfconstructing && !deconstructing
 
 # Base for all infantry.
 ^CoreInfantry:

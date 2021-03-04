@@ -20,6 +20,7 @@ Rules:
 	kknd1|core/rules/mechanics/researches_buildings.yaml
 	kknd1|core/rules/mechanics/saboteur.yaml
 	kknd1|core/rules/mechanics/sacrifices_infantry.yaml
+	kknd1|core/rules/mechanics/superweapon_bomber.yaml
 	kknd1|core/rules/mechanics/technician.yaml
 
 Sequences:

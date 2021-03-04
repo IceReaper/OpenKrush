@@ -4,13 +4,11 @@
 	Building:
 		BuildSounds: SURV.SLV|193.wav
 
-^CoreBuilding:
-	SaboteurConquerable:
-		RequiresCondition: !selfconstructing && !deconstructing
-
+# Only 1 damage state
 ^CoreTower:
 	-ExplosionOnDamageTransition@Critical:
 
+# Only 1 damage state
 ^CoreWall:
 	-ExplosionOnDamageTransition@Critical:
 
@@ -35,14 +33,6 @@
 		Weapons: weapon_blood1, weapon_blood2, weapon_blood3, weapon_blood4, weapon_blood5
 		Pieces: 1, 1
 		Range: 0c512, 1c256
-
-^CoreAircraft:
-	AttackBomber:
-	OffsetsArmament:
-		MuzzlePalette:
-	AmmoPool:
-	RejectsOrders:
-	-MapEditorData:
 
 ^CoreWorld:
 	ShroudRenderer:
