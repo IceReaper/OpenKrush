@@ -1,4 +1,4 @@
 beacon:
-	idle: core/sequences/beacon/frames.png
+	x: core/sequences/beacon/frames.png
 		Length: 10
 		Tick: 600
