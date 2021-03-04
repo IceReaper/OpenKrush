@@ -339,6 +339,8 @@
 	Living:
 	# If infantry is killed, it screams.
 	DeathSounds:
+	# Can be sacrificed in altar buildings.
+	Sacrificable:
 
 # Add locomotor to world...
 ^CoreWorld:

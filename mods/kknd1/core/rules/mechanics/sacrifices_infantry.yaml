@@ -1,0 +1,5 @@
+^sacrifices_infantry:
+	Altar:
+		RequiresCondition: !selfconstructing && !deconstructing
+	GrantExternalConditionToProduced:
+		Condition: produced

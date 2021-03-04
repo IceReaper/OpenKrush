@@ -11,12 +11,12 @@
 
 using System.Collections.Generic;
 using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.Kknd.Activities;
+using OpenRA.Mods.Kknd.Mechanics.Altars.Activities;
 using OpenRA.Mods.Kknd.Orders;
 using OpenRA.Primitives;
 using OpenRA.Traits;
 
-namespace OpenRA.Mods.Kknd.Traits.Altar
+namespace OpenRA.Mods.Kknd.Mechanics.Altars.Traits
 {
 	[Desc("Actor can be sacrificed.")]
 	class SacrificableInfo : TraitInfo
@@ -24,18 +24,28 @@ namespace OpenRA.Mods.Kknd.Traits.Altar
 		[Desc("Cursor used for order.")]
 		public readonly string Cursor = "enter";
 
-		[Desc("Voice used when ordering to enter enemy building.")]
-		[VoiceReference]
-		public readonly string Voice = "Sacrifice";
+		[Desc("Target line color.")]
+		public readonly Color TargetLineColor = Color.Yellow;
 
-		public override object Create(ActorInitializer init) { return new Sacrificable(init, this); }
+		[Desc("Voice used when ordering to sacrifice.")]
+		[VoiceReference]
+		public readonly string VoiceOrder = "Action";
+
+		[Desc("Voice used when entered and sacrificed.")]
+		[VoiceReference]
+		public readonly string VoiceEnter = "Die";
+
+		public override object Create(ActorInitializer init)
+		{
+			return new Sacrificable(this);
+		}
 	}
 
 	class Sacrificable : IIssueOrder, IResolveOrder, IOrderVoice
 	{
 		private readonly SacrificableInfo info;
 
-		public Sacrificable(ActorInitializer init, SacrificableInfo info)
+		public Sacrificable(SacrificableInfo info)
 		{
 			this.info = info;
 		}
@@ -50,14 +60,6 @@ namespace OpenRA.Mods.Kknd.Traits.Altar
 			return order.OrderID == SacrificeOrderTargeter.Id ? new Order(order.OrderID, self, target, queued) : null;
 		}
 
-		public string VoicePhraseForOrder(Actor self, Order order)
-		{
-			if (order.OrderString != SacrificeOrderTargeter.Id)
-				return null;
-
-			return info.Voice;
-		}
-
 		public void ResolveOrder(Actor self, Order order)
 		{
 			if (order.OrderString != SacrificeOrderTargeter.Id)
@@ -66,8 +68,21 @@ namespace OpenRA.Mods.Kknd.Traits.Altar
 			if (order.Target.Type != TargetType.Actor || order.Target.Actor == null)
 				return;
 
-			self.CancelActivity();
-			self.QueueActivity(new Sacrifice(self, order.Target, Color.Yellow));
+			self.QueueActivity(order.Queued, new Sacrifice(self, order.Target, info.TargetLineColor));
+		}
+
+		string IOrderVoice.VoicePhraseForOrder(Actor self, Order order)
+		{
+			return order.OrderString == SacrificeOrderTargeter.Id ? info.VoiceOrder : null;
+		}
+
+		public void Enter(Actor self, Actor targetActor)
+		{
+			if (self.Owner != self.World.LocalPlayer)
+				return;
+
+			if (self.Owner.RelationshipWith(targetActor.Owner).HasRelationship(PlayerRelationship.Ally))
+				self.PlayVoice(info.VoiceEnter);
 		}
 	}
 }

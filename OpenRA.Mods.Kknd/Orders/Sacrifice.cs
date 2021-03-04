@@ -10,7 +10,7 @@
 #endregion
 
 using OpenRA.Mods.Common.Orders;
-using OpenRA.Mods.Kknd.Traits.Altar;
+using OpenRA.Mods.Kknd.Mechanics.Altars.Traits;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.Kknd.Orders

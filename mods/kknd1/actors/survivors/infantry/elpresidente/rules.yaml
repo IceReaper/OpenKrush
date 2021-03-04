@@ -12,10 +12,7 @@ survivors_infantry_elpresidente:
 		Speed: 50
 	RevealsShroud:
 		Range: 5c0
-	AdvancedBuildable:
-		Prerequisites: survivors_infantry
-		BuildDuration: 250
-		Level: -1
+	-Sacrificable:
 	OffsetsArmament:
 		MuzzlePalette:
 		Weapon: survivors_infantry_elpresidente

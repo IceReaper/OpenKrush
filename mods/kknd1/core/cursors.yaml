@@ -15,6 +15,11 @@ Cursors:
 		move-blocked:
 			Start: 84
 
+		# TODO move to png section when we have an enter cursor!
+		enter:
+			Start: 70
+			Length: 14
+
 		attack:
 			Start: 54
 			Length: 6

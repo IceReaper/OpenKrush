@@ -13,8 +13,6 @@ using System.Linq;
 using OpenRA.Mods.Common.Widgets;
 using OpenRA.Mods.Kknd.Mechanics.Construction.Orders;
 using OpenRA.Mods.Kknd.Mechanics.Construction.Traits;
-using OpenRA.Mods.Kknd.Orders;
-using OpenRA.Mods.Kknd.Traits.Production;
 
 namespace OpenRA.Mods.Kknd.Widgets.Ingame.Buttons
 {

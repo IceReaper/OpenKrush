@@ -1,5 +1,6 @@
 evolved_building_holding_pen:
 	Inherits@1: ^CoreBuilding
+	Inherits@2: ^sacrifices_infantry
 	Tooltip:
 		Name: Holding Pen
 	Valued:
@@ -29,3 +30,5 @@ evolved_building_holding_pen:
 	RallyPoint:
 		Path: -1,2
 		Image:
+	Altar:
+		Summon: evolved_infantry_kingzog

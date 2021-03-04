@@ -1,5 +1,6 @@
 survivors_building_detention_center:
 	Inherits@1: ^CoreBuilding
+	Inherits@2: ^sacrifices_infantry
 	Tooltip:
 		Name: Detention Center
 	Valued:
@@ -29,3 +30,5 @@ survivors_building_detention_center:
 	RallyPoint:
 		Path: -1,2
 		Image:
+	Altar:
+		Summon: survivors_infantry_elpresidente

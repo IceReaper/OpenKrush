@@ -14,7 +14,6 @@ using System.Linq;
 using OpenRA.Graphics;
 using OpenRA.Mods.Common.Orders;
 using OpenRA.Mods.Kknd.Mechanics.Construction.Traits;
-using OpenRA.Mods.Kknd.Traits.Production;
 
 namespace OpenRA.Mods.Kknd.Mechanics.Construction.Orders
 {

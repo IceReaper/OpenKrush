@@ -9,24 +9,21 @@
  */
 #endregion
 
-using OpenRA.Mods.Common.Activities;
-using OpenRA.Mods.Kknd.Traits.Altar;
-using OpenRA.Primitives;
+using OpenRA.Mods.Kknd.Mechanics.Altars.Traits;
 using OpenRA.Traits;
 
-namespace OpenRA.Mods.Kknd.Activities
+namespace OpenRA.Mods.Kknd.Mechanics.Altars
 {
-	public class Sacrifice : Enter
+	public static class AltarUtils
 	{
-		public Sacrifice(Actor self, Target target, Color targetLineColor)
-			: base(self, target, targetLineColor)
+		public static bool CanEnter(Actor technician, Actor target)
 		{
-		}
+			var technicianRepairable = target.TraitOrDefault<Altar>();
 
-		protected override void OnEnterComplete(Actor self, Actor targetActor)
-		{
-			targetActor.Trait<Altar>().Enter(self);
-			self.Dispose();
+			if (technicianRepairable == null || technicianRepairable.IsTraitDisabled)
+				return false;
+
+			return technician.Owner.RelationshipWith(target.Owner) == PlayerRelationship.Ally;
 		}
 	}
 }
