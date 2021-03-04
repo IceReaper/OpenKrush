@@ -16,14 +16,14 @@ namespace OpenRA.Mods.Kknd.Mechanics.Technicians
 {
 	public static class TechnicianUtils
 	{
-		public static bool CanEnter(Actor technician, Actor target)
+		public static bool CanEnter(Actor source, Actor target)
 		{
-			var technicianRepairable = target.TraitOrDefault<TechnicianRepairable>();
+			var trait = target.TraitOrDefault<TechnicianRepairable>();
 
-			if (technicianRepairable == null || technicianRepairable.IsTraitDisabled)
+			if (trait == null || trait.IsTraitDisabled)
 				return false;
 
-			return technician.Owner.RelationshipWith(target.Owner) == PlayerRelationship.Ally;
+			return source.Owner.RelationshipWith(target.Owner) == PlayerRelationship.Ally;
 		}
 	}
 }

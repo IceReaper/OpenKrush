@@ -71,6 +71,9 @@ namespace OpenRA.Mods.Kknd.Mechanics.Technicians.Traits
 			if (order.Target.Type != TargetType.Actor || order.Target.Actor == null)
 				return;
 
+			if (!TechnicianUtils.CanEnter(self, order.Target.Actor))
+				return;
+
 			self.QueueActivity(order.Queued, new TechnicianEnter(self, order.Target, info.TargetLineColor));
 		}
 

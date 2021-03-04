@@ -17,7 +17,7 @@ namespace OpenRA.Mods.Kknd.FileFormats
 {
 	public class MobdAnimation
 	{
-		public MobdFrame[] Frames;
+		public readonly MobdFrame[] Frames;
 
 		public MobdAnimation(SegmentStream stream, Version version)
 		{
@@ -69,28 +69,6 @@ namespace OpenRA.Mods.Kknd.FileFormats
 			}
 
 			Frames = frames.ToArray();
-
-			// TODO we might want to verify and refactor this when we re-implement kknd2!
-			if (version != Version.KKND2)
-				return;
-
-			// KKnD 2 uses offsets only for frames they are used on instead of the whole animation.
-			var points = new List<MobdPoint>();
-
-			foreach (var frame in Frames)
-			{
-				if (frame.Points == null)
-					continue;
-
-				foreach (var point in frame.Points)
-				{
-					if (point.Id == 0)
-						points.Add(new MobdPoint { X = point.X, Y = point.Y, Z = point.Z, Id = points.Count });
-				}
-			}
-
-			foreach (var frame in Frames)
-				frame.Points = points.ToArray();
 		}
 	}
 }

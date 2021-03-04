@@ -28,7 +28,7 @@ namespace OpenRA.Mods.Kknd.VideoLoaders
 			return true;
 		}
 
-		bool IsVbc(Stream s)
+		private static bool IsVbc(Stream s)
 		{
 			var start = s.Position;
 

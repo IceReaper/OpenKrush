@@ -10,16 +10,15 @@
 #endregion
 
 using OpenRA.Mods.Common.Orders;
-using OpenRA.Mods.Kknd.Mechanics.Altars.Traits;
 using OpenRA.Traits;
 
-namespace OpenRA.Mods.Kknd.Orders
+namespace OpenRA.Mods.Kknd.Mechanics.Altars.Orders
 {
-	class SacrificeOrderTargeter : UnitOrderTargeter
+	public class SacrificeOrderTargeter : UnitOrderTargeter
 	{
 		public const string Id = "Sacrifice";
 
-		private string cursor;
+		private readonly string cursor;
 
 		public SacrificeOrderTargeter(string cursor)
 			: base(Id, 6, cursor, false, true)
@@ -29,18 +28,11 @@ namespace OpenRA.Mods.Kknd.Orders
 
 		public override bool CanTargetActor(Actor self, Actor target, TargetModifiers modifiers, ref string cursor)
 		{
-			cursor = null;
-
-			if (!target.Info.HasTraitInfo<AltarInfo>())
-				return false;
-
-			if (target.Trait<Altar>().IsTraitDisabled)
-				return false;
-
-			if (self.Owner != target.Owner)
+			if (!AltarUtils.CanEnter(self, target))
 				return false;
 
 			cursor = this.cursor;
+
 			return true;
 		}
 

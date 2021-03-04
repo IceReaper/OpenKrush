@@ -15,10 +15,10 @@ namespace OpenRA.Mods.Kknd.FileFormats
 {
 	public class MobdPoint
 	{
-		public int Id;
-		public int X;
-		public int Y;
-		public int Z;
+		public readonly int Id;
+		public readonly int X;
+		public readonly int Y;
+		public readonly int Z;
 
 		public MobdPoint()
 		{

@@ -22,7 +22,7 @@ namespace OpenRA.Mods.Kknd.FileFormats
 		public readonly int Height;
 		public readonly byte[] Pixels;
 
-		public MobdImage(SegmentStream stream, uint flags, Version version)
+		public MobdImage(Stream stream, uint flags, Version version)
 		{
 			bool flipped;
 			Width = stream.ReadInt32();
@@ -59,7 +59,7 @@ namespace OpenRA.Mods.Kknd.FileFormats
 				Array.Reverse(Pixels, i * Width, Width);
 		}
 
-		void DecompressKknd1(Stream compressed)
+		private void DecompressKknd1(Stream compressed)
 		{
 			var decompressed = new MemoryStream(Pixels);
 
@@ -85,7 +85,7 @@ namespace OpenRA.Mods.Kknd.FileFormats
 			}
 		}
 
-		void DecompressKknd2(Stream compressed, bool has256Colors)
+		private void DecompressKknd2(Stream compressed, bool has256Colors)
 		{
 			var decompressed = new MemoryStream(Pixels);
 

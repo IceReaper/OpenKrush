@@ -10,172 +10,116 @@
 #endregion
 
 using OpenRA.Graphics;
-using OpenRA.Mods.Common;
-using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common.Traits.Render;
+using OpenRA.Mods.Kknd.Traits.Production;
 using OpenRA.Primitives;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.Kknd.Mechanics.Altars.Traits
 {
 	[Desc("Allow sacrificeable units to enter and spawn a new actor..")]
-	public class AltarInfo : ConditionalTraitInfo, Requires<RenderSpritesInfo>
+	public class AltarInfo : AdvancedProductionInfo, Requires<RenderSpritesInfo>
 	{
 		[Desc("The amount of units required for a sacrifice.")]
 		public readonly int Sacrifices = 5;
 
-		[Desc("Duration of the summoning.")]
-		public readonly int SummonDelay = 50;
+		[Desc("Duration of the sacrifice.")]
+		public readonly int Duration = 50;
 
 		[FieldLoader.RequireAttribute]
 		[Desc("The unit which is granted upon sacrificing.")]
 		public readonly string Summon = null;
 
-		[Desc("Offset relative to the top-left cell of the building.")]
-		public readonly CVec SpawnOffset = CVec.Zero;
-
-		[Desc("Which direction the unit should face.")]
-		public readonly int Facing = 0;
-
-		[Desc("Sequence 1 to be played when sacrificing enough units.")]
+		[Desc("Sequence to be played when sacrificing.")]
 		[SequenceReference]
 		public readonly string SequenceEnter = null;
 
-		[Desc("Sequence 2 to be played when sacrificing enough units.")]
+		[Desc("Sequence to be played when summoning.")]
 		[SequenceReference]
 		public readonly string SequenceSummon = null;
 
 		[Desc("Position relative to body")]
 		public readonly WVec Offset = WVec.Zero;
 
-		public readonly int MaximumDistance = 3;
-
-		public override object Create(ActorInitializer init) { return new Altar(init.Self, this); }
+		public override object Create(ActorInitializer init) { return new Altar(init, this); }
 	}
 
-	public class Altar : ConditionalTrait<AltarInfo>, ITick
+	public class Altar : AdvancedProduction, ITick
 	{
+		private readonly AltarInfo info;
+
+		private int sacrificeTicker;
 		private int summonTicker;
+		private int population;
 
-		public int Population { get; private set; }
-
-		public Altar(Actor self, AltarInfo info)
-			: base(info)
+		public Altar(ActorInitializer init, AltarInfo info)
+			: base(init, info)
 		{
-			var rs = self.Trait<RenderSprites>();
-			var body = self.Trait<BodyOrientation>();
+			this.info = info;
 
-			if (Info.SequenceEnter != null)
+			var renderSprites = init.Self.Trait<RenderSprites>();
+			var body = init.Self.Trait<BodyOrientation>();
+
+			if (info.SequenceEnter != null)
 			{
-				var overlay1 = new Animation(self.World, rs.GetImage(self));
-				overlay1.PlayRepeating(RenderSprites.NormalizeSequence(overlay1, self.GetDamageState(), Info.SequenceEnter));
+				var animation = new Animation(init.Self.World, renderSprites.GetImage(init.Self));
+				animation.PlayRepeating(RenderSprites.NormalizeSequence(animation, init.Self.GetDamageState(), info.SequenceEnter));
 
-				var anim1 = new AnimationWithOffset(overlay1,
-					() => body.LocalToWorld(info.Offset.Rotate(body.QuantizeOrientation(self, self.Orientation))),
-					() => IsTraitDisabled || summonTicker == 0,
-					p => RenderUtils.ZOffsetFromCenter(self, p, 1));
+				var animationWithOffset = new AnimationWithOffset(animation,
+					() => body.LocalToWorld(info.Offset.Rotate(body.QuantizeOrientation(init.Self, init.Self.Orientation))),
+					() => IsTraitDisabled || sacrificeTicker == 0,
+					p => RenderUtils.ZOffsetFromCenter(init.Self, p, 1));
 
-				rs.Add(anim1);
+				renderSprites.Add(animationWithOffset);
 			}
 
-			if (Info.SequenceSummon != null)
+			if (info.SequenceSummon != null)
 			{
-				var overlay2 = new Animation(self.World, rs.GetImage(self));
-				overlay2.PlayRepeating(RenderSprites.NormalizeSequence(overlay2, self.GetDamageState(), Info.SequenceSummon));
+				var animation = new Animation(init.Self.World, renderSprites.GetImage(init.Self));
+				animation.PlayRepeating(RenderSprites.NormalizeSequence(animation, init.Self.GetDamageState(), info.SequenceSummon));
 
-				var anim2 = new AnimationWithOffset(overlay2,
-					() => body.LocalToWorld(info.Offset.Rotate(body.QuantizeOrientation(self, self.Orientation))),
+				var animationWithOffset = new AnimationWithOffset(animation,
+					() => body.LocalToWorld(info.Offset.Rotate(body.QuantizeOrientation(init.Self, init.Self.Orientation))),
 					() => IsTraitDisabled || summonTicker == 0,
-					p => RenderUtils.ZOffsetFromCenter(self, p, 1));
+					p => RenderUtils.ZOffsetFromCenter(init.Self, p, 1));
 
-				rs.Add(anim2);
+				renderSprites.Add(animationWithOffset);
 			}
 		}
 
 		public void Enter()
 		{
-			Population++;
-
-			if (Population == Info.Sacrifices)
-				summonTicker = Info.SummonDelay;
+			population++;
+			sacrificeTicker = info.Duration;
 		}
 
 		void ITick.Tick(Actor self)
 		{
-			if (summonTicker == 0 || --summonTicker > 0)
-				return;
+			if (sacrificeTicker > 0)
+				sacrificeTicker--;
 
-			var numSummons = Population / Info.Sacrifices;
-			Population -= numSummons * Info.Sacrifices;
-
-			self.World.AddFrameEndTask(w =>
+			if (summonTicker > 0)
 			{
-				for (var i = 0; i < numSummons; i++)
-					Summon(self);
-			});
-		}
+				if (--summonTicker != 0)
+					return;
 
-		private void Summon(Actor self)
-		{
-			self.World.AddFrameEndTask(w =>
-			{
-				var actor = Info.Summon;
+				var numSummons = population / info.Sacrifices;
+				population -= numSummons * info.Sacrifices;
 
-				var exit = SelectExit(self, self.World.Map.Rules.Actors[actor]).Info;
-				var exitLocation = self.Location + exit.ExitCell;
-
-				var td = new TypeDictionary
+				self.World.AddFrameEndTask(w =>
 				{
-					new OwnerInit(self.Owner),
-					new LocationInit(exitLocation),
-					new CenterPositionInit(self.CenterPosition + exit.SpawnOffset)
-				};
+					var td = new TypeDictionary
+					{
+						new OwnerInit(self.Owner)
+					};
 
-				if (exit.Facing != null)
-					td.Add(new FacingInit(exit.Facing.Value));
-
-				var newUnit = self.World.CreateActor(actor, td);
-				var move = newUnit.TraitOrDefault<IMove>();
-
-				if (move != null)
-				{
-					if (exit.ExitDelay > 0)
-						newUnit.QueueActivity(new Wait(exit.ExitDelay, false));
-
-					newUnit.QueueActivity(new Move(newUnit, exitLocation));
-					newUnit.QueueActivity(new AttackMoveActivity(newUnit, () => move.MoveTo(exitLocation, 1)));
-				}
-
-				foreach (var t in self.TraitsImplementing<INotifyProduction>())
-					t.UnitProduced(self, newUnit, CPos.Zero);
-			});
-		}
-
-		private Exit SelectExit(Actor self, ActorInfo producee)
-		{
-			var mobileInfo = producee.TraitInfoOrDefault<MobileInfo>();
-
-			var exit = self.Trait<Exit>();
-			var spawn = self.World.Map.CellContaining(self.CenterPosition + exit.Info.SpawnOffset);
-
-			for (var y = 1; y <= Info.MaximumDistance; y++)
-			for (var x = -y; x <= y; x++)
-			{
-				var candidate = new CVec(x, y);
-
-				if (!mobileInfo.CanEnterCell(self.World, self, spawn + candidate))
-					continue;
-
-				var exitInfo = new ExitInfo();
-				exitInfo.GetType().GetField("SpawnOffset").SetValue(exitInfo, exit.Info.SpawnOffset);
-				exitInfo.GetType().GetField("ExitCell").SetValue(exitInfo, spawn - self.Location + candidate);
-				exitInfo.GetType().GetField("Facing").SetValue(exitInfo, exit.Info.Facing);
-
-				return new Exit(null, exitInfo);
+					for (var i = 0; i < numSummons; i++)
+						Produce(self, self.World.Map.Rules.Actors[info.Summon], "produce", td, 0);
+				});
 			}
-
-			return exit;
+			else if (population == info.Sacrifices)
+				summonTicker = info.Duration;
 		}
 	}
 }

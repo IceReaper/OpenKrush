@@ -83,6 +83,9 @@ namespace OpenRA.Mods.Kknd.Mechanics.Saboteurs.Traits
 			if (order.Target.Type != TargetType.Actor || order.Target.Actor == null)
 				return;
 
+			if (!SaboteurUtils.CanEnter(self, order.Target.Actor))
+				return;
+
 			self.QueueActivity(order.Queued, new SaboteurEnter(self, order.Target, info.TargetLineColor));
 		}
 

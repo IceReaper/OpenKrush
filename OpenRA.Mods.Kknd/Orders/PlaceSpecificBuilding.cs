@@ -15,7 +15,7 @@ using OpenRA.Mods.Common.Traits;
 
 namespace OpenRA.Mods.Kknd.Orders
 {
-	class PlaceSpecificBuildingOrderGenerator : PlaceBuildingOrderGenerator
+	public class PlaceSpecificBuildingOrderGenerator : PlaceBuildingOrderGenerator
 	{
 		public readonly string Name;
 

@@ -25,7 +25,7 @@ namespace OpenRA.Mods.Kknd.SpriteLoaders
 	{
 		private class MobdSpriteFrame : ISpriteFrame
 		{
-			public SpriteFrameType Type { get { return SpriteFrameType.Indexed8; } }
+			public SpriteFrameType Type => SpriteFrameType.Indexed8;
 			public Size Size { get; private set; }
 			public Size FrameSize { get; private set; }
 			public float2 Offset { get; private set; }
@@ -33,7 +33,7 @@ namespace OpenRA.Mods.Kknd.SpriteLoaders
 			public readonly uint[] Palette;
 			public readonly MobdPoint[] Points;
 
-			public bool DisableExportPadding { get { return true; } }
+			public bool DisableExportPadding => true;
 
 			public MobdSpriteFrame(MobdFrame mobdFrame)
 			{
@@ -51,16 +51,14 @@ namespace OpenRA.Mods.Kknd.SpriteLoaders
 			}
 		}
 
-		bool IsMobd(Stream stream, out Version version)
+		private static bool IsMobd(Stream stream, out Version version)
 		{
 			version = Version.UNKNOWN;
 
-			var innerStream = stream as SegmentStream;
-			if (innerStream == null)
+			if (!(stream is SegmentStream innerStream))
 				return false;
 
-			var outerStream = innerStream.BaseStream as SegmentStream;
-			if (outerStream == null)
+			if (!(innerStream.BaseStream is SegmentStream outerStream))
 				return false;
 
 			var originalPosition = outerStream.BaseStream.Position;
@@ -110,7 +108,7 @@ namespace OpenRA.Mods.Kknd.SpriteLoaders
 			for (var i = 0; i < tmp.Count; i++)
 			{
 				if (tmp[i].Points != null)
-					points.Add(i, tmp[i].Points.Select(point => new Offset { Id = point.Id, X = point.X, Y = point.Y }).ToArray());
+					points.Add(i, tmp[i].Points.Select(point => new Offset(point.Id, point.X, point.Y)).ToArray());
 
 				if (tmp[i].Palette != null)
 					palette = tmp[i].Palette;

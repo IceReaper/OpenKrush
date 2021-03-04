@@ -12,18 +12,17 @@
 using System;
 using System.Linq;
 using OpenRA.Graphics;
-using OpenRA.Mods.Common;
-using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common.Traits.Render;
 using OpenRA.Mods.Kknd.Graphics;
+using OpenRA.Mods.Kknd.Traits.Production;
 using OpenRA.Primitives;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.Kknd.Mechanics.Bunkers.Traits
 {
 	[Desc("KKnD tech bunker mechanism.")]
-	public class TechBunkerInfo : TraitInfo, Requires<WithSpriteBodyInfo>
+	public class TechBunkerInfo : AdvancedProductionInfo, Requires<WithSpriteBodyInfo>
 	{
 		[ActorReference]
 		[Desc("Possible ejectable actors.")]
@@ -33,10 +32,10 @@ namespace OpenRA.Mods.Kknd.Mechanics.Bunkers.Traits
 		public readonly int ContainableMoney = 0;
 
 		[Desc("Minimum amount of ticks till the bunker may unlock.")]
-		public readonly int UnlockAfter = 15000;
+		public readonly int UnlockAfter = 1/*5000*/;
 
 		[Desc("The chance per tick the bunker may unlock in <1:x>.")]
-		public readonly int UnlockChance = 1000;
+		public readonly int UnlockChance = 1/*000*/;
 
 		[Desc("Amount of ticks till the bunker locks again. Use -1 to disable.")]
 		public readonly int LockAfter = 300;
@@ -62,8 +61,6 @@ namespace OpenRA.Mods.Kknd.Mechanics.Bunkers.Traits
 		[Desc("Unlocked effect sequence.")]
 		public readonly string SequenceUnlocked = null;
 
-		public readonly int MaximumDistance = 3;
-
 		public override object Create(ActorInitializer init)
 		{
 			return new TechBunker(init, this);
@@ -79,7 +76,7 @@ namespace OpenRA.Mods.Kknd.Mechanics.Bunkers.Traits
 		Opened
 	}
 
-	public class TechBunker : ITick
+	public class TechBunker : AdvancedProduction, ITick
 	{
 		private readonly TechBunkerInfo info;
 		private readonly WithSpriteBody wsb;
@@ -88,6 +85,7 @@ namespace OpenRA.Mods.Kknd.Mechanics.Bunkers.Traits
 		private TechBunkerState state = TechBunkerState.ClosedLocked;
 
 		public TechBunker(ActorInitializer init, TechBunkerInfo info)
+			: base(init, info)
 		{
 			this.info = info;
 			wsb = init.Self.Trait<WithSpriteBody>();
@@ -189,64 +187,14 @@ namespace OpenRA.Mods.Kknd.Mechanics.Bunkers.Traits
 				return;
 			}
 
-			self.World.AddFrameEndTask(w =>
+			var actor = info.ContainableActors[self.World.SharedRandom.Next(0, info.ContainableActors.Length)];
+
+			var td = new TypeDictionary
 			{
-				var actor = info.ContainableActors[self.World.SharedRandom.Next(0, info.ContainableActors.Length)];
+				new OwnerInit(owner)
+			};
 
-				var exit = SelectExit(self, self.World.Map.Rules.Actors[actor]).Info;
-				var exitLocation = self.Location + exit.ExitCell;
-
-				var td = new TypeDictionary
-				{
-					new OwnerInit(owner),
-					new LocationInit(exitLocation),
-					new CenterPositionInit(self.CenterPosition + exit.SpawnOffset)
-				};
-
-				if (exit.Facing != null)
-					td.Add(new FacingInit(exit.Facing.Value));
-
-				var newUnit = self.World.CreateActor(actor, td);
-				var move = newUnit.TraitOrDefault<IMove>();
-
-				if (move != null)
-				{
-					if (exit.ExitDelay > 0)
-						newUnit.QueueActivity(new Wait(exit.ExitDelay, false));
-
-					newUnit.QueueActivity(new Move(newUnit, exitLocation));
-					newUnit.QueueActivity(new AttackMoveActivity(newUnit, () => move.MoveTo(exitLocation, 1)));
-				}
-
-				foreach (var t in self.TraitsImplementing<INotifyProduction>())
-					t.UnitProduced(self, newUnit, CPos.Zero);
-			});
-		}
-
-		private Exit SelectExit(Actor self, ActorInfo producee)
-		{
-			var mobileInfo = producee.TraitInfoOrDefault<MobileInfo>();
-
-			var exit = self.Trait<Exit>();
-			var spawn = self.World.Map.CellContaining(self.CenterPosition + exit.Info.SpawnOffset);
-
-			for (var y = 1; y <= info.MaximumDistance; y++)
-			for (var x = -y; x <= y; x++)
-			{
-				var candidate = new CVec(x, y);
-
-				if (!mobileInfo.CanEnterCell(self.World, self, spawn + candidate))
-					continue;
-
-				var exitInfo = new ExitInfo();
-				exitInfo.GetType().GetField("SpawnOffset").SetValue(exitInfo, exit.Info.SpawnOffset);
-				exitInfo.GetType().GetField("ExitCell").SetValue(exitInfo, spawn - self.Location + candidate);
-				exitInfo.GetType().GetField("Facing").SetValue(exitInfo, exit.Info.Facing);
-
-				return new Exit(null, exitInfo);
-			}
-
-			return exit;
+			Produce(self, self.World.Map.Rules.Actors[actor], "produce", td, 0);
 		}
 	}
 }

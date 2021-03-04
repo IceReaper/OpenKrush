@@ -1,5 +1,6 @@
 ^sacrifices_infantry:
 	Altar:
 		RequiresCondition: !selfconstructing && !deconstructing
+		Produces: summoning
 	GrantExternalConditionToProduced:
 		Condition: produced

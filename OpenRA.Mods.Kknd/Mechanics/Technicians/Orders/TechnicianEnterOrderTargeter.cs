@@ -30,14 +30,16 @@ namespace OpenRA.Mods.Kknd.Mechanics.Technicians.Orders
 
 		public override bool CanTargetActor(Actor self, Actor target, TargetModifiers modifiers, ref string cursor)
 		{
-			if (TechnicianUtils.CanEnter(self, target))
+			if (!TechnicianUtils.CanEnter(self, target))
 			{
-				cursor = cursorAllowed;
-				return true;
+				cursor = cursorForbidden;
+
+				return false;
 			}
 
-			cursor = cursorForbidden;
-			return false;
+			cursor = cursorAllowed;
+
+			return true;
 		}
 
 		public override bool CanTargetFrozenActor(Actor self, FrozenActor target, TargetModifiers modifiers, ref string cursor)

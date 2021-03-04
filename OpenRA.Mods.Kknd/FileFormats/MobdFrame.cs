@@ -20,7 +20,7 @@ namespace OpenRA.Mods.Kknd.FileFormats
 		public readonly uint OriginX;
 		public readonly uint OriginY;
 		public readonly MobdRenderFlags RenderFlags;
-		public MobdPoint[] Points;
+		public readonly MobdPoint[] Points;
 
 		public MobdFrame(SegmentStream stream, Version version)
 		{

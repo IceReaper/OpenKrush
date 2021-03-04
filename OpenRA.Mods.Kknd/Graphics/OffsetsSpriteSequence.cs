@@ -20,9 +20,16 @@ namespace OpenRA.Mods.Kknd.Graphics
 {
 	public class Offset
 	{
-		public int Id;
-		public int X;
-		public int Y;
+		public readonly int Id;
+		public readonly int X;
+		public readonly int Y;
+
+		public Offset(int id, int x, int y)
+		{
+			Id = id;
+			X = x;
+			Y = y;
+		}
 	}
 
 	public class EmbeddedSpriteOffsets
@@ -46,9 +53,9 @@ namespace OpenRA.Mods.Kknd.Graphics
 		}
 	}
 
-	public class OffsetsSpriteSequence : DefaultSpriteSequence
+	public sealed class OffsetsSpriteSequence : DefaultSpriteSequence
 	{
-		public Dictionary<Sprite, Offset[]> EmbeddedOffsets = new Dictionary<Sprite, Offset[]>();
+		public readonly Dictionary<Sprite, Offset[]> EmbeddedOffsets = new Dictionary<Sprite, Offset[]>();
 
 		public OffsetsSpriteSequence(ModData modData, string tileSet, SpriteCache cache, ISpriteSequenceLoader loader, string sequence, string animation, MiniYaml info)
 			: base(modData, tileSet, cache, loader, sequence, animation, info)
@@ -78,7 +85,7 @@ namespace OpenRA.Mods.Kknd.Graphics
 						continue;
 
 					var lines = metadata.Metadata["Offsets[" + i + "]"].Split('\n');
-					var convertOffsets = new Func<string[], Offset>(data => new Offset { Id = int.Parse(data[0]), X = int.Parse(data[1]), Y = int.Parse(data[2]) });
+					var convertOffsets = new Func<string[], Offset>(data => new Offset(int.Parse(data[0]), int.Parse(data[1]), int.Parse(data[2])));
 					EmbeddedOffsets.Add(sprites[i], lines.Select(t => t.Split(',')).Select(convertOffsets).ToArray());
 				}
 			}

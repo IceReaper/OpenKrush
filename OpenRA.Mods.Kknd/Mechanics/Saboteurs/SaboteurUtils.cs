@@ -16,14 +16,14 @@ namespace OpenRA.Mods.Kknd.Mechanics.Saboteurs
 {
 	public static class SaboteurUtils
 	{
-		public static bool CanEnter(Actor saboteur, Actor target)
+		public static bool CanEnter(Actor source, Actor target)
 		{
-			var saboteurConquerable = target.TraitOrDefault<SaboteurConquerable>();
+			var trait = target.TraitOrDefault<SaboteurConquerable>();
 
-			if (saboteurConquerable == null || saboteurConquerable.IsTraitDisabled)
+			if (trait == null || trait.IsTraitDisabled)
 				return false;
 
-			return saboteur.Owner.RelationshipWith(target.Owner) != PlayerRelationship.Ally || saboteurConquerable.Population != saboteurConquerable.Info.MaxPopulation;
+			return source.Owner.RelationshipWith(target.Owner) != PlayerRelationship.Ally || trait.Population != trait.Info.MaxPopulation;
 		}
 	}
 }

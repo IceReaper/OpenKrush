@@ -50,7 +50,7 @@ namespace OpenRA.Mods.Kknd.FileSystem
 			return decryptedStream;
 		}
 
-		static void ParseBody(Stream encryptedStream, Stream decryptedStream, int length)
+		private static void ParseBody(Stream encryptedStream, Stream decryptedStream, int length)
 		{
 			while (decryptedStream.Position < length)
 			{

@@ -40,7 +40,7 @@ namespace OpenRA.Mods.Kknd.FileSystem
 
 	public class LvlPackageLoader : IPackageLoader
 	{
-		public sealed class LvlPackage : IReadOnlyPackage
+		private class LvlPackage : IReadOnlyPackage
 		{
 			public string Name { get; private set; }
 
@@ -52,7 +52,7 @@ namespace OpenRA.Mods.Kknd.FileSystem
 			private readonly Dictionary<string, uint[]> index = new Dictionary<string, uint[]>();
 			private readonly Stream stream;
 
-			public LvlPackage(Stream s, string filename, FS context)
+			public LvlPackage(Stream s, string filename, IReadOnlyFileSystem context)
 			{
 				stream = s;
 				Name = filename;
@@ -147,9 +147,7 @@ namespace OpenRA.Mods.Kknd.FileSystem
 
 			public Stream GetStream(string filename)
 			{
-				uint[] entry;
-
-				return !index.TryGetValue(filename, out entry) ? null : new NonDisposingSegmentStream(stream, entry[0], entry[1]);
+				return !index.TryGetValue(filename, out var entry) ? null : new NonDisposingSegmentStream(stream, entry[0], entry[1]);
 			}
 
 			public IReadOnlyPackage OpenPackage(string filename, FS context)
