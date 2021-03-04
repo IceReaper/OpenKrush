@@ -18,15 +18,15 @@ namespace OpenRA.Mods.Kknd.FileFormats
 {
 	public class MobdImage
 	{
-		public readonly uint Width;
-		public readonly uint Height;
+		public readonly int Width;
+		public readonly int Height;
 		public readonly byte[] Pixels;
 
 		public MobdImage(SegmentStream stream, uint flags, Version version)
 		{
 			bool flipped;
-			Width = stream.ReadUInt32();
-			Height = stream.ReadUInt32();
+			Width = stream.ReadInt32();
+			Height = stream.ReadInt32();
 			Pixels = new byte[Width * Height];
 
 			if (version == Version.KKND1)
@@ -56,12 +56,7 @@ namespace OpenRA.Mods.Kknd.FileFormats
 				return;
 
 			for (var i = 0; i < Height; i++)
-			{
-				var row = new byte[Width];
-				Array.Copy(Pixels, i * Width, row, 0, Width);
-				Array.Reverse(row);
-				Array.Copy(row, 0, Pixels, i * Width, Width);
-			}
+				Array.Reverse(Pixels, i * Width, Width);
 		}
 
 		void DecompressKknd1(Stream compressed)

@@ -9,6 +9,7 @@
  */
 #endregion
 
+using System;
 using System.IO;
 using OpenRA.Primitives;
 
@@ -52,9 +53,20 @@ namespace OpenRA.Mods.Kknd.FileFormats
 				stream.ReadUInt16(); // Duration
 		}
 
-		public uint[,] ApplyFrame(uint[,] oldFrame, ref uint[] palette, ushort width, ushort height)
+		public uint[,] ApplyFrame(uint[,] oldFrame, ref uint[] palette)
 		{
-			var newFrame = new uint[oldFrame.GetLength(0), oldFrame.GetLength(1)];
+			var width = oldFrame.GetLength(1);
+			var height = oldFrame.GetLength(0);
+
+			var newFrame = new uint[height, width];
+
+			// We use Buffer.BlockCopy as Array.Copy does not properly handle 2d array!
+			var shift = (globalMotion.X + globalMotion.Y * width) * 4;
+
+			if (shift >= 0)
+				Buffer.BlockCopy(oldFrame, shift, newFrame, 0, oldFrame.Length * 4 - shift);
+			else
+				Buffer.BlockCopy(oldFrame, 0, newFrame, -shift, oldFrame.Length * 4 + shift);
 
 			int[] patterns =
 			{
@@ -94,10 +106,6 @@ namespace OpenRA.Mods.Kknd.FileFormats
 					{
 						case 0:
 						{
-							for (var y = 0; y < 4; y++)
-							for (var x = 0; x < 4; x++)
-								newFrame[by * 4 + y, bx * 4 + x] = oldFrame[by * 4 + y + globalMotion.Y, bx * 4 + x + globalMotion.X];
-
 							break;
 						}
 
@@ -131,6 +139,7 @@ namespace OpenRA.Mods.Kknd.FileFormats
 							for (var y = 0; y < 4; y++)
 							for (var x = 0; x < 4; x++)
 								newFrame[by * 4 + y, bx * 4 + x] = color;
+
 							break;
 						}
 
@@ -161,9 +170,7 @@ namespace OpenRA.Mods.Kknd.FileFormats
 									for (var y = 0; y < 4; y++)
 									for (var x = 0; x < 4; x++)
 									{
-										if (((pattern >> (y * 4 + x)) & 1) == 0)
-											newFrame[by * 4 + y, bx * 4 + x] = oldFrame[by * 4 + y + globalMotion.Y, bx * 4 + x + globalMotion.X];
-										else
+										if (((pattern >> (y * 4 + x)) & 1) == 1)
 											newFrame[by * 4 + y, bx * 4 + x] = pixel;
 									}
 
@@ -177,9 +184,7 @@ namespace OpenRA.Mods.Kknd.FileFormats
 									for (var y = 0; y < 4; y++)
 									for (var x = 0; x < 4; x++)
 									{
-										if (((pattern >> (y * 4 + x)) & 1) == 1)
-											newFrame[by * 4 + y, bx * 4 + x] = oldFrame[by * 4 + y + globalMotion.Y, bx * 4 + x + globalMotion.X];
-										else
+										if (((pattern >> (y * 4 + x)) & 1) == 0)
 											newFrame[by * 4 + y, bx * 4 + x] = pixel;
 									}
 

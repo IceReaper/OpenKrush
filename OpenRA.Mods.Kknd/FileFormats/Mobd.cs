@@ -25,7 +25,6 @@ namespace OpenRA.Mods.Kknd.FileFormats
 		{
 			var fileOffset = (uint)stream.BaseOffset;
 			var firstFrameStart = stream.Length;
-			var justReadFrameOffset = false;
 
 			var animationOffsets = new List<uint>();
 			var rotationalAnimations = new List<MobdAnimation>();
@@ -33,48 +32,45 @@ namespace OpenRA.Mods.Kknd.FileFormats
 
 			while (stream.Position < firstFrameStart)
 			{
-				var value = stream.ReadUInt32();
+				var value = stream.ReadInt32();
 
-				// This parsing method is trash, because animation offsets are hardcoded in .exe but it seems to work.
-				if ((value == 0xffffffff || value == 0x00000000) && justReadFrameOffset)
+				if (value == 0 || (value - fileOffset < stream.Position && value >= fileOffset))
 				{
-					// terminator
-					justReadFrameOffset = false;
+					stream.Position -= 4;
+					break;
 				}
-				else if (value - fileOffset > stream.Position && value - fileOffset < stream.Length)
+
+				animationOffsets.Add((uint)(stream.Position - 4));
+
+				while (true)
 				{
-					// frame
-					justReadFrameOffset = true;
+					value = stream.ReadInt32();
+
+					if (value == -1 || value == 0)
+						break;
+
 					firstFrameStart = Math.Min(firstFrameStart, value - fileOffset);
 				}
-				else if (value - fileOffset < stream.Position && value >= fileOffset)
-				{
-					// animation pointer
-					animationOffsets.Remove(value - fileOffset);
-					var returnPosition = stream.Position;
-					stream.Position = value - fileOffset;
-					rotationalAnimations.Add(new MobdAnimation(stream, version));
-					stream.Position = returnPosition;
-				}
-				else if (value == 0)
-				{
-					// TODO filler ? Sprite Invisible?
-				}
-				else
-					animationOffsets.Add((uint)(stream.Position - 4));
+			}
+
+			while (stream.Position < firstFrameStart)
+			{
+				var value = stream.ReadUInt32();
+
+				if (value == 0)
+					continue;
+
+				animationOffsets.Remove(value - fileOffset);
+				var returnPosition = stream.Position;
+				stream.Position = value - fileOffset;
+				rotationalAnimations.Add(new MobdAnimation(stream, version));
+				stream.Position = returnPosition;
 			}
 
 			foreach (var animationOffset in animationOffsets)
 			{
-				try
-				{
-					stream.Position = animationOffset;
-					simpleAnimations.Add(new MobdAnimation(stream, version));
-				}
-				catch (Exception)
-				{
-					// TODO crashes on kknd2, fix me!
-				}
+				stream.Position = animationOffset;
+				simpleAnimations.Add(new MobdAnimation(stream, version));
 			}
 
 			RotationalAnimations = rotationalAnimations.ToArray();

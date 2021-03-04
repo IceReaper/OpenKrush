@@ -21,7 +21,7 @@ namespace OpenRA.Mods.Kknd.FileFormats
 
 		public MobdAnimation(SegmentStream stream, Version version)
 		{
-			// This are actually broken / bugged files. As we can not fix the containers, we have them hardcoded here:
+			// OpenRA needs the same amount of frames per facing, filling up missing frames:
 			var missingFrameWorkaround = 0;
 
 			// Beetle => 10,10,10,8,10,10,10,10,10,10,10,10,10,10,10,10
@@ -33,9 +33,20 @@ namespace OpenRA.Mods.Kknd.FileFormats
 			// Gort => 10,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11
 			missingFrameWorkaround += stream.BaseStream.Position == 2094122 ? 1 : 0;
 
-			// TODO add kknd2 bugged ones here! (Worm projectile, ...)
+			// TODO add kknd2 ones here! (Worm projectile, ...)
 
-			/*Unk1 =*/ stream.ReadUInt32(); // TODO this is likely the animation speed
+			// TODO this is likely the animation speed.
+			//      Pattern is 0x00aabbcc
+			//      0x00000010
+			//      0x00aaaa2a
+			//      flipping the bytes to 0xccbbaa00 makes more sence:
+			//      0x10000000
+			//      0x2aaaaa00
+			//      Notes:
+			//      0x10000000 is the most common value
+			//      cc is never 00
+			//      aa and bb often consist of the same value: 0000 1111 8888 aaaa ...
+			/*Unk1 =*/ stream.ReadUInt32();
 
 			var frames = new List<MobdFrame>();
 
@@ -44,7 +55,7 @@ namespace OpenRA.Mods.Kknd.FileFormats
 				var value = stream.ReadInt32();
 
 				if (value == 0 || value == -1)
-					break; // TODO this is most likely repeat pattern. 1,2,3,1,2,3 or 1,2,3,2,1,2,3
+					break; // TODO 0 might mean "repeat", -1 might mean "do not repeat"
 
 				var returnPosition = stream.Position;
 				stream.Position = value - stream.BaseOffset;
@@ -59,26 +70,27 @@ namespace OpenRA.Mods.Kknd.FileFormats
 
 			Frames = frames.ToArray();
 
-			if (version == Version.KKND2)
+			// TODO we might want to verify and refactor this when we re-implement kknd2!
+			if (version != Version.KKND2)
+				return;
+
+			// KKnD 2 uses offsets only for frames they are used on instead of the whole animation.
+			var points = new List<MobdPoint>();
+
+			foreach (var frame in Frames)
 			{
-				// KKnD 2 uses offsets only for frames they are used on instead of the whole animation.
-				var points = new List<MobdPoint>();
+				if (frame.Points == null)
+					continue;
 
-				foreach (var frame in Frames)
+				foreach (var point in frame.Points)
 				{
-					if (frame.Points == null)
-						continue;
-
-					foreach (var point in frame.Points)
-					{
-						if (point.Id == 0)
-							points.Add(new MobdPoint { X = point.X, Y = point.Y, Z = point.Z, Id = points.Count });
-					}
+					if (point.Id == 0)
+						points.Add(new MobdPoint { X = point.X, Y = point.Y, Z = point.Z, Id = points.Count });
 				}
-
-				foreach (var frame in Frames)
-					frame.Points = points.ToArray();
 			}
+
+			foreach (var frame in Frames)
+				frame.Points = points.ToArray();
 		}
 	}
 }

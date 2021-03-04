@@ -11,6 +11,7 @@
 
 #endregion
 
+using System;
 using System.IO;
 using System.Linq;
 using OpenRA.Video;
@@ -32,6 +33,7 @@ namespace OpenRA.Mods.Kknd.FileFormats
         public int SampleRate { get; }
 
         private readonly VbcFrame[] frames;
+        private uint[,] frame;
         private uint[] palette;
 
         public Vbc(Stream stream)
@@ -98,11 +100,17 @@ namespace OpenRA.Mods.Kknd.FileFormats
         {
             if (CurrentFrame == 0)
             {
-                FrameData = new uint[Exts.NextPowerOf2(Height), Exts.NextPowerOf2(Width)];
+                frame = new uint[Height, Width];
                 palette = new uint[256];
             }
             else
-                FrameData = frames[CurrentFrame - 1].ApplyFrame(FrameData, ref palette, Width, Height);
+                frame = frames[CurrentFrame - 1].ApplyFrame(frame, ref palette);
+
+            // TODO for better performance, we should get rid of this copying as soon we can use non-power-of-2 textures
+            FrameData = new uint[Exts.NextPowerOf2(Height), Exts.NextPowerOf2(Width)];
+
+            for (var y = 0; y < Height; y++)
+                Buffer.BlockCopy(frame, y * Width * 4, FrameData, y * FrameData.GetLength(1) * 4, Width * 4);
         }
     }
 }

@@ -28,10 +28,13 @@ namespace OpenRA.Mods.Kknd.FileFormats
 			OriginY = stream.ReadUInt32();
 			/*Unk1 =*/ stream.ReadUInt32();
 			var renderFlagsOffset = stream.ReadUInt32();
-			/*var boxListOffset =*/ stream.ReadUInt32(); // we do not read boxes (2 points)
+			/*var boxListOffset =*/ stream.ReadUInt32(); // we do not read boxes (2 points, min and max)
 			/*Unk2 =*/ stream.ReadUInt32();
 			var pointListOffset = stream.ReadUInt32();
 
+			// Theoretically we could also read the boxes here.
+			// However they contain info about hitshaped etc. We define them in yaml to be able to tweak them.
+			// But the points are required for turrets, muzzles and projectile launch offsets.
 			if (pointListOffset > 0)
 			{
 				var points = new List<MobdPoint>();
