@@ -1,5 +1,7 @@
 survivors_vehicle_barragecraft:
-	projectile: SPRITES.LVL|BarrageCraft.mobd
+	projectile: SPRITES.LVL|Crab.mobd
+		Length: 2
+		Tick: 120
 		Facings: -16
 	turret: SPRITES.LVL|BarrageCraft.mobd
 		Start: 16
