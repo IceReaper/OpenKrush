@@ -1,5 +1,9 @@
 survivors_infantry_rpglauncher:
 	Inherits@death: ^survivors_infantry_death
+	projectile: SPRITES.LVL|RocketLauncher.mobd
+		Length: 2
+		Tick: 120
+		Facings: -16
 	idle: SPRITES.LVL|RocketInfantry.mobd
 		Facings: -16
 	aim: SPRITES.LVL|RocketInfantry.mobd
