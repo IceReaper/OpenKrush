@@ -15,11 +15,6 @@ Cursors:
 		move-blocked:
 			Start: 84
 
-		# TODO move to png section when we have an enter cursor!
-		enter:
-			Start: 70
-			Length: 14
-
 		attack:
 			Start: 54
 			Length: 6
@@ -134,3 +129,10 @@ Cursors:
 		ability:
 			Start: 20
 			Length: 5
+
+	core/cursor_enter.png: kknd
+		enter:
+			Start: 0
+			Length: 5
+		enter-blocked:
+			Start: 5

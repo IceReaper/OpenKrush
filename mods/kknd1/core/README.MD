@@ -3,6 +3,11 @@ Author: Beam Software
 Source: Unused beta asset.
 Description: Custom building spritesheet.
 
+**cursor_enter.png**
+Author: Dzierzan
+Source: Drawn in Aseprite
+Description: Custom cursor for entering something.
+
 **beacon.wav**
 Author: Beam Software, Dzierzan
 Source: Ripped from FMV briefing.
