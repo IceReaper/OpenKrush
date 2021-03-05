@@ -30,5 +30,5 @@ survivors_building_detention_center:
 	RallyPoint:
 		Path: -1,2
 		Image:
-	Altar:
+	Sacrificer:
 		Summon: survivors_infantry_elpresidente

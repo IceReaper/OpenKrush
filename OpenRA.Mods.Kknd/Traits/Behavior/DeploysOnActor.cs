@@ -19,7 +19,7 @@ using OpenRA.Traits;
 namespace OpenRA.Mods.Kknd.Traits.Behavior
 {
 	[Desc("Deploy when standing on top of a specific actor.")]
-	class DeploysOnActorInfo : TraitInfo
+	public class DeploysOnActorInfo : TraitInfo
 	{
 		[Desc("Actor to transform into.")]
 		[ActorReference]
@@ -37,7 +37,7 @@ namespace OpenRA.Mods.Kknd.Traits.Behavior
 		public override object Create(ActorInitializer init) { return new DeploysOnActor(init, this); }
 	}
 
-	class DeploysOnActor : IIssueOrder, ITick
+	public class DeploysOnActor : IIssueOrder, ITick
 	{
 		private readonly DeploysOnActorInfo info;
 		private bool issued;

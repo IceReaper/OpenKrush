@@ -101,7 +101,7 @@ namespace OpenRA.Mods.Kknd.Mechanics.Construction.Traits
 
 		protected override bool ProducerHasRequirements(BuildableInfo buildable)
 		{
-			var producers = Actor.World.ActorsWithTrait<Common.Traits.Production>().Where(x => !x.Trait.IsTraitDisabled && x.Actor.Owner == Actor.Owner).Select(x => x.Actor);
+			var producers = Actor.World.ActorsWithTrait<Production>().Where(x => !x.Trait.IsTraitDisabled && x.Actor.Owner == Actor.Owner).Select(x => x.Actor);
 
 			return producers.Any(producer =>
 			{

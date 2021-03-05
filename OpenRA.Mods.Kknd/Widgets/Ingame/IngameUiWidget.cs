@@ -13,8 +13,10 @@ using System.Linq;
 using OpenRA.Graphics;
 using OpenRA.Mods.Common.Orders;
 using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.Kknd.Activities;
-using OpenRA.Mods.Kknd.Traits.Resources;
+using OpenRA.Mods.Kknd.Mechanics.Docking;
+using OpenRA.Mods.Kknd.Mechanics.Docking.Activities;
+using OpenRA.Mods.Kknd.Mechanics.Docking.Traits.Actions;
+using OpenRA.Mods.Kknd.Mechanics.Oil.Traits;
 using OpenRA.Primitives;
 using OpenRA.Widgets;
 

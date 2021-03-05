@@ -12,10 +12,10 @@
 using System;
 using OpenRA.Graphics;
 using OpenRA.Mods.Common.Traits;
+using OpenRA.Mods.Kknd.Mechanics.Oil;
 using OpenRA.Mods.Kknd.Mechanics.Researching.Traits;
 using OpenRA.Mods.Kknd.Mechanics.Saboteurs.Traits;
 using OpenRA.Mods.Kknd.Traits.Render;
-using OpenRA.Mods.Kknd.Traits.Resources;
 using OpenRA.Mods.Kknd.Traits.Veterancy;
 using OpenRA.Primitives;
 using OpenRA.Traits;

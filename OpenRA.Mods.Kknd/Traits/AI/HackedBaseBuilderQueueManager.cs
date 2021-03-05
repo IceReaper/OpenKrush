@@ -20,7 +20,7 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.Kknd.Traits.AI
 {
-	class HackedBaseBuilderQueueManager
+	public class HackedBaseBuilderQueueManager
 	{
 		readonly string category;
 

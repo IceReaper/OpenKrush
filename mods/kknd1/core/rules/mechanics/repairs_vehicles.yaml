@@ -1,7 +1,7 @@
 ^repairs_vehicles:
 	Dock:
 		RequiresCondition: !selfconstructing && !deconstructing
-	Repairbay:
+	RepairsVehicles:
 		Cursor: repair
 	RallyPoint:
 		Cursor: move

@@ -14,7 +14,7 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.Kknd.Mechanics.Saboteurs.Orders
 {
-	class SaboteurEnterOrderTargeter : UnitOrderTargeter
+	public class SaboteurEnterOrderTargeter : UnitOrderTargeter
 	{
 		public const string Id = "SaboteurEnter";
 

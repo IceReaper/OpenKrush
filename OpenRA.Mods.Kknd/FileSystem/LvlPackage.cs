@@ -26,7 +26,7 @@ namespace OpenRA.Mods.Kknd.FileSystem
 	}
 
 	// TODO try to get rid of this, but something is disposing the stream!
-	class NonDisposingSegmentStream : SegmentStream
+	public class NonDisposingSegmentStream : SegmentStream
 	{
 		public NonDisposingSegmentStream(Stream stream, long offset, long count)
 			: base(stream, offset, count)

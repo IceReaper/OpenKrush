@@ -9,30 +9,36 @@
  */
 #endregion
 
-using System.Linq;
 using OpenRA.Mods.Common.Orders;
 using OpenRA.Traits;
 
-namespace OpenRA.Mods.Kknd.Orders
+namespace OpenRA.Mods.Kknd.Mechanics.Sacrificing.Orders
 {
-	public class DeployOnActorOrderTargeter : UnitOrderTargeter
+	public class SacrificeOrderTargeter : UnitOrderTargeter
 	{
-		private readonly string[] validTargets;
+		public const string Id = "Sacrifice";
 
-		public DeployOnActorOrderTargeter(string[] validTargets, string cursor)
-			: base("Move", 6, cursor, false, true)
+		private readonly string cursor;
+
+		public SacrificeOrderTargeter(string cursor)
+			: base(Id, 6, cursor, false, true)
 		{
-			this.validTargets = validTargets;
+			this.cursor = cursor;
 		}
 
 		public override bool CanTargetActor(Actor self, Actor target, TargetModifiers modifiers, ref string cursor)
 		{
-			return validTargets.Contains(target.Info.Name);
+			if (!SacrificingUtils.CanEnter(self, target))
+				return false;
+
+			cursor = this.cursor;
+
+			return true;
 		}
 
 		public override bool CanTargetFrozenActor(Actor self, FrozenActor target, TargetModifiers modifiers, ref string cursor)
 		{
-			return validTargets.Contains(target.Info.Name);
+			return false;
 		}
 	}
 }

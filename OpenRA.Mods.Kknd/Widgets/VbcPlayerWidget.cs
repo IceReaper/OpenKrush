@@ -109,7 +109,9 @@ namespace OpenRA.Mods.Kknd.Widgets
 			while (currentFrame > lastFrame)
 			{
 				++lastFrame;
-				UpdateFrame();
+
+				if (lastFrame <= video.Frames)
+					UpdateFrame();
 			}
 		}
 

@@ -30,5 +30,5 @@ evolved_building_holding_pen:
 	RallyPoint:
 		Path: -1,2
 		Image:
-	Altar:
+	Sacrificer:
 		Summon: evolved_infantry_kingzog

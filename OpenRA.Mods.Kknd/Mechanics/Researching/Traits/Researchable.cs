@@ -18,7 +18,7 @@ using OpenRA.Traits;
 namespace OpenRA.Mods.Kknd.Mechanics.Researching.Traits
 {
 	[Desc("KKnD Research mechanism, attach to the actor which has tech levels.")]
-	class ResearchableInfo : ConditionalTraitInfo, Requires<RenderSpritesInfo>, Requires<BodyOrientationInfo>
+	public class ResearchableInfo : ConditionalTraitInfo, Requires<RenderSpritesInfo>, Requires<BodyOrientationInfo>
 	{
 		[Desc("Research sequence name to use.")]
 		public readonly string Sequence = "research";
@@ -44,7 +44,7 @@ namespace OpenRA.Mods.Kknd.Mechanics.Researching.Traits
 		}
 	}
 
-	class Researchable : ConditionalTrait<ResearchableInfo>
+	public class Researchable : ConditionalTrait<ResearchableInfo>
 	{
 		private readonly ResearchableInfo info;
 		private readonly Actor self;

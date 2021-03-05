@@ -12,9 +12,9 @@
 using System;
 using System.Linq;
 using OpenRA.Mods.Common.Traits;
+using OpenRA.Mods.Kknd.Mechanics.Docking.Traits.Actions;
 using OpenRA.Mods.Kknd.Mechanics.Researching.Orders;
 using OpenRA.Mods.Kknd.Mechanics.Researching.Traits;
-using OpenRA.Mods.Kknd.Traits.Resources;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.Kknd.Traits.AI

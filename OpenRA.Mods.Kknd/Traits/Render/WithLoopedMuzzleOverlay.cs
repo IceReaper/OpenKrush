@@ -21,7 +21,7 @@ using OpenRA.Traits;
 namespace OpenRA.Mods.Kknd.Traits.Render
 {
 	[Desc("Renders the MuzzleSequence from the Armament trait.")]
-	class WithLoopedMuzzleOverlayInfo : ConditionalTraitInfo, Requires<RenderSpritesInfo>, Requires<AttackBaseInfo>, Requires<ArmamentInfo>
+	public class WithLoopedMuzzleOverlayInfo : ConditionalTraitInfo, Requires<RenderSpritesInfo>, Requires<AttackBaseInfo>, Requires<ArmamentInfo>
 	{
 		[Desc("Ignore the weapon position, and always draw relative to the center of the actor")]
 		public readonly bool IgnoreOffset = false;
@@ -29,7 +29,7 @@ namespace OpenRA.Mods.Kknd.Traits.Render
 		public override object Create(ActorInitializer init) { return new WithLoopedMuzzleOverlay(init.Self, this); }
 	}
 
-	class WithLoopedMuzzleOverlay : ConditionalTrait<WithLoopedMuzzleOverlayInfo>, INotifyAttack, IRender, ITick
+	public class WithLoopedMuzzleOverlay : ConditionalTrait<WithLoopedMuzzleOverlayInfo>, INotifyAttack, IRender, ITick
 	{
 		readonly Dictionary<Barrel, int> visible = new Dictionary<Barrel, int>();
 		readonly Dictionary<Barrel, AnimationWithOffset> anims = new Dictionary<Barrel, AnimationWithOffset>();

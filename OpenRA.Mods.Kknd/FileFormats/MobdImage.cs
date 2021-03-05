@@ -11,7 +11,6 @@
 
 using System;
 using System.IO;
-using OpenRA.Primitives;
 using Version = OpenRA.Mods.Kknd.FileSystem.Version;
 
 namespace OpenRA.Mods.Kknd.FileFormats

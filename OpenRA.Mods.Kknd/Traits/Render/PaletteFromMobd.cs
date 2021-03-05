@@ -24,7 +24,7 @@ namespace OpenRA.Mods.Kknd.Traits.Render
 {
 	// TODO see PaletteFromEmbeddedSpritePalette
 	[Desc("Load palette from KKnD2 MOBD file.")]
-	class PaletteFromMobdInfo : TraitInfo, IProvidesCursorPaletteInfo
+	public class PaletteFromMobdInfo : TraitInfo, IProvidesCursorPaletteInfo
 	{
 		[FieldLoader.RequireAttribute]
 		[PaletteDefinition]
@@ -64,7 +64,7 @@ namespace OpenRA.Mods.Kknd.Traits.Render
 		}
 	}
 
-	class PaletteFromMobd : ILoadsPalettes, IProvidesAssetBrowserPalettes
+	public class PaletteFromMobd : ILoadsPalettes, IProvidesAssetBrowserPalettes
 	{
 		readonly World world;
 		readonly PaletteFromMobdInfo info;

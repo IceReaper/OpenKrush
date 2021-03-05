@@ -16,7 +16,7 @@ using OpenRA.Traits;
 namespace OpenRA.Mods.Kknd.Traits.Behavior
 {
 	[Desc("Makes infantry feel more alive by randomly rotating or playing an animation when idle.")]
-	class LivingInfo : TraitInfo, Requires<MobileInfo>, Requires<WithSpriteBodyInfo>
+	public class LivingInfo : TraitInfo, Requires<MobileInfo>, Requires<WithSpriteBodyInfo>
 	{
 		[Desc("Chance per tick the actor rotates to a random direction.")]
 		public readonly int RotationChance = 1000;
@@ -30,7 +30,7 @@ namespace OpenRA.Mods.Kknd.Traits.Behavior
 		public override object Create(ActorInitializer init) { return new Living(init, this); }
 	}
 
-	class Living : ITick
+	public class Living : ITick
 	{
 		private readonly LivingInfo info;
 		private readonly Mobile mobile;

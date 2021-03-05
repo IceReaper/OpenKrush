@@ -41,5 +41,5 @@ survivors_building_repairbay:
 	WithIdleOverlay@repairing:
 		Sequence: animation-repairing
 		RequiresCondition: repairing
-	Repairbay:
+	RepairsVehicles:
 		Condition: repairing

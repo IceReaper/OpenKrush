@@ -14,7 +14,7 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.Kknd.Mechanics.Technicians.Orders
 {
-	class TechnicianEnterOrderTargeter : UnitOrderTargeter
+	public class TechnicianEnterOrderTargeter : UnitOrderTargeter
 	{
 		public const string Id = "TechnicianEnter";
 
