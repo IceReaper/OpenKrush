@@ -8,8 +8,6 @@ evolved_vehicle_chopper:
 		Tick: 120
 		Facings: -16
 	aim: actors/evolved/vehicles/chopper/frames.png
-		Start: 48
-		Stride: 3
 		Facings: -16
 	shoot: actors/evolved/vehicles/chopper/frames.png
 		Start: 48
