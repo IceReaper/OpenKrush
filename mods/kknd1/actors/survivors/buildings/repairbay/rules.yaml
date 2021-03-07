@@ -30,7 +30,7 @@ survivors_building_repairbay:
 	AdvancedSelectionDecorations:
 		Offset: -4,-15
 	Dock:
-		Position: -576,64,0
+		Position: -100,-50,400
 	RallyPoint:
 		Path: 0,2
 	TechnicianRepairable:
