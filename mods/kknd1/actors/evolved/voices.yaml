@@ -13,7 +13,7 @@ EvolvedVoice:
 		Repair: MUTE.SLV|124.wav
 		Repairing: MUTE.SLV|108.wav
 		Die: MUTE.SLV|174.wav, MUTE.SLV|175.wav, MUTE.SLV|176.wav, MUTE.SLV|177.wav, MUTE.SLV|178.wav
-		Crush: kknd1|core/crush.wav, kknd1|core/crush.wav
+		Crush: kknd1|core/crush1.wav, kknd1|core/crush2.wav
 		Zapped: kknd1|core/zapped1.wav, kknd1|core/zapped2.wav, kknd1|core/zapped3.wav
 
 EvolvedVeteranVoice:
@@ -31,5 +31,5 @@ EvolvedVeteranVoice:
 		Repair: MUTE.SLV|124.wav
 		Repairing: MUTE.SLV|108.wav
 		Die: MUTE.SLV|174.wav, MUTE.SLV|175.wav, MUTE.SLV|176.wav, MUTE.SLV|177.wav, MUTE.SLV|178.wav
-		Crush: kknd1|core/crush.wav, kknd1|core/crush.wav
+		Crush: kknd1|core/crush1.wav, kknd1|core/crush2.wav
 		Zapped: kknd1|core/zapped1.wav, kknd1|core/zapped2.wav, kknd1|core/zapped3.wav
