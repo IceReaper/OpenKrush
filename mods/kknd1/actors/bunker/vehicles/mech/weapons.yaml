@@ -25,6 +25,9 @@ bunker_vehicles_mech_primary:
 		ExplosionPalette: kknd
 		Explosions: laser
 		ImpactSounds: MUTE.SLV|10.wav
+	Warhead@Smudge: LeaveSmudge
+		Chance: 35
+		SmudgeType: Crater
 
 bunker_vehicles_mech_secondary:
 	Inherits: ^weapon_explosion
