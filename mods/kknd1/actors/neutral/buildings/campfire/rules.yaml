@@ -7,17 +7,20 @@ neutral_building_campfire:
 	Health:
 		HP: 350
 	Building:
-		LocalCenterOffset: -500,500,0
+		LocalCenterOffset: -500,-500,0
 	AdvancedSelectionDecorations:
 		Offset: 0,-10
 		Width: 16
 	HitShape:
-		Type: Circle
-			Radius: 256
+		Type: Rectangle
+			TopLeft: 0, 0
+			BottomRight: 1024, 1024
+		TargetableOffsets: -700,500,0 # Y,X,Z
 	Selectable:
 		Bounds: 16, 16, 15, 20
 	Explodes:
-		Weapon: dieWall
-		EmptyWeapon: dieWall
+		Weapon: breakWall
+		EmptyWeapon: breakWall
+		Offset: 500,500,0
 	FrozenOnDeath:
 		Duration: 10
