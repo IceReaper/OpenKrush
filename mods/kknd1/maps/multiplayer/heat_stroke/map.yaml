@@ -1,12 +1,21 @@
 MapFormat: 11
+
 RequiresMod: kknd1
+
 Title: Heat Stroke
+
 Author: Zasso
+
 Tileset: desert
+
 MapSize: 107,66
+
 Bounds: 1,1,105,64
+
 Visibility: Lobby
+
 Categories: Conquest
+
 Players:
 	PlayerReference@Neutral:
 		Name: Neutral
@@ -38,6 +47,7 @@ Players:
 		Playable: True
 		Faction: Random
 		Enemies: Creeps
+
 Actors:
 	Actor4: neutral_building_hut_a
 		Owner: Neutral
@@ -162,11 +172,11 @@ Actors:
 	Actor55: evolved_tower_grapeshotcannon
 		Owner: Creeps
 		Location: 57,16
-		TurretFacing: 92
+		TurretFacing: 499
 	Actor56: evolved_tower_grapeshotcannon
 		Owner: Creeps
 		Location: 48,16
-		TurretFacing: 92
+		TurretFacing: 499
 	Actor57: desert_objects_11
 		Owner: Neutral
 		Location: 59,13

@@ -1,12 +1,21 @@
 MapFormat: 11
+
 RequiresMod: kknd1
+
 Title: Lost City
+
 Author: MrZuerg
+
 Tileset: urban
+
 MapSize: 126,126
+
 Bounds: 1,1,124,124
+
 Visibility: Lobby
+
 Categories: Conquest
+
 Players:
 	PlayerReference@Neutral:
 		Name: Neutral
@@ -38,6 +47,7 @@ Players:
 		Playable: True
 		Faction: Random
 		Enemies: Creeps
+
 Actors:
 	Actor1: urban_buildings_37
 		Owner: Neutral
@@ -177,19 +187,19 @@ Actors:
 	Actor421: evolved_tower_rotarycannon
 		Owner: Creeps
 		Location: 65,64
-		TurretFacing: 166
+		TurretFacing: 610
 	Actor422: evolved_tower_rotarycannon
 		Owner: Creeps
 		Location: 65,59
-		TurretFacing: 222
+		TurretFacing: 864
 	Actor423: evolved_tower_rotarycannon
 		Owner: Creeps
 		Location: 60,59
-		TurretFacing: 29
+		TurretFacing: 158
 	Actor424: evolved_tower_rotarycannon
 		Owner: Creeps
 		Location: 60,64
-		TurretFacing: 88
+		TurretFacing: 404
 	Actor425: mpspawn
 		Owner: Neutral
 		Location: 9,49

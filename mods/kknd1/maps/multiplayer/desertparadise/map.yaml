@@ -1,12 +1,21 @@
 MapFormat: 11
+
 RequiresMod: kknd1
+
 Title: Desert Paradise
+
 Author: TimoxaZlobniy
+
 Tileset: desert
+
 MapSize: 92,82
+
 Bounds: 1,1,90,80
+
 Visibility: Lobby
+
 Categories: Conquest
+
 Players:
 	PlayerReference@Neutral:
 		Name: Neutral
@@ -38,6 +47,7 @@ Players:
 		Playable: True
 		Faction: Random
 		Enemies: Creeps
+
 Actors:
 	Actor0: mpspawn
 		Owner: Neutral
@@ -342,18 +352,12 @@ Actors:
 	Actor187: neutral_building_hut_b
 		Owner: Neutral
 		Location: 47,25
-	Actor180: neutral_building_campfire
-		Owner: Neutral
-		Location: 45,23
 	Actor188: neutral_building_hut_e
 		Owner: Neutral
 		Location: 44,55
 	Actor208: neutral_building_hut_c
 		Owner: Neutral
 		Location: 47,55
-	Actor209: neutral_building_campfire
-		Owner: Neutral
-		Location: 46,56
 	Actor210: neutral_building_hut_b
 		Owner: Neutral
 		Location: 51,23
@@ -363,7 +367,6 @@ Actors:
 	Actor214: neutral_building_hut_b
 		Owner: Neutral
 		Location: 40,56
-		Health: 100
 	Actor181: neutral_building_hut_a
 		Owner: Neutral
 		Location: 43,58
@@ -406,3 +409,9 @@ Actors:
 	Actor206: oilpatch
 		Owner: Neutral
 		Location: 43,64
+	Actor127: neutral_building_campfire
+		Owner: Neutral
+		Location: 46,57
+	Actor128: neutral_building_campfire
+		Owner: Neutral
+		Location: 45,24

@@ -1,12 +1,21 @@
 MapFormat: 11
+
 RequiresMod: kknd1
+
 Title: Quick Sand
+
 Author: Zasso
+
 Tileset: desert
+
 MapSize: 97,97
+
 Bounds: 1,1,95,95
+
 Visibility: Lobby
+
 Categories: Conquest
+
 Players:
 	PlayerReference@Neutral:
 		Name: Neutral
@@ -28,6 +37,7 @@ Players:
 		Playable: True
 		Faction: Random
 		Enemies: Creeps
+
 Actors:
 	Actor1: neutral_building_hut_e
 		Owner: Neutral
@@ -35,9 +45,6 @@ Actors:
 	Actor2: neutral_building_hut_b
 		Owner: Neutral
 		Location: 50,28
-	Actor3: neutral_building_campfire
-		Owner: Neutral
-		Location: 48,27
 	Actor5: neutral_building_hut_a
 		Owner: Neutral
 		Location: 45,27
@@ -1178,11 +1185,11 @@ Actors:
 	Actor454: evolved_tower_machinegunnest
 		Owner: Creeps
 		Location: 45,10
-		TurretFacing: 92
+		TurretFacing: 507
 	Actor455: evolved_tower_machinegunnest
 		Owner: Creeps
 		Location: 50,10
-		TurretFacing: 92
+		TurretFacing: 507
 	Actor456: urban_objects_18
 		Owner: Neutral
 		Location: 49,14
@@ -1204,11 +1211,11 @@ Actors:
 	Actor462: evolved_tower_rotarycannon
 		Owner: Creeps
 		Location: 51,67
-		TurretFacing: 92
+		TurretFacing: 507
 	Actor463: evolved_tower_rotarycannon
 		Owner: Creeps
 		Location: 44,67
-		TurretFacing: 92
+		TurretFacing: 507
 	Actor464: neutral_building_drillrig
 		Owner: Neutral
 		Location: 47,47
@@ -1275,3 +1282,6 @@ Actors:
 	Actor485: desert_objects_24
 		Owner: Neutral
 		Location: 41,40
+	Actor452: neutral_building_campfire
+		Owner: Neutral
+		Location: 48,28

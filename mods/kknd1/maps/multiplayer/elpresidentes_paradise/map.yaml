@@ -1,12 +1,21 @@
 MapFormat: 11
+
 RequiresMod: kknd1
+
 Title: El Presidente's Paradise
+
 Author: Zasso
+
 Tileset: highland
+
 MapSize: 131,99
+
 Bounds: 1,1,129,97
+
 Visibility: Lobby
+
 Categories: Conquest
+
 Players:
 	PlayerReference@Neutral:
 		Name: Neutral
@@ -48,6 +57,7 @@ Players:
 		Playable: True
 		Faction: Random
 		Enemies: Creeps
+
 Actors:
 	Actor8: oilpatch
 		Owner: Neutral
@@ -574,8 +584,8 @@ Actors:
 	Actor214: survivors_vehicle_4x4pickup
 		Owner: Neutral
 		Location: 64,50
-		Facing: 92
-		TurretFacing: 92
+		Facing: 396
+		TurretFacing: 0
 	Actor218: highland_trees_4
 		Owner: Neutral
 		Location: 122,12
@@ -2020,4 +2030,4 @@ Actors:
 		Owner: Neutral
 		Location: 66,50
 		SubCell: 1
-		Facing: 92
+		Facing: 563
