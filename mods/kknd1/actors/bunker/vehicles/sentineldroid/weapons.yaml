@@ -25,3 +25,6 @@ bunker_vehicles_sentineldroid:
 		ExplosionPalette: kknd
 		Explosions: laser
 		ImpactSounds: MUTE.SLV|10.wav
+	Warhead@Smudge: LeaveSmudge
+		Chance: 35
+		SmudgeType: Crater
