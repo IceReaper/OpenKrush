@@ -1,4 +1,4 @@
-neutral_skullonstick:
+neutral_building_skullonstick:
 	idle: actors/neutral/buildings/skullonstick/frames.png
 	shadow: actors/neutral/buildings/skullonstick/frames.png
 		Start: 1

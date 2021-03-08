@@ -1,4 +1,4 @@
-neutral_skullonstick:
+neutral_building_skullonstick:
 	Inherits: ^CoreDecoration
 	Tooltip:
 		Name: Skull on stick
