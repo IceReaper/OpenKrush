@@ -3,9 +3,11 @@ Rules:
 	kknd1|actors/neutral/buildings/drillrig/rules.yaml
 	kknd1|actors/neutral/buildings/hut/rules.yaml
 	kknd1|actors/neutral/buildings/pillar/rules.yaml
+	kknd1|actors/neutral/buildings/skullonstick/rules.yaml
 
 Sequences:
 	kknd1|actors/neutral/buildings/campfire/sequences.yaml
 	kknd1|actors/neutral/buildings/drillrig/sequences.yaml
 	kknd1|actors/neutral/buildings/hut/sequences.yaml
 	kknd1|actors/neutral/buildings/pillar/sequences.yaml
+	kknd1|actors/neutral/buildings/skullonstick/sequences.yaml
