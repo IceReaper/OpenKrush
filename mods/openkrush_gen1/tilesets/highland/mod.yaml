@@ -1,0 +1,10 @@
+Rules:
+	openkrush_gen1|tilesets/highland/mapobjects/objects/rules.yaml
+	openkrush_gen1|tilesets/highland/mapobjects/trees/rules.yaml
+
+Sequences:
+	openkrush_gen1|tilesets/highland/mapobjects/objects/sequences.yaml
+	openkrush_gen1|tilesets/highland/mapobjects/trees/sequences.yaml
+
+TileSets:
+	openkrush_gen1|tilesets/highland/tileset.yaml

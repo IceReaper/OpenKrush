@@ -1,4 +1,4 @@
-This repository contains the KKnD remake project on the [OpenRA](https://github.com/OpenRA/OpenRA) engine.
+This repository contains the OpenKrush project on the [OpenRA](https://github.com/OpenRA/OpenRA) engine.
 
 These scripts and support files wrap and automatically manage a copy of the OpenRA game engine and common files during development, and generates Windows installers, macOS .app bundles, and Linux [AppImages](https://appimage.org/) for distribution.
 

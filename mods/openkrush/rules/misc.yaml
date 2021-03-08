@@ -1,0 +1,140 @@
+# Shared player setup.
+^CorePlayer:
+	# This actor is not affected by shroud or fog.
+	AlwaysVisible:
+	# Enable shroud and fog.
+	Shroud:
+
+# Ingame specific player setup.
+Player:
+	Inherits: ^CorePlayer
+	# Developer debug menu
+	DeveloperMode:
+	# Allow players to place building.
+	PlaceBuilding:
+	# Enable mission objectives, required to win or loose mission.
+	MissionObjectives:
+	# Default objective: Win by killing all enemies.
+	ConquestVictoryConditions:
+	# Amount of selectable starting resources.
+	PlayerResources:
+		DefaultCashDropdownLabel: Resources
+		SelectableCash: 5000, 6000, 8000, 10000, 12500, 15000
+	# Enable super weapons support.
+	SupportPowerManager:
+	# Manage build limits and pre-requisites.
+	TechTree:
+	# Required for FrozenUnderFog to work
+	FrozenActorLayer:
+	# Play notification when base is attacked.
+	AdvancedAttackNotifier:
+	# The global production queues, not attached to a single factory.
+	SelfConstructingProductionQueue@Building:
+		Type: building
+		ReadyAudio: BuildingReady
+	SelfConstructingProductionQueue@Tower:
+		Type: tower
+		ReadyAudio: BuildingReady
+	SelfConstructingProductionQueue@Walls:
+		Type: wall
+	PlaceBeacon:
+		ArrowSequence:
+		CircleSequence: x
+		Duration: 250
+
+# Map editor specific player setup.
+EditorPlayer:
+	Inherits: ^CorePlayer
+
+# Shared world setup.
+^CoreWorld:
+	# Make palettes usable in the world.
+	Inherits: ^Palettes
+	# Always render the world.
+	AlwaysVisible:
+	# Required for interaction between game window and input with the map.
+	ScreenMap:
+	# Required to cache and query actors on the map.
+	ActorMap:
+	# Implement music playback to the game.
+	MusicPlaylist: # TODO per faction music!
+	# Terrain rendering setup.
+	TerrainRenderer:
+	# Shroud rendering setup.
+	ShroudRenderer:
+		OverrideFullShroud: shroudfull
+		OverrideFullFog: fogfull
+		ShroudBlend: Multiply
+	# Random faction setup.
+	Faction@Random:
+		Name: Any
+		InternalName: Random
+		Side: Random
+	# Required for UI to load.
+	LoadWidgetAtGameStart:
+	# Required to show the map grid.
+	TerrainGeometryOverlay:
+	# Required for debug overlays:
+	DebugVisualizations:
+	# Required for warhead debug overlays.
+	WarheadDebugOverlay:
+	# Required for... not crashing
+	Selection:
+	# Smudge support.
+	SmudgeLayer@CRATER:
+		Type: Crater
+		Sequence: crater
+		SmokeChance: -1
+		SmokePalette:
+
+# Ingame specific world setup.
+World:
+	Inherits: ^CoreWorld
+	# Required for buildable area checks.
+	BuildingInfluence:
+	# Pathfinding requirement.
+	DomainIndex:
+	# Pathfinding requirement.
+	PathFinder:
+	# Support for prespawned actors.
+	SpawnMapActors:
+	# Default game settings: gamespeed, techlevel, shortgame.
+	MapOptions:
+	# Required for spawnpoint support.
+	MapStartingLocations:
+	# Required to setup the players in lobby.
+	CreateMapPlayers:
+	# Required to spawn player units at spawnpoint.
+	SpawnStartingUnits:
+		DropdownLabel: Units
+		StartingUnitsClass: support
+	# Cheat protection.
+	ValidateOrder:
+	# Requirement for shaking the screen if a building explodes.
+	ScreenShaker:
+		MinMultiplier: -10,0
+		MaxMultiplier: 10,0
+	# Oilpatch selectbox.
+	OilAmount:
+	# Oilpatch selectbox.
+	OilpatchBurn:
+	# Techlevel selectbox.
+	TechLevel:
+	# TechBunker amount selectbox.
+	TechBunkerAmount:
+	# TechBunker behavior selectbox.
+	TechBunkerBehavior:
+	# Used to manage beacons.
+	RadarPings:
+
+# Map editor specific world setup.
+EditorWorld:
+	Inherits: ^CoreWorld
+	# Displays actors in editor.
+	EditorActorLayer:
+	# Selecting, Copying, Pasting Support for map editor.
+	EditorSelectionLayer:
+	# Cursor attached stuff.
+	EditorCursorLayer:
+	# Undo / Redo support.
+	EditorActionManager:

@@ -1,0 +1,14 @@
+^weapon_bullet:
+	Projectile: InstantHit
+		Blockable: true
+	Warhead@Damage: SpreadDamage
+		Damage: 100
+		Spread: 32
+		Falloff: 100, 100
+	Warhead@Effect: ShrapnelCreateEffect
+		Image: weapon_bullet
+		ExplosionPalette: openkrush
+		Explosions: hit_a, hit_b, hit_c, hit_d, hit_e, hit_f, hit_g, hit_h
+		ImpactSounds: MUTE.SLV|11.wav, MUTE.SLV|12.wav, MUTE.SLV|13.wav
+		ImpactSoundChance: 10
+		Radius: 250,250

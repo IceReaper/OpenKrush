@@ -1,0 +1,196 @@
+dieVehicleLight:
+	Warhead: ShrapnelCreateEffect
+		Image: weapon_explosions
+		Explosions: m
+		ExplosionPalette: openkrush
+		ImpactSounds: SURV.SLV|3.wav
+		ShrapnelWeapon: weapon_shrapnels
+
+dieVehicle:
+	Warhead: ShrapnelCreateEffect
+		Image: weapon_explosions
+		Explosions: m
+		ExplosionPalette: openkrush
+		ImpactSounds: SURV.SLV|3.wav
+		ShrapnelWeapon: weapon_shrapnels
+
+dieVehicleHeavy:
+	Warhead: ShrapnelCreateEffect
+		Image: weapon_explosions
+		Explosions: m
+		ExplosionPalette: openkrush
+		ImpactSounds: SURV.SLV|3.wav
+		ShrapnelWeapon: weapon_shrapnels
+
+breakBuilding:
+	Warhead@1: ShrapnelCreateEffect
+		Image: weapon_explosions
+		Explosions: s
+		ExplosionPalette: openkrush
+		Radius: 100,10
+		ImpactSounds: SURV.SLV|10.wav
+		ShrapnelWeapon: weapon_shrapnels
+	Warhead@2: ShrapnelCreateEffect
+		Image: weapon_explosions
+		Explosions: s
+		ExplosionPalette: openkrush
+		Radius: 500,600
+		ShrapnelWeapon: weapon_shrapnels
+	Warhead@3: ShrapnelCreateEffect
+		Image: weapon_explosions
+		Explosions: s
+		ExplosionPalette: openkrush
+		Radius: 1000,600
+		ShrapnelWeapon: weapon_shrapnels
+	Warhead@4: ShrapnelCreateEffect
+		Image: weapon_explosions
+		Explosions: s
+		ExplosionPalette: openkrush
+		Radius: 1500,600
+		ShrapnelWeapon: weapon_shrapnels
+
+breakSmallBuilding:
+	Warhead@1: ShrapnelCreateEffect
+		Image: weapon_explosions
+		Explosions: s
+		ExplosionPalette: openkrush
+		Radius: 100,100
+		ImpactSounds: SURV.SLV|10.wav
+		ShrapnelWeapon: weapon_shrapnels
+	Warhead@2: ShrapnelCreateEffect
+		Image: weapon_explosions
+		Explosions: s
+		ExplosionPalette: openkrush
+		Radius: 1000,100
+		ShrapnelWeapon: weapon_shrapnels
+
+dieBuilding:
+	Warhead@1: ShrapnelCreateEffect
+		Image: weapon_explosions
+		Explosions: m
+		ExplosionPalette: openkrush
+		ImpactSounds: SURV.SLV|3.wav
+		Delay: 0
+		Radius: 50,50
+		ShrapnelWeapon: weapon_shrapnels
+	Warhead@2: ShrapnelCreateEffect
+		Image: weapon_explosions
+		Explosions: s
+		ExplosionPalette: openkrush
+		ImpactSounds: SURV.SLV|3.wav
+		Delay: 8
+		Radius: 750,750
+		ShrapnelWeapon: weapon_shrapnels
+	Warhead@3: ShrapnelCreateEffect
+		Image: weapon_explosions
+		Explosions: s
+		ExplosionPalette: openkrush
+		ImpactSounds: SURV.SLV|3.wav
+		Delay: 16
+		Radius: 750,750
+		ShrapnelWeapon: weapon_shrapnels
+	Warhead@4: ShrapnelCreateEffect
+		Image: weapon_explosions
+		Explosions: s
+		ExplosionPalette: openkrush
+		ImpactSounds: SURV.SLV|3.wav
+		Delay: 24
+		Radius: 750,750
+		ShrapnelWeapon: weapon_shrapnels
+	Warhead@5: ShrapnelCreateEffect
+		Image: weapon_explosions
+		Explosions: l
+		ExplosionPalette: openkrush
+		ImpactSounds: SURV.SLV|3.wav
+		Delay: 32
+		Radius: 750,750
+		ShrapnelWeapon: weapon_shrapnels
+	Warhead@6: ShrapnelCreateEffect
+		Image: weapon_explosions
+		Explosions: l
+		ExplosionPalette: openkrush
+		ImpactSounds: SURV.SLV|3.wav
+		Delay: 40
+		Radius: 750,750
+		ShrapnelWeapon: weapon_shrapnels
+	Warhead@7: ShrapnelCreateEffect
+		Image: weapon_explosions
+		Explosions: xl_fast
+		ExplosionPalette: openkrush
+		ImpactSounds: SURV.SLV|3.wav
+		Delay: 48
+		ShrapnelWeapon: weapon_shrapnels
+
+dieSmallBuilding:
+	Warhead@1: ShrapnelCreateEffect
+		Image: weapon_explosions
+		Explosions: m
+		ExplosionPalette: openkrush
+		ImpactSounds: SURV.SLV|3.wav
+		Delay: 0
+		Radius: 50,50
+		ShrapnelWeapon: weapon_shrapnels
+	Warhead@2: ShrapnelCreateEffect
+		Image: weapon_explosions
+		Explosions: s
+		ExplosionPalette: openkrush
+		ImpactSounds: SURV.SLV|3.wav
+		Delay: 8
+		Radius: 500,500
+		ShrapnelWeapon: weapon_shrapnels
+	Warhead@3: ShrapnelCreateEffect
+		Image: weapon_explosions
+		Explosions: s
+		ExplosionPalette: openkrush
+		ImpactSounds: SURV.SLV|3.wav
+		Delay: 16
+		Radius: 500,500
+		ShrapnelWeapon: weapon_shrapnels
+	Warhead@4: ShrapnelCreateEffect
+		Image: weapon_explosions
+		Explosions: s
+		ExplosionPalette: openkrush
+		ImpactSounds: SURV.SLV|3.wav
+		Delay: 24
+		Radius: 500,500
+		ShrapnelWeapon: weapon_shrapnels
+	Warhead@5: ShrapnelCreateEffect
+		Image: weapon_explosions
+		Explosions: l
+		ExplosionPalette: openkrush
+		ImpactSounds: SURV.SLV|3.wav
+		Delay: 32
+		Radius: 100,100
+		ShrapnelWeapon: weapon_shrapnels
+
+breakTower:
+	Warhead: ShrapnelCreateEffect
+		Image: weapon_explosions
+		Explosions: s
+		ExplosionPalette: openkrush
+		ImpactSounds: SURV.SLV|10.wav
+		ShrapnelWeapon: weapon_shrapnels
+
+dieTower:
+	Warhead: ShrapnelCreateEffect
+		Image: weapon_explosions
+		Explosions: l
+		ExplosionPalette: openkrush
+		ImpactSounds: SURV.SLV|3.wav
+		ShrapnelWeapon: weapon_shrapnels
+
+breakWall:
+	Warhead: ShrapnelCreateEffect
+		Image: weapon_explosions
+		Explosions: xs
+		ExplosionPalette: openkrush
+		ImpactSounds: SURV.SLV|10.wav
+		ShrapnelWeapon: weapon_shrapnels
+
+dieWall:
+	Warhead: ShrapnelCreateEffect
+		Image: weapon_explosions
+		Explosions: m
+		ExplosionPalette: openkrush
+		ImpactSounds: SURV.SLV|10.wav
+		ShrapnelWeapon: weapon_shrapnels

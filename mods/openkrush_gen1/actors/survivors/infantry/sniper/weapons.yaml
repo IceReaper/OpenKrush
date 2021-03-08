@@ -1,0 +1,12 @@
+survivors_infantry_sniper:
+	Inherits: ^weapon_bullet
+	Range: 7c0
+	Burst: 1
+	BurstDelays: 0
+	ReloadDelay: 38
+	Report: openkrush_gen1|actors/survivors/infantry/sniper/sound.wav #SURV.SLV|4.wav
+	Warhead@Damage: SpreadDamage
+		Versus:
+			infantry: 250
+			vehicle: 50
+			building: 35

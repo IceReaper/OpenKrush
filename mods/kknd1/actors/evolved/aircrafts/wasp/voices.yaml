@@ -1,7 +1,0 @@
-evolved_aircraft_wasp:
-	DefaultVariant: # TODO remove .aud as default from engine!
-	Voices:
-		Create: kknd1|actors/evolved/aircrafts/wasp/sound1.wav, kknd1|actors/evolved/aircrafts/wasp/sound2.wav, kknd1|actors/evolved/aircrafts/wasp/sound3.wav
-		Select: kknd1|actors/evolved/aircrafts/wasp/sound1.wav, kknd1|actors/evolved/aircrafts/wasp/sound2.wav, kknd1|actors/evolved/aircrafts/wasp/sound3.wav
-		Action: kknd1|actors/evolved/aircrafts/wasp/sound1.wav, kknd1|actors/evolved/aircrafts/wasp/sound2.wav, kknd1|actors/evolved/aircrafts/wasp/sound3.wav
-		Attack: kknd1|actors/evolved/aircrafts/wasp/sound1.wav, kknd1|actors/evolved/aircrafts/wasp/sound2.wav, kknd1|actors/evolved/aircrafts/wasp/sound3.wav

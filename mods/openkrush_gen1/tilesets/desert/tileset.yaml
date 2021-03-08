@@ -1,0 +1,8234 @@
+General:
+	Name: Desert
+	Id: desert
+	EditorTemplateOrder: Terrain, Beach, Cliff, Cliff Extra, Cliff Ramp, Decoration, Path, Path Extra, Street, Street Extra, Transition Dirt Sand, Transition Dirt Sand Extra, Transition Grass Dirt
+	SheetSize: 2048
+
+Terrain:
+	TerrainType@Clear:
+		Type: Clear
+	TerrainType@Sand:
+		Type: Sand
+		TargetTypes: Ground
+		Color: AA8D55
+		AcceptsSmudgeType: Crater
+	TerrainType@Water:
+		Type: Water
+		TargetTypes: Ground
+		Color: 58707D
+	TerrainType@Cliff:
+		Type: Cliff
+		TargetTypes: Ground
+		Color: 553C1E
+	TerrainType@Street:
+		Type: Street
+		TargetTypes: Ground
+		Color: 515151
+		AcceptsSmudgeType: Crater
+	TerrainType@Grass:
+		Type: Grass
+		TargetTypes: Ground
+		Color: 71561B
+		AcceptsSmudgeType: Crater
+	TerrainType@Path:
+		Type: Path
+		TargetTypes: Ground
+		Color: 935320
+		AcceptsSmudgeType: Crater
+	TerrainType@Dirt:
+		Type: Dirt
+		TargetTypes: Ground
+		Color: 9B692F
+		AcceptsSmudgeType: Crater
+
+Templates:
+	Template@349:
+		Id: 349
+		Images: tilesets/desert/tiles/Terrain_Dirt.png
+		Size: 1,1
+		PickAny: true
+		Categories: Terrain
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Dirt
+			9: Dirt
+			10: Dirt
+			11: Dirt
+			12: Dirt
+			13: Dirt
+			14: Dirt
+			15: Dirt
+			16: Dirt
+			17: Dirt
+			18: Dirt
+			19: Dirt
+			20: Dirt
+			21: Dirt
+			22: Dirt
+			23: Dirt
+			24: Dirt
+			25: Dirt
+			26: Dirt
+			27: Dirt
+			28: Dirt
+			29: Dirt
+			30: Dirt
+			31: Dirt
+			32: Dirt
+			33: Dirt
+			34: Dirt
+			35: Dirt
+
+	Template@350:
+		Id: 350
+		Images: tilesets/desert/tiles/Terrain_Sand.png
+		Size: 1,1
+		PickAny: true
+		Categories: Terrain
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			5: Sand
+			6: Sand
+			7: Sand
+			8: Sand
+			9: Sand
+			10: Sand
+			11: Sand
+			12: Sand
+			13: Sand
+			14: Sand
+			15: Sand
+			16: Sand
+			17: Sand
+			18: Sand
+			19: Sand
+			20: Sand
+			21: Sand
+			22: Sand
+			23: Sand
+			24: Sand
+			25: Sand
+			26: Sand
+			27: Sand
+			28: Sand
+			29: Sand
+			30: Sand
+			31: Sand
+			32: Sand
+			33: Sand
+			34: Sand
+			35: Sand
+
+	Template@1742:
+		Id: 1742
+		Images: tilesets/desert/tiles/Terrain_Water.png
+		Size: 1,1
+		PickAny: true
+		Categories: Terrain
+		Palette: openkrush
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+			8: Water
+			9: Water
+			10: Water
+			11: Water
+			12: Water
+			13: Water
+			14: Water
+			15: Water
+			16: Water
+			17: Water
+			18: Water
+			19: Water
+			20: Water
+			21: Water
+			22: Water
+			23: Water
+			24: Water
+			25: Water
+			26: Water
+			27: Water
+			28: Water
+			29: Water
+			30: Water
+			31: Water
+			32: Water
+			33: Water
+			34: Water
+			35: Water
+
+	Template@351:
+		Id: 351
+		Images: tilesets/desert/tiles/Terrain_Grass.png
+		Size: 1,1
+		PickAny: true
+		Categories: Terrain
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Grass
+			5: Grass
+			6: Grass
+			7: Grass
+			8: Grass
+			9: Grass
+			10: Grass
+			11: Grass
+			12: Grass
+			13: Grass
+			14: Grass
+			15: Grass
+			16: Grass
+			17: Grass
+			18: Grass
+			19: Grass
+			20: Grass
+			21: Grass
+			22: Grass
+			23: Grass
+			24: Grass
+			25: Grass
+			26: Grass
+			27: Grass
+			28: Grass
+			29: Grass
+			30: Grass
+			31: Grass
+			32: Grass
+			33: Grass
+			34: Grass
+			35: Grass
+
+	Template@957:
+		Id: 957
+		Images: tilesets/desert/tiles/Terrain_Dirt1.png
+		Size: 1,1
+		Categories: Terrain
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+
+	Template@959:
+		Id: 959
+		Images: tilesets/desert/tiles/Terrain_Dirt2.png
+		Size: 1,1
+		Categories: Terrain
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+
+	Template@960:
+		Id: 960
+		Images: tilesets/desert/tiles/Terrain_Dirt3.png
+		Size: 4,2
+		Categories: Terrain
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+
+	Template@963:
+		Id: 963
+		Images: tilesets/desert/tiles/Terrain_Dirt4.png
+		Size: 2,4
+		Categories: Terrain
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+
+	Template@964:
+		Id: 964
+		Images: tilesets/desert/tiles/Terrain_Dirt5.png
+		Size: 4,3
+		Categories: Terrain
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Dirt
+			9: Dirt
+			10: Dirt
+			11: Dirt
+
+	Template@965:
+		Id: 965
+		Images: tilesets/desert/tiles/Terrain_Dirt6.png
+		Size: 5,4
+		Categories: Terrain
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Dirt
+			9: Dirt
+			10: Dirt
+			11: Dirt
+			12: Dirt
+			13: Dirt
+			14: Dirt
+			15: Dirt
+			16: Dirt
+			17: Dirt
+			18: Dirt
+			19: Dirt
+
+	Template@966:
+		Id: 966
+		Images: tilesets/desert/tiles/Terrain_Dirt7.png
+		Size: 2,2
+		Categories: Terrain
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+
+	Template@967:
+		Id: 967
+		Images: tilesets/desert/tiles/Terrain_Dirt8.png
+		Size: 1,1
+		Categories: Terrain
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+
+	Template@968:
+		Id: 968
+		Images: tilesets/desert/tiles/Terrain_Dirt9.png
+		Size: 1,1
+		Categories: Terrain
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+
+	Template@973:
+		Id: 973
+		Images: tilesets/desert/tiles/Terrain_Dirt10.png
+		Size: 1,2
+		Categories: Terrain
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+
+	Template@974:
+		Id: 974
+		Images: tilesets/desert/tiles/Terrain_Dirt11.png
+		Size: 1,2
+		Categories: Terrain
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+
+	Template@977:
+		Id: 977
+		Images: tilesets/desert/tiles/Terrain_Dirt12.png
+		Size: 2,2
+		Categories: Terrain
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+
+	Template@978:
+		Id: 978
+		Images: tilesets/desert/tiles/Terrain_Dirt13.png
+		Size: 1,1
+		Categories: Terrain
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+
+	Template@979:
+		Id: 979
+		Images: tilesets/desert/tiles/Terrain_Dirt14.png
+		Size: 1,1
+		Categories: Terrain
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+
+	Template@980:
+		Id: 980
+		Images: tilesets/desert/tiles/Terrain_Dirt15.png
+		Size: 1,1
+		Categories: Terrain
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+
+	Template@982:
+		Id: 982
+		Images: tilesets/desert/tiles/Terrain_Dirt16.png
+		Size: 2,2
+		Categories: Terrain
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+
+	Template@983:
+		Id: 983
+		Images: tilesets/desert/tiles/Terrain_Dirt17.png
+		Size: 2,3
+		Categories: Terrain
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+
+	Template@986:
+		Id: 986
+		Images: tilesets/desert/tiles/Terrain_Grass1.png
+		Size: 3,3
+		Categories: Terrain
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Grass
+			5: Grass
+			6: Grass
+			7: Grass
+			8: Grass
+
+	Template@988:
+		Id: 988
+		Images: tilesets/desert/tiles/Terrain_Grass2.png
+		Size: 4,3
+		Categories: Terrain
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Grass
+			5: Grass
+			6: Grass
+			7: Grass
+			8: Grass
+			9: Grass
+			10: Grass
+			11: Grass
+
+	Template@990:
+		Id: 990
+		Images: tilesets/desert/tiles/Terrain_Grass3.png
+		Size: 3,3
+		Categories: Terrain
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Grass
+			5: Grass
+			6: Grass
+			7: Grass
+			8: Grass
+
+	Template@992:
+		Id: 992
+		Images: tilesets/desert/tiles/Terrain_Grass4.png
+		Size: 3,3
+		Categories: Terrain
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Grass
+			5: Grass
+			6: Grass
+			7: Grass
+			8: Grass
+
+	Template@993:
+		Id: 993
+		Images: tilesets/desert/tiles/Terrain_Grass5.png
+		Size: 4,4
+		Categories: Terrain
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Grass
+			5: Grass
+			6: Grass
+			7: Grass
+			8: Grass
+			9: Grass
+			10: Grass
+			11: Grass
+			12: Grass
+			13: Grass
+			14: Grass
+			15: Grass
+
+	Template@994:
+		Id: 994
+		Images: tilesets/desert/tiles/Terrain_Grass6.png
+		Size: 5,3
+		Categories: Terrain
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Grass
+			5: Grass
+			6: Grass
+			7: Grass
+			8: Grass
+			9: Grass
+			10: Grass
+			11: Grass
+			12: Grass
+			13: Grass
+			14: Grass
+
+	Template@995:
+		Id: 995
+		Images: tilesets/desert/tiles/Terrain_Grass7.png
+		Size: 3,3
+		Categories: Terrain
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Grass
+			5: Grass
+			6: Grass
+			7: Grass
+			8: Grass
+
+	Template@996:
+		Id: 996
+		Images: tilesets/desert/tiles/Terrain_Grass8.png
+		Size: 3,4
+		Categories: Terrain
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Grass
+			5: Grass
+			6: Grass
+			7: Grass
+			8: Grass
+			9: Grass
+			10: Grass
+			11: Grass
+
+	Template@998:
+		Id: 998
+		Images: tilesets/desert/tiles/Terrain_Sand1.png
+		Size: 2,4
+		Categories: Terrain
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			5: Sand
+			6: Sand
+			7: Sand
+
+	Template@1000:
+		Id: 1000
+		Images: tilesets/desert/tiles/Terrain_Sand2.png
+		Size: 2,2
+		Categories: Terrain
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
+
+	Template@1333:
+		Id: 1333
+		Images: tilesets/desert/tiles/Terrain_Sand3.png
+		Size: 2,3
+		Categories: Terrain
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			5: Sand
+
+	Template@1699:
+		Id: 1699
+		Images: tilesets/desert/tiles/Beach_1.png
+		Size: 4,4
+		Categories: Beach
+		Palette: openkrush
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Water
+			5: Water
+			6: Water
+			7: Water
+			10: Sand
+			11: Sand
+			15: Sand
+
+	Template@1700:
+		Id: 1700
+		Images: tilesets/desert/tiles/Beach_2.png
+		Size: 2,4
+		Categories: Beach
+		Palette: openkrush
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Water
+			4: Sand
+			5: Sand
+			6: Sand
+			7: Sand
+
+	Template@1702:
+		Id: 1702
+		Images: tilesets/desert/tiles/Beach_3.png
+		Size: 4,4
+		Categories: Beach
+		Palette: openkrush
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			6: Water
+			8: Sand
+			9: Sand
+			12: Sand
+
+	Template@1704:
+		Id: 1704
+		Images: tilesets/desert/tiles/Beach_4.png
+		Size: 4,4
+		Categories: Beach
+		Palette: openkrush
+		Tiles:
+			3: Water
+			6: Water
+			7: Water
+			9: Sand
+			10: Water
+			11: Water
+			12: Sand
+			13: Sand
+			14: Water
+			15: Water
+
+	Template@1705:
+		Id: 1705
+		Images: tilesets/desert/tiles/Beach_5.png
+		Size: 4,2
+		Categories: Beach
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Water
+			3: Water
+			4: Sand
+			5: Sand
+			6: Water
+			7: Water
+
+	Template@1707:
+		Id: 1707
+		Images: tilesets/desert/tiles/Beach_6.png
+		Size: 4,4
+		Categories: Beach
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Water
+			3: Water
+			5: Sand
+			6: Water
+			7: Water
+			10: Water
+			11: Water
+			15: Water
+
+	Template@1708:
+		Id: 1708
+		Images: tilesets/desert/tiles/Beach_7.png
+		Size: 4,4
+		Categories: Beach
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			4: Sand
+			5: Sand
+			8: Water
+			9: Water
+			10: Water
+			12: Water
+			13: Water
+			14: Water
+			15: Water
+
+	Template@1709:
+		Id: 1709
+		Images: tilesets/desert/tiles/Beach_8.png
+		Size: 2,4
+		Categories: Beach
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+
+	Template@1710:
+		Id: 1710
+		Images: tilesets/desert/tiles/Beach_9.png
+		Size: 4,4
+		Categories: Beach
+		Palette: openkrush
+		Tiles:
+			3: Sand
+			6: Sand
+			7: Sand
+			9: Water
+			10: Water
+			11: Water
+			12: Water
+			13: Water
+			14: Water
+			15: Water
+
+	Template@1711:
+		Id: 1711
+		Images: tilesets/desert/tiles/Beach_10.png
+		Size: 4,4
+		Categories: Beach
+		Palette: openkrush
+		Tiles:
+			0: Water
+			1: Water
+			2: Sand
+			3: Sand
+			4: Water
+			5: Water
+			6: Sand
+			8: Water
+			9: Water
+			12: Water
+
+	Template@1712:
+		Id: 1712
+		Images: tilesets/desert/tiles/Beach_11.png
+		Size: 4,2
+		Categories: Beach
+		Palette: openkrush
+		Tiles:
+			0: Water
+			1: Water
+			2: Sand
+			3: Sand
+			4: Water
+			5: Water
+			6: Sand
+			7: Sand
+
+	Template@1713:
+		Id: 1713
+		Images: tilesets/desert/tiles/Beach_12.png
+		Size: 4,4
+		Categories: Beach
+		Palette: openkrush
+		Tiles:
+			0: Water
+			4: Water
+			5: Water
+			8: Water
+			9: Water
+			10: Sand
+			12: Water
+			13: Water
+			14: Sand
+			15: Sand
+
+	Template@1714:
+		Id: 1714
+		Images: tilesets/desert/tiles/Beach_13.png
+		Size: 4,4
+		Categories: Beach
+		Palette: openkrush
+		Tiles:
+			1: Water
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+			8: Water
+			9: Water
+			10: Sand
+			11: Sand
+			12: Water
+			13: Water
+			14: Sand
+			15: Sand
+
+	Template@1715:
+		Id: 1715
+		Images: tilesets/desert/tiles/Beach_14.png
+		Size: 4,4
+		Categories: Beach
+		Palette: openkrush
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+			8: Sand
+			9: Sand
+			10: Water
+			11: Water
+			12: Sand
+			13: Sand
+			14: Water
+			15: Water
+
+	Template@1717:
+		Id: 1717
+		Images: tilesets/desert/tiles/Beach_16.png
+		Size: 4,4
+		Categories: Beach
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Water
+			3: Water
+			4: Sand
+			5: Sand
+			6: Water
+			7: Water
+			8: Water
+			9: Water
+			10: Water
+			11: Water
+			12: Water
+			13: Water
+			14: Water
+
+	Template@1718:
+		Id: 1718
+		Images: tilesets/desert/tiles/Beach_15.png
+		Size: 4,4
+		Categories: Beach
+		Palette: openkrush
+		Tiles:
+			0: Water
+			1: Water
+			2: Sand
+			3: Sand
+			4: Water
+			5: Water
+			6: Sand
+			7: Sand
+			8: Water
+			9: Water
+			10: Water
+			11: Water
+			13: Water
+			14: Water
+			15: Water
+
+	Template@1719:
+		Id: 1719
+		Images: tilesets/desert/tiles/Beach_17.png
+		Size: 4,4
+		Categories: Beach
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
+			5: Sand
+			6: Sand
+			7: Sand
+			10: Water
+			11: Water
+			15: Water
+
+	Template@1720:
+		Id: 1720
+		Images: tilesets/desert/tiles/Beach_18.png
+		Size: 4,4
+		Categories: Beach
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			5: Sand
+			6: Sand
+			8: Water
+			9: Water
+			12: Water
+
+	Template@1722:
+		Id: 1722
+		Images: tilesets/desert/tiles/Beach_19.png
+		Size: 4,3
+		Categories: Beach
+		Palette: openkrush
+		Tiles:
+			2: Sand
+			3: Sand
+			5: Sand
+			6: Sand
+			8: Water
+			9: Water
+
+	Template@1724:
+		Id: 1724
+		Images: tilesets/desert/tiles/Beach_20.png
+		Size: 4,4
+		Categories: Beach
+		Palette: openkrush
+		Tiles:
+			3: Sand
+			6: Sand
+			7: Sand
+			9: Sand
+			10: Sand
+			11: Sand
+			12: Water
+			13: Water
+			14: Sand
+			15: Sand
+
+	Template@1726:
+		Id: 1726
+		Images: tilesets/desert/tiles/Beach_21.png
+		Size: 4,4
+		Categories: Beach
+		Palette: openkrush
+		Tiles:
+			0: Water
+			1: Water
+			2: Sand
+			3: Sand
+			5: Sand
+			6: Sand
+			7: Sand
+			10: Sand
+			11: Sand
+			15: Sand
+
+	Template@1727:
+		Id: 1727
+		Images: tilesets/desert/tiles/Beach_22.png
+		Size: 4,3
+		Categories: Beach
+		Palette: openkrush
+		Tiles:
+			0: Water
+			1: Water
+			5: Sand
+			6: Sand
+			10: Sand
+			11: Sand
+
+	Template@1728:
+		Id: 1728
+		Images: tilesets/desert/tiles/Beach_23.png
+		Size: 4,4
+		Categories: Beach
+		Palette: openkrush
+		Tiles:
+			0: Water
+			4: Water
+			5: Water
+			8: Sand
+			9: Sand
+			10: Sand
+			12: Sand
+			13: Sand
+			14: Sand
+			15: Sand
+
+	Template@1729:
+		Id: 1729
+		Images: tilesets/desert/tiles/Beach_24.png
+		Size: 4,4
+		Categories: Beach
+		Palette: openkrush
+		Tiles:
+			3: Water
+			6: Water
+			7: Water
+			9: Sand
+			10: Sand
+			11: Sand
+			12: Sand
+			13: Sand
+			14: Sand
+			15: Sand
+
+	Template@1731:
+		Id: 1731
+		Images: tilesets/desert/tiles/Beach_25.png
+		Size: 4,3
+		Categories: Beach
+		Palette: openkrush
+		Tiles:
+			2: Water
+			3: Water
+			5: Sand
+			6: Sand
+			8: Sand
+			9: Sand
+
+	Template@1732:
+		Id: 1732
+		Images: tilesets/desert/tiles/Beach_26.png
+		Size: 4,4
+		Categories: Beach
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Water
+			3: Water
+			4: Sand
+			5: Sand
+			6: Sand
+			8: Sand
+			9: Sand
+			12: Sand
+
+	Template@1735:
+		Id: 1735
+		Images: tilesets/desert/tiles/Beach_27.png
+		Size: 4,4
+		Categories: Beach
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			4: Sand
+			5: Sand
+			8: Sand
+			9: Sand
+			10: Sand
+			12: Sand
+			13: Sand
+			14: Water
+			15: Water
+
+	Template@1736:
+		Id: 1736
+		Images: tilesets/desert/tiles/Beach_28.png
+		Size: 4,3
+		Categories: Beach
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			5: Sand
+			6: Sand
+			10: Water
+			11: Water
+
+	Template@1737:
+		Id: 1737
+		Images: tilesets/desert/tiles/Beach_29.png
+		Size: 3,3
+		Categories: Beach
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			5: Sand
+			6: Sand
+			7: Sand
+			8: Water
+
+	Template@1738:
+		Id: 1738
+		Images: tilesets/desert/tiles/Beach_30.png
+		Size: 3,3
+		Categories: Beach
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			5: Sand
+			6: Water
+			7: Sand
+			8: Sand
+
+	Template@1739:
+		Id: 1739
+		Images: tilesets/desert/tiles/Beach_32.png
+		Size: 3,3
+		Categories: Beach
+		Palette: openkrush
+		Tiles:
+			0: Water
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			5: Sand
+			6: Sand
+			7: Sand
+			8: Sand
+
+	Template@1740:
+		Id: 1740
+		Images: tilesets/desert/tiles/Beach_31.png
+		Size: 3,3
+		Categories: Beach
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Water
+			3: Sand
+			4: Sand
+			5: Sand
+			6: Sand
+			7: Sand
+			8: Sand
+
+	Template@269:
+		Id: 269
+		Images: tilesets/desert/tiles/Cliff_N_A.png
+		Size: 4,2
+		Categories: Cliff
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Grass
+			5: Grass
+			6: Grass
+			7: Grass
+
+	Template@270:
+		Id: 270
+		Images: tilesets/desert/tiles/Cliff_N_B.png
+		Size: 4,2
+		Categories: Cliff
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Grass
+			5: Grass
+			6: Grass
+			7: Grass
+
+	Template@271:
+		Id: 271
+		Images: tilesets/desert/tiles/Cliff_NE.png
+		Size: 3,1
+		Categories: Cliff
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Cliff
+
+	Template@272:
+		Id: 272
+		Images: tilesets/desert/tiles/Cliff_E_A.png
+		Size: 3,4
+		Categories: Cliff
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Dirt
+			3: Grass
+			4: Cliff
+			5: Dirt
+			6: Grass
+			7: Cliff
+			8: Dirt
+			9: Grass
+			10: Cliff
+			11: Dirt
+
+	Template@273:
+		Id: 273
+		Images: tilesets/desert/tiles/Cliff_E_B.png
+		Size: 3,4
+		Categories: Cliff
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Dirt
+			3: Grass
+			4: Cliff
+			5: Dirt
+			6: Grass
+			7: Cliff
+			8: Dirt
+			9: Grass
+			10: Cliff
+			11: Dirt
+
+	Template@274:
+		Id: 274
+		Images: tilesets/desert/tiles/Cliff_S_A.png
+		Size: 4,4
+		Categories: Cliff
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Cliff
+			13: Cliff
+			14: Cliff
+			15: Cliff
+
+	Template@275:
+		Id: 275
+		Images: tilesets/desert/tiles/Cliff_S_B.png
+		Size: 4,4
+		Categories: Cliff
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Cliff
+			13: Cliff
+			14: Cliff
+			15: Cliff
+
+	Template@276:
+		Id: 276
+		Images: tilesets/desert/tiles/Cliff_SW.png
+		Size: 1,6
+		Categories: Cliff
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Dirt
+
+	Template@277:
+		Id: 277
+		Images: tilesets/desert/tiles/Cliff_SE.png
+		Size: 1,6
+		Categories: Cliff
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Dirt
+
+	Template@278:
+		Id: 278
+		Images: tilesets/desert/tiles/Cliff_NW.png
+		Size: 3,1
+		Categories: Cliff
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Grass
+
+	Template@279:
+		Id: 279
+		Images: tilesets/desert/tiles/Cliff_W_A.png
+		Size: 3,4
+		Categories: Cliff
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Cliff
+			2: Grass
+			3: Dirt
+			4: Cliff
+			5: Grass
+			6: Dirt
+			7: Cliff
+			8: Grass
+			9: Dirt
+			10: Cliff
+			11: Grass
+
+	Template@280:
+		Id: 280
+		Images: tilesets/desert/tiles/Cliff_W_B.png
+		Size: 3,4
+		Categories: Cliff
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Cliff
+			2: Grass
+			3: Dirt
+			4: Cliff
+			5: Grass
+			6: Dirt
+			7: Cliff
+			8: Grass
+			9: Dirt
+			10: Cliff
+			11: Grass
+
+	Template@281:
+		Id: 281
+		Images: tilesets/desert/tiles/Cliff_N2E.png
+		Size: 3,3
+		Categories: Cliff
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Dirt
+			3: Grass
+			4: Cliff
+			5: Dirt
+			6: Grass
+			7: Cliff
+			8: Dirt
+
+	Template@283:
+		Id: 283
+		Images: tilesets/desert/tiles/Cliff_S2W.png
+		Size: 3,6
+		Categories: Cliff
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Cliff
+			2: Grass
+			3: Dirt
+			4: Cliff
+			5: Cliff
+			6: Dirt
+			7: Cliff
+			8: Cliff
+			9: Dirt
+			10: Cliff
+			11: Cliff
+			12: Dirt
+			13: Cliff
+			14: Cliff
+			15: Dirt
+			16: Dirt
+			17: Dirt
+
+	Template@284:
+		Id: 284
+		Images: tilesets/desert/tiles/Cliff_N2W.png
+		Size: 3,3
+		Categories: Cliff
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Cliff
+			2: Cliff
+			3: Dirt
+			4: Cliff
+			5: Grass
+			6: Dirt
+			7: Cliff
+			8: Grass
+
+	Template@285:
+		Id: 285
+		Images: tilesets/desert/tiles/Cliff_N2NE.png
+		Size: 3,2
+		Categories: Cliff
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Grass
+			4: Grass
+
+	Template@286:
+		Id: 286
+		Images: tilesets/desert/tiles/Cliff_N2NW.png
+		Size: 3,2
+		Categories: Cliff
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			4: Grass
+			5: Grass
+
+	Template@287:
+		Id: 287
+		Images: tilesets/desert/tiles/Cliff_W2NW.png
+		Size: 2,1
+		Categories: Cliff
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+
+	Template@288:
+		Id: 288
+		Images: tilesets/desert/tiles/Cliff_E2NE.png
+		Size: 2,1
+		Categories: Cliff
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+
+	Template@289:
+		Id: 289
+		Images: tilesets/desert/tiles/Cliff_E2SE.png
+		Size: 3,6
+		Categories: Cliff
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Dirt
+			3: Cliff
+			4: Cliff
+			5: Dirt
+			6: Cliff
+			7: Cliff
+			8: Dirt
+			9: Cliff
+			10: Cliff
+			11: Dirt
+			12: Cliff
+			13: Cliff
+			14: Dirt
+			15: Dirt
+			16: Dirt
+			17: Dirt
+
+	Template@290:
+		Id: 290
+		Images: tilesets/desert/tiles/Cliff_S2SE.png
+		Size: 2,5
+		Categories: Cliff
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+
+	Template@291:
+		Id: 291
+		Images: tilesets/desert/tiles/Cliff_S2SW.png
+		Size: 2,5
+		Categories: Cliff
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+
+	Template@301:
+		Id: 301
+		Images: tilesets/desert/tiles/Cliff_W2S.png
+		Size: 3,5
+		Categories: Cliff
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Grass
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Dirt
+			13: Cliff
+			14: Cliff
+
+	Template@302:
+		Id: 302
+		Images: tilesets/desert/tiles/Cliff_E2S.png
+		Size: 3,5
+		Categories: Cliff
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Cliff
+			13: Cliff
+			14: Dirt
+
+	Template@303:
+		Id: 303
+		Images: tilesets/desert/tiles/Cliff_E2N.png
+		Size: 3,3
+		Categories: Cliff
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Cliff
+			3: Grass
+			4: Cliff
+			5: Cliff
+			6: Grass
+			7: Grass
+			8: Grass
+
+	Template@304:
+		Id: 304
+		Images: tilesets/desert/tiles/Cliff_W2N.png
+		Size: 3,3
+		Categories: Cliff
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Grass
+			3: Cliff
+			4: Cliff
+			5: Grass
+			6: Grass
+			7: Grass
+			8: Grass
+
+	Template@307:
+		Id: 307
+		Images: tilesets/desert/tiles/Cliff_SE2S.png
+		Size: 3,5
+		Categories: Cliff
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Dirt
+			13: Dirt
+			14: Dirt
+
+	Template@308:
+		Id: 308
+		Images: tilesets/desert/tiles/Cliff_SW2S.png
+		Size: 3,5
+		Categories: Cliff
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Dirt
+			13: Dirt
+			14: Dirt
+
+	Template@309:
+		Id: 309
+		Images: tilesets/desert/tiles/Cliff_NE2E.png
+		Size: 2,1
+		Categories: Cliff
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+
+	Template@310:
+		Id: 310
+		Images: tilesets/desert/tiles/Cliff_NW2W.png
+		Size: 2,1
+		Categories: Cliff
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+
+	Template@311:
+		Id: 311
+		Images: tilesets/desert/tiles/Cliff_NE2N.png
+		Size: 2,1
+		Categories: Cliff
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+
+	Template@312:
+		Id: 312
+		Images: tilesets/desert/tiles/Cliff_NW2N.png
+		Size: 2,1
+		Categories: Cliff
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+
+	Template@1327:
+		Id: 1327
+		Images: tilesets/desert/tiles/Cliff_S2E.png
+		Size: 3,6
+		Categories: Cliff
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Dirt
+			3: Cliff
+			4: Cliff
+			5: Dirt
+			6: Cliff
+			7: Cliff
+			8: Dirt
+			9: Cliff
+			10: Cliff
+			11: Dirt
+			12: Cliff
+			13: Cliff
+			14: Dirt
+			15: Dirt
+			16: Dirt
+			17: Dirt
+
+	Template@1331:
+		Id: 1331
+		Images: tilesets/desert/tiles/Cliff_W2SW.png
+		Size: 3,6
+		Categories: Cliff
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Cliff
+			2: Grass
+			3: Dirt
+			4: Cliff
+			5: Cliff
+			6: Dirt
+			7: Cliff
+			8: Cliff
+			9: Dirt
+			10: Cliff
+			11: Cliff
+			12: Dirt
+			13: Cliff
+			14: Cliff
+			15: Dirt
+			16: Dirt
+			17: Dirt
+
+	Template@1244:
+		Id: 1244
+		Images: tilesets/desert/tiles/CliffExtra_1.png
+		Size: 5,2
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Grass
+			6: Grass
+			7: Grass
+			8: Grass
+			9: Grass
+
+	Template@1245:
+		Id: 1245
+		Images: tilesets/desert/tiles/CliffExtra_2.png
+		Size: 5,2
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Grass
+			6: Grass
+			7: Grass
+			8: Grass
+			9: Grass
+
+	Template@1246:
+		Id: 1246
+		Images: tilesets/desert/tiles/CliffExtra_3.png
+		Size: 2,2
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Grass
+			3: Cliff
+
+	Template@1247:
+		Id: 1247
+		Images: tilesets/desert/tiles/CliffExtra_4.png
+		Size: 2,2
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Dirt
+			2: Cliff
+			3: Cliff
+
+	Template@1249:
+		Id: 1249
+		Images: tilesets/desert/tiles/CliffExtra_5.png
+		Size: 2,2
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Grass
+			3: Cliff
+
+	Template@1250:
+		Id: 1250
+		Images: tilesets/desert/tiles/CliffExtra_6.png
+		Size: 4,4
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			4: Grass
+			5: Cliff
+			6: Cliff
+			9: Grass
+			10: Cliff
+			11: Cliff
+			14: Grass
+			15: Cliff
+
+	Template@1251:
+		Id: 1251
+		Images: tilesets/desert/tiles/CliffExtra_7.png
+		Size: 3,3
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			3: Grass
+			4: Cliff
+			7: Cliff
+			8: Dirt
+
+	Template@1253:
+		Id: 1253
+		Images: tilesets/desert/tiles/CliffExtra_8.png
+		Size: 3,6
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Dirt
+			3: Grass
+			4: Cliff
+			5: Dirt
+			6: Grass
+			7: Cliff
+			8: Dirt
+			9: Grass
+			10: Cliff
+			11: Dirt
+			12: Grass
+			13: Cliff
+			14: Dirt
+			15: Grass
+			16: Cliff
+			17: Dirt
+
+	Template@1254:
+		Id: 1254
+		Images: tilesets/desert/tiles/CliffExtra_9.png
+		Size: 3,7
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Dirt
+			3: Grass
+			4: Cliff
+			5: Dirt
+			6: Grass
+			7: Cliff
+			8: Dirt
+			9: Grass
+			10: Cliff
+			11: Dirt
+			12: Grass
+			13: Cliff
+			14: Dirt
+			15: Grass
+			16: Cliff
+			17: Dirt
+			18: Grass
+			19: Cliff
+			20: Dirt
+
+	Template@1255:
+		Id: 1255
+		Images: tilesets/desert/tiles/CliffExtra_10.png
+		Size: 3,6
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Dirt
+			3: Cliff
+			4: Cliff
+			5: Dirt
+			6: Cliff
+			7: Cliff
+			8: Dirt
+			9: Cliff
+			10: Cliff
+			11: Dirt
+			12: Cliff
+			13: Cliff
+			14: Dirt
+			15: Dirt
+			16: Dirt
+			17: Dirt
+
+	Template@1256:
+		Id: 1256
+		Images: tilesets/desert/tiles/CliffExtra_11.png
+		Size: 4,7
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			2: Grass
+			3: Grass
+			5: Grass
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Cliff
+			13: Cliff
+			14: Cliff
+			15: Cliff
+			16: Cliff
+			17: Cliff
+			18: Cliff
+			19: Cliff
+			20: Cliff
+			21: Cliff
+			22: Dirt
+			23: Dirt
+			24: Dirt
+			25: Dirt
+
+	Template@1258:
+		Id: 1258
+		Images: tilesets/desert/tiles/CliffExtra_12.png
+		Size: 4,6
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Grass
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Cliff
+			13: Cliff
+			14: Cliff
+			15: Cliff
+			16: Dirt
+			17: Dirt
+			18: Cliff
+			19: Cliff
+			22: Dirt
+			23: Dirt
+
+	Template@1259:
+		Id: 1259
+		Images: tilesets/desert/tiles/CliffExtra_13.png
+		Size: 3,6
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Cliff
+			2: Grass
+			3: Dirt
+			4: Cliff
+			5: Cliff
+			6: Dirt
+			7: Cliff
+			8: Cliff
+			9: Dirt
+			10: Cliff
+			11: Cliff
+			12: Dirt
+			13: Cliff
+			14: Cliff
+			15: Dirt
+			16: Dirt
+			17: Dirt
+
+	Template@1260:
+		Id: 1260
+		Images: tilesets/desert/tiles/CliffExtra_14.png
+		Size: 3,6
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Cliff
+			2: Grass
+			3: Dirt
+			4: Cliff
+			5: Grass
+			6: Dirt
+			7: Cliff
+			8: Grass
+			9: Dirt
+			10: Cliff
+			11: Grass
+			12: Dirt
+			13: Cliff
+			14: Grass
+			15: Dirt
+			16: Cliff
+			17: Grass
+
+	Template@1261:
+		Id: 1261
+		Images: tilesets/desert/tiles/CliffExtra_15.png
+		Size: 3,3
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			1: Cliff
+			2: Cliff
+			4: Cliff
+			5: Grass
+			6: Dirt
+			7: Cliff
+
+	Template@1262:
+		Id: 1262
+		Images: tilesets/desert/tiles/CliffExtra_16.png
+		Size: 4,4
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			2: Cliff
+			3: Cliff
+			5: Cliff
+			6: Cliff
+			7: Grass
+			8: Cliff
+			9: Cliff
+			10: Grass
+			12: Cliff
+			13: Grass
+
+	Template@1263:
+		Id: 1263
+		Images: tilesets/desert/tiles/CliffExtra_17.png
+		Size: 2,2
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Grass
+			2: Cliff
+			3: Grass
+
+	Template@1264:
+		Id: 1264
+		Images: tilesets/desert/tiles/CliffExtra_18.png
+		Size: 2,2
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Cliff
+			2: Cliff
+			3: Cliff
+
+	Template@1265:
+		Id: 1265
+		Images: tilesets/desert/tiles/CliffExtra_19.png
+		Size: 2,2
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Grass
+
+	Template@1266:
+		Id: 1266
+		Images: tilesets/desert/tiles/CliffExtra_20.png
+		Size: 4,4
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Cliff
+			3: Grass
+			4: Dirt
+			5: Dirt
+			6: Cliff
+			7: Grass
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Grass
+			12: Grass
+			13: Grass
+			14: Grass
+			15: Grass
+
+	Template@1267:
+		Id: 1267
+		Images: tilesets/desert/tiles/CliffExtra_21.png
+		Size: 4,4
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Dirt
+			3: Dirt
+			4: Grass
+			5: Cliff
+			6: Dirt
+			7: Dirt
+			8: Grass
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Grass
+			13: Grass
+			14: Grass
+			15: Grass
+
+	Template@1268:
+		Id: 1268
+		Images: tilesets/desert/tiles/CliffExtra_22.png
+		Size: 4,5
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Cliff
+			13: Cliff
+			14: Cliff
+			15: Cliff
+			16: Grass
+			17: Grass
+			18: Cliff
+			19: Dirt
+
+	Template@1269:
+		Id: 1269
+		Images: tilesets/desert/tiles/CliffExtra_23.png
+		Size: 5,6
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Grass
+			3: Grass
+			4: Grass
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Cliff
+			13: Cliff
+			14: Cliff
+			15: Cliff
+			16: Cliff
+			17: Cliff
+			18: Cliff
+			19: Cliff
+			20: Dirt
+			21: Dirt
+			22: Cliff
+			23: Cliff
+			24: Dirt
+			25: Dirt
+			26: Dirt
+			27: Dirt
+			28: Dirt
+			29: Dirt
+
+	Template@1270:
+		Id: 1270
+		Images: tilesets/desert/tiles/CliffExtra_24.png
+		Size: 3,6
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Dirt
+			13: Cliff
+			14: Cliff
+			16: Dirt
+			17: Dirt
+
+	Template@1272:
+		Id: 1272
+		Images: tilesets/desert/tiles/CliffExtra_25.png
+		Size: 6,5
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Grass
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Cliff
+			13: Cliff
+			14: Cliff
+			15: Cliff
+			16: Cliff
+			17: Cliff
+			18: Cliff
+			19: Cliff
+			20: Cliff
+			21: Cliff
+			22: Cliff
+			23: Cliff
+			24: Cliff
+			25: Dirt
+			26: Dirt
+			27: Dirt
+			28: Dirt
+			29: Cliff
+
+	Template@1273:
+		Id: 1273
+		Images: tilesets/desert/tiles/CliffExtra_26.png
+		Size: 4,5
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Grass
+			2: Grass
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Cliff
+			13: Cliff
+			14: Cliff
+			15: Cliff
+			16: Dirt
+			17: Cliff
+			18: Cliff
+			19: Dirt
+
+	Template@1275:
+		Id: 1275
+		Images: tilesets/desert/tiles/CliffExtra_28.png
+		Size: 3,5
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Dirt
+			10: Cliff
+			11: Cliff
+			12: Dirt
+			13: Dirt
+			14: Dirt
+
+	Template@1276:
+		Id: 1276
+		Images: tilesets/desert/tiles/CliffExtra_29.png
+		Size: 3,5
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Grass
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Dirt
+			13: Cliff
+			14: Dirt
+
+	Template@1277:
+		Id: 1277
+		Images: tilesets/desert/tiles/CliffExtra_30.png
+		Size: 4,7
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Cliff
+			13: Cliff
+			14: Cliff
+			15: Cliff
+			16: Dirt
+			17: Cliff
+			18: Cliff
+			19: Cliff
+			21: Dirt
+			22: Cliff
+			23: Cliff
+			26: Dirt
+			27: Dirt
+
+	Template@1278:
+		Id: 1278
+		Images: tilesets/desert/tiles/CliffExtra_31.png
+		Size: 6,5
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Cliff
+			3: Cliff
+			4: Grass
+			5: Grass
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Cliff
+			13: Cliff
+			14: Cliff
+			15: Cliff
+			16: Cliff
+			17: Cliff
+			18: Cliff
+			19: Cliff
+			20: Cliff
+			21: Cliff
+			22: Cliff
+			23: Cliff
+			24: Cliff
+			25: Dirt
+			26: Dirt
+			27: Dirt
+			28: Dirt
+			29: Cliff
+
+	Template@1279:
+		Id: 1279
+		Images: tilesets/desert/tiles/CliffExtra_32.png
+		Size: 6,5
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Cliff
+			13: Cliff
+			14: Cliff
+			15: Cliff
+			16: Cliff
+			17: Cliff
+			18: Cliff
+			19: Cliff
+			20: Dirt
+			21: Dirt
+			22: Cliff
+			23: Cliff
+			24: Dirt
+			25: Dirt
+			26: Dirt
+			27: Dirt
+			28: Dirt
+			29: Dirt
+
+	Template@1280:
+		Id: 1280
+		Images: tilesets/desert/tiles/CliffExtra_33.png
+		Size: 2,5
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Dirt
+			9: Dirt
+
+	Template@1282:
+		Id: 1282
+		Images: tilesets/desert/tiles/CliffExtra_34.png
+		Size: 5,6
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Grass
+			4: Grass
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Cliff
+			13: Cliff
+			14: Cliff
+			15: Cliff
+			16: Cliff
+			17: Cliff
+			18: Cliff
+			19: Cliff
+			20: Dirt
+			21: Dirt
+			22: Cliff
+			23: Cliff
+			24: Dirt
+			25: Dirt
+			26: Dirt
+			27: Dirt
+			28: Dirt
+			29: Dirt
+
+	Template@1284:
+		Id: 1284
+		Images: tilesets/desert/tiles/CliffExtra_35.png
+		Size: 4,6
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Grass
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Cliff
+			13: Cliff
+			14: Cliff
+			15: Cliff
+			16: Dirt
+			17: Dirt
+			18: Cliff
+			19: Cliff
+			20: Dirt
+			21: Dirt
+			22: Dirt
+			23: Dirt
+
+	Template@1347:
+		Id: 1347
+		Images: tilesets/desert/tiles/CliffExtra_36.png
+		Size: 3,7
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Cliff
+			2: Grass
+			3: Dirt
+			4: Cliff
+			5: Grass
+			6: Dirt
+			7: Cliff
+			8: Grass
+			9: Dirt
+			10: Cliff
+			11: Grass
+			12: Dirt
+			13: Cliff
+			14: Grass
+			15: Dirt
+			16: Cliff
+			17: Grass
+			18: Dirt
+			19: Cliff
+			20: Grass
+
+	Template@1348:
+		Id: 1348
+		Images: tilesets/desert/tiles/CliffExtra_37.png
+		Size: 3,4
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Dirt
+			3: Grass
+			4: Cliff
+			5: Dirt
+			6: Grass
+			7: Cliff
+			8: Dirt
+			9: Grass
+			10: Cliff
+			11: Dirt
+
+	Template@1349:
+		Id: 1349
+		Images: tilesets/desert/tiles/CliffExtra_38.png
+		Size: 3,3
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Dirt
+			3: Grass
+			4: Cliff
+			5: Dirt
+			6: Grass
+			7: Cliff
+			8: Dirt
+
+	Template@1688:
+		Id: 1688
+		Images: tilesets/desert/tiles/CliffExtra_39.png
+		Size: 2,5
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Dirt
+			8: Dirt
+			9: Dirt
+
+	Template@1758:
+		Id: 1758
+		Images: tilesets/desert/tiles/CliffExtra_40.png
+		Size: 3,5
+		Categories: Cliff Extra
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Cliff
+			13: Cliff
+			14: Dirt
+
+	Template@293:
+		Id: 293
+		Images: tilesets/desert/tiles/CliffRamp_SE.png
+		Size: 3,6
+		Categories: Cliff Ramp
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Cliff
+			3: Grass
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Cliff
+			13: Cliff
+			14: Dirt
+			15: Cliff
+			16: Dirt
+			17: Dirt
+
+	Template@294:
+		Id: 294
+		Images: tilesets/desert/tiles/CliffRamp_SW.png
+		Size: 3,6
+		Categories: Cliff Ramp
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Cliff
+			3: Dirt
+			4: Cliff
+			5: Cliff
+			6: Dirt
+			7: Cliff
+			8: Cliff
+			9: Dirt
+			10: Cliff
+			11: Cliff
+			12: Dirt
+			13: Cliff
+			14: Cliff
+			15: Dirt
+			16: Cliff
+			17: Cliff
+
+	Template@295:
+		Id: 295
+		Images: tilesets/desert/tiles/CliffRamp_NE.png
+		Size: 4,7
+		Categories: Cliff Ramp
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Dirt
+			4: Grass
+			5: Cliff
+			6: Cliff
+			7: Dirt
+			8: Grass
+			9: Cliff
+			10: Cliff
+			11: Dirt
+			12: Grass
+			13: Cliff
+			14: Cliff
+			15: Dirt
+			16: Grass
+			17: Cliff
+			18: Cliff
+			19: Dirt
+			20: Grass
+			21: Cliff
+			22: Dirt
+			23: Dirt
+			24: Grass
+			25: Grass
+			26: Dirt
+			27: Dirt
+
+	Template@296:
+		Id: 296
+		Images: tilesets/desert/tiles/CliffRamp_NW.png
+		Size: 4,7
+		Categories: Cliff Ramp
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Dirt
+			5: Cliff
+			6: Grass
+			7: Grass
+			8: Dirt
+			9: Cliff
+			10: Grass
+			11: Grass
+			12: Dirt
+			13: Cliff
+			14: Grass
+			15: Grass
+			16: Cliff
+			17: Cliff
+			18: Grass
+			19: Grass
+			20: Cliff
+			21: Grass
+			22: Grass
+			23: Grass
+			24: Grass
+			25: Grass
+			26: Grass
+			27: Grass
+
+	Template@297:
+		Id: 297
+		Images: tilesets/desert/tiles/CliffRamp_WS.png
+		Size: 3,5
+		Categories: Cliff Ramp
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Dirt
+			3: Grass
+			4: Cliff
+			5: Dirt
+			6: Grass
+			7: Cliff
+			8: Dirt
+			9: Grass
+			10: Cliff
+			11: Dirt
+			12: Grass
+			13: Grass
+			14: Grass
+
+	Template@298:
+		Id: 298
+		Images: tilesets/desert/tiles/CliffRamp_WN.png
+		Size: 3,3
+		Categories: Cliff Ramp
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Cliff
+			2: Cliff
+			3: Dirt
+			4: Cliff
+			5: Grass
+			6: Dirt
+			7: Cliff
+			8: Grass
+
+	Template@299:
+		Id: 299
+		Images: tilesets/desert/tiles/CliffRamp_ES.png
+		Size: 3,5
+		Categories: Cliff Ramp
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Cliff
+			2: Grass
+			3: Dirt
+			4: Cliff
+			5: Grass
+			6: Cliff
+			7: Cliff
+			8: Grass
+			9: Cliff
+			10: Grass
+			11: Grass
+			12: Grass
+			13: Grass
+			14: Grass
+
+	Template@300:
+		Id: 300
+		Images: tilesets/desert/tiles/CliffRamp_EN.png
+		Size: 3,3
+		Categories: Cliff Ramp
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Dirt
+			3: Grass
+			4: Cliff
+			5: Dirt
+			6: Grass
+			7: Cliff
+			8: Dirt
+
+	Template@1274:
+		Id: 1274
+		Images: tilesets/desert/tiles/CliffRamp_6.png
+		Size: 6,6
+		Categories: Cliff Ramp
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Grass
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Grass
+			9: Grass
+			10: Cliff
+			11: Cliff
+			12: Cliff
+			13: Cliff
+			14: Cliff
+			15: Cliff
+			16: Cliff
+			17: Dirt
+			18: Cliff
+			19: Cliff
+			20: Cliff
+			21: Cliff
+			22: Cliff
+			23: Dirt
+			24: Cliff
+			25: Cliff
+			26: Cliff
+			27: Cliff
+			28: Cliff
+			29: Dirt
+			30: Dirt
+			31: Dirt
+			32: Dirt
+			33: Dirt
+			34: Dirt
+			35: Dirt
+
+	Template@1286:
+		Id: 1286
+		Images: tilesets/desert/tiles/CliffRamp_1.png
+		Size: 3,7
+		Categories: Cliff Ramp
+		Palette: openkrush
+		Tiles:
+			1: Cliff
+			2: Cliff
+			4: Cliff
+			5: Cliff
+			7: Cliff
+			8: Grass
+			10: Cliff
+			11: Grass
+			12: Dirt
+			13: Cliff
+			14: Grass
+			15: Cliff
+			16: Grass
+			17: Grass
+			18: Grass
+			19: Grass
+			20: Grass
+
+	Template@1287:
+		Id: 1287
+		Images: tilesets/desert/tiles/CliffRamp_2.png
+		Size: 4,6
+		Categories: Cliff Ramp
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Cliff
+			3: Grass
+			4: Grass
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Grass
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Dirt
+			13: Cliff
+			14: Cliff
+			15: Cliff
+			16: Dirt
+			17: Cliff
+			18: Cliff
+			19: Cliff
+			20: Dirt
+			21: Cliff
+			22: Dirt
+			23: Dirt
+
+	Template@1684:
+		Id: 1684
+		Images: tilesets/desert/tiles/CliffRamp_3.png
+		Size: 6,6
+		Categories: Cliff Ramp
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Cliff
+			2: Grass
+			3: Grass
+			4: Grass
+			5: Grass
+			6: Dirt
+			7: Cliff
+			8: Cliff
+			9: Grass
+			10: Grass
+			11: Grass
+			12: Dirt
+			13: Cliff
+			14: Cliff
+			15: Cliff
+			16: Grass
+			17: Grass
+			18: Dirt
+			19: Cliff
+			20: Cliff
+			21: Cliff
+			22: Cliff
+			23: Grass
+			24: Dirt
+			25: Cliff
+			26: Cliff
+			27: Cliff
+			28: Cliff
+			29: Grass
+			30: Dirt
+			31: Dirt
+			32: Dirt
+			33: Dirt
+			34: Dirt
+			35: Grass
+
+	Template@1686:
+		Id: 1686
+		Images: tilesets/desert/tiles/CliffRamp_4.png
+		Size: 6,6
+		Categories: Cliff Ramp
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Cliff
+			5: Dirt
+			6: Grass
+			7: Grass
+			8: Grass
+			9: Cliff
+			10: Cliff
+			11: Dirt
+			12: Grass
+			13: Grass
+			14: Cliff
+			15: Cliff
+			16: Cliff
+			17: Dirt
+			18: Grass
+			19: Cliff
+			20: Cliff
+			21: Cliff
+			22: Cliff
+			23: Dirt
+			24: Grass
+			25: Cliff
+			26: Cliff
+			27: Cliff
+			28: Cliff
+			29: Dirt
+			30: Grass
+			31: Dirt
+			32: Dirt
+			33: Dirt
+			34: Dirt
+			35: Dirt
+
+	Template@1687:
+		Id: 1687
+		Images: tilesets/desert/tiles/CliffRamp_5.png
+		Size: 4,6
+		Categories: Cliff Ramp
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Cliff
+			2: Cliff
+			3: Dirt
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Dirt
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Dirt
+			12: Grass
+			13: Cliff
+			14: Cliff
+			15: Dirt
+			16: Grass
+			17: Cliff
+			18: Dirt
+			19: Dirt
+			20: Grass
+			21: Grass
+			22: Grass
+			23: Grass
+
+	Template@1002:
+		Id: 1002
+		Images: tilesets/desert/tiles/Decoration_1.png
+		Size: 7,13
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			2: Sand
+			3: Sand
+			4: Sand
+			5: Sand
+			8: Sand
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Cliff
+			13: Sand
+			15: Sand
+			16: Cliff
+			17: Cliff
+			18: Cliff
+			19: Cliff
+			20: Sand
+			23: Sand
+			24: Cliff
+			25: Cliff
+			26: Cliff
+			27: Sand
+			30: Sand
+			31: Cliff
+			32: Cliff
+			33: Cliff
+			34: Cliff
+			37: Cliff
+			38: Cliff
+			39: Cliff
+			40: Cliff
+			41: Cliff
+			43: Cliff
+			44: Cliff
+			45: Cliff
+			46: Cliff
+			47: Cliff
+			48: Sand
+			49: Cliff
+			50: Cliff
+			51: Cliff
+			52: Cliff
+			53: Cliff
+			54: Sand
+			56: Cliff
+			57: Cliff
+			58: Cliff
+			59: Cliff
+			60: Sand
+			63: Cliff
+			64: Cliff
+			65: Cliff
+			66: Sand
+			70: Cliff
+			71: Cliff
+			72: Cliff
+			73: Sand
+			77: Cliff
+			78: Cliff
+			79: Sand
+			80: Sand
+			84: Sand
+			85: Sand
+			86: Sand
+
+	Template@1003:
+		Id: 1003
+		Images: tilesets/desert/tiles/Decoration_2.png
+		Size: 7,11
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			3: Sand
+			4: Sand
+			5: Sand
+			9: Sand
+			10: Cliff
+			11: Cliff
+			12: Sand
+			13: Sand
+			16: Sand
+			17: Cliff
+			18: Cliff
+			19: Cliff
+			20: Sand
+			23: Cliff
+			24: Cliff
+			25: Cliff
+			26: Cliff
+			27: Sand
+			29: Cliff
+			30: Cliff
+			31: Cliff
+			32: Cliff
+			33: Cliff
+			34: Sand
+			35: Cliff
+			36: Cliff
+			37: Cliff
+			38: Cliff
+			39: Cliff
+			40: Sand
+			42: Cliff
+			43: Cliff
+			44: Cliff
+			45: Cliff
+			46: Sand
+			49: Cliff
+			50: Cliff
+			51: Cliff
+			52: Sand
+			56: Cliff
+			57: Cliff
+			58: Cliff
+			59: Sand
+			63: Cliff
+			64: Cliff
+			65: Sand
+			66: Sand
+			70: Sand
+			71: Sand
+			72: Sand
+
+	Template@1004:
+		Id: 1004
+		Images: tilesets/desert/tiles/Decoration_3.png
+		Size: 11,13
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			6: Sand
+			7: Sand
+			8: Sand
+			9: Sand
+			10: Sand
+			14: Sand
+			15: Sand
+			16: Sand
+			17: Cliff
+			18: Cliff
+			19: Cliff
+			20: Cliff
+			21: Sand
+			24: Sand
+			25: Cliff
+			26: Cliff
+			27: Cliff
+			28: Cliff
+			29: Cliff
+			30: Cliff
+			31: Cliff
+			32: Sand
+			34: Sand
+			35: Cliff
+			36: Cliff
+			37: Cliff
+			38: Cliff
+			39: Cliff
+			40: Cliff
+			41: Cliff
+			42: Cliff
+			43: Sand
+			44: Sand
+			45: Cliff
+			46: Cliff
+			47: Cliff
+			48: Cliff
+			49: Cliff
+			50: Cliff
+			51: Cliff
+			52: Cliff
+			53: Cliff
+			54: Sand
+			55: Cliff
+			56: Cliff
+			57: Cliff
+			58: Cliff
+			59: Cliff
+			60: Cliff
+			61: Cliff
+			62: Cliff
+			63: Cliff
+			64: Cliff
+			65: Cliff
+			66: Cliff
+			67: Cliff
+			68: Cliff
+			69: Cliff
+			70: Cliff
+			71: Cliff
+			72: Cliff
+			73: Cliff
+			74: Cliff
+			75: Cliff
+			76: Sand
+			77: Cliff
+			78: Cliff
+			79: Cliff
+			80: Sand
+			81: Cliff
+			82: Cliff
+			83: Cliff
+			84: Cliff
+			85: Sand
+			86: Sand
+			88: Sand
+			89: Cliff
+			90: Sand
+			91: Sand
+			92: Cliff
+			93: Cliff
+			94: Cliff
+			95: Sand
+			96: Sand
+			99: Sand
+			100: Sand
+			101: Sand
+			102: Sand
+			103: Cliff
+			104: Cliff
+			105: Cliff
+			106: Sand
+			114: Cliff
+			115: Cliff
+			116: Cliff
+			117: Sand
+			125: Cliff
+			126: Cliff
+			127: Sand
+			128: Sand
+			136: Sand
+			137: Sand
+			138: Sand
+
+	Template@1005:
+		Id: 1005
+		Images: tilesets/desert/tiles/Decoration_4.png
+		Size: 11,13
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			11: Sand
+			12: Cliff
+			13: Cliff
+			14: Cliff
+			15: Cliff
+			16: Sand
+			17: Sand
+			18: Sand
+			22: Sand
+			23: Cliff
+			24: Cliff
+			25: Cliff
+			26: Cliff
+			27: Cliff
+			28: Cliff
+			29: Cliff
+			30: Sand
+			33: Sand
+			34: Cliff
+			35: Cliff
+			36: Cliff
+			37: Cliff
+			38: Cliff
+			39: Cliff
+			40: Cliff
+			41: Cliff
+			42: Sand
+			44: Sand
+			45: Cliff
+			46: Cliff
+			47: Cliff
+			48: Cliff
+			49: Cliff
+			50: Cliff
+			51: Cliff
+			52: Cliff
+			53: Cliff
+			54: Sand
+			55: Cliff
+			56: Cliff
+			57: Cliff
+			58: Cliff
+			59: Cliff
+			60: Cliff
+			61: Cliff
+			62: Cliff
+			63: Cliff
+			64: Cliff
+			65: Cliff
+			66: Sand
+			67: Cliff
+			68: Cliff
+			69: Cliff
+			70: Cliff
+			71: Cliff
+			72: Cliff
+			73: Cliff
+			74: Cliff
+			75: Cliff
+			76: Cliff
+			78: Sand
+			79: Sand
+			80: Cliff
+			81: Cliff
+			82: Cliff
+			83: Cliff
+			84: Sand
+			85: Cliff
+			86: Cliff
+			87: Cliff
+			90: Sand
+			91: Sand
+			92: Cliff
+			93: Cliff
+			94: Cliff
+			95: Sand
+			96: Sand
+			97: Cliff
+			98: Sand
+			102: Sand
+			103: Cliff
+			104: Cliff
+			105: Cliff
+			106: Sand
+			107: Sand
+			108: Sand
+			109: Sand
+			113: Sand
+			114: Cliff
+			115: Cliff
+			116: Cliff
+			124: Sand
+			125: Sand
+			126: Cliff
+			127: Cliff
+			136: Sand
+			137: Sand
+			138: Sand
+
+	Template@1006:
+		Id: 1006
+		Images: tilesets/desert/tiles/Decoration_5.png
+		Size: 7,11
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			1: Sand
+			2: Sand
+			3: Sand
+			7: Sand
+			8: Sand
+			9: Cliff
+			10: Cliff
+			11: Sand
+			14: Sand
+			15: Cliff
+			16: Cliff
+			17: Cliff
+			18: Sand
+			21: Sand
+			22: Cliff
+			23: Cliff
+			24: Cliff
+			25: Cliff
+			28: Sand
+			29: Cliff
+			30: Cliff
+			31: Cliff
+			32: Cliff
+			33: Cliff
+			36: Sand
+			37: Cliff
+			38: Cliff
+			39: Cliff
+			40: Cliff
+			41: Cliff
+			44: Sand
+			45: Cliff
+			46: Cliff
+			47: Cliff
+			48: Cliff
+			52: Sand
+			53: Cliff
+			54: Cliff
+			55: Cliff
+			59: Sand
+			60: Cliff
+			61: Cliff
+			62: Cliff
+			66: Sand
+			67: Sand
+			68: Cliff
+			69: Cliff
+			74: Sand
+			75: Sand
+			76: Sand
+
+	Template@1007:
+		Id: 1007
+		Images: tilesets/desert/tiles/Decoration_6.png
+		Size: 7,13
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			7: Sand
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Sand
+			14: Sand
+			15: Cliff
+			16: Cliff
+			17: Cliff
+			18: Cliff
+			19: Sand
+			21: Sand
+			22: Cliff
+			23: Cliff
+			24: Cliff
+			25: Sand
+			28: Cliff
+			29: Cliff
+			30: Cliff
+			31: Cliff
+			32: Sand
+			35: Cliff
+			36: Cliff
+			37: Cliff
+			38: Cliff
+			39: Cliff
+			42: Sand
+			43: Cliff
+			44: Cliff
+			45: Cliff
+			46: Cliff
+			47: Cliff
+			50: Sand
+			51: Cliff
+			52: Cliff
+			53: Cliff
+			54: Cliff
+			55: Cliff
+			58: Sand
+			59: Cliff
+			60: Cliff
+			61: Cliff
+			62: Cliff
+			66: Sand
+			67: Cliff
+			68: Cliff
+			69: Cliff
+			73: Sand
+			74: Cliff
+			75: Cliff
+			76: Cliff
+			80: Sand
+			81: Sand
+			82: Cliff
+			83: Cliff
+			88: Sand
+			89: Sand
+			90: Sand
+
+	Template@1008:
+		Id: 1008
+		Images: tilesets/desert/tiles/Decoration_7.png
+		Size: 8,9
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			3: Sand
+			4: Sand
+			5: Sand
+			6: Sand
+			10: Sand
+			11: Cliff
+			12: Cliff
+			13: Cliff
+			14: Sand
+			15: Sand
+			17: Sand
+			18: Cliff
+			19: Cliff
+			20: Cliff
+			21: Cliff
+			22: Cliff
+			23: Sand
+			24: Sand
+			25: Cliff
+			26: Cliff
+			27: Cliff
+			28: Cliff
+			29: Cliff
+			30: Cliff
+			31: Sand
+			32: Cliff
+			33: Cliff
+			34: Cliff
+			35: Cliff
+			36: Cliff
+			37: Sand
+			38: Sand
+			40: Cliff
+			41: Cliff
+			42: Cliff
+			43: Cliff
+			44: Sand
+			48: Cliff
+			49: Cliff
+			50: Cliff
+			51: Sand
+			56: Sand
+			57: Cliff
+			58: Sand
+			64: Sand
+			65: Sand
+			66: Sand
+
+	Template@1009:
+		Id: 1009
+		Images: tilesets/desert/tiles/Decoration_8.png
+		Size: 8,9
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			8: Sand
+			9: Sand
+			10: Cliff
+			11: Cliff
+			12: Cliff
+			13: Sand
+			16: Sand
+			17: Cliff
+			18: Cliff
+			19: Cliff
+			20: Cliff
+			21: Cliff
+			22: Sand
+			24: Sand
+			25: Cliff
+			26: Cliff
+			27: Cliff
+			28: Cliff
+			29: Cliff
+			30: Cliff
+			31: Sand
+			33: Sand
+			34: Sand
+			35: Cliff
+			36: Cliff
+			37: Cliff
+			38: Cliff
+			39: Cliff
+			43: Sand
+			44: Cliff
+			45: Cliff
+			46: Cliff
+			47: Cliff
+			52: Sand
+			53: Cliff
+			54: Cliff
+			55: Cliff
+			61: Sand
+			62: Cliff
+			63: Sand
+			69: Sand
+			70: Sand
+			71: Sand
+
+	Template@1010:
+		Id: 1010
+		Images: tilesets/desert/tiles/Decoration_9.png
+		Size: 4,4
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Dirt
+			3: Dirt
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Dirt
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Dirt
+			12: Cliff
+			13: Cliff
+			14: Cliff
+			15: Dirt
+
+	Template@1011:
+		Id: 1011
+		Images: tilesets/desert/tiles/Decoration_10.png
+		Size: 3,2
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Dirt
+			3: Cliff
+			4: Cliff
+			5: Cliff
+
+	Template@1012:
+		Id: 1012
+		Images: tilesets/desert/tiles/Decoration_11.png
+		Size: 3,2
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+
+	Template@1013:
+		Id: 1013
+		Images: tilesets/desert/tiles/Decoration_12.png
+		Size: 4,4
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Cliff
+			3: Cliff
+			4: Dirt
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Dirt
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Dirt
+			13: Cliff
+			14: Cliff
+			15: Cliff
+
+	Template@1015:
+		Id: 1015
+		Images: tilesets/desert/tiles/Decoration_13.png
+		Size: 3,3
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+
+	Template@1017:
+		Id: 1017
+		Images: tilesets/desert/tiles/Decoration_14.png
+		Size: 3,3
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Dirt
+
+	Template@1018:
+		Id: 1018
+		Images: tilesets/desert/tiles/Decoration_15.png
+		Size: 7,5
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Water
+			9: Water
+			10: Water
+			11: Water
+			12: Dirt
+			13: Dirt
+			14: Dirt
+			15: Water
+			16: Water
+			17: Water
+			18: Water
+			19: Dirt
+			20: Dirt
+			21: Dirt
+			22: Water
+			23: Water
+			24: Water
+			25: Water
+			26: Dirt
+			27: Dirt
+			28: Dirt
+			29: Dirt
+			30: Dirt
+			31: Dirt
+			32: Dirt
+			33: Dirt
+			34: Dirt
+
+	Template@1019:
+		Id: 1019
+		Images: tilesets/desert/tiles/Decoration_16.png
+		Size: 2,2
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+
+	Template@1022:
+		Id: 1022
+		Images: tilesets/desert/tiles/Decoration_17.png
+		Size: 4,2
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+
+	Template@1023:
+		Id: 1023
+		Images: tilesets/desert/tiles/Decoration_18.png
+		Size: 4,2
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+
+	Template@1024:
+		Id: 1024
+		Images: tilesets/desert/tiles/Decoration_19.png
+		Size: 2,2
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+
+	Template@1025:
+		Id: 1025
+		Images: tilesets/desert/tiles/Decoration_20.png
+		Size: 7,5
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Dirt
+			9: Water
+			10: Water
+			11: Water
+			12: Water
+			13: Dirt
+			14: Dirt
+			15: Dirt
+			16: Water
+			17: Water
+			18: Water
+			19: Water
+			20: Dirt
+			21: Dirt
+			22: Dirt
+			23: Water
+			24: Water
+			25: Water
+			26: Water
+			27: Dirt
+			28: Dirt
+			29: Dirt
+			30: Dirt
+			31: Dirt
+			32: Dirt
+			33: Dirt
+			34: Dirt
+
+	Template@1026:
+		Id: 1026
+		Images: tilesets/desert/tiles/Decoration_21.png
+		Size: 9,7
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			1: Dirt
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Dirt
+			9: Dirt
+			10: Cliff
+			11: Cliff
+			12: Cliff
+			13: Cliff
+			14: Cliff
+			15: Cliff
+			16: Cliff
+			17: Dirt
+			18: Cliff
+			19: Cliff
+			20: Cliff
+			21: Cliff
+			22: Cliff
+			23: Cliff
+			24: Cliff
+			25: Cliff
+			26: Cliff
+			27: Cliff
+			28: Cliff
+			29: Cliff
+			30: Cliff
+			31: Cliff
+			32: Cliff
+			33: Cliff
+			34: Cliff
+			35: Cliff
+			36: Cliff
+			37: Cliff
+			38: Cliff
+			39: Cliff
+			40: Cliff
+			41: Cliff
+			42: Cliff
+			43: Cliff
+			44: Cliff
+			45: Dirt
+			46: Cliff
+			47: Cliff
+			48: Cliff
+			49: Cliff
+			50: Cliff
+			51: Cliff
+			52: Cliff
+			53: Dirt
+			55: Dirt
+			56: Cliff
+			57: Cliff
+			58: Cliff
+			59: Cliff
+			60: Cliff
+			61: Dirt
+
+	Template@1027:
+		Id: 1027
+		Images: tilesets/desert/tiles/Decoration_22.png
+		Size: 2,2
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+
+	Template@1028:
+		Id: 1028
+		Images: tilesets/desert/tiles/Decoration_23.png
+		Size: 2,3
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+
+	Template@1029:
+		Id: 1029
+		Images: tilesets/desert/tiles/Decoration_24.png
+		Size: 2,2
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+
+	Template@1031:
+		Id: 1031
+		Images: tilesets/desert/tiles/Decoration_25.png
+		Size: 3,3
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+
+	Template@1032:
+		Id: 1032
+		Images: tilesets/desert/tiles/Decoration_26.png
+		Size: 3,3
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+
+	Template@1034:
+		Id: 1034
+		Images: tilesets/desert/tiles/Decoration_27.png
+		Size: 3,3
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Dirt
+
+	Template@1035:
+		Id: 1035
+		Images: tilesets/desert/tiles/Decoration_28.png
+		Size: 6,4
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Dirt
+			9: Dirt
+			10: Dirt
+			12: Dirt
+			13: Dirt
+			14: Dirt
+			15: Dirt
+			18: Dirt
+			19: Dirt
+			20: Dirt
+
+	Template@1036:
+		Id: 1036
+		Images: tilesets/desert/tiles/Decoration_29.png
+		Size: 2,3
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+
+	Template@1039:
+		Id: 1039
+		Images: tilesets/desert/tiles/Decoration_30.png
+		Size: 2,1
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+
+	Template@1040:
+		Id: 1040
+		Images: tilesets/desert/tiles/Decoration_31.png
+		Size: 1,1
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+
+	Template@1041:
+		Id: 1041
+		Images: tilesets/desert/tiles/Decoration_32.png
+		Size: 2,2
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+
+	Template@1042:
+		Id: 1042
+		Images: tilesets/desert/tiles/Decoration_33.png
+		Size: 4,5
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Cliff
+			3: Grass
+			4: Grass
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Grass
+			9: Cliff
+			10: Cliff
+			11: Grass
+			12: Grass
+			13: Cliff
+			14: Grass
+			15: Grass
+			16: Grass
+			17: Grass
+			18: Grass
+			19: Grass
+
+	Template@1043:
+		Id: 1043
+		Images: tilesets/desert/tiles/Decoration_34.png
+		Size: 3,6
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Cliff
+			3: Grass
+			4: Cliff
+			5: Grass
+			6: Grass
+			7: Cliff
+			8: Grass
+			9: Cliff
+			10: Cliff
+			11: Grass
+			12: Cliff
+			13: Cliff
+			14: Grass
+			15: Cliff
+			16: Grass
+			17: Grass
+
+	Template@1044:
+		Id: 1044
+		Images: tilesets/desert/tiles/Decoration_35.png
+		Size: 3,3
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Grass
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Grass
+			7: Grass
+			8: Grass
+
+	Template@1045:
+		Id: 1045
+		Images: tilesets/desert/tiles/Decoration_36.png
+		Size: 10,4
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Cliff
+			7: Cliff
+			8: Cliff
+			9: Cliff
+			10: Cliff
+			11: Cliff
+			12: Cliff
+			13: Cliff
+			14: Cliff
+			15: Cliff
+			16: Cliff
+			17: Cliff
+			18: Cliff
+			19: Grass
+			20: Cliff
+			21: Cliff
+			22: Cliff
+			23: Cliff
+			24: Cliff
+			25: Cliff
+			26: Cliff
+			27: Cliff
+			28: Grass
+			29: Grass
+			33: Grass
+			34: Grass
+			35: Street
+			36: Street
+			37: Street
+			38: Grass
+			39: Grass
+
+	Template@1046:
+		Id: 1046
+		Images: tilesets/desert/tiles/Decoration_37.png
+		Size: 11,14
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			5: Grass
+			6: Grass
+			7: Grass
+			8: Grass
+			9: Grass
+			10: Grass
+			16: Grass
+			17: Cliff
+			18: Cliff
+			19: Cliff
+			20: Cliff
+			21: Grass
+			26: Grass
+			27: Grass
+			28: Cliff
+			29: Cliff
+			30: Cliff
+			31: Cliff
+			32: Grass
+			37: Grass
+			38: Cliff
+			39: Cliff
+			40: Cliff
+			41: Cliff
+			42: Cliff
+			43: Grass
+			47: Grass
+			48: Grass
+			49: Cliff
+			50: Cliff
+			51: Cliff
+			52: Cliff
+			53: Cliff
+			54: Grass
+			58: Grass
+			59: Cliff
+			60: Cliff
+			61: Cliff
+			62: Cliff
+			63: Cliff
+			64: Grass
+			65: Grass
+			69: Grass
+			70: Cliff
+			71: Cliff
+			72: Cliff
+			73: Cliff
+			74: Grass
+			75: Grass
+			79: Grass
+			80: Cliff
+			81: Cliff
+			82: Cliff
+			83: Cliff
+			84: Grass
+			85: Grass
+			90: Grass
+			91: Cliff
+			92: Cliff
+			93: Cliff
+			94: Grass
+			95: Grass
+			100: Grass
+			101: Cliff
+			102: Cliff
+			103: Cliff
+			104: Cliff
+			105: Grass
+			111: Cliff
+			112: Cliff
+			113: Cliff
+			114: Cliff
+			115: Grass
+			116: Grass
+			122: Cliff
+			123: Cliff
+			124: Cliff
+			125: Grass
+			126: Grass
+			132: Grass
+			133: Cliff
+			134: Cliff
+			135: Grass
+			143: Grass
+			144: Cliff
+			145: Grass
+
+	Template@1047:
+		Id: 1047
+		Images: tilesets/desert/tiles/Decoration_38.png
+		Size: 1,1
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+
+	Template@1048:
+		Id: 1048
+		Images: tilesets/desert/tiles/Decoration_39.png
+		Size: 1,1
+		Categories: Decoration
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+
+	Template@1050:
+		Id: 1050
+		Images: tilesets/desert/tiles/Path_1.png
+		Size: 4,3
+		Categories: Path
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Path
+			9: Path
+			10: Path
+			11: Path
+
+	Template@1051:
+		Id: 1051
+		Images: tilesets/desert/tiles/Path_2.png
+		Size: 3,3
+		Categories: Path
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+
+	Template@1054:
+		Id: 1054
+		Images: tilesets/desert/tiles/Path_3.png
+		Size: 2,2
+		Categories: Path
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+
+	Template@1056:
+		Id: 1056
+		Images: tilesets/desert/tiles/Path_4.png
+		Size: 4,3
+		Categories: Path
+		Palette: openkrush
+		Tiles:
+			2: Grass
+			5: Path
+			6: Path
+			7: Grass
+			8: Grass
+			9: Path
+			10: Path
+			11: Path
+
+	Template@1057:
+		Id: 1057
+		Images: tilesets/desert/tiles/Path_5.png
+		Size: 3,5
+		Categories: Path
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Path
+			9: Path
+			10: Path
+			11: Path
+			12: Path
+			13: Path
+			14: Path
+
+	Template@1058:
+		Id: 1058
+		Images: tilesets/desert/tiles/Path_6.png
+		Size: 4,3
+		Categories: Path
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Path
+			2: Path
+			3: Path
+			5: Path
+			6: Path
+			7: Grass
+			10: Grass
+
+	Template@1059:
+		Id: 1059
+		Images: tilesets/desert/tiles/Path_7.png
+		Size: 2,2
+		Categories: Path
+		Palette: openkrush
+		Tiles:
+			0: Path
+			2: Path
+			3: Path
+
+	Template@1060:
+		Id: 1060
+		Images: tilesets/desert/tiles/Path_8.png
+		Size: 3,3
+		Categories: Path
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+
+	Template@1062:
+		Id: 1062
+		Images: tilesets/desert/tiles/Path_9.png
+		Size: 4,3
+		Categories: Path
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Path
+			9: Path
+			10: Path
+			11: Path
+
+	Template@1063:
+		Id: 1063
+		Images: tilesets/desert/tiles/Path_10.png
+		Size: 3,3
+		Categories: Path
+		Palette: openkrush
+		Tiles:
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			7: Path
+			8: Path
+
+	Template@1064:
+		Id: 1064
+		Images: tilesets/desert/tiles/Path_11.png
+		Size: 2,2
+		Categories: Path
+		Palette: openkrush
+		Tiles:
+			1: Path
+			2: Path
+			3: Path
+
+	Template@1065:
+		Id: 1065
+		Images: tilesets/desert/tiles/Path_12.png
+		Size: 4,3
+		Categories: Path
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Grass
+			4: Grass
+			5: Path
+			6: Path
+			9: Grass
+
+	Template@1066:
+		Id: 1066
+		Images: tilesets/desert/tiles/Path_13.png
+		Size: 3,5
+		Categories: Path
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Path
+			9: Path
+			10: Path
+			11: Path
+			12: Path
+			13: Path
+			14: Path
+
+	Template@1067:
+		Id: 1067
+		Images: tilesets/desert/tiles/Path_14.png
+		Size: 4,3
+		Categories: Path
+		Palette: openkrush
+		Tiles:
+			1: Grass
+			4: Grass
+			5: Path
+			6: Path
+			8: Path
+			9: Path
+			10: Path
+			11: Grass
+
+	Template@1069:
+		Id: 1069
+		Images: tilesets/desert/tiles/Path_15.png
+		Size: 2,2
+		Categories: Path
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			3: Path
+
+	Template@1070:
+		Id: 1070
+		Images: tilesets/desert/tiles/Path_16.png
+		Size: 3,3
+		Categories: Path
+		Palette: openkrush
+		Tiles:
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			7: Path
+			8: Path
+
+	Template@1071:
+		Id: 1071
+		Images: tilesets/desert/tiles/Path_17.png
+		Size: 4,3
+		Categories: Path
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Path
+			9: Path
+			10: Path
+			11: Path
+
+	Template@1073:
+		Id: 1073
+		Images: tilesets/desert/tiles/Path_18.png
+		Size: 4,3
+		Categories: Path
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Path
+			9: Path
+			10: Path
+			11: Path
+
+	Template@1074:
+		Id: 1074
+		Images: tilesets/desert/tiles/Path_19.png
+		Size: 4,3
+		Categories: Path
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Grass
+			9: Grass
+			10: Grass
+			11: Grass
+
+	Template@1075:
+		Id: 1075
+		Images: tilesets/desert/tiles/Path_20.png
+		Size: 4,3
+		Categories: Path
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Grass
+			9: Grass
+			10: Grass
+			11: Grass
+
+	Template@1077:
+		Id: 1077
+		Images: tilesets/desert/tiles/Path_21.png
+		Size: 3,3
+		Categories: Path
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Grass
+			7: Grass
+			8: Grass
+
+	Template@1078:
+		Id: 1078
+		Images: tilesets/desert/tiles/Path_22.png
+		Size: 3,3
+		Categories: Path
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Path
+			2: Path
+			3: Grass
+			4: Path
+			5: Path
+			6: Grass
+			7: Path
+			8: Path
+
+	Template@1079:
+		Id: 1079
+		Images: tilesets/desert/tiles/Path_23.png
+		Size: 3,3
+		Categories: Path
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Path
+
+	Template@1080:
+		Id: 1080
+		Images: tilesets/desert/tiles/Path_24.png
+		Size: 3,3
+		Categories: Path
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Grass
+			3: Path
+			4: Path
+			5: Grass
+			6: Path
+			7: Path
+			8: Grass
+
+	Template@1081:
+		Id: 1081
+		Images: tilesets/desert/tiles/Path_25.png
+		Size: 3,3
+		Categories: Path
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Path
+
+	Template@1082:
+		Id: 1082
+		Images: tilesets/desert/tiles/Path_26.png
+		Size: 3,2
+		Categories: Path
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+
+	Template@1083:
+		Id: 1083
+		Images: tilesets/desert/tiles/Path_27.png
+		Size: 2,3
+		Categories: Path
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+
+	Template@1084:
+		Id: 1084
+		Images: tilesets/desert/tiles/Path_28.png
+		Size: 3,2
+		Categories: Path
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+
+	Template@1085:
+		Id: 1085
+		Images: tilesets/desert/tiles/Path_29.png
+		Size: 2,3
+		Categories: Path
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+
+	Template@1087:
+		Id: 1087
+		Images: tilesets/desert/tiles/PathExtra_1.png
+		Size: 4,4
+		Categories: Path Extra
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Path
+			9: Path
+			10: Path
+			11: Grass
+			12: Path
+			13: Path
+			14: Path
+			15: Grass
+
+	Template@1088:
+		Id: 1088
+		Images: tilesets/desert/tiles/PathExtra_2.png
+		Size: 4,4
+		Categories: Path Extra
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Grass
+			9: Path
+			10: Path
+			11: Path
+			12: Grass
+			13: Path
+			14: Path
+			15: Path
+
+	Template@1089:
+		Id: 1089
+		Images: tilesets/desert/tiles/PathExtra_3.png
+		Size: 4,4
+		Categories: Path Extra
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Grass
+			4: Path
+			5: Path
+			6: Path
+			7: Grass
+			8: Path
+			9: Path
+			10: Path
+			11: Path
+			12: Path
+			13: Path
+			14: Path
+			15: Path
+
+	Template@1090:
+		Id: 1090
+		Images: tilesets/desert/tiles/PathExtra_4.png
+		Size: 4,4
+		Categories: Path Extra
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Path
+			2: Path
+			3: Path
+			4: Grass
+			5: Path
+			6: Path
+			7: Path
+			8: Path
+			9: Path
+			10: Path
+			11: Path
+			12: Path
+			13: Path
+			14: Path
+			15: Path
+
+	Template@1091:
+		Id: 1091
+		Images: tilesets/desert/tiles/PathExtra_5.png
+		Size: 6,3
+		Categories: Path Extra
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Grass
+			7: Path
+			8: Path
+			9: Path
+			10: Path
+			11: Path
+			12: Grass
+			13: Path
+			14: Path
+			15: Path
+			16: Path
+			17: Path
+
+	Template@1092:
+		Id: 1092
+		Images: tilesets/desert/tiles/PathExtra_6.png
+		Size: 6,3
+		Categories: Path Extra
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Grass
+			5: Grass
+			6: Path
+			7: Path
+			8: Path
+			9: Path
+			10: Path
+			11: Grass
+			12: Path
+			13: Path
+			14: Path
+			15: Path
+			16: Path
+			17: Grass
+
+	Template@1093:
+		Id: 1093
+		Images: tilesets/desert/tiles/PathExtra_7.png
+		Size: 6,3
+		Categories: Path Extra
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Grass
+			7: Path
+			8: Path
+			9: Path
+			10: Path
+			11: Path
+			12: Grass
+			13: Grass
+			14: Path
+			15: Path
+			16: Path
+			17: Path
+
+	Template@1094:
+		Id: 1094
+		Images: tilesets/desert/tiles/PathExtra_8.png
+		Size: 6,3
+		Categories: Path Extra
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Grass
+			6: Path
+			7: Path
+			8: Path
+			9: Path
+			10: Path
+			11: Grass
+			12: Path
+			13: Path
+			14: Path
+			15: Path
+			16: Grass
+			17: Grass
+
+	Template@1095:
+		Id: 1095
+		Images: tilesets/desert/tiles/PathExtra_9.png
+		Size: 5,3
+		Categories: Path Extra
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Grass
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Path
+			9: Path
+			11: Grass
+			12: Path
+			13: Path
+			14: Grass
+
+	Template@1096:
+		Id: 1096
+		Images: tilesets/desert/tiles/PathExtra_10.png
+		Size: 5,3
+		Categories: Path Extra
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Grass
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Path
+			9: Path
+			10: Grass
+			11: Path
+			12: Path
+			13: Grass
+
+	Template@1097:
+		Id: 1097
+		Images: tilesets/desert/tiles/PathExtra_11.png
+		Size: 3,6
+		Categories: Path Extra
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Path
+			4: Path
+			5: Grass
+			6: Path
+			7: Path
+			8: Path
+			9: Path
+			10: Path
+			11: Path
+			12: Path
+			13: Path
+			14: Path
+			15: Path
+			16: Path
+			17: Path
+
+	Template@1101:
+		Id: 1101
+		Images: tilesets/desert/tiles/PathExtra_12.png
+		Size: 3,6
+		Categories: Path Extra
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Path
+			9: Path
+			10: Path
+			11: Path
+			12: Grass
+			13: Path
+			14: Path
+			15: Grass
+			16: Grass
+			17: Grass
+
+	Template@1102:
+		Id: 1102
+		Images: tilesets/desert/tiles/PathExtra_13.png
+		Size: 5,3
+		Categories: Path Extra
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+			4: Path
+			5: Path
+			6: Path
+			7: Path
+			8: Path
+			9: Path
+			10: Path
+			11: Path
+			12: Path
+			13: Path
+			14: Path
+
+	Template@1104:
+		Id: 1104
+		Images: tilesets/desert/tiles/PathExtra_14.png
+		Size: 2,2
+		Categories: Path Extra
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+
+	Template@1105:
+		Id: 1105
+		Images: tilesets/desert/tiles/PathExtra_15.png
+		Size: 2,2
+		Categories: Path Extra
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+
+	Template@1109:
+		Id: 1109
+		Images: tilesets/desert/tiles/PathExtra_16.png
+		Size: 2,2
+		Categories: Path Extra
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+
+	Template@1110:
+		Id: 1110
+		Images: tilesets/desert/tiles/PathExtra_17.png
+		Size: 2,2
+		Categories: Path Extra
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+
+	Template@1111:
+		Id: 1111
+		Images: tilesets/desert/tiles/PathExtra_18.png
+		Size: 2,2
+		Categories: Path Extra
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+
+	Template@1115:
+		Id: 1115
+		Images: tilesets/desert/tiles/PathExtra_19.png
+		Size: 2,2
+		Categories: Path Extra
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+
+	Template@1116:
+		Id: 1116
+		Images: tilesets/desert/tiles/PathExtra_20.png
+		Size: 2,2
+		Categories: Path Extra
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+
+	Template@1117:
+		Id: 1117
+		Images: tilesets/desert/tiles/PathExtra_21.png
+		Size: 2,2
+		Categories: Path Extra
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+
+	Template@1118:
+		Id: 1118
+		Images: tilesets/desert/tiles/PathExtra_22.png
+		Size: 2,2
+		Categories: Path Extra
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+
+	Template@1119:
+		Id: 1119
+		Images: tilesets/desert/tiles/PathExtra_23.png
+		Size: 2,2
+		Categories: Path Extra
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+
+	Template@1120:
+		Id: 1120
+		Images: tilesets/desert/tiles/PathExtra_24.png
+		Size: 2,2
+		Categories: Path Extra
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+
+	Template@1122:
+		Id: 1122
+		Images: tilesets/desert/tiles/PathExtra_25.png
+		Size: 2,2
+		Categories: Path Extra
+		Palette: openkrush
+		Tiles:
+			0: Path
+			1: Path
+			2: Path
+			3: Path
+
+	Template@1124:
+		Id: 1124
+		Images: tilesets/desert/tiles/Street_1.png
+		Size: 7,4
+		Categories: Street
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Grass
+			5: Grass
+			6: Grass
+			7: Street
+			8: Street
+			9: Street
+			10: Street
+			11: Street
+			12: Street
+			13: Street
+			14: Street
+			15: Street
+			16: Street
+			17: Street
+			18: Street
+			19: Street
+			20: Street
+			21: Grass
+			22: Grass
+			23: Grass
+			24: Grass
+			25: Grass
+			26: Grass
+			27: Grass
+
+	Template@1127:
+		Id: 1127
+		Images: tilesets/desert/tiles/Street_2.png
+		Size: 3,5
+		Categories: Street
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Street
+			4: Street
+			5: Grass
+			6: Street
+			7: Street
+			8: Street
+			9: Grass
+			10: Street
+			12: Grass
+			13: Grass
+
+	Template@1128:
+		Id: 1128
+		Images: tilesets/desert/tiles/Street_3.png
+		Size: 4,4
+		Categories: Street
+		Palette: openkrush
+		Tiles:
+			2: Grass
+			3: Grass
+			5: Street
+			6: Street
+			8: Grass
+			9: Street
+			12: Grass
+
+	Template@1129:
+		Id: 1129
+		Images: tilesets/desert/tiles/Street_4.png
+		Size: 5,4
+		Categories: Street
+		Palette: openkrush
+		Tiles:
+			2: Grass
+			3: Grass
+			6: Street
+			7: Street
+			8: Grass
+			9: Grass
+			10: Grass
+			11: Street
+			12: Street
+			13: Street
+			14: Grass
+			15: Grass
+			16: Grass
+			17: Street
+			18: Street
+			19: Grass
+
+	Template@1130:
+		Id: 1130
+		Images: tilesets/desert/tiles/Street_5.png
+		Size: 6,7
+		Categories: Street
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Street
+			3: Street
+			4: Grass
+			5: Grass
+			6: Grass
+			7: Grass
+			8: Street
+			9: Street
+			10: Grass
+			11: Grass
+			12: Grass
+			13: Grass
+			14: Street
+			15: Street
+			16: Grass
+			17: Grass
+			18: Grass
+			19: Grass
+			20: Street
+			21: Street
+			22: Grass
+			23: Grass
+			24: Grass
+			25: Grass
+			26: Street
+			27: Street
+			28: Grass
+			29: Grass
+			30: Grass
+			31: Grass
+			32: Street
+			33: Street
+			34: Grass
+			35: Grass
+			36: Grass
+			37: Grass
+			38: Street
+			39: Street
+			40: Grass
+			41: Grass
+
+	Template@1131:
+		Id: 1131
+		Images: tilesets/desert/tiles/Street_6.png
+		Size: 5,4
+		Categories: Street
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Street
+			3: Street
+			4: Grass
+			5: Grass
+			6: Street
+			7: Street
+			8: Street
+			9: Grass
+			11: Street
+			12: Street
+			13: Grass
+			14: Grass
+			17: Grass
+			18: Grass
+
+	Template@1133:
+		Id: 1133
+		Images: tilesets/desert/tiles/Street_7.png
+		Size: 4,4
+		Categories: Street
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			4: Grass
+			5: Street
+			9: Street
+			10: Street
+			14: Grass
+			15: Grass
+
+	Template@1134:
+		Id: 1134
+		Images: tilesets/desert/tiles/Street_8.png
+		Size: 3,6
+		Categories: Street
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			3: Grass
+			4: Grass
+			6: Grass
+			7: Street
+			9: Street
+			10: Street
+			11: Street
+			12: Street
+			13: Street
+			14: Grass
+			15: Grass
+			16: Grass
+			17: Grass
+
+	Template@1135:
+		Id: 1135
+		Images: tilesets/desert/tiles/Street_9.png
+		Size: 3,6
+		Categories: Street
+		Palette: openkrush
+		Tiles:
+			1: Grass
+			2: Grass
+			4: Grass
+			5: Grass
+			7: Street
+			8: Grass
+			9: Street
+			10: Street
+			11: Street
+			12: Grass
+			13: Street
+			14: Street
+			15: Grass
+			16: Grass
+			17: Grass
+
+	Template@1136:
+		Id: 1136
+		Images: tilesets/desert/tiles/Street_10.png
+		Size: 4,4
+		Categories: Street
+		Palette: openkrush
+		Tiles:
+			3: Grass
+			6: Street
+			7: Grass
+			9: Street
+			10: Street
+			12: Grass
+			13: Grass
+
+	Template@1137:
+		Id: 1137
+		Images: tilesets/desert/tiles/Street_11.png
+		Size: 5,4
+		Categories: Street
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Street
+			2: Street
+			3: Grass
+			4: Grass
+			5: Grass
+			6: Street
+			7: Street
+			8: Street
+			9: Grass
+			10: Grass
+			11: Grass
+			12: Street
+			13: Street
+			16: Grass
+			17: Grass
+
+	Template@1138:
+		Id: 1138
+		Images: tilesets/desert/tiles/Street_12.png
+		Size: 5,4
+		Categories: Street
+		Palette: openkrush
+		Tiles:
+			1: Grass
+			2: Grass
+			5: Grass
+			6: Grass
+			7: Street
+			8: Street
+			10: Grass
+			11: Street
+			12: Street
+			13: Street
+			14: Grass
+			15: Grass
+			16: Street
+			17: Street
+			18: Grass
+			19: Grass
+
+	Template@1139:
+		Id: 1139
+		Images: tilesets/desert/tiles/Street_13.png
+		Size: 4,4
+		Categories: Street
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			5: Street
+			6: Street
+			10: Street
+			11: Grass
+			15: Grass
+
+	Template@1142:
+		Id: 1142
+		Images: tilesets/desert/tiles/Street_14.png
+		Size: 3,5
+		Categories: Street
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Street
+			5: Street
+			6: Street
+			7: Street
+			8: Street
+			10: Street
+			11: Grass
+			13: Grass
+			14: Grass
+
+	Template@1143:
+		Id: 1143
+		Images: tilesets/desert/tiles/Street_15.png
+		Size: 4,3
+		Categories: Street
+		Palette: openkrush
+		Tiles:
+			0: Street
+			1: Street
+			2: Street
+			3: Street
+			4: Grass
+			5: Street
+			6: Street
+			7: Street
+			8: Grass
+			9: Grass
+			10: Street
+
+	Template@1144:
+		Id: 1144
+		Images: tilesets/desert/tiles/Street_16.png
+		Size: 4,3
+		Categories: Street
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Street
+			4: Grass
+			5: Street
+			6: Street
+			7: Street
+			8: Street
+			9: Street
+			10: Street
+			11: Street
+
+	Template@1145:
+		Id: 1145
+		Images: tilesets/desert/tiles/Street_17.png
+		Size: 4,3
+		Categories: Street
+		Palette: openkrush
+		Tiles:
+			1: Street
+			2: Grass
+			3: Grass
+			4: Street
+			5: Street
+			6: Street
+			7: Grass
+			8: Street
+			9: Street
+			10: Street
+			11: Street
+
+	Template@1146:
+		Id: 1146
+		Images: tilesets/desert/tiles/Street_18.png
+		Size: 4,3
+		Categories: Street
+		Palette: openkrush
+		Tiles:
+			0: Street
+			1: Street
+			2: Street
+			3: Street
+			4: Street
+			5: Street
+			6: Street
+			7: Grass
+			9: Street
+			10: Grass
+			11: Grass
+
+	Template@1147:
+		Id: 1147
+		Images: tilesets/desert/tiles/Street_19.png
+		Size: 4,5
+		Categories: Street
+		Palette: openkrush
+		Tiles:
+			0: Street
+			1: Grass
+			4: Street
+			5: Street
+			6: Street
+			8: Street
+			9: Street
+			10: Street
+			11: Grass
+			12: Street
+			13: Street
+			14: Grass
+			16: Street
+			17: Grass
+
+	Template@1148:
+		Id: 1148
+		Images: tilesets/desert/tiles/Street_20.png
+		Size: 4,5
+		Categories: Street
+		Palette: openkrush
+		Tiles:
+			2: Grass
+			3: Street
+			5: Street
+			6: Street
+			7: Street
+			8: Grass
+			9: Street
+			10: Street
+			11: Street
+			13: Grass
+			14: Street
+			15: Street
+			18: Grass
+			19: Street
+
+	Template@1150:
+		Id: 1150
+		Images: tilesets/desert/tiles/Street_21.png
+		Size: 4,5
+		Categories: Street
+		Palette: openkrush
+		Tiles:
+			2: Grass
+			3: Street
+			5: Grass
+			6: Street
+			7: Street
+			8: Grass
+			9: Street
+			10: Street
+			11: Street
+			13: Street
+			14: Street
+			15: Street
+			18: Grass
+			19: Street
+
+	Template@1151:
+		Id: 1151
+		Images: tilesets/desert/tiles/Street_22.png
+		Size: 4,5
+		Categories: Street
+		Palette: openkrush
+		Tiles:
+			0: Street
+			1: Grass
+			4: Street
+			5: Street
+			6: Grass
+			8: Street
+			9: Street
+			10: Street
+			11: Grass
+			12: Street
+			13: Street
+			14: Street
+			16: Street
+			17: Grass
+
+	Template@1152:
+		Id: 1152
+		Images: tilesets/desert/tiles/Street_23.png
+		Size: 4,4
+		Categories: Street
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Street
+			2: Street
+			3: Grass
+			4: Street
+			5: Street
+			6: Street
+			7: Street
+			8: Street
+			9: Street
+			10: Street
+			11: Street
+			12: Grass
+			13: Grass
+			14: Grass
+			15: Grass
+
+	Template@1153:
+		Id: 1153
+		Images: tilesets/desert/tiles/Street_24.png
+		Size: 4,4
+		Categories: Street
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Street
+			2: Street
+			3: Grass
+			4: Grass
+			5: Street
+			6: Street
+			7: Street
+			8: Grass
+			9: Street
+			10: Street
+			11: Street
+			12: Grass
+			13: Street
+			14: Street
+			15: Grass
+
+	Template@1155:
+		Id: 1155
+		Images: tilesets/desert/tiles/Street_25.png
+		Size: 4,4
+		Categories: Street
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Street
+			5: Street
+			6: Street
+			7: Street
+			8: Street
+			9: Street
+			10: Street
+			11: Street
+			12: Grass
+			13: Street
+			14: Street
+			15: Grass
+
+	Template@1156:
+		Id: 1156
+		Images: tilesets/desert/tiles/Street_26.png
+		Size: 4,4
+		Categories: Street
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Street
+			2: Street
+			3: Grass
+			4: Street
+			5: Street
+			6: Street
+			7: Grass
+			8: Street
+			9: Street
+			10: Street
+			11: Grass
+			12: Grass
+			13: Street
+			14: Street
+			15: Grass
+
+	Template@1157:
+		Id: 1157
+		Images: tilesets/desert/tiles/Street_27.png
+		Size: 4,4
+		Categories: Street
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Street
+			2: Street
+			3: Grass
+			4: Street
+			5: Street
+			6: Street
+			7: Street
+			8: Street
+			9: Street
+			10: Street
+			11: Street
+			12: Grass
+			13: Street
+			14: Street
+			15: Grass
+
+	Template@1158:
+		Id: 1158
+		Images: tilesets/desert/tiles/Street_28.png
+		Size: 4,4
+		Categories: Street
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Grass
+			5: Grass
+			6: Grass
+			7: Grass
+			8: Grass
+			9: Street
+			10: Street
+			11: Grass
+			12: Grass
+			13: Street
+			14: Street
+			15: Grass
+
+	Template@1160:
+		Id: 1160
+		Images: tilesets/desert/tiles/Street_29.png
+		Size: 4,4
+		Categories: Street
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Street
+			5: Street
+			6: Grass
+			7: Grass
+			8: Street
+			9: Street
+			10: Grass
+			11: Grass
+			12: Grass
+			13: Grass
+			14: Grass
+			15: Grass
+
+	Template@1162:
+		Id: 1162
+		Images: tilesets/desert/tiles/Street_30.png
+		Size: 4,4
+		Categories: Street
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Street
+			2: Street
+			3: Grass
+			4: Grass
+			5: Street
+			6: Street
+			7: Grass
+			8: Grass
+			9: Grass
+			10: Grass
+			11: Grass
+			12: Grass
+			13: Grass
+			14: Grass
+			15: Grass
+
+	Template@1163:
+		Id: 1163
+		Images: tilesets/desert/tiles/Street_31.png
+		Size: 4,4
+		Categories: Street
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Grass
+			5: Grass
+			6: Street
+			7: Street
+			8: Grass
+			9: Grass
+			10: Street
+			11: Street
+			12: Grass
+			13: Grass
+			14: Grass
+			15: Grass
+
+	Template@1164:
+		Id: 1164
+		Images: tilesets/desert/tiles/StreetExtra_1.png
+		Size: 6,1
+		Categories: Street Extra
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Street
+			3: Street
+			4: Grass
+			5: Grass
+
+	Template@1165:
+		Id: 1165
+		Images: tilesets/desert/tiles/StreetExtra_2.png
+		Size: 1,6
+		Categories: Street Extra
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Street
+			3: Street
+			4: Grass
+			5: Grass
+
+	Template@1166:
+		Id: 1166
+		Images: tilesets/desert/tiles/StreetExtra_3.png
+		Size: 4,4
+		Categories: Street Extra
+		Palette: openkrush
+		Tiles:
+			2: Grass
+			3: Grass
+			5: Street
+			6: Street
+			8: Grass
+			9: Street
+			12: Grass
+
+	Template@1167:
+		Id: 1167
+		Images: tilesets/desert/tiles/StreetExtra_4.png
+		Size: 4,4
+		Categories: Street Extra
+		Palette: openkrush
+		Tiles:
+			2: Grass
+			3: Grass
+			5: Street
+			6: Street
+			8: Grass
+			9: Street
+			12: Grass
+
+	Template@1168:
+		Id: 1168
+		Images: tilesets/desert/tiles/StreetExtra_5.png
+		Size: 4,4
+		Categories: Street Extra
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			5: Street
+			6: Street
+			10: Street
+			11: Grass
+			15: Grass
+
+	Template@1169:
+		Id: 1169
+		Images: tilesets/desert/tiles/StreetExtra_6.png
+		Size: 4,4
+		Categories: Street Extra
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			5: Street
+			6: Street
+			10: Street
+			11: Grass
+			15: Grass
+
+	Template@1171:
+		Id: 1171
+		Images: tilesets/desert/tiles/StreetExtra_7.png
+		Size: 4,4
+		Categories: Street Extra
+		Palette: openkrush
+		Tiles:
+			3: Grass
+			6: Street
+			7: Grass
+			9: Street
+			10: Street
+			12: Grass
+			13: Grass
+
+	Template@1172:
+		Id: 1172
+		Images: tilesets/desert/tiles/StreetExtra_8.png
+		Size: 4,4
+		Categories: Street Extra
+		Palette: openkrush
+		Tiles:
+			3: Grass
+			6: Street
+			7: Grass
+			9: Street
+			10: Street
+			12: Grass
+			13: Grass
+
+	Template@1173:
+		Id: 1173
+		Images: tilesets/desert/tiles/StreetExtra_9.png
+		Size: 4,4
+		Categories: Street Extra
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			4: Grass
+			5: Street
+			9: Street
+			10: Street
+			14: Grass
+			15: Grass
+
+	Template@1174:
+		Id: 1174
+		Images: tilesets/desert/tiles/StreetExtra_10.png
+		Size: 4,4
+		Categories: Street Extra
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			4: Grass
+			5: Street
+			9: Street
+			10: Street
+			14: Grass
+			15: Grass
+
+	Template@1175:
+		Id: 1175
+		Images: tilesets/desert/tiles/StreetExtra_11.png
+		Size: 6,6
+		Categories: Street Extra
+		Palette: openkrush
+		Tiles:
+			3: Path
+			4: Path
+			8: Street
+			9: Path
+			10: Path
+			11: Path
+			13: Street
+			14: Street
+			15: Street
+			16: Path
+			17: Grass
+			18: Grass
+			19: Path
+			20: Street
+			21: Street
+			22: Street
+			23: Grass
+			24: Grass
+			25: Path
+			26: Path
+			27: Street
+			28: Street
+			31: Path
+			32: Path
+			33: Grass
+
+	Template@1176:
+		Id: 1176
+		Images: tilesets/desert/tiles/StreetExtra_12.png
+		Size: 6,6
+		Categories: Street Extra
+		Palette: openkrush
+		Tiles:
+			1: Path
+			2: Path
+			6: Path
+			7: Path
+			8: Path
+			9: Street
+			12: Grass
+			13: Path
+			14: Street
+			15: Street
+			16: Street
+			18: Grass
+			19: Street
+			20: Street
+			21: Street
+			22: Path
+			23: Grass
+			25: Street
+			26: Street
+			27: Path
+			28: Path
+			29: Grass
+			32: Grass
+			33: Path
+			34: Path
+
+	Template@1177:
+		Id: 1177
+		Images: tilesets/desert/tiles/StreetExtra_13.png
+		Size: 6,6
+		Categories: Street Extra
+		Palette: openkrush
+		Tiles:
+			1: Path
+			2: Path
+			3: Grass
+			6: Grass
+			7: Path
+			8: Path
+			9: Street
+			10: Street
+			12: Grass
+			13: Path
+			14: Street
+			15: Street
+			16: Street
+			17: Grass
+			19: Street
+			20: Street
+			21: Street
+			22: Path
+			23: Grass
+			26: Street
+			27: Path
+			28: Path
+			29: Path
+			33: Path
+			34: Path
+
+	Template@1178:
+		Id: 1178
+		Images: tilesets/desert/tiles/StreetExtra_14.png
+		Size: 6,6
+		Categories: Street Extra
+		Palette: openkrush
+		Tiles:
+			2: Grass
+			3: Path
+			4: Path
+			7: Street
+			8: Street
+			9: Path
+			10: Path
+			11: Grass
+			12: Grass
+			13: Street
+			14: Street
+			15: Street
+			16: Path
+			17: Grass
+			18: Grass
+			19: Path
+			20: Street
+			21: Street
+			22: Street
+			24: Path
+			25: Path
+			26: Path
+			27: Street
+			31: Path
+			32: Path
+
+	Template@1179:
+		Id: 1179
+		Images: tilesets/desert/tiles/StreetExtra_15.png
+		Size: 2,4
+		Categories: Street Extra
+		Palette: openkrush
+		Tiles:
+			0: Cliff
+			1: Grass
+			2: Cliff
+			3: Street
+			4: Cliff
+			5: Street
+			6: Grass
+			7: Grass
+
+	Template@1180:
+		Id: 1180
+		Images: tilesets/desert/tiles/StreetExtra_16.png
+		Size: 2,4
+		Categories: Street Extra
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Cliff
+			2: Cliff
+			3: Cliff
+			4: Cliff
+			5: Cliff
+			6: Grass
+			7: Grass
+
+	Template@1181:
+		Id: 1181
+		Images: tilesets/desert/tiles/StreetExtra_17.png
+		Size: 6,5
+		Categories: Street Extra
+		Palette: openkrush
+		Tiles:
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Grass
+			5: Grass
+			7: Grass
+			8: Street
+			9: Street
+			10: Street
+			11: Grass
+			12: Grass
+			13: Street
+			14: Cliff
+			15: Cliff
+			16: Street
+			17: Grass
+			18: Street
+			19: Street
+			20: Street
+			21: Street
+			22: Grass
+			23: Grass
+			25: Street
+			26: Grass
+			27: Grass
+
+	Template@1182:
+		Id: 1182
+		Images: tilesets/desert/tiles/StreetExtra_18.png
+		Size: 5,3
+		Categories: Street Extra
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Street
+			2: Street
+			3: Grass
+			4: Grass
+			5: Grass
+			6: Cliff
+			7: Cliff
+			8: Grass
+			9: Grass
+			10: Grass
+			11: Street
+			12: Street
+			13: Grass
+			14: Grass
+
+	Template@1183:
+		Id: 1183
+		Images: tilesets/desert/tiles/StreetExtra_19.png
+		Size: 2,4
+		Categories: Street Extra
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Street
+			3: Street
+			4: Street
+			5: Street
+			6: Grass
+			7: Grass
+
+	Template@1185:
+		Id: 1185
+		Images: tilesets/desert/tiles/StreetExtra_20.png
+		Size: 6,2
+		Categories: Street Extra
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Street
+			3: Street
+			4: Grass
+			5: Grass
+			6: Grass
+			7: Grass
+			8: Street
+			9: Street
+			10: Grass
+			11: Grass
+
+	Template@1186:
+		Id: 1186
+		Images: tilesets/desert/tiles/StreetExtra_21.png
+		Size: 4,3
+		Categories: Street Extra
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Grass
+			5: Street
+			6: Street
+			7: Grass
+			8: Grass
+			9: Street
+			10: Street
+			11: Grass
+
+	Template@1188:
+		Id: 1188
+		Images: tilesets/desert/tiles/StreetExtra_22.png
+		Size: 3,4
+		Categories: Street Extra
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Street
+			4: Street
+			5: Grass
+			6: Street
+			7: Street
+			8: Grass
+			9: Grass
+			10: Grass
+			11: Grass
+
+	Template@1189:
+		Id: 1189
+		Images: tilesets/desert/tiles/StreetExtra_23.png
+		Size: 4,3
+		Categories: Street Extra
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Street
+			2: Street
+			3: Grass
+			4: Grass
+			5: Street
+			6: Street
+			7: Grass
+			8: Grass
+			9: Grass
+			10: Grass
+			11: Grass
+
+	Template@1190:
+		Id: 1190
+		Images: tilesets/desert/tiles/StreetExtra_24.png
+		Size: 3,4
+		Categories: Street Extra
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Street
+			5: Street
+			6: Grass
+			7: Street
+			8: Street
+			9: Grass
+			10: Grass
+			11: Grass
+
+	Template@313:
+		Id: 313
+		Images: tilesets/desert/tiles/TransitionDirtSand_SE.png
+		Size: 4,3
+		Categories: Transition Dirt Sand
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			5: Dirt
+			6: Dirt
+			10: Dirt
+			11: Sand
+
+	Template@314:
+		Id: 314
+		Images: tilesets/desert/tiles/TransitionDirtSand_SW.png
+		Size: 4,3
+		Categories: Transition Dirt Sand
+		Palette: openkrush
+		Tiles:
+			2: Dirt
+			3: Dirt
+			5: Dirt
+			6: Dirt
+			8: Sand
+			9: Dirt
+
+	Template@315:
+		Id: 315
+		Images: tilesets/desert/tiles/TransitionDirtSand_NE.png
+		Size: 4,3
+		Categories: Transition Dirt Sand
+		Palette: openkrush
+		Tiles:
+			2: Sand
+			3: Sand
+			5: Dirt
+			6: Dirt
+			8: Dirt
+			9: Dirt
+
+	Template@316:
+		Id: 316
+		Images: tilesets/desert/tiles/TransitionDirtSand_NW.png
+		Size: 4,3
+		Categories: Transition Dirt Sand
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			5: Dirt
+			6: Dirt
+			10: Dirt
+			11: Dirt
+
+	Template@317:
+		Id: 317
+		Images: tilesets/desert/tiles/TransitionDirtSand_NW2N.png
+		Size: 4,4
+		Categories: Transition Dirt Sand
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			4: Sand
+			5: Sand
+			8: Dirt
+			9: Dirt
+			10: Dirt
+			12: Dirt
+			13: Dirt
+			14: Dirt
+			15: Dirt
+
+	Template@318:
+		Id: 318
+		Images: tilesets/desert/tiles/TransitionDirtSand_NE2N.png
+		Size: 4,4
+		Categories: Transition Dirt Sand
+		Palette: openkrush
+		Tiles:
+			3: Sand
+			6: Sand
+			7: Sand
+			9: Dirt
+			10: Dirt
+			11: Dirt
+			12: Dirt
+			13: Dirt
+			14: Dirt
+			15: Dirt
+
+	Template@319:
+		Id: 319
+		Images: tilesets/desert/tiles/TransitionDirtSand_NE2E.png
+		Size: 4,4
+		Categories: Transition Dirt Sand
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Sand
+			3: Sand
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			8: Dirt
+			9: Dirt
+			12: Dirt
+
+	Template@320:
+		Id: 320
+		Images: tilesets/desert/tiles/TransitionDirtSand_NW2W.png
+		Size: 4,4
+		Categories: Transition Dirt Sand
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Dirt
+			3: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			10: Dirt
+			11: Dirt
+			15: Dirt
+
+	Template@321:
+		Id: 321
+		Images: tilesets/desert/tiles/TransitionDirtSand_SE2E.png
+		Size: 4,4
+		Categories: Transition Dirt Sand
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			4: Dirt
+			5: Dirt
+			8: Dirt
+			9: Dirt
+			10: Dirt
+			12: Dirt
+			13: Dirt
+			14: Sand
+			15: Sand
+
+	Template@322:
+		Id: 322
+		Images: tilesets/desert/tiles/TransitionDirtSand_SW2W.png
+		Size: 4,4
+		Categories: Transition Dirt Sand
+		Palette: openkrush
+		Tiles:
+			3: Dirt
+			6: Dirt
+			7: Dirt
+			9: Dirt
+			10: Dirt
+			11: Dirt
+			12: Sand
+			13: Sand
+			14: Dirt
+			15: Dirt
+
+	Template@323:
+		Id: 323
+		Images: tilesets/desert/tiles/TransitionDirtSand_SE2S.png
+		Size: 4,4
+		Categories: Transition Dirt Sand
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			10: Sand
+			11: Sand
+			15: Sand
+
+	Template@324:
+		Id: 324
+		Images: tilesets/desert/tiles/TransitionDirtSand_SW2S.png
+		Size: 4,4
+		Categories: Transition Dirt Sand
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			8: Sand
+			9: Sand
+			12: Sand
+
+	Template@325:
+		Id: 325
+		Images: tilesets/desert/tiles/TransitionDirtSand_W2S.png
+		Size: 3,3
+		Categories: Transition Dirt Sand
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Sand
+			4: Dirt
+			5: Dirt
+			6: Sand
+			7: Sand
+			8: Dirt
+
+	Template@326:
+		Id: 326
+		Images: tilesets/desert/tiles/TransitionDirtSand_E2S.png
+		Size: 3,3
+		Categories: Transition Dirt Sand
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Sand
+			6: Dirt
+			7: Sand
+			8: Sand
+
+	Template@327:
+		Id: 327
+		Images: tilesets/desert/tiles/TransitionDirtSand_E2N.png
+		Size: 3,3
+		Categories: Transition Dirt Sand
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Sand
+			2: Sand
+			3: Dirt
+			4: Dirt
+			5: Sand
+			6: Dirt
+			7: Dirt
+			8: Dirt
+
+	Template@328:
+		Id: 328
+		Images: tilesets/desert/tiles/TransitionDirtSand_W2N.png
+		Size: 3,3
+		Categories: Transition Dirt Sand
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Dirt
+			3: Sand
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Dirt
+
+	Template@329:
+		Id: 329
+		Images: tilesets/desert/tiles/TransitionDirtSand_W.png
+		Size: 4,2
+		Categories: Transition Dirt Sand
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Dirt
+			3: Dirt
+			4: Sand
+			5: Sand
+			6: Dirt
+			7: Dirt
+
+	Template@330:
+		Id: 330
+		Images: tilesets/desert/tiles/TransitionDirtSand_N.png
+		Size: 2,4
+		Categories: Transition Dirt Sand
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+
+	Template@331:
+		Id: 331
+		Images: tilesets/desert/tiles/TransitionDirtSand_E.png
+		Size: 4,2
+		Categories: Transition Dirt Sand
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Sand
+			3: Sand
+			4: Dirt
+			5: Dirt
+			6: Sand
+			7: Sand
+
+	Template@332:
+		Id: 332
+		Images: tilesets/desert/tiles/TransitionDirtSand_S.png
+		Size: 2,4
+		Categories: Transition Dirt Sand
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Sand
+			5: Sand
+			6: Sand
+			7: Sand
+
+	Template@333:
+		Id: 333
+		Images: tilesets/desert/tiles/TransitionDirtSand_N2E.png
+		Size: 4,4
+		Categories: Transition Dirt Sand
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			4: Sand
+			5: Sand
+			6: Sand
+			7: Sand
+			8: Dirt
+			9: Dirt
+			10: Sand
+			11: Sand
+			12: Dirt
+			13: Dirt
+			14: Sand
+			15: Sand
+
+	Template@334:
+		Id: 334
+		Images: tilesets/desert/tiles/TransitionDirtSand_S2E.png
+		Size: 4,4
+		Categories: Transition Dirt Sand
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Sand
+			3: Sand
+			4: Dirt
+			5: Dirt
+			6: Sand
+			7: Sand
+			8: Sand
+			9: Sand
+			10: Sand
+			11: Sand
+			12: Sand
+			13: Sand
+			14: Sand
+
+	Template@335:
+		Id: 335
+		Images: tilesets/desert/tiles/TransitionDirtSand_S2W.png
+		Size: 4,4
+		Categories: Transition Dirt Sand
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Dirt
+			3: Dirt
+			4: Sand
+			5: Sand
+			6: Dirt
+			7: Dirt
+			8: Sand
+			9: Sand
+			10: Sand
+			11: Sand
+			13: Sand
+			14: Sand
+			15: Sand
+
+	Template@336:
+		Id: 336
+		Images: tilesets/desert/tiles/TransitionDirtSand_N2W.png
+		Size: 4,4
+		Categories: Transition Dirt Sand
+		Palette: openkrush
+		Tiles:
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			5: Sand
+			6: Sand
+			7: Sand
+			8: Sand
+			9: Sand
+			10: Dirt
+			11: Dirt
+			12: Sand
+			13: Sand
+			14: Dirt
+			15: Dirt
+
+	Template@337:
+		Id: 337
+		Images: tilesets/desert/tiles/TransitionDirtSand_N2NE.png
+		Size: 4,4
+		Categories: Transition Dirt Sand
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			5: Sand
+			6: Sand
+			8: Dirt
+			9: Dirt
+			12: Dirt
+
+	Template@338:
+		Id: 338
+		Images: tilesets/desert/tiles/TransitionDirtSand_E2NE.png
+		Size: 4,4
+		Categories: Transition Dirt Sand
+		Palette: openkrush
+		Tiles:
+			3: Sand
+			6: Sand
+			7: Sand
+			9: Dirt
+			10: Sand
+			11: Sand
+			12: Dirt
+			13: Dirt
+			14: Sand
+			15: Sand
+
+	Template@339:
+		Id: 339
+		Images: tilesets/desert/tiles/TransitionDirtSand_E2SE.png
+		Size: 4,4
+		Categories: Transition Dirt Sand
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Sand
+			3: Sand
+			5: Dirt
+			6: Sand
+			7: Sand
+			10: Sand
+			11: Sand
+			15: Sand
+
+	Template@340:
+		Id: 340
+		Images: tilesets/desert/tiles/TransitionDirtSand_S2SE.png
+		Size: 4,4
+		Categories: Transition Dirt Sand
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			4: Dirt
+			5: Dirt
+			8: Sand
+			9: Sand
+			10: Sand
+			12: Sand
+			13: Sand
+			14: Sand
+			15: Sand
+
+	Template@341:
+		Id: 341
+		Images: tilesets/desert/tiles/TransitionDirtSand_S2SW.png
+		Size: 4,4
+		Categories: Transition Dirt Sand
+		Palette: openkrush
+		Tiles:
+			3: Dirt
+			6: Dirt
+			7: Dirt
+			9: Sand
+			10: Sand
+			11: Sand
+			12: Sand
+			13: Sand
+			14: Sand
+			15: Sand
+
+	Template@342:
+		Id: 342
+		Images: tilesets/desert/tiles/TransitionDirtSand_W2SW.png
+		Size: 4,4
+		Categories: Transition Dirt Sand
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Dirt
+			3: Dirt
+			4: Sand
+			5: Sand
+			6: Dirt
+			8: Sand
+			9: Sand
+			12: Sand
+
+	Template@343:
+		Id: 343
+		Images: tilesets/desert/tiles/TransitionDirtSand_W2NW.png
+		Size: 4,4
+		Categories: Transition Dirt Sand
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			4: Sand
+			5: Sand
+			8: Sand
+			9: Sand
+			10: Dirt
+			12: Sand
+			13: Sand
+			14: Dirt
+			15: Dirt
+
+	Template@344:
+		Id: 344
+		Images: tilesets/desert/tiles/TransitionDirtSand_N2NW.png
+		Size: 4,4
+		Categories: Transition Dirt Sand
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
+			5: Sand
+			6: Sand
+			7: Sand
+			10: Dirt
+			11: Dirt
+			15: Dirt
+
+	Template@1191:
+		Id: 1191
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_1.png
+		Size: 6,3
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Sand
+			7: Sand
+			8: Sand
+			9: Sand
+			10: Sand
+			11: Sand
+			12: Sand
+			13: Sand
+			14: Sand
+			15: Sand
+			16: Sand
+			17: Sand
+
+	Template@1192:
+		Id: 1192
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_2.png
+		Size: 6,3
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Dirt
+			6: Sand
+			7: Sand
+			8: Sand
+			9: Sand
+			10: Sand
+			11: Sand
+			12: Sand
+			13: Sand
+			14: Sand
+			15: Sand
+			16: Sand
+			17: Sand
+
+	Template@1193:
+		Id: 1193
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_3.png
+		Size: 3,2
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Dirt
+			3: Sand
+			4: Sand
+			5: Sand
+
+	Template@1194:
+		Id: 1194
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_4.png
+		Size: 4,4
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Dirt
+			5: Sand
+			6: Sand
+			7: Sand
+			10: Sand
+			11: Sand
+			15: Sand
+
+	Template@1195:
+		Id: 1195
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_5.png
+		Size: 3,3
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Dirt
+			3: Sand
+			4: Sand
+			5: Dirt
+			7: Sand
+			8: Sand
+
+	Template@1197:
+		Id: 1197
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_6.png
+		Size: 3,3
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Dirt
+			3: Sand
+			4: Sand
+			6: Sand
+			7: Sand
+			8: Dirt
+
+	Template@1199:
+		Id: 1199
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_7.png
+		Size: 3,4
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Dirt
+			3: Sand
+			4: Sand
+			5: Dirt
+			6: Sand
+			7: Sand
+			8: Dirt
+			9: Sand
+			10: Sand
+			11: Dirt
+
+	Template@1200:
+		Id: 1200
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_8.png
+		Size: 3,3
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Dirt
+			3: Sand
+			4: Sand
+			6: Sand
+			7: Dirt
+
+	Template@1201:
+		Id: 1201
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_9.png
+		Size: 3,3
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			5: Dirt
+			6: Sand
+			7: Dirt
+
+	Template@1203:
+		Id: 1203
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_10.png
+		Size: 4,4
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			3: Sand
+			6: Sand
+			7: Sand
+			9: Sand
+			10: Sand
+			11: Sand
+			12: Sand
+			13: Sand
+			14: Sand
+			15: Dirt
+
+	Template@1204:
+		Id: 1204
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_11.png
+		Size: 3,3
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			5: Dirt
+			6: Dirt
+			7: Dirt
+
+	Template@1205:
+		Id: 1205
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_12.png
+		Size: 6,3
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			5: Sand
+			6: Sand
+			7: Sand
+			8: Sand
+			9: Sand
+			10: Sand
+			11: Sand
+			12: Dirt
+			13: Dirt
+			14: Dirt
+			15: Dirt
+			16: Dirt
+			17: Dirt
+
+	Template@1206:
+		Id: 1206
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_13.png
+		Size: 6,3
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			5: Sand
+			6: Sand
+			7: Sand
+			8: Sand
+			9: Sand
+			10: Sand
+			11: Sand
+			12: Dirt
+			13: Dirt
+			14: Dirt
+			15: Dirt
+			16: Dirt
+			17: Dirt
+
+	Template@1207:
+		Id: 1207
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_14.png
+		Size: 3,3
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Dirt
+			4: Sand
+			5: Sand
+			7: Dirt
+			8: Dirt
+
+	Template@1208:
+		Id: 1208
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_15.png
+		Size: 4,4
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			4: Sand
+			5: Sand
+			8: Sand
+			9: Sand
+			10: Sand
+			12: Dirt
+			13: Sand
+			14: Sand
+			15: Sand
+
+	Template@1210:
+		Id: 1210
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_16.png
+		Size: 3,3
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			3: Dirt
+			4: Sand
+			5: Sand
+			7: Dirt
+			8: Sand
+
+	Template@1211:
+		Id: 1211
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_17.png
+		Size: 3,3
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Sand
+			2: Sand
+			4: Sand
+			5: Sand
+			7: Dirt
+			8: Sand
+
+	Template@1212:
+		Id: 1212
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_18.png
+		Size: 3,4
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Sand
+			2: Sand
+			3: Dirt
+			4: Sand
+			5: Sand
+			6: Dirt
+			7: Sand
+			8: Sand
+			9: Dirt
+			10: Sand
+			11: Sand
+
+	Template@1213:
+		Id: 1213
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_19.png
+		Size: 3,3
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			1: Dirt
+			2: Sand
+			4: Sand
+			5: Sand
+			6: Dirt
+			7: Sand
+			8: Sand
+
+	Template@1215:
+		Id: 1215
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_20.png
+		Size: 3,3
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			1: Dirt
+			2: Sand
+			3: Dirt
+			4: Sand
+			5: Sand
+			6: Sand
+			7: Sand
+
+	Template@1216:
+		Id: 1216
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_21.png
+		Size: 4,4
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			5: Sand
+			6: Sand
+			8: Sand
+			9: Sand
+			12: Sand
+
+	Template@1217:
+		Id: 1217
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_22.png
+		Size: 3,2
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			5: Sand
+
+	Template@1218:
+		Id: 1218
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_23.png
+		Size: 4,4
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Dirt
+			4: Sand
+			5: Sand
+			6: Dirt
+			7: Dirt
+			8: Sand
+			9: Sand
+			10: Sand
+			11: Sand
+			12: Sand
+			13: Sand
+			14: Sand
+			15: Sand
+
+	Template@1219:
+		Id: 1219
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_24.png
+		Size: 4,4
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			5: Sand
+			6: Sand
+			7: Sand
+			8: Sand
+			9: Sand
+			10: Dirt
+			11: Dirt
+			12: Sand
+			13: Sand
+			14: Dirt
+
+	Template@1221:
+		Id: 1221
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_25.png
+		Size: 4,4
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			5: Sand
+			6: Sand
+			7: Sand
+			8: Dirt
+			9: Dirt
+			10: Sand
+			11: Sand
+			13: Dirt
+			14: Sand
+			15: Sand
+
+	Template@1222:
+		Id: 1222
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_26.png
+		Size: 4,4
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			1: Dirt
+			2: Sand
+			3: Sand
+			4: Dirt
+			5: Dirt
+			6: Sand
+			7: Sand
+			8: Sand
+			9: Sand
+			10: Sand
+			11: Sand
+			12: Sand
+			13: Sand
+			14: Sand
+			15: Sand
+
+	Template@1224:
+		Id: 1224
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_27.png
+		Size: 3,3
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Sand
+			3: Dirt
+			4: Sand
+			5: Sand
+			6: Sand
+			7: Sand
+			8: Sand
+
+	Template@1225:
+		Id: 1225
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_28.png
+		Size: 3,3
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Dirt
+			2: Dirt
+			3: Sand
+			4: Sand
+			5: Dirt
+			6: Sand
+			7: Sand
+			8: Sand
+
+	Template@1226:
+		Id: 1226
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_29.png
+		Size: 3,3
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			5: Dirt
+			6: Sand
+			7: Dirt
+			8: Dirt
+
+	Template@1227:
+		Id: 1227
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_30.png
+		Size: 3,3
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Dirt
+			4: Sand
+			5: Sand
+			6: Dirt
+			7: Dirt
+			8: Sand
+
+	Template@1228:
+		Id: 1228
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_31.png
+		Size: 3,3
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			5: Sand
+			6: Sand
+			7: Sand
+			8: Sand
+
+	Template@1229:
+		Id: 1229
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_32.png
+		Size: 3,3
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Dirt
+			3: Sand
+			4: Sand
+			5: Sand
+			6: Sand
+			7: Sand
+			8: Sand
+
+	Template@1234:
+		Id: 1234
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_33.png
+		Size: 3,3
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			5: Sand
+			6: Sand
+			7: Sand
+			8: Dirt
+
+	Template@1235:
+		Id: 1235
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_34.png
+		Size: 3,3
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			5: Sand
+			6: Dirt
+			7: Sand
+			8: Sand
+
+	Template@1236:
+		Id: 1236
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_35.png
+		Size: 3,3
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			5: Sand
+			6: Sand
+			7: Sand
+			8: Sand
+
+	Template@1237:
+		Id: 1237
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_36.png
+		Size: 3,3
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Dirt
+			3: Sand
+			4: Sand
+			5: Sand
+			6: Sand
+			7: Sand
+			8: Sand
+
+	Template@1238:
+		Id: 1238
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_37.png
+		Size: 3,3
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			5: Sand
+			6: Sand
+			7: Sand
+			8: Dirt
+
+	Template@1239:
+		Id: 1239
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_38.png
+		Size: 3,3
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			5: Sand
+			6: Dirt
+			7: Sand
+			8: Sand
+
+	Template@1240:
+		Id: 1240
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_39.png
+		Size: 3,3
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			5: Sand
+			6: Sand
+			7: Sand
+			8: Sand
+
+	Template@1241:
+		Id: 1241
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_40.png
+		Size: 3,3
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Dirt
+			3: Sand
+			4: Sand
+			5: Sand
+			6: Sand
+			7: Sand
+			8: Sand
+
+	Template@1242:
+		Id: 1242
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_41.png
+		Size: 3,3
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			5: Sand
+			6: Sand
+			7: Sand
+			8: Dirt
+
+	Template@1243:
+		Id: 1243
+		Images: tilesets/desert/tiles/TransitionDirtSandExtra_42.png
+		Size: 3,3
+		Categories: Transition Dirt Sand Extra
+		Palette: openkrush
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			5: Sand
+			6: Dirt
+			7: Sand
+			8: Sand
+
+	Template@1288:
+		Id: 1288
+		Images: tilesets/desert/tiles/TransitionGrassDirt_1.png
+		Size: 4,2
+		Categories: Transition Grass Dirt
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Grass
+			5: Grass
+			6: Grass
+			7: Grass
+
+	Template@1289:
+		Id: 1289
+		Images: tilesets/desert/tiles/TransitionGrassDirt_2.png
+		Size: 4,2
+		Categories: Transition Grass Dirt
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Grass
+			5: Grass
+			6: Grass
+			7: Grass
+
+	Template@1291:
+		Id: 1291
+		Images: tilesets/desert/tiles/TransitionGrassDirt_3.png
+		Size: 2,2
+		Categories: Transition Grass Dirt
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Dirt
+			2: Grass
+			3: Grass
+
+	Template@1292:
+		Id: 1292
+		Images: tilesets/desert/tiles/TransitionGrassDirt_4.png
+		Size: 3,2
+		Categories: Transition Grass Dirt
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Dirt
+			4: Grass
+			5: Dirt
+
+	Template@1293:
+		Id: 1293
+		Images: tilesets/desert/tiles/TransitionGrassDirt_5.png
+		Size: 2,4
+		Categories: Transition Grass Dirt
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Dirt
+			2: Grass
+			3: Dirt
+			4: Grass
+			5: Dirt
+			6: Grass
+			7: Dirt
+
+	Template@1294:
+		Id: 1294
+		Images: tilesets/desert/tiles/TransitionGrassDirt_6.png
+		Size: 2,4
+		Categories: Transition Grass Dirt
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Dirt
+			2: Grass
+			3: Dirt
+			4: Grass
+			5: Dirt
+			6: Grass
+			7: Dirt
+
+	Template@1295:
+		Id: 1295
+		Images: tilesets/desert/tiles/TransitionGrassDirt_7.png
+		Size: 3,2
+		Categories: Transition Grass Dirt
+		Palette: openkrush
+		Tiles:
+			1: Grass
+			2: Dirt
+			3: Grass
+			4: Dirt
+
+	Template@1296:
+		Id: 1296
+		Images: tilesets/desert/tiles/TransitionGrassDirt_8.png
+		Size: 2,2
+		Categories: Transition Grass Dirt
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Dirt
+
+	Template@1297:
+		Id: 1297
+		Images: tilesets/desert/tiles/TransitionGrassDirt_9.png
+		Size: 4,2
+		Categories: Transition Grass Dirt
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+
+	Template@1301:
+		Id: 1301
+		Images: tilesets/desert/tiles/TransitionGrassDirt_10.png
+		Size: 4,2
+		Categories: Transition Grass Dirt
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Grass
+			5: Grass
+			6: Grass
+			7: Grass
+
+	Template@1302:
+		Id: 1302
+		Images: tilesets/desert/tiles/TransitionGrassDirt_11.png
+		Size: 2,2
+		Categories: Transition Grass Dirt
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Dirt
+			3: Grass
+
+	Template@1303:
+		Id: 1303
+		Images: tilesets/desert/tiles/TransitionGrassDirt_12.png
+		Size: 3,2
+		Categories: Transition Grass Dirt
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Grass
+			4: Dirt
+			5: Grass
+
+	Template@1304:
+		Id: 1304
+		Images: tilesets/desert/tiles/TransitionGrassDirt_13.png
+		Size: 2,4
+		Categories: Transition Grass Dirt
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Grass
+			2: Dirt
+			3: Grass
+			4: Dirt
+			5: Grass
+			6: Dirt
+			7: Grass
+
+	Template@1305:
+		Id: 1305
+		Images: tilesets/desert/tiles/TransitionGrassDirt_14.png
+		Size: 2,4
+		Categories: Transition Grass Dirt
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Grass
+			2: Dirt
+			3: Grass
+			4: Dirt
+			5: Grass
+			6: Dirt
+			7: Grass
+
+	Template@1307:
+		Id: 1307
+		Images: tilesets/desert/tiles/TransitionGrassDirt_15.png
+		Size: 3,2
+		Categories: Transition Grass Dirt
+		Palette: openkrush
+		Tiles:
+			1: Dirt
+			2: Grass
+			3: Dirt
+			4: Grass
+
+	Template@1308:
+		Id: 1308
+		Images: tilesets/desert/tiles/TransitionGrassDirt_16.png
+		Size: 2,2
+		Categories: Transition Grass Dirt
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Grass
+			2: Grass
+			3: Grass
+
+	Template@1311:
+		Id: 1311
+		Images: tilesets/desert/tiles/TransitionGrassDirt_17.png
+		Size: 3,3
+		Categories: Transition Grass Dirt
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Grass
+			4: Dirt
+			5: Dirt
+			6: Grass
+			7: Grass
+			8: Grass
+
+	Template@1312:
+		Id: 1312
+		Images: tilesets/desert/tiles/TransitionGrassDirt_18.png
+		Size: 3,3
+		Categories: Transition Grass Dirt
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Dirt
+			5: Dirt
+			6: Dirt
+			7: Dirt
+			8: Dirt
+
+	Template@1313:
+		Id: 1313
+		Images: tilesets/desert/tiles/TransitionGrassDirt_19.png
+		Size: 3,3
+		Categories: Transition Grass Dirt
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Dirt
+			4: Dirt
+			5: Grass
+			6: Dirt
+			7: Dirt
+			8: Dirt
+
+	Template@1314:
+		Id: 1314
+		Images: tilesets/desert/tiles/TransitionGrassDirt_20.png
+		Size: 3,3
+		Categories: Transition Grass Dirt
+		Palette: openkrush
+		Tiles:
+			0: Dirt
+			1: Dirt
+			2: Dirt
+			3: Dirt
+			4: Dirt
+			5: Grass
+			6: Grass
+			7: Grass
+			8: Grass
+
+	Template@1337:
+		Id: 1337
+		Images: tilesets/desert/tiles/TransitionGrassDirt_21.png
+		Size: 2,2
+		Categories: Transition Grass Dirt
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+
+	Template@1339:
+		Id: 1339
+		Images: tilesets/desert/tiles/TransitionGrassDirt_22.png
+		Size: 2,2
+		Categories: Transition Grass Dirt
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+
+	Template@1341:
+		Id: 1341
+		Images: tilesets/desert/tiles/TransitionGrassDirt_23.png
+		Size: 2,2
+		Categories: Transition Grass Dirt
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+
+	Template@1343:
+		Id: 1343
+		Images: tilesets/desert/tiles/TransitionGrassDirt_24.png
+		Size: 2,2
+		Categories: Transition Grass Dirt
+		Palette: openkrush
+		Tiles:
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+

@@ -1,0 +1,8 @@
+Rules:
+	openkrush_gen1|tilesets/desert/mapobjects/objects/rules.yaml
+
+Sequences:
+	openkrush_gen1|tilesets/desert/mapobjects/objects/sequences.yaml
+
+TileSets:
+	openkrush_gen1|tilesets/desert/tileset.yaml

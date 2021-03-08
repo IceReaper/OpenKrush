@@ -1,0 +1,7 @@
+BunkerVoice:
+	DefaultVariant: # TODO remove .aud as default from engine!
+	Voices:
+		Create: openkrush_gen1|actors/bunker/vehicles/SystemsActivated.wav, openkrush_gen1|actors/bunker/vehicles/UnitReady.wav
+		Select: openkrush_gen1|actors/bunker/vehicles/SystemsReady.wav, openkrush_gen1|actors/bunker/vehicles/Verified.wav, openkrush_gen1|actors/bunker/vehicles/Receiving.wav, openkrush_gen1|actors/bunker/vehicles/Online.wav
+		Action: openkrush_gen1|actors/bunker/vehicles/OnYourCommand.wav, openkrush_gen1|actors/bunker/vehicles/Affirmative.wav, openkrush_gen1|actors/bunker/vehicles/Confirmed.wav, openkrush_gen1|actors/bunker/vehicles/Acknowledged.wav, openkrush_gen1|actors/bunker/vehicles/AsYouWish.wav, openkrush_gen1|actors/bunker/vehicles/Locked.wav
+		Attack: openkrush_gen1|actors/bunker/vehicles/Target.wav, openkrush_gen1|actors/bunker/vehicles/TargetLocked.wav, openkrush_gen1|actors/bunker/vehicles/KrushKillAndDestroy.wav, openkrush_gen1|actors/bunker/vehicles/WithPleasure.wav, openkrush_gen1|actors/bunker/vehicles/Annihilate.wav, openkrush_gen1|actors/bunker/vehicles/PowerUp.wav

@@ -1,0 +1,30 @@
+bunker_vehicles_plasmatank:
+	Range: 7c0
+	Burst: 3
+	BurstDelays: 4
+	ReloadDelay: 25
+	Report: SURV.SLV|87.wav
+	Projectile: Bullet
+		Image: bunker_vehicles_plasmatank
+		Palette: openkrush
+		TrailPalette: openkrush
+		Sequences: projectile
+		Speed: 600
+	Warhead@Damage: SpreadDamage
+		Damage: 100
+		DamageTypes: Laser
+		Spread: 512
+		Falloff: 100, 100
+		AffectsParent: true
+		Versus:
+			infantry: 75
+			vehicle: 150
+			building: 90
+	Warhead@Effect: ShrapnelCreateEffect
+		Image: projectiles
+		ExplosionPalette: openkrush
+		Explosions: laser
+		ImpactSounds: MUTE.SLV|10.wav
+	Warhead@Smudge: LeaveSmudge
+		Chance: 35
+		SmudgeType: Crater

@@ -1,8 +1,0 @@
-Rules:
-	kknd1|tilesets/desert/mapobjects/objects/rules.yaml
-
-Sequences:
-	kknd1|tilesets/desert/mapobjects/objects/sequences.yaml
-
-TileSets:
-	kknd1|tilesets/desert/tileset.yaml

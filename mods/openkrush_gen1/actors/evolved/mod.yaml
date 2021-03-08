@@ -1,0 +1,117 @@
+Rules:
+	openkrush_gen1|actors/evolved/rules.yaml
+	openkrush_gen1|actors/evolved/infantry/berserker/rules.yaml
+	openkrush_gen1|actors/evolved/infantry/shotgunner/rules.yaml
+	openkrush_gen1|actors/evolved/infantry/pyromaniac/rules.yaml
+	openkrush_gen1|actors/evolved/infantry/rioter/rules.yaml
+	openkrush_gen1|actors/evolved/infantry/bazooka/rules.yaml
+	openkrush_gen1|actors/evolved/infantry/crazyharry/rules.yaml
+	openkrush_gen1|actors/evolved/infantry/kingzog/rules.yaml
+	openkrush_gen1|actors/evolved/infantry/mekanik/rules.yaml
+	openkrush_gen1|actors/evolved/infantry/vandal/rules.yaml
+	openkrush_gen1|actors/evolved/vehicles/direwolf/rules.yaml
+	openkrush_gen1|actors/evolved/vehicles/chopper/rules.yaml
+	openkrush_gen1|actors/evolved/vehicles/bikeandsidecar/rules.yaml
+	openkrush_gen1|actors/evolved/vehicles/monstertruck/rules.yaml
+	openkrush_gen1|actors/evolved/vehicles/giantscorpion/rules.yaml
+	openkrush_gen1|actors/evolved/vehicles/warmastodon/rules.yaml
+	openkrush_gen1|actors/evolved/vehicles/giantbeetle/rules.yaml
+	openkrush_gen1|actors/evolved/vehicles/missilecrab/rules.yaml
+	openkrush_gen1|actors/evolved/vehicles/oiltanker/rules.yaml
+	openkrush_gen1|actors/evolved/vehicles/derrick/rules.yaml
+	openkrush_gen1|actors/evolved/vehicles/clanhallwagon/rules.yaml
+	openkrush_gen1|actors/evolved/aircrafts/wasp/rules.yaml
+	openkrush_gen1|actors/evolved/buildings/clanhall/rules.yaml
+	openkrush_gen1|actors/evolved/buildings/warriorhall/rules.yaml
+	openkrush_gen1|actors/evolved/buildings/beastenclosure/rules.yaml
+	openkrush_gen1|actors/evolved/buildings/blacksmith/rules.yaml
+	openkrush_gen1|actors/evolved/buildings/beastforge/rules.yaml
+	openkrush_gen1|actors/evolved/buildings/menagerie/rules.yaml
+	openkrush_gen1|actors/evolved/buildings/alchemyhall/rules.yaml
+	openkrush_gen1|actors/evolved/buildings/powerstation/rules.yaml
+	openkrush_gen1|actors/evolved/buildings/drillrig/rules.yaml
+	openkrush_gen1|actors/evolved/buildings/windmill/rules.yaml
+	openkrush_gen1|actors/evolved/buildings/vespiary/rules.yaml
+	openkrush_gen1|actors/evolved/buildings/holding_pen/rules.yaml
+	openkrush_gen1|actors/evolved/towers/machinegunnest/rules.yaml
+	openkrush_gen1|actors/evolved/towers/grapeshotcannon/rules.yaml
+	openkrush_gen1|actors/evolved/towers/rotarycannon/rules.yaml
+	openkrush_gen1|actors/evolved/walls/skeletalwall/rules.yaml
+
+Sequences:
+	openkrush_gen1|actors/evolved/sidebar.yaml
+	openkrush_gen1|actors/evolved/infantry/sequences.yaml
+	openkrush_gen1|actors/evolved/infantry/berserker/sequences.yaml
+	openkrush_gen1|actors/evolved/infantry/shotgunner/sequences.yaml
+	openkrush_gen1|actors/evolved/infantry/pyromaniac/sequences.yaml
+	openkrush_gen1|actors/evolved/infantry/rioter/sequences.yaml
+	openkrush_gen1|actors/evolved/infantry/bazooka/sequences.yaml
+	openkrush_gen1|actors/evolved/infantry/crazyharry/sequences.yaml
+	openkrush_gen1|actors/evolved/infantry/kingzog/sequences.yaml
+	openkrush_gen1|actors/evolved/infantry/mekanik/sequences.yaml
+	openkrush_gen1|actors/evolved/infantry/vandal/sequences.yaml
+	openkrush_gen1|actors/evolved/vehicles/direwolf/sequences.yaml
+	openkrush_gen1|actors/evolved/vehicles/chopper/sequences.yaml
+	openkrush_gen1|actors/evolved/vehicles/bikeandsidecar/sequences.yaml
+	openkrush_gen1|actors/evolved/vehicles/monstertruck/sequences.yaml
+	openkrush_gen1|actors/evolved/vehicles/giantscorpion/sequences.yaml
+	openkrush_gen1|actors/evolved/vehicles/warmastodon/sequences.yaml
+	openkrush_gen1|actors/evolved/vehicles/giantbeetle/sequences.yaml
+	openkrush_gen1|actors/evolved/vehicles/missilecrab/sequences.yaml
+	openkrush_gen1|actors/evolved/vehicles/oiltanker/sequences.yaml
+	openkrush_gen1|actors/evolved/vehicles/derrick/sequences.yaml
+	openkrush_gen1|actors/evolved/vehicles/clanhallwagon/sequences.yaml
+	openkrush_gen1|actors/evolved/aircrafts/wasp/sequences.yaml
+	openkrush_gen1|actors/evolved/buildings/clanhall/sequences.yaml
+	openkrush_gen1|actors/evolved/buildings/warriorhall/sequences.yaml
+	openkrush_gen1|actors/evolved/buildings/beastenclosure/sequences.yaml
+	openkrush_gen1|actors/evolved/buildings/blacksmith/sequences.yaml
+	openkrush_gen1|actors/evolved/buildings/beastforge/sequences.yaml
+	openkrush_gen1|actors/evolved/buildings/menagerie/sequences.yaml
+	openkrush_gen1|actors/evolved/buildings/alchemyhall/sequences.yaml
+	openkrush_gen1|actors/evolved/buildings/powerstation/sequences.yaml
+	openkrush_gen1|actors/evolved/buildings/drillrig/sequences.yaml
+	openkrush_gen1|actors/evolved/buildings/windmill/sequences.yaml
+	openkrush_gen1|actors/evolved/buildings/vespiary/sequences.yaml
+	openkrush_gen1|actors/evolved/buildings/holding_pen/sequences.yaml
+	openkrush_gen1|actors/evolved/towers/machinegunnest/sequences.yaml
+	openkrush_gen1|actors/evolved/towers/grapeshotcannon/sequences.yaml
+	openkrush_gen1|actors/evolved/towers/rotarycannon/sequences.yaml
+	openkrush_gen1|actors/evolved/walls/skeletalwall/sequences.yaml
+
+Weapons:
+	openkrush_gen1|actors/evolved/infantry/berserker/weapons.yaml
+	openkrush_gen1|actors/evolved/infantry/shotgunner/weapons.yaml
+	openkrush_gen1|actors/evolved/infantry/pyromaniac/weapons.yaml
+	openkrush_gen1|actors/evolved/infantry/rioter/weapons.yaml
+	openkrush_gen1|actors/evolved/infantry/bazooka/weapons.yaml
+	openkrush_gen1|actors/evolved/infantry/crazyharry/weapons.yaml
+	openkrush_gen1|actors/evolved/infantry/kingzog/weapons.yaml
+	openkrush_gen1|actors/evolved/infantry/vandal/weapons.yaml
+	openkrush_gen1|actors/evolved/vehicles/direwolf/weapons.yaml
+	openkrush_gen1|actors/evolved/vehicles/chopper/weapons.yaml
+	openkrush_gen1|actors/evolved/vehicles/bikeandsidecar/weapons.yaml
+	openkrush_gen1|actors/evolved/vehicles/monstertruck/weapons.yaml
+	openkrush_gen1|actors/evolved/vehicles/giantscorpion/weapons.yaml
+	openkrush_gen1|actors/evolved/vehicles/warmastodon/weapons.yaml
+	openkrush_gen1|actors/evolved/vehicles/giantbeetle/weapons.yaml
+	openkrush_gen1|actors/evolved/vehicles/missilecrab/weapons.yaml
+	openkrush_gen1|actors/evolved/towers/machinegunnest/weapons.yaml
+	openkrush_gen1|actors/evolved/towers/grapeshotcannon/weapons.yaml
+	openkrush_gen1|actors/evolved/towers/rotarycannon/weapons.yaml
+	openkrush_gen1|actors/evolved/aircrafts/wasp/weapons.yaml
+
+Voices:
+	openkrush_gen1|actors/evolved/voices.yaml
+	openkrush_gen1|actors/evolved/vehicles/direwolf/voices.yaml
+	openkrush_gen1|actors/evolved/vehicles/giantscorpion/voices.yaml
+	openkrush_gen1|actors/evolved/vehicles/warmastodon/voices.yaml
+	openkrush_gen1|actors/evolved/vehicles/giantbeetle/voices.yaml
+	openkrush_gen1|actors/evolved/vehicles/missilecrab/voices.yaml
+	openkrush_gen1|actors/evolved/aircrafts/wasp/voices.yaml
+
+Music:
+	openkrush_gen1|actors/evolved/music.yaml
+
+ChromeMetrics:
+	openkrush_gen1|actors/evolved/metrics.yaml

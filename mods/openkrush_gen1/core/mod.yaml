@@ -1,0 +1,52 @@
+Rules:
+	openkrush_gen1|core/rules/colorpicker.yaml
+	openkrush_gen1|core/rules/core_overrides.yaml
+	openkrush_gen1|core/rules/misc_overrides.yaml
+	openkrush_gen1|core/rules/palettes.yaml
+	openkrush_gen1|core/rules/mechanics/animated_building.yaml
+	openkrush_gen1|core/rules/mechanics/extracts_oil.yaml
+	openkrush_gen1|core/rules/mechanics/grants_superweapon.yaml
+	openkrush_gen1|core/rules/mechanics/has_muzzle.yaml
+	openkrush_gen1|core/rules/mechanics/mobile_base.yaml
+	openkrush_gen1|core/rules/mechanics/oil_derrick.yaml
+	openkrush_gen1|core/rules/mechanics/oil_tanker.yaml
+	openkrush_gen1|core/rules/mechanics/processes_oil.yaml
+	openkrush_gen1|core/rules/mechanics/produces_buildings.yaml
+	openkrush_gen1|core/rules/mechanics/produces_infantry.yaml
+	openkrush_gen1|core/rules/mechanics/produces_resources.yaml
+	openkrush_gen1|core/rules/mechanics/produces_vehicles.yaml
+	openkrush_gen1|core/rules/mechanics/repairs_vehicles.yaml
+	openkrush_gen1|core/rules/mechanics/researchable.yaml
+	openkrush_gen1|core/rules/mechanics/researches_buildings.yaml
+	openkrush_gen1|core/rules/mechanics/saboteur.yaml
+	openkrush_gen1|core/rules/mechanics/sacrifices_infantry.yaml
+	openkrush_gen1|core/rules/mechanics/superweapon_bomber.yaml
+	openkrush_gen1|core/rules/mechanics/technician.yaml
+
+Sequences:
+	openkrush_gen1|core/sequences/craters.yaml
+	openkrush_gen1|core/sequences/misc.yaml
+	openkrush_gen1|core/sequences/muzzle.yaml
+	openkrush_gen1|core/sequences/projectiles.yaml
+	openkrush_gen1|core/sequences/beacon/sequences.yaml
+	openkrush_gen1|core/sequences/font/sequences.yaml
+	openkrush_gen1|core/sequences/shroud/sequences.yaml
+	openkrush_gen1|core/sequences/sidebar/sequences.yaml
+	openkrush_gen1|core/weapons/blood/sequences.yaml
+	openkrush_gen1|core/weapons/bullet/sequences.yaml
+	openkrush_gen1|core/weapons/explosions/sequences.yaml
+	openkrush_gen1|core/weapons/shrapnels/sequences.yaml
+
+Weapons:
+	openkrush_gen1|core/weapons/explosion.yaml
+	openkrush_gen1|core/weapons/nuke.yaml
+	openkrush_gen1|core/weapons/blood/weapons.yaml
+	openkrush_gen1|core/weapons/bullet/weapons.yaml
+	openkrush_gen1|core/weapons/explosions/weapons.yaml
+	openkrush_gen1|core/weapons/shrapnels/weapons.yaml
+
+Notifications:
+	openkrush_gen1|core/notifications.yaml
+
+Cursors:
+	openkrush_gen1|core/cursors.yaml

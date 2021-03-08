@@ -1,0 +1,15 @@
+^weapon_explosion:
+	Warhead@Smudge: LeaveSmudge
+		Chance: 35
+		SmudgeType: Crater
+	Warhead@Damage: SpreadDamage
+		Damage: 100
+		DamageTypes: Explosion
+		Spread: 512
+		Falloff: 100, 100
+		AffectsParent: true
+	Warhead@Effect: ShrapnelCreateEffect
+		Image: weapon_explosions
+		ExplosionPalette: openkrush
+		Explosions: s
+		ImpactSounds: MUTE.SLV|10.wav

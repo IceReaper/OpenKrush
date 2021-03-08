@@ -1,0 +1,7 @@
+evolved_aircraft_wasp:
+	DefaultVariant: # TODO remove .aud as default from engine!
+	Voices:
+		Create: openkrush_gen1|actors/evolved/aircrafts/wasp/sound1.wav, openkrush_gen1|actors/evolved/aircrafts/wasp/sound2.wav, openkrush_gen1|actors/evolved/aircrafts/wasp/sound3.wav
+		Select: openkrush_gen1|actors/evolved/aircrafts/wasp/sound1.wav, openkrush_gen1|actors/evolved/aircrafts/wasp/sound2.wav, openkrush_gen1|actors/evolved/aircrafts/wasp/sound3.wav
+		Action: openkrush_gen1|actors/evolved/aircrafts/wasp/sound1.wav, openkrush_gen1|actors/evolved/aircrafts/wasp/sound2.wav, openkrush_gen1|actors/evolved/aircrafts/wasp/sound3.wav
+		Attack: openkrush_gen1|actors/evolved/aircrafts/wasp/sound1.wav, openkrush_gen1|actors/evolved/aircrafts/wasp/sound2.wav, openkrush_gen1|actors/evolved/aircrafts/wasp/sound3.wav

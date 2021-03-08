@@ -1,0 +1,19 @@
+^Palettes:
+	PaletteFromPng@openkrush:
+		Name: openkrush
+		Filename: core/rules/palette.png
+		CursorPalette: true
+	OverlayPlayerColorPalette@player:
+		BasePalette: openkrush
+		RemapIndex: 8, 9, 10, 11, 12, 13
+	PaletteFromPaletteWithAlpha@fog:
+		Name: fog
+		BasePalette: openkrush
+		Alpha: 0.5
+	PaletteFromPng@colorpicker: # TODO replace this by openkrush
+		Name: colorpicker
+		Filename: core/rules/palette.png
+		AllowModifiers: false
+	PaletteFromPng@moveflash: # TODO replace this by openkrush
+		Name: moveflash
+		Filename: core/rules/palette.png

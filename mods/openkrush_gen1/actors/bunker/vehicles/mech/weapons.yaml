@@ -1,0 +1,52 @@
+bunker_vehicles_mech_primary:
+	Range: 7c0
+	Burst: 2
+	BurstDelays: 8 # 8 + 8 (secondary weapon)
+	ReloadDelay: 58 # 50 + 8 (secondary weapon)
+	Report: SURV.SLV|87.wav
+	Projectile: Bullet
+		Image: bunker_vehicles_mech
+		Palette: openkrush
+		TrailPalette: openkrush
+		Sequences: projectile
+		Speed: 500
+	Warhead@Damage: SpreadDamage
+		Damage: 100
+		DamageTypes: Laser
+		Spread: 512
+		Falloff: 100, 100
+		AffectsParent: true
+		Versus:
+			infantry: 150
+			vehicle: 300
+			building: 180
+	Warhead@Effect: ShrapnelCreateEffect
+		Image: projectiles
+		ExplosionPalette: openkrush
+		Explosions: laser
+		ImpactSounds: MUTE.SLV|10.wav
+	Warhead@Smudge: LeaveSmudge
+		Chance: 35
+		SmudgeType: Crater
+
+bunker_vehicles_mech_secondary:
+	Inherits: ^weapon_explosion
+	Range: 7c0
+	Burst: 1
+	BurstDelays: 0
+	ReloadDelay: 66 # 50 + 2 * 8 (primary weapon)
+	Report: SURV.SLV|14.wav
+	Projectile: Bullet
+		Image: bunker_vehicles_mech
+		Palette: openkrush
+		Sequences: projectile2
+		Speed: 300
+		TrailPalette: openkrush
+		TrailImage: projectiles
+		TrailSequences: smoke
+		Inaccuracy: 300
+	Warhead@Damage: SpreadDamage
+		Versus:
+			infantry: 150
+			vehicle: 300
+			building: 180

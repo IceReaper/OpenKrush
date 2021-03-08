@@ -1,0 +1,11 @@
+^grants_superweapon:
+	AdvancedAirstrikePower:
+		#DisplayBeacon: True # CRASH on clock - fix me!
+		#BeaconPoster: x
+		IconPalette: openkrush
+		BeaconPosterPalette:
+		AllowMultiple: true
+		Cursor: attack
+		RequiresCondition: !selfconstructing && !deconstructing
+	TooltipDescription:
+		Description: Grants superweapon

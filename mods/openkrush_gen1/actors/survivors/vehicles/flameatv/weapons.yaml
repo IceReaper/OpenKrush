@@ -1,0 +1,21 @@
+survivors_vehicle_flameatv:
+	Range: 3c0
+	Burst: 10
+	BurstDelays: 1
+	ReloadDelay: 41
+	Report: SURV.SLV|86.wav
+	Projectile: Bullet
+		Image: projectiles
+		Palette: openkrush
+		TrailPalette: openkrush
+		Sequences: flamethrower
+		Speed: 150
+	Warhead@Damage: SpreadDamage
+		Damage: 100
+		DamageTypes: Fire
+		Spread: 512
+		Falloff: 100, 100
+		Versus:
+			infantry: 17
+			vehicle: 25
+			building: 20

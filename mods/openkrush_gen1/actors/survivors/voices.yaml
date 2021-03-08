@@ -1,0 +1,35 @@
+SurvivorsVoice:
+	DefaultVariant: # TODO remove .aud as default from engine!
+	Voices:
+		Create: SURV.SLV|33.wav
+		Select: SURV.SLV|50.wav, SURV.SLV|51.wav, SURV.SLV|53.wav, SURV.SLV|69.wav, SURV.SLV|70.wav
+		Action: SURV.SLV|43.wav, SURV.SLV|49.wav, SURV.SLV|68.wav
+		Attack: SURV.SLV|48.wav, SURV.SLV|59.wav, SURV.SLV|61.wav
+		Infiltrate: openkrush_gen1|actors/survivors/Infiltrate.wav
+		Reinforce: SURV.SLV|45.wav
+		Infiltrated: SURV.SLV|37.wav, SURV.SLV|40.wav
+		Conquered: SURV.SLV|29.wav
+		Reinforced: # TODO keep it blank or make custom sound
+		Repair: SURV.SLV|45.wav
+		Repairing: SURV.SLV|28.wav
+		Die: SURV.SLV|174.wav, SURV.SLV|175.wav, SURV.SLV|176.wav, SURV.SLV|177.wav, SURV.SLV|178.wav
+		Crush: openkrush_gen1|core/crush1.wav, openkrush_gen1|core/crush2.wav
+		Zapped: openkrush_gen1|core/zapped1.wav, openkrush_gen1|core/zapped2.wav, openkrush_gen1|core/zapped3.wav
+
+SurvivorsVeteranVoice:
+	DefaultVariant: # TODO remove .aud as default from engine!
+	Voices:
+		Create: SURV.SLV|33.wav # Using non-veteran one to allow travis to build...
+		Select: SURV.SLV|78.wav, SURV.SLV|85.wav
+		Action: SURV.SLV|76.wav, SURV.SLV|85.wav, SURV.SLV|84.wav
+		Attack: SURV.SLV|73.wav, SURV.SLV|83.wav, SURV.SLV|71.wav
+		Infiltrate: SURV.SLV|71.wav
+		Reinforce: openkrush_gen1|actors/survivors/Ohhh.wav
+		Infiltrated: openkrush_gen1|actors/survivors/WereInside.wav
+		Conquered: SURV.SLV|77.wav
+		Reinforced: # TODO keep it blank or make custom sound
+		Repair: SURV.SLV|45.wav
+		Repairing: SURV.SLV|28.wav
+		Die: SURV.SLV|174.wav, SURV.SLV|175.wav, SURV.SLV|176.wav, SURV.SLV|177.wav, SURV.SLV|178.wav
+		Crush: openkrush_gen1|core/crush1.wav, openkrush_gen1|core/crush2.wav
+		Zapped: openkrush_gen1|core/zapped1.wav, openkrush_gen1|core/zapped2.wav, openkrush_gen1|core/zapped3.wav

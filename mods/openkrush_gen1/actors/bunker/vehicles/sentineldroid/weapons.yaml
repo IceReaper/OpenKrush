@@ -1,0 +1,30 @@
+bunker_vehicles_sentineldroid:
+	Range: 7c0
+	Burst: 2
+	BurstDelays: 13
+	ReloadDelay: 50
+	Report: SURV.SLV|87.wav
+	Projectile: Bullet
+		Image: bunker_vehicles_sentineldroid
+		Palette: openkrush
+		TrailPalette: openkrush
+		Sequences: projectile
+		Speed: 600
+	Warhead@Damage: SpreadDamage
+		Damage: 100
+		DamageTypes: Laser
+		Spread: 512
+		Falloff: 100, 100
+		AffectsParent: true
+		Versus:
+			infantry: 215
+			vehicle: 430
+			building: 260
+	Warhead@Effect: ShrapnelCreateEffect
+		Image: projectiles
+		ExplosionPalette: openkrush
+		Explosions: laser
+		ImpactSounds: MUTE.SLV|10.wav
+	Warhead@Smudge: LeaveSmudge
+		Chance: 35
+		SmudgeType: Crater

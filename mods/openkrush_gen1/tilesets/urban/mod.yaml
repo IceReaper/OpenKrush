@@ -1,0 +1,12 @@
+Rules:
+	openkrush_gen1|tilesets/urban/mapobjects/buildings/rules.yaml
+	openkrush_gen1|tilesets/urban/mapobjects/objects/rules.yaml
+	openkrush_gen1|tilesets/urban/mapobjects/trees/rules.yaml
+
+Sequences:
+	openkrush_gen1|tilesets/urban/mapobjects/buildings/sequences.yaml
+	openkrush_gen1|tilesets/urban/mapobjects/objects/sequences.yaml
+	openkrush_gen1|tilesets/urban/mapobjects/trees/sequences.yaml
+
+TileSets:
+	openkrush_gen1|tilesets/urban/tileset.yaml

@@ -1,0 +1,109 @@
+Rules:
+	openkrush_gen1|actors/survivors/rules.yaml
+	openkrush_gen1|actors/survivors/infantry/rifleman/rules.yaml
+	openkrush_gen1|actors/survivors/infantry/swat/rules.yaml
+	openkrush_gen1|actors/survivors/infantry/flamer/rules.yaml
+	openkrush_gen1|actors/survivors/infantry/sapper/rules.yaml
+	openkrush_gen1|actors/survivors/infantry/rpglauncher/rules.yaml
+	openkrush_gen1|actors/survivors/infantry/sniper/rules.yaml
+	openkrush_gen1|actors/survivors/infantry/technician/rules.yaml
+	openkrush_gen1|actors/survivors/infantry/saboteur/rules.yaml
+	openkrush_gen1|actors/survivors/infantry/elpresidente/rules.yaml
+	openkrush_gen1|actors/survivors/infantry/scout/rules.yaml
+	openkrush_gen1|actors/survivors/vehicles/dirtbike/rules.yaml
+	openkrush_gen1|actors/survivors/vehicles/4x4pickup/rules.yaml
+	openkrush_gen1|actors/survivors/vehicles/allterrainvehicle/rules.yaml
+	openkrush_gen1|actors/survivors/vehicles/flameatv/rules.yaml
+	openkrush_gen1|actors/survivors/vehicles/anacondatank/rules.yaml
+	openkrush_gen1|actors/survivors/vehicles/barragecraft/rules.yaml
+	openkrush_gen1|actors/survivors/vehicles/autocannontank/rules.yaml
+	openkrush_gen1|actors/survivors/vehicles/oiltanker/rules.yaml
+	openkrush_gen1|actors/survivors/vehicles/derrick/rules.yaml
+	openkrush_gen1|actors/survivors/vehicles/mobileoutpost/rules.yaml
+	openkrush_gen1|actors/survivors/aircrafts/bomber/rules.yaml
+	openkrush_gen1|actors/survivors/buildings/outpost/rules.yaml
+	openkrush_gen1|actors/survivors/buildings/barracks/rules.yaml
+	openkrush_gen1|actors/survivors/buildings/machineshop/rules.yaml
+	openkrush_gen1|actors/survivors/buildings/repairbay/rules.yaml
+	openkrush_gen1|actors/survivors/buildings/researchlab/rules.yaml
+	openkrush_gen1|actors/survivors/buildings/powerstation/rules.yaml
+	openkrush_gen1|actors/survivors/buildings/drillrig/rules.yaml
+	openkrush_gen1|actors/survivors/buildings/solarpanel/rules.yaml
+	openkrush_gen1|actors/survivors/buildings/airfield/rules.yaml
+	openkrush_gen1|actors/survivors/buildings/detention_center/rules.yaml
+	openkrush_gen1|actors/survivors/towers/guardtower/rules.yaml
+	openkrush_gen1|actors/survivors/towers/missilebattery/rules.yaml
+	openkrush_gen1|actors/survivors/towers/cannontower/rules.yaml
+	openkrush_gen1|actors/survivors/walls/barricade/rules.yaml
+
+Sequences:
+	openkrush_gen1|actors/survivors/sidebar.yaml
+	openkrush_gen1|actors/survivors/infantry/sequences.yaml
+	openkrush_gen1|actors/survivors/infantry/rifleman/sequences.yaml
+	openkrush_gen1|actors/survivors/infantry/swat/sequences.yaml
+	openkrush_gen1|actors/survivors/infantry/flamer/sequences.yaml
+	openkrush_gen1|actors/survivors/infantry/sapper/sequences.yaml
+	openkrush_gen1|actors/survivors/infantry/rpglauncher/sequences.yaml
+	openkrush_gen1|actors/survivors/infantry/sniper/sequences.yaml
+	openkrush_gen1|actors/survivors/infantry/technician/sequences.yaml
+	openkrush_gen1|actors/survivors/infantry/saboteur/sequences.yaml
+	openkrush_gen1|actors/survivors/infantry/elpresidente/sequences.yaml
+	openkrush_gen1|actors/survivors/infantry/scout/sequences.yaml
+	openkrush_gen1|actors/survivors/vehicles/dirtbike/sequences.yaml
+	openkrush_gen1|actors/survivors/vehicles/4x4pickup/sequences.yaml
+	openkrush_gen1|actors/survivors/vehicles/allterrainvehicle/sequences.yaml
+	openkrush_gen1|actors/survivors/vehicles/flameatv/sequences.yaml
+	openkrush_gen1|actors/survivors/vehicles/anacondatank/sequences.yaml
+	openkrush_gen1|actors/survivors/vehicles/barragecraft/sequences.yaml
+	openkrush_gen1|actors/survivors/vehicles/autocannontank/sequences.yaml
+	openkrush_gen1|actors/survivors/vehicles/oiltanker/sequences.yaml
+	openkrush_gen1|actors/survivors/vehicles/derrick/sequences.yaml
+	openkrush_gen1|actors/survivors/vehicles/mobileoutpost/sequences.yaml
+	openkrush_gen1|actors/survivors/aircrafts/bomber/sequences.yaml
+	openkrush_gen1|actors/survivors/buildings/outpost/sequences.yaml
+	openkrush_gen1|actors/survivors/buildings/barracks/sequences.yaml
+	openkrush_gen1|actors/survivors/buildings/machineshop/sequences.yaml
+	openkrush_gen1|actors/survivors/buildings/repairbay/sequences.yaml
+	openkrush_gen1|actors/survivors/buildings/researchlab/sequences.yaml
+	openkrush_gen1|actors/survivors/buildings/powerstation/sequences.yaml
+	openkrush_gen1|actors/survivors/buildings/drillrig/sequences.yaml
+	openkrush_gen1|actors/survivors/buildings/solarpanel/sequences.yaml
+	openkrush_gen1|actors/survivors/buildings/airfield/sequences.yaml
+	openkrush_gen1|actors/survivors/buildings/detention_center/sequences.yaml
+	openkrush_gen1|actors/survivors/towers/guardtower/sequences.yaml
+	openkrush_gen1|actors/survivors/towers/missilebattery/sequences.yaml
+	openkrush_gen1|actors/survivors/towers/cannontower/sequences.yaml
+	openkrush_gen1|actors/survivors/walls/barricade/sequences.yaml
+
+Weapons:
+	openkrush_gen1|actors/survivors/infantry/rifleman/weapons.yaml
+	openkrush_gen1|actors/survivors/infantry/swat/weapons.yaml
+	openkrush_gen1|actors/survivors/infantry/flamer/weapons.yaml
+	openkrush_gen1|actors/survivors/infantry/sapper/weapons.yaml
+	openkrush_gen1|actors/survivors/infantry/rpglauncher/weapons.yaml
+	openkrush_gen1|actors/survivors/infantry/sniper/weapons.yaml
+	openkrush_gen1|actors/survivors/infantry/saboteur/weapons.yaml
+	openkrush_gen1|actors/survivors/infantry/elpresidente/weapons.yaml
+	openkrush_gen1|actors/survivors/infantry/scout/weapons.yaml
+	openkrush_gen1|actors/survivors/vehicles/dirtbike/weapons.yaml
+	openkrush_gen1|actors/survivors/vehicles/4x4pickup/weapons.yaml
+	openkrush_gen1|actors/survivors/vehicles/allterrainvehicle/weapons.yaml
+	openkrush_gen1|actors/survivors/vehicles/flameatv/weapons.yaml
+	openkrush_gen1|actors/survivors/vehicles/anacondatank/weapons.yaml
+	openkrush_gen1|actors/survivors/vehicles/barragecraft/weapons.yaml
+	openkrush_gen1|actors/survivors/vehicles/autocannontank/weapons.yaml
+	openkrush_gen1|actors/survivors/aircrafts/bomber/weapons.yaml
+	openkrush_gen1|actors/survivors/towers/guardtower/weapons.yaml
+	openkrush_gen1|actors/survivors/towers/missilebattery/weapons.yaml
+	openkrush_gen1|actors/survivors/towers/cannontower/weapons.yaml
+
+Voices:
+	openkrush_gen1|actors/survivors/voices.yaml
+	openkrush_gen1|actors/survivors/infantry/scout/voices.yaml
+	openkrush_gen1|actors/survivors/aircrafts/bomber/voices.yaml
+
+Music:
+	openkrush_gen1|actors/survivors/music.yaml
+
+ChromeMetrics:
+	openkrush_gen1|actors/survivors/metrics.yaml

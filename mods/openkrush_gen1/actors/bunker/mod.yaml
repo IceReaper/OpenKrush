@@ -1,0 +1,23 @@
+Rules:
+	openkrush_gen1|actors/bunker/techbunker/rules.yaml
+	openkrush_gen1|actors/bunker/vehicles/gorttherobot/rules.yaml
+	openkrush_gen1|actors/bunker/vehicles/mech/rules.yaml
+	openkrush_gen1|actors/bunker/vehicles/plasmatank/rules.yaml
+	openkrush_gen1|actors/bunker/vehicles/sentineldroid/rules.yaml
+
+Sequences:
+	openkrush_gen1|actors/bunker/techbunker/sequences.yaml
+	openkrush_gen1|actors/bunker/vehicles/gorttherobot/sequences.yaml
+	openkrush_gen1|actors/bunker/vehicles/mech/sequences.yaml
+	openkrush_gen1|actors/bunker/vehicles/plasmatank/sequences.yaml
+	openkrush_gen1|actors/bunker/vehicles/sentineldroid/sequences.yaml
+
+Weapons:
+	openkrush_gen1|actors/bunker/vehicles/gorttherobot/weapons.yaml
+	openkrush_gen1|actors/bunker/vehicles/mech/weapons.yaml
+	openkrush_gen1|actors/bunker/vehicles/plasmatank/weapons.yaml
+	openkrush_gen1|actors/bunker/vehicles/sentineldroid/weapons.yaml
+
+Voices:
+	openkrush_gen1|actors/bunker/vehicles/voices.yaml
+	openkrush_gen1|actors/bunker/vehicles/gorttherobot/voices.yaml

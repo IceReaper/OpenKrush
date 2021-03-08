@@ -1,0 +1,112 @@
+Player:
+	HackedAiShit:
+	ModularBot@PlaceholderAI:
+		Name: Placeholder AI
+		Type: placeholder
+	GrantConditionOnBotOwner@placeholder:
+		Condition: enable-placeholder-ai
+		Bots: placeholder
+	SupportPowerBotModule@placeholder:
+		RequiresCondition: enable-placeholder-ai
+		Decisions:
+			bomber:
+				OrderName: AdvancedAirstrikePowerInfoOrder
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+	#HarvesterBotModule: TODO replace this one with proper resource implementation
+	#	RequiresCondition: enable-placeholder-ai
+	HackedBaseBuilderBotModule@placeholder: # TODO replace this by building implementation
+		RequiresCondition: enable-placeholder-ai
+		ConstructionYardTypes: survivors_building_outpost, evolved_building_clanhall
+		RefineryTypes: survivors_building_powerstation, evolved_building_powerstation
+		BarracksTypes: survivors_building_outpost, evolved_building_clanhall, survivors_building_barracks, evolved_building_warriorhall
+		VehiclesFactoryTypes: survivors_building_machineshop, evolved_building_beastenclosure, evolved_building_blacksmith, evolved_building_beastforge
+		ProductionTypes: survivors_building_outpost, evolved_building_clanhall, survivors_building_barracks, evolved_building_warriorhall, survivors_building_machineshop, evolved_building_beastenclosure, evolved_building_blacksmith, evolved_building_beastforge
+		BuildingQueues: building
+		DefenseQueues: tower
+		BuildingLimits:
+			survivors_building_machineshop: 3
+			evolved_building_beastforge: 3
+		BuildingFractions:
+			survivors_building_barracks: 75
+			survivors_building_machineshop: 50
+			#survivors_building_powerstation: 1
+			survivors_geothermal: 25
+			survivors_building_researchlab: 100
+			survivors_tower_guardtower: 50
+			survivors_tower_missilebattery: 75
+			survivors_tower_cannontower: 100
+			survivors_building_airfield: 100
+			evolved_building_warriorhall: 75
+			evolved_building_beastenclosure: 50
+			evolved_building_blacksmith: 50
+			evolved_building_beastforge: 50
+			#evolved_building_powerstation: 1
+			evolved_building_gasconverter: 25
+			evolved_building_alchemyhall: 100
+			evolved_tower_machinegunnest: 50
+			evolved_tower_grapeshotcannon: 75
+			evolved_tower_rotarycannon: 100
+			evolved_building_vespiary: 100
+	#BuildingRepairBotModule: # TODO implement repair implementation
+	#	RequiresCondition: enable-placeholder-ai
+	McvManagerBotModule@placeholder:
+		RequiresCondition: enable-placeholder-ai
+		McvTypes: survivors_vehicle_mobileoutpost, evolved_vehicle_clanhallwagon
+		ConstructionYardTypes: survivors_building_outpost, evolved_building_clanhall
+		McvFactoryTypes: survivors_building_machineshop, evolved_building_blacksmith, evolved_building_beastforge
+	SquadManagerBotModule@placeholder:
+		RequiresCondition: enable-placeholder-ai
+		SquadSize: 40
+		RushInterval: 1000
+		ExcludeFromSquadsTypes: survivors_vehicle_mobileoutpost, evolved_vehicle_clanhallwagon, survivors_vehicle_derrick, evolved_vehicle_derrick, survivors_vehicle_oiltanker, evolved_vehicle_oiltanker, survivors_infantry_technician, evolved_infantry_mekanik
+		ConstructionYardTypes: survivors_building_outpost, evolved_building_clanhall
+	UnitBuilderBotModule@placeholder:
+		RequiresCondition: enable-placeholder-ai
+		UnitQueues: infantry, vehicle, beast
+		UnitsToBuild:
+			evolved_infantry_berserker: 50
+			evolved_infantry_shotgunner: 60
+			evolved_infantry_pyromaniac: 70
+			#evolved_infantry_vandal: 75
+			evolved_infantry_rioter: 80
+			evolved_infantry_bazooka: 90
+			evolved_infantry_crazyharry: 100
+			evolved_vehicle_direwolf: 40
+			evolved_vehicle_bikeandsidecar: 50
+			evolved_vehicle_monstertruck: 60
+			evolved_vehicle_giantscorpion: 70
+			evolved_vehicle_warmastodon: 80
+			evolved_vehicle_giantbeetle: 90
+			evolved_vehicle_missilecrab: 100
+			survivors_infantry_rifleman: 50
+			survivors_infantry_swat: 60
+			survivors_infantry_flamer: 70
+			#survivors_infantry_saboteur: 75
+			survivors_infantry_sapper: 80
+			survivors_infantry_rpglauncher: 90
+			survivors_infantry_sniper: 100
+			survivors_vehicle_dirtbike: 40
+			survivors_vehicle_4x4pickup: 50
+			survivors_vehicle_allterrainvehicle: 60
+			survivors_atvflamethrower: 70
+			survivors_vehicle_anacondatank: 80
+			survivors_vehicle_barragecraft: 90
+			survivors_vehicle_autocannontank: 100
+		UnitLimits:
+			evolved_vehicle_direwolf: 5
+			evolved_vehicle_bikeandsidecar: 10
+			evolved_vehicle_monstertruck: 10
+			survivors_vehicle_dirtbike: 5
+			survivors_vehicle_4x4pickup: 10
+			survivors_vehicle_allterrainvehicle: 10
+	#CaptureManagerBotModule@placeholder:
+	#	CapturingActorTypes: evolved_infantry_vandal, survivors_infantry_saboteur
+	#	CapturableActorTypes: neutral_building_drillrig
+	#	MinimumCaptureDelay: 400
+	#	MaximumCaptureTargetOptions: 2
+	#	CheckCaptureTargetsForVisibility: False
+	#	CapturableStances: Neutral
+
+

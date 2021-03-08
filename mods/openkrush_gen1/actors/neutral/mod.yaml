@@ -1,0 +1,11 @@
+Rules:
+	openkrush_gen1|actors/neutral/buildings/campfire/rules.yaml
+	openkrush_gen1|actors/neutral/buildings/drillrig/rules.yaml
+	openkrush_gen1|actors/neutral/buildings/hut/rules.yaml
+	openkrush_gen1|actors/neutral/buildings/pillar/rules.yaml
+
+Sequences:
+	openkrush_gen1|actors/neutral/buildings/campfire/sequences.yaml
+	openkrush_gen1|actors/neutral/buildings/drillrig/sequences.yaml
+	openkrush_gen1|actors/neutral/buildings/hut/sequences.yaml
+	openkrush_gen1|actors/neutral/buildings/pillar/sequences.yaml

@@ -1,0 +1,21 @@
+survivors_infantry_rpglauncher:
+	Inherits: ^weapon_explosion
+	Range: 6c0
+	Burst: 1
+	BurstDelays: 0
+	ReloadDelay: 63
+	Report: SURV.SLV|14.wav
+	Projectile: Bullet
+		Image: survivors_infantry_rpglauncher
+		Palette: openkrush
+		Sequences: projectile
+		Speed: 200
+		TrailPalette: openkrush
+		TrailImage: projectiles
+		TrailSequences: smoke
+		Inaccuracy: 1500
+	Warhead@Damage: SpreadDamage
+		Versus:
+			infantry: 80
+			vehicle: 150
+			building: 80
