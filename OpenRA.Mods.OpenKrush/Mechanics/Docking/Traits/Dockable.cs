@@ -66,14 +66,18 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits
 				if (order.Target.Actor.TraitOrDefault<Drillrig>() != null)
 				{
 					tanker.PreferedDrillrig = order.Target.Actor;
-					self.QueueActivity(false, new TankerCycle(self, tanker));
+					var tankerCycle = new TankerCycle(self, tanker);
+					tankerCycle.QueueChild(new Docking.Activities.Docking(self, tanker.PreferedDrillrig, tanker.PreferedDrillrig.Trait<Dock>()));
+					self.QueueActivity(false, tankerCycle);
 					return;
 				}
 
 				if (order.Target.Actor.TraitOrDefault<PowerStation>() != null)
 				{
 					tanker.PreferedPowerStation = order.Target.Actor;
-					self.QueueActivity(false, new TankerCycle(self, tanker));
+					var tankerCycle = new TankerCycle(self, tanker);
+					tankerCycle.QueueChild(new Docking.Activities.Docking(self, tanker.PreferedPowerStation, tanker.PreferedPowerStation.Trait<Dock>()));
+					self.QueueActivity(false, tankerCycle);
 					return;
 				}
 			}

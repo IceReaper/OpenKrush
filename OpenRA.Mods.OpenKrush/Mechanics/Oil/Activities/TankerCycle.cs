@@ -33,19 +33,32 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Activities
 			if (IsCanceling)
 				return true;
 
-			if (tanker.PreferedDrillrig == null)
-				tanker.AssignNearestDrillrig();
-
-			if (tanker.PreferedPowerStation == null)
-				tanker.AssignNearestPowerStation();
-
 			if (ChildActivity != null)
 				return false;
 
-			if (tanker.Current < tanker.Maximum && tanker.PreferedDrillrig != null)
-				QueueChild(new Docking.Activities.Docking(actor, tanker.PreferedDrillrig, tanker.PreferedDrillrig.Trait<Dock>()));
-			else if (tanker.Current > 0 && tanker.PreferedPowerStation != null)
-				QueueChild(new Docking.Activities.Docking(actor, tanker.PreferedPowerStation, tanker.PreferedPowerStation.Trait<Dock>()));
+			if (tanker.Current < tanker.Maximum)
+			{
+				if (tanker.PreferedDrillrig == null)
+					tanker.AssignNearestDrillrig();
+
+				if (tanker.PreferedDrillrig != null)
+				{
+					QueueChild(new Docking.Activities.Docking(actor, tanker.PreferedDrillrig, tanker.PreferedDrillrig.Trait<Dock>()));
+					return false;
+				}
+			}
+
+			if (tanker.Current > 0)
+			{
+				if (tanker.PreferedPowerStation == null)
+					tanker.AssignNearestPowerStation();
+
+				if (tanker.PreferedPowerStation != null)
+				{
+					QueueChild(new Docking.Activities.Docking(actor, tanker.PreferedPowerStation, tanker.PreferedPowerStation.Trait<Dock>()));
+					return false;
+				}
+			}
 
 			return false;
 		}

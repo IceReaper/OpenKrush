@@ -41,7 +41,6 @@ namespace OpenRA.Mods.OpenKrush.LoadScreens
 
 		public override void StartGame(Arguments args)
 		{
-			// TODO if !started, add VBC playback here! (and if it works, remove it from the modloader!
 			base.StartGame(args);
 			started = true;
 		}

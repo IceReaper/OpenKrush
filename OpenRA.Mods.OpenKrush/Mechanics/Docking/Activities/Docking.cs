@@ -153,8 +153,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Activities
 		public void StartUndocking()
 		{
 			DockingState = DockingState.Undocking;
-
-			// TODO this is not displayed!
 			QueueChild(new Drag(dockableActor, DockActor.CenterPosition + Dock.Info.Position, initialPosition, Dock.Info.DragLength));
 		}
 	}
