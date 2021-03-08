@@ -32,3 +32,4 @@ oilpatch:
 	-DeconstructSellable:
 	# Not blocking projectiles.
 	-BlocksProjectiles:
+	-TechnicianRepairable:

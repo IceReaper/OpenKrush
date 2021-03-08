@@ -21,6 +21,7 @@ bunker_techbunker:
 	-Selectable:
 	-SelfConstructing:
 	-DeconstructSellable:
+	-TechnicianRepairable:
 	BlocksProjectiles:
 	RequiresSpecificOwners:
 		ValidOwnerNames: Neutral

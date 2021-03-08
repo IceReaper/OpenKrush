@@ -1,7 +1,6 @@
 ^oil_tanker:
 	Inherits: ^CoreVehicle
 	Tanker:
-		DockingActivity: TankerCycle
 	AttackNotification:
 		Notifications: TankerUnderAttack
 	IgnoreRallyPoint:
