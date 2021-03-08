@@ -113,7 +113,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits.Actions
 			token = self.RevokeCondition(token);
 		}
 
-		public void Disposing(Actor self)
+		void INotifyActorDisposing.Disposing(Actor self)
 		{
 			if (oilpatchActor != null)
 				this.self.World.AddFrameEndTask(world => world.Add(oilpatchActor));

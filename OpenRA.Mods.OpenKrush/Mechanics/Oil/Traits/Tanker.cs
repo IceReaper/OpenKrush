@@ -103,7 +103,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 			return dock != null && !dock.IsTraitDisabled && powerStation != null && !powerStation.IsTraitDisabled && !powerStation.CanDock(actor);
 		}
 
-		public void Tick(Actor self)
+		void ITick.Tick(Actor self)
 		{
 			if (PreferedDrillrig != null && !IsValidDrillrig(PreferedDrillrig))
 				PreferedDrillrig = null;
