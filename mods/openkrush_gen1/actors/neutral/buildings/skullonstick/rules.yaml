@@ -1,0 +1,26 @@
+neutral_building_skullonstick:
+	Inherits: ^CoreDecoration
+	Tooltip:
+		Name: Skull on stick
+	Targetable:
+		TargetTypes: Ground
+	Health:
+		HP: 350
+	Building:
+	AdvancedSelectionDecorations:
+		Offset: 0,0
+		Width: 16
+	HitShape:
+		Type: Circle
+			Radius: 256
+	Selectable:
+		Bounds: 32, 32, 0, 0
+	Explodes:
+		Weapon: breakWall
+		EmptyWeapon: breakWall
+	FrozenOnDeath:
+		Duration: 10
+	WithIdleOverlay@shadow:
+		Sequence: shadow
+	WithIdleOverlay@dirt:
+		Sequence: dirt
