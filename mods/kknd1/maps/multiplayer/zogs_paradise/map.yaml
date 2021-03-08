@@ -1,12 +1,21 @@
 MapFormat: 11
+
 RequiresMod: kknd1
+
 Title: Zog's Paradise
+
 Author: Zasso
+
 Tileset: highland
+
 MapSize: 171,99
+
 Bounds: 1,1,169,97
+
 Visibility: Lobby
+
 Categories: Conquest
+
 Players:
 	PlayerReference@Neutral:
 		Name: Neutral
@@ -58,6 +67,7 @@ Players:
 		Playable: True
 		Faction: Random
 		Enemies: Creeps
+
 Actors:
 	Actor184: highland_trees_4
 		Owner: Neutral
@@ -547,9 +557,9 @@ Actors:
 		Location: 65,49
 	Actor593: survivors_vehicle_4x4pickup
 		Owner: Neutral
-		Facing: 92
-		TurretFacing: 92
 		Location: 84,50
+		Facing: 404
+		TurretFacing: 0
 	Actor594: highland_trees_15
 		Owner: Neutral
 		Location: 105,49
@@ -3185,4 +3195,4 @@ Actors:
 		Owner: Neutral
 		Location: 86,50
 		SubCell: 1
-		Facing: 92
+		Facing: 523

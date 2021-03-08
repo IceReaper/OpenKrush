@@ -1,12 +1,21 @@
 MapFormat: 11
+
 RequiresMod: kknd1
+
 Title: Krash Kourse
+
 Author: Zasso
+
 Tileset: desert
+
 MapSize: 97,97
+
 Bounds: 1,1,95,95
+
 Visibility: Lobby
+
 Categories: Conquest
+
 Players:
 	PlayerReference@Neutral:
 		Name: Neutral
@@ -38,6 +47,7 @@ Players:
 		Playable: True
 		Faction: Random
 		Enemies: Creeps
+
 Actors:
 	Actor5: oilpatch
 		Owner: Neutral
@@ -63,9 +73,6 @@ Actors:
 	Actor12: oilpatch
 		Owner: Neutral
 		Location: 14,26
-	Actor18: neutral_building_campfire
-		Owner: Neutral
-		Location: 48,11
 	Actor19: neutral_building_hut_c
 		Owner: Neutral
 		Location: 49,10
@@ -81,9 +88,6 @@ Actors:
 	Actor21: neutral_building_hut_d
 		Owner: Neutral
 		Location: 46,81
-	Actor24: neutral_building_campfire
-		Owner: Neutral
-		Location: 48,83
 	Actor25: neutral_building_hut_a
 		Owner: Neutral
 		Location: 50,83
@@ -105,11 +109,6 @@ Actors:
 	Actor33: urban_objects_3
 		Owner: Neutral
 		Location: 56,48
-	Actor38: evolved_infantry_kingzog
-		Owner: Neutral
-		Location: 48,83
-		SubCell: 3
-		Facing: 92
 	Actor36: mpspawn
 		Owner: Neutral
 		Location: 21,21
@@ -3050,3 +3049,9 @@ Actors:
 	Actor1022: urban_objects_9
 		Owner: Neutral
 		Location: 90,55
+	Actor1023: neutral_building_campfire
+		Owner: Neutral
+		Location: 48,84
+	Actor1024: neutral_building_campfire
+		Owner: Neutral
+		Location: 48,12

@@ -1,12 +1,21 @@
 MapFormat: 11
+
 RequiresMod: kknd1
+
 Title: Tug of War
+
 Author: Zasso
+
 Tileset: urban
+
 MapSize: 97,57
+
 Bounds: 1,1,95,55
+
 Visibility: Lobby
+
 Categories: Conquest
+
 Players:
 	PlayerReference@Neutral:
 		Name: Neutral
@@ -28,13 +37,11 @@ Players:
 		Playable: True
 		Faction: Random
 		Enemies: Creeps
+
 Actors:
 	Actor2: neutral_building_drillrig
 		Owner: Neutral
 		Location: 47,40
-	Actor3: bunker_techbunker
-		Owner: Neutral
-		Location: 47,8
 	Actor8: urban_buildings_20
 		Owner: Neutral
 		Location: 35,29
@@ -188,11 +195,11 @@ Actors:
 	Actor71: evolved_tower_rotarycannon
 		Owner: Creeps
 		Location: 43,10
-		TurretFacing: 92
+		TurretFacing: 539
 	Actor72: evolved_tower_rotarycannon
 		Owner: Creeps
 		Location: 52,10
-		TurretFacing: 92
+		TurretFacing: 491
 	Actor73: urban_buildings_28
 		Owner: Neutral
 		Location: 58,15
@@ -223,3 +230,6 @@ Actors:
 	Actor81: urban_objects_29
 		Owner: Neutral
 		Location: 44,6
+	Actor82: bunker_techbunker
+		Owner: Neutral
+		Location: 47,7

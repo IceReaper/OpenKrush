@@ -1,12 +1,21 @@
 MapFormat: 11
+
 RequiresMod: kknd1
+
 Title: Bone Tear
+
 Author: Zasso
+
 Tileset: desert
+
 MapSize: 97,66
+
 Bounds: 1,1,95,64
+
 Visibility: Lobby
+
 Categories: Conquest
+
 Players:
 	PlayerReference@Neutral:
 		Name: Neutral
@@ -28,6 +37,7 @@ Players:
 		Playable: True
 		Faction: Random
 		Enemies: Creeps
+
 Actors:
 	Actor0: bunker_techbunker
 		Owner: Neutral
@@ -965,9 +975,6 @@ Actors:
 	Actor323: desert_objects_8
 		Owner: Neutral
 		Location: 51,0
-	Actor324: neutral_building_campfire
-		Owner: Neutral
-		Location: 65,5
 	Actor325: neutral_building_hut_c
 		Owner: Neutral
 		Location: 66,4
@@ -980,9 +987,6 @@ Actors:
 	Actor328: neutral_building_hut_d
 		Owner: Neutral
 		Location: 62,6
-	Actor329: neutral_building_campfire
-		Owner: Neutral
-		Location: 32,5
 	Actor330: neutral_building_hut_e
 		Owner: Neutral
 		Location: 31,3
@@ -1751,13 +1755,13 @@ Actors:
 	Actor585: evolved_vehicle_monstertruck
 		Owner: Neutral
 		Location: 47,59
-		Facing: 92
-		TurretFacing: 92
+		Facing: 380
+		TurretFacing: 1007
 	Actor588: evolved_infantry_kingzog
 		Owner: Neutral
 		Location: 49,59
 		SubCell: 3
-		Facing: 92
+		Facing: 547
 	Actor586: oilpatch
 		Owner: Neutral
 		Location: 15,51
@@ -1938,11 +1942,11 @@ Actors:
 	Actor648: evolved_tower_rotarycannon
 		Owner: Creeps
 		Location: 53,8
-		TurretFacing: 92
+		TurretFacing: 523
 	Actor649: evolved_tower_rotarycannon
 		Owner: Creeps
 		Location: 42,8
-		TurretFacing: 92
+		TurretFacing: 539
 	Actor660: desert_objects_13
 		Owner: Neutral
 		Location: 70,53
@@ -1952,3 +1956,9 @@ Actors:
 	Actor647: desert_objects_14
 		Owner: Neutral
 		Location: 3,48
+	Actor645: neutral_building_campfire
+		Owner: Neutral
+		Location: 32,6
+	Actor661: neutral_building_campfire
+		Owner: Neutral
+		Location: 65,6

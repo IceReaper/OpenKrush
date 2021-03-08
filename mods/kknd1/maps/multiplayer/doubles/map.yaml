@@ -1,12 +1,21 @@
 MapFormat: 11
+
 RequiresMod: kknd1
+
 Title: Doubles
+
 Author: Dzierzan
+
 Tileset: highland
+
 MapSize: 110,52
+
 Bounds: 1,1,108,50
+
 Visibility: Lobby
+
 Categories: Conquest
+
 Players:
 	PlayerReference@Neutral:
 		Name: Neutral
@@ -38,6 +47,7 @@ Players:
 		Playable: True
 		Faction: Random
 		Enemies: Creeps
+
 Actors:
 	Actor0: bunker_techbunker
 		Owner: Neutral
@@ -381,9 +391,6 @@ Actors:
 	Actor143: urban_buildings_2
 		Owner: Neutral
 		Location: 28,48
-	Actor146: neutral_building_campfire
-		Location: 55,31
-		Owner: Neutral
 	Actor150: neutral_building_hut_b
 		Location: 54,29
 		Owner: Neutral
@@ -703,7 +710,7 @@ Actors:
 	Actor258: evolved_tower_grapeshotcannon
 		Owner: Creeps
 		Location: 57,48
-		TurretFacing: 224
+		TurretFacing: 15
 	Actor259: highland_trees_20
 		Owner: Neutral
 		Location: 28,29
@@ -857,3 +864,18 @@ Actors:
 	Actor309: neutral_building_hut_f
 		Owner: Neutral
 		Location: 57,30
+	Actor310: neutral_building_pillar_b
+		Owner: Neutral
+		Location: 49,30
+	Actor311: neutral_building_pillar_d
+		Owner: Neutral
+		Location: 56,26
+	Actor312: neutral_building_pillar_h
+		Owner: Neutral
+		Location: 55,36
+	Actor313: neutral_building_pillar_f
+		Owner: Neutral
+		Location: 61,31
+	Actor314: neutral_building_campfire
+		Owner: Neutral
+		Location: 55,32
