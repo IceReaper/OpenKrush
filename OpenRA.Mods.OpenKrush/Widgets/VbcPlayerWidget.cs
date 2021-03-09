@@ -30,10 +30,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets
 
 		public Vbc Video
 		{
-			get
-			{
-				return video;
-			}
+			get => video;
 
 			set
 			{

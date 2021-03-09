@@ -39,7 +39,8 @@ namespace OpenRA.Mods.OpenKrush.Traits.Render
 
 		public override object Create(ActorInitializer init) { return new PaletteFromMobd(init.World, this); }
 
-		string IProvidesCursorPaletteInfo.Palette { get { return Name; } }
+		string IProvidesCursorPaletteInfo.Palette => Name;
+
 		ImmutablePalette IProvidesCursorPaletteInfo.ReadPalette(IReadOnlyFileSystem fileSystem)
 		{
 			var colors = new uint[Palette.Size];

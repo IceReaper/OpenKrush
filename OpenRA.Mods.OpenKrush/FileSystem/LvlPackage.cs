@@ -44,10 +44,7 @@ namespace OpenRA.Mods.OpenKrush.FileSystem
 		{
 			public string Name { get; private set; }
 
-			public IEnumerable<string> Contents
-			{
-				get { return index.Keys; }
-			}
+			public IEnumerable<string> Contents => index.Keys;
 
 			private readonly Dictionary<string, uint[]> index = new Dictionary<string, uint[]>();
 			private readonly Stream stream;

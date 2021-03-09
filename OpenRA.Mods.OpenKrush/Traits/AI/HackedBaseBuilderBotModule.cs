@@ -140,7 +140,7 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 			return randomConstructionYard != null ? randomConstructionYard.Location : initialBaseCenter;
 		}
 
-		public CPos DefenseCenter { get { return defenseCenter; } }
+		public CPos DefenseCenter => defenseCenter;
 
 		readonly World world;
 		readonly Player player;
@@ -194,10 +194,7 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 			defenseCenter = newLocation;
 		}
 
-		bool IBotRequestPauseUnitProduction.PauseUnitProduction
-		{
-			get { return !IsTraitDisabled && !HasAdequateRefineryCount; }
-		}
+		bool IBotRequestPauseUnitProduction.PauseUnitProduction => !IsTraitDisabled && !HasAdequateRefineryCount;
 
 		void IBotTick.BotTick(IBot bot)
 		{
@@ -261,26 +258,16 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 			return info != null && world.IsCellBuildable(x, null, info);
 		}
 
-		public bool HasAdequateRefineryCount
-		{
-			get
-			{
-				// Require at least one refinery, unless we can't build it.
-				return AIUtils.CountBuildingByCommonName(Info.RefineryTypes, player) >= MinimumRefineryCount ||
-					AIUtils.CountBuildingByCommonName(Info.PowerTypes, player) == 0 ||
-					AIUtils.CountBuildingByCommonName(Info.ConstructionYardTypes, player) == 0;
-			}
-		}
+		public bool HasAdequateRefineryCount =>
+			// Require at least one refinery, unless we can't build it.
+			AIUtils.CountBuildingByCommonName(Info.RefineryTypes, player) >= MinimumRefineryCount ||
+			AIUtils.CountBuildingByCommonName(Info.PowerTypes, player) == 0 ||
+			AIUtils.CountBuildingByCommonName(Info.ConstructionYardTypes, player) == 0;
 
-		int MinimumRefineryCount
-		{
-			get
-			{
-				// Unless we have no barracks (higher priority), require a 2nd refinery.
-				// TODO: Possibly unhardcode this, at least the targeted minimum of 2 (the fallback can probably stay at 1).
-				return AIUtils.CountBuildingByCommonName(Info.BarracksTypes, player) > 0 ? 2 : 1;
-			}
-		}
+		int MinimumRefineryCount =>
+			// Unless we have no barracks (higher priority), require a 2nd refinery.
+			// TODO: Possibly unhardcode this, at least the targeted minimum of 2 (the fallback can probably stay at 1).
+			AIUtils.CountBuildingByCommonName(Info.BarracksTypes, player) > 0 ? 2 : 1;
 
 		List<MiniYamlNode> IGameSaveTraitData.IssueTraitData(Actor self)
 		{

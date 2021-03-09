@@ -55,10 +55,10 @@ namespace OpenRA.Mods.OpenKrush.Graphics
 			veteranInfo = actor.Info.TraitInfoOrDefault<VeterancyInfo>();
 		}
 
-		public WPos Pos { get { return WPos.Zero; } }
-		public PaletteReference Palette { get { return null; } }
-		public int ZOffset { get { return 0; } }
-		public bool IsDecoration { get { return true; } }
+		public WPos Pos => WPos.Zero;
+		public PaletteReference Palette => null;
+		public int ZOffset => 0;
+		public bool IsDecoration => true;
 
 		public IRenderable WithPalette(PaletteReference newPalette) { return this; }
 		public IRenderable WithZOffset(int newOffset) { return this; }

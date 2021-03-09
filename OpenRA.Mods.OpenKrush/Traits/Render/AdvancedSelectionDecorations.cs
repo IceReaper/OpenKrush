@@ -87,7 +87,7 @@ namespace OpenRA.Mods.OpenKrush.Traits.Render
 			return GetDecorationOrigin(self, wr, pos, margin);
 		}
 
-		bool IRenderAnnotations.SpatiallyPartitionable { get { return true; } }
+		bool IRenderAnnotations.SpatiallyPartitionable => true;
 
 		void INotifyOwnerChanged.OnOwnerChanged(Actor self, Player oldOwner, Player newOwner)
 		{
