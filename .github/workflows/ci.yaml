@@ -6,7 +6,7 @@ on:
 
 jobs:
   linux:
-    name: Linux (.NET 5.0)
+    name: Linux (.NET 5)
     runs-on: ubuntu-20.04
 
     steps:
