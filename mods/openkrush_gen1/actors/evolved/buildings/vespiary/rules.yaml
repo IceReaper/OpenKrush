@@ -29,7 +29,7 @@ evolved_building_vespiary:
 		Description: Wasp Bomber
 		IconImage: evolved_aircraft_wasp
 		ChargeInterval: 7500
-		EndChargeSound: surv.slv||136.wav
+		EndChargeSound: surv.slv|136.wav
 		IncomingSound: openkrush_gen1|actors/evolved/buildings/vespiary/sound.wav
 		LaunchSound: openkrush_gen1|actors/evolved/buildings/vespiary/sound.wav
 	AdvancedSelectionDecorations:

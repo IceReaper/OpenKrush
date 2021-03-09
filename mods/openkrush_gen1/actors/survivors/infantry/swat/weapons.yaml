@@ -4,7 +4,7 @@ survivors_infantry_swat:
 	ReloadDelay: 13
 	BurstDelays: 0
 	Burst: 1
-	Report: surv.slv||4.wav
+	Report: surv.slv|4.wav
 	Warhead@Damage: SpreadDamage
 		Versus:
 			infantry: 48

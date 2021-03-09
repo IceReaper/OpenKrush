@@ -8,7 +8,7 @@ gog: Krush, Kill 'N' Destroy Xtreme (GoG, English)
 	Install:
 		copy: .
 			^SupportDir|Content/openkrush_gen1/sprites.lvl: LEVELS/640/SPRITES.LVL
-			^SupportDir|Content/openkrush_gen1/surv.slv:    LEVELS/surv.slv|
+			^SupportDir|Content/openkrush_gen1/surv.slv:    LEVELS/SURV.SLV
 			^SupportDir|Content/openkrush_gen1/mute.slv:    LEVELS/MUTE.SLV
 			^SupportDir|Content/openkrush_gen1/surv1.wav:   LEVELS/SURV1.WAV
 			^SupportDir|Content/openkrush_gen1/surv2.wav:   LEVELS/SURV2.WAV

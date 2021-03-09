@@ -30,7 +30,7 @@ survivors_vehicle_autocannontank:
 		Experience: 3000, 4000
 		ReloadRates: 100, 100
 	WithLoopedAttackSound:
-		Report: surv.slv||6.wav
+		Report: surv.slv|6.wav
 		Delay: 3
 	VeterancyVoiced:
 		VoiceSets: SurvivorsVoice, SurvivorsVeteranVoice, SurvivorsVeteranVoice

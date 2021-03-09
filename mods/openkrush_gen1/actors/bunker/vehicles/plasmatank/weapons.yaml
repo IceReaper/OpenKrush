@@ -3,7 +3,7 @@ bunker_vehicles_plasmatank:
 	Burst: 3
 	BurstDelays: 4
 	ReloadDelay: 25
-	Report: surv.slv||87.wav
+	Report: surv.slv|87.wav
 	Projectile: Bullet
 		Image: bunker_vehicles_plasmatank
 		Palette: openkrush

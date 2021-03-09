@@ -30,5 +30,5 @@ bunker_vehicles_gorttherobot:
 	AdvancedSelectionDecorations:
 		Offset: 0,-47
 	WithLoopedAttackSound:
-		Report: surv.slv||188.wav
+		Report: surv.slv|188.wav
 		Delay: 1

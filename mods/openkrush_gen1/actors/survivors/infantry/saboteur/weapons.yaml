@@ -4,7 +4,7 @@ survivors_infantry_saboteur:
 	Burst: 1
 	BurstDelays: 0
 	ReloadDelay: 50
-	Report: surv.slv||16.wav
+	Report: surv.slv|16.wav
 	Warhead@Damage: SpreadDamage
 		Versus:
 			infantry: 40

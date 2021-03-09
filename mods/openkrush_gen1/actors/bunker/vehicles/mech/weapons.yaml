@@ -3,7 +3,7 @@ bunker_vehicles_mech_primary:
 	Burst: 2
 	BurstDelays: 8 # 8 + 8 (secondary weapon)
 	ReloadDelay: 58 # 50 + 8 (secondary weapon)
-	Report: surv.slv||87.wav
+	Report: surv.slv|87.wav
 	Projectile: Bullet
 		Image: bunker_vehicles_mech
 		Palette: openkrush
@@ -35,7 +35,7 @@ bunker_vehicles_mech_secondary:
 	Burst: 1
 	BurstDelays: 0
 	ReloadDelay: 66 # 50 + 2 * 8 (primary weapon)
-	Report: surv.slv||14.wav
+	Report: surv.slv|14.wav
 	Projectile: Bullet
 		Image: bunker_vehicles_mech
 		Palette: openkrush

@@ -5,6 +5,6 @@ survivors_infantry_scout:
 		Select: openkrush_gen1|actors/survivors/infantry/scout/sound2.wav, openkrush_gen1|actors/survivors/infantry/scout/sound1.wav, openkrush_gen1|actors/survivors/infantry/scout/sound4.wav
 		Action: openkrush_gen1|actors/survivors/infantry/scout/sound6.wav, openkrush_gen1|actors/survivors/infantry/scout/sound4.wav, openkrush_gen1|actors/survivors/infantry/scout/sound1.wav, openkrush_gen1|actors/survivors/infantry/scout/sound5.wav
 		Attack: openkrush_gen1|actors/survivors/infantry/scout/sound3.wav, openkrush_gen1|actors/survivors/infantry/scout/sound5.wav
-		Die: surv.slv||174.wav, surv.slv||175.wav, surv.slv||176.wav, surv.slv||177.wav, surv.slv||178.wav
+		Die: surv.slv|174.wav, surv.slv|175.wav, surv.slv|176.wav, surv.slv|177.wav, surv.slv|178.wav
 		Crush: openkrush_gen1|core/crush1.wav, openkrush_gen1|core/crush2.wav
 		Zapped: openkrush_gen1|core/zapped1.wav, openkrush_gen1|core/zapped2.wav, openkrush_gen1|core/zapped3.wav

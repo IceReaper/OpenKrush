@@ -1,35 +1,35 @@
 SurvivorsVoice:
 	DefaultVariant: # TODO remove .aud as default from engine!
 	Voices:
-		Create: surv.slv||33.wav
-		Select: surv.slv||50.wav, surv.slv||51.wav, surv.slv||53.wav, surv.slv||69.wav, surv.slv||70.wav
-		Action: surv.slv||43.wav, surv.slv||49.wav, surv.slv||68.wav
-		Attack: surv.slv||48.wav, surv.slv||59.wav, surv.slv||61.wav
+		Create: surv.slv|33.wav
+		Select: surv.slv|50.wav, surv.slv|51.wav, surv.slv|53.wav, surv.slv|69.wav, surv.slv|70.wav
+		Action: surv.slv|43.wav, surv.slv|49.wav, surv.slv|68.wav
+		Attack: surv.slv|48.wav, surv.slv|59.wav, surv.slv|61.wav
 		Infiltrate: openkrush_gen1|actors/survivors/Infiltrate.wav
-		Reinforce: surv.slv||45.wav
-		Infiltrated: surv.slv||37.wav, surv.slv||40.wav
-		Conquered: surv.slv||29.wav
+		Reinforce: surv.slv|45.wav
+		Infiltrated: surv.slv|37.wav, surv.slv|40.wav
+		Conquered: surv.slv|29.wav
 		Reinforced: # TODO keep it blank or make custom sound
-		Repair: surv.slv||45.wav
-		Repairing: surv.slv||28.wav
-		Die: surv.slv||174.wav, surv.slv||175.wav, surv.slv||176.wav, surv.slv||177.wav, surv.slv||178.wav
+		Repair: surv.slv|45.wav
+		Repairing: surv.slv|28.wav
+		Die: surv.slv|174.wav, surv.slv|175.wav, surv.slv|176.wav, surv.slv|177.wav, surv.slv|178.wav
 		Crush: openkrush_gen1|core/crush1.wav, openkrush_gen1|core/crush2.wav
 		Zapped: openkrush_gen1|core/zapped1.wav, openkrush_gen1|core/zapped2.wav, openkrush_gen1|core/zapped3.wav
 
 SurvivorsVeteranVoice:
 	DefaultVariant: # TODO remove .aud as default from engine!
 	Voices:
-		Create: surv.slv||33.wav # Using non-veteran one to allow travis to build...
-		Select: surv.slv||78.wav, surv.slv||85.wav
-		Action: surv.slv||76.wav, surv.slv||85.wav, surv.slv||84.wav
-		Attack: surv.slv||73.wav, surv.slv||83.wav, surv.slv||71.wav
-		Infiltrate: surv.slv||71.wav
+		Create: surv.slv|33.wav # Using non-veteran one to allow travis to build...
+		Select: surv.slv|78.wav, surv.slv|85.wav
+		Action: surv.slv|76.wav, surv.slv|85.wav, surv.slv|84.wav
+		Attack: surv.slv|73.wav, surv.slv|83.wav, surv.slv|71.wav
+		Infiltrate: surv.slv|71.wav
 		Reinforce: openkrush_gen1|actors/survivors/Ohhh.wav
 		Infiltrated: openkrush_gen1|actors/survivors/WereInside.wav
-		Conquered: surv.slv||77.wav
+		Conquered: surv.slv|77.wav
 		Reinforced: # TODO keep it blank or make custom sound
-		Repair: surv.slv||45.wav
-		Repairing: surv.slv||28.wav
-		Die: surv.slv||174.wav, surv.slv||175.wav, surv.slv||176.wav, surv.slv||177.wav, surv.slv||178.wav
+		Repair: surv.slv|45.wav
+		Repairing: surv.slv|28.wav
+		Die: surv.slv|174.wav, surv.slv|175.wav, surv.slv|176.wav, surv.slv|177.wav, surv.slv|178.wav
 		Crush: openkrush_gen1|core/crush1.wav, openkrush_gen1|core/crush2.wav
 		Zapped: openkrush_gen1|core/zapped1.wav, openkrush_gen1|core/zapped2.wav, openkrush_gen1|core/zapped3.wav

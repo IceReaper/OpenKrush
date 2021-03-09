@@ -8,7 +8,7 @@ steam: Krush, Kill 'N' Destroy Xtreme (Steam, English)
 	Install:
 		copy: .
 			^SupportDir|Content/openkrush_gen1/sprites.lvl: steamapps/common/Krush Kill 'N Destroy Xtreme/LEVELS/640/SPRITES.LVL
-			^SupportDir|Content/openkrush_gen1/surv.slv:    steamapps/common/Krush Kill 'N Destroy Xtreme/LEVELS/surv.slv|
+			^SupportDir|Content/openkrush_gen1/surv.slv:    steamapps/common/Krush Kill 'N Destroy Xtreme/LEVELS/SURV.SLV
 			^SupportDir|Content/openkrush_gen1/mute.slv:    steamapps/common/Krush Kill 'N Destroy Xtreme/LEVELS/MUTE.SLV
 			^SupportDir|Content/openkrush_gen1/surv1.wav:   steamapps/common/Krush Kill 'N Destroy Xtreme/LEVELS/SURV1.WAV
 			^SupportDir|Content/openkrush_gen1/surv2.wav:   steamapps/common/Krush Kill 'N Destroy Xtreme/LEVELS/SURV2.WAV

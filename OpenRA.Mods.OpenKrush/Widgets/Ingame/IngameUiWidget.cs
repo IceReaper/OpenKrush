@@ -16,6 +16,7 @@ using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.OpenKrush.Mechanics.Docking;
 using OpenRA.Mods.OpenKrush.Mechanics.Docking.Activities;
 using OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits.Actions;
+using OpenRA.Mods.OpenKrush.Mechanics.Oil.Activities;
 using OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits;
 using OpenRA.Primitives;
 using OpenRA.Widgets;
@@ -77,7 +78,12 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 				if (tanker == null)
 					return false;
 
-				var dockActivity = a.CurrentActivity as Docking;
+				var tankerCycle = a.CurrentActivity as TankerCycle;
+
+				if (tankerCycle == null)
+					return false;
+
+				var dockActivity = tankerCycle.DockingActivity;
 
 				if (dockActivity == null)
 					return false;

@@ -4,7 +4,7 @@ survivors_infantry_sniper:
 	Burst: 1
 	BurstDelays: 0
 	ReloadDelay: 38
-	Report: openkrush_gen1|actors/survivors/infantry/sniper/sound.wav #surv.slv||4.wav
+	Report: openkrush_gen1|actors/survivors/infantry/sniper/sound.wav #surv.slv|4.wav
 	Warhead@Damage: SpreadDamage
 		Versus:
 			infantry: 250
