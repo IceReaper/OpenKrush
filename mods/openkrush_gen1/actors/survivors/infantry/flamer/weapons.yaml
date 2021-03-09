@@ -1,7 +1,7 @@
 survivors_infantry_flamer:
 	Range: 3c0
 	ReloadDelay: 41
-	Report: SURV.SLV|86.wav
+	Report: surv.slv||86.wav
 	Burst: 10
 	BurstDelays: 1
 	Projectile: Bullet

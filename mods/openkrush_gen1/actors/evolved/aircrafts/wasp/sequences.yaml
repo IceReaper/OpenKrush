@@ -1,5 +1,5 @@
 evolved_aircraft_wasp:
-	idle: SPRITES.LVL|Wasp.mobd
+	idle: sprites.lvl|Wasp.mobd
 		Start: 16
 		Length: 3
 		Tick: 50

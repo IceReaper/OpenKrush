@@ -81,10 +81,10 @@ namespace OpenRA.Mods.OpenKrush.Graphics
 
 				for (var i = 0; i < sprites.Length; i++)
 				{
-					if (sprites[i] == null || !metadata.Metadata.ContainsKey("Offsets[" + i + "]"))
+					if (sprites[i] == null || !metadata.Metadata.ContainsKey($"Offsets[{i}]"))
 						continue;
 
-					var lines = metadata.Metadata["Offsets[" + i + "]"].Split('\n');
+					var lines = metadata.Metadata[$"Offsets[{i}]"].Split('\n');
 					var convertOffsets = new Func<string[], Offset>(data => new Offset(int.Parse(data[0]), int.Parse(data[1]), int.Parse(data[2])));
 					EmbeddedOffsets.Add(sprites[i], lines.Select(t => t.Split(',')).Select(convertOffsets).ToArray());
 				}

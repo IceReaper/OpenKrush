@@ -1,21 +1,21 @@
 evolved_building_beastenclosure:
-	animation: SPRITES.LVL|BeastEnclosure.mobd
+	animation: sprites.lvl|BeastEnclosure.mobd
 		Length: 4
 		Tick: 160
 		Offset: -5,-48
-	damaged-idle: SPRITES.LVL|BeastEnclosure.mobd
+	damaged-idle: sprites.lvl|BeastEnclosure.mobd
 		Start: 4
 		Offset: -5,-48
-	idle: SPRITES.LVL|BeastEnclosure.mobd
+	idle: sprites.lvl|BeastEnclosure.mobd
 		Start: 5
 		Offset: -5,-48
-	make0: SPRITES.LVL|BeastEnclosure.mobd
+	make0: sprites.lvl|BeastEnclosure.mobd
 		Start: 15
 		Offset: -5,-48
-	make1: SPRITES.LVL|BeastEnclosure.mobd
+	make1: sprites.lvl|BeastEnclosure.mobd
 		Start: 16
 		Offset: -5,-48
-	make2: SPRITES.LVL|BeastEnclosure.mobd
+	make2: sprites.lvl|BeastEnclosure.mobd
 		Start: 17
 		Offset: -5,-48
 	critical-idle: actors/evolved/buildings/beastenclosure/frames.png

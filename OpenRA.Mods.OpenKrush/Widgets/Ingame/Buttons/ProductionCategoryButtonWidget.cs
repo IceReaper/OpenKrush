@@ -29,7 +29,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 			Categories = categories;
 			Bounds = new Rectangle(0, index * Size, Size, Size);
 			TooltipTitle = label;
-			hotkey = Game.ModData.Hotkeys["Production" + label].GetValue();
+			hotkey = Game.ModData.Hotkeys[$"Production{label}"].GetValue();
 		}
 
 		public override bool HandleKeyPress(KeyInput e)

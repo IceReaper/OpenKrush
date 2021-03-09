@@ -4,7 +4,7 @@ survivors_vehicle_allterrainvehicle:
 	Burst: 10
 	BurstDelays: 13
 	ReloadDelay: 38
-	Report: SURV.SLV|8.wav
+	Report: surv.slv||8.wav
 	Warhead@Damage: SpreadDamage
 		Versus:
 			infantry: 45

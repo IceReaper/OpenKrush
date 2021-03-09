@@ -22,7 +22,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 			var values = new Dictionary<string, string>();
 
 			for (var i = 0; i <= 100; i += 20)
-				values.Add(i.ToString(), i + "%");
+				values.Add(i.ToString(), $"{i}%");
 
 			yield return new LobbyOption(
 				"OilpatchBurn",

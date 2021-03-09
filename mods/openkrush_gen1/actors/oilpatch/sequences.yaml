@@ -1,5 +1,5 @@
 oilpatch:
-	idle: SPRITES.LVL|Oil.mobd
+	idle: sprites.lvl|Oil.mobd
 		Length: 14
 		Tick: 120
 		ZOffset: -2000

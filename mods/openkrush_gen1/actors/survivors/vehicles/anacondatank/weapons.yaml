@@ -4,7 +4,7 @@ survivors_vehicle_anacondatank:
 	Burst: 1
 	BurstDelays: 0
 	ReloadDelay: 82
-	Report: SURV.SLV|9.wav
+	Report: surv.slv||9.wav
 	Projectile: Bullet
 		Image: survivors_vehicle_anacondatank
 		Palette: openkrush

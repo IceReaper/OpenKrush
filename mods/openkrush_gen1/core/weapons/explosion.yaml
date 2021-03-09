@@ -12,4 +12,4 @@
 		Image: weapon_explosions
 		ExplosionPalette: openkrush
 		Explosions: s
-		ImpactSounds: MUTE.SLV|10.wav
+		ImpactSounds: mute.slv|10.wav

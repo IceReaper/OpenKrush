@@ -4,7 +4,7 @@ survivors_infantry_rpglauncher:
 	Burst: 1
 	BurstDelays: 0
 	ReloadDelay: 63
-	Report: SURV.SLV|14.wav
+	Report: surv.slv||14.wav
 	Projectile: Bullet
 		Image: survivors_infantry_rpglauncher
 		Palette: openkrush

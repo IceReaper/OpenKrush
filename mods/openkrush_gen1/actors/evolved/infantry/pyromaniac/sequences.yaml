@@ -1,18 +1,18 @@
 evolved_infantry_pyromaniac:
 	Inherits@muzzle: ^muzzle_flamethrower
 	Inherits@death: ^evolved_infantry_death
-	idle: SPRITES.LVL|Pyromaniac.mobd
+	idle: sprites.lvl|Pyromaniac.mobd
 		Facings: -16
-	aim: SPRITES.LVL|Pyromaniac.mobd
+	aim: sprites.lvl|Pyromaniac.mobd
 		Start: 16
 		Stride: 4
 		Facings: -16
-	shoot: SPRITES.LVL|Pyromaniac.mobd
+	shoot: sprites.lvl|Pyromaniac.mobd
 		Start: 16
 		Length: 4
 		Tick: 120
 		Facings: -16
-	move: SPRITES.LVL|Pyromaniac.mobd
+	move: sprites.lvl|Pyromaniac.mobd
 		Start: 80
 		Length: 6
 		Tick: 120

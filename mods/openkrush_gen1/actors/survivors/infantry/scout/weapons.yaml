@@ -2,7 +2,7 @@ survivors_infantry_scout:
 	Inherits: ^weapon_bullet
 	Range: 4c0
 	ReloadDelay: 25
-	Report: SURV.SLV|4.wav
+	Report: surv.slv||4.wav
 	Warhead@Damage: SpreadDamage
 		Versus:
 			infantry: 40

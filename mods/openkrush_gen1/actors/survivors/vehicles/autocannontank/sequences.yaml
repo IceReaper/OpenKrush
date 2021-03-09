@@ -1,15 +1,15 @@
 survivors_vehicle_autocannontank:
-	shoot: SPRITES.LVL|CannonTank.mobd
+	shoot: sprites.lvl|CannonTank.mobd
 		Length: 4
 		Tick: 40
 		Facings: -16
-	turret: SPRITES.LVL|CannonTank.mobd
+	turret: sprites.lvl|CannonTank.mobd
 		Start: 64
 		Facings: -16
-	idle: SPRITES.LVL|CannonTank.mobd
+	idle: sprites.lvl|CannonTank.mobd
 		Start: 80
 		Facings: -16
-	move: SPRITES.LVL|CannonTank.mobd
+	move: sprites.lvl|CannonTank.mobd
 		Start: 96
 		Length: 2
 		Tick: 120

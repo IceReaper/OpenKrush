@@ -4,7 +4,7 @@ survivors_tower_missilebattery:
 	Burst: 3
 	BurstDelays: 13
 	ReloadDelay: 50
-	Report: SURV.SLV|14.wav
+	Report: surv.slv||14.wav
 	Projectile: Bullet
 		Image: evolved_infantry_bazooka
 		Palette: openkrush

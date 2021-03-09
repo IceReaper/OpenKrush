@@ -1,15 +1,15 @@
 survivors_vehicle_barragecraft:
-	projectile: SPRITES.LVL|Crab.mobd
+	projectile: sprites.lvl|Crab.mobd
 		Length: 2
 		Tick: 120
 		Facings: -16
-	turret: SPRITES.LVL|BarrageCraft.mobd
+	turret: sprites.lvl|BarrageCraft.mobd
 		Start: 16
 		Facings: -16
-	idle: SPRITES.LVL|BarrageCraft.mobd
+	idle: sprites.lvl|BarrageCraft.mobd
 		Start: 32
 		Facings: -16
-	move: SPRITES.LVL|BarrageCraft.mobd
+	move: sprites.lvl|BarrageCraft.mobd
 		Start: 32
 		Facings: -16
 	icon: actors/survivors/vehicles/barragecraft/icon.png

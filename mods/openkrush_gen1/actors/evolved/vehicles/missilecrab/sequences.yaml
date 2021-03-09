@@ -1,15 +1,15 @@
 evolved_vehicle_missilecrab:
-	projectile: SPRITES.LVL|Crab.mobd
+	projectile: sprites.lvl|Crab.mobd
 		Length: 2
 		Tick: 120
 		Facings: -16
-	turret: SPRITES.LVL|Crab.mobd
+	turret: sprites.lvl|Crab.mobd
 		Start: 32
 		Facings: -16
-	idle: SPRITES.LVL|Crab.mobd
+	idle: sprites.lvl|Crab.mobd
 		Start: 48
 		Facings: -16
-	move: SPRITES.LVL|Crab.mobd
+	move: sprites.lvl|Crab.mobd
 		Start: 64
 		Length: 9
 		Tick: 120

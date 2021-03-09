@@ -1,7 +1,7 @@
 survivors_vehicle_derrick:
-	idle: SPRITES.LVL|SDerrick.mobd
+	idle: sprites.lvl|SDerrick.mobd
 		Facings: -16
-	move: SPRITES.LVL|SDerrick.mobd
+	move: sprites.lvl|SDerrick.mobd
 		Start: 17
 		Length: 2
 		Tick: 120

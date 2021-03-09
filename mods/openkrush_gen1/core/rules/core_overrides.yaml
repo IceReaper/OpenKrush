@@ -2,7 +2,7 @@
 	ActorPreviewPlaceBuildingPreview:
 		Palette: openkrush
 	Building:
-		BuildSounds: SURV.SLV|193.wav
+		BuildSounds: surv.slv||193.wav
 
 # Only 1 damage state
 ^CoreTower:

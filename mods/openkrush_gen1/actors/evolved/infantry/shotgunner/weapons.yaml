@@ -4,8 +4,8 @@ evolved_infantry_shotgunner:
 	Burst: 1
 	BurstDelays: 0
 	ReloadDelay: 38
-	Report: MUTE.SLV|17.wav
-	AfterFireSound: MUTE.SLV|190.wav
+	Report: mute.slv|17.wav
+	AfterFireSound: mute.slv|190.wav
 	AfterFireSoundDelay: 8
 	Warhead@Damage: SpreadDamage
 		Versus:

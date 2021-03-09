@@ -4,7 +4,7 @@ survivors_tower_guardtower:
 	Burst: 10
 	BurstDelays: 7
 	ReloadDelay: 38
-	Report: SURV.SLV|4.wav
+	Report: surv.slv||4.wav
 	Warhead@Damage: SpreadDamage
 		Versus:
 			infantry: 45

@@ -1,7 +1,7 @@
 evolved_vehicle_clanhallwagon:
-	idle: SPRITES.LVL|ClanhallWagon.mobd
+	idle: sprites.lvl|ClanhallWagon.mobd
 		Facings: -16
-	move: SPRITES.LVL|ClanhallWagon.mobd
+	move: sprites.lvl|ClanhallWagon.mobd
 		Start: 16
 		Length: 2
 		Tick: 120

@@ -4,7 +4,7 @@ survivors_tower_cannontower:
 	Burst: 2
 	BurstDelays: 4
 	ReloadDelay: 60
-	Report: SURV.SLV|9.wav
+	Report: surv.slv||9.wav
 	Projectile: Bullet
 		Image: survivors_vehicle_anacondatank
 		Palette: openkrush

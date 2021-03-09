@@ -1,23 +1,23 @@
 evolved_vehicle_direwolf:
 	Inherits@muzzle: ^muzzle_16_directions
-	idle: SPRITES.LVL|DireWolf.mobd
+	idle: sprites.lvl|DireWolf.mobd
 		Start: 40
 		Facings: -16
-	aim: SPRITES.LVL|DireWolf.mobd
+	aim: sprites.lvl|DireWolf.mobd
 		Start: 56
 		Stride: 5
 		Facings: -16
-	shoot: SPRITES.LVL|DireWolf.mobd
+	shoot: sprites.lvl|DireWolf.mobd
 		Start: 56
 		Length: 5
 		Tick: 60
 		Facings: -16
-	move: SPRITES.LVL|DireWolf.mobd
+	move: sprites.lvl|DireWolf.mobd
 		Start: 136
 		Length: 7
 		Tick: 60
 		Facings: -16
-	die: SPRITES.LVL|DireWolf.mobd
+	die: sprites.lvl|DireWolf.mobd
 		Start: 2
 		Length: 13
 		Tick: 120

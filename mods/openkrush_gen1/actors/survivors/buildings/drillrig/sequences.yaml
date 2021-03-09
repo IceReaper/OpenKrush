@@ -1,20 +1,20 @@
 survivors_building_drillrig:
-	animation: SPRITES.LVL|SRig.mobd
+	animation: sprites.lvl|SRig.mobd
 		Length: 6
 		Tick: 160
 		Offset: 0,-32
-	damaged-idle: SPRITES.LVL|SRig.mobd
+	damaged-idle: sprites.lvl|SRig.mobd
 		Start: 6
 		Offset: 0,-32
-	idle: SPRITES.LVL|SRig.mobd
+	idle: sprites.lvl|SRig.mobd
 		Start: 7
 		Offset: 0,-32
-	deploy: SPRITES.LVL|SRig.mobd
+	deploy: sprites.lvl|SRig.mobd
 		Start: 8
 		Length: 6
 		Tick: 60
 		Offset: 0,-32
-	oil: SPRITES.LVL|Oil.mobd
+	oil: sprites.lvl|Oil.mobd
 		Length: 14
 		Tick: 120
 		Offset: 0,-16

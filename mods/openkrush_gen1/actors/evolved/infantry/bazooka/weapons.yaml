@@ -4,7 +4,7 @@ evolved_infantry_bazooka:
 	Burst: 1
 	BurstDelays: 0
 	ReloadDelay: 63
-	Report: MUTE.SLV|14.wav
+	Report: mute.slv|14.wav
 	Projectile: Bullet
 		Image: evolved_infantry_bazooka
 		Palette: openkrush

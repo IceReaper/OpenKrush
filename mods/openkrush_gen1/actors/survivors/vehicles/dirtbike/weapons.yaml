@@ -4,7 +4,7 @@ survivors_vehicle_dirtbike:
 	Burst: 1
 	BurstDelays: 0
 	ReloadDelay: 25
-	Report: openkrush_gen1|actors/survivors/vehicles/dirtbike/sound.wav #SURV.SLV|5.wav
+	Report: openkrush_gen1|actors/survivors/vehicles/dirtbike/sound.wav #surv.slv||5.wav
 	Warhead@Damage: SpreadDamage
 		Versus:
 			infantry: 30

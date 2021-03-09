@@ -1,21 +1,21 @@
 evolved_building_powerstation:
-	animation: SPRITES.LVL|MPowerStation.mobd
+	animation: sprites.lvl|MPowerStation.mobd
 		Length: 4
 		Tick: 160
 		Offset: -5,-29
-	damaged-idle: SPRITES.LVL|MPowerStation.mobd
+	damaged-idle: sprites.lvl|MPowerStation.mobd
 		Start: 4
 		Offset: -5,-29
-	idle: SPRITES.LVL|MPowerStation.mobd
+	idle: sprites.lvl|MPowerStation.mobd
 		Start: 5
 		Offset: -5,-29
-	make0: SPRITES.LVL|MPowerStation.mobd
+	make0: sprites.lvl|MPowerStation.mobd
 		Start: 15
 		Offset: -5,-29
-	make1: SPRITES.LVL|MPowerStation.mobd
+	make1: sprites.lvl|MPowerStation.mobd
 		Start: 16
 		Offset: -5,-29
-	make2: SPRITES.LVL|MPowerStation.mobd
+	make2: sprites.lvl|MPowerStation.mobd
 		Start: 17
 		Offset: -5,-29
 	critical-idle: actors/evolved/buildings/powerstation/frames.png

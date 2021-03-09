@@ -1,7 +1,7 @@
 survivors_vehicle_oiltanker:
-	idle: SPRITES.LVL|SOTanker.mobd
+	idle: sprites.lvl|SOTanker.mobd
 		Facings: -16
-	move: SPRITES.LVL|SOTanker.mobd
+	move: sprites.lvl|SOTanker.mobd
 		Start: 16
 		Length: 2
 		Tick: 120

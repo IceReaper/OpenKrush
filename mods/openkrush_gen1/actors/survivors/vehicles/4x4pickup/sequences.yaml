@@ -1,13 +1,13 @@
 survivors_vehicle_4x4pickup:
 	Inherits@muzzle: ^muzzle_16_directions
 	# Original also uses the MonsterTruck turret, cause the Pickup turret has a broken north-frame.
-	#turret: SPRITES.LVL|Pickup.mobd
-	turret: SPRITES.LVL|MonsterTruck.mobd
+	#turret: sprites.lvl|Pickup.mobd
+	turret: sprites.lvl|MonsterTruck.mobd
 		Facings: -16
-	idle: SPRITES.LVL|Pickup.mobd
+	idle: sprites.lvl|Pickup.mobd
 		Start: 16
 		Facings: -16
-	move: SPRITES.LVL|Pickup.mobd
+	move: sprites.lvl|Pickup.mobd
 		Start: 32
 		Length: 2
 		Tick: 120

@@ -5,7 +5,7 @@ evolved_tower_grapeshotcannon:
 	BurstDelays: 1
 	ReloadDelay: 50
 	StartBurstReport: openkrush_gen1|actors/evolved/towers/grapeshotcannon/sound.wav
-	#Report: MUTE.SLV|9.wav
+	#Report: mute.slv|9.wav
 	Projectile: Bullet
 		Image: evolved_tower_grapeshotcannon
 		Palette: openkrush

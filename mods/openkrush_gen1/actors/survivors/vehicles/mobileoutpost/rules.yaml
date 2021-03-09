@@ -17,7 +17,7 @@ survivors_vehicle_mobileoutpost:
 		Range: 11c0
 	Transforms:
 		IntoActor: survivors_building_outpost
-		TransformSounds: SURV.SLV|189.wav
+		TransformSounds: surv.slv||189.wav
 	AdvancedSelectionDecorations:
 		Offset: 0,2
 	Voiced:

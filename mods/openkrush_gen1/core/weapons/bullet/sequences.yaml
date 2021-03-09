@@ -1,15 +1,15 @@
 weapon_bullet:
-	hit_a: SPRITES.LVL|Extras.mobd
+	hit_a: sprites.lvl|Extras.mobd
 		Start: 261
 		Length: 6
 		Tick: 120
 		ZOffset: 1500
-	hit_b: SPRITES.LVL|Extras.mobd
+	hit_b: sprites.lvl|Extras.mobd
 		Start: 267
 		Length: 4
 		Tick: 120
 		ZOffset: 1500
-	hit_c: SPRITES.LVL|Extras.mobd
+	hit_c: sprites.lvl|Extras.mobd
 		Start: 271
 		Length: 4
 		Tick: 120

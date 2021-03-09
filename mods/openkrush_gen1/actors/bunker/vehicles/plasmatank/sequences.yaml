@@ -1,14 +1,14 @@
 bunker_vehicles_plasmatank:
-	projectile: SPRITES.LVL|LaserTank.mobd
+	projectile: sprites.lvl|LaserTank.mobd
 		Facings: -16
 		ZOffset: 1000
-	turret: SPRITES.LVL|LaserTank.mobd
+	turret: sprites.lvl|LaserTank.mobd
 		Start: 16
 		Facings: -16
-	idle: SPRITES.LVL|LaserTank.mobd
+	idle: sprites.lvl|LaserTank.mobd
 		Start: 32
 		Facings: -16
-	move: SPRITES.LVL|LaserTank.mobd
+	move: sprites.lvl|LaserTank.mobd
 		Start: 48
 		Facings: -16
 	icon: actors/bunker/vehicles/plasmatank/icon.png

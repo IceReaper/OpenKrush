@@ -19,13 +19,13 @@ bunker_vehicles_gorttherobot:
 		Image: bunker_vehicles_gorttherobot_large
 		ExplosionPalette: openkrush
 		Explosions: electrified1, electrified2, electrified3, electrified4, electrified5, electrified6, electrified7, electrified8, electrified9
-		ImpactSounds: openkrush_gen1|actors/bunker/vehicles/gorttherobot/sound2.wav #SURV.SLV|187.wav
+		ImpactSounds: openkrush_gen1|actors/bunker/vehicles/gorttherobot/sound2.wav #surv.slv||187.wav
 		ImpactSoundChance: 15
 		InvalidTargets: Infantry
 	Warhead@EffectInfantry: ShrapnelCreateEffect
 		Image: bunker_vehicles_gorttherobot_small
 		ExplosionPalette: openkrush
 		Explosions: electrified1, electrified2, electrified3, electrified4, electrified5, electrified6, electrified7, electrified8, electrified9
-		ImpactSounds: openkrush_gen1|actors/bunker/vehicles/gorttherobot/sound2.wav #SURV.SLV|187.wav
+		ImpactSounds: openkrush_gen1|actors/bunker/vehicles/gorttherobot/sound2.wav #surv.slv||187.wav
 		ImpactSoundChance: 15
 		ValidTargets: Infantry

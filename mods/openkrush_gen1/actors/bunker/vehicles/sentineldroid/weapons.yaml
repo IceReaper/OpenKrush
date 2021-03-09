@@ -3,7 +3,7 @@ bunker_vehicles_sentineldroid:
 	Burst: 2
 	BurstDelays: 13
 	ReloadDelay: 50
-	Report: SURV.SLV|87.wav
+	Report: surv.slv||87.wav
 	Projectile: Bullet
 		Image: bunker_vehicles_sentineldroid
 		Palette: openkrush
@@ -24,7 +24,7 @@ bunker_vehicles_sentineldroid:
 		Image: projectiles
 		ExplosionPalette: openkrush
 		Explosions: laser
-		ImpactSounds: MUTE.SLV|10.wav
+		ImpactSounds: mute.slv|10.wav
 	Warhead@Smudge: LeaveSmudge
 		Chance: 35
 		SmudgeType: Crater

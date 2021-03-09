@@ -50,7 +50,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 
 			for (var i = 0; i < lastItem; i++)
 			{
-				if (e.Key != Game.ModData.Hotkeys["Production" + (i + 1)].GetValue().Key)
+				if (e.Key != Game.ModData.Hotkeys[$"Production{(i + 1)}"].GetValue().Key)
 					continue;
 
 				((ProductionItemButtonWidget)Children[i]).ClickedLeft(new MouseInput(MouseInputEvent.Down, MouseButton.None, int2.Zero, int2.Zero, e.Modifiers, 0));
@@ -181,7 +181,8 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 						IsActive = isActive,
 						IsFocused = () => Parent.Children.Count > 1 && IsFocused,
 						TooltipTitle = buildableItem.TraitInfo<TooltipInfo>().Name,
-						TooltipText = (valued == null ? "" : "Cost: " + valued.Cost + "\n") + "Time: " + buildTime + (description != null ? "\n" + description.Description : null)
+						TooltipText =
+							$"{(valued == null ? "" : $"Cost: {valued.Cost}\n")}Time: {buildTime}{(description != null ? $"\n{description.Description}" : null)}"
 					};
 
 					AddChild(button);

@@ -4,7 +4,7 @@ evolved_infantry_crazyharry:
 	Burst: 1
 	BurstDelays: 0
 	ReloadDelay: 13
-	Report: MUTE.SLV|8.wav
+	Report: mute.slv|8.wav
 	Warhead@Damage: SpreadDamage
 		Versus:
 			infantry: 150

@@ -4,7 +4,7 @@ evolved_vehicle_missilecrab:
 	Burst: 2
 	BurstDelays: 13
 	ReloadDelay: 38
-	Report: MUTE.SLV|14.wav
+	Report: mute.slv|14.wav
 	Projectile: Bullet
 		Image: evolved_vehicle_missilecrab
 		Palette: player

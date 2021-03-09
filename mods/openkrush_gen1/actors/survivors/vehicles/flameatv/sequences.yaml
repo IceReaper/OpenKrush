@@ -1,11 +1,11 @@
 survivors_vehicle_flameatv:
 	Inherits@muzzle: ^muzzle_flamethrower
-	turret: SPRITES.LVL|FlameAtv.mobd
+	turret: sprites.lvl|FlameAtv.mobd
 		Facings: -16
-	idle: SPRITES.LVL|FlameAtv.mobd
+	idle: sprites.lvl|FlameAtv.mobd
 		Start: 16
 		Facings: -16
-	move: SPRITES.LVL|FlameAtv.mobd
+	move: sprites.lvl|FlameAtv.mobd
 		Start: 32
 		Length: 2
 		Tick: 120

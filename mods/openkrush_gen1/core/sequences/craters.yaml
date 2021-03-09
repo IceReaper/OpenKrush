@@ -1,28 +1,28 @@
 crater:
-	a: SPRITES.LVL|Extras.mobd
+	a: sprites.lvl|Extras.mobd
 		Start: 362
 		Offset: -16,-16
-	b: SPRITES.LVL|Extras.mobd
+	b: sprites.lvl|Extras.mobd
 		Start: 363
 		Offset: -16,-16
-	c: SPRITES.LVL|Extras.mobd
+	c: sprites.lvl|Extras.mobd
 		Start: 364
 		Offset: -16,-16
-	d: SPRITES.LVL|Extras.mobd
+	d: sprites.lvl|Extras.mobd
 		Start: 365
 		Offset: -16,-16
-	e: SPRITES.LVL|Extras.mobd
+	e: sprites.lvl|Extras.mobd
 		Start: 366
 		Offset: -16,-16
-	f: SPRITES.LVL|Extras.mobd
+	f: sprites.lvl|Extras.mobd
 		Start: 367
 		Offset: -16,-16
-	g: SPRITES.LVL|Extras.mobd
+	g: sprites.lvl|Extras.mobd
 		Start: 368
 		Offset: -16,-16
-	h: SPRITES.LVL|Extras.mobd
+	h: sprites.lvl|Extras.mobd
 		Start: 369
 		Offset: -16,-16
-	i: SPRITES.LVL|Extras.mobd
+	i: sprites.lvl|Extras.mobd
 		Start: 370
 		Offset: -16,-16

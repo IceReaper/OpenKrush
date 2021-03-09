@@ -19,4 +19,4 @@ evolved_aircraft_wasp:
 	Voiced:
 		VoiceSet: evolved_aircraft_wasp
 	AmbientSound:
-		SoundFiles: MUTE.SLV|162.wav
+		SoundFiles: mute.slv|162.wav

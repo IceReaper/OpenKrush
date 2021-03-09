@@ -1,15 +1,15 @@
 evolved_infantry_rioter:
 	Inherits@death: ^evolved_infantry_death
-	idle: SPRITES.LVL|Rioter.mobd
+	idle: sprites.lvl|Rioter.mobd
 		Facings: -16
-	aim: SPRITES.LVL|Rioter.mobd
+	aim: sprites.lvl|Rioter.mobd
 		Facings: -16
-	shoot: SPRITES.LVL|Rioter.mobd
+	shoot: sprites.lvl|Rioter.mobd
 		Start: 16
 		Length: 6
 		Tick: 120
 		Facings: -16
-	move: SPRITES.LVL|Rioter.mobd
+	move: sprites.lvl|Rioter.mobd
 		Start: 112
 		Length: 6
 		Tick: 120

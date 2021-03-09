@@ -1,13 +1,13 @@
 evolved_vehicle_warmastodon:
-	projectile: SPRITES.LVL|Mastodon.mobd
+	projectile: sprites.lvl|Mastodon.mobd
 		Facings: -16
-	turret: SPRITES.LVL|Mastodon.mobd
+	turret: sprites.lvl|Mastodon.mobd
 		Start: 16
 		Facings: -16
-	idle: SPRITES.LVL|Mastodon.mobd
+	idle: sprites.lvl|Mastodon.mobd
 		Start: 32
 		Facings: -16
-	move: SPRITES.LVL|Mastodon.mobd
+	move: sprites.lvl|Mastodon.mobd
 		Start: 48
 		Length: 10
 		Tick: 120

@@ -4,7 +4,7 @@ evolved_vehicle_bikeandsidecar:
 	Burst: 10
 	BurstDelays: 19
 	ReloadDelay: 25
-	Report: MUTE.SLV|7.wav
+	Report: mute.slv|7.wav
 	Warhead@Damage: SpreadDamage
 		Versus:
 			infantry: 40

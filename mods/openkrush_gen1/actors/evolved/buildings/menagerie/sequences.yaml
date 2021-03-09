@@ -1,16 +1,16 @@
 evolved_building_menagerie:
-	damaged-idle: SPRITES.LVL|Menagerie.mobd
+	damaged-idle: sprites.lvl|Menagerie.mobd
 		Offset: -2,-35
-	idle: SPRITES.LVL|Menagerie.mobd
+	idle: sprites.lvl|Menagerie.mobd
 		Start: 1
 		Offset: -2,-35
-	make0: SPRITES.LVL|Menagerie.mobd
+	make0: sprites.lvl|Menagerie.mobd
 		Start: 11
 		Offset: -2,-35
-	make1: SPRITES.LVL|Menagerie.mobd
+	make1: sprites.lvl|Menagerie.mobd
 		Start: 12
 		Offset: -2,-35
-	make2: SPRITES.LVL|Menagerie.mobd
+	make2: sprites.lvl|Menagerie.mobd
 		Start: 13
 		Offset: -2,-35
 	critical-idle: actors/evolved/buildings/menagerie/frames.png

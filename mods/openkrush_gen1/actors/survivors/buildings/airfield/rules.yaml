@@ -30,8 +30,8 @@ survivors_building_airfield:
 		IconImage: survivors_aircraft_bomber
 		Icon: icon
 		ChargeInterval: 7500
-		EndChargeSound: SURV.SLV|66.wav
-		IncomingSound: SURV.SLV|42.wav
-		LaunchSound: SURV.SLV|42.wav
+		EndChargeSound: surv.slv||66.wav
+		IncomingSound: surv.slv||42.wav
+		LaunchSound: surv.slv||42.wav
 	AdvancedSelectionDecorations:
 		Offset: -2,0

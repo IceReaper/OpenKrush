@@ -1,14 +1,14 @@
 survivors_vehicle_anacondatank:
 	Inherits@muzzle: ^muzzle_16_directions
-	projectile: SPRITES.LVL|Tank.mobd
+	projectile: sprites.lvl|Tank.mobd
 		Facings: -16
-	turret: SPRITES.LVL|Tank.mobd
+	turret: sprites.lvl|Tank.mobd
 		Start: 16
 		Facings: -16
-	idle: SPRITES.LVL|Tank.mobd
+	idle: sprites.lvl|Tank.mobd
 		Start: 32
 		Facings: -16
-	move: SPRITES.LVL|Tank.mobd
+	move: sprites.lvl|Tank.mobd
 		Start: 48
 		Length: 2
 		Tick: 120

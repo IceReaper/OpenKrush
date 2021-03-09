@@ -1,23 +1,23 @@
 survivors_tower_cannontower:
-	shoot: SPRITES.LVL|CannonTower.mobd
+	shoot: sprites.lvl|CannonTower.mobd
 		Length: 3
 		Tick: 160
 		Facings: -16
 		Offset: 0,-10
-	turret: SPRITES.LVL|CannonTower.mobd
+	turret: sprites.lvl|CannonTower.mobd
 		Start: 48
 		Facings: -16
 		Offset: 0,-10
-	idle: SPRITES.LVL|CannonTower.mobd
+	idle: sprites.lvl|CannonTower.mobd
 		Start: 64
 		Offset: 0,-10
-	make0: SPRITES.LVL|CannonTower.mobd
+	make0: sprites.lvl|CannonTower.mobd
 		Start: 65
 		Offset: 0,-10
-	make1: SPRITES.LVL|CannonTower.mobd
+	make1: sprites.lvl|CannonTower.mobd
 		Start: 66
 		Offset: 0,-10
-	make2: SPRITES.LVL|CannonTower.mobd
+	make2: sprites.lvl|CannonTower.mobd
 		Start: 67
 		Offset: 0,-10
 	damaged-idle: actors/survivors/towers/cannontower/frames.png

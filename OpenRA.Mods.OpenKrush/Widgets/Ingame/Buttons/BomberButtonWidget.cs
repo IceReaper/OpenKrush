@@ -42,7 +42,8 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 
 				for (var i = 0; i < lastItem; i++)
 				{
-					if (e.Key != Game.ModData.Hotkeys["Production" + (i + 1)].GetValue().Key || e.Modifiers != Game.ModData.Hotkeys["Production" + (i + 1)].GetValue().Modifiers)
+					if (e.Key != Game.ModData.Hotkeys[$"Production{(i + 1)}"].GetValue().Key || e.Modifiers != Game.ModData.Hotkeys[
+						$"Production{(i + 1)}"].GetValue().Modifiers)
 						continue;
 
 					((ProductionItemButtonWidget)Children[i]).ClickedLeft(new MouseInput(MouseInputEvent.Down, MouseButton.None, int2.Zero, int2.Zero, e.Modifiers, 0));

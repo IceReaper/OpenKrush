@@ -1,18 +1,18 @@
 evolved_tower_machinegunnest:
 	Inherits@muzzle: ^muzzle_16_directions
-	turret: SPRITES.LVL|MGuardTower.mobd
+	turret: sprites.lvl|MGuardTower.mobd
 		Facings: -16
 		Offset: 1,-14
-	idle: SPRITES.LVL|MGuardTower.mobd
+	idle: sprites.lvl|MGuardTower.mobd
 		Start: 16
 		Offset: 1,-14
-	make0: SPRITES.LVL|MGuardTower.mobd
+	make0: sprites.lvl|MGuardTower.mobd
 		Start: 17
 		Offset: 1,-14
-	make1: SPRITES.LVL|MGuardTower.mobd
+	make1: sprites.lvl|MGuardTower.mobd
 		Start: 18
 		Offset: 1,-14
-	make2: SPRITES.LVL|MGuardTower.mobd
+	make2: sprites.lvl|MGuardTower.mobd
 		Start: 19
 		Offset: 1,-14
 	damaged-idle: actors/evolved/towers/machinegunnest/frames.png

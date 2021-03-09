@@ -1,16 +1,16 @@
 ^muzzle_16_directions:
-	muzzle: SPRITES.LVL|Extras.mobd
+	muzzle: sprites.lvl|Extras.mobd
 		Length: 2
 		Facings: -16
 		Tick: 60
 ^muzzle_8_directions:
-	muzzle: SPRITES.LVL|Extras.mobd
+	muzzle: sprites.lvl|Extras.mobd
 		Start: 32
 		Length: 2
 		Facings: -16
 		Tick: 60
 ^muzzle_flamethrower:
-	muzzle: SPRITES.LVL|Flame.mobd
+	muzzle: sprites.lvl|Flame.mobd
 		Length: 9
 		Facings: -16
 		Tick: 60

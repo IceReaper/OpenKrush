@@ -87,7 +87,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 
 			WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X, RenderBounds.Y, Size, Size), Color.FromArgb(255, 0, 0, 0));
 
-			sidebar.Buttons.PlayFetchIndex(Active && IsUsable() ? type + "-down" : type, () => 0);
+			sidebar.Buttons.PlayFetchIndex(Active && IsUsable() ? $"{type}-down" : type, () => 0);
 			WidgetUtils.DrawSHPCentered(sidebar.Buttons.Image, center, sidebar.IngameUi.Palette);
 
 			if (IsUsable())

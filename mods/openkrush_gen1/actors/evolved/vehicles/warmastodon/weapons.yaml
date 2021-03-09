@@ -4,7 +4,7 @@ evolved_vehicle_warmastodon:
 	Burst: 4
 	BurstDelays: 4
 	ReloadDelay: 67
-	Report: MUTE.SLV|9.wav
+	Report: mute.slv|9.wav
 	Projectile: Bullet
 		Image: evolved_vehicle_warmastodon
 		Palette: openkrush

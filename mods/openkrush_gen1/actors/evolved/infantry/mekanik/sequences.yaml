@@ -1,8 +1,8 @@
 evolved_infantry_mekanik:
 	Inherits@death: ^evolved_infantry_death
-	idle: SPRITES.LVL|Mekanik.mobd
+	idle: sprites.lvl|Mekanik.mobd
 		Facings: -16
-	move: SPRITES.LVL|Mekanik.mobd
+	move: sprites.lvl|Mekanik.mobd
 		Start: 16
 		Length: 6
 		Tick: 120

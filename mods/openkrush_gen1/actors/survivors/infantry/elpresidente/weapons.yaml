@@ -4,7 +4,7 @@ survivors_infantry_elpresidente:
 	Burst: 1
 	BurstDelays: 0
 	ReloadDelay: 38
-	Report: SURV.SLV|16.wav
+	Report: surv.slv||16.wav
 	Warhead@Damage: SpreadDamage
 		Versus:
 			infantry: 40

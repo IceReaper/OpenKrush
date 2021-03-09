@@ -1,24 +1,24 @@
 evolved_tower_rotarycannon:
 	Inherits@muzzle: ^muzzle_16_directions
-	shoot: SPRITES.LVL|RotaryCannon.mobd
+	shoot: sprites.lvl|RotaryCannon.mobd
 		Length: 4
 		Tick: 40
 		Facings: -16
 		Offset: 0,-17
-	turret: SPRITES.LVL|RotaryCannon.mobd
+	turret: sprites.lvl|RotaryCannon.mobd
 		Start: 64
 		Facings: -16
 		Offset: 0,-17
-	idle: SPRITES.LVL|RotaryCannon.mobd
+	idle: sprites.lvl|RotaryCannon.mobd
 		Start: 80
 		Offset: 0,-17
-	make0: SPRITES.LVL|RotaryCannon.mobd
+	make0: sprites.lvl|RotaryCannon.mobd
 		Start: 81
 		Offset: 0,-17
-	make1: SPRITES.LVL|RotaryCannon.mobd
+	make1: sprites.lvl|RotaryCannon.mobd
 		Start: 82
 		Offset: 0,-17
-	make2: SPRITES.LVL|RotaryCannon.mobd
+	make2: sprites.lvl|RotaryCannon.mobd
 		Start: 83
 		Offset: 0,-17
 	damaged-idle: actors/evolved/towers/rotarycannon/frames.png

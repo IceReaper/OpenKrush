@@ -4,7 +4,7 @@ evolved_infantry_vandal:
 	Burst: 1
 	BurstDelays: 0
 	ReloadDelay: 50
-	Report: MUTE.SLV|16.wav
+	Report: mute.slv|16.wav
 	Warhead@Damage: SpreadDamage
 		Versus:
 			infantry: 40

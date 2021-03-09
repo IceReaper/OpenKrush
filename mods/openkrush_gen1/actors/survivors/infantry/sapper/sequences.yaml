@@ -1,20 +1,20 @@
 survivors_infantry_sapper:
 	Inherits@death: ^survivors_infantry_death
-	projectile: SPRITES.LVL|Sapper.mobd
+	projectile: sprites.lvl|Sapper.mobd
 		Length: 8
 		Facings: -16
-	idle: SPRITES.LVL|Sapper.mobd
+	idle: sprites.lvl|Sapper.mobd
 		Start: 128
 		Facings: -16
-	aim: SPRITES.LVL|Sapper.mobd
+	aim: sprites.lvl|Sapper.mobd
 		Start: 128
 		Facings: -16
-	shoot: SPRITES.LVL|Sapper.mobd
+	shoot: sprites.lvl|Sapper.mobd
 		Start: 144
 		Length: 6
 		Tick: 120
 		Facings: -16
-	move: SPRITES.LVL|Sapper.mobd
+	move: sprites.lvl|Sapper.mobd
 		Start: 240
 		Length: 6
 		Tick: 120

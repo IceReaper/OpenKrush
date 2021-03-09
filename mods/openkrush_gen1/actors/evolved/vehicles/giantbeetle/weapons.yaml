@@ -3,7 +3,7 @@ evolved_vehicle_giantbeetle:
 	Burst: 6
 	BurstDelays: 0
 	ReloadDelay: 63
-	StartBurstReport: MUTE.SLV|161.wav
+	StartBurstReport: mute.slv|161.wav
 	Projectile: Bullet
 		Image: evolved_vehicle_giantbeetle
 		Palette: openkrush
@@ -27,4 +27,4 @@ evolved_vehicle_giantbeetle:
 		Image: projectiles
 		ExplosionPalette: openkrush
 		Explosions: splat
-		ImpactSounds: MUTE.SLV|161.wav
+		ImpactSounds: mute.slv|161.wav

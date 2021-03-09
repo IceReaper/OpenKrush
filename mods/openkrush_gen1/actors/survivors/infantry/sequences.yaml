@@ -1,5 +1,5 @@
 ^survivors_infantry_death:
-	die: SPRITES.LVL|Extras.mobd
+	die: sprites.lvl|Extras.mobd
 		Start: 308
 		Length: 15
 		Tick: 120

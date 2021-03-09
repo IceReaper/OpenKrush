@@ -59,9 +59,10 @@ namespace OpenRA.Mods.OpenKrush.FileSystem
 
 				var lvlLookup = new Dictionary<string, string>();
 				var updateLookup = false;
+				var lookupPath = $"archives/{Path.GetFileName(filename)}.yaml";
 
 				Stream s2;
-				if (context.TryOpen(filename + ".yaml", out s2))
+				if (context.TryOpen(lookupPath, out s2))
 					lvlLookup = MiniYaml.FromStream(s2).ToDictionary(x => x.Key, x => x.Value.Value);
 
 				var fileTypeListOffset = s.ReadUInt32();
@@ -109,7 +110,7 @@ namespace OpenRA.Mods.OpenKrush.FileSystem
 							entry[1] = fileOffset - entry[0];
 						}
 
-						var assetFileName = j + "." + fileType.ToLower();
+						var assetFileName = $"{j}.{fileType.ToLower()}";
 
 						// Lookup assumed original filename for better readability in yaml files.
 						if (lvlLookup.ContainsKey(assetFileName))
@@ -132,17 +133,8 @@ namespace OpenRA.Mods.OpenKrush.FileSystem
 				}
 
 				if (updateLookup)
-					File.WriteAllText(filename + ".yaml",
-						lvlLookup.Select(e => e.Key + ": " + e.Value).JoinWith("\n") + "\n");
-
-				/*if (!Directory.Exists("XTRACT/" + filename))
-					Directory.CreateDirectory("XTRACT/" + filename);
-
-				foreach (var entry in index)
-				{
-					stream.Position = entry.Value[0];
-					File.WriteAllBytes("XTRACT/" + filename + "/" + entry.Key, stream.ReadBytes((int)entry.Value[1]));
-				}*/
+					File.WriteAllText(lookupPath,
+						$"{lvlLookup.Select(e => $"{e.Key}: {e.Value}").JoinWith("\n")}\n");
 			}
 
 			public Stream GetStream(string filename)

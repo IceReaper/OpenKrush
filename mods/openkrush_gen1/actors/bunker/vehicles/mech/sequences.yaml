@@ -1,20 +1,20 @@
 bunker_vehicles_mech:
-	turret: SPRITES.LVL|Mech.mobd
+	turret: sprites.lvl|Mech.mobd
 		Facings: -16
-	idle: SPRITES.LVL|Mech.mobd
+	idle: sprites.lvl|Mech.mobd
 		Start: 16
 		Facings: -16
-	move: SPRITES.LVL|Mech.mobd
+	move: sprites.lvl|Mech.mobd
 		Start: 32
 		Length: 10
 		Tick: 80
 		Facings: -16
-	projectile: SPRITES.LVL|Mech.mobd
+	projectile: sprites.lvl|Mech.mobd
 		Start: 192
 		Length: 4
 		Tick: 60
 		ZOffset: 1000
-	projectile2: SPRITES.LVL|RocketLauncher.mobd
+	projectile2: sprites.lvl|RocketLauncher.mobd
 		Length: 2
 		Tick: 120
 		Facings: -16

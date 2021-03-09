@@ -1,21 +1,21 @@
 survivors_building_researchlab:
-	animation: SPRITES.LVL|ResearchLab.mobd
+	animation: sprites.lvl|ResearchLab.mobd
 		Length: 4
 		Tick: 180
 		Offset: -1,-32
-	damaged-idle: SPRITES.LVL|ResearchLab.mobd
+	damaged-idle: sprites.lvl|ResearchLab.mobd
 		Start: 4
 		Offset: -1,-32
-	idle: SPRITES.LVL|ResearchLab.mobd
+	idle: sprites.lvl|ResearchLab.mobd
 		Start: 5
 		Offset: -1,-32
-	make0: SPRITES.LVL|ResearchLab.mobd
+	make0: sprites.lvl|ResearchLab.mobd
 		Start: 6
 		Offset: -1,-32
-	make1: SPRITES.LVL|ResearchLab.mobd
+	make1: sprites.lvl|ResearchLab.mobd
 		Start: 7
 		Offset: -1,-32
-	make2: SPRITES.LVL|ResearchLab.mobd
+	make2: sprites.lvl|ResearchLab.mobd
 		Start: 8
 		Offset: -1,-32
 	critical-idle: actors/survivors/buildings/researchlab/frames.png

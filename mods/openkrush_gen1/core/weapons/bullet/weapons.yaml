@@ -9,6 +9,6 @@
 		Image: weapon_bullet
 		ExplosionPalette: openkrush
 		Explosions: hit_a, hit_b, hit_c, hit_d, hit_e, hit_f, hit_g, hit_h
-		ImpactSounds: MUTE.SLV|11.wav, MUTE.SLV|12.wav, MUTE.SLV|13.wav
+		ImpactSounds: mute.slv|11.wav, mute.slv|12.wav, mute.slv|13.wav
 		ImpactSoundChance: 10
 		Radius: 250,250

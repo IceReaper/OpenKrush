@@ -1,16 +1,16 @@
 bunker_vehicles_sentineldroid:
-	projectile: SPRITES.LVL|SentinelDroid.mobd
+	projectile: sprites.lvl|SentinelDroid.mobd
 		Length: 4
 		Facings: -16
 		Tick: 60
 		ZOffset: 1000
-	turret: SPRITES.LVL|SentinelDroid.mobd
+	turret: sprites.lvl|SentinelDroid.mobd
 		Start: 64
 		Facings: -16
-	idle: SPRITES.LVL|SentinelDroid.mobd
+	idle: sprites.lvl|SentinelDroid.mobd
 		Start: 80
 		Facings: -16
-	move: SPRITES.LVL|SentinelDroid.mobd
+	move: sprites.lvl|SentinelDroid.mobd
 		Start: 96
 		Length: 10
 		Tick: 60

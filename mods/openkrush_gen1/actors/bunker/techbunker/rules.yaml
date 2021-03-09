@@ -10,7 +10,7 @@ bunker_techbunker:
 	TechBunker:
 		Produces: summoning
 		ContainableActors: bunker_vehicles_gorttherobot, bunker_vehicles_mech, bunker_vehicles_plasmatank, bunker_vehicles_sentineldroid
-		SoundOpen: MUTE.SLV|189.wav
+		SoundOpen: mute.slv|189.wav
 		SequenceUnlocked: unlocked
 	Exit:
 		SpawnOffset: 0c-700,-0c150,0

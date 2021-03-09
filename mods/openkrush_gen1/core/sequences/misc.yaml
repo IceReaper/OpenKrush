@@ -1,44 +1,44 @@
 overlay:
-	build-valid: SPRITES.LVL|Cursors.mobd
+	build-valid: sprites.lvl|Cursors.mobd
 		Start: 98
 		Offset: -16, -16
-	build-invalid: SPRITES.LVL|Cursors.mobd
+	build-invalid: sprites.lvl|Cursors.mobd
 		Start: 97
 		Offset: -16, -16
 
 editor-overlay:
-	copy: SPRITES.LVL|Cursors.mobd
+	copy: sprites.lvl|Cursors.mobd
 		Start: 97
 		Offset: -16, -16
-	paste: SPRITES.LVL|Cursors.mobd
+	paste: sprites.lvl|Cursors.mobd
 		Start: 98
 		Offset: -16, -16
 
 moveflsh:
-	idle: SPRITES.LVL|Cursors.mobd
+	idle: sprites.lvl|Cursors.mobd
 		Start: 89
 		Length: 8
 
 indicators:
-	repair: SPRITES.LVL|Cursors.mobd
+	repair: sprites.lvl|Cursors.mobd
 		Start: 26
 		Length: 9
 		ZOffset: 2000
-	research0: SPRITES.LVL|Cursors.mobd
+	research0: sprites.lvl|Cursors.mobd
 		Start: 105
 		Length: 7
-	research1: SPRITES.LVL|Cursors.mobd
+	research1: sprites.lvl|Cursors.mobd
 		Start: 112
 		Length: 7
-	research2: SPRITES.LVL|Cursors.mobd
+	research2: sprites.lvl|Cursors.mobd
 		Start: 119
 		Length: 7
-	research3: SPRITES.LVL|Cursors.mobd
+	research3: sprites.lvl|Cursors.mobd
 		Start: 126
 		Length: 7
-	research4: SPRITES.LVL|Cursors.mobd
+	research4: sprites.lvl|Cursors.mobd
 		Start: 133
 		Length: 7
-	research5: SPRITES.LVL|Cursors.mobd
+	research5: sprites.lvl|Cursors.mobd
 		Start: 140
 		Length: 7

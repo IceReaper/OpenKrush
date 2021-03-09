@@ -1,18 +1,18 @@
 survivors_infantry_flamer:
 	Inherits@muzzle: ^muzzle_flamethrower
 	Inherits@death: ^survivors_infantry_death
-	idle: SPRITES.LVL|Flamer.mobd
+	idle: sprites.lvl|Flamer.mobd
 		Facings: -16
-	aim: SPRITES.LVL|Flamer.mobd
+	aim: sprites.lvl|Flamer.mobd
 		Start: 16
 		Stride: 4
 		Facings: -16
-	shoot: SPRITES.LVL|Flamer.mobd
+	shoot: sprites.lvl|Flamer.mobd
 		Start: 16
 		Length: 4
 		Tick: 120
 		Facings: -16
-	move: SPRITES.LVL|Flamer.mobd
+	move: sprites.lvl|Flamer.mobd
 		Start: 80
 		Length: 6
 		Tick: 120

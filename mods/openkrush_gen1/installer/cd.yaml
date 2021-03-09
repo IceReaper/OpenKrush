@@ -1,0 +1,18 @@
+cd: Krush, Kill 'N' Destroy Xtreme (Disc, English)
+	IDFiles:
+		GAME/KKND.exe: 6fb10d85739ef63b28831ada4cdfc159a950c5d2
+	Install:
+		copy: .
+			^SupportDir|Content/openkrush_gen1/sprites.lvl: LEVELS/640/SPRITES.LVL
+			^SupportDir|Content/openkrush_gen1/surv.slv:    LEVELS/surv.slv|
+			^SupportDir|Content/openkrush_gen1/mute.slv:    LEVELS/MUTE.SLV
+			^SupportDir|Content/openkrush_gen1/surv1.wav:   LEVELS/SURV1.WAV
+			^SupportDir|Content/openkrush_gen1/surv2.wav:   LEVELS/SURV2.WAV
+			^SupportDir|Content/openkrush_gen1/surv3.wav:   LEVELS/SURV3.WAV
+			^SupportDir|Content/openkrush_gen1/surv4.wav:   LEVELS/SURV4.WAV
+			^SupportDir|Content/openkrush_gen1/mute1.wav:   LEVELS/MUTE1.WAV
+			^SupportDir|Content/openkrush_gen1/mute2.wav:   LEVELS/MUTE2.WAV
+			^SupportDir|Content/openkrush_gen1/mute3.wav:   LEVELS/MUTE3.WAV
+			^SupportDir|Content/openkrush_gen1/mute4.wav:   LEVELS/MUTE4.WAV
+			^SupportDir|Content/openkrush_gen1/mh.vbc:      FMV/MH_FMV.VBC
+			^SupportDir|Content/openkrush_gen1/intro.vbc:   FMV/INTRO.VBC

@@ -47,7 +47,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 			IgnoreChildMouseOver = true;
 			IgnoreMouseOver = true;
 
-			Palette = WorldRenderer.Palette("player" + World.LocalPlayer.InternalName);
+			Palette = WorldRenderer.Palette($"player{World.LocalPlayer.InternalName}");
 
 			AddChild(Status = new StatusWidget(this));
 			AddChild(Radar = new RadarWidget(this));

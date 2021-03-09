@@ -1,7 +1,7 @@
 evolved_vehicle_giantscorpion:
 	DefaultVariant: # TODO remove .aud as default from engine!
 	Voices:
-		Create: MUTE.SLV|172.wav
-		Select: MUTE.SLV|172.wav
-		Action: MUTE.SLV|173.wav
-		Attack: MUTE.SLV|173.wav
+		Create: mute.slv|172.wav
+		Select: mute.slv|172.wav
+		Action: mute.slv|173.wav
+		Attack: mute.slv|173.wav

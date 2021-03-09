@@ -1,18 +1,18 @@
 survivors_tower_guardtower:
 	Inherits@muzzle: ^muzzle_16_directions
-	turret: SPRITES.LVL|SGuardTower.mobd
+	turret: sprites.lvl|SGuardTower.mobd
 		Facings: -16
 		Offset: 1,-17
-	idle: SPRITES.LVL|SGuardTower.mobd
+	idle: sprites.lvl|SGuardTower.mobd
 		Start: 16
 		Offset: 1,-17
-	make0: SPRITES.LVL|SGuardTower.mobd
+	make0: sprites.lvl|SGuardTower.mobd
 		Start: 26
 		Offset: 1,-17
-	make1: SPRITES.LVL|SGuardTower.mobd
+	make1: sprites.lvl|SGuardTower.mobd
 		Start: 27
 		Offset: 1,-17
-	make2: SPRITES.LVL|SGuardTower.mobd
+	make2: sprites.lvl|SGuardTower.mobd
 		Start: 28
 		Offset: 1,-17
 	damaged-idle: actors/survivors/towers/guardtower/frames.png

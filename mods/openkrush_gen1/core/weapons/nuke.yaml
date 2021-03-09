@@ -1,7 +1,7 @@
 ^weapon_nuke:
 	Range: 1c0 # TODO HACK
 	ReloadDelay: 10000 # TODO HACK
-	Report: MUTE.SLV|163.wav
+	Report: mute.slv|163.wav
 	Projectile: GravityBomb
 		Image: survivors_aircraft_bomber
 		Palette: openkrush
@@ -25,7 +25,7 @@
 		Image: weapon_explosions
 		ExplosionPalette: openkrush
 		Explosions: xl
-		ImpactSounds: MUTE.SLV|3.wav
+		ImpactSounds: mute.slv|3.wav
 	Warhead@2: ShrapnelCreateEffect
 		Image: weapon_explosions
 		Explosions: s

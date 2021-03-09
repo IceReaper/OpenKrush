@@ -1,18 +1,18 @@
 evolved_infantry_shotgunner:
 	Inherits@muzzle: ^muzzle_8_directions
 	Inherits@death: ^evolved_infantry_death
-	idle: SPRITES.LVL|Shotgunner.mobd
+	idle: sprites.lvl|Shotgunner.mobd
 		Facings: -16
-	aim: SPRITES.LVL|Shotgunner.mobd
+	aim: sprites.lvl|Shotgunner.mobd
 		Start: 16
 		Stride: 5
 		Facings: -16
-	shoot: SPRITES.LVL|Shotgunner.mobd
+	shoot: sprites.lvl|Shotgunner.mobd
 		Start: 16
 		Length: 5
 		Tick: 120
 		Facings: -16
-	move: SPRITES.LVL|Shotgunner.mobd
+	move: sprites.lvl|Shotgunner.mobd
 		Start: 96
 		Length: 6
 		Tick: 120

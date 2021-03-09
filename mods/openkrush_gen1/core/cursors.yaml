@@ -1,5 +1,5 @@
 Cursors:
-	SPRITES.LVL|Cursors.mobd: openkrush
+	sprites.lvl|Cursors.mobd: openkrush
 		default:
 			Start: 0
 		generic-blocked:

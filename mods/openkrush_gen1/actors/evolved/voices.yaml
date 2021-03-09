@@ -1,35 +1,35 @@
 EvolvedVoice:
 	DefaultVariant: # TODO remove .aud as default from engine!
 	Voices:
-		Create: MUTE.SLV|125.wav
-		Select: MUTE.SLV|116.wav, MUTE.SLV|139.wav, MUTE.SLV|140.wav, MUTE.SLV|142.wav
-		Action: MUTE.SLV|91.wav, MUTE.SLV|131.wav, MUTE.SLV|133.wav, openkrush_gen1|actors/evolved/Yes2.wav
-		Attack: MUTE.SLV|92.wav, MUTE.SLV|119.wav
+		Create: mute.slv|125.wav
+		Select: mute.slv|116.wav, mute.slv|139.wav, mute.slv|140.wav, mute.slv|142.wav
+		Action: mute.slv|91.wav, mute.slv|131.wav, mute.slv|133.wav, openkrush_gen1|actors/evolved/Yes2.wav
+		Attack: mute.slv|92.wav, mute.slv|119.wav
 		Infiltrate: openkrush_gen1|actors/evolved/Infiltrate.wav
-		Reinforce: MUTE.SLV|123.wav
-		Infiltrated: MUTE.SLV|105.wav
-		Conquered: MUTE.SLV|95.wav, MUTE.SLV|97.wav, MUTE.SLV|118.wav
+		Reinforce: mute.slv|123.wav
+		Infiltrated: mute.slv|105.wav
+		Conquered: mute.slv|95.wav, mute.slv|97.wav, mute.slv|118.wav
 		Reinforced: # TODO keep it blank or make custom sound
-		Repair: MUTE.SLV|124.wav
-		Repairing: MUTE.SLV|108.wav
-		Die: MUTE.SLV|174.wav, MUTE.SLV|175.wav, MUTE.SLV|176.wav, MUTE.SLV|177.wav, MUTE.SLV|178.wav
+		Repair: mute.slv|124.wav
+		Repairing: mute.slv|108.wav
+		Die: mute.slv|174.wav, mute.slv|175.wav, mute.slv|176.wav, mute.slv|177.wav, mute.slv|178.wav
 		Crush: openkrush_gen1|core/crush1.wav, openkrush_gen1|core/crush2.wav
 		Zapped: openkrush_gen1|core/zapped1.wav, openkrush_gen1|core/zapped2.wav, openkrush_gen1|core/zapped3.wav
 
 EvolvedVeteranVoice:
 	DefaultVariant: # TODO remove .aud as default from engine!
 	Voices:
-		Create: MUTE.SLV|125.wav # Using non-veteran one to allow travis to build...
-		Select: openkrush_gen1|actors/evolved/Huh.wav, MUTE.SLV|158.wav
-		Action: MUTE.SLV|154.wav, MUTE.SLV|148.wav
-		Attack: MUTE.SLV|153.wav, openkrush_gen1|actors/evolved/IveFoundThePlaymate.wav, openkrush_gen1|actors/evolved/ActionTime.wav
+		Create: mute.slv|125.wav # Using non-veteran one to allow travis to build...
+		Select: openkrush_gen1|actors/evolved/Huh.wav, mute.slv|158.wav
+		Action: mute.slv|154.wav, mute.slv|148.wav
+		Attack: mute.slv|153.wav, openkrush_gen1|actors/evolved/IveFoundThePlaymate.wav, openkrush_gen1|actors/evolved/ActionTime.wav
 		Infiltrate: openkrush_gen1|actors/evolved/TheBuildingHasBeenFound.wav
 		Reinforce: openkrush_gen1|actors/evolved/Yes.wav
 		Infiltrated: openkrush_gen1|actors/evolved/WereInside.wav
 		Conquered: openkrush_gen1|actors/evolved/WeGotTheirBuilding.wav
 		Reinforced: # TODO keep it blank or make custom sound
-		Repair: MUTE.SLV|124.wav
-		Repairing: MUTE.SLV|108.wav
-		Die: MUTE.SLV|174.wav, MUTE.SLV|175.wav, MUTE.SLV|176.wav, MUTE.SLV|177.wav, MUTE.SLV|178.wav
+		Repair: mute.slv|124.wav
+		Repairing: mute.slv|108.wav
+		Die: mute.slv|174.wav, mute.slv|175.wav, mute.slv|176.wav, mute.slv|177.wav, mute.slv|178.wav
 		Crush: openkrush_gen1|core/crush1.wav, openkrush_gen1|core/crush2.wav
 		Zapped: openkrush_gen1|core/zapped1.wav, openkrush_gen1|core/zapped2.wav, openkrush_gen1|core/zapped3.wav

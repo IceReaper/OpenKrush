@@ -4,7 +4,7 @@ survivors_infantry_rifleman:
 	Burst: 1
 	BurstDelays: 0
 	ReloadDelay: 25
-	Report: SURV.SLV|4.wav
+	Report: surv.slv||4.wav
 	Warhead@Damage: SpreadDamage
 		Versus:
 			infantry: 40

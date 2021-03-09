@@ -1,44 +1,44 @@
 neutral_building_hut_a:
-	idle: SPRITES.LVL|Hut.mobd
+	idle: sprites.lvl|Hut.mobd
 		Start: 5
 
 neutral_building_hut_a_rubble:
-	idle: SPRITES.LVL|Hut.mobd
+	idle: sprites.lvl|Hut.mobd
 		ZOffset: -1000
 
 neutral_building_hut_b:
-	idle: SPRITES.LVL|Hut.mobd
+	idle: sprites.lvl|Hut.mobd
 		Start: 6
 
 neutral_building_hut_b_rubble:
-	idle: SPRITES.LVL|Hut.mobd
+	idle: sprites.lvl|Hut.mobd
 		Start: 1
 		ZOffset: -1000
 
 neutral_building_hut_c:
-	idle: SPRITES.LVL|Hut.mobd
+	idle: sprites.lvl|Hut.mobd
 		Start: 7
 
 neutral_building_hut_c_rubble:
-	idle: SPRITES.LVL|Hut.mobd
+	idle: sprites.lvl|Hut.mobd
 		Start: 2
 		ZOffset: -1000
 
 neutral_building_hut_d:
-	idle: SPRITES.LVL|Hut.mobd
+	idle: sprites.lvl|Hut.mobd
 		Start: 8
 
 neutral_building_hut_d_rubble:
-	idle: SPRITES.LVL|Hut.mobd
+	idle: sprites.lvl|Hut.mobd
 		Start: 3
 		ZOffset: -1000
 
 neutral_building_hut_e:
-	idle: SPRITES.LVL|Hut.mobd
+	idle: sprites.lvl|Hut.mobd
 		Start: 9
 
 neutral_building_hut_e_rubble:
-	idle: SPRITES.LVL|Hut.mobd
+	idle: sprites.lvl|Hut.mobd
 		Start: 4
 		ZOffset: -1000
 

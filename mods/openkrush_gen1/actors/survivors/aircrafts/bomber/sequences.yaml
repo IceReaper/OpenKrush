@@ -1,9 +1,9 @@
 survivors_aircraft_bomber:
-	idle: SPRITES.LVL|WilburBomber.mobd
+	idle: sprites.lvl|WilburBomber.mobd
 		Start: 16
 		Facings: -16
 		ZOffset: 3500
-	projectile: SPRITES.LVL|WilburBomber.mobd
+	projectile: sprites.lvl|WilburBomber.mobd
 		Start: 32
 		Length: 13
 		Tick: 120

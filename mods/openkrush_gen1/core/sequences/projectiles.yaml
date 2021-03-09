@@ -1,20 +1,20 @@
 projectiles:
-	smoke: SPRITES.LVL|Extras.mobd
+	smoke: sprites.lvl|Extras.mobd
 		Start: 275
 		Length: 6
 		Tick: 120
 		ZOffset: 1500
-	flamethrower: SPRITES.LVL|Extras.mobd
+	flamethrower: sprites.lvl|Extras.mobd
 		Start: 292
 		Length: 16
 		Tick: 100
 		ZOffset: 1000
-	splat: SPRITES.LVL|Extras.mobd
+	splat: sprites.lvl|Extras.mobd
 		Start: 338
 		Length: 6
 		Tick: 60
 		ZOffset: 1500
-	laser: SPRITES.LVL|Extras.mobd
+	laser: sprites.lvl|Extras.mobd
 		Start: 371
 		Length: 5
 		Tick: 60

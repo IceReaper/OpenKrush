@@ -3,7 +3,7 @@ evolved_infantry_berserker:
 	Burst: 1
 	BurstDelays: 0
 	ReloadDelay: 25
-	Report: MUTE.SLV|89.wav
+	Report: mute.slv|89.wav
 	Projectile: Bullet
 		Image: evolved_infantry_berserker
 		Palette: player
@@ -23,5 +23,5 @@ evolved_infantry_berserker:
 		Image: weapon_bullet
 		ExplosionPalette: openkrush
 		Explosions: hit_a
-		ImpactSounds: MUTE.SLV|90.wav
+		ImpactSounds: mute.slv|90.wav
 		Radius: 250,250

@@ -1,5 +1,5 @@
 neutral_building_campfire:
-	idle: SPRITES.LVL|Hut.mobd
+	idle: sprites.lvl|Hut.mobd
 		Start: 10
 		Length: 4
 		Tick: 120

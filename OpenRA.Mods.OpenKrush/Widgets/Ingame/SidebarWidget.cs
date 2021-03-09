@@ -40,10 +40,10 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 			IngameUi = ingameUi;
 			Id = Identifier;
 
-			Buttons = new Animation(IngameUi.World, "sidebar-" + IngameUi.World.LocalPlayer.Faction.InternalName);
+			Buttons = new Animation(IngameUi.World, $"sidebar-{IngameUi.World.LocalPlayer.Faction.InternalName}");
 			Font = new Animation(IngameUi.World, "font");
 
-			ChromeMetrics.TryGet("ButtonArea-" + IngameUi.World.LocalPlayer.Faction.InternalName, out ButtonArea);
+			ChromeMetrics.TryGet($"ButtonArea-{IngameUi.World.LocalPlayer.Faction.InternalName}", out ButtonArea);
 
 			AddChild(new ProductionCategoryButtonWidget(this, 0, new[] { "infantry" }, "Infantry"));
 			AddChild(new ProductionCategoryButtonWidget(this, 1, new[] { "vehicle", "beast" }, "Vehicles"));

@@ -1,7 +1,7 @@
 survivors_vehicle_mobileoutpost:
-	idle: SPRITES.LVL|OutpostMobile.mobd
+	idle: sprites.lvl|OutpostMobile.mobd
 		Facings: -16
-	move: SPRITES.LVL|OutpostMobile.mobd
+	move: sprites.lvl|OutpostMobile.mobd
 		Start: 16
 		Length: 4
 		Tick: 120

@@ -1,7 +1,7 @@
 evolved_vehicle_derrick:
-	idle: SPRITES.LVL|MDerrick.mobd
+	idle: sprites.lvl|MDerrick.mobd
 		Facings: -16
-	move: SPRITES.LVL|MDerrick.mobd
+	move: sprites.lvl|MDerrick.mobd
 		Start: 16
 		Length: 2
 		Tick: 120

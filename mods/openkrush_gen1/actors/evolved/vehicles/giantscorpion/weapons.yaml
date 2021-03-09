@@ -3,7 +3,7 @@ evolved_vehicle_giantscorpion:
 	Burst: 1
 	BurstDelays: 0
 	ReloadDelay: 50
-	Report: MUTE.SLV|161.wav
+	Report: mute.slv|161.wav
 	Projectile: Bullet
 		Image: evolved_vehicle_giantscorpion
 		Palette: openkrush
@@ -24,4 +24,4 @@ evolved_vehicle_giantscorpion:
 		Image: projectiles
 		ExplosionPalette: openkrush
 		Explosions: splat
-		ImpactSounds: MUTE.SLV|161.wav
+		ImpactSounds: mute.slv|161.wav

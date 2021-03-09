@@ -1,8 +1,8 @@
 survivors_infantry_technician:
 	Inherits@death: ^survivors_infantry_death
-	idle: SPRITES.LVL|Technician.mobd
+	idle: sprites.lvl|Technician.mobd
 		Facings: -16
-	move: SPRITES.LVL|Technician.mobd
+	move: sprites.lvl|Technician.mobd
 		Start: 16
 		Length: 6
 		Tick: 120
