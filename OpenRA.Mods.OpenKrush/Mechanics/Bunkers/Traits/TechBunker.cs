@@ -32,10 +32,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 		public readonly int ContainableMoney = 0;
 
 		[Desc("Minimum amount of ticks till the bunker may unlock.")]
-		public readonly int UnlockAfter = 1/*5000*/;
+		public readonly int UnlockAfter = 15000;
 
 		[Desc("The chance per tick the bunker may unlock in <1:x>.")]
-		public readonly int UnlockChance = 1/*000*/;
+		public readonly int UnlockChance = 1000;
 
 		[Desc("Amount of ticks till the bunker locks again. Use -1 to disable.")]
 		public readonly int LockAfter = 300;
