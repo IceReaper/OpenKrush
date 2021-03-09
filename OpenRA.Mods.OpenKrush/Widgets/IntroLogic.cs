@@ -50,9 +50,9 @@ namespace OpenRA.Mods.OpenKrush.Widgets
 		public override void Tick()
 		{
 			if (state == 0)
-				PlayVideo("fmv/mh.vbc");
+				PlayVideo("mh.vbc");
 			else if (state == 2)
-				PlayVideo("fmv/intro.vbc");
+				PlayVideo("intro.vbc");
 			else if (state == 4)
 			{
 				widget.RemoveChild(player);

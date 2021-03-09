@@ -161,23 +161,24 @@ namespace OpenRA.Mods.OpenKrush.FileSystem
 
 		public bool TryParsePackage(Stream s, string filename, FS context, out IReadOnlyPackage package)
 		{
+			var version = Generation.Unknown;
+
 			if (filename.EndsWith(".lpk") // Spritesheet container
 			    || filename.EndsWith(".bpk") // Image container
 			    || filename.EndsWith(".spk") // Sound set
 			    || filename.EndsWith(".lps") // Singleplayer map
 			    || filename.EndsWith(".lpm") // Multiplayer map
-			    || filename.EndsWith(".mpk")) // Matrix set (destroyable map part, tile replacements)
+			    || filename.EndsWith(".mpk") // Matrix set (destroyable map part, tile replacements)
+				|| false)
+			{
+				version = Generation.Gen2;
 				s = Crypter.Decrypt(s);
+			}
 
 			var signature = s.ReadASCII(4);
 
-			var version = Generation.Unknown;
-
-			if (signature.Equals("DATA"))
+			if (signature.Equals("DATA") && version == Generation.Unknown)
 				version = Generation.Gen1;
-
-			if (signature.Equals("DAT2"))
-				version = Generation.Gen2;
 
 			if (version == Generation.Unknown)
 			{

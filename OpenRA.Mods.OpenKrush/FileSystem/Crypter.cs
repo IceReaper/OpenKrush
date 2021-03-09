@@ -33,7 +33,7 @@ namespace OpenRA.Mods.OpenKrush.FileSystem
 			var decryptedData = new byte[8 + decryptedSizeData /* + 8 + decryptedSizeMeta*/];
 			var decryptedStream = new MemoryStream(decryptedData);
 
-			decryptedStream.WriteArray(Encoding.ASCII.GetBytes("DAT2"));
+			decryptedStream.WriteArray(Encoding.ASCII.GetBytes("DATA"));
 			tmp = BitConverter.GetBytes(decryptedSizeData);
 			Array.Reverse(tmp);
 			decryptedStream.WriteArray(tmp);

@@ -35,6 +35,7 @@ namespace OpenRA.Mods.OpenKrush.FileFormats
         private readonly VbcFrame[] frames;
         private uint[,] frame;
         private uint[] palette;
+        private int stride = 1;
 
         public Vbc(Stream stream)
         {
@@ -61,6 +62,12 @@ namespace OpenRA.Mods.OpenKrush.FileFormats
             stream.ReadUInt32(); // 0
             stream.ReadUInt32(); // 0
             stream.ReadUInt32(); // 0
+
+            if (Width == 640 && Height == 240)
+            {
+                Height = 480;
+                stride = 2;
+            }
 
             if (stream.ReadASCII(4) != "BODY")
                 throw new InvalidDataException("Invalid vbc (not BODY)");
@@ -100,7 +107,7 @@ namespace OpenRA.Mods.OpenKrush.FileFormats
         {
             if (CurrentFrame == 0)
             {
-                frame = new uint[Height, Width];
+                frame = new uint[Height / stride, Width];
                 palette = new uint[256];
             }
             else
@@ -109,8 +116,9 @@ namespace OpenRA.Mods.OpenKrush.FileFormats
             // TODO for better performance, we should get rid of this copying as soon we can use non-power-of-2 textures
             FrameData = new uint[Exts.NextPowerOf2(Height), Exts.NextPowerOf2(Width)];
 
-            for (var y = 0; y < Height; y++)
-                Buffer.BlockCopy(frame, y * Width * 4, FrameData, y * FrameData.GetLength(1) * 4, Width * 4);
+            for (var y = 0; y < Height / stride; y++)
+            for (var i = 0; i < stride; i++)
+                Buffer.BlockCopy(frame, y * Width * 4, FrameData, (y * stride + i) * FrameData.GetLength(1) * 4, Width * 4);
         }
     }
 }

@@ -12,9 +12,9 @@ Packages:
 	$openkrush_gen1: openkrush_gen1
 	^EngineDir|mods/common: common
 	~^SupportDir|Content/openkrush_gen1/: installation
-	installation|sprites.lvl: sprites.lvl
-	installation|mute.slv: mute.slv
-	installation|surv.slv: surv.slv
+	~installation|sprites.lvl: sprites.lvl
+	~installation|mute.slv: mute.slv
+	~installation|surv.slv: surv.slv
 
 MapFolders:
 	openkrush_gen1|maps/classic: System
@@ -176,7 +176,7 @@ MapGrid:
 
 SupportsMapsFrom: gen1
 
-SoundFormats: Wav
+SoundFormats: Wav, Soun, Son
 
 SpriteFormats: Mobd, PngSheet
 
@@ -189,7 +189,7 @@ SpriteSequenceFormat: OffsetsSpriteSequence
 ModelSequenceFormat: PlaceholderModelSequence
 
 AssetBrowser:
-	SupportedExtensions: .mobd, vbc
+	SupportedExtensions: .mobd, .vbc, .wav
 
 GameSpeeds:
 	slower:
@@ -222,16 +222,27 @@ ModContent:
 	InstallPromptMessage: OpenKrush requires artwork and audio from the original game.\n\nAdvanced Install includes options for copying the music, videos, and\nother content from an original game disc or digital installation.
 	HeaderMessage: Game content may be extracted from the original game discs or an\nexisting digital install.
 	Packages:
-		base: Base Game Files
-			TestFiles: ^SupportDir|Content/openkrush_gen1/sprites.lvl, ^SupportDir|Content/openkrush_gen1/surv.slv, ^SupportDir|Content/openkrush_gen1/mute.slv
-			Sources: steam, gog, cd
+		sprites.lvl: Game Sprites
+			TestFiles: ^SupportDir|Content/openkrush_gen1/sprites.lvl
+			Sources: steam, gog, cd, cd-xtreme
 			Required: true
-		music: Base Game Music
-			TestFiles: ^SupportDir|Content/openkrush_gen1/surv1.wav, ^SupportDir|Content/openkrush_gen1/surv2.wav, ^SupportDir|Content/openkrush_gen1/surv3.wav, ^SupportDir|Content/openkrush_gen1/surv4.wav, ^SupportDir|Content/openkrush_gen1/mute1.wav, ^SupportDir|Content/openkrush_gen1/mute2.wav, ^SupportDir|Content/openkrush_gen1/mute3.wav, ^SupportDir|Content/openkrush_gen1/mute4.wav
-			Sources: steam, gog, cd
+		surv.slv: Survivors Sounds
+			TestFiles: ^SupportDir|Content/openkrush_gen1/surv.slv
+			Sources: steam, gog, cd, cd-xtreme
+			Required: true
+		mute.slv: Evolved Sounds
+			TestFiles: ^SupportDir|Content/openkrush_gen1/mute.slv
+			Sources: steam, gog, cd, cd-xtreme
+			Required: true
+		music: Game Music
+			TestFiles: ^SupportDir|Content/openkrush_gen1/surv1.wav, ^SupportDir|Content/openkrush_gen1/surv2.wav, ^SupportDir|Content/openkrush_gen1/surv3.wav, ^SupportDir|Content/openkrush_gen1/mute1.wav, ^SupportDir|Content/openkrush_gen1/mute2.wav, ^SupportDir|Content/openkrush_gen1/mute3.wav
+			Sources: steam, gog, cd, cd-xtreme
+		music-xtreme: Xtreme Addon Music
+			TestFiles: ^SupportDir|Content/openkrush_gen1/surv4.wav, ^SupportDir|Content/openkrush_gen1/mute4.wav
+			Sources: steam, gog, cd-xtreme
 		movies: Intro Videos
 			TestFiles: ^SupportDir|Content/openkrush_gen1/mh.vbc, ^SupportDir|Content/openkrush_gen1/intro.vbc
-			Sources: steam, gog, cd
+			Sources: steam, gog, cd, cd-xtreme
 	Sources:
 		openkrush_gen1|installer/steam.yaml
 		openkrush_gen1|installer/gog.yaml

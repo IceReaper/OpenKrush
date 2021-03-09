@@ -122,10 +122,9 @@ namespace OpenRA.Mods.OpenKrush.Widgets
 
 			base.Draw();
 
-			var yFactor = video.Height == 240 ? 2 : 1;
-			var scale = Math.Min(Bounds.Width / video.Width, Bounds.Height / (video.Height * yFactor));
-			var videoSize = new int2(video.Width * scale, video.Height * yFactor * scale);
-			var sheetSize = new int2(videoSprite.Sheet.Size.Width * scale, videoSprite.Sheet.Size.Height * yFactor * scale);
+			var scale = Math.Min(Bounds.Width / video.Width, Bounds.Height / video.Height);
+			var videoSize = new int2(video.Width * scale, video.Height * scale);
+			var sheetSize = new int2(videoSprite.Sheet.Size.Width * scale, videoSprite.Sheet.Size.Height * scale);
 			var position = new int2((Bounds.Width - videoSize.X) / 2, (Bounds.Height - videoSize.Y) / 2) + Bounds.Location;
 
 			Game.Renderer.RgbaSpriteRenderer.DrawSprite(videoSprite, position, sheetSize);
