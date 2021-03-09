@@ -31,5 +31,6 @@ oilpatch:
 	-SelfConstructing:
 	-DeconstructSellable:
 	# Not blocking projectiles.
-	-BlocksProjectiles:
+	# TODO: fix this!
+	#-BlocksProjectiles:
 	-TechnicianRepairable:
