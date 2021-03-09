@@ -470,6 +470,7 @@
 	# Auto target enemies nearby.
 	AutoTarget:
 	AutoTargetPriority:
+		InvalidTargets: Structure
 
 # Grouped traits for standard non-turreted behavior.
 ^CoreArmedSelf:
@@ -483,3 +484,4 @@
 	# Auto target enemies nearby.
 	AutoTarget:
 	AutoTargetPriority:
+		InvalidTargets: Structure
