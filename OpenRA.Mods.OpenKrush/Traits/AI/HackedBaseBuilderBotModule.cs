@@ -69,6 +69,12 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 		[Desc("Increase maintained excess power by ExcessPowerIncrement for every N base buildings.")]
 		public readonly int ExcessPowerIncreaseThreshold = 1;
 
+		[Desc("Number of refineries to build before building a barracks.")]
+		public readonly int InititalMinimumRefineryCount = 1;
+
+		[Desc("Number of refineries to build additionally after building a barracks.")]
+		public readonly int AdditionalMinimumRefineryCount = 1;
+
 		[Desc("Additional delay (in ticks) between structure production checks when there is no active production.",
 			"StructureProductionRandomBonusDelay is added to this.")]
 		public readonly int StructureProductionInactiveDelay = 125;
@@ -162,13 +168,9 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 
 		protected override void Created(Actor self)
 		{
-			// Special case handling is required for the Player actor.
-			// Created is called before Player.PlayerActor is assigned,
-			// so we must query player traits from self, which refers
-			// for bot modules always to the Player actor.
-			playerPower = self.TraitOrDefault<PowerManager>();
-			playerResources = self.Trait<PlayerResources>();
-			positionsUpdatedModules = self.TraitsImplementing<IBotPositionsUpdated>().ToArray();
+			playerPower = self.Owner.PlayerActor.TraitOrDefault<PowerManager>();
+			playerResources = self.Owner.PlayerActor.Trait<PlayerResources>();
+			positionsUpdatedModules = self.Owner.PlayerActor.TraitsImplementing<IBotPositionsUpdated>().ToArray();
 		}
 
 		protected override void TraitEnabled(Actor self)
@@ -246,7 +248,7 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 
 			if (!possibleRallyPoints.Any())
 			{
-				AIUtils.BotDebug("Bot Bug: No possible rallypoint near {0}", producer.Location);
+				AIUtils.BotDebug("{0} has no possible rallypoint near {1}", producer.Owner, producer.Location);
 				return producer.Location;
 			}
 
@@ -258,16 +260,14 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 			return info != null && world.IsCellBuildable(x, null, info);
 		}
 
+		// Require at least one refinery, unless we can't build it.
 		public bool HasAdequateRefineryCount =>
-			// Require at least one refinery, unless we can't build it.
+			!Info.RefineryTypes.Any() ||
 			AIUtils.CountBuildingByCommonName(Info.RefineryTypes, player) >= MinimumRefineryCount ||
 			AIUtils.CountBuildingByCommonName(Info.PowerTypes, player) == 0 ||
 			AIUtils.CountBuildingByCommonName(Info.ConstructionYardTypes, player) == 0;
 
-		int MinimumRefineryCount =>
-			// Unless we have no barracks (higher priority), require a 2nd refinery.
-			// TODO: Possibly unhardcode this, at least the targeted minimum of 2 (the fallback can probably stay at 1).
-			AIUtils.CountBuildingByCommonName(Info.BarracksTypes, player) > 0 ? 2 : 1;
+		int MinimumRefineryCount => AIUtils.CountBuildingByCommonName(Info.BarracksTypes, player) > 0 ? Info.InititalMinimumRefineryCount + Info.AdditionalMinimumRefineryCount : Info.InititalMinimumRefineryCount;
 
 		List<MiniYamlNode> IGameSaveTraitData.IssueTraitData(Actor self)
 		{

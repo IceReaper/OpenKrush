@@ -54,6 +54,8 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 			failRetryTicks = baseBuilder.Info.StructureProductionResumeDelay;
 			minimumExcessPower = baseBuilder.Info.MinimumExcessPower;
 			this.resourceTypeIndices = resourceTypeIndices;
+			if (!baseBuilder.Info.NavalProductionTypes.Any())
+				waterState = WaterCheck.DontCheck;
 		}
 
 		public void Tick(IBot bot)
@@ -135,14 +137,7 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 				return true;
 			}))
 				return true;
-
-			var choosenBuilding = ChooseBuildingToBuild(queue);
-			if (choosenBuilding == null)
-				return true;
-
-			var currentBuilding = queue.AllQueued().FirstOrDefault(item => item.Item == choosenBuilding.Name);
-			if (currentBuilding == null)
-				return true;
+			var currentBuilding = queue.AllQueued().FirstOrDefault();
 
 			// Waiting to build something
 			if (currentBuilding == null && failCount < baseBuilder.Info.MaximumFailedPlacementAttempts)
@@ -160,17 +155,37 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 				// HACK: HACK HACK HACK
 				// TODO: Derive this from BuildingCommonNames instead
 				var type = BuildingType.Building;
+				CPos? location = null;
+				string orderString = "PlaceBuilding";
 
-				// Check if Building is a defense and if we should place it towards the enemy or not.
-				if (world.Map.Rules.Actors[currentBuilding.Item].HasTraitInfo<AttackBaseInfo>() && world.LocalRandom.Next(100) < baseBuilder.Info.PlaceDefenseTowardsEnemyChance)
-					type = BuildingType.Defense;
-				else if (baseBuilder.Info.RefineryTypes.Contains(world.Map.Rules.Actors[currentBuilding.Item].Name))
-					type = BuildingType.Refinery;
+				// Check if Building is a plug for other Building
+				var actorInfo = world.Map.Rules.Actors[currentBuilding.Item];
+				var plugInfo = actorInfo.TraitInfoOrDefault<PlugInfo>();
+				if (plugInfo != null)
+				{
+					var possibleBuilding = world.ActorsWithTrait<Pluggable>().FirstOrDefault(a =>
+						a.Actor.Owner == player && a.Trait.AcceptsPlug(a.Actor, plugInfo.Type));
 
-				var location = ChooseBuildLocation(currentBuilding.Item, true, type);
+					if (possibleBuilding.Actor != null)
+					{
+						orderString = "PlacePlug";
+						location = possibleBuilding.Actor.Location + possibleBuilding.Trait.Info.Offset;
+					}
+				}
+				else
+				{
+					// Check if Building is a defense and if we should place it towards the enemy or not.
+					if (actorInfo.HasTraitInfo<AttackBaseInfo>() && world.LocalRandom.Next(100) < baseBuilder.Info.PlaceDefenseTowardsEnemyChance)
+						type = BuildingType.Defense;
+					else if (baseBuilder.Info.RefineryTypes.Contains(actorInfo.Name))
+						type = BuildingType.Refinery;
+
+					location = ChooseBuildLocation(currentBuilding.Item, true, type);
+				}
+
 				if (location == null)
 				{
-					AIUtils.BotDebug("AI: {0} has nowhere to place {1}".F(player, currentBuilding.Item));
+					AIUtils.BotDebug("{0} has nowhere to place {1}".F(player, currentBuilding.Item));
 					bot.QueueOrder(Order.CancelProduction(queue.Actor, currentBuilding.Item, 1));
 					failCount += failCount;
 
@@ -184,7 +199,8 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 				else
 				{
 					failCount = 0;
-					bot.QueueOrder(new Order("PlaceBuilding", player.PlayerActor, Target.FromCell(world, location.Value), false)
+
+					bot.QueueOrder(new Order(orderString, player.PlayerActor, Target.FromCell(world, location.Value), false)
 					{
 						// Building to place
 						TargetString = currentBuilding.Item,
@@ -240,7 +256,7 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 			{
 				if (power != null && power.TraitInfos<PowerInfo>().Where(i => i.EnabledByDefault).Sum(p => p.Amount) > 0)
 				{
-					AIUtils.BotDebug("AI: {0} decided to build {1}: Priority override (low power)", queue.Actor.Owner, power.Name);
+					AIUtils.BotDebug("{0} decided to build {1}: Priority override (low power)", queue.Actor.Owner, power.Name);
 					return power;
 				}
 			}
@@ -251,7 +267,7 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 				var refinery = GetProducibleBuilding(baseBuilder.Info.RefineryTypes, buildableThings);
 				if (refinery != null && HasSufficientPowerForActor(refinery))
 				{
-					AIUtils.BotDebug("AI: {0} decided to build {1}: Priority override (refinery)", queue.Actor.Owner, refinery.Name);
+					AIUtils.BotDebug("{0} decided to build {1}: Priority override (refinery)", queue.Actor.Owner, refinery.Name);
 					return refinery;
 				}
 
@@ -268,7 +284,7 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 				var production = GetProducibleBuilding(baseBuilder.Info.ProductionTypes, buildableThings);
 				if (production != null && HasSufficientPowerForActor(production))
 				{
-					AIUtils.BotDebug("AI: {0} decided to build {1}: Priority override (production)", queue.Actor.Owner, production.Name);
+					AIUtils.BotDebug("{0} decided to build {1}: Priority override (production)", queue.Actor.Owner, production.Name);
 					return production;
 				}
 
@@ -287,7 +303,7 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 				var navalproduction = GetProducibleBuilding(baseBuilder.Info.NavalProductionTypes, buildableThings);
 				if (navalproduction != null && HasSufficientPowerForActor(navalproduction))
 				{
-					AIUtils.BotDebug("AI: {0} decided to build {1}: Priority override (navalproduction)", queue.Actor.Owner, navalproduction.Name);
+					AIUtils.BotDebug("{0} decided to build {1}: Priority override (navalproduction)", queue.Actor.Owner, navalproduction.Name);
 					return navalproduction;
 				}
 
@@ -304,7 +320,7 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 				var silo = GetProducibleBuilding(baseBuilder.Info.SiloTypes, buildableThings);
 				if (silo != null && HasSufficientPowerForActor(silo))
 				{
-					AIUtils.BotDebug("AI: {0} decided to build {1}: Priority override (silo)", queue.Actor.Owner, silo.Name);
+					AIUtils.BotDebug("{0} decided to build {1}: Priority override (silo)", queue.Actor.Owner, silo.Name);
 					return silo;
 				}
 
