@@ -29,7 +29,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits.Actions
 		public override object Create(ActorInitializer init) { return new Drillrig(init, this); }
 	}
 
-	public class Drillrig : DockAction, ITick, IHaveOil, INotifyActorDisposing
+	public class Drillrig : DockAction, ITick, IHaveOil, INotifyRemovedFromWorld
 	{
 		private readonly DrillrigInfo info;
 		private readonly Actor self;
@@ -113,7 +113,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits.Actions
 			token = self.RevokeCondition(token);
 		}
 
-		void INotifyActorDisposing.Disposing(Actor self)
+		void INotifyRemovedFromWorld.RemovedFromWorld(Actor self)
 		{
 			if (oilpatchActor != null)
 				this.self.World.AddFrameEndTask(world => world.Add(oilpatchActor));
