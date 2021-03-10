@@ -156,6 +156,7 @@ build_platform() {
 	for f in ${PACKAGING_COPY_MOD_BINARIES}; do
 		mkdir -p "${LAUNCHER_RESOURCES_DIR}/$(dirname "${f}")"
 		cp "${TEMPLATE_ROOT}/${ENGINE_DIRECTORY}/bin/${f}" "${LAUNCHER_ASSEMBLY_DIR}/${f}"
+		cp "${TEMPLATE_ROOT}/${ENGINE_DIRECTORY}/bin/${f/.dll/.deps.json}" "${LAUNCHER_ASSEMBLY_DIR}/${f/.dll/.deps.json}"
 	done
 
 	set_engine_version "${ENGINE_VERSION}" "${LAUNCHER_RESOURCES_DIR}"

@@ -82,6 +82,7 @@ cp -Lr "${TEMPLATE_ROOT}/mods/"* "${APPDIR}/usr/lib/openra/mods"
 for f in ${PACKAGING_COPY_MOD_BINARIES}; do
 	mkdir -p "${APPDIR}/usr/lib/openra/$(dirname "${f}")"
 	cp "${TEMPLATE_ROOT}/${ENGINE_DIRECTORY}/bin/${f}" "${APPDIR}/usr/lib/openra/${f}"
+	cp "${TEMPLATE_ROOT}/${ENGINE_DIRECTORY}/bin/${f/.dll/.deps.json}" "${APPDIR}/usr/lib/openra/${f/.dll/.deps.json}"
 done
 
 set_engine_version "${ENGINE_VERSION}" "${APPDIR}/usr/lib/openra"
