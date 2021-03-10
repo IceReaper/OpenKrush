@@ -115,7 +115,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits.Actions
 
 		void INotifyRemovedFromWorld.RemovedFromWorld(Actor self)
 		{
-			if (oilpatchActor != null)
+			if (oilpatchActor != null && !self.World.Disposing)
 				this.self.World.AddFrameEndTask(world => world.Add(oilpatchActor));
 		}
 	}
