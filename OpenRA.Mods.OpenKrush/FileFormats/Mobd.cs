@@ -21,7 +21,7 @@ namespace OpenRA.Mods.OpenKrush.FileFormats
 		public readonly MobdAnimation[] RotationalAnimations;
 		public readonly MobdAnimation[] SimpleAnimations;
 
-		public Mobd(SegmentStream stream, Generation generation)
+		public Mobd(SegmentStream stream)
 		{
 			var fileOffset = (uint)stream.BaseOffset;
 			var firstFrameStart = stream.Length;
@@ -63,14 +63,14 @@ namespace OpenRA.Mods.OpenKrush.FileFormats
 				animationOffsets.Remove(value - fileOffset);
 				var returnPosition = stream.Position;
 				stream.Position = value - fileOffset;
-				rotationalAnimations.Add(new MobdAnimation(stream, generation));
+				rotationalAnimations.Add(new MobdAnimation(stream));
 				stream.Position = returnPosition;
 			}
 
 			foreach (var animationOffset in animationOffsets)
 			{
 				stream.Position = animationOffset;
-				simpleAnimations.Add(new MobdAnimation(stream, generation));
+				simpleAnimations.Add(new MobdAnimation(stream));
 			}
 
 			RotationalAnimations = rotationalAnimations.ToArray();

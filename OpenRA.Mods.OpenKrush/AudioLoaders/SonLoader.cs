@@ -16,7 +16,7 @@ namespace OpenRA.Mods.OpenKrush.AudioLoaders
 {
 	public class SonLoader : ISoundLoader
 	{
-		bool IsSon(Stream s)
+		private static bool IsSon(Stream s)
 		{
 			var start = s.Position;
 			var type = s.ReadASCII(4);

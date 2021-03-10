@@ -55,7 +55,6 @@ namespace OpenRA.Mods.OpenKrush.FileSystem
 				Name = filename;
 
 				var lvlLookup = new Dictionary<string, string>();
-				var updateLookup = false;
 				var lookupPath = $"archives/{Path.GetFileName(filename)}.yaml";
 
 				Stream s2;
@@ -115,7 +114,6 @@ namespace OpenRA.Mods.OpenKrush.FileSystem
 						else
 						{
 							lvlLookup.Add(assetFileName, assetFileName);
-							updateLookup = true;
 						}
 
 						index.Add(assetFileName, new uint[] { fileOffset, 0 });
@@ -128,10 +126,6 @@ namespace OpenRA.Mods.OpenKrush.FileSystem
 					var entry = index.ElementAt(index.Count - 1).Value;
 					entry[1] = firstFileListOffset - entry[0];
 				}
-
-				if (updateLookup)
-					File.WriteAllText(lookupPath,
-						$"{lvlLookup.Select(e => $"{e.Key}: {e.Value}").JoinWith("\n")}\n");
 			}
 
 			public Stream GetStream(string filename)

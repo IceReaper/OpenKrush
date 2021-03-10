@@ -45,7 +45,7 @@ namespace OpenRA.Mods.OpenKrush.Traits.Render
 		{
 			var colors = new uint[Palette.Size];
 
-			var mobd = new Mobd(fileSystem.Open(Filename) as SegmentStream, Generation.Gen2);
+			var mobd = new Mobd(fileSystem.Open(Filename) as SegmentStream);
 			var frame = mobd.RotationalAnimations.FirstOrDefault(a => a.Frames.Length > 0) ?? mobd.SimpleAnimations.FirstOrDefault(a => a.Frames.Length > 0);
 			var palette = frame.Frames.First().RenderFlags.Palette;
 

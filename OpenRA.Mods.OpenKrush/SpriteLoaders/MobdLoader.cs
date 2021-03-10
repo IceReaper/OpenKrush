@@ -51,10 +51,8 @@ namespace OpenRA.Mods.OpenKrush.SpriteLoaders
 			}
 		}
 
-		private static bool IsMobd(Stream stream, out Generation generation)
+		private static bool IsMobd(Stream stream)
 		{
-			generation = Generation.Unknown;
-
 			if (!(stream is SegmentStream innerStream))
 				return false;
 
@@ -66,14 +64,10 @@ namespace OpenRA.Mods.OpenKrush.SpriteLoaders
 			var magic = outerStream.BaseStream.ReadASCII(4);
 			outerStream.BaseStream.Position = originalPosition;
 
+			// TODO refactor this crap!
 			switch (magic)
 			{
 				case "DATA":
-					generation = Generation.Gen1;
-					return true;
-
-				case "DAT2":
-					generation = Generation.Gen2;
 					return true;
 
 				default:
@@ -83,16 +77,14 @@ namespace OpenRA.Mods.OpenKrush.SpriteLoaders
 
 		public bool TryParseSprite(Stream stream, out ISpriteFrame[] frames, out TypeDictionary metadata)
 		{
-			Generation generation;
-
-			if (!IsMobd(stream, out generation))
+			if (!IsMobd(stream))
 			{
 				metadata = null;
 				frames = null;
 				return false;
 			}
 
-			var mobd = new Mobd(stream as SegmentStream, generation);
+			var mobd = new Mobd(stream as SegmentStream);
 			var tmp = new List<MobdSpriteFrame>();
 
 			tmp.AddRange(from mobdAnimation in mobd.RotationalAnimations

@@ -10,7 +10,6 @@
 #endregion
 
 using System.Collections.Generic;
-using OpenRA.Mods.OpenKrush.FileSystem;
 using OpenRA.Primitives;
 
 namespace OpenRA.Mods.OpenKrush.FileFormats
@@ -22,7 +21,7 @@ namespace OpenRA.Mods.OpenKrush.FileFormats
 		public readonly MobdRenderFlags RenderFlags;
 		public readonly MobdPoint[] Points;
 
-		public MobdFrame(SegmentStream stream, Generation generation)
+		public MobdFrame(SegmentStream stream)
 		{
 			OriginX = stream.ReadUInt32();
 			OriginY = stream.ReadUInt32();
@@ -55,7 +54,7 @@ namespace OpenRA.Mods.OpenKrush.FileFormats
 			}
 
 			stream.Position = renderFlagsOffset - stream.BaseOffset;
-			RenderFlags = new MobdRenderFlags(stream, generation);
+			RenderFlags = new MobdRenderFlags(stream);
 		}
 	}
 }

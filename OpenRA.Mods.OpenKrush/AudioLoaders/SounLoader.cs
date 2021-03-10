@@ -16,7 +16,7 @@ namespace OpenRA.Mods.OpenKrush.AudioLoaders
 {
 	public class SounLoader : ISoundLoader
 	{
-		bool IsSoun(Stream s)
+		private static bool IsSoun(Stream s)
 		{
 			if (s.Position + 72 > s.Length)
 				return false;

@@ -9,6 +9,8 @@
  */
 #endregion
 
+using System;
+using System.Linq;
 using OpenRA.Mods.OpenKrush.FileSystem;
 using OpenRA.Primitives;
 
@@ -19,10 +21,17 @@ namespace OpenRA.Mods.OpenKrush.FileFormats
 		public readonly MobdImage Image;
 		public readonly uint[] Palette;
 
-		public MobdRenderFlags(SegmentStream stream, Generation generation)
+		public MobdRenderFlags(SegmentStream stream)
 		{
-			/*Type =*/ stream.ReadASCII(4);
+			var type = new string(stream.ReadASCII(4).Reverse().ToArray());
 			var flags = stream.ReadUInt32();
+
+			var generation = Generation.Unknown;
+
+			if (type == "SPRT")
+				generation = Generation.Gen1;
+			else if (type == "SPNS" || type == "SPRC")
+				generation = Generation.Gen2;
 
 			if (generation == Generation.Gen2)
 			{

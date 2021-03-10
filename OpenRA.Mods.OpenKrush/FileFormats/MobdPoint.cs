@@ -20,10 +20,6 @@ namespace OpenRA.Mods.OpenKrush.FileFormats
 		public readonly int Y;
 		public readonly int Z;
 
-		public MobdPoint()
-		{
-		}
-
 		public MobdPoint(Stream stream)
 		{
 			Id = stream.ReadInt32();

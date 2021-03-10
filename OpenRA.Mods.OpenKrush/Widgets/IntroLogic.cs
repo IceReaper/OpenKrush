@@ -25,7 +25,6 @@ namespace OpenRA.Mods.OpenKrush.Widgets
 		private readonly ModData modData;
 		private readonly World world;
 		private readonly VbcPlayerWidget player;
-		private readonly MusicPlaylist musicPlayList;
 		private MusicInfo song;
 
 		[ObjectCreator.UseCtorAttribute]
@@ -42,7 +41,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets
 
 			player.Bounds = new Rectangle(0, 0, Game.Renderer.Resolution.Width, Game.Renderer.Resolution.Height);
 
-			musicPlayList = world.WorldActor.Trait<MusicPlaylist>();
+			var musicPlayList = world.WorldActor.Trait<MusicPlaylist>();
 			song = musicPlayList.CurrentSong();
 			musicPlayList.Stop();
 		}

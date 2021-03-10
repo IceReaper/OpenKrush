@@ -19,7 +19,7 @@ namespace OpenRA.Mods.OpenKrush.FileFormats
 	{
 		public readonly MobdFrame[] Frames;
 
-		public MobdAnimation(SegmentStream stream, Generation generation)
+		public MobdAnimation(SegmentStream stream)
 		{
 			// OpenRA needs the same amount of frames per facing, filling up missing frames:
 			var missingFrameWorkaround = 0;
@@ -59,7 +59,7 @@ namespace OpenRA.Mods.OpenKrush.FileFormats
 
 				var returnPosition = stream.Position;
 				stream.Position = value - stream.BaseOffset;
-				var frame = new MobdFrame(stream, generation);
+				var frame = new MobdFrame(stream);
 				frames.Add(frame);
 
 				if (missingFrameWorkaround-- > 0)
