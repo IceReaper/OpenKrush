@@ -25,6 +25,7 @@ namespace OpenRA.Mods.OpenKrush.FileFormats
         public ushort Width { get; }
         public ushort Height { get; }
         public uint[,] FrameData { get; private set; }
+        public string TextData { get; private set; }
         public int CurrentFrame { get; private set; }
         public bool HasAudio => true;
         public byte[] AudioData { get; }
@@ -105,13 +106,18 @@ namespace OpenRA.Mods.OpenKrush.FileFormats
 
         private void LoadFrame()
         {
+            var textData = "";
+
             if (CurrentFrame == 0)
             {
                 frame = new uint[Height / stride, Width];
                 palette = new uint[256];
+                TextData = "";
             }
             else
-                frame = frames[CurrentFrame - 1].ApplyFrame(frame, ref palette);
+                frame = frames[CurrentFrame - 1].ApplyFrame(frame, ref palette, ref textData);
+
+            TextData += textData;
 
             // TODO for better performance, we should get rid of this copying as soon we can use non-power-of-2 textures
             FrameData = new uint[Exts.NextPowerOf2(Height), Exts.NextPowerOf2(Width)];

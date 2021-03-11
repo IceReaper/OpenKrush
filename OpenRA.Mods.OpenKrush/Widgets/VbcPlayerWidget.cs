@@ -107,7 +107,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets
 			{
 				++lastFrame;
 
-				if (lastFrame <= video.Frames)
+				if (lastFrame < video.Frames)
 					UpdateFrame();
 			}
 		}

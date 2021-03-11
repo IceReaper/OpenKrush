@@ -22,6 +22,7 @@ namespace OpenRA.Mods.OpenKrush.FileFormats
 		private readonly SegmentStream colors;
 
 		public readonly byte[] Audio;
+		public readonly string Text;
 
 		public VbcFrame(Stream stream)
 		{
@@ -51,9 +52,12 @@ namespace OpenRA.Mods.OpenKrush.FileFormats
 
 			if ((flags & 0x0020) != 0)
 				stream.ReadUInt16(); // Duration
+
+			if ((flags & 0x0040) != 0)
+				Text = stream.ReadASCII(stream.ReadInt32() - 4);
 		}
 
-		public uint[,] ApplyFrame(uint[,] oldFrame, ref uint[] palette)
+		public uint[,] ApplyFrame(uint[,] oldFrame, ref uint[] palette, ref string textData)
 		{
 			var width = oldFrame.GetLength(1);
 			var height = oldFrame.GetLength(0);
@@ -197,6 +201,9 @@ namespace OpenRA.Mods.OpenKrush.FileFormats
 					}
 				}
 			}
+
+			if (Text != null)
+				textData = Text;
 
 			return newFrame;
 		}
