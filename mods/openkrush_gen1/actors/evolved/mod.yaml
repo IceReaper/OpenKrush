@@ -110,8 +110,5 @@ Voices:
 	openkrush_gen1|actors/evolved/vehicles/missilecrab/voices.yaml
 	openkrush_gen1|actors/evolved/aircrafts/wasp/voices.yaml
 
-Music:
-	openkrush_gen1|actors/evolved/music.yaml
-
 ChromeMetrics:
 	openkrush_gen1|actors/evolved/metrics.yaml

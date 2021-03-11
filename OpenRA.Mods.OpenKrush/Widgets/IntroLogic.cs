@@ -12,6 +12,7 @@
 using OpenRA.GameRules;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.OpenKrush.FileFormats;
+using OpenRA.Mods.OpenKrush.GameProviders;
 using OpenRA.Primitives;
 using OpenRA.Widgets;
 
@@ -48,10 +49,11 @@ namespace OpenRA.Mods.OpenKrush.Widgets
 
 		public override void Tick()
 		{
+			// TODO case insensitive!
 			if (state == 0)
-				PlayVideo("mh.vbc");
+				PlayVideo(GameProvider.Movies.ContainsKey("mh_fmv.vbc") ? GameProvider.Movies["mh_fmv.vbc"] : GameProvider.Movies["mh.vbc"]);
 			else if (state == 2)
-				PlayVideo("intro.vbc");
+				PlayVideo(GameProvider.Movies["intro.vbc"]);
 			else if (state == 4)
 			{
 				widget.RemoveChild(player);

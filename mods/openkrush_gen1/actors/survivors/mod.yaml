@@ -102,8 +102,5 @@ Voices:
 	openkrush_gen1|actors/survivors/infantry/scout/voices.yaml
 	openkrush_gen1|actors/survivors/aircrafts/bomber/voices.yaml
 
-Music:
-	openkrush_gen1|actors/survivors/music.yaml
-
 ChromeMetrics:
 	openkrush_gen1|actors/survivors/metrics.yaml
