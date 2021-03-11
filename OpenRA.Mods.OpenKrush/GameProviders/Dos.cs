@@ -92,7 +92,7 @@ namespace OpenRA.Mods.OpenKrush.GameProviders
                 f.EndsWith(".lvl", StringComparison.OrdinalIgnoreCase)))
             {
                 if (!GameProvider.Packages.ContainsKey(file))
-                    GameProvider.Packages.Add(file, null);
+                    GameProvider.Packages.Add(file, Path.GetFileName(file).ToLower());
             }
 
             return true;
