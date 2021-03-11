@@ -21,6 +21,7 @@ namespace OpenRA.Mods.OpenKrush.GameProviders
 {
     public static class GameProvider
     {
+        public static string Installation;
         public static Dictionary<string, string> Packages = new Dictionary<string, string>();
         public static Dictionary<string, string> Music = new Dictionary<string, string>();
         public static Dictionary<string, string> Movies = new Dictionary<string, string>();
@@ -33,8 +34,16 @@ namespace OpenRA.Mods.OpenKrush.GameProviders
 
         private static bool Mount(ModData modData)
         {
+            modData.ModFiles.Mount(Installation, "installation");
+
             foreach (var (name, explicitName) in Packages)
-                modData.ModFiles.Mount(name, explicitName);
+                modData.ModFiles.Mount(InInstallation(name), explicitName);
+
+            foreach (var key in Music.Keys)
+                Music[key] = InInstallation(Music[key]);
+
+            foreach (var key in Movies.Keys)
+                Movies[key] = InInstallation(Movies[key]);
 
             return true;
         }
@@ -43,7 +52,7 @@ namespace OpenRA.Mods.OpenKrush.GameProviders
         {
             var result = new Dictionary<string, MusicInfo>();
 
-            foreach (var (path, name) in Music)
+            foreach (var (name, path) in Music)
             {
                 var extension = Path.GetExtension(path).Substring(1);
                 var key = path.Substring(0, path.Length - extension.Length - 1);
@@ -65,6 +74,11 @@ namespace OpenRA.Mods.OpenKrush.GameProviders
             directory = Directory.GetDirectories(path).Select(Path.GetFileName).FirstOrDefault(d => d.Equals(directory, StringComparison.OrdinalIgnoreCase));
 
             return directory == null ? null : Path.Combine(path, directory);
+        }
+
+        private static string InInstallation(string path)
+        {
+            return "installation|" + Path.GetRelativePath(Installation, path);
         }
     }
 }

@@ -82,18 +82,19 @@ namespace OpenRA.Mods.OpenKrush.GameProviders
             if (files.Values.Any(v => v == null))
                 return false;
 
+            GameProvider.Installation = path;
             GameProvider.Packages.Add(files["sprites.lvl"], "sprites.lvl");
             GameProvider.Packages.Add(files["mute.slv"], "mute.slv");
             GameProvider.Packages.Add(files["surv.slv"], "surv.slv");
 
-            GameProvider.Music.Add(files["surv1.wav"], "Survivors 1");
-            GameProvider.Music.Add(files["surv2.wav"], "Survivors 2");
-            GameProvider.Music.Add(files["surv3.wav"], "Survivors 3");
-            GameProvider.Music.Add(files["surv4.wav"], "Survivors 4");
-            GameProvider.Music.Add(files["mute1.wav"], "Evolved 1");
-            GameProvider.Music.Add(files["mute2.wav"], "Evolved 2");
-            GameProvider.Music.Add(files["mute3.wav"], "Evolved 3");
-            GameProvider.Music.Add(files["mute4.wav"], "Evolved 4");
+            GameProvider.Music.Add("Survivors 1", files["surv1.wav"]);
+            GameProvider.Music.Add("Survivors 2", files["surv2.wav"]);
+            GameProvider.Music.Add("Survivors 3", files["surv3.wav"]);
+            GameProvider.Music.Add("Survivors 4", files["surv4.wav"]);
+            GameProvider.Music.Add("Evolved 1", files["mute1.wav"]);
+            GameProvider.Music.Add("Evolved 2", files["mute2.wav"]);
+            GameProvider.Music.Add("Evolved 3", files["mute3.wav"]);
+            GameProvider.Music.Add("Evolved 4", files["mute4.wav"]);
 
             GameProvider.Movies.Add("mh.vbc", files["mh_fmv.vbc"]);
             GameProvider.Movies.Add("intro.vbc", files["intro.vbc"]);

@@ -49,7 +49,6 @@ namespace OpenRA.Mods.OpenKrush.Widgets
 
 		public override void Tick()
 		{
-			// TODO case insensitive!
 			if (state == 0)
 				PlayVideo(GameProvider.Movies.ContainsKey("mh_fmv.vbc") ? GameProvider.Movies["mh_fmv.vbc"] : GameProvider.Movies["mh.vbc"]);
 			else if (state == 2)
