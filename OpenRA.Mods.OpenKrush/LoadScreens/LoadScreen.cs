@@ -35,7 +35,7 @@ namespace OpenRA.Mods.OpenKrush.LoadScreens
 			Game.Settings.Graphics.SheetSize = 8192;
 
 			if (!FindInstallation(modData))
-				Console.WriteLine("TODO show endless 'missing installation' message");
+				throw new Exception("NO GAME INSTALLATION FOUND");
 
 			base.Init(modData, info);
 
@@ -97,8 +97,15 @@ namespace OpenRA.Mods.OpenKrush.LoadScreens
 				if (!data.TryGetValue("installdir", out var installDir))
 					continue;
 
-				return GameProvider.TryRegister(modData, Path.Combine(steamDirectory, "steamapps", "common", installDir));
+				installDir = Path.Combine(steamDirectory, "steamapps", "common", installDir);
+
+				Log.Write("debug", $"Steam version candidate: {installDir}");
+
+				if (GameProvider.TryRegister(modData, installDir))
+					return true;
 			}
+
+			Log.Write("debug", "Steam version not found");
 
 			return false;
 		}
@@ -107,18 +114,42 @@ namespace OpenRA.Mods.OpenKrush.LoadScreens
 		{
 			var prefixes = new[] { "HKEY_LOCAL_MACHINE\\Software\\", "HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\" };
 
-			return prefixes
-				.Select(prefix =>
-					Microsoft.Win32.Registry.GetValue($"{prefix}GOG.com\\Games\\1207659107", "path", null) as string)
-				.Any(path => path != null && GameProvider.TryRegister(modData, path));
+			foreach (var prefix in prefixes)
+			{
+				var installDir = Microsoft.Win32.Registry.GetValue($"{prefix}GOG.com\\Games\\1207659107", "path", null) as string;
+
+				if (installDir == null)
+					continue;
+
+				Log.Write("debug", $"GoG version candidate: {installDir}");
+
+				if (GameProvider.TryRegister(modData, installDir))
+					return true;
+			}
+
+			Log.Write("debug", "GoG version not found");
+
+			return false;
 		}
 
 		private static bool FindCdInDrive(ModData modData)
 		{
-			return DriveInfo.GetDrives()
-				.Where(driveInfo => driveInfo.DriveType == DriveType.CDRom && driveInfo.IsReady)
-				.Select(driveInfo => driveInfo.RootDirectory.FullName)
-				.Any(path => GameProvider.TryRegister(modData, path));
+			foreach (var driveInfo in DriveInfo.GetDrives())
+			{
+				if (driveInfo.DriveType != DriveType.CDRom || !driveInfo.IsReady)
+					continue;
+
+				var installDir = driveInfo.RootDirectory.FullName;
+
+				Log.Write("debug", $"CD version candidate: {installDir}");
+
+				if (GameProvider.TryRegister(modData, installDir))
+					return true;
+			}
+
+			Log.Write("debug", "CD version not found");
+
+			return false;
 		}
 
 		private static IEnumerable<string> SteamDirectory()

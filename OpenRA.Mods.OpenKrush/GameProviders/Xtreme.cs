@@ -39,27 +39,47 @@ namespace OpenRA.Mods.OpenKrush.GameProviders
                     return false;
             }
 
+            Log.Write("debug", $"Detected installation: {path}");
+
             var release = CryptoUtil.SHA1Hash(File.OpenRead(executable));
 
-            // Krush, Kill 'N' Destroy Xtreme (Disc, English)
             if (release != "6fb10d85739ef63b28831ada4cdfc159a950c5d2")
             {
-                // Krush, Kill 'N' Destroy Xtreme (Steam, English)
-                // Krush, Kill 'N' Destroy Xtreme (GoG, English)
                 if (release != "d1f41d7129b6f377869f28b89f92c18f4977a48f")
+                {
+                    Log.Write("debug", "=> Unsupported game version");
+
                     return false;
+                }
+
+                Log.Write("debug", "=> Krush, Kill 'N' Destroy Xtreme (Steam/GoG, English)");
             }
+            else
+                Log.Write("debug", "=> Krush, Kill 'N' Destroy Xtreme (Disc, English)");
 
             var levelsFolder = GameProvider.GetDirectory(path, "levels");
+
+            if (levelsFolder == null)
+            {
+                Log.Write("debug", "=> Missing folder: levels");
+                return false;
+            }
+
             var fmvFolder = GameProvider.GetDirectory(path, "fmv");
 
-            if (levelsFolder == null || fmvFolder == null)
+            if (fmvFolder == null)
+            {
+                Log.Write("debug", "=> Missing folder: fmv");
                 return false;
+            }
 
             var graphicsFolder = GameProvider.GetDirectory(levelsFolder, "640");
 
             if (graphicsFolder == null)
+            {
+                Log.Write("debug", "=> Missing folder: 640");
                 return false;
+            }
 
             // Required files.
             var files = new Dictionary<string, string>
@@ -79,8 +99,15 @@ namespace OpenRA.Mods.OpenKrush.GameProviders
                 { "intro.vbc", fmvFolder }
             }.ToDictionary(e => e.Key, e => GameProvider.GetFile(e.Value, e.Key));
 
-            if (files.Values.Any(v => v == null))
+            var missingFiles = files.Where(e => e.Value == null).Select(e => e.Key).ToArray();
+
+            if (missingFiles.Any())
+            {
+                foreach (var missingFile in missingFiles)
+                    Log.Write("debug", $"=> Missing file: {missingFile}");
+
                 return false;
+            }
 
             GameProvider.Installation = path;
             GameProvider.Packages.Add(files["sprites.lvl"], "sprites.lvl");

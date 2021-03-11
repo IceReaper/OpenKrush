@@ -32,22 +32,42 @@ namespace OpenRA.Mods.OpenKrush.GameProviders
             if (executable == null)
                 return false;
 
+            Log.Write("debug", $"Detected installation: {path}");
+
             var release = CryptoUtil.SHA1Hash(File.OpenRead(executable));
 
-            // Krush, Kill 'N' Destroy (Disc, English)
             if (release != "024e96860c504b462b24b9237d49bfe8de6eb8e0")
+            {
+                Log.Write("debug", "=> Unsupported game version");
+
                 return false;
+            }
+
+            Log.Write("debug", "=> Krush, Kill 'N' Destroy (Disc, English)");
 
             var levelsFolder = GameProvider.GetDirectory(path, "levels");
+
+            if (levelsFolder == null)
+            {
+                Log.Write("debug", "=> Missing folder: levels");
+                return false;
+            }
+
             var fmvFolder = GameProvider.GetDirectory(path, "fmv");
 
-            if (levelsFolder == null || fmvFolder == null)
+            if (fmvFolder == null)
+            {
+                Log.Write("debug", "=> Missing folder: fmv");
                 return false;
+            }
 
             var graphicsFolder = GameProvider.GetDirectory(levelsFolder, "640");
 
             if (graphicsFolder == null)
+            {
+                Log.Write("debug", "=> Missing folder: 640");
                 return false;
+            }
 
             // Required files.
             var files = new Dictionary<string, string>
@@ -65,8 +85,15 @@ namespace OpenRA.Mods.OpenKrush.GameProviders
                 { "intro.vbc", fmvFolder }
             }.ToDictionary(e => e.Key, e => GameProvider.GetFile(e.Value, e.Key));
 
-            if (files.Values.Any(v => v == null))
+            var missingFiles = files.Where(e => e.Value == null).Select(e => e.Key).ToArray();
+
+            if (missingFiles.Any())
+            {
+                foreach (var missingFile in missingFiles)
+                    Log.Write("debug", $"=> Missing file: {missingFile}");
+
                 return false;
+            }
 
             GameProvider.Installation = path;
             GameProvider.Packages.Add(files["sprites.lvl"], "sprites.lvl");
