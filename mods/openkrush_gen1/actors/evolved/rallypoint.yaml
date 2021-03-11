@@ -1,0 +1,8 @@
+evolved-rallypoint:
+	flag: actors/evolved/rallypoint.png
+		Length: 6
+		Tick: 100
+		Offset: -1,-10
+		ZOffset: 500
+	circles: actors/evolved/rallypoint.png
+		Start: 6

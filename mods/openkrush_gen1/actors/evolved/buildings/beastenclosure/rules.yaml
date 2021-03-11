@@ -46,5 +46,5 @@ evolved_building_beastenclosure:
 	RallyPoint:
 		Path: 0,2
 		LineWidth: 2
-		Image: rallypoint-evolved
+		Image: evolved-rallypoint
 		FlagSequence: flag

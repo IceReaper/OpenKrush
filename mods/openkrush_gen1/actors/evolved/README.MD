@@ -48,7 +48,7 @@ Author: Beam Software
 Source: Unused beta asset.
 Description: Voice file for the actor.
 
-**evolved_flag.png**
+**rallypoint.png**
 Author: Embodied dissapointment, JMSower, Dzierzan
 Source: Modeled by Embodied dissapointment, render scenery by JMSower, polished by Dzierzan.
 Description: Custom rally point flag.

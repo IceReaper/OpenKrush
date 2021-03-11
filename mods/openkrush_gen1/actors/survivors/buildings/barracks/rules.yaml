@@ -39,5 +39,5 @@ survivors_building_barracks:
 	RallyPoint:
 		Path: 1,3
 		LineWidth: 2
-		Image: rallypoint-survivors
+		Image: survivors-rallypoint
 		FlagSequence: flag

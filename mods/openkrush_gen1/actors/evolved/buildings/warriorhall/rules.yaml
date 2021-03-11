@@ -38,5 +38,5 @@ evolved_building_warriorhall:
 	RallyPoint:
 		Path: -1,3
 		LineWidth: 2
-		Image: rallypoint-evolved
+		Image: evolved-rallypoint
 		FlagSequence: flag

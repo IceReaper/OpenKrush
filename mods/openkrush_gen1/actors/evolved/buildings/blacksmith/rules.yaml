@@ -44,5 +44,5 @@ evolved_building_blacksmith:
 	RallyPoint:
 		Path: 0,1
 		LineWidth: 2
-		Image: rallypoint-evolved
+		Image: evolved-rallypoint
 		FlagSequence: flag

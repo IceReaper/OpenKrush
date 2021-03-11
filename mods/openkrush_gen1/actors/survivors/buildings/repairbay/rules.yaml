@@ -34,7 +34,7 @@ survivors_building_repairbay:
 	RallyPoint:
 		Path: 0,2
 		LineWidth: 2
-		Image: rallypoint-survivors
+		Image: survivors-rallypoint
 		FlagSequence: flag
 	TechnicianRepairable:
 		Offset: 5,-40

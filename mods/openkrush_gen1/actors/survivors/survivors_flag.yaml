@@ -1,8 +1,0 @@
-rallypoint-survivors:
-	flag: actors/survivors/survivors_flag.png
-		Length: 8
-		Tick: 100
-		Offset: 6,-12
-		ZOffset: 500
-	circles: actors/survivors/survivors_flag.png
-		Start: 8
