@@ -1,4 +1,4 @@
-survivors-rallypoint:
+survivors_rallypoint:
 	flag: actors/survivors/rallypoint.png
 		Length: 8
 		Tick: 100

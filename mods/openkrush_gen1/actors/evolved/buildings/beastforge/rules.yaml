@@ -43,5 +43,5 @@ evolved_building_beastforge:
 	RallyPoint:
 		Path: 0,2
 		LineWidth: 2
-		Image: evolved-rallypoint
+		Image: evolved_rallypoint
 		FlagSequence: flag

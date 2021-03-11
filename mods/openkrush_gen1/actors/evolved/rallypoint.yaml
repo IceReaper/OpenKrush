@@ -1,4 +1,4 @@
-evolved-rallypoint:
+evolved_rallypoint:
 	flag: actors/evolved/rallypoint.png
 		Length: 6
 		Tick: 100

@@ -30,7 +30,7 @@ evolved_building_holding_pen:
 	RallyPoint:
 		Path: -1,2
 		LineWidth: 2
-		Image: evolved-rallypoint
+		Image: evolved_rallypoint
 		FlagSequence: flag
 	Sacrificer:
 		Summon: evolved_infantry_kingzog

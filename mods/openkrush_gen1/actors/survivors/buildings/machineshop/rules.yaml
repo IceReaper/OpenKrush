@@ -39,5 +39,5 @@ survivors_building_machineshop:
 	RallyPoint:
 		Path: 0,3
 		LineWidth: 2
-		Image: survivors-rallypoint
+		Image: survivors_rallypoint
 		FlagSequence: flag
