@@ -12,6 +12,10 @@ Packages:
 	$openkrush_gen1: openkrush_gen1
 	^EngineDir|mods/common: common
 
+ModCredits:
+	ModCreditsFile: openkrush_gen1|CREDITS
+	ModTabTitle: OpenKrush
+
 MapFolders:
 	openkrush_gen1|maps/classic: System
 	openkrush_gen1|maps/multiplayer: System
