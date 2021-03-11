@@ -14,6 +14,6 @@ survivors_tower_cannontower:
 		Blockable: false
 	Warhead@Damage: SpreadDamage
 		Versus:
-			infantry: 172
-			vehicle: 258
-			building: 110
+			infantry: 86
+			vehicle: 129
+			building: 55

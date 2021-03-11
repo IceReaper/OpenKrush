@@ -73,7 +73,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 				.FirstOrDefault();
 		}
 
-		private static bool IsValidDrillrig(Actor actor)
+		private bool IsValidDrillrig(Actor actor)
 		{
 			if (actor == null || actor.IsDead || !actor.IsInWorld)
 				return false;
@@ -81,7 +81,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 			var dock = actor.TraitOrDefault<Dock>();
 			var drillRig = actor.TraitOrDefault<Drillrig>();
 
-			return dock != null && !dock.IsTraitDisabled && drillRig != null && !drillRig.IsTraitDisabled && !drillRig.CanDock(actor);
+			return dock != null && !dock.IsTraitDisabled && drillRig != null && !drillRig.IsTraitDisabled && drillRig.CanDock(self);
 		}
 
 		public void AssignNearestPowerStation()
@@ -100,7 +100,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 			var dock = actor.TraitOrDefault<Dock>();
 			var powerStation = actor.TraitOrDefault<PowerStation>();
 
-			return dock != null && !dock.IsTraitDisabled && powerStation != null && !powerStation.IsTraitDisabled && !powerStation.CanDock(actor);
+			return dock != null && !dock.IsTraitDisabled && powerStation != null && !powerStation.IsTraitDisabled && powerStation.CanDock(self);
 		}
 
 		void ITick.Tick(Actor self)
