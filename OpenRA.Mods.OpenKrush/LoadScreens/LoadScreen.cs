@@ -32,6 +32,8 @@ namespace OpenRA.Mods.OpenKrush.LoadScreens
 
 		public override void Init(ModData modData, Dictionary<string, string> info)
 		{
+			Game.Settings.Graphics.SheetSize = 8192;
+
 			if (!FindInstallation(modData))
 				Console.WriteLine("TODO show endless 'missing installation' message");
 
