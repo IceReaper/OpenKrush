@@ -38,3 +38,6 @@ survivors_building_machineshop:
 		Facing: 300
 	RallyPoint:
 		Path: 0,3
+		LineWidth: 2
+		Image: rallypoint-survivors
+		FlagSequence: flag

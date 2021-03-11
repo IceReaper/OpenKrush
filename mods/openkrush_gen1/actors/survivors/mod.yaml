@@ -38,6 +38,7 @@ Rules:
 
 Sequences:
 	openkrush_gen1|actors/survivors/sidebar.yaml
+	openkrush_gen1|actors/survivors/survivors_flag.yaml
 	openkrush_gen1|actors/survivors/infantry/sequences.yaml
 	openkrush_gen1|actors/survivors/infantry/rifleman/sequences.yaml
 	openkrush_gen1|actors/survivors/infantry/swat/sequences.yaml

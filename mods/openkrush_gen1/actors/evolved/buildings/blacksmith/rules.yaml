@@ -43,3 +43,6 @@ evolved_building_blacksmith:
 		Facing: 300
 	RallyPoint:
 		Path: 0,1
+		LineWidth: 2
+		Image: rallypoint-evolved
+		FlagSequence: flag

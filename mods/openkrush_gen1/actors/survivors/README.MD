@@ -17,3 +17,8 @@ Description: Voice file for the actor.
 Author: Beam Software
 Source: Demo asset, edited to match phrasing.
 Description: Voice file for the actor.
+
+**survivors_flag.png**
+Author: Embodied dissapointment, JMSower, Dzierzan
+Source: Modeled by Embodied dissapointment, render scenery by JMSower, polished by Dzierzan.
+Description: Custom rally point flag.

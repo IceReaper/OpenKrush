@@ -40,6 +40,7 @@ Rules:
 
 Sequences:
 	openkrush_gen1|actors/evolved/sidebar.yaml
+	openkrush_gen1|actors/evolved/evolved_flag.yaml
 	openkrush_gen1|actors/evolved/infantry/sequences.yaml
 	openkrush_gen1|actors/evolved/infantry/berserker/sequences.yaml
 	openkrush_gen1|actors/evolved/infantry/shotgunner/sequences.yaml

@@ -29,6 +29,8 @@ evolved_building_holding_pen:
 		Facing: 256
 	RallyPoint:
 		Path: -1,2
-		Image:
+		LineWidth: 2
+		Image: rallypoint-evolved
+		FlagSequence: flag
 	Sacrificer:
 		Summon: evolved_infantry_kingzog
