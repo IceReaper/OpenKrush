@@ -15,7 +15,6 @@ using System.Linq;
 using OpenRA.Graphics;
 using OpenRA.Mods.Common.Graphics;
 using OpenRA.Mods.OpenKrush.FileFormats;
-using OpenRA.Mods.OpenKrush.FileSystem;
 using OpenRA.Mods.OpenKrush.Graphics;
 using OpenRA.Primitives;
 
@@ -26,10 +25,10 @@ namespace OpenRA.Mods.OpenKrush.SpriteLoaders
 		private class MobdSpriteFrame : ISpriteFrame
 		{
 			public SpriteFrameType Type => SpriteFrameType.Indexed8;
-			public Size Size { get; private set; }
-			public Size FrameSize { get; private set; }
-			public float2 Offset { get; private set; }
-			public byte[] Data { get; private set; }
+			public Size Size { get; }
+			public Size FrameSize { get; }
+			public float2 Offset { get; }
+			public byte[] Data { get; }
 			public readonly uint[] Palette;
 			public readonly MobdPoint[] Points;
 
@@ -42,8 +41,8 @@ namespace OpenRA.Mods.OpenKrush.SpriteLoaders
 				var x = mobdFrame.OriginX;
 				var y = mobdFrame.OriginY;
 
-				Size = new Size((int)width, (int)height);
-				FrameSize = new Size((int)width, (int)height);
+				Size = new Size(width, height);
+				FrameSize = new Size(width, height);
 				Offset = new int2((int)(width / 2 - x), (int)(height / 2 - y));
 				Data = mobdFrame.RenderFlags.Image.Pixels;
 				Palette = mobdFrame.RenderFlags.Palette;
@@ -51,33 +50,9 @@ namespace OpenRA.Mods.OpenKrush.SpriteLoaders
 			}
 		}
 
-		private static bool IsMobd(Stream stream)
+		public bool TryParseSprite(Stream stream, string filename, out ISpriteFrame[] frames, out TypeDictionary metadata)
 		{
-			if (!(stream is SegmentStream innerStream))
-				return false;
-
-			if (!(innerStream.BaseStream is SegmentStream outerStream))
-				return false;
-
-			var originalPosition = outerStream.BaseStream.Position;
-			outerStream.BaseStream.Position = 0;
-			var magic = outerStream.BaseStream.ReadASCII(4);
-			outerStream.BaseStream.Position = originalPosition;
-
-			// TODO refactor this crap!
-			switch (magic)
-			{
-				case "DATA":
-					return true;
-
-				default:
-					return false;
-			}
-		}
-
-		public bool TryParseSprite(Stream stream, out ISpriteFrame[] frames, out TypeDictionary metadata)
-		{
-			if (!IsMobd(stream))
+			if (!filename.EndsWith(".mobd"))
 			{
 				metadata = null;
 				frames = null;
