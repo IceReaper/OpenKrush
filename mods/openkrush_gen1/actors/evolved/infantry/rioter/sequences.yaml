@@ -18,7 +18,7 @@ evolved_infantry_rioter:
 		Length: 8
 		Tick: 60
 		Facings: -8
-		Zoffset: 1000
+		Zoffset: 2500
 	bored: actors/evolved/infantry/rioter/frames.png
 		Length: 20
 		Tick: 70

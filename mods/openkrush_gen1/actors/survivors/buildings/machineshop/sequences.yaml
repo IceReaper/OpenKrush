@@ -3,21 +3,28 @@ survivors_building_machineshop:
 		Length: 4
 		Tick: 120
 		Offset: -3,-38
+		ZOffset: -500
 	damaged-idle: sprites.lvl|MachineShop.mobd
 		Start: 4
 		Offset: -3,-38
+		ZOffset: -500
 	idle: sprites.lvl|MachineShop.mobd
 		Start: 5
 		Offset: -3,-38
+		ZOffset: -500
 	make0: sprites.lvl|MachineShop.mobd
 		Start: 15
 		Offset: -3,-38
+		ZOffset: -500
 	make1: sprites.lvl|MachineShop.mobd
 		Start: 16
 		Offset: -3,-38
+		ZOffset: -500
 	make2: sprites.lvl|MachineShop.mobd
 		Start: 17
 		Offset: -3,-38
+		ZOffset: -500
 	critical-idle: actors/survivors/buildings/machineshop/frames.png
 		Offset: -3,-38
+		ZOffset: -500
 	icon: actors/survivors/buildings/machineshop/icon.png

@@ -4,6 +4,7 @@ evolved_infantry_bazooka:
 		Length: 2
 		Tick: 120
 		Facings: -16
+		ZOffset: 2500
 	idle: sprites.lvl|RocketLauncher.mobd
 		Start: 32
 		Facings: -16

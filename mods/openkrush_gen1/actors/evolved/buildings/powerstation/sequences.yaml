@@ -3,23 +3,30 @@ evolved_building_powerstation:
 		Length: 4
 		Tick: 160
 		Offset: -5,-29
+		ZOffset: -500
 	damaged-idle: sprites.lvl|MPowerStation.mobd
 		Start: 4
 		Offset: -5,-29
+		ZOffset: -500
 	idle: sprites.lvl|MPowerStation.mobd
 		Start: 5
 		Offset: -5,-29
+		ZOffset: -500
 	make0: sprites.lvl|MPowerStation.mobd
 		Start: 15
 		Offset: -5,-29
+		ZOffset: -500
 	make1: sprites.lvl|MPowerStation.mobd
 		Start: 16
 		Offset: -5,-29
+		ZOffset: -500
 	make2: sprites.lvl|MPowerStation.mobd
 		Start: 17
 		Offset: -5,-29
+		ZOffset: -500
 	critical-idle: actors/evolved/buildings/powerstation/frames.png
 		Offset: -5,-29
+		ZOffset: -500
 	critical-animation: actors/evolved/buildings/powerstation/frames.png
 		Start: 1
 		Length: 4

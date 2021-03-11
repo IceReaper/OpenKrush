@@ -3,6 +3,7 @@ survivors_vehicle_barragecraft:
 		Length: 2
 		Tick: 120
 		Facings: -16
+		ZOffset: 2500
 	turret: sprites.lvl|BarrageCraft.mobd
 		Start: 16
 		Facings: -16

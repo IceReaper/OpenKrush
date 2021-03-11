@@ -3,26 +3,34 @@ evolved_building_clanhall:
 		Length: 72
 		Tick: 160
 		Offset: -3,-46
+		ZOffset: -500
 	damaged-idle: sprites.lvl|Clanhall.mobd
 		Start: 131
 		Offset: -3,-46
+		ZOffset: -500
 	idle: sprites.lvl|Clanhall.mobd
 		Start: 132
 		Offset: -3,-46
+		ZOffset: -500
 	make0: sprites.lvl|Clanhall.mobd
 		Start: 133
 		Offset: -3,-46
+		ZOffset: -500
 	make1: sprites.lvl|Clanhall.mobd
 		Start: 134
 		Offset: -3,-46
+		ZOffset: -500
 	make2: sprites.lvl|Clanhall.mobd
 		Start: 135
 		Offset: -3,-46
+		ZOffset: -500
 	deploy: sprites.lvl|Clanhall.mobd
 		Start: 137
 		Length: 9
 		Tick: 120
 		Offset: -3,-46
+		ZOffset: -500
 	critical-idle: actors/evolved/buildings/clanhall/frames.png
 		Offset: -3,-46
+		ZOffset: -500
 	icon: actors/evolved/buildings/clanhall/icon.png

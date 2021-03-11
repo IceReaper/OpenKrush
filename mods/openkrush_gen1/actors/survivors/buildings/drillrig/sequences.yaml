@@ -3,17 +3,21 @@ survivors_building_drillrig:
 		Length: 6
 		Tick: 160
 		Offset: 0,-32
+		ZOffset: -500
 	damaged-idle: sprites.lvl|SRig.mobd
 		Start: 6
 		Offset: 0,-32
+		ZOffset: -500
 	idle: sprites.lvl|SRig.mobd
 		Start: 7
 		Offset: 0,-32
+		ZOffset: -500
 	deploy: sprites.lvl|SRig.mobd
 		Start: 8
 		Length: 6
 		Tick: 60
 		Offset: 0,-32
+		ZOffset: -500
 	oil: sprites.lvl|Oil.mobd
 		Length: 14
 		Tick: 120
@@ -21,13 +25,17 @@ survivors_building_drillrig:
 		ZOffset: -2000
 	critical-idle: actors/survivors/buildings/drillrig/frames.png
 		Offset: 0,-32
+		ZOffset: -500
 	make0: actors/survivors/buildings/drillrig/frames.png
 		Start: 1
 		Offset: 0,-32
+		ZOffset: -500
 	make1: actors/survivors/buildings/drillrig/frames.png
 		Start: 2
 		Offset: 0,-32
+		ZOffset: -500
 	make2: actors/survivors/buildings/drillrig/frames.png
 		Start: 3
 		Offset: 0,-32
+		ZOffset: -500
 	icon: actors/survivors/buildings/drillrig/icon.png

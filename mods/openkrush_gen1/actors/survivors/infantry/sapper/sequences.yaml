@@ -3,6 +3,7 @@ survivors_infantry_sapper:
 	projectile: sprites.lvl|Sapper.mobd
 		Length: 8
 		Facings: -16
+		ZOffset: 2500
 	idle: sprites.lvl|Sapper.mobd
 		Start: 128
 		Facings: -16

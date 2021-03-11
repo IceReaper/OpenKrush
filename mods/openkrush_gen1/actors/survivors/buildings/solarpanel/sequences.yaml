@@ -1,16 +1,22 @@
 survivors_building_solarpanel:
 	make0: actors/survivors/buildings/solarpanel/frames.png
 		Start: 0
+		ZOffset: -500
 	make1: actors/survivors/buildings/solarpanel/frames.png
 		Start: 1
+		ZOffset: -500
 	make2: actors/survivors/buildings/solarpanel/frames.png
 		Start: 2
+		ZOffset: -500
 	idle: actors/survivors/buildings/solarpanel/frames.png
 		Start: 3
+		ZOffset: -500
 	damaged-idle: actors/survivors/buildings/solarpanel/frames.png
 		Start: 4
+		ZOffset: -500
 	critical-idle: actors/survivors/buildings/solarpanel/frames.png
 		Start: 5
+		ZOffset: -500
 	animation: actors/survivors/buildings/solarpanel/frames.png
 		Start: 6
 		Length: 10

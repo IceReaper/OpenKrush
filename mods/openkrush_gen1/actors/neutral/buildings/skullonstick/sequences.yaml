@@ -2,7 +2,7 @@ neutral_building_skullonstick:
 	idle: actors/neutral/buildings/skullonstick/frames.png
 	shadow: actors/neutral/buildings/skullonstick/frames.png
 		Start: 1
-		ZOffset: -1000
+		ZOffset: -500
 	dirt: actors/neutral/buildings/skullonstick/frames.png
 		Start: 2
 		ZOffset: -1500

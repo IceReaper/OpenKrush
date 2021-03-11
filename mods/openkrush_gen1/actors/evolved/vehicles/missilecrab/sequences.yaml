@@ -3,6 +3,7 @@ evolved_vehicle_missilecrab:
 		Length: 2
 		Tick: 120
 		Facings: -16
+		ZOffset: 2500
 	turret: sprites.lvl|Crab.mobd
 		Start: 32
 		Facings: -16

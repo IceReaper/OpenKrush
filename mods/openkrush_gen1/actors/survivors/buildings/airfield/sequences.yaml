@@ -1,14 +1,20 @@
 survivors_building_airfield:
 	make0: actors/survivors/buildings/airfield/frames.png
 		Start: 0
+		ZOffset: -500
 	make1: actors/survivors/buildings/airfield/frames.png
 		Start: 1
+		ZOffset: -500
 	make2: actors/survivors/buildings/airfield/frames.png
 		Start: 2
+		ZOffset: -500
 	idle: actors/survivors/buildings/airfield/frames.png
 		Start: 3
+		ZOffset: -500
 	damaged-idle: actors/survivors/buildings/airfield/frames.png
 		Start: 4
+		ZOffset: -500
 	critical-idle: actors/survivors/buildings/airfield/frames.png
 		Start: 5
+		ZOffset: -500
 	icon: actors/survivors/buildings/airfield/icon.png

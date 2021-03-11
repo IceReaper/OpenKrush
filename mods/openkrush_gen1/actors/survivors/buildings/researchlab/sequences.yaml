@@ -6,18 +6,24 @@ survivors_building_researchlab:
 	damaged-idle: sprites.lvl|ResearchLab.mobd
 		Start: 4
 		Offset: -1,-32
+		ZOffset: -500
 	idle: sprites.lvl|ResearchLab.mobd
 		Start: 5
 		Offset: -1,-32
+		ZOffset: -500
 	make0: sprites.lvl|ResearchLab.mobd
 		Start: 6
 		Offset: -1,-32
+		ZOffset: -500
 	make1: sprites.lvl|ResearchLab.mobd
 		Start: 7
 		Offset: -1,-32
+		ZOffset: -500
 	make2: sprites.lvl|ResearchLab.mobd
 		Start: 8
 		Offset: -1,-32
+		ZOffset: -500
 	critical-idle: actors/survivors/buildings/researchlab/frames.png
 		Offset: -1,-32
+		ZOffset: -500
 	icon: actors/survivors/buildings/researchlab/icon.png
