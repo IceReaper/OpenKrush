@@ -1,7 +1,7 @@
 evolved_vehicle_giantscorpion:
 	projectile: sprites.lvl|Snot.mobd
 		Facings: -16
-		ZOffset: 1000
+		ZOffset: 2500
 	idle: sprites.lvl|Scorpion.mobd
 		Facings: -16
 	aim: sprites.lvl|Scorpion.mobd

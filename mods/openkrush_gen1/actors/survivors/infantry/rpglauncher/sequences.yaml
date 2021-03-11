@@ -4,6 +4,7 @@ survivors_infantry_rpglauncher:
 		Length: 2
 		Tick: 120
 		Facings: -16
+		ZOffset: 2500
 	idle: sprites.lvl|RocketInfantry.mobd
 		Facings: -16
 	aim: sprites.lvl|RocketInfantry.mobd

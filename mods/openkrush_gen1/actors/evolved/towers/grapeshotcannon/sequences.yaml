@@ -1,7 +1,7 @@
 evolved_tower_grapeshotcannon:
 	projectile: sprites.lvl|GrapeShotCannon.mobd
 		Facings: -16
-		ZOffset: 1000
+		ZOffset: 2500
 	turret: sprites.lvl|GrapeShotCannon.mobd
 		Start: 16
 		Facings: -16

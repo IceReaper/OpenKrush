@@ -1,6 +1,7 @@
 evolved_vehicle_warmastodon:
 	projectile: sprites.lvl|Mastodon.mobd
 		Facings: -16
+		ZOffset: 2500
 	turret: sprites.lvl|Mastodon.mobd
 		Start: 16
 		Facings: -16

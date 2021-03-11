@@ -3,7 +3,7 @@ bunker_vehicles_sentineldroid:
 		Length: 4
 		Facings: -16
 		Tick: 60
-		ZOffset: 1000
+		ZOffset: 2500
 	turret: sprites.lvl|SentinelDroid.mobd
 		Start: 64
 		Facings: -16

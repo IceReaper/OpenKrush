@@ -3,7 +3,7 @@ evolved_vehicle_giantbeetle:
 		Length: 4
 		Facings: -16
 		Tick: 120
-		ZOffset: 1000
+		ZOffset: 2500
 	idle: sprites.lvl|Beetle.mobd
 		Start: 64
 		Facings: -16

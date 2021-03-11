@@ -3,26 +3,34 @@ evolved_building_alchemyhall:
 		Length: 4
 		Tick: 180
 		Offset: -4,-29
+		ZOffset: -500
 	damaged-idle: sprites.lvl|AlchemyHall.mobd
 		Start: 4
 		Offset: -4,-29
+		ZOffset: -500
 	idle: sprites.lvl|AlchemyHall.mobd
 		Start: 5
 		Offset: -4,-29
+		ZOffset: -500
 	make0: sprites.lvl|AlchemyHall.mobd
 		Start: 6
 		Offset: -4,-29
+		ZOffset: -500
 	make1: sprites.lvl|AlchemyHall.mobd
 		Start: 7
 		Offset: -4,-29
+		ZOffset: -500
 	make2: sprites.lvl|AlchemyHall.mobd
 		Start: 8
 		Offset: -4,-29
+		ZOffset: -500
 	critical-idle: actors/evolved/buildings/alchemyhall/frames.png
 		Offset: -4,-29
+		ZOffset: -500
 	critical-animation: actors/evolved/buildings/alchemyhall/frames.png
 		Start: 1
 		Length: 4
 		Tick: 160
 		Offset: -4,-29
+		ZOffset: -500
 	icon: actors/evolved/buildings/alchemyhall/icon.png

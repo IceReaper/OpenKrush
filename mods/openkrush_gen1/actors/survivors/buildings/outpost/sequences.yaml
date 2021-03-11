@@ -3,26 +3,34 @@ survivors_building_outpost:
 		Length: 120
 		Tick: 120
 		Offset: -10,-27
+		ZOffset: -500
 	damaged-idle: sprites.lvl|Outpost.mobd
 		Start: 169
 		Offset: -10,-27
+		ZOffset: -500
 	idle: sprites.lvl|Outpost.mobd
 		Start: 170
 		Offset: -10,-27
+		ZOffset: -500
 	make0: sprites.lvl|Outpost.mobd
 		Start: 171
 		Offset: -10,-27
+		ZOffset: -500
 	make1: sprites.lvl|Outpost.mobd
 		Start: 172
 		Offset: -10,-27
+		ZOffset: -500
 	make2: sprites.lvl|Outpost.mobd
 		Start: 173
 		Offset: -10,-27
+		ZOffset: -500
 	deploy: sprites.lvl|Outpost.mobd
 		Start: 175
 		Length: 9
 		Tick: 120
 		Offset: -10,-27
+		ZOffset: -500
 	critical-idle: actors/survivors/buildings/outpost/frames.png
 		Offset: -10,-27
+		ZOffset: -500
 	icon: actors/survivors/buildings/outpost/icon.png

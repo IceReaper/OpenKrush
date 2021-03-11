@@ -1,7 +1,7 @@
 bunker_vehicles_plasmatank:
 	projectile: sprites.lvl|LaserTank.mobd
 		Facings: -16
-		ZOffset: 1000
+		ZOffset: 2500
 	turret: sprites.lvl|LaserTank.mobd
 		Start: 16
 		Facings: -16
