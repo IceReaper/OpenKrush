@@ -42,7 +42,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 
 				for (var i = 0; i < lastItem; i++)
 				{
-					if (e.Key != Game.ModData.Hotkeys[$"Production{(i + 1)}"].GetValue().Key || e.Modifiers != Game.ModData.Hotkeys[
+					if (e.Key != Game.ModData.Hotkeys[$"Production{i + 1:00}"].GetValue().Key || e.Modifiers != Game.ModData.Hotkeys[
 						$"Production{(i + 1)}"].GetValue().Modifiers)
 						continue;
 
