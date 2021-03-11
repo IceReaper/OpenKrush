@@ -1,0 +1,11 @@
+neutral_building_skulls:
+	idle: actors/neutral/buildings/skulls/frames.png
+		Length: 5
+		Tick: 100
+		ZOffset: -500
+	shadow: actors/neutral/buildings/skulls/frames.png
+		Start: 5
+		ZOffset: -1000
+	dirt: actors/neutral/buildings/skulls/frames.png
+		Start: 6
+		ZOffset: -1500

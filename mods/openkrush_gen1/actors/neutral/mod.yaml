@@ -4,6 +4,7 @@ Rules:
 	openkrush_gen1|actors/neutral/buildings/hut/rules.yaml
 	openkrush_gen1|actors/neutral/buildings/pillar/rules.yaml
 	openkrush_gen1|actors/neutral/buildings/skullonstick/rules.yaml
+	openkrush_gen1|actors/neutral/buildings/skulls/rules.yaml
 
 Sequences:
 	openkrush_gen1|actors/neutral/buildings/campfire/sequences.yaml
@@ -11,3 +12,4 @@ Sequences:
 	openkrush_gen1|actors/neutral/buildings/hut/sequences.yaml
 	openkrush_gen1|actors/neutral/buildings/pillar/sequences.yaml
 	openkrush_gen1|actors/neutral/buildings/skullonstick/sequences.yaml
+	openkrush_gen1|actors/neutral/buildings/skulls/sequences.yaml
