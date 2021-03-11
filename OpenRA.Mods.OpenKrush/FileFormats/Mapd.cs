@@ -31,7 +31,7 @@ namespace OpenRA.Mods.OpenKrush.FileFormats
 
             var palette = stream.ReadBytes(stream.ReadInt32() * 4);
 
-            for (var i = 1; i < palette.Length / 4; i++)
+            for (var i = 0; i < palette.Length / 4; i++)
                 palette[i * 4 + 3] = 0xff;
 
             for (var i = 0; i < Layers.Length; i++)
@@ -65,7 +65,14 @@ namespace OpenRA.Mods.OpenKrush.FileFormats
 
                     for (var y = 0; y < tileHeight; y++)
                     for (var x = 0; x < tileWidth; x++)
-                        Array.Copy(palette, stream.ReadByte() * 4, pixels, (y * tileWidth + x) * 4, 4);
+                    {
+                        var index = stream.ReadByte();
+
+                        if (index == 0 && i != 0)
+                            continue;
+
+                        Array.Copy(palette, index * 4, pixels, (y * tileWidth + x) * 4, 4);
+                    }
                 }
 
                 var layer = new MapdLayer(tilesX * tileWidth, tilesY * tileHeight);
