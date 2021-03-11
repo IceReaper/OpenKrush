@@ -33,6 +33,9 @@ survivors_building_repairbay:
 		Position: -100,-50,400
 	RallyPoint:
 		Path: 0,2
+		LineWidth: 2
+		Image: survivors_rallypoint
+		FlagSequence: flag
 	TechnicianRepairable:
 		Offset: 5,-40
 	WithIdleOverlay@idle:

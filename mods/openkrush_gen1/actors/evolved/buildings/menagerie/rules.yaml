@@ -33,5 +33,8 @@ evolved_building_menagerie:
 		Position: -500,-100,500
 	RallyPoint:
 		Path: 0,2
+		LineWidth: 2
+		Image: evolved_rallypoint
+		FlagSequence: flag
 	TechnicianRepairable:
 		Offset: -10,-50

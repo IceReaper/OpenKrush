@@ -45,3 +45,6 @@ evolved_building_beastenclosure:
 		Facing: 300
 	RallyPoint:
 		Path: 0,2
+		LineWidth: 2
+		Image: evolved_rallypoint
+		FlagSequence: flag

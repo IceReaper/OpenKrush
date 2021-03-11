@@ -29,6 +29,8 @@ survivors_building_detention_center:
 		Facing: 256
 	RallyPoint:
 		Path: -1,2
-		Image:
+		LineWidth: 2
+		Image: survivors_rallypoint
+		FlagSequence: flag
 	Sacrificer:
 		Summon: survivors_infantry_elpresidente

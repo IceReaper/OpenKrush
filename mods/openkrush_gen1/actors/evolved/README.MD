@@ -47,3 +47,8 @@ Description: Voice file for the actor.
 Author: Beam Software
 Source: Unused beta asset.
 Description: Voice file for the actor.
+
+**rallypoint.png**
+Author: Embodied dissapointment, JMSower, Dzierzan
+Source: Modeled by Embodied dissapointment, render scenery by JMSower, polished by Dzierzan.
+Description: Custom rally point flag.
