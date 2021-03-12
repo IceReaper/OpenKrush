@@ -25,7 +25,7 @@ namespace OpenRA.Mods.OpenKrush.FileSystem
 		Gen2
 	}
 
-	// TODO try to get rid of this, but something is disposing the stream!
+	// TODO We need this weird hack, as some assets are using offsets relative to the container beginning!
 	public class NonDisposingSegmentStream : SegmentStream
 	{
 		public NonDisposingSegmentStream(Stream stream, long offset, long count)
@@ -42,11 +42,11 @@ namespace OpenRA.Mods.OpenKrush.FileSystem
 	{
 		private class LvlPackage : IReadOnlyPackage
 		{
-			public string Name { get; private set; }
+			public string Name { get; }
 
 			public IEnumerable<string> Contents => index.Keys;
 
-			private readonly Dictionary<string, uint[]> index = new Dictionary<string, uint[]>();
+			private readonly Dictionary<string, int[]> index = new Dictionary<string, int[]>();
 			private readonly Stream stream;
 
 			public LvlPackage(Stream s, string filename, IReadOnlyFileSystem context)
@@ -61,17 +61,17 @@ namespace OpenRA.Mods.OpenKrush.FileSystem
 				if (context.TryOpen(lookupPath, out s2))
 					lvlLookup = MiniYaml.FromStream(s2).ToDictionary(x => x.Key, x => x.Value.Value);
 
-				var fileTypeListOffset = s.ReadUInt32();
+				var fileTypeListOffset = s.ReadInt32();
 				s.Position = fileTypeListOffset;
 
-				uint firstFileListOffset = 0;
+				int firstFileListOffset = 0;
 
 				for (var i = 0; s.Position < s.Length; i++)
 				{
 					s.Position = fileTypeListOffset + i * 8;
 
 					var fileType = s.ReadASCII(4);
-					var fileListOffset = s.ReadUInt32();
+					var fileListOffset = s.ReadInt32();
 
 					// List terminator reached.
 					if (fileListOffset == 0)
@@ -83,7 +83,7 @@ namespace OpenRA.Mods.OpenKrush.FileSystem
 
 					// To determine when this list ends, check the next entry
 					s.Position += 4;
-					var fileListEndOffset = s.ReadUInt32();
+					var fileListEndOffset = s.ReadInt32();
 
 					// List terminator reached, so assume the list goes on till the fileTypeList starts.
 					if (fileListEndOffset == 0)
@@ -93,7 +93,7 @@ namespace OpenRA.Mods.OpenKrush.FileSystem
 
 					for (var j = 0; s.Position < fileListEndOffset; j++)
 					{
-						var fileOffset = s.ReadUInt32();
+						var fileOffset = s.ReadInt32();
 
 						// Removed file, still increments fileId.
 						if (fileOffset == 0)
@@ -116,16 +116,16 @@ namespace OpenRA.Mods.OpenKrush.FileSystem
 							lvlLookup.Add(assetFileName, assetFileName);
 						}
 
-						index.Add(assetFileName, new uint[] { fileOffset, 0 });
+						index.Add(assetFileName, new int[] { fileOffset, 0 });
 					}
 				}
 
+				if (index.Count <= 0)
+					return;
+
 				// Calculate the last fileLength.
-				if (index.Count > 0)
-				{
-					var entry = index.ElementAt(index.Count - 1).Value;
-					entry[1] = firstFileListOffset - entry[0];
-				}
+				var lastEntry = index.ElementAt(index.Count - 1).Value;
+				lastEntry[1] = firstFileListOffset - lastEntry[0];
 			}
 
 			public Stream GetStream(string filename)
@@ -152,38 +152,29 @@ namespace OpenRA.Mods.OpenKrush.FileSystem
 
 		public bool TryParsePackage(Stream s, string filename, FS context, out IReadOnlyPackage package)
 		{
-			var version = Generation.Unknown;
-
 			if (filename.EndsWith(".lpk") // Spritesheet container
 			    || filename.EndsWith(".bpk") // Image container
 			    || filename.EndsWith(".spk") // Sound set
 			    || filename.EndsWith(".lps") // Singleplayer map
 			    || filename.EndsWith(".lpm") // Multiplayer map
-			    || filename.EndsWith(".mpk") // Matrix set (destroyable map part, tile replacements)
-				|| false)
+			    || filename.EndsWith(".mpk")) // Matrix set (destroyable map part, tile replacements)
+				s = Decompressor.Decompress(s);
+
+			if (s.Position + 4 <= s.Length)
 			{
-				version = Generation.Gen2;
-				s = Crypter.Decrypt(s);
-			}
-
-			var signature = s.ReadASCII(4);
-
-			if (signature.Equals("DATA") && version == Generation.Unknown)
-				version = Generation.Gen1;
-
-			if (version == Generation.Unknown)
-			{
+				var signature = s.ReadASCII(4);
 				s.Position -= 4;
-				package = null;
-				return false;
+
+				if (signature.Equals("DATA"))
+				{
+					package = new LvlPackage(new SegmentStream(s, 8, (s.ReadByte() << 24) | (s.ReadByte() << 16) | (s.ReadByte() << 8) | s.ReadByte()), filename, context);
+
+					return true;
+				}
 			}
 
-			var tmp = s.ReadBytes(4); // Big-Endian
-			var dataLength = (tmp[0] << 24) | (tmp[1] << 16) | (tmp[2] << 8) | tmp[3];
-
-			package = new LvlPackage(new SegmentStream(s, 8, dataLength), filename, context);
-
-			return true;
+			package = null;
+			return false;
 		}
 	}
 }

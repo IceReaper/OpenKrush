@@ -16,30 +16,20 @@ namespace OpenRA.Mods.OpenKrush.AudioLoaders
 {
 	public class SonLoader : ISoundLoader
 	{
-		private static bool IsSon(Stream s)
-		{
-			var start = s.Position;
-			var type = s.ReadASCII(4);
-			s.Position += 4;
-			var format = s.ReadASCII(8);
-			s.Position = start;
-
-			return type == "SIFF" && format == "SOUNSHDR";
-		}
-
 		bool ISoundLoader.TryParseSound(Stream stream, out ISoundFormat sound)
 		{
-			try
+			if (stream.Position + 16 <= stream.Length)
 			{
-				if (IsSon(stream))
+				var type = stream.ReadASCII(4);
+				stream.Position += 4;
+				var format = stream.ReadASCII(8);
+				stream.Position -= 16;
+
+				if (type == "SIFF" && format == "SOUNSHDR")
 				{
 					sound = new Son(stream);
 					return true;
 				}
-			}
-			catch
-			{
-				// Not a (supported) SON
 			}
 
 			sound = null;

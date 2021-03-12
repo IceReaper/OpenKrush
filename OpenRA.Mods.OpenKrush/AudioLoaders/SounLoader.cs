@@ -16,32 +16,19 @@ namespace OpenRA.Mods.OpenKrush.AudioLoaders
 {
 	public class SounLoader : ISoundLoader
 	{
-		private static bool IsSoun(Stream s)
-		{
-			if (s.Position + 72 > s.Length)
-				return false;
-
-			var start = s.Position;
-			s.Position += 52;
-			var filename = s.ReadASCII(20);
-			s.Position = start;
-
-			return filename.Contains(".smp");
-		}
-
 		bool ISoundLoader.TryParseSound(Stream stream, out ISoundFormat sound)
 		{
-			try
+			if (stream.Position + 72 <= stream.Length)
 			{
-				if (IsSoun(stream))
+				stream.Position += 52;
+				var filename = stream.ReadASCII(20);
+				stream.Position -= 72;
+
+				if (filename.Contains(".smp"))
 				{
 					sound = new Soun(stream);
 					return true;
 				}
-			}
-			catch
-			{
-				// Not a (supported) SOUN
 			}
 
 			sound = null;

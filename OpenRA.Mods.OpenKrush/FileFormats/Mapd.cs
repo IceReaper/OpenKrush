@@ -11,6 +11,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using OpenRA.Primitives;
 
 namespace OpenRA.Mods.OpenKrush.FileFormats
@@ -21,6 +22,7 @@ namespace OpenRA.Mods.OpenKrush.FileFormats
 
         public Mapd(SegmentStream stream)
         {
+            // This is damn ugly, but it seems MAPD uses offsets from lvl start.
             var basePosition = ((SegmentStream)stream.BaseStream).BaseStream.Position - 8;
 
             var layerOffsets = new int[stream.ReadInt32()];
@@ -38,7 +40,11 @@ namespace OpenRA.Mods.OpenKrush.FileFormats
             {
                 stream.Position = layerOffsets[i] - basePosition;
 
-                stream.ReadASCII(4); // SCRL
+                var type = new string(stream.ReadASCII(4).Reverse().ToArray());
+
+                if (type != "SCRL")
+                    throw new Exception("Unknown type.");
+
                 var tileWidth = stream.ReadInt32();
                 var tileHeight = stream.ReadInt32();
                 var tilesX = stream.ReadInt32();
@@ -61,7 +67,7 @@ namespace OpenRA.Mods.OpenKrush.FileFormats
                 {
                     stream.Position = offset - basePosition;
 
-                    stream.ReadInt32(); // Unk
+                    var unk1 = stream.ReadInt32(); // Unk
 
                     for (var y = 0; y < tileHeight; y++)
                     for (var x = 0; x < tileWidth; x++)
