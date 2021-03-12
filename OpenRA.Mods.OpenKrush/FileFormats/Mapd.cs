@@ -12,6 +12,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using OpenRA.Mods.OpenKrush.FileSystem;
 using OpenRA.Primitives;
 
 namespace OpenRA.Mods.OpenKrush.FileFormats
@@ -25,16 +26,40 @@ namespace OpenRA.Mods.OpenKrush.FileFormats
             // This is damn ugly, but it seems MAPD uses offsets from lvl start.
             var basePosition = ((SegmentStream)stream.BaseStream).BaseStream.Position - 8;
 
+            var test = stream.ReadInt32();
+            stream.Position += test * 4;
+            var generation = stream.ReadInt32() == 256 ? Generation.Gen1 : Generation.Gen2;
+            stream.Position -= (test + 2) * 4;
+
+            if (generation == Generation.Gen2)
+                stream.ReadInt32(); // Unk
+
             var layerOffsets = new int[stream.ReadInt32()];
             Layers = new MapdLayer[layerOffsets.Length];
 
             for (var i = 0; i < layerOffsets.Length; i++)
                 layerOffsets[i] = stream.ReadInt32();
 
-            var palette = stream.ReadBytes(stream.ReadInt32() * 4);
+            var palette = new byte[stream.ReadInt32() * 4];
 
-            for (var i = 0; i < palette.Length / 4; i++)
-                palette[i * 4 + 3] = 0xff;
+            if (generation == Generation.Gen2)
+            {
+                for (var i = 0; i < palette.Length;)
+                {
+                    var color16 = stream.ReadUInt16(); // aRRRRRGGGGGBBBBB
+                    palette[i++] = (byte)(((color16 & 0x7c00) >> 7) & 0xff);
+                    palette[i++] = (byte)(((color16 & 0x03e0) >> 2) & 0xff);
+                    palette[i++] = (byte)(((color16 & 0x001f) << 3) & 0xff);
+                    palette[i++] = 0xff;
+                }
+            }
+            else
+            {
+                stream.Read(palette);
+
+                for (var i = 0; i < palette.Length / 4; i++)
+                    palette[i * 4 + 3] = 0xff;
+            }
 
             for (var i = 0; i < Layers.Length; i++)
             {
@@ -50,6 +75,13 @@ namespace OpenRA.Mods.OpenKrush.FileFormats
                 var tilesX = stream.ReadInt32();
                 var tilesY = stream.ReadInt32();
 
+                if (generation == Generation.Gen2)
+                {
+                    stream.ReadInt32(); // Unk
+                    stream.ReadInt32(); // Unk
+                    stream.ReadInt32(); // Unk
+                }
+
                 var tilePixels = new Dictionary<int, byte[]>();
                 var tiles = new List<int>();
 
@@ -57,6 +89,10 @@ namespace OpenRA.Mods.OpenKrush.FileFormats
                 for (var x = 0; x < tilesX; x++)
                 {
                     var tile = stream.ReadInt32();
+
+                    if (generation == Generation.Gen2)
+                        tile -= tile % 4;
+
                     tiles.Add(tile);
 
                     if (tile != 0 && !tilePixels.ContainsKey(tile))
@@ -67,7 +103,8 @@ namespace OpenRA.Mods.OpenKrush.FileFormats
                 {
                     stream.Position = offset - basePosition;
 
-                    var unk1 = stream.ReadInt32(); // Unk
+                    if (generation == Generation.Gen1)
+                        stream.ReadInt32(); // Unk
 
                     for (var y = 0; y < tileHeight; y++)
                     for (var x = 0; x < tileWidth; x++)
