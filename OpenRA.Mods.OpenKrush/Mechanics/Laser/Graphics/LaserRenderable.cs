@@ -13,7 +13,7 @@ using System.Linq;
 using OpenRA.Graphics;
 using OpenRA.Primitives;
 
-namespace OpenRA.Mods.OpenKrush.Graphics
+namespace OpenRA.Mods.OpenKrush.Mechanics.Laser.Graphics
 {
 	public struct LaserRenderable : IRenderable, IFinalizedRenderable
 	{

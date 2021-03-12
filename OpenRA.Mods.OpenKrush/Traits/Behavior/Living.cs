@@ -45,14 +45,14 @@ namespace OpenRA.Mods.OpenKrush.Traits.Behavior
 
 		void ITick.Tick(Actor self)
 		{
-			if (self.CurrentActivity == null)
-			{
-				if (info.RotationChance > 0 && self.World.SharedRandom.Next(1, info.RotationChance) == 1)
-					mobile.Facing = WAngle.FromFacing(self.World.SharedRandom.Next(0x00, 0xff));
+			if (self.CurrentActivity != null)
+				return;
 
-				if (info.BoredSequence != null && self.World.SharedRandom.Next(1, info.BoredChance) == 1)
-					wsb.PlayCustomAnimation(self, info.BoredSequence);
-			}
+			if (info.RotationChance > 0 && self.World.SharedRandom.Next(1, info.RotationChance) == 1)
+				mobile.Facing = WAngle.FromFacing(self.World.SharedRandom.Next(0x00, 0xff));
+
+			if (info.BoredSequence != null && self.World.SharedRandom.Next(1, info.BoredChance) == 1)
+				wsb.PlayCustomAnimation(self, info.BoredSequence);
 		}
 	}
 }

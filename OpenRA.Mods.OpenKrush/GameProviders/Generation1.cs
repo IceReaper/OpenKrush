@@ -18,22 +18,30 @@ using System.Linq;
 
 namespace OpenRA.Mods.OpenKrush.GameProviders
 {
-    public static class Xtreme
+    public static class Generation1
     {
         public static bool TryRegister(string path)
         {
-            // GoG and Steam
-            var executable = GameProvider.GetFile(path, "kkndgame.exe");
+            var executablePath = path;
+
+            // Xtreme GoG and Steam
+            var executable = GameProvider.GetFile(executablePath, "kkndgame.exe");
 
             if (executable == null)
             {
-                // CD
-                var gamePath = GameProvider.GetDirectory(path, "game");
+                // Xtreme CD
+                executablePath = GameProvider.GetDirectory(path, "game");
 
-                if (gamePath == null)
-                    return false;
+                if (executablePath == null)
+                {
+                    // Dos CD
+                    executablePath = GameProvider.GetDirectory(path, "kknd");
 
-                executable = GameProvider.GetFile(gamePath, "kknd.exe");
+                    if (executablePath == null)
+                        return false;
+                }
+
+                executable = GameProvider.GetFile(executablePath, "kknd.exe");
 
                 if (executable == null)
                     return false;
@@ -42,20 +50,28 @@ namespace OpenRA.Mods.OpenKrush.GameProviders
             Log.Write("debug", $"Detected installation: {path}");
 
             var release = CryptoUtil.SHA1Hash(File.OpenRead(executable));
+            var isXtreme = true;
 
-            if (release != "6fb10d85739ef63b28831ada4cdfc159a950c5d2")
+            switch (release)
             {
-                if (release != "d1f41d7129b6f377869f28b89f92c18f4977a48f")
-                {
+                case "d1f41d7129b6f377869f28b89f92c18f4977a48f":
+                    Log.Write("debug", "=> Krush, Kill 'N' Destroy Xtreme (Steam/GoG, English)");
+                    break;
+
+                case "6fb10d85739ef63b28831ada4cdfc159a950c5d2":
+                    Log.Write("debug", "=> Krush, Kill 'N' Destroy Xtreme (Disc, English)");
+                    break;
+
+                case "024e96860c504b462b24b9237d49bfe8de6eb8e0":
+                    Log.Write("debug", "=> Krush, Kill 'N' Destroy (Disc, English)");
+                    isXtreme = false;
+                    path = executablePath;
+                    break;
+
+                default:
                     Log.Write("debug", "=> Unsupported game version");
-
                     return false;
-                }
-
-                Log.Write("debug", "=> Krush, Kill 'N' Destroy Xtreme (Steam/GoG, English)");
             }
-            else
-                Log.Write("debug", "=> Krush, Kill 'N' Destroy Xtreme (Disc, English)");
 
             var levelsFolder = GameProvider.GetDirectory(path, "levels");
 
@@ -87,17 +103,29 @@ namespace OpenRA.Mods.OpenKrush.GameProviders
                 { "sprites.lvl", graphicsFolder },
                 { "surv.slv", levelsFolder },
                 { "mute.slv", levelsFolder },
-                { "surv1.wav", levelsFolder },
-                { "surv2.wav", levelsFolder },
-                { "surv3.wav", levelsFolder },
-                { "surv4.wav", levelsFolder },
-                { "mute1.wav", levelsFolder },
-                { "mute2.wav", levelsFolder },
-                { "mute3.wav", levelsFolder },
-                { "mute4.wav", levelsFolder },
                 { "mh_fmv.vbc", fmvFolder },
                 { "intro.vbc", fmvFolder }
-            }.ToDictionary(e => e.Key, e => GameProvider.GetFile(e.Value, e.Key));
+            }.Concat(isXtreme
+                ? new Dictionary<string, string>
+                {
+                    { "surv1.wav", levelsFolder },
+                    { "surv2.wav", levelsFolder },
+                    { "surv3.wav", levelsFolder },
+                    { "surv4.wav", levelsFolder },
+                    { "mute1.wav", levelsFolder },
+                    { "mute2.wav", levelsFolder },
+                    { "mute3.wav", levelsFolder },
+                    { "mute4.wav", levelsFolder }
+                }
+                : new Dictionary<string, string>
+                {
+                    { "surv1.son", levelsFolder },
+                    { "surv2.son", levelsFolder },
+                    { "surv3.son", levelsFolder },
+                    { "mute1.son", levelsFolder },
+                    { "mute2.son", levelsFolder },
+                    { "mute3.son", levelsFolder },
+                }).ToDictionary(e => e.Key, e => GameProvider.GetFile(e.Value, e.Key));
 
             var missingFiles = files.Where(e => e.Value == null).Select(e => e.Key).ToArray();
 
@@ -114,14 +142,18 @@ namespace OpenRA.Mods.OpenKrush.GameProviders
             GameProvider.Packages.Add(files["mute.slv"], "mute.slv");
             GameProvider.Packages.Add(files["surv.slv"], "surv.slv");
 
-            GameProvider.Music.Add("Survivors 1", files["surv1.wav"]);
-            GameProvider.Music.Add("Survivors 2", files["surv2.wav"]);
-            GameProvider.Music.Add("Survivors 3", files["surv3.wav"]);
-            GameProvider.Music.Add("Survivors 4", files["surv4.wav"]);
-            GameProvider.Music.Add("Evolved 1", files["mute1.wav"]);
-            GameProvider.Music.Add("Evolved 2", files["mute2.wav"]);
-            GameProvider.Music.Add("Evolved 3", files["mute3.wav"]);
-            GameProvider.Music.Add("Evolved 4", files["mute4.wav"]);
+            GameProvider.Music.Add("Survivors 1", files[$"surv1.{(isXtreme ? "wav" : "son")}"]);
+            GameProvider.Music.Add("Survivors 2", files[$"surv2.{(isXtreme ? "wav" : "son")}"]);
+            GameProvider.Music.Add("Survivors 3", files[$"surv3.{(isXtreme ? "wav" : "son")}"]);
+            GameProvider.Music.Add("Evolved 1", files[$"mute1.{(isXtreme ? "wav" : "son")}"]);
+            GameProvider.Music.Add("Evolved 2", files[$"mute2.{(isXtreme ? "wav" : "son")}"]);
+            GameProvider.Music.Add("Evolved 3", files[$"mute3.{(isXtreme ? "wav" : "son")}"]);
+
+            if (isXtreme)
+            {
+                GameProvider.Music.Add("Survivors 4", files["surv4.wav"]);
+                GameProvider.Music.Add("Evolved 4", files["mute4.wav"]);
+            }
 
             GameProvider.Movies.Add("mh.vbc", files["mh_fmv.vbc"]);
             GameProvider.Movies.Add("intro.vbc", files["intro.vbc"]);

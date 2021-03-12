@@ -14,12 +14,12 @@ using System.Collections.Generic;
 using System.Numerics;
 using OpenRA.GameRules;
 using OpenRA.Graphics;
-using OpenRA.Mods.OpenKrush.Graphics;
+using OpenRA.Mods.OpenKrush.Mechanics.Laser.Graphics;
 using OpenRA.Primitives;
 using OpenRA.Support;
 using OpenRA.Traits;
 
-namespace OpenRA.Mods.OpenKrush.Projectiles
+namespace OpenRA.Mods.OpenKrush.Mechanics.Laser.Projectiles
 {
 	[Desc("A beautiful generated laser beam.")]
 	public class LaserInfo : IProjectileInfo

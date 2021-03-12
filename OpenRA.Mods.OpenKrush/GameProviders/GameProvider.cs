@@ -28,8 +28,7 @@ namespace OpenRA.Mods.OpenKrush.GameProviders
 
         public static bool TryRegister(ModData modData, string path)
         {
-            // ALWAYS check xtreme first, as its preferred due to the addon content!
-            return (Xtreme.TryRegister(path) || Dos.TryRegister(path)) && Mount(modData);
+            return Generation1.TryRegister(path) && Mount(modData);
         }
 
         private static bool Mount(ModData modData)
