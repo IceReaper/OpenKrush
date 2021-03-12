@@ -14,7 +14,6 @@ using OpenRA.Graphics;
 using OpenRA.Mods.Common.Orders;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.OpenKrush.Mechanics.Docking;
-using OpenRA.Mods.OpenKrush.Mechanics.Docking.Activities;
 using OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits.Actions;
 using OpenRA.Mods.OpenKrush.Mechanics.Oil.Activities;
 using OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits;

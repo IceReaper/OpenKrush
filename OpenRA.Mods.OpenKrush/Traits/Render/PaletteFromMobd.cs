@@ -16,7 +16,6 @@ using OpenRA.FileSystem;
 using OpenRA.Graphics;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.OpenKrush.FileFormats;
-using OpenRA.Mods.OpenKrush.FileSystem;
 using OpenRA.Primitives;
 using OpenRA.Traits;
 

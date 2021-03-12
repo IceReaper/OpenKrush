@@ -16,15 +16,15 @@ namespace OpenRA.Mods.OpenKrush.FileFormats
 {
 	public class MobdFrame
 	{
-		public readonly uint OriginX;
-		public readonly uint OriginY;
+		public readonly uint OffsetX;
+		public readonly uint OffsetY;
 		public readonly MobdRenderFlags RenderFlags;
 		public readonly MobdPoint[] Points;
 
 		public MobdFrame(SegmentStream stream)
 		{
-			OriginX = stream.ReadUInt32();
-			OriginY = stream.ReadUInt32();
+			OffsetX = stream.ReadUInt32();
+			OffsetY = stream.ReadUInt32();
 			/*Unk1 =*/ stream.ReadUInt32();
 			var renderFlagsOffset = stream.ReadUInt32();
 			/*var boxListOffset =*/ stream.ReadUInt32(); // we do not read boxes (2 points, min and max)

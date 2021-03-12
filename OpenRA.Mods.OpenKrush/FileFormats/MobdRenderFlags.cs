@@ -9,7 +9,6 @@
  */
 #endregion
 
-using System;
 using System.Linq;
 using OpenRA.Mods.OpenKrush.FileSystem;
 using OpenRA.Primitives;

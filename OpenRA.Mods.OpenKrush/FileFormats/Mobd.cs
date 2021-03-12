@@ -11,7 +11,6 @@
 
 using System;
 using System.Collections.Generic;
-using OpenRA.Mods.OpenKrush.FileSystem;
 using OpenRA.Primitives;
 
 namespace OpenRA.Mods.OpenKrush.FileFormats
@@ -23,6 +22,7 @@ namespace OpenRA.Mods.OpenKrush.FileFormats
 
 		public Mobd(SegmentStream stream)
 		{
+			// This is damn ugly, but it seems MOBD uses offsets from lvl start.
 			var fileOffset = (uint)stream.BaseOffset;
 			var firstFrameStart = stream.Length;
 

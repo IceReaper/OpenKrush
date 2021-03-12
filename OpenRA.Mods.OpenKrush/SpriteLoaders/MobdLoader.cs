@@ -38,8 +38,8 @@ namespace OpenRA.Mods.OpenKrush.SpriteLoaders
 			{
 				var width = mobdFrame.RenderFlags.Image.Width;
 				var height = mobdFrame.RenderFlags.Image.Height;
-				var x = mobdFrame.OriginX;
-				var y = mobdFrame.OriginY;
+				var x = mobdFrame.OffsetX;
+				var y = mobdFrame.OffsetY;
 
 				Size = new Size(width, height);
 				FrameSize = new Size(width, height);

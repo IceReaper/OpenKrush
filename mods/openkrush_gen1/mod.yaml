@@ -178,7 +178,7 @@ SupportsMapsFrom: gen1
 
 SoundFormats: Wav, Soun, Son
 
-SpriteFormats: PngSheet, Mobd, Mapd
+SpriteFormats: PngSheet, Mobd, Mapd, Blit
 
 VideoFormats: Vbc
 
@@ -189,7 +189,7 @@ SpriteSequenceFormat: OffsetsSpriteSequence
 ModelSequenceFormat: PlaceholderModelSequence
 
 AssetBrowser:
-	SupportedExtensions: .wav, .mobd, .mapd, .soun, .son, .vbc
+	SupportedExtensions: .wav, .mobd, .mapd, .blit, .soun, .son, .vbc
 
 GameSpeeds:
 	slower:
