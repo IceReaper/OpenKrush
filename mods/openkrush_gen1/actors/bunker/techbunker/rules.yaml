@@ -9,7 +9,7 @@ bunker_techbunker:
 			Radius: 1000
 	TechBunker:
 		Produces: summoning
-		ContainableActors: bunker_vehicles_gorttherobot, bunker_vehicles_mech, bunker_vehicles_plasmatank, bunker_vehicles_sentineldroid
+		ContainableActors: bunker_vehicles_gorttherobot, bunker_vehicles_mech, bunker_vehicles_plasmatank, bunker_vehicles_sentineldroid, bunker_vehicles_desintegrator
 		SoundOpen: mute.slv|189.wav
 		SequenceUnlocked: unlocked
 	Exit:

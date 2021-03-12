@@ -1,0 +1,29 @@
+bunker_vehicles_desintegrator:
+	Range: 7c0
+	Burst: 3
+	BurstDelays: 4
+	ReloadDelay: 25
+	Report: openkrush_gen1|actors/bunker/vehicles/desintegrator/sound.wav
+	Projectile: Laser
+		Duration: 4
+		Distortion: 64
+		DistortionAnimation: 16
+		SegmentLength: 512
+	Warhead@Damage: SpreadDamage
+		Damage: 100
+		DamageTypes: Laser
+		Spread: 512
+		Falloff: 100, 100
+		AffectsParent: true
+		Versus:
+			infantry: 75
+			vehicle: 150
+			building: 90
+	Warhead@Effect: ShrapnelCreateEffect
+		Image: projectiles
+		ExplosionPalette: openkrush
+		Explosions: laser
+		ImpactSounds: mute.slv|10.wav
+	Warhead@Smudge: LeaveSmudge
+		Chance: 35
+		SmudgeType: Crater

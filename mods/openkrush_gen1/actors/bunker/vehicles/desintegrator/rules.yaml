@@ -1,0 +1,35 @@
+bunker_vehicles_desintegrator:
+	Inherits@1: ^CoreVehicle
+	Inherits@2: ^CoreTurret
+	Tooltip:
+		Name: Desintegrator
+	OffsetsArmament@1:
+		BurstOffsets: 0
+		MuzzlePalette:
+		Weapon: bunker_vehicles_desintegrator
+	OffsetsArmament@2:
+		BurstOffsets: 1
+		MuzzlePalette:
+		Name: secondary
+		Weapon: bunker_vehicles_desintegrator
+	Turreted:
+		TurnSpeed: 32
+	Voiced:
+		VoiceSet: BunkerVoice
+	AdvancedBuildable:
+		Level: -1
+	MapEditorData:
+		Categories: Bunker
+	Veterancy:
+		Experience: 7500, 15000
+	AttackNotification:
+		Notifications: BunkerUnderAttack
+	Health:
+		HP: 6000
+	Mobile:
+		Speed: 50
+		TurnSpeed: 32
+	RevealsShroud:
+		Range: 8c0
+	AdvancedSelectionDecorations:
+		Offset: 0,-10
