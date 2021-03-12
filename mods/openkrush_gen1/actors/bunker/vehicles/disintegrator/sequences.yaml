@@ -1,0 +1,11 @@
+bunker_vehicles_disintegrator:
+	idle: actors/bunker/vehicles/disintegrator/body.png
+		Facings: -8
+	move: actors/bunker/vehicles/disintegrator/body.png
+		Start: 8
+		Length: 8
+		Tick: 120
+		Facings: -8
+	turret: actors/bunker/vehicles/disintegrator/turret.png
+		Facings: -16
+	icon: actors/bunker/vehicles/disintegrator/icon.png

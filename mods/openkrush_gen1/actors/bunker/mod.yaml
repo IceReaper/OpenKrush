@@ -1,6 +1,6 @@
 Rules:
 	openkrush_gen1|actors/bunker/techbunker/rules.yaml
-	openkrush_gen1|actors/bunker/vehicles/desintegrator/rules.yaml
+	openkrush_gen1|actors/bunker/vehicles/disintegrator/rules.yaml
 	openkrush_gen1|actors/bunker/vehicles/gorttherobot/rules.yaml
 	openkrush_gen1|actors/bunker/vehicles/mech/rules.yaml
 	openkrush_gen1|actors/bunker/vehicles/plasmatank/rules.yaml
@@ -8,14 +8,14 @@ Rules:
 
 Sequences:
 	openkrush_gen1|actors/bunker/techbunker/sequences.yaml
-	openkrush_gen1|actors/bunker/vehicles/desintegrator/sequences.yaml
+	openkrush_gen1|actors/bunker/vehicles/disintegrator/sequences.yaml
 	openkrush_gen1|actors/bunker/vehicles/gorttherobot/sequences.yaml
 	openkrush_gen1|actors/bunker/vehicles/mech/sequences.yaml
 	openkrush_gen1|actors/bunker/vehicles/plasmatank/sequences.yaml
 	openkrush_gen1|actors/bunker/vehicles/sentineldroid/sequences.yaml
 
 Weapons:
-	openkrush_gen1|actors/bunker/vehicles/desintegrator/weapons.yaml
+	openkrush_gen1|actors/bunker/vehicles/disintegrator/weapons.yaml
 	openkrush_gen1|actors/bunker/vehicles/gorttherobot/weapons.yaml
 	openkrush_gen1|actors/bunker/vehicles/mech/weapons.yaml
 	openkrush_gen1|actors/bunker/vehicles/plasmatank/weapons.yaml

@@ -31,11 +31,9 @@ namespace OpenRA.Mods.OpenKrush.Graphics
 		}
 
 		public WPos Pos => new WPos(offsets[0].X, offsets[0].Y, 0);
-		public PaletteReference Palette => null;
 		public int ZOffset => zOffset;
 		public bool IsDecoration => true;
 
-		public IRenderable WithPalette(PaletteReference newPalette) { return this; }
 		public IRenderable WithZOffset(int newOffset) { return new LaserRenderable(offsets, newOffset, width, color); }
 		public IRenderable OffsetBy(WVec vec) { return new LaserRenderable(offsets.Select(offset => offset + vec).ToArray(), zOffset, width, color); }
 		public IRenderable AsDecoration() { return this; }
@@ -45,8 +43,7 @@ namespace OpenRA.Mods.OpenKrush.Graphics
 		{
 			// TODO fix connectSegments - asin smoothen the edge of a break!
 			var screenWidth = wr.ScreenVector(new WVec(width, WDist.Zero, WDist.Zero))[0];
-
-			Game.Renderer.WorldRgbaColorRenderer.DrawLine(offsets.Select(offset => wr.Screen3DPosition(offset)), screenWidth, color, false);
+			Game.Renderer.WorldRgbaColorRenderer.DrawLine(offsets.Select(wr.Screen3DPosition), screenWidth, color, false);
 		}
 
 		public void RenderDebugGeometry(WorldRenderer wr) { }

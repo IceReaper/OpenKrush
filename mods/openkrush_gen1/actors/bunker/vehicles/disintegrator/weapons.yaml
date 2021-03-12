@@ -1,14 +1,14 @@
-bunker_vehicles_desintegrator:
+bunker_vehicles_disintegrator:
 	Range: 7c0
-	Burst: 3
-	BurstDelays: 4
-	ReloadDelay: 25
-	Report: openkrush_gen1|actors/bunker/vehicles/desintegrator/sound.wav
+	ReloadDelay: 75
+	Report: openkrush_gen1|actors/bunker/vehicles/disintegrator/sound.wav
 	Projectile: Laser
 		Duration: 4
-		Distortion: 64
-		DistortionAnimation: 16
+		Distortion: 256
+		DistortionAnimation: 64
 		SegmentLength: 512
+		Color: 429CEF
+		ZOffset: 2500
 	Warhead@Damage: SpreadDamage
 		Damage: 100
 		DamageTypes: Laser
@@ -16,9 +16,9 @@ bunker_vehicles_desintegrator:
 		Falloff: 100, 100
 		AffectsParent: true
 		Versus:
-			infantry: 75
-			vehicle: 150
-			building: 90
+			infantry: 300
+			vehicle: 400
+			building: 250
 	Warhead@Effect: ShrapnelCreateEffect
 		Image: projectiles
 		ExplosionPalette: openkrush

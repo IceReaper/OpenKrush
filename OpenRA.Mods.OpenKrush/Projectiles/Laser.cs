@@ -9,7 +9,9 @@
  */
 #endregion
 
+using System;
 using System.Collections.Generic;
+using System.Numerics;
 using OpenRA.GameRules;
 using OpenRA.Graphics;
 using OpenRA.Mods.OpenKrush.Graphics;
@@ -54,15 +56,16 @@ namespace OpenRA.Mods.OpenKrush.Projectiles
 
 	public class Laser : IProjectile
 	{
-		readonly LaserInfo info;
-		readonly Color[] colors;
-		readonly WPos[] offsets;
+		private readonly LaserInfo info;
+		private readonly Color[] colors;
+		private readonly WPos[] offsets;
+		private readonly float[] distances;
 
-		readonly WVec leftVector;
-		readonly WVec upVector;
-		readonly MersenneTwister random;
+		private readonly WVec leftVector;
+		private readonly WVec upVector;
+		private readonly MersenneTwister random;
 
-		int ticks;
+		private int ticks;
 
 		public Laser(ProjectileArgs args, LaserInfo info)
 		{
@@ -98,32 +101,24 @@ namespace OpenRA.Mods.OpenKrush.Projectiles
 			}
 
 			if (this.info.SegmentLength == WDist.Zero)
-			{
 				offsets = new[] { args.Source, args.PassiveTarget };
-			}
 			else
 			{
 				var numSegments = (direction.Length - 1) / info.SegmentLength.Length + 1;
+
 				offsets = new WPos[numSegments + 1];
 				offsets[0] = args.Source;
 				offsets[offsets.Length - 1] = args.PassiveTarget;
 
-				for (var i = 1; i < numSegments; i++)
+				distances = new float[offsets.Length];
+
+				if (info.Distortion != 0)
 				{
-					var segmentStart = direction / numSegments * i;
-					offsets[i] = args.Source + segmentStart;
-
-					if (info.Distortion != 0)
-					{
-						var angle = WAngle.FromDegrees(random.Next(360));
-						var distortion = random.Next(info.Distortion);
-
-						var offset = distortion * angle.Cos() * leftVector / (1024 * 1024)
-							+ distortion * angle.Sin() * upVector / (1024 * 1024);
-
-						offsets[i] += offset;
-					}
+					for (var i = 1; i < numSegments; i++)
+						distances[i] = random.Next(info.Distortion * 2) - info.Distortion;
 				}
+
+				CalculateOffsets();
 			}
 
 			args.Weapon.Impact(Target.FromPos(args.PassiveTarget), args.SourceActor);
@@ -135,17 +130,32 @@ namespace OpenRA.Mods.OpenKrush.Projectiles
 				world.AddFrameEndTask(w => w.Remove(this));
 			else if (info.DistortionAnimation != 0)
 			{
-				for (var i = 1; i < offsets.Length - 1; i++)
-				{
-					var angle = WAngle.FromDegrees(random.Next(360));
-					var distortion = random.Next(info.DistortionAnimation);
+				for (var i = 1; i < distances.Length - 1; i++)
+					distances[i] = Math.Clamp(distances[i] + random.Next(info.DistortionAnimation * 2) - info.DistortionAnimation, -info.Distortion, info.Distortion);
 
-					var offset = distortion * angle.Cos() * leftVector / (1024 * 1024)
-						+ distortion * angle.Sin() * upVector / (1024 * 1024);
-
-					offsets[i] += offset;
-				}
+				CalculateOffsets();
 			}
+		}
+
+		private void CalculateOffsets()
+		{
+			var source = offsets[0];
+			var numSegments = offsets.Length - 1;
+			var distance = (offsets[numSegments] - source) / numSegments;
+
+			for (var i = 1; i < numSegments; i++)
+				offsets[i] = source + FindPoint(distance * i, distances[i]);
+		}
+
+		private static WVec FindPoint(WVec pos, float distance)
+		{
+			// TODO remove System.Numerics here.
+			var dir = new Vector3(pos.X, pos.Y, pos.Z);
+			var circumference = 2 * (float)Math.PI * dir.Length();
+			var angle = distance / circumference * (float)Math.PI;
+			dir = Vector3.Transform(dir, Quaternion.CreateFromAxisAngle(Vector3.UnitZ, angle));
+
+			return new WVec((int)dir.X, (int)dir.Y, (int)dir.Z);
 		}
 
 		public IEnumerable<IRenderable> Render(WorldRenderer worldRenderer)

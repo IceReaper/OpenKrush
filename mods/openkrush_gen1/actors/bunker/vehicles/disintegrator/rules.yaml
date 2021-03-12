@@ -1,17 +1,17 @@
-bunker_vehicles_desintegrator:
+bunker_vehicles_disintegrator:
 	Inherits@1: ^CoreVehicle
 	Inherits@2: ^CoreTurret
 	Tooltip:
-		Name: Desintegrator
+		Name: Disintegrator
 	OffsetsArmament@1:
 		BurstOffsets: 0
 		MuzzlePalette:
-		Weapon: bunker_vehicles_desintegrator
+		Weapon: bunker_vehicles_disintegrator
 	OffsetsArmament@2:
 		BurstOffsets: 1
 		MuzzlePalette:
 		Name: secondary
-		Weapon: bunker_vehicles_desintegrator
+		Weapon: bunker_vehicles_disintegrator
 	Turreted:
 		TurnSpeed: 32
 	Voiced:
