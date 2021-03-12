@@ -14,6 +14,6 @@ Source: Self-made based on alpha frames.
 Description: Overhauled to match first generation artstyle.
 
 **sound.wav**
-Author: Julien Matthey
-Source: https://freesound.org/people/Julien%20Matthey/sounds/268344/
+Author: Mike Koenig
+Source: http://soundbible.com/1770-Ray-Gun.html
 Description: Gun fire sound.
