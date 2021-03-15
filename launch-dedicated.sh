@@ -5,7 +5,9 @@
 #  Read the file to see which settings you can override
 
 set -e
-command -v mono >/dev/null 2>&1 || { echo >&2 "The OpenRA mod SDK requires mono."; exit 1; }
+if ! command -v mono >/dev/null 2>&1; then
+	command -v dotnet >/dev/null 2>&1 || { echo >&2 "The OpenRA mod SDK requires mono or dotnet."; exit 1; }
+fi
 if command -v python3 >/dev/null 2>&1; then
 	PYTHON="python3"
 else
