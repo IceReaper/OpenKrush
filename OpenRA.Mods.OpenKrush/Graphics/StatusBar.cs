@@ -18,11 +18,11 @@ namespace OpenRA.Mods.OpenKrush.Graphics
 	using Mechanics.Oil;
 	using Mechanics.Researching.Traits;
 	using Mechanics.Saboteurs.Traits;
+	using Mechanics.Veterancy.Traits;
 	using OpenRA.Graphics;
 	using OpenRA.Traits;
 	using Primitives;
 	using Traits.Render;
-	using Traits.Veterancy;
 
 	public class StatusBar : IRenderable, IFinalizedRenderable
 	{

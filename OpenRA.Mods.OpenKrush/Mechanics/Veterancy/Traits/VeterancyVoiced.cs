@@ -11,7 +11,7 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Traits.Veterancy
+namespace OpenRA.Mods.OpenKrush.Mechanics.Veterancy.Traits
 {
 	using System;
 	using Common.Traits;
@@ -30,7 +30,7 @@ namespace OpenRA.Mods.OpenKrush.Traits.Veterancy
 
 		public override object Create(ActorInitializer init)
 		{
-			return new VeterancyVoiced(init.Self, this);
+			return new VeterancyVoiced(this);
 		}
 	}
 
@@ -39,7 +39,7 @@ namespace OpenRA.Mods.OpenKrush.Traits.Veterancy
 		private readonly VeterancyVoicedInfo info;
 		private Veterancy veterancy;
 
-		public VeterancyVoiced(Actor self, VeterancyVoicedInfo info)
+		public VeterancyVoiced(VeterancyVoicedInfo info)
 		{
 			this.info = info;
 		}

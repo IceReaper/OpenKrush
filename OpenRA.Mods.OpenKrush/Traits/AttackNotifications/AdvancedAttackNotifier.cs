@@ -15,9 +15,9 @@ namespace OpenRA.Mods.OpenKrush.Traits.AttackNotifications
 {
 	using System.Collections.Generic;
 	using Common.Traits;
+	using Mechanics.Veterancy.Traits;
 	using OpenRA.Traits;
 	using Primitives;
-	using Veterancy;
 
 	[Desc("Attack notifier which supports per actor notifications.")]
 	public class AdvancedAttackNotifierInfo : TraitInfo

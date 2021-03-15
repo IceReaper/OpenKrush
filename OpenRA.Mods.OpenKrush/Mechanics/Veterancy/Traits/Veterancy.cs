@@ -11,7 +11,7 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Traits.Veterancy
+namespace OpenRA.Mods.OpenKrush.Mechanics.Veterancy.Traits
 {
 	using Common.Traits;
 	using OpenRA.Traits;
@@ -48,7 +48,7 @@ namespace OpenRA.Mods.OpenKrush.Traits.Veterancy
 		public readonly int HealDelay = 1;
 
 		[Desc("Apply the selfhealing using these damagetypes.")]
-		public readonly BitSet<DamageType> DamageTypes = default(BitSet<DamageType>);
+		public readonly BitSet<DamageType> DamageTypes = default;
 
 		public override object Create(ActorInitializer init)
 		{
