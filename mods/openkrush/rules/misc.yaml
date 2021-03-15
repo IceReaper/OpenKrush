@@ -117,7 +117,7 @@ World:
 	# Oilpatch selectbox.
 	OilAmount:
 	# Oilpatch selectbox.
-	OilpatchBurn:
+	OilBurn:
 	# Techlevel selectbox.
 	TechLevel:
 	# TechBunker amount selectbox.
@@ -128,6 +128,8 @@ World:
 	TechBunkerUsage:
 	# TechBunker uses selectbox.
 	TechBunkerUses:
+	# Saboteur usage selectbox.
+	SaboteurUsage:
 	# Used to manage beacons.
 	RadarPings:
 

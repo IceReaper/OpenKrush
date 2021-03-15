@@ -11,7 +11,7 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
+namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.LobbyOptions
 {
 	using System;
 	using System.Collections.Generic;
@@ -19,6 +19,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 	using Common.Traits;
 	using OpenRA.Graphics;
 	using OpenRA.Traits;
+	using Traits;
 
 	public enum TechBunkerAmountType
 	{

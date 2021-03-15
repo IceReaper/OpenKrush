@@ -11,12 +11,13 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
+namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.LobbyOptions
 {
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
 	using OpenRA.Traits;
+	using Traits;
 
 	public enum TechBunkerUsesType
 	{

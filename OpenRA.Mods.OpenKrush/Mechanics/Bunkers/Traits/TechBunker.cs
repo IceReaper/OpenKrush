@@ -18,6 +18,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 	using Common.Traits;
 	using Common.Traits.Render;
 	using Graphics;
+	using LobbyOptions;
 	using OpenKrush.Traits.Production;
 	using OpenRA.Graphics;
 	using OpenRA.Traits;

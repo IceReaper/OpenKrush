@@ -11,13 +11,14 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
+namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.LobbyOptions
 {
 	using System.Collections.Generic;
 	using OpenRA.Traits;
+	using Traits;
 
 	[Desc("Selectable oil burn behavior in lobby.")]
-	public class OilpatchBurnInfo : TraitInfo, ILobbyOptions
+	public class OilBurnInfo : TraitInfo, ILobbyOptions
 	{
 		public const string Id = "OilBurn";
 
@@ -29,7 +30,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 				values.Add(i.ToString(), $"{i}%");
 
 			yield return new LobbyOption(
-				OilpatchBurnInfo.Id,
+				OilBurnInfo.Id,
 				"Burn",
 				"Percent amount of oil to burn when ignited.",
 				true,
@@ -42,17 +43,17 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 
 		public override object Create(ActorInitializer init)
 		{
-			return new OilpatchBurn();
+			return new OilBurn();
 		}
 	}
 
-	public class OilpatchBurn : INotifyCreated
+	public class OilBurn : INotifyCreated
 	{
 		public int Amount { get; set; }
 
 		void INotifyCreated.Created(Actor self)
 		{
-			Amount = int.Parse(self.World.LobbyInfo.GlobalSettings.OptionOrDefault(OilpatchBurnInfo.Id, "0"));
+			Amount = int.Parse(self.World.LobbyInfo.GlobalSettings.OptionOrDefault(OilBurnInfo.Id, "0"));
 		}
 	}
 }

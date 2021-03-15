@@ -15,6 +15,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 {
 	using System;
 	using GameRules;
+	using LobbyOptions;
 	using OpenRA.Traits;
 	using Primitives;
 
@@ -85,7 +86,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 		{
 			this.info = info;
 			resources = info.Amount == 0 ? init.World.WorldActor.Trait<OilAmount>().Amount : info.Amount;
-			burnTotal = this.info.FullAmount * init.World.WorldActor.Trait<OilpatchBurn>().Amount / 100;
+			burnTotal = this.info.FullAmount * init.World.WorldActor.Trait<OilBurn>().Amount / 100;
 		}
 
 		public int Current => resources == -1 ? info.FullAmount : resources;

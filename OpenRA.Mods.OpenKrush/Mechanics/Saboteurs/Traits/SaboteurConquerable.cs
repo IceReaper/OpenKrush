@@ -15,6 +15,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.Traits
 {
 	using System;
 	using Common.Traits;
+	using LobbyOptions;
 	using OpenRA.Traits;
 
 	[Desc("Saboteur mechanism, attach to the building.")]
@@ -34,18 +35,22 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.Traits
 
 		public override object Create(ActorInitializer init)
 		{
-			return new SaboteurConquerable(this);
+			return new SaboteurConquerable(init, this);
 		}
 	}
 
 	public class SaboteurConquerable : ConditionalTrait<SaboteurConquerableInfo>
 	{
+		private readonly SaboteurUsage usage;
+
 		public int Population;
 
-		public SaboteurConquerable(SaboteurConquerableInfo info)
+		public SaboteurConquerable(ActorInitializer init, SaboteurConquerableInfo info)
 			: base(info)
 		{
 			Population = info.Population;
+
+			usage = init.Self.World.WorldActor.Trait<SaboteurUsage>();
 		}
 
 		public void Enter(Actor self, Actor target)
@@ -61,9 +66,18 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.Traits
 			{
 				Population = 1;
 				Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", Info.NotificationConquered, self.Owner.Faction.InternalName);
-				self.ChangeOwner(target.Owner);
 
-				// TODO clear production queues!
+				if (usage.Usage == SaboteurUsageType.Conquer || self.Owner.RelationshipWith(target.Owner) == PlayerRelationship.Neutral)
+				{
+					// TODO clear production queues!
+					self.ChangeOwner(target.Owner);
+				}
+				else
+				{
+					var worth = self.Info.TraitInfoOrDefault<ValuedInfo>()?.Cost ?? 0;
+					target.Owner.PlayerActor.Trait<PlayerResources>().GiveCash(worth);
+					self.Kill(target);
+				}
 			}
 		}
 	}

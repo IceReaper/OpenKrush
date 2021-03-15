@@ -11,10 +11,11 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
+namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.LobbyOptions
 {
 	using System.Collections.Generic;
 	using OpenRA.Traits;
+	using Traits;
 
 	[Desc("Selectable oilpatch oil amount in lobby.")]
 	public class OilAmountInfo : TraitInfo, ILobbyOptions
