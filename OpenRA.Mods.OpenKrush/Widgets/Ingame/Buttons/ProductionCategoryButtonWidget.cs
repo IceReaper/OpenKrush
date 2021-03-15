@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,17 +8,19 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.Common.Widgets;
-using OpenRA.Primitives;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 {
+	using System;
+	using System.Collections.Generic;
+	using System.Linq;
+	using Common.Traits;
+	using Common.Widgets;
+	using Primitives;
+	using ProductionPaletteWidget = Ingame.ProductionPaletteWidget;
+
 	public class ProductionCategoryButtonWidget : ButtonWidget
 	{
 		public readonly string[] Categories;
@@ -27,7 +30,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 			: base(sidebar, "unit")
 		{
 			Categories = categories;
-			Bounds = new Rectangle(0, index * Size, Size, Size);
+			Bounds = new Rectangle(0, index * ButtonWidget.Size, ButtonWidget.Size, ButtonWidget.Size);
 			TooltipTitle = label;
 			hotkey = Game.ModData.Hotkeys[$"Production{label}"].GetValue();
 		}
@@ -47,10 +50,12 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 				for (var i = 0; i < Children.Count; i++)
 				{
 					var child = (ProductionPaletteWidget)Children[i];
+
 					if (child.IsFocused)
 					{
 						child.IsFocused = false;
 						((ProductionPaletteWidget)Children[(i + 1) % Children.Count]).IsFocused = true;
+
 						break;
 					}
 				}
@@ -111,28 +116,29 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 			foreach (var queue in queues)
 				AddChild(new ProductionPaletteWidget(sidebar, queue));
 
-			Children.Sort((a, b) =>
-			{
-				var typeA = ((ProductionPaletteWidget)a).Queue.Info.Type;
-				var typeB = ((ProductionPaletteWidget)b).Queue.Info.Type;
-
-				if (typeA == typeB)
+			Children.Sort(
+				(a, b) =>
 				{
-					var idA = ((ProductionPaletteWidget)a).Queue.Actor.ActorID;
-					var idB = ((ProductionPaletteWidget)b).Queue.Actor.ActorID;
+					var typeA = ((ProductionPaletteWidget)a).Queue.Info.Type;
+					var typeB = ((ProductionPaletteWidget)b).Queue.Info.Type;
 
-					return (int)idA - (int)idB;
-				}
+					if (typeA == typeB)
+					{
+						var idA = ((ProductionPaletteWidget)a).Queue.Actor.ActorID;
+						var idB = ((ProductionPaletteWidget)b).Queue.Actor.ActorID;
 
-				return string.Compare(typeA, typeB, StringComparison.Ordinal);
-			});
+						return (int)idA - (int)idB;
+					}
+
+					return string.Compare(typeA, typeB, StringComparison.Ordinal);
+				});
 
 			var focused = -1;
 
 			for (var i = 0; i < Children.Count; i++)
 			{
 				var palette = (ProductionPaletteWidget)Children[i];
-				palette.Bounds.X = (i + 1) * Size * -1;
+				palette.Bounds.X = (i + 1) * ButtonWidget.Size * -1;
 
 				if (palette.IsFocused)
 					focused = i;

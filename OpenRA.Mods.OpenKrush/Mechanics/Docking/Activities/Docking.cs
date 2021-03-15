@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,17 +8,18 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System.Linq;
-using OpenRA.Activities;
-using OpenRA.Mods.Common.Activities;
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Activities
 {
+	using System.Linq;
+	using Common.Activities;
+	using Common.Traits;
+	using OpenRA.Activities;
+	using OpenRA.Traits;
+	using Traits;
+
 	public class Docking : Activity, IDockingActivity
 	{
 		private readonly Actor dockableActor;
@@ -67,6 +69,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Activities
 					if (State == ActivityState.Canceling)
 					{
 						Dock.Remove(dockableActor);
+
 						return true;
 					}
 
@@ -76,6 +79,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Activities
 					if (State == ActivityState.Canceling)
 					{
 						Dock.Remove(dockableActor);
+
 						return true;
 					}
 
@@ -101,6 +105,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Activities
 					if (State == ActivityState.Canceling)
 					{
 						StartUndocking();
+
 						return false;
 					}
 
@@ -116,6 +121,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Activities
 					if (State == ActivityState.Canceling)
 					{
 						StartUndocking();
+
 						return false;
 					}
 
@@ -130,6 +136,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Activities
 						if (!DockActor.IsDead && DockActor.IsInWorld)
 						{
 							var rallyPoint = DockActor.TraitOrDefault<RallyPoint>();
+
 							if (rallyPoint != null && rallyPoint.Path.Any())
 								foreach (var cell in rallyPoint.Path)
 									dockableActor.QueueActivity(new Move(dockableActor, cell));

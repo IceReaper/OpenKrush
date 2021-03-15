@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,13 +8,14 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Traits.Behavior
 {
+	using Common.Traits;
+	using OpenRA.Traits;
+
 	[Desc("Play together with an attack.")]
 	public class WithLoopedAttackSoundInfo : TraitInfo
 	{

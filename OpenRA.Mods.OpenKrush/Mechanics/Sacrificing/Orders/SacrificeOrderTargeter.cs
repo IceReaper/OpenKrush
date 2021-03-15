@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,13 +8,14 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using OpenRA.Mods.Common.Orders;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Sacrificing.Orders
 {
+	using Common.Orders;
+	using OpenRA.Traits;
+
 	public class SacrificeOrderTargeter : UnitOrderTargeter
 	{
 		public const string Id = "Sacrifice";
@@ -21,7 +23,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Sacrificing.Orders
 		private readonly string cursor;
 
 		public SacrificeOrderTargeter(string cursor)
-			: base(Id, 6, cursor, false, true)
+			: base(SacrificeOrderTargeter.Id, 6, cursor, false, true)
 		{
 			this.cursor = cursor;
 		}

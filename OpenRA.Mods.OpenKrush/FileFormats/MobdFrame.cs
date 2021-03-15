@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,13 +8,14 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System.Collections.Generic;
-using OpenRA.Primitives;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.FileFormats
 {
+	using System.Collections.Generic;
+	using Primitives;
+
 	public class MobdFrame
 	{
 		public readonly uint OffsetX;
@@ -25,10 +27,10 @@ namespace OpenRA.Mods.OpenKrush.FileFormats
 		{
 			OffsetX = stream.ReadUInt32();
 			OffsetY = stream.ReadUInt32();
-			/*Unk1 =*/ stream.ReadUInt32();
+			stream.ReadUInt32(); // Unk
 			var renderFlagsOffset = stream.ReadUInt32();
-			/*var boxListOffset =*/ stream.ReadUInt32(); // we do not read boxes (2 points, min and max)
-			/*Unk2 =*/ stream.ReadUInt32();
+			stream.ReadUInt32(); // boxListOffset - we do not read boxes (2 points, min and max)
+			stream.ReadUInt32(); // Unk
 			var pointListOffset = stream.ReadUInt32();
 
 			// Theoretically we could also read the boxes here.

@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,21 +8,25 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System;
-using OpenRA.Mods.Common.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Traits.Production
 {
+	using System;
+	using Common.Traits;
+
 	public class AdvancedProductionInfo : ProductionInfo
 	{
 		public readonly int MaximumDistance = 3;
 
-		public override object Create(ActorInitializer init) { return new AdvancedProduction(init, this); }
+		public override object Create(ActorInitializer init)
+		{
+			return new AdvancedProduction(init, this);
+		}
 	}
 
-	public class AdvancedProduction : Common.Traits.Production
+	public class AdvancedProduction : Production
 	{
 		private AdvancedProductionInfo info;
 

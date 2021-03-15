@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,14 +8,15 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using OpenRA.Graphics;
-using OpenRA.Primitives;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Traits.Render
 {
+	using OpenRA.Graphics;
+	using OpenRA.Traits;
+	using Primitives;
+
 	[Desc("More beautiful variant of the PlayerColorPalette by using the overlay blend mode.")]
 	public class OverlayPlayerColorPaletteInfo : TraitInfo
 	{
@@ -32,7 +34,10 @@ namespace OpenRA.Mods.OpenKrush.Traits.Render
 		[Desc("Allow palette modifiers to change the palette.")]
 		public readonly bool AllowModifiers = true;
 
-		public override object Create(ActorInitializer init) { return new OverlayPlayerColorPalette(this); }
+		public override object Create(ActorInitializer init)
+		{
+			return new OverlayPlayerColorPalette(this);
+		}
 	}
 
 	public class OverlayPlayerColorPalette : ILoadsPlayerPalettes

@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,23 +8,27 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System.Linq;
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.Common.Traits.Render;
-using OpenRA.Mods.OpenKrush.Graphics;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Traits.SpritesWithOffsets
 {
+	using System.Linq;
+	using Common.Traits;
+	using Common.Traits.Render;
+	using Graphics;
+	using OpenRA.Traits;
+
 	[Desc("Use asset provided armament offset.")]
 	public class OffsetsArmamentInfo : ArmamentInfo, Requires<WithSpriteBodyInfo>
 	{
 		[Desc("Offset id to use per burst shot.")]
 		public readonly int[] BurstOffsets = { 0 };
 
-		public override object Create(ActorInitializer init) { return new OffsetsArmament(init.Self, this); }
+		public override object Create(ActorInitializer init)
+		{
+			return new OffsetsArmament(init.Self, this);
+		}
 	}
 
 	public class OffsetsArmament : Armament
@@ -43,12 +48,14 @@ namespace OpenRA.Mods.OpenKrush.Traits.SpritesWithOffsets
 			var offset = base.CalculateMuzzleOffset(self, barrel);
 
 			var sequence = wsb.DefaultAnimation.CurrentSequence as OffsetsSpriteSequence;
+
 			if (sequence != null)
 			{
 				var wst = self.TraitOrDefault<WithOffsetsSpriteTurret>();
 				var weaponPoint = info.BurstOffsets[(Weapon.Burst - Burst) % info.BurstOffsets.Length];
 
 				var sprite = wsb.DefaultAnimation.Image;
+
 				if (sequence.EmbeddedOffsets.ContainsKey(sprite) && sequence.EmbeddedOffsets[sprite] != null)
 				{
 					var offsets = sequence.EmbeddedOffsets[sprite];
@@ -61,9 +68,11 @@ namespace OpenRA.Mods.OpenKrush.Traits.SpritesWithOffsets
 				if (wst != null)
 				{
 					var turretSequence = wst.DefaultAnimation.CurrentSequence as OffsetsSpriteSequence;
+
 					if (turretSequence != null)
 					{
 						sprite = wst.DefaultAnimation.Image;
+
 						if (turretSequence.EmbeddedOffsets.ContainsKey(sprite) && turretSequence.EmbeddedOffsets[sprite] != null)
 						{
 							var offsets = turretSequence.EmbeddedOffsets[sprite];

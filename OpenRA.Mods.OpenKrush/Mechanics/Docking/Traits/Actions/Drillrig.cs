@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,15 +8,16 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System.Linq;
-using OpenRA.Mods.OpenKrush.Mechanics.Oil;
-using OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits.Actions
 {
+	using System.Linq;
+	using Oil;
+	using Oil.Traits;
+	using OpenRA.Traits;
+
 	[Desc("Drillrig logic.")]
 	public class DrillrigInfo : DockActionInfo
 	{
@@ -32,7 +34,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits.Actions
 		[Desc("How many oil per tick should be pumped.")]
 		public readonly int Rate = 3;
 
-		public override object Create(ActorInitializer init) { return new Drillrig(init, this); }
+		public override object Create(ActorInitializer init)
+		{
+			return new Drillrig(init, this);
+		}
 	}
 
 	public class Drillrig : DockAction, ITick, IHaveOil, INotifyRemovedFromWorld

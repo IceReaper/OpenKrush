@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,17 +8,18 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using OpenRA.Graphics;
-using OpenRA.Mods.Common.Graphics;
-using OpenRA.Mods.Common.SpriteLoaders;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Graphics
 {
+	using System;
+	using System.Collections.Generic;
+	using System.Linq;
+	using Common.Graphics;
+	using Common.SpriteLoaders;
+	using OpenRA.Graphics;
+
 	public class Offset
 	{
 		public readonly int Id;
@@ -45,7 +47,9 @@ namespace OpenRA.Mods.OpenKrush.Graphics
 	public class OffsetsSpriteSequenceLoader : DefaultSpriteSequenceLoader
 	{
 		public OffsetsSpriteSequenceLoader(ModData modData)
-			: base(modData) { }
+			: base(modData)
+		{
+		}
 
 		public override ISpriteSequence CreateSequence(ModData modData, string tileSet, SpriteCache cache, string sequence, string animation, MiniYaml info)
 		{
@@ -57,7 +61,14 @@ namespace OpenRA.Mods.OpenKrush.Graphics
 	{
 		public readonly Dictionary<Sprite, Offset[]> EmbeddedOffsets = new Dictionary<Sprite, Offset[]>();
 
-		public OffsetsSpriteSequence(ModData modData, string tileSet, SpriteCache cache, ISpriteSequenceLoader loader, string sequence, string animation, MiniYaml info)
+		public OffsetsSpriteSequence(
+			ModData modData,
+			string tileSet,
+			SpriteCache cache,
+			ISpriteSequenceLoader loader,
+			string sequence,
+			string animation,
+			MiniYaml info)
 			: base(modData, tileSet, cache, loader, sequence, animation, info)
 		{
 			if (info.Value.EndsWith(".mobd"))

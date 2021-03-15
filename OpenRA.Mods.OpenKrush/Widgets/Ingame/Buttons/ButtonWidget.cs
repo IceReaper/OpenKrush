@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,14 +8,15 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using OpenRA.Mods.Common.Widgets;
-using OpenRA.Primitives;
-using OpenRA.Widgets;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 {
+	using Common.Widgets;
+	using OpenRA.Widgets;
+	using Primitives;
+
 	public abstract class ButtonWidget : Widget
 	{
 		public static readonly int Size = 48;
@@ -32,7 +34,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 			this.sidebar = sidebar;
 			this.type = type;
 
-			Bounds = new Rectangle(0, 0, Size, Size);
+			Bounds = new Rectangle(0, 0, ButtonWidget.Size, ButtonWidget.Size);
 		}
 
 		public override void MouseEntered()
@@ -44,7 +46,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 			sidebar.IngameUi.Tooltip.TooltipText = TooltipText;
 
 			sidebar.IngameUi.Tooltip.Bounds.X = RenderBounds.X;
-			sidebar.IngameUi.Tooltip.Bounds.Y = RenderBounds.Y + Size / 2;
+			sidebar.IngameUi.Tooltip.Bounds.Y = RenderBounds.Y + ButtonWidget.Size / 2;
 
 			sidebar.IngameUi.Tooltip.Visible = true;
 		}
@@ -68,6 +70,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 		{
 			Game.Sound.PlayNotification(sidebar.IngameUi.World.Map.Rules, null, "Sounds", "ClickSound", null);
 			Active = !Active;
+
 			return true;
 		}
 
@@ -83,9 +86,9 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 
 		public override void Draw()
 		{
-			center = new int2(RenderBounds.X + Size / 2, RenderBounds.Y + Size / 2);
+			center = new int2(RenderBounds.X + ButtonWidget.Size / 2, RenderBounds.Y + ButtonWidget.Size / 2);
 
-			WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X, RenderBounds.Y, Size, Size), Color.FromArgb(255, 0, 0, 0));
+			WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X, RenderBounds.Y, ButtonWidget.Size, ButtonWidget.Size), Color.FromArgb(255, 0, 0, 0));
 
 			sidebar.Buttons.PlayFetchIndex(Active && IsUsable() ? $"{type}-down" : type, () => 0);
 			WidgetUtils.DrawSHPCentered(sidebar.Buttons.Image, center, sidebar.IngameUi.Palette);

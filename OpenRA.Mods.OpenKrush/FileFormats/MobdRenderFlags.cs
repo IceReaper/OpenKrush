@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,14 +8,15 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System.Linq;
-using OpenRA.Mods.OpenKrush.FileSystem;
-using OpenRA.Primitives;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.FileFormats
 {
+	using System.Linq;
+	using FileSystem;
+	using Primitives;
+
 	public class MobdRenderFlags
 	{
 		public readonly MobdImage Image;

@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,16 +8,17 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System.IO;
-using System.Linq;
-using OpenRA.Graphics;
-using OpenRA.Mods.OpenKrush.FileFormats;
-using OpenRA.Primitives;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.SpriteLoaders
 {
+	using System.IO;
+	using System.Linq;
+	using FileFormats;
+	using OpenRA.Graphics;
+	using Primitives;
+
 	public class BlitLoader : ISpriteLoader
 	{
 		private class BlitSpriteFrame : ISpriteFrame
@@ -49,6 +51,7 @@ namespace OpenRA.Mods.OpenKrush.SpriteLoaders
 			{
 				metadata = null;
 				frames = null;
+
 				return false;
 			}
 

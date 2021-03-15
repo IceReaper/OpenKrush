@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,17 +8,18 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System;
-using System.Collections.Generic;
-using OpenRA.Graphics;
-using OpenRA.Mods.Common.LoadScreens;
-using OpenRA.Mods.OpenKrush.GameProviders;
-using OpenRA.Primitives;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.LoadScreens
 {
+	using System;
+	using System.Collections.Generic;
+	using Common.LoadScreens;
+	using GameProviders;
+	using OpenRA.Graphics;
+	using Primitives;
+
 	public class LoadScreen : BlankLoadScreen
 	{
 		private Renderer renderer;
@@ -38,6 +40,7 @@ namespace OpenRA.Mods.OpenKrush.LoadScreens
 			base.Init(modData, info);
 
 			renderer = Game.Renderer;
+
 			if (renderer == null)
 				return;
 

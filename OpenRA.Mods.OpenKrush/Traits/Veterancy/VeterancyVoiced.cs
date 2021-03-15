@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,14 +8,15 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System;
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Traits.Veterancy
 {
+	using System;
+	using Common.Traits;
+	using OpenRA.Traits;
+
 	[Desc("This actor has a different voice for each veterancy level.")]
 	public class VeterancyVoicedInfo : TraitInfo
 	{
@@ -26,7 +28,10 @@ namespace OpenRA.Mods.OpenKrush.Traits.Veterancy
 		[Desc("Multiply volume with this factor.")]
 		public readonly float Volume = 1f;
 
-		public override object Create(ActorInitializer init) { return new VeterancyVoiced(init.Self, this); }
+		public override object Create(ActorInitializer init)
+		{
+			return new VeterancyVoiced(init.Self, this);
+		}
 	}
 
 	public class VeterancyVoiced : IVoiced, INotifyCreated
@@ -53,6 +58,7 @@ namespace OpenRA.Mods.OpenKrush.Traits.Veterancy
 
 			var type = ((IVoiced)this).VoiceSet.ToLowerInvariant();
 			var volume = info.Volume;
+
 			return Game.Sound.PlayPredefined(SoundType.World, self.World.Map.Rules, null, self, type, phrase, variant, true, WPos.Zero, volume, true);
 		}
 
@@ -62,12 +68,25 @@ namespace OpenRA.Mods.OpenKrush.Traits.Veterancy
 				return false;
 
 			var type = ((IVoiced)this).VoiceSet.ToLowerInvariant();
-			return Game.Sound.PlayPredefined(SoundType.World, self.World.Map.Rules, null, self, type, phrase, variant, false, self.CenterPosition, volume, true);
+
+			return Game.Sound.PlayPredefined(
+				SoundType.World,
+				self.World.Map.Rules,
+				null,
+				self,
+				type,
+				phrase,
+				variant,
+				false,
+				self.CenterPosition,
+				volume,
+				true);
 		}
 
 		bool IVoiced.HasVoice(Actor self, string voice)
 		{
 			var voices = self.World.Map.Rules.Voices[((IVoiced)this).VoiceSet.ToLowerInvariant()];
+
 			return voices != null && voices.Voices.ContainsKey(voice);
 		}
 	}

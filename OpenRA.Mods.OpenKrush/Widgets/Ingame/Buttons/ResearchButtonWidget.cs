@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,17 +8,18 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System.Linq;
-using OpenRA.Mods.Common.Widgets;
-using OpenRA.Mods.OpenKrush.Mechanics.Researching.Orders;
-using OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits;
-using OpenRA.Primitives;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 {
+	using System.Linq;
+	using Common.Widgets;
+	using Mechanics.Researching.Orders;
+	using Mechanics.Researching.Traits;
+	using OpenRA.Traits;
+	using Primitives;
+
 	public class ResearchButtonWidget : ButtonWidget
 	{
 		private bool researchAvailable;
@@ -31,8 +33,11 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 
 		public override bool HandleKeyPress(KeyInput e)
 		{
-			if (IsUsable() && !e.IsRepeat && e.Event == KeyInputEvent.Down
-				&& e.Key == Game.ModData.Hotkeys["Research"].GetValue().Key && e.Modifiers == Game.ModData.Hotkeys["Research"].GetValue().Modifiers)
+			if (IsUsable()
+				&& !e.IsRepeat
+				&& e.Event == KeyInputEvent.Down
+				&& e.Key == Game.ModData.Hotkeys["Research"].GetValue().Key
+				&& e.Modifiers == Game.ModData.Hotkeys["Research"].GetValue().Modifiers)
 			{
 				Active = !Active;
 
@@ -68,6 +73,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 		{
 			Game.Sound.PlayNotification(sidebar.IngameUi.World.Map.Rules, null, "Sounds", "ClickSound", null);
 			autoResearchEnabled = !autoResearchEnabled;
+
 			return true;
 		}
 
@@ -78,7 +84,10 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 
 		public override void Tick()
 		{
-			var res = sidebar.IngameUi.World.ActorsWithTrait<Researches>().Where(e => e.Actor.Owner == sidebar.IngameUi.World.LocalPlayer && !e.Trait.IsTraitDisabled).ToArray();
+			var res = sidebar.IngameUi.World.ActorsWithTrait<Researches>()
+				.Where(e => e.Actor.Owner == sidebar.IngameUi.World.LocalPlayer && !e.Trait.IsTraitDisabled)
+				.ToArray();
+
 			researchAvailable = res.Length > 0;
 			autoResearchEnabled = researchAvailable && autoResearchEnabled;
 			Active = !autoResearchEnabled && sidebar.IngameUi.World.OrderGenerator != null && sidebar.IngameUi.World.OrderGenerator is ResearchOrderGenerator;
@@ -90,15 +99,20 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 				if (pair.Trait == null)
 					return;
 
-				var researchables = sidebar.IngameUi.World.Actors.Where(a =>
-				{
-					if (a.Owner != sidebar.IngameUi.World.LocalPlayer)
-						return false;
+				var researchables = sidebar.IngameUi.World.Actors.Where(
+						a =>
+						{
+							if (a.Owner != sidebar.IngameUi.World.LocalPlayer)
+								return false;
 
-					var researchable = a.TraitOrDefault<Researchable>();
+							var researchable = a.TraitOrDefault<Researchable>();
 
-					return researchable != null && !researchable.IsTraitDisabled && researchable.Level < researchable.Info.MaxLevel && researchable.ResearchedBy == null;
-				}).ToArray();
+							return researchable != null
+								&& !researchable.IsTraitDisabled
+								&& researchable.Level < researchable.Info.MaxLevel
+								&& researchable.ResearchedBy == null;
+						})
+					.ToArray();
 
 				if (researchables.Length == 0)
 					return;
@@ -112,6 +126,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 		{
 			if (autoResearchEnabled)
 				WidgetUtils.FillRectWithColor(RenderBounds, Color.FromArgb(25, 255, 255, 255));
+
 			sidebar.Buttons.PlayFetchIndex("research", () => 0);
 			WidgetUtils.DrawSHPCentered(sidebar.Buttons.Image, center + new int2(0, Active ? 1 : 0), sidebar.IngameUi.Palette);
 		}

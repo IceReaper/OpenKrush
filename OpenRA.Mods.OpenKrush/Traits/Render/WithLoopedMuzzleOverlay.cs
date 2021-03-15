@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,26 +8,30 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using OpenRA.Graphics;
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.Common.Traits.Render;
-using OpenRA.Primitives;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Traits.Render
 {
+	using System;
+	using System.Collections.Generic;
+	using System.Linq;
+	using Common.Traits;
+	using Common.Traits.Render;
+	using OpenRA.Graphics;
+	using OpenRA.Traits;
+	using Primitives;
+
 	[Desc("Renders the MuzzleSequence from the Armament trait.")]
 	public class WithLoopedMuzzleOverlayInfo : ConditionalTraitInfo, Requires<RenderSpritesInfo>, Requires<AttackBaseInfo>, Requires<ArmamentInfo>
 	{
 		[Desc("Ignore the weapon position, and always draw relative to the center of the actor")]
 		public readonly bool IgnoreOffset = false;
 
-		public override object Create(ActorInitializer init) { return new WithLoopedMuzzleOverlay(init.Self, this); }
+		public override object Create(ActorInitializer init)
+		{
+			return new WithLoopedMuzzleOverlay(init.Self, this);
+		}
 	}
 
 	public class WithLoopedMuzzleOverlay : ConditionalTrait<WithLoopedMuzzleOverlayInfo>, INotifyAttack, IRender, ITick
@@ -42,17 +47,14 @@ namespace OpenRA.Mods.OpenKrush.Traits.Render
 			var render = self.Trait<RenderSprites>();
 			var facing = self.TraitOrDefault<IFacing>();
 
-			armaments = self.TraitsImplementing<Armament>()
-				.Where(arm => arm.Info.MuzzleSequence != null)
-				.ToArray();
+			armaments = self.TraitsImplementing<Armament>().Where(arm => arm.Info.MuzzleSequence != null).ToArray();
 
 			foreach (var arm in armaments)
 			{
 				foreach (var b in arm.Barrels)
 				{
 					var barrel = b;
-					var turreted = self.TraitsImplementing<Turreted>()
-						.FirstOrDefault(t => t.Name == arm.Info.Turret);
+					var turreted = self.TraitsImplementing<Turreted>().FirstOrDefault(t => t.Name == arm.Info.Turret);
 
 					if (turreted != null)
 						getFacing = () => turreted.WorldOrientation.Yaw;
@@ -63,8 +65,11 @@ namespace OpenRA.Mods.OpenKrush.Traits.Render
 
 					var muzzleFlash = new Animation(self.World, render.GetImage(self), getFacing);
 					visible.Add(barrel, 0);
-					anims.Add(barrel,
-						new AnimationWithOffset(muzzleFlash,
+
+					anims.Add(
+						barrel,
+						new AnimationWithOffset(
+							muzzleFlash,
 							() => info.IgnoreOffset ? WVec.Zero : arm.MuzzleOffset(self, barrel),
 							() => IsTraitDisabled || visible[barrel] == 0,
 							p => RenderUtils.ZOffsetFromCenter(self, p, 2)));
@@ -85,16 +90,20 @@ namespace OpenRA.Mods.OpenKrush.Traits.Render
 			visible[barrel] = 2;
 		}
 
-		void INotifyAttack.PreparingAttack(Actor self, in Target target, Armament a, Barrel barrel) { }
+		void INotifyAttack.PreparingAttack(Actor self, in Target target, Armament a, Barrel barrel)
+		{
+		}
 
 		IEnumerable<IRenderable> IRender.Render(Actor self, WorldRenderer wr)
 		{
 			foreach (var arm in armaments)
 			{
 				var palette = wr.Palette(arm.Info.MuzzlePalette);
+
 				foreach (var b in arm.Barrels)
 				{
 					var anim = anims[b];
+
 					if (anim.DisableFunc != null && anim.DisableFunc())
 						continue;
 

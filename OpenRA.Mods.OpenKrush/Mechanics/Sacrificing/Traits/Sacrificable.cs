@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,17 +8,18 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System.Collections.Generic;
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.OpenKrush.Mechanics.Sacrificing.Activities;
-using OpenRA.Mods.OpenKrush.Mechanics.Sacrificing.Orders;
-using OpenRA.Primitives;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Sacrificing.Traits
 {
+	using System.Collections.Generic;
+	using Activities;
+	using Common.Traits;
+	using OpenRA.Traits;
+	using Orders;
+	using Primitives;
+
 	[Desc("Actor can be sacrificed.")]
 	public class SacrificableInfo : TraitInfo
 	{
@@ -52,7 +54,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Sacrificing.Traits
 
 		public IEnumerable<IOrderTargeter> Orders
 		{
-			get { yield return new SacrificeOrderTargeter(info.Cursor); }
+			get
+			{
+				yield return new SacrificeOrderTargeter(info.Cursor);
+			}
 		}
 
 		public Order IssueOrder(Actor self, IOrderTargeter order, in Target target, bool queued)

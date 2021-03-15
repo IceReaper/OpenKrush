@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,15 +8,16 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits;
-using OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits.Actions
 {
+	using Common.Traits;
+	using Oil.Traits;
+	using OpenRA.Traits;
+	using Researching.Traits;
+
 	[Desc("PowerStation implementation.")]
 	public class PowerStationInfo : DockActionInfo, Requires<ResearchableInfo>
 	{
@@ -28,7 +30,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits.Actions
 		[Desc("How many ticks to wait between pumps.")]
 		public readonly int Delay = 6;
 
-		public override object Create(ActorInitializer init) { return new PowerStation(init, this); }
+		public override object Create(ActorInitializer init)
+		{
+			return new PowerStation(init, this);
+		}
 	}
 
 	public class PowerStation : DockAction

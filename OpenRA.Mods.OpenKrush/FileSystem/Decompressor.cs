@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,14 +8,15 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System;
-using System.IO;
-using System.Text;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.FileSystem
 {
+	using System;
+	using System.IO;
+	using System.Text;
+
 	public static class Decompressor
 	{
 		public static Stream Decompress(Stream compressed)
@@ -31,7 +33,7 @@ namespace OpenRA.Mods.OpenKrush.FileSystem
 			var tmp = BitConverter.GetBytes(uncompressedSizeData);
 			Array.Reverse(tmp);
 			uncompressedStream.WriteArray(tmp);
-			Decompress(compressed, uncompressedStream, uncompressedSizeData);
+			Decompressor.Decompress(compressed, uncompressedStream, uncompressedSizeData);
 
 			uncompressedStream.Position = 0;
 

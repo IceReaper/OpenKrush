@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,33 +8,38 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using OpenRA.Mods.Common.Activities;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Traits.Behavior
 {
+	using Common.Activities;
+	using OpenRA.Traits;
+
 	[Desc("Makes specific actors ignore the rally point when created.")]
 	public class IgnoreRallyPointInfo : TraitInfo
 	{
-		public override object Create(ActorInitializer init) { return new IgnoreRallyPoint(); }
+		public override object Create(ActorInitializer init)
+		{
+			return new IgnoreRallyPoint();
+		}
 	}
 
 	public class IgnoreRallyPoint : INotifyCreated
 	{
 		void INotifyCreated.Created(Actor self)
 		{
-			self.World.AddFrameEndTask(world =>
-			{
-				var activity = self.CurrentActivity;
+			self.World.AddFrameEndTask(
+				world =>
+				{
+					var activity = self.CurrentActivity;
 
-				while (activity != null && !(activity is AttackMoveActivity))
-					activity = activity.NextActivity;
+					while (activity != null && !(activity is AttackMoveActivity))
+						activity = activity.NextActivity;
 
-				if (activity != null)
-					activity.Cancel(self, true);
-			});
+					if (activity != null)
+						activity.Cancel(self, true);
+				});
 		}
 	}
 }

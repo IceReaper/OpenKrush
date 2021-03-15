@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,16 +8,17 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System.Collections.Generic;
-using System.Linq;
-using OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits;
-using OpenRA.Orders;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Orders
 {
+	using System.Collections.Generic;
+	using System.Linq;
+	using OpenRA.Orders;
+	using OpenRA.Traits;
+	using Traits;
+
 	public class ResearchOrderGenerator : UnitOrderGenerator
 	{
 		private IEnumerable<Actor> researchActors = new List<Actor>();

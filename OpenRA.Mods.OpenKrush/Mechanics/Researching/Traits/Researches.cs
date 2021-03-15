@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,16 +8,17 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System;
-using System.Collections.Generic;
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.OpenKrush.Mechanics.Researching.Orders;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 {
+	using System;
+	using System.Collections.Generic;
+	using Common.Traits;
+	using OpenRA.Traits;
+	using Orders;
+
 	[Desc("Research mechanism, attach to the actor which can research.")]
 	public class ResearchesInfo : ConditionalTraitInfo, Requires<ResearchableInfo>
 	{
@@ -72,7 +74,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 
 		IEnumerable<IOrderTargeter> IIssueOrder.Orders
 		{
-			get { yield return new ResearchOrderTargeter(info.Cursor, info.BlockedCursor); }
+			get
+			{
+				yield return new ResearchOrderTargeter(info.Cursor, info.BlockedCursor);
+			}
 		}
 
 		Order IIssueOrder.IssueOrder(Actor self, IOrderTargeter order, in Target target, bool queued)
@@ -111,6 +116,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 			if (action == ResearchAction.None)
 			{
 				StopResearch(true);
+
 				return;
 			}
 

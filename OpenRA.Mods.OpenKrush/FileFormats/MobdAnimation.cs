@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,13 +8,14 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System.Collections.Generic;
-using OpenRA.Primitives;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.FileFormats
 {
+	using System.Collections.Generic;
+	using Primitives;
+
 	public class MobdAnimation
 	{
 		public readonly MobdFrame[] Frames;
@@ -45,7 +47,7 @@ namespace OpenRA.Mods.OpenKrush.FileFormats
 			//      0x10000000 is the most common value
 			//      cc is never 00
 			//      aa and bb often consist of the same value: 0000 1111 8888 aaaa ...
-			/*Unk1 =*/ stream.ReadUInt32();
+			stream.ReadUInt32(); // Unk
 
 			var frames = new List<MobdFrame>();
 

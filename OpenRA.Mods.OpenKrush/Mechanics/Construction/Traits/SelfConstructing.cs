@@ -1,4 +1,5 @@
 ﻿#region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,22 +8,31 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.Common.Traits.Render;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits
 {
-	public enum SpawnType { PlaceBuilding, Deploy, Other }
+	using System;
+	using System.Collections.Generic;
+	using System.Linq;
+	using Common.Traits;
+	using Common.Traits.Render;
+	using OpenRA.Traits;
+
+	public enum SpawnType
+	{
+		PlaceBuilding,
+		Deploy,
+		Other
+	}
 
 	public class SelfConstructingInfo : WithMakeAnimationInfo, Requires<IHealthInfo>
 	{
-		public override object Create(ActorInitializer init) { return new SelfConstructing(init, this); }
+		public override object Create(ActorInitializer init)
+		{
+			return new SelfConstructing(init, this);
+		}
 	}
 
 	public class SelfConstructing : WithMakeAnimation, ITick, INotifyRemovedFromWorld, INotifyCreated, INotifyDamageStateChanged, INotifyKilled
@@ -50,7 +60,8 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits
 			if (!string.IsNullOrEmpty(Info.Condition) && token == Actor.InvalidConditionToken)
 				token = init.Self.GrantCondition(Info.Condition);
 
-			spawnType = init.Contains<PlaceBuildingInit>(null) ? SpawnType.PlaceBuilding : init.Contains<SpawnedByMapInit>() ? SpawnType.Other : SpawnType.Deploy;
+			spawnType = init.Contains<PlaceBuildingInit>(null) ? SpawnType.PlaceBuilding :
+				init.Contains<SpawnedByMapInit>() ? SpawnType.Other : SpawnType.Deploy;
 
 			for (Steps = 0; ; Steps++)
 			{
@@ -65,12 +76,14 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits
 			{
 				var productionQueue = self.Owner.PlayerActor.TraitsImplementing<SelfConstructingProductionQueue>().First(q => q.AllItems().Contains(self.Info));
 				var valued = self.Info.TraitInfoOrDefault<ValuedInfo>();
+
 				productionItem = new SelfConstructingProductionItem(productionQueue, self, valued == null ? 0 : valued.Cost, null, null);
 				productionQueue.BeginProduction(productionItem, false);
 
 				health = self.Trait<Health>();
 
 				healthSteps = new List<int>();
+
 				for (var i = 0; i <= Steps; i++)
 					healthSteps.Add(health.MaxHP * (i + 1) / (Steps + 1));
 
@@ -109,10 +122,13 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits
 					health.InflictDamage(self, self, new Damage(healthSteps[step] - healthSteps[++step]), true);
 
 				OnComplete(self);
+
 				return;
 			}
 
-			var progress = Math.Max(0, Math.Min(Steps * (productionItem.TotalTime - productionItem.RemainingTime) / Math.Max(1, productionItem.TotalTime), Steps - 1));
+			var progress = Math.Max(
+				0,
+				Math.Min(Steps * (productionItem.TotalTime - productionItem.RemainingTime) / Math.Max(1, productionItem.TotalTime), Steps - 1));
 
 			if (progress != step)
 			{

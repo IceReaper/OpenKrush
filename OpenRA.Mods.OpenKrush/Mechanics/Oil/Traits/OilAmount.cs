@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,13 +8,14 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System.Collections.Generic;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 {
+	using System.Collections.Generic;
+	using OpenRA.Traits;
+
 	[Desc("Selectable oilpatch oil amount in lobby.")]
 	public class OilAmountInfo : TraitInfo, ILobbyOptions
 	{
@@ -30,8 +32,9 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 				values.Add(OilAmounts[i].ToString(), OilAmountNames[i]);
 
 			var standard = OilAmounts[OilAmountNames.IndexOf("Normal")];
+
 			yield return new LobbyOption(
-				Id,
+				OilAmountInfo.Id,
 				"Amount",
 				"Amount of oil every oilpatch contains.",
 				true,
@@ -42,7 +45,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 				OilpatchInfo.LobbyOptionsCategory);
 		}
 
-		public override object Create(ActorInitializer init) { return new OilAmount(this); }
+		public override object Create(ActorInitializer init)
+		{
+			return new OilAmount(this);
+		}
 	}
 
 	public class OilAmount : INotifyCreated

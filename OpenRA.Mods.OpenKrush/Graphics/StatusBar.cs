@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,21 +8,22 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System;
-using OpenRA.Graphics;
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.OpenKrush.Mechanics.Oil;
-using OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits;
-using OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.Traits;
-using OpenRA.Mods.OpenKrush.Traits.Render;
-using OpenRA.Mods.OpenKrush.Traits.Veterancy;
-using OpenRA.Primitives;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Graphics
 {
+	using System;
+	using Common.Traits;
+	using Mechanics.Oil;
+	using Mechanics.Researching.Traits;
+	using Mechanics.Saboteurs.Traits;
+	using OpenRA.Graphics;
+	using OpenRA.Traits;
+	using Primitives;
+	using Traits.Render;
+	using Traits.Veterancy;
+
 	public class StatusBar : IRenderable, IFinalizedRenderable
 	{
 		private Actor actor;
@@ -60,11 +62,30 @@ namespace OpenRA.Mods.OpenKrush.Graphics
 		public int ZOffset => 0;
 		public bool IsDecoration => true;
 
-		public IRenderable WithPalette(PaletteReference newPalette) { return this; }
-		public IRenderable WithZOffset(int newOffset) { return this; }
-		public IRenderable OffsetBy(in WVec offset) { return this; }
-		public IRenderable AsDecoration() { return this; }
-		public IFinalizedRenderable PrepareRender(WorldRenderer wr) { return this; }
+		public IRenderable WithPalette(PaletteReference newPalette)
+		{
+			return this;
+		}
+
+		public IRenderable WithZOffset(int newOffset)
+		{
+			return this;
+		}
+
+		public IRenderable OffsetBy(in WVec offset)
+		{
+			return this;
+		}
+
+		public IRenderable AsDecoration()
+		{
+			return this;
+		}
+
+		public IFinalizedRenderable PrepareRender(WorldRenderer wr)
+		{
+			return this;
+		}
 
 		public void Render(WorldRenderer wr)
 		{
@@ -74,10 +95,24 @@ namespace OpenRA.Mods.OpenKrush.Graphics
 			var bounds = actor.Trait<IMouseBounds>().MouseoverBounds(actor, wr).BoundingRect;
 
 			var thickness = info.BigVariant ? 4 : 3;
-			var height = (health != null ? thickness : 0) + (saboteurs != null ? thickness : 0) + (researchable != null ? thickness : 0) + (oil != null ? thickness : 0) - 1;
+
+			var height = (health != null ? thickness : 0)
+				+ (saboteurs != null ? thickness : 0)
+				+ (researchable != null ? thickness : 0)
+				+ (oil != null ? thickness : 0)
+				- 1;
+
 			var width = info.Width == 0 ? bounds.Width : info.Width;
 
-			DrawRect(wr, bounds, 0, -height - 4, width, height + 4, veteran != null && veteran.Level > 0 ? veteranInfo.Levels[veteran.Level - 1] : Color.FromArgb(255, 206, 206, 206));
+			DrawRect(
+				wr,
+				bounds,
+				0,
+				-height - 4,
+				width,
+				height + 4,
+				veteran != null && veteran.Level > 0 ? veteranInfo.Levels[veteran.Level - 1] : Color.FromArgb(255, 206, 206, 206));
+
 			DrawRect(wr, bounds, 1, -height - 3, width - 2, height + 2, Color.FromArgb(255, 16, 16, 16));
 
 			var current = 0;
@@ -94,26 +129,31 @@ namespace OpenRA.Mods.OpenKrush.Graphics
 					case DamageState.Undamaged:
 						DrawRect(wr, bounds, 2, -height - 2 + current * thickness, progress, 1, Color.FromArgb(255, 0, 255, 0));
 						DrawRect(wr, bounds, 2, -height - 1 + current * thickness, progress, thickness - 2, Color.FromArgb(255, 0, 181, 0));
+
 						break;
 
 					case DamageState.Light:
 						DrawRect(wr, bounds, 2, -height - 2 + current * thickness, progress, 1, Color.FromArgb(255, 255, 255, 0));
 						DrawRect(wr, bounds, 2, -height - 1 + current * thickness, progress, thickness - 2, Color.FromArgb(255, 141, 184, 28));
+
 						break;
 
 					case DamageState.Medium:
 						DrawRect(wr, bounds, 2, -height - 2 + current * thickness, progress, 1, Color.FromArgb(255, 255, 156, 0));
 						DrawRect(wr, bounds, 2, -height - 1 + current * thickness, progress, thickness - 2, Color.FromArgb(255, 178, 122, 51));
+
 						break;
 
 					case DamageState.Heavy:
 						DrawRect(wr, bounds, 2, -height - 2 + current * thickness, progress, 1, Color.FromArgb(255, 230, 0, 0));
 						DrawRect(wr, bounds, 2, -height - 1 + current * thickness, progress, thickness - 2, Color.FromArgb(255, 123, 0, 0));
+
 						break;
 
 					case DamageState.Critical:
 						DrawRect(wr, bounds, 2, -height - 2 + current * thickness, progress, 1, Color.FromArgb(255, 123, 0, 0));
 						DrawRect(wr, bounds, 2, -height - 1 + current * thickness, progress, thickness - 2, Color.FromArgb(255, 82, 0, 0));
+
 						break;
 				}
 
@@ -131,7 +171,14 @@ namespace OpenRA.Mods.OpenKrush.Graphics
 				DrawRect(wr, bounds, 2, -height - 1 + current * thickness, progress, thickness - 2, Color.FromArgb(255, 123, 0, 0));
 
 				for (var i = 1; i < saboteursInfo.MaxPopulation; i++)
-					DrawRect(wr, bounds, 2 + (width - 4) * i / saboteursInfo.MaxPopulation, -height - 2 + current * thickness, 1, thickness - 1, Color.FromArgb(255, 16, 16, 16));
+					DrawRect(
+						wr,
+						bounds,
+						2 + (width - 4) * i / saboteursInfo.MaxPopulation,
+						-height - 2 + current * thickness,
+						1,
+						thickness - 1,
+						Color.FromArgb(255, 16, 16, 16));
 
 				current++;
 			}
@@ -150,7 +197,14 @@ namespace OpenRA.Mods.OpenKrush.Graphics
 				DrawRect(wr, bounds, width - 2 - unavailable, -height - 2 + current * thickness, unavailable, thickness, Color.FromArgb(255, 16, 16, 16));
 
 				for (var i = 1; i < researchableInfo.MaxLevel; i++)
-					DrawRect(wr, bounds, 2 + (width - 4) * i / researchableInfo.MaxLevel, -height - 2 + current * thickness, 1, thickness - 1, Color.FromArgb(255, 16, 16, 16));
+					DrawRect(
+						wr,
+						bounds,
+						2 + (width - 4) * i / researchableInfo.MaxLevel,
+						-height - 2 + current * thickness,
+						1,
+						thickness - 1,
+						Color.FromArgb(255, 16, 16, 16));
 
 				current++;
 			}
@@ -173,14 +227,23 @@ namespace OpenRA.Mods.OpenKrush.Graphics
 
 			var width = info.Width == 0 ? bounds.Width : info.Width;
 			var center = (bounds.Width - width) / 2;
+
 			Game.Renderer.RgbaColorRenderer.FillRect(
 				new float3(renderPosition.X + (x + info.Offset.X + center) * wr.Viewport.Zoom, renderPosition.Y + (y + info.Offset.Y) * wr.Viewport.Zoom, 0),
-				new float3(renderPosition.X + (x + info.Offset.X + center + w) * wr.Viewport.Zoom, renderPosition.Y + (y + info.Offset.Y + h) * wr.Viewport.Zoom, 0),
+				new float3(
+					renderPosition.X + (x + info.Offset.X + center + w) * wr.Viewport.Zoom,
+					renderPosition.Y + (y + info.Offset.Y + h) * wr.Viewport.Zoom,
+					0),
 				c);
 		}
 
-		public void RenderDebugGeometry(WorldRenderer wr) { }
+		public void RenderDebugGeometry(WorldRenderer wr)
+		{
+		}
 
-		public Rectangle ScreenBounds(WorldRenderer wr) { return Rectangle.Empty; }
+		public Rectangle ScreenBounds(WorldRenderer wr)
+		{
+			return Rectangle.Empty;
+		}
 	}
 }

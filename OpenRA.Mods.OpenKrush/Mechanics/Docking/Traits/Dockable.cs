@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,24 +8,29 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System.Collections.Generic;
-using System.Linq;
-using OpenRA.Activities;
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.OpenKrush.Mechanics.Docking.Orders;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits
 {
+	using System.Collections.Generic;
+	using System.Linq;
+	using Activities;
+	using Common.Traits;
+	using OpenRA.Activities;
+	using OpenRA.Traits;
+	using Orders;
+
 	public class DockableInfo : TraitInfo
 	{
 		[Desc("Voice to use when ordering to dock.")]
 		[VoiceReference]
 		public readonly string Voice = "Action";
 
-		public override object Create(ActorInitializer init) { return new Dockable(this); }
+		public override object Create(ActorInitializer init)
+		{
+			return new Dockable(this);
+		}
 	}
 
 	public class Dockable : IIssueOrder, IResolveOrder, IOrderVoice
@@ -36,7 +42,13 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits
 			Info = info;
 		}
 
-		IEnumerable<IOrderTargeter> IIssueOrder.Orders { get { yield return new DockOrderTargeter(); } }
+		IEnumerable<IOrderTargeter> IIssueOrder.Orders
+		{
+			get
+			{
+				yield return new DockOrderTargeter();
+			}
+		}
 
 		public Order IssueOrder(Actor self, IOrderTargeter order, in Target target, bool queued)
 		{
@@ -61,7 +73,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits
 
 		protected virtual Activity GetDockingActivity(Actor self, Actor target, Dock dock)
 		{
-			return new Activities.Docking(self, target, dock);
+			return new Docking(self, target, dock);
 		}
 
 		string IOrderVoice.VoicePhraseForOrder(Actor self, Order order)

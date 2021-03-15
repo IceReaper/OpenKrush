@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,14 +8,15 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Primitives;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Traits.Veterancy
 {
+	using Common.Traits;
+	using OpenRA.Traits;
+	using Primitives;
+
 	[Desc("Unit veterancy.")]
 	public class VeterancyInfo : TraitInfo
 	{
@@ -48,7 +50,10 @@ namespace OpenRA.Mods.OpenKrush.Traits.Veterancy
 		[Desc("Apply the selfhealing using these damagetypes.")]
 		public readonly BitSet<DamageType> DamageTypes = default(BitSet<DamageType>);
 
-		public override object Create(ActorInitializer init) { return new Veterancy(init, this); }
+		public override object Create(ActorInitializer init)
+		{
+			return new Veterancy(init, this);
+		}
 	}
 
 	public class Veterancy : INotifyAppliedDamage, IDamageModifier, IInaccuracyModifier, IRangeModifier, IReloadModifier, ISpeedModifier, ITick

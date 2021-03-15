@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,15 +8,16 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using OpenRA.Graphics;
-using OpenRA.Mods.Common.Widgets;
-using OpenRA.Primitives;
-using OpenRA.Widgets;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Widgets
 {
+	using Common.Widgets;
+	using OpenRA.Graphics;
+	using OpenRA.Widgets;
+	using Primitives;
+
 	public class OverlayColorPreviewManagerWidget : ColorPreviewManagerWidget
 	{
 		Color cachedColor;
@@ -39,6 +41,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets
 		{
 			if (cachedColor == Color)
 				return;
+
 			cachedColor = Color;
 
 			var newPalette = new MutablePalette(preview);

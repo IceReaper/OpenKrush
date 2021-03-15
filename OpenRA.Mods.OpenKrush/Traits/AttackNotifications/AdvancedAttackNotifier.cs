@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,15 +8,17 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System.Collections.Generic;
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Primitives;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Traits.AttackNotifications
 {
+	using System.Collections.Generic;
+	using Common.Traits;
+	using OpenRA.Traits;
+	using Primitives;
+	using Veterancy;
+
 	[Desc("Attack notifier which supports per actor notifications.")]
 	public class AdvancedAttackNotifierInfo : TraitInfo
 	{
@@ -27,7 +30,10 @@ namespace OpenRA.Mods.OpenKrush.Traits.AttackNotifications
 		[Desc("Length of time (in ticks) to display a location ping in the minimap.")]
 		public readonly int RadarPingDuration = 10 * 25;
 
-		public override object Create(ActorInitializer init) { return new AdvancedAttackNotifier(init.Self, this); }
+		public override object Create(ActorInitializer init)
+		{
+			return new AdvancedAttackNotifier(init.Self, this);
+		}
 	}
 
 	public class AdvancedAttackNotifier : INotifyDamage
@@ -62,7 +68,7 @@ namespace OpenRA.Mods.OpenKrush.Traits.AttackNotifications
 			if (ani == null)
 				return;
 
-			var veterancy = self.TraitOrDefault<Veterancy.Veterancy>();
+			var veterancy = self.TraitOrDefault<Veterancy>();
 			var notification = ani.Notifications[(veterancy == null ? 0 : veterancy.Level) % ani.Notifications.Length];
 
 			if (!lastAttackTimes.ContainsKey(notification))

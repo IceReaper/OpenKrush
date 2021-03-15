@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,15 +8,16 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 {
+	using System;
+	using System.Collections.Generic;
+	using System.Linq;
+	using OpenRA.Traits;
+
 	public enum TechBunkerUsesType
 	{
 		Once,
@@ -31,17 +33,15 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(Ruleset rules)
 		{
 			yield return new LobbyOption(
-				Id,
+				TechBunkerUsesInfo.Id,
 				"Uses",
 				"How many times a TechBunker can be used.",
 				true,
 				0,
-				new ReadOnlyDictionary<string, string>(new Dictionary<TechBunkerUsesType, string>
-				{
-					{ TechBunkerUsesType.Once, "Once" },
-					{ TechBunkerUsesType.Infinitely, "Infinitely" }
-				}.ToDictionary(e => e.Key.ToString(), e => e.Value)),
-				Default.ToString(),
+				new ReadOnlyDictionary<string, string>(
+					new Dictionary<TechBunkerUsesType, string> { { TechBunkerUsesType.Once, "Once" }, { TechBunkerUsesType.Infinitely, "Infinitely" } }
+						.ToDictionary(e => e.Key.ToString(), e => e.Value)),
+				TechBunkerUsesInfo.Default.ToString(),
 				false,
 				TechBunkerInfo.LobbyOptionsCategory);
 		}
@@ -58,7 +58,8 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 
 		void INotifyCreated.Created(Actor self)
 		{
-			Uses = (TechBunkerUsesType)Enum.Parse(typeof(TechBunkerUsesType),
+			Uses = (TechBunkerUsesType)Enum.Parse(
+				typeof(TechBunkerUsesType),
 				self.World.LobbyInfo.GlobalSettings.OptionOrDefault(TechBunkerUsesInfo.Id, TechBunkerUsesInfo.Default.ToString()));
 		}
 	}

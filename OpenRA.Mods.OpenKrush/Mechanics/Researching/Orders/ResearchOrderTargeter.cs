@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,14 +8,15 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using OpenRA.Mods.Common.Orders;
-using OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Orders
 {
+	using Common.Orders;
+	using OpenRA.Traits;
+	using Traits;
+
 	public class ResearchOrderTargeter : UnitOrderTargeter
 	{
 		public const string Id = "Research";
@@ -23,7 +25,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Orders
 		private readonly string cursorForbidden;
 
 		public ResearchOrderTargeter(string cursorAllowed, string cursorForbidden)
-			: base(Id, 6, cursorAllowed, false, true)
+			: base(ResearchOrderTargeter.Id, 6, cursorAllowed, false, true)
 		{
 			this.cursorAllowed = cursorAllowed;
 			this.cursorForbidden = cursorForbidden;
@@ -36,16 +38,19 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Orders
 			if (action == ResearchAction.Start)
 			{
 				cursor = cursorAllowed;
+
 				return true;
 			}
 
 			if (action == ResearchAction.Stop)
 			{
 				cursor = cursorForbidden;
+
 				return true;
 			}
 
 			cursor = null;
+
 			return false;
 		}
 

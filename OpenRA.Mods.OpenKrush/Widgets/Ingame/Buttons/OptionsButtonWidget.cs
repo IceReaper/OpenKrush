@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,15 +8,16 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System.Linq;
-using OpenRA.Mods.Common.Widgets;
-using OpenRA.Mods.Common.Widgets.Logic;
-using OpenRA.Widgets;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 {
+	using System.Linq;
+	using Common.Widgets;
+	using Common.Widgets.Logic;
+	using OpenRA.Widgets;
+
 	public class OptionsButtonWidget : ButtonWidget
 	{
 		private Widget menu;
@@ -32,6 +34,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 			{
 				Active = true;
 				ShowMenu();
+
 				return true;
 			}
 
@@ -58,15 +61,18 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 
 			var widgetArgs = new WidgetArgs();
 			widgetArgs.Add("activePanel", IngameInfoPanel.AutoSelect);
-			widgetArgs.Add("onExit", () =>
-			{
-				if (sidebar.IngameUi.World.LobbyInfo.NonBotClients.Count() == 1)
-					sidebar.IngameUi.World.SetPauseState(false);
 
-				Ui.Root.Get("MENU_ROOT").RemoveChild(menu);
-				Active = false;
-				menu = null;
-			});
+			widgetArgs.Add(
+				"onExit",
+				() =>
+				{
+					if (sidebar.IngameUi.World.LobbyInfo.NonBotClients.Count() == 1)
+						sidebar.IngameUi.World.SetPauseState(false);
+
+					Ui.Root.Get("MENU_ROOT").RemoveChild(menu);
+					Active = false;
+					menu = null;
+				});
 
 			menu = Game.LoadWidget(sidebar.IngameUi.World, "INGAME_MENU", Ui.Root.Get("MENU_ROOT"), widgetArgs);
 		}

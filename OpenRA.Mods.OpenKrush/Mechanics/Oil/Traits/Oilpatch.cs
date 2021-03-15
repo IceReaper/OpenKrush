@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,15 +8,16 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System;
-using OpenRA.GameRules;
-using OpenRA.Primitives;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 {
+	using System;
+	using GameRules;
+	using OpenRA.Traits;
+	using Primitives;
+
 	[Desc("Oilpatch implementation.")]
 	public class OilpatchInfo : TraitInfo, IRulesetLoaded, IHealthInfo
 	{
@@ -42,7 +44,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 
 		public WeaponInfo WeaponInfo { get; private set; }
 
-		public override object Create(ActorInitializer init) { return new Oilpatch(init, this); }
+		public override object Create(ActorInitializer init)
+		{
+			return new Oilpatch(init, this);
+		}
 
 		public void RulesetLoaded(Ruleset rules, ActorInfo ai)
 		{
@@ -51,8 +56,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 
 			WeaponInfo weapon;
 			var weaponToLower = Weapon.ToLowerInvariant();
+
 			if (!rules.Weapons.TryGetValue(weaponToLower, out weapon))
 				throw new YamlException("Weapons Ruleset does not contain an entry '{0}'".F(weaponToLower));
+
 			WeaponInfo = weapon;
 		}
 	}
@@ -91,6 +98,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 
 			var pullAmount = Math.Min(amount, Current);
 			resources -= pullAmount;
+
 			return pullAmount;
 		}
 

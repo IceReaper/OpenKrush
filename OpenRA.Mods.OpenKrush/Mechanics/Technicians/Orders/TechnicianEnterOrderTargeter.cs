@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,13 +8,14 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using OpenRA.Mods.Common.Orders;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Orders
 {
+	using Common.Orders;
+	using OpenRA.Traits;
+
 	public class TechnicianEnterOrderTargeter : UnitOrderTargeter
 	{
 		public const string Id = "TechnicianEnter";
@@ -22,7 +24,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Orders
 		private readonly string cursorForbidden;
 
 		public TechnicianEnterOrderTargeter(string cursorAllowed, string cursorForbidden)
-			: base(Id, 6, null, false, true)
+			: base(TechnicianEnterOrderTargeter.Id, 6, null, false, true)
 		{
 			this.cursorAllowed = cursorAllowed;
 			this.cursorForbidden = cursorForbidden;

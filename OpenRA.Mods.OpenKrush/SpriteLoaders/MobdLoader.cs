@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,19 +8,20 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using OpenRA.Graphics;
-using OpenRA.Mods.Common.Graphics;
-using OpenRA.Mods.OpenKrush.FileFormats;
-using OpenRA.Mods.OpenKrush.Graphics;
-using OpenRA.Primitives;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.SpriteLoaders
 {
+	using System.Collections.Generic;
+	using System.IO;
+	using System.Linq;
+	using Common.Graphics;
+	using FileFormats;
+	using Graphics;
+	using OpenRA.Graphics;
+	using Primitives;
+
 	public class MobdLoader : ISpriteLoader
 	{
 		private class MobdSpriteFrame : ISpriteFrame
@@ -56,18 +58,15 @@ namespace OpenRA.Mods.OpenKrush.SpriteLoaders
 			{
 				metadata = null;
 				frames = null;
+
 				return false;
 			}
 
 			var mobd = new Mobd(stream as SegmentStream);
 			var tmp = new List<MobdSpriteFrame>();
 
-			tmp.AddRange(from mobdAnimation in mobd.RotationalAnimations
-				from mobdFrame in mobdAnimation.Frames
-				select new MobdSpriteFrame(mobdFrame));
-			tmp.AddRange(from mobdAnimation in mobd.SimpleAnimations
-				from mobdFrame in mobdAnimation.Frames
-				select new MobdSpriteFrame(mobdFrame));
+			tmp.AddRange(from mobdAnimation in mobd.RotationalAnimations from mobdFrame in mobdAnimation.Frames select new MobdSpriteFrame(mobdFrame));
+			tmp.AddRange(from mobdAnimation in mobd.SimpleAnimations from mobdFrame in mobdAnimation.Frames select new MobdSpriteFrame(mobdFrame));
 
 			uint[] palette = null;
 			var points = new Dictionary<int, Offset[]>();

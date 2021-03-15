@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,17 +8,18 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System.Collections.Generic;
-using OpenRA.Graphics;
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.OpenKrush.Graphics;
-using OpenRA.Primitives;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Traits.Render
 {
+	using System.Collections.Generic;
+	using Common.Traits;
+	using Graphics;
+	using OpenRA.Graphics;
+	using OpenRA.Traits;
+	using Primitives;
+
 	[Desc("Healthbar box.")]
 	public class AdvancedSelectionDecorationsInfo : TraitInfo
 	{
@@ -30,7 +32,10 @@ namespace OpenRA.Mods.OpenKrush.Traits.Render
 		[Desc("Offset for the decoration bar.")]
 		public readonly int2 Offset = int2.Zero;
 
-		public override object Create(ActorInitializer init) { return new AdvancedSelectionDecorations(this); }
+		public override object Create(ActorInitializer init)
+		{
+			return new AdvancedSelectionDecorations(this);
+		}
 	}
 
 	public class AdvancedSelectionDecorations : ISelectionDecorations, IRenderAnnotations, INotifyCreated, INotifyOwnerChanged
@@ -67,6 +72,7 @@ namespace OpenRA.Mods.OpenKrush.Traits.Render
 					case StatusBarsType.DamageShow:
 						if (health == null || health.DamageState == DamageState.Undamaged)
 							yield break;
+
 						break;
 
 					case StatusBarsType.AlwaysShow:

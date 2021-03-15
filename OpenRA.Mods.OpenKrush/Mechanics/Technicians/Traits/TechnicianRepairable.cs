@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,17 +8,18 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System.Collections.Generic;
-using System.Linq;
-using OpenRA.Graphics;
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.Common.Traits.Render;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Traits
 {
+	using System.Collections.Generic;
+	using System.Linq;
+	using Common.Traits;
+	using Common.Traits.Render;
+	using OpenRA.Graphics;
+	using OpenRA.Traits;
+
 	[Desc("Technician mechanism, attach to the building.")]
 	public class TechnicianRepairableInfo : ConditionalTraitInfo, Requires<RenderSpritesInfo>, Requires<BodyOrientationInfo>
 	{
@@ -62,7 +64,8 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Traits
 			overlay.PlayRepeating(RenderSprites.NormalizeSequence(overlay, init.Self.GetDamageState(), "repair"));
 
 			// TODO body.LocalToWorld messes up the position.
-			var anim = new AnimationWithOffset(overlay,
+			var anim = new AnimationWithOffset(
+				overlay,
 				() => body.LocalToWorld(
 					new WVec(info.Offset.Y * -32, info.Offset.X * -32, 0).Rotate(body.QuantizeOrientation(init.Self, init.Self.Orientation))),
 				() => repairTasks.Count == 0,

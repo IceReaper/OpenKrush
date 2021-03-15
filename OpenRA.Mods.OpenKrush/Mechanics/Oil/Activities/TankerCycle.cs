@@ -1,4 +1,5 @@
-﻿#region Copyright & License Information
+#region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,26 +8,27 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using OpenRA.Activities;
-using OpenRA.Mods.OpenKrush.Mechanics.Docking;
-using OpenRA.Mods.OpenKrush.Mechanics.Docking.Activities;
-using OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits;
-using OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Activities
 {
+	using Docking;
+	using Docking.Activities;
+	using Docking.Traits;
+	using OpenRA.Activities;
+	using Traits;
+
 	public class TankerCycle : Activity, IDockingActivity
 	{
 		private readonly Actor actor;
 		private readonly Tanker tanker;
 
-		public Dock Dock => (ChildActivity as Docking.Activities.Docking)?.Dock;
-		public Actor DockActor => (ChildActivity as Docking.Activities.Docking)?.DockActor;
-		public DockingState DockingState => (ChildActivity as Docking.Activities.Docking)?.DockingState ?? DockingState.None;
-		public void StartDocking() => (ChildActivity as Docking.Activities.Docking)?.StartDocking();
-		public void StartUndocking() => (ChildActivity as Docking.Activities.Docking)?.StartUndocking();
+		public Dock Dock => (ChildActivity as Docking)?.Dock;
+		public Actor DockActor => (ChildActivity as Docking)?.DockActor;
+		public DockingState DockingState => (ChildActivity as Docking)?.DockingState ?? DockingState.None;
+		public void StartDocking() => (ChildActivity as Docking)?.StartDocking();
+		public void StartUndocking() => (ChildActivity as Docking)?.StartUndocking();
 
 		public TankerCycle(Actor actor, Tanker tanker)
 		{
@@ -49,7 +51,8 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Activities
 
 				if (tanker.PreferedDrillrig != null)
 				{
-					QueueChild(new Docking.Activities.Docking(actor, tanker.PreferedDrillrig, tanker.PreferedDrillrig.Trait<Dock>()));
+					QueueChild(new Docking(actor, tanker.PreferedDrillrig, tanker.PreferedDrillrig.Trait<Dock>()));
+
 					return false;
 				}
 			}
@@ -63,7 +66,8 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Activities
 
 				if (target != null)
 				{
-					QueueChild(new Docking.Activities.Docking(actor, target, target.Trait<Dock>()));
+					QueueChild(new Docking(actor, target, target.Trait<Dock>()));
+
 					return false;
 				}
 			}

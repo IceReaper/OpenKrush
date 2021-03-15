@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,20 +8,21 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using OpenRA.FileSystem;
-using OpenRA.Graphics;
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.OpenKrush.FileFormats;
-using OpenRA.Primitives;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Traits.Render
 {
+	using System;
+	using System.Collections.Generic;
+	using System.Linq;
+	using Common.Traits;
+	using FileFormats;
+	using OpenRA.FileSystem;
+	using OpenRA.Graphics;
+	using OpenRA.Traits;
+	using Primitives;
+
 	// TODO see PaletteFromEmbeddedSpritePalette
 	[Desc("Load palette from MOBD file.")]
 	public class PaletteFromMobdInfo : TraitInfo, IProvidesCursorPaletteInfo
@@ -36,7 +38,10 @@ namespace OpenRA.Mods.OpenKrush.Traits.Render
 
 		public readonly bool AllowModifiers = true;
 
-		public override object Create(ActorInitializer init) { return new PaletteFromMobd(init.World, this); }
+		public override object Create(ActorInitializer init)
+		{
+			return new PaletteFromMobd(init.World, this);
+		}
 
 		string IProvidesCursorPaletteInfo.Palette => Name;
 
@@ -71,6 +76,12 @@ namespace OpenRA.Mods.OpenKrush.Traits.Render
 			wr.AddPalette(info.Name, ((IProvidesCursorPaletteInfo)info).ReadPalette(world.Map), info.AllowModifiers);
 		}
 
-		public IEnumerable<string> PaletteNames { get { yield return info.Name; } }
+		public IEnumerable<string> PaletteNames
+		{
+			get
+			{
+				yield return info.Name;
+			}
+		}
 	}
 }

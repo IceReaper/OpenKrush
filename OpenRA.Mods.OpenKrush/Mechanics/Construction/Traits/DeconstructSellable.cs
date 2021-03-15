@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,16 +8,17 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System;
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.Common.Traits.Render;
-using OpenRA.Mods.OpenKrush.Mechanics.Construction.Orders;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits
 {
+	using System;
+	using Common.Traits;
+	using Common.Traits.Render;
+	using OpenRA.Traits;
+	using Orders;
+
 	public class DeconstructSellableInfo : ConditionalTraitInfo, Requires<WithSpriteBodyInfo>
 	{
 		[Desc("How long selling will take, percentual to build time.")]
@@ -29,7 +31,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits
 		[Desc("The condition to grant to self while the make animation is playing.")]
 		public readonly string Condition = null;
 
-		public override object Create(ActorInitializer init) { return new DeconstructSellable(init, this); }
+		public override object Create(ActorInitializer init)
+		{
+			return new DeconstructSellable(init, this);
+		}
 	}
 
 	public class DeconstructSellable : ConditionalTrait<DeconstructSellableInfo>, ITick, IResolveOrder, INotifyCreated
@@ -84,7 +89,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits
 				self.Dispose();
 			}
 			else
-				wsb.PlayCustomAnimationRepeating(self, selfConstructing.Info.Sequence.Substring(0, selfConstructing.Info.Sequence.Length - 1) + Math.Min(sellTimer * selfConstructing.Steps / sellTimerTotal, selfConstructing.Steps - 1));
+				wsb.PlayCustomAnimationRepeating(
+					self,
+					selfConstructing.Info.Sequence.Substring(0, selfConstructing.Info.Sequence.Length - 1)
+					+ Math.Min(sellTimer * selfConstructing.Steps / sellTimerTotal, selfConstructing.Steps - 1));
 		}
 
 		void IResolveOrder.ResolveOrder(Actor self, Order order)

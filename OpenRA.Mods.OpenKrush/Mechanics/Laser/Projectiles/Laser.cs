@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,20 +8,21 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System;
-using System.Collections.Generic;
-using System.Numerics;
-using OpenRA.GameRules;
-using OpenRA.Graphics;
-using OpenRA.Mods.OpenKrush.Mechanics.Laser.Graphics;
-using OpenRA.Primitives;
-using OpenRA.Support;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Laser.Projectiles
 {
+	using System;
+	using System.Collections.Generic;
+	using System.Numerics;
+	using GameRules;
+	using Graphics;
+	using OpenRA.Graphics;
+	using OpenRA.Traits;
+	using Primitives;
+	using Support;
+
 	[Desc("A beautiful generated laser beam.")]
 	public class LaserInfo : IProjectileInfo
 	{
@@ -51,7 +53,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Laser.Projectiles
 		[Desc("Equivalent to sequence ZOffset. Controls Z sorting.")]
 		public readonly int ZOffset = 0;
 
-		public IProjectile Create(ProjectileArgs args) { return new Laser(args, this); }
+		public IProjectile Create(ProjectileArgs args)
+		{
+			return new Laser(args, this);
+		}
 	}
 
 	public class Laser : IProjectile
@@ -72,6 +77,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Laser.Projectiles
 			this.info = info;
 
 			colors = new Color[info.Radius];
+
 			for (var i = 0; i < info.Radius; i++)
 			{
 				var color = info.Color == Color.Transparent ? args.SourceActor.Owner.Color : info.Color;
@@ -87,13 +93,12 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Laser.Projectiles
 			if (info.Distortion != 0 || info.DistortionAnimation != 0)
 			{
 				leftVector = new WVec(direction.Y, -direction.X, 0);
+
 				if (leftVector.Length != 0)
 					leftVector = 1024 * leftVector / leftVector.Length;
 
-				upVector = new WVec(
-					-direction.X * direction.Z,
-					-direction.Z * direction.Y,
-					direction.X * direction.X + direction.Y * direction.Y);
+				upVector = new WVec(-direction.X * direction.Z, -direction.Z * direction.Y, direction.X * direction.X + direction.Y * direction.Y);
+
 				if (upVector.Length != 0)
 					upVector = 1024 * upVector / upVector.Length;
 
@@ -131,7 +136,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Laser.Projectiles
 			else if (info.DistortionAnimation != 0)
 			{
 				for (var i = 1; i < distances.Length - 1; i++)
-					distances[i] = Math.Clamp(distances[i] + random.Next(info.DistortionAnimation * 2) - info.DistortionAnimation, -info.Distortion, info.Distortion);
+					distances[i] = Math.Clamp(
+						distances[i] + random.Next(info.DistortionAnimation * 2) - info.DistortionAnimation,
+						-info.Distortion,
+						info.Distortion);
 
 				CalculateOffsets();
 			}
@@ -144,7 +152,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Laser.Projectiles
 			var distance = (offsets[numSegments] - source) / numSegments;
 
 			for (var i = 1; i < numSegments; i++)
-				offsets[i] = source + FindPoint(distance * i, distances[i]);
+				offsets[i] = source + Laser.FindPoint(distance * i, distances[i]);
 		}
 
 		private static WVec FindPoint(WVec pos, float distance)
@@ -161,8 +169,8 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Laser.Projectiles
 		public IEnumerable<IRenderable> Render(WorldRenderer worldRenderer)
 		{
 			for (var i = 0; i < offsets.Length - 1; i++)
-				for (var j = 0; j < info.Radius; j++)
-					yield return new LaserRenderable(offsets, info.ZOffset, new WDist(32 + (info.Radius - j - 1) * 64), colors[j]);
+			for (var j = 0; j < info.Radius; j++)
+				yield return new LaserRenderable(offsets, info.ZOffset, new WDist(32 + (info.Radius - j - 1) * 64), colors[j]);
 		}
 	}
 }

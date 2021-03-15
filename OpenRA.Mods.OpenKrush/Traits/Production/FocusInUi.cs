@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,27 +8,33 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.OpenKrush.Widgets.Ingame;
-using OpenRA.Traits;
-using OpenRA.Widgets;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Traits.Production
 {
+	using Common.Traits;
+	using OpenRA.Traits;
+	using OpenRA.Widgets;
+	using Widgets.Ingame;
+
 	public class FocusInUiInfo : ConditionalTraitInfo
 	{
 		[FieldLoader.RequireAttribute]
 		public readonly string Category = null;
 
-		public override object Create(ActorInitializer init) { return new FocusInUi(this); }
+		public override object Create(ActorInitializer init)
+		{
+			return new FocusInUi(this);
+		}
 	}
 
 	public class FocusInUi : ConditionalTrait<FocusInUiInfo>, INotifySelected
 	{
 		public FocusInUi(FocusInUiInfo info)
-			: base(info) { }
+			: base(info)
+		{
+		}
 
 		void INotifySelected.Selected(Actor self)
 		{

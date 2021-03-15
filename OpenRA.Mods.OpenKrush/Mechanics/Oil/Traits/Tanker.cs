@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,24 +8,29 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System;
-using OpenRA.Activities;
-using OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits;
-using OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits.Actions;
-using OpenRA.Mods.OpenKrush.Mechanics.Oil.Activities;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 {
+	using System;
+	using Activities;
+	using Docking.Activities;
+	using Docking.Traits;
+	using Docking.Traits.Actions;
+	using OpenRA.Activities;
+	using OpenRA.Traits;
+
 	[Desc("Tanker implementation.")]
 	public class TankerInfo : DockableInfo
 	{
 		[Desc("Maximum oil a tanker can hold.")]
 		public readonly int Capacity = 500;
 
-		public override object Create(ActorInitializer init) { return new Tanker(this); }
+		public override object Create(ActorInitializer init)
+		{
+			return new Tanker(this);
+		}
 	}
 
 	public class Tanker : Dockable, IHaveOil, INotifyCreated, ITick
@@ -52,6 +58,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 		{
 			var pullAmount = Math.Min(amount, Current);
 			Current -= pullAmount;
+
 			return pullAmount;
 		}
 
@@ -59,6 +66,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 		{
 			var pushAmount = Math.Min(amount, Maximum - Current);
 			Current += pushAmount;
+
 			return amount - pushAmount;
 		}
 
@@ -68,7 +76,8 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 			{
 				PreferedDrillrig = target;
 				var tankerCycle = new TankerCycle(self, this);
-				tankerCycle.QueueChild(new Docking.Activities.Docking(self, PreferedDrillrig, PreferedDrillrig.Trait<Dock>()));
+				tankerCycle.QueueChild(new Docking(self, PreferedDrillrig, PreferedDrillrig.Trait<Dock>()));
+
 				return tankerCycle;
 			}
 
@@ -76,7 +85,8 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 			{
 				PreferedPowerStation = target;
 				var tankerCycle = new TankerCycle(self, this);
-				tankerCycle.QueueChild(new Docking.Activities.Docking(self, PreferedPowerStation, PreferedPowerStation.Trait<Dock>()));
+				tankerCycle.QueueChild(new Docking(self, PreferedPowerStation, PreferedPowerStation.Trait<Dock>()));
+
 				return tankerCycle;
 			}
 

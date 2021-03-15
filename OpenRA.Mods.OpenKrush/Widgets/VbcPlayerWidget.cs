@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,16 +8,17 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System;
-using OpenRA.Graphics;
-using OpenRA.Mods.Common.Widgets;
-using OpenRA.Mods.OpenKrush.FileFormats;
-using OpenRA.Primitives;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Widgets
 {
+	using System;
+	using Common.Widgets;
+	using FileFormats;
+	using OpenRA.Graphics;
+	using Primitives;
+
 	public class VbcPlayerWidget : ColorBlockWidget
 	{
 		private Vbc video;
@@ -99,10 +101,12 @@ namespace OpenRA.Mods.OpenKrush.Widgets
 			if (start + duration < Game.RunTime)
 			{
 				Stop();
+
 				return;
 			}
 
 			var currentFrame = Math.Min((Game.RunTime - start) * Video.Frames / duration, Video.Frames);
+
 			while (currentFrame > lastFrame)
 			{
 				++lastFrame;

@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,15 +8,16 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System;
-using System.Linq;
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.Common.Widgets;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 {
+	using System;
+	using System.Linq;
+	using Common.Traits;
+	using Common.Widgets;
+
 	public sealed class BomberButtonWidget : ButtonWidget
 	{
 		public BomberButtonWidget(SidebarWidget sidebar)
@@ -29,10 +31,13 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 			if (!IsUsable() || e.IsRepeat || e.Event != KeyInputEvent.Down)
 				return false;
 
-			if (!Active && e.Key == Game.ModData.Hotkeys["Superweapons"].GetValue().Key && e.Modifiers == Game.ModData.Hotkeys["Superweapons"].GetValue().Modifiers)
+			if (!Active
+				&& e.Key == Game.ModData.Hotkeys["Superweapons"].GetValue().Key
+				&& e.Modifiers == Game.ModData.Hotkeys["Superweapons"].GetValue().Modifiers)
 			{
 				Active = true;
 				sidebar.CloseAllBut(this);
+
 				return true;
 			}
 
@@ -42,11 +47,12 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 
 				for (var i = 0; i < lastItem; i++)
 				{
-					if (e.Key != Game.ModData.Hotkeys[$"Production{i + 1:00}"].GetValue().Key || e.Modifiers != Game.ModData.Hotkeys[
-						$"Production{(i + 1)}"].GetValue().Modifiers)
+					if (e.Key != Game.ModData.Hotkeys[$"Production{i + 1:00}"].GetValue().Key
+						|| e.Modifiers != Game.ModData.Hotkeys[$"Production{(i + 1)}"].GetValue().Modifiers)
 						continue;
 
-					((ProductionItemButtonWidget)Children[i]).ClickedLeft(new MouseInput(MouseInputEvent.Down, MouseButton.None, int2.Zero, int2.Zero, e.Modifiers, 0));
+					((ProductionItemButtonWidget)Children[i]).ClickedLeft(
+						new MouseInput(MouseInputEvent.Down, MouseButton.None, int2.Zero, int2.Zero, e.Modifiers, 0));
 
 					return true;
 				}
@@ -87,11 +93,13 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 			{
 				var power = powers[i];
 
-				var button = Children.FirstOrDefault(c =>
-				{
-					var widget = c as ProductionItemButtonWidget;
-					return widget != null && widget.Item == power.Key;
-				});
+				var button = Children.FirstOrDefault(
+					c =>
+					{
+						var widget = c as ProductionItemButtonWidget;
+
+						return widget != null && widget.Item == power.Key;
+					});
 
 				if (button == null)
 				{
@@ -106,6 +114,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 						IsActive = () =>
 						{
 							var og = sidebar.IngameUi.World.OrderGenerator as SelectGenericPowerTarget;
+
 							return og != null && og.OrderKey == power.Key;
 						},
 						IsFocused = () => false,
@@ -117,7 +126,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 				}
 
 				button.Visible = Active;
-				button.Bounds.X = (-1 - i) * Size;
+				button.Bounds.X = (-1 - i) * ButtonWidget.Size;
 			}
 
 			if (Children.Count == 0)

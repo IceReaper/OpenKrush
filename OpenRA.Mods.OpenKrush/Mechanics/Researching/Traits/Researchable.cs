@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,16 +8,17 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System;
-using OpenRA.Graphics;
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.Common.Traits.Render;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 {
+	using System;
+	using Common.Traits;
+	using Common.Traits.Render;
+	using OpenRA.Graphics;
+	using OpenRA.Traits;
+
 	[Desc("Research mechanism, attach to the actor which has tech levels.")]
 	public class ResearchableInfo : ConditionalTraitInfo, Requires<RenderSpritesInfo>, Requires<BodyOrientationInfo>
 	{
@@ -70,9 +72,9 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 			overlay = new Animation(self.World, "indicators", hidden);
 			overlay.PlayRepeating(info.Sequence + 0);
 
-			var anim = new AnimationWithOffset(overlay,
-				() => body.LocalToWorld(
-					new WVec(info.Offset.Y * -32, info.Offset.X * -32, 0).Rotate(body.QuantizeOrientation(self, self.Orientation))),
+			var anim = new AnimationWithOffset(
+				overlay,
+				() => body.LocalToWorld(new WVec(info.Offset.Y * -32, info.Offset.X * -32, 0).Rotate(body.QuantizeOrientation(self, self.Orientation))),
 				hidden,
 				p => RenderUtils.ZOffsetFromCenter(self, p, 1));
 

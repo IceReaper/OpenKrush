@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,15 +8,16 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using OpenRA.Mods.Common.Activities;
-using OpenRA.Mods.OpenKrush.Mechanics.Sacrificing.Traits;
-using OpenRA.Primitives;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Sacrificing.Activities
 {
+	using Common.Activities;
+	using OpenRA.Traits;
+	using Primitives;
+	using Traits;
+
 	public class Sacrifice : Enter
 	{
 		private readonly Actor target;

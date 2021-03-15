@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,15 +8,16 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System.Linq;
-using OpenRA.Mods.Common.Widgets;
-using OpenRA.Mods.OpenKrush.Mechanics.Technicians.Orders;
-using OpenRA.Mods.OpenKrush.Mechanics.Technicians.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 {
+	using System.Linq;
+	using Common.Widgets;
+	using Mechanics.Technicians.Orders;
+	using Mechanics.Technicians.Traits;
+
 	public class RepairButtonWidget : ButtonWidget
 	{
 		private bool technicians;
@@ -28,8 +30,11 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 
 		public override bool HandleKeyPress(KeyInput e)
 		{
-			if (IsUsable() && !e.IsRepeat && e.Event == KeyInputEvent.Down
-				&& e.Key == Game.ModData.Hotkeys["Repair"].GetValue().Key && e.Modifiers == Game.ModData.Hotkeys["Repair"].GetValue().Modifiers)
+			if (IsUsable()
+				&& !e.IsRepeat
+				&& e.Event == KeyInputEvent.Down
+				&& e.Key == Game.ModData.Hotkeys["Repair"].GetValue().Key
+				&& e.Modifiers == Game.ModData.Hotkeys["Repair"].GetValue().Modifiers)
 			{
 				Active = !Active;
 

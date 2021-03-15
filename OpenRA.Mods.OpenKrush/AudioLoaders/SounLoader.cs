@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,13 +8,14 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System.IO;
-using OpenRA.Mods.OpenKrush.FileFormats;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.AudioLoaders
 {
+	using System.IO;
+	using FileFormats;
+
 	public class SounLoader : ISoundLoader
 	{
 		bool ISoundLoader.TryParseSound(Stream stream, out ISoundFormat sound)
@@ -27,11 +29,13 @@ namespace OpenRA.Mods.OpenKrush.AudioLoaders
 				if (filename.Contains(".smp"))
 				{
 					sound = new Soun(stream);
+
 					return true;
 				}
 			}
 
 			sound = null;
+
 			return false;
 		}
 	}

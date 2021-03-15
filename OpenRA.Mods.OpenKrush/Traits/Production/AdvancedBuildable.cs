@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,12 +8,13 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using OpenRA.Mods.Common.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Traits.Production
 {
+	using Common.Traits;
+
 	// TODO merge to FactoryPrerequisite, make Prerequisite standard -> Make mobile base require repairbay.
 	[Desc("Adds support for required tech level to Buildable.")]
 	public class AdvancedBuildableInfo : BuildableInfo
@@ -21,5 +23,7 @@ namespace OpenRA.Mods.OpenKrush.Traits.Production
 		public readonly int Level = 0;
 	}
 
-	public class AdvancedBuildable : Buildable { }
+	public class AdvancedBuildable : Buildable
+	{
+	}
 }

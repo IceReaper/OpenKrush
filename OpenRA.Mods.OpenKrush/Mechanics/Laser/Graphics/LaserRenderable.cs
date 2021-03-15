@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,14 +8,15 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System.Linq;
-using OpenRA.Graphics;
-using OpenRA.Primitives;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Laser.Graphics
 {
+	using System.Linq;
+	using OpenRA.Graphics;
+	using Primitives;
+
 	public struct LaserRenderable : IRenderable, IFinalizedRenderable
 	{
 		readonly WPos[] offsets;
@@ -34,17 +36,28 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Laser.Graphics
 		public int ZOffset => zOffset;
 		public bool IsDecoration => true;
 
-		public IRenderable WithZOffset(int newOffset) { return new LaserRenderable(offsets, newOffset, width, color); }
+		public IRenderable WithZOffset(int newOffset)
+		{
+			return new LaserRenderable(offsets, newOffset, width, color);
+		}
 
 		public IRenderable OffsetBy(in WVec vec)
 		{
 			var vecCopy = vec;
+
 			return new LaserRenderable(offsets.Select(offset => offset + vecCopy).ToArray(), zOffset, width, color);
 		}
 
-		public IRenderable AsDecoration() { return this; }
+		public IRenderable AsDecoration()
+		{
+			return this;
+		}
 
-		public IFinalizedRenderable PrepareRender(WorldRenderer wr) { return this; }
+		public IFinalizedRenderable PrepareRender(WorldRenderer wr)
+		{
+			return this;
+		}
+
 		public void Render(WorldRenderer wr)
 		{
 			// TODO fix connectSegments - asin smoothen the edge of a break!
@@ -52,7 +65,13 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Laser.Graphics
 			Game.Renderer.WorldRgbaColorRenderer.DrawLine(offsets.Select(wr.Screen3DPosition), screenWidth, color, false);
 		}
 
-		public void RenderDebugGeometry(WorldRenderer wr) { }
-		public Rectangle ScreenBounds(WorldRenderer wr) { return Rectangle.Empty; }
+		public void RenderDebugGeometry(WorldRenderer wr)
+		{
+		}
+
+		public Rectangle ScreenBounds(WorldRenderer wr)
+		{
+			return Rectangle.Empty;
+		}
 	}
 }

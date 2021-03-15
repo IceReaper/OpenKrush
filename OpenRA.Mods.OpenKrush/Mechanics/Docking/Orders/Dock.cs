@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,22 +8,28 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using OpenRA.Mods.Common.Orders;
-using OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Orders
 {
+	using Common.Orders;
+	using OpenRA.Traits;
+	using Traits;
+
 	public class DockOrderTargeter : UnitOrderTargeter
 	{
 		public const string Id = "Dock";
 
 		public DockOrderTargeter()
-			: base(Id, 6, null, false, true) { }
+			: base(DockOrderTargeter.Id, 6, null, false, true)
+		{
+		}
 
-		public override bool CanTargetFrozenActor(Actor self, FrozenActor target, TargetModifiers modifiers, ref string cursor) { return false; }
+		public override bool CanTargetFrozenActor(Actor self, FrozenActor target, TargetModifiers modifiers, ref string cursor)
+		{
+			return false;
+		}
 
 		public override bool CanTargetActor(Actor self, Actor target, TargetModifiers modifiers, ref string cursor)
 		{

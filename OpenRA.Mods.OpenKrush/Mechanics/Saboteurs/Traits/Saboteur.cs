@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,17 +8,18 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System.Collections.Generic;
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.Activities;
-using OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.Orders;
-using OpenRA.Primitives;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.Traits
 {
+	using System.Collections.Generic;
+	using Activities;
+	using Common.Traits;
+	using OpenRA.Traits;
+	using Orders;
+	using Primitives;
+
 	[Desc("Saboteur mechanism, attach to the unit.")]
 	public class SaboteurInfo : TraitInfo
 	{
@@ -67,7 +69,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.Traits
 
 		IEnumerable<IOrderTargeter> IIssueOrder.Orders
 		{
-			get { yield return new SaboteurEnterOrderTargeter(info.Cursor, info.BlockedCursor); }
+			get
+			{
+				yield return new SaboteurEnterOrderTargeter(info.Cursor, info.BlockedCursor);
+			}
 		}
 
 		Order IIssueOrder.IssueOrder(Actor self, IOrderTargeter order, in Target target, bool queued)

@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,17 +8,19 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
+
 #endregion
 
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using OpenRA.FileSystem;
-using OpenRA.Primitives;
 using FS = OpenRA.FileSystem.FileSystem;
 
 namespace OpenRA.Mods.OpenKrush.FileSystem
 {
+	using System.Collections.Generic;
+	using System.IO;
+	using System.Linq;
+	using OpenRA.FileSystem;
+	using Primitives;
+
 	public enum Generation
 	{
 		Unknown,
@@ -58,6 +61,7 @@ namespace OpenRA.Mods.OpenKrush.FileSystem
 				var lookupPath = $"archives/{Path.GetFileName(filename)}.yaml";
 
 				Stream s2;
+
 				if (context.TryOpen(lookupPath, out s2))
 					lvlLookup = MiniYaml.FromStream(s2).ToDictionary(x => x.Key, x => x.Value.Value);
 
@@ -167,13 +171,17 @@ namespace OpenRA.Mods.OpenKrush.FileSystem
 
 				if (signature.Equals("DATA"))
 				{
-					package = new LvlPackage(new SegmentStream(s, 8, (s.ReadByte() << 24) | (s.ReadByte() << 16) | (s.ReadByte() << 8) | s.ReadByte()), filename, context);
+					package = new LvlPackage(
+						new SegmentStream(s, 8, (s.ReadByte() << 24) | (s.ReadByte() << 16) | (s.ReadByte() << 8) | s.ReadByte()),
+						filename,
+						context);
 
 					return true;
 				}
 			}
 
 			package = null;
+
 			return false;
 		}
 	}

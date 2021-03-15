@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,17 +8,18 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using OpenRA.Graphics;
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 {
+	using System;
+	using System.Collections.Generic;
+	using System.Linq;
+	using Common.Traits;
+	using OpenRA.Graphics;
+	using OpenRA.Traits;
+
 	public enum TechBunkerAmountType
 	{
 		None,
@@ -38,19 +40,20 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(Ruleset rules)
 		{
 			yield return new LobbyOption(
-				Id,
+				TechBunkerAmountInfo.Id,
 				"Amount",
 				"How many TechBunkers should be spawned on the map.",
 				true,
 				0,
-				new ReadOnlyDictionary<string, string>(new Dictionary<TechBunkerAmountType, string>
-				{
-					{ TechBunkerAmountType.None, "None" },
-					{ TechBunkerAmountType.One, "1 per map" },
-					{ TechBunkerAmountType.OnePerTwoPlayers, "1 per 2 players" },
-					{ TechBunkerAmountType.All, "All" }
-				}.ToDictionary(e => e.Key.ToString(), e => e.Value)),
-				Default.ToString(),
+				new ReadOnlyDictionary<string, string>(
+					new Dictionary<TechBunkerAmountType, string>
+					{
+						{ TechBunkerAmountType.None, "None" },
+						{ TechBunkerAmountType.One, "1 per map" },
+						{ TechBunkerAmountType.OnePerTwoPlayers, "1 per 2 players" },
+						{ TechBunkerAmountType.All, "All" }
+					}.ToDictionary(e => e.Key.ToString(), e => e.Value)),
+				TechBunkerAmountInfo.Default.ToString(),
 				false,
 				TechBunkerInfo.LobbyOptionsCategory);
 		}
@@ -74,7 +77,8 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 
 		void INotifyCreated.Created(Actor self)
 		{
-			behavior = (TechBunkerAmountType)Enum.Parse(typeof(TechBunkerAmountType),
+			behavior = (TechBunkerAmountType)Enum.Parse(
+				typeof(TechBunkerAmountType),
 				self.World.LobbyInfo.GlobalSettings.OptionOrDefault(TechBunkerAmountInfo.Id, TechBunkerAmountInfo.Default.ToString()));
 		}
 
@@ -84,6 +88,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 				return false;
 
 			bunkers.Add(actorReference);
+
 			return true;
 		}
 

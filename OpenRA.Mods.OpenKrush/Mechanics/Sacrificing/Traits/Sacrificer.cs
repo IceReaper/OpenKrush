@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,17 +8,18 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using OpenRA.Graphics;
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.Common.Traits.Render;
-using OpenRA.Mods.OpenKrush.Traits.Production;
-using OpenRA.Primitives;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Sacrificing.Traits
 {
+	using Common.Traits;
+	using Common.Traits.Render;
+	using OpenKrush.Traits.Production;
+	using OpenRA.Graphics;
+	using OpenRA.Traits;
+	using Primitives;
+
 	[Desc("Allow sacrificeable units to enter and spawn a new actor..")]
 	public class SacrificerInfo : AdvancedProductionInfo, Requires<RenderSpritesInfo>
 	{
@@ -42,7 +44,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Sacrificing.Traits
 		[Desc("Position relative to body")]
 		public readonly WVec Offset = WVec.Zero;
 
-		public override object Create(ActorInitializer init) { return new Sacrificer(init, this); }
+		public override object Create(ActorInitializer init)
+		{
+			return new Sacrificer(init, this);
+		}
 	}
 
 	public class Sacrificer : AdvancedProduction, ITick
@@ -66,7 +71,8 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Sacrificing.Traits
 				var animation = new Animation(init.Self.World, renderSprites.GetImage(init.Self));
 				animation.PlayRepeating(RenderSprites.NormalizeSequence(animation, init.Self.GetDamageState(), info.SequenceEnter));
 
-				var animationWithOffset = new AnimationWithOffset(animation,
+				var animationWithOffset = new AnimationWithOffset(
+					animation,
 					() => body.LocalToWorld(info.Offset.Rotate(body.QuantizeOrientation(init.Self, init.Self.Orientation))),
 					() => IsTraitDisabled || sacrificeTicker == 0,
 					p => RenderUtils.ZOffsetFromCenter(init.Self, p, 1));
@@ -79,7 +85,8 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Sacrificing.Traits
 				var animation = new Animation(init.Self.World, renderSprites.GetImage(init.Self));
 				animation.PlayRepeating(RenderSprites.NormalizeSequence(animation, init.Self.GetDamageState(), info.SequenceSummon));
 
-				var animationWithOffset = new AnimationWithOffset(animation,
+				var animationWithOffset = new AnimationWithOffset(
+					animation,
 					() => body.LocalToWorld(info.Offset.Rotate(body.QuantizeOrientation(init.Self, init.Self.Orientation))),
 					() => IsTraitDisabled || summonTicker == 0,
 					p => RenderUtils.ZOffsetFromCenter(init.Self, p, 1));
@@ -107,16 +114,14 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Sacrificing.Traits
 				var numSummons = population / info.Sacrifices;
 				population -= numSummons * info.Sacrifices;
 
-				self.World.AddFrameEndTask(w =>
-				{
-					var td = new TypeDictionary
+				self.World.AddFrameEndTask(
+					w =>
 					{
-						new OwnerInit(self.Owner)
-					};
+						var td = new TypeDictionary { new OwnerInit(self.Owner) };
 
-					for (var i = 0; i < numSummons; i++)
-						Produce(self, self.World.Map.Rules.Actors[info.Summon], "produce", td, 0);
-				});
+						for (var i = 0; i < numSummons; i++)
+							Produce(self, self.World.Map.Rules.Actors[info.Summon], "produce", td, 0);
+					});
 			}
 			else if (population == info.Sacrifices)
 				summonTicker = info.Duration;

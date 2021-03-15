@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,13 +8,14 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System.Collections.Generic;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 {
+	using System.Collections.Generic;
+	using OpenRA.Traits;
+
 	[Desc("Selectable oil burn behavior in lobby.")]
 	public class OilpatchBurnInfo : TraitInfo, ILobbyOptions
 	{
@@ -27,7 +29,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 				values.Add(i.ToString(), $"{i}%");
 
 			yield return new LobbyOption(
-				Id,
+				OilpatchBurnInfo.Id,
 				"Burn",
 				"Percent amount of oil to burn when ignited.",
 				true,
@@ -38,7 +40,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 				OilpatchInfo.LobbyOptionsCategory);
 		}
 
-		public override object Create(ActorInitializer init) { return new OilpatchBurn(); }
+		public override object Create(ActorInitializer init)
+		{
+			return new OilpatchBurn();
+		}
 	}
 
 	public class OilpatchBurn : INotifyCreated

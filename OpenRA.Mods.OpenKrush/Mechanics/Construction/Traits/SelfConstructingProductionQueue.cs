@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,21 +8,25 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits;
-using OpenRA.Mods.OpenKrush.Traits.Production;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits
 {
+	using System;
+	using System.Collections.Generic;
+	using System.Linq;
+	using Common.Traits;
+	using OpenKrush.Traits.Production;
+	using Researching.Traits;
+
 	[Desc("This special production queue implements a fake AllQueued, used to instantly place self constructing buildings.")]
 	public class SelfConstructingProductionQueueInfo : AdvancedProductionQueueInfo
 	{
-		public override object Create(ActorInitializer init) { return new SelfConstructingProductionQueue(init, init.Self, this); }
+		public override object Create(ActorInitializer init)
+		{
+			return new SelfConstructingProductionQueue(init, init.Self, this);
+		}
 	}
 
 	public class SelfConstructingProductionQueue : AdvancedProductionQueue
@@ -29,23 +34,29 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits
 		private bool expectFakeProductionItemRequest;
 
 		public SelfConstructingProductionQueue(ActorInitializer init, Actor playerActor, SelfConstructingProductionQueueInfo info)
-			: base(init, playerActor, info) { }
+			: base(init, playerActor, info)
+		{
+		}
 
 		public override IEnumerable<ProductionItem> AllQueued()
 		{
 			// Pretend to have items queued, to allow direct placement.
-			return BuildableItems().Select(buildableItem =>
-			{
-				// Cost == 0 to not consume money at this point.
-				var item = new ProductionItem(this, buildableItem.Name, 0, null, null);
+			return BuildableItems()
+				.Select(
+					buildableItem =>
+					{
+						// Cost == 0 to not consume money at this point.
+						var item = new ProductionItem(this, buildableItem.Name, 0, null, null);
 
-				// Required for GetBuildTime, else the production wont be ready after below Tick().
-				expectFakeProductionItemRequest = true;
+						// Required for GetBuildTime, else the production wont be ready after below Tick().
+						expectFakeProductionItemRequest = true;
 
-				// Tick once, so the item is done.
-				item.Tick(playerResources);
-				return item;
-			}).ToList();
+						// Tick once, so the item is done.
+						item.Tick(playerResources);
+
+						return item;
+					})
+				.ToList();
 		}
 
 		public override int GetBuildTime(ActorInfo unit, BuildableInfo bi)
@@ -54,6 +65,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits
 			if (expectFakeProductionItemRequest)
 			{
 				expectFakeProductionItemRequest = false;
+
 				return 0;
 			}
 
@@ -72,11 +84,13 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits
 
 		protected override void TickInner(Actor self, bool allProductionPaused)
 		{
-			Queue.RemoveAll(item =>
-			{
-				var selfConstructingItem = item as SelfConstructingProductionItem;
-				return selfConstructingItem == null || selfConstructingItem.Actor.IsDead || !selfConstructingItem.Actor.IsInWorld;
-			});
+			Queue.RemoveAll(
+				item =>
+				{
+					var selfConstructingItem = item as SelfConstructingProductionItem;
+
+					return selfConstructingItem == null || selfConstructingItem.Actor.IsDead || !selfConstructingItem.Actor.IsInWorld;
+				});
 
 			if (Queue.Count > 0)
 			{
@@ -103,21 +117,23 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits
 		{
 			var producers = Actor.World.ActorsWithTrait<Production>().Where(x => !x.Trait.IsTraitDisabled && x.Actor.Owner == Actor.Owner).Select(x => x.Actor);
 
-			return producers.Any(producer =>
-			{
-				if (!producer.Info.TraitInfos<ProvidesPrerequisiteInfo>().Any(providesPrerequisite => buildable.Prerequisites.Contains(providesPrerequisite.Prerequisite)))
-					return false;
+			return producers.Any(
+				producer =>
+				{
+					if (!producer.Info.TraitInfos<ProvidesPrerequisiteInfo>()
+						.Any(providesPrerequisite => buildable.Prerequisites.Contains(providesPrerequisite.Prerequisite)))
+						return false;
 
-				var advancedBuildable = buildable as AdvancedBuildableInfo;
+					var advancedBuildable = buildable as AdvancedBuildableInfo;
 
-				if (advancedBuildable == null)
-					return true;
+					if (advancedBuildable == null)
+						return true;
 
-				if (advancedBuildable.Level == -1)
-					return false;
+					if (advancedBuildable.Level == -1)
+						return false;
 
-				return advancedBuildable.Level == 0 || advancedBuildable.Level <= producer.Trait<Researchable>().Level;
-			});
+					return advancedBuildable.Level == 0 || advancedBuildable.Level <= producer.Trait<Researchable>().Level;
+				});
 		}
 	}
 

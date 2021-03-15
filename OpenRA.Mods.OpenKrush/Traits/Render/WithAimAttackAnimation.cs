@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,14 +8,15 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.Common.Traits.Render;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Traits.Render
 {
+	using Common.Traits;
+	using Common.Traits.Render;
+	using OpenRA.Traits;
+
 	public class WithAimAttackAnimationInfo : TraitInfo, Requires<WithSpriteBodyInfo>
 	{
 		[Desc("Displayed while attacking.")]
@@ -25,7 +27,10 @@ namespace OpenRA.Mods.OpenKrush.Traits.Render
 		[SequenceReference]
 		public readonly string SequenceAim = null;
 
-		public override object Create(ActorInitializer init) { return new WithAimAttackAnimation(init, this); }
+		public override object Create(ActorInitializer init)
+		{
+			return new WithAimAttackAnimation(init, this);
+		}
 	}
 
 	public class WithAimAttackAnimation : ITick, INotifyAttack, INotifyAiming
@@ -45,7 +50,9 @@ namespace OpenRA.Mods.OpenKrush.Traits.Render
 			wsb.PlayCustomAnimation(self, info.SequenceFire);
 		}
 
-		void INotifyAttack.PreparingAttack(Actor self, in Target target, Armament a, Barrel barrel) { }
+		void INotifyAttack.PreparingAttack(Actor self, in Target target, Armament a, Barrel barrel)
+		{
+		}
 
 		void ITick.Tick(Actor self)
 		{

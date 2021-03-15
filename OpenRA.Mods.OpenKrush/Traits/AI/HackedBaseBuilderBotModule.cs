@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,17 +8,18 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using OpenRA.Mods.Common;
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Traits.AI
 {
+	using System.Collections;
+	using System.Collections.Generic;
+	using System.Linq;
+	using Common;
+	using Common.Traits;
+	using OpenRA.Traits;
+
 	[Desc("Manages AI base construction.")]
 	public class HackedBaseBuilderBotModuleInfo : ConditionalTraitInfo
 	{
@@ -75,11 +77,13 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 		[Desc("Number of refineries to build additionally after building a barracks.")]
 		public readonly int AdditionalMinimumRefineryCount = 1;
 
-		[Desc("Additional delay (in ticks) between structure production checks when there is no active production.",
+		[Desc(
+			"Additional delay (in ticks) between structure production checks when there is no active production.",
 			"StructureProductionRandomBonusDelay is added to this.")]
 		public readonly int StructureProductionInactiveDelay = 125;
 
-		[Desc("Additional delay (in ticks) added between structure production checks when actively building things.",
+		[Desc(
+			"Additional delay (in ticks) added between structure production checks when actively building things.",
 			"Note: The total delay is gamespeed OrderLatency x 4 + this + StructureProductionRandomBonusDelay.")]
 		public readonly int StructureProductionActiveDelay = 0;
 
@@ -89,8 +93,7 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 		[Desc("Delay (in ticks) until retrying to build structure after the last 3 consecutive attempts failed.")]
 		public readonly int StructureProductionResumeDelay = 1500;
 
-		[Desc("After how many failed attempts to place a structure should AI give up and wait",
-			"for StructureProductionResumeDelay before retrying.")]
+		[Desc("After how many failed attempts to place a structure should AI give up and wait", "for StructureProductionResumeDelay before retrying.")]
 		public readonly int MaximumFailedPlacementAttempts = 3;
 
 		[Desc("How many randomly chosen cells with resources to check when deciding refinery placement.")]
@@ -114,7 +117,8 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 		[Desc("Radius in cells around a factory scanned for rally points by the AI.")]
 		public readonly int RallyPointScanRadius = 8;
 
-		[Desc("Radius in cells around each building with ProvideBuildableArea",
+		[Desc(
+			"Radius in cells around each building with ProvideBuildableArea",
 			"to check for a 3x3 area of water where naval structures can be built.",
 			"Should match maximum adjacency of naval structures.")]
 		public readonly int CheckForWaterRadius = 8;
@@ -131,16 +135,23 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 		[Desc("When should the AI start building specific buildings.")]
 		public readonly Dictionary<string, int> BuildingDelays = null;
 
-		public override object Create(ActorInitializer init) { return new HackedBaseBuilderBotModule(init.Self, this); }
+		public override object Create(ActorInitializer init)
+		{
+			return new HackedBaseBuilderBotModule(init.Self, this);
+		}
 	}
 
-	public class HackedBaseBuilderBotModule : ConditionalTrait<HackedBaseBuilderBotModuleInfo>, IGameSaveTraitData,
-		IBotTick, IBotPositionsUpdated, IBotRespondToAttack, IBotRequestPauseUnitProduction
+	public class HackedBaseBuilderBotModule
+		: ConditionalTrait<HackedBaseBuilderBotModuleInfo>,
+			IGameSaveTraitData,
+			IBotTick,
+			IBotPositionsUpdated,
+			IBotRespondToAttack,
+			IBotRequestPauseUnitProduction
 	{
 		public CPos GetRandomBaseCenter()
 		{
-			var randomConstructionYard = world.Actors.Where(a => a.Owner == player &&
-				Info.ConstructionYardTypes.Contains(a.Info.Name))
+			var randomConstructionYard = world.Actors.Where(a => a.Owner == player && Info.ConstructionYardTypes.Contains(a.Info.Name))
 				.RandomOrDefault(world.LocalRandom);
 
 			return randomConstructionYard != null ? randomConstructionYard.Location : initialBaseCenter;
@@ -177,11 +188,13 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 		{
 			var terrainInfo = world.Map.Rules.TerrainInfo;
 			resourceTypeIndices = new BitArray(terrainInfo.TerrainTypes.Length); // Big enough
+
 			foreach (var t in world.Map.Rules.Actors["world"].TraitInfos<ResourceTypeInfo>())
 				resourceTypeIndices.Set(terrainInfo.GetTerrainIndex(t.TerrainType), true);
 
 			foreach (var building in Info.BuildingQueues)
 				builders.Add(new HackedBaseBuilderQueueManager(this, building, player, playerPower, playerResources, resourceTypeIndices));
+
 			foreach (var defense in Info.DefenseQueues)
 				builders.Add(new HackedBaseBuilderQueueManager(this, defense, player, playerPower, playerResources, resourceTypeIndices));
 		}
@@ -232,10 +245,12 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 
 				if (rp.Trait.Path.Count == 0 || !IsRallyPointValid(rp.Trait.Path[0], rp.Actor.Info.TraitInfoOrDefault<BuildingInfo>()))
 				{
-					bot.QueueOrder(new Order("SetRallyPoint", rp.Actor, Target.FromCell(world, ChooseRallyLocationNear(rp.Actor)), false)
-					{
-						SuppressVisualFeedback = true
-					});
+					bot.QueueOrder(
+						new Order(
+							"SetRallyPoint",
+							rp.Actor,
+							Target.FromCell(world, ChooseRallyLocationNear(rp.Actor)),
+							false) { SuppressVisualFeedback = true });
 				}
 			}
 		}
@@ -249,6 +264,7 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 			if (!possibleRallyPoints.Any())
 			{
 				AIUtils.BotDebug("{0} has no possible rallypoint near {1}", producer.Owner, producer.Location);
+
 				return producer.Location;
 			}
 
@@ -262,12 +278,15 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 
 		// Require at least one refinery, unless we can't build it.
 		public bool HasAdequateRefineryCount =>
-			!Info.RefineryTypes.Any() ||
-			AIUtils.CountBuildingByCommonName(Info.RefineryTypes, player) >= MinimumRefineryCount ||
-			AIUtils.CountBuildingByCommonName(Info.PowerTypes, player) == 0 ||
-			AIUtils.CountBuildingByCommonName(Info.ConstructionYardTypes, player) == 0;
+			!Info.RefineryTypes.Any()
+			|| AIUtils.CountBuildingByCommonName(Info.RefineryTypes, player) >= MinimumRefineryCount
+			|| AIUtils.CountBuildingByCommonName(Info.PowerTypes, player) == 0
+			|| AIUtils.CountBuildingByCommonName(Info.ConstructionYardTypes, player) == 0;
 
-		int MinimumRefineryCount => AIUtils.CountBuildingByCommonName(Info.BarracksTypes, player) > 0 ? Info.InititalMinimumRefineryCount + Info.AdditionalMinimumRefineryCount : Info.InititalMinimumRefineryCount;
+		int MinimumRefineryCount =>
+			AIUtils.CountBuildingByCommonName(Info.BarracksTypes, player) > 0
+				? Info.InititalMinimumRefineryCount + Info.AdditionalMinimumRefineryCount
+				: Info.InititalMinimumRefineryCount;
 
 		List<MiniYamlNode> IGameSaveTraitData.IssueTraitData(Actor self)
 		{
@@ -287,10 +306,12 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 				return;
 
 			var initialBaseCenterNode = data.FirstOrDefault(n => n.Key == "InitialBaseCenter");
+
 			if (initialBaseCenterNode != null)
 				initialBaseCenter = FieldLoader.GetValue<CPos>("InitialBaseCenter", initialBaseCenterNode.Value.Value);
 
 			var defenseCenterNode = data.FirstOrDefault(n => n.Key == "DefenseCenter");
+
 			if (defenseCenterNode != null)
 				defenseCenter = FieldLoader.GetValue<CPos>("DefenseCenter", defenseCenterNode.Value.Value);
 		}

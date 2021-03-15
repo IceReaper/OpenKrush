@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,19 +8,20 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System.Collections.Generic;
-using System.Linq;
-using OpenRA.Graphics;
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.Common.Widgets;
-using OpenRA.Primitives;
-using OpenRA.Traits;
-using OpenRA.Widgets;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 {
+	using System.Collections.Generic;
+	using System.Linq;
+	using Common.Traits;
+	using Common.Widgets;
+	using OpenRA.Graphics;
+	using OpenRA.Traits;
+	using OpenRA.Widgets;
+	using Primitives;
+
 	public class RadarWidget : Widget
 	{
 		private readonly IngameUiWidget ingameUi;
@@ -43,7 +45,11 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 			radarData = radarSheet.GetData();
 
 			terrainSprite = new Sprite(radarSheet, new Rectangle(0, 0, ingameUi.World.Map.MapSize.X, ingameUi.World.Map.MapSize.Y), TextureChannel.RGBA);
-			shroudSprite = new Sprite(radarSheet, new Rectangle(0, ingameUi.World.Map.MapSize.Y, ingameUi.World.Map.MapSize.X, ingameUi.World.Map.MapSize.Y), TextureChannel.RGBA);
+
+			shroudSprite = new Sprite(
+				radarSheet,
+				new Rectangle(0, ingameUi.World.Map.MapSize.Y, ingameUi.World.Map.MapSize.X, ingameUi.World.Map.MapSize.Y),
+				TextureChannel.RGBA);
 
 			DrawTerrain();
 			Resize();
@@ -95,6 +101,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 				if (rp != null)
 				{
 					var pos = new MPos(x, y);
+
 					if (!rp.Shroud.IsExplored(pos))
 						color = Color.FromArgb(255, Color.Black);
 					else if (!rp.Shroud.IsVisible(pos))
@@ -113,15 +120,9 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 			var cell = new MPos((pos.X - RenderBounds.X) / size, (pos.Y - RenderBounds.Y) / size).ToCPos(ingameUi.World.Map);
 			var worldPixel = ingameUi.WorldRenderer.ScreenPxPosition(ingameUi.World.Map.CenterOfCell(cell));
 			var location = ingameUi.WorldRenderer.Viewport.WorldToViewPx(worldPixel);
-
-			var mi = new MouseInput
-			{
-				Location = location,
-				Button = Game.Settings.Game.MouseButtonPreference.Action,
-				Modifiers = Game.GetModifierKeys()
-			};
-
+			var mi = new MouseInput { Location = location, Button = Game.Settings.Game.MouseButtonPreference.Action, Modifiers = Game.GetModifierKeys() };
 			var cursor = ingameUi.World.OrderGenerator.GetCursor(ingameUi.World, cell, worldPixel, mi);
+
 			return cursor ?? "default";
 		}
 
@@ -137,12 +138,10 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 				return true;
 
 			var location = ingameUi.WorldRenderer.Viewport.WorldToViewPx(ingameUi.WorldRenderer.ScreenPxPosition(pos));
+
 			var fakemi = new MouseInput
 			{
-				Event = MouseInputEvent.Down,
-				Button = Game.Settings.Game.MouseButtonPreference.Action,
-				Modifiers = mi.Modifiers,
-				Location = location
+				Event = MouseInputEvent.Down, Button = Game.Settings.Game.MouseButtonPreference.Action, Modifiers = mi.Modifiers, Location = location
 			};
 
 			var controller = Ui.Root.Get<WorldInteractionControllerWidget>("INTERACTION_CONTROLLER");
@@ -157,23 +156,39 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 		{
 			UpdateShroud();
 
-			WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X - size, RenderBounds.Y - size, RenderBounds.Width + size * 2, RenderBounds.Height + size * 2), Color.White);
+			WidgetUtils.FillRectWithColor(
+				new Rectangle(RenderBounds.X - size, RenderBounds.Y - size, RenderBounds.Width + size * 2, RenderBounds.Height + size * 2),
+				Color.White);
 
 			radarSheet.CommitBufferedData();
-			Game.Renderer.RgbaSpriteRenderer.DrawSprite(terrainSprite, new int2(RenderBounds.X, RenderBounds.Y), new int2(RenderBounds.Width, RenderBounds.Height));
-			Game.Renderer.RgbaSpriteRenderer.DrawSprite(shroudSprite, new int2(RenderBounds.X, RenderBounds.Y), new int2(RenderBounds.Width, RenderBounds.Height));
+
+			Game.Renderer.RgbaSpriteRenderer.DrawSprite(
+				terrainSprite,
+				new int2(RenderBounds.X, RenderBounds.Y),
+				new int2(RenderBounds.Width, RenderBounds.Height));
+
+			Game.Renderer.RgbaSpriteRenderer.DrawSprite(
+				shroudSprite,
+				new int2(RenderBounds.X, RenderBounds.Y),
+				new int2(RenderBounds.Width, RenderBounds.Height));
 
 			var cells = new List<(CPos, Color)>();
 
 			foreach (var e in ingameUi.World.ActorsWithTrait<IRadarSignature>())
 			{
-				if (!e.Actor.IsInWorld || e.Actor.IsDead || ingameUi.World.ShroudObscures(e.Actor.CenterPosition) || ingameUi.World.FogObscures(e.Actor) || e.Actor.Owner == null)
+				if (!e.Actor.IsInWorld
+					|| e.Actor.IsDead
+					|| ingameUi.World.ShroudObscures(e.Actor.CenterPosition)
+					|| ingameUi.World.FogObscures(e.Actor)
+					|| e.Actor.Owner == null)
 					continue;
 
-				if (!ShowStances.HasRelationship(PlayerRelationship.Ally) && e.Actor.Owner.RelationshipWith(ingameUi.World.LocalPlayer).HasRelationship(PlayerRelationship.Ally))
+				if (!ShowStances.HasRelationship(PlayerRelationship.Ally)
+					&& e.Actor.Owner.RelationshipWith(ingameUi.World.LocalPlayer).HasRelationship(PlayerRelationship.Ally))
 					continue;
 
-				if (!ShowStances.HasRelationship(PlayerRelationship.Enemy) && e.Actor.Owner.RelationshipWith(ingameUi.World.LocalPlayer).HasRelationship(PlayerRelationship.Enemy))
+				if (!ShowStances.HasRelationship(PlayerRelationship.Enemy)
+					&& e.Actor.Owner.RelationshipWith(ingameUi.World.LocalPlayer).HasRelationship(PlayerRelationship.Enemy))
 					continue;
 
 				cells.Clear();
@@ -195,7 +210,8 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 
 			Game.Renderer.RgbaColorRenderer.DrawRect(
 				new int2(RenderBounds.X, RenderBounds.Y) + ingameUi.WorldRenderer.Viewport.TopLeft / 32 * size,
-				new int2(RenderBounds.X, RenderBounds.Y) + ingameUi.WorldRenderer.Viewport.BottomRight / 32 * size, size,
+				new int2(RenderBounds.X, RenderBounds.Y) + ingameUi.WorldRenderer.Viewport.BottomRight / 32 * size,
+				size,
 				Color.White);
 
 			foreach (var ping in ingameUi.RadarPings.Pings)

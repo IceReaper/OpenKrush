@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,24 +8,26 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System.IO;
-using OpenRA.Mods.OpenKrush.FileFormats;
-using OpenRA.Video;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.VideoLoaders
 {
+	using System.IO;
+	using FileFormats;
+	using Video;
+
 	public class VbcLoader : IVideoLoader
 	{
 		public bool TryParseVideo(Stream s, out IVideo video)
 		{
 			video = null;
 
-			if (!IsVbc(s))
+			if (!VbcLoader.IsVbc(s))
 				return false;
 
 			video = new Vbc(s);
+
 			return true;
 		}
 
@@ -35,10 +38,12 @@ namespace OpenRA.Mods.OpenKrush.VideoLoaders
 			if (s.ReadASCII(4) != "SIFF")
 			{
 				s.Position = start;
+
 				return false;
 			}
 
 			s.Position = start;
+
 			return true;
 		}
 	}

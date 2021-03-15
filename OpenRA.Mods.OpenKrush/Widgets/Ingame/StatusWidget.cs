@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,17 +8,18 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System.Linq;
-using OpenRA.Graphics;
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.Common.Widgets;
-using OpenRA.Primitives;
-using OpenRA.Widgets;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 {
+	using System.Linq;
+	using Common.Traits;
+	using Common.Widgets;
+	using OpenRA.Graphics;
+	using OpenRA.Widgets;
+	using Primitives;
+
 	public class StatusWidget : Widget
 	{
 		private readonly IngameUiWidget ingameUi;
@@ -78,9 +80,14 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 				foreach (var power in powers)
 				{
 					var text = WidgetUtils.FormatTime(power.Value.RemainingTicks, false, ingameUi.World.Timestep);
-					font.DrawTextWithContrast(text, new int2(
-						RenderBounds.X + 10 + index % 4 * ((RenderBounds.Width - 20) / 4),
-						RenderBounds.Y + 25 + index / 4 * powerHeight), player.Color, player.Color.GetBrightness() > .5 ? Color.Black : Color.White, 1);
+
+					font.DrawTextWithContrast(
+						text,
+						new int2(RenderBounds.X + 10 + index % 4 * ((RenderBounds.Width - 20) / 4), RenderBounds.Y + 25 + index / 4 * powerHeight),
+						player.Color,
+						player.Color.GetBrightness() > .5 ? Color.Black : Color.White,
+						1);
+
 					index++;
 				}
 			}

@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,18 +8,19 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System.Linq;
-using OpenRA.Graphics;
-using OpenRA.Mods.Common.Widgets;
-using OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons;
-using OpenRA.Primitives;
-using OpenRA.Widgets;
-using ButtonWidget = OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons.ButtonWidget;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 {
+	using System.Linq;
+	using Buttons;
+	using Common.Widgets;
+	using OpenRA.Graphics;
+	using OpenRA.Widgets;
+	using Primitives;
+	using ButtonWidget = Buttons.ButtonWidget;
+
 	public sealed class SidebarWidget : Widget
 	{
 		public const string Identifier = "OPENKRUSH_SIDEBAR";
@@ -38,7 +40,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 		public SidebarWidget(IngameUiWidget ingameUi)
 		{
 			IngameUi = ingameUi;
-			Id = Identifier;
+			Id = SidebarWidget.Identifier;
 
 			Buttons = new Animation(IngameUi.World, $"sidebar-{IngameUi.World.LocalPlayer.Faction.InternalName}");
 			Font = new Animation(IngameUi.World, "font");
@@ -112,15 +114,16 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 
 		public void SelectFactory(Actor factory, string category)
 		{
-			var categoryButton = Children.FirstOrDefault(child =>
-			{
-				var button = child as ProductionCategoryButtonWidget;
+			var categoryButton = Children.FirstOrDefault(
+				child =>
+				{
+					var button = child as ProductionCategoryButtonWidget;
 
-				if (button == null)
-					return false;
+					if (button == null)
+						return false;
 
-				return button.Categories.Contains(category);
-			}) as ProductionCategoryButtonWidget;
+					return button.Categories.Contains(category);
+				}) as ProductionCategoryButtonWidget;
 
 			if (categoryButton == null)
 				return;

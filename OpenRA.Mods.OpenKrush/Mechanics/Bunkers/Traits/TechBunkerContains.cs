@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,15 +8,16 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 {
+	using System;
+	using System.Collections.Generic;
+	using System.Linq;
+	using OpenRA.Traits;
+
 	public enum TechBunkerContainsType
 	{
 		Resources,
@@ -32,18 +34,19 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(Ruleset rules)
 		{
 			yield return new LobbyOption(
-				Id,
+				TechBunkerContainsInfo.Id,
 				"Contains",
 				"What a TechBunker may contain.",
 				true,
 				0,
-				new ReadOnlyDictionary<string, string>(new Dictionary<TechBunkerContainsType, string>
-				{
-					{ TechBunkerContainsType.Resources, "Resources" },
-					{ TechBunkerContainsType.Units, "Units" },
-					{ TechBunkerContainsType.Both, "Both" }
-				}.ToDictionary(e => e.Key.ToString(), e => e.Value)),
-				Default.ToString(),
+				new ReadOnlyDictionary<string, string>(
+					new Dictionary<TechBunkerContainsType, string>
+					{
+						{ TechBunkerContainsType.Resources, "Resources" },
+						{ TechBunkerContainsType.Units, "Units" },
+						{ TechBunkerContainsType.Both, "Both" }
+					}.ToDictionary(e => e.Key.ToString(), e => e.Value)),
+				TechBunkerContainsInfo.Default.ToString(),
 				false,
 				TechBunkerInfo.LobbyOptionsCategory);
 		}
@@ -60,7 +63,8 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 
 		void INotifyCreated.Created(Actor self)
 		{
-			Contains = (TechBunkerContainsType)Enum.Parse(typeof(TechBunkerContainsType),
+			Contains = (TechBunkerContainsType)Enum.Parse(
+				typeof(TechBunkerContainsType),
 				self.World.LobbyInfo.GlobalSettings.OptionOrDefault(TechBunkerContainsInfo.Id, TechBunkerContainsInfo.Default.ToString()));
 		}
 	}

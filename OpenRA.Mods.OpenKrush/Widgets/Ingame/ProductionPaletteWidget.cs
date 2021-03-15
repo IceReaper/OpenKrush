@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,22 +8,23 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System;
-using System.Linq;
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.Common.Traits.Render;
-using OpenRA.Mods.Common.Widgets;
-using OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits;
-using OpenRA.Mods.OpenKrush.Orders;
-using OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons;
-using OpenRA.Primitives;
-using OpenRA.Widgets;
-using ButtonWidget = OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons.ButtonWidget;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 {
+	using System;
+	using System.Linq;
+	using Buttons;
+	using Common.Traits;
+	using Common.Traits.Render;
+	using Common.Widgets;
+	using Mechanics.Construction.Traits;
+	using OpenRA.Widgets;
+	using Orders;
+	using Primitives;
+	using ButtonWidget = Buttons.ButtonWidget;
+
 	// TODO implement support for the colored bar with "jump-to-factory" (only if producer is not the player!)
 	public class ProductionPaletteWidget : Widget
 	{
@@ -53,7 +55,8 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 				if (e.Key != Game.ModData.Hotkeys[$"Production{i + 1:00}"].GetValue().Key)
 					continue;
 
-				((ProductionItemButtonWidget)Children[i]).ClickedLeft(new MouseInput(MouseInputEvent.Down, MouseButton.None, int2.Zero, int2.Zero, e.Modifiers, 0));
+				((ProductionItemButtonWidget)Children[i]).ClickedLeft(
+					new MouseInput(MouseInputEvent.Down, MouseButton.None, int2.Zero, int2.Zero, e.Modifiers, 0));
 
 				return true;
 			}
@@ -108,7 +111,8 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 
 			scrollOffset = Math.Max(0, Math.Min(scrollOffset, buildableItems.Length - visibleIcons));
 
-			var oldButtons = Children.Where(c => c is ProductionItemButtonWidget && buildableItems.All(b => b.Name != ((ProductionItemButtonWidget)c).Item)).ToArray();
+			var oldButtons = Children.Where(c => c is ProductionItemButtonWidget && buildableItems.All(b => b.Name != ((ProductionItemButtonWidget)c).Item))
+				.ToArray();
 
 			foreach (var oldButton in oldButtons)
 				Children.Remove(oldButton);
@@ -117,11 +121,13 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 			{
 				var buildableItem = buildableItems[i];
 
-				var button = Children.FirstOrDefault(c =>
-				{
-					var widget = c as ProductionItemButtonWidget;
-					return widget != null && widget.Item == buildableItem.Name;
-				});
+				var button = Children.FirstOrDefault(
+					c =>
+					{
+						var widget = c as ProductionItemButtonWidget;
+
+						return widget != null && widget.Item == buildableItem.Name;
+					});
 
 				if (button == null)
 				{
@@ -129,7 +135,10 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 					{
 						if (Queue is SelfConstructingProductionQueue)
 						{
-							var pbog = sidebar.IngameUi.World.OrderGenerator == null ? null : sidebar.IngameUi.World.OrderGenerator as PlaceSpecificBuildingOrderGenerator;
+							var pbog = sidebar.IngameUi.World.OrderGenerator == null
+								? null
+								: sidebar.IngameUi.World.OrderGenerator as PlaceSpecificBuildingOrderGenerator;
+
 							return pbog != null && pbog.Name == buildableItem.Name;
 						}
 
@@ -151,11 +160,13 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 								return -1;
 
 							var queued = Queue.AllQueued().FirstOrDefault(q => q.Item == buildableItem.Name);
+
 							return queued == null ? -1 : (queued.TotalTime - queued.RemainingTime) * 100 / queued.TotalTime;
 						},
 						Amount = () =>
 						{
 							var queued = Queue.AllQueued().Where(q => q.Item == buildableItem.Name).ToArray();
+
 							return queued.Length > 0 && queued.First().Infinite ? -1 : queued.Length;
 						},
 						ClickedLeft = mi =>
@@ -168,7 +179,10 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 								if (isActive())
 									sidebar.IngameUi.World.CancelInputMode();
 								else
-									sidebar.IngameUi.World.OrderGenerator = new PlaceSpecificBuildingOrderGenerator(Queue, buildableItem.Name, sidebar.IngameUi.WorldRenderer);
+									sidebar.IngameUi.World.OrderGenerator = new PlaceSpecificBuildingOrderGenerator(
+										Queue,
+										buildableItem.Name,
+										sidebar.IngameUi.WorldRenderer);
 							}
 							else
 								sidebar.IngameUi.World.IssueOrder(Order.StartProduction(Queue.Actor, buildableItem.Name, count));
@@ -211,11 +225,9 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 				WidgetUtils.DrawSHPCentered(sidebar.Buttons.Image, position, sidebar.IngameUi.Palette);
 
 				if (scrollOffset + visibleIcons == buildableItems.Length)
-					WidgetUtils.FillRectWithColor(new Rectangle(
-						RenderBounds.X,
-						RenderBounds.Y + visibleIcons * ButtonWidget.Size,
-						ButtonWidget.Size / 2,
-						ButtonWidget.Size / 2), Color.FromArgb(128, 0, 0, 0));
+					WidgetUtils.FillRectWithColor(
+						new Rectangle(RenderBounds.X, RenderBounds.Y + visibleIcons * ButtonWidget.Size, ButtonWidget.Size / 2, ButtonWidget.Size / 2),
+						Color.FromArgb(128, 0, 0, 0));
 
 				sidebar.Buttons.PlayFetchIndex("button-small", () => 0);
 				WidgetUtils.DrawSHPCentered(sidebar.Buttons.Image, position + new int2(ButtonWidget.Size / 2, 0), sidebar.IngameUi.Palette);
@@ -223,11 +235,13 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 				WidgetUtils.DrawSHPCentered(sidebar.Buttons.Image, position + new int2(ButtonWidget.Size / 2, 0), sidebar.IngameUi.Palette);
 
 				if (scrollOffset == 0)
-					WidgetUtils.FillRectWithColor(new Rectangle(
-						RenderBounds.X + ButtonWidget.Size / 2,
-						RenderBounds.Y + visibleIcons * ButtonWidget.Size,
-						ButtonWidget.Size / 2,
-						ButtonWidget.Size / 2), Color.FromArgb(128, 0, 0, 0));
+					WidgetUtils.FillRectWithColor(
+						new Rectangle(
+							RenderBounds.X + ButtonWidget.Size / 2,
+							RenderBounds.Y + visibleIcons * ButtonWidget.Size,
+							ButtonWidget.Size / 2,
+							ButtonWidget.Size / 2),
+						Color.FromArgb(128, 0, 0, 0));
 			}
 		}
 	}

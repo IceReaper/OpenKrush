@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,20 +8,21 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System;
-using System.Linq;
-using OpenRA.Graphics;
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.Common.Traits.Render;
-using OpenRA.Mods.OpenKrush.Graphics;
-using OpenRA.Mods.OpenKrush.Traits.Production;
-using OpenRA.Primitives;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 {
+	using System;
+	using System.Linq;
+	using Common.Traits;
+	using Common.Traits.Render;
+	using Graphics;
+	using OpenKrush.Traits.Production;
+	using OpenRA.Graphics;
+	using OpenRA.Traits;
+	using Primitives;
+
 	[Desc("Tech bunker mechanism.")]
 	public class TechBunkerInfo : AdvancedProductionInfo, Requires<WithSpriteBodyInfo>, Requires<RenderSpritesInfo>
 	{
@@ -116,7 +118,8 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 			var overlay = new Animation(self.World, renderSprites.GetImage(self), hideWhen);
 			overlay.PlayRepeating(RenderSprites.NormalizeSequence(overlay, self.GetDamageState(), sequence));
 
-			var anim = new AnimationWithOffset(overlay,
+			var anim = new AnimationWithOffset(
+				overlay,
 				() =>
 				{
 					var currentSequence = withSpriteBody.DefaultAnimation.CurrentSequence as OffsetsSpriteSequence;
@@ -152,7 +155,8 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 					if (usage.Usage != TechBunkerUsageType.Proximity)
 						break;
 
-					var nearbyActors = self.World.FindActorsInCircle(self.CenterPosition, info.TriggerRadius).Where(actor => !actor.Owner.NonCombatant)
+					var nearbyActors = self.World.FindActorsInCircle(self.CenterPosition, info.TriggerRadius)
+						.Where(actor => !actor.Owner.NonCombatant)
 						.ToArray();
 
 					if (!nearbyActors.Any())
@@ -163,17 +167,19 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 					break;
 
 				case TechBunkerState.Opened:
-					if (uses.Uses == TechBunkerUsesType.Infinitely && info.LockAfter != -1 &&
-						timer++ >= info.LockAfter)
+					if (uses.Uses == TechBunkerUsesType.Infinitely && info.LockAfter != -1 && timer++ >= info.LockAfter)
 					{
 						State = TechBunkerState.Closing;
 						timer = 0;
 
-						withSpriteBody.PlayCustomAnimationBackwards(self, info.SequenceOpening, () =>
-						{
-							State = TechBunkerState.ClosedLocked;
-							withSpriteBody.CancelCustomAnimation(self);
-						});
+						withSpriteBody.PlayCustomAnimationBackwards(
+							self,
+							info.SequenceOpening,
+							() =>
+							{
+								State = TechBunkerState.ClosedLocked;
+								withSpriteBody.CancelCustomAnimation(self);
+							});
 
 						if (info.SoundClose != null)
 							Game.Sound.Play(SoundType.World, info.SoundClose.Random(self.World.SharedRandom), self.CenterPosition);
@@ -187,30 +193,35 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 		{
 			State = TechBunkerState.Opening;
 
-			withSpriteBody.PlayCustomAnimation(self, info.SequenceOpening, () =>
-			{
-				State = TechBunkerState.Opened;
-				withSpriteBody.PlayCustomAnimationRepeating(self, info.SequenceOpened);
-
-				switch (contains.Contains)
+			withSpriteBody.PlayCustomAnimation(
+				self,
+				info.SequenceOpening,
+				() =>
 				{
-					case TechBunkerContainsType.Resources:
-						EjectResources(owner);
-						break;
+					State = TechBunkerState.Opened;
+					withSpriteBody.PlayCustomAnimationRepeating(self, info.SequenceOpened);
 
-					case TechBunkerContainsType.Both:
-						if (self.World.SharedRandom.Next(0, info.ContainableActors.Length + 1) == 0)
+					switch (contains.Contains)
+					{
+						case TechBunkerContainsType.Resources:
 							EjectResources(owner);
-						else
+
+							break;
+
+						case TechBunkerContainsType.Both:
+							if (self.World.SharedRandom.Next(0, info.ContainableActors.Length + 1) == 0)
+								EjectResources(owner);
+							else
+								EjectUnit(self, owner);
+
+							break;
+
+						case TechBunkerContainsType.Units:
 							EjectUnit(self, owner);
 
-						break;
-
-					case TechBunkerContainsType.Units:
-						EjectUnit(self, owner);
-						break;
-				}
-			});
+							break;
+					}
+				});
 
 			if (info.SoundOpen != null)
 				Game.Sound.Play(SoundType.World, info.SoundOpen.Random(self.World.SharedRandom), self.CenterPosition);
@@ -225,10 +236,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 		{
 			var actor = info.ContainableActors[self.World.SharedRandom.Next(0, info.ContainableActors.Length)];
 
-			var td = new TypeDictionary
-			{
-				new OwnerInit(owner)
-			};
+			var td = new TypeDictionary { new OwnerInit(owner) };
 
 			Produce(self, self.World.Map.Rules.Actors[actor], "produce", td, 0);
 		}

@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,23 +8,27 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using OpenRA.Graphics;
-using OpenRA.Mods.Common.Graphics;
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.Common.Traits.Render;
-using OpenRA.Mods.OpenKrush.Graphics;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Traits.SpritesWithOffsets
 {
+	using System;
+	using System.Collections.Generic;
+	using System.Linq;
+	using Common.Graphics;
+	using Common.Traits;
+	using Common.Traits.Render;
+	using Graphics;
+	using OpenRA.Graphics;
+
 	[Desc("Use asset provided turret offset.")]
 	public class WithOffsetsSpriteTurretInfo : WithSpriteTurretInfo, IRenderActorPreviewSpritesInfo
 	{
-		public override object Create(ActorInitializer init) { return new WithOffsetsSpriteTurret(init.Self, this); }
+		public override object Create(ActorInitializer init)
+		{
+			return new WithOffsetsSpriteTurret(init.Self, this);
+		}
 
 		public new IEnumerable<IActorPreview> RenderPreviewSprites(ActorPreviewInitializer init, string image, int facings, PaletteReference p)
 		{
@@ -31,8 +36,7 @@ namespace OpenRA.Mods.OpenKrush.Traits.SpritesWithOffsets
 				yield break;
 
 			var body = init.Actor.TraitInfo<BodyOrientationInfo>();
-			var t = init.Actor.TraitInfos<TurretedInfo>()
-				.First(tt => tt.Turret == Turret);
+			var t = init.Actor.TraitInfos<TurretedInfo>().First(tt => tt.Turret == Turret);
 
 			var bodyAnim = new Animation(init.World, image, init.GetFacing());
 			bodyAnim.PlayRepeating(RenderSprites.NormalizeSequence(bodyAnim, init.GetDamageState(), "idle"));
@@ -61,6 +65,7 @@ namespace OpenRA.Mods.OpenKrush.Traits.SpritesWithOffsets
 			Func<int> zOffset = () =>
 			{
 				var tmpOffset = offset();
+
 				return -(tmpOffset.Y + tmpOffset.Z) + 1;
 			};
 

@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,14 +8,15 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System;
-using System.Collections.Generic;
-using OpenRA.Primitives;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.FileFormats
 {
+	using System;
+	using System.Collections.Generic;
+	using Primitives;
+
 	public class Mobd
 	{
 		public readonly MobdAnimation[] RotationalAnimations;
@@ -37,6 +39,7 @@ namespace OpenRA.Mods.OpenKrush.FileFormats
 				if (value == 0 || (value - fileOffset < stream.Position && value >= fileOffset))
 				{
 					stream.Position -= 4;
+
 					break;
 				}
 

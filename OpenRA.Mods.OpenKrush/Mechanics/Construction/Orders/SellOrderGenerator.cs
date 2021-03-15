@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,16 +8,17 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System.Collections.Generic;
-using System.Linq;
-using OpenRA.Graphics;
-using OpenRA.Mods.Common.Orders;
-using OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Orders
 {
+	using System.Collections.Generic;
+	using System.Linq;
+	using Common.Orders;
+	using OpenRA.Graphics;
+	using Traits;
+
 	public class SellOrderGenerator : OrderGenerator
 	{
 		public const string Id = "Sell";
@@ -30,8 +32,9 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Orders
 			else
 			{
 				var actor = world.ActorMap.GetActorsAt(cell).FirstOrDefault(a => sellableActors.Any(e => e.Actor == a));
+
 				if (actor != null)
-					yield return new Order(Id, actor, false);
+					yield return new Order(SellOrderGenerator.Id, actor, false);
 			}
 		}
 
@@ -43,9 +46,20 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Orders
 				world.CancelInputMode();
 		}
 
-		protected override IEnumerable<IRenderable> Render(WorldRenderer wr, World world) { yield break; }
-		protected override IEnumerable<IRenderable> RenderAboveShroud(WorldRenderer wr, World world) { yield break; }
-		protected override IEnumerable<IRenderable> RenderAnnotations(WorldRenderer wr, World world) { yield break; }
+		protected override IEnumerable<IRenderable> Render(WorldRenderer wr, World world)
+		{
+			yield break;
+		}
+
+		protected override IEnumerable<IRenderable> RenderAboveShroud(WorldRenderer wr, World world)
+		{
+			yield break;
+		}
+
+		protected override IEnumerable<IRenderable> RenderAnnotations(WorldRenderer wr, World world)
+		{
+			yield break;
+		}
 
 		protected override string GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)
 		{

@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,12 +8,13 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Traits.AttackNotifications
 {
+	using OpenRA.Traits;
+
 	[Desc("Specifies the notification for the AdvancedAttackNotifier.")]
 	public class AttackNotificationInfo : TraitInfo
 	{
@@ -22,8 +24,13 @@ namespace OpenRA.Mods.OpenKrush.Traits.AttackNotifications
 
 		public bool RadarPings = true;
 
-		public override object Create(ActorInitializer init) { return new AttackNotification(); }
+		public override object Create(ActorInitializer init)
+		{
+			return new AttackNotification();
+		}
 	}
 
-	public class AttackNotification { }
+	public class AttackNotification
+	{
+	}
 }

@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,16 +8,17 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System.Collections.Generic;
-using System.Linq;
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.OpenKrush.Mechanics.Docking.Activities;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits
 {
+	using System.Collections.Generic;
+	using System.Linq;
+	using Activities;
+	using Common.Traits;
+	using OpenRA.Traits;
+
 	public class DockInfo : ConditionalTraitInfo, Requires<DockActionInfo>
 	{
 		[Desc("Actual actor facing when docking.")]
@@ -37,7 +39,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits
 		[Desc("Name of this dock to assign dock actions to..")]
 		public readonly string Name = "Dock";
 
-		public override object Create(ActorInitializer init) { return new Dock(init, this); }
+		public override object Create(ActorInitializer init)
+		{
+			return new Dock(init, this);
+		}
 	}
 
 	public class Dock : ConditionalTrait<DockInfo>, ITick
@@ -82,29 +87,32 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits
 
 		void ITick.Tick(Actor self)
 		{
-			queue.RemoveAll(actor =>
-			{
-				if (actor.IsDead || !actor.IsInWorld)
-					return true;
-
-				if (!(actor.CurrentActivity is IDockingActivity docking))
-					return true;
-
-				if (docking.Dock != this)
-					return true;
-
-				if (IsTraitDisabled)
+			queue.RemoveAll(
+				actor =>
 				{
+					if (actor.IsDead || !actor.IsInWorld)
+						return true;
+
+					if (!(actor.CurrentActivity is IDockingActivity docking))
+						return true;
+
+					if (docking.Dock != this)
+						return true;
+
+					if (IsTraitDisabled)
+					{
+						actor.CurrentActivity.Cancel(actor, true);
+
+						return true;
+					}
+
+					if (GetDockAction(actor) != null)
+						return false;
+
 					actor.CurrentActivity.Cancel(actor, true);
+
 					return true;
-				}
-
-				if (GetDockAction(actor) != null)
-					return false;
-
-				actor.CurrentActivity.Cancel(actor, true);
-				return true;
-			});
+				});
 
 			var target = queue.FirstOrDefault();
 
@@ -115,6 +123,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits
 			{
 				case DockingState.Waiting:
 					activity.StartDocking();
+
 					break;
 
 				case DockingState.Docked:

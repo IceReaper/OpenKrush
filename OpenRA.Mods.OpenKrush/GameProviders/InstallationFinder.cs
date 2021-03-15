@@ -11,31 +11,34 @@
 
 #endregion
 
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text.RegularExpressions;
-
 namespace OpenRA.Mods.OpenKrush.GameProviders
 {
+	using System;
+	using System.Collections.Generic;
+	using System.IO;
+	using System.Linq;
+	using System.Text.RegularExpressions;
+	using Microsoft.Win32;
+
 	public static class InstallationFinder
 	{
 		public static bool FindInstallation(ModData modData, int appIdSteam, int appIdGog)
 		{
-			return FindSteamInstallation(modData, appIdSteam) || FindGoGInstallation(modData, appIdGog) || FindCdInDrive(modData);
+			return InstallationFinder.FindSteamInstallation(modData, appIdSteam)
+				|| InstallationFinder.FindGoGInstallation(modData, appIdGog)
+				|| InstallationFinder.FindCdInDrive(modData);
 		}
 
 		private static bool FindSteamInstallation(ModData modData, int appIdSteam)
 		{
-			foreach (var steamDirectory in SteamDirectory())
+			foreach (var steamDirectory in InstallationFinder.SteamDirectory())
 			{
 				var manifestPath = Path.Combine(steamDirectory, "steamapps", $"appmanifest_{appIdSteam}.acf");
 
 				if (!File.Exists(manifestPath))
 					continue;
 
-				var data = ParseKeyValuesManifest(manifestPath);
+				var data = InstallationFinder.ParseKeyValuesManifest(manifestPath);
 
 				if (!data.TryGetValue("StateFlags", out var stateFlags) || stateFlags != "4")
 					continue;
@@ -64,7 +67,7 @@ namespace OpenRA.Mods.OpenKrush.GameProviders
 
 				foreach (var prefix in prefixes)
 				{
-					var installDir = Microsoft.Win32.Registry.GetValue($"{prefix}GOG.com\\Games\\{appIdGog}", "path", null) as string;
+					var installDir = Registry.GetValue($"{prefix}GOG.com\\Games\\{appIdGog}", "path", null) as string;
 
 					if (installDir == null)
 						continue;
@@ -112,21 +115,13 @@ namespace OpenRA.Mods.OpenKrush.GameProviders
 				var prefixes = new[] { "HKEY_LOCAL_MACHINE\\Software\\", "HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\" };
 
 				foreach (var prefix in prefixes)
-					if (Microsoft.Win32.Registry.GetValue($"{prefix}Valve\\Steam", "InstallPath", null) is string path)
+					if (Registry.GetValue($"{prefix}Valve\\Steam", "InstallPath", null) is string path)
 						candidatePaths.Add(path);
 			}
 			else if (Platform.CurrentPlatform == PlatformType.OSX)
-			{
-				candidatePaths.Add(Path.Combine(
-					Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
-					"Library", "Application Support", "Steam"));
-			}
+				candidatePaths.Add(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Library", "Application Support", "Steam"));
 			else
-			{
-				candidatePaths.Add(Path.Combine(
-					Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
-					".steam", "root"));
-			}
+				candidatePaths.Add(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".steam", "root"));
 
 			foreach (var libraryPath in candidatePaths.Where(Directory.Exists))
 			{
@@ -137,7 +132,7 @@ namespace OpenRA.Mods.OpenKrush.GameProviders
 				if (!File.Exists(libraryFoldersPath))
 					continue;
 
-				var data = ParseKeyValuesManifest(libraryFoldersPath);
+				var data = InstallationFinder.ParseKeyValuesManifest(libraryFoldersPath);
 
 				for (var i = 1; ; i++)
 				{

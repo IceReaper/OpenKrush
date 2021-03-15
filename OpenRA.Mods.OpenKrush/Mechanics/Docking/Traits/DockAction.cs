@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,12 +8,13 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using OpenRA.Mods.Common.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits
 {
+	using Common.Traits;
+
 	public abstract class DockActionInfo : ConditionalTraitInfo
 	{
 		[Desc("Cursor to use when docking is possible.")]
@@ -25,12 +27,20 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits
 	public abstract class DockAction : ConditionalTrait<DockActionInfo>
 	{
 		protected DockAction(DockActionInfo info)
-			: base(info) { }
+			: base(info)
+		{
+		}
 
 		public abstract bool CanDock(Actor actor);
 
-		public virtual void OnDock() { }
+		public virtual void OnDock()
+		{
+		}
+
 		public abstract bool Process(Actor actor);
-		public virtual void OnUndock() { }
+
+		public virtual void OnUndock()
+		{
+		}
 	}
 }

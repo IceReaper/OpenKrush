@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,16 +8,17 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits.Dockables;
-using OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits;
-using OpenRA.Primitives;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits.Actions
 {
+	using Common.Traits;
+	using Dockables;
+	using OpenRA.Traits;
+	using Primitives;
+	using Researching.Traits;
+
 	// TODO implement cost per repair
 	[Desc("RepairBay implementation.")]
 	public class RepairsVehiclesInfo : DockActionInfo, Requires<ResearchableInfo>
@@ -34,7 +36,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits.Actions
 		[Desc("Repair using these damagetypes.")]
 		public readonly BitSet<DamageType> DamageTypes = default;
 
-		public override object Create(ActorInitializer init) { return new RepairsVehicles(init, this); }
+		public override object Create(ActorInitializer init)
+		{
+			return new RepairsVehicles(init, this);
+		}
 	}
 
 	public class RepairsVehicles : DockAction, ITick

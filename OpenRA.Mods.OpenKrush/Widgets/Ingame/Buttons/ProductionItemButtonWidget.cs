@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,17 +8,18 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System;
-using OpenRA.Graphics;
-using OpenRA.Mods.Common;
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.Common.Widgets;
-using OpenRA.Primitives;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 {
+	using System;
+	using Common;
+	using Common.Traits;
+	using Common.Widgets;
+	using OpenRA.Graphics;
+	using Primitives;
+
 	public class ProductionItemButtonWidget : ButtonWidget
 	{
 		public string Item;
@@ -35,11 +37,14 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 		private Sprite image;
 
 		public ProductionItemButtonWidget(SidebarWidget sidebar)
-			: base(sidebar, "unit") { }
+			: base(sidebar, "unit")
+		{
+		}
 
 		protected override bool HandleLeftClick(MouseInput mi)
 		{
 			ClickedLeft(mi);
+
 			return true;
 		}
 
@@ -80,16 +85,27 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 			if (Progress != null)
 			{
 				var progress = Progress();
+
 				if (progress != -1)
 				{
-					progress = progress * (Size - 10) / 100;
-					var o = Size - 10 - progress;
-					WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X + 2, RenderBounds.Y + 4, 7, Size - 6), Color.Black);
-					WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X + 3, RenderBounds.Y + 5, 5, Size - 8), sidebar.IngameUi.Palette.Palette.GetColor(10));
-					WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X + 4, RenderBounds.Y + 6, 3, Size - 10), sidebar.IngameUi.Palette.Palette.GetColor(8));
-					WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X + 4, RenderBounds.Y + 6 + o, 3, progress), sidebar.IngameUi.Palette.Palette.GetColor(12));
+					progress = progress * (ButtonWidget.Size - 10) / 100;
+					var o = ButtonWidget.Size - 10 - progress;
+					WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X + 2, RenderBounds.Y + 4, 7, ButtonWidget.Size - 6), Color.Black);
+
+					WidgetUtils.FillRectWithColor(
+						new Rectangle(RenderBounds.X + 3, RenderBounds.Y + 5, 5, ButtonWidget.Size - 8),
+						sidebar.IngameUi.Palette.Palette.GetColor(10));
+
+					WidgetUtils.FillRectWithColor(
+						new Rectangle(RenderBounds.X + 4, RenderBounds.Y + 6, 3, ButtonWidget.Size - 10),
+						sidebar.IngameUi.Palette.Palette.GetColor(8));
+
+					WidgetUtils.FillRectWithColor(
+						new Rectangle(RenderBounds.X + 4, RenderBounds.Y + 6 + o, 3, progress),
+						sidebar.IngameUi.Palette.Palette.GetColor(12));
 
 					var amount = Amount();
+
 					if (amount == -1)
 					{
 						sidebar.Font.PlayFetchIndex("production", () => 10);
@@ -98,10 +114,15 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 					else if (amount > 1)
 					{
 						var numberString = amount.ToString();
+
 						for (var i = 0; i < numberString.Length; i++)
 						{
 							sidebar.Font.PlayFetchIndex("production", () => numberString[i] - 0x30);
-							WidgetUtils.DrawSHPCentered(sidebar.Font.Image, new int2(RenderBounds.X + 14 + i * 8, RenderBounds.Y + 40), sidebar.IngameUi.Palette);
+
+							WidgetUtils.DrawSHPCentered(
+								sidebar.Font.Image,
+								new int2(RenderBounds.X + 14 + i * 8, RenderBounds.Y + 40),
+								sidebar.IngameUi.Palette);
 						}
 					}
 				}
@@ -120,22 +141,23 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 				{
 					actor.PlayFetchIndex("icon", () => 0);
 					image = actor.Image;
+
 					return;
 				}
 
 				if (actorPreviewWidget == null)
 				{
-					actorPreviewWidget = new ActorPreviewWidget(sidebar.IngameUi.WorldRenderer)
-					{
-						Animate = true
-					};
-					actorPreviewWidget.SetPreview(sidebar.IngameUi.World.Map.Rules.Actors[Item], new TypeDictionary
-					{
-						new FacingInit(WAngle.FromFacing(96)),
-						new TurretFacingInit(WAngle.FromFacing(96)),
-						new OwnerInit(sidebar.IngameUi.World.LocalPlayer),
-						new FactionInit(sidebar.IngameUi.World.LocalPlayer.Faction.Name)
-					});
+					actorPreviewWidget = new ActorPreviewWidget(sidebar.IngameUi.WorldRenderer) { Animate = true };
+
+					actorPreviewWidget.SetPreview(
+						sidebar.IngameUi.World.Map.Rules.Actors[Item],
+						new TypeDictionary
+						{
+							new FacingInit(WAngle.FromFacing(96)),
+							new TurretFacingInit(WAngle.FromFacing(96)),
+							new OwnerInit(sidebar.IngameUi.World.LocalPlayer),
+							new FactionInit(sidebar.IngameUi.World.LocalPlayer.Faction.Name)
+						});
 
 					/*
 					// TODO implement per actor offsets
@@ -169,11 +191,12 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 			{
 				actorPreviewWidget.Bounds = RenderBounds;
 
-				Game.Renderer.EnableScissor(new Rectangle(
-					RenderBounds.X + sidebar.ButtonArea.X,
-					RenderBounds.Y + sidebar.ButtonArea.Y,
-					sidebar.ButtonArea.Width,
-					sidebar.ButtonArea.Height));
+				Game.Renderer.EnableScissor(
+					new Rectangle(
+						RenderBounds.X + sidebar.ButtonArea.X,
+						RenderBounds.Y + sidebar.ButtonArea.Y,
+						sidebar.ButtonArea.Width,
+						sidebar.ButtonArea.Height));
 
 				actorPreviewWidget.Draw();
 				Game.Renderer.DisableScissor();

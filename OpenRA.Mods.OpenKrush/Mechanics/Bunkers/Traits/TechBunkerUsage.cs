@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,15 +8,16 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 {
+	using System;
+	using System.Collections.Generic;
+	using System.Linq;
+	using OpenRA.Traits;
+
 	public enum TechBunkerUsageType
 	{
 		Proximity,
@@ -31,17 +33,17 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(Ruleset rules)
 		{
 			yield return new LobbyOption(
-				Id,
+				TechBunkerUsageInfo.Id,
 				"Usage",
 				"How a TechBunker can be opened.",
 				true,
 				0,
-				new ReadOnlyDictionary<string, string>(new Dictionary<TechBunkerUsageType, string>
-				{
-					{ TechBunkerUsageType.Proximity, "Proximity" },
-					{ TechBunkerUsageType.Technician, "Technician" }
-				}.ToDictionary(e => e.Key.ToString(), e => e.Value)),
-				Default.ToString(),
+				new ReadOnlyDictionary<string, string>(
+					new Dictionary<TechBunkerUsageType, string>
+					{
+						{ TechBunkerUsageType.Proximity, "Proximity" }, { TechBunkerUsageType.Technician, "Technician" }
+					}.ToDictionary(e => e.Key.ToString(), e => e.Value)),
+				TechBunkerUsageInfo.Default.ToString(),
 				false,
 				TechBunkerInfo.LobbyOptionsCategory);
 		}
@@ -58,7 +60,8 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 
 		void INotifyCreated.Created(Actor self)
 		{
-			Usage = (TechBunkerUsageType)Enum.Parse(typeof(TechBunkerUsageType),
+			Usage = (TechBunkerUsageType)Enum.Parse(
+				typeof(TechBunkerUsageType),
 				self.World.LobbyInfo.GlobalSettings.OptionOrDefault(TechBunkerUsageInfo.Id, TechBunkerUsageInfo.Default.ToString()));
 		}
 	}

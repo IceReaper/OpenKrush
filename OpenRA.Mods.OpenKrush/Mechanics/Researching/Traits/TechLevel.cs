@@ -1,4 +1,5 @@
 #region Copyright & License Information
+
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
@@ -7,13 +8,14 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-#endregion
 
-using System.Collections.Generic;
-using OpenRA.Traits;
+#endregion
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 {
+	using System.Collections.Generic;
+	using OpenRA.Traits;
+
 	[Desc("Selectable max tech level in lobby.")]
 	public class TechLevelInfo : TraitInfo, ILobbyOptions
 	{
@@ -29,7 +31,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 				values.Add(i.ToString(), i.ToString());
 
 			yield return new LobbyOption(
-				Id,
+				TechLevelInfo.Id,
 				"Tech level",
 				"Maximum tech level.",
 				true,

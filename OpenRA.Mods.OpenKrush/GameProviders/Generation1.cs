@@ -11,169 +11,179 @@
 
 #endregion
 
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-
 namespace OpenRA.Mods.OpenKrush.GameProviders
 {
+	using System;
+	using System.Collections.Generic;
+	using System.IO;
+	using System.Linq;
+
 	public static class Generation1
 	{
 		public const int AppIdGog = 1207659107;
 		public const int AppIdSteam = 1292170;
 
 		public static bool TryRegister(string path)
-    	{
-   	 	var executablePath = path;
+		{
+			var executablePath = path;
 
-   	 	// Xtreme GoG and Steam
-   	 	var executable = GameProvider.GetFile(executablePath, "kkndgame.exe");
+			// Xtreme GoG and Steam
+			var executable = GameProvider.GetFile(executablePath, "kkndgame.exe");
 
-   	 	if (executable == null)
-   	 	{
-  	 	 	// Xtreme CD
-  	 	 	executablePath = GameProvider.GetDirectory(path, "game");
+			if (executable == null)
+			{
+				// Xtreme CD
+				executablePath = GameProvider.GetDirectory(path, "game");
 
-  	 	 	if (executablePath == null)
-  	 	 	{
- 	 	 	 	// Dos CD
- 	 	 	 	executablePath = GameProvider.GetDirectory(path, "kknd");
+				if (executablePath == null)
+				{
+					// Dos CD
+					executablePath = GameProvider.GetDirectory(path, "kknd");
 
- 	 	 	 	if (executablePath == null)
-	 	 	 	 	return false;
-  	 	 	}
+					if (executablePath == null)
+						return false;
+				}
 
-  	 	 	executable = GameProvider.GetFile(executablePath, "kknd.exe");
+				executable = GameProvider.GetFile(executablePath, "kknd.exe");
 
-  	 	 	if (executable == null)
- 	 	 	 	return false;
-   	 	}
+				if (executable == null)
+					return false;
+			}
 
-   	 	Log.Write("debug", $"Detected installation: {path}");
+			Log.Write("debug", $"Detected installation: {path}");
 
-   	 	var release = CryptoUtil.SHA1Hash(File.OpenRead(executable));
-   	 	var isXtreme = true;
+			var release = CryptoUtil.SHA1Hash(File.OpenRead(executable));
+			var isXtreme = true;
 
-   	 	switch (release)
-   	 	{
-  	 	 	case "d1f41d7129b6f377869f28b89f92c18f4977a48f":
- 	 	 	 	Log.Write("debug", "=> Krush, Kill 'N' Destroy Xtreme (Steam/GoG, English)");
- 	 	 	 	break;
+			switch (release)
+			{
+				case "d1f41d7129b6f377869f28b89f92c18f4977a48f":
+					Log.Write("debug", "=> Krush, Kill 'N' Destroy Xtreme (Steam/GoG, English)");
 
-  	 	 	case "6fb10d85739ef63b28831ada4cdfc159a950c5d2":
- 	 	 	 	Log.Write("debug", "=> Krush, Kill 'N' Destroy Xtreme (Disc, English)");
- 	 	 	 	break;
+					break;
 
-  	 	 	case "024e96860c504b462b24b9237d49bfe8de6eb8e0":
- 	 	 	 	Log.Write("debug", "=> Krush, Kill 'N' Destroy (Disc, English)");
- 	 	 	 	isXtreme = false;
- 	 	 	 	path = executablePath;
- 	 	 	 	break;
+				case "6fb10d85739ef63b28831ada4cdfc159a950c5d2":
+					Log.Write("debug", "=> Krush, Kill 'N' Destroy Xtreme (Disc, English)");
 
-  	 	 	default:
- 	 	 	 	Log.Write("debug", "=> Unsupported game version");
- 	 	 	 	return false;
-   	 	}
+					break;
 
-   	 	var levelsFolder = GameProvider.GetDirectory(path, "levels");
+				case "024e96860c504b462b24b9237d49bfe8de6eb8e0":
+					Log.Write("debug", "=> Krush, Kill 'N' Destroy (Disc, English)");
+					isXtreme = false;
+					path = executablePath;
 
-   	 	if (levelsFolder == null)
-   	 	{
-  	 	 	Log.Write("debug", "=> Missing folder: levels");
-  	 	 	return false;
-   	 	}
+					break;
 
-   	 	var fmvFolder = GameProvider.GetDirectory(path, "fmv");
+				default:
+					Log.Write("debug", "=> Unsupported game version");
 
-   	 	if (fmvFolder == null)
-   	 	{
-  	 	 	Log.Write("debug", "=> Missing folder: fmv");
-  	 	 	return false;
-   	 	}
+					return false;
+			}
 
-   	 	var graphicsFolder = GameProvider.GetDirectory(levelsFolder, "640");
+			var levelsFolder = GameProvider.GetDirectory(path, "levels");
 
-   	 	if (graphicsFolder == null)
-   	 	{
-  	 	 	Log.Write("debug", "=> Missing folder: 640");
-  	 	 	return false;
-   	 	}
+			if (levelsFolder == null)
+			{
+				Log.Write("debug", "=> Missing folder: levels");
 
-   	 	// Required files.
-   	 	var files = new Dictionary<string, string>
-   	 	{
-  	 	 	{ "sprites.lvl", graphicsFolder },
-  	 	 	{ "surv.slv", levelsFolder },
-  	 	 	{ "mute.slv", levelsFolder },
-  	 	 	{ "mh_fmv.vbc", fmvFolder },
-  	 	 	{ "intro.vbc", fmvFolder }
-   	 	}.Concat(isXtreme
-  	 	 	? new Dictionary<string, string>
-  	 	 	{
- 	 	 	 	{ "surv1.wav", levelsFolder },
- 	 	 	 	{ "surv2.wav", levelsFolder },
- 	 	 	 	{ "surv3.wav", levelsFolder },
- 	 	 	 	{ "surv4.wav", levelsFolder },
- 	 	 	 	{ "mute1.wav", levelsFolder },
- 	 	 	 	{ "mute2.wav", levelsFolder },
- 	 	 	 	{ "mute3.wav", levelsFolder },
- 	 	 	 	{ "mute4.wav", levelsFolder }
-  	 	 	}
-  	 	 	: new Dictionary<string, string>
-  	 	 	{
- 	 	 	 	{ "surv1.son", levelsFolder },
- 	 	 	 	{ "surv2.son", levelsFolder },
- 	 	 	 	{ "surv3.son", levelsFolder },
- 	 	 	 	{ "mute1.son", levelsFolder },
- 	 	 	 	{ "mute2.son", levelsFolder },
- 	 	 	 	{ "mute3.son", levelsFolder },
-  	 	 	}).ToDictionary(e => e.Key, e => GameProvider.GetFile(e.Value, e.Key));
+				return false;
+			}
 
-   	 	var missingFiles = files.Where(e => e.Value == null).Select(e => e.Key).ToArray();
+			var fmvFolder = GameProvider.GetDirectory(path, "fmv");
 
-   	 	if (missingFiles.Any())
-   	 	{
-  	 	 	foreach (var missingFile in missingFiles)
- 	 	 	 	Log.Write("debug", $"=> Missing file: {missingFile}");
+			if (fmvFolder == null)
+			{
+				Log.Write("debug", "=> Missing folder: fmv");
 
-  	 	 	return false;
-   	 	}
+				return false;
+			}
 
-   	 	GameProvider.Installation = path;
-   	 	GameProvider.Packages.Add(files["sprites.lvl"], "sprites.lvl");
-   	 	GameProvider.Packages.Add(files["mute.slv"], "mute.slv");
-   	 	GameProvider.Packages.Add(files["surv.slv"], "surv.slv");
+			var graphicsFolder = GameProvider.GetDirectory(levelsFolder, "640");
 
-   	 	GameProvider.Music.Add("Survivors 1", files[$"surv1.{(isXtreme ? "wav" : "son")}"]);
-   	 	GameProvider.Music.Add("Survivors 2", files[$"surv2.{(isXtreme ? "wav" : "son")}"]);
-   	 	GameProvider.Music.Add("Survivors 3", files[$"surv3.{(isXtreme ? "wav" : "son")}"]);
-   	 	GameProvider.Music.Add("Evolved 1", files[$"mute1.{(isXtreme ? "wav" : "son")}"]);
-   	 	GameProvider.Music.Add("Evolved 2", files[$"mute2.{(isXtreme ? "wav" : "son")}"]);
-   	 	GameProvider.Music.Add("Evolved 3", files[$"mute3.{(isXtreme ? "wav" : "son")}"]);
+			if (graphicsFolder == null)
+			{
+				Log.Write("debug", "=> Missing folder: 640");
 
-   	 	if (isXtreme)
-   	 	{
-  	 	 	GameProvider.Music.Add("Survivors 4", files["surv4.wav"]);
-  	 	 	GameProvider.Music.Add("Evolved 4", files["mute4.wav"]);
-   	 	}
+				return false;
+			}
 
-   	 	GameProvider.Movies.Add("mh.vbc", files["mh_fmv.vbc"]);
-   	 	GameProvider.Movies.Add("intro.vbc", files["intro.vbc"]);
+			// Required files.
+			var files =
+				new Dictionary<string, string>
+					{
+						{ "sprites.lvl", graphicsFolder },
+						{ "surv.slv", levelsFolder },
+						{ "mute.slv", levelsFolder },
+						{ "mh_fmv.vbc", fmvFolder },
+						{ "intro.vbc", fmvFolder }
+					}.Concat(
+						isXtreme
+							? new Dictionary<string, string>
+							{
+								{ "surv1.wav", levelsFolder },
+								{ "surv2.wav", levelsFolder },
+								{ "surv3.wav", levelsFolder },
+								{ "surv4.wav", levelsFolder },
+								{ "mute1.wav", levelsFolder },
+								{ "mute2.wav", levelsFolder },
+								{ "mute3.wav", levelsFolder },
+								{ "mute4.wav", levelsFolder }
+							}
+							: new Dictionary<string, string>
+							{
+								{ "surv1.son", levelsFolder },
+								{ "surv2.son", levelsFolder },
+								{ "surv3.son", levelsFolder },
+								{ "mute1.son", levelsFolder },
+								{ "mute2.son", levelsFolder },
+								{ "mute3.son", levelsFolder },
+							})
+					.ToDictionary(e => e.Key, e => GameProvider.GetFile(e.Value, e.Key));
 
-   	 	// Any other container for asset browser purpose
-   	 	GameProvider.Packages.Add(levelsFolder, null);
-   	 	GameProvider.Packages.Add(fmvFolder, null);
+			var missingFiles = files.Where(e => e.Value == null).Select(e => e.Key).ToArray();
 
-   	 	foreach (var file in Directory.GetFiles(levelsFolder).Concat(Directory.GetFiles(graphicsFolder)).Where(f =>
-  	 	 	f.EndsWith(".slv", StringComparison.OrdinalIgnoreCase) ||
-  	 	 	f.EndsWith(".lvl", StringComparison.OrdinalIgnoreCase)))
-   	 	{
-  	 	 	if (!GameProvider.Packages.ContainsKey(file))
- 	 	 	 	GameProvider.Packages.Add(file, Path.GetFileName(file).ToLower());
-   	 	}
+			if (missingFiles.Any())
+			{
+				foreach (var missingFile in missingFiles)
+					Log.Write("debug", $"=> Missing file: {missingFile}");
 
-   	 	return true;
-    	}
+				return false;
+			}
+
+			GameProvider.Installation = path;
+			GameProvider.Packages.Add(files["sprites.lvl"], "sprites.lvl");
+			GameProvider.Packages.Add(files["mute.slv"], "mute.slv");
+			GameProvider.Packages.Add(files["surv.slv"], "surv.slv");
+
+			GameProvider.Music.Add("Survivors 1", files[$"surv1.{(isXtreme ? "wav" : "son")}"]);
+			GameProvider.Music.Add("Survivors 2", files[$"surv2.{(isXtreme ? "wav" : "son")}"]);
+			GameProvider.Music.Add("Survivors 3", files[$"surv3.{(isXtreme ? "wav" : "son")}"]);
+			GameProvider.Music.Add("Evolved 1", files[$"mute1.{(isXtreme ? "wav" : "son")}"]);
+			GameProvider.Music.Add("Evolved 2", files[$"mute2.{(isXtreme ? "wav" : "son")}"]);
+			GameProvider.Music.Add("Evolved 3", files[$"mute3.{(isXtreme ? "wav" : "son")}"]);
+
+			if (isXtreme)
+			{
+				GameProvider.Music.Add("Survivors 4", files["surv4.wav"]);
+				GameProvider.Music.Add("Evolved 4", files["mute4.wav"]);
+			}
+
+			GameProvider.Movies.Add("mh.vbc", files["mh_fmv.vbc"]);
+			GameProvider.Movies.Add("intro.vbc", files["intro.vbc"]);
+
+			// Any other container for asset browser purpose
+			GameProvider.Packages.Add(levelsFolder, null);
+			GameProvider.Packages.Add(fmvFolder, null);
+
+			foreach (var file in Directory.GetFiles(levelsFolder)
+				.Concat(Directory.GetFiles(graphicsFolder))
+				.Where(f => f.EndsWith(".slv", StringComparison.OrdinalIgnoreCase) || f.EndsWith(".lvl", StringComparison.OrdinalIgnoreCase)))
+			{
+				if (!GameProvider.Packages.ContainsKey(file))
+					GameProvider.Packages.Add(file, Path.GetFileName(file).ToLower());
+			}
+
+			return true;
+		}
 	}
 }
