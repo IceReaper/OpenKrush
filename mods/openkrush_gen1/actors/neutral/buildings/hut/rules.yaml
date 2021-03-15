@@ -65,3 +65,19 @@ neutral_building_hut_f:
 	Inherits: neutral_building_hut_a
 	SpawnActorOnDeath:
 		Actor: neutral_building_hut_a_rubble
+
+neutral_building_hut_g:
+	Inherits: neutral_building_hut_a
+	SpawnActorOnDeath:
+		Actor: neutral_building_hut_g_rubble
+
+neutral_building_hut_g_rubble:
+	Inherits: neutral_building_hut_a_rubble
+
+neutral_building_hut_h:
+	Inherits: neutral_building_hut_a
+	SpawnActorOnDeath:
+		Actor: neutral_building_hut_h_rubble
+
+neutral_building_hut_h_rubble:
+	Inherits: neutral_building_hut_a_rubble
