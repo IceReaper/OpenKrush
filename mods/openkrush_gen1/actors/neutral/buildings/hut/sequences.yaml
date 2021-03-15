@@ -44,3 +44,20 @@ neutral_building_hut_e_rubble:
 
 neutral_building_hut_f:
 	idle: actors/neutral/buildings/hut/frames.png
+
+neutral_building_hut_g:
+	idle: actors/neutral/buildings/hut/frames2.png
+
+neutral_building_hut_g_rubble:
+	idle: actors/neutral/buildings/hut/frames2.png
+		Start: 2
+		ZOffset: -1000
+
+neutral_building_hut_h:
+	idle: actors/neutral/buildings/hut/frames2.png
+		Start: 1
+
+neutral_building_hut_h_rubble:
+	idle: actors/neutral/buildings/hut/frames2.png
+		Start: 3
+		ZOffset: -1000
