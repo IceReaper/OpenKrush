@@ -19,7 +19,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil
 {
     public static class OilUtils
     {
-		public static Actor GetMostUnderutilizedDrillrig(Player owner)
+		public static Actor GetMostUnderutilizedDrillrig(Player owner, WPos origin)
 		{
 			// We will ignore any oil sneaking actors.
 			var tankers = owner.World.ActorsWithTrait<Tanker>()
@@ -37,7 +37,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil
 				.Select(pair => pair.Actor)
 				.OrderBy(drillrig =>
 				{
-					// Assume a default distance of 1 when we have no powerstation nearby.
+					// Assume a default distance of 1 when we have no PowerStation nearby.
 					var distance = 1;
 
 					// We ignore the fact that Tankers could have assigned a different PowerStation.
@@ -47,6 +47,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil
 					// Using a large factor to avoid using a float.
 					return 1024 * 1024 * tankers.Count(pair2 => pair2.PreferedDrillrig.Equals(drillrig)) / distance;
 				})
+				.ThenBy(drillrig => (drillrig.CenterPosition - origin).Length)
 				.FirstOrDefault();
 		}
 

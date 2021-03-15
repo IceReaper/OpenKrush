@@ -39,7 +39,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Activities
 			if (tanker.Current < tanker.Maximum)
 			{
 				if (tanker.PreferedDrillrig == null)
-					tanker.PreferedDrillrig = OilUtils.GetMostUnderutilizedDrillrig(self.Owner);
+					tanker.PreferedDrillrig = OilUtils.GetMostUnderutilizedDrillrig(self.Owner, self.CenterPosition);
 
 				if (tanker.PreferedDrillrig != null)
 				{
