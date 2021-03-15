@@ -58,22 +58,27 @@ namespace OpenRA.Mods.OpenKrush.GameProviders
 
 		private static bool FindGoGInstallation(ModData modData, int appIdGog)
 		{
-			var prefixes = new[] { "HKEY_LOCAL_MACHINE\\Software\\", "HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\" };
-
-			foreach (var prefix in prefixes)
+			if (Platform.CurrentPlatform == PlatformType.Windows)
 			{
-				var installDir = Microsoft.Win32.Registry.GetValue($"{prefix}GOG.com\\Games\\{appIdGog}", "path", null) as string;
+				var prefixes = new[] { "HKEY_LOCAL_MACHINE\\Software\\", "HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\" };
 
-				if (installDir == null)
-					continue;
+				foreach (var prefix in prefixes)
+				{
+					var installDir = Microsoft.Win32.Registry.GetValue($"{prefix}GOG.com\\Games\\{appIdGog}", "path", null) as string;
 
-				Log.Write("debug", $"GoG version candidate: {installDir}");
+					if (installDir == null)
+						continue;
 
-				if (GameProvider.TryRegister(modData, installDir))
-					return true;
+					Log.Write("debug", $"GoG version candidate: {installDir}");
+
+					if (GameProvider.TryRegister(modData, installDir))
+						return true;
+				}
+
+				Log.Write("debug", "GoG version not found");
 			}
-
-			Log.Write("debug", "GoG version not found");
+			else
+				Log.Write("debug", "GoG version not supported on this platform");
 
 			return false;
 		}
