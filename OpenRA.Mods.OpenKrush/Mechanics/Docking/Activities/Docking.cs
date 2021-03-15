@@ -18,7 +18,7 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Activities
 {
-	public class Docking : Activity
+	public class Docking : Activity, IDockingActivity
 	{
 		private readonly Actor dockableActor;
 

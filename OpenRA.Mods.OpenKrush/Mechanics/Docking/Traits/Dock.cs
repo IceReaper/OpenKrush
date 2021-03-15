@@ -11,9 +11,8 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using OpenRA.Activities;
 using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.OpenKrush.Mechanics.Oil.Activities;
+using OpenRA.Mods.OpenKrush.Mechanics.Docking.Activities;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits
@@ -88,32 +87,29 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits
 				if (actor.IsDead || !actor.IsInWorld)
 					return true;
 
-				var docking = FindDockingActivity(actor.CurrentActivity);
+				if (!(actor.CurrentActivity is IDockingActivity docking))
+					return true;
 
-				if (docking == null || docking.Dock != this)
+				if (docking.Dock != this)
 					return true;
 
 				if (IsTraitDisabled)
 				{
-					docking.Cancel(actor, true);
+					actor.CurrentActivity.Cancel(actor, true);
 					return true;
 				}
 
-				if (GetDockAction(actor) == null)
-				{
-					docking.Cancel(actor, true);
-					return true;
-				}
+				if (GetDockAction(actor) != null)
+					return false;
 
-				return false;
+				actor.CurrentActivity.Cancel(actor, true);
+				return true;
 			});
 
 			var target = queue.FirstOrDefault();
 
-			if (target == null)
+			if (!(target?.CurrentActivity is IDockingActivity activity))
 				return;
-
-			var activity = FindDockingActivity(target.CurrentActivity);
 
 			switch (activity.DockingState)
 			{
@@ -132,18 +128,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits
 
 					break;
 			}
-		}
-
-		private Activities.Docking FindDockingActivity(Activity activity)
-		{
-			if (activity is Activities.Docking docking)
-				return docking;
-
-			// TODO this is ugly, refactor this!
-			if (activity is TankerCycle tankerCycle)
-				return tankerCycle.DockingActivity;
-
-			return null;
 		}
 	}
 }

@@ -10,17 +10,23 @@
 #endregion
 
 using OpenRA.Activities;
+using OpenRA.Mods.OpenKrush.Mechanics.Docking;
+using OpenRA.Mods.OpenKrush.Mechanics.Docking.Activities;
 using OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits;
 using OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits;
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Activities
 {
-	public class TankerCycle : Activity
+	public class TankerCycle : Activity, IDockingActivity
 	{
 		private readonly Actor actor;
 		private readonly Tanker tanker;
 
-		public Docking.Activities.Docking DockingActivity => ChildActivity as Docking.Activities.Docking;
+		public Dock Dock => (ChildActivity as Docking.Activities.Docking)?.Dock;
+		public Actor DockActor => (ChildActivity as Docking.Activities.Docking)?.DockActor;
+		public DockingState DockingState => (ChildActivity as Docking.Activities.Docking)?.DockingState ?? DockingState.None;
+		public void StartDocking() => (ChildActivity as Docking.Activities.Docking)?.StartDocking();
+		public void StartUndocking() => (ChildActivity as Docking.Activities.Docking)?.StartUndocking();
 
 		public TankerCycle(Actor actor, Tanker tanker)
 		{

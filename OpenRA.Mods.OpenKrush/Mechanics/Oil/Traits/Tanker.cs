@@ -10,6 +10,7 @@
 #endregion
 
 using System;
+using OpenRA.Activities;
 using OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits;
 using OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits.Actions;
 using OpenRA.Mods.OpenKrush.Mechanics.Oil.Activities;
@@ -59,6 +60,27 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 			var pushAmount = Math.Min(amount, Maximum - Current);
 			Current += pushAmount;
 			return amount - pushAmount;
+		}
+
+		protected override Activity GetDockingActivity(Actor self, Actor target, Dock dock)
+		{
+			if (target.TraitOrDefault<Drillrig>() != null)
+			{
+				PreferedDrillrig = target;
+				var tankerCycle = new TankerCycle(self, this);
+				tankerCycle.QueueChild(new Docking.Activities.Docking(self, PreferedDrillrig, PreferedDrillrig.Trait<Dock>()));
+				return tankerCycle;
+			}
+
+			if (target.TraitOrDefault<PowerStation>() != null)
+			{
+				PreferedPowerStation = target;
+				var tankerCycle = new TankerCycle(self, this);
+				tankerCycle.QueueChild(new Docking.Activities.Docking(self, PreferedPowerStation, PreferedPowerStation.Trait<Dock>()));
+				return tankerCycle;
+			}
+
+			return base.GetDockingActivity(self, target, dock);
 		}
 
 		void ITick.Tick(Actor self)

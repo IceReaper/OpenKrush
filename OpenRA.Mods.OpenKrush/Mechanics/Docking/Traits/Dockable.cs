@@ -11,11 +11,9 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using OpenRA.Activities;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.OpenKrush.Mechanics.Docking.Orders;
-using OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits.Actions;
-using OpenRA.Mods.OpenKrush.Mechanics.Oil.Activities;
-using OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits
@@ -58,31 +56,12 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits
 			if (dock == null)
 				return;
 
-			// TODO this is ugly, refactor this!
-			var tanker = self.TraitOrDefault<Tanker>();
+			self.QueueActivity(false, GetDockingActivity(self, order.Target.Actor, dock));
+		}
 
-			if (tanker != null)
-			{
-				if (order.Target.Actor.TraitOrDefault<Drillrig>() != null)
-				{
-					tanker.PreferedDrillrig = order.Target.Actor;
-					var tankerCycle = new TankerCycle(self, tanker);
-					tankerCycle.QueueChild(new Docking.Activities.Docking(self, tanker.PreferedDrillrig, tanker.PreferedDrillrig.Trait<Dock>()));
-					self.QueueActivity(false, tankerCycle);
-					return;
-				}
-
-				if (order.Target.Actor.TraitOrDefault<PowerStation>() != null)
-				{
-					tanker.PreferedPowerStation = order.Target.Actor;
-					var tankerCycle = new TankerCycle(self, tanker);
-					tankerCycle.QueueChild(new Docking.Activities.Docking(self, tanker.PreferedPowerStation, tanker.PreferedPowerStation.Trait<Dock>()));
-					self.QueueActivity(false, tankerCycle);
-					return;
-				}
-			}
-
-			self.QueueActivity(false, new Activities.Docking(self, order.Target.Actor, dock));
+		protected virtual Activity GetDockingActivity(Actor self, Actor target, Dock dock)
+		{
+			return new Activities.Docking(self, target, dock);
 		}
 
 		string IOrderVoice.VoicePhraseForOrder(Actor self, Order order)

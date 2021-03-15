@@ -77,17 +77,10 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 				if (tanker == null)
 					return false;
 
-				var tankerCycle = a.CurrentActivity as TankerCycle;
-
-				if (tankerCycle == null)
+				if (!(a.CurrentActivity is TankerCycle tankerCycle))
 					return false;
 
-				var dockActivity = tankerCycle.DockingActivity;
-
-				if (dockActivity == null)
-					return false;
-
-				return dockActivity.DockingState == DockingState.Docked && dockActivity.DockActor.Info.HasTraitInfo<PowerStationInfo>();
+				return tankerCycle.DockingState == DockingState.Docked && tankerCycle.DockActor.Info.HasTraitInfo<PowerStationInfo>();
 			});
 
 			if (playOilSound && oilSound == null)
