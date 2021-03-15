@@ -11,7 +11,6 @@
 
 using System;
 using System.Linq;
-using DiscordRPC;
 using OpenRA.Graphics;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common.Traits.Render;

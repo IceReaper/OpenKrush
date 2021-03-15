@@ -62,7 +62,7 @@ namespace OpenRA.Mods.OpenKrush.Graphics
 
 		public IRenderable WithPalette(PaletteReference newPalette) { return this; }
 		public IRenderable WithZOffset(int newOffset) { return this; }
-		public IRenderable OffsetBy(WVec offset) { return this; }
+		public IRenderable OffsetBy(in WVec offset) { return this; }
 		public IRenderable AsDecoration() { return this; }
 		public IFinalizedRenderable PrepareRender(WorldRenderer wr) { return this; }
 

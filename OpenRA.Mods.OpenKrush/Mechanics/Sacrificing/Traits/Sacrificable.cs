@@ -84,8 +84,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Sacrificing.Traits
 			if (self.Owner != self.World.LocalPlayer)
 				return;
 
-			if (self.Owner.RelationshipWith(targetActor.Owner).HasRelationship(PlayerRelationship.Ally))
-				self.PlayVoice(info.VoiceEnter);
+			self.PlayVoice(info.VoiceEnter);
 		}
 	}
 }

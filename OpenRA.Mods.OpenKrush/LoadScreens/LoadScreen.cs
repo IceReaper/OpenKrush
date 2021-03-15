@@ -13,7 +13,6 @@ using System;
 using System.Collections.Generic;
 using OpenRA.Graphics;
 using OpenRA.Mods.Common.LoadScreens;
-using OpenRA.Mods.OpenKrush.FileSystem;
 using OpenRA.Mods.OpenKrush.GameProviders;
 using OpenRA.Primitives;
 

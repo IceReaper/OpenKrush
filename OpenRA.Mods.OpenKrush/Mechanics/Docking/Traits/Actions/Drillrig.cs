@@ -23,6 +23,12 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits.Actions
 		[Desc("Condition, which will be granted if the Drillrig is not empty.")]
 		public readonly string Condition = "HasOil";
 
+		[Desc("Notification to play when oil is low.")]
+		public readonly string LowNotification = "DrillrigLow";
+
+		[Desc("Notification to play when oil is depleted.")]
+		public readonly string EmptyNotification = "DrillrigEmpty";
+
 		[Desc("How many oil per tick should be pumped.")]
 		public readonly int Rate = 3;
 
@@ -78,21 +84,20 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits.Actions
 		{
 			var tanker = actor.Trait<Tanker>();
 
-			if (oilpatch != null)
-			{
-				var amount = oilpatch.Pull(info.Rate);
-				var remaining = tanker.Push(amount);
-				oilpatch.Push(remaining);
-			}
+			if (oilpatch == null)
+				return true;
+
+			var amount = oilpatch.Pull(info.Rate);
+			var remaining = tanker.Push(amount);
+			oilpatch.Push(remaining);
 
 			return oilpatch == null || tanker.Current == tanker.Maximum;
 		}
 
 		public override void OnDock()
 		{
-			// TODO unhardcode!
-			if (oilpatch != null && oilpatch.Current <= 2500)
-				Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", "DrillrigLow", self.Owner.Faction.InternalName);
+			if (info.LowNotification != null && oilpatch != null && oilpatch.Current <= 2500)
+				Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", info.LowNotification, self.Owner.Faction.InternalName);
 		}
 
 		void ITick.Tick(Actor self)
@@ -105,8 +110,8 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits.Actions
 			if (!oilpatchActor.IsDead)
 				return;
 
-			// TODO unhardcode!
-			Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", "DrillrigEmpty", self.Owner.Faction.InternalName);
+			if (info.EmptyNotification != null)
+				Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", info.EmptyNotification, self.Owner.Faction.InternalName);
 
 			oilpatchActor = null;
 			oilpatch = null;

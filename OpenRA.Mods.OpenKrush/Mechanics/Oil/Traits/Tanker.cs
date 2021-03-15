@@ -10,7 +10,6 @@
 #endregion
 
 using System;
-using System.Linq;
 using OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits;
 using OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits.Actions;
 using OpenRA.Mods.OpenKrush.Mechanics.Oil.Activities;
@@ -24,23 +23,20 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 		[Desc("Maximum oil a tanker can hold.")]
 		public readonly int Capacity = 500;
 
-		public override object Create(ActorInitializer init) { return new Tanker(init, this); }
+		public override object Create(ActorInitializer init) { return new Tanker(this); }
 	}
 
 	public class Tanker : Dockable, IHaveOil, INotifyCreated, ITick
 	{
 		private readonly TankerInfo info;
 
-		private Actor self;
-
 		public Actor PreferedDrillrig;
 		public Actor PreferedPowerStation;
 
-		public Tanker(ActorInitializer init, TankerInfo info)
+		public Tanker(TankerInfo info)
 			: base(info)
 		{
 			this.info = info;
-			self = init.Self;
 		}
 
 		void INotifyCreated.Created(Actor self)
@@ -65,50 +61,19 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 			return amount - pushAmount;
 		}
 
-		public void AssignNearestDrillrig()
-		{
-			PreferedDrillrig = self.World.ActorsHavingTrait<Drillrig>()
-				.Where(actor => actor.Owner == self.Owner && IsValidDrillrig(actor))
-				.OrderBy(a => (self.CenterPosition - a.CenterPosition).Length)
-				.FirstOrDefault();
-		}
-
-		private bool IsValidDrillrig(Actor actor)
-		{
-			if (actor == null || actor.IsDead || !actor.IsInWorld)
-				return false;
-
-			var dock = actor.TraitOrDefault<Dock>();
-			var drillRig = actor.TraitOrDefault<Drillrig>();
-
-			return dock != null && !dock.IsTraitDisabled && drillRig != null && !drillRig.IsTraitDisabled && drillRig.CanDock(self);
-		}
-
-		public void AssignNearestPowerStation()
-		{
-			PreferedPowerStation = self.World.ActorsHavingTrait<PowerStation>()
-				.Where(actor => actor.Owner == self.Owner && IsValidPowerStation(actor))
-				.OrderBy(a => (self.CenterPosition - a.CenterPosition).Length)
-				.FirstOrDefault();
-		}
-
-		private bool IsValidPowerStation(Actor actor)
-		{
-			if (actor == null || actor.IsDead || !actor.IsInWorld || !actor.Owner.IsAlliedWith(self.Owner))
-				return false;
-
-			var dock = actor.TraitOrDefault<Dock>();
-			var powerStation = actor.TraitOrDefault<PowerStation>();
-
-			return dock != null && !dock.IsTraitDisabled && powerStation != null && !powerStation.IsTraitDisabled && powerStation.CanDock(self);
-		}
-
 		void ITick.Tick(Actor self)
 		{
-			if (PreferedDrillrig != null && !IsValidDrillrig(PreferedDrillrig))
+			if (PreferedDrillrig != null && !OilUtils.IsUsable(PreferedDrillrig, PreferedDrillrig.Trait<Drillrig>()))
+			{
+				// When releasing the drillrig, we should also release the powerstation as another one might be the better pick.
 				PreferedDrillrig = null;
+				PreferedPowerStation = null;
+			}
 
-			if (PreferedPowerStation != null && !IsValidPowerStation(PreferedPowerStation))
+			if (PreferedPowerStation != null && PreferedPowerStation.Owner.RelationshipWith(self.Owner) != PlayerRelationship.Ally)
+				PreferedPowerStation = null;
+
+			if (PreferedPowerStation != null && !OilUtils.IsUsable(PreferedPowerStation, PreferedPowerStation.Trait<PowerStation>()))
 				PreferedPowerStation = null;
 		}
 	}

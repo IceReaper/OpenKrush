@@ -35,7 +35,13 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Laser.Graphics
 		public bool IsDecoration => true;
 
 		public IRenderable WithZOffset(int newOffset) { return new LaserRenderable(offsets, newOffset, width, color); }
-		public IRenderable OffsetBy(WVec vec) { return new LaserRenderable(offsets.Select(offset => offset + vec).ToArray(), zOffset, width, color); }
+
+		public IRenderable OffsetBy(in WVec vec)
+		{
+			var vecCopy = vec;
+			return new LaserRenderable(offsets.Select(offset => offset + vecCopy).ToArray(), zOffset, width, color);
+		}
+
 		public IRenderable AsDecoration() { return this; }
 
 		public IFinalizedRenderable PrepareRender(WorldRenderer wr) { return this; }

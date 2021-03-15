@@ -39,7 +39,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Activities
 			if (tanker.Current < tanker.Maximum)
 			{
 				if (tanker.PreferedDrillrig == null)
-					tanker.AssignNearestDrillrig();
+					tanker.PreferedDrillrig = OilUtils.GetMostUnderutilizedDrillrig(self.Owner);
 
 				if (tanker.PreferedDrillrig != null)
 				{
@@ -50,12 +50,14 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Activities
 
 			if (tanker.Current > 0)
 			{
-				if (tanker.PreferedPowerStation == null)
-					tanker.AssignNearestPowerStation();
+				if (tanker.PreferedPowerStation == null && tanker.PreferedDrillrig != null)
+					tanker.PreferedPowerStation = OilUtils.GetNearestPowerStation(self.Owner, tanker.PreferedDrillrig.CenterPosition);
 
-				if (tanker.PreferedPowerStation != null)
+				var target = tanker.PreferedPowerStation ?? OilUtils.GetNearestPowerStation(self.Owner, self.CenterPosition);
+
+				if (target != null)
 				{
-					QueueChild(new Docking.Activities.Docking(actor, tanker.PreferedPowerStation, tanker.PreferedPowerStation.Trait<Dock>()));
+					QueueChild(new Docking.Activities.Docking(actor, target, target.Trait<Dock>()));
 					return false;
 				}
 			}
