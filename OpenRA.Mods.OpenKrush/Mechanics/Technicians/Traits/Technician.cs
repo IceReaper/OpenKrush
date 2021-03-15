@@ -11,6 +11,7 @@
 
 using System.Collections.Generic;
 using OpenRA.Mods.Common.Traits;
+using OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits;
 using OpenRA.Mods.OpenKrush.Mechanics.Technicians.Activities;
 using OpenRA.Mods.OpenKrush.Mechanics.Technicians.Orders;
 using OpenRA.Primitives;
@@ -37,6 +38,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Traits
 		[Desc("Voice used when entered and starting repair.")]
 		[VoiceReference]
 		public readonly string VoiceEnter = "Repairing";
+
+		[Desc("Voice used when entered a bunker.")]
+		[VoiceReference]
+		public readonly string VoiceEnterBunker = null;
 
 		public override object Create(ActorInitializer init)
 		{
@@ -87,8 +92,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Traits
 			if (self.Owner != self.World.LocalPlayer)
 				return;
 
-			if (self.Owner.RelationshipWith(targetActor.Owner).HasRelationship(PlayerRelationship.Ally))
+			if (self.World.WorldActor.Info.TraitInfo<TechBunkerAmountInfo>().ActorType != targetActor.Info.Name)
 				self.PlayVoice(info.VoiceEnter);
+			else if (info.VoiceEnterBunker != null)
+				self.PlayVoice(info.VoiceEnterBunker);
 		}
 	}
 }

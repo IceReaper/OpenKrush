@@ -17,43 +17,43 @@ using OpenRA.Primitives;
 
 namespace OpenRA.Mods.OpenKrush.SpriteLoaders
 {
-    public class MapdLoader : ISpriteLoader
-    {
-        private class MapdSpriteFrame : ISpriteFrame
-        {
-            public SpriteFrameType Type => SpriteFrameType.Rgba32;
+	public class MapdLoader : ISpriteLoader
+	{
+    	private class MapdSpriteFrame : ISpriteFrame
+    	{
+   	 	public SpriteFrameType Type => SpriteFrameType.Rgba32;
 
-            public Size Size { get; }
+   	 	public Size Size { get; }
 
-            public Size FrameSize { get; }
+   	 	public Size FrameSize { get; }
 
-            public float2 Offset => float2.Zero;
+   	 	public float2 Offset => float2.Zero;
 
-            public byte[] Data { get; }
+   	 	public byte[] Data { get; }
 
-            public bool DisableExportPadding => true;
+   	 	public bool DisableExportPadding => true;
 
-            public MapdSpriteFrame(MapdLayer layer)
-            {
-                Size = new Size(layer.Width, layer.Height);
-                FrameSize = new Size(layer.Width, layer.Height);
-                Data = layer.Pixels;
-            }
-        }
+   	 	public MapdSpriteFrame(MapdLayer layer)
+   	 	{
+  	 	 	Size = new Size(layer.Width, layer.Height);
+  	 	 	FrameSize = new Size(layer.Width, layer.Height);
+  	 	 	Data = layer.Pixels;
+   	 	}
+    	}
 
-        public bool TryParseSprite(Stream stream, string filename, out ISpriteFrame[] frames, out TypeDictionary metadata)
-        {
-            if (!filename.EndsWith(".mapd"))
-            {
-                metadata = null;
-                frames = null;
-                return false;
-            }
+    	public bool TryParseSprite(Stream stream, string filename, out ISpriteFrame[] frames, out TypeDictionary metadata)
+    	{
+   	 	if (!filename.EndsWith(".mapd"))
+   	 	{
+  	 	 	metadata = null;
+  	 	 	frames = null;
+  	 	 	return false;
+   	 	}
 
-            frames = new Mapd(stream as SegmentStream).Layers.Select(layer => new MapdSpriteFrame(layer)).ToArray();
-            metadata = null;
+   	 	frames = new Mapd(stream as SegmentStream).Layers.Select(layer => new MapdSpriteFrame(layer)).ToArray();
+   	 	metadata = null;
 
-            return true;
-        }
-    }
+   	 	return true;
+    	}
+	}
 }

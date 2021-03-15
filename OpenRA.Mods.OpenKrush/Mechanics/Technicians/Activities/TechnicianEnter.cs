@@ -10,6 +10,7 @@
 #endregion
 
 using OpenRA.Mods.Common.Activities;
+using OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits;
 using OpenRA.Mods.OpenKrush.Mechanics.Technicians.Traits;
 using OpenRA.Primitives;
 using OpenRA.Traits;
@@ -37,7 +38,8 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Activities
 		protected override void OnEnterComplete(Actor self, Actor targetActor)
 		{
 			self.Trait<Technician>().Enter(self, targetActor);
-			targetActor.Trait<TechnicianRepairable>().Enter();
+			targetActor.TraitOrDefault<TechnicianRepairable>()?.Enter();
+			targetActor.TraitOrDefault<TechBunker>()?.Use(targetActor, self.Owner);
 			self.Dispose();
 		}
 	}

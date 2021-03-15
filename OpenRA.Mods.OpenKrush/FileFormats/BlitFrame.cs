@@ -14,25 +14,25 @@ using System.IO;
 
 namespace OpenRA.Mods.OpenKrush.FileFormats
 {
-    public class BlitFrame
-    {
-        public readonly int Width;
-        public readonly int Height;
-        public readonly int OffsetX;
-        public readonly int OffsetY;
-        public readonly byte[] Pixels;
+	public class BlitFrame
+	{
+    	public readonly int Width;
+    	public readonly int Height;
+    	public readonly int OffsetX;
+    	public readonly int OffsetY;
+    	public readonly byte[] Pixels;
 
-        public BlitFrame(Stream stream, byte[] palette)
-        {
-            Width = stream.ReadInt32();
-            Height = stream.ReadInt32();
-            OffsetX = stream.ReadInt32();
-            OffsetY = stream.ReadInt32();
-            Pixels = new byte[Width * Height * 4];
+    	public BlitFrame(Stream stream, byte[] palette)
+    	{
+   	 	Width = stream.ReadInt32();
+   	 	Height = stream.ReadInt32();
+   	 	OffsetX = stream.ReadInt32();
+   	 	OffsetY = stream.ReadInt32();
+   	 	Pixels = new byte[Width * Height * 4];
 
-            for (var y = 0; y < Height; y++)
-            for (var x = 0; x < Width; x++)
-                Array.Copy(palette, stream.ReadByte() * 4, Pixels, (y * Width + x) * 4, 4);
-        }
-    }
+   	 	for (var y = 0; y < Height; y++)
+   	 	for (var x = 0; x < Width; x++)
+  	 	 	Array.Copy(palette, stream.ReadByte() * 4, Pixels, (y * Width + x) * 4, 4);
+    	}
+	}
 }

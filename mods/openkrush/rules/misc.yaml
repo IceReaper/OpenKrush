@@ -122,8 +122,12 @@ World:
 	TechLevel:
 	# TechBunker amount selectbox.
 	TechBunkerAmount:
-	# TechBunker behavior selectbox.
-	TechBunkerBehavior:
+	# TechBunker contains selectbox.
+	TechBunkerContains:
+	# TechBunker usage selectbox.
+	TechBunkerUsage:
+	# TechBunker uses selectbox.
+	TechBunkerUses:
 	# Used to manage beacons.
 	RadarPings:
 

@@ -9,6 +9,7 @@
  */
 #endregion
 
+using OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits;
 using OpenRA.Mods.OpenKrush.Mechanics.Technicians.Traits;
 using OpenRA.Traits;
 
@@ -18,6 +19,11 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians
 	{
 		public static bool CanEnter(Actor source, Actor target)
 		{
+			var bunker = target.TraitOrDefault<TechBunker>();
+
+			if (bunker != null)
+				return bunker.State == TechBunkerState.ClosedUnlocked;
+
 			var trait = target.TraitOrDefault<TechnicianRepairable>();
 
 			if (trait == null || trait.IsTraitDisabled)

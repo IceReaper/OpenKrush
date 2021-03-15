@@ -15,45 +15,45 @@ using OpenRA.Primitives;
 
 namespace OpenRA.Mods.OpenKrush.FileFormats
 {
-    public class Blit
-    {
-        public readonly BlitFrame[] Frames;
+	public class Blit
+	{
+    	public readonly BlitFrame[] Frames;
 
-        public Blit(SegmentStream stream)
-        {
-            // This is damn ugly, but it seems BLIT uses offsets from lvl start.
-            var basePosition = (int)((SegmentStream)stream.BaseStream).BaseStream.Position - 8;
+    	public Blit(SegmentStream stream)
+    	{
+   	 	// This is damn ugly, but it seems BLIT uses offsets from lvl start.
+   	 	var basePosition = (int)((SegmentStream)stream.BaseStream).BaseStream.Position - 8;
 
-            Frames = new BlitFrame[stream.ReadInt32()];
-            var frameOffsets = new int[Frames.Length];
+   	 	Frames = new BlitFrame[stream.ReadInt32()];
+   	 	var frameOffsets = new int[Frames.Length];
 
-            stream.ReadInt32(); // Unk
-            var paletteOffset = stream.ReadInt32() - basePosition;
-            var identifier = new string(stream.ReadASCII(4).Reverse().ToArray());
+   	 	stream.ReadInt32(); // Unk
+   	 	var paletteOffset = stream.ReadInt32() - basePosition;
+   	 	var identifier = new string(stream.ReadASCII(4).Reverse().ToArray());
 
-            if (identifier != "BLT8")
-                throw new Exception("Unknwon blit type.");
-            for (var i = 0; i < Frames.Length; i++)
-                frameOffsets[i] = stream.ReadInt32() - basePosition;
+   	 	if (identifier != "BLT8")
+  	 	 	throw new Exception("Unknwon blit type.");
+   	 	for (var i = 0; i < Frames.Length; i++)
+  	 	 	frameOffsets[i] = stream.ReadInt32() - basePosition;
 
-            stream.Position = paletteOffset;
+   	 	stream.Position = paletteOffset;
 
-            var palette = new byte[256 * 4];
+   	 	var palette = new byte[256 * 4];
 
-            for (var i = 0; i < palette.Length;)
-            {
-                var color16 = stream.ReadUInt16(); // aRRRRRGGGGGBBBBB
-                palette[i++] = (byte)(((color16 & 0x001f) << 3) & 0xff);
-                palette[i++] = (byte)(((color16 & 0x03e0) >> 2) & 0xff);
-                palette[i++] = (byte)(((color16 & 0x7c00) >> 7) & 0xff);
-                palette[i++] = 0xff;
-            }
+   	 	for (var i = 0; i < palette.Length;)
+   	 	{
+  	 	 	var color16 = stream.ReadUInt16(); // aRRRRRGGGGGBBBBB
+  	 	 	palette[i++] = (byte)(((color16 & 0x001f) << 3) & 0xff);
+  	 	 	palette[i++] = (byte)(((color16 & 0x03e0) >> 2) & 0xff);
+  	 	 	palette[i++] = (byte)(((color16 & 0x7c00) >> 7) & 0xff);
+  	 	 	palette[i++] = 0xff;
+   	 	}
 
-            for (var i = 0; i < Frames.Length; i++)
-            {
-                stream.Position = frameOffsets[i];
-                Frames[i] = new BlitFrame(stream, palette);
-            }
-        }
-    }
+   	 	for (var i = 0; i < Frames.Length; i++)
+   	 	{
+  	 	 	stream.Position = frameOffsets[i];
+  	 	 	Frames[i] = new BlitFrame(stream, palette);
+   	 	}
+    	}
+	}
 }

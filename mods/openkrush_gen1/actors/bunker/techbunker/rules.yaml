@@ -19,6 +19,8 @@ bunker_techbunker:
 	MapEditorData:
 		Categories: Bunker
 	-Selectable:
+	Interactable:
+		Bounds: 64, 64, 0, -16
 	-SelfConstructing:
 	-DeconstructSellable:
 	-TechnicianRepairable:

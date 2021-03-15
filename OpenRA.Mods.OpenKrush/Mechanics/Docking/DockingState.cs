@@ -11,14 +11,14 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Docking
 {
-    public enum DockingState
-    {
-        None,
-        Approaching,
-        Waiting,
-        PrepareDocking,
-        Docking,
-        Docked,
-        Undocking
-    }
+	public enum DockingState
+	{
+    	None,
+    	Approaching,
+    	Waiting,
+    	PrepareDocking,
+    	Docking,
+    	Docked,
+    	Undocking
+	}
 }

@@ -11,17 +11,17 @@
 
 namespace OpenRA.Mods.OpenKrush.FileFormats
 {
-    public class MapdLayer
-    {
-        public readonly int Width;
-        public readonly int Height;
-        public readonly byte[] Pixels;
+	public class MapdLayer
+	{
+    	public readonly int Width;
+    	public readonly int Height;
+    	public readonly byte[] Pixels;
 
-        public MapdLayer(int width, int height)
-        {
-            Width = width;
-            Height = height;
-            Pixels = new byte[width * height * 4];
-        }
-    }
+    	public MapdLayer(int width, int height)
+    	{
+   	 	Width = width;
+   	 	Height = height;
+   	 	Pixels = new byte[width * height * 4];
+    	}
+	}
 }

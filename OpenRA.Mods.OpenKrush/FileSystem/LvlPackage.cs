@@ -153,11 +153,11 @@ namespace OpenRA.Mods.OpenKrush.FileSystem
 		public bool TryParsePackage(Stream s, string filename, FS context, out IReadOnlyPackage package)
 		{
 			if (filename.EndsWith(".lpk") // Spritesheet container
-			    || filename.EndsWith(".bpk") // Image container
-			    || filename.EndsWith(".spk") // Sound set
-			    || filename.EndsWith(".lps") // Singleplayer map
-			    || filename.EndsWith(".lpm") // Multiplayer map
-			    || filename.EndsWith(".mpk")) // Matrix set (destroyable map part, tile replacements)
+				|| filename.EndsWith(".bpk") // Image container
+				|| filename.EndsWith(".spk") // Sound set
+				|| filename.EndsWith(".lps") // Singleplayer map
+				|| filename.EndsWith(".lpm") // Multiplayer map
+				|| filename.EndsWith(".mpk")) // Matrix set (destroyable map part, tile replacements)
 				s = Decompressor.Decompress(s);
 
 			if (s.Position + 4 <= s.Length)

@@ -21,15 +21,16 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 	public enum TechBunkerAmountType
 	{
 		None,
-		Xtreme,
-		Krossfire,
+		One,
+		OnePerTwoPlayers,
 		All
 	}
 
-	[Desc("Tech bunker amount.")]
+	[Desc("How many TechBunkers should be spawned on the map.")]
 	public class TechBunkerAmountInfo : TraitInfo, ILobbyOptions
 	{
 		public const string Id = "TechBunkerAmount";
+		public const TechBunkerAmountType Default = TechBunkerAmountType.All;
 
 		[Desc("The type of the bunker actor.")]
 		public readonly string ActorType = "bunker_techbunker";
@@ -38,19 +39,20 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 		{
 			yield return new LobbyOption(
 				Id,
-				"Bunker Amount",
-				"TechBunker amount.",
+				"Amount",
+				"How many TechBunkers should be spawned on the map.",
 				true,
 				0,
 				new ReadOnlyDictionary<string, string>(new Dictionary<TechBunkerAmountType, string>
 				{
 					{ TechBunkerAmountType.None, "None" },
-					{ TechBunkerAmountType.Xtreme, "Xtreme (1 per map)" },
-					{ TechBunkerAmountType.Krossfire, "Krossfire (1 per 2 players)" },
+					{ TechBunkerAmountType.One, "1 per map" },
+					{ TechBunkerAmountType.OnePerTwoPlayers, "1 per 2 players" },
 					{ TechBunkerAmountType.All, "All" }
 				}.ToDictionary(e => e.Key.ToString(), e => e.Value)),
-				TechBunkerAmountType.All.ToString(),
-				false);
+				Default.ToString(),
+				false,
+				TechBunkerInfo.LobbyOptionsCategory);
 		}
 
 		public override object Create(ActorInitializer init)
@@ -73,7 +75,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 		void INotifyCreated.Created(Actor self)
 		{
 			behavior = (TechBunkerAmountType)Enum.Parse(typeof(TechBunkerAmountType),
-				self.World.LobbyInfo.GlobalSettings.OptionOrDefault(TechBunkerAmountInfo.Id, TechBunkerAmountType.All.ToString()));
+				self.World.LobbyInfo.GlobalSettings.OptionOrDefault(TechBunkerAmountInfo.Id, TechBunkerAmountInfo.Default.ToString()));
 		}
 
 		bool IPreventMapSpawn.PreventMapSpawn(World world, ActorReference actorReference)
@@ -85,20 +87,20 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 			return true;
 		}
 
-		public void WorldLoaded(World w, WorldRenderer wr)
+		public void WorldLoaded(World world, WorldRenderer worldRenderer)
 		{
 			if (behavior == TechBunkerAmountType.None)
 				return;
 
-			var numBunkers = behavior == TechBunkerAmountType.Xtreme ? 1 : w.Players.Count(p => p.Playable);
+			var numBunkers = behavior == TechBunkerAmountType.One ? 1 : world.Players.Count(p => p.Playable);
 
-			if (behavior == TechBunkerAmountType.Krossfire)
+			if (behavior == TechBunkerAmountType.OnePerTwoPlayers)
 				numBunkers /= 2;
 
 			for (var i = 0; i < numBunkers && bunkers.Count > 0; i++)
 			{
-				var random = w.SharedRandom.Next(0, bunkers.Count);
-				w.CreateActor(true, bunkers[random]);
+				var random = world.SharedRandom.Next(0, bunkers.Count);
+				world.CreateActor(true, bunkers[random]);
 				bunkers.RemoveAt(random);
 			}
 		}
