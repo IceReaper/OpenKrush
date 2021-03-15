@@ -17,6 +17,8 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 	[Desc("Selectable oilpatch oil amount in lobby.")]
 	public class OilAmountInfo : TraitInfo, ILobbyOptions
 	{
+		public const string Id = "OilAmount";
+
 		public readonly int[] OilAmounts = { 25000, 50000, 75000, 100000, -1 };
 		public readonly string[] OilAmountNames = { "Scarce", "Normal", "Abundant", "Maximum", "Infinite" };
 
@@ -29,14 +31,15 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 
 			var standard = OilAmounts[OilAmountNames.IndexOf("Normal")];
 			yield return new LobbyOption(
-				"oilpatches",
-				"Oilpatches",
+				Id,
+				"Amount",
 				"Amount of oil every oilpatch contains.",
 				true,
 				0,
 				new ReadOnlyDictionary<string, string>(values),
 				standard.ToString(),
-				false);
+				false,
+				OilpatchInfo.LobbyOptionsCategory);
 		}
 
 		public override object Create(ActorInitializer init) { return new OilAmount(this); }
@@ -55,7 +58,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 		void INotifyCreated.Created(Actor self)
 		{
 			var standard = info.OilAmounts[info.OilAmountNames.IndexOf("Normal")];
-			Amount = int.Parse(self.World.LobbyInfo.GlobalSettings.OptionOrDefault("oilpatches", standard.ToString()));
+			Amount = int.Parse(self.World.LobbyInfo.GlobalSettings.OptionOrDefault(OilAmountInfo.Id, standard.ToString()));
 		}
 	}
 }

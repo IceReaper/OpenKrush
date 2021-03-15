@@ -17,6 +17,8 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 	[Desc("Selectable oil burn behavior in lobby.")]
 	public class OilpatchBurnInfo : TraitInfo, ILobbyOptions
 	{
+		public const string Id = "OilBurn";
+
 		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(Ruleset rules)
 		{
 			var values = new Dictionary<string, string>();
@@ -25,14 +27,15 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 				values.Add(i.ToString(), $"{i}%");
 
 			yield return new LobbyOption(
-				"OilpatchBurn",
-				"Oil Burn",
-				"Percent amount of oil to burn when shot.",
+				Id,
+				"Burn",
+				"Percent amount of oil to burn when ignited.",
 				true,
 				0,
 				new ReadOnlyDictionary<string, string>(values),
 				"0",
-				false);
+				false,
+				OilpatchInfo.LobbyOptionsCategory);
 		}
 
 		public override object Create(ActorInitializer init) { return new OilpatchBurn(); }
@@ -44,7 +47,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 
 		void INotifyCreated.Created(Actor self)
 		{
-			Amount = int.Parse(self.World.LobbyInfo.GlobalSettings.OptionOrDefault("OilpatchBurn", "0"));
+			Amount = int.Parse(self.World.LobbyInfo.GlobalSettings.OptionOrDefault(OilpatchBurnInfo.Id, "0"));
 		}
 	}
 }
