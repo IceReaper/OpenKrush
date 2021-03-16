@@ -57,6 +57,7 @@ if [ ! -f "${TEMPLATE_ROOT}/${ENGINE_DIRECTORY}/Makefile" ]; then
 fi
 
 . "${TEMPLATE_ROOT}/${ENGINE_DIRECTORY}/packaging/functions.sh"
+. "${TEMPLATE_ROOT}/packaging/functions.sh"
 
 if [ ! -d "${OUTPUTDIR}" ]; then
 	echo "Output directory '${OUTPUTDIR}' does not exist.";
@@ -73,17 +74,9 @@ for f in ${PACKAGING_COPY_ENGINE_FILES}; do
 done
 
 echo "Building mod files"
-pushd "${TEMPLATE_ROOT}" > /dev/null
-make all
-popd > /dev/null
+install_mod_assemblies "${TEMPLATE_ROOT}" "${APPDIR}/usr/lib/openra" "linux-x64"
 
 cp -Lr "${TEMPLATE_ROOT}/mods/"* "${APPDIR}/usr/lib/openra/mods"
-
-for f in ${PACKAGING_COPY_MOD_BINARIES}; do
-	mkdir -p "${APPDIR}/usr/lib/openra/$(dirname "${f}")"
-	cp "${TEMPLATE_ROOT}/${ENGINE_DIRECTORY}/bin/${f}" "${APPDIR}/usr/lib/openra/${f}"
-	cp "${TEMPLATE_ROOT}/${ENGINE_DIRECTORY}/bin/${f/.dll/.deps.json}" "${APPDIR}/usr/lib/openra/${f/.dll/.deps.json}"
-done
 
 set_engine_version "${ENGINE_VERSION}" "${APPDIR}/usr/lib/openra"
 if [ "${PACKAGING_OVERWRITE_MOD_VERSION}" == "True" ]; then

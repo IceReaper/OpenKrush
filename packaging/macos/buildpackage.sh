@@ -63,6 +63,7 @@ if [ ! -f "${TEMPLATE_ROOT}/${ENGINE_DIRECTORY}/Makefile" ]; then
 fi
 
 . "${TEMPLATE_ROOT}/${ENGINE_DIRECTORY}/packaging/functions.sh"
+. "${TEMPLATE_ROOT}/packaging/functions.sh"
 
 # Import code signing certificate
 if [ -n "${MACOS_DEVELOPER_CERTIFICATE_BASE64}" ] && [ -n "${MACOS_DEVELOPER_CERTIFICATE_PASSWORD}" ] && [ -n "${MACOS_DEVELOPER_IDENTITY}" ]; then
@@ -147,17 +148,13 @@ build_platform() {
 	done
 
 	echo "Building mod files"
-	pushd "${TEMPLATE_ROOT}" > /dev/null
-	make all
-	popd > /dev/null
+	if [ "${PLATFORM}" = "compat" ]; then
+		install_mod_assemblies_mono "${TEMPLATE_ROOT}" "${LAUNCHER_ASSEMBLY_DIR}" "osx-x64" "${TEMPLATE_ROOT}/${ENGINE_DIRECTORY}"
+	else
+		install_mod_assemblies "${TEMPLATE_ROOT}" "${LAUNCHER_ASSEMBLY_DIR}" "osx-x64"
+	fi
 
 	cp -LR "${TEMPLATE_ROOT}mods/"* "${LAUNCHER_RESOURCES_DIR}/mods"
-
-	for f in ${PACKAGING_COPY_MOD_BINARIES}; do
-		mkdir -p "${LAUNCHER_RESOURCES_DIR}/$(dirname "${f}")"
-		cp "${TEMPLATE_ROOT}/${ENGINE_DIRECTORY}/bin/${f}" "${LAUNCHER_ASSEMBLY_DIR}/${f}"
-		cp "${TEMPLATE_ROOT}/${ENGINE_DIRECTORY}/bin/${f/.dll/.deps.json}" "${LAUNCHER_ASSEMBLY_DIR}/${f/.dll/.deps.json}"
-	done
 
 	set_engine_version "${ENGINE_VERSION}" "${LAUNCHER_RESOURCES_DIR}"
 	if [ "${PACKAGING_OVERWRITE_MOD_VERSION}" == "True" ]; then
