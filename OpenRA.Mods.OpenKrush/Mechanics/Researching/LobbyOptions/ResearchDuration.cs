@@ -11,55 +11,48 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
+namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.LobbyOptions
 {
 	using System.Collections.Generic;
 	using OpenRA.Traits;
 
 	[Desc("Selectable max tech level in lobby.")]
-	public class TechLevelInfo : TraitInfo, ILobbyOptions
+	public class ResearchDurationInfo : TraitInfo, ILobbyOptions
 	{
-		public const string Id = "TechLevel";
-
-		public readonly int TechLevels = 5;
+		public const string Id = "ResearchDuration";
 
 		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(Ruleset rules)
 		{
 			var values = new Dictionary<string, string>();
 
-			for (var i = 1; i <= TechLevels; i++)
-				values.Add(i.ToString(), i.ToString());
+			for (var i = 1; i <= 4; i++)
+				values.Add(i.ToString(), $"{i * 100}%");
 
 			yield return new LobbyOption(
-				TechLevelInfo.Id,
-				"Tech level",
-				"Maximum tech level.",
+				ResearchDurationInfo.Id,
+				"Duration",
+				"Research duration.",
 				true,
 				0,
 				new ReadOnlyDictionary<string, string>(values),
-				TechLevels.ToString(),
-				false);
+				"1",
+				false,
+				ResearchUtils.LobbyOptionsCategory);
 		}
 
 		public override object Create(ActorInitializer init)
 		{
-			return new TechLevel(this);
+			return new ResearchDuration();
 		}
 	}
 
-	public class TechLevel : INotifyCreated
+	public class ResearchDuration : INotifyCreated
 	{
-		private readonly TechLevelInfo info;
-		public int TechLevels { get; private set; }
-
-		public TechLevel(TechLevelInfo info)
-		{
-			this.info = info;
-		}
+		public int Duration { get; private set; }
 
 		void INotifyCreated.Created(Actor self)
 		{
-			TechLevels = int.Parse(self.World.LobbyInfo.GlobalSettings.OptionOrDefault(TechLevelInfo.Id, info.TechLevels.ToString()));
+			Duration = int.Parse(self.World.LobbyInfo.GlobalSettings.OptionOrDefault(ResearchDurationInfo.Id, "1"));
 		}
 	}
 }

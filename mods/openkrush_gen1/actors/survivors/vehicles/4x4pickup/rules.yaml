@@ -12,7 +12,7 @@ survivors_vehicle_4x4pickup:
 	Mobile:
 		Speed: 90
 		TurnSpeed: 32
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: survivors_vehicles
 		BuildDuration: 150
 		Level: 0

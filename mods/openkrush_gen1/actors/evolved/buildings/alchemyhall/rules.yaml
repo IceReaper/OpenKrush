@@ -11,7 +11,7 @@ evolved_building_alchemyhall:
 		HP: 3000
 	SaboteurConquerable:
 		Population: 1
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: evolved_buildings
 		BuildDuration: 500
 		BuildLimit: 1

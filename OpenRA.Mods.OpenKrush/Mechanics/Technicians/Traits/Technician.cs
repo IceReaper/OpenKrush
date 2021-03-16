@@ -16,7 +16,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Traits
 	using System.Collections.Generic;
 	using Activities;
 	using Bunkers.LobbyOptions;
-	using Bunkers.Traits;
 	using Common.Traits;
 	using OpenRA.Traits;
 	using Orders;

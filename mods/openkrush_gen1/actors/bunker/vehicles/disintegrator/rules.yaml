@@ -16,7 +16,7 @@ bunker_vehicles_disintegrator:
 		TurnSpeed: 32
 	Voiced:
 		VoiceSet: BunkerVoice
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Level: -1
 	MapEditorData:
 		Categories: Bunker

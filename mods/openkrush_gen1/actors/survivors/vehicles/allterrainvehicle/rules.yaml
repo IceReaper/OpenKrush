@@ -11,7 +11,7 @@ survivors_vehicle_allterrainvehicle:
 	Mobile:
 		Speed: 70
 		TurnSpeed: 32
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: survivors_vehicles
 		BuildDuration: 300
 		Level: 1

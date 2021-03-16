@@ -14,8 +14,11 @@
 namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 {
 	using System;
+	using System.Collections.Generic;
+	using System.Linq;
 	using Common.Traits;
 	using Common.Traits.Render;
+	using LobbyOptions;
 	using OpenRA.Graphics;
 	using OpenRA.Traits;
 
@@ -25,17 +28,17 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 		[Desc("Research sequence name to use.")]
 		public readonly string Sequence = "research";
 
-		[Desc("Initial tech level.")]
-		public readonly int Level = 0;
+		[Desc("Base duration of research.")]
+		public readonly int ResearchTimeBase = 400;
 
-		[Desc("Maximum tech level.")]
-		public readonly int MaxLevel = 5;
+		[Desc("Additional duration of research per tech level.")]
+		public readonly int ResearchTimeTechLevel = 300;
 
-		[Desc("Duration of research per level-up.")]
-		public readonly int[] ResearchTime = { 400, 700, 1000, 1250, 1500 };
+		[Desc("Base cost of research.")]
+		public readonly int ResearchCostBase = 250;
 
-		[Desc("Costs of research per level-up.")]
-		public readonly int[] ResearchCost = { 250, 500, 1000, 1500, 2000 };
+		[Desc("Additional cost of research per tech level.")]
+		public readonly int ResearchCostTechLevel = 500;
 
 		[Desc("Offset for the research sequence.")]
 		public readonly int2 Offset = int2.Zero;
@@ -46,15 +49,31 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 		}
 	}
 
-	public class Researchable : ConditionalTrait<ResearchableInfo>
+	public class Researchable : ConditionalTrait<ResearchableInfo>, INotifyAddedToWorld
 	{
+		private class Technology
+		{
+			public readonly string Id;
+			public readonly int Level;
+			public bool Researched;
+
+			public Technology(string id, int level)
+			{
+				Id = id;
+				Level = level;
+			}
+		}
+
 		private readonly ResearchableInfo info;
 		private readonly Actor self;
 
 		private readonly Animation overlay;
 		private readonly int researchSteps;
 
+		private Technology[] technologies;
 		public int Level;
+		public int MaxLevel;
+		public int LimitedLevels;
 		public Researches ResearchedBy;
 
 		public Researchable(ActorInitializer init, ResearchableInfo info)
@@ -62,10 +81,9 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 		{
 			this.info = info;
 			self = init.Self;
-			Level = info.Level;
 
-			var rs = self.Trait<RenderSprites>();
-			var body = self.Trait<BodyOrientation>();
+			var renderSprites = self.Trait<RenderSprites>();
+			var bodyOrientation = self.Trait<BodyOrientation>();
 
 			var hidden = new Func<bool>(() => ResearchedBy == null || !self.Owner.IsAlliedWith(self.World.LocalPlayer));
 
@@ -74,11 +92,12 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 
 			var anim = new AnimationWithOffset(
 				overlay,
-				() => body.LocalToWorld(new WVec(info.Offset.Y * -32, info.Offset.X * -32, 0).Rotate(body.QuantizeOrientation(self, self.Orientation))),
+				() => bodyOrientation.LocalToWorld(
+					new WVec(info.Offset.Y * -32, info.Offset.X * -32, 0).Rotate(bodyOrientation.QuantizeOrientation(self, self.Orientation))),
 				hidden,
 				p => RenderUtils.ZOffsetFromCenter(self, p, 1));
 
-			rs.Add(anim);
+			renderSprites.Add(anim);
 
 			while (overlay.HasSequence(info.Sequence + researchSteps))
 				researchSteps++;
@@ -104,6 +123,80 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 				return ResarchState.Researching;
 
 			return ResarchState.Available;
+		}
+
+		void INotifyAddedToWorld.AddedToWorld(Actor self)
+		{
+			var researchMode = self.World.WorldActor.Trait<ResearchMode>().Mode;
+			var techLimit = self.World.WorldActor.Trait<TechLimit>().Limit;
+
+			var techTrees = self.TraitsImplementing<IProvidesResearchables>();
+
+			var allTechnologies = new List<Technology>();
+
+			foreach (var techTree in techTrees)
+				allTechnologies.AddRange(
+					techTree.GetResearchables()
+						.Where(
+							entry =>
+							{
+								if (entry.Value <= techLimit)
+									return entry.Value >= 0;
+
+								if (researchMode == ResearchModeType.FullLevel)
+									LimitedLevels = Math.Max(entry.Value - techLimit, LimitedLevels);
+								else
+									LimitedLevels++;
+
+								return false;
+							})
+						.Select(entry => new Technology(entry.Key, entry.Value)));
+
+			if (!allTechnologies.Any())
+				return;
+
+			technologies = allTechnologies.OrderBy(technology => technology.Level).ToArray();
+
+			Level = technologies[0].Level;
+
+			foreach (var technology in technologies.Where(technology => technology.Level == Level))
+				technology.Researched = true;
+
+			if (researchMode == ResearchModeType.FullLevel)
+				MaxLevel = technologies[technologies.Length - 1].Level;
+			else
+			{
+				Level = 0;
+				MaxLevel = technologies.Count(technology => !technology.Researched);
+			}
+		}
+
+		public void Researched()
+		{
+			if (Level == MaxLevel)
+				return;
+
+			Level++;
+
+			var researchMode = self.World.WorldActor.Trait<ResearchMode>().Mode;
+
+			if (researchMode == ResearchModeType.SingleTech)
+				technologies.First(technology => technology.Researched == false).Researched = true;
+			else
+				foreach (var technology in technologies.Where(technology => technology.Level == Level))
+					technology.Researched = true;
+		}
+
+		public bool IsResearched(string id)
+		{
+			var technology = technologies.FirstOrDefault(t => t.Id == id);
+
+			return technology != null && technology.Researched;
+		}
+
+		public int NextTechLevel()
+		{
+			return technologies.FirstOrDefault(technology => !technology.Researched)?.Level ?? 0;
 		}
 	}
 }

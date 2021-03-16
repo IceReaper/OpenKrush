@@ -10,7 +10,7 @@ survivors_vehicle_flameatv:
 	Mobile:
 		Speed: 60
 		TurnSpeed: 32
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: survivors_vehicles
 		BuildDuration: 450
 		Level: 2

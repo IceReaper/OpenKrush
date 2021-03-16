@@ -12,7 +12,7 @@ survivors_infantry_rifleman:
 		Speed: 50
 	RevealsShroud:
 		Range: 5c0
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: survivors_infantry
 		BuildDuration: 75
 		Level: 0

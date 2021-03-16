@@ -9,7 +9,7 @@ survivors_vehicle_oiltanker:
 	Mobile:
 		Speed: 45
 		TurnSpeed: 32
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: survivors_vehicles
 		BuildDuration: 600
 		Level: 2

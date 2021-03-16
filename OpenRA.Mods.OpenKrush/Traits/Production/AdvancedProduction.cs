@@ -15,8 +15,9 @@ namespace OpenRA.Mods.OpenKrush.Traits.Production
 {
 	using System;
 	using Common.Traits;
+	using Mechanics.Researching.Traits;
 
-	public class AdvancedProductionInfo : ProductionInfo
+	public class AdvancedProductionInfo : ResearchableProductionInfo
 	{
 		public readonly int MaximumDistance = 3;
 
@@ -26,7 +27,7 @@ namespace OpenRA.Mods.OpenKrush.Traits.Production
 		}
 	}
 
-	public class AdvancedProduction : Production
+	public class AdvancedProduction : ResearchableProduction
 	{
 		private AdvancedProductionInfo info;
 

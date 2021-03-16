@@ -8,7 +8,7 @@ evolved_building_windmill:
 		Cost: 750
 	Health:
 		HP: 2000
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: evolved_buildings
 		BuildDuration: 750
 		Level: 3

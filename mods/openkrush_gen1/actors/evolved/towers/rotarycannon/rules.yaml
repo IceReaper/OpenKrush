@@ -8,7 +8,7 @@ evolved_tower_rotarycannon:
 		Cost: 2500
 	Health:
 		HP: 2500
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: evolved_towers
 		BuildDuration: 1200
 		Level: 4

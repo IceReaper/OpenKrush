@@ -11,7 +11,7 @@ evolved_building_beastforge:
 		Cost: 1500
 	Health:
 		HP: 4000
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: evolved_buildings
 		BuildDuration: 1000
 	SaboteurConquerable:

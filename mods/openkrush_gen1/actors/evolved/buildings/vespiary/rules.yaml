@@ -7,7 +7,7 @@ evolved_building_vespiary:
 		Cost: 2500
 	Health:
 		HP: 5000
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: evolved_buildings
 		BuildDuration: 1500
 		BuildLimit: 1

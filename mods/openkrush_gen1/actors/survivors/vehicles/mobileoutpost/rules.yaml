@@ -9,7 +9,7 @@ survivors_vehicle_mobileoutpost:
 	Mobile:
 		Speed: 40
 		TurnSpeed: 20
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: survivors_vehicles
 		BuildDuration: 1000
 		Level: 3

@@ -10,7 +10,7 @@ bunker_vehicles_sentineldroid:
 		TurnSpeed: 32
 	Voiced:
 		VoiceSet: BunkerVoice
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Level: -1
 	MapEditorData:
 		Categories: Bunker

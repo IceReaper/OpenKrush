@@ -11,7 +11,7 @@ survivors_infantry_swat:
 		Speed: 50
 	RevealsShroud:
 		Range: 5c0
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: survivors_infantry
 		BuildDuration: 100
 		Level: 1

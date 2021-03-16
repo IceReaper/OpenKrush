@@ -13,7 +13,7 @@ survivors_infantry_saboteur:
 		Speed: 60
 	RevealsShroud:
 		Range: 5c0
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: survivors_infantry
 		BuildDuration: 150
 		Level: 1

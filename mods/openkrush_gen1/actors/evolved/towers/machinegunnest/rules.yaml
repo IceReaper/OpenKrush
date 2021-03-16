@@ -8,7 +8,7 @@ evolved_tower_machinegunnest:
 		Cost: 750
 	Health:
 		HP: 1500
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: evolved_towers
 		BuildDuration: 500
 		Level: 1

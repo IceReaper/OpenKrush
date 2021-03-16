@@ -12,7 +12,7 @@ survivors_infantry_sniper:
 		Speed: 50
 	RevealsShroud:
 		Range: 7c0
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: survivors_infantry
 		BuildDuration: 300
 		Level: 5

@@ -13,16 +13,20 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits.Actions
 {
+	using System.Collections.Generic;
 	using Common.Traits;
 	using Dockables;
 	using OpenRA.Traits;
 	using Primitives;
+	using Researching;
 	using Researching.Traits;
 
 	// TODO implement cost per repair
 	[Desc("RepairBay implementation.")]
 	public class RepairsVehiclesInfo : DockActionInfo, Requires<ResearchableInfo>
 	{
+		public const string Prefix = "REPAIRSVEHICLES::";
+
 		[Desc("How many HP per tick should be repaired per tech level.")]
 		public readonly int[] Rates = { 10, 20, 30, 40 };
 
@@ -42,7 +46,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits.Actions
 		}
 	}
 
-	public class RepairsVehicles : DockAction, ITick
+	public class RepairsVehicles : DockAction, ITick, IProvidesResearchables
 	{
 		private readonly RepairsVehiclesInfo info;
 		private readonly Actor self;
@@ -92,6 +96,16 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits.Actions
 		{
 			if (token != Actor.InvalidConditionToken && self.World.WorldTick - 1 > lastRepairTick)
 				token = self.RevokeCondition(token);
+		}
+
+		public Dictionary<string, int> GetResearchables()
+		{
+			var technologies = new Dictionary<string, int>();
+
+			for (var i = 0; i < info.Rates.Length; i++)
+				technologies.Add(RepairsVehiclesInfo.Prefix + i, i);
+
+			return technologies;
 		}
 	}
 }

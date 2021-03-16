@@ -31,8 +31,8 @@ neutral_building_drillrig:
 	FrozenOnDeath:
 		Duration: 60
 	-GivesBuildableArea:
-	-AdvancedBuildable:
-	-Production:
+	-TechLevelBuildable:
+	-ResearchableProduction:
 	-SelfConstructing:
 	-DeconstructSellable:
 	ExplosionOnDamageTransition@Heavy:

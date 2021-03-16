@@ -13,7 +13,6 @@
 
 namespace OpenRA.Mods.OpenKrush.Graphics
 {
-	using System;
 	using Common.Traits;
 	using Mechanics.Oil;
 	using Mechanics.Researching.Traits;
@@ -34,8 +33,6 @@ namespace OpenRA.Mods.OpenKrush.Graphics
 		private SaboteurConquerableInfo saboteursInfo;
 		private IHaveOil oil;
 		private Researchable researchable;
-		private ResearchableInfo researchableInfo;
-		private TechLevel techLevel;
 		private Veterancy veteran;
 		private VeterancyInfo veteranInfo;
 
@@ -51,8 +48,6 @@ namespace OpenRA.Mods.OpenKrush.Graphics
 			saboteursInfo = actor.Info.TraitInfoOrDefault<SaboteurConquerableInfo>();
 			oil = actor.TraitOrDefault<IHaveOil>();
 			researchable = isAlly ? actor.TraitOrDefault<Researchable>() : null;
-			researchableInfo = actor.Info.TraitInfoOrDefault<ResearchableInfo>();
-			techLevel = actor.World.WorldActor.Trait<TechLevel>();
 			veteran = actor.TraitOrDefault<Veterancy>();
 			veteranInfo = actor.Info.TraitInfoOrDefault<VeterancyInfo>();
 		}
@@ -183,10 +178,11 @@ namespace OpenRA.Mods.OpenKrush.Graphics
 				current++;
 			}
 
-			if (researchable != null)
+			if (researchable != null && researchable.MaxLevel > 0)
 			{
-				var progress = (width - 4) * researchable.Level / researchableInfo.MaxLevel;
-				var unavailable = (width - 4) * Math.Max(0, researchableInfo.MaxLevel - techLevel.TechLevels) / researchableInfo.MaxLevel;
+				var segments = researchable.MaxLevel + researchable.LimitedLevels;
+				var progress = (width - 4) * researchable.Level / segments;
+				var unavailable = (width - 4) * researchable.LimitedLevels / segments;
 
 				DrawRect(wr, bounds, 2, -height - 2 + current * thickness, width - 4, 1, Color.FromArgb(255, 206, 206, 206));
 				DrawRect(wr, bounds, 2, -height - 1 + current * thickness, width - 4, thickness - 2, Color.FromArgb(255, 49, 49, 49));
@@ -196,11 +192,11 @@ namespace OpenRA.Mods.OpenKrush.Graphics
 
 				DrawRect(wr, bounds, width - 2 - unavailable, -height - 2 + current * thickness, unavailable, thickness, Color.FromArgb(255, 16, 16, 16));
 
-				for (var i = 1; i < researchableInfo.MaxLevel; i++)
+				for (var i = 1; i < segments; i++)
 					DrawRect(
 						wr,
 						bounds,
-						2 + (width - 4) * i / researchableInfo.MaxLevel,
+						2 + (width - 4) * i / segments,
 						-height - 2 + current * thickness,
 						1,
 						thickness - 1,

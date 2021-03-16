@@ -13,7 +13,7 @@ evolved_infantry_vandal:
 		Speed: 60
 	RevealsShroud:
 		Range: 5c0
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: evolved_infantry
 		BuildDuration: 150
 		Level: 1

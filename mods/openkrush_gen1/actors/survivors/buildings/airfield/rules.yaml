@@ -7,7 +7,7 @@ survivors_building_airfield:
 		Cost: 2500
 	Health:
 		HP: 5000
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: survivors_buildings
 		BuildDuration: 1500
 		BuildLimit: 1

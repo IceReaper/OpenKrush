@@ -6,10 +6,10 @@ survivors_wall_barricade:
 		Cost: 200
 	Health:
 		HP: 2500
-	AdvancedBuildable:
+	TechLevelBuildable:
 		BuildDuration: 150
 		Level: 2
 	WithWallSpriteBody:
 		Type: survivors_wall_barricade
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: survivors_walls

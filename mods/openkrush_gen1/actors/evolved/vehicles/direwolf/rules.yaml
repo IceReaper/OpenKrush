@@ -12,7 +12,7 @@ evolved_vehicle_direwolf:
 	Mobile:
 		Speed: 115
 		TurnSpeed: 164
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: evolved_beasts
 		BuildDuration: 150
 		Level: 0

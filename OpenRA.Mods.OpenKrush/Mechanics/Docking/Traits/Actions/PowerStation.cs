@@ -13,14 +13,18 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits.Actions
 {
+	using System.Collections.Generic;
 	using Common.Traits;
 	using Oil.Traits;
 	using OpenRA.Traits;
+	using Researching;
 	using Researching.Traits;
 
 	[Desc("PowerStation implementation.")]
 	public class PowerStationInfo : DockActionInfo, Requires<ResearchableInfo>
 	{
+		public const string Prefix = "POWERSTATION::";
+
 		[Desc("How many oil per tick should be pumped.")]
 		public readonly int Amount = 20;
 
@@ -36,7 +40,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits.Actions
 		}
 	}
 
-	public class PowerStation : DockAction
+	public class PowerStation : DockAction, IProvidesResearchables
 	{
 		private readonly PowerStationInfo info;
 		private readonly Actor self;
@@ -74,6 +78,16 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits.Actions
 				self.Owner.PlayerActor.Trait<PlayerResources>().GiveCash(tanker.Pull(info.Amount) + info.Additional[researchable.Level]);
 
 			return tanker.Current == 0;
+		}
+
+		public Dictionary<string, int> GetResearchables()
+		{
+			var technologies = new Dictionary<string, int>();
+
+			for (var i = 0; i < info.Additional.Length; i++)
+				technologies.Add(PowerStationInfo.Prefix + i, i);
+
+			return technologies;
 		}
 	}
 }

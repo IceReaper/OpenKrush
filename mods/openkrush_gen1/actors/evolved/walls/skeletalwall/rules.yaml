@@ -6,10 +6,10 @@ evolved_wall_skeletalwall:
 		Cost: 200
 	Health:
 		HP: 2500
-	AdvancedBuildable:
+	TechLevelBuildable:
 		BuildDuration: 150
 		Level: 2
 	WithWallSpriteBody:
 		Type: evolved_wall_skeletalwall
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: evolved_walls

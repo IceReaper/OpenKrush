@@ -15,6 +15,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 {
 	using System.Linq;
 	using Common.Widgets;
+	using Mechanics.Researching;
 	using Mechanics.Researching.Orders;
 	using Mechanics.Researching.Traits;
 	using OpenRA.Traits;
@@ -109,7 +110,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 
 							return researchable != null
 								&& !researchable.IsTraitDisabled
-								&& researchable.Level < researchable.Info.MaxLevel
+								&& researchable.Level < researchable.MaxLevel
 								&& researchable.ResearchedBy == null;
 						})
 					.ToArray();

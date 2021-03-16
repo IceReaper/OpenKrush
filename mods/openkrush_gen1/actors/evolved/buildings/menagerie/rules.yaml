@@ -8,7 +8,7 @@ evolved_building_menagerie:
 		Cost: 500
 	Health:
 		HP: 3000
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: evolved_buildings
 		BuildDuration: 750
 		Level: 1
@@ -25,7 +25,6 @@ evolved_building_menagerie:
 	Selectable:
 		Bounds: 80, 64, -8, -32
 	Researchable:
-		MaxLevel: 3
 		Offset: 5,-125
 	AdvancedSelectionDecorations:
 		Offset: 1,-27

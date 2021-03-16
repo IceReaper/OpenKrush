@@ -5,5 +5,5 @@ colorpicker:
 	RenderSprites:
 		Image: bunker_vehicles_plasmatank
 		Palette: colorpicker
-	-AdvancedBuildable:
+	-TechLevelBuildable:
 	-MapEditorData:

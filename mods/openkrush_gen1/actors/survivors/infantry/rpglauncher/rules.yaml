@@ -11,7 +11,7 @@ survivors_infantry_rpglauncher:
 		Speed: 50
 	RevealsShroud:
 		Range: 5c0
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: survivors_infantry
 		BuildDuration: 200
 		Level: 4

@@ -9,7 +9,7 @@ survivors_building_barracks:
 		Cost: 500
 	Health:
 		HP: 3000
-	AdvancedBuildable:
+	TechLevelBuildable:
 		BuildDuration: 500
 		Prerequisites: survivors_buildings
 	SaboteurConquerable:

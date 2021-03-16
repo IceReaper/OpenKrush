@@ -47,5 +47,5 @@ survivors.colorpicker:
 	RenderSprites:
 		Image: survivors_vehicle_oiltanker
 		Palette: colorpicker
-	-AdvancedBuildable:
+	-TechLevelBuildable:
 	-MapEditorData:

@@ -60,17 +60,17 @@ namespace OpenRA.Mods.OpenKrush.Traits.Production
 						&& buildable.BuildLimit <= Actor.World.ActorsHavingTrait<Buildable>().Count(a => a.Info.Name == prod.Name && a.Owner == Actor.Owner))
 						return false;
 
-					return ProducerHasRequirements(buildable);
+					return ProducerHasRequirements(prod, buildable);
 				});
 		}
 
-		protected virtual bool ProducerHasRequirements(BuildableInfo buildable)
+		protected virtual bool ProducerHasRequirements(ActorInfo prod, BuildableInfo buildable)
 		{
 			if (!Actor.Info.TraitInfos<ProvidesPrerequisiteInfo>()
 				.Any(providesPrerequisite => buildable.Prerequisites.Contains(providesPrerequisite.Prerequisite)))
 				return false;
 
-			var advancedBuildable = buildable as AdvancedBuildableInfo;
+			var advancedBuildable = buildable as TechLevelBuildableInfo;
 
 			if (advancedBuildable == null)
 				return true;
@@ -80,7 +80,7 @@ namespace OpenRA.Mods.OpenKrush.Traits.Production
 
 			var researchable = actor.TraitOrDefault<Researchable>();
 
-			return advancedBuildable.Level == 0 || (researchable != null && advancedBuildable.Level <= researchable.Level);
+			return researchable.IsResearched(TechLevelBuildableInfo.Prefix + prod.Name);
 		}
 	}
 }

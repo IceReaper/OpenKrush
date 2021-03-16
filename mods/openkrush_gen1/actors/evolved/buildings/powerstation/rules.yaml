@@ -9,7 +9,7 @@ evolved_building_powerstation:
 		Cost: 1500
 	Health:
 		HP: 4000
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: evolved_buildings
 		BuildDuration: 850
 		BuildLimit: 8

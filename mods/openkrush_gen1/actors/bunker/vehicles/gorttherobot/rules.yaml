@@ -12,7 +12,7 @@ bunker_vehicles_gorttherobot:
 		TurnSpeed: 32
 	Voiced:
 		VoiceSet: bunker_vehicle_gorttherobot
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Level: -1
 	MapEditorData:
 		Categories: Bunker

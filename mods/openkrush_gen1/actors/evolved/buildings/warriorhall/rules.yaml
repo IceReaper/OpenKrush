@@ -8,7 +8,7 @@ evolved_building_warriorhall:
 		Cost: 500
 	Health:
 		HP: 3000
-	AdvancedBuildable:
+	TechLevelBuildable:
 		BuildDuration: 500
 		Prerequisites: evolved_buildings
 	SaboteurConquerable:

@@ -72,15 +72,15 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 			{
 				var researchable = e.Actor.Trait<Researchable>();
 
-				if (researchable.Level < e.Trait.Info.Level)
+				if (!researchable.IsResearched(ProvidesResearchableRadarInfo.Available))
 					continue;
 
 				hasRadar = true;
 
-				if (researchable.Level >= e.Trait.Info.AllyLevel)
+				if (researchable.IsResearched(ProvidesResearchableRadarInfo.ShowAllies))
 					showStances |= PlayerRelationship.Ally;
 
-				if (researchable.Level >= e.Trait.Info.EnemyLevel)
+				if (researchable.IsResearched(ProvidesResearchableRadarInfo.ShowEnemies))
 					showStances |= PlayerRelationship.Enemy;
 			}
 

@@ -11,7 +11,7 @@ survivors_vehicle_autocannontank:
 	Mobile:
 		Speed: 45
 		TurnSpeed: 32
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: survivors_vehicles
 		BuildDuration: 1000
 		Level: 5

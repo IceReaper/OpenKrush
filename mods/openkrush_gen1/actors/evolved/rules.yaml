@@ -47,5 +47,5 @@ evolved.colorpicker:
 	RenderSprites:
 		Image: evolved_vehicle_oiltanker
 		Palette: colorpicker
-	-AdvancedBuildable:
+	-TechLevelBuildable:
 	-MapEditorData:

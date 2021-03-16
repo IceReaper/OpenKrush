@@ -17,6 +17,8 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching
 
 	public static class ResearchUtils
 	{
+		public const string LobbyOptionsCategory = "Research";
+
 		public static ResearchAction GetAction(Actor self, Actor target)
 		{
 			if (target.Disposed)
@@ -51,12 +53,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching
 			if (researchesState == ResarchState.Researching)
 				return ResearchAction.None;
 
-			if (researchable.Level >= researchable.Info.MaxLevel)
-				return ResearchAction.None;
-
-			var techLevel = self.World.WorldActor.TraitOrDefault<TechLevel>();
-
-			if (techLevel != null && researchable.Level >= techLevel.TechLevels)
+			if (researchable.Level >= researchable.MaxLevel)
 				return ResearchAction.None;
 
 			return ResearchAction.Start;

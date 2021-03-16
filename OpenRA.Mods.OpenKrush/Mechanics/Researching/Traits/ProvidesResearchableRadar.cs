@@ -13,11 +13,17 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 {
+	using System.Collections.Generic;
 	using Common.Traits;
 
 	[Desc("This actor enables the radar minimap.")]
 	public class ProvidesResearchableRadarInfo : ConditionalTraitInfo
 	{
+		private const string Prefix = "RADAR::";
+		public const string Available = ProvidesResearchableRadarInfo.Prefix + "AVAILABLE";
+		public const string ShowAllies = ProvidesResearchableRadarInfo.Prefix + "ALLIES";
+		public const string ShowEnemies = ProvidesResearchableRadarInfo.Prefix + "ENEMIES";
+
 		[Desc("The tech level required to enable radar.")]
 		public readonly int Level = 1;
 
@@ -33,11 +39,21 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 		}
 	}
 
-	public class ProvidesResearchableRadar : ConditionalTrait<ProvidesResearchableRadarInfo>
+	public class ProvidesResearchableRadar : ConditionalTrait<ProvidesResearchableRadarInfo>, IProvidesResearchables
 	{
 		public ProvidesResearchableRadar(ProvidesResearchableRadarInfo info)
 			: base(info)
 		{
+		}
+
+		public Dictionary<string, int> GetResearchables()
+		{
+			return new Dictionary<string, int>
+			{
+				{ ProvidesResearchableRadarInfo.Available, Info.Level },
+				{ ProvidesResearchableRadarInfo.ShowAllies, Info.AllyLevel },
+				{ ProvidesResearchableRadarInfo.ShowEnemies, Info.EnemyLevel }
+			};
 		}
 	}
 }

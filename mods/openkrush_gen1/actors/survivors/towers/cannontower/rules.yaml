@@ -7,7 +7,7 @@ survivors_tower_cannontower:
 		Cost: 2500
 	Health:
 		HP: 2500
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: survivors_towers
 		BuildDuration: 1200
 		Level: 4

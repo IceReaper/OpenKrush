@@ -9,7 +9,7 @@ evolved_vehicle_clanhallwagon:
 	Mobile:
 		Speed: 40
 		TurnSpeed: 20
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: evolved_vehicles
 		BuildDuration: 1000
 		Level: 3

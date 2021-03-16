@@ -9,7 +9,7 @@ evolved_building_clanhall:
 		Cost: 1250
 	Health:
 		HP: 6000
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: evolved_buildings
 		BuildDuration: 1000
 		Level: -1

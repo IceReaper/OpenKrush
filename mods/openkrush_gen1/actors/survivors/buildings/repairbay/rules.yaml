@@ -8,7 +8,7 @@ survivors_building_repairbay:
 		Cost: 500
 	Health:
 		HP: 3000
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: survivors_buildings
 		BuildDuration: 750
 		Level: 1
@@ -25,7 +25,6 @@ survivors_building_repairbay:
 	Selectable:
 		Bounds: 96, 96, 0, -32
 	Researchable:
-		MaxLevel: 3
 		Offset: 2,-131
 	AdvancedSelectionDecorations:
 		Offset: -4,-15

@@ -153,7 +153,7 @@
 	RevealsShroud:
 		Range: 5c0
 	# Making buildings actualy buildable.
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Queue: building
 		BuildDurationModifier: 100
 		BuildLimit: 4
@@ -162,7 +162,7 @@
 	MapEditorData:
 		Categories: Building
 	# Having at last one building, allows to build another HQ.
-	Production:
+	ResearchableProduction:
 		Produces: building
 		RequiresCondition: !selfconstructing && !deconstructing
 	# Should not be auto attacked.
@@ -189,7 +189,7 @@
 	Inherits@1: ^CoreConstruction
 	Inherits@2: ^CoreTurret
 	# Making towers actualy buildable.
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Queue: tower
 		BuildDurationModifier: 100
 		BuildLimit: 8
@@ -277,7 +277,7 @@
 	RevealsShroud:
 		Range: 1c0
 	# Make walls actually buildable.
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Queue: wall
 		BuildDurationModifier: 100
 		IconPalette:
@@ -326,7 +326,7 @@
 	MapEditorData:
 		Categories: Infantry
 	# Making infantry actualy buildable.
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Queue: infantry
 		BuildDurationModifier: 100
 		IconPalette:
@@ -374,7 +374,7 @@
 	MapEditorData:
 		Categories: Vehicle
 	# Making vehicles actualy buildable.
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Queue: vehicle
 		BuildDurationModifier: 100
 		IconPalette:
@@ -418,7 +418,7 @@
 		Offset: 43,128,0
 		ZOffset: -129
 	# Making aircraft actualy buildable.
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Queue: aircraft
 		BuildDurationModifier: 100
 		IconPalette:

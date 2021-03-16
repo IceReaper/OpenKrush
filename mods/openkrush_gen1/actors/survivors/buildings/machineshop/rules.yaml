@@ -9,7 +9,7 @@ survivors_building_machineshop:
 		Cost: 1500
 	Health:
 		HP: 4000
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: survivors_buildings
 		BuildDuration: 1000
 	SaboteurConquerable:

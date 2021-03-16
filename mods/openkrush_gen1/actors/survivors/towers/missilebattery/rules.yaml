@@ -7,7 +7,7 @@ survivors_tower_missilebattery:
 		Cost: 1500
 	Health:
 		HP: 2000
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: survivors_towers
 		BuildDuration: 850
 		Level: 3

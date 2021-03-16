@@ -118,8 +118,12 @@ World:
 	OilAmount:
 	# Oilpatch selectbox.
 	OilBurn:
-	# Techlevel selectbox.
-	TechLevel:
+	# TechLimit selectbox.
+	TechLimit:
+	# Research duration selectbox.
+	ResearchDuration:
+	# Research mode selectbox.
+	ResearchMode:
 	# TechBunker amount selectbox.
 	TechBunkerAmount:
 	# TechBunker contains selectbox.

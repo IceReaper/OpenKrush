@@ -22,6 +22,8 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 	[Desc("Research mechanism, attach to the actor which can research.")]
 	public class ResearchesInfo : ConditionalTraitInfo, Requires<ResearchableInfo>
 	{
+		public const string Prefix = "RESEARCH::";
+
 		[Desc("Cursor used when target actor is researchable.")]
 		public readonly string Cursor = "research";
 
@@ -46,7 +48,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 		}
 	}
 
-	public class Researches : ConditionalTrait<ResearchesInfo>, IIssueOrder, IResolveOrder, INotifyKilled, ITick
+	public class Researches : ConditionalTrait<ResearchesInfo>, IIssueOrder, IResolveOrder, INotifyKilled, ITick, IProvidesResearchables
 	{
 		private readonly ResearchesInfo info;
 		private readonly Actor self;
@@ -134,7 +136,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 			if (remainingTime == 0)
 			{
 				StopResearch(false);
-				researchable.Level++;
+				researchable.Researched();
 				Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", info.CompleteNotification, self.Owner.Faction.InternalName);
 			}
 			else
@@ -155,12 +157,15 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 				StopResearch(true);
 
 			Researching = target;
-			remainingCost = totalCost = researchable.Info.ResearchCost[researchable.Level] * info.ResearchRates[this.researchable.Level] / 100;
+
+			remainingCost = totalCost = researchable.Info.ResearchCostBase
+				+ researchable.Info.ResearchCostTechLevel * researchable.NextTechLevel() * info.ResearchRates[this.researchable.Level] / 100;
 
 			if (developerMode.FastBuild)
 				remainingTime = totalTime = 1;
 			else
-				remainingTime = totalTime = researchable.Info.ResearchTime[researchable.Level] * info.ResearchRates[this.researchable.Level] / 100;
+				remainingTime = totalTime = researchable.Info.ResearchTimeBase
+					+ researchable.Info.ResearchTimeTechLevel * researchable.NextTechLevel() * info.ResearchRates[this.researchable.Level] / 100;
 
 			researchable.ResearchedBy = this;
 			researchable.SetProgress(0);
@@ -191,6 +196,16 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 				return ResarchState.Researching;
 
 			return ResarchState.Available;
+		}
+
+		public Dictionary<string, int> GetResearchables()
+		{
+			var technologies = new Dictionary<string, int>();
+
+			for (var i = 0; i < info.ResearchRates.Length; i++)
+				technologies.Add(ResearchesInfo.Prefix + i, i);
+
+			return technologies;
 		}
 	}
 }

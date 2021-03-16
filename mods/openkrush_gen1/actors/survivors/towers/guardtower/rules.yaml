@@ -8,7 +8,7 @@ survivors_tower_guardtower:
 		Cost: 750
 	Health:
 		HP: 1500
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: survivors_towers
 		BuildDuration: 500
 		Level: 1

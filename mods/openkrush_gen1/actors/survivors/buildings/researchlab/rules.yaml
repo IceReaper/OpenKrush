@@ -9,7 +9,7 @@ survivors_building_researchlab:
 		Cost: 500
 	Health:
 		HP: 3000
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: survivors_buildings
 		BuildDuration: 500
 		BuildLimit: 1

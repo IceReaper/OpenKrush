@@ -38,24 +38,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Orders
 			else
 			{
 				foreach (var actor in world.ActorMap.GetActorsAt(cell))
-				{
-					foreach (var researchActor in researchActors)
-					{
-						var action = ResearchUtils.GetAction(researchActor, actor);
-
-						if (action == ResearchAction.None)
-							continue;
-
-						yield return new Order(ResearchOrderTargeter.Id, researchActor, Target.FromActor(actor), true);
-					}
-				}
-			}
-		}
-
-		public override string GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)
-		{
-			foreach (var actor in world.ActorMap.GetActorsAt(cell))
-			{
 				foreach (var researchActor in researchActors)
 				{
 					var action = ResearchUtils.GetAction(researchActor, actor);
@@ -63,14 +45,28 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Orders
 					if (action == ResearchAction.None)
 						continue;
 
-					var info = researchActor.Info.TraitInfo<ResearchesInfo>();
-
-					if (action == ResearchAction.Start)
-						return info.Cursor;
-
-					if (action == ResearchAction.Stop)
-						return info.BlockedCursor;
+					yield return new Order(ResearchOrderTargeter.Id, researchActor, Target.FromActor(actor), true);
 				}
+			}
+		}
+
+		public override string GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)
+		{
+			foreach (var actor in world.ActorMap.GetActorsAt(cell))
+			foreach (var researchActor in researchActors)
+			{
+				var action = ResearchUtils.GetAction(researchActor, actor);
+
+				if (action == ResearchAction.None)
+					continue;
+
+				var info = researchActor.Info.TraitInfo<ResearchesInfo>();
+
+				if (action == ResearchAction.Start)
+					return info.Cursor;
+
+				if (action == ResearchAction.Stop)
+					return info.BlockedCursor;
 			}
 
 			return null;

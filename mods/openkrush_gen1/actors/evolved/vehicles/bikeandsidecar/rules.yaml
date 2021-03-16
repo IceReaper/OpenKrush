@@ -12,7 +12,7 @@ evolved_vehicle_bikeandsidecar:
 	Mobile:
 		Speed: 90
 		TurnSpeed: 32
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: evolved_vehicles
 		BuildDuration: 150
 		Level: 0

@@ -12,7 +12,7 @@ survivors_vehicle_dirtbike:
 	Mobile:
 		Speed: 115
 		TurnSpeed: 164
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: survivors_vehicles
 		BuildDuration: 150
 		Level: 0

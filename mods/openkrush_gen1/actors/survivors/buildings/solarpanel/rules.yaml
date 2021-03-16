@@ -8,7 +8,7 @@ survivors_building_solarpanel:
 		Cost: 750
 	Health:
 		HP: 2000
-	AdvancedBuildable:
+	TechLevelBuildable:
 		Prerequisites: survivors_buildings
 		BuildDuration: 750
 		Level: 3

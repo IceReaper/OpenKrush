@@ -17,6 +17,7 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 	using System.Linq;
 	using Common.Traits;
 	using Mechanics.Docking.Traits.Actions;
+	using Mechanics.Researching;
 	using Mechanics.Researching.Orders;
 	using Mechanics.Researching.Traits;
 	using OpenRA.Traits;
@@ -71,7 +72,7 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 
 						return researchable != null
 							&& !researchable.IsTraitDisabled
-							&& researchable.Level < researchable.Info.MaxLevel
+							&& researchable.Level < researchable.MaxLevel
 							&& researchable.ResearchedBy == null;
 					})
 				.ToArray();

@@ -113,7 +113,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits
 			Queue.FindAll(i => i.Done).ForEach(i => Queue.Remove(i));
 		}
 
-		protected override bool ProducerHasRequirements(BuildableInfo buildable)
+		protected override bool ProducerHasRequirements(ActorInfo prod, BuildableInfo buildable)
 		{
 			var producers = Actor.World.ActorsWithTrait<Production>().Where(x => !x.Trait.IsTraitDisabled && x.Actor.Owner == Actor.Owner).Select(x => x.Actor);
 
@@ -124,15 +124,14 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits
 						.Any(providesPrerequisite => buildable.Prerequisites.Contains(providesPrerequisite.Prerequisite)))
 						return false;
 
-					var advancedBuildable = buildable as AdvancedBuildableInfo;
+					var advancedBuildable = buildable as TechLevelBuildableInfo;
 
 					if (advancedBuildable == null)
 						return true;
 
-					if (advancedBuildable.Level == -1)
-						return false;
+					var researchable = producer.Trait<Researchable>();
 
-					return advancedBuildable.Level == 0 || advancedBuildable.Level <= producer.Trait<Researchable>().Level;
+					return researchable.IsResearched(TechLevelBuildableInfo.Prefix + prod.Name);
 				});
 		}
 	}
