@@ -222,7 +222,3 @@ urban_buildings_55:
 urban_buildings_56:
 	idle: tilesets/urban/mapobjects/buildings/frames.png
 		Start: 55
-
-urban_buildings_57:
-	idle: tilesets/urban/mapobjects/buildings/frames.png
-		Start: 56
