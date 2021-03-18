@@ -342,10 +342,3 @@ urban_buildings_56:
 		Dimensions: 7,5
 		Footprint: =xxxxxx =xxxxxx ==xxxxx ==xxxxx ==xxxx=
 		LocalCenterOffset: 0,-3000,0
-
-urban_buildings_57:
-	Inherits: ^CoreDecoration
-	Building:
-		Dimensions: 8,6
-		Footprint: ==xxxxx= xxxxxxx= xxxxxxx= xxxxxxxx =xxxxxxx ==xxx===
-		LocalCenterOffset: 0,-4000,0
