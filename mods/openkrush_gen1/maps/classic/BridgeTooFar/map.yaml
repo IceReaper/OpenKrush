@@ -284,15 +284,6 @@ Actors:
 	Actor81: desert_objects_3
 		Owner: Neutral
 		Location: 60,44
-	Actor83: desert_objects_7
-		Owner: Neutral
-		Location: 47,43
-	Actor84: desert_objects_23
-		Owner: Neutral
-		Location: 51,42
-	Actor85: desert_objects_22
-		Owner: Neutral
-		Location: 53,41
 	Actor86: desert_objects_27
 		Owner: Neutral
 		Location: 52,38
@@ -440,3 +431,15 @@ Actors:
 	Actor142: desert_objects_8
 		Owner: Neutral
 		Location: 37,47
+	Actor143: desert_objects_28
+		Owner: Neutral
+		Location: 47,44
+	Actor144: desert_objects_7
+		Owner: Neutral
+		Location: 45,43
+	Actor145: desert_objects_23
+		Owner: Neutral
+		Location: 50,44
+	Actor146: desert_objects_22
+		Owner: Neutral
+		Location: 51,43
