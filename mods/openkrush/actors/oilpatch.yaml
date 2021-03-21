@@ -34,3 +34,6 @@ oilpatch:
 	# TODO: fix this!
 	#-BlocksProjectiles:
 	-TechnicianRepairable:
+	# This actor will be enforced to be owned by Neutral.
+	RequiresSpecificOwners:
+		ValidOwnerNames: Neutral
