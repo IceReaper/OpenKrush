@@ -11,7 +11,7 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.FileSystem
+namespace OpenRA.Mods.OpenKrush.Utils
 {
 	using System;
 	using System.IO;

@@ -16,6 +16,7 @@ namespace OpenRA.Mods.OpenKrush.FileFormats
 	using System.Linq;
 	using FileSystem;
 	using Primitives;
+	using Utils;
 
 	public class MobdRenderFlags
 	{

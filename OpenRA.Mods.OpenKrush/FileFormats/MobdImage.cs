@@ -16,6 +16,7 @@ namespace OpenRA.Mods.OpenKrush.FileFormats
 	using System;
 	using System.IO;
 	using FileSystem;
+	using Utils;
 
 	public class MobdImage
 	{
