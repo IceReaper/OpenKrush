@@ -299,9 +299,6 @@ Actors:
 	Actor79: urban_objects_12
 		Owner: Neutral
 		Location: 44,7
-	Actor80: urban_objects_3
-		Owner: Neutral
-		Location: 44,4
 	Actor81: urban_objects_32
 		Owner: Neutral
 		Location: 41,3
@@ -416,3 +413,6 @@ Actors:
 	Actor128: oilpatch
 		Owner: Neutral
 		Location: 86,5
+	Actor129: urban_objects_3
+		Owner: Neutral
+		Location: 43,4
