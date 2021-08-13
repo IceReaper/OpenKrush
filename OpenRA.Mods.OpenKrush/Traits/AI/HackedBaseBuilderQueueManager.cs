@@ -120,12 +120,12 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 
 		bool TickQueue(IBot bot, ProductionQueue queue)
 		{
-			if (queue.Actor.World.Actors.Any(
+			var botActors = queue.Actor.World.Actors.Where(actor => actor.Owner == queue.Actor.Owner).ToArray();
+
+			// Hack: Do not build anything if something is being build.
+			if (botActors.Any(
 				actor =>
 				{
-					if (actor.Owner != queue.Actor.Owner)
-						return false;
-
 					var buildable = actor.Info.TraitInfoOrDefault<BuildableInfo>();
 
 					if (buildable == null || !buildable.Queue.Contains(queue.Info.Type))
@@ -140,7 +140,16 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 				}))
 				return true;
 
-			var currentBuilding = queue.AllQueued().FirstOrDefault();
+			// Hack: Build base if not owning one, else do never build it.
+			// var currentBuilding = queue.AllQueued().FirstOrDefault();
+			var hasBase = botActors.Any(actor => actor.TraitOrDefault<BaseBuilding>() != null);
+			var currentBuilding = queue.AllQueued().FirstOrDefault(
+				item =>
+				{
+					var isBase = bot.Player.World.Map.Rules.Actors[item.Item].HasTraitInfo<BaseBuildingInfo>();
+
+					return hasBase != isBase;
+				});
 
 			// Waiting to build something
 			if (currentBuilding == null && failCount < baseBuilder.Info.MaximumFailedPlacementAttempts)
