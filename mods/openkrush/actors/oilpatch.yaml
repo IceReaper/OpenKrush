@@ -24,7 +24,7 @@ oilpatch:
 			TopLeft: -512, -512
 			BottomRight: 512, 512
 	Selectable:
-		Bounds: 32, 32, 0, 0
+		Bounds: 1024, 1024, 0, 0
 	# Oil has a healthbar when hovered, which shows the oil amount.
 	AdvancedSelectionDecorations:
 	# Not build or sellable.
