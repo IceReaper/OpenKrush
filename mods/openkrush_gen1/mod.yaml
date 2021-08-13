@@ -69,7 +69,7 @@ ChromeLayout:
 	common|chrome/ingame-infoobjectives.yaml
 	common|chrome/ingame-infostats.yaml
 	openkrush|chrome/ingame-menu.yaml
-	common|chrome/ingame-observer.yaml
+	openkrush|chrome/ingame-observer.yaml
 	openkrush|chrome/ingame-player.yaml
 	common|chrome/ingame-perf.yaml
 	common|chrome/ingame-debug.yaml
