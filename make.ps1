@@ -157,7 +157,7 @@ function CheckForUtility
 
 function CheckForDotnet
 {
-	if ((Get-Command "dotnet" -ErrorAction SilentlyContinue) -eq $null) 
+	if ((Get-Command "dotnet" -ErrorAction SilentlyContinue) -eq $null)
 	{
 		Write-Host "The 'dotnet' tool is required to compile OpenRA. Please install the .NET 5.0 SDK and try again. https://dotnet.microsoft.com/download/dotnet/5.0" -ForegroundColor Red
 		return 1

@@ -7,7 +7,7 @@
 #   make RUNTIME=mono
 #
 # to compile using system libraries for native dependencies, run:
-#   make [RUNTIME=dotnet] TARGETPLATFORM=unix-generic
+#   make [RUNTIME=net5] TARGETPLATFORM=unix-generic
 #
 # to remove the files created by compiling, run:
 #   make clean
@@ -19,10 +19,10 @@
 #   make check-scripts
 #
 # to check the engine and your mod dlls for StyleCop violations, run:
-#   make [RUNTIME=dotnet] check
+#   make [RUNTIME=net5] check
 #
 # to check your mod yaml for errors, run:
-#   make [RUNTIME=dotnet] test
+#   make [RUNTIME=net5] test
 #
 # the following are internal sdk helpers that are not intended to be run directly:
 #   make check-variables
@@ -53,7 +53,7 @@ MOD_SOLUTION_FILES = $(shell find . -maxdepth 1 -iname '*.sln' 2> /dev/null)
 MSBUILD = msbuild -verbosity:m -nologo
 DOTNET = dotnet
 
-RUNTIME ?= dotnet
+RUNTIME ?= net5
 
 ifndef TARGETPLATFORM
 UNAME_S := $(shell uname -s)
