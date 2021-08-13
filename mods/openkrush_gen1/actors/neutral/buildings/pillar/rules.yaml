@@ -15,7 +15,7 @@ neutral_building_pillar_a:
 		Type: Circle
 			Radius: 700
 	Selectable:
-		Bounds: 40, 40, 0, 0
+		Bounds: 1280, 1280, 0, 0
 	Explodes:
 		Weapon: dieWall
 		EmptyWeapon: dieWall

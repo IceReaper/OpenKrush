@@ -80,13 +80,13 @@ urban_buildings_14:
 	Inherits: ^CoreDecoration
 	Building:
 		Dimensions: 3,3
-		Footprint: === xxx =x= 
+		Footprint: === xxx =x=
 
 urban_buildings_15:
 	Inherits: ^CoreDecoration
 	Building:
 		Dimensions: 3,4
-		Footprint: === === xxx =x= 
+		Footprint: === === xxx =x=
 
 urban_buildings_16:
 	Inherits: ^CoreDecoration
@@ -333,7 +333,7 @@ urban_buildings_55:
 	Inherits: ^CoreDecoration
 	Building:
 		Dimensions: 18,5
-		Footprint: ========xxxxx==___ ===xxx==xxxxxx==__ ========xxxxxx==== ========xxxxxxx=== _______=========== 
+		Footprint: ========xxxxx==___ ===xxx==xxxxxx==__ ========xxxxxx==== ========xxxxxxx=== _______===========
 		LocalCenterOffset: 0,-2000,0
 
 urban_buildings_56:

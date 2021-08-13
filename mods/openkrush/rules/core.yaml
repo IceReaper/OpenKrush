@@ -47,7 +47,7 @@
 			Radius: 512
 	# In general all units can be selected by using its full cell / tile.
 	Selectable:
-		Bounds: 32, 32
+		Bounds: 1024, 1024
 		# Make the default priority higher, so units are prefered over constructions.
 		Priority: 20
 	# Units have a healthbar when selected or hovered.
@@ -208,7 +208,7 @@
 			BottomRight: 1024, 0
 		TargetableOffsets: 819,-512,0, 819,512,0
 	Selectable:
-		Bounds: 64, 64, 0, -16
+		Bounds: 2048, 2048, 0, -512
 	# Require other actor nearby which provides buildable area in order to place a tower.
 	RequiresBuildableArea:
 		AreaTypes: defence
@@ -254,7 +254,7 @@
 			TopLeft: -512, -512
 			BottomRight: 512, 512
 	Selectable:
-		Bounds: 32, 32, 0, 0
+		Bounds: 1024, 1024, 0, 0
 	# Walls do visualy connect with adjecent walls.
 	-WithSpriteBody:
 	WithWallSpriteBody:
@@ -315,7 +315,7 @@
 		TargetTypes: Ground, Infantry
 	# Calculated size for infantry to match shared cells.
 	Selectable:
-		Bounds: 18,20,0,-6
+		Bounds: 576,640,0,-192
 	# Infantry hitshape
 	HitShape:
 		Type: Circle
@@ -448,7 +448,7 @@
 ^CoreHeavyVehicle:
 	# Heavy vehicles occupy 2x2 cells
 	Selectable:
-		Bounds: 64,64
+		Bounds: 2048,2048
 	# 2x2 hitshape - TODO reimplement me after collision works. otherwise unit gets damage by nearby actors.
 	#HitShape:
 	#	Type: Circle

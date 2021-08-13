@@ -23,7 +23,7 @@ survivors_building_repairbay:
 			BottomRight: 1024, 0
 		TargetableOffsets: 1000,-1336,0, 819,-512,0, 819,512,0, 1800,-1000,0, 2300,-212,0, 2458,512,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
 	Selectable:
-		Bounds: 96, 96, 0, -32
+		Bounds: 3072, 3072, 0, -1024
 	Researchable:
 		Offset: 2,-131
 	AdvancedSelectionDecorations:

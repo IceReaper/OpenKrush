@@ -23,7 +23,7 @@ survivors_building_solarpanel:
 			BottomRight: 1024, 1024
 		TargetableOffsets: 300,-300,0, 300,300,0, -600,-300,0, -600,300,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
 	Selectable:
-		Bounds: 50, 50, 0, 0
+		Bounds: 1600, 1600, 0, 0
 	AdvancedSelectionDecorations:
 		Offset: 0,-25
 	CashTrickler:

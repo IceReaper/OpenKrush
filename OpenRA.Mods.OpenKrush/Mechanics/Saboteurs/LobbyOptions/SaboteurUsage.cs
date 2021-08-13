@@ -15,6 +15,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.LobbyOptions
 {
 	using System;
 	using System.Collections.Generic;
+	using System.Collections.ObjectModel;
 	using System.Linq;
 	using OpenRA.Traits;
 
@@ -27,14 +28,16 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.LobbyOptions
 	[Desc("What happens when a saboteur conquers a building.")]
 	public class SaboteurUsageInfo : TraitInfo, ILobbyOptions
 	{
+		public const string LobbyOptionsCategory = "saboteur";
+
 		public const string Id = "SaboteurUsage";
 		public const SaboteurUsageType Default = SaboteurUsageType.Conquer;
 
-		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(Ruleset rules)
+		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(MapPreview mapPreview)
 		{
 			yield return new LobbyOption(
 				SaboteurUsageInfo.Id,
-				"Saboteurs",
+				"Usage",
 				"What happens when a saboteur conquers a building.",
 				true,
 				0,
@@ -44,7 +47,8 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.LobbyOptions
 						{ SaboteurUsageType.Destroy, "Destroy" }, { SaboteurUsageType.Conquer, "Conquer" }
 					}.ToDictionary(e => e.Key.ToString(), e => e.Value)),
 				SaboteurUsageInfo.Default.ToString(),
-				false);
+				false,
+				SaboteurUsageInfo.LobbyOptionsCategory);
 		}
 
 		public override object Create(ActorInitializer init)

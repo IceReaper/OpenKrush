@@ -11,8 +11,8 @@ survivors_aircraft_bomber:
 		Speed: 200
 		TurnSpeed: 12
 	RevealsShroud:
-		Range: 5c0	
-		Type: CenterPosition	
+		Range: 5c0
+		Type: CenterPosition
 	OffsetsArmament:
 		MuzzlePalette:
 		Weapon: survivors_aircraft_bomber

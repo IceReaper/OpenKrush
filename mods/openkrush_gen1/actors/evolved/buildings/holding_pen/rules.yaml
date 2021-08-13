@@ -18,7 +18,7 @@ evolved_building_holding_pen:
 			BottomRight: 1024, 512
 		TargetableOffsets: 500,-600,0, 350,100,0, 1400,-512,0, 1300,100,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
 	Selectable:
-		Bounds: 96, 64, -16, -16
+		Bounds: 3072, 2048, -512, -512
 	AdvancedSelectionDecorations:
 		Offset: 19,-14
 	TechnicianRepairable:

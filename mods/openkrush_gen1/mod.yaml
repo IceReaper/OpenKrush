@@ -76,15 +76,15 @@ ChromeLayout:
 	common|chrome/ingame-debuginfo.yaml
 	common|chrome/ingame-infochat.yaml
 	openkrush|chrome/mainmenu.yaml
-	openkrush|chrome/mainmenu-prompts.yaml
+	common|chrome/mainmenu-prompts.yaml
 	common|chrome/settings.yaml
-	openkrush|chrome/settings-display.yaml
+	common|chrome/settings-display.yaml
 	common|chrome/settings-audio.yaml
 	common|chrome/settings-input.yaml
 	common|chrome/settings-hotkeys.yaml
 	common|chrome/settings-advanced.yaml
 	common|chrome/credits.yaml
-	openkrush|chrome/lobby.yaml
+	common|chrome/lobby.yaml
 	common|chrome/lobby-mappreview.yaml
 	common|chrome/lobby-players.yaml
 	common|chrome/lobby-options.yaml
@@ -104,7 +104,7 @@ ChromeLayout:
 	common|chrome/dropdowns.yaml
 	common|chrome/musicplayer.yaml
 	common|chrome/tooltips.yaml
-	openkrush|chrome/assetbrowser.yaml
+	common|chrome/assetbrowser.yaml
 	common|chrome/missionbrowser.yaml
 	common|chrome/confirmation-dialogs.yaml
 	common|chrome/editor.yaml
@@ -192,28 +192,25 @@ AssetBrowser:
 	SupportedExtensions: .wav, .mobd, .mapd, .blit, .soun, .son, .vbc
 
 GameSpeeds:
-	slower:
-		Name: Slower
-		Timestep: 50
-		OrderLatency: 3
-	default:
-		Name: Normal
-		Timestep: 40
-		OrderLatency: 3
-	fast:
-		Name: Fast
-		Timestep: 35
-		OrderLatency: 4
-	faster:
-		Name: Faster
-		Timestep: 30
-		OrderLatency: 4
-	fastest:
-		Name: Fastest
-		Timestep: 20
-		OrderLatency: 6
-
-ColorValidator:
-	HsvSaturationRange: 0, 1
-	HsvValueRange: 0, 1
-	TeamColorPresets: 429cef, de2121, ff8c00, c5a53a, 4aef42, 42efb5, 8c10a5, de008c, 42529c, ff8cad, 7b5221, ceced6, 4a4a5a, ffe652, d6a542
+	DefaultSpeed: default
+	Speeds:
+		slower:
+			Name: Slower
+			Timestep: 50
+			OrderLatency: 3
+		default:
+			Name: Normal
+			Timestep: 40
+			OrderLatency: 3
+		fast:
+			Name: Fast
+			Timestep: 35
+			OrderLatency: 4
+		faster:
+			Name: Faster
+			Timestep: 30
+			OrderLatency: 4
+		fastest:
+			Name: Fastest
+			Timestep: 20
+			OrderLatency: 6

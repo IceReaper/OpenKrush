@@ -27,7 +27,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 	[Desc("Tech bunker mechanism.")]
 	public class TechBunkerInfo : AdvancedProductionInfo, Requires<WithSpriteBodyInfo>, Requires<RenderSpritesInfo>
 	{
-		public const string LobbyOptionsCategory = "Tech Bunkers";
+		public const string LobbyOptionsCategory = "techbunker";
 
 		[ActorReference]
 		[Desc("Possible ejectable actors.")]

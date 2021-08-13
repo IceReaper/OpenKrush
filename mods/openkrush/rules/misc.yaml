@@ -114,16 +114,33 @@ World:
 	ScreenShaker:
 		MinMultiplier: -10,0
 		MaxMultiplier: 10,0
+	# Used to manage beacons.
+	RadarPings:
+	# Required for the color picker.
+	ColorPickerManager:
+		PreviewActor: colorpicker
+
+	LobbyOptionCategory@oilpatch:
+		Category: oilpatch
+		Title: Oil
 	# Oilpatch selectbox.
 	OilAmount:
 	# Oilpatch selectbox.
 	OilBurn:
+
+	LobbyOptionCategory@research:
+		Category: research
+		Title: Research
 	# TechLimit selectbox.
 	TechLimit:
 	# Research duration selectbox.
 	ResearchDuration:
 	# Research mode selectbox.
 	ResearchMode:
+
+	LobbyOptionCategory@techbunker:
+		Category: techbunker
+		Title: Tech Bunkers
 	# TechBunker amount selectbox.
 	TechBunkerAmount:
 	# TechBunker contains selectbox.
@@ -132,10 +149,12 @@ World:
 	TechBunkerUsage:
 	# TechBunker uses selectbox.
 	TechBunkerUses:
+
+	LobbyOptionCategory@saboteur:
+		Category: saboteur
+		Title: Saboteurs
 	# Saboteur usage selectbox.
 	SaboteurUsage:
-	# Used to manage beacons.
-	RadarPings:
 
 # Map editor specific world setup.
 EditorWorld:

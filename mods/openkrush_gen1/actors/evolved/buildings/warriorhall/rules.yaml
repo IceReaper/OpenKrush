@@ -24,7 +24,7 @@ evolved_building_warriorhall:
 			BottomRight: 1024, 656
 		TargetableOffsets: 0,-512,0, 0,512,0, 1438,-512,0, 1438,512,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
 	Selectable:
-		Bounds: 96, 64, -16, -16
+		Bounds: 3072, 2048, -512, -512
 	AdvancedSelectionDecorations:
 		Offset: 19,-10
 	Researchable:

@@ -24,7 +24,7 @@ evolved_building_powerstation:
 			BottomRight: 1024, 512
 		TargetableOffsets: 800,-512,0, 800,512,0, 1900,-300,0, 1900,800,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
 	Selectable:
-		Bounds: 160, 32, 0, -32
+		Bounds: 5120, 1024, 0, -1024
 	FreeActor:
 		Actor: evolved_vehicle_oiltanker
 		SpawnOffset: 1,1

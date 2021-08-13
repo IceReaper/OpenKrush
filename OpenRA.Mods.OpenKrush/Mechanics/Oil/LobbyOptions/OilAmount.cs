@@ -14,6 +14,7 @@
 namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.LobbyOptions
 {
 	using System.Collections.Generic;
+	using System.Collections.ObjectModel;
 	using OpenRA.Traits;
 	using Traits;
 
@@ -25,7 +26,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.LobbyOptions
 		public readonly int[] OilAmounts = { 25000, 50000, 75000, 100000, -1 };
 		public readonly string[] OilAmountNames = { "Scarce", "Normal", "Abundant", "Maximum", "Infinite" };
 
-		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(Ruleset rules)
+		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(MapPreview mapPreview)
 		{
 			var values = new Dictionary<string, string>();
 

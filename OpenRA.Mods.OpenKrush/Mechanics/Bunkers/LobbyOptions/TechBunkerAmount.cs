@@ -15,6 +15,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.LobbyOptions
 {
 	using System;
 	using System.Collections.Generic;
+	using System.Collections.ObjectModel;
 	using System.Linq;
 	using Common.Traits;
 	using OpenRA.Graphics;
@@ -38,7 +39,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.LobbyOptions
 		[Desc("The type of the bunker actor.")]
 		public readonly string ActorType = "bunker_techbunker";
 
-		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(Ruleset rules)
+		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(MapPreview mapPreview)
 		{
 			yield return new LobbyOption(
 				TechBunkerAmountInfo.Id,

@@ -15,7 +15,7 @@ neutral_building_hut_a:
 		Type: Circle
 			Radius: 1000
 	Selectable:
-		Bounds: 64, 64, 0, 0
+		Bounds: 2048, 2048, 0, 0
 	Explodes:
 		Weapon: dieWall
 		EmptyWeapon: dieWall

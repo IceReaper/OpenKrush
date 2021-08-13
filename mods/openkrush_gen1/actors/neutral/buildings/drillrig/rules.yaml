@@ -15,7 +15,7 @@ neutral_building_drillrig:
 			BottomRight: 1024, 2048
 		TargetableOffsets: -1000,-600,0, -1000,512,0, -2200,-512,0, -2000,512,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
 	Selectable:
-		Bounds: 70, 70, 0, 30
+		Bounds: 2240, 2240, 0, 960
 	AdvancedSelectionDecorations:
 		Offset: -5,-66
 	WithIdleOverlay:

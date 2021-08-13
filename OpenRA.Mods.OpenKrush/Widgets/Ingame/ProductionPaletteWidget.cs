@@ -220,9 +220,9 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 				var position = new int2(RenderBounds.X + ButtonWidget.Size / 4, RenderBounds.Y + ButtonWidget.Size / 4 + visibleIcons * ButtonWidget.Size);
 
 				sidebar.Buttons.PlayFetchIndex("button-small", () => 0);
-				WidgetUtils.DrawSHPCentered(sidebar.Buttons.Image, position, sidebar.IngameUi.Palette);
+				WidgetUtils.DrawSpriteCentered(sidebar.Buttons.Image, sidebar.IngameUi.Palette, position);
 				sidebar.Buttons.PlayFetchIndex("button-small-down", () => 0);
-				WidgetUtils.DrawSHPCentered(sidebar.Buttons.Image, position, sidebar.IngameUi.Palette);
+				WidgetUtils.DrawSpriteCentered(sidebar.Buttons.Image, sidebar.IngameUi.Palette, position);
 
 				if (scrollOffset + visibleIcons == buildableItems.Length)
 					WidgetUtils.FillRectWithColor(
@@ -230,9 +230,9 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 						Color.FromArgb(128, 0, 0, 0));
 
 				sidebar.Buttons.PlayFetchIndex("button-small", () => 0);
-				WidgetUtils.DrawSHPCentered(sidebar.Buttons.Image, position + new int2(ButtonWidget.Size / 2, 0), sidebar.IngameUi.Palette);
+				WidgetUtils.DrawSpriteCentered(sidebar.Buttons.Image, sidebar.IngameUi.Palette, position + new int2(ButtonWidget.Size / 2, 0));
 				sidebar.Buttons.PlayFetchIndex("button-small-up", () => 0);
-				WidgetUtils.DrawSHPCentered(sidebar.Buttons.Image, position + new int2(ButtonWidget.Size / 2, 0), sidebar.IngameUi.Palette);
+				WidgetUtils.DrawSpriteCentered(sidebar.Buttons.Image, sidebar.IngameUi.Palette, position + new int2(ButtonWidget.Size / 2, 0));
 
 				if (scrollOffset == 0)
 					WidgetUtils.FillRectWithColor(

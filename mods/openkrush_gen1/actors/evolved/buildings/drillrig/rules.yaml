@@ -24,7 +24,7 @@ evolved_building_drillrig:
 			BottomRight: 512, -312
 		TargetableOffsets: 820,0,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
 	Selectable:
-		Bounds: 64, 64, 0, -32
+		Bounds: 2048, 2048, 0, -1024
 	Dock:
 		Position: -1000,400,0
 	AdvancedSelectionDecorations:

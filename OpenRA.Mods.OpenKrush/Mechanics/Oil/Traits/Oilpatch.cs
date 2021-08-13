@@ -22,7 +22,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 	[Desc("Oilpatch implementation.")]
 	public class OilpatchInfo : TraitInfo, IRulesetLoaded, IHealthInfo
 	{
-		public const string LobbyOptionsCategory = "Oil";
+		public const string LobbyOptionsCategory = "oilpatch";
 
 		[Desc("How many oil will be burned per tick.")]
 		public readonly int BurnAmount = 5;

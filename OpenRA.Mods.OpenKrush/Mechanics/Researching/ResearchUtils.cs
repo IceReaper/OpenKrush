@@ -17,7 +17,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching
 
 	public static class ResearchUtils
 	{
-		public const string LobbyOptionsCategory = "Research";
+		public const string LobbyOptionsCategory = "research";
 
 		public static ResearchAction GetAction(Actor self, Actor target)
 		{

@@ -138,7 +138,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 		protected override void DrawContents()
 		{
 			sidebar.Buttons.PlayFetchIndex("aircraft", () => 0);
-			WidgetUtils.DrawSHPCentered(sidebar.Buttons.Image, center + new int2(0, Active ? 1 : 0), sidebar.IngameUi.Palette);
+			WidgetUtils.DrawSpriteCentered(sidebar.Buttons.Image, sidebar.IngameUi.Palette, center + new int2(0, Active ? 1 : 0));
 		}
 	}
 }

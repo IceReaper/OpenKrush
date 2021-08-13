@@ -24,7 +24,7 @@ survivors_building_powerstation:
 			BottomRight: 1024, 512
 		TargetableOffsets: 800,-800,0, 400,300,0, 2000,-600,0, 1600,450,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
 	Selectable:
-		Bounds: 80, 64, -8, -32
+		Bounds: 2560, 2048, -256, -1024
 	FreeActor:
 		Actor: survivors_vehicle_oiltanker
 		SpawnOffset: 1,2

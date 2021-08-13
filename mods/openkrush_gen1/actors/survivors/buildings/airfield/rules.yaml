@@ -23,7 +23,7 @@ survivors_building_airfield:
 			BottomRight: 1024, 1024
 		TargetableOffsets: -200,-512,0, -500,512,0, 819,-700,0, 700,300,0, 2300,-450,0, 2000,450,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
 	Selectable:
-		Bounds: 96, 96, 0, -16
+		Bounds: 3072, 3072, 0, -512
 	AdvancedAirstrikePower:
 		UnitType: survivors_aircraft_bomber
 		Description: Wilbur Bomber

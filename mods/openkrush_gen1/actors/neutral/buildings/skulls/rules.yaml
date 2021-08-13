@@ -14,7 +14,7 @@ neutral_building_skulls:
 		Type: Circle
 			Radius: 256
 	Selectable:
-		Bounds: 32, 32, 0, 0
+		Bounds: 1024, 1024, 0, 0
 	Explodes:
 		Weapon: breakWall
 		EmptyWeapon: breakWall

@@ -28,4 +28,4 @@ weapon_explosions:
 		Start: 192
 		Length: 16
 		Tick: 60
-		ZOffset: 2500	
+		ZOffset: 2500

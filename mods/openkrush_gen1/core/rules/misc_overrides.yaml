@@ -1,3 +1,12 @@
+World:
+	ColorPickerManager:
+		PreviewActor: colorpicker
+		FactionPreviewActors: # TODO this should not be here!
+			survivors: survivors.colorpicker
+			evolved: evolved.colorpicker
+		PresetHues: 0.5799615, 0, 0.09150327, 0.12829737, 0.32562622, 0.44412333, 0.80536914, 0.8948949, 0.63703704, 0.9521739, 0.09074075, 0.6666667, 0.6666667, 0.14258188, 0.111486495
+		PresetSaturations: 0.7238494, 0.8513514, 1, 0.70558375, 0.7238494, 0.7238494, 0.90303034, 1, 0.5769231, 0.45098037, 0.7317073, 0.037383176, 0.17777777, 0.6784314, 0.69158876
+
 EditorWorld:
 	EditorSelectionLayer:
 		Palette: openkrush

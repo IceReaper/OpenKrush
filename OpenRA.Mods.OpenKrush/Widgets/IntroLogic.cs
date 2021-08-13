@@ -40,7 +40,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets
 			this.world = world;
 			this.modData = modData;
 
-			widget.AddChild(player = new VbcPlayerWidget());
+			widget.AddChild(player = new VbcPlayerWidget(this.modData));
 
 			player.Bounds = new Rectangle(0, 0, Game.Renderer.Resolution.Width, Game.Renderer.Resolution.Height);
 

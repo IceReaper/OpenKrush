@@ -14,6 +14,7 @@
 namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.LobbyOptions
 {
 	using System.Collections.Generic;
+	using System.Collections.ObjectModel;
 	using OpenRA.Traits;
 
 	[Desc("Selectable max tech level in lobby.")]
@@ -21,7 +22,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.LobbyOptions
 	{
 		public const string Id = "ResearchDuration";
 
-		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(Ruleset rules)
+		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(MapPreview mapPreview)
 		{
 			var values = new Dictionary<string, string>();
 

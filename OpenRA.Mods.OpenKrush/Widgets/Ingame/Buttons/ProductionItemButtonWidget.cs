@@ -109,7 +109,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 					if (amount == -1)
 					{
 						sidebar.Font.PlayFetchIndex("production", () => 10);
-						WidgetUtils.DrawSHPCentered(sidebar.Font.Image, new int2(RenderBounds.X + 14 + 4, RenderBounds.Y + 40), sidebar.IngameUi.Palette);
+						WidgetUtils.DrawSpriteCentered(sidebar.Font.Image, sidebar.IngameUi.Palette, new int2(RenderBounds.X + 14 + 4, RenderBounds.Y + 40));
 					}
 					else if (amount > 1)
 					{
@@ -119,10 +119,10 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 						{
 							sidebar.Font.PlayFetchIndex("production", () => numberString[i] - 0x30);
 
-							WidgetUtils.DrawSHPCentered(
+							WidgetUtils.DrawSpriteCentered(
 								sidebar.Font.Image,
-								new int2(RenderBounds.X + 14 + i * 8, RenderBounds.Y + 40),
-								sidebar.IngameUi.Palette);
+								sidebar.IngameUi.Palette,
+								new int2(RenderBounds.X + 14 + i * 8, RenderBounds.Y + 40));
 						}
 					}
 				}
@@ -186,7 +186,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 				WidgetUtils.FillRectWithColor(RenderBounds, Color.FromArgb(25, 255, 255, 255));
 
 			if (image != null)
-				WidgetUtils.DrawSHPCentered(image, center + new int2(0, Active ? 1 : 0), sidebar.IngameUi.Palette);
+				WidgetUtils.DrawSpriteCentered(image, sidebar.IngameUi.Palette, center + new int2(0, Active ? 1 : 0));
 			else
 			{
 				actorPreviewWidget.Bounds = RenderBounds;

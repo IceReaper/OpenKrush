@@ -2,7 +2,7 @@
   "profiles": {
     "OpenKrush Gen 1": {
       "commandName": "Executable",
-      "executablePath": "../../engine/bin/OpenRA.exe",
+      "executablePath": "../../engine/bin/OpenRA.dll",
       "commandLineArgs": "Game.Mod=\"openkrush_gen1\" Engine.EngineDir=\"..\" Engine.ModSearchPaths=\"../../mods,../mods\""
     }
   }

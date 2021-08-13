@@ -14,13 +14,13 @@ bunker_techbunker:
 		SequenceUnlocked: unlocked
 	Exit:
 		SpawnOffset: 0c-700,-0c150,0
-		ExitCell: -1,1 
+		ExitCell: -1,1
 		Facing: 300
 	MapEditorData:
 		Categories: Bunker
 	-Selectable:
 	Interactable:
-		Bounds: 64, 64, 0, -16
+		Bounds: 2048, 2048, 0, -512
 	-SelfConstructing:
 	-DeconstructSellable:
 	-TechnicianRepairable:

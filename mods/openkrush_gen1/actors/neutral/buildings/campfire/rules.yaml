@@ -17,7 +17,7 @@ neutral_building_campfire:
 			BottomRight: 1024, 1024
 		TargetableOffsets: -700,500,0 # Y,X,Z
 	Selectable:
-		Bounds: 16, 16, 15, 20
+		Bounds: 512, 512, 480, 640
 	Explodes:
 		Weapon: breakWall
 		EmptyWeapon: breakWall

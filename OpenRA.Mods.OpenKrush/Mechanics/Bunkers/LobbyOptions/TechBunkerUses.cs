@@ -15,6 +15,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.LobbyOptions
 {
 	using System;
 	using System.Collections.Generic;
+	using System.Collections.ObjectModel;
 	using System.Linq;
 	using OpenRA.Traits;
 	using Traits;
@@ -31,7 +32,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.LobbyOptions
 		public const string Id = "TechBunkerUses";
 		public const TechBunkerUsesType Default = TechBunkerUsesType.Infinitely;
 
-		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(Ruleset rules)
+		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(MapPreview mapPreview)
 		{
 			yield return new LobbyOption(
 				TechBunkerUsesInfo.Id,

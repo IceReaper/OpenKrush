@@ -14,6 +14,7 @@
 namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.LobbyOptions
 {
 	using System.Collections.Generic;
+	using System.Collections.ObjectModel;
 	using OpenRA.Traits;
 	using Traits;
 
@@ -22,7 +23,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.LobbyOptions
 	{
 		public const string Id = "OilBurn";
 
-		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(Ruleset rules)
+		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(MapPreview mapPreview)
 		{
 			var values = new Dictionary<string, string>();
 

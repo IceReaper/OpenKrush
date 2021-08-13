@@ -102,7 +102,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 			for (var y = 0; y < Bounds.Height; y += ButtonWidget.Size)
 			{
 				Buttons.PlayFetchIndex("button", () => 0);
-				WidgetUtils.DrawSHPCentered(Buttons.Image, new float2(RenderBounds.X + ButtonWidget.Size / 2, y + ButtonWidget.Size / 2), IngameUi.Palette);
+				WidgetUtils.DrawSpriteCentered(Buttons.Image, IngameUi.Palette, new float2(RenderBounds.X + ButtonWidget.Size / 2, y + ButtonWidget.Size / 2));
 			}
 		}
 

@@ -60,7 +60,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 				sidebar.IngameUi.World.SetPauseState(true);
 
 			var widgetArgs = new WidgetArgs();
-			widgetArgs.Add("activePanel", IngameInfoPanel.AutoSelect);
+			widgetArgs.Add("initialPanel", IngameInfoPanel.AutoSelect);
 
 			widgetArgs.Add(
 				"onExit",
@@ -80,7 +80,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 		protected override void DrawContents()
 		{
 			sidebar.Buttons.PlayFetchIndex("options", () => 0);
-			WidgetUtils.DrawSHPCentered(sidebar.Buttons.Image, center + new int2(0, Active ? 1 : 0), sidebar.IngameUi.Palette);
+			WidgetUtils.DrawSpriteCentered(sidebar.Buttons.Image, sidebar.IngameUi.Palette, center + new int2(0, Active ? 1 : 0));
 		}
 	}
 }

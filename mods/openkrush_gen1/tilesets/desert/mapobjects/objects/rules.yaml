@@ -78,12 +78,12 @@ desert_objects_14:
 
 desert_objects_15:
 	Inherits: ^CoreDecoration
-	 Building:
+	Building:
 		Footprint: =
 
 desert_objects_16:
 	Inherits: ^CoreDecoration
-	 Building:
+	Building:
 		Footprint: =
 
 desert_objects_17:

@@ -1,27 +1,24 @@
 #region Copyright & License Information
-
 /*
- * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
- * This file is part of OpenKrush, which is free software. It is made
+ * Copyright 2007-2021 The OpenRA Developers (see AUTHORS)
+ * This file is part of OpenRA, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
-
 #endregion
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using OpenRA.Mods.Common;
+using OpenRA.Mods.Common.Traits;
+using OpenRA.Mods.Common.Traits.Render;
+using OpenRA.Traits;
 
 namespace OpenRA.Mods.OpenKrush.Traits.AI
 {
-	using System;
-	using System.Collections;
-	using System.Collections.Generic;
-	using System.Linq;
-	using Common;
-	using Common.Traits;
-	using Common.Traits.Render;
-	using OpenRA.Traits;
-
 	public class HackedBaseBuilderQueueManager
 	{
 		readonly string category;
@@ -31,6 +28,7 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 		readonly Player player;
 		readonly PowerManager playerPower;
 		readonly PlayerResources playerResources;
+		readonly IResourceLayer resourceLayer;
 
 		int waitTicks;
 		Actor[] playerBuildings;
@@ -40,28 +38,21 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 		int cachedBases;
 		int cachedBuildings;
 		int minimumExcessPower;
-		BitArray resourceTypeIndices;
 
 		WaterCheck waterState = WaterCheck.NotChecked;
 
-		public HackedBaseBuilderQueueManager(
-			HackedBaseBuilderBotModule baseBuilder,
-			string category,
-			Player p,
-			PowerManager pm,
-			PlayerResources pr,
-			BitArray resourceTypeIndices)
+		public HackedBaseBuilderQueueManager(HackedBaseBuilderBotModule baseBuilder, string category, Player p, PowerManager pm,
+			PlayerResources pr, IResourceLayer rl)
 		{
 			this.baseBuilder = baseBuilder;
 			world = p.World;
 			player = p;
 			playerPower = pm;
 			playerResources = pr;
+			resourceLayer = rl;
 			this.category = category;
 			failRetryTicks = baseBuilder.Info.StructureProductionResumeDelay;
 			minimumExcessPower = baseBuilder.Info.MinimumExcessPower;
-			this.resourceTypeIndices = resourceTypeIndices;
-
 			if (!baseBuilder.Info.NavalProductionTypes.Any())
 				waterState = WaterCheck.DontCheck;
 		}
@@ -110,16 +101,10 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 				return;
 
 			playerBuildings = world.ActorsHavingTrait<Building>().Where(a => a.Owner == player).ToArray();
-
-			var excessPowerBonus = baseBuilder.Info.ExcessPowerIncrement
-				* (playerBuildings.Count() / baseBuilder.Info.ExcessPowerIncreaseThreshold.Clamp(1, int.MaxValue));
-
-			minimumExcessPower = (baseBuilder.Info.MinimumExcessPower + excessPowerBonus).Clamp(
-				baseBuilder.Info.MinimumExcessPower,
-				baseBuilder.Info.MaximumExcessPower);
+			var excessPowerBonus = baseBuilder.Info.ExcessPowerIncrement * (playerBuildings.Count() / baseBuilder.Info.ExcessPowerIncreaseThreshold.Clamp(1, int.MaxValue));
+			minimumExcessPower = (baseBuilder.Info.MinimumExcessPower + excessPowerBonus).Clamp(baseBuilder.Info.MinimumExcessPower, baseBuilder.Info.MaximumExcessPower);
 
 			var active = false;
-
 			foreach (var queue in AIUtils.FindQueues(player, category))
 				if (TickQueue(bot, queue))
 					active = true;
@@ -129,8 +114,7 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 			var randomFactor = world.LocalRandom.Next(0, baseBuilder.Info.StructureProductionRandomBonusDelay);
 
 			// Needs to be at least 4 * OrderLatency because otherwise the AI frequently duplicates build orders (i.e. makes the same build decision twice)
-			waitTicks = active
-				? 4 * world.LobbyInfo.GlobalSettings.OrderLatency + baseBuilder.Info.StructureProductionActiveDelay + randomFactor
+			waitTicks = active ? 4 * world.OrderLatency + baseBuilder.Info.StructureProductionActiveDelay + randomFactor
 				: baseBuilder.Info.StructureProductionInactiveDelay + randomFactor;
 		}
 
@@ -162,7 +146,6 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 			if (currentBuilding == null && failCount < baseBuilder.Info.MaximumFailedPlacementAttempts)
 			{
 				var item = ChooseBuildingToBuild(queue);
-
 				if (item == null)
 					return false;
 
@@ -181,11 +164,10 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 				// Check if Building is a plug for other Building
 				var actorInfo = world.Map.Rules.Actors[currentBuilding.Item];
 				var plugInfo = actorInfo.TraitInfoOrDefault<PlugInfo>();
-
 				if (plugInfo != null)
 				{
-					var possibleBuilding = world.ActorsWithTrait<Pluggable>()
-						.FirstOrDefault(a => a.Actor.Owner == player && a.Trait.AcceptsPlug(a.Actor, plugInfo.Type));
+					var possibleBuilding = world.ActorsWithTrait<Pluggable>().FirstOrDefault(a =>
+						a.Actor.Owner == player && a.Trait.AcceptsPlug(a.Actor, plugInfo.Type));
 
 					if (possibleBuilding.Actor != null)
 					{
@@ -206,7 +188,7 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 
 				if (location == null)
 				{
-					AIUtils.BotDebug("{0} has nowhere to place {1}".F(player, currentBuilding.Item));
+					AIUtils.BotDebug($"{player} has nowhere to place {currentBuilding.Item}");
 					bot.QueueOrder(Order.CancelProduction(queue.Actor, currentBuilding.Item, 1));
 					failCount += failCount;
 
@@ -221,16 +203,15 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 				{
 					failCount = 0;
 
-					bot.QueueOrder(
-						new Order(orderString, player.PlayerActor, Target.FromCell(world, location.Value), false)
-						{
-							// Building to place
-							TargetString = currentBuilding.Item,
+					bot.QueueOrder(new Order(orderString, player.PlayerActor, Target.FromCell(world, location.Value), false)
+					{
+						// Building to place
+						TargetString = currentBuilding.Item,
 
-							// Actor ID to associate the placement with
-							ExtraData = queue.Actor.ActorID,
-							SuppressVisualFeedback = true
-						});
+						// Actor ID to associate the placement with
+						ExtraData = queue.Actor.ActorID,
+						SuppressVisualFeedback = true
+					});
 
 					return true;
 				}
@@ -241,18 +222,17 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 
 		ActorInfo GetProducibleBuilding(HashSet<string> actors, IEnumerable<ActorInfo> buildables, Func<ActorInfo, int> orderBy = null)
 		{
-			var available = buildables.Where(
-				actor =>
-				{
-					// Are we able to build this?
-					if (!actors.Contains(actor.Name))
-						return false;
+			var available = buildables.Where(actor =>
+			{
+				// Are we able to build this?
+				if (!actors.Contains(actor.Name))
+					return false;
 
-					if (!baseBuilder.Info.BuildingLimits.ContainsKey(actor.Name))
-						return true;
+				if (!baseBuilder.Info.BuildingLimits.ContainsKey(actor.Name))
+					return true;
 
-					return playerBuildings.Count(a => a.Info.Name == actor.Name) < baseBuilder.Info.BuildingLimits[actor.Name];
-				});
+				return playerBuildings.Count(a => a.Info.Name == actor.Name) < baseBuilder.Info.BuildingLimits[actor.Name];
+			});
 
 			if (orderBy != null)
 				return available.MaxByOrDefault(orderBy);
@@ -262,9 +242,8 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 
 		bool HasSufficientPowerForActor(ActorInfo actorInfo)
 		{
-			return playerPower == null
-				|| (actorInfo.TraitInfos<PowerInfo>().Where(i => i.EnabledByDefault).Sum(p => p.Amount) + playerPower.ExcessPower)
-				>= baseBuilder.Info.MinimumExcessPower;
+			return playerPower == null || (actorInfo.TraitInfos<PowerInfo>().Where(i => i.EnabledByDefault)
+				.Sum(p => p.Amount) + playerPower.ExcessPower) >= baseBuilder.Info.MinimumExcessPower;
 		}
 
 		ActorInfo ChooseBuildingToBuild(ProductionQueue queue)
@@ -272,9 +251,7 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 			var buildableThings = queue.BuildableItems();
 
 			// This gets used quite a bit, so let's cache it here
-			var power = GetProducibleBuilding(
-				baseBuilder.Info.PowerTypes,
-				buildableThings,
+			var power = GetProducibleBuilding(baseBuilder.Info.PowerTypes, buildableThings,
 				a => a.TraitInfos<PowerInfo>().Where(i => i.EnabledByDefault).Sum(p => p.Amount));
 
 			// First priority is to get out of a low power situation
@@ -283,7 +260,6 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 				if (power != null && power.TraitInfos<PowerInfo>().Where(i => i.EnabledByDefault).Sum(p => p.Amount) > 0)
 				{
 					AIUtils.BotDebug("{0} decided to build {1}: Priority override (low power)", queue.Actor.Owner, power.Name);
-
 					return power;
 				}
 			}
@@ -292,18 +268,15 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 			if (!baseBuilder.HasAdequateRefineryCount)
 			{
 				var refinery = GetProducibleBuilding(baseBuilder.Info.RefineryTypes, buildableThings);
-
 				if (refinery != null && HasSufficientPowerForActor(refinery))
 				{
 					AIUtils.BotDebug("{0} decided to build {1}: Priority override (refinery)", queue.Actor.Owner, refinery.Name);
-
 					return refinery;
 				}
 
 				if (power != null && refinery != null && !HasSufficientPowerForActor(refinery))
 				{
 					AIUtils.BotDebug("{0} decided to build {1}: Priority override (would be low power)", queue.Actor.Owner, power.Name);
-
 					return power;
 				}
 			}
@@ -312,46 +285,34 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 			if (baseBuilder.Info.NewProductionCashThreshold > 0 && playerResources.Resources > baseBuilder.Info.NewProductionCashThreshold)
 			{
 				var production = GetProducibleBuilding(baseBuilder.Info.ProductionTypes, buildableThings);
-
 				if (production != null && HasSufficientPowerForActor(production))
 				{
 					AIUtils.BotDebug("{0} decided to build {1}: Priority override (production)", queue.Actor.Owner, production.Name);
-
 					return production;
 				}
 
 				if (power != null && production != null && !HasSufficientPowerForActor(production))
 				{
 					AIUtils.BotDebug("{0} decided to build {1}: Priority override (would be low power)", queue.Actor.Owner, power.Name);
-
 					return power;
 				}
 			}
 
 			// Only consider building this if there is enough water inside the base perimeter and there are close enough adjacent buildings
-			if (waterState == WaterCheck.EnoughWater
-				&& baseBuilder.Info.NewProductionCashThreshold > 0
+			if (waterState == WaterCheck.EnoughWater && baseBuilder.Info.NewProductionCashThreshold > 0
 				&& playerResources.Resources > baseBuilder.Info.NewProductionCashThreshold
-				&& AIUtils.IsAreaAvailable<GivesBuildableArea>(
-					world,
-					player,
-					world.Map,
-					baseBuilder.Info.CheckForWaterRadius,
-					baseBuilder.Info.WaterTerrainTypes))
+				&& AIUtils.IsAreaAvailable<GivesBuildableArea>(world, player, world.Map, baseBuilder.Info.CheckForWaterRadius, baseBuilder.Info.WaterTerrainTypes))
 			{
 				var navalproduction = GetProducibleBuilding(baseBuilder.Info.NavalProductionTypes, buildableThings);
-
 				if (navalproduction != null && HasSufficientPowerForActor(navalproduction))
 				{
 					AIUtils.BotDebug("{0} decided to build {1}: Priority override (navalproduction)", queue.Actor.Owner, navalproduction.Name);
-
 					return navalproduction;
 				}
 
 				if (power != null && navalproduction != null && !HasSufficientPowerForActor(navalproduction))
 				{
 					AIUtils.BotDebug("{0} decided to build {1}: Priority override (would be low power)", queue.Actor.Owner, power.Name);
-
 					return power;
 				}
 			}
@@ -360,18 +321,15 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 			if (playerResources.Resources > 0.8 * playerResources.ResourceCapacity)
 			{
 				var silo = GetProducibleBuilding(baseBuilder.Info.SiloTypes, buildableThings);
-
 				if (silo != null && HasSufficientPowerForActor(silo))
 				{
 					AIUtils.BotDebug("{0} decided to build {1}: Priority override (silo)", queue.Actor.Owner, silo.Name);
-
 					return silo;
 				}
 
 				if (power != null && silo != null && !HasSufficientPowerForActor(silo))
 				{
 					AIUtils.BotDebug("{0} decided to build {1}: Priority override (would be low power)", queue.Actor.Owner, power.Name);
-
 					return power;
 				}
 			}
@@ -382,9 +340,9 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 				var name = frac.Key;
 
 				// Does this building have initial delay, if so have we passed it?
-				if (baseBuilder.Info.BuildingDelays != null
-					&& baseBuilder.Info.BuildingDelays.ContainsKey(name)
-					&& baseBuilder.Info.BuildingDelays[name] > world.WorldTick)
+				if (baseBuilder.Info.BuildingDelays != null &&
+					baseBuilder.Info.BuildingDelays.ContainsKey(name) &&
+					baseBuilder.Info.BuildingDelays[name] > world.WorldTick)
 					continue;
 
 				// Can we build this structure?
@@ -393,7 +351,6 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 
 				// Do we want to build this structure?
 				var count = playerBuildings.Count(a => a.Info.Name == name);
-
 				if (count * 100 > frac.Value * playerBuildings.Length)
 					continue;
 
@@ -405,17 +362,11 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 				// TODO: Extend this check to cover any naval structure, not just production.
 				if (baseBuilder.Info.NavalProductionTypes.Contains(name)
 					&& (waterState == WaterCheck.NotEnoughWater
-						|| !AIUtils.IsAreaAvailable<GivesBuildableArea>(
-							world,
-							player,
-							world.Map,
-							baseBuilder.Info.CheckForWaterRadius,
-							baseBuilder.Info.WaterTerrainTypes)))
+						|| !AIUtils.IsAreaAvailable<GivesBuildableArea>(world, player, world.Map, baseBuilder.Info.CheckForWaterRadius, baseBuilder.Info.WaterTerrainTypes)))
 					continue;
 
 				// Will this put us into low power?
 				var actor = world.Map.Rules.Actors[name];
-
 				if (playerPower != null && (playerPower.ExcessPower < minimumExcessPower || !HasSufficientPowerForActor(actor)))
 				{
 					// Try building a power plant instead
@@ -431,15 +382,8 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 				}
 
 				// Lets build this
-				AIUtils.BotDebug(
-					"{0} decided to build {1}: Desired is {2} ({3} / {4}); current is {5} / {4}",
-					queue.Actor.Owner,
-					name,
-					frac.Value,
-					frac.Value * playerBuildings.Length,
-					playerBuildings.Length,
-					count);
-
+				AIUtils.BotDebug("{0} decided to build {1}: Desired is {2} ({3} / {4}); current is {5} / {4}",
+					queue.Actor.Owner, name, frac.Value, frac.Value * playerBuildings.Length, playerBuildings.Length, count);
 				return actor;
 			}
 
@@ -452,7 +396,6 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 		{
 			var actorInfo = world.Map.Rules.Actors[actorType];
 			var bi = actorInfo.TraitInfoOrDefault<BuildingInfo>();
-
 			if (bi == null)
 				return null;
 
@@ -488,38 +431,34 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 				case BuildingType.Defense:
 
 					// Build near the closest enemy structure
-					var closestEnemy = world.ActorsHavingTrait<Building>()
-						.Where(a => !a.Disposed && player.RelationshipWith(a.Owner) == PlayerRelationship.Enemy)
+					var closestEnemy = world.ActorsHavingTrait<Building>().Where(a => !a.Disposed && player.RelationshipWith(a.Owner) == PlayerRelationship.Enemy)
 						.ClosestTo(world.Map.CenterOfCell(baseBuilder.DefenseCenter));
 
 					var targetCell = closestEnemy != null ? closestEnemy.Location : baseCenter;
-
 					return findPos(baseBuilder.DefenseCenter, targetCell, baseBuilder.Info.MinimumDefenseRadius, baseBuilder.Info.MaximumDefenseRadius);
 
 				case BuildingType.Refinery:
 
 					// Try and place the refinery near a resource field
-					var nearbyResources = world.Map.FindTilesInAnnulus(baseCenter, baseBuilder.Info.MinBaseRadius, baseBuilder.Info.MaxBaseRadius)
-						.Where(a => resourceTypeIndices.Get(world.Map.GetTerrainIndex(a)))
-						.Shuffle(world.LocalRandom)
-						.Take(baseBuilder.Info.MaxResourceCellsToCheck);
-
-					foreach (var r in nearbyResources)
+					if (resourceLayer != null)
 					{
-						var found = findPos(baseCenter, r, baseBuilder.Info.MinBaseRadius, baseBuilder.Info.MaxBaseRadius);
+						var nearbyResources = world.Map.FindTilesInAnnulus(baseCenter, baseBuilder.Info.MinBaseRadius, baseBuilder.Info.MaxBaseRadius)
+							.Where(a => resourceLayer.GetResource(a).Type != null)
+							.Shuffle(world.LocalRandom).Take(baseBuilder.Info.MaxResourceCellsToCheck);
 
-						if (found != null)
-							return found;
+						foreach (var r in nearbyResources)
+						{
+							var found = findPos(baseCenter, r, baseBuilder.Info.MinBaseRadius, baseBuilder.Info.MaxBaseRadius);
+							if (found != null)
+								return found;
+						}
 					}
 
 					// Try and find a free spot somewhere else in the base
 					return findPos(baseCenter, baseCenter, baseBuilder.Info.MinBaseRadius, baseBuilder.Info.MaxBaseRadius);
 
 				case BuildingType.Building:
-					return findPos(
-						baseCenter,
-						baseCenter,
-						baseBuilder.Info.MinBaseRadius,
+					return findPos(baseCenter, baseCenter, baseBuilder.Info.MinBaseRadius,
 						distanceToBaseIsImportant ? baseBuilder.Info.MaxBaseRadius : world.Map.Grid.MaximumTileSearchRange);
 			}
 

@@ -44,7 +44,8 @@ namespace OpenRA.Mods.OpenKrush.Widgets
 			}
 		}
 
-		public VbcPlayerWidget()
+		public VbcPlayerWidget(ModData modData)
+			: base(modData)
 		{
 			Visible = false;
 			Color = Color.Black;
@@ -125,10 +126,9 @@ namespace OpenRA.Mods.OpenKrush.Widgets
 
 			var scale = Math.Min(Bounds.Width / video.Width, Bounds.Height / video.Height);
 			var videoSize = new int2(video.Width * scale, video.Height * scale);
-			var sheetSize = new int2(videoSprite.Sheet.Size.Width * scale, videoSprite.Sheet.Size.Height * scale);
 			var position = new int2((Bounds.Width - videoSize.X) / 2, (Bounds.Height - videoSize.Y) / 2) + Bounds.Location;
 
-			Game.Renderer.RgbaSpriteRenderer.DrawSprite(videoSprite, position, sheetSize);
+			Game.Renderer.RgbaSpriteRenderer.DrawSprite(videoSprite, position, scale);
 		}
 	}
 }

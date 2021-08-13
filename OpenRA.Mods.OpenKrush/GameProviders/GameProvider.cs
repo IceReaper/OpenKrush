@@ -47,7 +47,7 @@ namespace OpenRA.Mods.OpenKrush.GameProviders
 			return true;
 		}
 
-		public static OpenRA.IReadOnlyDictionary<string, MusicInfo> BuildMusicDictionary()
+		public static IReadOnlyDictionary<string, MusicInfo> BuildMusicDictionary()
 		{
 			var result = new Dictionary<string, MusicInfo>();
 
@@ -58,19 +58,35 @@ namespace OpenRA.Mods.OpenKrush.GameProviders
 				result.Add(key, new MusicInfo(key, new MiniYaml(name, new List<MiniYamlNode> { new MiniYamlNode("Extension", extension) })));
 			}
 
-			return result.AsReadOnly();
+			return result;
 		}
 
 		public static string GetFile(string path, string file)
 		{
-			file = Directory.GetFiles(path).Select(Path.GetFileName).FirstOrDefault(d => d.Equals(file, StringComparison.OrdinalIgnoreCase));
+			try
+			{
+				file = Directory.GetFiles(path).Select(Path.GetFileName).FirstOrDefault(d => d.Equals(file, StringComparison.OrdinalIgnoreCase));
+			}
+			catch (Exception)
+			{
+				return null;
+			}
 
 			return file == null ? null : Path.Combine(path, file);
 		}
 
 		public static string GetDirectory(string path, string directory)
 		{
-			directory = Directory.GetDirectories(path).Select(Path.GetFileName).FirstOrDefault(d => d.Equals(directory, StringComparison.OrdinalIgnoreCase));
+			try
+			{
+				directory = Directory.GetDirectories(path)
+					.Select(Path.GetFileName)
+					.FirstOrDefault(d => d.Equals(directory, StringComparison.OrdinalIgnoreCase));
+			}
+			catch (Exception)
+			{
+				return null;
+			}
 
 			return directory == null ? null : Path.Combine(path, directory);
 		}

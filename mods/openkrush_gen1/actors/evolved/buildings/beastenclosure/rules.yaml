@@ -28,7 +28,7 @@ evolved_building_beastenclosure:
 			BottomRight: 1536, 0
 		TargetableOffsets: 819,-1024,0, 819,0,0, 819,1024,0, 2458,-1024,0, 2458,0,0, 2458,1024,0 # Y,X,Z - Y uses dark space magic. do NOT touch or kittens will die!
 	Selectable:
-		Bounds: 128, 96, 0, -32
+		Bounds: 4096, 3072, 0, -1024
 	AdvancedSelectionDecorations:
 		Offset: -1,-7
 	Researchable:

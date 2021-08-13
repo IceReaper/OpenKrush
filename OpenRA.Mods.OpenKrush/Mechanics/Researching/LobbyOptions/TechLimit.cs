@@ -15,6 +15,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.LobbyOptions
 {
 	using System;
 	using System.Collections.Generic;
+	using System.Collections.ObjectModel;
 	using OpenRA.Traits;
 	using Traits;
 
@@ -25,11 +26,11 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.LobbyOptions
 
 		public int MaxTechLevel;
 
-		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(Ruleset rules)
+		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(MapPreview mapPreview)
 		{
 			var values = new Dictionary<string, string>();
 
-			foreach (var actorInfo in rules.Actors.Values)
+			foreach (var actorInfo in mapPreview.LoadRuleset().Actors.Values)
 			{
 				var techLevelBuildableInfo = actorInfo.TraitInfoOrDefault<TechLevelBuildableInfo>();
 

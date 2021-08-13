@@ -15,6 +15,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.LobbyOptions
 {
 	using System;
 	using System.Collections.Generic;
+	using System.Collections.ObjectModel;
 	using System.Linq;
 	using OpenRA.Traits;
 
@@ -30,7 +31,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.LobbyOptions
 		public const string Id = "ResearchMode";
 		public const ResearchModeType Default = ResearchModeType.FullLevel;
 
-		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(Ruleset rules)
+		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(MapPreview mapPreview)
 		{
 			yield return new LobbyOption(
 				ResearchModeInfo.Id,
