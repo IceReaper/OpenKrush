@@ -41,5 +41,7 @@
 	Faction@Random:
 		# TODO split this
 		RandomFactionMembers: survivors, evolved
+
+World:
 	SmudgeLayer@CRATER:
 		Palette: openkrush

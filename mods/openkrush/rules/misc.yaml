@@ -76,20 +76,20 @@ EditorPlayer:
 	TerrainGeometryOverlay:
 	# Required for debug overlays:
 	DebugVisualizations:
-	# Required for warhead debug overlays.
-	WarheadDebugOverlay:
 	# Required for... not crashing
 	Selection:
+
+# Ingame specific world setup.
+World:
+	Inherits: ^CoreWorld
+	# Required for warhead debug overlays.
+	WarheadDebugOverlay:
 	# Smudge support.
 	SmudgeLayer@CRATER:
 		Type: Crater
 		Sequence: crater
 		SmokeChance: -1
 		SmokePalette:
-
-# Ingame specific world setup.
-World:
-	Inherits: ^CoreWorld
 	# Required for buildable area checks.
 	BuildingInfluence:
 	# Pathfinding requirement.
