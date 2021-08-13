@@ -10,11 +10,13 @@ evolved_building_clanhall:
 	Health:
 		HP: 6000
 	TechLevelBuildable:
-		Prerequisites: evolved_buildings
+		Prerequisites: evolved_base
 		BuildDuration: 1000
-		Level: -1
 	SaboteurConquerable:
 		Population: 3
+	ProvidesPrerequisite@base:
+		Prerequisite: evolved_base
+		RequiresCondition: !selfconstructing && !deconstructing
 	ProvidesPrerequisite@buildings:
 		Prerequisite: evolved_buildings
 		RequiresCondition: !selfconstructing && !deconstructing

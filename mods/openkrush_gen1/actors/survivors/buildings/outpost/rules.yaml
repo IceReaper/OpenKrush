@@ -10,11 +10,13 @@ survivors_building_outpost:
 	Health:
 		HP: 6000
 	TechLevelBuildable:
-		Prerequisites: survivors_buildings
+		Prerequisites: survivors_base
 		BuildDuration: 1000
-		Level: -1
 	SaboteurConquerable:
 		Population: 3
+	ProvidesPrerequisite@base:
+		Prerequisite: survivors_base
+		RequiresCondition: !selfconstructing && !deconstructing
 	ProvidesPrerequisite@buildings:
 		Prerequisite: survivors_buildings
 		RequiresCondition: !selfconstructing && !deconstructing

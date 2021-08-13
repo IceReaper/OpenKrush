@@ -16,6 +16,9 @@ survivors_building_machineshop:
 		Population: 2
 	ProvidesPrerequisite:
 		Prerequisite: survivors_vehicles
+	ProvidesPrerequisite@base:
+		Prerequisite: survivors_base
+		RequiresCondition: !selfconstructing && !deconstructing
 	Building:
 		Dimensions: 4,4
 		Footprint: xxxx xxxx ==== ====

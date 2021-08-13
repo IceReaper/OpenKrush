@@ -14,6 +14,9 @@ evolved_building_menagerie:
 		Level: 1
 	SaboteurConquerable:
 		Population: 1
+	ProvidesPrerequisite@base:
+		Prerequisite: evolved_base
+		RequiresCondition: !selfconstructing && !deconstructing
 	Building:
 		Dimensions: 4,4
 		Footprint: =xx= xxx= ==== ====

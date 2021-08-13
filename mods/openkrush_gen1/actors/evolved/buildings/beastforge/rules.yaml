@@ -16,6 +16,9 @@ evolved_building_beastforge:
 		BuildDuration: 1000
 	SaboteurConquerable:
 		Population: 2
+	ProvidesPrerequisite@base:
+		Prerequisite: evolved_base
+		RequiresCondition: !selfconstructing && !deconstructing
 	ProvidesPrerequisite@vehicles:
 		Prerequisite: evolved_vehicles
 	ProvidesPrerequisite@beasts:

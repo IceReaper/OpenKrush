@@ -17,6 +17,9 @@ evolved_building_beastenclosure:
 		Level: -1
 	SaboteurConquerable:
 		Population: 2
+	ProvidesPrerequisite@base:
+		Prerequisite: evolved_base
+		RequiresCondition: !selfconstructing && !deconstructing
 	ProvidesPrerequisite:
 		Prerequisite: evolved_beasts
 	Building:

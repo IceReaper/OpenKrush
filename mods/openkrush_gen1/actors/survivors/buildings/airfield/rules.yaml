@@ -14,6 +14,9 @@ survivors_building_airfield:
 		Level: 5
 	SaboteurConquerable:
 		Population: 2
+	ProvidesPrerequisite@base:
+		Prerequisite: survivors_base
+		RequiresCondition: !selfconstructing && !deconstructing
 	Building:
 		Dimensions: 4,4
 		Footprint: =xx= xxxx xxxx =xx=

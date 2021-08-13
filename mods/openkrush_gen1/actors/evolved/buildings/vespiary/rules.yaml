@@ -14,6 +14,9 @@ evolved_building_vespiary:
 		Level: 5
 	SaboteurConquerable:
 		Population: 2
+	ProvidesPrerequisite@base:
+		Prerequisite: evolved_base
+		RequiresCondition: !selfconstructing && !deconstructing
 	Building:
 		Dimensions: 4,4
 		Footprint: ==== xxxx xxxx ====

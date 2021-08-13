@@ -16,6 +16,9 @@ survivors_building_barracks:
 		Population: 2
 	ProvidesPrerequisite:
 		Prerequisite: survivors_infantry
+	ProvidesPrerequisite@base:
+		Prerequisite: survivors_base
+		RequiresCondition: !selfconstructing && !deconstructing
 	Building:
 		Dimensions: 4,3
 		Footprint: =xx= xxxx =xx=

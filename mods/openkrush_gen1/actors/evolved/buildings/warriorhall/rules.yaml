@@ -13,6 +13,9 @@ evolved_building_warriorhall:
 		Prerequisites: evolved_buildings
 	SaboteurConquerable:
 		Population: 2
+	ProvidesPrerequisite@base:
+		Prerequisite: evolved_base
+		RequiresCondition: !selfconstructing && !deconstructing
 	ProvidesPrerequisite:
 		Prerequisite: evolved_infantry
 	Building:

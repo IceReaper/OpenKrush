@@ -11,6 +11,9 @@ evolved_building_alchemyhall:
 		HP: 3000
 	SaboteurConquerable:
 		Population: 1
+	ProvidesPrerequisite@base:
+		Prerequisite: evolved_base
+		RequiresCondition: !selfconstructing && !deconstructing
 	TechLevelBuildable:
 		Prerequisites: evolved_buildings
 		BuildDuration: 500

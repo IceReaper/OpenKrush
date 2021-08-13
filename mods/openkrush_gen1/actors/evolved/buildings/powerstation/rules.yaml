@@ -15,6 +15,9 @@ evolved_building_powerstation:
 		BuildLimit: 8
 	SaboteurConquerable:
 		Population: 2
+	ProvidesPrerequisite@base:
+		Prerequisite: evolved_base
+		RequiresCondition: !selfconstructing && !deconstructing
 	Building:
 		Dimensions: 4,3
 		Footprint: xxxx xxx= ====

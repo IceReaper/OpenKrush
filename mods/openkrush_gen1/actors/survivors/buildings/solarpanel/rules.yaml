@@ -14,6 +14,9 @@ survivors_building_solarpanel:
 		Level: 3
 	SaboteurConquerable:
 		Population: 1
+	ProvidesPrerequisite@base:
+		Prerequisite: survivors_base
+		RequiresCondition: !selfconstructing && !deconstructing
 	Building:
 		Dimensions: 2,2
 		Footprint: == xx
