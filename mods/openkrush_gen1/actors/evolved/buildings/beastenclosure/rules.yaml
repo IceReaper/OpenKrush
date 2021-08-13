@@ -14,7 +14,6 @@ evolved_building_beastenclosure:
 	TechLevelBuildable:
 		Prerequisites: evolved_buildings
 		BuildDuration: 1000
-		Level: -1
 	SaboteurConquerable:
 		Population: 2
 	ProvidesPrerequisite@base:
@@ -36,7 +35,6 @@ evolved_building_beastenclosure:
 		Offset: -1,-7
 	Researchable:
 		Offset: 0,-119
-		RequiresCondition: !selfconstructing && !deconstructing
 	TechnicianRepairable:
 		Offset: 10,-50
 	Exit:

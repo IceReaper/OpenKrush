@@ -176,15 +176,20 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 			if (Level == MaxLevel)
 				return;
 
-			Level++;
-
 			var researchMode = self.World.WorldActor.Trait<ResearchMode>().Mode;
 
 			if (researchMode == ResearchModeType.SingleTech)
+			{
+				Level++;
 				technologies.First(technology => technology.Researched == false).Researched = true;
+			}
 			else
+			{
+				Level = NextTechLevel();
+
 				foreach (var technology in technologies.Where(technology => technology.Level == Level))
 					technology.Researched = true;
+			}
 		}
 
 		public bool IsResearched(string id)

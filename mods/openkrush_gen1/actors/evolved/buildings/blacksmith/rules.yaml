@@ -12,7 +12,6 @@ evolved_building_blacksmith:
 	TechLevelBuildable:
 		Prerequisites: evolved_buildings
 		BuildDuration: 1000
-		Level: -1
 	SaboteurConquerable:
 		Population: 2
 	ProvidesPrerequisite@base:
