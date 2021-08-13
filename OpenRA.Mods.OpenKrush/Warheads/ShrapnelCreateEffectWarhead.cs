@@ -31,6 +31,9 @@ namespace OpenRA.Mods.OpenKrush.Warheads
 
 		public override void DoImpact(in Target target, WarheadArgs args)
 		{
+			if (args.WeaponTarget.Actor != null && !IsValidAgainst(args.WeaponTarget.Actor, args.SourceActor))
+				return;
+
 			var random = args.SourceActor.World.SharedRandom;
 
 			var pos = target.CenterPosition
