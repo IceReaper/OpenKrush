@@ -163,15 +163,8 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 
 			radarSheet.CommitBufferedData();
 
-			Game.Renderer.RgbaSpriteRenderer.DrawSprite(
-				terrainSprite,
-				new int2(RenderBounds.X, RenderBounds.Y),
-				new int2(RenderBounds.Width, RenderBounds.Height));
-
-			Game.Renderer.RgbaSpriteRenderer.DrawSprite(
-				shroudSprite,
-				new int2(RenderBounds.X, RenderBounds.Y),
-				new int2(RenderBounds.Width, RenderBounds.Height));
+			Game.Renderer.RgbaSpriteRenderer.DrawSprite(terrainSprite, new int2(RenderBounds.X, RenderBounds.Y), RadarWidget.Scale);
+			Game.Renderer.RgbaSpriteRenderer.DrawSprite(shroudSprite, new int2(RenderBounds.X, RenderBounds.Y), RadarWidget.Scale);
 
 			var cells = new List<(CPos, Color)>();
 
