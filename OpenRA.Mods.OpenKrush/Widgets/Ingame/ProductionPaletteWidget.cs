@@ -77,15 +77,15 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 
 				var arrow = (mi.Location.X - EventBounds.X) / (ButtonWidget.Size / 2);
 
-				if (arrow == 0 && scrollOffset + visibleIcons < buildableItems.Length)
-				{
-					Game.Sound.PlayNotification(sidebar.IngameUi.World.Map.Rules, null, "Sounds", "ClickSound", null);
-					scrollOffset++;
-				}
-				else if (arrow == 1 && scrollOffset > 0)
+				if (arrow == 0 && scrollOffset > 0)
 				{
 					Game.Sound.PlayNotification(sidebar.IngameUi.World.Map.Rules, null, "Sounds", "ClickSound", null);
 					scrollOffset--;
+				}
+				else if (arrow == 1 && scrollOffset + visibleIcons < buildableItems.Length)
+				{
+					Game.Sound.PlayNotification(sidebar.IngameUi.World.Map.Rules, null, "Sounds", "ClickSound", null);
+					scrollOffset++;
 				}
 			}
 			else if (mi.Event == MouseInputEvent.Scroll)
@@ -212,7 +212,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 			sidebar.Buttons.PlayFetchIndex("button-small-down", () => 0);
 			WidgetUtils.DrawSpriteCentered(sidebar.Buttons.Image, sidebar.IngameUi.Palette, position);
 
-			if (scrollOffset + visibleIcons == buildableItems.Length)
+			if (scrollOffset == 0)
 				WidgetUtils.FillRectWithColor(
 					new Rectangle(RenderBounds.X, RenderBounds.Y + visibleIcons * ButtonWidget.Size, ButtonWidget.Size / 2, ButtonWidget.Size / 2),
 					Color.FromArgb(128, 0, 0, 0));
@@ -222,7 +222,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 			sidebar.Buttons.PlayFetchIndex("button-small-up", () => 0);
 			WidgetUtils.DrawSpriteCentered(sidebar.Buttons.Image, sidebar.IngameUi.Palette, position + new int2(ButtonWidget.Size / 2, 0));
 
-			if (scrollOffset == 0)
+			if (scrollOffset + visibleIcons == buildableItems.Length)
 				WidgetUtils.FillRectWithColor(
 					new Rectangle(
 						RenderBounds.X + ButtonWidget.Size / 2,

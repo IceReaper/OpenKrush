@@ -94,7 +94,7 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 		private void PlaceConstruction(IBot bot, Actor[] buildings, ActorInfo actorInfo, PlacementType type, ProductionQueue queue)
 		{
 			var maxDistance = actorInfo.TraitInfoOrDefault<RequiresBuildableAreaInfo>()?.Adjacent ?? 0;
-			var placeLocation = BotBaseBuilder.FindBuildLocation(bot.Player.World, ChooseBuildSource(buildings, type), maxDistance, actorInfo);
+			var placeLocation = BotBaseBuilder.FindBuildLocation(bot.Player.World, ChooseBuildSource(buildings, type), maxDistance, buildings, actorInfo);
 
 			if (placeLocation == null)
 				return;
@@ -129,11 +129,11 @@ namespace OpenRA.Mods.OpenKrush.Traits.AI
 			return CPos.Zero;
 		}
 
-		private static CPos? FindBuildLocation(World world, CPos center, int maxRange, ActorInfo actorInfo)
+		private static CPos? FindBuildLocation(World world, CPos center, int maxRange, Actor[] buildings, ActorInfo actorInfo)
 		{
 			var buildingInfo = actorInfo.TraitInfo<BuildingInfo>();
 
-			return world.Map.FindTilesInAnnulus(center, 0, maxRange)
+			return buildings.SelectMany(building => world.Map.FindTilesInAnnulus(building.Location, 0, maxRange))
 				.OrderBy(c => (c - center).LengthSquared)
 				.FirstOrDefault(cell => world.CanPlaceBuilding(cell, actorInfo, buildingInfo, null));
 		}
