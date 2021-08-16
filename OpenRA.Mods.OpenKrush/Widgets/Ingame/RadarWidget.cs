@@ -24,6 +24,8 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 
 	public class RadarWidget : Widget
 	{
+		private const int Scale = 2;
+
 		private readonly IngameUiWidget ingameUi;
 
 		private readonly Sheet radarSheet;
@@ -31,8 +33,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 		private readonly Sprite terrainSprite;
 		private readonly Sprite shroudSprite;
 
-		private int size = 2;
-		private bool useStanceColor = false;
+		private bool useStanceColor;
 
 		public PlayerRelationship ShowStances { get; set; }
 
@@ -70,9 +71,9 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 		{
 			Bounds = new Rectangle(
 				0,
-				Game.Renderer.Resolution.Height - ingameUi.World.Map.MapSize.Y * size,
-				ingameUi.World.Map.MapSize.X * size,
-				ingameUi.World.Map.MapSize.Y * size);
+				Game.Renderer.Resolution.Height - ingameUi.World.Map.MapSize.Y * RadarWidget.Scale,
+				ingameUi.World.Map.MapSize.X * RadarWidget.Scale,
+				ingameUi.World.Map.MapSize.Y * RadarWidget.Scale);
 		}
 
 		private void DrawTerrain()
@@ -117,7 +118,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 
 		public override string GetCursor(int2 pos)
 		{
-			var cell = new MPos((pos.X - RenderBounds.X) / size, (pos.Y - RenderBounds.Y) / size).ToCPos(ingameUi.World.Map);
+			var cell = new MPos((pos.X - RenderBounds.X) / RadarWidget.Scale, (pos.Y - RenderBounds.Y) / RadarWidget.Scale).ToCPos(ingameUi.World.Map);
 			var worldPixel = ingameUi.WorldRenderer.ScreenPxPosition(ingameUi.World.Map.CenterOfCell(cell));
 			var location = ingameUi.WorldRenderer.Viewport.WorldToViewPx(worldPixel);
 			var mi = new MouseInput { Location = location, Button = Game.Settings.Game.MouseButtonPreference.Action, Modifiers = Game.GetModifierKeys() };
@@ -128,7 +129,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 
 		public override bool HandleMouseInput(MouseInput mi)
 		{
-			var cell = new MPos((mi.Location.X - RenderBounds.X) / size, (mi.Location.Y - RenderBounds.Y) / size).ToCPos(ingameUi.World.Map);
+			var cell = new MPos((mi.Location.X - RenderBounds.X) / RadarWidget.Scale, (mi.Location.Y - RenderBounds.Y) / RadarWidget.Scale).ToCPos(ingameUi.World.Map);
 			var pos = ingameUi.World.Map.CenterOfCell(cell);
 
 			if ((mi.Event == MouseInputEvent.Down || mi.Event == MouseInputEvent.Move) && mi.Button == Game.Settings.Game.MouseButtonPreference.Cancel)
@@ -157,7 +158,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 			UpdateShroud();
 
 			WidgetUtils.FillRectWithColor(
-				new Rectangle(RenderBounds.X - size, RenderBounds.Y - size, RenderBounds.Width + size * 2, RenderBounds.Height + size * 2),
+				new Rectangle(RenderBounds.X - RadarWidget.Scale, RenderBounds.Y - RadarWidget.Scale, RenderBounds.Width + RadarWidget.Scale * 2, RenderBounds.Height + RadarWidget.Scale * 2),
 				Color.White);
 
 			radarSheet.CommitBufferedData();
@@ -202,16 +203,16 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 					var pos = cell.Item1.ToMPos(ingameUi.World.Map.Grid.Type);
 					var color = useStanceColor ? Color.FromArgb(e.Actor.Owner.PlayerRelationshipColor(e.Actor).ToArgb()) : e.Actor.Owner.Color;
 
-					WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X + pos.U * size, RenderBounds.Y + pos.V * size, size, size), color);
+					WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X + pos.U * RadarWidget.Scale, RenderBounds.Y + pos.V * RadarWidget.Scale, RadarWidget.Scale, RadarWidget.Scale), color);
 				}
 			}
 
 			Game.Renderer.EnableScissor(RenderBounds);
 
 			Game.Renderer.RgbaColorRenderer.DrawRect(
-				new int2(RenderBounds.X, RenderBounds.Y) + ingameUi.WorldRenderer.Viewport.TopLeft / 32 * size,
-				new int2(RenderBounds.X, RenderBounds.Y) + ingameUi.WorldRenderer.Viewport.BottomRight / 32 * size,
-				size,
+				new int2(RenderBounds.X, RenderBounds.Y) + ingameUi.WorldRenderer.Viewport.TopLeft / 32 * RadarWidget.Scale,
+				new int2(RenderBounds.X, RenderBounds.Y) + ingameUi.WorldRenderer.Viewport.BottomRight / 32 * RadarWidget.Scale,
+				RadarWidget.Scale,
 				Color.White);
 
 			foreach (var ping in ingameUi.RadarPings.Pings)
@@ -220,7 +221,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 					continue;
 
 				var center = ingameUi.World.Map.CellContaining(ping.Position).ToMPos(ingameUi.World.Map.Grid.Type);
-				var points = ping.Points(new int2(RenderBounds.X + center.U * size, RenderBounds.Y + center.V * size)).ToArray();
+				var points = ping.Points(new int2(RenderBounds.X + center.U * RadarWidget.Scale, RenderBounds.Y + center.V * RadarWidget.Scale)).ToArray();
 				Game.Renderer.RgbaColorRenderer.DrawPolygon(points, 2, ping.Color);
 			}
 

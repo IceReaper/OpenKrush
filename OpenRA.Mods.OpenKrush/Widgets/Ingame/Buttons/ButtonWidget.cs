@@ -19,9 +19,9 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 
 	public abstract class ButtonWidget : Widget
 	{
-		public static readonly int Size = 48;
+		public const int Size = 48;
 
-		protected SidebarWidget sidebar;
+		protected readonly SidebarWidget sidebar;
 		protected string type;
 		protected int2 center;
 		public bool Active;

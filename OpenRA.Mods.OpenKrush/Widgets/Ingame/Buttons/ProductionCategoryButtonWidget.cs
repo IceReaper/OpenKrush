@@ -24,7 +24,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 	public class ProductionCategoryButtonWidget : ButtonWidget
 	{
 		public readonly string[] Categories;
-		private Hotkey hotkey;
+		private readonly Hotkey hotkey;
 
 		public ProductionCategoryButtonWidget(SidebarWidget sidebar, int index, string[] categories, string label)
 			: base(sidebar, "unit")
@@ -66,15 +66,13 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 
 		protected override bool HandleLeftClick(MouseInput mi)
 		{
-			if (base.HandleLeftClick(mi))
-			{
-				if (Active)
-					sidebar.CloseAllBut(this);
+			if (!base.HandleLeftClick(mi))
+				return false;
 
-				return true;
-			}
+			if (Active)
+				sidebar.CloseAllBut(this);
 
-			return false;
+			return true;
 		}
 
 		protected override bool IsUsable()
@@ -84,24 +82,12 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 
 		public override void Tick()
 		{
-			var queues = new List<ProductionQueue>();
 			var actors = sidebar.IngameUi.World.ActorsHavingTrait<ProductionQueue>().Where(a => a.Owner == sidebar.IngameUi.World.LocalPlayer);
 
-			foreach (var actor in actors)
-			{
-				var productionQueues = actor.TraitsImplementing<ProductionQueue>();
-
-				foreach (var productionQueue in productionQueues)
-				{
-					if (!Categories.Contains(productionQueue.Info.Type))
-						continue;
-
-					if (!productionQueue.BuildableItems().Any())
-						continue;
-
-					queues.Add(productionQueue);
-				}
-			}
+			var queues = actors.SelectMany(actor => actor.TraitsImplementing<ProductionQueue>(), (actor, productionQueue) => new { actor, productionQueue })
+				.Where(t => Categories.Contains(t.productionQueue.Info.Type))
+				.Where(t => t.productionQueue.BuildableItems().Any())
+				.Select(t => t.productionQueue).ToList();
 
 			var children = Children.ToArray();
 
@@ -122,15 +108,13 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 					var typeA = ((ProductionPaletteWidget)a).Queue.Info.Type;
 					var typeB = ((ProductionPaletteWidget)b).Queue.Info.Type;
 
-					if (typeA == typeB)
-					{
-						var idA = ((ProductionPaletteWidget)a).Queue.Actor.ActorID;
-						var idB = ((ProductionPaletteWidget)b).Queue.Actor.ActorID;
+					if (typeA != typeB)
+						return string.Compare(typeA, typeB, StringComparison.Ordinal);
 
-						return (int)idA - (int)idB;
-					}
+					var idA = ((ProductionPaletteWidget)a).Queue.Actor.ActorID;
+					var idB = ((ProductionPaletteWidget)b).Queue.Actor.ActorID;
 
-					return string.Compare(typeA, typeB, StringComparison.Ordinal);
+					return (int)idA - (int)idB;
 				});
 
 			var focused = -1;

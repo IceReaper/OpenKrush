@@ -82,49 +82,49 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 		{
 			base.Draw();
 
-			if (Progress != null)
+			if (Progress == null)
+				return;
+
+			var progress = Progress();
+
+			if (progress == -1)
+				return;
+
+			progress = progress * (ButtonWidget.Size - 10) / 100;
+			var o = ButtonWidget.Size - 10 - progress;
+			WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X + 2, RenderBounds.Y + 4, 7, ButtonWidget.Size - 6), Color.Black);
+
+			WidgetUtils.FillRectWithColor(
+				new Rectangle(RenderBounds.X + 3, RenderBounds.Y + 5, 5, ButtonWidget.Size - 8),
+				sidebar.IngameUi.Palette.Palette.GetColor(10));
+
+			WidgetUtils.FillRectWithColor(
+				new Rectangle(RenderBounds.X + 4, RenderBounds.Y + 6, 3, ButtonWidget.Size - 10),
+				sidebar.IngameUi.Palette.Palette.GetColor(8));
+
+			WidgetUtils.FillRectWithColor(
+				new Rectangle(RenderBounds.X + 4, RenderBounds.Y + 6 + o, 3, progress),
+				sidebar.IngameUi.Palette.Palette.GetColor(12));
+
+			var amount = Amount();
+
+			if (amount == -1)
 			{
-				var progress = Progress();
+				sidebar.Font.PlayFetchIndex("production", () => 10);
+				WidgetUtils.DrawSpriteCentered(sidebar.Font.Image, sidebar.IngameUi.Palette, new int2(RenderBounds.X + 14 + 4, RenderBounds.Y + 40));
+			}
+			else if (amount > 1)
+			{
+				var numberString = amount.ToString();
 
-				if (progress != -1)
+				for (var i = 0; i < numberString.Length; i++)
 				{
-					progress = progress * (ButtonWidget.Size - 10) / 100;
-					var o = ButtonWidget.Size - 10 - progress;
-					WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X + 2, RenderBounds.Y + 4, 7, ButtonWidget.Size - 6), Color.Black);
+					sidebar.Font.PlayFetchIndex("production", () => numberString[i] - 0x30);
 
-					WidgetUtils.FillRectWithColor(
-						new Rectangle(RenderBounds.X + 3, RenderBounds.Y + 5, 5, ButtonWidget.Size - 8),
-						sidebar.IngameUi.Palette.Palette.GetColor(10));
-
-					WidgetUtils.FillRectWithColor(
-						new Rectangle(RenderBounds.X + 4, RenderBounds.Y + 6, 3, ButtonWidget.Size - 10),
-						sidebar.IngameUi.Palette.Palette.GetColor(8));
-
-					WidgetUtils.FillRectWithColor(
-						new Rectangle(RenderBounds.X + 4, RenderBounds.Y + 6 + o, 3, progress),
-						sidebar.IngameUi.Palette.Palette.GetColor(12));
-
-					var amount = Amount();
-
-					if (amount == -1)
-					{
-						sidebar.Font.PlayFetchIndex("production", () => 10);
-						WidgetUtils.DrawSpriteCentered(sidebar.Font.Image, sidebar.IngameUi.Palette, new int2(RenderBounds.X + 14 + 4, RenderBounds.Y + 40));
-					}
-					else if (amount > 1)
-					{
-						var numberString = amount.ToString();
-
-						for (var i = 0; i < numberString.Length; i++)
-						{
-							sidebar.Font.PlayFetchIndex("production", () => numberString[i] - 0x30);
-
-							WidgetUtils.DrawSpriteCentered(
-								sidebar.Font.Image,
-								sidebar.IngameUi.Palette,
-								new int2(RenderBounds.X + 14 + i * 8, RenderBounds.Y + 40));
-						}
-					}
+					WidgetUtils.DrawSpriteCentered(
+						sidebar.Font.Image,
+						sidebar.IngameUi.Palette,
+						new int2(RenderBounds.X + 14 + i * 8, RenderBounds.Y + 40));
 				}
 			}
 		}
@@ -176,8 +176,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 				}
 			}
 
-			if (actorPreviewWidget != null)
-				actorPreviewWidget.PrepareRenderables();
+			actorPreviewWidget?.PrepareRenderables();
 		}
 
 		protected override void DrawContents()

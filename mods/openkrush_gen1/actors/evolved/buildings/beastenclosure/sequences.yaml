@@ -2,7 +2,7 @@ evolved_building_beastenclosure:
 	animation: sprites.lvl|BeastEnclosure.mobd
 		Length: 4
 		Tick: 160
-		Offset: -5,-50
+		Offset: -5,-48
 		ZOffset: -500
 	damaged-idle: sprites.lvl|BeastEnclosure.mobd
 		Start: 4

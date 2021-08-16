@@ -30,38 +30,34 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 
 		public override bool HandleKeyPress(KeyInput e)
 		{
-			if (IsUsable()
-				&& !e.IsRepeat
-				&& e.Event == KeyInputEvent.Down
-				&& e.Key == Game.ModData.Hotkeys["Repair"].GetValue().Key
-				&& e.Modifiers == Game.ModData.Hotkeys["Repair"].GetValue().Modifiers)
-			{
-				Active = !Active;
+			if (!IsUsable()
+				|| e.IsRepeat
+				|| e.Event != KeyInputEvent.Down
+				|| e.Key != Game.ModData.Hotkeys["Repair"].GetValue().Key
+				|| e.Modifiers != Game.ModData.Hotkeys["Repair"].GetValue().Modifiers)
+				return false;
 
-				if (Active)
-					sidebar.IngameUi.World.OrderGenerator = new TechnicianEnterOrderGenerator();
-				else if (sidebar.IngameUi.World.OrderGenerator != null && sidebar.IngameUi.World.OrderGenerator is TechnicianEnterOrderGenerator)
-					sidebar.IngameUi.World.CancelInputMode();
+			Active = !Active;
 
-				return true;
-			}
+			if (Active)
+				sidebar.IngameUi.World.OrderGenerator = new TechnicianEnterOrderGenerator();
+			else if (sidebar.IngameUi.World.OrderGenerator is TechnicianEnterOrderGenerator)
+				sidebar.IngameUi.World.CancelInputMode();
 
-			return false;
+			return true;
 		}
 
 		protected override bool HandleLeftClick(MouseInput mi)
 		{
-			if (base.HandleLeftClick(mi))
-			{
-				if (Active)
-					sidebar.IngameUi.World.OrderGenerator = new TechnicianEnterOrderGenerator();
-				else if (sidebar.IngameUi.World.OrderGenerator != null && sidebar.IngameUi.World.OrderGenerator is TechnicianEnterOrderGenerator)
-					sidebar.IngameUi.World.CancelInputMode();
+			if (!base.HandleLeftClick(mi))
+				return false;
 
-				return true;
-			}
+			if (Active)
+				sidebar.IngameUi.World.OrderGenerator = new TechnicianEnterOrderGenerator();
+			else if (sidebar.IngameUi.World.OrderGenerator is TechnicianEnterOrderGenerator)
+				sidebar.IngameUi.World.CancelInputMode();
 
-			return false;
+			return true;
 		}
 
 		protected override bool IsUsable()
@@ -72,7 +68,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 		public override void Tick()
 		{
 			technicians = sidebar.IngameUi.World.ActorsWithTrait<Technician>().Any(e => e.Actor.Owner == sidebar.IngameUi.World.LocalPlayer && e.Actor.IsIdle);
-			Active = sidebar.IngameUi.World.OrderGenerator != null && sidebar.IngameUi.World.OrderGenerator is TechnicianEnterOrderGenerator;
+			Active = sidebar.IngameUi.World.OrderGenerator is TechnicianEnterOrderGenerator;
 		}
 
 		protected override void DrawContents()

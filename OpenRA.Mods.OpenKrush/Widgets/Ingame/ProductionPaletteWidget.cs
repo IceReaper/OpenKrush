@@ -28,8 +28,8 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 	// TODO implement support for the colored bar with "jump-to-factory" (only if producer is not the player!)
 	public class ProductionPaletteWidget : Widget
 	{
-		private SidebarWidget sidebar;
-		public ProductionQueue Queue;
+		private readonly SidebarWidget sidebar;
+		public readonly ProductionQueue Queue;
 		private ActorInfo[] buildableItems;
 		private int scrollOffset;
 		private int visibleIcons;
@@ -67,33 +67,31 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 		public override bool HandleMouseInput(MouseInput mi)
 		{
 			// TODO this whole block can be removed when arrows are widgets!
-			if (EventBounds.Contains(mi.Location))
+			if (!EventBounds.Contains(mi.Location))
+				return false;
+
+			if (mi.Event == MouseInputEvent.Down)
 			{
-				if (mi.Event == MouseInputEvent.Down)
+				if (mi.Location.Y - EventBounds.Y < visibleIcons * ButtonWidget.Size)
+					return true;
+
+				var arrow = (mi.Location.X - EventBounds.X) / (ButtonWidget.Size / 2);
+
+				if (arrow == 0 && scrollOffset + visibleIcons < buildableItems.Length)
 				{
-					if (mi.Location.Y - EventBounds.Y >= visibleIcons * ButtonWidget.Size)
-					{
-						var arrow = (mi.Location.X - EventBounds.X) / (ButtonWidget.Size / 2);
-
-						if (arrow == 0 && scrollOffset + visibleIcons < buildableItems.Length)
-						{
-							Game.Sound.PlayNotification(sidebar.IngameUi.World.Map.Rules, null, "Sounds", "ClickSound", null);
-							scrollOffset++;
-						}
-						else if (arrow == 1 && scrollOffset > 0)
-						{
-							Game.Sound.PlayNotification(sidebar.IngameUi.World.Map.Rules, null, "Sounds", "ClickSound", null);
-							scrollOffset--;
-						}
-					}
+					Game.Sound.PlayNotification(sidebar.IngameUi.World.Map.Rules, null, "Sounds", "ClickSound", null);
+					scrollOffset++;
 				}
-				else if (mi.Event == MouseInputEvent.Scroll)
-					scrollOffset = Math.Max(0, Math.Min(scrollOffset += mi.Delta.Y < 0 ? 1 : -1, buildableItems.Length - visibleIcons));
-
-				return true;
+				else if (arrow == 1 && scrollOffset > 0)
+				{
+					Game.Sound.PlayNotification(sidebar.IngameUi.World.Map.Rules, null, "Sounds", "ClickSound", null);
+					scrollOffset--;
+				}
 			}
+			else if (mi.Event == MouseInputEvent.Scroll)
+				scrollOffset = Math.Max(0, Math.Min(scrollOffset += mi.Delta.Y < 0 ? 1 : -1, buildableItems.Length - visibleIcons));
 
-			return false;
+			return true;
 		}
 
 		public override void Tick()
@@ -122,28 +120,17 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 				var buildableItem = buildableItems[i];
 
 				var button = Children.FirstOrDefault(
-					c =>
-					{
-						var widget = c as ProductionItemButtonWidget;
-
-						return widget != null && widget.Item == buildableItem.Name;
-					});
+					c => c is ProductionItemButtonWidget widget && widget.Item == buildableItem.Name);
 
 				if (button == null)
 				{
-					Func<bool> isActive = () =>
+					bool IsActive()
 					{
-						if (Queue is SelfConstructingProductionQueue)
-						{
-							var pbog = sidebar.IngameUi.World.OrderGenerator == null
-								? null
-								: sidebar.IngameUi.World.OrderGenerator as PlaceSpecificBuildingOrderGenerator;
+						if (!(Queue is SelfConstructingProductionQueue))
+							return Queue.AllQueued().Any(item => item.Item.Equals(buildableItem.Name));
 
-							return pbog != null && pbog.Name == buildableItem.Name;
-						}
-
-						return Queue.AllQueued().Any(item => item.Item.Equals(buildableItem.Name));
-					};
+						return sidebar.IngameUi.World.OrderGenerator is PlaceSpecificBuildingOrderGenerator pbog && pbog.Name == buildableItem.Name;
+					}
 
 					var valued = buildableItem.TraitInfoOrDefault<ValuedInfo>();
 					var buildTime = WidgetUtils.FormatTime(buildableItem.TraitInfo<BuildableInfo>().BuildDuration, false, sidebar.IngameUi.World.Timestep);
@@ -176,7 +163,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 
 							if (actor.HasTraitInfo<BuildingInfo>())
 							{
-								if (isActive())
+								if (IsActive())
 									sidebar.IngameUi.World.CancelInputMode();
 								else
 									sidebar.IngameUi.World.OrderGenerator = new PlaceSpecificBuildingOrderGenerator(
@@ -192,7 +179,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 							var count = mi.Modifiers.HasModifier(Modifiers.Shift) ? 5 : mi.Modifiers.HasModifier(Modifiers.Ctrl) ? 11 : 1;
 							sidebar.IngameUi.World.IssueOrder(Order.CancelProduction(Queue.Actor, buildableItem.Name, count));
 						},
-						IsActive = isActive,
+						IsActive = IsActive,
 						IsFocused = () => Parent.Children.Count > 1 && IsFocused,
 						TooltipTitle = buildableItem.TraitInfo<TooltipInfo>().Name,
 						TooltipText =
@@ -215,34 +202,34 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 		public override void Draw()
 		{
 			// TODO this whole block can be removed when arrows are widgets!
-			if (visibleIcons < buildableItems.Length)
-			{
-				var position = new int2(RenderBounds.X + ButtonWidget.Size / 4, RenderBounds.Y + ButtonWidget.Size / 4 + visibleIcons * ButtonWidget.Size);
+			if (visibleIcons >= buildableItems.Length)
+				return;
 
-				sidebar.Buttons.PlayFetchIndex("button-small", () => 0);
-				WidgetUtils.DrawSpriteCentered(sidebar.Buttons.Image, sidebar.IngameUi.Palette, position);
-				sidebar.Buttons.PlayFetchIndex("button-small-down", () => 0);
-				WidgetUtils.DrawSpriteCentered(sidebar.Buttons.Image, sidebar.IngameUi.Palette, position);
+			var position = new int2(RenderBounds.X + ButtonWidget.Size / 4, RenderBounds.Y + ButtonWidget.Size / 4 + visibleIcons * ButtonWidget.Size);
 
-				if (scrollOffset + visibleIcons == buildableItems.Length)
-					WidgetUtils.FillRectWithColor(
-						new Rectangle(RenderBounds.X, RenderBounds.Y + visibleIcons * ButtonWidget.Size, ButtonWidget.Size / 2, ButtonWidget.Size / 2),
-						Color.FromArgb(128, 0, 0, 0));
+			sidebar.Buttons.PlayFetchIndex("button-small", () => 0);
+			WidgetUtils.DrawSpriteCentered(sidebar.Buttons.Image, sidebar.IngameUi.Palette, position);
+			sidebar.Buttons.PlayFetchIndex("button-small-down", () => 0);
+			WidgetUtils.DrawSpriteCentered(sidebar.Buttons.Image, sidebar.IngameUi.Palette, position);
 
-				sidebar.Buttons.PlayFetchIndex("button-small", () => 0);
-				WidgetUtils.DrawSpriteCentered(sidebar.Buttons.Image, sidebar.IngameUi.Palette, position + new int2(ButtonWidget.Size / 2, 0));
-				sidebar.Buttons.PlayFetchIndex("button-small-up", () => 0);
-				WidgetUtils.DrawSpriteCentered(sidebar.Buttons.Image, sidebar.IngameUi.Palette, position + new int2(ButtonWidget.Size / 2, 0));
+			if (scrollOffset + visibleIcons == buildableItems.Length)
+				WidgetUtils.FillRectWithColor(
+					new Rectangle(RenderBounds.X, RenderBounds.Y + visibleIcons * ButtonWidget.Size, ButtonWidget.Size / 2, ButtonWidget.Size / 2),
+					Color.FromArgb(128, 0, 0, 0));
 
-				if (scrollOffset == 0)
-					WidgetUtils.FillRectWithColor(
-						new Rectangle(
-							RenderBounds.X + ButtonWidget.Size / 2,
-							RenderBounds.Y + visibleIcons * ButtonWidget.Size,
-							ButtonWidget.Size / 2,
-							ButtonWidget.Size / 2),
-						Color.FromArgb(128, 0, 0, 0));
-			}
+			sidebar.Buttons.PlayFetchIndex("button-small", () => 0);
+			WidgetUtils.DrawSpriteCentered(sidebar.Buttons.Image, sidebar.IngameUi.Palette, position + new int2(ButtonWidget.Size / 2, 0));
+			sidebar.Buttons.PlayFetchIndex("button-small-up", () => 0);
+			WidgetUtils.DrawSpriteCentered(sidebar.Buttons.Image, sidebar.IngameUi.Palette, position + new int2(ButtonWidget.Size / 2, 0));
+
+			if (scrollOffset == 0)
+				WidgetUtils.FillRectWithColor(
+					new Rectangle(
+						RenderBounds.X + ButtonWidget.Size / 2,
+						RenderBounds.Y + visibleIcons * ButtonWidget.Size,
+						ButtonWidget.Size / 2,
+						ButtonWidget.Size / 2),
+					Color.FromArgb(128, 0, 0, 0));
 		}
 	}
 }

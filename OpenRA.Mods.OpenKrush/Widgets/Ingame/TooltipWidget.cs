@@ -21,8 +21,8 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 
 	public class TooltipWidget : Widget
 	{
-		private SpriteFont tooltipTitleFont;
-		private SpriteFont tooltipTextFont;
+		private readonly SpriteFont tooltipTitleFont;
+		private readonly SpriteFont tooltipTextFont;
 		public string TooltipTitle = null;
 		public string TooltipText = null;
 

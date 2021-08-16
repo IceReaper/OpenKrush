@@ -30,31 +30,27 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 
 		public override bool HandleKeyPress(KeyInput e)
 		{
-			if (IsUsable()
-				&& !e.IsRepeat
-				&& e.Event == KeyInputEvent.Down
-				&& e.Key == Game.ModData.Hotkeys["Radar"].GetValue().Key
-				&& e.Modifiers == Game.ModData.Hotkeys["Radar"].GetValue().Modifiers)
-			{
-				Active = !Active;
-				sidebar.IngameUi.Radar.Visible = Active;
+			if (!IsUsable()
+				|| e.IsRepeat
+				|| e.Event != KeyInputEvent.Down
+				|| e.Key != Game.ModData.Hotkeys["Radar"].GetValue().Key
+				|| e.Modifiers != Game.ModData.Hotkeys["Radar"].GetValue().Modifiers)
+				return false;
 
-				return true;
-			}
+			Active = !Active;
+			sidebar.IngameUi.Radar.Visible = Active;
 
-			return false;
+			return true;
 		}
 
 		protected override bool HandleLeftClick(MouseInput mi)
 		{
-			if (base.HandleLeftClick(mi))
-			{
-				sidebar.IngameUi.Radar.Visible = Active;
+			if (!base.HandleLeftClick(mi))
+				return false;
 
-				return true;
-			}
+			sidebar.IngameUi.Radar.Visible = Active;
 
-			return false;
+			return true;
 		}
 
 		protected override bool IsUsable()

@@ -30,31 +30,27 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 
 		public override bool HandleKeyPress(KeyInput e)
 		{
-			if (e.Key == Keycode.ESCAPE && !e.IsRepeat && e.Event == KeyInputEvent.Down && menu == null && e.Modifiers == Modifiers.None)
-			{
-				Active = true;
-				ShowMenu();
+			if (e.Key != Keycode.ESCAPE || e.IsRepeat || e.Event != KeyInputEvent.Down || menu != null || e.Modifiers != Modifiers.None)
+				return false;
 
-				return true;
-			}
+			Active = true;
+			ShowMenu();
 
-			return false;
+			return true;
 		}
 
 		protected override bool HandleLeftClick(MouseInput mi)
 		{
-			if (base.HandleLeftClick(mi))
-			{
-				if (Active)
-					ShowMenu();
+			if (!base.HandleLeftClick(mi))
+				return false;
 
-				return true;
-			}
+			if (Active)
+				ShowMenu();
 
-			return false;
+			return true;
 		}
 
-		void ShowMenu()
+		private void ShowMenu()
 		{
 			if (sidebar.IngameUi.World.LobbyInfo.NonBotClients.Count() == 1)
 				sidebar.IngameUi.World.SetPauseState(true);

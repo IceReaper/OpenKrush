@@ -28,7 +28,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets
 		private readonly ModData modData;
 		private readonly World world;
 		private readonly VbcPlayerWidget player;
-		private MusicInfo song;
+		private readonly MusicInfo song;
 
 		[ObjectCreator.UseCtorAttribute]
 		public IntroLogic(Widget widget, World world, ModData modData)

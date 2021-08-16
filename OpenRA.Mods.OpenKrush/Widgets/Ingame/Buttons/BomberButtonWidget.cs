@@ -41,21 +41,21 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 				return true;
 			}
 
-			if (Active)
+			if (!Active)
+				return false;
+
+			var lastItem = Math.Min(12, Children.Count);
+
+			for (var i = 0; i < lastItem; i++)
 			{
-				var lastItem = Math.Min(12, Children.Count);
+				if (e.Key != Game.ModData.Hotkeys[$"Production{i + 1:00}"].GetValue().Key
+					|| e.Modifiers != Game.ModData.Hotkeys[$"Production{i + 1}"].GetValue().Modifiers)
+					continue;
 
-				for (var i = 0; i < lastItem; i++)
-				{
-					if (e.Key != Game.ModData.Hotkeys[$"Production{i + 1:00}"].GetValue().Key
-						|| e.Modifiers != Game.ModData.Hotkeys[$"Production{(i + 1)}"].GetValue().Modifiers)
-						continue;
+				((ProductionItemButtonWidget)Children[i]).ClickedLeft(
+					new MouseInput(MouseInputEvent.Down, MouseButton.None, int2.Zero, int2.Zero, e.Modifiers, 0));
 
-					((ProductionItemButtonWidget)Children[i]).ClickedLeft(
-						new MouseInput(MouseInputEvent.Down, MouseButton.None, int2.Zero, int2.Zero, e.Modifiers, 0));
-
-					return true;
-				}
+				return true;
 			}
 
 			return false;
@@ -63,15 +63,13 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 
 		protected override bool HandleLeftClick(MouseInput mi)
 		{
-			if (base.HandleLeftClick(mi))
-			{
-				if (Active)
-					sidebar.CloseAllBut(this);
+			if (!base.HandleLeftClick(mi))
+				return false;
 
-				return true;
-			}
+			if (Active)
+				sidebar.CloseAllBut(this);
 
-			return false;
+			return true;
 		}
 
 		protected override bool IsUsable()
@@ -94,12 +92,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 				var power = powers[i];
 
 				var button = Children.FirstOrDefault(
-					c =>
-					{
-						var widget = c as ProductionItemButtonWidget;
-
-						return widget != null && widget.Item == power.Key;
-					});
+					c => c is ProductionItemButtonWidget widget && widget.Item == power.Key);
 
 				if (button == null)
 				{
@@ -111,12 +104,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 						Amount = () => 0,
 						ClickedLeft = mi => power.Target(),
 						ClickedRight = null,
-						IsActive = () =>
-						{
-							var og = sidebar.IngameUi.World.OrderGenerator as SelectGenericPowerTarget;
-
-							return og != null && og.OrderKey == power.Key;
-						},
+						IsActive = () => sidebar.IngameUi.World.OrderGenerator is SelectGenericPowerTarget og && og.OrderKey == power.Key,
 						IsFocused = () => false,
 						TooltipTitle = power.Info.Description,
 						TooltipText = null

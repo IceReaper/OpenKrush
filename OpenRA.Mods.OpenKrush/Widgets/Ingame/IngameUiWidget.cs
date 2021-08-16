@@ -33,7 +33,6 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 
 		public readonly PaletteReference Palette;
 
-		public readonly StatusWidget Status;
 		public readonly RadarWidget Radar;
 		public readonly TooltipWidget Tooltip;
 
@@ -51,7 +50,7 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 
 			Palette = WorldRenderer.Palette($"player{World.LocalPlayer.InternalName}");
 
-			AddChild(Status = new StatusWidget(this));
+			AddChild(new StatusWidget(this));
 			AddChild(Radar = new RadarWidget(this));
 			AddChild(new SidebarWidget(this));
 			AddChild(Tooltip = new TooltipWidget());
@@ -63,11 +62,6 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 		public void Resize()
 		{
 			Bounds = new Rectangle(0, 0, Game.Renderer.Resolution.Width, Game.Renderer.Resolution.Height);
-		}
-
-		public override string GetCursor(int2 pos)
-		{
-			return null;
 		}
 
 		public override void Tick()
@@ -100,14 +94,12 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 
 		public override bool HandleKeyPress(KeyInput e)
 		{
-			if (e.Key == Game.ModData.Hotkeys["PlaceBeacon"].GetValue().Key)
-			{
-				World.OrderGenerator = new BeaconOrderGenerator();
+			if (e.Key != Game.ModData.Hotkeys["PlaceBeacon"].GetValue().Key)
+				return false;
 
-				return true;
-			}
+			World.OrderGenerator = new BeaconOrderGenerator();
 
-			return false;
+			return true;
 		}
 	}
 }

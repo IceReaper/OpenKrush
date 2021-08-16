@@ -30,12 +30,12 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 		public readonly Animation Font;
 		public readonly Rectangle ButtonArea;
 
-		private BomberButtonWidget bomber;
-		private SellButtonWidget sell;
-		private ResearchButtonWidget research;
-		private RepairButtonWidget repair;
-		private RadarButtonWidget radar;
-		private OptionsButtonWidget options;
+		private readonly BomberButtonWidget bomber;
+		private readonly SellButtonWidget sell;
+		private readonly ResearchButtonWidget research;
+		private readonly RepairButtonWidget repair;
+		private readonly RadarButtonWidget radar;
+		private readonly OptionsButtonWidget options;
 
 		public SidebarWidget(IngameUiWidget ingameUi)
 		{
@@ -114,18 +114,14 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 
 		public void SelectFactory(Actor factory, string category)
 		{
-			var categoryButton = Children.FirstOrDefault(
+			if (!(Children.FirstOrDefault(
 				child =>
 				{
-					var button = child as ProductionCategoryButtonWidget;
-
-					if (button == null)
+					if (!(child is ProductionCategoryButtonWidget button))
 						return false;
 
 					return button.Categories.Contains(category);
-				}) as ProductionCategoryButtonWidget;
-
-			if (categoryButton == null)
+				}) is ProductionCategoryButtonWidget categoryButton))
 				return;
 
 			CloseAllBut(categoryButton);
