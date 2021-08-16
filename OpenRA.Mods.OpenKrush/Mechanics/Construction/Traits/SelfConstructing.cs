@@ -51,6 +51,8 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits
 		private int step;
 		private SpawnType spawnType;
 
+		public bool IsConstructing => token != Actor.InvalidConditionToken;
+
 		public SelfConstructing(ActorInitializer init, SelfConstructingInfo info)
 			: base(init, info)
 		{

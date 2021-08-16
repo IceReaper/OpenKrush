@@ -1,69 +1,35 @@
 Player:
 	HackedAiShit:
-	ModularBot@PlaceholderAI:
-		Name: Placeholder AI
-		Type: placeholder
-	GrantConditionOnBotOwner@placeholder:
-		Condition: enable-placeholder-ai
-		Bots: placeholder
+	ModularBot:
+		Name: Computer
+		Type: computer
+	GrantConditionOnBotOwner:
+		Condition: enable-ai
+		Bots: computer
+	BotBaseBuilder:
+		RequiresCondition: enable-ai
+	# TODO refactor stuff below!
 	SupportPowerBotModule@placeholder:
-		RequiresCondition: enable-placeholder-ai
+		RequiresCondition: enable-ai
 		Decisions:
 			bomber:
 				OrderName: AdvancedAirstrikePowerInfoOrder
 				Consideration@1:
 					Against: Enemy
 					Types: Structure
-	#HarvesterBotModule: TODO replace this one with proper resource implementation
-	#	RequiresCondition: enable-placeholder-ai
-	HackedBaseBuilderBotModule@placeholder: # TODO replace this by building implementation
-		RequiresCondition: enable-placeholder-ai
-		ConstructionYardTypes: survivors_building_outpost, evolved_building_clanhall
-		RefineryTypes: survivors_building_powerstation, evolved_building_powerstation
-		BarracksTypes: survivors_building_outpost, evolved_building_clanhall, survivors_building_barracks, evolved_building_warriorhall
-		VehiclesFactoryTypes: survivors_building_machineshop, evolved_building_beastenclosure, evolved_building_blacksmith, evolved_building_beastforge
-		ProductionTypes: survivors_building_outpost, evolved_building_clanhall, survivors_building_barracks, evolved_building_warriorhall, survivors_building_machineshop, evolved_building_beastenclosure, evolved_building_blacksmith, evolved_building_beastforge
-		BuildingQueues: building
-		DefenseQueues: tower
-		BuildingLimits:
-			survivors_building_machineshop: 3
-			evolved_building_beastforge: 3
-		BuildingFractions:
-			survivors_building_barracks: 75
-			survivors_building_machineshop: 50
-			#survivors_building_powerstation: 1
-			survivors_geothermal: 25
-			survivors_building_researchlab: 100
-			survivors_tower_guardtower: 50
-			survivors_tower_missilebattery: 75
-			survivors_tower_cannontower: 100
-			survivors_building_airfield: 100
-			evolved_building_warriorhall: 75
-			evolved_building_beastenclosure: 50
-			evolved_building_blacksmith: 50
-			evolved_building_beastforge: 50
-			#evolved_building_powerstation: 1
-			evolved_building_gasconverter: 25
-			evolved_building_alchemyhall: 100
-			evolved_tower_machinegunnest: 50
-			evolved_tower_grapeshotcannon: 75
-			evolved_tower_rotarycannon: 100
-			evolved_building_vespiary: 100
-	#BuildingRepairBotModule: # TODO implement repair implementation
-	#	RequiresCondition: enable-placeholder-ai
 	McvManagerBotModule@placeholder:
-		RequiresCondition: enable-placeholder-ai
+		RequiresCondition: enable-ai
 		McvTypes: survivors_vehicle_mobileoutpost, evolved_vehicle_clanhallwagon
 		ConstructionYardTypes: survivors_building_outpost, evolved_building_clanhall
 		McvFactoryTypes: survivors_building_machineshop, evolved_building_blacksmith, evolved_building_beastforge
 	SquadManagerBotModule@placeholder:
-		RequiresCondition: enable-placeholder-ai
+		RequiresCondition: enable-ai
 		SquadSize: 40
 		RushInterval: 1000
 		ExcludeFromSquadsTypes: survivors_vehicle_mobileoutpost, evolved_vehicle_clanhallwagon, survivors_vehicle_derrick, evolved_vehicle_derrick, survivors_vehicle_oiltanker, evolved_vehicle_oiltanker, survivors_infantry_technician, evolved_infantry_mekanik
 		ConstructionYardTypes: survivors_building_outpost, evolved_building_clanhall
 	UnitBuilderBotModule@placeholder:
-		RequiresCondition: enable-placeholder-ai
+		RequiresCondition: enable-ai
 		UnitQueues: infantry, vehicle, beast
 		UnitsToBuild:
 			evolved_infantry_berserker: 50

@@ -52,6 +52,8 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits
 		private int sellTimerTotal;
 		private int refundAmount;
 
+		public bool IsSelling => token != Actor.InvalidConditionToken;
+
 		public DeconstructSellable(ActorInitializer init, DeconstructSellableInfo info)
 			: base(info)
 		{
