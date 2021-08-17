@@ -119,6 +119,12 @@ World:
 	# Required for the color picker.
 	ColorPickerManager:
 		PreviewActor: colorpicker
+	# Required for chat commands.
+	ChatCommands:
+	HelpCommand:
+	PlayerCommands:
+	DevCommands:
+	DebugVisualizationCommands:
 
 	LobbyOptionCategory@oilpatch:
 		Category: oilpatch
