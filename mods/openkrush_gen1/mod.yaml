@@ -118,6 +118,7 @@ Hotkeys:
 	openkrush|hotkeys/production-common.yaml
 	openkrush|hotkeys/supportpowers.yaml
 	openkrush|hotkeys/viewport.yaml
+	openkrush|hotkeys/chat.yaml
 
 LoadScreen: LoadScreen
 
