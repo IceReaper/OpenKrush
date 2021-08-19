@@ -13,36 +13,36 @@
 
 namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 {
-	using System.Linq;
 	using Common.Widgets;
 	using Mechanics.Technicians.Orders;
 	using Mechanics.Technicians.Traits;
+	using System.Linq;
 
-	public class RepairButtonWidget : ButtonWidget
+	public class RepairButtonWidget : SidebarButtonWidget
 	{
 		private bool technicians;
 
 		public RepairButtonWidget(SidebarWidget sidebar)
 			: base(sidebar, "button")
 		{
-			TooltipTitle = "Repair";
+			this.TooltipTitle = "Repair";
 		}
 
 		public override bool HandleKeyPress(KeyInput e)
 		{
-			if (!IsUsable()
+			if (!this.IsUsable()
 				|| e.IsRepeat
 				|| e.Event != KeyInputEvent.Down
 				|| e.Key != Game.ModData.Hotkeys["Repair"].GetValue().Key
 				|| e.Modifiers != Game.ModData.Hotkeys["Repair"].GetValue().Modifiers)
 				return false;
 
-			Active = !Active;
+			this.Active = !this.Active;
 
-			if (Active)
-				sidebar.IngameUi.World.OrderGenerator = new TechnicianEnterOrderGenerator();
-			else if (sidebar.IngameUi.World.OrderGenerator is TechnicianEnterOrderGenerator)
-				sidebar.IngameUi.World.CancelInputMode();
+			if (this.Active)
+				this.Sidebar.IngameUi.World.OrderGenerator = new TechnicianEnterOrderGenerator();
+			else if (this.Sidebar.IngameUi.World.OrderGenerator is TechnicianEnterOrderGenerator)
+				this.Sidebar.IngameUi.World.CancelInputMode();
 
 			return true;
 		}
@@ -52,29 +52,31 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 			if (!base.HandleLeftClick(mi))
 				return false;
 
-			if (Active)
-				sidebar.IngameUi.World.OrderGenerator = new TechnicianEnterOrderGenerator();
-			else if (sidebar.IngameUi.World.OrderGenerator is TechnicianEnterOrderGenerator)
-				sidebar.IngameUi.World.CancelInputMode();
+			if (this.Active)
+				this.Sidebar.IngameUi.World.OrderGenerator = new TechnicianEnterOrderGenerator();
+			else if (this.Sidebar.IngameUi.World.OrderGenerator is TechnicianEnterOrderGenerator)
+				this.Sidebar.IngameUi.World.CancelInputMode();
 
 			return true;
 		}
 
 		protected override bool IsUsable()
 		{
-			return technicians;
+			return this.technicians;
 		}
 
 		public override void Tick()
 		{
-			technicians = sidebar.IngameUi.World.ActorsWithTrait<Technician>().Any(e => e.Actor.Owner == sidebar.IngameUi.World.LocalPlayer && e.Actor.IsIdle);
-			Active = sidebar.IngameUi.World.OrderGenerator is TechnicianEnterOrderGenerator;
+			this.technicians = this.Sidebar.IngameUi.World.ActorsWithTrait<Technician>()
+				.Any(e => e.Actor.Owner == this.Sidebar.IngameUi.World.LocalPlayer && e.Actor.IsIdle);
+
+			this.Active = this.Sidebar.IngameUi.World.OrderGenerator is TechnicianEnterOrderGenerator;
 		}
 
 		protected override void DrawContents()
 		{
-			sidebar.Buttons.PlayFetchIndex("repair", () => 0);
-			WidgetUtils.DrawSpriteCentered(sidebar.Buttons.Image, sidebar.IngameUi.Palette, center + new int2(0, Active ? 1 : 0));
+			this.Sidebar.Buttons.PlayFetchIndex("repair", () => 0);
+			WidgetUtils.DrawSpriteCentered(this.Sidebar.Buttons.Image, this.Sidebar.IngameUi.Palette, this.Center + new int2(0, this.Active ? 1 : 0));
 		}
 	}
 }

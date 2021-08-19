@@ -13,11 +13,12 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.LobbyOptions
 {
+	using JetBrains.Annotations;
+	using OpenRA.Traits;
 	using System;
 	using System.Collections.Generic;
 	using System.Collections.ObjectModel;
 	using System.Linq;
-	using OpenRA.Traits;
 	using Traits;
 
 	public enum TechBunkerUsesType
@@ -26,6 +27,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.LobbyOptions
 		Infinitely
 	}
 
+	[UsedImplicitly]
 	[Desc("How many times a TechBunker can be used.")]
 	public class TechBunkerUsesInfo : TraitInfo, ILobbyOptions
 	{
@@ -42,10 +44,12 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.LobbyOptions
 				0,
 				new ReadOnlyDictionary<string, string>(
 					new Dictionary<TechBunkerUsesType, string> { { TechBunkerUsesType.Once, "Once" }, { TechBunkerUsesType.Infinitely, "Infinitely" } }
-						.ToDictionary(e => e.Key.ToString(), e => e.Value)),
+						.ToDictionary(e => e.Key.ToString(), e => e.Value)
+				),
 				TechBunkerUsesInfo.Default.ToString(),
 				false,
-				TechBunkerInfo.LobbyOptionsCategory);
+				TechBunkerInfo.LobbyOptionsCategory
+			);
 		}
 
 		public override object Create(ActorInitializer init)
@@ -60,9 +64,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.LobbyOptions
 
 		void INotifyCreated.Created(Actor self)
 		{
-			Uses = (TechBunkerUsesType)Enum.Parse(
+			this.Uses = (TechBunkerUsesType)Enum.Parse(
 				typeof(TechBunkerUsesType),
-				self.World.LobbyInfo.GlobalSettings.OptionOrDefault(TechBunkerUsesInfo.Id, TechBunkerUsesInfo.Default.ToString()));
+				self.World.LobbyInfo.GlobalSettings.OptionOrDefault(TechBunkerUsesInfo.Id, TechBunkerUsesInfo.Default.ToString())
+			);
 		}
 	}
 }

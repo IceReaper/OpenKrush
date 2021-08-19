@@ -13,11 +13,12 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.LobbyOptions
 {
+	using JetBrains.Annotations;
+	using OpenRA.Traits;
 	using System;
 	using System.Collections.Generic;
 	using System.Collections.ObjectModel;
 	using System.Linq;
-	using OpenRA.Traits;
 
 	public enum SaboteurUsageType
 	{
@@ -25,10 +26,11 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.LobbyOptions
 		Conquer
 	}
 
+	[UsedImplicitly]
 	[Desc("What happens when a saboteur conquers a building.")]
 	public class SaboteurUsageInfo : TraitInfo, ILobbyOptions
 	{
-		public const string LobbyOptionsCategory = "saboteur";
+		private const string LobbyOptionsCategory = "saboteur";
 
 		public const string Id = "SaboteurUsage";
 		public const SaboteurUsageType Default = SaboteurUsageType.Conquer;
@@ -42,13 +44,13 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.LobbyOptions
 				true,
 				0,
 				new ReadOnlyDictionary<string, string>(
-					new Dictionary<SaboteurUsageType, string>
-					{
-						{ SaboteurUsageType.Destroy, "Destroy" }, { SaboteurUsageType.Conquer, "Conquer" }
-					}.ToDictionary(e => e.Key.ToString(), e => e.Value)),
+					new Dictionary<SaboteurUsageType, string> { { SaboteurUsageType.Destroy, "Destroy" }, { SaboteurUsageType.Conquer, "Conquer" } }
+						.ToDictionary(e => e.Key.ToString(), e => e.Value)
+				),
 				SaboteurUsageInfo.Default.ToString(),
 				false,
-				SaboteurUsageInfo.LobbyOptionsCategory);
+				SaboteurUsageInfo.LobbyOptionsCategory
+			);
 		}
 
 		public override object Create(ActorInitializer init)
@@ -63,9 +65,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.LobbyOptions
 
 		void INotifyCreated.Created(Actor self)
 		{
-			Usage = (SaboteurUsageType)Enum.Parse(
+			this.Usage = (SaboteurUsageType)Enum.Parse(
 				typeof(SaboteurUsageType),
-				self.World.LobbyInfo.GlobalSettings.OptionOrDefault(SaboteurUsageInfo.Id, SaboteurUsageInfo.Default.ToString()));
+				self.World.LobbyInfo.GlobalSettings.OptionOrDefault(SaboteurUsageInfo.Id, SaboteurUsageInfo.Default.ToString())
+			);
 		}
 	}
 }

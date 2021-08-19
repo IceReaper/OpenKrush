@@ -30,16 +30,16 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Sacrificing.Activities
 
 		public override bool Tick(Actor self)
 		{
-			if (!IsCanceling && !SacrificingUtils.CanEnter(self, target))
-				Cancel(self, true);
+			if (!this.IsCanceling && !SacrificingUtils.CanEnter(self, this.target))
+				this.Cancel(self, true);
 
 			return base.Tick(self);
 		}
 
 		protected override void OnEnterComplete(Actor self, Actor targetActor)
 		{
-			self.Trait<Sacrificable>().Enter(self, targetActor);
-			targetActor.Trait<Sacrificer>().Enter();
+			self.TraitOrDefault<Sacrificable>().Enter(self);
+			targetActor.TraitOrDefault<Sacrificer>().Enter();
 			self.Dispose();
 		}
 	}

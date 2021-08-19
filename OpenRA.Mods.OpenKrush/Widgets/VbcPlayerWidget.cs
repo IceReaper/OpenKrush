@@ -13,75 +13,86 @@
 
 namespace OpenRA.Mods.OpenKrush.Widgets
 {
-	using System;
+	using Assets.FileFormats;
 	using Common.Widgets;
-	using FileFormats;
-	using OpenRA.Graphics;
+	using Graphics;
 	using Primitives;
+	using System;
 
 	public class VbcPlayerWidget : ColorBlockWidget
 	{
-		private Vbc video;
+		private Vbc? video;
 
-		private Sprite videoSprite;
+		private Sprite? videoSprite;
 
 		private long duration;
 		private long start;
 		private int lastFrame;
-		private Action onComplete;
+		private Action? onComplete;
 
-		public Vbc Video
+		public Vbc? Video
 		{
-			get => video;
-
 			set
 			{
-				video = value;
+				this.video = value;
 
-				var size = new Size(Exts.NextPowerOf2(video.Width), Exts.NextPowerOf2(video.Height));
-				videoSprite = new Sprite(new Sheet(SheetType.BGRA, size), new Rectangle(0, 0, size.Width, size.Height), TextureChannel.RGBA);
-				videoSprite.Sheet.GetTexture().ScaleFilter = TextureScaleFilter.Linear;
+				if (this.video == null)
+				{
+					this.videoSprite = null;
+
+					return;
+				}
+
+				var size = new Size(Exts.NextPowerOf2(this.video.Width), Exts.NextPowerOf2(this.video.Height));
+				this.videoSprite = new(new(SheetType.BGRA, size), new(0, 0, size.Width, size.Height), TextureChannel.RGBA);
+				this.videoSprite.Sheet.GetTexture().ScaleFilter = TextureScaleFilter.Linear;
 			}
 		}
 
 		public VbcPlayerWidget(ModData modData)
 			: base(modData)
 		{
-			Visible = false;
-			Color = Color.Black;
+			this.Visible = false;
+			this.Color = Color.Black;
 		}
 
-		public void Play(Action onComplete)
+		public void Play(Action complete)
 		{
-			this.onComplete = onComplete;
-			Visible = true;
+			this.onComplete = complete;
+			this.Visible = true;
 
-			start = Game.RunTime;
-			lastFrame = 0;
-			UpdateFrame();
+			this.start = Game.RunTime;
+			this.lastFrame = 0;
+			this.UpdateFrame();
 
-			var audio = Video.AudioData;
-			duration = audio.Length * 1000L / (video.SampleRate * 1 * (video.SampleBits / 8));
-			Game.Sound.PlayVideo(audio, 1, Video.SampleBits, Video.SampleRate);
+			if (this.video == null)
+				return;
+
+			var audio = this.video.AudioData;
+			this.duration = audio.Length * 1000L / (this.video.SampleRate * 1 * (this.video.SampleBits / 8));
+			Game.Sound.PlayVideo(audio, 1, this.video.SampleBits, this.video.SampleRate);
 		}
 
 		private void UpdateFrame()
 		{
-			Video.AdvanceFrame();
-			videoSprite.Sheet.GetTexture().SetData(Video.FrameData);
+			if (this.video == null)
+				return;
+
+			this.video.AdvanceFrame();
+			this.videoSprite?.Sheet.GetTexture().SetData(this.video.FrameData);
 		}
 
-		public void Stop()
+		private void Stop()
 		{
 			Game.Sound.StopVideo();
-			Visible = false;
-			onComplete();
+			this.Visible = false;
+			this.onComplete?.Invoke();
 		}
 
 		public override bool HandleKeyPress(KeyInput e)
 		{
 			if (e.Event == KeyInputEvent.Down)
-				Stop();
+				this.Stop();
 
 			return true;
 		}
@@ -89,46 +100,52 @@ namespace OpenRA.Mods.OpenKrush.Widgets
 		public override bool HandleMouseInput(MouseInput mi)
 		{
 			if (mi.Event == MouseInputEvent.Down)
-				Stop();
+				this.Stop();
 
 			return true;
 		}
 
 		public override void Tick()
 		{
-			if (!Visible)
+			if (!this.Visible)
 				return;
 
-			if (start + duration < Game.RunTime)
+			if (this.start + this.duration < Game.RunTime)
 			{
-				Stop();
+				this.Stop();
 
 				return;
 			}
 
-			var currentFrame = Math.Min((Game.RunTime - start) * Video.Frames / duration, Video.Frames);
+			if (this.video == null)
+				return;
 
-			while (currentFrame > lastFrame)
+			var currentFrame = Math.Min((Game.RunTime - this.start) * this.video.Frames / this.duration, this.video.Frames);
+
+			while (currentFrame > this.lastFrame)
 			{
-				++lastFrame;
+				++this.lastFrame;
 
-				if (lastFrame < video.Frames)
-					UpdateFrame();
+				if (this.lastFrame < this.video.Frames)
+					this.UpdateFrame();
 			}
 		}
 
 		public override void Draw()
 		{
-			if (!Visible)
+			if (!this.Visible)
 				return;
 
 			base.Draw();
 
-			var scale = Math.Min(Bounds.Width / video.Width, Bounds.Height / video.Height);
-			var videoSize = new int2(video.Width * scale, video.Height * scale);
-			var position = new int2((Bounds.Width - videoSize.X) / 2, (Bounds.Height - videoSize.Y) / 2) + Bounds.Location;
+			if (this.video == null)
+				return;
 
-			Game.Renderer.RgbaSpriteRenderer.DrawSprite(videoSprite, position, scale);
+			var scale = Math.Min(this.Bounds.Width / this.video.Width, this.Bounds.Height / this.video.Height);
+			var videoSize = new int2(this.video.Width * scale, this.video.Height * scale);
+			var position = new int2((this.Bounds.Width - videoSize.X) / 2, (this.Bounds.Height - videoSize.Y) / 2) + this.Bounds.Location;
+
+			Game.Renderer.RgbaSpriteRenderer.DrawSprite(this.videoSprite, position, scale);
 		}
 	}
 }

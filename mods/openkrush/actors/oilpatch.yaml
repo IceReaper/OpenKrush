@@ -2,7 +2,7 @@
 oilpatch:
 	Inherits: ^CoreConstruction
 	# Oilpatch behavior.
-	Oilpatch:
+	OilPatch:
 	# Put oil in resources catgegory in map editor.
 	MapEditorData:
 		Categories: Resource

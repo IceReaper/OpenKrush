@@ -34,12 +34,12 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.Orders
 		{
 			if (!SaboteurUtils.CanEnter(self, target))
 			{
-				cursor = cursorForbidden;
+				cursor = this.cursorForbidden;
 
 				return false;
 			}
 
-			cursor = cursorAllowed;
+			cursor = this.cursorAllowed;
 
 			return true;
 		}

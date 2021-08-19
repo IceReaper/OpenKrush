@@ -13,11 +13,12 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.LobbyOptions
 {
+	using JetBrains.Annotations;
+	using OpenRA.Traits;
 	using System;
 	using System.Collections.Generic;
 	using System.Collections.ObjectModel;
 	using System.Linq;
-	using OpenRA.Traits;
 	using Traits;
 
 	public enum TechBunkerContainsType
@@ -27,6 +28,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.LobbyOptions
 		Both
 	}
 
+	[UsedImplicitly]
 	[Desc("What a TechBunker may contain.")]
 	public class TechBunkerContainsInfo : TraitInfo, ILobbyOptions
 	{
@@ -47,10 +49,12 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.LobbyOptions
 						{ TechBunkerContainsType.Resources, "Resources" },
 						{ TechBunkerContainsType.Units, "Units" },
 						{ TechBunkerContainsType.Both, "Both" }
-					}.ToDictionary(e => e.Key.ToString(), e => e.Value)),
+					}.ToDictionary(e => e.Key.ToString(), e => e.Value)
+				),
 				TechBunkerContainsInfo.Default.ToString(),
 				false,
-				TechBunkerInfo.LobbyOptionsCategory);
+				TechBunkerInfo.LobbyOptionsCategory
+			);
 		}
 
 		public override object Create(ActorInitializer init)
@@ -65,9 +69,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.LobbyOptions
 
 		void INotifyCreated.Created(Actor self)
 		{
-			Contains = (TechBunkerContainsType)Enum.Parse(
+			this.Contains = (TechBunkerContainsType)Enum.Parse(
 				typeof(TechBunkerContainsType),
-				self.World.LobbyInfo.GlobalSettings.OptionOrDefault(TechBunkerContainsInfo.Id, TechBunkerContainsInfo.Default.ToString()));
+				self.World.LobbyInfo.GlobalSettings.OptionOrDefault(TechBunkerContainsInfo.Id, TechBunkerContainsInfo.Default.ToString())
+			);
 		}
 	}
 }

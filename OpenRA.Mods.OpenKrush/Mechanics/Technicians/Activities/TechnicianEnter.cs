@@ -31,15 +31,15 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Activities
 
 		public override bool Tick(Actor self)
 		{
-			if (!IsCanceling && !TechnicianUtils.CanEnter(self, target))
-				Cancel(self, true);
+			if (!this.IsCanceling && !TechnicianUtils.CanEnter(self, this.target))
+				this.Cancel(self, true);
 
 			return base.Tick(self);
 		}
 
 		protected override void OnEnterComplete(Actor self, Actor targetActor)
 		{
-			self.Trait<Technician>().Enter(self, targetActor);
+			self.TraitOrDefault<Technician>().Enter(self, targetActor);
 			targetActor.TraitOrDefault<TechnicianRepairable>()?.Enter();
 			targetActor.TraitOrDefault<TechBunker>()?.Use(targetActor, self.Owner);
 			self.Dispose();

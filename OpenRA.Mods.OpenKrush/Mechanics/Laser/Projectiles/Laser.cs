@@ -13,16 +13,18 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Laser.Projectiles
 {
+	using GameRules;
+	using Graphics;
+	using JetBrains.Annotations;
+	using OpenRA.Graphics;
+	using Primitives;
+	using Support;
 	using System;
 	using System.Collections.Generic;
 	using System.Numerics;
-	using GameRules;
-	using Graphics;
-	using OpenRA.Graphics;
-	using OpenRA.Traits;
-	using Primitives;
-	using Support;
+	using Traits;
 
+	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("A beautiful generated laser beam.")]
 	public class LaserInfo : IProjectileInfo
 	{
@@ -42,16 +44,16 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Laser.Projectiles
 		public readonly int Radius = 3;
 
 		[Desc("Distortion offset.")]
-		public readonly int Distortion = 0;
+		public readonly int Distortion;
 
 		[Desc("Distortion animation offset.")]
-		public readonly int DistortionAnimation = 0;
+		public readonly int DistortionAnimation;
 
 		[Desc("Maximum length per segment.")]
 		public readonly WDist SegmentLength = WDist.Zero;
 
 		[Desc("Equivalent to sequence ZOffset. Controls Z sorting.")]
-		public readonly int ZOffset = 0;
+		public readonly int ZOffset;
 
 		public IProjectile Create(ProjectileArgs args)
 		{
@@ -62,21 +64,19 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Laser.Projectiles
 	public class Laser : IProjectile
 	{
 		private readonly LaserInfo info;
+		private readonly MersenneTwister random;
 		private readonly Color[] colors;
 		private readonly WPos[] offsets;
-		private readonly float[] distances;
-
-		private readonly WVec leftVector;
-		private readonly WVec upVector;
-		private readonly MersenneTwister random;
+		private readonly float[]? distances;
 
 		private int ticks;
 
 		public Laser(ProjectileArgs args, LaserInfo info)
 		{
 			this.info = info;
+			this.random = args.SourceActor.World.SharedRandom;
 
-			colors = new Color[info.Radius];
+			this.colors = new Color[info.Radius];
 
 			for (var i = 0; i < info.Radius; i++)
 			{
@@ -85,45 +85,30 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Laser.Projectiles
 				var dstR = bw > .5 ? 1 - (1 - 2 * (bw - .5)) * (1 - (float)color.R / 0xff) : 2 * bw * ((float)color.R / 0xff);
 				var dstG = bw > .5 ? 1 - (1 - 2 * (bw - .5)) * (1 - (float)color.G / 0xff) : 2 * bw * ((float)color.G / 0xff);
 				var dstB = bw > .5 ? 1 - (1 - 2 * (bw - .5)) * (1 - (float)color.B / 0xff) : 2 * bw * ((float)color.B / 0xff);
-				colors[i] = Color.FromArgb((int)(dstR * 0xff), (int)(dstG * 0xff), (int)(dstB * 0xff));
+				this.colors[i] = Color.FromArgb((int)(dstR * 0xff), (int)(dstG * 0xff), (int)(dstB * 0xff));
 			}
 
 			var direction = args.PassiveTarget - args.Source;
 
-			if (info.Distortion != 0 || info.DistortionAnimation != 0)
-			{
-				leftVector = new WVec(direction.Y, -direction.X, 0);
-
-				if (leftVector.Length != 0)
-					leftVector = 1024 * leftVector / leftVector.Length;
-
-				upVector = new WVec(-direction.X * direction.Z, -direction.Z * direction.Y, direction.X * direction.X + direction.Y * direction.Y);
-
-				if (upVector.Length != 0)
-					upVector = 1024 * upVector / upVector.Length;
-
-				random = args.SourceActor.World.SharedRandom;
-			}
-
 			if (this.info.SegmentLength == WDist.Zero)
-				offsets = new[] { args.Source, args.PassiveTarget };
+				this.offsets = new[] { args.Source, args.PassiveTarget };
 			else
 			{
 				var numSegments = (direction.Length - 1) / info.SegmentLength.Length + 1;
 
-				offsets = new WPos[numSegments + 1];
-				offsets[0] = args.Source;
-				offsets[offsets.Length - 1] = args.PassiveTarget;
+				this.offsets = new WPos[numSegments + 1];
+				this.offsets[0] = args.Source;
+				this.offsets[^1] = args.PassiveTarget;
 
-				distances = new float[offsets.Length];
+				this.distances = new float[this.offsets.Length];
 
 				if (info.Distortion != 0)
 				{
 					for (var i = 1; i < numSegments; i++)
-						distances[i] = random.Next(info.Distortion * 2) - info.Distortion;
+						this.distances[i] = this.random.Next(info.Distortion * 2) - info.Distortion;
 				}
 
-				CalculateOffsets();
+				this.CalculateOffsets();
 			}
 
 			args.Weapon.Impact(Target.FromPos(args.PassiveTarget), args.SourceActor);
@@ -131,28 +116,34 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Laser.Projectiles
 
 		public void Tick(World world)
 		{
-			if (++ticks >= info.Duration)
+			if (++this.ticks >= this.info.Duration)
 				world.AddFrameEndTask(w => w.Remove(this));
-			else if (info.DistortionAnimation != 0)
+			else if (this.info.DistortionAnimation != 0 && this.distances != null)
 			{
-				for (var i = 1; i < distances.Length - 1; i++)
-					distances[i] = Math.Clamp(
-						distances[i] + random.Next(info.DistortionAnimation * 2) - info.DistortionAnimation,
-						-info.Distortion,
-						info.Distortion);
+				for (var i = 1; i < this.distances.Length - 1; i++)
+				{
+					this.distances[i] = Math.Clamp(
+						this.distances[i] + this.random.Next(this.info.DistortionAnimation * 2) - this.info.DistortionAnimation,
+						-this.info.Distortion,
+						this.info.Distortion
+					);
+				}
 
-				CalculateOffsets();
+				this.CalculateOffsets();
 			}
 		}
 
 		private void CalculateOffsets()
 		{
-			var source = offsets[0];
-			var numSegments = offsets.Length - 1;
-			var distance = (offsets[numSegments] - source) / numSegments;
+			if (this.distances == null)
+				return;
+
+			var source = this.offsets[0];
+			var numSegments = this.offsets.Length - 1;
+			var distance = (this.offsets[numSegments] - source) / numSegments;
 
 			for (var i = 1; i < numSegments; i++)
-				offsets[i] = source + Laser.FindPoint(distance * i, distances[i]);
+				this.offsets[i] = source + Laser.FindPoint(distance * i, this.distances[i]);
 		}
 
 		private static WVec FindPoint(WVec pos, float distance)
@@ -163,14 +154,14 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Laser.Projectiles
 			var angle = distance / circumference * (float)Math.PI;
 			dir = Vector3.Transform(dir, Quaternion.CreateFromAxisAngle(Vector3.UnitZ, angle));
 
-			return new WVec((int)dir.X, (int)dir.Y, (int)dir.Z);
+			return new((int)dir.X, (int)dir.Y, (int)dir.Z);
 		}
 
 		public IEnumerable<IRenderable> Render(WorldRenderer worldRenderer)
 		{
-			for (var i = 0; i < offsets.Length - 1; i++)
-			for (var j = 0; j < info.Radius; j++)
-				yield return new LaserRenderable(offsets, info.ZOffset, new WDist(32 + (info.Radius - j - 1) * 64), colors[j]);
+			for (var i = 0; i < this.offsets.Length - 1; i++)
+			for (var j = 0; j < this.info.Radius; j++)
+				yield return new LaserRenderable(this.offsets, this.info.ZOffset, new(32 + (this.info.Radius - j - 1) * 64), this.colors[j]);
 		}
 	}
 }

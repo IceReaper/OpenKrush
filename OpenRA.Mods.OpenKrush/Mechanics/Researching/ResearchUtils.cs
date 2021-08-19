@@ -13,6 +13,7 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Researching
 {
+	using System;
 	using Traits;
 
 	public static class ResearchUtils
@@ -27,7 +28,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching
 			if (target.Owner != self.Owner)
 				return ResearchAction.None;
 
-			var researches = self.Trait<Researches>();
+			var researches = self.TraitOrDefault<Researches>();
 
 			if (researches == null)
 				return ResearchAction.None;
@@ -42,21 +43,27 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching
 			if (researchable == null)
 				return ResearchAction.None;
 
-			var currentState = researchable.GetState();
+			var currentState = researchable.GetState(target);
 
-			if (currentState == ResarchState.Unavailable)
-				return ResearchAction.None;
+			switch (currentState)
+			{
+				case ResarchState.Unavailable:
+					return ResearchAction.None;
 
-			if (currentState == ResarchState.Researching)
-				return ResearchAction.Stop;
+				case ResarchState.Researching:
+					return ResearchAction.Stop;
+
+				case ResarchState.Available:
+					break;
+
+				default:
+					throw new ArgumentOutOfRangeException(Enum.GetName(currentState));
+			}
 
 			if (researchesState == ResarchState.Researching)
 				return ResearchAction.None;
 
-			if (researchable.Level >= researchable.MaxLevel)
-				return ResearchAction.None;
-
-			return ResearchAction.Start;
+			return researchable.Level >= researchable.MaxLevel ? ResearchAction.None : ResearchAction.Start;
 		}
 	}
 }

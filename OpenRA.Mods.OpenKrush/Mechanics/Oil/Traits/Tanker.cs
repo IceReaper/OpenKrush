@@ -13,14 +13,15 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 {
-	using System;
 	using Activities;
 	using Docking.Activities;
 	using Docking.Traits;
-	using Docking.Traits.Actions;
+	using JetBrains.Annotations;
 	using OpenRA.Activities;
 	using OpenRA.Traits;
+	using System;
 
+	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("Tanker implementation.")]
 	public class TankerInfo : DockableInfo
 	{
@@ -37,8 +38,8 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 	{
 		private readonly TankerInfo info;
 
-		public Actor PreferedDrillrig;
-		public Actor PreferedPowerStation;
+		public Actor? PreferedDrillrig;
+		public Actor? PreferedPowerStation;
 
 		public Tanker(TankerInfo info)
 			: base(info)
@@ -48,24 +49,24 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 
 		void INotifyCreated.Created(Actor self)
 		{
-			self.World.AddFrameEndTask(world => self.QueueActivity(new TankerCycle(self, this)));
+			self.World.AddFrameEndTask(_ => self.QueueActivity(new TankerCycle(self, this)));
 		}
 
 		public int Current { get; private set; }
-		public int Maximum => info.Capacity;
+		public int Maximum => this.info.Capacity;
 
 		public int Pull(int amount)
 		{
-			var pullAmount = Math.Min(amount, Current);
-			Current -= pullAmount;
+			var pullAmount = Math.Min(amount, this.Current);
+			this.Current -= pullAmount;
 
 			return pullAmount;
 		}
 
 		public int Push(int amount)
 		{
-			var pushAmount = Math.Min(amount, Maximum - Current);
-			Current += pushAmount;
+			var pushAmount = Math.Min(amount, this.Maximum - this.Current);
+			this.Current += pushAmount;
 
 			return amount - pushAmount;
 		}
@@ -74,39 +75,37 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 		{
 			if (target.TraitOrDefault<Drillrig>() != null)
 			{
-				PreferedDrillrig = target;
-				var tankerCycle = new TankerCycle(self, this);
-				tankerCycle.QueueChild(new Docking(self, PreferedDrillrig, PreferedDrillrig.Trait<Dock>()));
+				this.PreferedDrillrig = target;
+				var tankerCycleDrillrig = new TankerCycle(self, this);
+				tankerCycleDrillrig.QueueChild(new Docking(self, this.PreferedDrillrig, this.PreferedDrillrig.TraitOrDefault<Dock>()));
 
-				return tankerCycle;
+				return tankerCycleDrillrig;
 			}
 
-			if (target.TraitOrDefault<PowerStation>() != null)
-			{
-				PreferedPowerStation = target;
-				var tankerCycle = new TankerCycle(self, this);
-				tankerCycle.QueueChild(new Docking(self, PreferedPowerStation, PreferedPowerStation.Trait<Dock>()));
+			if (target.TraitOrDefault<PowerStation>() == null)
+				return base.GetDockingActivity(self, target, dock);
 
-				return tankerCycle;
-			}
+			this.PreferedPowerStation = target;
+			var tankerCyclePowerStation = new TankerCycle(self, this);
+			tankerCyclePowerStation.QueueChild(new Docking(self, this.PreferedPowerStation, this.PreferedPowerStation.TraitOrDefault<Dock>()));
 
-			return base.GetDockingActivity(self, target, dock);
+			return tankerCyclePowerStation;
 		}
 
 		void ITick.Tick(Actor self)
 		{
-			if (PreferedDrillrig != null && !OilUtils.IsUsable(PreferedDrillrig, PreferedDrillrig.Trait<Drillrig>()))
+			if (this.PreferedDrillrig != null && !OilUtils.IsUsable(this.PreferedDrillrig, this.PreferedDrillrig.TraitOrDefault<Drillrig>()))
 			{
 				// When releasing the drillrig, we should also release the powerstation as another one might be the better pick.
-				PreferedDrillrig = null;
-				PreferedPowerStation = null;
+				this.PreferedDrillrig = null;
+				this.PreferedPowerStation = null;
 			}
 
-			if (PreferedPowerStation != null && PreferedPowerStation.Owner.RelationshipWith(self.Owner) != PlayerRelationship.Ally)
-				PreferedPowerStation = null;
+			if (this.PreferedPowerStation != null && this.PreferedPowerStation.Owner.RelationshipWith(self.Owner) != PlayerRelationship.Ally)
+				this.PreferedPowerStation = null;
 
-			if (PreferedPowerStation != null && !OilUtils.IsUsable(PreferedPowerStation, PreferedPowerStation.Trait<PowerStation>()))
-				PreferedPowerStation = null;
+			if (this.PreferedPowerStation != null && !OilUtils.IsUsable(this.PreferedPowerStation, this.PreferedPowerStation.TraitOrDefault<PowerStation>()))
+				this.PreferedPowerStation = null;
 		}
 	}
 }

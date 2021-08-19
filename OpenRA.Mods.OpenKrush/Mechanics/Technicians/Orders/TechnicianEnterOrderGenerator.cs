@@ -13,10 +13,10 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Orders
 {
-	using System.Collections.Generic;
-	using System.Linq;
 	using OpenRA.Orders;
 	using OpenRA.Traits;
+	using System.Collections.Generic;
+	using System.Linq;
 	using Traits;
 
 	public class TechnicianEnterOrderGenerator : UnitOrderGenerator
@@ -25,9 +25,9 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Orders
 
 		public override void Tick(World world)
 		{
-			technicians = world.ActorsHavingTrait<Technician>().Where(e => e.Owner == world.LocalPlayer && e.IsIdle);
+			this.technicians = world.ActorsHavingTrait<Technician>().Where(e => e.Owner == world.LocalPlayer && e.IsIdle);
 
-			if (!technicians.Any())
+			if (!this.technicians.Any())
 				world.CancelInputMode();
 		}
 
@@ -37,25 +37,29 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Orders
 				world.CancelInputMode();
 			else
 			{
-				var technician = technicians.OrderBy(e => (e.CenterPosition - world.Map.CenterOfCell(cell)).Length).First();
+				var technician = this.technicians.OrderBy(e => (e.CenterPosition - world.Map.CenterOfCell(cell)).Length).FirstOrDefault();
+
+				if (technician == null)
+					yield break;
+
 				var actor = world.ActorMap.GetActorsAt(cell).FirstOrDefault(a => TechnicianUtils.CanEnter(technician, a));
 
 				if (actor == null)
 					yield break;
 
-				yield return new Order(TechnicianEnterOrderTargeter.Id, technician, Target.FromActor(actor), true);
+				yield return new(TechnicianEnterOrderTargeter.Id, technician, Target.FromActor(actor), true);
 			}
 		}
 
-		public override string GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)
+		public override string? GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)
 		{
-			var technician = technicians.OrderBy(e => (e.CenterPosition - world.Map.CenterOfCell(cell)).Length).FirstOrDefault();
+			var technician = this.technicians.OrderBy(e => (e.CenterPosition - world.Map.CenterOfCell(cell)).Length).FirstOrDefault();
 
 			if (technician == null)
 				return null;
 
 			var actor = world.ActorMap.GetActorsAt(cell).FirstOrDefault(a => TechnicianUtils.CanEnter(technician, a));
-			var info = technician.Info.TraitInfo<TechnicianInfo>();
+			var info = technician.Info.TraitInfoOrDefault<TechnicianInfo>();
 
 			return actor != null ? info.Cursor : info.BlockedCursor;
 		}

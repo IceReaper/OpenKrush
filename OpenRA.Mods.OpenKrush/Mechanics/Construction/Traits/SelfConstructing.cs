@@ -13,12 +13,13 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits
 {
+	using Common.Traits;
+	using Common.Traits.Render;
+	using JetBrains.Annotations;
+	using OpenRA.Traits;
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
-	using Common.Traits;
-	using Common.Traits.Render;
-	using OpenRA.Traits;
 
 	public enum SpawnType
 	{
@@ -27,6 +28,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits
 		Other
 	}
 
+	[UsedImplicitly]
 	public class SelfConstructingInfo : WithMakeAnimationInfo, Requires<IHealthInfo>
 	{
 		public override object Create(ActorInitializer init)
@@ -38,141 +40,160 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits
 	public class SelfConstructing : WithMakeAnimation, ITick, INotifyRemovedFromWorld, INotifyCreated, INotifyDamageStateChanged, INotifyKilled
 	{
 		public readonly SelfConstructingInfo Info;
-		public readonly int Steps = 0;
+		public readonly int Steps;
 
 		private readonly WithSpriteBody wsb;
 
 		private int token = Actor.InvalidConditionToken;
 
-		private ProductionItem productionItem;
+		private ProductionItem? productionItem;
 
-		private List<int> healthSteps;
-		private Health health;
+		private List<int> healthSteps = new();
+		private Health? health;
 		private int step;
-		private SpawnType spawnType;
+		private readonly SpawnType spawnType;
 
-		public bool IsConstructing => token != Actor.InvalidConditionToken;
+		public bool IsConstructing => this.token != Actor.InvalidConditionToken;
 
 		public SelfConstructing(ActorInitializer init, SelfConstructingInfo info)
 			: base(init, info)
 		{
-			Info = info;
-			wsb = init.Self.Trait<WithSpriteBody>();
+			this.Info = info;
+			this.wsb = init.Self.TraitOrDefault<WithSpriteBody>();
 
-			if (!string.IsNullOrEmpty(Info.Condition) && token == Actor.InvalidConditionToken)
-				token = init.Self.GrantCondition(Info.Condition);
+			if (!string.IsNullOrEmpty(this.Info.Condition) && this.token == Actor.InvalidConditionToken)
+				this.token = init.Self.GrantCondition(this.Info.Condition);
 
-			spawnType = init.Contains<PlaceBuildingInit>(null) ? SpawnType.PlaceBuilding :
+			this.spawnType = init.Contains<PlaceBuildingInit>(null) ? SpawnType.PlaceBuilding :
 				init.Contains<SpawnedByMapInit>() ? SpawnType.Other : SpawnType.Deploy;
 
-			for (Steps = 0; ; Steps++)
+			for (this.Steps = 0;; this.Steps++)
 			{
-				if (!wsb.DefaultAnimation.HasSequence(Info.Sequence.Substring(0, Info.Sequence.Length - 1) + Steps))
+				if (!this.wsb.DefaultAnimation.HasSequence(this.Info.Sequence[..^1] + this.Steps))
 					break;
 			}
 		}
 
 		void INotifyCreated.Created(Actor self)
 		{
-			if (spawnType == SpawnType.PlaceBuilding)
+			switch (this.spawnType)
 			{
-				var productionQueue = self.Owner.PlayerActor.TraitsImplementing<SelfConstructingProductionQueue>().First(q => q.AllItems().Contains(self.Info));
-				var valued = self.Info.TraitInfoOrDefault<ValuedInfo>();
+				case SpawnType.PlaceBuilding:
+				{
+					var productionQueue = self.Owner.PlayerActor.TraitsImplementing<SelfConstructingProductionQueue>()
+						.FirstOrDefault(q => q.AllItems().Contains(self.Info));
 
-				productionItem = new SelfConstructingProductionItem(productionQueue, self, valued == null ? 0 : valued.Cost, null, null);
-				productionQueue.BeginProduction(productionItem, false);
+					if (productionQueue == null)
+						return;
 
-				health = self.Trait<Health>();
+					var valued = self.Info.TraitInfoOrDefault<ValuedInfo>();
 
-				healthSteps = new List<int>();
+					this.productionItem = new SelfConstructingProductionItem(productionQueue, self, valued?.Cost ?? 0, null, null);
+					productionQueue.BeginProduction(this.productionItem, false);
 
-				for (var i = 0; i <= Steps; i++)
-					healthSteps.Add(health.MaxHP * (i + 1) / (Steps + 1));
+					this.health = self.TraitOrDefault<Health>();
 
-				self.World.AddFrameEndTask(world => health.InflictDamage(self, self, new Damage(health.MaxHP - healthSteps[0]), true));
+					this.healthSteps = new();
 
-				wsb.CancelCustomAnimation(self);
-				wsb.PlayCustomAnimationRepeating(self, Info.Sequence.Substring(0, Info.Sequence.Length - 1) + 0);
+					for (var i = 0; i <= this.Steps; i++)
+						this.healthSteps.Add(this.health.MaxHP * (i + 1) / (this.Steps + 1));
+
+					self.World.AddFrameEndTask(_ => this.health.InflictDamage(self, self, new(this.health.MaxHP - this.healthSteps[0]), true));
+
+					this.wsb.CancelCustomAnimation(self);
+					this.wsb.PlayCustomAnimationRepeating(self, this.Info.Sequence[..^1] + 0);
+
+					break;
+				}
+
+				case SpawnType.Deploy:
+					this.wsb.CancelCustomAnimation(self);
+					this.wsb.PlayCustomAnimation(self, "deploy", () => this.OnComplete(self));
+
+					break;
+
+				case SpawnType.Other:
+					this.OnComplete(self);
+
+					break;
+
+				default:
+					throw new ArgumentOutOfRangeException(Enum.GetName(this.spawnType));
 			}
-			else if (spawnType == SpawnType.Deploy)
-			{
-				wsb.CancelCustomAnimation(self);
-				wsb.PlayCustomAnimation(self, "deploy", () => OnComplete(self));
-			}
-			else
-				OnComplete(self);
 		}
 
 		private void OnComplete(Actor self)
 		{
-			if (token != Actor.InvalidConditionToken)
-				token = self.RevokeCondition(token);
+			if (this.token != Actor.InvalidConditionToken)
+				this.token = self.RevokeCondition(this.token);
 		}
 
 		void ITick.Tick(Actor self)
 		{
-			if (productionItem == null)
+			if (this.productionItem == null)
 				return;
 
-			if (productionItem.Done)
+			if (this.productionItem.Done)
 			{
-				productionItem.Queue.EndProduction(productionItem);
-				productionItem = null;
-				wsb.CancelCustomAnimation(self);
+				this.productionItem.Queue.EndProduction(this.productionItem);
+				this.productionItem = null;
+				this.wsb.CancelCustomAnimation(self);
 
-				while (step < Steps)
-					health.InflictDamage(self, self, new Damage(healthSteps[step] - healthSteps[++step]), true);
+				for (; this.step < this.Steps; this.step++)
+					this.health?.InflictDamage(self, self, new(this.healthSteps[this.step] - this.healthSteps[this.step + 1]), true);
 
-				OnComplete(self);
+				this.OnComplete(self);
 
 				return;
 			}
 
 			var progress = Math.Max(
 				0,
-				Math.Min(Steps * (productionItem.TotalTime - productionItem.RemainingTime) / Math.Max(1, productionItem.TotalTime), Steps - 1));
+				Math.Min(
+					this.Steps * (this.productionItem.TotalTime - this.productionItem.RemainingTime) / Math.Max(1, this.productionItem.TotalTime),
+					this.Steps - 1
+				)
+			);
 
-			if (progress != step)
-			{
-				while (step < progress)
-					health.InflictDamage(self, self, new Damage(healthSteps[step] - healthSteps[++step]), true);
+			if (progress == this.step)
+				return;
 
-				wsb.PlayCustomAnimationRepeating(self, Info.Sequence.Substring(0, Info.Sequence.Length - 1) + step);
-			}
+			for (; this.step < progress; this.step++)
+				this.health?.InflictDamage(self, self, new(this.healthSteps[this.step] - this.healthSteps[this.step + 1]), true);
+
+			this.wsb.PlayCustomAnimationRepeating(self, this.Info.Sequence[..^1] + this.step);
 		}
 
 		void INotifyRemovedFromWorld.RemovedFromWorld(Actor self)
 		{
-			if (productionItem != null)
-				productionItem.Queue.EndProduction(productionItem);
+			this.productionItem?.Queue.EndProduction(this.productionItem);
 		}
 
-		public ProductionItem TryAbort(Actor self)
+		public ProductionItem? TryAbort(Actor self)
 		{
-			if (productionItem == null)
+			if (this.productionItem == null)
 				return null;
 
-			var item = productionItem;
+			var item = this.productionItem;
 
-			productionItem.Queue.EndProduction(productionItem);
-			productionItem = null;
-			OnComplete(self);
+			this.productionItem.Queue.EndProduction(this.productionItem);
+			this.productionItem = null;
+			this.OnComplete(self);
 
 			return item;
 		}
 
 		void INotifyDamageStateChanged.DamageStateChanged(Actor self, AttackInfo e)
 		{
-			if (productionItem == null)
+			if (this.productionItem == null)
 				return;
 
-			wsb.PlayCustomAnimationRepeating(self, Info.Sequence.Substring(0, Info.Sequence.Length - 1) + step);
+			this.wsb.PlayCustomAnimationRepeating(self, this.Info.Sequence[..^1] + this.step);
 		}
 
 		void INotifyKilled.Killed(Actor self, AttackInfo e)
 		{
-			if (productionItem != null)
-				productionItem.Queue.EndProduction(productionItem);
+			this.productionItem?.Queue.EndProduction(this.productionItem);
 		}
 	}
 }

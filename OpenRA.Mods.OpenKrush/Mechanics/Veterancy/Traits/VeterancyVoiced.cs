@@ -13,17 +13,19 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Veterancy.Traits
 {
-	using System;
 	using Common.Traits;
+	using JetBrains.Annotations;
 	using OpenRA.Traits;
+	using System;
 
+	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("This actor has a different voice for each veterancy level.")]
 	public class VeterancyVoicedInfo : TraitInfo
 	{
 		[FieldLoader.RequireAttribute]
 		[Desc("Which voice sets to use.")]
 		[VoiceSetReference]
-		public readonly string[] VoiceSets = { };
+		public readonly string[] VoiceSets = Array.Empty<string>();
 
 		[Desc("Multiply volume with this factor.")]
 		public readonly float Volume = 1f;
@@ -37,7 +39,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Veterancy.Traits
 	public class VeterancyVoiced : IVoiced, INotifyCreated
 	{
 		private readonly VeterancyVoicedInfo info;
-		private Veterancy veterancy;
+		private Veterancy? veterancy;
 
 		public VeterancyVoiced(VeterancyVoicedInfo info)
 		{
@@ -46,23 +48,23 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Veterancy.Traits
 
 		void INotifyCreated.Created(Actor self)
 		{
-			veterancy = self.TraitOrDefault<Veterancy>();
+			this.veterancy = self.TraitOrDefault<Veterancy>();
 		}
 
-		string IVoiced.VoiceSet => info.VoiceSets[veterancy != null ? Math.Min(veterancy.Level, info.VoiceSets.Length - 1) : 0];
+		string IVoiced.VoiceSet => this.info.VoiceSets[this.veterancy != null ? Math.Min(this.veterancy.Level, this.info.VoiceSets.Length - 1) : 0];
 
-		bool IVoiced.PlayVoice(Actor self, string phrase, string variant)
+		bool IVoiced.PlayVoice(Actor self, string? phrase, string variant)
 		{
 			if (phrase == null)
 				return false;
 
 			var type = ((IVoiced)this).VoiceSet.ToLowerInvariant();
-			var volume = info.Volume;
+			var volume = this.info.Volume;
 
 			return Game.Sound.PlayPredefined(SoundType.World, self.World.Map.Rules, null, self, type, phrase, variant, true, WPos.Zero, volume, true);
 		}
 
-		bool IVoiced.PlayVoiceLocal(Actor self, string phrase, string variant, float volume)
+		bool IVoiced.PlayVoiceLocal(Actor self, string? phrase, string variant, float volume)
 		{
 			if (phrase == null)
 				return false;
@@ -80,7 +82,8 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Veterancy.Traits
 				false,
 				self.CenterPosition,
 				volume,
-				true);
+				true
+			);
 		}
 
 		bool IVoiced.HasVoice(Actor self, string voice)

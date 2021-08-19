@@ -17,8 +17,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Activities
 
 	public interface IDockingActivity
 	{
-		Dock Dock { get; }
-		Actor DockActor { get; }
+		Dock? Dock { get; }
 		DockingState DockingState { get; }
 		void StartDocking();
 		void StartUndocking();

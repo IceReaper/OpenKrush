@@ -13,13 +13,15 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.Traits
 {
-	using System.Collections.Generic;
 	using Activities;
 	using Common.Traits;
+	using JetBrains.Annotations;
 	using OpenRA.Traits;
 	using Orders;
 	using Primitives;
+	using System.Collections.Generic;
 
+	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("Saboteur mechanism, attach to the unit.")]
 	public class SaboteurInfo : TraitInfo
 	{
@@ -71,11 +73,11 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.Traits
 		{
 			get
 			{
-				yield return new SaboteurEnterOrderTargeter(info.Cursor, info.BlockedCursor);
+				yield return new SaboteurEnterOrderTargeter(this.info.Cursor, this.info.BlockedCursor);
 			}
 		}
 
-		Order IIssueOrder.IssueOrder(Actor self, IOrderTargeter order, in Target target, bool queued)
+		Order? IIssueOrder.IssueOrder(Actor self, IOrderTargeter order, in Target target, bool queued)
 		{
 			return order.OrderID == SaboteurEnterOrderTargeter.Id ? new Order(order.OrderID, self, target, queued) : null;
 		}
@@ -91,15 +93,17 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.Traits
 			if (!SaboteurUtils.CanEnter(self, order.Target.Actor))
 				return;
 
-			self.QueueActivity(order.Queued, new SaboteurEnter(self, order.Target, info.TargetLineColor));
+			self.QueueActivity(order.Queued, new SaboteurEnter(self, order.Target, this.info.TargetLineColor));
 		}
 
-		string IOrderVoice.VoicePhraseForOrder(Actor self, Order order)
+		string? IOrderVoice.VoicePhraseForOrder(Actor self, Order order)
 		{
 			if (order.OrderString != SaboteurEnterOrderTargeter.Id)
 				return null;
 
-			return order.Target.Actor.Owner.RelationshipWith(self.Owner).HasRelationship(PlayerRelationship.Ally) ? info.VoiceOrderAlly : info.VoiceOrderEnemy;
+			return order.Target.Actor.Owner.RelationshipWith(self.Owner).HasRelationship(PlayerRelationship.Ally)
+				? this.info.VoiceOrderAlly
+				: this.info.VoiceOrderEnemy;
 		}
 
 		public void Enter(Actor self, Actor targetActor)
@@ -108,11 +112,11 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.Traits
 				return;
 
 			if (self.Owner.RelationshipWith(targetActor.Owner).HasRelationship(PlayerRelationship.Ally))
-				self.PlayVoice(info.VoiceEnterAlly);
-			else if (targetActor.Trait<SaboteurConquerable>().Population > 0)
-				self.PlayVoice(info.VoiceEnterEnemy);
+				self.PlayVoice(this.info.VoiceEnterAlly);
+			else if (targetActor.TraitOrDefault<SaboteurConquerable>().Population > 0)
+				self.PlayVoice(this.info.VoiceEnterEnemy);
 			else
-				self.PlayVoice(info.VoiceConquered);
+				self.PlayVoice(this.info.VoiceConquered);
 		}
 	}
 }

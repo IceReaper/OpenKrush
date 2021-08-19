@@ -13,15 +13,14 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Oil
 {
+	using Docking.Traits;
 	using System;
 	using System.Linq;
-	using Docking.Traits;
-	using Docking.Traits.Actions;
 	using Traits;
 
 	public static class OilUtils
 	{
-		public static Actor GetMostUnderutilizedDrillrig(Player owner, WPos origin)
+		public static Actor? GetMostUnderutilizedDrillrig(Player owner, WPos origin)
 		{
 			// We will ignore any oil sneaking actors.
 			var tankers = owner.World.ActorsWithTrait<Tanker>()
@@ -48,13 +47,14 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil
 							distance = Math.Max(distance, powerstations.Min(powerStation => (powerStation.CenterPosition - drillrig.CenterPosition).Length));
 
 						// Using a large factor to avoid using a float.
-						return 1024 * 1024 * tankers.Count(pair2 => pair2.PreferedDrillrig.Equals(drillrig)) / distance;
-					})
+						return 1024 * 1024 * tankers.Count(pair2 => drillrig.Equals(pair2.PreferedDrillrig)) / distance;
+					}
+				)
 				.ThenBy(drillrig => (drillrig.CenterPosition - origin).Length)
 				.FirstOrDefault();
 		}
 
-		public static Actor GetNearestPowerStation(Player owner, WPos origin)
+		public static Actor? GetNearestPowerStation(Player owner, WPos origin)
 		{
 			return owner.World.ActorsWithTrait<PowerStation>()
 				.Where(pair => pair.Actor.Owner == owner && OilUtils.IsUsable(pair.Actor, pair.Trait))
@@ -65,22 +65,22 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil
 
 		public static bool IsUsable(Actor actor, Drillrig drillrig)
 		{
-			if (actor == null || actor.IsDead || !actor.IsInWorld)
+			if (actor.IsDead || !actor.IsInWorld)
 				return false;
 
 			var dock = actor.TraitOrDefault<Dock>();
 
-			return dock != null && !dock.IsTraitDisabled && drillrig != null && !drillrig.IsTraitDisabled && drillrig.Current > 0;
+			return dock is { IsTraitDisabled: false } && drillrig is { IsTraitDisabled: false, Current: > 0 };
 		}
 
 		public static bool IsUsable(Actor actor, PowerStation powerStation)
 		{
-			if (actor == null || actor.IsDead || !actor.IsInWorld)
+			if (actor.IsDead || !actor.IsInWorld)
 				return false;
 
 			var dock = actor.TraitOrDefault<Dock>();
 
-			return dock != null && !dock.IsTraitDisabled && powerStation != null && !powerStation.IsTraitDisabled;
+			return dock is { IsTraitDisabled: false } && powerStation is { IsTraitDisabled: false };
 		}
 	}
 }

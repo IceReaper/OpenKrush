@@ -13,11 +13,12 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Activities
 {
-	using System.Linq;
 	using Common.Activities;
 	using Common.Traits;
 	using OpenRA.Activities;
 	using OpenRA.Traits;
+	using System;
+	using System.Linq;
 	using Traits;
 
 	public class Docking : Activity, IDockingActivity
@@ -33,42 +34,42 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Activities
 		public Docking(Actor dockableActor, Actor dockActor, Dock dock)
 		{
 			this.dockableActor = dockableActor;
-			DockActor = dockActor;
-			Dock = dock;
+			this.DockActor = dockActor;
+			this.Dock = dock;
 
-			DockingState = DockingState.Approaching;
+			this.DockingState = DockingState.Approaching;
 		}
 
 		public override bool Tick(Actor self)
 		{
-			if ((DockActor.IsDead || !DockActor.IsInWorld || Dock.IsTraitDisabled) && !IsCanceling)
-				Cancel(self, true);
+			if ((this.DockActor.IsDead || !this.DockActor.IsInWorld || this.Dock.IsTraitDisabled) && !this.IsCanceling)
+				this.Cancel(self, true);
 
-			switch (DockingState)
+			switch (this.DockingState)
 			{
 				case DockingState.Approaching:
-					if (State == ActivityState.Canceling)
+					if (this.State == ActivityState.Canceling)
 						return true;
 
-					if (ChildActivity != null)
+					if (this.ChildActivity != null)
 						break;
 
-					var distance = WDist.FromCells(Dock.Info.QueueDistance);
+					var distance = WDist.FromCells(this.Dock.Info.QueueDistance);
 
-					if ((dockableActor.CenterPosition - DockActor.CenterPosition).Length > distance.Length)
-						QueueChild(new Move(dockableActor, Target.FromActor(DockActor), distance));
+					if ((this.dockableActor.CenterPosition - this.DockActor.CenterPosition).Length > distance.Length)
+						this.QueueChild(new Move(this.dockableActor, Target.FromActor(this.DockActor), distance));
 					else
 					{
-						DockingState = DockingState.Waiting;
-						Dock.Add(dockableActor);
+						this.DockingState = DockingState.Waiting;
+						this.Dock.Add(this.dockableActor);
 					}
 
 					break;
 
 				case DockingState.Waiting:
-					if (State == ActivityState.Canceling)
+					if (this.State == ActivityState.Canceling)
 					{
-						Dock.Remove(dockableActor);
+						this.Dock.Remove(this.dockableActor);
 
 						return true;
 					}
@@ -76,51 +77,59 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Activities
 					break;
 
 				case DockingState.PrepareDocking:
-					if (State == ActivityState.Canceling)
+					if (this.State == ActivityState.Canceling)
 					{
-						Dock.Remove(dockableActor);
+						this.Dock.Remove(this.dockableActor);
 
 						return true;
 					}
 
-					if (ChildActivity != null)
+					if (this.ChildActivity != null)
 						break;
 
-					var target = DockActor.World.Map.CellContaining(DockActor.CenterPosition + Dock.Info.Position + Dock.Info.DragOffset);
+					var target = this.DockActor.World.Map.CellContaining(this.DockActor.CenterPosition + this.Dock.Info.Position + this.Dock.Info.DragOffset);
 
-					if (dockableActor.Location != target)
-						QueueChild(new Move(dockableActor, target));
+					if (this.dockableActor.Location != target)
+						this.QueueChild(new Move(this.dockableActor, target));
 					else
 					{
-						DockingState = DockingState.Docking;
+						this.DockingState = DockingState.Docking;
 
-						QueueChild(new Turn(dockableActor, Dock.Info.Angle));
-						initialPosition = dockableActor.CenterPosition;
-						QueueChild(new Drag(dockableActor, dockableActor.CenterPosition, DockActor.CenterPosition + Dock.Info.Position, Dock.Info.DragLength));
+						this.QueueChild(new Turn(this.dockableActor, this.Dock.Info.Angle));
+						this.initialPosition = this.dockableActor.CenterPosition;
+
+						this.QueueChild(
+							new Drag(
+								this.dockableActor,
+								this.dockableActor.CenterPosition,
+								this.DockActor.CenterPosition + this.Dock.Info.Position,
+								this.Dock.Info.DragLength
+							)
+						);
 					}
 
 					break;
 
 				case DockingState.Docking:
-					if (State == ActivityState.Canceling)
+					if (this.State == ActivityState.Canceling)
 					{
-						StartUndocking();
+						this.StartUndocking();
 
 						return false;
 					}
 
-					if (ChildActivity == null)
+					if (this.ChildActivity == null)
 					{
-						DockingState = DockingState.Docked;
-						Dock.OnDock();
+						this.DockingState = DockingState.Docked;
+						this.Dock.OnDock(this.DockActor);
 					}
 
 					break;
 
 				case DockingState.Docked:
-					if (State == ActivityState.Canceling)
+					if (this.State == ActivityState.Canceling)
 					{
-						StartUndocking();
+						this.StartUndocking();
 
 						return false;
 					}
@@ -128,18 +137,21 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Activities
 					break;
 
 				case DockingState.Undocking:
-					if (ChildActivity == null)
+					if (this.ChildActivity == null)
 					{
-						DockingState = DockingState.None;
-						Dock.Remove(dockableActor);
+						this.DockingState = DockingState.None;
+						this.Dock.OnUndock();
+						this.Dock.Remove(this.dockableActor);
 
-						if (!DockActor.IsDead && DockActor.IsInWorld)
+						if (!this.DockActor.IsDead && this.DockActor.IsInWorld)
 						{
-							var rallyPoint = DockActor.TraitOrDefault<RallyPoint>();
+							var rallyPoint = this.DockActor.TraitOrDefault<RallyPoint>();
 
 							if (rallyPoint != null && rallyPoint.Path.Any())
+							{
 								foreach (var cell in rallyPoint.Path)
-									dockableActor.QueueActivity(new Move(dockableActor, cell));
+									this.dockableActor.QueueActivity(new Move(this.dockableActor, cell));
+							}
 						}
 					}
 
@@ -147,6 +159,9 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Activities
 
 				case DockingState.None:
 					return true;
+
+				default:
+					throw new ArgumentOutOfRangeException(Enum.GetName(this.DockingState));
 			}
 
 			return false;
@@ -154,13 +169,16 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Activities
 
 		public void StartDocking()
 		{
-			DockingState = DockingState.PrepareDocking;
+			this.DockingState = DockingState.PrepareDocking;
 		}
 
 		public void StartUndocking()
 		{
-			DockingState = DockingState.Undocking;
-			QueueChild(new Drag(dockableActor, DockActor.CenterPosition + Dock.Info.Position, initialPosition, Dock.Info.DragLength));
+			this.DockingState = DockingState.Undocking;
+
+			this.QueueChild(
+				new Drag(this.dockableActor, this.DockActor.CenterPosition + this.Dock.Info.Position, this.initialPosition, this.Dock.Info.DragLength)
+			);
 		}
 	}
 }

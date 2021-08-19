@@ -13,14 +13,16 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits
 {
-	using System.Collections.Generic;
-	using System.Linq;
 	using Activities;
 	using Common.Traits;
+	using JetBrains.Annotations;
 	using OpenRA.Activities;
 	using OpenRA.Traits;
 	using Orders;
+	using System.Collections.Generic;
+	using System.Linq;
 
+	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	public class DockableInfo : TraitInfo
 	{
 		[Desc("Voice to use when ordering to dock.")]
@@ -35,11 +37,11 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits
 
 	public class Dockable : IIssueOrder, IResolveOrder, IOrderVoice
 	{
-		public readonly DockableInfo Info;
+		private readonly DockableInfo info;
 
 		public Dockable(DockableInfo info)
 		{
-			Info = info;
+			this.info = info;
 		}
 
 		IEnumerable<IOrderTargeter> IIssueOrder.Orders
@@ -50,7 +52,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits
 			}
 		}
 
-		public Order IssueOrder(Actor self, IOrderTargeter order, in Target target, bool queued)
+		public Order? IssueOrder(Actor self, IOrderTargeter order, in Target target, bool queued)
 		{
 			return order.OrderID == DockOrderTargeter.Id ? new Order(order.OrderID, self, target, queued) : null;
 		}
@@ -63,12 +65,15 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits
 			if (order.Target.Type != TargetType.Actor || order.Target.Actor == null)
 				return;
 
-			var dock = order.Target.Actor.TraitsImplementing<Dock>().Where(d => d.GetDockAction(self) != null).OrderBy(d => d.QueueLength).FirstOrDefault();
+			var dock = order.Target.Actor.TraitsImplementing<Dock>()
+				.Where(d => d.GetDockAction(order.Target.Actor, self) != null)
+				.OrderBy(d => d.QueueLength)
+				.FirstOrDefault();
 
 			if (dock == null)
 				return;
 
-			self.QueueActivity(false, GetDockingActivity(self, order.Target.Actor, dock));
+			self.QueueActivity(false, this.GetDockingActivity(self, order.Target.Actor, dock));
 		}
 
 		protected virtual Activity GetDockingActivity(Actor self, Actor target, Dock dock)
@@ -76,9 +81,9 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits
 			return new Docking(self, target, dock);
 		}
 
-		string IOrderVoice.VoicePhraseForOrder(Actor self, Order order)
+		string? IOrderVoice.VoicePhraseForOrder(Actor self, Order order)
 		{
-			return order.OrderString == DockOrderTargeter.Id ? Info.Voice : null;
+			return order.OrderString == DockOrderTargeter.Id ? this.info.Voice : null;
 		}
 	}
 }

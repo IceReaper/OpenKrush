@@ -15,6 +15,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Orders
 {
 	using Common.Orders;
 	using OpenRA.Traits;
+	using System;
 
 	public class ResearchOrderTargeter : UnitOrderTargeter
 	{
@@ -30,27 +31,30 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Orders
 			this.cursorForbidden = cursorForbidden;
 		}
 
-		public override bool CanTargetActor(Actor self, Actor target, TargetModifiers modifiers, ref string cursor)
+		public override bool CanTargetActor(Actor self, Actor target, TargetModifiers modifiers, ref string? cursor)
 		{
 			var action = ResearchUtils.GetAction(self, target);
 
-			if (action == ResearchAction.Start)
+			switch (action)
 			{
-				cursor = cursorAllowed;
+				case ResearchAction.Start:
+					cursor = this.cursorAllowed;
 
-				return true;
+					return true;
+
+				case ResearchAction.Stop:
+					cursor = this.cursorForbidden;
+
+					return true;
+
+				case ResearchAction.None:
+					cursor = null;
+
+					return false;
+
+				default:
+					throw new ArgumentOutOfRangeException(Enum.GetName(action));
 			}
-
-			if (action == ResearchAction.Stop)
-			{
-				cursor = cursorForbidden;
-
-				return true;
-			}
-
-			cursor = null;
-
-			return false;
 		}
 
 		public override bool CanTargetFrozenActor(Actor self, FrozenActor target, TargetModifiers modifiers, ref string cursor)

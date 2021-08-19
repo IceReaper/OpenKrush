@@ -30,16 +30,16 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.Activities
 
 		public override bool Tick(Actor self)
 		{
-			if (!IsCanceling && !SaboteurUtils.CanEnter(self, target))
-				Cancel(self, true);
+			if (!this.IsCanceling && !SaboteurUtils.CanEnter(self, this.target))
+				this.Cancel(self, true);
 
 			return base.Tick(self);
 		}
 
 		protected override void OnEnterComplete(Actor self, Actor targetActor)
 		{
-			self.Trait<Saboteur>().Enter(self, targetActor);
-			targetActor.Trait<SaboteurConquerable>().Enter(targetActor, self);
+			self.TraitOrDefault<Saboteur>().Enter(self, targetActor);
+			targetActor.TraitOrDefault<SaboteurConquerable>().Enter(targetActor, self);
 			self.Dispose();
 		}
 	}

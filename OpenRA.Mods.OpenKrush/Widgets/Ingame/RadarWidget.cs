@@ -13,14 +13,14 @@
 
 namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 {
-	using System.Collections.Generic;
-	using System.Linq;
 	using Common.Traits;
 	using Common.Widgets;
-	using OpenRA.Graphics;
-	using OpenRA.Traits;
+	using Graphics;
 	using OpenRA.Widgets;
 	using Primitives;
+	using System.Collections.Generic;
+	using System.Linq;
+	using Traits;
 
 	public class RadarWidget : Widget
 	{
@@ -41,20 +41,21 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 		{
 			this.ingameUi = ingameUi;
 
-			radarSheet = new Sheet(SheetType.BGRA, new Size(ingameUi.World.Map.MapSize.X, ingameUi.World.Map.MapSize.Y * 2).NextPowerOf2());
-			radarSheet.CreateBuffer();
-			radarData = radarSheet.GetData();
+			this.radarSheet = new(SheetType.BGRA, new Size(ingameUi.World.Map.MapSize.X, ingameUi.World.Map.MapSize.Y * 2).NextPowerOf2());
+			this.radarSheet.CreateBuffer();
+			this.radarData = this.radarSheet.GetData();
 
-			terrainSprite = new Sprite(radarSheet, new Rectangle(0, 0, ingameUi.World.Map.MapSize.X, ingameUi.World.Map.MapSize.Y), TextureChannel.RGBA);
+			this.terrainSprite = new(this.radarSheet, new(0, 0, ingameUi.World.Map.MapSize.X, ingameUi.World.Map.MapSize.Y), TextureChannel.RGBA);
 
-			shroudSprite = new Sprite(
-				radarSheet,
-				new Rectangle(0, ingameUi.World.Map.MapSize.Y, ingameUi.World.Map.MapSize.X, ingameUi.World.Map.MapSize.Y),
-				TextureChannel.RGBA);
+			this.shroudSprite = new(
+				this.radarSheet,
+				new(0, ingameUi.World.Map.MapSize.Y, ingameUi.World.Map.MapSize.X, ingameUi.World.Map.MapSize.Y),
+				TextureChannel.RGBA
+			);
 
-			DrawTerrain();
-			Resize();
-			Visible = false;
+			this.DrawTerrain();
+			this.Resize();
+			this.Visible = false;
 		}
 
 		public override bool HandleKeyPress(KeyInput e)
@@ -62,40 +63,41 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 			if (e.Key != Game.ModData.Hotkeys["TogglePlayerStanceColor"].GetValue().Key || e.IsRepeat || e.Event != KeyInputEvent.Down)
 				return false;
 
-			useStanceColor = !useStanceColor;
+			this.useStanceColor = !this.useStanceColor;
 
 			return true;
 		}
 
-		public void Resize()
+		private void Resize()
 		{
-			Bounds = new Rectangle(
+			this.Bounds = new(
 				0,
-				Game.Renderer.Resolution.Height - ingameUi.World.Map.MapSize.Y * RadarWidget.Scale,
-				ingameUi.World.Map.MapSize.X * RadarWidget.Scale,
-				ingameUi.World.Map.MapSize.Y * RadarWidget.Scale);
+				Game.Renderer.Resolution.Height - this.ingameUi.World.Map.MapSize.Y * RadarWidget.Scale,
+				this.ingameUi.World.Map.MapSize.X * RadarWidget.Scale,
+				this.ingameUi.World.Map.MapSize.Y * RadarWidget.Scale
+			);
 		}
 
 		private void DrawTerrain()
 		{
 			// TODO instead of using this colors, try a correct thumbnail variant.
-			for (var y = 0; y < ingameUi.World.Map.MapSize.Y; y++)
-			for (var x = 0; x < ingameUi.World.Map.MapSize.X; x++)
+			for (var y = 0; y < this.ingameUi.World.Map.MapSize.Y; y++)
+			for (var x = 0; x < this.ingameUi.World.Map.MapSize.X; x++)
 			{
-				var type = ingameUi.World.Map.Rules.TerrainInfo.GetTerrainInfo(ingameUi.World.Map.Tiles[new MPos(x, y)]);
-				radarData[(y * radarSheet.Size.Width + x) * 4] = type.MinColor.B;
-				radarData[(y * radarSheet.Size.Width + x) * 4 + 1] = type.MinColor.G;
-				radarData[(y * radarSheet.Size.Width + x) * 4 + 2] = type.MinColor.R;
-				radarData[(y * radarSheet.Size.Width + x) * 4 + 3] = 0xff;
+				var type = this.ingameUi.World.Map.Rules.TerrainInfo.GetTerrainInfo(this.ingameUi.World.Map.Tiles[new MPos(x, y)]);
+				this.radarData[(y * this.radarSheet.Size.Width + x) * 4] = type.MinColor.B;
+				this.radarData[(y * this.radarSheet.Size.Width + x) * 4 + 1] = type.MinColor.G;
+				this.radarData[(y * this.radarSheet.Size.Width + x) * 4 + 2] = type.MinColor.R;
+				this.radarData[(y * this.radarSheet.Size.Width + x) * 4 + 3] = 0xff;
 			}
 		}
 
 		private void UpdateShroud()
 		{
-			var rp = ingameUi.World.RenderPlayer;
+			var rp = this.ingameUi.World.RenderPlayer;
 
-			for (var y = 0; y < ingameUi.World.Map.MapSize.Y; y++)
-			for (var x = 0; x < ingameUi.World.Map.MapSize.X; x++)
+			for (var y = 0; y < this.ingameUi.World.Map.MapSize.Y; y++)
+			for (var x = 0; x < this.ingameUi.World.Map.MapSize.X; x++)
 			{
 				var color = Color.FromArgb(0, Color.Black);
 
@@ -109,36 +111,42 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 						color = Color.FromArgb(128, Color.Black);
 				}
 
-				radarData[radarSheet.Size.Width * ingameUi.World.Map.MapSize.Y * 4 + (y * radarSheet.Size.Width + x) * 4] = color.B;
-				radarData[radarSheet.Size.Width * ingameUi.World.Map.MapSize.Y * 4 + (y * radarSheet.Size.Width + x) * 4 + 1] = color.G;
-				radarData[radarSheet.Size.Width * ingameUi.World.Map.MapSize.Y * 4 + (y * radarSheet.Size.Width + x) * 4 + 2] = color.R;
-				radarData[radarSheet.Size.Width * ingameUi.World.Map.MapSize.Y * 4 + (y * radarSheet.Size.Width + x) * 4 + 3] = color.A;
+				this.radarData[this.radarSheet.Size.Width * this.ingameUi.World.Map.MapSize.Y * 4 + (y * this.radarSheet.Size.Width + x) * 4] = color.B;
+				this.radarData[this.radarSheet.Size.Width * this.ingameUi.World.Map.MapSize.Y * 4 + (y * this.radarSheet.Size.Width + x) * 4 + 1] = color.G;
+				this.radarData[this.radarSheet.Size.Width * this.ingameUi.World.Map.MapSize.Y * 4 + (y * this.radarSheet.Size.Width + x) * 4 + 2] = color.R;
+				this.radarData[this.radarSheet.Size.Width * this.ingameUi.World.Map.MapSize.Y * 4 + (y * this.radarSheet.Size.Width + x) * 4 + 3] = color.A;
 			}
 		}
 
 		public override string GetCursor(int2 pos)
 		{
-			var cell = new MPos((pos.X - RenderBounds.X) / RadarWidget.Scale, (pos.Y - RenderBounds.Y) / RadarWidget.Scale).ToCPos(ingameUi.World.Map);
-			var worldPixel = ingameUi.WorldRenderer.ScreenPxPosition(ingameUi.World.Map.CenterOfCell(cell));
-			var location = ingameUi.WorldRenderer.Viewport.WorldToViewPx(worldPixel);
+			var cell =
+				new MPos((pos.X - this.RenderBounds.X) / RadarWidget.Scale, (pos.Y - this.RenderBounds.Y) / RadarWidget.Scale).ToCPos(this.ingameUi.World.Map);
+
+			var worldPixel = this.ingameUi.WorldRenderer.ScreenPxPosition(this.ingameUi.World.Map.CenterOfCell(cell));
+			var location = this.ingameUi.WorldRenderer.Viewport.WorldToViewPx(worldPixel);
 			var mi = new MouseInput { Location = location, Button = Game.Settings.Game.MouseButtonPreference.Action, Modifiers = Game.GetModifierKeys() };
-			var cursor = ingameUi.World.OrderGenerator.GetCursor(ingameUi.World, cell, worldPixel, mi);
+			var cursor = this.ingameUi.World.OrderGenerator.GetCursor(this.ingameUi.World, cell, worldPixel, mi);
 
 			return cursor ?? "default";
 		}
 
 		public override bool HandleMouseInput(MouseInput mi)
 		{
-			var cell = new MPos((mi.Location.X - RenderBounds.X) / RadarWidget.Scale, (mi.Location.Y - RenderBounds.Y) / RadarWidget.Scale).ToCPos(ingameUi.World.Map);
-			var pos = ingameUi.World.Map.CenterOfCell(cell);
+			var cell =
+				new MPos((mi.Location.X - this.RenderBounds.X) / RadarWidget.Scale, (mi.Location.Y - this.RenderBounds.Y) / RadarWidget.Scale).ToCPos(
+					this.ingameUi.World.Map
+				);
 
-			if ((mi.Event == MouseInputEvent.Down || mi.Event == MouseInputEvent.Move) && mi.Button == Game.Settings.Game.MouseButtonPreference.Cancel)
-				ingameUi.WorldRenderer.Viewport.Center(pos);
+			var pos = this.ingameUi.World.Map.CenterOfCell(cell);
+
+			if (mi.Event is MouseInputEvent.Down or MouseInputEvent.Move && mi.Button == Game.Settings.Game.MouseButtonPreference.Cancel)
+				this.ingameUi.WorldRenderer.Viewport.Center(pos);
 
 			if (mi.Event != MouseInputEvent.Down || mi.Button != Game.Settings.Game.MouseButtonPreference.Action)
 				return true;
 
-			var location = ingameUi.WorldRenderer.Viewport.WorldToViewPx(ingameUi.WorldRenderer.ScreenPxPosition(pos));
+			var location = this.ingameUi.WorldRenderer.Viewport.WorldToViewPx(this.ingameUi.WorldRenderer.ScreenPxPosition(pos));
 
 			var fakemi = new MouseInput
 			{
@@ -155,66 +163,84 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 
 		public override void Draw()
 		{
-			UpdateShroud();
+			this.UpdateShroud();
 
 			WidgetUtils.FillRectWithColor(
-				new Rectangle(RenderBounds.X - RadarWidget.Scale, RenderBounds.Y - RadarWidget.Scale, RenderBounds.Width + RadarWidget.Scale * 2, RenderBounds.Height + RadarWidget.Scale * 2),
-				Color.White);
+				new(
+					this.RenderBounds.X - RadarWidget.Scale,
+					this.RenderBounds.Y - RadarWidget.Scale,
+					this.RenderBounds.Width + RadarWidget.Scale * 2,
+					this.RenderBounds.Height + RadarWidget.Scale * 2
+				),
+				Color.White
+			);
 
-			radarSheet.CommitBufferedData();
+			this.radarSheet.CommitBufferedData();
 
-			Game.Renderer.RgbaSpriteRenderer.DrawSprite(terrainSprite, new int2(RenderBounds.X, RenderBounds.Y), RadarWidget.Scale);
-			Game.Renderer.RgbaSpriteRenderer.DrawSprite(shroudSprite, new int2(RenderBounds.X, RenderBounds.Y), RadarWidget.Scale);
+			Game.Renderer.RgbaSpriteRenderer.DrawSprite(this.terrainSprite, new int2(this.RenderBounds.X, this.RenderBounds.Y), RadarWidget.Scale);
+			Game.Renderer.RgbaSpriteRenderer.DrawSprite(this.shroudSprite, new int2(this.RenderBounds.X, this.RenderBounds.Y), RadarWidget.Scale);
 
 			var cells = new List<(CPos, Color)>();
 
-			foreach (var e in ingameUi.World.ActorsWithTrait<IRadarSignature>())
+			foreach (var e in this.ingameUi.World.ActorsWithTrait<IRadarSignature>())
 			{
 				if (!e.Actor.IsInWorld
 					|| e.Actor.IsDead
-					|| ingameUi.World.ShroudObscures(e.Actor.CenterPosition)
-					|| ingameUi.World.FogObscures(e.Actor)
+					|| this.ingameUi.World.ShroudObscures(e.Actor.CenterPosition)
+					|| this.ingameUi.World.FogObscures(e.Actor)
 					|| e.Actor.Owner == null)
 					continue;
 
-				if (!ShowStances.HasRelationship(PlayerRelationship.Ally)
-					&& e.Actor.Owner.RelationshipWith(ingameUi.World.LocalPlayer).HasRelationship(PlayerRelationship.Ally))
+				if (!this.ShowStances.HasRelationship(PlayerRelationship.Ally)
+					&& e.Actor.Owner.RelationshipWith(this.ingameUi.World.LocalPlayer).HasRelationship(PlayerRelationship.Ally))
 					continue;
 
-				if (!ShowStances.HasRelationship(PlayerRelationship.Enemy)
-					&& e.Actor.Owner.RelationshipWith(ingameUi.World.LocalPlayer).HasRelationship(PlayerRelationship.Enemy))
+				if (!this.ShowStances.HasRelationship(PlayerRelationship.Enemy)
+					&& e.Actor.Owner.RelationshipWith(this.ingameUi.World.LocalPlayer).HasRelationship(PlayerRelationship.Enemy))
 					continue;
 
 				cells.Clear();
 				e.Trait.PopulateRadarSignatureCells(e.Actor, cells);
 
-				foreach (var cell in cells)
+				foreach (var cell in cells.Select(c => c.Item1))
 				{
-					if (!ingameUi.World.Map.Contains(cell.Item1))
+					if (!this.ingameUi.World.Map.Contains(cell))
 						continue;
 
-					var pos = cell.Item1.ToMPos(ingameUi.World.Map.Grid.Type);
-					var color = useStanceColor ? Color.FromArgb(e.Actor.Owner.PlayerRelationshipColor(e.Actor).ToArgb()) : e.Actor.Owner.Color;
+					var pos = cell.ToMPos(this.ingameUi.World.Map.Grid.Type);
+					var color = this.useStanceColor ? Color.FromArgb(e.Actor.Owner.PlayerRelationshipColor(e.Actor).ToArgb()) : e.Actor.Owner.Color;
 
-					WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X + pos.U * RadarWidget.Scale, RenderBounds.Y + pos.V * RadarWidget.Scale, RadarWidget.Scale, RadarWidget.Scale), color);
+					WidgetUtils.FillRectWithColor(
+						new(
+							this.RenderBounds.X + pos.U * RadarWidget.Scale,
+							this.RenderBounds.Y + pos.V * RadarWidget.Scale,
+							RadarWidget.Scale,
+							RadarWidget.Scale
+						),
+						color
+					);
 				}
 			}
 
-			Game.Renderer.EnableScissor(RenderBounds);
+			Game.Renderer.EnableScissor(this.RenderBounds);
 
 			Game.Renderer.RgbaColorRenderer.DrawRect(
-				new int2(RenderBounds.X, RenderBounds.Y) + ingameUi.WorldRenderer.Viewport.TopLeft / 32 * RadarWidget.Scale,
-				new int2(RenderBounds.X, RenderBounds.Y) + ingameUi.WorldRenderer.Viewport.BottomRight / 32 * RadarWidget.Scale,
+				new int2(this.RenderBounds.X, this.RenderBounds.Y) + this.ingameUi.WorldRenderer.Viewport.TopLeft / 32 * RadarWidget.Scale,
+				new int2(this.RenderBounds.X, this.RenderBounds.Y) + this.ingameUi.WorldRenderer.Viewport.BottomRight / 32 * RadarWidget.Scale,
 				RadarWidget.Scale,
-				Color.White);
+				Color.White
+			);
 
-			foreach (var ping in ingameUi.RadarPings.Pings)
+			foreach (var ping in this.ingameUi.RadarPings.Pings)
 			{
 				if (!ping.IsVisible())
 					continue;
 
-				var center = ingameUi.World.Map.CellContaining(ping.Position).ToMPos(ingameUi.World.Map.Grid.Type);
-				var points = ping.Points(new int2(RenderBounds.X + center.U * RadarWidget.Scale, RenderBounds.Y + center.V * RadarWidget.Scale)).ToArray();
+				var center = this.ingameUi.World.Map.CellContaining(ping.Position).ToMPos(this.ingameUi.World.Map.Grid.Type);
+
+				var points = ping.Points(new int2(this.RenderBounds.X + center.U * RadarWidget.Scale, this.RenderBounds.Y + center.V * RadarWidget.Scale))
+					.ToArray();
+
 				Game.Renderer.RgbaColorRenderer.DrawPolygon(points, 2, ping.Color);
 			}
 

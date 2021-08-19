@@ -33,14 +33,14 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Orders
 
 		public override bool CanTargetActor(Actor self, Actor target, TargetModifiers modifiers, ref string cursor)
 		{
-			IsQueued = modifiers.HasModifier(TargetModifiers.ForceQueue);
+			this.IsQueued = modifiers.HasModifier(TargetModifiers.ForceQueue);
 
 			foreach (var dock in target.TraitsImplementing<Dock>())
 			{
 				if (dock.IsTraitDisabled)
 					continue;
 
-				var dockAction = dock.GetDockAction(self);
+				var dockAction = dock.GetDockAction(target, self);
 
 				if (dockAction == null)
 					continue;

@@ -13,9 +13,11 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 {
-	using System.Collections.Generic;
 	using Common.Traits;
+	using JetBrains.Annotations;
+	using System.Collections.Generic;
 
+	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("This actor enables the radar minimap.")]
 	public class ProvidesResearchableRadarInfo : ConditionalTraitInfo
 	{
@@ -46,13 +48,13 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 		{
 		}
 
-		public Dictionary<string, int> GetResearchables()
+		public Dictionary<string, int> GetResearchables(Actor self)
 		{
-			return new Dictionary<string, int>
+			return new()
 			{
-				{ ProvidesResearchableRadarInfo.Available, Info.Level },
-				{ ProvidesResearchableRadarInfo.ShowAllies, Info.AllyLevel },
-				{ ProvidesResearchableRadarInfo.ShowEnemies, Info.EnemyLevel }
+				{ ProvidesResearchableRadarInfo.Available, this.Info.Level },
+				{ ProvidesResearchableRadarInfo.ShowAllies, this.Info.AllyLevel },
+				{ ProvidesResearchableRadarInfo.ShowEnemies, this.Info.EnemyLevel }
 			};
 		}
 	}

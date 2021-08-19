@@ -13,81 +13,100 @@
 
 namespace OpenRA.Mods.OpenKrush.LoadScreens
 {
-	using System.Collections.Generic;
 	using Common.LoadScreens;
-	using GameProviders;
-	using OpenRA.Graphics;
-	using Primitives;
+	using Graphics;
+	using InstallationFinder;
+	using JetBrains.Annotations;
+	using System.Collections.Generic;
 
+	[UsedImplicitly]
 	public class LoadScreen : BlankLoadScreen
 	{
-		private bool gameFound;
-		private Renderer renderer;
-		private Sheet sheet1;
-		private Sheet sheet2;
-		private Sheet sheet3;
-		private Sprite logo1;
-		private Sprite logo2;
-		private Sprite logo3;
-		private bool started;
+		private Installation? gen1;
+		private Installation? gen2;
+		private Renderer? renderer;
+		private Sheet? sheet;
+		private Sprite? logo;
+		private bool canRun;
 
 		public override void Init(ModData modData, Dictionary<string, string> info)
 		{
 			// TODO this is for MAPD only.
 			Game.Settings.Graphics.SheetSize = 8192;
 
-			gameFound = InstallationFinder.FindInstallation(modData, Generation1.AppIdSteam, Generation1.AppIdGog);
+			this.gen1 = InstallationFinder.RegisterInstallation(modData, new Generation1());
+			this.gen2 = InstallationFinder.RegisterInstallation(modData, new Generation2());
 
-			if (!gameFound)
+			var game = modData.Manifest.Id switch
+			{
+				"openkrush_gen1" => this.gen1,
+				"openkrush_gen2" => this.gen2,
+				_ => null
+			};
+
+			if (game == null)
 			{
 				var manifestType = modData.Manifest.GetType();
 				manifestType.GetField(nameof(Manifest.Cursors))?.SetValue(modData.Manifest, new[] { "openkrush|cursors.yaml" });
 			}
+			else
+				this.canRun = true;
 
 			base.Init(modData, info);
 
-			renderer = Game.Renderer;
+			this.renderer = Game.Renderer;
 
-			if (renderer == null)
+			if (this.renderer == null)
 				return;
 
-			sheet1 = new Sheet(SheetType.BGRA, modData.DefaultFileSystem.Open("uibits/loading_game.png"));
-			sheet2 = new Sheet(SheetType.BGRA, modData.DefaultFileSystem.Open("uibits/loading_map.png"));
-			sheet3 = new Sheet(SheetType.BGRA, modData.DefaultFileSystem.Open("uibits/missing_installation.png"));
-			logo1 = new Sprite(sheet1, new Rectangle(0, 0, 640, 480), TextureChannel.RGBA);
-			logo2 = new Sprite(sheet2, new Rectangle(0, 0, 640, 480), TextureChannel.RGBA);
-			logo3 = new Sprite(sheet3, new Rectangle(0, 0, 640, 480), TextureChannel.RGBA);
+			this.sheet = new(SheetType.BGRA, modData.DefaultFileSystem.Open(this.canRun ? "uibits/loading_game.png" : "uibits/missing_installation.png"));
+			this.logo = new(this.sheet, new(0, 0, 640, 480), TextureChannel.RGBA);
 		}
 
 		public override void StartGame(Arguments args)
 		{
-			if (!gameFound)
+			if (!this.canRun)
 			{
-				Game.InitializeMod(ModData.Manifest.Id, Arguments.Empty);
+				Game.InitializeMod(this.ModData.Manifest.Id, Arguments.Empty);
+
 				return;
 			}
 
-			typeof(Ruleset).GetField("Music")?.SetValue(ModData.DefaultRules, GameProvider.BuildMusicDictionary());
+			typeof(Ruleset).GetField("Music")
+				?.SetValue(
+					this.ModData.DefaultRules,
+					InstallationUtils.BuildMusicDictionary(
+						this.ModData.Manifest.Id switch
+						{
+							"openkrush_gen1" => this.gen1,
+							"openkrush_gen2" => this.gen2,
+							_ => null
+						}
+					)
+				);
+
 			base.StartGame(args);
-			started = true;
+
+			this.sheet?.Dispose();
+			this.sheet = new(SheetType.BGRA, this.ModData.DefaultFileSystem.Open("uibits/loading_map.png"));
+			this.logo = new(this.sheet, new(0, 0, 640, 480), TextureChannel.RGBA);
 		}
 
 		public override void Display()
 		{
-			if (renderer == null)
+			if (this.renderer == null)
 				return;
 
-			var logoPos = new float2(renderer.Resolution.Width / 2 - 320, renderer.Resolution.Height / 2 - 240);
+			var logoPos = new float2(this.renderer.Resolution.Width / 2 - 320, this.renderer.Resolution.Height / 2 - 240);
 
-			renderer.BeginUI();
-			renderer.RgbaSpriteRenderer.DrawSprite(!gameFound ? logo3 : started ? logo2 : logo1, logoPos);
-			renderer.EndFrame(new NullInputHandler());
+			this.renderer.BeginUI();
+			this.renderer.RgbaSpriteRenderer.DrawSprite(this.logo, logoPos);
+			this.renderer.EndFrame(new NullInputHandler());
 		}
 
 		protected override void Dispose(bool disposing)
 		{
-			sheet1.Dispose();
-			sheet2.Dispose();
+			this.sheet?.Dispose();
 			base.Dispose(disposing);
 		}
 	}

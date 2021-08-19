@@ -13,17 +13,17 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Orders
 {
+	using Common.Orders;
+	using Graphics;
 	using System.Collections.Generic;
 	using System.Linq;
-	using Common.Orders;
-	using OpenRA.Graphics;
 	using Traits;
 
 	public class SellOrderGenerator : OrderGenerator
 	{
 		public const string Id = "Sell";
 
-		private IEnumerable<TraitPair<DeconstructSellable>> sellableActors;
+		private IEnumerable<TraitPair<DeconstructSellable>>? sellableActors;
 
 		protected override IEnumerable<Order> OrderInner(World world, CPos cell, int2 worldPixel, MouseInput mi)
 		{
@@ -31,18 +31,18 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Orders
 				world.CancelInputMode();
 			else
 			{
-				var actor = world.ActorMap.GetActorsAt(cell).FirstOrDefault(a => sellableActors.Any(e => e.Actor == a));
+				var actor = world.ActorMap.GetActorsAt(cell).FirstOrDefault(a => this.sellableActors?.Any(e => e.Actor.Equals(a)) ?? false);
 
 				if (actor != null)
-					yield return new Order(SellOrderGenerator.Id, actor, false);
+					yield return new(SellOrderGenerator.Id, actor, false);
 			}
 		}
 
 		protected override void Tick(World world)
 		{
-			sellableActors = world.ActorsWithTrait<DeconstructSellable>().Where(e => e.Actor.Owner == world.LocalPlayer && !e.Trait.IsTraitDisabled);
+			this.sellableActors = world.ActorsWithTrait<DeconstructSellable>().Where(e => e.Actor.Owner == world.LocalPlayer && !e.Trait.IsTraitDisabled);
 
-			if (!sellableActors.Any())
+			if (!this.sellableActors.Any())
 				world.CancelInputMode();
 		}
 
@@ -61,12 +61,12 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Orders
 			yield break;
 		}
 
-		protected override string GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)
+		protected override string? GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)
 		{
-			if (sellableActors == null)
+			if (this.sellableActors == null)
 				return null;
 
-			var actor = world.ActorMap.GetActorsAt(cell).FirstOrDefault(a => sellableActors.Any(e => e.Actor == a));
+			var actor = world.ActorMap.GetActorsAt(cell).FirstOrDefault(a => this.sellableActors.Any(e => e.Actor.Equals(a)));
 
 			return actor != null ? "sell" : null;
 		}

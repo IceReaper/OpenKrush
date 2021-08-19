@@ -17,6 +17,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching
 
 	public interface IProvidesResearchables
 	{
-		Dictionary<string, int> GetResearchables();
+		Dictionary<string, int> GetResearchables(Actor self);
 	}
 }

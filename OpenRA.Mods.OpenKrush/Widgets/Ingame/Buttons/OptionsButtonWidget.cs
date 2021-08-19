@@ -13,28 +13,28 @@
 
 namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 {
-	using System.Linq;
 	using Common.Widgets;
 	using Common.Widgets.Logic;
 	using OpenRA.Widgets;
+	using System.Linq;
 
-	public class OptionsButtonWidget : ButtonWidget
+	public class OptionsButtonWidget : SidebarButtonWidget
 	{
-		private Widget menu;
+		private Widget? menu;
 
 		public OptionsButtonWidget(SidebarWidget sidebar)
 			: base(sidebar, "button")
 		{
-			TooltipTitle = "Options";
+			this.TooltipTitle = "Options";
 		}
 
 		public override bool HandleKeyPress(KeyInput e)
 		{
-			if (e.Key != Keycode.ESCAPE || e.IsRepeat || e.Event != KeyInputEvent.Down || menu != null || e.Modifiers != Modifiers.None)
+			if (e.Key != Keycode.ESCAPE || e.IsRepeat || e.Event != KeyInputEvent.Down || this.menu != null || e.Modifiers != Modifiers.None)
 				return false;
 
-			Active = true;
-			ShowMenu();
+			this.Active = true;
+			this.ShowMenu();
 
 			return true;
 		}
@@ -44,39 +44,40 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 			if (!base.HandleLeftClick(mi))
 				return false;
 
-			if (Active)
-				ShowMenu();
+			if (this.Active)
+				this.ShowMenu();
 
 			return true;
 		}
 
 		private void ShowMenu()
 		{
-			if (sidebar.IngameUi.World.LobbyInfo.NonBotClients.Count() == 1)
-				sidebar.IngameUi.World.SetPauseState(true);
+			if (this.Sidebar.IngameUi.World.LobbyInfo.NonBotClients.Count() == 1)
+				this.Sidebar.IngameUi.World.SetPauseState(true);
 
-			var widgetArgs = new WidgetArgs();
-			widgetArgs.Add("initialPanel", IngameInfoPanel.AutoSelect);
-
-			widgetArgs.Add(
-				"onExit",
-				() =>
+			var widgetArgs = new WidgetArgs
+			{
+				{ "initialPanel", IngameInfoPanel.AutoSelect },
 				{
-					if (sidebar.IngameUi.World.LobbyInfo.NonBotClients.Count() == 1)
-						sidebar.IngameUi.World.SetPauseState(false);
+					"onExit", () =>
+					{
+						if (this.Sidebar.IngameUi.World.LobbyInfo.NonBotClients.Count() == 1)
+							this.Sidebar.IngameUi.World.SetPauseState(false);
 
-					Ui.Root.Get("MENU_ROOT").RemoveChild(menu);
-					Active = false;
-					menu = null;
-				});
+						Ui.Root.Get("MENU_ROOT").RemoveChild(this.menu);
+						this.Active = false;
+						this.menu = null;
+					}
+				}
+			};
 
-			menu = Game.LoadWidget(sidebar.IngameUi.World, "INGAME_MENU", Ui.Root.Get("MENU_ROOT"), widgetArgs);
+			this.menu = Game.LoadWidget(this.Sidebar.IngameUi.World, "INGAME_MENU", Ui.Root.Get("MENU_ROOT"), widgetArgs);
 		}
 
 		protected override void DrawContents()
 		{
-			sidebar.Buttons.PlayFetchIndex("options", () => 0);
-			WidgetUtils.DrawSpriteCentered(sidebar.Buttons.Image, sidebar.IngameUi.Palette, center + new int2(0, Active ? 1 : 0));
+			this.Sidebar.Buttons.PlayFetchIndex("options", () => 0);
+			WidgetUtils.DrawSpriteCentered(this.Sidebar.Buttons.Image, this.Sidebar.IngameUi.Palette, this.Center + new int2(0, this.Active ? 1 : 0));
 		}
 	}
 }

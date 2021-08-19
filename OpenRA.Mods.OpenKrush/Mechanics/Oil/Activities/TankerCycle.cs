@@ -24,11 +24,19 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Activities
 		private readonly Actor actor;
 		private readonly Tanker tanker;
 
-		public Dock Dock => (ChildActivity as Docking)?.Dock;
-		public Actor DockActor => (ChildActivity as Docking)?.DockActor;
-		public DockingState DockingState => (ChildActivity as Docking)?.DockingState ?? DockingState.None;
-		public void StartDocking() => (ChildActivity as Docking)?.StartDocking();
-		public void StartUndocking() => (ChildActivity as Docking)?.StartUndocking();
+		public Dock? Dock => (this.ChildActivity as Docking)?.Dock;
+		public Actor? DockActor => (this.ChildActivity as Docking)?.DockActor;
+		public DockingState DockingState => (this.ChildActivity as Docking)?.DockingState ?? DockingState.None;
+
+		public void StartDocking()
+		{
+			(this.ChildActivity as Docking)?.StartDocking();
+		}
+
+		public void StartUndocking()
+		{
+			(this.ChildActivity as Docking)?.StartUndocking();
+		}
 
 		public TankerCycle(Actor actor, Tanker tanker)
 		{
@@ -38,39 +46,36 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Activities
 
 		public override bool Tick(Actor self)
 		{
-			if (IsCanceling)
+			if (this.IsCanceling)
 				return true;
 
-			if (ChildActivity != null)
+			if (this.ChildActivity != null)
 				return false;
 
-			if (tanker.Current < tanker.Maximum)
+			if (this.tanker.Current < this.tanker.Maximum)
 			{
-				if (tanker.PreferedDrillrig == null)
-					tanker.PreferedDrillrig = OilUtils.GetMostUnderutilizedDrillrig(self.Owner, self.CenterPosition);
+				this.tanker.PreferedDrillrig ??= OilUtils.GetMostUnderutilizedDrillrig(self.Owner, self.CenterPosition);
 
-				if (tanker.PreferedDrillrig != null)
+				if (this.tanker.PreferedDrillrig != null)
 				{
-					QueueChild(new Docking(actor, tanker.PreferedDrillrig, tanker.PreferedDrillrig.Trait<Dock>()));
+					this.QueueChild(new Docking(this.actor, this.tanker.PreferedDrillrig, this.tanker.PreferedDrillrig.TraitOrDefault<Dock>()));
 
 					return false;
 				}
 			}
 
-			if (tanker.Current > 0)
-			{
-				if (tanker.PreferedPowerStation == null && tanker.PreferedDrillrig != null)
-					tanker.PreferedPowerStation = OilUtils.GetNearestPowerStation(self.Owner, tanker.PreferedDrillrig.CenterPosition);
+			if (this.tanker.Current <= 0)
+				return false;
 
-				var target = tanker.PreferedPowerStation ?? OilUtils.GetNearestPowerStation(self.Owner, self.CenterPosition);
+			if (this.tanker.PreferedPowerStation == null && this.tanker.PreferedDrillrig != null)
+				this.tanker.PreferedPowerStation = OilUtils.GetNearestPowerStation(self.Owner, this.tanker.PreferedDrillrig.CenterPosition);
 
-				if (target != null)
-				{
-					QueueChild(new Docking(actor, target, target.Trait<Dock>()));
+			var target = this.tanker.PreferedPowerStation ?? OilUtils.GetNearestPowerStation(self.Owner, self.CenterPosition);
 
-					return false;
-				}
-			}
+			if (target == null)
+				return false;
+
+			this.QueueChild(new Docking(this.actor, target, target.TraitOrDefault<Dock>()));
 
 			return false;
 		}

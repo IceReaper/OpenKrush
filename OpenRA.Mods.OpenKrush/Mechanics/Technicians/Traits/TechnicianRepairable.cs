@@ -13,13 +13,15 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Traits
 {
-	using System.Collections.Generic;
-	using System.Linq;
 	using Common.Traits;
 	using Common.Traits.Render;
-	using OpenRA.Graphics;
+	using Graphics;
+	using JetBrains.Annotations;
 	using OpenRA.Traits;
+	using System.Collections.Generic;
+	using System.Linq;
 
+	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("Technician mechanism, attach to the building.")]
 	public class TechnicianRepairableInfo : ConditionalTraitInfo, Requires<RenderSpritesInfo>, Requires<BodyOrientationInfo>
 	{
@@ -45,52 +47,54 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Traits
 
 		public RepairTask(int amount, int duration)
 		{
-			Amount = amount;
-			Duration = duration;
+			this.Amount = amount;
+			this.Duration = duration;
 		}
 	}
 
 	public class TechnicianRepairable : ConditionalTrait<TechnicianRepairableInfo>, ITick
 	{
-		private readonly List<RepairTask> repairTasks = new List<RepairTask>();
+		private readonly List<RepairTask> repairTasks = new();
 
 		public TechnicianRepairable(ActorInitializer init, TechnicianRepairableInfo info)
 			: base(info)
 		{
-			var rs = init.Self.Trait<RenderSprites>();
-			var body = init.Self.Trait<BodyOrientation>();
+			var rs = init.Self.TraitOrDefault<RenderSprites>();
+			var body = init.Self.TraitOrDefault<BodyOrientation>();
 
-			var overlay = new Animation(init.World, "indicators", () => repairTasks.Count == 0);
+			var overlay = new Animation(init.World, "indicators", () => this.repairTasks.Count == 0);
 			overlay.PlayRepeating(RenderSprites.NormalizeSequence(overlay, init.Self.GetDamageState(), "repair"));
 
 			// TODO body.LocalToWorld messes up the position.
 			var anim = new AnimationWithOffset(
 				overlay,
 				() => body.LocalToWorld(
-					new WVec(info.Offset.Y * -32, info.Offset.X * -32, 0).Rotate(body.QuantizeOrientation(init.Self, init.Self.Orientation))),
-				() => repairTasks.Count == 0,
-				p => RenderUtils.ZOffsetFromCenter(init.Self, p, 1));
+					new WVec(info.Offset.Y * -32, info.Offset.X * -32, 0).Rotate(body.QuantizeOrientation(init.Self, init.Self.Orientation))
+				),
+				() => this.repairTasks.Count == 0,
+				p => RenderUtils.ZOffsetFromCenter(init.Self, p, 1)
+			);
 
 			rs.Add(anim);
 		}
 
 		void ITick.Tick(Actor self)
 		{
-			foreach (var repairTask in repairTasks.ToList())
+			foreach (var repairTask in this.repairTasks.ToList())
 			{
 				var amount = repairTask.Amount / repairTask.Duration;
 				repairTask.Amount -= amount;
 				repairTask.Duration -= 1;
-				self.InflictDamage(self, new Damage(-amount));
+				self.InflictDamage(self, new(-amount));
 
 				if (repairTask.Duration == 0)
-					repairTasks.Remove(repairTask);
+					this.repairTasks.Remove(repairTask);
 			}
 		}
 
 		public void Enter()
 		{
-			repairTasks.Add(new RepairTask(Info.Amount, Info.Duration));
+			this.repairTasks.Add(new(this.Info.Amount, this.Info.Duration));
 		}
 	}
 }

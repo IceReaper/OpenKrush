@@ -13,15 +13,17 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 {
+	using Common.Traits;
+	using Common.Traits.Render;
+	using Graphics;
+	using JetBrains.Annotations;
+	using LobbyOptions;
+	using OpenRA.Traits;
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
-	using Common.Traits;
-	using Common.Traits.Render;
-	using LobbyOptions;
-	using OpenRA.Graphics;
-	using OpenRA.Traits;
 
+	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("Research mechanism, attach to the actor which has tech levels.")]
 	public class ResearchableInfo : ConditionalTraitInfo, Requires<RenderSpritesInfo>, Requires<BodyOrientationInfo>
 	{
@@ -59,149 +61,156 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 
 			public Technology(string id, int level)
 			{
-				Id = id;
-				Level = level;
+				this.Id = id;
+				this.Level = level;
 			}
 		}
 
 		private readonly ResearchableInfo info;
-		private readonly Actor self;
 
 		private readonly Animation overlay;
 		private readonly int researchSteps;
 
-		private Technology[] technologies;
+		private Technology[] technologies = Array.Empty<Technology>();
 		public int Level;
 		public int MaxLevel;
 		public int LimitedLevels;
-		public Researches ResearchedBy;
+		public Actor? ResearchedBy;
+		public Researches? ResearchedByResearches;
 
 		public Researchable(ActorInitializer init, ResearchableInfo info)
 			: base(info)
 		{
 			this.info = info;
-			self = init.Self;
 
-			var renderSprites = self.Trait<RenderSprites>();
-			var bodyOrientation = self.Trait<BodyOrientation>();
+			var renderSprites = init.Self.TraitOrDefault<RenderSprites>();
+			var bodyOrientation = init.Self.TraitOrDefault<BodyOrientation>();
 
-			var hidden = new Func<bool>(() => ResearchedBy == null || !self.Owner.IsAlliedWith(self.World.LocalPlayer));
+			var hidden = new Func<bool>(() => this.ResearchedBy == null || !init.Self.Owner.IsAlliedWith(init.Self.World.LocalPlayer));
 
-			overlay = new Animation(self.World, "indicators", hidden);
-			overlay.PlayRepeating(info.Sequence + 0);
+			this.overlay = new(init.Self.World, "indicators", hidden);
+			this.overlay.PlayRepeating(info.Sequence + 0);
 
 			var anim = new AnimationWithOffset(
-				overlay,
+				this.overlay,
 				() => bodyOrientation.LocalToWorld(
-					new WVec(info.Offset.Y * -32, info.Offset.X * -32, 0).Rotate(bodyOrientation.QuantizeOrientation(self, self.Orientation))),
+					new WVec(info.Offset.Y * -32, info.Offset.X * -32, 0).Rotate(bodyOrientation.QuantizeOrientation(init.Self, init.Self.Orientation))
+				),
 				hidden,
-				p => RenderUtils.ZOffsetFromCenter(self, p, 1));
+				p => RenderUtils.ZOffsetFromCenter(init.Self, p, 1)
+			);
 
 			renderSprites.Add(anim);
 
-			while (overlay.HasSequence(info.Sequence + researchSteps))
-				researchSteps++;
+			while (this.overlay.HasSequence(info.Sequence + this.researchSteps))
+				this.researchSteps++;
 		}
 
 		public void SetProgress(float progress)
 		{
-			var sequence = info.Sequence + (int)Math.Floor(researchSteps * progress);
+			var sequence = this.info.Sequence + (int)Math.Floor(this.researchSteps * progress);
 
-			if (overlay.CurrentSequence.Name != sequence)
-				overlay.PlayRepeating(sequence);
+			if (this.overlay.CurrentSequence.Name != sequence)
+				this.overlay.PlayRepeating(sequence);
 		}
 
-		public ResarchState GetState()
+		public ResarchState GetState(Actor self)
 		{
-			if (IsTraitDisabled)
+			if (this.IsTraitDisabled)
 				return ResarchState.Unavailable;
 
 			if (self.IsDead || !self.IsInWorld)
 				return ResarchState.Unavailable;
 
-			if (ResearchedBy != null)
-				return ResarchState.Researching;
-
-			return ResarchState.Available;
+			return this.ResearchedBy != null ? ResarchState.Researching : ResarchState.Available;
 		}
 
 		void INotifyAddedToWorld.AddedToWorld(Actor self)
 		{
-			var researchMode = self.World.WorldActor.Trait<ResearchMode>().Mode;
-			var techLimit = self.World.WorldActor.Trait<TechLimit>().Limit;
+			var researchMode = self.World.WorldActor.TraitOrDefault<ResearchMode>().Mode;
+			var techLimit = self.World.WorldActor.TraitOrDefault<TechLimit>().Limit;
 
 			var techTrees = self.TraitsImplementing<IProvidesResearchables>();
 
 			var allTechnologies = new List<Technology>();
 
 			foreach (var techTree in techTrees)
+			{
 				allTechnologies.AddRange(
-					techTree.GetResearchables()
+					techTree.GetResearchables(self)
 						.Where(
 							entry =>
 							{
-								if (entry.Value <= techLimit)
-									return entry.Value >= 0;
+								var (_, value) = entry;
+
+								if (value <= techLimit)
+									return value >= 0;
 
 								if (researchMode == ResearchModeType.FullLevel)
-									LimitedLevels = Math.Max(entry.Value - techLimit, LimitedLevels);
+									this.LimitedLevels = Math.Max(value - techLimit, this.LimitedLevels);
 								else
-									LimitedLevels++;
+									this.LimitedLevels++;
 
 								return false;
-							})
-						.Select(entry => new Technology(entry.Key, entry.Value)));
+							}
+						)
+						.Select(entry => new Technology(entry.Key, entry.Value))
+				);
+			}
 
 			if (!allTechnologies.Any())
 				return;
 
-			technologies = allTechnologies.OrderBy(technology => technology.Level).ToArray();
+			this.technologies = allTechnologies.OrderBy(technology => technology.Level).ToArray();
 
-			Level = technologies[0].Level;
+			this.Level = this.technologies[0].Level;
 
-			foreach (var technology in technologies.Where(technology => technology.Level == Level))
+			foreach (var technology in this.technologies.Where(technology => technology.Level == this.Level))
 				technology.Researched = true;
 
 			if (researchMode == ResearchModeType.FullLevel)
-				MaxLevel = technologies[technologies.Length - 1].Level;
+				this.MaxLevel = this.technologies[^1].Level;
 			else
 			{
-				Level = 0;
-				MaxLevel = technologies.Count(technology => !technology.Researched);
+				this.Level = 0;
+				this.MaxLevel = this.technologies.Count(technology => !technology.Researched);
 			}
 		}
 
-		public void Researched()
+		public void Researched(Actor self)
 		{
-			if (Level == MaxLevel)
+			if (this.Level == this.MaxLevel)
 				return;
 
-			var researchMode = self.World.WorldActor.Trait<ResearchMode>().Mode;
+			var researchMode = self.World.WorldActor.TraitOrDefault<ResearchMode>().Mode;
 
 			if (researchMode == ResearchModeType.SingleTech)
 			{
-				Level++;
-				technologies.First(technology => technology.Researched == false).Researched = true;
+				this.Level++;
+				var technology = this.technologies.FirstOrDefault(technology => technology.Researched == false);
+
+				if (technology != null)
+					technology.Researched = true;
 			}
 			else
 			{
-				Level = NextTechLevel();
+				this.Level = this.NextTechLevel();
 
-				foreach (var technology in technologies.Where(technology => technology.Level == Level))
+				foreach (var technology in this.technologies.Where(technology => technology.Level == this.Level))
 					technology.Researched = true;
 			}
 		}
 
 		public bool IsResearched(string id)
 		{
-			var technology = technologies.FirstOrDefault(t => t.Id == id);
+			var technology = this.technologies.FirstOrDefault(t => t.Id == id);
 
-			return technology != null && technology.Researched;
+			return technology is { Researched: true };
 		}
 
 		public int NextTechLevel()
 		{
-			return technologies.FirstOrDefault(technology => !technology.Researched)?.Level ?? 0;
+			return this.technologies.FirstOrDefault(technology => !technology.Researched)?.Level ?? 0;
 		}
 	}
 }

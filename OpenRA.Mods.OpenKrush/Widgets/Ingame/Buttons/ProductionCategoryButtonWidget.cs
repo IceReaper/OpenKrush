@@ -13,15 +13,12 @@
 
 namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
 	using Common.Traits;
 	using Common.Widgets;
-	using Primitives;
-	using ProductionPaletteWidget = Ingame.ProductionPaletteWidget;
+	using System;
+	using System.Linq;
 
-	public class ProductionCategoryButtonWidget : ButtonWidget
+	public class ProductionCategoryButtonWidget : SidebarButtonWidget
 	{
 		public readonly string[] Categories;
 		private readonly Hotkey hotkey;
@@ -29,35 +26,35 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 		public ProductionCategoryButtonWidget(SidebarWidget sidebar, int index, string[] categories, string label)
 			: base(sidebar, "unit")
 		{
-			Categories = categories;
-			Bounds = new Rectangle(0, index * ButtonWidget.Size, ButtonWidget.Size, ButtonWidget.Size);
-			TooltipTitle = label;
-			hotkey = Game.ModData.Hotkeys[$"Production{label}"].GetValue();
+			this.Categories = categories;
+			this.Bounds = new(0, index * SidebarButtonWidget.Size, SidebarButtonWidget.Size, SidebarButtonWidget.Size);
+			this.TooltipTitle = label;
+			this.hotkey = Game.ModData.Hotkeys[$"Production{label}"].GetValue();
 		}
 
 		public override bool HandleKeyPress(KeyInput e)
 		{
-			if (!IsUsable() || e.Key != hotkey.Key || e.IsRepeat || e.Event != KeyInputEvent.Down || e.Modifiers != hotkey.Modifiers)
+			if (!this.IsUsable() || e.Key != this.hotkey.Key || e.IsRepeat || e.Event != KeyInputEvent.Down || e.Modifiers != this.hotkey.Modifiers)
 				return false;
 
-			if (!Active)
+			if (!this.Active)
 			{
-				Active = true;
-				sidebar.CloseAllBut(this);
+				this.Active = true;
+				this.Sidebar.CloseAllBut(this);
 			}
 			else
 			{
-				for (var i = 0; i < Children.Count; i++)
+				for (var i = 0; i < this.Children.Count; i++)
 				{
-					var child = (ProductionPaletteWidget)Children[i];
+					var child = (ProductionPaletteColumnWidget)this.Children[i];
 
-					if (child.IsFocused)
-					{
-						child.IsFocused = false;
-						((ProductionPaletteWidget)Children[(i + 1) % Children.Count]).IsFocused = true;
+					if (!child.IsFocused)
+						continue;
 
-						break;
-					}
+					child.IsFocused = false;
+					((ProductionPaletteColumnWidget)this.Children[(i + 1) % this.Children.Count]).IsFocused = true;
+
+					break;
 				}
 			}
 
@@ -69,84 +66,86 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 			if (!base.HandleLeftClick(mi))
 				return false;
 
-			if (Active)
-				sidebar.CloseAllBut(this);
+			if (this.Active)
+				this.Sidebar.CloseAllBut(this);
 
 			return true;
 		}
 
 		protected override bool IsUsable()
 		{
-			return Children.Count > 0;
+			return this.Children.Count > 0;
 		}
 
 		public override void Tick()
 		{
-			var actors = sidebar.IngameUi.World.ActorsHavingTrait<ProductionQueue>().Where(a => a.Owner == sidebar.IngameUi.World.LocalPlayer);
+			var actors = this.Sidebar.IngameUi.World.ActorsHavingTrait<ProductionQueue>().Where(a => a.Owner == this.Sidebar.IngameUi.World.LocalPlayer);
 
 			var queues = actors.SelectMany(actor => actor.TraitsImplementing<ProductionQueue>(), (actor, productionQueue) => new { actor, productionQueue })
-				.Where(t => Categories.Contains(t.productionQueue.Info.Type))
+				.Where(t => this.Categories.Contains(t.productionQueue.Info.Type))
 				.Where(t => t.productionQueue.BuildableItems().Any())
-				.Select(t => t.productionQueue).ToList();
+				.Select(t => t.productionQueue)
+				.ToList();
 
-			var children = Children.ToArray();
+			var children = this.Children.ToArray();
 
 			foreach (var child in children)
 			{
-				if (!queues.Contains(((ProductionPaletteWidget)child).Queue))
-					RemoveChild(child);
+				if (!queues.Contains(((ProductionPaletteColumnWidget)child).Queue))
+					this.RemoveChild(child);
 				else
-					queues.Remove(((ProductionPaletteWidget)child).Queue);
+					queues.Remove(((ProductionPaletteColumnWidget)child).Queue);
 			}
 
 			foreach (var queue in queues)
-				AddChild(new ProductionPaletteWidget(sidebar, queue));
+				this.AddChild(new ProductionPaletteColumnWidget(this.Sidebar, queue));
 
-			Children.Sort(
+			this.Children.Sort(
 				(a, b) =>
 				{
-					var typeA = ((ProductionPaletteWidget)a).Queue.Info.Type;
-					var typeB = ((ProductionPaletteWidget)b).Queue.Info.Type;
+					var typeA = ((ProductionPaletteColumnWidget)a).Queue.Info.Type;
+					var typeB = ((ProductionPaletteColumnWidget)b).Queue.Info.Type;
 
 					if (typeA != typeB)
 						return string.Compare(typeA, typeB, StringComparison.Ordinal);
 
-					var idA = ((ProductionPaletteWidget)a).Queue.Actor.ActorID;
-					var idB = ((ProductionPaletteWidget)b).Queue.Actor.ActorID;
+					var idA = ((ProductionPaletteColumnWidget)a).Queue.Actor.ActorID;
+					var idB = ((ProductionPaletteColumnWidget)b).Queue.Actor.ActorID;
 
 					return (int)idA - (int)idB;
-				});
+				}
+			);
 
 			var focused = -1;
 
-			for (var i = 0; i < Children.Count; i++)
+			for (var i = 0; i < this.Children.Count; i++)
 			{
-				var palette = (ProductionPaletteWidget)Children[i];
-				palette.Bounds.X = (i + 1) * ButtonWidget.Size * -1;
+				var palette = (ProductionPaletteColumnWidget)this.Children[i];
+				palette.Bounds.X = (i + 1) * SidebarButtonWidget.Size * -1;
 
 				if (palette.IsFocused)
 					focused = i;
 			}
 
-			if (Children.Count == 0)
-				Active = false;
+			if (this.Children.Count == 0)
+				this.Active = false;
 			else if (focused == -1)
-				((ProductionPaletteWidget)Children[0]).IsFocused = true;
+				((ProductionPaletteColumnWidget)this.Children[0]).IsFocused = true;
 
-			Children.ForEach(c => c.Visible = Active);
-			type = Children.Count > 0 ? "unit" : "button";
+			this.Children.ForEach(c => c.Visible = this.Active);
+			this.Type = this.Children.Count > 0 ? "unit" : "button";
 		}
 
 		protected override void DrawContents()
 		{
-			sidebar.Buttons.PlayFetchIndex(Categories[0], () => 0);
-			WidgetUtils.DrawSpriteCentered(sidebar.Buttons.Image, sidebar.IngameUi.Palette, center + new int2(0, Active ? 1 : 0));
+			this.Sidebar.Buttons.PlayFetchIndex(this.Categories[0], () => 0);
+			WidgetUtils.DrawSpriteCentered(this.Sidebar.Buttons.Image, this.Sidebar.IngameUi.Palette, this.Center + new int2(0, this.Active ? 1 : 0));
 		}
 
 		public void SelectFactory(Actor factory)
 		{
-			var productionQueue = factory.TraitsImplementing<ProductionQueue>().First(pq => Categories.Contains(pq.Info.Type));
-			var productionPalettes = Children.OfType<ProductionPaletteWidget>().ToArray();
+			var productionQueue = factory.TraitsImplementing<ProductionQueue>().FirstOrDefault(pq => this.Categories.Contains(pq.Info.Type));
+			var productionPalettes = this.Children.OfType<ProductionPaletteColumnWidget>().ToArray();
 
 			foreach (var productionPalette in productionPalettes)
 				productionPalette.IsFocused = productionPalette.Queue == productionQueue;

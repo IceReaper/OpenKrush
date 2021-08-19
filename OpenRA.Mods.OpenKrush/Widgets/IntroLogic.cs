@@ -14,21 +14,22 @@
 namespace OpenRA.Mods.OpenKrush.Widgets
 {
 	using Common.Traits;
-	using FileFormats;
-	using GameProviders;
 	using GameRules;
+	using JetBrains.Annotations;
 	using OpenRA.Widgets;
-	using Primitives;
+	using System;
+	using System.Linq;
 
+	[UsedImplicitly]
 	public class IntroLogic : ChromeLogic
 	{
 		private static int state;
 
-		private readonly Widget widget;
-		private readonly ModData modData;
-		private readonly World world;
-		private readonly VbcPlayerWidget player;
-		private readonly MusicInfo song;
+		private readonly Widget? widget;
+		private readonly ModData? modData;
+		private readonly World? world;
+		private readonly VbcPlayerWidget? player;
+		private readonly MusicInfo? song;
 
 		[ObjectCreator.UseCtorAttribute]
 		public IntroLogic(Widget widget, World world, ModData modData)
@@ -40,44 +41,95 @@ namespace OpenRA.Mods.OpenKrush.Widgets
 			this.world = world;
 			this.modData = modData;
 
-			widget.AddChild(player = new VbcPlayerWidget(this.modData));
+			widget.AddChild(this.player = new(this.modData));
 
-			player.Bounds = new Rectangle(0, 0, Game.Renderer.Resolution.Width, Game.Renderer.Resolution.Height);
+			this.player.Bounds = new(0, 0, Game.Renderer.Resolution.Width, Game.Renderer.Resolution.Height);
 
-			var musicPlayList = world.WorldActor.Trait<MusicPlaylist>();
-			song = musicPlayList.CurrentSong();
+			var musicPlayList = world.WorldActor.TraitOrDefault<MusicPlaylist>();
+			this.song = musicPlayList.CurrentSong();
 			musicPlayList.Stop();
 		}
 
 		public override void Tick()
 		{
-			if (IntroLogic.state == 0)
-				PlayVideo(GameProvider.Movies.ContainsKey("mh_fmv.vbc") ? GameProvider.Movies["mh_fmv.vbc"] : GameProvider.Movies["mh.vbc"]);
-			else if (IntroLogic.state == 2)
-				PlayVideo(GameProvider.Movies["intro.vbc"]);
-			else if (IntroLogic.state == 4)
+			if (this.modData == null)
 			{
-				widget.RemoveChild(player);
-				IntroLogic.state++;
+				this.Finished();
 
-				if (song != null)
-					world.WorldActor.Trait<MusicPlaylist>().Play(song);
+				return;
+			}
+
+			switch (IntroLogic.state)
+			{
+				case 0:
+					this.PlayVideo(
+						this.modData.Manifest.Id switch
+						{
+							"openkrush_gen1" => "mh_fmv.vbc",
+							"openkrush_gen2" => "mh.vbc",
+							_ => null
+						}
+					);
+
+					break;
+
+				case 2:
+					this.PlayVideo("intro.vbc");
+
+					break;
+
+				case 4:
+				{
+					this.Finished();
+
+					break;
+				}
 			}
 		}
 
-		private void PlayVideo(string video)
+		private void PlayVideo(string? video)
 		{
 			IntroLogic.state++;
 
-			if (!modData.ModFiles.TryOpen(video, out var stream))
+			if (video == null || this.player == null)
 			{
 				IntroLogic.state++;
 
 				return;
 			}
 
-			player.Video = new Vbc(stream);
-			player.Play(() => IntroLogic.state++);
+			var fmvPackage = this.modData?.ModFiles.MountedPackages.FirstOrDefault(
+				package => this.modData.ModFiles.GetPrefix(package)
+					== this.modData.Manifest.Id switch
+					{
+						"openkrush_gen1" => "gen1_fmv",
+						"openkrush_gen2" => "gen2_fmv",
+						_ => null
+					}
+			);
+
+			var stream = fmvPackage?.Contents.Where(file => file.Equals(video, StringComparison.InvariantCultureIgnoreCase))
+				.Select(file => fmvPackage.GetStream(file))
+				.FirstOrDefault();
+
+			if (stream == null)
+			{
+				IntroLogic.state++;
+
+				return;
+			}
+
+			this.player.Video = new(stream);
+			this.player.Play(() => IntroLogic.state++);
+		}
+
+		private void Finished()
+		{
+			this.widget?.RemoveChild(this.player);
+			IntroLogic.state++;
+
+			if (this.song != null)
+				this.world?.WorldActor.TraitOrDefault<MusicPlaylist>().Play(this.song);
 		}
 	}
 }

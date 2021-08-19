@@ -13,12 +13,15 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 {
-	using System;
-	using System.Collections.Generic;
 	using Common.Traits;
+	using JetBrains.Annotations;
+	using LobbyOptions;
 	using OpenRA.Traits;
 	using Orders;
+	using System;
+	using System.Collections.Generic;
 
+	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("Research mechanism, attach to the actor which can research.")]
 	public class ResearchesInfo : ConditionalTraitInfo, Requires<ResearchableInfo>
 	{
@@ -51,13 +54,13 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 	public class Researches : ConditionalTrait<ResearchesInfo>, IIssueOrder, IResolveOrder, INotifyKilled, ITick, IProvidesResearchables
 	{
 		private readonly ResearchesInfo info;
-		private readonly Actor self;
 
 		private readonly Researchable researchable;
 		private readonly DeveloperMode developerMode;
 		private readonly PlayerResources playerResources;
+		private readonly int timeFactor;
 
-		public Actor Researching;
+		private Actor? researchingActor;
 
 		private int totalCost;
 		private int totalTime;
@@ -68,21 +71,21 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 			: base(info)
 		{
 			this.info = info;
-			self = init.Self;
-			researchable = init.Self.Trait<Researchable>();
-			developerMode = init.Self.Owner.PlayerActor.Trait<DeveloperMode>();
-			playerResources = init.Self.Owner.PlayerActor.Trait<PlayerResources>();
+			this.researchable = init.Self.TraitOrDefault<Researchable>();
+			this.developerMode = init.Self.Owner.PlayerActor.TraitOrDefault<DeveloperMode>();
+			this.playerResources = init.Self.Owner.PlayerActor.TraitOrDefault<PlayerResources>();
+			this.timeFactor = init.Self.World.WorldActor.TraitOrDefault<ResearchDuration>().Duration;
 		}
 
 		IEnumerable<IOrderTargeter> IIssueOrder.Orders
 		{
 			get
 			{
-				yield return new ResearchOrderTargeter(info.Cursor, info.BlockedCursor);
+				yield return new ResearchOrderTargeter(this.info.Cursor, this.info.BlockedCursor);
 			}
 		}
 
-		Order IIssueOrder.IssueOrder(Actor self, IOrderTargeter order, in Target target, bool queued)
+		Order? IIssueOrder.IssueOrder(Actor self, IOrderTargeter order, in Target target, bool queued)
 		{
 			return order.OrderID == ResearchOrderTargeter.Id ? new Order(order.OrderID, self, target, queued) : null;
 		}
@@ -97,112 +100,134 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 
 			var action = ResearchUtils.GetAction(self, order.Target.Actor);
 
-			if (action == ResearchAction.Start)
-				StartResearch(order.Target.Actor);
-			else if (action == ResearchAction.Stop)
-				order.Target.Actor.Trait<Researchable>().ResearchedBy.StopResearch(true);
+			switch (action)
+			{
+				case ResearchAction.Start:
+					this.StartResearch(self, order.Target.Actor);
+
+					break;
+
+				case ResearchAction.Stop:
+					var targetResearchable = order.Target.Actor.TraitOrDefault<Researchable>();
+
+					if (targetResearchable.ResearchedBy != null)
+						targetResearchable.ResearchedByResearches?.StopResearch(targetResearchable.ResearchedBy, true);
+
+					break;
+
+				case ResearchAction.None:
+					break;
+
+				default:
+					throw new ArgumentOutOfRangeException(Enum.GetName(action));
+			}
 		}
 
 		void INotifyKilled.Killed(Actor self, AttackInfo attackInfo)
 		{
-			StopResearch(true);
+			this.StopResearch(self, true);
 		}
 
 		void ITick.Tick(Actor self)
 		{
-			if (Researching == null)
+			if (this.researchingActor == null)
 				return;
 
-			var action = ResearchUtils.GetAction(self, Researching);
+			var action = ResearchUtils.GetAction(self, this.researchingActor);
 
 			if (action == ResearchAction.None)
 			{
-				StopResearch(true);
+				this.StopResearch(self, true);
 
 				return;
 			}
 
-			var expectedRemainingCost = remainingTime == 1 ? 0 : totalCost * remainingTime / Math.Max(1, totalTime);
-			var costThisFrame = remainingCost - expectedRemainingCost;
+			var expectedRemainingCost = this.remainingTime == 1 ? 0 : this.totalCost * this.remainingTime / Math.Max(1, this.totalTime);
+			var costThisFrame = this.remainingCost - expectedRemainingCost;
 
-			if (costThisFrame != 0 && !playerResources.TakeCash(costThisFrame, true))
+			if (costThisFrame != 0 && !this.playerResources.TakeCash(costThisFrame, true))
 				return;
 
-			remainingCost -= costThisFrame;
-			remainingTime -= 1;
+			this.remainingCost -= costThisFrame;
+			this.remainingTime -= 1;
 
-			var researchable = Researching.Trait<Researchable>();
+			var targetActor = this.researchingActor;
+			var targetResearchable = targetActor.TraitOrDefault<Researchable>();
 
-			if (remainingTime == 0)
+			if (this.remainingTime == 0)
 			{
-				StopResearch(false);
-				researchable.Researched();
-				Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", info.CompleteNotification, self.Owner.Faction.InternalName);
+				this.StopResearch(self, false);
+				targetResearchable.Researched(targetActor);
+				Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", this.info.CompleteNotification, self.Owner.Faction.InternalName);
 			}
 			else
-				researchable.SetProgress((totalTime - remainingTime) / (float)totalTime);
+				targetResearchable.SetProgress((this.totalTime - this.remainingTime) / (float)this.totalTime);
 		}
 
-		private void StartResearch(Actor target)
+		private void StartResearch(Actor self, Actor target)
 		{
-			if (Researching != null && Researching.Equals(target))
+			if (this.researchingActor != null && this.researchingActor.Equals(target))
 				return;
 
-			var researchable = target.Trait<Researchable>();
+			var targetResearchable = target.TraitOrDefault<Researchable>();
 
-			if (researchable.ResearchedBy != null)
+			if (targetResearchable.ResearchedBy != null)
 				return;
 
-			if (Researching != null)
-				StopResearch(true);
+			if (this.researchingActor != null)
+				this.StopResearch(self, true);
 
-			Researching = target;
+			this.researchingActor = target;
 
-			remainingCost = totalCost = researchable.Info.ResearchCostBase
-				+ researchable.Info.ResearchCostTechLevel * researchable.NextTechLevel() * info.ResearchRates[this.researchable.Level] / 100;
+			this.remainingCost = this.totalCost = targetResearchable.Info.ResearchCostBase
+				+ targetResearchable.Info.ResearchCostTechLevel * targetResearchable.NextTechLevel() * this.info.ResearchRates[this.researchable.Level] / 100;
 
-			if (developerMode.FastBuild)
-				remainingTime = totalTime = 1;
+			if (this.developerMode.FastBuild)
+				this.remainingTime = this.totalTime = 1;
 			else
-				remainingTime = totalTime = researchable.Info.ResearchTimeBase
-					+ researchable.Info.ResearchTimeTechLevel * researchable.NextTechLevel() * info.ResearchRates[this.researchable.Level] / 100;
+			{
+				this.remainingTime = this.totalTime = targetResearchable.Info.ResearchTimeBase
+					+ targetResearchable.Info.ResearchTimeTechLevel
+					* targetResearchable.NextTechLevel()
+					* this.info.ResearchRates[this.researchable.Level]
+					/ 100
+					* this.timeFactor;
+			}
 
-			researchable.ResearchedBy = this;
-			researchable.SetProgress(0);
+			targetResearchable.ResearchedBy = self;
+			targetResearchable.ResearchedByResearches = this;
+			targetResearchable.SetProgress(0);
 
-			Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", info.StartNotification, self.Owner.Faction.InternalName);
+			Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", this.info.StartNotification, self.Owner.Faction.InternalName);
 		}
 
-		private void StopResearch(bool isCanceled)
+		private void StopResearch(Actor self, bool isCanceled)
 		{
-			if (Researching == null)
+			if (this.researchingActor == null)
 				return;
 
-			if (!Researching.Disposed)
-				Researching.Trait<Researchable>().ResearchedBy = null;
+			if (!this.researchingActor.Disposed)
+				this.researchingActor.TraitOrDefault<Researchable>().ResearchedBy = null;
 
-			Researching = null;
+			this.researchingActor = null;
 
 			if (isCanceled)
-				Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", info.CancelNotification, self.Owner.Faction.InternalName);
+				Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", this.info.CancelNotification, self.Owner.Faction.InternalName);
 		}
 
 		public ResarchState GetState()
 		{
-			if (IsTraitDisabled)
+			if (this.IsTraitDisabled)
 				return ResarchState.Unavailable;
 
-			if (Researching != null)
-				return ResarchState.Researching;
-
-			return ResarchState.Available;
+			return this.researchingActor != null ? ResarchState.Researching : ResarchState.Available;
 		}
 
-		public Dictionary<string, int> GetResearchables()
+		public Dictionary<string, int> GetResearchables(Actor self)
 		{
 			var technologies = new Dictionary<string, int>();
 
-			for (var i = 0; i < info.ResearchRates.Length; i++)
+			for (var i = 0; i < this.info.ResearchRates.Length; i++)
 				technologies.Add(ResearchesInfo.Prefix + i, i);
 
 			return technologies;

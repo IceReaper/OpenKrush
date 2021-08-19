@@ -13,11 +13,12 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.LobbyOptions
 {
+	using JetBrains.Annotations;
+	using OpenRA.Traits;
 	using System;
 	using System.Collections.Generic;
 	using System.Collections.ObjectModel;
 	using System.Linq;
-	using OpenRA.Traits;
 
 	public enum ResearchModeType
 	{
@@ -25,6 +26,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.LobbyOptions
 		SingleTech
 	}
 
+	[UsedImplicitly]
 	[Desc("How the research system should work.")]
 	public class ResearchModeInfo : TraitInfo, ILobbyOptions
 	{
@@ -41,10 +43,12 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.LobbyOptions
 				0,
 				new ReadOnlyDictionary<string, string>(
 					new Dictionary<ResearchModeType, string> { { ResearchModeType.FullLevel, "Full Level" }, { ResearchModeType.SingleTech, "Single Tech" } }
-						.ToDictionary(e => e.Key.ToString(), e => e.Value)),
+						.ToDictionary(e => e.Key.ToString(), e => e.Value)
+				),
 				ResearchModeInfo.Default.ToString(),
 				false,
-				ResearchUtils.LobbyOptionsCategory);
+				ResearchUtils.LobbyOptionsCategory
+			);
 		}
 
 		public override object Create(ActorInitializer init)
@@ -59,9 +63,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.LobbyOptions
 
 		void INotifyCreated.Created(Actor self)
 		{
-			Mode = (ResearchModeType)Enum.Parse(
+			this.Mode = (ResearchModeType)Enum.Parse(
 				typeof(ResearchModeType),
-				self.World.LobbyInfo.GlobalSettings.OptionOrDefault(ResearchModeInfo.Id, ResearchModeInfo.Default.ToString()));
+				self.World.LobbyInfo.GlobalSettings.OptionOrDefault(ResearchModeInfo.Id, ResearchModeInfo.Default.ToString())
+			);
 		}
 	}
 }

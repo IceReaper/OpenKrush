@@ -13,28 +13,28 @@
 
 namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 {
-	using System;
 	using Common;
 	using Common.Traits;
 	using Common.Widgets;
-	using OpenRA.Graphics;
+	using Graphics;
 	using Primitives;
+	using System;
 
-	public class ProductionItemButtonWidget : ButtonWidget
+	public class ProductionItemButtonWidget : SidebarButtonWidget
 	{
-		public string Item;
-		public string Icon;
-		public Action<MouseInput> ClickedLeft;
-		public Action<MouseInput> ClickedRight;
-		public Func<bool> IsActive;
-		public Func<bool> IsFocused;
-		public Func<int> Progress;
-		public Func<int> Amount;
+		public string? Item;
+		public string? Icon;
+		public Action<MouseInput>? ClickedLeft;
+		public Action<MouseInput>? ClickedRight;
+		public Func<bool>? IsActive;
+		public Func<bool>? IsFocused;
+		public Func<int>? Progress;
+		public Func<int>? Amount;
 
-		private ActorPreviewWidget actorPreviewWidget;
+		private ActorPreviewWidget? actorPreviewWidget;
 		private bool isHovered;
 		private bool initialized;
-		private Sprite image;
+		private Sprite? image;
 
 		public ProductionItemButtonWidget(SidebarWidget sidebar)
 			: base(sidebar, "unit")
@@ -43,15 +43,14 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 
 		protected override bool HandleLeftClick(MouseInput mi)
 		{
-			ClickedLeft(mi);
+			this.ClickedLeft?.Invoke(mi);
 
 			return true;
 		}
 
 		protected override bool HandleRightClick(MouseInput mi)
 		{
-			if (ClickedRight != null)
-				ClickedRight(mi);
+			this.ClickedRight?.Invoke(mi);
 
 			return true;
 		}
@@ -59,105 +58,120 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 		public override void MouseEntered()
 		{
 			base.MouseEntered();
-			isHovered = true;
+			this.isHovered = true;
 		}
 
 		public override void MouseExited()
 		{
 			base.MouseExited();
-			isHovered = false;
+			this.isHovered = false;
 		}
 
 		public override void Tick()
 		{
-			Active = IsActive();
+			this.Active = this.IsActive?.Invoke() ?? false;
 
-			if (actorPreviewWidget != null && isHovered)
-			{
-				actorPreviewWidget.Tick();
-			}
+			if (this.actorPreviewWidget != null && this.isHovered)
+				this.actorPreviewWidget.Tick();
 		}
 
 		public override void Draw()
 		{
 			base.Draw();
 
-			if (Progress == null)
+			if (this.Progress == null)
 				return;
 
-			var progress = Progress();
+			var progress = this.Progress();
 
 			if (progress == -1)
 				return;
 
-			progress = progress * (ButtonWidget.Size - 10) / 100;
-			var o = ButtonWidget.Size - 10 - progress;
-			WidgetUtils.FillRectWithColor(new Rectangle(RenderBounds.X + 2, RenderBounds.Y + 4, 7, ButtonWidget.Size - 6), Color.Black);
+			progress = progress * (SidebarButtonWidget.Size - 10) / 100;
+			var o = SidebarButtonWidget.Size - 10 - progress;
+			WidgetUtils.FillRectWithColor(new(this.RenderBounds.X + 2, this.RenderBounds.Y + 4, 7, SidebarButtonWidget.Size - 6), Color.Black);
 
 			WidgetUtils.FillRectWithColor(
-				new Rectangle(RenderBounds.X + 3, RenderBounds.Y + 5, 5, ButtonWidget.Size - 8),
-				sidebar.IngameUi.Palette.Palette.GetColor(10));
+				new(this.RenderBounds.X + 3, this.RenderBounds.Y + 5, 5, SidebarButtonWidget.Size - 8),
+				this.Sidebar.IngameUi.Palette.Palette.GetColor(10)
+			);
 
 			WidgetUtils.FillRectWithColor(
-				new Rectangle(RenderBounds.X + 4, RenderBounds.Y + 6, 3, ButtonWidget.Size - 10),
-				sidebar.IngameUi.Palette.Palette.GetColor(8));
+				new(this.RenderBounds.X + 4, this.RenderBounds.Y + 6, 3, SidebarButtonWidget.Size - 10),
+				this.Sidebar.IngameUi.Palette.Palette.GetColor(8)
+			);
 
 			WidgetUtils.FillRectWithColor(
-				new Rectangle(RenderBounds.X + 4, RenderBounds.Y + 6 + o, 3, progress),
-				sidebar.IngameUi.Palette.Palette.GetColor(12));
+				new(this.RenderBounds.X + 4, this.RenderBounds.Y + 6 + o, 3, progress),
+				this.Sidebar.IngameUi.Palette.Palette.GetColor(12)
+			);
 
-			var amount = Amount();
+			var amount = this.Amount?.Invoke() ?? 0;
 
-			if (amount == -1)
+			switch (amount)
 			{
-				sidebar.Font.PlayFetchIndex("production", () => 10);
-				WidgetUtils.DrawSpriteCentered(sidebar.Font.Image, sidebar.IngameUi.Palette, new int2(RenderBounds.X + 14 + 4, RenderBounds.Y + 40));
-			}
-			else if (amount > 1)
-			{
-				var numberString = amount.ToString();
-
-				for (var i = 0; i < numberString.Length; i++)
-				{
-					sidebar.Font.PlayFetchIndex("production", () => numberString[i] - 0x30);
+				case -1:
+					this.Sidebar.Font.PlayFetchIndex("production", () => 10);
 
 					WidgetUtils.DrawSpriteCentered(
-						sidebar.Font.Image,
-						sidebar.IngameUi.Palette,
-						new int2(RenderBounds.X + 14 + i * 8, RenderBounds.Y + 40));
+						this.Sidebar.Font.Image,
+						this.Sidebar.IngameUi.Palette,
+						new int2(this.RenderBounds.X + 14 + 4, this.RenderBounds.Y + 40)
+					);
+
+					break;
+
+				case > 1:
+				{
+					var numberString = amount.ToString();
+
+					for (var i = 0; i < numberString.Length; i++)
+					{
+						var j = i;
+						this.Sidebar.Font.PlayFetchIndex("production", () => numberString[j] - 0x30);
+
+						WidgetUtils.DrawSpriteCentered(
+							this.Sidebar.Font.Image,
+							this.Sidebar.IngameUi.Palette,
+							new int2(this.RenderBounds.X + 14 + i * 8, this.RenderBounds.Y + 40)
+						);
+					}
+
+					break;
 				}
 			}
 		}
 
 		public override void PrepareRenderables()
 		{
-			if (!initialized)
+			if (!this.initialized)
 			{
-				initialized = true;
+				this.initialized = true;
 
-				var actor = new Animation(sidebar.IngameUi.World, Icon);
+				var actor = new Animation(this.Sidebar.IngameUi.World, this.Icon);
 
 				if (actor.HasSequence("icon"))
 				{
 					actor.PlayFetchIndex("icon", () => 0);
-					image = actor.Image;
+					this.image = actor.Image;
 
 					return;
 				}
 
-				if (actorPreviewWidget == null)
+				if (this.actorPreviewWidget == null)
 				{
-					actorPreviewWidget = new ActorPreviewWidget(sidebar.IngameUi.WorldRenderer) { Animate = true };
+					this.actorPreviewWidget = new(this.Sidebar.IngameUi.WorldRenderer) { Animate = true };
 
-					actorPreviewWidget.SetPreview(
-						sidebar.IngameUi.World.Map.Rules.Actors[Item],
-						new TypeDictionary
+					this.actorPreviewWidget.SetPreview(
+						this.Sidebar.IngameUi.World.Map.Rules.Actors[this.Item],
+						new()
 						{
 							new FacingInit(WAngle.FromFacing(96)),
 							new TurretFacingInit(WAngle.FromFacing(96)),
-							new OwnerInit(sidebar.IngameUi.World.LocalPlayer),
-							new FactionInit(sidebar.IngameUi.World.LocalPlayer.Faction.Name)
-						});
+							new OwnerInit(this.Sidebar.IngameUi.World.LocalPlayer),
+							new FactionInit(this.Sidebar.IngameUi.World.LocalPlayer.Faction.Name)
+						}
+					);
 
 					/*
 					// TODO implement per actor offsets
@@ -165,39 +179,47 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 					// TODO fix turret palettes!
 					*/
 
-					var factorX = sidebar.ButtonArea.Width / (float)actorPreviewWidget.IdealPreviewSize.X;
-					var factorY = sidebar.ButtonArea.Height / (float)actorPreviewWidget.IdealPreviewSize.Y;
+					var factorX = this.Sidebar.ButtonArea.Width / (float)this.actorPreviewWidget.IdealPreviewSize.X;
+					var factorY = this.Sidebar.ButtonArea.Height / (float)this.actorPreviewWidget.IdealPreviewSize.Y;
 
 					if (factorX <= 1 && factorY <= 1)
 					{
 						var factor = Math.Max(factorX, factorY);
-						actorPreviewWidget.GetScale = () => factor;
+						this.actorPreviewWidget.GetScale = () => factor;
 					}
 				}
 			}
 
-			actorPreviewWidget?.PrepareRenderables();
+			this.actorPreviewWidget?.PrepareRenderables();
 		}
 
 		protected override void DrawContents()
 		{
-			if (IsFocused())
-				WidgetUtils.FillRectWithColor(RenderBounds, Color.FromArgb(25, 255, 255, 255));
+			if (this.IsFocused?.Invoke() ?? false)
+				WidgetUtils.FillRectWithColor(this.RenderBounds, Color.FromArgb(25, 255, 255, 255));
 
-			if (image != null)
-				WidgetUtils.DrawSpriteCentered(image, sidebar.IngameUi.Palette, center + new int2(0, Active ? 1 : 0));
+			if (this.image != null)
+				WidgetUtils.DrawSpriteCentered(this.image, this.Sidebar.IngameUi.Palette, this.Center + new int2(0, this.Active ? 1 : 0));
 			else
 			{
-				actorPreviewWidget.Bounds = RenderBounds;
+				var previewWidget = this.actorPreviewWidget;
 
-				Game.Renderer.EnableScissor(
-					new Rectangle(
-						RenderBounds.X + sidebar.ButtonArea.X,
-						RenderBounds.Y + sidebar.ButtonArea.Y,
-						sidebar.ButtonArea.Width,
-						sidebar.ButtonArea.Height));
+				if (previewWidget != null)
+				{
+					previewWidget.Bounds = this.RenderBounds;
 
-				actorPreviewWidget.Draw();
+					Game.Renderer.EnableScissor(
+						new(
+							this.RenderBounds.X + this.Sidebar.ButtonArea.X,
+							this.RenderBounds.Y + this.Sidebar.ButtonArea.Y,
+							this.Sidebar.ButtonArea.Width,
+							this.Sidebar.ButtonArea.Height
+						)
+					);
+
+					previewWidget.Draw();
+				}
+
 				Game.Renderer.DisableScissor();
 			}
 		}

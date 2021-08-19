@@ -14,9 +14,12 @@
 namespace OpenRA.Mods.OpenKrush.Mechanics.Veterancy.Traits
 {
 	using Common.Traits;
+	using JetBrains.Annotations;
 	using OpenRA.Traits;
 	using Primitives;
+	using System;
 
+	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("Unit veterancy.")]
 	public class VeterancyInfo : TraitInfo
 	{
@@ -42,13 +45,13 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Veterancy.Traits
 		public readonly int[] SpeedRates = { 100, 100 };
 
 		[Desc("Self heal per veterancy level.")]
-		public readonly int[] HealRates = { };
+		public readonly int[] HealRates = Array.Empty<int>();
 
 		[Desc("Delay in ticks between healing.")]
 		public readonly int HealDelay = 1;
 
 		[Desc("Apply the selfhealing using these damagetypes.")]
-		public readonly BitSet<DamageType> DamageTypes = default;
+		public readonly BitSet<DamageType> DamageTypes;
 
 		public override object Create(ActorInitializer init)
 		{
@@ -67,58 +70,58 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Veterancy.Traits
 		public Veterancy(ActorInitializer init, VeterancyInfo info)
 		{
 			this.info = info;
-			health = init.Self.TraitOrDefault<Health>();
+			this.health = init.Self.TraitOrDefault<Health>();
 		}
 
 		void INotifyAppliedDamage.AppliedDamage(Actor self, Actor damaged, AttackInfo e)
 		{
-			if (Level == info.Levels.Length)
+			if (this.Level == this.info.Levels.Length)
 				return;
 
 			if (self.Owner.RelationshipWith(damaged.Owner) != PlayerRelationship.Enemy)
 				return;
 
-			experience += e.Damage.Value;
+			this.experience += e.Damage.Value;
 
-			if (experience < info.Experience[Level])
+			if (this.experience < this.info.Experience[this.Level])
 				return;
 
-			experience -= info.Experience[Level];
-			Level++;
+			this.experience -= this.info.Experience[this.Level];
+			this.Level++;
 		}
 
 		int IDamageModifier.GetDamageModifier(Actor attacker, Damage damage)
 		{
-			return Level == 0 ? 100 : info.DamageRates[Level - 1];
+			return this.Level == 0 ? 100 : this.info.DamageRates[this.Level - 1];
 		}
 
 		int IInaccuracyModifier.GetInaccuracyModifier()
 		{
-			return Level == 0 ? 100 : info.InaccuracyRates[Level - 1];
+			return this.Level == 0 ? 100 : this.info.InaccuracyRates[this.Level - 1];
 		}
 
 		int IRangeModifier.GetRangeModifier()
 		{
-			return Level == 0 ? 100 : info.RangeRates[Level - 1];
+			return this.Level == 0 ? 100 : this.info.RangeRates[this.Level - 1];
 		}
 
 		int IReloadModifier.GetReloadModifier()
 		{
-			return Level == 0 ? 100 : info.ReloadRates[Level - 1];
+			return this.Level == 0 ? 100 : this.info.ReloadRates[this.Level - 1];
 		}
 
 		int ISpeedModifier.GetSpeedModifier()
 		{
-			return Level == 0 ? 100 : info.SpeedRates[Level - 1];
+			return this.Level == 0 ? 100 : this.info.SpeedRates[this.Level - 1];
 		}
 
 		void ITick.Tick(Actor self)
 		{
-			if (info.HealRates.Length == 0 || Level == 0)
+			if (this.info.HealRates.Length == 0 || this.Level == 0)
 				return;
 
-			if (self.CurrentActivity == null && self.World.WorldTick % info.HealDelay == 0)
-				health.InflictDamage(self, self, new Damage(-info.HealRates[Level - 1], info.DamageTypes), true);
+			if (self.CurrentActivity == null && self.World.WorldTick % this.info.HealDelay == 0)
+				this.health.InflictDamage(self, self, new(-this.info.HealRates[this.Level - 1], this.info.DamageTypes), true);
 		}
 	}
 }

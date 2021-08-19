@@ -13,39 +13,38 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Laser.Graphics
 {
-	using System.Linq;
 	using OpenRA.Graphics;
 	using Primitives;
+	using System.Linq;
 
-	public struct LaserRenderable : IRenderable, IFinalizedRenderable
+	public readonly struct LaserRenderable : IRenderable, IFinalizedRenderable
 	{
-		readonly WPos[] offsets;
-		readonly int zOffset;
-		readonly WDist width;
-		readonly Color color;
+		private readonly WPos[] offsets;
+		private readonly WDist width;
+		private readonly Color color;
 
 		public LaserRenderable(WPos[] offsets, int zOffset, WDist width, Color color)
 		{
 			this.offsets = offsets;
-			this.zOffset = zOffset;
+			this.ZOffset = zOffset;
 			this.width = width;
 			this.color = color;
 		}
 
-		public WPos Pos => new WPos(offsets[0].X, offsets[0].Y, 0);
-		public int ZOffset => zOffset;
+		public WPos Pos => new(this.offsets[0].X, this.offsets[0].Y, 0);
+		public int ZOffset { get; }
 		public bool IsDecoration => true;
 
 		public IRenderable WithZOffset(int newOffset)
 		{
-			return new LaserRenderable(offsets, newOffset, width, color);
+			return new LaserRenderable(this.offsets, newOffset, this.width, this.color);
 		}
 
 		public IRenderable OffsetBy(in WVec vec)
 		{
 			var vecCopy = vec;
 
-			return new LaserRenderable(offsets.Select(offset => offset + vecCopy).ToArray(), zOffset, width, color);
+			return new LaserRenderable(this.offsets.Select(offset => offset + vecCopy).ToArray(), this.ZOffset, this.width, this.color);
 		}
 
 		public IRenderable AsDecoration()
@@ -61,8 +60,8 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Laser.Graphics
 		public void Render(WorldRenderer wr)
 		{
 			// TODO fix connectSegments - asin smoothen the edge of a break!
-			var screenWidth = wr.ScreenVector(new WVec(width, WDist.Zero, WDist.Zero))[0];
-			Game.Renderer.WorldRgbaColorRenderer.DrawLine(offsets.Select(wr.Screen3DPosition), screenWidth, color, false);
+			var screenWidth = wr.ScreenVector(new(this.width, WDist.Zero, WDist.Zero))[0];
+			Game.Renderer.WorldRgbaColorRenderer.DrawLine(this.offsets.Select(wr.Screen3DPosition), screenWidth, this.color);
 		}
 
 		public void RenderDebugGeometry(WorldRenderer wr)

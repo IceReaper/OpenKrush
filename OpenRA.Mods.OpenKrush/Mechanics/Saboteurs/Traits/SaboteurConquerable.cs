@@ -13,11 +13,13 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.Traits
 {
-	using System;
 	using Common.Traits;
+	using JetBrains.Annotations;
 	using LobbyOptions;
 	using OpenRA.Traits;
+	using System;
 
+	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("Saboteur mechanism, attach to the building.")]
 	public class SaboteurConquerableInfo : ConditionalTraitInfo
 	{
@@ -48,26 +50,26 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.Traits
 		public SaboteurConquerable(ActorInitializer init, SaboteurConquerableInfo info)
 			: base(info)
 		{
-			Population = info.Population;
+			this.Population = info.Population;
 
-			usage = init.Self.World.WorldActor.Trait<SaboteurUsage>();
+			this.usage = init.Self.World.WorldActor.TraitOrDefault<SaboteurUsage>();
 		}
 
 		public void Enter(Actor self, Actor target)
 		{
 			if (self.Owner.RelationshipWith(target.Owner).HasRelationship(PlayerRelationship.Ally))
-				Population = Math.Min(Population + 1, Info.MaxPopulation);
-			else if (Population > 0)
+				this.Population = Math.Min(this.Population + 1, this.Info.MaxPopulation);
+			else if (this.Population > 0)
 			{
-				Population--;
-				Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", Info.NotificationInfiltrated, self.Owner.Faction.InternalName);
+				this.Population--;
+				Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", this.Info.NotificationInfiltrated, self.Owner.Faction.InternalName);
 			}
 			else
 			{
-				Population = 1;
-				Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", Info.NotificationConquered, self.Owner.Faction.InternalName);
+				this.Population = 1;
+				Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", this.Info.NotificationConquered, self.Owner.Faction.InternalName);
 
-				if (usage.Usage == SaboteurUsageType.Conquer || self.Owner.RelationshipWith(target.Owner) == PlayerRelationship.Neutral)
+				if (this.usage.Usage == SaboteurUsageType.Conquer || self.Owner.RelationshipWith(target.Owner) == PlayerRelationship.Neutral)
 				{
 					// TODO clear production queues!
 					self.ChangeOwner(target.Owner);
@@ -75,7 +77,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.Traits
 				else
 				{
 					var worth = self.Info.TraitInfoOrDefault<ValuedInfo>()?.Cost ?? 0;
-					target.Owner.PlayerActor.Trait<PlayerResources>().GiveCash(worth);
+					target.Owner.PlayerActor.TraitOrDefault<PlayerResources>().GiveCash(worth);
 					self.Kill(target);
 				}
 			}

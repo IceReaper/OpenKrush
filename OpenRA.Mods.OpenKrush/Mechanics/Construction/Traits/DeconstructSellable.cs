@@ -13,12 +13,14 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits
 {
-	using System;
 	using Common.Traits;
 	using Common.Traits.Render;
+	using JetBrains.Annotations;
 	using OpenRA.Traits;
 	using Orders;
+	using System;
 
+	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	public class DeconstructSellableInfo : ConditionalTraitInfo, Requires<WithSpriteBodyInfo>
 	{
 		[Desc("How long selling will take, percentual to build time.")]
@@ -29,7 +31,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits
 
 		[GrantedConditionReference]
 		[Desc("The condition to grant to self while the make animation is playing.")]
-		public readonly string Condition = null;
+		public readonly string? Condition;
 
 		public override object Create(ActorInitializer init)
 		{
@@ -37,14 +39,14 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits
 		}
 	}
 
-	public class DeconstructSellable : ConditionalTrait<DeconstructSellableInfo>, ITick, IResolveOrder, INotifyCreated
+	public class DeconstructSellable : ConditionalTrait<DeconstructSellableInfo>, ITick, IResolveOrder
 	{
 		private readonly DeconstructSellableInfo info;
 
 		private readonly DeveloperMode developerMode;
 		private readonly WithSpriteBody wsb;
 
-		private SelfConstructing selfConstructing;
+		private SelfConstructing? selfConstructing;
 
 		private int token = Actor.InvalidConditionToken;
 
@@ -52,19 +54,17 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits
 		private int sellTimerTotal;
 		private int refundAmount;
 
-		public bool IsSelling => token != Actor.InvalidConditionToken;
-
 		public DeconstructSellable(ActorInitializer init, DeconstructSellableInfo info)
 			: base(info)
 		{
 			this.info = info;
-			developerMode = init.Self.Owner.PlayerActor.Trait<DeveloperMode>();
-			wsb = init.Self.Trait<WithSpriteBody>();
+			this.developerMode = init.Self.Owner.PlayerActor.TraitOrDefault<DeveloperMode>();
+			this.wsb = init.Self.TraitOrDefault<WithSpriteBody>();
 		}
 
 		protected override void Created(Actor self)
 		{
-			selfConstructing = self.Trait<SelfConstructing>();
+			this.selfConstructing = self.TraitOrDefault<SelfConstructing>();
 		}
 
 		void ITick.Tick(Actor self)
@@ -72,29 +72,32 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits
 			if (self.IsDead)
 				return;
 
-			if (token == Actor.InvalidConditionToken)
+			if (this.token == Actor.InvalidConditionToken)
 				return;
 
-			sellTimer = developerMode.FastBuild ? 0 : sellTimer - 1;
+			this.sellTimer = this.developerMode.FastBuild ? 0 : this.sellTimer - 1;
 
-			if (sellTimer <= 0)
+			if (this.sellTimer <= 0)
 			{
 				foreach (var notifySold in self.TraitsImplementing<INotifySold>())
 					notifySold.Sold(self);
 
-				var pr = self.Owner.PlayerActor.Trait<PlayerResources>();
+				var pr = self.Owner.PlayerActor.TraitOrDefault<PlayerResources>();
 				var valued = self.Info.TraitInfoOrDefault<ValuedInfo>();
 
 				if (valued != null)
-					pr.GiveCash(refundAmount * info.RefundPercent / 100);
+					pr.GiveCash(this.refundAmount * this.info.RefundPercent / 100);
 
 				self.Dispose();
 			}
-			else
-				wsb.PlayCustomAnimationRepeating(
+			else if (this.selfConstructing != null)
+			{
+				this.wsb.PlayCustomAnimationRepeating(
 					self,
-					selfConstructing.Info.Sequence.Substring(0, selfConstructing.Info.Sequence.Length - 1)
-					+ Math.Min(sellTimer * selfConstructing.Steps / sellTimerTotal, selfConstructing.Steps - 1));
+					this.selfConstructing.Info.Sequence[..^1]
+					+ Math.Min(this.sellTimer * this.selfConstructing.Steps / this.sellTimerTotal, this.selfConstructing.Steps - 1)
+				);
+			}
 		}
 
 		void IResolveOrder.ResolveOrder(Actor self, Order order)
@@ -102,23 +105,23 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits
 			if (order.OrderString != SellOrderGenerator.Id)
 				return;
 
-			if (!string.IsNullOrEmpty(info.Condition) && token == Actor.InvalidConditionToken)
-				token = self.GrantCondition(info.Condition);
+			if (!string.IsNullOrEmpty(this.info.Condition) && this.token == Actor.InvalidConditionToken)
+				this.token = self.GrantCondition(this.info.Condition);
 
-			var productionItem = self.Trait<SelfConstructing>().TryAbort(self);
+			var productionItem = self.TraitOrDefault<SelfConstructing>().TryAbort(self);
 			var valued = self.Info.TraitInfoOrDefault<ValuedInfo>();
 
 			if (productionItem != null)
-				refundAmount = productionItem.TotalCost - productionItem.RemainingCost;
+				this.refundAmount = productionItem.TotalCost - productionItem.RemainingCost;
 			else if (valued != null)
-				refundAmount = valued.Cost;
+				this.refundAmount = valued.Cost;
 
-			sellTimer = sellTimerTotal = self.Info.TraitInfoOrDefault<BuildableInfo>().BuildDuration * info.SellTimePercent / 100;
+			this.sellTimer = this.sellTimerTotal = self.Info.TraitInfoOrDefault<BuildableInfo>().BuildDuration * this.info.SellTimePercent / 100;
 
-			if (developerMode.FastBuild)
-				sellTimer = 0;
+			if (this.developerMode.FastBuild)
+				this.sellTimer = 0;
 			else if (productionItem != null)
-				sellTimer = (productionItem.TotalTime - productionItem.RemainingTime) * info.SellTimePercent / 100;
+				this.sellTimer = (productionItem.TotalTime - productionItem.RemainingTime) * this.info.SellTimePercent / 100;
 
 			foreach (var notifySold in self.TraitsImplementing<INotifySold>())
 				notifySold.Selling(self);

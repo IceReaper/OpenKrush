@@ -13,10 +13,12 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.LobbyOptions
 {
+	using JetBrains.Annotations;
+	using OpenRA.Traits;
 	using System.Collections.Generic;
 	using System.Collections.ObjectModel;
-	using OpenRA.Traits;
 
+	[UsedImplicitly]
 	[Desc("Selectable max tech level in lobby.")]
 	public class ResearchDurationInfo : TraitInfo, ILobbyOptions
 	{
@@ -38,7 +40,8 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.LobbyOptions
 				new ReadOnlyDictionary<string, string>(values),
 				"1",
 				false,
-				ResearchUtils.LobbyOptionsCategory);
+				ResearchUtils.LobbyOptionsCategory
+			);
 		}
 
 		public override object Create(ActorInitializer init)
@@ -53,7 +56,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.LobbyOptions
 
 		void INotifyCreated.Created(Actor self)
 		{
-			Duration = int.Parse(self.World.LobbyInfo.GlobalSettings.OptionOrDefault(ResearchDurationInfo.Id, "1"));
+			this.Duration = int.Parse(self.World.LobbyInfo.GlobalSettings.OptionOrDefault(ResearchDurationInfo.Id, "1"));
 		}
 	}
 }

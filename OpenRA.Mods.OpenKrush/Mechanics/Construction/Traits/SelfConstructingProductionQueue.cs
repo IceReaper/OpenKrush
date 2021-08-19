@@ -13,13 +13,15 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits
 {
+	using Common.Traits;
+	using JetBrains.Annotations;
+	using Production.Traits;
+	using Researching.Traits;
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
-	using Common.Traits;
-	using OpenKrush.Traits.Production;
-	using Researching.Traits;
 
+	[UsedImplicitly]
 	[Desc("This special production queue implements a fake AllQueued, used to instantly place self constructing buildings.")]
 	public class SelfConstructingProductionQueueInfo : AdvancedProductionQueueInfo
 	{
@@ -41,7 +43,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits
 		public override IEnumerable<ProductionItem> AllQueued()
 		{
 			// Pretend to have items queued, to allow direct placement.
-			return BuildableItems()
+			return this.BuildableItems()
 				.Select(
 					buildableItem =>
 					{
@@ -49,32 +51,31 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits
 						var item = new ProductionItem(this, buildableItem.Name, 0, null, null);
 
 						// Required for GetBuildTime, else the production wont be ready after below Tick().
-						expectFakeProductionItemRequest = true;
+						this.expectFakeProductionItemRequest = true;
 
 						// Tick once, so the item is done.
-						item.Tick(playerResources);
+						item.Tick(this.playerResources);
 
 						return item;
-					})
+					}
+				)
 				.ToList();
 		}
 
 		public override int GetBuildTime(ActorInfo unit, BuildableInfo bi)
 		{
 			// Workaround to make above Tick receive a 0 for the production time.
-			if (expectFakeProductionItemRequest)
-			{
-				expectFakeProductionItemRequest = false;
+			if (!this.expectFakeProductionItemRequest)
+				return base.GetBuildTime(unit, bi);
 
-				return 0;
-			}
+			this.expectFakeProductionItemRequest = false;
 
-			return base.GetBuildTime(unit, bi);
+			return 0;
 		}
 
 		protected override void Tick(Actor self)
 		{
-			TickInner(self, false);
+			this.TickInner(self, false);
 		}
 
 		public new void BeginProduction(ProductionItem item, bool hasPriority)
@@ -84,38 +85,38 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits
 
 		protected override void TickInner(Actor self, bool allProductionPaused)
 		{
-			Queue.RemoveAll(
-				item =>
-				{
-					var selfConstructingItem = item as SelfConstructingProductionItem;
+			this.Queue.RemoveAll(
+				item => item is not SelfConstructingProductionItem selfConstructingItem
+					|| selfConstructingItem.Actor.IsDead
+					|| !selfConstructingItem.Actor.IsInWorld
+			);
 
-					return selfConstructingItem == null || selfConstructingItem.Actor.IsDead || !selfConstructingItem.Actor.IsInWorld;
-				});
-
-			if (Queue.Count > 0)
+			if (this.Queue.Count > 0)
 			{
-				var first = Queue[0];
+				var first = this.Queue[0];
 				var before = first.RemainingTime;
-				first.Tick(playerResources);
+				first.Tick(this.playerResources);
 
 				if (first.RemainingTime != before)
 				{
-					Queue.Remove(first);
+					this.Queue.Remove(first);
 
 					if (!first.Done)
-						Queue.Add(first);
+						this.Queue.Add(first);
 					else
-						Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", Info.ReadyAudio, self.Owner.Faction.InternalName);
+						Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", this.Info.ReadyAudio, self.Owner.Faction.InternalName);
 				}
 			}
 
 			// Auto finish done items, as they are already in the world in our case!
-			Queue.FindAll(i => i.Done).ForEach(i => Queue.Remove(i));
+			this.Queue.FindAll(i => i.Done).ForEach(i => this.Queue.Remove(i));
 		}
 
 		protected override bool ProducerHasRequirements(ActorInfo prod, BuildableInfo buildable)
 		{
-			var producers = Actor.World.ActorsWithTrait<Production>().Where(x => !x.Trait.IsTraitDisabled && x.Actor.Owner == Actor.Owner).Select(x => x.Actor);
+			var producers = this.Actor.World.ActorsWithTrait<Production>()
+				.Where(x => !x.Trait.IsTraitDisabled && x.Actor.Owner == this.Actor.Owner)
+				.Select(x => x.Actor);
 
 			return producers.Any(
 				producer =>
@@ -124,15 +125,14 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits
 						.Any(providesPrerequisite => buildable.Prerequisites.Contains(providesPrerequisite.Prerequisite)))
 						return false;
 
-					var advancedBuildable = buildable as TechLevelBuildableInfo;
-
-					if (advancedBuildable == null)
+					if (buildable is not TechLevelBuildableInfo)
 						return true;
 
-					var researchable = producer.Trait<Researchable>();
+					var researchable = producer.TraitOrDefault<Researchable>();
 
 					return researchable.IsResearched(TechLevelBuildableInfo.Prefix + prod.Name);
-				});
+				}
+			);
 		}
 	}
 
@@ -140,10 +140,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits
 	{
 		public readonly Actor Actor;
 
-		public SelfConstructingProductionItem(ProductionQueue queue, Actor actor, int cost, PowerManager pm, Action onComplete)
+		public SelfConstructingProductionItem(ProductionQueue queue, Actor actor, int cost, PowerManager? pm, Action? onComplete)
 			: base(queue, actor.Info.Name, cost, pm, onComplete)
 		{
-			Actor = actor;
+			this.Actor = actor;
 		}
 	}
 }

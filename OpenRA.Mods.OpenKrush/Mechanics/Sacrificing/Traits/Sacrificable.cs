@@ -13,13 +13,15 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Sacrificing.Traits
 {
-	using System.Collections.Generic;
 	using Activities;
 	using Common.Traits;
+	using JetBrains.Annotations;
 	using OpenRA.Traits;
 	using Orders;
 	using Primitives;
+	using System.Collections.Generic;
 
+	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("Actor can be sacrificed.")]
 	public class SacrificableInfo : TraitInfo
 	{
@@ -56,11 +58,11 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Sacrificing.Traits
 		{
 			get
 			{
-				yield return new SacrificeOrderTargeter(info.Cursor);
+				yield return new SacrificeOrderTargeter(this.info.Cursor);
 			}
 		}
 
-		public Order IssueOrder(Actor self, IOrderTargeter order, in Target target, bool queued)
+		public Order? IssueOrder(Actor self, IOrderTargeter order, in Target target, bool queued)
 		{
 			return order.OrderID == SacrificeOrderTargeter.Id ? new Order(order.OrderID, self, target, queued) : null;
 		}
@@ -76,20 +78,20 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Sacrificing.Traits
 			if (!SacrificingUtils.CanEnter(self, order.Target.Actor))
 				return;
 
-			self.QueueActivity(order.Queued, new Sacrifice(self, order.Target, info.TargetLineColor));
+			self.QueueActivity(order.Queued, new Sacrifice(self, order.Target, this.info.TargetLineColor));
 		}
 
-		string IOrderVoice.VoicePhraseForOrder(Actor self, Order order)
+		string? IOrderVoice.VoicePhraseForOrder(Actor self, Order order)
 		{
-			return order.OrderString == SacrificeOrderTargeter.Id ? info.VoiceOrder : null;
+			return order.OrderString == SacrificeOrderTargeter.Id ? this.info.VoiceOrder : null;
 		}
 
-		public void Enter(Actor self, Actor targetActor)
+		public void Enter(Actor self)
 		{
 			if (self.Owner != self.World.LocalPlayer)
 				return;
 
-			self.PlayVoice(info.VoiceEnter);
+			self.PlayVoice(this.info.VoiceEnter);
 		}
 	}
 }

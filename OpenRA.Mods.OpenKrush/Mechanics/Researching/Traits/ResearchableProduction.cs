@@ -13,9 +13,9 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 {
+	using Common.Traits;
 	using System.Collections.Generic;
 	using System.Linq;
-	using Common.Traits;
 
 	public class ResearchableProductionInfo : ProductionInfo
 	{
@@ -27,40 +27,34 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 
 	public class ResearchableProduction : Production, IProvidesResearchables
 	{
-		private readonly Actor self;
-
 		public ResearchableProduction(ActorInitializer init, ProductionInfo info)
 			: base(init, info)
 		{
-			self = init.Self;
 		}
 
-		public Dictionary<string, int> GetResearchables()
+		public Dictionary<string, int> GetResearchables(Actor self)
 		{
-			var result = new Dictionary<string, int>();
 			var providesPrerequisite = self.TraitsImplementing<ProvidesPrerequisite>();
 
-			foreach (var actorInfo in self.World.Map.Rules.Actors.Values.Where(
-				x =>
-				{
-					if (x.Name[0] == '^')
-						return false;
+			return self.World.Map.Rules.Actors.Values.Where(
+					actorInfo =>
+					{
+						if (actorInfo.Name[0] == '^')
+							return false;
 
-					var buildableInfo = x.TraitInfoOrDefault<BuildableInfo>();
+						var buildableInfo = actorInfo.TraitInfoOrDefault<BuildableInfo>();
 
-					if (buildableInfo == null)
-						return false;
+						if (buildableInfo == null)
+							return false;
 
-					if (buildableInfo.Prerequisites.Any(p => providesPrerequisite.All(pp => pp.Info.Prerequisite != p)))
-						return false;
-
-					return buildableInfo.Queue.Any(q => Info.Produces.Contains(q));
-				}))
-			{
-				result.Add(TechLevelBuildableInfo.Prefix + actorInfo.Name, actorInfo.TraitInfoOrDefault<TechLevelBuildableInfo>()?.Level ?? 0);
-			}
-
-			return result;
+						return !buildableInfo.Prerequisites.Any(p => providesPrerequisite.All(pp => pp.Info.Prerequisite != p))
+							&& buildableInfo.Queue.Any(q => this.Info.Produces.Contains(q));
+					}
+				)
+				.ToDictionary(
+					actorInfo => TechLevelBuildableInfo.Prefix + actorInfo.Name,
+					actorInfo => actorInfo.TraitInfoOrDefault<TechLevelBuildableInfo>()?.Level ?? 0
+				);
 		}
 	}
 }

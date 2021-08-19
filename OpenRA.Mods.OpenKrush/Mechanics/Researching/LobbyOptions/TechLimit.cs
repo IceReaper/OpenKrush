@@ -13,12 +13,14 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.LobbyOptions
 {
+	using JetBrains.Annotations;
+	using OpenRA.Traits;
 	using System;
 	using System.Collections.Generic;
 	using System.Collections.ObjectModel;
-	using OpenRA.Traits;
 	using Traits;
 
+	[UsedImplicitly]
 	[Desc("Selectable max tech level in lobby.")]
 	public class TechLimitInfo : TraitInfo, ILobbyOptions
 	{
@@ -37,11 +39,11 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.LobbyOptions
 				if (techLevelBuildableInfo == null)
 					continue;
 
-				MaxTechLevel = Math.Max(MaxTechLevel, techLevelBuildableInfo.Level);
+				this.MaxTechLevel = Math.Max(this.MaxTechLevel, techLevelBuildableInfo.Level);
 			}
 
 			// We start at 1, otherwise building a research building makes no sense!
-			for (var i = 1; i <= MaxTechLevel; i++)
+			for (var i = 1; i <= this.MaxTechLevel; i++)
 				values.Add(i.ToString(), i.ToString());
 
 			yield return new LobbyOption(
@@ -51,9 +53,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.LobbyOptions
 				true,
 				0,
 				new ReadOnlyDictionary<string, string>(values),
-				MaxTechLevel.ToString(),
+				this.MaxTechLevel.ToString(),
 				false,
-				ResearchUtils.LobbyOptionsCategory);
+				ResearchUtils.LobbyOptionsCategory
+			);
 		}
 
 		public override object Create(ActorInitializer init)
@@ -74,7 +77,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.LobbyOptions
 
 		void INotifyCreated.Created(Actor self)
 		{
-			Limit = int.Parse(self.World.LobbyInfo.GlobalSettings.OptionOrDefault(TechLimitInfo.Id, info.MaxTechLevel.ToString()));
+			this.Limit = int.Parse(self.World.LobbyInfo.GlobalSettings.OptionOrDefault(TechLimitInfo.Id, this.info.MaxTechLevel.ToString()));
 		}
 	}
 }

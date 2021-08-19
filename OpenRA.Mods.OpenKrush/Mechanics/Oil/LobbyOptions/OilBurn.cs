@@ -13,11 +13,13 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.LobbyOptions
 {
+	using JetBrains.Annotations;
+	using OpenRA.Traits;
 	using System.Collections.Generic;
 	using System.Collections.ObjectModel;
-	using OpenRA.Traits;
 	using Traits;
 
+	[UsedImplicitly]
 	[Desc("Selectable oil burn behavior in lobby.")]
 	public class OilBurnInfo : TraitInfo, ILobbyOptions
 	{
@@ -39,7 +41,8 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.LobbyOptions
 				new ReadOnlyDictionary<string, string>(values),
 				"0",
 				false,
-				OilpatchInfo.LobbyOptionsCategory);
+				OilPatchInfo.LobbyOptionsCategory
+			);
 		}
 
 		public override object Create(ActorInitializer init)
@@ -50,11 +53,11 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.LobbyOptions
 
 	public class OilBurn : INotifyCreated
 	{
-		public int Amount { get; set; }
+		public int Amount { get; private set; }
 
 		void INotifyCreated.Created(Actor self)
 		{
-			Amount = int.Parse(self.World.LobbyInfo.GlobalSettings.OptionOrDefault(OilBurnInfo.Id, "0"));
+			this.Amount = int.Parse(self.World.LobbyInfo.GlobalSettings.OptionOrDefault(OilBurnInfo.Id, "0"));
 		}
 	}
 }

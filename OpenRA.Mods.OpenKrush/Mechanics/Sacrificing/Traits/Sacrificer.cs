@@ -15,11 +15,13 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Sacrificing.Traits
 {
 	using Common.Traits;
 	using Common.Traits.Render;
-	using OpenKrush.Traits.Production;
-	using OpenRA.Graphics;
+	using Graphics;
+	using JetBrains.Annotations;
 	using OpenRA.Traits;
 	using Primitives;
+	using Production.Traits;
 
+	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("Allow sacrificeable units to enter and spawn a new actor..")]
 	public class SacrificerInfo : AdvancedProductionInfo, Requires<RenderSpritesInfo>
 	{
@@ -31,15 +33,15 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Sacrificing.Traits
 
 		[FieldLoader.RequireAttribute]
 		[Desc("The unit which is granted upon sacrificing.")]
-		public readonly string Summon = null;
+		public readonly string Summon = "";
 
 		[Desc("Sequence to be played when sacrificing.")]
 		[SequenceReference]
-		public readonly string SequenceEnter = null;
+		public readonly string? SequenceEnter;
 
 		[Desc("Sequence to be played when summoning.")]
 		[SequenceReference]
-		public readonly string SequenceSummon = null;
+		public readonly string? SequenceSummon;
 
 		[Desc("Position relative to body")]
 		public readonly WVec Offset = WVec.Zero;
@@ -63,68 +65,71 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Sacrificing.Traits
 		{
 			this.info = info;
 
-			var renderSprites = init.Self.Trait<RenderSprites>();
-			var body = init.Self.Trait<BodyOrientation>();
+			var renderSprites = init.Self.TraitOrDefault<RenderSprites>();
+			var body = init.Self.TraitOrDefault<BodyOrientation>();
 
 			if (info.SequenceEnter != null)
 			{
-				var animation = new Animation(init.Self.World, renderSprites.GetImage(init.Self));
-				animation.PlayRepeating(RenderSprites.NormalizeSequence(animation, init.Self.GetDamageState(), info.SequenceEnter));
+				var animationEnter = new Animation(init.Self.World, renderSprites.GetImage(init.Self));
+				animationEnter.PlayRepeating(RenderSprites.NormalizeSequence(animationEnter, init.Self.GetDamageState(), info.SequenceEnter));
 
-				var animationWithOffset = new AnimationWithOffset(
-					animation,
-					() => body.LocalToWorld(info.Offset.Rotate(body.QuantizeOrientation(init.Self, init.Self.Orientation))),
-					() => IsTraitDisabled || sacrificeTicker == 0,
-					p => RenderUtils.ZOffsetFromCenter(init.Self, p, 1));
-
-				renderSprites.Add(animationWithOffset);
+				renderSprites.Add(
+					new(
+						animationEnter,
+						() => body.LocalToWorld(info.Offset.Rotate(body.QuantizeOrientation(init.Self, init.Self.Orientation))),
+						() => this.IsTraitDisabled || this.sacrificeTicker == 0,
+						p => RenderUtils.ZOffsetFromCenter(init.Self, p, 1)
+					)
+				);
 			}
 
-			if (info.SequenceSummon != null)
-			{
-				var animation = new Animation(init.Self.World, renderSprites.GetImage(init.Self));
-				animation.PlayRepeating(RenderSprites.NormalizeSequence(animation, init.Self.GetDamageState(), info.SequenceSummon));
+			if (info.SequenceSummon == null)
+				return;
 
-				var animationWithOffset = new AnimationWithOffset(
+			var animation = new Animation(init.Self.World, renderSprites.GetImage(init.Self));
+			animation.PlayRepeating(RenderSprites.NormalizeSequence(animation, init.Self.GetDamageState(), info.SequenceSummon));
+
+			renderSprites.Add(
+				new(
 					animation,
 					() => body.LocalToWorld(info.Offset.Rotate(body.QuantizeOrientation(init.Self, init.Self.Orientation))),
-					() => IsTraitDisabled || summonTicker == 0,
-					p => RenderUtils.ZOffsetFromCenter(init.Self, p, 1));
-
-				renderSprites.Add(animationWithOffset);
-			}
+					() => this.IsTraitDisabled || this.summonTicker == 0,
+					p => RenderUtils.ZOffsetFromCenter(init.Self, p, 1)
+				)
+			);
 		}
 
 		public void Enter()
 		{
-			population++;
-			sacrificeTicker = info.Duration;
+			this.population++;
+			this.sacrificeTicker = this.info.Duration;
 		}
 
 		void ITick.Tick(Actor self)
 		{
-			if (sacrificeTicker > 0)
-				sacrificeTicker--;
+			if (this.sacrificeTicker > 0)
+				this.sacrificeTicker--;
 
-			if (summonTicker > 0)
+			if (this.summonTicker > 0)
 			{
-				if (--summonTicker != 0)
+				if (--this.summonTicker != 0)
 					return;
 
-				var numSummons = population / info.Sacrifices;
-				population -= numSummons * info.Sacrifices;
+				var numSummons = this.population / this.info.Sacrifices;
+				this.population -= numSummons * this.info.Sacrifices;
 
 				self.World.AddFrameEndTask(
-					w =>
+					_ =>
 					{
 						var td = new TypeDictionary { new OwnerInit(self.Owner) };
 
 						for (var i = 0; i < numSummons; i++)
-							Produce(self, self.World.Map.Rules.Actors[info.Summon], "produce", td, 0);
-					});
+							this.Produce(self, self.World.Map.Rules.Actors[this.info.Summon], "produce", td, 0);
+					}
+				);
 			}
-			else if (population == info.Sacrifices)
-				summonTicker = info.Duration;
+			else if (this.population == this.info.Sacrifices)
+				this.summonTicker = this.info.Duration;
 		}
 	}
 }

@@ -13,14 +13,16 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Traits
 {
-	using System.Collections.Generic;
 	using Activities;
 	using Bunkers.LobbyOptions;
 	using Common.Traits;
+	using JetBrains.Annotations;
 	using OpenRA.Traits;
 	using Orders;
 	using Primitives;
+	using System.Collections.Generic;
 
+	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("Technician mechanism, attach to the unit.")]
 	public class TechnicianInfo : TraitInfo
 	{
@@ -43,7 +45,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Traits
 
 		[Desc("Voice used when entered a bunker.")]
 		[VoiceReference]
-		public readonly string VoiceEnterBunker = null;
+		public readonly string? VoiceEnterBunker;
 
 		public override object Create(ActorInitializer init)
 		{
@@ -64,11 +66,11 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Traits
 		{
 			get
 			{
-				yield return new TechnicianEnterOrderTargeter(info.Cursor, info.BlockedCursor);
+				yield return new TechnicianEnterOrderTargeter(this.info.Cursor, this.info.BlockedCursor);
 			}
 		}
 
-		Order IIssueOrder.IssueOrder(Actor self, IOrderTargeter order, in Target target, bool queued)
+		Order? IIssueOrder.IssueOrder(Actor self, IOrderTargeter order, in Target target, bool queued)
 		{
 			return order.OrderID == TechnicianEnterOrderTargeter.Id ? new Order(order.OrderID, self, target, queued) : null;
 		}
@@ -84,12 +86,12 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Traits
 			if (!TechnicianUtils.CanEnter(self, order.Target.Actor))
 				return;
 
-			self.QueueActivity(order.Queued, new TechnicianEnter(self, order.Target, info.TargetLineColor));
+			self.QueueActivity(order.Queued, new TechnicianEnter(self, order.Target, this.info.TargetLineColor));
 		}
 
-		string IOrderVoice.VoicePhraseForOrder(Actor self, Order order)
+		string? IOrderVoice.VoicePhraseForOrder(Actor self, Order order)
 		{
-			return order.OrderString == TechnicianEnterOrderTargeter.Id ? info.VoiceOrder : null;
+			return order.OrderString == TechnicianEnterOrderTargeter.Id ? this.info.VoiceOrder : null;
 		}
 
 		public void Enter(Actor self, Actor targetActor)
@@ -97,10 +99,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Traits
 			if (self.Owner != self.World.LocalPlayer)
 				return;
 
-			if (self.World.WorldActor.Info.TraitInfo<TechBunkerAmountInfo>().ActorType != targetActor.Info.Name)
-				self.PlayVoice(info.VoiceEnter);
-			else if (info.VoiceEnterBunker != null)
-				self.PlayVoice(info.VoiceEnterBunker);
+			if (self.World.WorldActor.Info.TraitInfoOrDefault<TechBunkerAmountInfo>().ActorType != targetActor.Info.Name)
+				self.PlayVoice(this.info.VoiceEnter);
+			else if (this.info.VoiceEnterBunker != null)
+				self.PlayVoice(this.info.VoiceEnterBunker);
 		}
 	}
 }

@@ -13,66 +13,74 @@
 
 namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 {
-	using System;
 	using Common.Widgets;
-	using OpenRA.Graphics;
+	using Graphics;
 	using OpenRA.Widgets;
 	using Primitives;
+	using System;
 
 	public class TooltipWidget : Widget
 	{
 		private readonly SpriteFont tooltipTitleFont;
 		private readonly SpriteFont tooltipTextFont;
-		public string TooltipTitle = null;
-		public string TooltipText = null;
+		public string? TooltipTitle = null;
+		public string? TooltipText = null;
 
 		public TooltipWidget()
 		{
-			tooltipTitleFont = Game.Renderer.Fonts["Regular"];
-			tooltipTextFont = Game.Renderer.Fonts["Tiny"];
+			this.tooltipTitleFont = Game.Renderer.Fonts["Regular"];
+			this.tooltipTextFont = Game.Renderer.Fonts["Tiny"];
 
-			Visible = false;
+			this.Visible = false;
 		}
 
 		public override void Draw()
 		{
-			var tooltipTitleMeasure = TooltipTitle == null ? int2.Zero : tooltipTitleFont.Measure(TooltipTitle);
-			var tooltipTextMeasure = TooltipText == null ? int2.Zero : tooltipTextFont.Measure(TooltipText);
+			var tooltipTitleMeasure = this.TooltipTitle == null ? int2.Zero : this.tooltipTitleFont.Measure(this.TooltipTitle);
+			var tooltipTextMeasure = this.TooltipText == null ? int2.Zero : this.tooltipTextFont.Measure(this.TooltipText);
 
 			WidgetUtils.FillRectWithColor(
-				new Rectangle(
-					RenderBounds.X - Math.Max(tooltipTitleMeasure.X, tooltipTextMeasure.X) - 12,
-					RenderBounds.Y - (tooltipTitleMeasure.Y + tooltipTextMeasure.Y) / 2 - 6,
+				new(
+					this.RenderBounds.X - Math.Max(tooltipTitleMeasure.X, tooltipTextMeasure.X) - 12,
+					this.RenderBounds.Y - (tooltipTitleMeasure.Y + tooltipTextMeasure.Y) / 2 - 6,
 					Math.Max(tooltipTitleMeasure.X, tooltipTextMeasure.X) + 12,
-					tooltipTitleMeasure.Y + tooltipTextMeasure.Y + 12),
-				Color.FromArgb(255, 255, 255, 255));
+					tooltipTitleMeasure.Y + tooltipTextMeasure.Y + 12
+				),
+				Color.FromArgb(255, 255, 255, 255)
+			);
 
 			WidgetUtils.FillRectWithColor(
-				new Rectangle(
-					RenderBounds.X - Math.Max(tooltipTitleMeasure.X, tooltipTextMeasure.X) - 11,
-					RenderBounds.Y - (tooltipTitleMeasure.Y + tooltipTextMeasure.Y) / 2 - 5,
+				new(
+					this.RenderBounds.X - Math.Max(tooltipTitleMeasure.X, tooltipTextMeasure.X) - 11,
+					this.RenderBounds.Y - (tooltipTitleMeasure.Y + tooltipTextMeasure.Y) / 2 - 5,
 					Math.Max(tooltipTitleMeasure.X, tooltipTextMeasure.X) + 10,
-					tooltipTitleMeasure.Y + tooltipTextMeasure.Y + 10),
-				Color.FromArgb(255, 0, 0, 0));
+					tooltipTitleMeasure.Y + tooltipTextMeasure.Y + 10
+				),
+				Color.FromArgb(255, 0, 0, 0)
+			);
 
-			if (TooltipTitle != null)
+			if (this.TooltipTitle != null)
 			{
-				tooltipTitleFont.DrawText(
-					TooltipTitle,
+				this.tooltipTitleFont.DrawText(
+					this.TooltipTitle,
 					new int2(
-						RenderBounds.X - Math.Max(tooltipTitleMeasure.X, tooltipTextMeasure.X) - 6,
-						RenderBounds.Y - (tooltipTitleMeasure.Y + tooltipTextMeasure.Y) / 2 - 5),
-					Color.White);
+						this.RenderBounds.X - Math.Max(tooltipTitleMeasure.X, tooltipTextMeasure.X) - 6,
+						this.RenderBounds.Y - (tooltipTitleMeasure.Y + tooltipTextMeasure.Y) / 2 - 5
+					),
+					Color.White
+				);
 			}
 
-			if (TooltipText != null)
+			if (this.TooltipText != null)
 			{
-				tooltipTextFont.DrawText(
-					TooltipText,
+				this.tooltipTextFont.DrawText(
+					this.TooltipText,
 					new int2(
-						RenderBounds.X - Math.Max(tooltipTitleMeasure.X, tooltipTextMeasure.X) - 6,
-						RenderBounds.Y - (tooltipTitleMeasure.Y + tooltipTextMeasure.Y) / 2 + tooltipTitleMeasure.Y),
-					Color.White);
+						this.RenderBounds.X - Math.Max(tooltipTitleMeasure.X, tooltipTextMeasure.X) - 6,
+						this.RenderBounds.Y - (tooltipTitleMeasure.Y + tooltipTextMeasure.Y) / 2 + tooltipTitleMeasure.Y
+					),
+					Color.White
+				);
 			}
 		}
 	}

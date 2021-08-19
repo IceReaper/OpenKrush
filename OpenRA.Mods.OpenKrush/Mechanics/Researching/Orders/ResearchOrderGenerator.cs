@@ -13,10 +13,11 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Orders
 {
-	using System.Collections.Generic;
-	using System.Linq;
 	using OpenRA.Orders;
 	using OpenRA.Traits;
+	using System;
+	using System.Collections.Generic;
+	using System.Linq;
 	using Traits;
 
 	public class ResearchOrderGenerator : UnitOrderGenerator
@@ -25,9 +26,9 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Orders
 
 		public override void Tick(World world)
 		{
-			researchActors = world.ActorsHavingTrait<Researches>().Where(e => e.Owner == world.LocalPlayer);
+			this.researchActors = world.ActorsHavingTrait<Researches>().Where(e => e.Owner == world.LocalPlayer);
 
-			if (!researchActors.Any())
+			if (!this.researchActors.Any())
 				world.CancelInputMode();
 		}
 
@@ -38,35 +39,40 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Orders
 			else
 			{
 				foreach (var actor in world.ActorMap.GetActorsAt(cell))
-				foreach (var researchActor in researchActors)
+				foreach (var researchActor in this.researchActors)
 				{
 					var action = ResearchUtils.GetAction(researchActor, actor);
 
 					if (action == ResearchAction.None)
 						continue;
 
-					yield return new Order(ResearchOrderTargeter.Id, researchActor, Target.FromActor(actor), true);
+					yield return new(ResearchOrderTargeter.Id, researchActor, Target.FromActor(actor), true);
 				}
 			}
 		}
 
-		public override string GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)
+		public override string? GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)
 		{
 			foreach (var actor in world.ActorMap.GetActorsAt(cell))
-			foreach (var researchActor in researchActors)
+			foreach (var researchActor in this.researchActors)
 			{
 				var action = ResearchUtils.GetAction(researchActor, actor);
+				var info = researchActor.Info.TraitInfoOrDefault<ResearchesInfo>();
 
-				if (action == ResearchAction.None)
-					continue;
+				switch (action)
+				{
+					case ResearchAction.Start:
+						return info.Cursor;
 
-				var info = researchActor.Info.TraitInfo<ResearchesInfo>();
+					case ResearchAction.Stop:
+						return info.BlockedCursor;
 
-				if (action == ResearchAction.Start)
-					return info.Cursor;
+					case ResearchAction.None:
+						break;
 
-				if (action == ResearchAction.Stop)
-					return info.BlockedCursor;
+					default:
+						throw new ArgumentOutOfRangeException(Enum.GetName(action));
+				}
 			}
 
 			return null;

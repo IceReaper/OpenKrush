@@ -13,32 +13,32 @@
 
 namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 {
-	using System.Linq;
 	using Common.Widgets;
 	using Mechanics.Researching.Traits;
-	using OpenRA.Traits;
+	using System.Linq;
+	using Traits;
 
-	public class RadarButtonWidget : ButtonWidget
+	public class RadarButtonWidget : SidebarButtonWidget
 	{
 		private bool hasRadar;
 
 		public RadarButtonWidget(SidebarWidget sidebar)
 			: base(sidebar, "button")
 		{
-			TooltipTitle = "Radar";
+			this.TooltipTitle = "Radar";
 		}
 
 		public override bool HandleKeyPress(KeyInput e)
 		{
-			if (!IsUsable()
+			if (!this.IsUsable()
 				|| e.IsRepeat
 				|| e.Event != KeyInputEvent.Down
 				|| e.Key != Game.ModData.Hotkeys["Radar"].GetValue().Key
 				|| e.Modifiers != Game.ModData.Hotkeys["Radar"].GetValue().Modifiers)
 				return false;
 
-			Active = !Active;
-			sidebar.IngameUi.Radar.Visible = Active;
+			this.Active = !this.Active;
+			this.Sidebar.IngameUi.Radar.Visible = this.Active;
 
 			return true;
 		}
@@ -48,30 +48,30 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 			if (!base.HandleLeftClick(mi))
 				return false;
 
-			sidebar.IngameUi.Radar.Visible = Active;
+			this.Sidebar.IngameUi.Radar.Visible = this.Active;
 
 			return true;
 		}
 
 		protected override bool IsUsable()
 		{
-			return hasRadar;
+			return this.hasRadar;
 		}
 
 		public override void Tick()
 		{
-			hasRadar = false;
+			this.hasRadar = false;
 			var showStances = PlayerRelationship.None;
 
-			foreach (var e in sidebar.IngameUi.World.ActorsWithTrait<ProvidesResearchableRadar>()
-				.Where(p => p.Actor.Owner == sidebar.IngameUi.World.LocalPlayer && !p.Trait.IsTraitDisabled))
+			foreach (var e in this.Sidebar.IngameUi.World.ActorsWithTrait<ProvidesResearchableRadar>()
+				.Where(p => p.Actor.Owner == this.Sidebar.IngameUi.World.LocalPlayer && !p.Trait.IsTraitDisabled))
 			{
-				var researchable = e.Actor.Trait<Researchable>();
+				var researchable = e.Actor.TraitOrDefault<Researchable>();
 
 				if (!researchable.IsResearched(ProvidesResearchableRadarInfo.Available))
 					continue;
 
-				hasRadar = true;
+				this.hasRadar = true;
 
 				if (researchable.IsResearched(ProvidesResearchableRadarInfo.ShowAllies))
 					showStances |= PlayerRelationship.Ally;
@@ -80,16 +80,16 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 					showStances |= PlayerRelationship.Enemy;
 			}
 
-			sidebar.IngameUi.Radar.ShowStances = showStances;
+			this.Sidebar.IngameUi.Radar.ShowStances = showStances;
 
-			if (!hasRadar)
-				sidebar.IngameUi.Radar.Visible = Active = false;
+			if (!this.hasRadar)
+				this.Sidebar.IngameUi.Radar.Visible = this.Active = false;
 		}
 
 		protected override void DrawContents()
 		{
-			sidebar.Buttons.PlayFetchIndex("radar", () => 0);
-			WidgetUtils.DrawSpriteCentered(sidebar.Buttons.Image, sidebar.IngameUi.Palette, center + new int2(0, Active ? 1 : 0));
+			this.Sidebar.Buttons.PlayFetchIndex("radar", () => 0);
+			WidgetUtils.DrawSpriteCentered(this.Sidebar.Buttons.Image, this.Sidebar.IngameUi.Palette, this.Center + new int2(0, this.Active ? 1 : 0));
 		}
 	}
 }

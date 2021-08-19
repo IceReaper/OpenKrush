@@ -13,11 +13,13 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.LobbyOptions
 {
+	using JetBrains.Annotations;
+	using OpenRA.Traits;
 	using System.Collections.Generic;
 	using System.Collections.ObjectModel;
-	using OpenRA.Traits;
 	using Traits;
 
+	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("Selectable oilpatch oil amount in lobby.")]
 	public class OilAmountInfo : TraitInfo, ILobbyOptions
 	{
@@ -30,10 +32,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.LobbyOptions
 		{
 			var values = new Dictionary<string, string>();
 
-			for (var i = 0; i < OilAmountNames.Length; i++)
-				values.Add(OilAmounts[i].ToString(), OilAmountNames[i]);
+			for (var i = 0; i < this.OilAmountNames.Length; i++)
+				values.Add(this.OilAmounts[i].ToString(), this.OilAmountNames[i]);
 
-			var standard = OilAmounts[OilAmountNames.IndexOf("Normal")];
+			var standard = this.OilAmounts[this.OilAmountNames.IndexOf("Normal")];
 
 			yield return new LobbyOption(
 				OilAmountInfo.Id,
@@ -44,7 +46,8 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.LobbyOptions
 				new ReadOnlyDictionary<string, string>(values),
 				standard.ToString(),
 				false,
-				OilpatchInfo.LobbyOptionsCategory);
+				OilPatchInfo.LobbyOptionsCategory
+			);
 		}
 
 		public override object Create(ActorInitializer init)
@@ -56,7 +59,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.LobbyOptions
 	public class OilAmount : INotifyCreated
 	{
 		private readonly OilAmountInfo info;
-		public int Amount { get; set; }
+		public int Amount { get; private set; }
 
 		public OilAmount(OilAmountInfo info)
 		{
@@ -65,8 +68,8 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.LobbyOptions
 
 		void INotifyCreated.Created(Actor self)
 		{
-			var standard = info.OilAmounts[info.OilAmountNames.IndexOf("Normal")];
-			Amount = int.Parse(self.World.LobbyInfo.GlobalSettings.OptionOrDefault(OilAmountInfo.Id, standard.ToString()));
+			var standard = this.info.OilAmounts[this.info.OilAmountNames.IndexOf("Normal")];
+			this.Amount = int.Parse(self.World.LobbyInfo.GlobalSettings.OptionOrDefault(OilAmountInfo.Id, standard.ToString()));
 		}
 	}
 }

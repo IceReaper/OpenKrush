@@ -1,15 +1,21 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <EngineRootPath>../engine</EngineRootPath>
-  </PropertyGroup>
-  <Import Project="$(EngineRootPath)/Directory.Build.props" />
-  <ItemGroup>
-    <ProjectReference Include="$(EngineRootPath)/OpenRA.Game/OpenRA.Game.csproj">
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="$(EngineRootPath)/OpenRA.Mods.Common/OpenRA.Mods.Common.csproj">
-      <Private>False</Private>
-    </ProjectReference>
-    <AdditionalFiles Include="$(EngineRootPath)/stylecop.json" />
-  </ItemGroup>
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <OutputPath>../engine/bin</OutputPath>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="../engine/OpenRA.Game/OpenRA.Game.csproj" />
+        <ProjectReference Include="../engine/OpenRA.Mods.Common/OpenRA.Mods.Common.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="JetBrains.Annotations" Version="2021.2.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Mechanics\Misc" />
+    </ItemGroup>
 </Project>

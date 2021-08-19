@@ -13,13 +13,12 @@
 
 namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 {
-	using System.Linq;
 	using Buttons;
 	using Common.Widgets;
-	using OpenRA.Graphics;
+	using Graphics;
 	using OpenRA.Widgets;
 	using Primitives;
-	using ButtonWidget = Buttons.ButtonWidget;
+	using System.Linq;
 
 	public sealed class SidebarWidget : Widget
 	{
@@ -39,92 +38,91 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 
 		public SidebarWidget(IngameUiWidget ingameUi)
 		{
-			IngameUi = ingameUi;
-			Id = SidebarWidget.Identifier;
+			this.IngameUi = ingameUi;
+			this.Id = SidebarWidget.Identifier;
 
-			Buttons = new Animation(IngameUi.World, $"sidebar-{IngameUi.World.LocalPlayer.Faction.InternalName}");
-			Font = new Animation(IngameUi.World, "font");
+			this.Buttons = new(this.IngameUi.World, $"sidebar-{this.IngameUi.World.LocalPlayer.Faction.InternalName}");
+			this.Font = new(this.IngameUi.World, "font");
 
-			ChromeMetrics.TryGet($"ButtonArea-{IngameUi.World.LocalPlayer.Faction.InternalName}", out ButtonArea);
+			ChromeMetrics.TryGet($"ButtonArea-{this.IngameUi.World.LocalPlayer.Faction.InternalName}", out this.ButtonArea);
 
-			AddChild(new ProductionCategoryButtonWidget(this, 0, new[] { "infantry" }, "Infantry"));
-			AddChild(new ProductionCategoryButtonWidget(this, 1, new[] { "vehicle", "beast" }, "Vehicles"));
-			AddChild(new ProductionCategoryButtonWidget(this, 2, new[] { "building" }, "Buildings"));
-			AddChild(new ProductionCategoryButtonWidget(this, 3, new[] { "tower" }, "Towers"));
-			AddChild(new ProductionCategoryButtonWidget(this, 4, new[] { "wall" }, "Walls"));
+			this.AddChild(new ProductionCategoryButtonWidget(this, 0, new[] { "infantry" }, "Infantry"));
+			this.AddChild(new ProductionCategoryButtonWidget(this, 1, new[] { "vehicle", "beast" }, "Vehicles"));
+			this.AddChild(new ProductionCategoryButtonWidget(this, 2, new[] { "building" }, "Buildings"));
+			this.AddChild(new ProductionCategoryButtonWidget(this, 3, new[] { "tower" }, "Towers"));
+			this.AddChild(new ProductionCategoryButtonWidget(this, 4, new[] { "wall" }, "Walls"));
 
-			AddChild(bomber = new BomberButtonWidget(this));
+			this.AddChild(this.bomber = new(this));
 
-			AddChild(sell = new SellButtonWidget(this));
-			AddChild(research = new ResearchButtonWidget(this));
-			AddChild(repair = new RepairButtonWidget(this));
+			this.AddChild(this.sell = new(this));
+			this.AddChild(this.research = new(this));
+			this.AddChild(this.repair = new(this));
 
-			AddChild(radar = new RadarButtonWidget(this));
-			AddChild(options = new OptionsButtonWidget(this));
+			this.AddChild(this.radar = new(this));
+			this.AddChild(this.options = new(this));
 
-			Resize();
+			this.Resize();
 		}
 
-		public void Resize()
+		private void Resize()
 		{
-			Bounds = new Rectangle(Game.Renderer.Resolution.Width - ButtonWidget.Size, 0, ButtonWidget.Size, Game.Renderer.Resolution.Height);
+			this.Bounds = new(Game.Renderer.Resolution.Width - SidebarButtonWidget.Size, 0, SidebarButtonWidget.Size, Game.Renderer.Resolution.Height);
 		}
 
 		public override bool HandleMouseInput(MouseInput mi)
 		{
-			return EventBounds.Contains(mi.Location);
+			return this.EventBounds.Contains(mi.Location);
 		}
 
 		public override void Tick()
 		{
-			if (Bounds.Height < 14 * ButtonWidget.Size)
+			if (this.Bounds.Height < 14 * SidebarButtonWidget.Size)
 			{
-				bomber.Bounds.Y = 5 * ButtonWidget.Size;
-				sell.Bounds.Y = 6 * ButtonWidget.Size;
-				research.Bounds.Y = 7 * ButtonWidget.Size;
-				repair.Bounds.Y = 8 * ButtonWidget.Size;
-				radar.Bounds.Y = 9 * ButtonWidget.Size;
-				options.Bounds.Y = 10 * ButtonWidget.Size;
+				this.bomber.Bounds.Y = 5 * SidebarButtonWidget.Size;
+				this.sell.Bounds.Y = 6 * SidebarButtonWidget.Size;
+				this.research.Bounds.Y = 7 * SidebarButtonWidget.Size;
+				this.repair.Bounds.Y = 8 * SidebarButtonWidget.Size;
+				this.radar.Bounds.Y = 9 * SidebarButtonWidget.Size;
+				this.options.Bounds.Y = 10 * SidebarButtonWidget.Size;
 			}
 			else
 			{
-				bomber.Bounds.Y = 6 * ButtonWidget.Size;
-				sell.Bounds.Y = 8 * ButtonWidget.Size;
-				research.Bounds.Y = 9 * ButtonWidget.Size;
-				repair.Bounds.Y = 10 * ButtonWidget.Size;
-				radar.Bounds.Y = 12 * ButtonWidget.Size;
-				options.Bounds.Y = 13 * ButtonWidget.Size;
+				this.bomber.Bounds.Y = 6 * SidebarButtonWidget.Size;
+				this.sell.Bounds.Y = 8 * SidebarButtonWidget.Size;
+				this.research.Bounds.Y = 9 * SidebarButtonWidget.Size;
+				this.repair.Bounds.Y = 10 * SidebarButtonWidget.Size;
+				this.radar.Bounds.Y = 12 * SidebarButtonWidget.Size;
+				this.options.Bounds.Y = 13 * SidebarButtonWidget.Size;
 			}
 		}
 
 		public override void Draw()
 		{
-			for (var y = 0; y < Bounds.Height; y += ButtonWidget.Size)
+			for (var y = 0; y < this.Bounds.Height; y += SidebarButtonWidget.Size)
 			{
-				Buttons.PlayFetchIndex("button", () => 0);
-				WidgetUtils.DrawSpriteCentered(Buttons.Image, IngameUi.Palette, new float2(RenderBounds.X + ButtonWidget.Size / 2, y + ButtonWidget.Size / 2));
+				this.Buttons.PlayFetchIndex("button", () => 0);
+
+				WidgetUtils.DrawSpriteCentered(
+					this.Buttons.Image,
+					this.IngameUi.Palette,
+					new(this.RenderBounds.X + SidebarButtonWidget.Size / 2, y + SidebarButtonWidget.Size / 2)
+				);
 			}
 		}
 
-		public void CloseAllBut(ButtonWidget keepOpen)
+		public void CloseAllBut(SidebarButtonWidget keepOpen)
 		{
-			foreach (var widget in Children.Where(w => w != keepOpen && (w is ProductionCategoryButtonWidget || w is BomberButtonWidget)))
-				((ButtonWidget)widget).Active = false;
+			foreach (var widget in this.Children.Where(w => w != keepOpen && w is ProductionCategoryButtonWidget or BomberButtonWidget))
+				((SidebarButtonWidget)widget).Active = false;
 		}
 
 		public void SelectFactory(Actor factory, string category)
 		{
-			if (!(Children.FirstOrDefault(
-				child =>
-				{
-					if (!(child is ProductionCategoryButtonWidget button))
-						return false;
-
-					return button.Categories.Contains(category);
-				}) is ProductionCategoryButtonWidget categoryButton))
+			if (this.Children.FirstOrDefault(child => child is ProductionCategoryButtonWidget button && button.Categories.Contains(category)) is not
+				ProductionCategoryButtonWidget categoryButton)
 				return;
 
-			CloseAllBut(categoryButton);
+			this.CloseAllBut(categoryButton);
 			categoryButton.Active = true;
 
 			categoryButton.SelectFactory(factory);

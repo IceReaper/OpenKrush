@@ -34,12 +34,12 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Orders
 		{
 			if (!TechnicianUtils.CanEnter(self, target))
 			{
-				cursor = cursorForbidden;
+				cursor = this.cursorForbidden;
 
 				return false;
 			}
 
-			cursor = cursorAllowed;
+			cursor = this.cursorAllowed;
 
 			return true;
 		}

@@ -14,7 +14,9 @@
 namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits
 {
 	using Common.Traits;
+	using JetBrains.Annotations;
 
+	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	public abstract class DockActionInfo : ConditionalTraitInfo
 	{
 		[Desc("Cursor to use when docking is possible.")]
@@ -31,13 +33,13 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits
 		{
 		}
 
-		public abstract bool CanDock(Actor actor);
+		public abstract bool CanDock(Actor self, Actor actor);
 
-		public virtual void OnDock()
+		public virtual void OnDock(Actor self)
 		{
 		}
 
-		public abstract bool Process(Actor actor);
+		public abstract bool Process(Actor self, Actor actor);
 
 		public virtual void OnUndock()
 		{

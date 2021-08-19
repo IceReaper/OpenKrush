@@ -13,11 +13,12 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.LobbyOptions
 {
+	using JetBrains.Annotations;
+	using OpenRA.Traits;
 	using System;
 	using System.Collections.Generic;
 	using System.Collections.ObjectModel;
 	using System.Linq;
-	using OpenRA.Traits;
 	using Traits;
 
 	public enum TechBunkerUsageType
@@ -26,6 +27,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.LobbyOptions
 		Technician
 	}
 
+	[UsedImplicitly]
 	[Desc("How a TechBunker can be opened.")]
 	public class TechBunkerUsageInfo : TraitInfo, ILobbyOptions
 	{
@@ -44,10 +46,12 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.LobbyOptions
 					new Dictionary<TechBunkerUsageType, string>
 					{
 						{ TechBunkerUsageType.Proximity, "Proximity" }, { TechBunkerUsageType.Technician, "Technician" }
-					}.ToDictionary(e => e.Key.ToString(), e => e.Value)),
+					}.ToDictionary(e => e.Key.ToString(), e => e.Value)
+				),
 				TechBunkerUsageInfo.Default.ToString(),
 				false,
-				TechBunkerInfo.LobbyOptionsCategory);
+				TechBunkerInfo.LobbyOptionsCategory
+			);
 		}
 
 		public override object Create(ActorInitializer init)
@@ -62,9 +66,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.LobbyOptions
 
 		void INotifyCreated.Created(Actor self)
 		{
-			Usage = (TechBunkerUsageType)Enum.Parse(
+			this.Usage = (TechBunkerUsageType)Enum.Parse(
 				typeof(TechBunkerUsageType),
-				self.World.LobbyInfo.GlobalSettings.OptionOrDefault(TechBunkerUsageInfo.Id, TechBunkerUsageInfo.Default.ToString()));
+				self.World.LobbyInfo.GlobalSettings.OptionOrDefault(TechBunkerUsageInfo.Id, TechBunkerUsageInfo.Default.ToString())
+			);
 		}
 	}
 }

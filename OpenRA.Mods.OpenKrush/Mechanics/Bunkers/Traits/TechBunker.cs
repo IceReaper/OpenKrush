@@ -13,17 +13,19 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 {
-	using System;
-	using System.Linq;
 	using Common.Traits;
 	using Common.Traits.Render;
+	using DataFromAssets.Graphics;
 	using Graphics;
+	using JetBrains.Annotations;
 	using LobbyOptions;
-	using OpenKrush.Traits.Production;
-	using OpenRA.Graphics;
 	using OpenRA.Traits;
 	using Primitives;
+	using Production.Traits;
+	using System;
+	using System.Linq;
 
+	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("Tech bunker mechanism.")]
 	public class TechBunkerInfo : AdvancedProductionInfo, Requires<WithSpriteBodyInfo>, Requires<RenderSpritesInfo>
 	{
@@ -31,7 +33,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 
 		[ActorReference]
 		[Desc("Possible ejectable actors.")]
-		public readonly string[] ContainableActors = null;
+		public readonly string[] ContainableActors = Array.Empty<string>();
 
 		[Desc("Amount of money. Use 0 to disable.")]
 		public readonly int ContainableMoney = 5000;
@@ -46,10 +48,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 		public readonly int LockAfter = 300;
 
 		[Desc("The sound played when the bunker opens.")]
-		public readonly string[] SoundOpen = null;
+		public readonly string[] SoundOpen = Array.Empty<string>();
 
 		[Desc("The sound played when the bunker closes.")]
-		public readonly string[] SoundClose = null;
+		public readonly string[] SoundClose = Array.Empty<string>();
 
 		[Desc("The distance to search for actors triggering bunker opening.")]
 		public readonly WDist TriggerRadius = WDist.FromCells(3);
@@ -61,10 +63,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 		public readonly string SequenceOpening = "opening";
 
 		[Desc("Locked effect sequence.")]
-		public readonly string SequenceLocked = null;
+		public readonly string? SequenceLocked;
 
 		[Desc("Unlocked effect sequence.")]
-		public readonly string SequenceUnlocked = null;
+		public readonly string? SequenceUnlocked;
 
 		public override object Create(ActorInitializer init)
 		{
@@ -100,146 +102,161 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 		{
 			this.info = info;
 
-			withSpriteBody = init.Self.Trait<WithSpriteBody>();
-			renderSprites = init.Self.Trait<RenderSprites>();
+			this.withSpriteBody = init.Self.TraitOrDefault<WithSpriteBody>();
+			this.renderSprites = init.Self.TraitOrDefault<RenderSprites>();
 
-			contains = init.Self.World.WorldActor.Trait<TechBunkerContains>();
-			usage = init.Self.World.WorldActor.Trait<TechBunkerUsage>();
-			uses = init.Self.World.WorldActor.Trait<TechBunkerUses>();
+			this.contains = init.Self.World.WorldActor.TraitOrDefault<TechBunkerContains>();
+			this.usage = init.Self.World.WorldActor.TraitOrDefault<TechBunkerUsage>();
+			this.uses = init.Self.World.WorldActor.TraitOrDefault<TechBunkerUses>();
 
-			AddAnimation(init.Self, info.SequenceLocked, () => State != TechBunkerState.ClosedLocked);
-			AddAnimation(init.Self, info.SequenceUnlocked, () => State == TechBunkerState.ClosedLocked);
+			if (info.SequenceLocked != null)
+				this.AddAnimation(init.Self, info.SequenceLocked, () => this.State != TechBunkerState.ClosedLocked);
+
+			if (info.SequenceUnlocked != null)
+				this.AddAnimation(init.Self, info.SequenceUnlocked, () => this.State == TechBunkerState.ClosedLocked);
 		}
 
 		private void AddAnimation(Actor self, string sequence, Func<bool> hideWhen)
 		{
-			if (sequence == null)
-				return;
-
-			var overlay = new Animation(self.World, renderSprites.GetImage(self), hideWhen);
+			var overlay = new Animation(self.World, this.renderSprites.GetImage(self), hideWhen);
 			overlay.PlayRepeating(RenderSprites.NormalizeSequence(overlay, self.GetDamageState(), sequence));
 
 			var anim = new AnimationWithOffset(
 				overlay,
 				() =>
 				{
-					var currentSequence = withSpriteBody.DefaultAnimation.CurrentSequence as OffsetsSpriteSequence;
-					var sprite = withSpriteBody.DefaultAnimation.Image;
+					var currentSequence = this.withSpriteBody.DefaultAnimation.CurrentSequence as OffsetsSpriteSequence;
+					var sprite = this.withSpriteBody.DefaultAnimation.Image;
 
-					if (currentSequence == null || !currentSequence.EmbeddedOffsets.ContainsKey(sprite) || currentSequence.EmbeddedOffsets[sprite] == null)
+					if (currentSequence == null
+						|| !currentSequence.EmbeddedOffsets.ContainsKey(sprite)
+						|| currentSequence.EmbeddedOffsets.TryGetValue(sprite, out var offsets))
 						return WVec.Zero;
 
-					var point = currentSequence.EmbeddedOffsets[sprite].FirstOrDefault(p => p.Id == 0);
+					var point = offsets?.FirstOrDefault(p => p.Id == 0);
 
-					return point != null ? new WVec(point.X * 32, point.Y * 32, 0) : WVec.Zero;
+					return point != null ? new(point.X * 32, point.Y * 32, 0) : WVec.Zero;
 				},
 				hideWhen,
-				p => RenderUtils.ZOffsetFromCenter(self, p, 1));
+				p => RenderUtils.ZOffsetFromCenter(self, p, 1)
+			);
 
-			renderSprites.Add(anim);
+			this.renderSprites.Add(anim);
 		}
 
 		void ITick.Tick(Actor self)
 		{
-			switch (State)
+			switch (this.State)
 			{
 				case TechBunkerState.ClosedLocked:
-					if (timer++ >= info.UnlockAfter && self.World.SharedRandom.Next(0, info.UnlockChance) == 0)
+					if (this.timer++ >= this.info.UnlockAfter && self.World.SharedRandom.Next(0, this.info.UnlockChance) == 0)
 					{
-						State = TechBunkerState.ClosedUnlocked;
-						timer = 0;
+						this.State = TechBunkerState.ClosedUnlocked;
+						this.timer = 0;
 					}
 
 					break;
 
 				case TechBunkerState.ClosedUnlocked:
-					if (usage.Usage != TechBunkerUsageType.Proximity)
+					if (this.usage.Usage != TechBunkerUsageType.Proximity)
 						break;
 
-					var nearbyActors = self.World.FindActorsInCircle(self.CenterPosition, info.TriggerRadius)
+					var nearbyActors = self.World.FindActorsInCircle(self.CenterPosition, this.info.TriggerRadius)
 						.Where(actor => !actor.Owner.NonCombatant)
 						.ToArray();
 
 					if (!nearbyActors.Any())
 						return;
 
-					Use(self, nearbyActors[self.World.SharedRandom.Next(0, nearbyActors.Length - 1)].Owner);
+					this.Use(self, nearbyActors[self.World.SharedRandom.Next(0, nearbyActors.Length - 1)].Owner);
 
 					break;
 
 				case TechBunkerState.Opened:
-					if (uses.Uses == TechBunkerUsesType.Infinitely && info.LockAfter != -1 && timer++ >= info.LockAfter)
+					if (this.uses.Uses == TechBunkerUsesType.Infinitely && this.info.LockAfter != -1 && this.timer++ >= this.info.LockAfter)
 					{
-						State = TechBunkerState.Closing;
-						timer = 0;
+						this.State = TechBunkerState.Closing;
+						this.timer = 0;
 
-						withSpriteBody.PlayCustomAnimationBackwards(
+						this.withSpriteBody.PlayCustomAnimationBackwards(
 							self,
-							info.SequenceOpening,
+							this.info.SequenceOpening,
 							() =>
 							{
-								State = TechBunkerState.ClosedLocked;
-								withSpriteBody.CancelCustomAnimation(self);
-							});
+								this.State = TechBunkerState.ClosedLocked;
+								this.withSpriteBody.CancelCustomAnimation(self);
+							}
+						);
 
-						if (info.SoundClose != null)
-							Game.Sound.Play(SoundType.World, info.SoundClose.Random(self.World.SharedRandom), self.CenterPosition);
+						Game.Sound.Play(SoundType.World, this.info.SoundClose.Random(self.World.SharedRandom), self.CenterPosition);
 					}
 
 					break;
+
+				case TechBunkerState.Opening:
+					break;
+
+				case TechBunkerState.Closing:
+					break;
+
+				default:
+					throw new ArgumentOutOfRangeException(Enum.GetName(this.State));
 			}
 		}
 
 		public void Use(Actor self, Player owner)
 		{
-			State = TechBunkerState.Opening;
+			this.State = TechBunkerState.Opening;
 
-			withSpriteBody.PlayCustomAnimation(
+			this.withSpriteBody.PlayCustomAnimation(
 				self,
-				info.SequenceOpening,
+				this.info.SequenceOpening,
 				() =>
 				{
-					State = TechBunkerState.Opened;
-					withSpriteBody.PlayCustomAnimationRepeating(self, info.SequenceOpened);
+					this.State = TechBunkerState.Opened;
+					this.withSpriteBody.PlayCustomAnimationRepeating(self, this.info.SequenceOpened);
 
-					switch (contains.Contains)
+					switch (this.contains.Contains)
 					{
 						case TechBunkerContainsType.Resources:
-							EjectResources(owner);
+							this.EjectResources(owner);
 
 							break;
 
 						case TechBunkerContainsType.Both:
-							if (self.World.SharedRandom.Next(0, info.ContainableActors.Length + 1) == 0)
-								EjectResources(owner);
+							if (self.World.SharedRandom.Next(0, this.info.ContainableActors.Length + 1) == 0)
+								this.EjectResources(owner);
 							else
-								EjectUnit(self, owner);
+								this.EjectUnit(self, owner);
 
 							break;
 
 						case TechBunkerContainsType.Units:
-							EjectUnit(self, owner);
+							this.EjectUnit(self, owner);
 
 							break;
-					}
-				});
 
-			if (info.SoundOpen != null)
-				Game.Sound.Play(SoundType.World, info.SoundOpen.Random(self.World.SharedRandom), self.CenterPosition);
+						default:
+							throw new ArgumentOutOfRangeException(Enum.GetName(this.contains.Contains));
+					}
+				}
+			);
+
+			Game.Sound.Play(SoundType.World, this.info.SoundOpen.Random(self.World.SharedRandom), self.CenterPosition);
 		}
 
 		private void EjectResources(Player owner)
 		{
-			owner.PlayerActor.Trait<PlayerResources>().GiveCash(info.ContainableMoney);
+			owner.PlayerActor.TraitOrDefault<PlayerResources>().GiveCash(this.info.ContainableMoney);
 		}
 
 		private void EjectUnit(Actor self, Player owner)
 		{
-			var actor = info.ContainableActors[self.World.SharedRandom.Next(0, info.ContainableActors.Length)];
+			var actor = this.info.ContainableActors[self.World.SharedRandom.Next(0, this.info.ContainableActors.Length)];
 
 			var td = new TypeDictionary { new OwnerInit(owner) };
 
-			Produce(self, self.World.Map.Rules.Actors[actor], "produce", td, 0);
+			this.Produce(self, self.World.Map.Rules.Actors[actor], "produce", td, 0);
 		}
 	}
 }

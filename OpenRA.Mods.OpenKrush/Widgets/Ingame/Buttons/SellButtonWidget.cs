@@ -13,36 +13,36 @@
 
 namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 {
-	using System.Linq;
 	using Common.Widgets;
 	using Mechanics.Construction.Orders;
 	using Mechanics.Construction.Traits;
+	using System.Linq;
 
-	public class SellButtonWidget : ButtonWidget
+	public class SellButtonWidget : SidebarButtonWidget
 	{
 		private bool sellableActors;
 
 		public SellButtonWidget(SidebarWidget sidebar)
 			: base(sidebar, "button")
 		{
-			TooltipTitle = "Sell";
+			this.TooltipTitle = "Sell";
 		}
 
 		public override bool HandleKeyPress(KeyInput e)
 		{
-			if (!IsUsable()
+			if (!this.IsUsable()
 				|| e.IsRepeat
 				|| e.Event != KeyInputEvent.Down
 				|| e.Key != Game.ModData.Hotkeys["Sell"].GetValue().Key
 				|| e.Modifiers != Game.ModData.Hotkeys["Sell"].GetValue().Modifiers)
 				return false;
 
-			Active = !Active;
+			this.Active = !this.Active;
 
-			if (Active)
-				sidebar.IngameUi.World.OrderGenerator = new SellOrderGenerator();
-			else if (sidebar.IngameUi.World.OrderGenerator is SellOrderGenerator)
-				sidebar.IngameUi.World.CancelInputMode();
+			if (this.Active)
+				this.Sidebar.IngameUi.World.OrderGenerator = new SellOrderGenerator();
+			else if (this.Sidebar.IngameUi.World.OrderGenerator is SellOrderGenerator)
+				this.Sidebar.IngameUi.World.CancelInputMode();
 
 			return true;
 		}
@@ -52,29 +52,31 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 			if (!base.HandleLeftClick(mi))
 				return false;
 
-			if (Active)
-				sidebar.IngameUi.World.OrderGenerator = new SellOrderGenerator();
-			else if (sidebar.IngameUi.World.OrderGenerator is SellOrderGenerator)
-				sidebar.IngameUi.World.CancelInputMode();
+			if (this.Active)
+				this.Sidebar.IngameUi.World.OrderGenerator = new SellOrderGenerator();
+			else if (this.Sidebar.IngameUi.World.OrderGenerator is SellOrderGenerator)
+				this.Sidebar.IngameUi.World.CancelInputMode();
 
 			return true;
 		}
 
 		protected override bool IsUsable()
 		{
-			return sellableActors;
+			return this.sellableActors;
 		}
 
 		public override void Tick()
 		{
-			sellableActors = sidebar.IngameUi.World.ActorsWithTrait<SelfConstructing>().Any(e => e.Actor.Owner == sidebar.IngameUi.World.LocalPlayer);
-			Active = sidebar.IngameUi.World.OrderGenerator is SellOrderGenerator;
+			this.sellableActors = this.Sidebar.IngameUi.World.ActorsWithTrait<SelfConstructing>()
+				.Any(e => e.Actor.Owner == this.Sidebar.IngameUi.World.LocalPlayer);
+
+			this.Active = this.Sidebar.IngameUi.World.OrderGenerator is SellOrderGenerator;
 		}
 
 		protected override void DrawContents()
 		{
-			sidebar.Buttons.PlayFetchIndex("sell", () => 0);
-			WidgetUtils.DrawSpriteCentered(sidebar.Buttons.Image, sidebar.IngameUi.Palette, center + new int2(0, Active ? 1 : 0));
+			this.Sidebar.Buttons.PlayFetchIndex("sell", () => 0);
+			WidgetUtils.DrawSpriteCentered(this.Sidebar.Buttons.Image, this.Sidebar.IngameUi.Palette, this.Center + new int2(0, this.Active ? 1 : 0));
 		}
 	}
 }

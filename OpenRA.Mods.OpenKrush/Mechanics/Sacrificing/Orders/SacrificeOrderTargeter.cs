@@ -20,12 +20,12 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Sacrificing.Orders
 	{
 		public const string Id = "Sacrifice";
 
-		private readonly string cursor;
+		private readonly string sacrificeCursor;
 
 		public SacrificeOrderTargeter(string cursor)
 			: base(SacrificeOrderTargeter.Id, 6, cursor, false, true)
 		{
-			this.cursor = cursor;
+			this.sacrificeCursor = cursor;
 		}
 
 		public override bool CanTargetActor(Actor self, Actor target, TargetModifiers modifiers, ref string cursor)
@@ -33,7 +33,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Sacrificing.Orders
 			if (!SacrificingUtils.CanEnter(self, target))
 				return false;
 
-			cursor = this.cursor;
+			cursor = this.sacrificeCursor;
 
 			return true;
 		}
