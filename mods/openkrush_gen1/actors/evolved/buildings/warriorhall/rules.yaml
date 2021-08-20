@@ -19,8 +19,9 @@ evolved_building_warriorhall:
 	ProvidesPrerequisite:
 		Prerequisite: evolved_infantry
 	Building:
-		Dimensions: 4,3
-		Footprint: =xxx xxxx =xx=
+		Dimensions: 4,4
+		Footprint: =xxx xxxx =xx= ====
+		LocalCenterOffset: 0,-500,0
 	HitShape:
 		Type: Rectangle
 			TopLeft: -1024, -1336

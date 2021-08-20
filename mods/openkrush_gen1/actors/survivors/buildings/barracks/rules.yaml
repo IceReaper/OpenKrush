@@ -20,8 +20,9 @@ survivors_building_barracks:
 		Prerequisite: survivors_base
 		RequiresCondition: !selfconstructing && !deconstructing
 	Building:
-		Dimensions: 4,3
-		Footprint: =xx= xxxx =xx=
+		Dimensions: 4,4
+		Footprint: =xx= xxxx =xx= ====
+		LocalCenterOffset: 0,-500,0
 	HitShape:
 		Type: Rectangle
 			TopLeft: -1024, -1136
