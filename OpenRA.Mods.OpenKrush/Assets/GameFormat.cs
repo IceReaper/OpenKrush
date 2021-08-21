@@ -1,6 +1,6 @@
 namespace OpenRA.Mods.OpenKrush.Assets
 {
-	public enum Generation
+	public enum GameFormat
 	{
 		Unknown,
 		Gen1,

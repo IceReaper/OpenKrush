@@ -28,13 +28,13 @@ namespace OpenRA.Mods.OpenKrush.Assets.FileFormats
 
 			var generation = type switch
 			{
-				"SPRT" => Generation.Gen1,
-				"SPNS" => Generation.Gen2,
-				"SPRC" => Generation.Gen2,
-				_ => Generation.Unknown
+				"SPRT" => GameFormat.Gen1,
+				"SPNS" => GameFormat.Gen2,
+				"SPRC" => GameFormat.Gen2,
+				_ => GameFormat.Unknown
 			};
 
-			if (generation == Generation.Gen2)
+			if (generation == GameFormat.Gen2)
 			{
 				var paletteOffset = stream.ReadUInt32();
 

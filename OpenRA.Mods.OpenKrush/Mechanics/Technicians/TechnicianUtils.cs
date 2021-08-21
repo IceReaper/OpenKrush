@@ -21,6 +21,9 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians
 	{
 		public static bool CanEnter(Actor source, Actor target)
 		{
+			if (target.IsDead || target.Disposed || !target.IsInWorld)
+				return false;
+			
 			var bunker = target.TraitOrDefault<TechBunker>();
 
 			if (bunker != null)

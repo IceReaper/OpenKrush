@@ -26,10 +26,10 @@ namespace OpenRA.Mods.OpenKrush.Assets.FileFormats
 		{
 			var test = stream.ReadInt32();
 			stream.Position += test * 4;
-			var generation = stream.ReadInt32() == 256 ? Generation.Gen1 : Generation.Gen2;
+			var generation = stream.ReadInt32() == 256 ? GameFormat.Gen1 : GameFormat.Gen2;
 			stream.Position -= (test + 2) * 4;
 
-			if (generation == Generation.Gen2)
+			if (generation == GameFormat.Gen2)
 				stream.ReadInt32(); // TODO Unk
 
 			var layerOffsets = new int[stream.ReadInt32()];
@@ -40,7 +40,7 @@ namespace OpenRA.Mods.OpenKrush.Assets.FileFormats
 
 			var palette = new byte[stream.ReadInt32() * 4];
 
-			if (generation == Generation.Gen2)
+			if (generation == GameFormat.Gen2)
 			{
 				for (var i = 0; i < palette.Length;)
 				{
@@ -73,7 +73,7 @@ namespace OpenRA.Mods.OpenKrush.Assets.FileFormats
 				var tilesX = stream.ReadInt32();
 				var tilesY = stream.ReadInt32();
 
-				if (generation == Generation.Gen2)
+				if (generation == GameFormat.Gen2)
 				{
 					stream.ReadInt32(); // TODO Unk
 					stream.ReadInt32(); // TODO Unk
@@ -88,7 +88,7 @@ namespace OpenRA.Mods.OpenKrush.Assets.FileFormats
 				{
 					var tile = stream.ReadInt32();
 
-					if (generation == Generation.Gen2)
+					if (generation == GameFormat.Gen2)
 						tile -= tile % 4;
 
 					tiles.Add(tile);
@@ -101,7 +101,7 @@ namespace OpenRA.Mods.OpenKrush.Assets.FileFormats
 				{
 					stream.Position = offset;
 
-					if (generation == Generation.Gen1)
+					if (generation == GameFormat.Gen1)
 						stream.ReadInt32(); // TODO Unk
 
 					tilePixels[offset] = stream.ReadBytes(tileWidth * tileHeight)

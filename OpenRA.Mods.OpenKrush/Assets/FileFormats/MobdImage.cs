@@ -22,14 +22,14 @@ namespace OpenRA.Mods.OpenKrush.Assets.FileFormats
 		public readonly int Height;
 		public readonly byte[] Pixels;
 
-		public MobdImage(Stream stream, uint flags, Generation generation)
+		public MobdImage(Stream stream, uint flags, GameFormat gameFormat)
 		{
 			bool flipped;
 			this.Width = stream.ReadInt32();
 			this.Height = stream.ReadInt32();
 			this.Pixels = new byte[this.Width * this.Height];
 
-			if (generation == Generation.Gen1)
+			if (gameFormat == GameFormat.Gen1)
 			{
 				flipped = (flags & 0x1) == 1;
 

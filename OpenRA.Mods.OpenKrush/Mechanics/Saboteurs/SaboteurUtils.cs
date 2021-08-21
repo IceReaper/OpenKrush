@@ -20,6 +20,9 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs
 	{
 		public static bool CanEnter(Actor source, Actor target)
 		{
+			if (target.IsDead || target.Disposed || !target.IsInWorld)
+				return false;
+
 			var trait = target.TraitOrDefault<SaboteurConquerable>();
 
 			if (trait == null || trait.IsTraitDisabled)
