@@ -1,0 +1,267 @@
+0.mobd: B_Bore.mobd
+1.mobd: B_Cow.mobd # Placeholder spritesheet
+2.mobd: B_Cursors.mobd
+3.mobd: B_Dirt.mobd
+#4.mobd: B_4.mobd # DOES NOT EXIST
+5.mobd: B_Explosions.mobd
+6.mobd: B_Fluff.mobd # Placeholder spritesheet
+#7.mobd: B_7.mobd # DOES NOT EXIST
+#8.mobd: B_8.mobd # DOES NOT EXIST
+#9.mobd: B_9.mobd # DOES NOT EXIST
+#10.mobd: B_10.mobd # DOES NOT EXIST
+11.mobd: B_Gui.mobd
+#12.mobd: B_12.mobd # DOES NOT EXIST
+13.mobd: B_Hut.mobd
+#14.mobd: B_14.mobd # DOES NOT EXIST
+#15.mobd: B_15.mobd # DOES NOT EXIST
+16.mobd: B_Oil.mobd
+17.mobd: B_Prison.mobd
+18.mobd: B_Rabbit.mobd
+19.mobd: B_Rings.mobd
+20.mobd: B_RPrison.mobd
+21.mobd: B_Rubble.mobd
+22.mobd: B_Special.mobd
+23.mobd: B_Temple.mobd
+24.mobd: B_Tree.mobd
+25.mobd: B_WaterEffects.mobd
+26.mobd: M_A_Bomber.mobd
+27.mobd: M_A_Expansion.mobd # ADDON
+28.mobd: M_A_Fighter.mobd
+29.mobd: M_A_FighterTurret.mobd
+30.mobd: M_A_Transport.mobd
+31.mobd: M_B_Armory.mobd
+32.mobd: M_B_Barracks.mobd
+33.mobd: M_B_Collector.mobd
+34.mobd: M_B_Converter.mobd
+35.mobd: M_B_Drillrig.mobd
+36.mobd: M_B_Machineshop.mobd
+37.mobd: M_B_Outpost.mobd
+38.mobd: M_B_Powerstation.mobd
+39.mobd: M_B_Repairbay.mobd
+40.mobd: M_B_Researchlab.mobd
+41.mobd: M_C_Expansion.mobd # ADDON
+42.mobd: M_C_Large.mobd
+43.mobd: M_C_Medium.mobd
+44.mobd: M_C_Small.mobd
+45.mobd: M_C_TAcid.mobd
+46.mobd: M_C_TArtillery.mobd
+47.mobd: M_C_TBallista.mobd
+48.mobd: M_C_TCatapult.mobd
+49.mobd: M_C_TFrenzy.mobd
+50.mobd: M_C_TLAPC.mobd
+51.mobd: M_C_TRadar.mobd
+52.mobd: M_C_TRepair.mobd
+53.mobd: M_C_TSAPC.mobd
+54.mobd: M_I_Death.mobd
+55.mobd: M_I_Demon.mobd
+56.mobd: M_I_Expansion1.mobd # ADDON
+57.mobd: M_I_Expansion2.mobd # ADDON
+58.mobd: M_I_Flamer.mobd
+59.mobd: M_I_Grenadier.mobd
+60.mobd: M_I_Gunner.mobd
+61.mobd: M_I_Kamikaze.mobd
+62.mobd: M_I_Rocketeer.mobd
+63.mobd: M_I_Sniper.mobd
+64.mobd: M_I_Technician.mobd
+65.mobd: M_Tower1.mobd
+66.mobd: M_Tower1Turret.mobd
+67.mobd: M_Tower2.mobd
+68.mobd: M_Tower2Turret.mobd
+69.mobd: M_Tower3.mobd
+70.mobd: M_Tower3Turret.mobd
+71.mobd: M_Tower4.mobd
+72.mobd: M_Tower4Turret.mobd
+73.mobd: M_V_ACrinoid.mobd
+74.mobd: M_V_AHippo.mobd
+75.mobd: M_V_Beetle.mobd
+76.mobd: M_V_DireWolf.mobd
+77.mobd: M_V_Expansion1.mobd # ADDON
+78.mobd: M_V_Expansion2.mobd # ADDON
+79.mobd: M_V_Expansion3.mobd # ADDON
+80.mobd: M_V_Expansion4.mobd # ADDON
+81.mobd: M_V_Mastodon.mobd
+82.mobd: M_V_MissileCrab.mobd
+83.mobd: M_V_MobileDrillrig.mobd
+84.mobd: M_V_MobileOutpost.mobd
+85.mobd: M_V_Scorpion.mobd
+86.mobd: M_V_TACrinoid.mobd
+87.mobd: M_V_TAHippo.mobd
+88.mobd: M_V_Tanker.mobd
+89.mobd: M_V_TExpansion1.mobd # ADDON
+90.mobd: M_V_TExpansion2.mobd # ADDON
+91.mobd: M_V_TExpansion3.mobd # ADDON
+92.mobd: M_V_TExpansion4.mobd # ADDON
+93.mobd: M_V_TMastodon.mobd
+94.mobd: M_V_TMissileCrab.mobd
+95.mobd: M_Wall1.mobd
+96.mobd: M_Wall2.mobd
+97.mobd: P_Ballistics.mobd
+98.mobd: P_Fire.mobd
+99.mobd: P_GreenFire.mobd
+100.mobd: P_GreenProjectiles.mobd
+101.mobd: P_Laser.mobd
+102.mobd: P_Projectiles.mobd
+103.mobd: P_RedProjectiles.mobd
+104.mobd: P_SmallProjectiles.mobd
+105.mobd: P_Special.mobd
+106.mobd: R_A_Bomber.mobd
+107.mobd: R_A_Expansion.mobd # ADDON
+108.mobd: R_A_Fighter.mobd
+109.mobd: R_A_Transport.mobd
+110.mobd: R_B_Armory.mobd
+111.mobd: R_B_Barracks.mobd
+112.mobd: R_B_Collector.mobd
+113.mobd: R_B_Converter.mobd
+114.mobd: R_B_Drillrig.mobd
+115.mobd: R_B_Machineshop.mobd
+116.mobd: R_B_Outpost.mobd
+117.mobd: R_B_Powerstation.mobd
+118.mobd: R_B_Repairbay.mobd
+119.mobd: R_B_Researchlab.mobd
+120.mobd: R_C_Expansion.mobd # ADDON
+121.mobd: R_C_Large.mobd
+122.mobd: R_C_Medium.mobd
+123.mobd: R_C_Small.mobd
+124.mobd: R_C_TAntiAir.mobd
+125.mobd: R_C_TArtillery.mobd
+126.mobd: R_C_TFlamer.mobd
+127.mobd: R_C_TLAPC.mobd
+128.mobd: R_C_TLaser.mobd
+129.mobd: R_C_TRadar.mobd
+130.mobd: R_C_TLepair.mobd
+131.mobd: R_C_TSAPC.mobd
+132.mobd: R_C_TShield.mobd
+133.mobd: R_I_Death.mobd
+134.mobd: R_I_Expansion1.mobd # ADDON
+135.mobd: R_I_Expansion2.mobd # ADDON
+136.mobd: R_I_Flamer.mobd
+137.mobd: R_I_Grenadier.mobd
+138.mobd: R_I_Gunner.mobd
+139.mobd: R_I_Kamikaze.mobd
+140.mobd: R_I_Rocketeer.mobd
+141.mobd: R_I_Sniper.mobd
+142.mobd: R_I_Technician.mobd
+143.mobd: R_Lights.mobd
+144.mobd: R_Tower1.mobd
+145.mobd: R_Tower1Turret.mobd
+146.mobd: R_Tower2.mobd
+147.mobd: R_Tower2Turret.mobd
+148.mobd: R_Tower3.mobd
+149.mobd: R_Tower3Turret.mobd
+150.mobd: R_Tower4.mobd
+151.mobd: R_Tower4Turret.mobd
+152.mobd: R_V_ADoomDome.mobd
+153.mobd: R_V_ARadiator.mobd
+154.mobd: R_V_Cauteriser.mobd
+155.mobd: R_V_Expansion1.mobd # ADDON
+156.mobd: R_V_Expansion2.mobd # ADDON
+157.mobd: R_V_Expansion3.mobd # ADDON
+158.mobd: R_V_Expansion4.mobd # ADDON
+159.mobd: R_V_MobileDrillrig.mobd
+160.mobd: R_V_MobileOutpost.mobd
+161.mobd: R_V_Patrolbot.mobd
+162.mobd: R_V_Reaper.mobd
+163.mobd: R_V_Responsebot.mobd
+164.mobd: R_V_TADoomDome.mobd
+165.mobd: R_V_Tankbot.mobd
+166.mobd: R_V_Tanker.mobd
+167.mobd: R_V_TARadiator.mobd
+168.mobd: R_V_TCauteriser.mobd
+169.mobd: R_V_TExpansion1.mobd # ADDON
+170.mobd: R_V_TExpansion2.mobd # ADDON
+171.mobd: R_V_TExpansion3.mobd # ADDON
+172.mobd: R_V_TExpansion4.mobd # ADDON
+173.mobd: R_V_TReaper.mobd
+174.mobd: R_V_TResponsebot.mobd
+175.mobd: R_V_TTankbot.mobd
+176.mobd: R_Wall1.mobd
+177.mobd: R_Wall2.mobd
+178.mobd: S_A_Bomber.mobd
+179.mobd: S_A_Expansion.mobd # ADDON
+180.mobd: S_A_Fighter.mobd
+181.mobd: S_A_Transport.mobd
+182.mobd: S_B_Armory.mobd
+183.mobd: S_B_Barracks.mobd
+184.mobd: S_B_Collector.mobd
+185.mobd: S_B_Converter.mobd
+186.mobd: S_B_Drillrig.mobd
+187.mobd: S_B_Machineshop.mobd
+188.mobd: S_B_Outpost.mobd
+189.mobd: S_B_Powerstation.mobd
+190.mobd: S_B_Repairbay.mobd
+191.mobd: S_B_Researchlab.mobd
+192.mobd: S_C_Expansion.mobd # ADDON
+193.mobd: S_C_Large.mobd
+194.mobd: S_C_Medium.mobd
+195.mobd: S_C_Small.mobd
+196.mobd: S_C_TAntiAir.mobd
+197.mobd: S_C_TArtillery.mobd
+198.mobd: S_C_TEMP.mobd
+199.mobd: S_C_TLAPC.mobd
+200.mobd: S_C_TLaser.mobd
+201.mobd: S_C_TRadar.mobd
+202.mobd: S_C_TRepair.mobd
+203.mobd: S_C_TSAPC.mobd
+204.mobd: S_C_TSonicBoom.mobd
+205.mobd: S_C_TSpecial.mobd
+206.mobd: S_C_TStealth.mobd
+207.mobd: S_I_Death.mobd
+208.mobd: S_I_Expansion1.mobd # ADDON
+209.mobd: S_I_Expansion2.mobd # ADDON
+210.mobd: S_I_Flamer.mobd
+211.mobd: S_I_Grenadier.mobd
+212.mobd: S_I_Gunner.mobd
+213.mobd: S_I_Kamikaze.mobd
+214.mobd: S_I_Rocketeer.mobd
+215.mobd: S_I_Sniper.mobd
+216.mobd: S_I_Technician.mobd
+217.mobd: S_Tower1.mobd
+218.mobd: S_Tower1Turret.mobd
+219.mobd: S_Tower2.mobd
+220.mobd: S_Tower2Turret.mobd
+221.mobd: S_Tower3.mobd
+222.mobd: S_Tower3Turret.mobd
+223.mobd: S_Tower4.mobd
+224.mobd: S_Tower4Turret.mobd
+225.mobd: S_V_ABarrageCraft.mobd
+226.mobd: S_V_AHoverBike.mobd
+227.mobd: S_V_AnacondaTank.mobd
+228.mobd: S_V_ATV.mobd
+229.mobd: S_V_AutocannonTank.mobd
+230.mobd: S_V_DirtBike.mobd
+231.mobd: S_V_Expansion1.mobd # ADDON
+232.mobd: S_V_Expansion2.mobd # ADDON
+233.mobd: S_V_Expansion3.mobd # ADDON
+234.mobd: S_V_Expansion4.mobd # ADDON
+235.mobd: S_V_Juggernaut.mobd
+236.mobd: S_V_MobileDrillrig.mobd
+237.mobd: S_V_MobileOutpost.mobd
+238.mobd: S_V_TABarrageCraft.mobd
+239.mobd: S_V_TAHoverBike.mobd
+240.mobd: S_V_TAnacondaTank.mobd
+241.mobd: S_V_Tanker.mobd
+242.mobd: S_V_TATV.mobd
+243.mobd: S_V_TAutocannonTank.mobd
+244.mobd: S_V_TExpansion1.mobd # ADDON
+245.mobd: S_V_TExpansion2.mobd # ADDON
+246.mobd: S_V_TExpansion3.mobd # ADDON
+247.mobd: S_V_TExpansion4.mobd # ADDON
+248.mobd: S_V_TJuggernaut.mobd
+249.mobd: S_Wall1.mobd
+250.mobd: S_Wall2.mobd
+251.mobd: Superweapons.mobd
+252.mobd: T_Bunker.mobd
+253.mobd: T_Dropship.mobd
+254.mobd: T_Expansion1.mobd # ADDON
+255.mobd: T_Expansion1Turret.mobd # ADDON
+256.mobd: T_Expansion2.mobd # ADDON
+257.mobd: T_Expansion2Turret.mobd # ADDON
+258.mobd: T_GortRobot.mobd
+259.mobd: T_GortRobotTurret.mobd
+260.mobd: T_MechanoidWalker.mobd
+261.mobd: T_MechanoidWalkerTurret.mobd
+262.mobd: T_PlasmaTankTurret.mobd
+263.mobd: T_PlasmaTankVehicle.mobd
+264.mobd: T_SentinelDroidTurret.mobd
+265.mobd: T_SentinelDroidVehicle.mobd
+266.mobd: T_UFO.mobd
