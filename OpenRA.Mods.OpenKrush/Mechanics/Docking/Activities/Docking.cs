@@ -57,7 +57,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Activities
 					var distance = WDist.FromCells(this.Dock.Info.QueueDistance);
 
 					if ((this.dockableActor.CenterPosition - this.DockActor.CenterPosition).Length > distance.Length)
-						this.QueueChild(new Move(this.dockableActor, this.DockActor.Location, distance));
+						this.QueueChild(new Move(this.dockableActor, self.World.Map.CellContaining(this.DockActor.CenterPosition), distance));
 					else
 					{
 						this.DockingState = DockingState.Waiting;
