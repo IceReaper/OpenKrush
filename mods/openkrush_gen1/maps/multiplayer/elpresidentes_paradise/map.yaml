@@ -137,9 +137,6 @@ Actors:
 	Actor53: oilpatch
 		Owner: Neutral
 		Location: 24,10
-	Actor54: oilpatch
-		Owner: Neutral
-		Location: 23,81
 	Actor55: oilpatch
 		Owner: Neutral
 		Location: 115,69
@@ -158,9 +155,6 @@ Actors:
 	Actor59: oilpatch
 		Owner: Neutral
 		Location: 110,40
-	Actor61: oilpatch
-		Owner: Neutral
-		Location: 113,23
 	Actor62: oilpatch
 		Owner: Neutral
 		Location: 13,23
@@ -2031,3 +2025,9 @@ Actors:
 		Location: 66,50
 		SubCell: 1
 		Facing: 563
+	Actor700: oilpatch
+		Owner: Neutral
+		Location: 24,81
+	Actor701: oilpatch
+		Owner: Neutral
+		Location: 114,23
