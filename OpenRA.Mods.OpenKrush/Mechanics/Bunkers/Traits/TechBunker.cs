@@ -188,7 +188,8 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 							}
 						);
 
-						Game.Sound.Play(SoundType.World, this.info.SoundClose.Random(self.World.SharedRandom), self.CenterPosition);
+						if (this.info.SoundClose.Any())
+							Game.Sound.Play(SoundType.World, this.info.SoundClose.Random(self.World.SharedRandom), self.CenterPosition);
 					}
 
 					break;
