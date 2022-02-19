@@ -122,6 +122,7 @@ Hotkeys:
 	openkrush|hotkeys/supportpowers.yaml
 	openkrush|hotkeys/viewport.yaml
 	openkrush|hotkeys/chat.yaml
+	openkrush|hotkeys/control-groups.yaml
 
 LoadScreen: LoadScreen
 

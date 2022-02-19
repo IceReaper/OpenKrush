@@ -47,7 +47,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 
 		void IBotTick.BotTick(IBot bot)
 		{
-			this.HandleBuildings(bot);
+			// For performance we delay some ai tasks => OpenKrush runs with 25 ticks per second (at normal speed).
+
+			if (bot.Player.World.WorldTick % 25 == 0)
+				this.HandleBuildings(bot);
 		}
 
 		private void HandleBuildings(IBot bot)
