@@ -21,7 +21,7 @@ namespace OpenRA.Mods.OpenKrush.Assets.VideoLoaders
 	[UsedImplicitly]
 	public class VbcLoader : IVideoLoader
 	{
-		public bool TryParseVideo(Stream s, out IVideo? video)
+		public bool TryParseVideo(Stream s, bool useFramePadding, out IVideo? video)
 		{
 			video = null;
 

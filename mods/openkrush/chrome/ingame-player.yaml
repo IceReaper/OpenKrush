@@ -2,8 +2,15 @@ Container@PLAYER_WIDGETS:
 	Logic: LoadIngameChatLogic
 	Children:
 		Container@CHAT_ROOT:
-		LogicKeyListener@CONTROLGROUP_KEYHANDLER:
-			Logic: ControlGroupLogic
+		LogicKeyListener@PLAYER_KEYHANDLER:
+			Logic: RemoveFromControlGroupHotkeyLogic
+				RemoveFromControlGroupKey: RemoveFromControlGroup
+		ControlGroups@CONTROLGROUPS:
+			SelectGroupKeyPrefix: ControlGroupSelect
+			CreateGroupKeyPrefix: ControlGroupCreate
+			AddToGroupKeyPrefix: ControlGroupAddTo
+			CombineWithGroupKeyPrefix: ControlGroupCombineWith
+			JumpToGroupKeyPrefix: ControlGroupJumpTo
 		# TODO for what?
 		LogicTicker@SIDEBAR_TICKER:
 		# TODO merge into our ui!

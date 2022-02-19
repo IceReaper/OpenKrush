@@ -76,8 +76,10 @@ EditorPlayer:
 	TerrainGeometryOverlay:
 	# Required for debug overlays:
 	DebugVisualizations:
-	# Required for... not crashing
+	# Required for... not crashing.
 	Selection:
+	# Required for control groups support.
+	ControlGroups:
 
 # Ingame specific world setup.
 World:

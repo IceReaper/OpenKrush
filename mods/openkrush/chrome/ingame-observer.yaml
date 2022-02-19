@@ -16,11 +16,11 @@ Container@OBSERVER_WIDGETS:
 			Logic: GameTimerLogic
 			X: (WINDOW_RIGHT - WIDTH) / 2
 			Width: 100
-			Height: 85
+			Height: 55
 			Children:
 				LabelWithTooltip@GAME_TIMER:
 					Width: PARENT_RIGHT
-					Height: 60
+					Height: 30
 					Align: Center
 					Font: Title
 					Contrast: true

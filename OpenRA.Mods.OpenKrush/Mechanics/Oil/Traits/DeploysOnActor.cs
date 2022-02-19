@@ -94,7 +94,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 
 			this.issued = true;
 
-			self.QueueActivity(new Transform(self, this.info.IntoActor) { Faction = self.Owner.Faction.InternalName, Offset = this.info.Offset });
+			self.QueueActivity(new Transform(this.info.IntoActor) { Faction = self.Owner.Faction.InternalName, Offset = this.info.Offset });
 		}
 	}
 }

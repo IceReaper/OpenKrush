@@ -79,7 +79,9 @@ namespace OpenRA.Mods.OpenKrush.Widgets
 				return;
 
 			this.video.AdvanceFrame();
-			this.videoSprite?.Sheet.GetTexture().SetData(this.video.FrameData);
+
+			this.videoSprite?.Sheet.GetTexture()
+				.SetData(this.video.CurrentFrameData, Exts.NextPowerOf2(this.video.Width), Exts.NextPowerOf2(this.video.Height));
 		}
 
 		private void Stop()
@@ -120,13 +122,13 @@ namespace OpenRA.Mods.OpenKrush.Widgets
 			if (this.video == null)
 				return;
 
-			var currentFrame = Math.Min((Game.RunTime - this.start) * this.video.Frames / this.duration, this.video.Frames);
+			var currentFrame = Math.Min((Game.RunTime - this.start) * this.video.FrameCount / this.duration, this.video.FrameCount);
 
 			while (currentFrame > this.lastFrame)
 			{
 				++this.lastFrame;
 
-				if (this.lastFrame < this.video.Frames)
+				if (this.lastFrame < this.video.FrameCount)
 					this.UpdateFrame();
 			}
 		}

@@ -59,7 +59,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Production.Traits
 				exitInfo.GetType().GetField("ExitCell")?.SetValue(exitInfo, spawn - self.Location + candidate);
 				exitInfo.GetType().GetField("Facing")?.SetValue(exitInfo, exit.Info.Facing);
 
-				return new(null, exitInfo);
+				return new(exitInfo);
 			}
 
 			return null;

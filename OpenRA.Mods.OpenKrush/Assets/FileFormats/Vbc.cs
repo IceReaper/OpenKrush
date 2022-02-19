@@ -20,13 +20,13 @@ namespace OpenRA.Mods.OpenKrush.Assets.FileFormats
 
 	public class Vbc : IVideo
 	{
-		public ushort Frames { get; }
+		public ushort FrameCount { get; }
 		public byte Framerate { get; }
 		public ushort Width { get; }
 		public ushort Height { get; }
-		public uint[,]? FrameData { get; private set; }
+		public byte[]? CurrentFrameData { get; private set; }
 		public string? TextData { get; private set; }
-		public int CurrentFrame { get; private set; }
+		public int CurrentFrameIndex { get; private set; }
 		public bool HasAudio => true;
 		public byte[] AudioData { get; }
 		public int AudioChannels => 1;
@@ -56,7 +56,7 @@ namespace OpenRA.Mods.OpenKrush.Assets.FileFormats
 			this.Width = stream.ReadUInt16();
 			this.Height = stream.ReadUInt16();
 			stream.ReadUInt32(); // 0
-			this.Frames = stream.ReadUInt16();
+			this.FrameCount = stream.ReadUInt16();
 			this.SampleBits = stream.ReadUInt16();
 			this.SampleRate = stream.ReadUInt16();
 			stream.ReadUInt32(); // 0
@@ -80,9 +80,9 @@ namespace OpenRA.Mods.OpenKrush.Assets.FileFormats
 
 			stream.ReadUInt32(); // Length
 
-			this.frames = new VbcFrame[this.Frames];
+			this.frames = new VbcFrame[this.FrameCount];
 
-			for (var i = 0; i < this.Frames; i++)
+			for (var i = 0; i < this.FrameCount; i++)
 				this.frames[i] = new(stream);
 
 			var audio = new MemoryStream();
@@ -92,26 +92,26 @@ namespace OpenRA.Mods.OpenKrush.Assets.FileFormats
 
 			this.AudioData = audio.ToArray();
 			var a = audio.Length / (this.SampleRate * 1 * (this.SampleBits / 8));
-			this.Framerate = (byte)(this.Frames / a);
+			this.Framerate = (byte)(this.FrameCount / a);
 
 			this.Reset();
 		}
 
 		public void AdvanceFrame()
 		{
-			this.CurrentFrame++;
+			this.CurrentFrameIndex++;
 			this.LoadFrame();
 		}
 
 		public void Reset()
 		{
-			this.CurrentFrame = 0;
+			this.CurrentFrameIndex = 0;
 			this.LoadFrame();
 		}
 
 		private void LoadFrame()
 		{
-			if (this.CurrentFrame == 0)
+			if (this.CurrentFrameIndex == 0)
 			{
 				this.currentFrame = new uint[this.Height / this.stride, this.Width];
 				this.palette = new uint[256];
@@ -119,7 +119,7 @@ namespace OpenRA.Mods.OpenKrush.Assets.FileFormats
 			}
 			else
 			{
-				var nextFrame = this.frames[this.CurrentFrame - 1];
+				var nextFrame = this.frames[this.CurrentFrameIndex - 1];
 
 				this.currentFrame = nextFrame.ApplyFrame(this.currentFrame, ref this.palette);
 
@@ -128,7 +128,7 @@ namespace OpenRA.Mods.OpenKrush.Assets.FileFormats
 			}
 
 			// TODO for better performance, we should get rid of this copying as soon we can use non-power-of-2 textures
-			this.FrameData = new uint[Exts.NextPowerOf2(this.Height), Exts.NextPowerOf2(this.Width)];
+			this.CurrentFrameData = new byte[Exts.NextPowerOf2(this.Height) * Exts.NextPowerOf2(this.Width) * 4];
 
 			for (var y = 0; y < this.Height / this.stride; y++)
 			for (var i = 0; i < this.stride; i++)
@@ -136,8 +136,8 @@ namespace OpenRA.Mods.OpenKrush.Assets.FileFormats
 				Buffer.BlockCopy(
 					this.currentFrame,
 					y * this.Width * 4,
-					this.FrameData,
-					(y * this.stride + i) * this.FrameData.GetLength(1) * 4,
+					this.CurrentFrameData,
+					(y * this.stride + i) * Exts.NextPowerOf2(this.Width) * 4,
 					this.Width * 4
 				);
 			}
