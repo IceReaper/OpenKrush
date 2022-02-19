@@ -68,7 +68,9 @@ namespace OpenRA.Mods.OpenKrush.InstallationFinder
 
 				foreach (var prefix in prefixes)
 				{
+#pragma warning disable CA1416
 					var installDir = Registry.GetValue($"{prefix}GOG.com\\Games\\{generation.GogAppId}", "path", null) as string;
+#pragma warning restore CA1416
 
 					if (installDir == null)
 						continue;
@@ -123,7 +125,9 @@ namespace OpenRA.Mods.OpenKrush.InstallationFinder
 
 					foreach (var prefix in prefixes)
 					{
+#pragma warning disable CA1416
 						if (Registry.GetValue($"{prefix}Valve\\Steam", "InstallPath", null) is string path)
+#pragma warning restore CA1416
 							candidatePaths.Add(path);
 					}
 
