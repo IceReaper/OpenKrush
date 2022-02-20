@@ -1,7 +1,7 @@
 survivors_aircraft_bomber:
 	DefaultVariant: # TODO remove .aud as default from engine!
 	Voices:
-		Create: surv.slv|25.wav, surv.slv|58.wav
-		Select: surv.slv|25.wav, surv.slv|58.wav
-		Action: surv.slv|25.wav, surv.slv|58.wav
-		Attack: surv.slv|25.wav, surv.slv|58.wav
+		Create: surv.slv|25.wav, surv.slv|58.wav, surv.slv|30.wav
+		Select: surv.slv|25.wav, surv.slv|58.wav, surv.slv|30.wav
+		Action: surv.slv|25.wav, surv.slv|58.wav, surv.slv|30.wav
+		Attack: surv.slv|25.wav, surv.slv|58.wav, surv.slv|30.wav
