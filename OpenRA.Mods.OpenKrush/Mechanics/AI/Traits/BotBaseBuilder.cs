@@ -52,6 +52,12 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 
 		private void HandleBuildings(IBot bot)
 		{
+			var resources = bot.Player.PlayerActor.Trait<PlayerResources>();
+
+			// Do not try to build anything if we have no money!
+			if (resources is { Cash: 0 })
+				return;
+			
 			var queue = this.queues.FirstOrDefault(q => q.Info.Type == "building");
 
 			if (queue == null)
