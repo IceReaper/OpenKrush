@@ -29,7 +29,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Orders
 
 		protected override IEnumerable<Order> InnerOrder(World world, CPos cell, MouseInput mi)
 		{
-			return this.queue.Actor.Owner.PlayerActor.Trait<PlayerResources>() is { Cash: 0 } ? Array.Empty<Order>() : base.InnerOrder(world, cell, mi);
+			return this.Queue.Actor.Owner.PlayerActor.Trait<PlayerResources>() is { Cash: 0 } ? Array.Empty<Order>() : base.InnerOrder(world, cell, mi);
 		}
 	}
 }

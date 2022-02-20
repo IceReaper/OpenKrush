@@ -23,7 +23,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians
 		{
 			if (target.IsDead || target.Disposed || !target.IsInWorld)
 				return false;
-			
+
 			var bunker = target.TraitOrDefault<TechBunker>();
 
 			if (bunker != null)

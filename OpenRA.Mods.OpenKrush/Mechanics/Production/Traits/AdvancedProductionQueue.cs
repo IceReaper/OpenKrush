@@ -82,5 +82,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Production.Traits
 
 			return researchable.IsResearched(TechLevelBuildableInfo.Prefix + prod.Name);
 		}
+
+		public override int GetBuildTime(ActorInfo unit, BuildableInfo bi)
+		{
+			return base.GetBuildTime(unit, bi) * (100 + this.actor.Owner.Handicap) / 100;
+		}
 	}
 }
