@@ -17,7 +17,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.Traits
 	using JetBrains.Annotations;
 	using LobbyOptions;
 	using OpenRA.Traits;
-	using System;
 
 	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("Saboteur mechanism, attach to the building.")]

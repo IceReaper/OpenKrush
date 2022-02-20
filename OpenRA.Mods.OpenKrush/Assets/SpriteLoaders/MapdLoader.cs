@@ -17,8 +17,6 @@ namespace OpenRA.Mods.OpenKrush.Assets.SpriteLoaders
 	using Graphics;
 	using JetBrains.Annotations;
 	using Primitives;
-	using System.IO;
-	using System.Linq;
 
 	[UsedImplicitly]
 	public class MapdLoader : ISpriteLoader

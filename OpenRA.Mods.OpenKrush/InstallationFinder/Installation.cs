@@ -13,9 +13,6 @@
 
 namespace OpenRA.Mods.OpenKrush.InstallationFinder
 {
-	using System.Collections.Generic;
-	using System.IO;
-
 	public class Installation
 	{
 		private readonly string id;

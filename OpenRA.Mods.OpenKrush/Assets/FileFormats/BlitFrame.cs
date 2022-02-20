@@ -13,9 +13,6 @@
 
 namespace OpenRA.Mods.OpenKrush.Assets.FileFormats
 {
-	using System.IO;
-	using System.Linq;
-
 	public class BlitFrame
 	{
 		public readonly int Width;

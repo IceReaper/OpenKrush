@@ -13,8 +13,6 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Researching
 {
-	using System.Collections.Generic;
-
 	public interface IProvidesResearchables
 	{
 		Dictionary<string, int> GetResearchables(Actor self);

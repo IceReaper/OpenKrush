@@ -17,7 +17,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Veterancy.Traits
 	using JetBrains.Annotations;
 	using OpenRA.Traits;
 	using Primitives;
-	using System;
 
 	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("Unit veterancy.")]

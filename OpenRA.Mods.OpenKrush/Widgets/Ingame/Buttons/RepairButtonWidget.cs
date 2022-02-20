@@ -16,7 +16,6 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 	using Common.Widgets;
 	using Mechanics.Technicians.Orders;
 	using Mechanics.Technicians.Traits;
-	using System.Linq;
 
 	public class RepairButtonWidget : SidebarButtonWidget
 	{

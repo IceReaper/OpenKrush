@@ -14,8 +14,6 @@
 namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 {
 	using Common.Traits;
-	using System.Collections.Generic;
-	using System.Linq;
 
 	public class ResearchableProductionInfo : ProductionInfo
 	{

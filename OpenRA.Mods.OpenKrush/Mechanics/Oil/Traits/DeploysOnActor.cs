@@ -18,9 +18,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 	using Common.Activities;
 	using JetBrains.Annotations;
 	using OpenRA.Traits;
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
 
 	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("Deploy when standing on top of a specific actor.")]

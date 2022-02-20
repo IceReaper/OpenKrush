@@ -19,7 +19,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Misc.Warheads
 	using GameRules;
 	using JetBrains.Annotations;
 	using OpenRA.Traits;
-	using System;
 
 	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	public class ShrapnelCreateEffectWarhead : CreateEffectWarhead

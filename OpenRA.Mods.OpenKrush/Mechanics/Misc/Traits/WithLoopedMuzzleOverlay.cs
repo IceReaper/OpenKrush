@@ -19,9 +19,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Misc.Traits
 	using JetBrains.Annotations;
 	using OpenRA.Traits;
 	using Primitives;
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
 
 	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("Renders the MuzzleSequence from the Armament trait.")]

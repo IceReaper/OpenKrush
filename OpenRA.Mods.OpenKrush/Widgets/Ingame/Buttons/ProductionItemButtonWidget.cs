@@ -18,7 +18,6 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 	using Common.Widgets;
 	using Graphics;
 	using Primitives;
-	using System;
 
 	public class ProductionItemButtonWidget : SidebarButtonWidget
 	{

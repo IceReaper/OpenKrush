@@ -15,7 +15,6 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 {
 	using Common.Widgets;
 	using Mechanics.Researching.Traits;
-	using System.Linq;
 	using Traits;
 
 	public class RadarButtonWidget : SidebarButtonWidget

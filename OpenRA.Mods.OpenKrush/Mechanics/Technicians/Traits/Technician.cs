@@ -20,7 +20,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Traits
 	using OpenRA.Traits;
 	using Orders;
 	using Primitives;
-	using System.Collections.Generic;
 
 	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("Technician mechanism, attach to the unit.")]

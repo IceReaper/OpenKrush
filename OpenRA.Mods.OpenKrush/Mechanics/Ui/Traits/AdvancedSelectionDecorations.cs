@@ -19,8 +19,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Ui.Traits
 	using OpenRA.Graphics;
 	using OpenRA.Traits;
 	using Primitives;
-	using System;
-	using System.Collections.Generic;
 
 	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("Healthbar box.")]

@@ -16,9 +16,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Activities
 	using Common.Activities;
 	using Common.Traits;
 	using OpenRA.Activities;
-	using OpenRA.Traits;
-	using System;
-	using System.Linq;
 	using Traits;
 
 	public class Docking : Activity, IDockingActivity

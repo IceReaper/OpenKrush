@@ -15,8 +15,6 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 {
 	using Common.Traits;
 	using Common.Widgets;
-	using System;
-	using System.Linq;
 
 	public class ProductionCategoryButtonWidget : SidebarButtonWidget
 	{

@@ -17,9 +17,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.DataFromAssets.Graphics
 	using Common.SpriteLoaders;
 	using JetBrains.Annotations;
 	using OpenRA.Graphics;
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
 
 	public class Offset
 	{

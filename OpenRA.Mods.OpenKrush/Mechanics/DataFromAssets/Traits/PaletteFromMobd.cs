@@ -20,9 +20,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.DataFromAssets.Traits
 	using OpenRA.Graphics;
 	using OpenRA.Traits;
 	using Primitives;
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
 
 	// TODO see PaletteFromEmbeddedSpritePalette
 	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]

@@ -16,7 +16,6 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 	using Common.Widgets;
 	using Mechanics.Construction.Orders;
 	using Mechanics.Construction.Traits;
-	using System.Linq;
 
 	public class SellButtonWidget : SidebarButtonWidget
 	{

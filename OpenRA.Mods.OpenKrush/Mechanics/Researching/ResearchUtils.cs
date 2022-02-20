@@ -13,7 +13,6 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Researching
 {
-	using System;
 	using Traits;
 
 	public static class ResearchUtils

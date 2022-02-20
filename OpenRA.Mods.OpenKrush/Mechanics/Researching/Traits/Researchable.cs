@@ -19,9 +19,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 	using JetBrains.Annotations;
 	using LobbyOptions;
 	using OpenRA.Traits;
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
 
 	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("Research mechanism, attach to the actor which has tech levels.")]

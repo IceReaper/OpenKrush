@@ -15,8 +15,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Orders
 {
 	using Common.Orders;
 	using Graphics;
-	using System.Collections.Generic;
-	using System.Linq;
 	using Traits;
 
 	public class SellOrderGenerator : OrderGenerator

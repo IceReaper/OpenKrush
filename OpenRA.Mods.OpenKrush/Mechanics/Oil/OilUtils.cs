@@ -14,8 +14,6 @@
 namespace OpenRA.Mods.OpenKrush.Mechanics.Oil
 {
 	using Docking.Traits;
-	using System;
-	using System.Linq;
 	using Traits;
 
 	public static class OilUtils

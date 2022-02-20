@@ -13,9 +13,6 @@
 
 namespace OpenRA.Mods.OpenKrush.Assets.FileFormats
 {
-	using System;
-	using System.IO;
-
 	public class Son : ISoundFormat
 	{
 		private readonly byte[] data;

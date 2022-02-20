@@ -15,7 +15,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.LobbyOptions
 {
 	using JetBrains.Annotations;
 	using OpenRA.Traits;
-	using System.Collections.Generic;
 	using System.Collections.ObjectModel;
 	using Traits;
 

@@ -16,7 +16,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 	using Docking.Traits;
 	using JetBrains.Annotations;
 	using OpenRA.Traits;
-	using System.Linq;
 
 	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("Drillrig logic.")]

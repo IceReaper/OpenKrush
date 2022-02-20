@@ -16,7 +16,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Veterancy.Traits
 	using Common.Traits;
 	using JetBrains.Annotations;
 	using OpenRA.Traits;
-	using System;
 
 	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("This actor has a different voice for each veterancy level.")]

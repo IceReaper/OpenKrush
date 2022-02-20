@@ -18,7 +18,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 	using LobbyOptions;
 	using OpenRA.Traits;
 	using Primitives;
-	using System;
 
 	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("Oilpatch implementation.")]

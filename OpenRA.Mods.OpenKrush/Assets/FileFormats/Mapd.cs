@@ -13,11 +13,6 @@
 
 namespace OpenRA.Mods.OpenKrush.Assets.FileFormats
 {
-	using System;
-	using System.Collections.Generic;
-	using System.IO;
-	using System.Linq;
-
 	public class Mapd
 	{
 		public readonly MapdLayer[] Layers;

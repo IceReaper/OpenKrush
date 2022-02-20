@@ -19,7 +19,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 	using OpenRA.Traits;
 	using Researching;
 	using Researching.Traits;
-	using System.Collections.Generic;
 
 	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("PowerStation implementation.")]

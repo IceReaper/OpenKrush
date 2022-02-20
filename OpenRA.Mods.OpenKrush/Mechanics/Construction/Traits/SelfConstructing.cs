@@ -17,9 +17,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits
 	using Common.Traits.Render;
 	using JetBrains.Annotations;
 	using OpenRA.Traits;
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
 
 	public enum SpawnType
 	{

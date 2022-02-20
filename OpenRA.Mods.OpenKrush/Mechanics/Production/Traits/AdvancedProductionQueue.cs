@@ -16,8 +16,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Production.Traits
 	using Common.Traits;
 	using JetBrains.Annotations;
 	using Researching.Traits;
-	using System.Collections.Generic;
-	using System.Linq;
 
 	[UsedImplicitly]
 	[Desc("This version of ParallelProductionQueue references prerequisites and techlevel to itself.")]

@@ -17,8 +17,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Misc.Projectiles
 	using Graphics;
 	using JetBrains.Annotations;
 	using OpenRA.Traits;
-	using System;
-	using System.Collections.Generic;
 
 	[UsedImplicitly]
 	[Desc("Explodes on the attacker position instead of the target position.")]

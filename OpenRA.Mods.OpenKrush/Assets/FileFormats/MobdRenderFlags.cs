@@ -13,9 +13,6 @@
 
 namespace OpenRA.Mods.OpenKrush.Assets.FileFormats
 {
-	using System.IO;
-	using System.Linq;
-
 	public class MobdRenderFlags
 	{
 		public readonly MobdImage Image;

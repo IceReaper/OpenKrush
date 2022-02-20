@@ -21,8 +21,6 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 	using Mechanics.Construction.Traits;
 	using OpenRA.Widgets;
 	using Primitives;
-	using System;
-	using System.Linq;
 
 	// TODO implement support for the colored bar with "jump-to-factory" (only if producer is not the player!)
 	public class ProductionPaletteColumnWidget : Widget

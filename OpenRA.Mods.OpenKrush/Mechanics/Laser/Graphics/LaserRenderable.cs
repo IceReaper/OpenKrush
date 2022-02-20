@@ -15,7 +15,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Laser.Graphics
 {
 	using OpenRA.Graphics;
 	using Primitives;
-	using System.Linq;
 
 	public readonly struct LaserRenderable : IRenderable, IFinalizedRenderable
 	{

@@ -15,10 +15,6 @@ namespace OpenRA.Mods.OpenKrush.Assets.FileFormats
 {
 	using OpenRA.FileSystem;
 	using Primitives;
-	using System;
-	using System.Collections.Generic;
-	using System.IO;
-	using System.Linq;
 
 	// Assets are using container offsets, passing container stream wrapped in a dispose protection to avoid assets disposing the container.  
 	public class NonDisposingSegmentStream : SegmentStream

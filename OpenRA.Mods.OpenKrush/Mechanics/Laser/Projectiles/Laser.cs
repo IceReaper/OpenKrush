@@ -19,8 +19,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Laser.Projectiles
 	using OpenRA.Graphics;
 	using Primitives;
 	using Support;
-	using System;
-	using System.Collections.Generic;
 	using System.Numerics;
 	using Traits;
 

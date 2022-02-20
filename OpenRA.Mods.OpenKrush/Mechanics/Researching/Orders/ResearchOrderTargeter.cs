@@ -15,7 +15,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Orders
 {
 	using Common.Orders;
 	using OpenRA.Traits;
-	using System;
 
 	public class ResearchOrderTargeter : UnitOrderTargeter
 	{

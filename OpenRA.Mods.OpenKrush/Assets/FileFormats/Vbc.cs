@@ -13,9 +13,6 @@
 
 namespace OpenRA.Mods.OpenKrush.Assets.FileFormats
 {
-	using System;
-	using System.IO;
-	using System.Linq;
 	using Video;
 
 	public class Vbc : IVideo

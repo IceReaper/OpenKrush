@@ -20,7 +20,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Repairbays.Traits
 	using Primitives;
 	using Researching;
 	using Researching.Traits;
-	using System.Collections.Generic;
 
 	// TODO implement cost per repair
 	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]

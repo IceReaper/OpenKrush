@@ -15,7 +15,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AttackNotifications.Traits
 {
 	using JetBrains.Annotations;
 	using OpenRA.Traits;
-	using System;
 	using Veterancy.Traits;
 
 	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]

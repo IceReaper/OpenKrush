@@ -19,7 +19,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
 	using JetBrains.Annotations;
 	using OpenRA.Activities;
 	using OpenRA.Traits;
-	using System;
 
 	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("Tanker implementation.")]

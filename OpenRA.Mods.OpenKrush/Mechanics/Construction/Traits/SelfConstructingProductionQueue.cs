@@ -17,9 +17,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits
 	using JetBrains.Annotations;
 	using Production.Traits;
 	using Researching.Traits;
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
 
 	[UsedImplicitly]
 	[Desc("This special production queue implements a fake AllQueued, used to instantly place self constructing buildings.")]

@@ -15,8 +15,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Orders
 {
 	using OpenRA.Orders;
 	using OpenRA.Traits;
-	using System.Collections.Generic;
-	using System.Linq;
 	using Traits;
 
 	public class TechnicianEnterOrderGenerator : UnitOrderGenerator

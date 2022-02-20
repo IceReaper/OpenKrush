@@ -13,8 +13,6 @@
 
 namespace OpenRA.Mods.OpenKrush.Assets
 {
-	using System;
-	using System.IO;
 	using System.Text;
 
 	public static class Decompressor

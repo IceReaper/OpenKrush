@@ -17,8 +17,6 @@ namespace OpenRA.Mods.OpenKrush.Widgets
 	using GameRules;
 	using JetBrains.Annotations;
 	using OpenRA.Widgets;
-	using System;
-	using System.Linq;
 
 	[UsedImplicitly]
 	public class IntroLogic : ChromeLogic

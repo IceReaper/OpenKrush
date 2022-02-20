@@ -17,7 +17,6 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 	using Graphics;
 	using OpenRA.Widgets;
 	using Primitives;
-	using System;
 
 	public class TooltipWidget : Widget
 	{

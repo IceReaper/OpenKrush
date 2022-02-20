@@ -17,7 +17,6 @@ namespace OpenRA.Mods.OpenKrush.LoadScreens
 	using Graphics;
 	using InstallationFinder;
 	using JetBrains.Annotations;
-	using System.Collections.Generic;
 
 	[UsedImplicitly]
 	public class LoadScreen : BlankLoadScreen

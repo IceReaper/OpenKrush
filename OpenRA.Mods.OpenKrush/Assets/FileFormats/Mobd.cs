@@ -13,10 +13,6 @@
 
 namespace OpenRA.Mods.OpenKrush.Assets.FileFormats
 {
-	using System;
-	using System.Collections.Generic;
-	using System.IO;
-
 	public class Mobd
 	{
 		public readonly MobdAnimation[] RotationalAnimations;

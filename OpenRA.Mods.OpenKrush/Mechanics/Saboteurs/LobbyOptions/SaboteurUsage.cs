@@ -15,10 +15,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.LobbyOptions
 {
 	using JetBrains.Annotations;
 	using OpenRA.Traits;
-	using System;
-	using System.Collections.Generic;
 	using System.Collections.ObjectModel;
-	using System.Linq;
 
 	public enum SaboteurUsageType
 	{

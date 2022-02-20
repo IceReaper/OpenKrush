@@ -20,8 +20,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 	using Researching;
 	using Researching.Orders;
 	using Researching.Traits;
-	using System;
-	using System.Linq;
 
 	// TODO replace this completely when AI is modular!
 	[UsedImplicitly]

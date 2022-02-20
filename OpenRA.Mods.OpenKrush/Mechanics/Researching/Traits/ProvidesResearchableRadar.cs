@@ -15,7 +15,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 {
 	using Common.Traits;
 	using JetBrains.Annotations;
-	using System.Collections.Generic;
 
 	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("This actor enables the radar minimap.")]

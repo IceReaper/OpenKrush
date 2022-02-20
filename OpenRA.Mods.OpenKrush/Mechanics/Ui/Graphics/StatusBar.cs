@@ -20,7 +20,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Ui.Graphics
 	using Primitives;
 	using Researching.Traits;
 	using Saboteurs.Traits;
-	using System;
 	using Traits;
 	using Veterancy.Traits;
 

@@ -13,11 +13,6 @@
 
 namespace OpenRA.Mods.OpenKrush.InstallationFinder
 {
-	using System;
-	using System.Collections.Generic;
-	using System.IO;
-	using System.Linq;
-
 	public class Generation1 : IGeneration
 	{
 		public int SteamAppId => 1292170;

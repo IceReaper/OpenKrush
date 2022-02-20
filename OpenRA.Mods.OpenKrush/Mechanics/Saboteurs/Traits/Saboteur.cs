@@ -19,7 +19,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.Traits
 	using OpenRA.Traits;
 	using Orders;
 	using Primitives;
-	using System.Collections.Generic;
 
 	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("Saboteur mechanism, attach to the unit.")]

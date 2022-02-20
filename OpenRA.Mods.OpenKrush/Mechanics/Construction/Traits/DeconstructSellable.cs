@@ -18,7 +18,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits
 	using JetBrains.Annotations;
 	using OpenRA.Traits;
 	using Orders;
-	using System;
 
 	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	public class DeconstructSellableInfo : ConditionalTraitInfo, Requires<WithSpriteBodyInfo>

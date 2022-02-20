@@ -18,7 +18,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.DataFromAssets.Traits
 	using Graphics;
 	using JetBrains.Annotations;
 	using OpenRA.Traits;
-	using System.Linq;
 
 	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("Use asset provided armament offset.")]

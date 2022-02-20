@@ -15,7 +15,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Misc.Traits
 {
 	using Common.Traits;
 	using JetBrains.Annotations;
-	using System.Linq;
 
 	[UsedImplicitly]
 	[Desc("This special airstrike version makes bombers fly a base-to-target route.")]

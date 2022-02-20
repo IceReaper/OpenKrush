@@ -18,8 +18,6 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 	using Graphics;
 	using OpenRA.Widgets;
 	using Primitives;
-	using System.Collections.Generic;
-	using System.Linq;
 	using Traits;
 
 	public class RadarWidget : Widget

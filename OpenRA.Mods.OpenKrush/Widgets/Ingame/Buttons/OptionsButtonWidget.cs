@@ -16,7 +16,6 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 	using Common.Widgets;
 	using Common.Widgets.Logic;
 	using OpenRA.Widgets;
-	using System.Linq;
 
 	public class OptionsButtonWidget : SidebarButtonWidget
 	{

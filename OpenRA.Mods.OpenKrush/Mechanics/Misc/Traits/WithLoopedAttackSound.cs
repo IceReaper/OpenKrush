@@ -16,7 +16,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Misc.Traits
 	using Common.Traits;
 	using JetBrains.Annotations;
 	using OpenRA.Traits;
-	using System;
 
 	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("Play together with an attack.")]

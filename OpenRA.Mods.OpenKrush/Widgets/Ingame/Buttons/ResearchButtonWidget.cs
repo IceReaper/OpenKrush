@@ -18,7 +18,6 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
 	using Mechanics.Researching.Orders;
 	using Mechanics.Researching.Traits;
 	using Primitives;
-	using System.Linq;
 	using Traits;
 
 	public class ResearchButtonWidget : SidebarButtonWidget

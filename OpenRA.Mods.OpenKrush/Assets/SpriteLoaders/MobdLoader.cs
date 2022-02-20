@@ -19,9 +19,6 @@ namespace OpenRA.Mods.OpenKrush.Assets.SpriteLoaders
 	using JetBrains.Annotations;
 	using Mechanics.DataFromAssets.Graphics;
 	using Primitives;
-	using System.Collections.Generic;
-	using System.IO;
-	using System.Linq;
 
 	[UsedImplicitly]
 	public class MobdLoader : ISpriteLoader

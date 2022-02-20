@@ -17,7 +17,6 @@ namespace OpenRA.Mods.OpenKrush.Widgets
 	using Common.Widgets;
 	using Graphics;
 	using Primitives;
-	using System;
 
 	public class VbcPlayerWidget : ColorBlockWidget
 	{

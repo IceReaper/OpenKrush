@@ -19,8 +19,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits
 	using OpenRA.Activities;
 	using OpenRA.Traits;
 	using Orders;
-	using System.Collections.Generic;
-	using System.Linq;
 
 	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	public class DockableInfo : TraitInfo

@@ -15,7 +15,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Activities
 {
 	using Common.Orders;
 	using OpenRA.Traits;
-	using System.Linq;
 
 	public class DeployOnActorOrderTargeter : UnitOrderTargeter
 	{

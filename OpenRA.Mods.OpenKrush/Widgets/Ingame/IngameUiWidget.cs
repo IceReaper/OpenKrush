@@ -21,7 +21,6 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 	using Mechanics.Oil.Activities;
 	using Mechanics.Oil.Traits;
 	using OpenRA.Widgets;
-	using System.Linq;
 
 	[UsedImplicitly]
 

@@ -15,8 +15,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.LobbyOptions
 {
 	using JetBrains.Annotations;
 	using OpenRA.Traits;
-	using System;
-	using System.Collections.Generic;
 	using System.Collections.ObjectModel;
 	using Traits;
 

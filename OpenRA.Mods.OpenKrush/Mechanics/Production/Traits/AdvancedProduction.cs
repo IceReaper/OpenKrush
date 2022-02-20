@@ -16,7 +16,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Production.Traits
 	using Common.Traits;
 	using JetBrains.Annotations;
 	using Researching.Traits;
-	using System;
 
 	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	public class AdvancedProductionInfo : ResearchableProductionInfo

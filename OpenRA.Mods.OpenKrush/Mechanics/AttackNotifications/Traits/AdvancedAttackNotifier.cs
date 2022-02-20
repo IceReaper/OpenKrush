@@ -17,7 +17,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AttackNotifications.Traits
 	using JetBrains.Annotations;
 	using OpenRA.Traits;
 	using Primitives;
-	using System.Collections.Generic;
 
 	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("Attack notifier which supports per actor notifications.")]

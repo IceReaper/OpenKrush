@@ -18,7 +18,6 @@ namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
 	using Graphics;
 	using OpenRA.Widgets;
 	using Primitives;
-	using System.Linq;
 
 	public sealed class SidebarWidget : Widget
 	{

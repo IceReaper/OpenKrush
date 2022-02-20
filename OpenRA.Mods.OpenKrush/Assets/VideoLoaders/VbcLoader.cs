@@ -15,7 +15,6 @@ namespace OpenRA.Mods.OpenKrush.Assets.VideoLoaders
 {
 	using FileFormats;
 	using JetBrains.Annotations;
-	using System.IO;
 	using Video;
 
 	[UsedImplicitly]

@@ -15,7 +15,6 @@ namespace OpenRA.Mods.OpenKrush.Assets.AudioLoaders
 {
 	using FileFormats;
 	using JetBrains.Annotations;
-	using System.IO;
 
 	[UsedImplicitly]
 	public class SounLoader : ISoundLoader

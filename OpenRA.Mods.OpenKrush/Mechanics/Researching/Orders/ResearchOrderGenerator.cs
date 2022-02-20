@@ -15,9 +15,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Orders
 {
 	using OpenRA.Orders;
 	using OpenRA.Traits;
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
 	using Traits;
 
 	public class ResearchOrderGenerator : UnitOrderGenerator

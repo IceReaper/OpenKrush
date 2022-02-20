@@ -14,8 +14,6 @@
 namespace OpenRA.Mods.OpenKrush.Assets.FileFormats
 {
 	using Primitives;
-	using System;
-	using System.IO;
 
 	public class VbcFrame
 	{

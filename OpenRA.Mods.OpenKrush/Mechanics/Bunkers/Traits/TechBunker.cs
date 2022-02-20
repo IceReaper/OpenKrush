@@ -22,8 +22,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 	using OpenRA.Traits;
 	using Primitives;
 	using Production.Traits;
-	using System;
-	using System.Linq;
 
 	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("Tech bunker mechanism.")]

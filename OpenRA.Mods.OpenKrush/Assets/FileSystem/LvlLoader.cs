@@ -17,7 +17,6 @@ namespace OpenRA.Mods.OpenKrush.Assets.FileSystem
 	using JetBrains.Annotations;
 	using OpenRA.FileSystem;
 	using Primitives;
-	using System.IO;
 
 	[UsedImplicitly]
 	public class LvlPackageLoader : IPackageLoader

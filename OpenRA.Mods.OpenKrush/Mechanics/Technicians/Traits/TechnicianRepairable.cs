@@ -18,8 +18,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Traits
 	using Graphics;
 	using JetBrains.Annotations;
 	using OpenRA.Traits;
-	using System.Collections.Generic;
-	using System.Linq;
 
 	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("Technician mechanism, attach to the building.")]

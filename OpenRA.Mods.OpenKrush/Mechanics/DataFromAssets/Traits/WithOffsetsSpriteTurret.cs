@@ -19,9 +19,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.DataFromAssets.Traits
 	using Graphics;
 	using JetBrains.Annotations;
 	using OpenRA.Graphics;
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
 
 	[UsedImplicitly]
 	[Desc("Use asset provided turret offset.")]

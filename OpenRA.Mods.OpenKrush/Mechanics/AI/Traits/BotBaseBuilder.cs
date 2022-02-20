@@ -17,9 +17,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 	using Construction.Traits;
 	using JetBrains.Annotations;
 	using OpenRA.Traits;
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
 
 	[UsedImplicitly]
 	public class BotBaseBuilderInfo : TraitInfo

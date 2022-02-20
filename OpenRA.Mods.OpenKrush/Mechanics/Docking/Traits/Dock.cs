@@ -17,9 +17,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits
 	using Common.Traits;
 	using JetBrains.Annotations;
 	using OpenRA.Traits;
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
 
 	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	public class DockInfo : ConditionalTraitInfo, Requires<DockActionInfo>

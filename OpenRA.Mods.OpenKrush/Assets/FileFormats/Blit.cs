@@ -13,9 +13,6 @@
 
 namespace OpenRA.Mods.OpenKrush.Assets.FileFormats
 {
-	using System.IO;
-	using System.Linq;
-
 	public class Blit
 	{
 		public readonly BlitFrame[] Frames;

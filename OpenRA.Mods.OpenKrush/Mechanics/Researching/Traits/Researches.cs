@@ -18,8 +18,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 	using LobbyOptions;
 	using OpenRA.Traits;
 	using Orders;
-	using System;
-	using System.Collections.Generic;
 
 	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	[Desc("Research mechanism, attach to the actor which can research.")]

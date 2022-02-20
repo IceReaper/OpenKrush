@@ -13,8 +13,6 @@
 
 namespace OpenRA.Mods.OpenKrush.Assets.FileFormats
 {
-	using System.IO;
-
 	public class MobdPoint
 	{
 		public readonly int Id;

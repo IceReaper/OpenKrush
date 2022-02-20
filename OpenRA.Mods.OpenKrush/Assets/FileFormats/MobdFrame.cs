@@ -13,9 +13,6 @@
 
 namespace OpenRA.Mods.OpenKrush.Assets.FileFormats
 {
-	using System.Collections.Generic;
-	using System.IO;
-
 	public class MobdFrame
 	{
 		public readonly uint OffsetX;
