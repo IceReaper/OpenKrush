@@ -1,8 +1,9 @@
 Metadata:
-	Title: OpenKrush Generation 1
+	Title: OpenKrush
 	Version: {DEV_VERSION}
 	Website: https://github.com/IceReaper/OpenKrush/
 	WebIcon32: https://raw.githubusercontent.com/IceReaper/OpenKrush/master/packaging/artwork/icon_32x32.png
+	WindowTitle: OpenKrush
 
 PackageFormats: LvlPackage
 
@@ -194,11 +195,17 @@ SpriteSequenceFormat: OffsetsSpriteSequence
 ModelSequenceFormat: PlaceholderModelSequence
 
 AssetBrowser:
-	SupportedExtensions: .wav, .mobd, .mapd, .blit, .soun, .son, .vbc
+	SpriteExtensions: .mobd, .mapd, .blit
+	AudioExtensions: .wav, .soun, .son
+	VideoExtensions: .vbc
 
 GameSpeeds:
 	DefaultSpeed: default
 	Speeds:
+		slowest:
+			Name: Slowest
+			Timestep: 80
+			OrderLatency: 2
 		slower:
 			Name: Slower
 			Timestep: 50
@@ -219,3 +226,6 @@ GameSpeeds:
 			Name: Fastest
 			Timestep: 20
 			OrderLatency: 6
+
+DiscordService:
+	ApplicationId: 944902326177644544
