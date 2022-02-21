@@ -253,69 +253,56 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 
 			var buildingInfo = actorInfo.TraitInfoOrDefault<BuildingInfo>();
 
-			var cells = sources.SelectMany(building => world.Map.FindTilesInAnnulus(building.Location, 0, maxRange + 5))
+			var cells = sources.SelectMany(building => world.Map.FindTilesInAnnulus(building.Location, 0, maxRange + buildingInfo.Dimensions.Length))
 				.Distinct()
 				.Where(cell => world.CanPlaceBuilding(cell, actorInfo, buildingInfo, null))
 				.ToArray();
 
+			var targets = new List<CPos>();
+
 			switch (type)
 			{
-				// TODO this should be used to place power stations.
-				case PlacementType.NearOil:
-
 				case PlacementType.NearBase:
-				{
-					var baseLocation = (sources.FirstOrDefault(b => this.bases.Contains(b.Info.Name)) ?? sources.FirstOrDefault())?.Location;
+					targets.AddRange(world.Actors.Where(a => this.bases.Contains(a.Info.Name) && a.Owner == player).Select(e => e.Location));
 
-					if (baseLocation == null)
-						break;
-
-					return cells.Where(
-							cell =>
-							{
-								for (var y = -1; y <= 1; y++)
-								for (var x = -1; x <= 1; x++)
-								{
-									if (!cells.Contains(cell + new CVec(x, y)))
-										return false;
-								}
-
-								return true;
-							}
-						)
-						.OrderBy(c => (c - baseLocation.Value).LengthSquared)
-						.FirstOrDefault();
-				}
+					break;
 
 				case PlacementType.NearEnemy:
-				{
-					var baseLocation = (sources.FirstOrDefault(b => this.bases.Contains(b.Info.Name)) ?? sources.FirstOrDefault())?.Location;
+					targets.AddRange(world.Actors.Where(a => this.bases.Contains(a.Info.Name) && a.Owner != player).Select(e => e.Location));
 
-					if (baseLocation == null)
-						break;
+					break;
 
-					return cells.Where(
-							cell =>
-							{
-								for (var y = -1; y <= 1; y++)
-								for (var x = -1; x <= 1; x++)
-								{
-									if (!cells.Contains(cell + new CVec(x, y)))
-										return false;
-								}
-
-								return true;
-							}
-						)
-						.OrderByDescending(c => (c - baseLocation.Value).LengthSquared)
-						.FirstOrDefault();
-				}
+				case PlacementType.NearOil:
+					// TODO this should be used to place power stations.
+					break;
 
 				default:
-					throw new ArgumentOutOfRangeException(Enum.GetName(type));
+					throw new ArgumentOutOfRangeException(nameof(type), type, null);
 			}
 
-			return CPos.Zero;
+			if (targets.Count == 0)
+				targets.AddRange(sources.Select(source => source.Location));
+
+			if (targets.Count == 0)
+				return null;
+
+			var target = targets.Random(world.LocalRandom);
+
+			return cells.Where(
+					cell =>
+					{
+						for (var y = -1; y <= 1; y++)
+						for (var x = -1; x <= 1; x++)
+						{
+							if (!cells.Contains(cell + new CVec(x, y)))
+								return false;
+						}
+
+						return true;
+					}
+				)
+				.OrderBy(c => (c - target).LengthSquared)
+				.FirstOrDefault();
 		}
 	}
 }
