@@ -168,7 +168,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 			// If the whole base is set up, also make sure we have at last one repairer.
 			var repairer = buildables.FirstOrDefault(buildable => this.repairers.Contains(buildable.Name));
 
-			if (repairer == null)
+			if (repairer == null || buildings.Any(building => building.Info == repairer))
 				return;
 
 			this.PlaceConstruction(bot, constructedBuildings, repairer, PlacementType.NearOil, queue);
