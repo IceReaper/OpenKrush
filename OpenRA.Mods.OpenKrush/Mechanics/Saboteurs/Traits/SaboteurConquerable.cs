@@ -69,10 +69,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.Traits
 				Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", this.Info.NotificationConquered, self.Owner.Faction.InternalName);
 
 				if (this.usage.Usage == SaboteurUsageType.Conquer || self.Owner.RelationshipWith(target.Owner) == PlayerRelationship.Neutral)
-				{
-					// TODO clear production queues!
 					self.ChangeOwner(target.Owner);
-				}
 				else
 				{
 					var worth = self.Info.TraitInfoOrDefault<ValuedInfo>()?.Cost ?? 0;

@@ -129,9 +129,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 		{
 			var buildingInfo = actorInfo.TraitInfoOrDefault<BuildingInfo>();
 
-			// TODO we should in general always make sure we have 2 tiles space between buildings!
-			var cells = buildings.SelectMany(building => world.Map.FindTilesInAnnulus(building.Location, 0, maxRange))
-				.Where(cell => world.CanPlaceBuilding(cell, actorInfo, buildingInfo, null));
+			var cells = buildings.SelectMany(building => world.Map.FindTilesInAnnulus(building.Location, 0, maxRange + 5))
+				.Distinct()
+				.Where(cell => world.CanPlaceBuilding(cell, actorInfo, buildingInfo, null))
+				.ToArray();
 
 			switch (type)
 			{
@@ -142,7 +143,21 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 					if (baseLocation == null)
 						break;
 
-					return cells.OrderBy(c => (c - baseLocation.Value).LengthSquared).FirstOrDefault();
+					return cells.Where(
+							cell =>
+							{
+								for (var y = -1; y <= 1; y++)
+								for (var x = -1; x <= 1; x++)
+								{
+									if (!cells.Contains(cell + new CVec(x, y)))
+										return false;
+								}
+
+								return true;
+							}
+						)
+						.OrderBy(c => (c - baseLocation.Value).LengthSquared)
+						.FirstOrDefault();
 				}
 
 				case PlacementType.NearOil:
