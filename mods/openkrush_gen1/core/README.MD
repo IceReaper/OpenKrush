@@ -3,10 +3,10 @@ Author: Beam Software
 Source: Unused beta asset.
 Description: Custom building spritesheet.
 
-**cursor_enter.png**
+**cursors_custom.png**
 Author: Dzierzan
-Source: Drawn in Aseprite
-Description: Custom cursor for entering something.
+Source: Aseprite tool.
+Description: Custom cursors.
 
 **beacon.wav**
 Author: Beam Software, Dzierzan
