@@ -7,7 +7,7 @@ Player:
 		Condition: enable-ai
 		Bots: computer
 	BotBaseBuilder:
-		#RequiresCondition: enable-ai
+		RequiresCondition: enable-ai
 	# TODO refactor stuff below!
 	SupportPowerBotModule@placeholder:
 		RequiresCondition: enable-ai

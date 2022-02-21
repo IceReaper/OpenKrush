@@ -19,27 +19,30 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 	using OpenRA.Traits;
 
 	[UsedImplicitly]
-	public class BotBaseBuilderInfo : TraitInfo
+	public class BotBaseBuilderInfo : ConditionalTraitInfo
 	{
 		public override object Create(ActorInitializer init)
 		{
-			return new BotBaseBuilder(init.World);
+			return new BotBaseBuilder(init.World, this);
 		}
 	}
 
-	public class BotBaseBuilder : IBotTick, INotifyCreated
+	public class BotBaseBuilder : ConditionalTrait<BotBaseBuilderInfo>, IBotTick, INotifyCreated
 	{
-		public readonly IEnumerable<string> Bases;
+		private readonly IEnumerable<string> bases;
 		private ProductionQueue[] queues = Array.Empty<ProductionQueue>();
+		private PlayerResources? resources;
 
-		public BotBaseBuilder(World world)
+		public BotBaseBuilder(World world, BotBaseBuilderInfo info)
+			: base(info)
 		{
-			this.Bases = world.Map.Rules.Actors.Where(a => a.Value.HasTraitInfo<BaseBuildingInfo>()).Select(e => e.Key);
+			this.bases = world.Map.Rules.Actors.Where(a => a.Value.HasTraitInfo<BaseBuildingInfo>()).Select(e => e.Key);
 		}
 
 		void INotifyCreated.Created(Actor self)
 		{
-			this.queues = self.TraitsImplementing<ProductionQueue>().ToArray();
+			this.queues = self.Owner.PlayerActor.TraitsImplementing<ProductionQueue>().ToArray();
+			this.resources = self.Owner.PlayerActor.TraitsImplementing<PlayerResources>().FirstOrDefault();
 		}
 
 		void IBotTick.BotTick(IBot bot)
@@ -52,10 +55,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 
 		private void HandleBuildings(IBot bot)
 		{
-			var resources = bot.Player.PlayerActor.Trait<PlayerResources>();
-
-			// Do not try to build anything if we have no money!
-			if (resources is { Cash: 0 })
+			if (this.resources == null || this.resources.Cash == 0)
 				return;
 
 			var queue = this.queues.FirstOrDefault(q => q.Info.Type == "building");
@@ -81,9 +81,9 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 			var buildables = queue.BuildableItems().ToArray();
 
 			// If we do not have a base, and we can place a base, we ALWAYS place it, regardless of anything else being build!
-			if (!buildings.Any(building => this.Bases.Contains(building.Info.Name)))
+			if (!buildings.Any(building => this.bases.Contains(building.Info.Name)))
 			{
-				var baseActorInfo = buildables.FirstOrDefault(buildable => this.Bases.Contains(buildable.Name));
+				var baseActorInfo = buildables.FirstOrDefault(buildable => this.bases.Contains(buildable.Name));
 
 				if (baseActorInfo != null)
 				{
@@ -98,7 +98,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 				return;
 
 			// TODO continue to build base in order with priority!
-			var randomBuilding = buildables.Where(b => !this.Bases.Contains(b.Name)).RandomOrDefault(bot.Player.World.SharedRandom);
+			var randomBuilding = buildables.Where(b => !this.bases.Contains(b.Name)).RandomOrDefault(bot.Player.World.LocalRandom);
 
 			if (randomBuilding != null)
 				this.PlaceConstruction(bot, constructedBuildings, randomBuilding, PlacementType.NearBase, queue);
@@ -106,7 +106,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 
 		private void PlaceConstruction(IBot bot, Actor[] buildings, ActorInfo actorInfo, PlacementType type, ProductionQueue queue)
 		{
-			var placeLocation = this.ChooseBuildSource(
+			var placeLocation = this.ChooseBuildTarget(
 				bot.Player.World,
 				actorInfo.TraitInfoOrDefault<RequiresBuildableAreaInfo>()?.Adjacent ?? 0,
 				buildings,
@@ -120,12 +120,12 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 			bot.QueueOrder(
 				new("PlaceBuilding", bot.Player.PlayerActor, Target.FromCell(bot.Player.World, placeLocation.Value), false)
 				{
-					TargetString = actorInfo.Name, ExtraData = queue.Actor.ActorID
+					TargetString = actorInfo.Name, ExtraData = queue.Actor.ActorID, SuppressVisualFeedback = true
 				}
 			);
 		}
 
-		private CPos? ChooseBuildSource(World world, int maxRange, Actor[] buildings, ActorInfo actorInfo, PlacementType type)
+		private CPos? ChooseBuildTarget(World world, int maxRange, Actor[] buildings, ActorInfo actorInfo, PlacementType type)
 		{
 			var buildingInfo = actorInfo.TraitInfoOrDefault<BuildingInfo>();
 
@@ -137,7 +137,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 			{
 				case PlacementType.NearBase:
 				{
-					var baseLocation = (buildings.FirstOrDefault(b => this.Bases.Contains(b.Info.Name)) ?? buildings.FirstOrDefault())?.Location;
+					var baseLocation = (buildings.FirstOrDefault(b => this.bases.Contains(b.Info.Name)) ?? buildings.FirstOrDefault())?.Location;
 
 					if (baseLocation == null)
 						break;
