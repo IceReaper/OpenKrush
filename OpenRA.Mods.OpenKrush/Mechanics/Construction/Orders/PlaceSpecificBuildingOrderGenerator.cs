@@ -29,12 +29,12 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Orders
 
 		protected override IEnumerable<Order> InnerOrder(World world, CPos cell, MouseInput mi)
 		{
-			return this.Queue.Actor.Owner.PlayerActor.Trait<PlayerResources>() is { Cash: 0 } ? Array.Empty<Order>() : base.InnerOrder(world, cell, mi);
+			return this.Queue.Actor.Owner.PlayerActor.TraitOrDefault<PlayerResources>() is { Cash: 0 } ? Array.Empty<Order>() : base.InnerOrder(world, cell, mi);
 		}
 
 		public override string? GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)
 		{
-			return this.Queue.Actor.Owner.PlayerActor.Trait<PlayerResources>() is { Cash: 0 } ? "no-oil" : null;
+			return this.Queue.Actor.Owner.PlayerActor.TraitOrDefault<PlayerResources>() is { Cash: 0 } ? "no-oil" : null;
 		}
 	}
 }
