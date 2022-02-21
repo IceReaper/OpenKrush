@@ -27,7 +27,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 		}
 	}
 
-	public class BotBaseBuilder : ConditionalTrait<BotBaseBuilderInfo>, IBotTick, INotifyCreated
+	public class BotBaseBuilder : ConditionalTrait<BotBaseBuilderInfo>, IBotTick
 	{
 		private readonly IEnumerable<string> bases;
 		private ProductionQueue[] queues = Array.Empty<ProductionQueue>();
@@ -39,7 +39,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 			this.bases = world.Map.Rules.Actors.Where(a => a.Value.HasTraitInfo<BaseBuildingInfo>()).Select(e => e.Key);
 		}
 
-		void INotifyCreated.Created(Actor self)
+		protected override void Created(Actor self)
 		{
 			this.queues = self.Owner.PlayerActor.TraitsImplementing<ProductionQueue>().ToArray();
 			this.resources = self.Owner.PlayerActor.TraitsImplementing<PlayerResources>().FirstOrDefault();
