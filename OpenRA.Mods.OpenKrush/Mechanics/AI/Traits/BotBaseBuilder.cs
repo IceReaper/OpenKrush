@@ -65,8 +65,11 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 		void IBotTick.BotTick(IBot bot)
 		{
 			// For performance we delay some ai tasks => OpenKrush runs with 25 ticks per second (at normal speed).
-			if (bot.Player.World.WorldTick % 25 == 0)
-				this.HandleBuildings(bot);
+			if (bot.Player.World.WorldTick % 25 != 0)
+				return;
+
+			this.HandleBuildings(bot);
+			this.HandleTowers(bot);
 		}
 
 		private void HandleBuildings(IBot bot)
@@ -79,7 +82,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 			if (queue == null)
 				return;
 
-			var buildings = bot.Player.World.Actors.Where(a => a.Owner == bot.Player && a.Info.HasTraitInfo<BuildingInfo>()).ToArray();
+			var buildings = bot.Player.World.Actors.Where(
+					a => a.Owner == bot.Player && (a.Info.TraitInfoOrDefault<TechLevelBuildableInfo>()?.Queue.Contains("building") ?? false)
+				)
+				.ToArray();
 
 			var constructedBuildings = buildings.Where(
 					building =>
@@ -103,7 +109,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 
 				if (actorInfo != null)
 				{
-					this.PlaceConstruction(bot, constructedBuildings, actorInfo, PlacementType.NearBase, queue);
+					this.PlaceConstruction(bot, actorInfo, PlacementType.NearBase, queue);
 
 					return;
 				}
@@ -123,7 +129,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 
 				if (actorInfo != null)
 				{
-					this.PlaceConstruction(bot, constructedBuildings, actorInfo, PlacementType.NearOil, queue);
+					this.PlaceConstruction(bot, actorInfo, PlacementType.NearOil, queue);
 
 					return;
 				}
@@ -144,7 +150,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 				if (actorInfo == null)
 					continue;
 
-				this.PlaceConstruction(bot, constructedBuildings, actorInfo, PlacementType.NearBase, queue);
+				this.PlaceConstruction(bot, actorInfo, PlacementType.NearBase, queue);
 
 				return;
 			}
@@ -159,27 +165,62 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 					if (!category.Contains(actorInfo.Name))
 						continue;
 
-					this.PlaceConstruction(bot, constructedBuildings, actorInfo, PlacementType.NearBase, queue);
+					this.PlaceConstruction(bot, actorInfo, PlacementType.NearBase, queue);
 
 					return;
 				}
 			}
-			
+
 			// If the whole base is set up, also make sure we have at last one repairer.
 			var repairer = buildables.FirstOrDefault(buildable => this.repairers.Contains(buildable.Name));
 
 			if (repairer == null || buildings.Any(building => building.Info == repairer))
 				return;
 
-			this.PlaceConstruction(bot, constructedBuildings, repairer, PlacementType.NearOil, queue);
+			this.PlaceConstruction(bot, repairer, PlacementType.NearOil, queue);
 		}
 
-		private void PlaceConstruction(IBot bot, Actor[] buildings, ActorInfo actorInfo, PlacementType type, ProductionQueue queue)
+		private void HandleTowers(IBot bot)
+		{
+			if (this.resources == null || this.resources.Cash == 0)
+				return;
+
+			var queue = this.queues.FirstOrDefault(q => q.Info.Type == "tower");
+
+			if (queue == null)
+				return;
+
+			var towers = bot.Player.World.Actors
+				.Where(a => a.Owner == bot.Player && (a.Info.TraitInfoOrDefault<TechLevelBuildableInfo>()?.Queue.Contains("tower") ?? false))
+				.ToArray();
+
+			var constructedTowers = towers.Where(
+					building =>
+					{
+						var selfConstructing = building.TraitOrDefault<SelfConstructing>();
+
+						return selfConstructing is not { IsConstructing: true };
+					}
+				)
+				.ToArray();
+
+			if (constructedTowers.Length < towers.Length)
+				return;
+
+			var tower = queue.BuildableItems().OrderBy(info => info.TraitInfoOrDefault<TechLevelBuildableInfo>()?.Level ?? 0).FirstOrDefault();
+
+			if (tower == null)
+				return;
+
+			this.PlaceConstruction(bot, tower, PlacementType.NearEnemy, queue);
+		}
+
+		private void PlaceConstruction(IBot bot, ActorInfo actorInfo, PlacementType type, ProductionQueue queue)
 		{
 			var placeLocation = this.ChooseBuildTarget(
 				bot.Player.World,
+				bot.Player,
 				actorInfo.TraitInfoOrDefault<RequiresBuildableAreaInfo>()?.Adjacent ?? 0,
-				buildings,
 				actorInfo,
 				type
 			);
@@ -195,11 +236,24 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 			);
 		}
 
-		private CPos? ChooseBuildTarget(World world, int maxRange, Actor[] buildings, ActorInfo actorInfo, PlacementType type)
+		private CPos? ChooseBuildTarget(World world, Player player, int maxRange, ActorInfo actorInfo, PlacementType type)
 		{
+			var requiredQueue = actorInfo.TraitInfoOrDefault<RequiresBuildableAreaInfo>()?.AreaTypes.FirstOrDefault();
+
+			if (requiredQueue == null)
+				return null;
+
+			var sources = world.ActorsWithTrait<GivesBuildableArea>()
+				.Where(e => e.Actor.Owner == player && !e.Trait.IsTraitDisabled)
+				.Select(e => e.Actor)
+				.ToArray();
+
+			if (sources.Length == 0)
+				return null;
+
 			var buildingInfo = actorInfo.TraitInfoOrDefault<BuildingInfo>();
 
-			var cells = buildings.SelectMany(building => world.Map.FindTilesInAnnulus(building.Location, 0, maxRange + 5))
+			var cells = sources.SelectMany(building => world.Map.FindTilesInAnnulus(building.Location, 0, maxRange + 5))
 				.Distinct()
 				.Where(cell => world.CanPlaceBuilding(cell, actorInfo, buildingInfo, null))
 				.ToArray();
@@ -209,12 +263,9 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 				// TODO this should be used to place power stations.
 				case PlacementType.NearOil:
 
-				// TODO this should be used to place defences.
-				case PlacementType.NearEnemy:
-
 				case PlacementType.NearBase:
 				{
-					var baseLocation = (buildings.FirstOrDefault(b => this.bases.Contains(b.Info.Name)) ?? buildings.FirstOrDefault())?.Location;
+					var baseLocation = (sources.FirstOrDefault(b => this.bases.Contains(b.Info.Name)) ?? sources.FirstOrDefault())?.Location;
 
 					if (baseLocation == null)
 						break;
@@ -233,6 +284,30 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 							}
 						)
 						.OrderBy(c => (c - baseLocation.Value).LengthSquared)
+						.FirstOrDefault();
+				}
+
+				case PlacementType.NearEnemy:
+				{
+					var baseLocation = (sources.FirstOrDefault(b => this.bases.Contains(b.Info.Name)) ?? sources.FirstOrDefault())?.Location;
+
+					if (baseLocation == null)
+						break;
+
+					return cells.Where(
+							cell =>
+							{
+								for (var y = -1; y <= 1; y++)
+								for (var x = -1; x <= 1; x++)
+								{
+									if (!cells.Contains(cell + new CVec(x, y)))
+										return false;
+								}
+
+								return true;
+							}
+						)
+						.OrderByDescending(c => (c - baseLocation.Value).LengthSquared)
 						.FirstOrDefault();
 				}
 
