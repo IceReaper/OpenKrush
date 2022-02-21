@@ -41,7 +41,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 			// For performance we delay some ai tasks => OpenKrush runs with 25 ticks per second (at normal speed).
 			if (bot.Player.World.WorldTick % 25 != 0)
 				return;
-			
+
 			var researcher = bot.Player.World.Actors.FirstOrDefault(
 				a =>
 				{
@@ -71,6 +71,5 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 				new(ResearchOrderTargeter.Id, researcher, Target.FromActor(researchables[0]), false)
 			);
 		}
-
 	}
 }

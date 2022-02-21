@@ -41,7 +41,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching
 
 			if (researches.GetState() == ResarchState.Researching)
 				return ResearchAction.Blocked;
-			
+
 			return researchable.Level >= researchable.MaxLevel ? ResearchAction.Blocked : ResearchAction.Start;
 		}
 	}

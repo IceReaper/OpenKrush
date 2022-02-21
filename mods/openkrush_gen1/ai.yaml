@@ -11,6 +11,8 @@ Player:
 		RequiresCondition: enable-ai
 	BotBaseResearcher:
 		RequiresCondition: enable-ai
+	BotProtectionGenerator:
+		RequiresCondition: enable-ai
 	# TODO refactor stuff below!
 	SupportPowerBotModule@placeholder:
 		RequiresCondition: enable-ai

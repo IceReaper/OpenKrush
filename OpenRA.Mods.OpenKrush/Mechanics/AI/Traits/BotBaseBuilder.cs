@@ -268,7 +268,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 					break;
 
 				case PlacementType.NearEnemy:
-					targets.AddRange(world.Actors.Where(a => this.bases.Contains(a.Info.Name) && a.Owner != player).Select(e => e.Location));
+					targets.AddRange(
+						world.Actors.Where(a => this.bases.Contains(a.Info.Name) && a.Owner.RelationshipWith(player) == PlayerRelationship.Enemy)
+							.Select(e => e.Location)
+					);
 
 					break;
 
