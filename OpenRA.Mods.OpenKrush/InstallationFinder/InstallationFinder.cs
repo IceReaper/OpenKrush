@@ -33,7 +33,7 @@ namespace OpenRA.Mods.OpenKrush.InstallationFinder
 				if (!File.Exists(manifestPath))
 					continue;
 
-				var data = InstallationFinder.ParseKeyValuesManifest(manifestPath);
+				var data = InstallationFinder.ParseGameManifest(manifestPath);
 
 				if (!data.TryGetValue("StateFlags", out var stateFlags) || stateFlags != "4")
 					continue;
@@ -158,19 +158,12 @@ namespace OpenRA.Mods.OpenKrush.InstallationFinder
 				if (!File.Exists(libraryFoldersPath))
 					continue;
 
-				var data = InstallationFinder.ParseKeyValuesManifest(libraryFoldersPath);
-
-				for (var i = 1;; i++)
-				{
-					if (!data.TryGetValue(i.ToString(), out var path))
-						break;
-
-					yield return path;
-				}
+				foreach (var e in InstallationFinder.ParseLibraryManifest(libraryFoldersPath).Where(e => e.Item1 == "path"))
+					yield return e.Item2;
 			}
 		}
 
-		private static Dictionary<string, string> ParseKeyValuesManifest(string path)
+		private static Dictionary<string, string> ParseGameManifest(string path)
 		{
 			var regex = new Regex("^\\s*\"(?<key>[^\"]*)\"\\s*\"(?<value>[^\"]*)\"\\s*$");
 			var result = new Dictionary<string, string>();
@@ -183,6 +176,24 @@ namespace OpenRA.Mods.OpenKrush.InstallationFinder
 
 				if (match.Success)
 					result[match.Groups["key"].Value] = match.Groups["value"].Value;
+			}
+
+			return result;
+		}
+
+		private static List<Tuple<string, string>> ParseLibraryManifest(string path)
+		{
+			var regex = new Regex("^\\s*\"(?<key>[^\"]*)\"\\s*\"(?<value>[^\"]*)\"\\s*$");
+			var result = new List<Tuple<string, string>>();
+
+			using var s = new FileStream(path, FileMode.Open);
+
+			foreach (var line in s.ReadAllLines())
+			{
+				var match = regex.Match(line);
+
+				if (match.Success)
+					result.Add(new(match.Groups["key"].Value, match.Groups["value"].Value));
 			}
 
 			return result;
