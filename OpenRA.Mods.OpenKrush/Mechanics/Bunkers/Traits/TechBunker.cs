@@ -111,7 +111,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.Traits
 				this.AddAnimation(init.Self, info.SequenceLocked, () => this.State != TechBunkerState.ClosedLocked);
 
 			if (info.SequenceUnlocked != null)
-				this.AddAnimation(init.Self, info.SequenceUnlocked, () => this.State == TechBunkerState.ClosedLocked);
+				this.AddAnimation(init.Self, info.SequenceUnlocked, () => this.State != TechBunkerState.ClosedUnlocked);
 		}
 
 		private void AddAnimation(Actor self, string sequence, Func<bool> hideWhen)
