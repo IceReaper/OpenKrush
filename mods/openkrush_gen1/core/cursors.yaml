@@ -49,8 +49,6 @@ Cursors:
 		conquer:
 			Start: 45
 			Length: 7
-		conquer-blocked:
-			Start: 84
 
 		deploy:
 			Start: 35
@@ -130,9 +128,15 @@ Cursors:
 			Start: 20
 			Length: 5
 
-	core/cursor_enter.png: openkrush
+	core/cursors_custom.png: openkrush
 		enter:
 			Start: 0
 			Length: 5
 		enter-blocked:
 			Start: 5
+
+		no-oil:
+			Start: 6
+
+		conquer-blocked:
+			Start: 7
