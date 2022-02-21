@@ -11,31 +11,30 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Sacrificing
+namespace OpenRA.Mods.OpenKrush.Mechanics.Sacrificing;
+
+using OpenRA.Traits;
+using Traits;
+
+public static class SacrificingUtils
 {
-	using OpenRA.Traits;
-	using Traits;
-
-	public static class SacrificingUtils
+	public static bool CanEnter(Actor source, Actor target, out bool blocked)
 	{
-		public static bool CanEnter(Actor source, Actor target, out bool blocked)
-		{
-			blocked = false;
+		blocked = false;
 
-			if (target.IsDead || target.Disposed || !target.IsInWorld)
-				return false;
-
-			var trait = target.TraitOrDefault<Sacrificer>();
-
-			if (trait == null)
-				return false;
-
-			if (!trait.IsTraitDisabled && source.Owner.RelationshipWith(target.Owner) == PlayerRelationship.Ally)
-				return true;
-
-			blocked = true;
-
+		if (target.IsDead || target.Disposed || !target.IsInWorld)
 			return false;
-		}
+
+		var trait = target.TraitOrDefault<Sacrificer>();
+
+		if (trait == null)
+			return false;
+
+		if (!trait.IsTraitDisabled && source.Owner.RelationshipWith(target.Owner) == PlayerRelationship.Ally)
+			return true;
+
+		blocked = true;
+
+		return false;
 	}
 }

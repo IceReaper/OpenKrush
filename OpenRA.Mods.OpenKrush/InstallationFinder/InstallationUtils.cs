@@ -11,72 +11,69 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.InstallationFinder
+namespace OpenRA.Mods.OpenKrush.InstallationFinder;
+
+using GameRules;
+
+public static class InstallationUtils
 {
-	using GameRules;
-
-	public static class InstallationUtils
+	public static Installation? TryRegister(ModData modData, string path, IGeneration generation)
 	{
-		public static Installation? TryRegister(ModData modData, string path, IGeneration generation)
-		{
-			var installation = generation.TryRegister(path);
+		var installation = generation.TryRegister(path);
 
-			if (installation == null)
-				return installation;
-
-			foreach (var (explicitName, name) in installation.Packages)
-				modData.ModFiles.Mount(name, explicitName);
-
+		if (installation == null)
 			return installation;
-		}
 
-		public static IReadOnlyDictionary<string, MusicInfo> BuildMusicDictionary(Installation? installation)
-		{
-			var result = new Dictionary<string, MusicInfo>();
+		foreach (var (explicitName, name) in installation.Packages)
+			modData.ModFiles.Mount(name, explicitName);
 
-			if (installation == null)
-				return result;
+		return installation;
+	}
 
-			foreach (var (name, path) in installation.Music)
-			{
-				var extension = Path.GetExtension(path)[1..];
-				var key = path[..(path.Length - extension.Length - 1)];
-				result.Add(key, new(key, new(name, new() { new("Extension", extension) })));
-			}
+	public static IReadOnlyDictionary<string, MusicInfo> BuildMusicDictionary(Installation? installation)
+	{
+		var result = new Dictionary<string, MusicInfo>();
 
+		if (installation == null)
 			return result;
+
+		foreach (var (name, path) in installation.Music)
+		{
+			var extension = Path.GetExtension(path)[1..];
+			var key = path[..(path.Length - extension.Length - 1)];
+			result.Add(key, new(key, new(name, new() { new("Extension", extension) })));
 		}
 
-		public static string? GetFile(string path, string file)
-		{
-			try
-			{
-				var match = Directory.GetFiles(path)
-					.Select(Path.GetFileName)
-					.FirstOrDefault(d => d != null && d.Equals(file, StringComparison.OrdinalIgnoreCase));
+		return result;
+	}
 
-				return match == null ? null : Path.Combine(path, match);
-			}
-			catch (Exception)
-			{
-				return null;
-			}
+	public static string? GetFile(string path, string file)
+	{
+		try
+		{
+			var match = Directory.GetFiles(path).Select(Path.GetFileName).FirstOrDefault(d => d != null && d.Equals(file, StringComparison.OrdinalIgnoreCase));
+
+			return match == null ? null : Path.Combine(path, match);
 		}
-
-		public static string? GetDirectory(string path, string directory)
+		catch (Exception)
 		{
-			try
-			{
-				var match = Directory.GetDirectories(path)
-					.Select(Path.GetFileName)
-					.FirstOrDefault(d => d != null && d.Equals(directory, StringComparison.OrdinalIgnoreCase));
+			return null;
+		}
+	}
 
-				return match == null ? null : Path.Combine(path, match);
-			}
-			catch (Exception)
-			{
-				return null;
-			}
+	public static string? GetDirectory(string path, string directory)
+	{
+		try
+		{
+			var match = Directory.GetDirectories(path)
+				.Select(Path.GetFileName)
+				.FirstOrDefault(d => d != null && d.Equals(directory, StringComparison.OrdinalIgnoreCase));
+
+			return match == null ? null : Path.Combine(path, match);
+		}
+		catch (Exception)
+		{
+			return null;
 		}
 	}
 }

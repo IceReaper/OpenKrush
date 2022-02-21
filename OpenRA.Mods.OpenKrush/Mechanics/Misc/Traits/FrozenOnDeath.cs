@@ -11,42 +11,41 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Misc.Traits
+namespace OpenRA.Mods.OpenKrush.Mechanics.Misc.Traits;
+
+using Common.Traits;
+using JetBrains.Annotations;
+using OpenRA.Traits;
+
+[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
+[Desc("This actor will be visible for a particular time when being killed.")]
+public class FrozenOnDeathInfo : TraitInfo, Requires<HealthInfo>
 {
-	using Common.Traits;
-	using JetBrains.Annotations;
-	using OpenRA.Traits;
+	[Desc("The amount of ticks the death state will be visible.")]
+	public readonly int Duration = 25;
 
-	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
-	[Desc("This actor will be visible for a particular time when being killed.")]
-	public class FrozenOnDeathInfo : TraitInfo, Requires<HealthInfo>
+	public override object Create(ActorInitializer init)
 	{
-		[Desc("The amount of ticks the death state will be visible.")]
-		public readonly int Duration = 25;
+		return new FrozenOnDeath(init, this);
+	}
+}
 
-		public override object Create(ActorInitializer init)
-		{
-			return new FrozenOnDeath(init, this);
-		}
+public class FrozenOnDeath : ITick
+{
+	private int despawn;
+
+	public FrozenOnDeath(ActorInitializer init, FrozenOnDeathInfo info)
+	{
+		this.despawn = info.Duration;
+		init.Self.TraitOrDefault<Health>().RemoveOnDeath = false;
 	}
 
-	public class FrozenOnDeath : ITick
+	void ITick.Tick(Actor self)
 	{
-		private int despawn;
+		if (!self.IsDead)
+			return;
 
-		public FrozenOnDeath(ActorInitializer init, FrozenOnDeathInfo info)
-		{
-			this.despawn = info.Duration;
-			init.Self.TraitOrDefault<Health>().RemoveOnDeath = false;
-		}
-
-		void ITick.Tick(Actor self)
-		{
-			if (!self.IsDead)
-				return;
-
-			if (--this.despawn <= 0)
-				self.Dispose();
-		}
+		if (--this.despawn <= 0)
+			self.Dispose();
 	}
 }

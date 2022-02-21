@@ -11,118 +11,117 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
+namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons;
+
+using Common.Widgets;
+using Mechanics.Researching;
+using Mechanics.Researching.Orders;
+using Mechanics.Researching.Traits;
+using Primitives;
+using Traits;
+
+public class ResearchButtonWidget : SidebarButtonWidget
 {
-	using Common.Widgets;
-	using Mechanics.Researching;
-	using Mechanics.Researching.Orders;
-	using Mechanics.Researching.Traits;
-	using Primitives;
-	using Traits;
+	private bool researchAvailable;
+	private bool autoResearchEnabled;
 
-	public class ResearchButtonWidget : SidebarButtonWidget
+	public ResearchButtonWidget(SidebarWidget sidebar)
+		: base(sidebar, "button")
 	{
-		private bool researchAvailable;
-		private bool autoResearchEnabled;
+		this.TooltipTitle = "Research";
+	}
 
-		public ResearchButtonWidget(SidebarWidget sidebar)
-			: base(sidebar, "button")
-		{
-			this.TooltipTitle = "Research";
-		}
+	public override bool HandleKeyPress(KeyInput e)
+	{
+		if (!this.IsUsable()
+			|| e.IsRepeat
+			|| e.Event != KeyInputEvent.Down
+			|| e.Key != Game.ModData.Hotkeys["Research"].GetValue().Key
+			|| e.Modifiers != Game.ModData.Hotkeys["Research"].GetValue().Modifiers)
+			return false;
 
-		public override bool HandleKeyPress(KeyInput e)
-		{
-			if (!this.IsUsable()
-				|| e.IsRepeat
-				|| e.Event != KeyInputEvent.Down
-				|| e.Key != Game.ModData.Hotkeys["Research"].GetValue().Key
-				|| e.Modifiers != Game.ModData.Hotkeys["Research"].GetValue().Modifiers)
-				return false;
+		this.Active = !this.Active;
 
-			this.Active = !this.Active;
+		if (this.Active)
+			this.Sidebar.IngameUi.World.OrderGenerator = new ResearchOrderGenerator();
+		else if (this.Sidebar.IngameUi.World.OrderGenerator is ResearchOrderGenerator)
+			this.Sidebar.IngameUi.World.CancelInputMode();
 
-			if (this.Active)
-				this.Sidebar.IngameUi.World.OrderGenerator = new ResearchOrderGenerator();
-			else if (this.Sidebar.IngameUi.World.OrderGenerator is ResearchOrderGenerator)
-				this.Sidebar.IngameUi.World.CancelInputMode();
+		return true;
+	}
 
-			return true;
-		}
+	protected override bool HandleLeftClick(MouseInput mi)
+	{
+		if (!base.HandleLeftClick(mi))
+			return false;
 
-		protected override bool HandleLeftClick(MouseInput mi)
-		{
-			if (!base.HandleLeftClick(mi))
-				return false;
+		if (this.autoResearchEnabled)
+			this.autoResearchEnabled = false;
+		else if (this.Active)
+			this.Sidebar.IngameUi.World.OrderGenerator = new ResearchOrderGenerator();
+		else if (this.Sidebar.IngameUi.World.OrderGenerator is ResearchOrderGenerator)
+			this.Sidebar.IngameUi.World.CancelInputMode();
 
-			if (this.autoResearchEnabled)
-				this.autoResearchEnabled = false;
-			else if (this.Active)
-				this.Sidebar.IngameUi.World.OrderGenerator = new ResearchOrderGenerator();
-			else if (this.Sidebar.IngameUi.World.OrderGenerator is ResearchOrderGenerator)
-				this.Sidebar.IngameUi.World.CancelInputMode();
+		return true;
+	}
 
-			return true;
-		}
+	protected override bool HandleRightClick(MouseInput mi)
+	{
+		Game.Sound.PlayNotification(this.Sidebar.IngameUi.World.Map.Rules, null, "Sounds", "ClickSound", null);
+		this.autoResearchEnabled = !this.autoResearchEnabled;
 
-		protected override bool HandleRightClick(MouseInput mi)
-		{
-			Game.Sound.PlayNotification(this.Sidebar.IngameUi.World.Map.Rules, null, "Sounds", "ClickSound", null);
-			this.autoResearchEnabled = !this.autoResearchEnabled;
+		return true;
+	}
 
-			return true;
-		}
+	protected override bool IsUsable()
+	{
+		return this.researchAvailable;
+	}
 
-		protected override bool IsUsable()
-		{
-			return this.researchAvailable;
-		}
+	public override void Tick()
+	{
+		var res = this.Sidebar.IngameUi.World.ActorsWithTrait<Researches>()
+			.Where(e => e.Actor.Owner == this.Sidebar.IngameUi.World.LocalPlayer && !e.Trait.IsTraitDisabled)
+			.ToArray();
 
-		public override void Tick()
-		{
-			var res = this.Sidebar.IngameUi.World.ActorsWithTrait<Researches>()
-				.Where(e => e.Actor.Owner == this.Sidebar.IngameUi.World.LocalPlayer && !e.Trait.IsTraitDisabled)
-				.ToArray();
+		this.researchAvailable = res.Length > 0;
+		this.autoResearchEnabled = this.researchAvailable && this.autoResearchEnabled;
+		this.Active = !this.autoResearchEnabled && this.Sidebar.IngameUi.World.OrderGenerator is ResearchOrderGenerator;
 
-			this.researchAvailable = res.Length > 0;
-			this.autoResearchEnabled = this.researchAvailable && this.autoResearchEnabled;
-			this.Active = !this.autoResearchEnabled && this.Sidebar.IngameUi.World.OrderGenerator is ResearchOrderGenerator;
+		if (!this.autoResearchEnabled || this.Sidebar.IngameUi.World.WorldTick % 50 != 0)
+			return;
 
-			if (!this.autoResearchEnabled || this.Sidebar.IngameUi.World.WorldTick % 50 != 0)
-				return;
+		var pair = res.FirstOrDefault(r => r.Trait.GetState() != ResarchState.Researching);
 
-			var pair = res.FirstOrDefault(r => r.Trait.GetState() != ResarchState.Researching);
+		if (pair.Trait == null)
+			return;
 
-			if (pair.Trait == null)
-				return;
+		var researchables = this.Sidebar.IngameUi.World.Actors.Where(
+				a =>
+				{
+					if (a.Owner != this.Sidebar.IngameUi.World.LocalPlayer)
+						return false;
 
-			var researchables = this.Sidebar.IngameUi.World.Actors.Where(
-					a =>
-					{
-						if (a.Owner != this.Sidebar.IngameUi.World.LocalPlayer)
-							return false;
+					var researchable = a.TraitOrDefault<Researchable>();
 
-						var researchable = a.TraitOrDefault<Researchable>();
+					return researchable is { IsTraitDisabled: false } && researchable.Level < researchable.MaxLevel && researchable.ResearchedBy == null;
+				}
+			)
+			.ToArray();
 
-						return researchable is { IsTraitDisabled: false } && researchable.Level < researchable.MaxLevel && researchable.ResearchedBy == null;
-					}
-				)
-				.ToArray();
+		if (researchables.Length == 0)
+			return;
 
-			if (researchables.Length == 0)
-				return;
+		var target = researchables[this.Sidebar.IngameUi.World.LocalRandom.Next(0, researchables.Length)];
+		this.Sidebar.IngameUi.World.IssueOrder(new(ResearchOrderTargeter.Id, pair.Actor, Target.FromActor(target), false));
+	}
 
-			var target = researchables[this.Sidebar.IngameUi.World.LocalRandom.Next(0, researchables.Length)];
-			this.Sidebar.IngameUi.World.IssueOrder(new(ResearchOrderTargeter.Id, pair.Actor, Target.FromActor(target), false));
-		}
+	protected override void DrawContents()
+	{
+		if (this.autoResearchEnabled)
+			WidgetUtils.FillRectWithColor(this.RenderBounds, Color.FromArgb(25, 255, 255, 255));
 
-		protected override void DrawContents()
-		{
-			if (this.autoResearchEnabled)
-				WidgetUtils.FillRectWithColor(this.RenderBounds, Color.FromArgb(25, 255, 255, 255));
-
-			this.Sidebar.Buttons.PlayFetchIndex("research", () => 0);
-			WidgetUtils.DrawSpriteCentered(this.Sidebar.Buttons.Image, this.Sidebar.IngameUi.Palette, this.Center + new int2(0, this.Active ? 1 : 0));
-		}
+		this.Sidebar.Buttons.PlayFetchIndex("research", () => 0);
+		WidgetUtils.DrawSpriteCentered(this.Sidebar.Buttons.Image, this.Sidebar.IngameUi.Palette, this.Center + new int2(0, this.Active ? 1 : 0));
 	}
 }

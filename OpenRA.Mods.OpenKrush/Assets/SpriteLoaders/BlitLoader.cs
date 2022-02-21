@@ -11,50 +11,49 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Assets.SpriteLoaders
+namespace OpenRA.Mods.OpenKrush.Assets.SpriteLoaders;
+
+using FileFormats;
+using Graphics;
+using JetBrains.Annotations;
+using Primitives;
+
+[UsedImplicitly]
+public class BlitLoader : ISpriteLoader
 {
-	using FileFormats;
-	using Graphics;
-	using JetBrains.Annotations;
-	using Primitives;
-
-	[UsedImplicitly]
-	public class BlitLoader : ISpriteLoader
+	private class BlitSpriteFrame : ISpriteFrame
 	{
-		private class BlitSpriteFrame : ISpriteFrame
+		public SpriteFrameType Type => SpriteFrameType.Bgra32;
+		public Size Size { get; }
+		public Size FrameSize { get; }
+		public float2 Offset { get; }
+		public byte[] Data { get; }
+
+		public bool DisableExportPadding => true;
+
+		public BlitSpriteFrame(BlitFrame blitFrame)
 		{
-			public SpriteFrameType Type => SpriteFrameType.Bgra32;
-			public Size Size { get; }
-			public Size FrameSize { get; }
-			public float2 Offset { get; }
-			public byte[] Data { get; }
+			this.FrameSize = this.Size = new(blitFrame.Width, blitFrame.Height);
+			this.Offset = new int2(blitFrame.Width / 2, blitFrame.Height / 2) - blitFrame.Offset;
+			this.Data = blitFrame.Pixels;
+		}
+	}
 
-			public bool DisableExportPadding => true;
+	public bool TryParseSprite(Stream stream, string filename, out ISpriteFrame[]? frames, out TypeDictionary? metadata)
+	{
+		metadata = null;
 
-			public BlitSpriteFrame(BlitFrame blitFrame)
-			{
-				this.FrameSize = this.Size = new(blitFrame.Width, blitFrame.Height);
-				this.Offset = new int2(blitFrame.Width / 2, blitFrame.Height / 2) - blitFrame.Offset;
-				this.Data = blitFrame.Pixels;
-			}
+		if (!filename.EndsWith(".blit") || stream is not SegmentStream segmentStream)
+		{
+			frames = null;
+
+			return false;
 		}
 
-		public bool TryParseSprite(Stream stream, string filename, out ISpriteFrame[]? frames, out TypeDictionary? metadata)
-		{
-			metadata = null;
+		// This is damn ugly, but BLIT uses offsets from LVL start.
+		segmentStream.BaseStream.Position = segmentStream.BaseOffset;
+		frames = new Blit(segmentStream.BaseStream).Frames.Select(blitFrame => new BlitSpriteFrame(blitFrame) as ISpriteFrame).ToArray();
 
-			if (!filename.EndsWith(".blit") || stream is not SegmentStream segmentStream)
-			{
-				frames = null;
-
-				return false;
-			}
-
-			// This is damn ugly, but BLIT uses offsets from LVL start.
-			segmentStream.BaseStream.Position = segmentStream.BaseOffset;
-			frames = new Blit(segmentStream.BaseStream).Frames.Select(blitFrame => new BlitSpriteFrame(blitFrame) as ISpriteFrame).ToArray();
-
-			return true;
-		}
+		return true;
 	}
 }

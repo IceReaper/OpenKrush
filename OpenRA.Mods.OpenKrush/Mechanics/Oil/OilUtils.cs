@@ -11,74 +11,73 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Oil
+namespace OpenRA.Mods.OpenKrush.Mechanics.Oil;
+
+using Docking.Traits;
+using Traits;
+
+public static class OilUtils
 {
-	using Docking.Traits;
-	using Traits;
-
-	public static class OilUtils
+	public static Actor? GetMostUnderutilizedDrillrig(Player owner, WPos origin)
 	{
-		public static Actor? GetMostUnderutilizedDrillrig(Player owner, WPos origin)
-		{
-			// We will ignore any oil sneaking actors.
-			var tankers = owner.World.ActorsWithTrait<Tanker>()
-				.Where(pair => pair.Actor.Owner == owner && pair.Trait.PreferedDrillrig != null)
-				.Select(pair => pair.Trait)
-				.ToArray();
+		// We will ignore any oil sneaking actors.
+		var tankers = owner.World.ActorsWithTrait<Tanker>()
+			.Where(pair => pair.Actor.Owner == owner && pair.Trait.PreferedDrillrig != null)
+			.Select(pair => pair.Trait)
+			.ToArray();
 
-			var powerstations = owner.World.ActorsWithTrait<PowerStation>()
-				.Where(pair => pair.Actor.Owner == owner && !pair.Trait.IsTraitDisabled)
-				.Select(pair => pair.Actor)
-				.ToArray();
+		var powerstations = owner.World.ActorsWithTrait<PowerStation>()
+			.Where(pair => pair.Actor.Owner == owner && !pair.Trait.IsTraitDisabled)
+			.Select(pair => pair.Actor)
+			.ToArray();
 
-			return owner.World.ActorsWithTrait<Drillrig>()
-				.Where(pair => pair.Actor.Owner == owner && OilUtils.IsUsable(pair.Actor, pair.Trait))
-				.Select(pair => pair.Actor)
-				.OrderBy(
-					drillrig =>
-					{
-						// Assume a default distance of 1 when we have no PowerStation nearby.
-						var distance = 1;
+		return owner.World.ActorsWithTrait<Drillrig>()
+			.Where(pair => pair.Actor.Owner == owner && OilUtils.IsUsable(pair.Actor, pair.Trait))
+			.Select(pair => pair.Actor)
+			.OrderBy(
+				drillrig =>
+				{
+					// Assume a default distance of 1 when we have no PowerStation nearby.
+					var distance = 1;
 
-						// We ignore the fact that Tankers could have assigned a different PowerStation.
-						if (powerstations.Any())
-							distance = Math.Max(distance, powerstations.Min(powerStation => (powerStation.CenterPosition - drillrig.CenterPosition).Length));
+					// We ignore the fact that Tankers could have assigned a different PowerStation.
+					if (powerstations.Any())
+						distance = Math.Max(distance, powerstations.Min(powerStation => (powerStation.CenterPosition - drillrig.CenterPosition).Length));
 
-						// Using a large factor to avoid using a float.
-						return 1024 * 1024 * tankers.Count(pair2 => drillrig.Equals(pair2.PreferedDrillrig)) / distance;
-					}
-				)
-				.ThenBy(drillrig => (drillrig.CenterPosition - origin).Length)
-				.FirstOrDefault();
-		}
+					// Using a large factor to avoid using a float.
+					return 1024 * 1024 * tankers.Count(pair2 => drillrig.Equals(pair2.PreferedDrillrig)) / distance;
+				}
+			)
+			.ThenBy(drillrig => (drillrig.CenterPosition - origin).Length)
+			.FirstOrDefault();
+	}
 
-		public static Actor? GetNearestPowerStation(Player owner, WPos origin)
-		{
-			return owner.World.ActorsWithTrait<PowerStation>()
-				.Where(pair => pair.Actor.Owner == owner && OilUtils.IsUsable(pair.Actor, pair.Trait))
-				.OrderBy(pair => (pair.Actor.CenterPosition - origin).Length)
-				.Select(pair => pair.Actor)
-				.FirstOrDefault();
-		}
+	public static Actor? GetNearestPowerStation(Player owner, WPos origin)
+	{
+		return owner.World.ActorsWithTrait<PowerStation>()
+			.Where(pair => pair.Actor.Owner == owner && OilUtils.IsUsable(pair.Actor, pair.Trait))
+			.OrderBy(pair => (pair.Actor.CenterPosition - origin).Length)
+			.Select(pair => pair.Actor)
+			.FirstOrDefault();
+	}
 
-		public static bool IsUsable(Actor actor, Drillrig drillrig)
-		{
-			if (actor.IsDead || !actor.IsInWorld)
-				return false;
+	public static bool IsUsable(Actor actor, Drillrig drillrig)
+	{
+		if (actor.IsDead || !actor.IsInWorld)
+			return false;
 
-			var dock = actor.TraitOrDefault<Dock>();
+		var dock = actor.TraitOrDefault<Dock>();
 
-			return dock is { IsTraitDisabled: false } && drillrig is { IsTraitDisabled: false, Current: > 0 };
-		}
+		return dock is { IsTraitDisabled: false } && drillrig is { IsTraitDisabled: false, Current: > 0 };
+	}
 
-		public static bool IsUsable(Actor actor, PowerStation powerStation)
-		{
-			if (actor.IsDead || !actor.IsInWorld)
-				return false;
+	public static bool IsUsable(Actor actor, PowerStation powerStation)
+	{
+		if (actor.IsDead || !actor.IsInWorld)
+			return false;
 
-			var dock = actor.TraitOrDefault<Dock>();
+		var dock = actor.TraitOrDefault<Dock>();
 
-			return dock is { IsTraitDisabled: false } && powerStation is { IsTraitDisabled: false };
-		}
+		return dock is { IsTraitDisabled: false } && powerStation is { IsTraitDisabled: false };
 	}
 }

@@ -11,75 +11,74 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.DataFromAssets.Traits
+namespace OpenRA.Mods.OpenKrush.Mechanics.DataFromAssets.Traits;
+
+using Common.Traits;
+using Common.Traits.Render;
+using Graphics;
+using JetBrains.Annotations;
+using OpenRA.Traits;
+
+[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
+[Desc("Use asset provided armament offset.")]
+public class OffsetsArmamentInfo : ArmamentInfo, Requires<WithSpriteBodyInfo>
 {
-	using Common.Traits;
-	using Common.Traits.Render;
-	using Graphics;
-	using JetBrains.Annotations;
-	using OpenRA.Traits;
+	[Desc("Offset id to use per burst shot.")]
+	public readonly int[] BurstOffsets = { 0 };
 
-	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
-	[Desc("Use asset provided armament offset.")]
-	public class OffsetsArmamentInfo : ArmamentInfo, Requires<WithSpriteBodyInfo>
+	public override object Create(ActorInitializer init)
 	{
-		[Desc("Offset id to use per burst shot.")]
-		public readonly int[] BurstOffsets = { 0 };
+		return new OffsetsArmament(init.Self, this);
+	}
+}
 
-		public override object Create(ActorInitializer init)
-		{
-			return new OffsetsArmament(init.Self, this);
-		}
+public class OffsetsArmament : Armament
+{
+	private readonly OffsetsArmamentInfo info;
+	private readonly WithSpriteBody wsb;
+
+	public OffsetsArmament(Actor self, OffsetsArmamentInfo info)
+		: base(self, info)
+	{
+		this.info = info;
+		this.wsb = self.TraitOrDefault<WithSpriteBody>();
 	}
 
-	public class OffsetsArmament : Armament
+	protected override WVec CalculateMuzzleOffset(Actor self, Barrel barrel)
 	{
-		private readonly OffsetsArmamentInfo info;
-		private readonly WithSpriteBody wsb;
+		var offset = base.CalculateMuzzleOffset(self, barrel);
 
-		public OffsetsArmament(Actor self, OffsetsArmamentInfo info)
-			: base(self, info)
-		{
-			this.info = info;
-			this.wsb = self.TraitOrDefault<WithSpriteBody>();
-		}
-
-		protected override WVec CalculateMuzzleOffset(Actor self, Barrel barrel)
-		{
-			var offset = base.CalculateMuzzleOffset(self, barrel);
-
-			if (this.wsb.DefaultAnimation.CurrentSequence is not OffsetsSpriteSequence sequence)
-				return offset;
-
-			var wst = self.TraitOrDefault<WithOffsetsSpriteTurret>();
-			var weaponPoint = this.info.BurstOffsets[(this.Weapon.Burst - this.Burst) % this.info.BurstOffsets.Length];
-
-			var sprite = this.wsb.DefaultAnimation.Image;
-
-			if (sequence.EmbeddedOffsets.ContainsKey(sprite))
-			{
-				var offsets = sequence.EmbeddedOffsets[sprite];
-				var weaponOrTurretOffset = offsets.FirstOrDefault(p => p.Id == (wst == null ? weaponPoint : 0));
-
-				if (weaponOrTurretOffset != null)
-					offset = new(offset.X + weaponOrTurretOffset.X * 32, offset.Y + weaponOrTurretOffset.Y * 32, offset.Z);
-			}
-
-			if (wst?.DefaultAnimation.CurrentSequence is not OffsetsSpriteSequence turretSequence)
-				return offset;
-
-			sprite = wst.DefaultAnimation.Image;
-
-			if (!turretSequence.EmbeddedOffsets.ContainsKey(sprite))
-				return offset;
-
-			var turretOffsets = turretSequence.EmbeddedOffsets[sprite];
-			var weaponOffset = turretOffsets.FirstOrDefault(p => p.Id == weaponPoint);
-
-			if (weaponOffset != null)
-				offset = new(offset.X + weaponOffset.X * 32, offset.Y + weaponOffset.Y * 32, offset.Z);
-
+		if (this.wsb.DefaultAnimation.CurrentSequence is not OffsetsSpriteSequence sequence)
 			return offset;
+
+		var wst = self.TraitOrDefault<WithOffsetsSpriteTurret>();
+		var weaponPoint = this.info.BurstOffsets[(this.Weapon.Burst - this.Burst) % this.info.BurstOffsets.Length];
+
+		var sprite = this.wsb.DefaultAnimation.Image;
+
+		if (sequence.EmbeddedOffsets.ContainsKey(sprite))
+		{
+			var offsets = sequence.EmbeddedOffsets[sprite];
+			var weaponOrTurretOffset = offsets.FirstOrDefault(p => p.Id == (wst == null ? weaponPoint : 0));
+
+			if (weaponOrTurretOffset != null)
+				offset = new(offset.X + weaponOrTurretOffset.X * 32, offset.Y + weaponOrTurretOffset.Y * 32, offset.Z);
 		}
+
+		if (wst?.DefaultAnimation.CurrentSequence is not OffsetsSpriteSequence turretSequence)
+			return offset;
+
+		sprite = wst.DefaultAnimation.Image;
+
+		if (!turretSequence.EmbeddedOffsets.ContainsKey(sprite))
+			return offset;
+
+		var turretOffsets = turretSequence.EmbeddedOffsets[sprite];
+		var weaponOffset = turretOffsets.FirstOrDefault(p => p.Id == weaponPoint);
+
+		if (weaponOffset != null)
+			offset = new(offset.X + weaponOffset.X * 32, offset.Y + weaponOffset.Y * 32, offset.Z);
+
+		return offset;
 	}
 }

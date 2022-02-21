@@ -11,63 +11,62 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Misc.Traits
+namespace OpenRA.Mods.OpenKrush.Mechanics.Misc.Traits;
+
+using Common.Traits;
+using JetBrains.Annotations;
+using OpenRA.Traits;
+
+[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
+[Desc("Play together with an attack.")]
+public class WithLoopedAttackSoundInfo : TraitInfo
 {
-	using Common.Traits;
-	using JetBrains.Annotations;
-	using OpenRA.Traits;
+	[FieldLoader.RequireAttribute]
+	[Desc("Sound filename to use")]
+	public readonly string[] Report = Array.Empty<string>();
 
-	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
-	[Desc("Play together with an attack.")]
-	public class WithLoopedAttackSoundInfo : TraitInfo
+	public readonly int Delay = 10;
+
+	public override object Create(ActorInitializer init)
 	{
-		[FieldLoader.RequireAttribute]
-		[Desc("Sound filename to use")]
-		public readonly string[] Report = Array.Empty<string>();
+		return new WithLoopedAttackSound(this);
+	}
+}
 
-		public readonly int Delay = 10;
+public class WithLoopedAttackSound : INotifyAttack, ITick, INotifyRemovedFromWorld
+{
+	private readonly WithLoopedAttackSoundInfo info;
 
-		public override object Create(ActorInitializer init)
-		{
-			return new WithLoopedAttackSound(this);
-		}
+	private ISound? sound;
+	private int tick;
+
+	public WithLoopedAttackSound(WithLoopedAttackSoundInfo info)
+	{
+		this.info = info;
 	}
 
-	public class WithLoopedAttackSound : INotifyAttack, ITick, INotifyRemovedFromWorld
+	void INotifyAttack.Attacking(Actor self, in Target target, Armament a, Barrel barrel)
 	{
-		private readonly WithLoopedAttackSoundInfo info;
+		this.sound ??= Game.Sound.PlayLooped(SoundType.World, this.info.Report.Random(self.World.SharedRandom), self.CenterPosition);
+		this.tick = self.World.WorldTick + this.info.Delay;
+	}
 
-		private ISound? sound;
-		private int tick;
+	void INotifyAttack.PreparingAttack(Actor self, in Target target, Armament a, Barrel barrel)
+	{
+	}
 
-		public WithLoopedAttackSound(WithLoopedAttackSoundInfo info)
-		{
-			this.info = info;
-		}
+	void ITick.Tick(Actor self)
+	{
+		if (this.sound == null || this.tick >= self.World.WorldTick)
+			return;
 
-		void INotifyAttack.Attacking(Actor self, in Target target, Armament a, Barrel barrel)
-		{
-			this.sound ??= Game.Sound.PlayLooped(SoundType.World, this.info.Report.Random(self.World.SharedRandom), self.CenterPosition);
-			this.tick = self.World.WorldTick + this.info.Delay;
-		}
+		Game.Sound.StopSound(this.sound);
+		this.sound = null;
+	}
 
-		void INotifyAttack.PreparingAttack(Actor self, in Target target, Armament a, Barrel barrel)
-		{
-		}
-
-		void ITick.Tick(Actor self)
-		{
-			if (this.sound == null || this.tick >= self.World.WorldTick)
-				return;
-
+	void INotifyRemovedFromWorld.RemovedFromWorld(Actor self)
+	{
+		if (this.sound != null)
 			Game.Sound.StopSound(this.sound);
-			this.sound = null;
-		}
-
-		void INotifyRemovedFromWorld.RemovedFromWorld(Actor self)
-		{
-			if (this.sound != null)
-				Game.Sound.StopSound(this.sound);
-		}
 	}
 }

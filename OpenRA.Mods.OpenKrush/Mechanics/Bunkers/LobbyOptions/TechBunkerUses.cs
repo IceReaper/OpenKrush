@@ -11,60 +11,59 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.LobbyOptions
+namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.LobbyOptions;
+
+using JetBrains.Annotations;
+using OpenRA.Traits;
+using System.Collections.ObjectModel;
+using Traits;
+
+public enum TechBunkerUsesType
 {
-	using JetBrains.Annotations;
-	using OpenRA.Traits;
-	using System.Collections.ObjectModel;
-	using Traits;
+	Once,
+	Infinitely
+}
 
-	public enum TechBunkerUsesType
+[UsedImplicitly]
+[Desc("How many times a TechBunker can be used.")]
+public class TechBunkerUsesInfo : TraitInfo, ILobbyOptions
+{
+	public const string Id = "TechBunkerUses";
+	public const TechBunkerUsesType Default = TechBunkerUsesType.Infinitely;
+
+	IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(MapPreview mapPreview)
 	{
-		Once,
-		Infinitely
+		yield return new LobbyOption(
+			TechBunkerUsesInfo.Id,
+			"Uses",
+			"How many times a TechBunker can be used.",
+			true,
+			0,
+			new ReadOnlyDictionary<string, string>(
+				new Dictionary<TechBunkerUsesType, string> { { TechBunkerUsesType.Once, "Once" }, { TechBunkerUsesType.Infinitely, "Infinitely" } }
+					.ToDictionary(e => e.Key.ToString(), e => e.Value)
+			),
+			TechBunkerUsesInfo.Default.ToString(),
+			false,
+			TechBunkerInfo.LobbyOptionsCategory
+		);
 	}
 
-	[UsedImplicitly]
-	[Desc("How many times a TechBunker can be used.")]
-	public class TechBunkerUsesInfo : TraitInfo, ILobbyOptions
+	public override object Create(ActorInitializer init)
 	{
-		public const string Id = "TechBunkerUses";
-		public const TechBunkerUsesType Default = TechBunkerUsesType.Infinitely;
-
-		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(MapPreview mapPreview)
-		{
-			yield return new LobbyOption(
-				TechBunkerUsesInfo.Id,
-				"Uses",
-				"How many times a TechBunker can be used.",
-				true,
-				0,
-				new ReadOnlyDictionary<string, string>(
-					new Dictionary<TechBunkerUsesType, string> { { TechBunkerUsesType.Once, "Once" }, { TechBunkerUsesType.Infinitely, "Infinitely" } }
-						.ToDictionary(e => e.Key.ToString(), e => e.Value)
-				),
-				TechBunkerUsesInfo.Default.ToString(),
-				false,
-				TechBunkerInfo.LobbyOptionsCategory
-			);
-		}
-
-		public override object Create(ActorInitializer init)
-		{
-			return new TechBunkerUses();
-		}
+		return new TechBunkerUses();
 	}
+}
 
-	public class TechBunkerUses : INotifyCreated
+public class TechBunkerUses : INotifyCreated
+{
+	public TechBunkerUsesType Uses { get; private set; }
+
+	void INotifyCreated.Created(Actor self)
 	{
-		public TechBunkerUsesType Uses { get; private set; }
-
-		void INotifyCreated.Created(Actor self)
-		{
-			this.Uses = (TechBunkerUsesType)Enum.Parse(
-				typeof(TechBunkerUsesType),
-				self.World.LobbyInfo.GlobalSettings.OptionOrDefault(TechBunkerUsesInfo.Id, TechBunkerUsesInfo.Default.ToString())
-			);
-		}
+		this.Uses = (TechBunkerUsesType)Enum.Parse(
+			typeof(TechBunkerUsesType),
+			self.World.LobbyInfo.GlobalSettings.OptionOrDefault(TechBunkerUsesInfo.Id, TechBunkerUsesInfo.Default.ToString())
+		);
 	}
 }

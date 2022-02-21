@@ -11,104 +11,103 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
+namespace OpenRA.Mods.OpenKrush.Widgets.Ingame;
+
+using Common.Orders;
+using Common.Traits;
+using Graphics;
+using JetBrains.Annotations;
+using Mechanics.Docking;
+using Mechanics.Oil.Activities;
+using Mechanics.Oil.Traits;
+using OpenRA.Widgets;
+
+[UsedImplicitly]
+
+// TODO add all the hotkeys we need for stances etc here, so we can remove the trash from the ingame chrome yaml.
+public sealed class IngameUiWidget : Widget
 {
-	using Common.Orders;
-	using Common.Traits;
-	using Graphics;
-	using JetBrains.Annotations;
-	using Mechanics.Docking;
-	using Mechanics.Oil.Activities;
-	using Mechanics.Oil.Traits;
-	using OpenRA.Widgets;
+	public readonly World World;
+	public readonly WorldRenderer WorldRenderer;
+	public readonly RadarPings RadarPings;
 
-	[UsedImplicitly]
+	public readonly PaletteReference Palette;
 
-	// TODO add all the hotkeys we need for stances etc here, so we can remove the trash from the ingame chrome yaml.
-	public sealed class IngameUiWidget : Widget
+	public readonly RadarWidget Radar;
+	public readonly TooltipWidget Tooltip;
+
+	private ISound? oilSound;
+
+	[ObjectCreator.UseCtorAttribute]
+	public IngameUiWidget(World world, WorldRenderer worldRenderer)
 	{
-		public readonly World World;
-		public readonly WorldRenderer WorldRenderer;
-		public readonly RadarPings RadarPings;
+		this.World = world;
+		this.WorldRenderer = worldRenderer;
+		this.RadarPings = world.WorldActor.TraitOrDefault<RadarPings>();
 
-		public readonly PaletteReference Palette;
+		this.IgnoreChildMouseOver = true;
+		this.IgnoreMouseOver = true;
 
-		public readonly RadarWidget Radar;
-		public readonly TooltipWidget Tooltip;
+		this.Palette = this.WorldRenderer.Palette($"player{this.World.LocalPlayer.InternalName}");
 
-		private ISound? oilSound;
+		this.AddChild(new StatusWidget(this));
+		this.AddChild(this.Radar = new(this));
+		this.AddChild(new SidebarWidget(this));
+		this.AddChild(this.Tooltip = new());
 
-		[ObjectCreator.UseCtorAttribute]
-		public IngameUiWidget(World world, WorldRenderer worldRenderer)
-		{
-			this.World = world;
-			this.WorldRenderer = worldRenderer;
-			this.RadarPings = world.WorldActor.TraitOrDefault<RadarPings>();
+		this.Resize();
+		this.TickOuter();
+	}
 
-			this.IgnoreChildMouseOver = true;
-			this.IgnoreMouseOver = true;
+	private void Resize()
+	{
+		this.Bounds = new(0, 0, Game.Renderer.Resolution.Width, Game.Renderer.Resolution.Height);
+	}
 
-			this.Palette = this.WorldRenderer.Palette($"player{this.World.LocalPlayer.InternalName}");
-
-			this.AddChild(new StatusWidget(this));
-			this.AddChild(this.Radar = new(this));
-			this.AddChild(new SidebarWidget(this));
-			this.AddChild(this.Tooltip = new());
-
-			this.Resize();
-			this.TickOuter();
-		}
-
-		private void Resize()
-		{
-			this.Bounds = new(0, 0, Game.Renderer.Resolution.Width, Game.Renderer.Resolution.Height);
-		}
-
-		public override void Tick()
-		{
-			var playOilSound = this.World.Actors.Any(
-				a =>
-				{
-					if (a.IsDead || !a.IsInWorld || a.Owner != a.World.LocalPlayer)
-						return false;
-
-					var tanker = a.TraitOrDefault<Tanker>();
-
-					if (tanker == null)
-						return false;
-
-					if (a.CurrentActivity is not TankerCycle tankerCycle)
-						return false;
-
-					return tankerCycle.DockingState == DockingState.Docked
-						&& tankerCycle.DockActor != null
-						&& tankerCycle.DockActor.Info.HasTraitInfo<PowerStationInfo>();
-				}
-			);
-
-			switch (playOilSound)
+	public override void Tick()
+	{
+		var playOilSound = this.World.Actors.Any(
+			a =>
 			{
-				case true when this.oilSound == null:
-					this.oilSound = Game.Sound.PlayLooped(SoundType.UI, "191.wav"); // TODO un-hardcode this!
+				if (a.IsDead || !a.IsInWorld || a.Owner != a.World.LocalPlayer)
+					return false;
 
-					break;
+				var tanker = a.TraitOrDefault<Tanker>();
 
-				case false when this.oilSound != null:
-					Game.Sound.StopSound(this.oilSound);
-					this.oilSound = null;
+				if (tanker == null)
+					return false;
 
-					break;
+				if (a.CurrentActivity is not TankerCycle tankerCycle)
+					return false;
+
+				return tankerCycle.DockingState == DockingState.Docked
+					&& tankerCycle.DockActor != null
+					&& tankerCycle.DockActor.Info.HasTraitInfo<PowerStationInfo>();
 			}
-		}
+		);
 
-		public override bool HandleKeyPress(KeyInput e)
+		switch (playOilSound)
 		{
-			if (e.Key != Game.ModData.Hotkeys["PlaceBeacon"].GetValue().Key)
-				return false;
+			case true when this.oilSound == null:
+				this.oilSound = Game.Sound.PlayLooped(SoundType.UI, "191.wav"); // TODO un-hardcode this!
 
-			this.World.OrderGenerator = new BeaconOrderGenerator();
+				break;
 
-			return true;
+			case false when this.oilSound != null:
+				Game.Sound.StopSound(this.oilSound);
+				this.oilSound = null;
+
+				break;
 		}
+	}
+
+	public override bool HandleKeyPress(KeyInput e)
+	{
+		if (e.Key != Game.ModData.Hotkeys["PlaceBeacon"].GetValue().Key)
+			return false;
+
+		this.World.OrderGenerator = new BeaconOrderGenerator();
+
+		return true;
 	}
 }

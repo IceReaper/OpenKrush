@@ -11,120 +11,119 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Widgets.Ingame
+namespace OpenRA.Mods.OpenKrush.Widgets.Ingame;
+
+using Buttons;
+using Common.Widgets;
+using Graphics;
+using OpenRA.Widgets;
+using Primitives;
+
+public sealed class SidebarWidget : Widget
 {
-	using Buttons;
-	using Common.Widgets;
-	using Graphics;
-	using OpenRA.Widgets;
-	using Primitives;
+	public const string Identifier = "OPENKRUSH_SIDEBAR";
+	public readonly IngameUiWidget IngameUi;
 
-	public sealed class SidebarWidget : Widget
+	public readonly Animation Buttons;
+	public readonly Animation Font;
+	public readonly Rectangle ButtonArea;
+
+	private readonly BomberButtonWidget bomber;
+	private readonly SellButtonWidget sell;
+	private readonly ResearchButtonWidget research;
+	private readonly RepairButtonWidget repair;
+	private readonly RadarButtonWidget radar;
+	private readonly OptionsButtonWidget options;
+
+	public SidebarWidget(IngameUiWidget ingameUi)
 	{
-		public const string Identifier = "OPENKRUSH_SIDEBAR";
-		public readonly IngameUiWidget IngameUi;
+		this.IngameUi = ingameUi;
+		this.Id = SidebarWidget.Identifier;
 
-		public readonly Animation Buttons;
-		public readonly Animation Font;
-		public readonly Rectangle ButtonArea;
+		this.Buttons = new(this.IngameUi.World, $"sidebar-{this.IngameUi.World.LocalPlayer.Faction.InternalName}");
+		this.Font = new(this.IngameUi.World, "font");
 
-		private readonly BomberButtonWidget bomber;
-		private readonly SellButtonWidget sell;
-		private readonly ResearchButtonWidget research;
-		private readonly RepairButtonWidget repair;
-		private readonly RadarButtonWidget radar;
-		private readonly OptionsButtonWidget options;
+		ChromeMetrics.TryGet($"ButtonArea-{this.IngameUi.World.LocalPlayer.Faction.InternalName}", out this.ButtonArea);
 
-		public SidebarWidget(IngameUiWidget ingameUi)
+		this.AddChild(new ProductionCategoryButtonWidget(this, 0, new[] { "infantry" }, "Infantry"));
+		this.AddChild(new ProductionCategoryButtonWidget(this, 1, new[] { "vehicle", "beast" }, "Vehicles"));
+		this.AddChild(new ProductionCategoryButtonWidget(this, 2, new[] { "building" }, "Buildings"));
+		this.AddChild(new ProductionCategoryButtonWidget(this, 3, new[] { "tower" }, "Towers"));
+		this.AddChild(new ProductionCategoryButtonWidget(this, 4, new[] { "wall" }, "Walls"));
+
+		this.AddChild(this.bomber = new(this));
+
+		this.AddChild(this.sell = new(this));
+		this.AddChild(this.research = new(this));
+		this.AddChild(this.repair = new(this));
+
+		this.AddChild(this.radar = new(this));
+		this.AddChild(this.options = new(this));
+
+		this.Resize();
+	}
+
+	private void Resize()
+	{
+		this.Bounds = new(Game.Renderer.Resolution.Width - SidebarButtonWidget.Size, 0, SidebarButtonWidget.Size, Game.Renderer.Resolution.Height);
+	}
+
+	public override bool HandleMouseInput(MouseInput mi)
+	{
+		return this.EventBounds.Contains(mi.Location);
+	}
+
+	public override void Tick()
+	{
+		if (this.Bounds.Height < 14 * SidebarButtonWidget.Size)
 		{
-			this.IngameUi = ingameUi;
-			this.Id = SidebarWidget.Identifier;
-
-			this.Buttons = new(this.IngameUi.World, $"sidebar-{this.IngameUi.World.LocalPlayer.Faction.InternalName}");
-			this.Font = new(this.IngameUi.World, "font");
-
-			ChromeMetrics.TryGet($"ButtonArea-{this.IngameUi.World.LocalPlayer.Faction.InternalName}", out this.ButtonArea);
-
-			this.AddChild(new ProductionCategoryButtonWidget(this, 0, new[] { "infantry" }, "Infantry"));
-			this.AddChild(new ProductionCategoryButtonWidget(this, 1, new[] { "vehicle", "beast" }, "Vehicles"));
-			this.AddChild(new ProductionCategoryButtonWidget(this, 2, new[] { "building" }, "Buildings"));
-			this.AddChild(new ProductionCategoryButtonWidget(this, 3, new[] { "tower" }, "Towers"));
-			this.AddChild(new ProductionCategoryButtonWidget(this, 4, new[] { "wall" }, "Walls"));
-
-			this.AddChild(this.bomber = new(this));
-
-			this.AddChild(this.sell = new(this));
-			this.AddChild(this.research = new(this));
-			this.AddChild(this.repair = new(this));
-
-			this.AddChild(this.radar = new(this));
-			this.AddChild(this.options = new(this));
-
-			this.Resize();
+			this.bomber.Bounds.Y = 5 * SidebarButtonWidget.Size;
+			this.sell.Bounds.Y = 6 * SidebarButtonWidget.Size;
+			this.research.Bounds.Y = 7 * SidebarButtonWidget.Size;
+			this.repair.Bounds.Y = 8 * SidebarButtonWidget.Size;
+			this.radar.Bounds.Y = 9 * SidebarButtonWidget.Size;
+			this.options.Bounds.Y = 10 * SidebarButtonWidget.Size;
 		}
-
-		private void Resize()
+		else
 		{
-			this.Bounds = new(Game.Renderer.Resolution.Width - SidebarButtonWidget.Size, 0, SidebarButtonWidget.Size, Game.Renderer.Resolution.Height);
+			this.bomber.Bounds.Y = 6 * SidebarButtonWidget.Size;
+			this.sell.Bounds.Y = 8 * SidebarButtonWidget.Size;
+			this.research.Bounds.Y = 9 * SidebarButtonWidget.Size;
+			this.repair.Bounds.Y = 10 * SidebarButtonWidget.Size;
+			this.radar.Bounds.Y = 12 * SidebarButtonWidget.Size;
+			this.options.Bounds.Y = 13 * SidebarButtonWidget.Size;
 		}
+	}
 
-		public override bool HandleMouseInput(MouseInput mi)
+	public override void Draw()
+	{
+		for (var y = 0; y < this.Bounds.Height; y += SidebarButtonWidget.Size)
 		{
-			return this.EventBounds.Contains(mi.Location);
+			this.Buttons.PlayFetchIndex("button", () => 0);
+
+			WidgetUtils.DrawSpriteCentered(
+				this.Buttons.Image,
+				this.IngameUi.Palette,
+				new(this.RenderBounds.X + SidebarButtonWidget.Size / 2, y + SidebarButtonWidget.Size / 2)
+			);
 		}
+	}
 
-		public override void Tick()
-		{
-			if (this.Bounds.Height < 14 * SidebarButtonWidget.Size)
-			{
-				this.bomber.Bounds.Y = 5 * SidebarButtonWidget.Size;
-				this.sell.Bounds.Y = 6 * SidebarButtonWidget.Size;
-				this.research.Bounds.Y = 7 * SidebarButtonWidget.Size;
-				this.repair.Bounds.Y = 8 * SidebarButtonWidget.Size;
-				this.radar.Bounds.Y = 9 * SidebarButtonWidget.Size;
-				this.options.Bounds.Y = 10 * SidebarButtonWidget.Size;
-			}
-			else
-			{
-				this.bomber.Bounds.Y = 6 * SidebarButtonWidget.Size;
-				this.sell.Bounds.Y = 8 * SidebarButtonWidget.Size;
-				this.research.Bounds.Y = 9 * SidebarButtonWidget.Size;
-				this.repair.Bounds.Y = 10 * SidebarButtonWidget.Size;
-				this.radar.Bounds.Y = 12 * SidebarButtonWidget.Size;
-				this.options.Bounds.Y = 13 * SidebarButtonWidget.Size;
-			}
-		}
+	public void CloseAllBut(SidebarButtonWidget keepOpen)
+	{
+		foreach (var widget in this.Children.Where(w => w != keepOpen && w is ProductionCategoryButtonWidget or BomberButtonWidget))
+			((SidebarButtonWidget)widget).Active = false;
+	}
 
-		public override void Draw()
-		{
-			for (var y = 0; y < this.Bounds.Height; y += SidebarButtonWidget.Size)
-			{
-				this.Buttons.PlayFetchIndex("button", () => 0);
+	public void SelectFactory(Actor factory, string category)
+	{
+		if (this.Children.FirstOrDefault(child => child is ProductionCategoryButtonWidget button && button.Categories.Contains(category)) is not
+			ProductionCategoryButtonWidget categoryButton)
+			return;
 
-				WidgetUtils.DrawSpriteCentered(
-					this.Buttons.Image,
-					this.IngameUi.Palette,
-					new(this.RenderBounds.X + SidebarButtonWidget.Size / 2, y + SidebarButtonWidget.Size / 2)
-				);
-			}
-		}
+		this.CloseAllBut(categoryButton);
+		categoryButton.Active = true;
 
-		public void CloseAllBut(SidebarButtonWidget keepOpen)
-		{
-			foreach (var widget in this.Children.Where(w => w != keepOpen && w is ProductionCategoryButtonWidget or BomberButtonWidget))
-				((SidebarButtonWidget)widget).Active = false;
-		}
-
-		public void SelectFactory(Actor factory, string category)
-		{
-			if (this.Children.FirstOrDefault(child => child is ProductionCategoryButtonWidget button && button.Categories.Contains(category)) is not
-				ProductionCategoryButtonWidget categoryButton)
-				return;
-
-			this.CloseAllBut(categoryButton);
-			categoryButton.Active = true;
-
-			categoryButton.SelectFactory(factory);
-		}
+		categoryButton.SelectFactory(factory);
 	}
 }

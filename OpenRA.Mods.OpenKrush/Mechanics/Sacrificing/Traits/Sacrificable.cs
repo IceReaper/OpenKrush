@@ -11,89 +11,88 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Sacrificing.Traits
+namespace OpenRA.Mods.OpenKrush.Mechanics.Sacrificing.Traits;
+
+using Activities;
+using Common.Traits;
+using JetBrains.Annotations;
+using OpenRA.Traits;
+using Orders;
+using Primitives;
+
+[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
+[Desc("Actor can be sacrificed.")]
+public class SacrificableInfo : TraitInfo
 {
-	using Activities;
-	using Common.Traits;
-	using JetBrains.Annotations;
-	using OpenRA.Traits;
-	using Orders;
-	using Primitives;
+	[Desc("Cursor used for order.")]
+	public readonly string Cursor = "enter";
 
-	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
-	[Desc("Actor can be sacrificed.")]
-	public class SacrificableInfo : TraitInfo
+	[Desc("Cursor used for order.")]
+	public readonly string BlockedCursor = "enter-blocked";
+
+	[Desc("Target line color.")]
+	public readonly Color TargetLineColor = Color.Yellow;
+
+	[Desc("Voice used when ordering to sacrifice.")]
+	[VoiceReference]
+	public readonly string VoiceOrder = "Action";
+
+	[Desc("Voice used when entered and sacrificed.")]
+	[VoiceReference]
+	public readonly string VoiceEnter = "Die";
+
+	public override object Create(ActorInitializer init)
 	{
-		[Desc("Cursor used for order.")]
-		public readonly string Cursor = "enter";
+		return new Sacrificable(this);
+	}
+}
 
-		[Desc("Cursor used for order.")]
-		public readonly string BlockedCursor = "enter-blocked";
+public class Sacrificable : IIssueOrder, IResolveOrder, IOrderVoice
+{
+	private readonly SacrificableInfo info;
 
-		[Desc("Target line color.")]
-		public readonly Color TargetLineColor = Color.Yellow;
+	public Sacrificable(SacrificableInfo info)
+	{
+		this.info = info;
+	}
 
-		[Desc("Voice used when ordering to sacrifice.")]
-		[VoiceReference]
-		public readonly string VoiceOrder = "Action";
-
-		[Desc("Voice used when entered and sacrificed.")]
-		[VoiceReference]
-		public readonly string VoiceEnter = "Die";
-
-		public override object Create(ActorInitializer init)
+	public IEnumerable<IOrderTargeter> Orders
+	{
+		get
 		{
-			return new Sacrificable(this);
+			yield return new SacrificeOrderTargeter(this.info.Cursor, this.info.BlockedCursor);
 		}
 	}
 
-	public class Sacrificable : IIssueOrder, IResolveOrder, IOrderVoice
+	public Order? IssueOrder(Actor self, IOrderTargeter order, in Target target, bool queued)
 	{
-		private readonly SacrificableInfo info;
+		return order.OrderID == SacrificeOrderTargeter.Id ? new Order(order.OrderID, self, target, queued) : null;
+	}
 
-		public Sacrificable(SacrificableInfo info)
-		{
-			this.info = info;
-		}
+	public void ResolveOrder(Actor self, Order order)
+	{
+		if (order.OrderString != SacrificeOrderTargeter.Id)
+			return;
 
-		public IEnumerable<IOrderTargeter> Orders
-		{
-			get
-			{
-				yield return new SacrificeOrderTargeter(this.info.Cursor, this.info.BlockedCursor);
-			}
-		}
+		if (order.Target.Type != TargetType.Actor || order.Target.Actor == null)
+			return;
 
-		public Order? IssueOrder(Actor self, IOrderTargeter order, in Target target, bool queued)
-		{
-			return order.OrderID == SacrificeOrderTargeter.Id ? new Order(order.OrderID, self, target, queued) : null;
-		}
+		if (!SacrificingUtils.CanEnter(self, order.Target.Actor, out _))
+			return;
 
-		public void ResolveOrder(Actor self, Order order)
-		{
-			if (order.OrderString != SacrificeOrderTargeter.Id)
-				return;
+		self.QueueActivity(order.Queued, new Sacrifice(self, order.Target, this.info.TargetLineColor));
+	}
 
-			if (order.Target.Type != TargetType.Actor || order.Target.Actor == null)
-				return;
+	string? IOrderVoice.VoicePhraseForOrder(Actor self, Order order)
+	{
+		return order.OrderString == SacrificeOrderTargeter.Id && SacrificingUtils.CanEnter(self, order.Target.Actor, out _) ? this.info.VoiceOrder : null;
+	}
 
-			if (!SacrificingUtils.CanEnter(self, order.Target.Actor, out _))
-				return;
+	public void Enter(Actor self)
+	{
+		if (self.Owner != self.World.LocalPlayer)
+			return;
 
-			self.QueueActivity(order.Queued, new Sacrifice(self, order.Target, this.info.TargetLineColor));
-		}
-
-		string? IOrderVoice.VoicePhraseForOrder(Actor self, Order order)
-		{
-			return order.OrderString == SacrificeOrderTargeter.Id && SacrificingUtils.CanEnter(self, order.Target.Actor, out _) ? this.info.VoiceOrder : null;
-		}
-
-		public void Enter(Actor self)
-		{
-			if (self.Owner != self.World.LocalPlayer)
-				return;
-
-			self.PlayVoice(this.info.VoiceEnter);
-		}
+		self.PlayVoice(this.info.VoiceEnter);
 	}
 }

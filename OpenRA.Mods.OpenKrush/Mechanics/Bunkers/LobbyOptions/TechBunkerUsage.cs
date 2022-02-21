@@ -11,62 +11,59 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.LobbyOptions
+namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.LobbyOptions;
+
+using JetBrains.Annotations;
+using OpenRA.Traits;
+using System.Collections.ObjectModel;
+using Traits;
+
+public enum TechBunkerUsageType
 {
-	using JetBrains.Annotations;
-	using OpenRA.Traits;
-	using System.Collections.ObjectModel;
-	using Traits;
+	Proximity,
+	Technician
+}
 
-	public enum TechBunkerUsageType
+[UsedImplicitly]
+[Desc("How a TechBunker can be opened.")]
+public class TechBunkerUsageInfo : TraitInfo, ILobbyOptions
+{
+	public const string Id = "TechBunkerUsage";
+	public const TechBunkerUsageType Default = TechBunkerUsageType.Proximity;
+
+	IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(MapPreview mapPreview)
 	{
-		Proximity,
-		Technician
+		yield return new LobbyOption(
+			TechBunkerUsageInfo.Id,
+			"Usage",
+			"How a TechBunker can be opened.",
+			true,
+			0,
+			new ReadOnlyDictionary<string, string>(
+				new Dictionary<TechBunkerUsageType, string> { { TechBunkerUsageType.Proximity, "Proximity" }, { TechBunkerUsageType.Technician, "Technician" } }
+					.ToDictionary(e => e.Key.ToString(), e => e.Value)
+			),
+			TechBunkerUsageInfo.Default.ToString(),
+			false,
+			TechBunkerInfo.LobbyOptionsCategory
+		);
 	}
 
-	[UsedImplicitly]
-	[Desc("How a TechBunker can be opened.")]
-	public class TechBunkerUsageInfo : TraitInfo, ILobbyOptions
+	public override object Create(ActorInitializer init)
 	{
-		public const string Id = "TechBunkerUsage";
-		public const TechBunkerUsageType Default = TechBunkerUsageType.Proximity;
-
-		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(MapPreview mapPreview)
-		{
-			yield return new LobbyOption(
-				TechBunkerUsageInfo.Id,
-				"Usage",
-				"How a TechBunker can be opened.",
-				true,
-				0,
-				new ReadOnlyDictionary<string, string>(
-					new Dictionary<TechBunkerUsageType, string>
-					{
-						{ TechBunkerUsageType.Proximity, "Proximity" }, { TechBunkerUsageType.Technician, "Technician" }
-					}.ToDictionary(e => e.Key.ToString(), e => e.Value)
-				),
-				TechBunkerUsageInfo.Default.ToString(),
-				false,
-				TechBunkerInfo.LobbyOptionsCategory
-			);
-		}
-
-		public override object Create(ActorInitializer init)
-		{
-			return new TechBunkerUsage();
-		}
+		return new TechBunkerUsage();
 	}
+}
 
-	public class TechBunkerUsage : INotifyCreated
+public class TechBunkerUsage : INotifyCreated
+{
+	public TechBunkerUsageType Usage { get; private set; }
+
+	void INotifyCreated.Created(Actor self)
 	{
-		public TechBunkerUsageType Usage { get; private set; }
-
-		void INotifyCreated.Created(Actor self)
-		{
-			this.Usage = (TechBunkerUsageType)Enum.Parse(
-				typeof(TechBunkerUsageType),
-				self.World.LobbyInfo.GlobalSettings.OptionOrDefault(TechBunkerUsageInfo.Id, TechBunkerUsageInfo.Default.ToString())
-			);
-		}
+		this.Usage = (TechBunkerUsageType)Enum.Parse(
+			typeof(TechBunkerUsageType),
+			self.World.LobbyInfo.GlobalSettings.OptionOrDefault(TechBunkerUsageInfo.Id, TechBunkerUsageInfo.Default.ToString())
+		);
 	}
 }

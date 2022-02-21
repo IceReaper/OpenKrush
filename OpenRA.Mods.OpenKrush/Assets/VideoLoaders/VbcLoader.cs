@@ -11,41 +11,40 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Assets.VideoLoaders
+namespace OpenRA.Mods.OpenKrush.Assets.VideoLoaders;
+
+using FileFormats;
+using JetBrains.Annotations;
+using Video;
+
+[UsedImplicitly]
+public class VbcLoader : IVideoLoader
 {
-	using FileFormats;
-	using JetBrains.Annotations;
-	using Video;
-
-	[UsedImplicitly]
-	public class VbcLoader : IVideoLoader
+	public bool TryParseVideo(Stream s, bool useFramePadding, out IVideo? video)
 	{
-		public bool TryParseVideo(Stream s, bool useFramePadding, out IVideo? video)
+		video = null;
+
+		if (!VbcLoader.IsVbc(s))
+			return false;
+
+		video = new Vbc(s);
+
+		return true;
+	}
+
+	private static bool IsVbc(Stream s)
+	{
+		var start = s.Position;
+
+		if (s.ReadASCII(4) != "SIFF")
 		{
-			video = null;
-
-			if (!VbcLoader.IsVbc(s))
-				return false;
-
-			video = new Vbc(s);
-
-			return true;
-		}
-
-		private static bool IsVbc(Stream s)
-		{
-			var start = s.Position;
-
-			if (s.ReadASCII(4) != "SIFF")
-			{
-				s.Position = start;
-
-				return false;
-			}
-
 			s.Position = start;
 
-			return true;
+			return false;
 		}
+
+		s.Position = start;
+
+		return true;
 	}
 }

@@ -11,37 +11,36 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Assets.FileFormats
+namespace OpenRA.Mods.OpenKrush.Assets.FileFormats;
+
+public class Soun : ISoundFormat
 {
-	public class Soun : ISoundFormat
+	private readonly byte[] data;
+
+	public int Channels { get; }
+	public int SampleBits { get; }
+	public int SampleRate { get; }
+	public float LengthInSeconds => (float)this.data.Length / (this.Channels * this.SampleRate * this.SampleBits);
+
+	public Soun(Stream stream)
 	{
-		private readonly byte[] data;
+		var size = stream.ReadInt32();
+		this.SampleRate = stream.ReadInt32();
+		this.SampleBits = stream.ReadInt32();
+		this.Channels = stream.ReadInt32();
+		stream.ReadUInt32(); // unk
+		stream.Position += 32; // Empty
+		stream.ReadBytes(20); // Filename
+		this.data = stream.ReadBytes(size * this.Channels);
+	}
 
-		public int Channels { get; }
-		public int SampleBits { get; }
-		public int SampleRate { get; }
-		public float LengthInSeconds => (float)this.data.Length / (this.Channels * this.SampleRate * this.SampleBits);
+	public Stream GetPCMInputStream()
+	{
+		return new MemoryStream(this.data);
+	}
 
-		public Soun(Stream stream)
-		{
-			var size = stream.ReadInt32();
-			this.SampleRate = stream.ReadInt32();
-			this.SampleBits = stream.ReadInt32();
-			this.Channels = stream.ReadInt32();
-			stream.ReadUInt32(); // unk
-			stream.Position += 32; // Empty
-			stream.ReadBytes(20); // Filename
-			this.data = stream.ReadBytes(size * this.Channels);
-		}
-
-		public Stream GetPCMInputStream()
-		{
-			return new MemoryStream(this.data);
-		}
-
-		public void Dispose()
-		{
-			GC.SuppressFinalize(this);
-		}
+	public void Dispose()
+	{
+		GC.SuppressFinalize(this);
 	}
 }

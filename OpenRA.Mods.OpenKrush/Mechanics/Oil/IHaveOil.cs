@@ -11,11 +11,10 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Oil
+namespace OpenRA.Mods.OpenKrush.Mechanics.Oil;
+
+internal interface IHaveOil
 {
-	internal interface IHaveOil
-	{
-		int Current { get; }
-		int Maximum { get; }
-	}
+	int Current { get; }
+	int Maximum { get; }
 }

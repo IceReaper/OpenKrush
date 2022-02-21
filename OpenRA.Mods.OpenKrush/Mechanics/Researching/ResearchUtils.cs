@@ -11,38 +11,37 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Researching
+namespace OpenRA.Mods.OpenKrush.Mechanics.Researching;
+
+using Traits;
+
+public static class ResearchUtils
 {
-	using Traits;
+	public const string LobbyOptionsCategory = "research";
 
-	public static class ResearchUtils
+	public static ResearchAction GetAction(Actor self, Actor target)
 	{
-		public const string LobbyOptionsCategory = "research";
+		if (target.IsDead || target.Disposed || !target.IsInWorld)
+			return ResearchAction.None;
 
-		public static ResearchAction GetAction(Actor self, Actor target)
-		{
-			if (target.IsDead || target.Disposed || !target.IsInWorld)
-				return ResearchAction.None;
+		if (target.Owner != self.Owner)
+			return ResearchAction.None;
 
-			if (target.Owner != self.Owner)
-				return ResearchAction.None;
+		var researches = self.TraitOrDefault<Researches>();
+		var researchable = target.TraitOrDefault<Researchable>();
 
-			var researches = self.TraitOrDefault<Researches>();
-			var researchable = target.TraitOrDefault<Researchable>();
+		if (researches == null || researches.IsTraitDisabled || researchable == null)
+			return ResearchAction.None;
 
-			if (researches == null || researches.IsTraitDisabled || researchable == null)
-				return ResearchAction.None;
+		if (researchable.IsTraitDisabled)
+			return ResearchAction.Blocked;
 
-			if (researchable.IsTraitDisabled)
-				return ResearchAction.Blocked;
+		if (researchable.ResearchedBy != null)
+			return ResearchAction.Stop;
 
-			if (researchable.ResearchedBy != null)
-				return ResearchAction.Stop;
+		if (researches.GetState() == ResarchState.Researching)
+			return ResearchAction.Blocked;
 
-			if (researches.GetState() == ResarchState.Researching)
-				return ResearchAction.Blocked;
-
-			return researchable.Level >= researchable.MaxLevel ? ResearchAction.Blocked : ResearchAction.Start;
-		}
+		return researchable.Level >= researchable.MaxLevel ? ResearchAction.Blocked : ResearchAction.Start;
 	}
 }

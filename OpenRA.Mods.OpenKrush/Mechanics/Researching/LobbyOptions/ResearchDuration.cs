@@ -11,51 +11,50 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.LobbyOptions
+namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.LobbyOptions;
+
+using JetBrains.Annotations;
+using OpenRA.Traits;
+using System.Collections.ObjectModel;
+
+[UsedImplicitly]
+[Desc("Selectable max tech level in lobby.")]
+public class ResearchDurationInfo : TraitInfo, ILobbyOptions
 {
-	using JetBrains.Annotations;
-	using OpenRA.Traits;
-	using System.Collections.ObjectModel;
+	public const string Id = "ResearchDuration";
 
-	[UsedImplicitly]
-	[Desc("Selectable max tech level in lobby.")]
-	public class ResearchDurationInfo : TraitInfo, ILobbyOptions
+	IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(MapPreview mapPreview)
 	{
-		public const string Id = "ResearchDuration";
+		var values = new Dictionary<string, string>();
 
-		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(MapPreview mapPreview)
-		{
-			var values = new Dictionary<string, string>();
+		for (var i = 1; i <= 4; i++)
+			values.Add(i.ToString(), $"{i * 100}%");
 
-			for (var i = 1; i <= 4; i++)
-				values.Add(i.ToString(), $"{i * 100}%");
-
-			yield return new LobbyOption(
-				ResearchDurationInfo.Id,
-				"Duration",
-				"Research duration.",
-				true,
-				0,
-				new ReadOnlyDictionary<string, string>(values),
-				"1",
-				false,
-				ResearchUtils.LobbyOptionsCategory
-			);
-		}
-
-		public override object Create(ActorInitializer init)
-		{
-			return new ResearchDuration();
-		}
+		yield return new LobbyOption(
+			ResearchDurationInfo.Id,
+			"Duration",
+			"Research duration.",
+			true,
+			0,
+			new ReadOnlyDictionary<string, string>(values),
+			"1",
+			false,
+			ResearchUtils.LobbyOptionsCategory
+		);
 	}
 
-	public class ResearchDuration : INotifyCreated
+	public override object Create(ActorInitializer init)
 	{
-		public int Duration { get; private set; }
+		return new ResearchDuration();
+	}
+}
 
-		void INotifyCreated.Created(Actor self)
-		{
-			this.Duration = int.Parse(self.World.LobbyInfo.GlobalSettings.OptionOrDefault(ResearchDurationInfo.Id, "1"));
-		}
+public class ResearchDuration : INotifyCreated
+{
+	public int Duration { get; private set; }
+
+	void INotifyCreated.Created(Actor self)
+	{
+		this.Duration = int.Parse(self.World.LobbyInfo.GlobalSettings.OptionOrDefault(ResearchDurationInfo.Id, "1"));
 	}
 }

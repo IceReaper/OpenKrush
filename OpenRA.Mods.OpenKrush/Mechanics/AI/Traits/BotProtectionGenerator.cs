@@ -11,45 +11,44 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
-{
-	using Common.Traits;
-	using JetBrains.Annotations;
-	using Oil.Traits;
-	using Ui.Traits;
+namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits;
 
-	[UsedImplicitly]
-	public class BotProtectionGeneratorInfo : ConditionalTraitInfo
+using Common.Traits;
+using JetBrains.Annotations;
+using Oil.Traits;
+using Ui.Traits;
+
+[UsedImplicitly]
+public class BotProtectionGeneratorInfo : ConditionalTraitInfo
+{
+	public override object Create(ActorInitializer init)
 	{
-		public override object Create(ActorInitializer init)
-		{
-			return new BotProtectionGenerator(this);
-		}
+		return new BotProtectionGenerator(this);
+	}
+}
+
+public class BotProtectionGenerator : ConditionalTrait<BotProtectionGeneratorInfo>
+{
+	public BotProtectionGenerator(BotProtectionGeneratorInfo info)
+		: base(info)
+	{
 	}
 
-	public class BotProtectionGenerator : ConditionalTrait<BotProtectionGeneratorInfo>
+	protected override void Created(Actor self)
 	{
-		public BotProtectionGenerator(BotProtectionGeneratorInfo info)
-			: base(info)
-		{
-		}
+		var info = self.TraitOrDefault<SquadManagerBotModule>()?.Info;
 
-		protected override void Created(Actor self)
-		{
-			var info = self.TraitOrDefault<SquadManagerBotModule>()?.Info;
-
-			info?.GetType()
-				.GetField(nameof(SquadManagerBotModuleInfo.ProtectionTypes))
-				?.SetValue(
-					info,
-					self.World.Map.Rules.Actors
-						.Where(
-							a => (a.Value.HasTraitInfo<BuildingInfo>() && a.Value.HasTraitInfo<AdvancedSelectionDecorationsInfo>())
-								|| a.Value.HasTraitInfo<TankerInfo>()
-						)
-						.Select(e => e.Key)
-						.ToHashSet()
-				);
-		}
+		info?.GetType()
+			.GetField(nameof(SquadManagerBotModuleInfo.ProtectionTypes))
+			?.SetValue(
+				info,
+				self.World.Map.Rules.Actors
+					.Where(
+						a => (a.Value.HasTraitInfo<BuildingInfo>() && a.Value.HasTraitInfo<AdvancedSelectionDecorationsInfo>())
+							|| a.Value.HasTraitInfo<TankerInfo>()
+					)
+					.Select(e => e.Key)
+					.ToHashSet()
+			);
 	}
 }

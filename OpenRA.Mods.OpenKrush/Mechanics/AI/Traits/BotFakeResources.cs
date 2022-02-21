@@ -11,40 +11,39 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
-{
-	using Common.Traits;
-	using JetBrains.Annotations;
-	using Oil.Traits;
-	using OpenRA.Traits;
-	using Researching.Traits;
+namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits;
 
-	[UsedImplicitly]
-	public class BotFakeResourcesInfo : ConditionalTraitInfo
+using Common.Traits;
+using JetBrains.Annotations;
+using Oil.Traits;
+using OpenRA.Traits;
+using Researching.Traits;
+
+[UsedImplicitly]
+public class BotFakeResourcesInfo : ConditionalTraitInfo
+{
+	public override object Create(ActorInitializer init)
 	{
-		public override object Create(ActorInitializer init)
-		{
-			return new BotFakeResources(this);
-		}
+		return new BotFakeResources(this);
+	}
+}
+
+public class BotFakeResources : ConditionalTrait<BotFakeResourcesInfo>, IBotTick
+{
+	public BotFakeResources(BotFakeResourcesInfo info)
+		: base(info)
+	{
 	}
 
-	public class BotFakeResources : ConditionalTrait<BotFakeResourcesInfo>, IBotTick
+	void IBotTick.BotTick(IBot bot)
 	{
-		public BotFakeResources(BotFakeResourcesInfo info)
-			: base(info)
-		{
-		}
+		if (bot.Player.World.WorldTick % 3 != 0)
+			return;
 
-		void IBotTick.BotTick(IBot bot)
-		{
-			if (bot.Player.World.WorldTick % 3 != 0)
-				return;
+		var pumpForce = bot.Player.World.ActorsHavingTrait<PowerStation>()
+			.Where(a => a.Owner == bot.Player)
+			.Sum(a => 5 + a.TraitOrDefault<Researchable>().Level);
 
-			var pumpForce = bot.Player.World.ActorsHavingTrait<PowerStation>()
-				.Where(a => a.Owner == bot.Player)
-				.Sum(a => 5 + a.TraitOrDefault<Researchable>().Level);
-
-			bot.Player.PlayerActor.TraitOrDefault<PlayerResources>().GiveCash(Math.Max(5, pumpForce));
-		}
+		bot.Player.PlayerActor.TraitOrDefault<PlayerResources>().GiveCash(Math.Max(5, pumpForce));
 	}
 }

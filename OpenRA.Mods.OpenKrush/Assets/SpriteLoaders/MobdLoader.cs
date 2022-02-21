@@ -11,89 +11,88 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Assets.SpriteLoaders
+namespace OpenRA.Mods.OpenKrush.Assets.SpriteLoaders;
+
+using Common.Graphics;
+using FileFormats;
+using Graphics;
+using JetBrains.Annotations;
+using Mechanics.DataFromAssets.Graphics;
+using Primitives;
+
+[UsedImplicitly]
+public class MobdLoader : ISpriteLoader
 {
-	using Common.Graphics;
-	using FileFormats;
-	using Graphics;
-	using JetBrains.Annotations;
-	using Mechanics.DataFromAssets.Graphics;
-	using Primitives;
-
-	[UsedImplicitly]
-	public class MobdLoader : ISpriteLoader
+	private class MobdSpriteFrame : ISpriteFrame
 	{
-		private class MobdSpriteFrame : ISpriteFrame
+		public SpriteFrameType Type => SpriteFrameType.Indexed8;
+		public Size Size { get; }
+		public Size FrameSize { get; }
+		public float2 Offset { get; }
+		public byte[] Data { get; }
+		public readonly uint[]? Palette;
+		public readonly MobdPoint[]? Points;
+
+		public bool DisableExportPadding => true;
+
+		public MobdSpriteFrame(MobdFrame mobdFrame)
 		{
-			public SpriteFrameType Type => SpriteFrameType.Indexed8;
-			public Size Size { get; }
-			public Size FrameSize { get; }
-			public float2 Offset { get; }
-			public byte[] Data { get; }
-			public readonly uint[]? Palette;
-			public readonly MobdPoint[]? Points;
+			var width = mobdFrame.RenderFlags.Image.Width;
+			var height = mobdFrame.RenderFlags.Image.Height;
+			var x = mobdFrame.OffsetX;
+			var y = mobdFrame.OffsetY;
 
-			public bool DisableExportPadding => true;
+			this.Size = new(width, height);
+			this.FrameSize = new(width, height);
+			this.Offset = new int2((int)(width / 2 - x), (int)(height / 2 - y));
+			this.Data = mobdFrame.RenderFlags.Image.Pixels;
+			this.Palette = mobdFrame.RenderFlags.Palette;
+			this.Points = mobdFrame.Points;
+		}
+	}
 
-			public MobdSpriteFrame(MobdFrame mobdFrame)
-			{
-				var width = mobdFrame.RenderFlags.Image.Width;
-				var height = mobdFrame.RenderFlags.Image.Height;
-				var x = mobdFrame.OffsetX;
-				var y = mobdFrame.OffsetY;
+	public bool TryParseSprite(Stream stream, string filename, out ISpriteFrame[]? frames, out TypeDictionary? metadata)
+	{
+		if (!filename.EndsWith(".mobd") || stream is not SegmentStream segmentStream)
+		{
+			metadata = null;
+			frames = null;
 
-				this.Size = new(width, height);
-				this.FrameSize = new(width, height);
-				this.Offset = new int2((int)(width / 2 - x), (int)(height / 2 - y));
-				this.Data = mobdFrame.RenderFlags.Image.Pixels;
-				this.Palette = mobdFrame.RenderFlags.Palette;
-				this.Points = mobdFrame.Points;
-			}
+			return false;
 		}
 
-		public bool TryParseSprite(Stream stream, string filename, out ISpriteFrame[]? frames, out TypeDictionary? metadata)
+		// This is damn ugly, but MOBD uses offsets from LVL start.
+		segmentStream.BaseStream.Position = segmentStream.BaseOffset;
+		var mobd = new Mobd(segmentStream.BaseStream);
+		var tmp = new List<MobdSpriteFrame>();
+
+		tmp.AddRange(mobd.RotationalAnimations.SelectMany(mobdAnimation => mobdAnimation.Frames, (_, mobdFrame) => new MobdSpriteFrame(mobdFrame)));
+		tmp.AddRange(mobd.SimpleAnimations.SelectMany(mobdAnimation => mobdAnimation.Frames, (_, mobdFrame) => new MobdSpriteFrame(mobdFrame)));
+
+		uint[]? palette = null;
+		var points = new Dictionary<int, Offset[]>();
+
+		for (var i = 0; i < tmp.Count; i++)
 		{
-			if (!filename.EndsWith(".mobd") || stream is not SegmentStream segmentStream)
+			if (tmp[i].Points != null)
 			{
-				metadata = null;
-				frames = null;
+				var mobdPoints = tmp[i].Points;
 
-				return false;
+				if (mobdPoints != null)
+					points.Add(i, mobdPoints.Select(point => new Offset(point.Id, point.X, point.Y)).ToArray());
 			}
 
-			// This is damn ugly, but MOBD uses offsets from LVL start.
-			segmentStream.BaseStream.Position = segmentStream.BaseOffset;
-			var mobd = new Mobd(segmentStream.BaseStream);
-			var tmp = new List<MobdSpriteFrame>();
-
-			tmp.AddRange(mobd.RotationalAnimations.SelectMany(mobdAnimation => mobdAnimation.Frames, (_, mobdFrame) => new MobdSpriteFrame(mobdFrame)));
-			tmp.AddRange(mobd.SimpleAnimations.SelectMany(mobdAnimation => mobdAnimation.Frames, (_, mobdFrame) => new MobdSpriteFrame(mobdFrame)));
-
-			uint[]? palette = null;
-			var points = new Dictionary<int, Offset[]>();
-
-			for (var i = 0; i < tmp.Count; i++)
-			{
-				if (tmp[i].Points != null)
-				{
-					var mobdPoints = tmp[i].Points;
-
-					if (mobdPoints != null)
-						points.Add(i, mobdPoints.Select(point => new Offset(point.Id, point.X, point.Y)).ToArray());
-				}
-
-				if (tmp[i].Palette != null)
-					palette = tmp[i].Palette;
-			}
-
-			frames = tmp.Select(e => e as ISpriteFrame).ToArray();
-
-			metadata = new() { new EmbeddedSpriteOffsets(points) };
-
-			if (palette != null)
-				metadata.Add(new EmbeddedSpritePalette(palette));
-
-			return true;
+			if (tmp[i].Palette != null)
+				palette = tmp[i].Palette;
 		}
+
+		frames = tmp.Select(e => e as ISpriteFrame).ToArray();
+
+		metadata = new() { new EmbeddedSpriteOffsets(points) };
+
+		if (palette != null)
+			metadata.Add(new EmbeddedSpritePalette(palette));
+
+		return true;
 	}
 }

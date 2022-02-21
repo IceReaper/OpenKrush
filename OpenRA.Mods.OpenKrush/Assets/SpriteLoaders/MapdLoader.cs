@@ -11,54 +11,53 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Assets.SpriteLoaders
+namespace OpenRA.Mods.OpenKrush.Assets.SpriteLoaders;
+
+using FileFormats;
+using Graphics;
+using JetBrains.Annotations;
+using Primitives;
+
+[UsedImplicitly]
+public class MapdLoader : ISpriteLoader
 {
-	using FileFormats;
-	using Graphics;
-	using JetBrains.Annotations;
-	using Primitives;
-
-	[UsedImplicitly]
-	public class MapdLoader : ISpriteLoader
+	private class MapdSpriteFrame : ISpriteFrame
 	{
-		private class MapdSpriteFrame : ISpriteFrame
+		public SpriteFrameType Type => SpriteFrameType.Rgba32;
+
+		public Size Size { get; }
+
+		public Size FrameSize { get; }
+
+		public float2 Offset => float2.Zero;
+
+		public byte[] Data { get; }
+
+		public bool DisableExportPadding => true;
+
+		public MapdSpriteFrame(MapdLayer layer)
 		{
-			public SpriteFrameType Type => SpriteFrameType.Rgba32;
+			this.Size = new(layer.Width, layer.Height);
+			this.FrameSize = new(layer.Width, layer.Height);
+			this.Data = layer.Pixels;
+		}
+	}
 
-			public Size Size { get; }
+	public bool TryParseSprite(Stream stream, string filename, out ISpriteFrame[]? frames, out TypeDictionary? metadata)
+	{
+		metadata = null;
 
-			public Size FrameSize { get; }
+		if (!filename.EndsWith(".mapd") || stream is not SegmentStream segmentStream)
+		{
+			frames = null;
 
-			public float2 Offset => float2.Zero;
-
-			public byte[] Data { get; }
-
-			public bool DisableExportPadding => true;
-
-			public MapdSpriteFrame(MapdLayer layer)
-			{
-				this.Size = new(layer.Width, layer.Height);
-				this.FrameSize = new(layer.Width, layer.Height);
-				this.Data = layer.Pixels;
-			}
+			return false;
 		}
 
-		public bool TryParseSprite(Stream stream, string filename, out ISpriteFrame[]? frames, out TypeDictionary? metadata)
-		{
-			metadata = null;
+		// This is damn ugly, but MAPD uses offsets from LVL start.
+		segmentStream.BaseStream.Position = segmentStream.BaseOffset;
+		frames = new Mapd(segmentStream.BaseStream).Layers.Select(layer => new MapdSpriteFrame(layer) as ISpriteFrame).ToArray();
 
-			if (!filename.EndsWith(".mapd") || stream is not SegmentStream segmentStream)
-			{
-				frames = null;
-
-				return false;
-			}
-
-			// This is damn ugly, but MAPD uses offsets from LVL start.
-			segmentStream.BaseStream.Position = segmentStream.BaseOffset;
-			frames = new Mapd(segmentStream.BaseStream).Layers.Select(layer => new MapdSpriteFrame(layer) as ISpriteFrame).ToArray();
-
-			return true;
-		}
+		return true;
 	}
 }

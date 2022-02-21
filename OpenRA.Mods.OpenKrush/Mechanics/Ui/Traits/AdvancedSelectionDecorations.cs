@@ -11,96 +11,95 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Ui.Traits
+namespace OpenRA.Mods.OpenKrush.Mechanics.Ui.Traits;
+
+using Common.Traits;
+using Graphics;
+using JetBrains.Annotations;
+using OpenRA.Graphics;
+using OpenRA.Traits;
+using Primitives;
+
+[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
+[Desc("Healthbar box.")]
+public class AdvancedSelectionDecorationsInfo : TraitInfo
 {
-	using Common.Traits;
-	using Graphics;
-	using JetBrains.Annotations;
-	using OpenRA.Graphics;
-	using OpenRA.Traits;
-	using Primitives;
+	[Desc("Width for the decoration bar.")]
+	public readonly int Width = 32;
 
-	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
-	[Desc("Healthbar box.")]
-	public class AdvancedSelectionDecorationsInfo : TraitInfo
+	[Desc("Use big variant?")]
+	public readonly bool BigVariant;
+
+	[Desc("Offset for the decoration bar.")]
+	public readonly int2 Offset = int2.Zero;
+
+	public override object Create(ActorInitializer init)
 	{
-		[Desc("Width for the decoration bar.")]
-		public readonly int Width = 32;
+		return new AdvancedSelectionDecorations(this);
+	}
+}
 
-		[Desc("Use big variant?")]
-		public readonly bool BigVariant;
+public class AdvancedSelectionDecorations : ISelectionDecorations, IRenderAnnotations, INotifyCreated, INotifyOwnerChanged
+{
+	private readonly AdvancedSelectionDecorationsInfo info;
+	private StatusBar? statusBar;
+	private Health? health;
 
-		[Desc("Offset for the decoration bar.")]
-		public readonly int2 Offset = int2.Zero;
-
-		public override object Create(ActorInitializer init)
-		{
-			return new AdvancedSelectionDecorations(this);
-		}
+	public AdvancedSelectionDecorations(AdvancedSelectionDecorationsInfo info)
+	{
+		this.info = info;
 	}
 
-	public class AdvancedSelectionDecorations : ISelectionDecorations, IRenderAnnotations, INotifyCreated, INotifyOwnerChanged
+	void INotifyCreated.Created(Actor self)
 	{
-		private readonly AdvancedSelectionDecorationsInfo info;
-		private StatusBar? statusBar;
-		private Health? health;
+		this.health = self.TraitOrDefault<Health>();
+	}
 
-		public AdvancedSelectionDecorations(AdvancedSelectionDecorationsInfo info)
+	public IEnumerable<IRenderable> RenderAnnotations(Actor self, WorldRenderer wr)
+	{
+		this.statusBar ??= new(self, this.info);
+
+		if (!self.CanBeViewedByPlayer(self.World.LocalPlayer))
+			yield break;
+
+		if (!self.World.Selection.Contains(self))
 		{
-			this.info = info;
-		}
-
-		void INotifyCreated.Created(Actor self)
-		{
-			this.health = self.TraitOrDefault<Health>();
-		}
-
-		public IEnumerable<IRenderable> RenderAnnotations(Actor self, WorldRenderer wr)
-		{
-			this.statusBar ??= new(self, this.info);
-
-			if (!self.CanBeViewedByPlayer(self.World.LocalPlayer))
-				yield break;
-
-			if (!self.World.Selection.Contains(self))
+			switch (Game.Settings.Game.StatusBars)
 			{
-				switch (Game.Settings.Game.StatusBars)
-				{
-					case StatusBarsType.Standard:
+				case StatusBarsType.Standard:
+					yield break;
+
+				case StatusBarsType.DamageShow:
+					if (this.health == null || this.health.DamageState == DamageState.Undamaged)
 						yield break;
 
-					case StatusBarsType.DamageShow:
-						if (this.health == null || this.health.DamageState == DamageState.Undamaged)
-							yield break;
+					break;
 
-						break;
+				case StatusBarsType.AlwaysShow:
+					break;
 
-					case StatusBarsType.AlwaysShow:
-						break;
-
-					default:
-						throw new ArgumentOutOfRangeException(Enum.GetName(Game.Settings.Game.StatusBars));
-				}
+				default:
+					throw new ArgumentOutOfRangeException(Enum.GetName(Game.Settings.Game.StatusBars));
 			}
-
-			yield return this.statusBar;
 		}
 
-		public IEnumerable<IRenderable> RenderSelectionAnnotations(Actor self, WorldRenderer worldRenderer, Color color)
-		{
-			yield break;
-		}
+		yield return this.statusBar;
+	}
 
-		public int2 GetDecorationOrigin(Actor self, WorldRenderer wr, string pos, int2 margin)
-		{
-			return int2.Zero;
-		}
+	public IEnumerable<IRenderable> RenderSelectionAnnotations(Actor self, WorldRenderer worldRenderer, Color color)
+	{
+		yield break;
+	}
 
-		bool IRenderAnnotations.SpatiallyPartitionable => true;
+	public int2 GetDecorationOrigin(Actor self, WorldRenderer wr, string pos, int2 margin)
+	{
+		return int2.Zero;
+	}
 
-		void INotifyOwnerChanged.OnOwnerChanged(Actor self, Player oldOwner, Player newOwner)
-		{
-			this.statusBar = new(self, this.info);
-		}
+	bool IRenderAnnotations.SpatiallyPartitionable => true;
+
+	void INotifyOwnerChanged.OnOwnerChanged(Actor self, Player oldOwner, Player newOwner)
+	{
+		this.statusBar = new(self, this.info);
 	}
 }

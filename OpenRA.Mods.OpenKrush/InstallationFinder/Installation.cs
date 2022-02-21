@@ -11,26 +11,25 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.InstallationFinder
+namespace OpenRA.Mods.OpenKrush.InstallationFinder;
+
+public class Installation
 {
-	public class Installation
+	private readonly string id;
+	private readonly string rootPath;
+	public readonly Dictionary<string, string> Packages = new();
+	public readonly Dictionary<string, string> Music = new();
+
+	public Installation(string id, string rootPath)
 	{
-		private readonly string id;
-		private readonly string rootPath;
-		public readonly Dictionary<string, string> Packages = new();
-		public readonly Dictionary<string, string> Music = new();
+		this.id = id;
+		this.rootPath = rootPath;
 
-		public Installation(string id, string rootPath)
-		{
-			this.id = id;
-			this.rootPath = rootPath;
+		this.Packages.Add(id, rootPath);
+	}
 
-			this.Packages.Add(id, rootPath);
-		}
-
-		public string GetPath(string path)
-		{
-			return $"{this.id}|{Path.GetRelativePath(this.rootPath, path)}";
-		}
+	public string GetPath(string path)
+	{
+		return $"{this.id}|{Path.GetRelativePath(this.rootPath, path)}";
 	}
 }

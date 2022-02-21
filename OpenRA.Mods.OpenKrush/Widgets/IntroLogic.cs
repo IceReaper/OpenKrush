@@ -11,123 +11,122 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Widgets
+namespace OpenRA.Mods.OpenKrush.Widgets;
+
+using Common.Traits;
+using GameRules;
+using JetBrains.Annotations;
+using OpenRA.Widgets;
+
+[UsedImplicitly]
+public class IntroLogic : ChromeLogic
 {
-	using Common.Traits;
-	using GameRules;
-	using JetBrains.Annotations;
-	using OpenRA.Widgets;
+	private static int state;
 
-	[UsedImplicitly]
-	public class IntroLogic : ChromeLogic
+	private readonly Widget? widget;
+	private readonly ModData? modData;
+	private readonly World? world;
+	private readonly VbcPlayerWidget? player;
+	private readonly MusicInfo? song;
+
+	[ObjectCreator.UseCtorAttribute]
+	public IntroLogic(Widget widget, World world, ModData modData)
 	{
-		private static int state;
+		if (IntroLogic.state != 0)
+			return;
 
-		private readonly Widget? widget;
-		private readonly ModData? modData;
-		private readonly World? world;
-		private readonly VbcPlayerWidget? player;
-		private readonly MusicInfo? song;
+		this.widget = widget;
+		this.world = world;
+		this.modData = modData;
 
-		[ObjectCreator.UseCtorAttribute]
-		public IntroLogic(Widget widget, World world, ModData modData)
+		widget.AddChild(this.player = new(this.modData));
+
+		this.player.Bounds = new(0, 0, Game.Renderer.Resolution.Width, Game.Renderer.Resolution.Height);
+
+		var musicPlayList = world.WorldActor.TraitOrDefault<MusicPlaylist>();
+		this.song = musicPlayList.CurrentSong();
+		musicPlayList.Stop();
+	}
+
+	public override void Tick()
+	{
+		if (this.modData == null)
 		{
-			if (IntroLogic.state != 0)
-				return;
+			this.Finished();
 
-			this.widget = widget;
-			this.world = world;
-			this.modData = modData;
-
-			widget.AddChild(this.player = new(this.modData));
-
-			this.player.Bounds = new(0, 0, Game.Renderer.Resolution.Width, Game.Renderer.Resolution.Height);
-
-			var musicPlayList = world.WorldActor.TraitOrDefault<MusicPlaylist>();
-			this.song = musicPlayList.CurrentSong();
-			musicPlayList.Stop();
+			return;
 		}
 
-		public override void Tick()
+		switch (IntroLogic.state)
 		{
-			if (this.modData == null)
+			case 0:
+				this.PlayVideo(
+					this.modData.Manifest.Id switch
+					{
+						"openkrush_gen1" => "mh_fmv.vbc",
+						"openkrush_gen2" => "mh.vbc",
+						_ => null
+					}
+				);
+
+				break;
+
+			case 2:
+				this.PlayVideo("intro.vbc");
+
+				break;
+
+			case 4:
 			{
 				this.Finished();
 
-				return;
+				break;
 			}
+		}
+	}
 
-			switch (IntroLogic.state)
-			{
-				case 0:
-					this.PlayVideo(
-						this.modData.Manifest.Id switch
-						{
-							"openkrush_gen1" => "mh_fmv.vbc",
-							"openkrush_gen2" => "mh.vbc",
-							_ => null
-						}
-					);
+	private void PlayVideo(string? video)
+	{
+		IntroLogic.state++;
 
-					break;
+		if (video == null || this.player == null)
+		{
+			IntroLogic.state++;
 
-				case 2:
-					this.PlayVideo("intro.vbc");
+			return;
+		}
 
-					break;
-
-				case 4:
+		var fmvPackage = this.modData?.ModFiles.MountedPackages.FirstOrDefault(
+			package => this.modData.ModFiles.GetPrefix(package)
+				== this.modData.Manifest.Id switch
 				{
-					this.Finished();
-
-					break;
+					"openkrush_gen1" => "gen1_fmv",
+					"openkrush_gen2" => "gen2_fmv",
+					_ => null
 				}
-			}
-		}
+		);
 
-		private void PlayVideo(string? video)
+		var stream = fmvPackage?.Contents.Where(file => file.Equals(video, StringComparison.InvariantCultureIgnoreCase))
+			.Select(file => fmvPackage.GetStream(file))
+			.FirstOrDefault();
+
+		if (stream == null)
 		{
 			IntroLogic.state++;
 
-			if (video == null || this.player == null)
-			{
-				IntroLogic.state++;
-
-				return;
-			}
-
-			var fmvPackage = this.modData?.ModFiles.MountedPackages.FirstOrDefault(
-				package => this.modData.ModFiles.GetPrefix(package)
-					== this.modData.Manifest.Id switch
-					{
-						"openkrush_gen1" => "gen1_fmv",
-						"openkrush_gen2" => "gen2_fmv",
-						_ => null
-					}
-			);
-
-			var stream = fmvPackage?.Contents.Where(file => file.Equals(video, StringComparison.InvariantCultureIgnoreCase))
-				.Select(file => fmvPackage.GetStream(file))
-				.FirstOrDefault();
-
-			if (stream == null)
-			{
-				IntroLogic.state++;
-
-				return;
-			}
-
-			this.player.Video = new(stream);
-			this.player.Play(() => IntroLogic.state++);
+			return;
 		}
 
-		private void Finished()
-		{
-			this.widget?.RemoveChild(this.player);
-			IntroLogic.state++;
+		this.player.Video = new(stream);
+		this.player.Play(() => IntroLogic.state++);
+	}
 
-			if (this.song != null)
-				this.world?.WorldActor.TraitOrDefault<MusicPlaylist>().Play(this.song);
-		}
+	private void Finished()
+	{
+		this.widget?.RemoveChild(this.player);
+		IntroLogic.state++;
+
+		if (this.song != null)
+			this.world?.WorldActor.TraitOrDefault<MusicPlaylist>().Play(this.song);
 	}
 }

@@ -11,41 +11,40 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Assets.FileFormats
+namespace OpenRA.Mods.OpenKrush.Assets.FileFormats;
+
+public class Son : ISoundFormat
 {
-	public class Son : ISoundFormat
+	private readonly byte[] data;
+
+	public int Channels { get; }
+	public int SampleBits { get; }
+	public int SampleRate { get; }
+	public float LengthInSeconds => (float)this.data.Length / (this.Channels * this.SampleRate * this.SampleBits);
+
+	public Son(Stream stream)
 	{
-		private readonly byte[] data;
+		stream.ReadASCII(4); // SIFF
+		stream.ReadInt32(); // fileSize - BE
+		stream.ReadASCII(8); // SOUNSHDR
+		stream.ReadInt16(); // 0
+		stream.ReadInt16(); // 8
+		stream.ReadInt32(); // 1/4 of the size?
+		this.SampleRate = stream.ReadUInt16();
+		this.SampleBits = stream.ReadByte();
+		this.Channels = stream.ReadByte() == 1 ? 2 : 1;
+		stream.ReadASCII(4); // BODY
+		var size = (stream.ReadByte() << 24) | (stream.ReadByte() << 16) | (stream.ReadByte() << 8) | stream.ReadByte();
+		this.data = stream.ReadBytes(size);
+	}
 
-		public int Channels { get; }
-		public int SampleBits { get; }
-		public int SampleRate { get; }
-		public float LengthInSeconds => (float)this.data.Length / (this.Channels * this.SampleRate * this.SampleBits);
+	public Stream GetPCMInputStream()
+	{
+		return new MemoryStream(this.data);
+	}
 
-		public Son(Stream stream)
-		{
-			stream.ReadASCII(4); // SIFF
-			stream.ReadInt32(); // fileSize - BE
-			stream.ReadASCII(8); // SOUNSHDR
-			stream.ReadInt16(); // 0
-			stream.ReadInt16(); // 8
-			stream.ReadInt32(); // 1/4 of the size?
-			this.SampleRate = stream.ReadUInt16();
-			this.SampleBits = stream.ReadByte();
-			this.Channels = stream.ReadByte() == 1 ? 2 : 1;
-			stream.ReadASCII(4); // BODY
-			var size = (stream.ReadByte() << 24) | (stream.ReadByte() << 16) | (stream.ReadByte() << 8) | stream.ReadByte();
-			this.data = stream.ReadBytes(size);
-		}
-
-		public Stream GetPCMInputStream()
-		{
-			return new MemoryStream(this.data);
-		}
-
-		public void Dispose()
-		{
-			GC.SuppressFinalize(this);
-		}
+	public void Dispose()
+	{
+		GC.SuppressFinalize(this);
 	}
 }

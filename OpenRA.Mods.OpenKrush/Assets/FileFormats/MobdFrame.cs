@@ -11,49 +11,48 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Assets.FileFormats
+namespace OpenRA.Mods.OpenKrush.Assets.FileFormats;
+
+public class MobdFrame
 {
-	public class MobdFrame
+	public readonly uint OffsetX;
+	public readonly uint OffsetY;
+	public readonly MobdRenderFlags RenderFlags;
+	public readonly MobdPoint[]? Points;
+
+	public MobdFrame(Stream stream)
 	{
-		public readonly uint OffsetX;
-		public readonly uint OffsetY;
-		public readonly MobdRenderFlags RenderFlags;
-		public readonly MobdPoint[]? Points;
+		this.OffsetX = stream.ReadUInt32();
+		this.OffsetY = stream.ReadUInt32();
+		stream.ReadUInt32(); // TODO Unk
+		var renderFlagsOffset = stream.ReadUInt32();
+		stream.ReadUInt32(); // TODO boxListOffset - we do not read boxes (2 points, min and max)
+		stream.ReadUInt32(); // TODO Unk
+		var pointListOffset = stream.ReadUInt32();
 
-		public MobdFrame(Stream stream)
+		// Theoretically we could also read the boxes here.
+		// However they contain info about hitshapes etc. We define them in yaml to be able to tweak them.
+		// But the points are required for turrets, muzzles and projectile launch offsets.
+		if (pointListOffset > 0)
 		{
-			this.OffsetX = stream.ReadUInt32();
-			this.OffsetY = stream.ReadUInt32();
-			stream.ReadUInt32(); // TODO Unk
-			var renderFlagsOffset = stream.ReadUInt32();
-			stream.ReadUInt32(); // TODO boxListOffset - we do not read boxes (2 points, min and max)
-			stream.ReadUInt32(); // TODO Unk
-			var pointListOffset = stream.ReadUInt32();
+			var points = new List<MobdPoint>();
+			stream.Position = pointListOffset;
 
-			// Theoretically we could also read the boxes here.
-			// However they contain info about hitshapes etc. We define them in yaml to be able to tweak them.
-			// But the points are required for turrets, muzzles and projectile launch offsets.
-			if (pointListOffset > 0)
+			while (true)
 			{
-				var points = new List<MobdPoint>();
-				stream.Position = pointListOffset;
+				var boxId = stream.ReadUInt32();
 
-				while (true)
-				{
-					var boxId = stream.ReadUInt32();
+				if (boxId == 0xffffffff)
+					break;
 
-					if (boxId == 0xffffffff)
-						break;
-
-					stream.Position -= 4;
-					points.Add(new(stream));
-				}
-
-				this.Points = points.ToArray();
+				stream.Position -= 4;
+				points.Add(new(stream));
 			}
 
-			stream.Position = renderFlagsOffset;
-			this.RenderFlags = new(stream);
+			this.Points = points.ToArray();
 		}
+
+		stream.Position = renderFlagsOffset;
+		this.RenderFlags = new(stream);
 	}
 }

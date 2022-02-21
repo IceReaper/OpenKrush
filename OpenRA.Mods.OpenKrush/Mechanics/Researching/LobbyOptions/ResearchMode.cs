@@ -11,59 +11,58 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.LobbyOptions
+namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.LobbyOptions;
+
+using JetBrains.Annotations;
+using OpenRA.Traits;
+using System.Collections.ObjectModel;
+
+public enum ResearchModeType
 {
-	using JetBrains.Annotations;
-	using OpenRA.Traits;
-	using System.Collections.ObjectModel;
+	FullLevel,
+	SingleTech
+}
 
-	public enum ResearchModeType
+[UsedImplicitly]
+[Desc("How the research system should work.")]
+public class ResearchModeInfo : TraitInfo, ILobbyOptions
+{
+	public const string Id = "ResearchMode";
+	public const ResearchModeType Default = ResearchModeType.FullLevel;
+
+	IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(MapPreview mapPreview)
 	{
-		FullLevel,
-		SingleTech
+		yield return new LobbyOption(
+			ResearchModeInfo.Id,
+			"Mode",
+			"Wether to research a full tech level or a single technology.",
+			true,
+			0,
+			new ReadOnlyDictionary<string, string>(
+				new Dictionary<ResearchModeType, string> { { ResearchModeType.FullLevel, "Full Level" }, { ResearchModeType.SingleTech, "Single Tech" } }
+					.ToDictionary(e => e.Key.ToString(), e => e.Value)
+			),
+			ResearchModeInfo.Default.ToString(),
+			false,
+			ResearchUtils.LobbyOptionsCategory
+		);
 	}
 
-	[UsedImplicitly]
-	[Desc("How the research system should work.")]
-	public class ResearchModeInfo : TraitInfo, ILobbyOptions
+	public override object Create(ActorInitializer init)
 	{
-		public const string Id = "ResearchMode";
-		public const ResearchModeType Default = ResearchModeType.FullLevel;
-
-		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(MapPreview mapPreview)
-		{
-			yield return new LobbyOption(
-				ResearchModeInfo.Id,
-				"Mode",
-				"Wether to research a full tech level or a single technology.",
-				true,
-				0,
-				new ReadOnlyDictionary<string, string>(
-					new Dictionary<ResearchModeType, string> { { ResearchModeType.FullLevel, "Full Level" }, { ResearchModeType.SingleTech, "Single Tech" } }
-						.ToDictionary(e => e.Key.ToString(), e => e.Value)
-				),
-				ResearchModeInfo.Default.ToString(),
-				false,
-				ResearchUtils.LobbyOptionsCategory
-			);
-		}
-
-		public override object Create(ActorInitializer init)
-		{
-			return new ResearchMode();
-		}
+		return new ResearchMode();
 	}
+}
 
-	public class ResearchMode : INotifyCreated
+public class ResearchMode : INotifyCreated
+{
+	public ResearchModeType Mode { get; private set; }
+
+	void INotifyCreated.Created(Actor self)
 	{
-		public ResearchModeType Mode { get; private set; }
-
-		void INotifyCreated.Created(Actor self)
-		{
-			this.Mode = (ResearchModeType)Enum.Parse(
-				typeof(ResearchModeType),
-				self.World.LobbyInfo.GlobalSettings.OptionOrDefault(ResearchModeInfo.Id, ResearchModeInfo.Default.ToString())
-			);
-		}
+		this.Mode = (ResearchModeType)Enum.Parse(
+			typeof(ResearchModeType),
+			self.World.LobbyInfo.GlobalSettings.OptionOrDefault(ResearchModeInfo.Id, ResearchModeInfo.Default.ToString())
+		);
 	}
 }

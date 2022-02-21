@@ -11,12 +11,11 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.InstallationFinder
+namespace OpenRA.Mods.OpenKrush.InstallationFinder;
+
+public interface IGeneration
 {
-	public interface IGeneration
-	{
-		public int SteamAppId { get; }
-		public int GogAppId { get; }
-		public Installation? TryRegister(string path);
-	}
+	public int SteamAppId { get; }
+	public int GogAppId { get; }
+	public Installation? TryRegister(string path);
 }

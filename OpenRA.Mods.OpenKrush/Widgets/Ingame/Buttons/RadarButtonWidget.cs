@@ -11,84 +11,83 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons
+namespace OpenRA.Mods.OpenKrush.Widgets.Ingame.Buttons;
+
+using Common.Widgets;
+using Mechanics.Researching.Traits;
+using Traits;
+
+public class RadarButtonWidget : SidebarButtonWidget
 {
-	using Common.Widgets;
-	using Mechanics.Researching.Traits;
-	using Traits;
+	private bool hasRadar;
 
-	public class RadarButtonWidget : SidebarButtonWidget
+	public RadarButtonWidget(SidebarWidget sidebar)
+		: base(sidebar, "button")
 	{
-		private bool hasRadar;
+		this.TooltipTitle = "Radar";
+	}
 
-		public RadarButtonWidget(SidebarWidget sidebar)
-			: base(sidebar, "button")
+	public override bool HandleKeyPress(KeyInput e)
+	{
+		if (!this.IsUsable()
+			|| e.IsRepeat
+			|| e.Event != KeyInputEvent.Down
+			|| e.Key != Game.ModData.Hotkeys["Radar"].GetValue().Key
+			|| e.Modifiers != Game.ModData.Hotkeys["Radar"].GetValue().Modifiers)
+			return false;
+
+		this.Active = !this.Active;
+		this.Sidebar.IngameUi.Radar.Visible = this.Active;
+
+		return true;
+	}
+
+	protected override bool HandleLeftClick(MouseInput mi)
+	{
+		if (!base.HandleLeftClick(mi))
+			return false;
+
+		this.Sidebar.IngameUi.Radar.Visible = this.Active;
+
+		return true;
+	}
+
+	protected override bool IsUsable()
+	{
+		return this.hasRadar;
+	}
+
+	public override void Tick()
+	{
+		this.hasRadar = false;
+		var showStances = PlayerRelationship.None;
+
+		foreach (var e in this.Sidebar.IngameUi.World.ActorsWithTrait<ProvidesResearchableRadar>()
+			.Where(p => p.Actor.Owner == this.Sidebar.IngameUi.World.LocalPlayer && !p.Trait.IsTraitDisabled))
 		{
-			this.TooltipTitle = "Radar";
+			var researchable = e.Actor.TraitOrDefault<Researchable>();
+
+			if (!researchable.IsResearched(ProvidesResearchableRadarInfo.Available))
+				continue;
+
+			this.hasRadar = true;
+
+			if (researchable.IsResearched(ProvidesResearchableRadarInfo.ShowAllies))
+				showStances |= PlayerRelationship.Ally;
+
+			if (researchable.IsResearched(ProvidesResearchableRadarInfo.ShowEnemies))
+				showStances |= PlayerRelationship.Enemy;
 		}
 
-		public override bool HandleKeyPress(KeyInput e)
-		{
-			if (!this.IsUsable()
-				|| e.IsRepeat
-				|| e.Event != KeyInputEvent.Down
-				|| e.Key != Game.ModData.Hotkeys["Radar"].GetValue().Key
-				|| e.Modifiers != Game.ModData.Hotkeys["Radar"].GetValue().Modifiers)
-				return false;
+		this.Sidebar.IngameUi.Radar.ShowStances = showStances;
 
-			this.Active = !this.Active;
-			this.Sidebar.IngameUi.Radar.Visible = this.Active;
+		if (!this.hasRadar)
+			this.Sidebar.IngameUi.Radar.Visible = this.Active = false;
+	}
 
-			return true;
-		}
-
-		protected override bool HandleLeftClick(MouseInput mi)
-		{
-			if (!base.HandleLeftClick(mi))
-				return false;
-
-			this.Sidebar.IngameUi.Radar.Visible = this.Active;
-
-			return true;
-		}
-
-		protected override bool IsUsable()
-		{
-			return this.hasRadar;
-		}
-
-		public override void Tick()
-		{
-			this.hasRadar = false;
-			var showStances = PlayerRelationship.None;
-
-			foreach (var e in this.Sidebar.IngameUi.World.ActorsWithTrait<ProvidesResearchableRadar>()
-				.Where(p => p.Actor.Owner == this.Sidebar.IngameUi.World.LocalPlayer && !p.Trait.IsTraitDisabled))
-			{
-				var researchable = e.Actor.TraitOrDefault<Researchable>();
-
-				if (!researchable.IsResearched(ProvidesResearchableRadarInfo.Available))
-					continue;
-
-				this.hasRadar = true;
-
-				if (researchable.IsResearched(ProvidesResearchableRadarInfo.ShowAllies))
-					showStances |= PlayerRelationship.Ally;
-
-				if (researchable.IsResearched(ProvidesResearchableRadarInfo.ShowEnemies))
-					showStances |= PlayerRelationship.Enemy;
-			}
-
-			this.Sidebar.IngameUi.Radar.ShowStances = showStances;
-
-			if (!this.hasRadar)
-				this.Sidebar.IngameUi.Radar.Visible = this.Active = false;
-		}
-
-		protected override void DrawContents()
-		{
-			this.Sidebar.Buttons.PlayFetchIndex("radar", () => 0);
-			WidgetUtils.DrawSpriteCentered(this.Sidebar.Buttons.Image, this.Sidebar.IngameUi.Palette, this.Center + new int2(0, this.Active ? 1 : 0));
-		}
+	protected override void DrawContents()
+	{
+		this.Sidebar.Buttons.PlayFetchIndex("radar", () => 0);
+		WidgetUtils.DrawSpriteCentered(this.Sidebar.Buttons.Image, this.Sidebar.IngameUi.Palette, this.Center + new int2(0, this.Active ? 1 : 0));
 	}
 }

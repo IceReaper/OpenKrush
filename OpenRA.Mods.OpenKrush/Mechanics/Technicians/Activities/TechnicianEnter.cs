@@ -11,38 +11,37 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Activities
+namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Activities;
+
+using Bunkers.Traits;
+using Common.Activities;
+using OpenRA.Traits;
+using Primitives;
+using Traits;
+
+public class TechnicianEnter : Enter
 {
-	using Bunkers.Traits;
-	using Common.Activities;
-	using OpenRA.Traits;
-	using Primitives;
-	using Traits;
+	private readonly Actor target;
 
-	public class TechnicianEnter : Enter
+	public TechnicianEnter(Actor self, Target target, Color targetLineColor)
+		: base(self, target, targetLineColor)
 	{
-		private readonly Actor target;
+		this.target = target.Actor;
+	}
 
-		public TechnicianEnter(Actor self, Target target, Color targetLineColor)
-			: base(self, target, targetLineColor)
-		{
-			this.target = target.Actor;
-		}
+	public override bool Tick(Actor self)
+	{
+		if (!this.IsCanceling && !TechnicianUtils.CanEnter(self, this.target, out _))
+			this.Cancel(self, true);
 
-		public override bool Tick(Actor self)
-		{
-			if (!this.IsCanceling && !TechnicianUtils.CanEnter(self, this.target, out _))
-				this.Cancel(self, true);
+		return base.Tick(self);
+	}
 
-			return base.Tick(self);
-		}
-
-		protected override void OnEnterComplete(Actor self, Actor targetActor)
-		{
-			self.TraitOrDefault<Technician>().Enter(self, targetActor);
-			targetActor.TraitOrDefault<TechnicianRepairable>()?.Enter();
-			targetActor.TraitOrDefault<TechBunker>()?.Use(targetActor, self.Owner);
-			self.Dispose();
-		}
+	protected override void OnEnterComplete(Actor self, Actor targetActor)
+	{
+		self.TraitOrDefault<Technician>().Enter(self, targetActor);
+		targetActor.TraitOrDefault<TechnicianRepairable>()?.Enter();
+		targetActor.TraitOrDefault<TechBunker>()?.Use(targetActor, self.Owner);
+		self.Dispose();
 	}
 }

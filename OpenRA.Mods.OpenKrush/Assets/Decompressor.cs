@@ -11,78 +11,77 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Assets
+namespace OpenRA.Mods.OpenKrush.Assets;
+
+using System.Text;
+
+public static class Decompressor
 {
-	using System.Text;
-
-	public static class Decompressor
+	public static Stream Decompress(Stream compressed)
 	{
-		public static Stream Decompress(Stream compressed)
+		compressed.ReadUInt32(); // version
+		compressed.ReadUInt32(); // timestamp
+		var uncompressedSizeData = (compressed.ReadByte() << 24) | (compressed.ReadByte() << 16) | (compressed.ReadByte() << 8) | compressed.ReadByte();
+		compressed.Position += 4; // RRLC length.
+
+		var uncompressedData = new byte[8 + uncompressedSizeData];
+		var uncompressedStream = new MemoryStream(uncompressedData);
+
+		uncompressedStream.WriteArray(Encoding.ASCII.GetBytes("DATA"));
+		var tmp = BitConverter.GetBytes(uncompressedSizeData);
+		Array.Reverse(tmp);
+		uncompressedStream.WriteArray(tmp);
+		Decompressor.Decompress(compressed, uncompressedStream, uncompressedSizeData);
+
+		uncompressedStream.Position = 0;
+
+		return uncompressedStream;
+	}
+
+	private static void Decompress(Stream compressed, Stream uncompressed, int length)
+	{
+		// TODO figure out which compression this is.
+		while (uncompressed.Position < length)
 		{
-			compressed.ReadUInt32(); // version
-			compressed.ReadUInt32(); // timestamp
-			var uncompressedSizeData = (compressed.ReadByte() << 24) | (compressed.ReadByte() << 16) | (compressed.ReadByte() << 8) | compressed.ReadByte();
-			compressed.Position += 4; // RRLC length.
+			var uncompressedSize = compressed.ReadUInt32();
+			var compressedSize = compressed.ReadUInt32();
 
-			var uncompressedData = new byte[8 + uncompressedSizeData];
-			var uncompressedStream = new MemoryStream(uncompressedData);
-
-			uncompressedStream.WriteArray(Encoding.ASCII.GetBytes("DATA"));
-			var tmp = BitConverter.GetBytes(uncompressedSizeData);
-			Array.Reverse(tmp);
-			uncompressedStream.WriteArray(tmp);
-			Decompressor.Decompress(compressed, uncompressedStream, uncompressedSizeData);
-
-			uncompressedStream.Position = 0;
-
-			return uncompressedStream;
-		}
-
-		private static void Decompress(Stream compressed, Stream uncompressed, int length)
-		{
-			// TODO figure out which compression this is.
-			while (uncompressed.Position < length)
+			if (compressedSize == uncompressedSize)
+				uncompressed.WriteArray(compressed.ReadBytes((int)compressedSize));
+			else
 			{
-				var uncompressedSize = compressed.ReadUInt32();
-				var compressedSize = compressed.ReadUInt32();
+				var chunkEndOffset = compressed.Position + compressedSize;
 
-				if (compressedSize == uncompressedSize)
-					uncompressed.WriteArray(compressed.ReadBytes((int)compressedSize));
-				else
+				while (compressed.Position < chunkEndOffset)
 				{
-					var chunkEndOffset = compressed.Position + compressedSize;
+					var bitmasks = compressed.ReadBytes(2);
 
-					while (compressed.Position < chunkEndOffset)
+					for (var i = 0; i < 16; i++)
 					{
-						var bitmasks = compressed.ReadBytes(2);
-
-						for (var i = 0; i < 16; i++)
+						if ((bitmasks[i / 8] & (1 << (i % 8))) == 0)
+							uncompressed.WriteByte(compressed.ReadUInt8());
+						else
 						{
-							if ((bitmasks[i / 8] & (1 << (i % 8))) == 0)
-								uncompressed.WriteByte(compressed.ReadUInt8());
-							else
+							var metaBytes = compressed.ReadBytes(2);
+							var total = 1 + (metaBytes[0] & 0x000F);
+							var offset = ((metaBytes[0] & 0x00F0) << 4) | metaBytes[1];
+
+							for (var bytesLeft = total; bytesLeft > 0;)
 							{
-								var metaBytes = compressed.ReadBytes(2);
-								var total = 1 + (metaBytes[0] & 0x000F);
-								var offset = ((metaBytes[0] & 0x00F0) << 4) | metaBytes[1];
+								var amount = Math.Min(bytesLeft, offset);
 
-								for (var bytesLeft = total; bytesLeft > 0;)
-								{
-									var amount = Math.Min(bytesLeft, offset);
+								uncompressed.Position -= offset;
+								var data = uncompressed.ReadBytes(amount);
 
-									uncompressed.Position -= offset;
-									var data = uncompressed.ReadBytes(amount);
+								uncompressed.Position += offset - amount;
+								uncompressed.WriteArray(data);
 
-									uncompressed.Position += offset - amount;
-									uncompressed.WriteArray(data);
-
-									bytesLeft -= offset;
-								}
+								bytesLeft -= offset;
 							}
-
-							if (compressed.Position == chunkEndOffset)
-								break;
 						}
+
+						if (compressed.Position == chunkEndOffset)
+							break;
 					}
 				}
 			}

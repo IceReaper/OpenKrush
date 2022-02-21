@@ -11,121 +11,120 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Misc.Traits
+namespace OpenRA.Mods.OpenKrush.Mechanics.Misc.Traits;
+
+using Common.Traits;
+using Common.Traits.Render;
+using Graphics;
+using JetBrains.Annotations;
+using OpenRA.Traits;
+using Primitives;
+
+[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
+[Desc("Renders the MuzzleSequence from the Armament trait.")]
+public class WithLoopedMuzzleOverlayInfo : ConditionalTraitInfo, Requires<RenderSpritesInfo>, Requires<AttackBaseInfo>, Requires<ArmamentInfo>
 {
-	using Common.Traits;
-	using Common.Traits.Render;
-	using Graphics;
-	using JetBrains.Annotations;
-	using OpenRA.Traits;
-	using Primitives;
+	[Desc("Ignore the weapon position, and always draw relative to the center of the actor")]
+	public readonly bool IgnoreOffset;
 
-	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
-	[Desc("Renders the MuzzleSequence from the Armament trait.")]
-	public class WithLoopedMuzzleOverlayInfo : ConditionalTraitInfo, Requires<RenderSpritesInfo>, Requires<AttackBaseInfo>, Requires<ArmamentInfo>
+	public override object Create(ActorInitializer init)
 	{
-		[Desc("Ignore the weapon position, and always draw relative to the center of the actor")]
-		public readonly bool IgnoreOffset;
+		return new WithLoopedMuzzleOverlay(init.Self, this);
+	}
+}
 
-		public override object Create(ActorInitializer init)
+public class WithLoopedMuzzleOverlay : ConditionalTrait<WithLoopedMuzzleOverlayInfo>, INotifyAttack, IRender, ITick
+{
+	private readonly Dictionary<Barrel, int> visible = new();
+	private readonly Dictionary<Barrel, AnimationWithOffset> anims = new();
+	private readonly Armament[] armaments;
+
+	public WithLoopedMuzzleOverlay(Actor self, WithLoopedMuzzleOverlayInfo info)
+		: base(info)
+	{
+		var render = self.TraitOrDefault<RenderSprites>();
+		var facing = self.TraitOrDefault<IFacing>();
+
+		this.armaments = self.TraitsImplementing<Armament>().Where(arm => arm.Info.MuzzleSequence != null).ToArray();
+
+		foreach (var arm in this.armaments)
 		{
-			return new WithLoopedMuzzleOverlay(init.Self, this);
+			foreach (var b in arm.Barrels)
+			{
+				var barrel = b;
+				var turreted = self.TraitsImplementing<Turreted>().FirstOrDefault(t => t.Name == arm.Info.Turret);
+
+				var getFacting = new Func<WAngle>(() => WAngle.Zero);
+
+				if (turreted != null)
+					getFacting = () => turreted.WorldOrientation.Yaw;
+				else if (facing != null)
+					getFacting = () => facing.Facing;
+
+				var muzzleFlash = new Animation(self.World, render.GetImage(self), getFacting);
+				this.visible.Add(barrel, 0);
+
+				this.anims.Add(
+					barrel,
+					new(
+						muzzleFlash,
+						() => info.IgnoreOffset ? WVec.Zero : arm.MuzzleOffset(self, barrel),
+						() => this.IsTraitDisabled || this.visible[barrel] == 0,
+						p => RenderUtils.ZOffsetFromCenter(self, p, 2)
+					)
+				);
+			}
 		}
 	}
 
-	public class WithLoopedMuzzleOverlay : ConditionalTrait<WithLoopedMuzzleOverlayInfo>, INotifyAttack, IRender, ITick
+	void INotifyAttack.Attacking(Actor self, in Target target, Armament? a, Barrel? barrel)
 	{
-		private readonly Dictionary<Barrel, int> visible = new();
-		private readonly Dictionary<Barrel, AnimationWithOffset> anims = new();
-		private readonly Armament[] armaments;
+		if (a == null || barrel == null || !this.armaments.Contains(a))
+			return;
 
-		public WithLoopedMuzzleOverlay(Actor self, WithLoopedMuzzleOverlayInfo info)
-			: base(info)
+		var sequence = a.Info.MuzzleSequence;
+
+		if (this.visible[barrel] == 0)
+			this.anims[barrel].Animation.PlayThen(sequence, () => this.visible[barrel] = 0);
+
+		this.visible[barrel] = 2;
+	}
+
+	void INotifyAttack.PreparingAttack(Actor self, in Target target, Armament a, Barrel barrel)
+	{
+	}
+
+	IEnumerable<IRenderable> IRender.Render(Actor self, WorldRenderer wr)
+	{
+		foreach (var arm in this.armaments)
 		{
-			var render = self.TraitOrDefault<RenderSprites>();
-			var facing = self.TraitOrDefault<IFacing>();
+			var palette = wr.Palette(arm.Info.MuzzlePalette);
 
-			this.armaments = self.TraitsImplementing<Armament>().Where(arm => arm.Info.MuzzleSequence != null).ToArray();
-
-			foreach (var arm in this.armaments)
+			foreach (var barrel in arm.Barrels)
 			{
-				foreach (var b in arm.Barrels)
-				{
-					var barrel = b;
-					var turreted = self.TraitsImplementing<Turreted>().FirstOrDefault(t => t.Name == arm.Info.Turret);
+				var anim = this.anims[barrel];
 
-					var getFacting = new Func<WAngle>(() => WAngle.Zero);
+				if (anim.DisableFunc != null && anim.DisableFunc())
+					continue;
 
-					if (turreted != null)
-						getFacting = () => turreted.WorldOrientation.Yaw;
-					else if (facing != null)
-						getFacting = () => facing.Facing;
-
-					var muzzleFlash = new Animation(self.World, render.GetImage(self), getFacting);
-					this.visible.Add(barrel, 0);
-
-					this.anims.Add(
-						barrel,
-						new(
-							muzzleFlash,
-							() => info.IgnoreOffset ? WVec.Zero : arm.MuzzleOffset(self, barrel),
-							() => this.IsTraitDisabled || this.visible[barrel] == 0,
-							p => RenderUtils.ZOffsetFromCenter(self, p, 2)
-						)
-					);
-				}
+				foreach (var r in anim.Render(self, wr, palette))
+					yield return r;
 			}
 		}
+	}
 
-		void INotifyAttack.Attacking(Actor self, in Target target, Armament? a, Barrel? barrel)
-		{
-			if (a == null || barrel == null || !this.armaments.Contains(a))
-				return;
+	IEnumerable<Rectangle> IRender.ScreenBounds(Actor self, WorldRenderer wr)
+	{
+		// Muzzle flashes don't contribute to actor bounds
+		yield break;
+	}
 
-			var sequence = a.Info.MuzzleSequence;
+	void ITick.Tick(Actor self)
+	{
+		foreach (var barrel in this.visible.Keys)
+			this.visible[barrel] -= this.visible[barrel] > 1 ? 1 : 0;
 
-			if (this.visible[barrel] == 0)
-				this.anims[barrel].Animation.PlayThen(sequence, () => this.visible[barrel] = 0);
-
-			this.visible[barrel] = 2;
-		}
-
-		void INotifyAttack.PreparingAttack(Actor self, in Target target, Armament a, Barrel barrel)
-		{
-		}
-
-		IEnumerable<IRenderable> IRender.Render(Actor self, WorldRenderer wr)
-		{
-			foreach (var arm in this.armaments)
-			{
-				var palette = wr.Palette(arm.Info.MuzzlePalette);
-
-				foreach (var barrel in arm.Barrels)
-				{
-					var anim = this.anims[barrel];
-
-					if (anim.DisableFunc != null && anim.DisableFunc())
-						continue;
-
-					foreach (var r in anim.Render(self, wr, palette))
-						yield return r;
-				}
-			}
-		}
-
-		IEnumerable<Rectangle> IRender.ScreenBounds(Actor self, WorldRenderer wr)
-		{
-			// Muzzle flashes don't contribute to actor bounds
-			yield break;
-		}
-
-		void ITick.Tick(Actor self)
-		{
-			foreach (var barrel in this.visible.Keys)
-				this.visible[barrel] -= this.visible[barrel] > 1 ? 1 : 0;
-
-			foreach (var a in this.anims.Values)
-				a.Animation.Tick();
-		}
+		foreach (var a in this.anims.Values)
+			a.Animation.Tick();
 	}
 }

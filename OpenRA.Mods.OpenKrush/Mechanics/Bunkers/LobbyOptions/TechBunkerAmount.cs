@@ -11,107 +11,106 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.LobbyOptions
+namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.LobbyOptions;
+
+using Common.Traits;
+using Graphics;
+using JetBrains.Annotations;
+using OpenRA.Traits;
+using System.Collections.ObjectModel;
+using Traits;
+
+public enum TechBunkerAmountType
 {
-	using Common.Traits;
-	using Graphics;
-	using JetBrains.Annotations;
-	using OpenRA.Traits;
-	using System.Collections.ObjectModel;
-	using Traits;
+	None,
+	One,
+	OnePerTwoPlayers,
+	All
+}
 
-	public enum TechBunkerAmountType
+[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
+[Desc("How many TechBunkers should be spawned on the map.")]
+public class TechBunkerAmountInfo : TraitInfo, ILobbyOptions
+{
+	public const string Id = "TechBunkerAmount";
+	public const TechBunkerAmountType Default = TechBunkerAmountType.All;
+
+	[Desc("The type of the bunker actor.")]
+	public readonly string ActorType = "bunker_techbunker";
+
+	IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(MapPreview mapPreview)
 	{
-		None,
-		One,
-		OnePerTwoPlayers,
-		All
+		yield return new LobbyOption(
+			TechBunkerAmountInfo.Id,
+			"Amount",
+			"How many TechBunkers should be spawned on the map.",
+			true,
+			0,
+			new ReadOnlyDictionary<string, string>(
+				new Dictionary<TechBunkerAmountType, string>
+				{
+					{ TechBunkerAmountType.None, "None" },
+					{ TechBunkerAmountType.One, "1 per map" },
+					{ TechBunkerAmountType.OnePerTwoPlayers, "1 per 2 players" },
+					{ TechBunkerAmountType.All, "All" }
+				}.ToDictionary(e => e.Key.ToString(), e => e.Value)
+			),
+			TechBunkerAmountInfo.Default.ToString(),
+			false,
+			TechBunkerInfo.LobbyOptionsCategory
+		);
 	}
 
-	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
-	[Desc("How many TechBunkers should be spawned on the map.")]
-	public class TechBunkerAmountInfo : TraitInfo, ILobbyOptions
+	public override object Create(ActorInitializer init)
 	{
-		public const string Id = "TechBunkerAmount";
-		public const TechBunkerAmountType Default = TechBunkerAmountType.All;
+		return new TechBunkerAmount(this);
+	}
+}
 
-		[Desc("The type of the bunker actor.")]
-		public readonly string ActorType = "bunker_techbunker";
+public class TechBunkerAmount : INotifyCreated, IPreventMapSpawn, IWorldLoaded
+{
+	private readonly TechBunkerAmountInfo info;
+	private readonly List<ActorReference> bunkers = new();
+	private TechBunkerAmountType behavior;
 
-		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(MapPreview mapPreview)
-		{
-			yield return new LobbyOption(
-				TechBunkerAmountInfo.Id,
-				"Amount",
-				"How many TechBunkers should be spawned on the map.",
-				true,
-				0,
-				new ReadOnlyDictionary<string, string>(
-					new Dictionary<TechBunkerAmountType, string>
-					{
-						{ TechBunkerAmountType.None, "None" },
-						{ TechBunkerAmountType.One, "1 per map" },
-						{ TechBunkerAmountType.OnePerTwoPlayers, "1 per 2 players" },
-						{ TechBunkerAmountType.All, "All" }
-					}.ToDictionary(e => e.Key.ToString(), e => e.Value)
-				),
-				TechBunkerAmountInfo.Default.ToString(),
-				false,
-				TechBunkerInfo.LobbyOptionsCategory
-			);
-		}
-
-		public override object Create(ActorInitializer init)
-		{
-			return new TechBunkerAmount(this);
-		}
+	public TechBunkerAmount(TechBunkerAmountInfo info)
+	{
+		this.info = info;
 	}
 
-	public class TechBunkerAmount : INotifyCreated, IPreventMapSpawn, IWorldLoaded
+	void INotifyCreated.Created(Actor self)
 	{
-		private readonly TechBunkerAmountInfo info;
-		private readonly List<ActorReference> bunkers = new();
-		private TechBunkerAmountType behavior;
+		this.behavior = (TechBunkerAmountType)Enum.Parse(
+			typeof(TechBunkerAmountType),
+			self.World.LobbyInfo.GlobalSettings.OptionOrDefault(TechBunkerAmountInfo.Id, TechBunkerAmountInfo.Default.ToString())
+		);
+	}
 
-		public TechBunkerAmount(TechBunkerAmountInfo info)
+	bool IPreventMapSpawn.PreventMapSpawn(World world, ActorReference actorReference)
+	{
+		if (actorReference.Type != this.info.ActorType)
+			return false;
+
+		this.bunkers.Add(actorReference);
+
+		return true;
+	}
+
+	public void WorldLoaded(World world, WorldRenderer worldRenderer)
+	{
+		if (this.behavior == TechBunkerAmountType.None)
+			return;
+
+		var numBunkers = this.behavior == TechBunkerAmountType.One ? 1 : world.Players.Count(p => p.Playable);
+
+		if (this.behavior == TechBunkerAmountType.OnePerTwoPlayers)
+			numBunkers /= 2;
+
+		for (var i = 0; i < numBunkers && this.bunkers.Count > 0; i++)
 		{
-			this.info = info;
-		}
-
-		void INotifyCreated.Created(Actor self)
-		{
-			this.behavior = (TechBunkerAmountType)Enum.Parse(
-				typeof(TechBunkerAmountType),
-				self.World.LobbyInfo.GlobalSettings.OptionOrDefault(TechBunkerAmountInfo.Id, TechBunkerAmountInfo.Default.ToString())
-			);
-		}
-
-		bool IPreventMapSpawn.PreventMapSpawn(World world, ActorReference actorReference)
-		{
-			if (actorReference.Type != this.info.ActorType)
-				return false;
-
-			this.bunkers.Add(actorReference);
-
-			return true;
-		}
-
-		public void WorldLoaded(World world, WorldRenderer worldRenderer)
-		{
-			if (this.behavior == TechBunkerAmountType.None)
-				return;
-
-			var numBunkers = this.behavior == TechBunkerAmountType.One ? 1 : world.Players.Count(p => p.Playable);
-
-			if (this.behavior == TechBunkerAmountType.OnePerTwoPlayers)
-				numBunkers /= 2;
-
-			for (var i = 0; i < numBunkers && this.bunkers.Count > 0; i++)
-			{
-				var random = world.SharedRandom.Next(0, this.bunkers.Count);
-				world.CreateActor(true, this.bunkers[random]);
-				this.bunkers.RemoveAt(random);
-			}
+			var random = world.SharedRandom.Next(0, this.bunkers.Count);
+			world.CreateActor(true, this.bunkers[random]);
+			this.bunkers.RemoveAt(random);
 		}
 	}
 }

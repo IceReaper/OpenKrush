@@ -11,36 +11,35 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Sacrificing.Activities
+namespace OpenRA.Mods.OpenKrush.Mechanics.Sacrificing.Activities;
+
+using Common.Activities;
+using OpenRA.Traits;
+using Primitives;
+using Traits;
+
+public class Sacrifice : Enter
 {
-	using Common.Activities;
-	using OpenRA.Traits;
-	using Primitives;
-	using Traits;
+	private readonly Actor target;
 
-	public class Sacrifice : Enter
+	public Sacrifice(Actor self, Target target, Color targetLineColor)
+		: base(self, target, targetLineColor)
 	{
-		private readonly Actor target;
+		this.target = target.Actor;
+	}
 
-		public Sacrifice(Actor self, Target target, Color targetLineColor)
-			: base(self, target, targetLineColor)
-		{
-			this.target = target.Actor;
-		}
+	public override bool Tick(Actor self)
+	{
+		if (!this.IsCanceling && !SacrificingUtils.CanEnter(self, this.target, out _))
+			this.Cancel(self, true);
 
-		public override bool Tick(Actor self)
-		{
-			if (!this.IsCanceling && !SacrificingUtils.CanEnter(self, this.target, out _))
-				this.Cancel(self, true);
+		return base.Tick(self);
+	}
 
-			return base.Tick(self);
-		}
-
-		protected override void OnEnterComplete(Actor self, Actor targetActor)
-		{
-			self.TraitOrDefault<Sacrificable>().Enter(self);
-			targetActor.TraitOrDefault<Sacrificer>().Enter();
-			self.Dispose();
-		}
+	protected override void OnEnterComplete(Actor self, Actor targetActor)
+	{
+		self.TraitOrDefault<Sacrificable>().Enter(self);
+		targetActor.TraitOrDefault<Sacrificer>().Enter();
+		self.Dispose();
 	}
 }

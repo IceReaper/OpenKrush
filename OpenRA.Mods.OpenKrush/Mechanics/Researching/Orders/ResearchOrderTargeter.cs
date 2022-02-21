@@ -11,59 +11,58 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Orders
+namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Orders;
+
+using Common.Orders;
+using OpenRA.Traits;
+
+public class ResearchOrderTargeter : UnitOrderTargeter
 {
-	using Common.Orders;
-	using OpenRA.Traits;
+	public const string Id = "Research";
 
-	public class ResearchOrderTargeter : UnitOrderTargeter
+	private readonly string cursorAllowed;
+	private readonly string cursorForbidden;
+
+	public ResearchOrderTargeter(string cursorAllowed, string cursorForbidden)
+		: base(ResearchOrderTargeter.Id, 6, cursorAllowed, false, true)
 	{
-		public const string Id = "Research";
+		this.cursorAllowed = cursorAllowed;
+		this.cursorForbidden = cursorForbidden;
+	}
 
-		private readonly string cursorAllowed;
-		private readonly string cursorForbidden;
+	public override bool CanTargetActor(Actor self, Actor target, TargetModifiers modifiers, ref string? cursor)
+	{
+		var action = ResearchUtils.GetAction(self, target);
 
-		public ResearchOrderTargeter(string cursorAllowed, string cursorForbidden)
-			: base(ResearchOrderTargeter.Id, 6, cursorAllowed, false, true)
+		switch (action)
 		{
-			this.cursorAllowed = cursorAllowed;
-			this.cursorForbidden = cursorForbidden;
+			case ResearchAction.Start:
+				cursor = this.cursorAllowed;
+
+				return true;
+
+			case ResearchAction.Stop:
+				cursor = this.cursorForbidden;
+
+				return true;
+
+			case ResearchAction.Blocked:
+				cursor = this.cursorForbidden;
+
+				return true;
+
+			case ResearchAction.None:
+				cursor = null;
+
+				return false;
+
+			default:
+				throw new ArgumentOutOfRangeException(Enum.GetName(action));
 		}
+	}
 
-		public override bool CanTargetActor(Actor self, Actor target, TargetModifiers modifiers, ref string? cursor)
-		{
-			var action = ResearchUtils.GetAction(self, target);
-
-			switch (action)
-			{
-				case ResearchAction.Start:
-					cursor = this.cursorAllowed;
-
-					return true;
-
-				case ResearchAction.Stop:
-					cursor = this.cursorForbidden;
-
-					return true;
-
-				case ResearchAction.Blocked:
-					cursor = this.cursorForbidden;
-
-					return true;
-
-				case ResearchAction.None:
-					cursor = null;
-
-					return false;
-
-				default:
-					throw new ArgumentOutOfRangeException(Enum.GetName(action));
-			}
-		}
-
-		public override bool CanTargetFrozenActor(Actor self, FrozenActor target, TargetModifiers modifiers, ref string cursor)
-		{
-			return false;
-		}
+	public override bool CanTargetFrozenActor(Actor self, FrozenActor target, TargetModifiers modifiers, ref string cursor)
+	{
+		return false;
 	}
 }

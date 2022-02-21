@@ -11,20 +11,19 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Assets.FileFormats
-{
-	public class MobdPoint
-	{
-		public readonly int Id;
-		public readonly int X;
-		public readonly int Y;
+namespace OpenRA.Mods.OpenKrush.Assets.FileFormats;
 
-		public MobdPoint(Stream stream)
-		{
-			this.Id = stream.ReadInt32();
-			this.X = stream.ReadInt32() >> 8;
-			this.Y = stream.ReadInt32() >> 8;
-			stream.ReadInt32(); // TODO Unk - Likely Z
-		}
+public class MobdPoint
+{
+	public readonly int Id;
+	public readonly int X;
+	public readonly int Y;
+
+	public MobdPoint(Stream stream)
+	{
+		this.Id = stream.ReadInt32();
+		this.X = stream.ReadInt32() >> 8;
+		this.Y = stream.ReadInt32() >> 8;
+		stream.ReadInt32(); // TODO Unk - Likely Z
 	}
 }

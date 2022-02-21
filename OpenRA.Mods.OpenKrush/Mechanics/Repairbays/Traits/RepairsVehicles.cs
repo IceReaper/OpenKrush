@@ -11,100 +11,99 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Repairbays.Traits
+namespace OpenRA.Mods.OpenKrush.Mechanics.Repairbays.Traits;
+
+using Common.Traits;
+using Docking.Traits;
+using JetBrains.Annotations;
+using OpenRA.Traits;
+using Primitives;
+using Researching;
+using Researching.Traits;
+
+// TODO implement cost per repair
+[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
+[Desc("RepairBay implementation.")]
+public class RepairsVehiclesInfo : DockActionInfo, Requires<ResearchableInfo>
 {
-	using Common.Traits;
-	using Docking.Traits;
-	using JetBrains.Annotations;
-	using OpenRA.Traits;
-	using Primitives;
-	using Researching;
-	using Researching.Traits;
+	public const string Prefix = "REPAIRSVEHICLES::";
 
-	// TODO implement cost per repair
-	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
-	[Desc("RepairBay implementation.")]
-	public class RepairsVehiclesInfo : DockActionInfo, Requires<ResearchableInfo>
+	[Desc("How many HP per tick should be repaired per tech level.")]
+	public readonly int[] Rates = { 10, 20, 30, 40 };
+
+	[Desc("Delay between repair ticks.")]
+	public readonly int Delay = 3;
+
+	[GrantedConditionReference]
+	[Desc("Condition to grant while repairing.")]
+	public readonly string? Condition;
+
+	[Desc("Repair using these damagetypes.")]
+	public readonly BitSet<DamageType> DamageTypes;
+
+	public override object Create(ActorInitializer init)
 	{
-		public const string Prefix = "REPAIRSVEHICLES::";
+		return new RepairsVehicles(init, this);
+	}
+}
 
-		[Desc("How many HP per tick should be repaired per tech level.")]
-		public readonly int[] Rates = { 10, 20, 30, 40 };
+public class RepairsVehicles : DockAction, ITick, IProvidesResearchables
+{
+	private readonly RepairsVehiclesInfo info;
+	private readonly Researchable researchable;
 
-		[Desc("Delay between repair ticks.")]
-		public readonly int Delay = 3;
+	private int lastRepairTick;
+	private int token = Actor.InvalidConditionToken;
 
-		[GrantedConditionReference]
-		[Desc("Condition to grant while repairing.")]
-		public readonly string? Condition;
-
-		[Desc("Repair using these damagetypes.")]
-		public readonly BitSet<DamageType> DamageTypes;
-
-		public override object Create(ActorInitializer init)
-		{
-			return new RepairsVehicles(init, this);
-		}
+	public RepairsVehicles(ActorInitializer init, RepairsVehiclesInfo info)
+		: base(info)
+	{
+		this.info = info;
+		this.researchable = init.Self.TraitOrDefault<Researchable>();
 	}
 
-	public class RepairsVehicles : DockAction, ITick, IProvidesResearchables
+	public override bool CanDock(Actor self, Actor target)
 	{
-		private readonly RepairsVehiclesInfo info;
-		private readonly Researchable researchable;
+		if (!target.Info.HasTraitInfo<RepairableVehicleInfo>())
+			return false;
 
-		private int lastRepairTick;
-		private int token = Actor.InvalidConditionToken;
+		// Only yourself, so you cannot block friendly repairbays when being broke.
+		if (target.Owner != self.Owner)
+			return false;
 
-		public RepairsVehicles(ActorInitializer init, RepairsVehiclesInfo info)
-			: base(info)
-		{
-			this.info = info;
-			this.researchable = init.Self.TraitOrDefault<Researchable>();
-		}
+		return target.TraitOrDefault<Health>().DamageState != DamageState.Undamaged;
+	}
 
-		public override bool CanDock(Actor self, Actor target)
-		{
-			if (!target.Info.HasTraitInfo<RepairableVehicleInfo>())
-				return false;
+	public override bool Process(Actor self, Actor target)
+	{
+		if (!target.Info.HasTraitInfo<RepairableVehicleInfo>())
+			return true;
 
-			// Only yourself, so you cannot block friendly repairbays when being broke.
-			if (target.Owner != self.Owner)
-				return false;
+		if (!string.IsNullOrEmpty(this.info.Condition) && this.token == Actor.InvalidConditionToken)
+			this.token = self.GrantCondition(this.info.Condition);
 
-			return target.TraitOrDefault<Health>().DamageState != DamageState.Undamaged;
-		}
+		this.lastRepairTick = target.World.WorldTick;
+		var health = target.TraitOrDefault<Health>();
 
-		public override bool Process(Actor self, Actor target)
-		{
-			if (!target.Info.HasTraitInfo<RepairableVehicleInfo>())
-				return true;
+		if (target.World.WorldTick % this.info.Delay == 0)
+			health.InflictDamage(self, self, new(-this.info.Rates[this.researchable.Level], this.info.DamageTypes), true);
 
-			if (!string.IsNullOrEmpty(this.info.Condition) && this.token == Actor.InvalidConditionToken)
-				this.token = self.GrantCondition(this.info.Condition);
+		return health.HP == health.MaxHP;
+	}
 
-			this.lastRepairTick = target.World.WorldTick;
-			var health = target.TraitOrDefault<Health>();
+	void ITick.Tick(Actor self)
+	{
+		if (this.token != Actor.InvalidConditionToken && self.World.WorldTick - 1 > this.lastRepairTick)
+			this.token = self.RevokeCondition(this.token);
+	}
 
-			if (target.World.WorldTick % this.info.Delay == 0)
-				health.InflictDamage(self, self, new(-this.info.Rates[this.researchable.Level], this.info.DamageTypes), true);
+	public Dictionary<string, int> GetResearchables(Actor self)
+	{
+		var technologies = new Dictionary<string, int>();
 
-			return health.HP == health.MaxHP;
-		}
+		for (var i = 0; i < this.info.Rates.Length; i++)
+			technologies.Add(RepairsVehiclesInfo.Prefix + i, i);
 
-		void ITick.Tick(Actor self)
-		{
-			if (this.token != Actor.InvalidConditionToken && self.World.WorldTick - 1 > this.lastRepairTick)
-				this.token = self.RevokeCondition(this.token);
-		}
-
-		public Dictionary<string, int> GetResearchables(Actor self)
-		{
-			var technologies = new Dictionary<string, int>();
-
-			for (var i = 0; i < this.info.Rates.Length; i++)
-				technologies.Add(RepairsVehiclesInfo.Prefix + i, i);
-
-			return technologies;
-		}
+		return technologies;
 	}
 }

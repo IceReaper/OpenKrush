@@ -11,19 +11,18 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Assets.FileFormats
-{
-	public class MapdLayer
-	{
-		public readonly int Width;
-		public readonly int Height;
-		public readonly byte[] Pixels;
+namespace OpenRA.Mods.OpenKrush.Assets.FileFormats;
 
-		public MapdLayer(int width, int height)
-		{
-			this.Width = width;
-			this.Height = height;
-			this.Pixels = new byte[width * height * 4];
-		}
+public class MapdLayer
+{
+	public readonly int Width;
+	public readonly int Height;
+	public readonly byte[] Pixels;
+
+	public MapdLayer(int width, int height)
+	{
+		this.Width = width;
+		this.Height = height;
+		this.Pixels = new byte[width * height * 4];
 	}
 }

@@ -11,25 +11,24 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Repairbays.Traits
+namespace OpenRA.Mods.OpenKrush.Mechanics.Repairbays.Traits;
+
+using Docking.Traits;
+using JetBrains.Annotations;
+
+[UsedImplicitly]
+public class RepairableVehicleInfo : DockableInfo
 {
-	using Docking.Traits;
-	using JetBrains.Annotations;
-
-	[UsedImplicitly]
-	public class RepairableVehicleInfo : DockableInfo
+	public override object Create(ActorInitializer init)
 	{
-		public override object Create(ActorInitializer init)
-		{
-			return new RepairableVehicle(this);
-		}
+		return new RepairableVehicle(this);
 	}
+}
 
-	public class RepairableVehicle : Dockable
+public class RepairableVehicle : Dockable
+{
+	public RepairableVehicle(RepairableVehicleInfo info)
+		: base(info)
 	{
-		public RepairableVehicle(RepairableVehicleInfo info)
-			: base(info)
-		{
-		}
 	}
 }

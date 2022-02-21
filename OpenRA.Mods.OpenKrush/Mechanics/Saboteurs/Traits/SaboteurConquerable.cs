@@ -11,71 +11,70 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.Traits
+namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.Traits;
+
+using Common.Traits;
+using JetBrains.Annotations;
+using LobbyOptions;
+using OpenRA.Traits;
+
+[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
+[Desc("Saboteur mechanism, attach to the building.")]
+public class SaboteurConquerableInfo : ConditionalTraitInfo
 {
-	using Common.Traits;
-	using JetBrains.Annotations;
-	using LobbyOptions;
-	using OpenRA.Traits;
+	[Desc("Starting population.")]
+	public readonly int Population = 3;
 
-	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
-	[Desc("Saboteur mechanism, attach to the building.")]
-	public class SaboteurConquerableInfo : ConditionalTraitInfo
+	[Desc("Maximum population.")]
+	public readonly int MaxPopulation = 5;
+
+	[Desc("Voice used when enemy infiltrates a building.")]
+	public readonly string NotificationInfiltrated = "EnemyInfiltrated";
+
+	[Desc("Voice used when enemy conquered a building.")]
+	public readonly string NotificationConquered = "EnemyConquered";
+
+	public override object Create(ActorInitializer init)
 	{
-		[Desc("Starting population.")]
-		public readonly int Population = 3;
+		return new SaboteurConquerable(init, this);
+	}
+}
 
-		[Desc("Maximum population.")]
-		public readonly int MaxPopulation = 5;
+public class SaboteurConquerable : ConditionalTrait<SaboteurConquerableInfo>
+{
+	private readonly SaboteurUsage usage;
 
-		[Desc("Voice used when enemy infiltrates a building.")]
-		public readonly string NotificationInfiltrated = "EnemyInfiltrated";
+	public int Population;
 
-		[Desc("Voice used when enemy conquered a building.")]
-		public readonly string NotificationConquered = "EnemyConquered";
+	public SaboteurConquerable(ActorInitializer init, SaboteurConquerableInfo info)
+		: base(info)
+	{
+		this.Population = info.Population;
 
-		public override object Create(ActorInitializer init)
-		{
-			return new SaboteurConquerable(init, this);
-		}
+		this.usage = init.Self.World.WorldActor.TraitOrDefault<SaboteurUsage>();
 	}
 
-	public class SaboteurConquerable : ConditionalTrait<SaboteurConquerableInfo>
+	public void Enter(Actor self, Actor target)
 	{
-		private readonly SaboteurUsage usage;
-
-		public int Population;
-
-		public SaboteurConquerable(ActorInitializer init, SaboteurConquerableInfo info)
-			: base(info)
+		if (self.Owner.RelationshipWith(target.Owner).HasRelationship(PlayerRelationship.Ally))
+			this.Population = Math.Min(this.Population + 1, this.Info.MaxPopulation);
+		else if (this.Population > 0)
 		{
-			this.Population = info.Population;
-
-			this.usage = init.Self.World.WorldActor.TraitOrDefault<SaboteurUsage>();
+			this.Population--;
+			Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", this.Info.NotificationInfiltrated, self.Owner.Faction.InternalName);
 		}
-
-		public void Enter(Actor self, Actor target)
+		else
 		{
-			if (self.Owner.RelationshipWith(target.Owner).HasRelationship(PlayerRelationship.Ally))
-				this.Population = Math.Min(this.Population + 1, this.Info.MaxPopulation);
-			else if (this.Population > 0)
-			{
-				this.Population--;
-				Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", this.Info.NotificationInfiltrated, self.Owner.Faction.InternalName);
-			}
+			this.Population = 1;
+			Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", this.Info.NotificationConquered, self.Owner.Faction.InternalName);
+
+			if (this.usage.Usage == SaboteurUsageType.Conquer || self.Owner.RelationshipWith(target.Owner) == PlayerRelationship.Neutral)
+				self.ChangeOwner(target.Owner);
 			else
 			{
-				this.Population = 1;
-				Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", this.Info.NotificationConquered, self.Owner.Faction.InternalName);
-
-				if (this.usage.Usage == SaboteurUsageType.Conquer || self.Owner.RelationshipWith(target.Owner) == PlayerRelationship.Neutral)
-					self.ChangeOwner(target.Owner);
-				else
-				{
-					var worth = self.Info.TraitInfoOrDefault<ValuedInfo>()?.Cost ?? 0;
-					target.Owner.PlayerActor.TraitOrDefault<PlayerResources>().GiveCash(worth);
-					self.Kill(target);
-				}
+				var worth = self.Info.TraitInfoOrDefault<ValuedInfo>()?.Cost ?? 0;
+				target.Owner.PlayerActor.TraitOrDefault<PlayerResources>().GiveCash(worth);
+				self.Kill(target);
 			}
 		}
 	}

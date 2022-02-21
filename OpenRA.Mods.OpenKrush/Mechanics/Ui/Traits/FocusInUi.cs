@@ -11,39 +11,38 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Ui.Traits
+namespace OpenRA.Mods.OpenKrush.Mechanics.Ui.Traits;
+
+using Common.Traits;
+using JetBrains.Annotations;
+using OpenRA.Traits;
+using OpenRA.Widgets;
+using Widgets.Ingame;
+
+[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
+public class FocusInUiInfo : ConditionalTraitInfo
 {
-	using Common.Traits;
-	using JetBrains.Annotations;
-	using OpenRA.Traits;
-	using OpenRA.Widgets;
-	using Widgets.Ingame;
+	[FieldLoader.RequireAttribute]
+	public readonly string Category = "";
 
-	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
-	public class FocusInUiInfo : ConditionalTraitInfo
+	public override object Create(ActorInitializer init)
 	{
-		[FieldLoader.RequireAttribute]
-		public readonly string Category = "";
+		return new FocusInUi(this);
+	}
+}
 
-		public override object Create(ActorInitializer init)
-		{
-			return new FocusInUi(this);
-		}
+public class FocusInUi : ConditionalTrait<FocusInUiInfo>, INotifySelected
+{
+	public FocusInUi(FocusInUiInfo info)
+		: base(info)
+	{
 	}
 
-	public class FocusInUi : ConditionalTrait<FocusInUiInfo>, INotifySelected
+	void INotifySelected.Selected(Actor self)
 	{
-		public FocusInUi(FocusInUiInfo info)
-			: base(info)
-		{
-		}
+		if (self.Owner != self.World.LocalPlayer || this.IsTraitDisabled)
+			return;
 
-		void INotifySelected.Selected(Actor self)
-		{
-			if (self.Owner != self.World.LocalPlayer || this.IsTraitDisabled)
-				return;
-
-			Ui.Root.GetOrNull<SidebarWidget>(SidebarWidget.Identifier)?.SelectFactory(self, this.Info.Category);
-		}
+		Ui.Root.GetOrNull<SidebarWidget>(SidebarWidget.Identifier)?.SelectFactory(self, this.Info.Category);
 	}
 }

@@ -11,109 +11,108 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.Traits
+namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.Traits;
+
+using Activities;
+using Common.Traits;
+using JetBrains.Annotations;
+using OpenRA.Traits;
+using Orders;
+using Primitives;
+
+[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
+[Desc("Saboteur mechanism, attach to the unit.")]
+public class SaboteurInfo : TraitInfo
 {
-	using Activities;
-	using Common.Traits;
-	using JetBrains.Annotations;
-	using OpenRA.Traits;
-	using Orders;
-	using Primitives;
+	[Desc("Cursor used for order.")]
+	public readonly string Cursor = "conquer";
 
-	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
-	[Desc("Saboteur mechanism, attach to the unit.")]
-	public class SaboteurInfo : TraitInfo
+	[Desc("Cursor used for order if building does not need to be enforced.")]
+	public readonly string BlockedCursor = "conquer-blocked";
+
+	[Desc("Target line color.")]
+	public readonly Color TargetLineColor = Color.Yellow;
+
+	[Desc("Voice used when ordering to enter enemy building.")]
+	[VoiceReference]
+	public readonly string VoiceOrderEnemy = "Infiltrate";
+
+	[Desc("Voice used when ordering to enter ally building.")]
+	[VoiceReference]
+	public readonly string VoiceOrderAlly = "Reinforce";
+
+	[Desc("Voice used when entered enemy building.")]
+	[VoiceReference]
+	public readonly string VoiceEnterEnemy = "Infiltrated";
+
+	[Desc("Voice used when conquered enemy building.")]
+	[VoiceReference]
+	public readonly string VoiceConquered = "Conquered";
+
+	[Desc("Voice used when entered ally building.")]
+	[VoiceReference]
+	public readonly string VoiceEnterAlly = "Reinforced";
+
+	public override object Create(ActorInitializer init)
 	{
-		[Desc("Cursor used for order.")]
-		public readonly string Cursor = "conquer";
+		return new Saboteur(this);
+	}
+}
 
-		[Desc("Cursor used for order if building does not need to be enforced.")]
-		public readonly string BlockedCursor = "conquer-blocked";
+public class Saboteur : IIssueOrder, IResolveOrder, IOrderVoice
+{
+	private readonly SaboteurInfo info;
 
-		[Desc("Target line color.")]
-		public readonly Color TargetLineColor = Color.Yellow;
+	public Saboteur(SaboteurInfo info)
+	{
+		this.info = info;
+	}
 
-		[Desc("Voice used when ordering to enter enemy building.")]
-		[VoiceReference]
-		public readonly string VoiceOrderEnemy = "Infiltrate";
-
-		[Desc("Voice used when ordering to enter ally building.")]
-		[VoiceReference]
-		public readonly string VoiceOrderAlly = "Reinforce";
-
-		[Desc("Voice used when entered enemy building.")]
-		[VoiceReference]
-		public readonly string VoiceEnterEnemy = "Infiltrated";
-
-		[Desc("Voice used when conquered enemy building.")]
-		[VoiceReference]
-		public readonly string VoiceConquered = "Conquered";
-
-		[Desc("Voice used when entered ally building.")]
-		[VoiceReference]
-		public readonly string VoiceEnterAlly = "Reinforced";
-
-		public override object Create(ActorInitializer init)
+	IEnumerable<IOrderTargeter> IIssueOrder.Orders
+	{
+		get
 		{
-			return new Saboteur(this);
+			yield return new SaboteurEnterOrderTargeter(this.info.Cursor, this.info.BlockedCursor);
 		}
 	}
 
-	public class Saboteur : IIssueOrder, IResolveOrder, IOrderVoice
+	Order? IIssueOrder.IssueOrder(Actor self, IOrderTargeter order, in Target target, bool queued)
 	{
-		private readonly SaboteurInfo info;
+		return order.OrderID == SaboteurEnterOrderTargeter.Id ? new Order(order.OrderID, self, target, queued) : null;
+	}
 
-		public Saboteur(SaboteurInfo info)
-		{
-			this.info = info;
-		}
+	void IResolveOrder.ResolveOrder(Actor self, Order order)
+	{
+		if (order.OrderString != SaboteurEnterOrderTargeter.Id)
+			return;
 
-		IEnumerable<IOrderTargeter> IIssueOrder.Orders
-		{
-			get
-			{
-				yield return new SaboteurEnterOrderTargeter(this.info.Cursor, this.info.BlockedCursor);
-			}
-		}
+		if (order.Target.Type != TargetType.Actor || order.Target.Actor == null)
+			return;
 
-		Order? IIssueOrder.IssueOrder(Actor self, IOrderTargeter order, in Target target, bool queued)
-		{
-			return order.OrderID == SaboteurEnterOrderTargeter.Id ? new Order(order.OrderID, self, target, queued) : null;
-		}
+		if (!SaboteurUtils.CanEnter(self, order.Target.Actor, out _))
+			return;
 
-		void IResolveOrder.ResolveOrder(Actor self, Order order)
-		{
-			if (order.OrderString != SaboteurEnterOrderTargeter.Id)
-				return;
+		self.QueueActivity(order.Queued, new SaboteurEnter(self, order.Target, this.info.TargetLineColor));
+	}
 
-			if (order.Target.Type != TargetType.Actor || order.Target.Actor == null)
-				return;
+	string? IOrderVoice.VoicePhraseForOrder(Actor self, Order order)
+	{
+		return order.OrderString == SaboteurEnterOrderTargeter.Id && SaboteurUtils.CanEnter(self, order.Target.Actor, out _)
+			? order.Target.Actor.Owner.RelationshipWith(self.Owner).HasRelationship(PlayerRelationship.Ally) ? this.info.VoiceOrderAlly :
+			this.info.VoiceOrderEnemy
+			: null;
+	}
 
-			if (!SaboteurUtils.CanEnter(self, order.Target.Actor, out _))
-				return;
+	public void Enter(Actor self, Actor targetActor)
+	{
+		if (self.Owner != self.World.LocalPlayer)
+			return;
 
-			self.QueueActivity(order.Queued, new SaboteurEnter(self, order.Target, this.info.TargetLineColor));
-		}
-
-		string? IOrderVoice.VoicePhraseForOrder(Actor self, Order order)
-		{
-			return order.OrderString == SaboteurEnterOrderTargeter.Id && SaboteurUtils.CanEnter(self, order.Target.Actor, out _)
-				? order.Target.Actor.Owner.RelationshipWith(self.Owner).HasRelationship(PlayerRelationship.Ally) ? this.info.VoiceOrderAlly :
-				this.info.VoiceOrderEnemy
-				: null;
-		}
-
-		public void Enter(Actor self, Actor targetActor)
-		{
-			if (self.Owner != self.World.LocalPlayer)
-				return;
-
-			if (self.Owner.RelationshipWith(targetActor.Owner).HasRelationship(PlayerRelationship.Ally))
-				self.PlayVoice(this.info.VoiceEnterAlly);
-			else if (targetActor.TraitOrDefault<SaboteurConquerable>().Population > 0)
-				self.PlayVoice(this.info.VoiceEnterEnemy);
-			else
-				self.PlayVoice(this.info.VoiceConquered);
-		}
+		if (self.Owner.RelationshipWith(targetActor.Owner).HasRelationship(PlayerRelationship.Ally))
+			self.PlayVoice(this.info.VoiceEnterAlly);
+		else if (targetActor.TraitOrDefault<SaboteurConquerable>().Population > 0)
+			self.PlayVoice(this.info.VoiceEnterEnemy);
+		else
+			self.PlayVoice(this.info.VoiceConquered);
 	}
 }

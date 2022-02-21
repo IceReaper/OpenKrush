@@ -11,46 +11,41 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Assets.FileSystem
+namespace OpenRA.Mods.OpenKrush.Assets.FileSystem;
+
+using FileFormats;
+using JetBrains.Annotations;
+using OpenRA.FileSystem;
+using Primitives;
+
+[UsedImplicitly]
+public class LvlPackageLoader : IPackageLoader
 {
-	using FileFormats;
-	using JetBrains.Annotations;
-	using OpenRA.FileSystem;
-	using Primitives;
-
-	[UsedImplicitly]
-	public class LvlPackageLoader : IPackageLoader
+	public bool TryParsePackage(Stream s, string filename, FileSystem context, out IReadOnlyPackage? package)
 	{
-		public bool TryParsePackage(Stream s, string filename, FileSystem context, out IReadOnlyPackage? package)
+		if (filename.EndsWith(".lpk") // Spritesheet container
+			|| filename.EndsWith(".bpk") // Image container
+			|| filename.EndsWith(".spk") // Sound set
+			|| filename.EndsWith(".lps") // Singleplayer map
+			|| filename.EndsWith(".lpm") // Multiplayer map
+			|| filename.EndsWith(".mpk")) // Matrix set (destroyable map part, tile replacements)
+			s = Decompressor.Decompress(s);
+
+		if (s.Position + 4 <= s.Length)
 		{
-			if (filename.EndsWith(".lpk") // Spritesheet container
-				|| filename.EndsWith(".bpk") // Image container
-				|| filename.EndsWith(".spk") // Sound set
-				|| filename.EndsWith(".lps") // Singleplayer map
-				|| filename.EndsWith(".lpm") // Multiplayer map
-				|| filename.EndsWith(".mpk")) // Matrix set (destroyable map part, tile replacements)
-				s = Decompressor.Decompress(s);
+			var signature = s.ReadASCII(4);
+			s.Position -= 4;
 
-			if (s.Position + 4 <= s.Length)
+			if (signature.Equals("DATA"))
 			{
-				var signature = s.ReadASCII(4);
-				s.Position -= 4;
+				package = new Lvl(new SegmentStream(s, 8, (s.ReadByte() << 24) | (s.ReadByte() << 16) | (s.ReadByte() << 8) | s.ReadByte()), filename, context);
 
-				if (signature.Equals("DATA"))
-				{
-					package = new Lvl(
-						new SegmentStream(s, 8, (s.ReadByte() << 24) | (s.ReadByte() << 16) | (s.ReadByte() << 8) | s.ReadByte()),
-						filename,
-						context
-					);
-
-					return true;
-				}
+				return true;
 			}
-
-			package = null;
-
-			return false;
 		}
+
+		package = null;
+
+		return false;
 	}
 }

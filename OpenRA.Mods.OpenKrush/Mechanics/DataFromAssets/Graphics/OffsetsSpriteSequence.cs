@@ -11,94 +11,93 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.DataFromAssets.Graphics
+namespace OpenRA.Mods.OpenKrush.Mechanics.DataFromAssets.Graphics;
+
+using Common.Graphics;
+using Common.SpriteLoaders;
+using JetBrains.Annotations;
+using OpenRA.Graphics;
+
+public class Offset
 {
-	using Common.Graphics;
-	using Common.SpriteLoaders;
-	using JetBrains.Annotations;
-	using OpenRA.Graphics;
+	public readonly int Id;
+	public readonly int X;
+	public readonly int Y;
 
-	public class Offset
+	public Offset(int id, int x, int y)
 	{
-		public readonly int Id;
-		public readonly int X;
-		public readonly int Y;
+		this.Id = id;
+		this.X = x;
+		this.Y = y;
+	}
+}
 
-		public Offset(int id, int x, int y)
-		{
-			this.Id = id;
-			this.X = x;
-			this.Y = y;
-		}
+public class EmbeddedSpriteOffsets
+{
+	public readonly Dictionary<int, Offset[]> FrameOffsets;
+
+	public EmbeddedSpriteOffsets(Dictionary<int, Offset[]> frameOffsets)
+	{
+		this.FrameOffsets = frameOffsets;
+	}
+}
+
+[UsedImplicitly]
+public class OffsetsSpriteSequenceLoader : DefaultSpriteSequenceLoader
+{
+	public OffsetsSpriteSequenceLoader(ModData modData)
+		: base(modData)
+	{
 	}
 
-	public class EmbeddedSpriteOffsets
+	public override ISpriteSequence CreateSequence(ModData modData, string tileSet, SpriteCache cache, string sequence, string animation, MiniYaml info)
 	{
-		public readonly Dictionary<int, Offset[]> FrameOffsets;
-
-		public EmbeddedSpriteOffsets(Dictionary<int, Offset[]> frameOffsets)
-		{
-			this.FrameOffsets = frameOffsets;
-		}
+		return new OffsetsSpriteSequence(modData, tileSet, cache, this, sequence, animation, info);
 	}
+}
 
-	[UsedImplicitly]
-	public class OffsetsSpriteSequenceLoader : DefaultSpriteSequenceLoader
+public sealed class OffsetsSpriteSequence : DefaultSpriteSequence
+{
+	public readonly Dictionary<Sprite, Offset[]> EmbeddedOffsets = new();
+
+	public OffsetsSpriteSequence(
+		ModData modData,
+		string tileSet,
+		SpriteCache cache,
+		ISpriteSequenceLoader loader,
+		string sequence,
+		string animation,
+		MiniYaml info
+	)
+		: base(modData, tileSet, cache, loader, sequence, animation, info)
 	{
-		public OffsetsSpriteSequenceLoader(ModData modData)
-			: base(modData)
+		if (info.Value.EndsWith(".mobd"))
 		{
-		}
+			var src = this.GetSpriteSrc(modData, tileSet, sequence, animation, info.Value, info.ToDictionary());
+			var offsets = cache.FrameMetadata(src).Get<EmbeddedSpriteOffsets>();
 
-		public override ISpriteSequence CreateSequence(ModData modData, string tileSet, SpriteCache cache, string sequence, string animation, MiniYaml info)
-		{
-			return new OffsetsSpriteSequence(modData, tileSet, cache, this, sequence, animation, info);
-		}
-	}
-
-	public sealed class OffsetsSpriteSequence : DefaultSpriteSequence
-	{
-		public readonly Dictionary<Sprite, Offset[]> EmbeddedOffsets = new();
-
-		public OffsetsSpriteSequence(
-			ModData modData,
-			string tileSet,
-			SpriteCache cache,
-			ISpriteSequenceLoader loader,
-			string sequence,
-			string animation,
-			MiniYaml info
-		)
-			: base(modData, tileSet, cache, loader, sequence, animation, info)
-		{
-			if (info.Value.EndsWith(".mobd"))
+			for (var i = 0; i < this.sprites.Length; i++)
 			{
-				var src = this.GetSpriteSrc(modData, tileSet, sequence, animation, info.Value, info.ToDictionary());
-				var offsets = cache.FrameMetadata(src).Get<EmbeddedSpriteOffsets>();
+				if (this.sprites[i] == null)
+					continue;
 
-				for (var i = 0; i < this.sprites.Length; i++)
-				{
-					if (this.sprites[i] == null)
-						continue;
-
-					if (offsets.FrameOffsets != null && offsets.FrameOffsets.ContainsKey(i))
-						this.EmbeddedOffsets.Add(this.sprites[i], offsets.FrameOffsets[i]);
-				}
+				if (offsets.FrameOffsets != null && offsets.FrameOffsets.ContainsKey(i))
+					this.EmbeddedOffsets.Add(this.sprites[i], offsets.FrameOffsets[i]);
 			}
-			else if (info.Value.EndsWith(".png"))
+		}
+		else if (info.Value.EndsWith(".png"))
+		{
+			var src = this.GetSpriteSrc(modData, tileSet, sequence, animation, info.Value, info.ToDictionary());
+			var metadata = cache.FrameMetadata(src).Get<PngSheetMetadata>();
+
+			for (var i = 0; i < this.sprites.Length; i++)
 			{
-				var src = this.GetSpriteSrc(modData, tileSet, sequence, animation, info.Value, info.ToDictionary());
-				var metadata = cache.FrameMetadata(src).Get<PngSheetMetadata>();
+				if (this.sprites[i] == null || !metadata.Metadata.ContainsKey($"Offsets[{i}]"))
+					continue;
 
-				for (var i = 0; i < this.sprites.Length; i++)
-				{
-					if (this.sprites[i] == null || !metadata.Metadata.ContainsKey($"Offsets[{i}]"))
-						continue;
-
-					var lines = metadata.Metadata[$"Offsets[{i}]"].Split('|');
-					var convertOffsets = new Func<string[], Offset>(data => new(int.Parse(data[0]), int.Parse(data[1]), int.Parse(data[2])));
-					this.EmbeddedOffsets.Add(this.sprites[i], lines.Select(t => t.Split(',')).Select(convertOffsets).ToArray());
-				}
+				var lines = metadata.Metadata[$"Offsets[{i}]"].Split('|');
+				var convertOffsets = new Func<string[], Offset>(data => new(int.Parse(data[0]), int.Parse(data[1]), int.Parse(data[2])));
+				this.EmbeddedOffsets.Add(this.sprites[i], lines.Select(t => t.Split(',')).Select(convertOffsets).ToArray());
 			}
 		}
 	}

@@ -11,121 +11,120 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Misc.Warheads
+namespace OpenRA.Mods.OpenKrush.Mechanics.Misc.Warheads;
+
+using Common.Effects;
+using Common.Warheads;
+using Effects;
+using GameRules;
+using JetBrains.Annotations;
+using OpenRA.Traits;
+
+[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
+public class ShrapnelCreateEffectWarhead : CreateEffectWarhead
 {
-	using Common.Effects;
-	using Common.Warheads;
-	using Effects;
-	using GameRules;
-	using JetBrains.Annotations;
-	using OpenRA.Traits;
+	public readonly int2 Radius = int2.Zero;
 
-	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
-	public class ShrapnelCreateEffectWarhead : CreateEffectWarhead
+	[Desc("Weapon to fire when this warhead triggers.")]
+	public readonly string? ShrapnelWeapon;
+
+	[Desc("The minimum and maximum distances the shrapnel may travel.")]
+	public readonly WDist[] ShrapnelRange = { WDist.Zero, WDist.Zero };
+
+	public override void DoImpact(in Target target, WarheadArgs args)
 	{
-		public readonly int2 Radius = int2.Zero;
+		if (args.WeaponTarget.Actor != null && !this.IsValidAgainst(args.WeaponTarget.Actor, args.SourceActor))
+			return;
 
-		[Desc("Weapon to fire when this warhead triggers.")]
-		public readonly string? ShrapnelWeapon;
+		var random = args.SourceActor.World.SharedRandom;
 
-		[Desc("The minimum and maximum distances the shrapnel may travel.")]
-		public readonly WDist[] ShrapnelRange = { WDist.Zero, WDist.Zero };
+		var pos = target.CenterPosition
+			+ new WVec(
+				this.Radius.X == 0 ? 0 : random.Next(-this.Radius.X, this.Radius.X),
+				this.Radius.Y == 0 ? 0 : random.Next(-this.Radius.Y, this.Radius.Y),
+				0
+			);
 
-		public override void DoImpact(in Target target, WarheadArgs args)
+		var world = args.SourceActor.World;
+		var targetTile = world.Map.CellContaining(pos);
+
+		if (!world.Map.Contains(targetTile))
+			return;
+
+		var palette = this.ExplosionPalette;
+
+		if (this.UsePlayerPalette)
+			palette += args.SourceActor.Owner.InternalName;
+
+		if (this.ForceDisplayAtGroundLevel)
 		{
-			if (args.WeaponTarget.Actor != null && !this.IsValidAgainst(args.WeaponTarget.Actor, args.SourceActor))
-				return;
+			var dat = world.Map.DistanceAboveTerrain(pos);
+			pos = new(pos.X, pos.Y, pos.Z - dat.Length);
+		}
 
-			var random = args.SourceActor.World.SharedRandom;
+		var explosion = this.Explosions.RandomOrDefault(Game.CosmeticRandom);
 
-			var pos = target.CenterPosition
-				+ new WVec(
-					this.Radius.X == 0 ? 0 : random.Next(-this.Radius.X, this.Radius.X),
-					this.Radius.Y == 0 ? 0 : random.Next(-this.Radius.Y, this.Radius.Y),
-					0
-				);
+		if (this.Image != null && explosion != null)
+			world.AddFrameEndTask(w => w.Add(new SpriteEffect(pos, w, this.Image, explosion, palette)));
 
-			var world = args.SourceActor.World;
-			var targetTile = world.Map.CellContaining(pos);
+		if (this.ShrapnelWeapon != null)
+		{
+			var weaponToLower = this.ShrapnelWeapon.ToLowerInvariant();
 
-			if (!world.Map.Contains(targetTile))
-				return;
+			if (!Game.ModData.DefaultRules.Weapons.TryGetValue(weaponToLower, out var weaponInfo))
+				throw new YamlException("Weapons Ruleset does not contain an entry '{0}'".F(weaponToLower));
 
-			var palette = this.ExplosionPalette;
+			var rotation = WRot.FromFacing(world.SharedRandom.Next(1024));
+			var range = world.SharedRandom.Next(this.ShrapnelRange[0].Length, this.ShrapnelRange[1].Length);
+			var passiveTarget = pos + new WVec(range, 0, 0).Rotate(rotation);
 
-			if (this.UsePlayerPalette)
-				palette += args.SourceActor.Owner.InternalName;
-
-			if (this.ForceDisplayAtGroundLevel)
+			var newArgs = new ProjectileArgs
 			{
-				var dat = world.Map.DistanceAboveTerrain(pos);
-				pos = new(pos.X, pos.Y, pos.Z - dat.Length);
-			}
+				Weapon = weaponInfo,
+				DamageModifiers = Array.Empty<int>(),
+				InaccuracyModifiers = Array.Empty<int>(),
+				RangeModifiers = Array.Empty<int>(),
+				Source = pos,
+				CurrentSource = () => pos,
+				SourceActor = args.SourceActor,
+				PassiveTarget = passiveTarget,
+				GuidedTarget = target
+			};
 
-			var explosion = this.Explosions.RandomOrDefault(Game.CosmeticRandom);
-
-			if (this.Image != null && explosion != null)
-				world.AddFrameEndTask(w => w.Add(new SpriteEffect(pos, w, this.Image, explosion, palette)));
-
-			if (this.ShrapnelWeapon != null)
-			{
-				var weaponToLower = this.ShrapnelWeapon.ToLowerInvariant();
-
-				if (!Game.ModData.DefaultRules.Weapons.TryGetValue(weaponToLower, out var weaponInfo))
-					throw new YamlException("Weapons Ruleset does not contain an entry '{0}'".F(weaponToLower));
-
-				var rotation = WRot.FromFacing(world.SharedRandom.Next(1024));
-				var range = world.SharedRandom.Next(this.ShrapnelRange[0].Length, this.ShrapnelRange[1].Length);
-				var passiveTarget = pos + new WVec(range, 0, 0).Rotate(rotation);
-
-				var newArgs = new ProjectileArgs
+			world.AddFrameEndTask(
+				_ =>
 				{
-					Weapon = weaponInfo,
-					DamageModifiers = Array.Empty<int>(),
-					InaccuracyModifiers = Array.Empty<int>(),
-					RangeModifiers = Array.Empty<int>(),
-					Source = pos,
-					CurrentSource = () => pos,
-					SourceActor = args.SourceActor,
-					PassiveTarget = passiveTarget,
-					GuidedTarget = target
-				};
-
-				world.AddFrameEndTask(
-					_ =>
+					if (newArgs.Weapon.Projectile != null)
 					{
-						if (newArgs.Weapon.Projectile != null)
-						{
-							var projectile = newArgs.Weapon.Projectile.Create(newArgs);
+						var projectile = newArgs.Weapon.Projectile.Create(newArgs);
 
-							if (projectile != null)
-								world.Add(projectile);
-						}
-						else
+						if (projectile != null)
+							world.Add(projectile);
+					}
+					else
+					{
+						foreach (var warhead in newArgs.Weapon.Warheads)
 						{
-							foreach (var warhead in newArgs.Weapon.Warheads)
+							var wh = warhead; // force the closure to bind to the current warhead
+							var iargs = new WarheadArgs { SourceActor = newArgs.SourceActor };
+
+							if (wh.Delay > 0)
 							{
-								var wh = warhead; // force the closure to bind to the current warhead
-								var iargs = new WarheadArgs { SourceActor = newArgs.SourceActor };
-
-								if (wh.Delay > 0)
-								{
-									args.SourceActor.World.AddFrameEndTask(
-										w => w.Add(new DelayedImpact(wh.Delay, wh, Target.FromPos(newArgs.PassiveTarget), iargs))
-									);
-								}
-								else
-									wh.DoImpact(Target.FromPos(newArgs.PassiveTarget), iargs);
+								args.SourceActor.World.AddFrameEndTask(
+									w => w.Add(new DelayedImpact(wh.Delay, wh, Target.FromPos(newArgs.PassiveTarget), iargs))
+								);
 							}
+							else
+								wh.DoImpact(Target.FromPos(newArgs.PassiveTarget), iargs);
 						}
 					}
-				);
-			}
-
-			var impactSound = this.ImpactSounds.RandomOrDefault(Game.CosmeticRandom);
-
-			if (impactSound != null && Game.CosmeticRandom.Next(0, 100) < this.ImpactSoundChance)
-				Game.Sound.Play(SoundType.World, impactSound, pos);
+				}
+			);
 		}
+
+		var impactSound = this.ImpactSounds.RandomOrDefault(Game.CosmeticRandom);
+
+		if (impactSound != null && Game.CosmeticRandom.Next(0, 100) < this.ImpactSoundChance)
+			Game.Sound.Play(SoundType.World, impactSound, pos);
 	}
 }

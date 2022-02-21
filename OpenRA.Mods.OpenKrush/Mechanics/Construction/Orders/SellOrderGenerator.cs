@@ -11,62 +11,61 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Orders
+namespace OpenRA.Mods.OpenKrush.Mechanics.Construction.Orders;
+
+using Common.Orders;
+using Graphics;
+using Traits;
+
+public class SellOrderGenerator : OrderGenerator
 {
-	using Common.Orders;
-	using Graphics;
-	using Traits;
+	public const string Id = "Sell";
 
-	public class SellOrderGenerator : OrderGenerator
+	private IEnumerable<TraitPair<DeconstructSellable>>? sellableActors;
+
+	protected override IEnumerable<Order> OrderInner(World world, CPos cell, int2 worldPixel, MouseInput mi)
 	{
-		public const string Id = "Sell";
-
-		private IEnumerable<TraitPair<DeconstructSellable>>? sellableActors;
-
-		protected override IEnumerable<Order> OrderInner(World world, CPos cell, int2 worldPixel, MouseInput mi)
+		if (mi.Button != Game.Settings.Game.MouseButtonPreference.Action)
+			world.CancelInputMode();
+		else
 		{
-			if (mi.Button != Game.Settings.Game.MouseButtonPreference.Action)
-				world.CancelInputMode();
-			else
-			{
-				var actor = world.ActorMap.GetActorsAt(cell).FirstOrDefault(a => this.sellableActors?.Any(e => e.Actor.Equals(a)) ?? false);
+			var actor = world.ActorMap.GetActorsAt(cell).FirstOrDefault(a => this.sellableActors?.Any(e => e.Actor.Equals(a)) ?? false);
 
-				if (actor != null)
-					yield return new(SellOrderGenerator.Id, actor, false);
-			}
+			if (actor != null)
+				yield return new(SellOrderGenerator.Id, actor, false);
 		}
+	}
 
-		protected override void Tick(World world)
-		{
-			this.sellableActors = world.ActorsWithTrait<DeconstructSellable>().Where(e => e.Actor.Owner == world.LocalPlayer && !e.Trait.IsTraitDisabled);
+	protected override void Tick(World world)
+	{
+		this.sellableActors = world.ActorsWithTrait<DeconstructSellable>().Where(e => e.Actor.Owner == world.LocalPlayer && !e.Trait.IsTraitDisabled);
 
-			if (!this.sellableActors.Any())
-				world.CancelInputMode();
-		}
+		if (!this.sellableActors.Any())
+			world.CancelInputMode();
+	}
 
-		protected override IEnumerable<IRenderable> Render(WorldRenderer wr, World world)
-		{
-			yield break;
-		}
+	protected override IEnumerable<IRenderable> Render(WorldRenderer wr, World world)
+	{
+		yield break;
+	}
 
-		protected override IEnumerable<IRenderable> RenderAboveShroud(WorldRenderer wr, World world)
-		{
-			yield break;
-		}
+	protected override IEnumerable<IRenderable> RenderAboveShroud(WorldRenderer wr, World world)
+	{
+		yield break;
+	}
 
-		protected override IEnumerable<IRenderable> RenderAnnotations(WorldRenderer wr, World world)
-		{
-			yield break;
-		}
+	protected override IEnumerable<IRenderable> RenderAnnotations(WorldRenderer wr, World world)
+	{
+		yield break;
+	}
 
-		protected override string? GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)
-		{
-			if (this.sellableActors == null)
-				return null;
+	protected override string? GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)
+	{
+		if (this.sellableActors == null)
+			return null;
 
-			var actor = world.ActorMap.GetActorsAt(cell).FirstOrDefault(a => this.sellableActors.Any(e => e.Actor.Equals(a)));
+		var actor = world.ActorMap.GetActorsAt(cell).FirstOrDefault(a => this.sellableActors.Any(e => e.Actor.Equals(a)));
 
-			return actor != null ? "sell" : null;
-		}
+		return actor != null ? "sell" : null;
 	}
 }

@@ -11,34 +11,33 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Assets.AudioLoaders
+namespace OpenRA.Mods.OpenKrush.Assets.AudioLoaders;
+
+using FileFormats;
+using JetBrains.Annotations;
+
+[UsedImplicitly]
+public class SonLoader : ISoundLoader
 {
-	using FileFormats;
-	using JetBrains.Annotations;
-
-	[UsedImplicitly]
-	public class SonLoader : ISoundLoader
+	bool ISoundLoader.TryParseSound(Stream stream, out ISoundFormat? soundFormat)
 	{
-		bool ISoundLoader.TryParseSound(Stream stream, out ISoundFormat? soundFormat)
+		if (stream.Position + 16 <= stream.Length)
 		{
-			if (stream.Position + 16 <= stream.Length)
+			var type = stream.ReadASCII(4);
+			stream.Position += 4;
+			var format = stream.ReadASCII(8);
+			stream.Position -= 16;
+
+			if (type == "SIFF" && format == "SOUNSHDR")
 			{
-				var type = stream.ReadASCII(4);
-				stream.Position += 4;
-				var format = stream.ReadASCII(8);
-				stream.Position -= 16;
+				soundFormat = new Son(stream);
 
-				if (type == "SIFF" && format == "SOUNSHDR")
-				{
-					soundFormat = new Son(stream);
-
-					return true;
-				}
+				return true;
 			}
-
-			soundFormat = null;
-
-			return false;
 		}
+
+		soundFormat = null;
+
+		return false;
 	}
 }

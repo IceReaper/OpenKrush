@@ -11,32 +11,31 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Misc.Traits
-{
-	using Common.Traits;
-	using JetBrains.Annotations;
+namespace OpenRA.Mods.OpenKrush.Mechanics.Misc.Traits;
 
-	[UsedImplicitly]
-	[Desc("This special airstrike version makes bombers fly a base-to-target route.")]
-	public class AdvancedAirstrikePowerInfo : AirstrikePowerInfo
+using Common.Traits;
+using JetBrains.Annotations;
+
+[UsedImplicitly]
+[Desc("This special airstrike version makes bombers fly a base-to-target route.")]
+public class AdvancedAirstrikePowerInfo : AirstrikePowerInfo
+{
+	public override object Create(ActorInitializer init)
 	{
-		public override object Create(ActorInitializer init)
-		{
-			return new AdvancedAirstrikePower(init.Self, this);
-		}
+		return new AdvancedAirstrikePower(init.Self, this);
+	}
+}
+
+public class AdvancedAirstrikePower : AirstrikePower
+{
+	public AdvancedAirstrikePower(Actor self, AdvancedAirstrikePowerInfo info)
+		: base(self, info)
+	{
 	}
 
-	public class AdvancedAirstrikePower : AirstrikePower
+	public override void Activate(Actor self, Order order, SupportPowerManager manager)
 	{
-		public AdvancedAirstrikePower(Actor self, AdvancedAirstrikePowerInfo info)
-			: base(self, info)
-		{
-		}
-
-		public override void Activate(Actor self, Order order, SupportPowerManager manager)
-		{
-			var target = order.Target.Positions.FirstOrDefault();
-			this.SendAirstrike(self, target, (target - self.CenterPosition).Yaw);
-		}
+		var target = order.Target.Positions.FirstOrDefault();
+		this.SendAirstrike(self, target, (target - self.CenterPosition).Yaw);
 	}
 }

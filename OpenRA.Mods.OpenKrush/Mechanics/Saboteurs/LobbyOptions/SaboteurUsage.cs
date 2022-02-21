@@ -11,61 +11,62 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.LobbyOptions
+namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.LobbyOptions;
+
+using JetBrains.Annotations;
+using OpenRA.Traits;
+using System.Collections.ObjectModel;
+
+public enum SaboteurUsageType
 {
-	using JetBrains.Annotations;
-	using OpenRA.Traits;
-	using System.Collections.ObjectModel;
+	Destroy,
+	Conquer
+}
 
-	public enum SaboteurUsageType
+[UsedImplicitly]
+[Desc("What happens when a saboteur conquers a building.")]
+public class SaboteurUsageInfo : TraitInfo, ILobbyOptions
+{
+	private const string LobbyOptionsCategory = "saboteur";
+
+	public const string Id = "SaboteurUsage";
+	public const SaboteurUsageType Default = SaboteurUsageType.Conquer;
+
+	IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(MapPreview mapPreview)
 	{
-		Destroy,
-		Conquer
+		yield return new LobbyOption(
+			SaboteurUsageInfo.Id,
+			"Usage",
+			"What happens when a saboteur conquers a building.",
+			true,
+			0,
+			new ReadOnlyDictionary<string, string>(
+				new Dictionary<SaboteurUsageType, string> { { SaboteurUsageType.Destroy, "Destroy" }, { SaboteurUsageType.Conquer, "Conquer" } }.ToDictionary(
+					e => e.Key.ToString(),
+					e => e.Value
+				)
+			),
+			SaboteurUsageInfo.Default.ToString(),
+			false,
+			SaboteurUsageInfo.LobbyOptionsCategory
+		);
 	}
 
-	[UsedImplicitly]
-	[Desc("What happens when a saboteur conquers a building.")]
-	public class SaboteurUsageInfo : TraitInfo, ILobbyOptions
+	public override object Create(ActorInitializer init)
 	{
-		private const string LobbyOptionsCategory = "saboteur";
-
-		public const string Id = "SaboteurUsage";
-		public const SaboteurUsageType Default = SaboteurUsageType.Conquer;
-
-		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(MapPreview mapPreview)
-		{
-			yield return new LobbyOption(
-				SaboteurUsageInfo.Id,
-				"Usage",
-				"What happens when a saboteur conquers a building.",
-				true,
-				0,
-				new ReadOnlyDictionary<string, string>(
-					new Dictionary<SaboteurUsageType, string> { { SaboteurUsageType.Destroy, "Destroy" }, { SaboteurUsageType.Conquer, "Conquer" } }
-						.ToDictionary(e => e.Key.ToString(), e => e.Value)
-				),
-				SaboteurUsageInfo.Default.ToString(),
-				false,
-				SaboteurUsageInfo.LobbyOptionsCategory
-			);
-		}
-
-		public override object Create(ActorInitializer init)
-		{
-			return new SaboteurUsage();
-		}
+		return new SaboteurUsage();
 	}
+}
 
-	public class SaboteurUsage : INotifyCreated
+public class SaboteurUsage : INotifyCreated
+{
+	public SaboteurUsageType Usage { get; private set; }
+
+	void INotifyCreated.Created(Actor self)
 	{
-		public SaboteurUsageType Usage { get; private set; }
-
-		void INotifyCreated.Created(Actor self)
-		{
-			this.Usage = (SaboteurUsageType)Enum.Parse(
-				typeof(SaboteurUsageType),
-				self.World.LobbyInfo.GlobalSettings.OptionOrDefault(SaboteurUsageInfo.Id, SaboteurUsageInfo.Default.ToString())
-			);
-		}
+		this.Usage = (SaboteurUsageType)Enum.Parse(
+			typeof(SaboteurUsageType),
+			self.World.LobbyInfo.GlobalSettings.OptionOrDefault(SaboteurUsageInfo.Id, SaboteurUsageInfo.Default.ToString())
+		);
 	}
 }

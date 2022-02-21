@@ -11,36 +11,35 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Orders
+namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Orders;
+
+using Common.Orders;
+using OpenRA.Traits;
+
+public class TechnicianEnterOrderTargeter : UnitOrderTargeter
 {
-	using Common.Orders;
-	using OpenRA.Traits;
+	public const string Id = "TechnicianEnter";
 
-	public class TechnicianEnterOrderTargeter : UnitOrderTargeter
+	private readonly string cursorAllowed;
+	private readonly string cursorForbidden;
+
+	public TechnicianEnterOrderTargeter(string cursorAllowed, string cursorForbidden)
+		: base(TechnicianEnterOrderTargeter.Id, 6, null, false, true)
 	{
-		public const string Id = "TechnicianEnter";
+		this.cursorAllowed = cursorAllowed;
+		this.cursorForbidden = cursorForbidden;
+	}
 
-		private readonly string cursorAllowed;
-		private readonly string cursorForbidden;
+	public override bool CanTargetActor(Actor self, Actor target, TargetModifiers modifiers, ref string cursor)
+	{
+		var result = TechnicianUtils.CanEnter(self, target, out var blocked);
+		cursor = blocked ? this.cursorForbidden : this.cursorAllowed;
 
-		public TechnicianEnterOrderTargeter(string cursorAllowed, string cursorForbidden)
-			: base(TechnicianEnterOrderTargeter.Id, 6, null, false, true)
-		{
-			this.cursorAllowed = cursorAllowed;
-			this.cursorForbidden = cursorForbidden;
-		}
+		return result || blocked;
+	}
 
-		public override bool CanTargetActor(Actor self, Actor target, TargetModifiers modifiers, ref string cursor)
-		{
-			var result = TechnicianUtils.CanEnter(self, target, out var blocked);
-			cursor = blocked ? this.cursorForbidden : this.cursorAllowed;
-
-			return result || blocked;
-		}
-
-		public override bool CanTargetFrozenActor(Actor self, FrozenActor target, TargetModifiers modifiers, ref string cursor)
-		{
-			return false;
-		}
+	public override bool CanTargetFrozenActor(Actor self, FrozenActor target, TargetModifiers modifiers, ref string cursor)
+	{
+		return false;
 	}
 }

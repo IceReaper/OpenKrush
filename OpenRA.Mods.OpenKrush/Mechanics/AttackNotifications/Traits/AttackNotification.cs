@@ -11,41 +11,40 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.AttackNotifications.Traits
+namespace OpenRA.Mods.OpenKrush.Mechanics.AttackNotifications.Traits;
+
+using JetBrains.Annotations;
+using OpenRA.Traits;
+using Veterancy.Traits;
+
+[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
+[Desc("Specifies the notification for the AdvancedAttackNotifier.")]
+public class AttackNotificationInfo : TraitInfo
 {
-	using JetBrains.Annotations;
-	using OpenRA.Traits;
-	using Veterancy.Traits;
+	[Desc("The audio notification type to play.")]
+	[FieldLoader.RequireAttribute]
+	public string[] Notifications = Array.Empty<string>();
 
-	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
-	[Desc("Specifies the notification for the AdvancedAttackNotifier.")]
-	public class AttackNotificationInfo : TraitInfo
+	public bool RadarPings = true;
+
+	public override object Create(ActorInitializer init)
 	{
-		[Desc("The audio notification type to play.")]
-		[FieldLoader.RequireAttribute]
-		public string[] Notifications = Array.Empty<string>();
+		return new AttackNotification(this);
+	}
+}
 
-		public bool RadarPings = true;
+public class AttackNotification : INotifyCreated
+{
+	public readonly AttackNotificationInfo Info;
+	public Veterancy? Veterancy;
 
-		public override object Create(ActorInitializer init)
-		{
-			return new AttackNotification(this);
-		}
+	public AttackNotification(AttackNotificationInfo info)
+	{
+		this.Info = info;
 	}
 
-	public class AttackNotification : INotifyCreated
+	void INotifyCreated.Created(Actor self)
 	{
-		public readonly AttackNotificationInfo Info;
-		public Veterancy? Veterancy;
-
-		public AttackNotification(AttackNotificationInfo info)
-		{
-			this.Info = info;
-		}
-
-		void INotifyCreated.Created(Actor self)
-		{
-			this.Veterancy = self.TraitOrDefault<Veterancy>();
-		}
+		this.Veterancy = self.TraitOrDefault<Veterancy>();
 	}
 }

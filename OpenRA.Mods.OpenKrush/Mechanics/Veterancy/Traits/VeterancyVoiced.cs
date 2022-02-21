@@ -11,85 +11,72 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Veterancy.Traits
+namespace OpenRA.Mods.OpenKrush.Mechanics.Veterancy.Traits;
+
+using Common.Traits;
+using JetBrains.Annotations;
+using OpenRA.Traits;
+
+[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
+[Desc("This actor has a different voice for each veterancy level.")]
+public class VeterancyVoicedInfo : TraitInfo
 {
-	using Common.Traits;
-	using JetBrains.Annotations;
-	using OpenRA.Traits;
+	[FieldLoader.RequireAttribute]
+	[Desc("Which voice sets to use.")]
+	[VoiceSetReference]
+	public readonly string[] VoiceSets = Array.Empty<string>();
 
-	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
-	[Desc("This actor has a different voice for each veterancy level.")]
-	public class VeterancyVoicedInfo : TraitInfo
+	[Desc("Multiply volume with this factor.")]
+	public readonly float Volume = 1f;
+
+	public override object Create(ActorInitializer init)
 	{
-		[FieldLoader.RequireAttribute]
-		[Desc("Which voice sets to use.")]
-		[VoiceSetReference]
-		public readonly string[] VoiceSets = Array.Empty<string>();
+		return new VeterancyVoiced(this);
+	}
+}
 
-		[Desc("Multiply volume with this factor.")]
-		public readonly float Volume = 1f;
+public class VeterancyVoiced : IVoiced, INotifyCreated
+{
+	private readonly VeterancyVoicedInfo info;
+	private Veterancy? veterancy;
 
-		public override object Create(ActorInitializer init)
-		{
-			return new VeterancyVoiced(this);
-		}
+	public VeterancyVoiced(VeterancyVoicedInfo info)
+	{
+		this.info = info;
 	}
 
-	public class VeterancyVoiced : IVoiced, INotifyCreated
+	void INotifyCreated.Created(Actor self)
 	{
-		private readonly VeterancyVoicedInfo info;
-		private Veterancy? veterancy;
+		this.veterancy = self.TraitOrDefault<Veterancy>();
+	}
 
-		public VeterancyVoiced(VeterancyVoicedInfo info)
-		{
-			this.info = info;
-		}
+	string IVoiced.VoiceSet => this.info.VoiceSets[this.veterancy != null ? Math.Min(this.veterancy.Level, this.info.VoiceSets.Length - 1) : 0];
 
-		void INotifyCreated.Created(Actor self)
-		{
-			this.veterancy = self.TraitOrDefault<Veterancy>();
-		}
+	bool IVoiced.PlayVoice(Actor self, string? phrase, string variant)
+	{
+		if (phrase == null)
+			return false;
 
-		string IVoiced.VoiceSet => this.info.VoiceSets[this.veterancy != null ? Math.Min(this.veterancy.Level, this.info.VoiceSets.Length - 1) : 0];
+		var type = ((IVoiced)this).VoiceSet.ToLowerInvariant();
+		var volume = this.info.Volume;
 
-		bool IVoiced.PlayVoice(Actor self, string? phrase, string variant)
-		{
-			if (phrase == null)
-				return false;
+		return Game.Sound.PlayPredefined(SoundType.World, self.World.Map.Rules, null, self, type, phrase, variant, true, WPos.Zero, volume, true);
+	}
 
-			var type = ((IVoiced)this).VoiceSet.ToLowerInvariant();
-			var volume = this.info.Volume;
+	bool IVoiced.PlayVoiceLocal(Actor self, string? phrase, string variant, float volume)
+	{
+		if (phrase == null)
+			return false;
 
-			return Game.Sound.PlayPredefined(SoundType.World, self.World.Map.Rules, null, self, type, phrase, variant, true, WPos.Zero, volume, true);
-		}
+		var type = ((IVoiced)this).VoiceSet.ToLowerInvariant();
 
-		bool IVoiced.PlayVoiceLocal(Actor self, string? phrase, string variant, float volume)
-		{
-			if (phrase == null)
-				return false;
+		return Game.Sound.PlayPredefined(SoundType.World, self.World.Map.Rules, null, self, type, phrase, variant, false, self.CenterPosition, volume, true);
+	}
 
-			var type = ((IVoiced)this).VoiceSet.ToLowerInvariant();
+	bool IVoiced.HasVoice(Actor self, string voice)
+	{
+		var voices = self.World.Map.Rules.Voices[((IVoiced)this).VoiceSet.ToLowerInvariant()];
 
-			return Game.Sound.PlayPredefined(
-				SoundType.World,
-				self.World.Map.Rules,
-				null,
-				self,
-				type,
-				phrase,
-				variant,
-				false,
-				self.CenterPosition,
-				volume,
-				true
-			);
-		}
-
-		bool IVoiced.HasVoice(Actor self, string voice)
-		{
-			var voices = self.World.Map.Rules.Voices[((IVoiced)this).VoiceSet.ToLowerInvariant()];
-
-			return voices != null && voices.Voices.ContainsKey(voice);
-		}
+		return voices != null && voices.Voices.ContainsKey(voice);
 	}
 }

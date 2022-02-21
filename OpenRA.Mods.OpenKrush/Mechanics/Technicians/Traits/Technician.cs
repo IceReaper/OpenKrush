@@ -11,99 +11,96 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Traits
+namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Traits;
+
+using Activities;
+using Bunkers.LobbyOptions;
+using Common.Traits;
+using JetBrains.Annotations;
+using OpenRA.Traits;
+using Orders;
+using Primitives;
+
+[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
+[Desc("Technician mechanism, attach to the unit.")]
+public class TechnicianInfo : TraitInfo
 {
-	using Activities;
-	using Bunkers.LobbyOptions;
-	using Common.Traits;
-	using JetBrains.Annotations;
-	using OpenRA.Traits;
-	using Orders;
-	using Primitives;
+	[Desc("Cursor used for order.")]
+	public readonly string Cursor = "repair";
 
-	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
-	[Desc("Technician mechanism, attach to the unit.")]
-	public class TechnicianInfo : TraitInfo
+	[Desc("Cursor used for order if building does not need repair.")]
+	public readonly string BlockedCursor = "repair-blocked";
+
+	[Desc("Target line color.")]
+	public readonly Color TargetLineColor = Color.Yellow;
+
+	[Desc("Voice used when ordering to repair.")]
+	[VoiceReference]
+	public readonly string VoiceOrder = "Repair";
+
+	[Desc("Voice used when entered and starting repair.")]
+	[VoiceReference]
+	public readonly string VoiceEnter = "Repairing";
+
+	[Desc("Voice used when entered a bunker.")]
+	[VoiceReference]
+	public readonly string? VoiceEnterBunker;
+
+	public override object Create(ActorInitializer init)
 	{
-		[Desc("Cursor used for order.")]
-		public readonly string Cursor = "repair";
+		return new Technician(this);
+	}
+}
 
-		[Desc("Cursor used for order if building does not need repair.")]
-		public readonly string BlockedCursor = "repair-blocked";
+public class Technician : IIssueOrder, IResolveOrder, IOrderVoice
+{
+	private readonly TechnicianInfo info;
 
-		[Desc("Target line color.")]
-		public readonly Color TargetLineColor = Color.Yellow;
+	public Technician(TechnicianInfo info)
+	{
+		this.info = info;
+	}
 
-		[Desc("Voice used when ordering to repair.")]
-		[VoiceReference]
-		public readonly string VoiceOrder = "Repair";
-
-		[Desc("Voice used when entered and starting repair.")]
-		[VoiceReference]
-		public readonly string VoiceEnter = "Repairing";
-
-		[Desc("Voice used when entered a bunker.")]
-		[VoiceReference]
-		public readonly string? VoiceEnterBunker;
-
-		public override object Create(ActorInitializer init)
+	IEnumerable<IOrderTargeter> IIssueOrder.Orders
+	{
+		get
 		{
-			return new Technician(this);
+			yield return new TechnicianEnterOrderTargeter(this.info.Cursor, this.info.BlockedCursor);
 		}
 	}
 
-	public class Technician : IIssueOrder, IResolveOrder, IOrderVoice
+	Order? IIssueOrder.IssueOrder(Actor self, IOrderTargeter order, in Target target, bool queued)
 	{
-		private readonly TechnicianInfo info;
+		return order.OrderID == TechnicianEnterOrderTargeter.Id ? new Order(order.OrderID, self, target, queued) : null;
+	}
 
-		public Technician(TechnicianInfo info)
-		{
-			this.info = info;
-		}
+	void IResolveOrder.ResolveOrder(Actor self, Order order)
+	{
+		if (order.OrderString != TechnicianEnterOrderTargeter.Id)
+			return;
 
-		IEnumerable<IOrderTargeter> IIssueOrder.Orders
-		{
-			get
-			{
-				yield return new TechnicianEnterOrderTargeter(this.info.Cursor, this.info.BlockedCursor);
-			}
-		}
+		if (order.Target.Type != TargetType.Actor || order.Target.Actor == null)
+			return;
 
-		Order? IIssueOrder.IssueOrder(Actor self, IOrderTargeter order, in Target target, bool queued)
-		{
-			return order.OrderID == TechnicianEnterOrderTargeter.Id ? new Order(order.OrderID, self, target, queued) : null;
-		}
+		if (!TechnicianUtils.CanEnter(self, order.Target.Actor, out _))
+			return;
 
-		void IResolveOrder.ResolveOrder(Actor self, Order order)
-		{
-			if (order.OrderString != TechnicianEnterOrderTargeter.Id)
-				return;
+		self.QueueActivity(order.Queued, new TechnicianEnter(self, order.Target, this.info.TargetLineColor));
+	}
 
-			if (order.Target.Type != TargetType.Actor || order.Target.Actor == null)
-				return;
+	string? IOrderVoice.VoicePhraseForOrder(Actor self, Order order)
+	{
+		return order.OrderString == TechnicianEnterOrderTargeter.Id && TechnicianUtils.CanEnter(self, order.Target.Actor, out _) ? this.info.VoiceOrder : null;
+	}
 
-			if (!TechnicianUtils.CanEnter(self, order.Target.Actor, out _))
-				return;
+	public void Enter(Actor self, Actor targetActor)
+	{
+		if (self.Owner != self.World.LocalPlayer)
+			return;
 
-			self.QueueActivity(order.Queued, new TechnicianEnter(self, order.Target, this.info.TargetLineColor));
-		}
-
-		string? IOrderVoice.VoicePhraseForOrder(Actor self, Order order)
-		{
-			return order.OrderString == TechnicianEnterOrderTargeter.Id && TechnicianUtils.CanEnter(self, order.Target.Actor, out _)
-				? this.info.VoiceOrder
-				: null;
-		}
-
-		public void Enter(Actor self, Actor targetActor)
-		{
-			if (self.Owner != self.World.LocalPlayer)
-				return;
-
-			if (self.World.WorldActor.Info.TraitInfoOrDefault<TechBunkerAmountInfo>().ActorType != targetActor.Info.Name)
-				self.PlayVoice(this.info.VoiceEnter);
-			else if (this.info.VoiceEnterBunker != null)
-				self.PlayVoice(this.info.VoiceEnterBunker);
-		}
+		if (self.World.WorldActor.Info.TraitInfoOrDefault<TechBunkerAmountInfo>().ActorType != targetActor.Info.Name)
+			self.PlayVoice(this.info.VoiceEnter);
+		else if (this.info.VoiceEnterBunker != null)
+			self.PlayVoice(this.info.VoiceEnterBunker);
 	}
 }

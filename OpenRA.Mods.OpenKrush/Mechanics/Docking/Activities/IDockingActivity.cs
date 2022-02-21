@@ -11,15 +11,14 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Activities
-{
-	using Traits;
+namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Activities;
 
-	public interface IDockingActivity
-	{
-		Dock? Dock { get; }
-		DockingState DockingState { get; }
-		void StartDocking();
-		void StartUndocking();
-	}
+using Traits;
+
+public interface IDockingActivity
+{
+	Dock? Dock { get; }
+	DockingState DockingState { get; }
+	void StartDocking();
+	void StartUndocking();
 }

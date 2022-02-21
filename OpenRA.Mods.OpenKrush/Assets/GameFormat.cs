@@ -1,9 +1,8 @@
-namespace OpenRA.Mods.OpenKrush.Assets
+namespace OpenRA.Mods.OpenKrush.Assets;
+
+public enum GameFormat
 {
-	public enum GameFormat
-	{
-		Unknown,
-		Gen1,
-		Gen2
-	}
+	Unknown,
+	Gen1,
+	Gen2
 }

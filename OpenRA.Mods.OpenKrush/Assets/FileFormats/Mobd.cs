@@ -11,68 +11,67 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Assets.FileFormats
+namespace OpenRA.Mods.OpenKrush.Assets.FileFormats;
+
+public class Mobd
 {
-	public class Mobd
+	public readonly MobdAnimation[] RotationalAnimations;
+	public readonly MobdAnimation[] SimpleAnimations;
+
+	public Mobd(Stream stream)
 	{
-		public readonly MobdAnimation[] RotationalAnimations;
-		public readonly MobdAnimation[] SimpleAnimations;
+		var fileStart = (uint)stream.Position;
+		var firstFrameStart = stream.Length;
 
-		public Mobd(Stream stream)
+		var animationOffsets = new List<uint>();
+		var rotationalAnimations = new List<MobdAnimation>();
+		var simpleAnimations = new List<MobdAnimation>();
+
+		while (stream.Position < firstFrameStart)
 		{
-			var fileStart = (uint)stream.Position;
-			var firstFrameStart = stream.Length;
+			var value = stream.ReadInt32();
 
-			var animationOffsets = new List<uint>();
-			var rotationalAnimations = new List<MobdAnimation>();
-			var simpleAnimations = new List<MobdAnimation>();
-
-			while (stream.Position < firstFrameStart)
+			if (value == 0 || (value < stream.Position && value >= fileStart))
 			{
-				var value = stream.ReadInt32();
+				stream.Position -= 4;
 
-				if (value == 0 || (value < stream.Position && value >= fileStart))
-				{
-					stream.Position -= 4;
+				break;
+			}
 
+			animationOffsets.Add((uint)(stream.Position - 4));
+
+			while (true)
+			{
+				value = stream.ReadInt32();
+
+				if (value is -1 or 0)
 					break;
-				}
 
-				animationOffsets.Add((uint)(stream.Position - 4));
-
-				while (true)
-				{
-					value = stream.ReadInt32();
-
-					if (value is -1 or 0)
-						break;
-
-					firstFrameStart = Math.Min(firstFrameStart, value);
-				}
+				firstFrameStart = Math.Min(firstFrameStart, value);
 			}
-
-			while (stream.Position < firstFrameStart)
-			{
-				var value = stream.ReadUInt32();
-
-				if (value == 0)
-					continue;
-
-				animationOffsets.Remove(value);
-				var returnPosition = stream.Position;
-				stream.Position = value;
-				rotationalAnimations.Add(new(stream));
-				stream.Position = returnPosition;
-			}
-
-			foreach (var animationOffset in animationOffsets)
-			{
-				stream.Position = animationOffset;
-				simpleAnimations.Add(new(stream));
-			}
-
-			this.RotationalAnimations = rotationalAnimations.ToArray();
-			this.SimpleAnimations = simpleAnimations.ToArray();
 		}
+
+		while (stream.Position < firstFrameStart)
+		{
+			var value = stream.ReadUInt32();
+
+			if (value == 0)
+				continue;
+
+			animationOffsets.Remove(value);
+			var returnPosition = stream.Position;
+			stream.Position = value;
+			rotationalAnimations.Add(new(stream));
+			stream.Position = returnPosition;
+		}
+
+		foreach (var animationOffset in animationOffsets)
+		{
+			stream.Position = animationOffset;
+			simpleAnimations.Add(new(stream));
+		}
+
+		this.RotationalAnimations = rotationalAnimations.ToArray();
+		this.SimpleAnimations = simpleAnimations.ToArray();
 	}
 }

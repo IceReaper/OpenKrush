@@ -11,12 +11,11 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Researching
+namespace OpenRA.Mods.OpenKrush.Mechanics.Researching;
+
+public enum ResarchState
 {
-	public enum ResarchState
-	{
-		Unavailable,
-		Available,
-		Researching
-	}
+	Unavailable,
+	Available,
+	Researching
 }

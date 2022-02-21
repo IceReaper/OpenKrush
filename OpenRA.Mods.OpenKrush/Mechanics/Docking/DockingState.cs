@@ -11,16 +11,15 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Docking
+namespace OpenRA.Mods.OpenKrush.Mechanics.Docking;
+
+public enum DockingState
 {
-	public enum DockingState
-	{
-		None,
-		Approaching,
-		Waiting,
-		PrepareDocking,
-		Docking,
-		Docked,
-		Undocking
-	}
+	None,
+	Approaching,
+	Waiting,
+	PrepareDocking,
+	Docking,
+	Docked,
+	Undocking
 }

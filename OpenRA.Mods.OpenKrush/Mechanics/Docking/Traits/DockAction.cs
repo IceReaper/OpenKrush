@@ -11,38 +11,37 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits
+namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits;
+
+using Common.Traits;
+using JetBrains.Annotations;
+
+[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
+public abstract class DockActionInfo : ConditionalTraitInfo
 {
-	using Common.Traits;
-	using JetBrains.Annotations;
+	[Desc("Cursor to use when docking is possible.")]
+	public readonly string Cursor = "dock";
 
-	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
-	public abstract class DockActionInfo : ConditionalTraitInfo
+	[Desc("Name of the dock this action is assigned to..")]
+	public readonly string Name = "Dock";
+}
+
+public abstract class DockAction : ConditionalTrait<DockActionInfo>
+{
+	protected DockAction(DockActionInfo info)
+		: base(info)
 	{
-		[Desc("Cursor to use when docking is possible.")]
-		public readonly string Cursor = "dock";
-
-		[Desc("Name of the dock this action is assigned to..")]
-		public readonly string Name = "Dock";
 	}
 
-	public abstract class DockAction : ConditionalTrait<DockActionInfo>
+	public abstract bool CanDock(Actor self, Actor actor);
+
+	public virtual void OnDock(Actor self)
 	{
-		protected DockAction(DockActionInfo info)
-			: base(info)
-		{
-		}
+	}
 
-		public abstract bool CanDock(Actor self, Actor actor);
+	public abstract bool Process(Actor self, Actor actor);
 
-		public virtual void OnDock(Actor self)
-		{
-		}
-
-		public abstract bool Process(Actor self, Actor actor);
-
-		public virtual void OnUndock()
-		{
-		}
+	public virtual void OnUndock()
+	{
 	}
 }

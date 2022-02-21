@@ -11,36 +11,35 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.Orders
+namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.Orders;
+
+using Common.Orders;
+using OpenRA.Traits;
+
+public class SaboteurEnterOrderTargeter : UnitOrderTargeter
 {
-	using Common.Orders;
-	using OpenRA.Traits;
+	public const string Id = "SaboteurEnter";
 
-	public class SaboteurEnterOrderTargeter : UnitOrderTargeter
+	private readonly string cursorAllowed;
+	private readonly string cursorForbidden;
+
+	public SaboteurEnterOrderTargeter(string cursorAllowed, string cursorForbidden)
+		: base(SaboteurEnterOrderTargeter.Id, 7, null, false, true)
 	{
-		public const string Id = "SaboteurEnter";
+		this.cursorAllowed = cursorAllowed;
+		this.cursorForbidden = cursorForbidden;
+	}
 
-		private readonly string cursorAllowed;
-		private readonly string cursorForbidden;
+	public override bool CanTargetActor(Actor self, Actor target, TargetModifiers modifiers, ref string cursor)
+	{
+		var result = SaboteurUtils.CanEnter(self, target, out var blocked);
+		cursor = blocked ? this.cursorForbidden : this.cursorAllowed;
 
-		public SaboteurEnterOrderTargeter(string cursorAllowed, string cursorForbidden)
-			: base(SaboteurEnterOrderTargeter.Id, 7, null, false, true)
-		{
-			this.cursorAllowed = cursorAllowed;
-			this.cursorForbidden = cursorForbidden;
-		}
+		return result || blocked;
+	}
 
-		public override bool CanTargetActor(Actor self, Actor target, TargetModifiers modifiers, ref string cursor)
-		{
-			var result = SaboteurUtils.CanEnter(self, target, out var blocked);
-			cursor = blocked ? this.cursorForbidden : this.cursorAllowed;
-
-			return result || blocked;
-		}
-
-		public override bool CanTargetFrozenActor(Actor self, FrozenActor target, TargetModifiers modifiers, ref string cursor)
-		{
-			return false;
-		}
+	public override bool CanTargetFrozenActor(Actor self, FrozenActor target, TargetModifiers modifiers, ref string cursor)
+	{
+		return false;
 	}
 }

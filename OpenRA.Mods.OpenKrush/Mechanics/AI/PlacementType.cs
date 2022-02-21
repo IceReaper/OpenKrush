@@ -11,12 +11,11 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.AI
+namespace OpenRA.Mods.OpenKrush.Mechanics.AI;
+
+public enum PlacementType
 {
-	public enum PlacementType
-	{
-		NearBase,
-		NearOil,
-		NearEnemy
-	}
+	NearBase,
+	NearOil,
+	NearEnemy
 }

@@ -11,10 +11,9 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Researching
+namespace OpenRA.Mods.OpenKrush.Mechanics.Researching;
+
+public interface IProvidesResearchables
 {
-	public interface IProvidesResearchables
-	{
-		Dictionary<string, int> GetResearchables(Actor self);
-	}
+	Dictionary<string, int> GetResearchables(Actor self);
 }

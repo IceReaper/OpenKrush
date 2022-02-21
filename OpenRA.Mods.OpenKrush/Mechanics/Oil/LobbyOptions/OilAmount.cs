@@ -11,64 +11,63 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.LobbyOptions
+namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.LobbyOptions;
+
+using JetBrains.Annotations;
+using OpenRA.Traits;
+using System.Collections.ObjectModel;
+using Traits;
+
+[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
+[Desc("Selectable oilpatch oil amount in lobby.")]
+public class OilAmountInfo : TraitInfo, ILobbyOptions
 {
-	using JetBrains.Annotations;
-	using OpenRA.Traits;
-	using System.Collections.ObjectModel;
-	using Traits;
+	public const string Id = "OilAmount";
 
-	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
-	[Desc("Selectable oilpatch oil amount in lobby.")]
-	public class OilAmountInfo : TraitInfo, ILobbyOptions
+	public readonly int[] OilAmounts = { 25000, 50000, 75000, 100000, -1 };
+	public readonly string[] OilAmountNames = { "Scarce", "Normal", "Abundant", "Maximum", "Infinite" };
+
+	IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(MapPreview mapPreview)
 	{
-		public const string Id = "OilAmount";
+		var values = new Dictionary<string, string>();
 
-		public readonly int[] OilAmounts = { 25000, 50000, 75000, 100000, -1 };
-		public readonly string[] OilAmountNames = { "Scarce", "Normal", "Abundant", "Maximum", "Infinite" };
+		for (var i = 0; i < this.OilAmountNames.Length; i++)
+			values.Add(this.OilAmounts[i].ToString(), this.OilAmountNames[i]);
 
-		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(MapPreview mapPreview)
-		{
-			var values = new Dictionary<string, string>();
+		var standard = this.OilAmounts[this.OilAmountNames.IndexOf("Normal")];
 
-			for (var i = 0; i < this.OilAmountNames.Length; i++)
-				values.Add(this.OilAmounts[i].ToString(), this.OilAmountNames[i]);
-
-			var standard = this.OilAmounts[this.OilAmountNames.IndexOf("Normal")];
-
-			yield return new LobbyOption(
-				OilAmountInfo.Id,
-				"Amount",
-				"Amount of oil every oilpatch contains.",
-				true,
-				0,
-				new ReadOnlyDictionary<string, string>(values),
-				standard.ToString(),
-				false,
-				OilPatchInfo.LobbyOptionsCategory
-			);
-		}
-
-		public override object Create(ActorInitializer init)
-		{
-			return new OilAmount(this);
-		}
+		yield return new LobbyOption(
+			OilAmountInfo.Id,
+			"Amount",
+			"Amount of oil every oilpatch contains.",
+			true,
+			0,
+			new ReadOnlyDictionary<string, string>(values),
+			standard.ToString(),
+			false,
+			OilPatchInfo.LobbyOptionsCategory
+		);
 	}
 
-	public class OilAmount : INotifyCreated
+	public override object Create(ActorInitializer init)
 	{
-		private readonly OilAmountInfo info;
-		public int Amount { get; private set; }
+		return new OilAmount(this);
+	}
+}
 
-		public OilAmount(OilAmountInfo info)
-		{
-			this.info = info;
-		}
+public class OilAmount : INotifyCreated
+{
+	private readonly OilAmountInfo info;
+	public int Amount { get; private set; }
 
-		void INotifyCreated.Created(Actor self)
-		{
-			var standard = this.info.OilAmounts[this.info.OilAmountNames.IndexOf("Normal")];
-			this.Amount = int.Parse(self.World.LobbyInfo.GlobalSettings.OptionOrDefault(OilAmountInfo.Id, standard.ToString()));
-		}
+	public OilAmount(OilAmountInfo info)
+	{
+		this.info = info;
+	}
+
+	void INotifyCreated.Created(Actor self)
+	{
+		var standard = this.info.OilAmounts[this.info.OilAmountNames.IndexOf("Normal")];
+		this.Amount = int.Parse(self.World.LobbyInfo.GlobalSettings.OptionOrDefault(OilAmountInfo.Id, standard.ToString()));
 	}
 }

@@ -11,77 +11,76 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits
+namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Traits;
+
+using Activities;
+using Common.Traits;
+using JetBrains.Annotations;
+using OpenRA.Activities;
+using OpenRA.Traits;
+using Orders;
+
+[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
+public class DockableInfo : TraitInfo
 {
-	using Activities;
-	using Common.Traits;
-	using JetBrains.Annotations;
-	using OpenRA.Activities;
-	using OpenRA.Traits;
-	using Orders;
+	[Desc("Voice to use when ordering to dock.")]
+	[VoiceReference]
+	public readonly string Voice = "Action";
 
-	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
-	public class DockableInfo : TraitInfo
+	public override object Create(ActorInitializer init)
 	{
-		[Desc("Voice to use when ordering to dock.")]
-		[VoiceReference]
-		public readonly string Voice = "Action";
+		return new Dockable(this);
+	}
+}
 
-		public override object Create(ActorInitializer init)
+public class Dockable : IIssueOrder, IResolveOrder, IOrderVoice
+{
+	private readonly DockableInfo info;
+
+	public Dockable(DockableInfo info)
+	{
+		this.info = info;
+	}
+
+	IEnumerable<IOrderTargeter> IIssueOrder.Orders
+	{
+		get
 		{
-			return new Dockable(this);
+			yield return new DockOrderTargeter();
 		}
 	}
 
-	public class Dockable : IIssueOrder, IResolveOrder, IOrderVoice
+	public Order? IssueOrder(Actor self, IOrderTargeter order, in Target target, bool queued)
 	{
-		private readonly DockableInfo info;
+		return order.OrderID == DockOrderTargeter.Id ? new Order(order.OrderID, self, target, queued) : null;
+	}
 
-		public Dockable(DockableInfo info)
-		{
-			this.info = info;
-		}
+	public void ResolveOrder(Actor self, Order order)
+	{
+		if (order.OrderString != DockOrderTargeter.Id)
+			return;
 
-		IEnumerable<IOrderTargeter> IIssueOrder.Orders
-		{
-			get
-			{
-				yield return new DockOrderTargeter();
-			}
-		}
+		if (order.Target.Type != TargetType.Actor || order.Target.Actor == null)
+			return;
 
-		public Order? IssueOrder(Actor self, IOrderTargeter order, in Target target, bool queued)
-		{
-			return order.OrderID == DockOrderTargeter.Id ? new Order(order.OrderID, self, target, queued) : null;
-		}
+		var dock = order.Target.Actor.TraitsImplementing<Dock>()
+			.Where(d => d.GetDockAction(order.Target.Actor, self) != null)
+			.OrderBy(d => d.QueueLength)
+			.FirstOrDefault();
 
-		public void ResolveOrder(Actor self, Order order)
-		{
-			if (order.OrderString != DockOrderTargeter.Id)
-				return;
+		if (dock == null)
+			return;
 
-			if (order.Target.Type != TargetType.Actor || order.Target.Actor == null)
-				return;
+		self.QueueActivity(false, this.GetDockingActivity(self, order.Target.Actor, dock));
+	}
 
-			var dock = order.Target.Actor.TraitsImplementing<Dock>()
-				.Where(d => d.GetDockAction(order.Target.Actor, self) != null)
-				.OrderBy(d => d.QueueLength)
-				.FirstOrDefault();
+	protected virtual Activity GetDockingActivity(Actor self, Actor target, Dock dock)
+	{
+		return new Docking(self, target, dock);
+	}
 
-			if (dock == null)
-				return;
-
-			self.QueueActivity(false, this.GetDockingActivity(self, order.Target.Actor, dock));
-		}
-
-		protected virtual Activity GetDockingActivity(Actor self, Actor target, Dock dock)
-		{
-			return new Docking(self, target, dock);
-		}
-
-		string? IOrderVoice.VoicePhraseForOrder(Actor self, Order order)
-		{
-			return order.OrderString == DockOrderTargeter.Id ? this.info.Voice : null;
-		}
+	string? IOrderVoice.VoicePhraseForOrder(Actor self, Order order)
+	{
+		return order.OrderString == DockOrderTargeter.Id ? this.info.Voice : null;
 	}
 }

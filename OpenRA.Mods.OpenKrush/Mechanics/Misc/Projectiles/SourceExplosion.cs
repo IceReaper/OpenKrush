@@ -11,37 +11,36 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Misc.Projectiles
-{
-	using GameRules;
-	using Graphics;
-	using JetBrains.Annotations;
-	using OpenRA.Traits;
+namespace OpenRA.Mods.OpenKrush.Mechanics.Misc.Projectiles;
 
-	[UsedImplicitly]
-	[Desc("Explodes on the attacker position instead of the target position.")]
-	public class SourceExplosionInfo : IProjectileInfo
+using GameRules;
+using Graphics;
+using JetBrains.Annotations;
+using OpenRA.Traits;
+
+[UsedImplicitly]
+[Desc("Explodes on the attacker position instead of the target position.")]
+public class SourceExplosionInfo : IProjectileInfo
+{
+	public IProjectile Create(ProjectileArgs args)
 	{
-		public IProjectile Create(ProjectileArgs args)
-		{
-			return new SourceExplosion(args);
-		}
+		return new SourceExplosion(args);
+	}
+}
+
+public class SourceExplosion : IProjectile
+{
+	public SourceExplosion(ProjectileArgs args)
+	{
+		args.Weapon.Impact(Target.FromPos(args.SourceActor.CenterPosition), args.SourceActor);
 	}
 
-	public class SourceExplosion : IProjectile
+	public void Tick(World world)
 	{
-		public SourceExplosion(ProjectileArgs args)
-		{
-			args.Weapon.Impact(Target.FromPos(args.SourceActor.CenterPosition), args.SourceActor);
-		}
+	}
 
-		public void Tick(World world)
-		{
-		}
-
-		public IEnumerable<IRenderable> Render(WorldRenderer r)
-		{
-			return Array.Empty<IRenderable>();
-		}
+	public IEnumerable<IRenderable> Render(WorldRenderer r)
+	{
+		return Array.Empty<IRenderable>();
 	}
 }

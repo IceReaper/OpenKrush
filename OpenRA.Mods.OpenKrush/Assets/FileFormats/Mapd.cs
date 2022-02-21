@@ -11,116 +11,115 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Assets.FileFormats
+namespace OpenRA.Mods.OpenKrush.Assets.FileFormats;
+
+public class Mapd
 {
-	public class Mapd
+	public readonly MapdLayer[] Layers;
+
+	public Mapd(Stream stream)
 	{
-		public readonly MapdLayer[] Layers;
+		var test = stream.ReadInt32();
+		stream.Position += test * 4;
+		var generation = stream.ReadInt32() == 256 ? GameFormat.Gen1 : GameFormat.Gen2;
+		stream.Position -= (test + 2) * 4;
 
-		public Mapd(Stream stream)
+		if (generation == GameFormat.Gen2)
+			stream.ReadInt32(); // TODO Unk
+
+		var layerOffsets = new int[stream.ReadInt32()];
+		this.Layers = new MapdLayer[layerOffsets.Length];
+
+		for (var i = 0; i < layerOffsets.Length; i++)
+			layerOffsets[i] = stream.ReadInt32();
+
+		var palette = new byte[stream.ReadInt32() * 4];
+
+		if (generation == GameFormat.Gen2)
 		{
-			var test = stream.ReadInt32();
-			stream.Position += test * 4;
-			var generation = stream.ReadInt32() == 256 ? GameFormat.Gen1 : GameFormat.Gen2;
-			stream.Position -= (test + 2) * 4;
+			for (var i = 0; i < palette.Length;)
+			{
+				var color16 = stream.ReadUInt16();
+				palette[i++] = (byte)(((color16 & 0x7c00) >> 7) & 0xff);
+				palette[i++] = (byte)(((color16 & 0x03e0) >> 2) & 0xff);
+				palette[i++] = (byte)(((color16 & 0x001f) << 3) & 0xff);
+				palette[i++] = 0xff;
+			}
+		}
+		else
+		{
+			stream.Read(palette);
+
+			for (var i = 0; i < palette.Length / 4; i++)
+				palette[i * 4 + 3] = 0xff;
+		}
+
+		for (var i = 0; i < this.Layers.Length; i++)
+		{
+			stream.Position = layerOffsets[i];
+
+			var type = new string(stream.ReadASCII(4).Reverse().ToArray());
+
+			if (type != "SCRL")
+				throw new("Unknown type.");
+
+			var tileWidth = stream.ReadInt32();
+			var tileHeight = stream.ReadInt32();
+			var tilesX = stream.ReadInt32();
+			var tilesY = stream.ReadInt32();
 
 			if (generation == GameFormat.Gen2)
+			{
 				stream.ReadInt32(); // TODO Unk
-
-			var layerOffsets = new int[stream.ReadInt32()];
-			this.Layers = new MapdLayer[layerOffsets.Length];
-
-			for (var i = 0; i < layerOffsets.Length; i++)
-				layerOffsets[i] = stream.ReadInt32();
-
-			var palette = new byte[stream.ReadInt32() * 4];
-
-			if (generation == GameFormat.Gen2)
-			{
-				for (var i = 0; i < palette.Length;)
-				{
-					var color16 = stream.ReadUInt16();
-					palette[i++] = (byte)(((color16 & 0x7c00) >> 7) & 0xff);
-					palette[i++] = (byte)(((color16 & 0x03e0) >> 2) & 0xff);
-					palette[i++] = (byte)(((color16 & 0x001f) << 3) & 0xff);
-					palette[i++] = 0xff;
-				}
-			}
-			else
-			{
-				stream.Read(palette);
-
-				for (var i = 0; i < palette.Length / 4; i++)
-					palette[i * 4 + 3] = 0xff;
+				stream.ReadInt32(); // TODO Unk
+				stream.ReadInt32(); // TODO Unk
 			}
 
-			for (var i = 0; i < this.Layers.Length; i++)
+			var tilePixels = new Dictionary<int, byte[]>();
+			var tiles = new List<int>();
+
+			for (var y = 0; y < tilesY; y++)
+			for (var x = 0; x < tilesX; x++)
 			{
-				stream.Position = layerOffsets[i];
-
-				var type = new string(stream.ReadASCII(4).Reverse().ToArray());
-
-				if (type != "SCRL")
-					throw new("Unknown type.");
-
-				var tileWidth = stream.ReadInt32();
-				var tileHeight = stream.ReadInt32();
-				var tilesX = stream.ReadInt32();
-				var tilesY = stream.ReadInt32();
+				var tile = stream.ReadInt32();
 
 				if (generation == GameFormat.Gen2)
-				{
+					tile -= tile % 4;
+
+				tiles.Add(tile);
+
+				if (tile != 0 && !tilePixels.ContainsKey(tile))
+					tilePixels.Add(tile, new byte[tileWidth * tileHeight * 4]);
+			}
+
+			foreach (var offset in tilePixels.Keys)
+			{
+				stream.Position = offset;
+
+				if (generation == GameFormat.Gen1)
 					stream.ReadInt32(); // TODO Unk
-					stream.ReadInt32(); // TODO Unk
-					stream.ReadInt32(); // TODO Unk
-				}
 
-				var tilePixels = new Dictionary<int, byte[]>();
-				var tiles = new List<int>();
+				tilePixels[offset] = stream.ReadBytes(tileWidth * tileHeight)
+					.SelectMany(index => index == 0 && i != 0 ? new byte[4] : palette.Skip(index * 4).Take(4))
+					.ToArray();
+			}
 
-				for (var y = 0; y < tilesY; y++)
-				for (var x = 0; x < tilesX; x++)
-				{
-					var tile = stream.ReadInt32();
+			var layer = new MapdLayer(tilesX * tileWidth, tilesY * tileHeight);
+			this.Layers[i] = layer;
 
-					if (generation == GameFormat.Gen2)
-						tile -= tile % 4;
+			for (var y = 0; y < tilesY; y++)
+			for (var x = 0; x < tilesX; x++)
+			{
+				var tile = tiles[y * tilesX + x];
 
-					tiles.Add(tile);
+				if (tile == 0)
+					continue;
 
-					if (tile != 0 && !tilePixels.ContainsKey(tile))
-						tilePixels.Add(tile, new byte[tileWidth * tileHeight * 4]);
-				}
+				var pixels = tilePixels[tile];
+				var offset = (y * tileHeight * tilesX + x) * tileWidth;
 
-				foreach (var offset in tilePixels.Keys)
-				{
-					stream.Position = offset;
-
-					if (generation == GameFormat.Gen1)
-						stream.ReadInt32(); // TODO Unk
-
-					tilePixels[offset] = stream.ReadBytes(tileWidth * tileHeight)
-						.SelectMany(index => index == 0 && i != 0 ? new byte[4] : palette.Skip(index * 4).Take(4))
-						.ToArray();
-				}
-
-				var layer = new MapdLayer(tilesX * tileWidth, tilesY * tileHeight);
-				this.Layers[i] = layer;
-
-				for (var y = 0; y < tilesY; y++)
-				for (var x = 0; x < tilesX; x++)
-				{
-					var tile = tiles[y * tilesX + x];
-
-					if (tile == 0)
-						continue;
-
-					var pixels = tilePixels[tile];
-					var offset = (y * tileHeight * tilesX + x) * tileWidth;
-
-					for (var row = 0; row < tileHeight; row++)
-						Array.Copy(pixels, row * tileWidth * 4, layer.Pixels, (offset + row * layer.Width) * 4, tileWidth * 4);
-				}
+				for (var row = 0; row < tileHeight; row++)
+					Array.Copy(pixels, row * tileWidth * 4, layer.Pixels, (offset + row * layer.Width) * 4, tileWidth * 4);
 			}
 		}
 	}

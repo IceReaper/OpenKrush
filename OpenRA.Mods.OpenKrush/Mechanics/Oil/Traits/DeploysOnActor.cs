@@ -11,87 +11,86 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
+namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits;
+
+using Activities;
+using Common;
+using Common.Activities;
+using JetBrains.Annotations;
+using OpenRA.Traits;
+
+[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
+[Desc("Deploy when standing on top of a specific actor.")]
+public class DeploysOnActorInfo : TraitInfo
 {
-	using Activities;
-	using Common;
-	using Common.Activities;
-	using JetBrains.Annotations;
-	using OpenRA.Traits;
+	[Desc("Actor to transform into.")]
+	[ActorReference]
+	[FieldLoader.RequireAttribute]
+	public readonly string? IntoActor;
 
-	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
-	[Desc("Deploy when standing on top of a specific actor.")]
-	public class DeploysOnActorInfo : TraitInfo
+	[Desc("Cursor to display when hovering target actor.")]
+	public readonly string DeployCursor = "deploy";
+
+	[Desc("Actors which this actor can deploy on.")]
+	public readonly string[] ValidTargets = Array.Empty<string>();
+
+	public readonly CVec Offset = CVec.Zero;
+
+	public override object Create(ActorInitializer init)
 	{
-		[Desc("Actor to transform into.")]
-		[ActorReference]
-		[FieldLoader.RequireAttribute]
-		public readonly string? IntoActor;
+		return new DeploysOnActor(this);
+	}
+}
 
-		[Desc("Cursor to display when hovering target actor.")]
-		public readonly string DeployCursor = "deploy";
+public class DeploysOnActor : IIssueOrder, ITick
+{
+	private readonly DeploysOnActorInfo info;
+	private bool issued;
 
-		[Desc("Actors which this actor can deploy on.")]
-		public readonly string[] ValidTargets = Array.Empty<string>();
+	public DeploysOnActor(DeploysOnActorInfo info)
+	{
+		this.info = info;
+	}
 
-		public readonly CVec Offset = CVec.Zero;
-
-		public override object Create(ActorInitializer init)
+	IEnumerable<IOrderTargeter> IIssueOrder.Orders
+	{
+		get
 		{
-			return new DeploysOnActor(this);
+			yield return new DeployOnActorOrderTargeter(this.info.ValidTargets, this.info.DeployCursor);
 		}
 	}
 
-	public class DeploysOnActor : IIssueOrder, ITick
+	public Order? IssueOrder(Actor self, IOrderTargeter order, in Target target, bool queued)
 	{
-		private readonly DeploysOnActorInfo info;
-		private bool issued;
+		return order is DeployOnActorOrderTargeter
+			? new Order("Move", self, Target.FromCell(self.World, self.World.Map.CellContaining(target.CenterPosition)), queued)
+			: null;
+	}
 
-		public DeploysOnActor(DeploysOnActorInfo info)
-		{
-			this.info = info;
-		}
+	void ITick.Tick(Actor self)
+	{
+		if (this.issued || !self.IsIdle)
+			return;
 
-		IEnumerable<IOrderTargeter> IIssueOrder.Orders
-		{
-			get
-			{
-				yield return new DeployOnActorOrderTargeter(this.info.ValidTargets, this.info.DeployCursor);
-			}
-		}
+		var actors = self.World.FindActorsOnCircle(self.CenterPosition, new(512))
+			.Where(
+				actor =>
+				{
+					if (actor.Equals(self))
+						return false;
 
-		public Order? IssueOrder(Actor self, IOrderTargeter order, in Target target, bool queued)
-		{
-			return order is DeployOnActorOrderTargeter
-				? new Order("Move", self, Target.FromCell(self.World, self.World.Map.CellContaining(target.CenterPosition)), queued)
-				: null;
-		}
+					if (!this.info.ValidTargets.Contains(actor.Info.Name))
+						return false;
 
-		void ITick.Tick(Actor self)
-		{
-			if (this.issued || !self.IsIdle)
-				return;
+					return actor.CenterPosition - self.CenterPosition == WVec.Zero;
+				}
+			);
 
-			var actors = self.World.FindActorsOnCircle(self.CenterPosition, new(512))
-				.Where(
-					actor =>
-					{
-						if (actor.Equals(self))
-							return false;
+		if (!actors.Any())
+			return;
 
-						if (!this.info.ValidTargets.Contains(actor.Info.Name))
-							return false;
+		this.issued = true;
 
-						return actor.CenterPosition - self.CenterPosition == WVec.Zero;
-					}
-				);
-
-			if (!actors.Any())
-				return;
-
-			this.issued = true;
-
-			self.QueueActivity(new Transform(this.info.IntoActor) { Faction = self.Owner.Faction.InternalName, Offset = this.info.Offset });
-		}
+		self.QueueActivity(new Transform(this.info.IntoActor) { Faction = self.Owner.Faction.InternalName, Offset = this.info.Offset });
 	}
 }

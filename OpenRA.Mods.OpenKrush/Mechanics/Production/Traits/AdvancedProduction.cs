@@ -11,57 +11,56 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Production.Traits
+namespace OpenRA.Mods.OpenKrush.Mechanics.Production.Traits;
+
+using Common.Traits;
+using JetBrains.Annotations;
+using Researching.Traits;
+
+[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
+public class AdvancedProductionInfo : ResearchableProductionInfo
 {
-	using Common.Traits;
-	using JetBrains.Annotations;
-	using Researching.Traits;
+	public readonly int MaximumDistance = 3;
 
-	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
-	public class AdvancedProductionInfo : ResearchableProductionInfo
+	public override object Create(ActorInitializer init)
 	{
-		public readonly int MaximumDistance = 3;
+		return new AdvancedProduction(init, this);
+	}
+}
 
-		public override object Create(ActorInitializer init)
-		{
-			return new AdvancedProduction(init, this);
-		}
+public class AdvancedProduction : ResearchableProduction
+{
+	private readonly AdvancedProductionInfo info;
+
+	public AdvancedProduction(ActorInitializer init, AdvancedProductionInfo info)
+		: base(init, info)
+	{
+		this.info = info;
 	}
 
-	public class AdvancedProduction : ResearchableProduction
+	protected override Exit? SelectExit(Actor self, ActorInfo producee, string productionType, Func<Exit, bool> p)
 	{
-		private readonly AdvancedProductionInfo info;
+		var mobileInfo = producee.TraitInfoOrDefault<MobileInfo>();
 
-		public AdvancedProduction(ActorInitializer init, AdvancedProductionInfo info)
-			: base(init, info)
+		var exit = base.SelectExit(self, producee, productionType, null);
+		var spawn = self.World.Map.CellContaining(self.CenterPosition + exit.Info.SpawnOffset);
+
+		for (var y = 1; y <= this.info.MaximumDistance; y++)
+		for (var x = -y; x <= y; x++)
 		{
-			this.info = info;
+			var candidate = new CVec(x, y);
+
+			if (!mobileInfo.CanEnterCell(self.World, self, spawn + candidate))
+				continue;
+
+			var exitInfo = new ExitInfo();
+			exitInfo.GetType().GetField("SpawnOffset")?.SetValue(exitInfo, exit.Info.SpawnOffset);
+			exitInfo.GetType().GetField("ExitCell")?.SetValue(exitInfo, spawn - self.Location + candidate);
+			exitInfo.GetType().GetField("Facing")?.SetValue(exitInfo, exit.Info.Facing);
+
+			return new(exitInfo);
 		}
 
-		protected override Exit? SelectExit(Actor self, ActorInfo producee, string productionType, Func<Exit, bool> p)
-		{
-			var mobileInfo = producee.TraitInfoOrDefault<MobileInfo>();
-
-			var exit = base.SelectExit(self, producee, productionType, null);
-			var spawn = self.World.Map.CellContaining(self.CenterPosition + exit.Info.SpawnOffset);
-
-			for (var y = 1; y <= this.info.MaximumDistance; y++)
-			for (var x = -y; x <= y; x++)
-			{
-				var candidate = new CVec(x, y);
-
-				if (!mobileInfo.CanEnterCell(self.World, self, spawn + candidate))
-					continue;
-
-				var exitInfo = new ExitInfo();
-				exitInfo.GetType().GetField("SpawnOffset")?.SetValue(exitInfo, exit.Info.SpawnOffset);
-				exitInfo.GetType().GetField("ExitCell")?.SetValue(exitInfo, spawn - self.Location + candidate);
-				exitInfo.GetType().GetField("Facing")?.SetValue(exitInfo, exit.Info.Facing);
-
-				return new(exitInfo);
-			}
-
-			return null;
-		}
+		return null;
 	}
 }

@@ -11,50 +11,49 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
+namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits;
+
+using Common.Traits;
+using JetBrains.Annotations;
+
+[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
+[Desc("This actor enables the radar minimap.")]
+public class ProvidesResearchableRadarInfo : ConditionalTraitInfo
 {
-	using Common.Traits;
-	using JetBrains.Annotations;
+	private const string Prefix = "RADAR::";
+	public const string Available = ProvidesResearchableRadarInfo.Prefix + "AVAILABLE";
+	public const string ShowAllies = ProvidesResearchableRadarInfo.Prefix + "ALLIES";
+	public const string ShowEnemies = ProvidesResearchableRadarInfo.Prefix + "ENEMIES";
 
-	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
-	[Desc("This actor enables the radar minimap.")]
-	public class ProvidesResearchableRadarInfo : ConditionalTraitInfo
+	[Desc("The tech level required to enable radar.")]
+	public readonly int Level = 1;
+
+	[Desc("The tech level required to show ally units.")]
+	public readonly int AllyLevel = 1;
+
+	[Desc("The tech level required to show enemy units.")]
+	public readonly int EnemyLevel = 2;
+
+	public override object Create(ActorInitializer init)
 	{
-		private const string Prefix = "RADAR::";
-		public const string Available = ProvidesResearchableRadarInfo.Prefix + "AVAILABLE";
-		public const string ShowAllies = ProvidesResearchableRadarInfo.Prefix + "ALLIES";
-		public const string ShowEnemies = ProvidesResearchableRadarInfo.Prefix + "ENEMIES";
+		return new ProvidesResearchableRadar(this);
+	}
+}
 
-		[Desc("The tech level required to enable radar.")]
-		public readonly int Level = 1;
-
-		[Desc("The tech level required to show ally units.")]
-		public readonly int AllyLevel = 1;
-
-		[Desc("The tech level required to show enemy units.")]
-		public readonly int EnemyLevel = 2;
-
-		public override object Create(ActorInitializer init)
-		{
-			return new ProvidesResearchableRadar(this);
-		}
+public class ProvidesResearchableRadar : ConditionalTrait<ProvidesResearchableRadarInfo>, IProvidesResearchables
+{
+	public ProvidesResearchableRadar(ProvidesResearchableRadarInfo info)
+		: base(info)
+	{
 	}
 
-	public class ProvidesResearchableRadar : ConditionalTrait<ProvidesResearchableRadarInfo>, IProvidesResearchables
+	public Dictionary<string, int> GetResearchables(Actor self)
 	{
-		public ProvidesResearchableRadar(ProvidesResearchableRadarInfo info)
-			: base(info)
+		return new()
 		{
-		}
-
-		public Dictionary<string, int> GetResearchables(Actor self)
-		{
-			return new()
-			{
-				{ ProvidesResearchableRadarInfo.Available, this.Info.Level },
-				{ ProvidesResearchableRadarInfo.ShowAllies, this.Info.AllyLevel },
-				{ ProvidesResearchableRadarInfo.ShowEnemies, this.Info.EnemyLevel }
-			};
-		}
+			{ ProvidesResearchableRadarInfo.Available, this.Info.Level },
+			{ ProvidesResearchableRadarInfo.ShowAllies, this.Info.AllyLevel },
+			{ ProvidesResearchableRadarInfo.ShowEnemies, this.Info.EnemyLevel }
+		};
 	}
 }

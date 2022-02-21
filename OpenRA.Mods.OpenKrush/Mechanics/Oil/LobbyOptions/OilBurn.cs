@@ -11,52 +11,51 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.LobbyOptions
+namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.LobbyOptions;
+
+using JetBrains.Annotations;
+using OpenRA.Traits;
+using System.Collections.ObjectModel;
+using Traits;
+
+[UsedImplicitly]
+[Desc("Selectable oil burn behavior in lobby.")]
+public class OilBurnInfo : TraitInfo, ILobbyOptions
 {
-	using JetBrains.Annotations;
-	using OpenRA.Traits;
-	using System.Collections.ObjectModel;
-	using Traits;
+	public const string Id = "OilBurn";
 
-	[UsedImplicitly]
-	[Desc("Selectable oil burn behavior in lobby.")]
-	public class OilBurnInfo : TraitInfo, ILobbyOptions
+	IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(MapPreview mapPreview)
 	{
-		public const string Id = "OilBurn";
+		var values = new Dictionary<string, string>();
 
-		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(MapPreview mapPreview)
-		{
-			var values = new Dictionary<string, string>();
+		for (var i = 0; i <= 100; i += 20)
+			values.Add(i.ToString(), $"{i}%");
 
-			for (var i = 0; i <= 100; i += 20)
-				values.Add(i.ToString(), $"{i}%");
-
-			yield return new LobbyOption(
-				OilBurnInfo.Id,
-				"Burn",
-				"Percent amount of oil to burn when ignited.",
-				true,
-				0,
-				new ReadOnlyDictionary<string, string>(values),
-				"0",
-				false,
-				OilPatchInfo.LobbyOptionsCategory
-			);
-		}
-
-		public override object Create(ActorInitializer init)
-		{
-			return new OilBurn();
-		}
+		yield return new LobbyOption(
+			OilBurnInfo.Id,
+			"Burn",
+			"Percent amount of oil to burn when ignited.",
+			true,
+			0,
+			new ReadOnlyDictionary<string, string>(values),
+			"0",
+			false,
+			OilPatchInfo.LobbyOptionsCategory
+		);
 	}
 
-	public class OilBurn : INotifyCreated
+	public override object Create(ActorInitializer init)
 	{
-		public int Amount { get; private set; }
+		return new OilBurn();
+	}
+}
 
-		void INotifyCreated.Created(Actor self)
-		{
-			this.Amount = int.Parse(self.World.LobbyInfo.GlobalSettings.OptionOrDefault(OilBurnInfo.Id, "0"));
-		}
+public class OilBurn : INotifyCreated
+{
+	public int Amount { get; private set; }
+
+	void INotifyCreated.Created(Actor self)
+	{
+		this.Amount = int.Parse(self.World.LobbyInfo.GlobalSettings.OptionOrDefault(OilBurnInfo.Id, "0"));
 	}
 }

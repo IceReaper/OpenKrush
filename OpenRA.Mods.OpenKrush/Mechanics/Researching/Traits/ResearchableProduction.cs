@@ -11,48 +11,47 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
-{
-	using Common.Traits;
+namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits;
 
-	public class ResearchableProductionInfo : ProductionInfo
+using Common.Traits;
+
+public class ResearchableProductionInfo : ProductionInfo
+{
+	public override object Create(ActorInitializer init)
 	{
-		public override object Create(ActorInitializer init)
-		{
-			return new ResearchableProduction(init, this);
-		}
+		return new ResearchableProduction(init, this);
+	}
+}
+
+public class ResearchableProduction : Production, IProvidesResearchables
+{
+	public ResearchableProduction(ActorInitializer init, ProductionInfo info)
+		: base(init, info)
+	{
 	}
 
-	public class ResearchableProduction : Production, IProvidesResearchables
+	public Dictionary<string, int> GetResearchables(Actor self)
 	{
-		public ResearchableProduction(ActorInitializer init, ProductionInfo info)
-			: base(init, info)
-		{
-		}
+		var providesPrerequisite = self.TraitsImplementing<ProvidesPrerequisite>();
 
-		public Dictionary<string, int> GetResearchables(Actor self)
-		{
-			var providesPrerequisite = self.TraitsImplementing<ProvidesPrerequisite>();
+		return self.World.Map.Rules.Actors.Values.Where(
+				actorInfo =>
+				{
+					if (actorInfo.Name[0] == '^')
+						return false;
 
-			return self.World.Map.Rules.Actors.Values.Where(
-					actorInfo =>
-					{
-						if (actorInfo.Name[0] == '^')
-							return false;
+					var buildableInfo = actorInfo.TraitInfoOrDefault<BuildableInfo>();
 
-						var buildableInfo = actorInfo.TraitInfoOrDefault<BuildableInfo>();
+					if (buildableInfo == null)
+						return false;
 
-						if (buildableInfo == null)
-							return false;
-
-						return !buildableInfo.Prerequisites.Any(p => providesPrerequisite.All(pp => pp.Info.Prerequisite != p))
-							&& buildableInfo.Queue.Any(q => this.Info.Produces.Contains(q));
-					}
-				)
-				.ToDictionary(
-					actorInfo => TechLevelBuildableInfo.Prefix + actorInfo.Name,
-					actorInfo => actorInfo.TraitInfoOrDefault<TechLevelBuildableInfo>()?.Level ?? 0
-				);
-		}
+					return !buildableInfo.Prerequisites.Any(p => providesPrerequisite.All(pp => pp.Info.Prerequisite != p))
+						&& buildableInfo.Queue.Any(q => this.Info.Produces.Contains(q));
+				}
+			)
+			.ToDictionary(
+				actorInfo => TechLevelBuildableInfo.Prefix + actorInfo.Name,
+				actorInfo => actorInfo.TraitInfoOrDefault<TechLevelBuildableInfo>()?.Level ?? 0
+			);
 	}
 }

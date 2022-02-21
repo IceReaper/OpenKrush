@@ -11,65 +11,62 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.LobbyOptions
+namespace OpenRA.Mods.OpenKrush.Mechanics.Bunkers.LobbyOptions;
+
+using JetBrains.Annotations;
+using OpenRA.Traits;
+using System.Collections.ObjectModel;
+using Traits;
+
+public enum TechBunkerContainsType
 {
-	using JetBrains.Annotations;
-	using OpenRA.Traits;
-	using System.Collections.ObjectModel;
-	using Traits;
+	Resources,
+	Units,
+	Both
+}
 
-	public enum TechBunkerContainsType
+[UsedImplicitly]
+[Desc("What a TechBunker may contain.")]
+public class TechBunkerContainsInfo : TraitInfo, ILobbyOptions
+{
+	public const string Id = "TechBunkerContains";
+	public const TechBunkerContainsType Default = TechBunkerContainsType.Units;
+
+	IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(MapPreview mapPreview)
 	{
-		Resources,
-		Units,
-		Both
+		yield return new LobbyOption(
+			TechBunkerContainsInfo.Id,
+			"Contains",
+			"What a TechBunker may contain.",
+			true,
+			0,
+			new ReadOnlyDictionary<string, string>(
+				new Dictionary<TechBunkerContainsType, string>
+				{
+					{ TechBunkerContainsType.Resources, "Resources" }, { TechBunkerContainsType.Units, "Units" }, { TechBunkerContainsType.Both, "Both" }
+				}.ToDictionary(e => e.Key.ToString(), e => e.Value)
+			),
+			TechBunkerContainsInfo.Default.ToString(),
+			false,
+			TechBunkerInfo.LobbyOptionsCategory
+		);
 	}
 
-	[UsedImplicitly]
-	[Desc("What a TechBunker may contain.")]
-	public class TechBunkerContainsInfo : TraitInfo, ILobbyOptions
+	public override object Create(ActorInitializer init)
 	{
-		public const string Id = "TechBunkerContains";
-		public const TechBunkerContainsType Default = TechBunkerContainsType.Units;
-
-		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(MapPreview mapPreview)
-		{
-			yield return new LobbyOption(
-				TechBunkerContainsInfo.Id,
-				"Contains",
-				"What a TechBunker may contain.",
-				true,
-				0,
-				new ReadOnlyDictionary<string, string>(
-					new Dictionary<TechBunkerContainsType, string>
-					{
-						{ TechBunkerContainsType.Resources, "Resources" },
-						{ TechBunkerContainsType.Units, "Units" },
-						{ TechBunkerContainsType.Both, "Both" }
-					}.ToDictionary(e => e.Key.ToString(), e => e.Value)
-				),
-				TechBunkerContainsInfo.Default.ToString(),
-				false,
-				TechBunkerInfo.LobbyOptionsCategory
-			);
-		}
-
-		public override object Create(ActorInitializer init)
-		{
-			return new TechBunkerContains();
-		}
+		return new TechBunkerContains();
 	}
+}
 
-	public class TechBunkerContains : INotifyCreated
+public class TechBunkerContains : INotifyCreated
+{
+	public TechBunkerContainsType Contains { get; private set; }
+
+	void INotifyCreated.Created(Actor self)
 	{
-		public TechBunkerContainsType Contains { get; private set; }
-
-		void INotifyCreated.Created(Actor self)
-		{
-			this.Contains = (TechBunkerContainsType)Enum.Parse(
-				typeof(TechBunkerContainsType),
-				self.World.LobbyInfo.GlobalSettings.OptionOrDefault(TechBunkerContainsInfo.Id, TechBunkerContainsInfo.Default.ToString())
-			);
-		}
+		this.Contains = (TechBunkerContainsType)Enum.Parse(
+			typeof(TechBunkerContainsType),
+			self.World.LobbyInfo.GlobalSettings.OptionOrDefault(TechBunkerContainsInfo.Id, TechBunkerContainsInfo.Default.ToString())
+		);
 	}
 }

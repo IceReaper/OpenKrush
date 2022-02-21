@@ -11,54 +11,53 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Assets.FileFormats
+namespace OpenRA.Mods.OpenKrush.Assets.FileFormats;
+
+public class MobdRenderFlags
 {
-	public class MobdRenderFlags
+	public readonly MobdImage Image;
+	public readonly uint[]? Palette;
+
+	public MobdRenderFlags(Stream stream)
 	{
-		public readonly MobdImage Image;
-		public readonly uint[]? Palette;
+		var type = new string(stream.ReadASCII(4).Reverse().ToArray());
+		var flags = stream.ReadUInt32();
 
-		public MobdRenderFlags(Stream stream)
+		var generation = type switch
 		{
-			var type = new string(stream.ReadASCII(4).Reverse().ToArray());
-			var flags = stream.ReadUInt32();
+			"SPRT" => GameFormat.Gen1,
+			"SPNS" => GameFormat.Gen2,
+			"SPRC" => GameFormat.Gen2,
+			_ => GameFormat.Unknown
+		};
 
-			var generation = type switch
+		if (generation == GameFormat.Gen2)
+		{
+			var paletteOffset = stream.ReadUInt32();
+
+			var returnPos = stream.Position;
+			stream.Position = paletteOffset;
+			stream.ReadUInt32(); // TODO 00 00 00 80
+			stream.ReadUInt32(); // TODO 00 00 00 80
+			stream.ReadUInt32(); // TODO 00 00 00 80
+			var numColors = stream.ReadUInt16();
+			this.Palette = new uint[256];
+
+			for (var i = 0; i < numColors; i++)
 			{
-				"SPRT" => GameFormat.Gen1,
-				"SPNS" => GameFormat.Gen2,
-				"SPRC" => GameFormat.Gen2,
-				_ => GameFormat.Unknown
-			};
-
-			if (generation == GameFormat.Gen2)
-			{
-				var paletteOffset = stream.ReadUInt32();
-
-				var returnPos = stream.Position;
-				stream.Position = paletteOffset;
-				stream.ReadUInt32(); // TODO 00 00 00 80
-				stream.ReadUInt32(); // TODO 00 00 00 80
-				stream.ReadUInt32(); // TODO 00 00 00 80
-				var numColors = stream.ReadUInt16();
-				this.Palette = new uint[256];
-
-				for (var i = 0; i < numColors; i++)
-				{
-					var color16 = stream.ReadUInt16();
-					var r = ((color16 & 0x7c00) >> 7) & 0xff;
-					var g = ((color16 & 0x03e0) >> 2) & 0xff;
-					var b = ((color16 & 0x001f) << 3) & 0xff;
-					this.Palette[i] = (uint)((0xff << 24) | (r << 16) | (g << 8) | b);
-				}
-
-				stream.Position = returnPos;
+				var color16 = stream.ReadUInt16();
+				var r = ((color16 & 0x7c00) >> 7) & 0xff;
+				var g = ((color16 & 0x03e0) >> 2) & 0xff;
+				var b = ((color16 & 0x001f) << 3) & 0xff;
+				this.Palette[i] = (uint)((0xff << 24) | (r << 16) | (g << 8) | b);
 			}
 
-			var imageOffset = stream.ReadUInt32();
-
-			stream.Position = imageOffset;
-			this.Image = new(stream, flags, generation);
+			stream.Position = returnPos;
 		}
+
+		var imageOffset = stream.ReadUInt32();
+
+		stream.Position = imageOffset;
+		this.Image = new(stream, flags, generation);
 	}
 }

@@ -11,46 +11,45 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Orders
+namespace OpenRA.Mods.OpenKrush.Mechanics.Docking.Orders;
+
+using Common.Orders;
+using OpenRA.Traits;
+using Traits;
+
+public class DockOrderTargeter : UnitOrderTargeter
 {
-	using Common.Orders;
-	using OpenRA.Traits;
-	using Traits;
+	public const string Id = "Dock";
 
-	public class DockOrderTargeter : UnitOrderTargeter
+	public DockOrderTargeter()
+		: base(DockOrderTargeter.Id, 6, null, false, true)
 	{
-		public const string Id = "Dock";
+	}
 
-		public DockOrderTargeter()
-			: base(DockOrderTargeter.Id, 6, null, false, true)
+	public override bool CanTargetFrozenActor(Actor self, FrozenActor target, TargetModifiers modifiers, ref string cursor)
+	{
+		return false;
+	}
+
+	public override bool CanTargetActor(Actor self, Actor target, TargetModifiers modifiers, ref string cursor)
+	{
+		this.IsQueued = modifiers.HasModifier(TargetModifiers.ForceQueue);
+
+		foreach (var dock in target.TraitsImplementing<Dock>())
 		{
+			if (dock.IsTraitDisabled)
+				continue;
+
+			var dockAction = dock.GetDockAction(target, self);
+
+			if (dockAction == null)
+				continue;
+
+			cursor = dockAction.Info.Cursor;
+
+			return true;
 		}
 
-		public override bool CanTargetFrozenActor(Actor self, FrozenActor target, TargetModifiers modifiers, ref string cursor)
-		{
-			return false;
-		}
-
-		public override bool CanTargetActor(Actor self, Actor target, TargetModifiers modifiers, ref string cursor)
-		{
-			this.IsQueued = modifiers.HasModifier(TargetModifiers.ForceQueue);
-
-			foreach (var dock in target.TraitsImplementing<Dock>())
-			{
-				if (dock.IsTraitDisabled)
-					continue;
-
-				var dockAction = dock.GetDockAction(target, self);
-
-				if (dockAction == null)
-					continue;
-
-				cursor = dockAction.Info.Cursor;
-
-				return true;
-			}
-
-			return false;
-		}
+		return false;
 	}
 }

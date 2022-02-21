@@ -11,27 +11,26 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
+namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits;
+
+using Common.Traits;
+using JetBrains.Annotations;
+
+[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
+[Desc("Adds support for tech level to Buildable.")]
+public class TechLevelBuildableInfo : BuildableInfo
 {
-	using Common.Traits;
-	using JetBrains.Annotations;
+	public const string Prefix = "ACTOR::";
 
-	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
-	[Desc("Adds support for tech level to Buildable.")]
-	public class TechLevelBuildableInfo : BuildableInfo
+	[Desc("The tech level this actor is on.")]
+	public readonly int Level;
+
+	public override object Create(ActorInitializer init)
 	{
-		public const string Prefix = "ACTOR::";
-
-		[Desc("The tech level this actor is on.")]
-		public readonly int Level;
-
-		public override object Create(ActorInitializer init)
-		{
-			return new TechLevelBuildable();
-		}
+		return new TechLevelBuildable();
 	}
+}
 
-	public class TechLevelBuildable : Buildable
-	{
-	}
+public class TechLevelBuildable : Buildable
+{
 }

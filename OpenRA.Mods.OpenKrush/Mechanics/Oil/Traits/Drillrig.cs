@@ -11,119 +11,118 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
+namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits;
+
+using Docking.Traits;
+using JetBrains.Annotations;
+using OpenRA.Traits;
+
+[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
+[Desc("Drillrig logic.")]
+public class DrillrigInfo : DockActionInfo
 {
-	using Docking.Traits;
-	using JetBrains.Annotations;
-	using OpenRA.Traits;
+	[GrantedConditionReference]
+	[Desc("Condition, which will be granted if the Drillrig is not empty.")]
+	public readonly string Condition = "HasOil";
 
-	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
-	[Desc("Drillrig logic.")]
-	public class DrillrigInfo : DockActionInfo
+	[Desc("Notification to play when oil is low.")]
+	public readonly string LowNotification = "DrillrigLow";
+
+	[Desc("Notification to play when oil is depleted.")]
+	public readonly string EmptyNotification = "DrillrigEmpty";
+
+	[Desc("How many oil per tick should be pumped.")]
+	public readonly int Rate = 3;
+
+	public override object Create(ActorInitializer init)
 	{
-		[GrantedConditionReference]
-		[Desc("Condition, which will be granted if the Drillrig is not empty.")]
-		public readonly string Condition = "HasOil";
+		return new Drillrig(this);
+	}
+}
 
-		[Desc("Notification to play when oil is low.")]
-		public readonly string LowNotification = "DrillrigLow";
+public class Drillrig : DockAction, ITick, IHaveOil, INotifyRemovedFromWorld
+{
+	private readonly DrillrigInfo info;
 
-		[Desc("Notification to play when oil is depleted.")]
-		public readonly string EmptyNotification = "DrillrigEmpty";
+	private Actor? oilPatchActor;
+	private OilPatch? oilPatch;
 
-		[Desc("How many oil per tick should be pumped.")]
-		public readonly int Rate = 3;
+	private int token = Actor.InvalidConditionToken;
 
-		public override object Create(ActorInitializer init)
-		{
-			return new Drillrig(this);
-		}
+	public int Current => this.oilPatch?.Current ?? 0;
+	public int Maximum => this.oilPatchActor == null ? 1 : this.oilPatchActor.Info.TraitInfoOrDefault<OilPatchInfo>().FullAmount;
+
+	public Drillrig(DrillrigInfo info)
+		: base(info)
+	{
+		this.info = info;
 	}
 
-	public class Drillrig : DockAction, ITick, IHaveOil, INotifyRemovedFromWorld
+	protected override void Created(Actor self)
 	{
-		private readonly DrillrigInfo info;
+		base.Created(self);
 
-		private Actor? oilPatchActor;
-		private OilPatch? oilPatch;
+		var actor = self.World.FindActorsInCircle(self.CenterPosition, new(1024)).FirstOrDefault(a => a.Info.HasTraitInfo<OilPatchInfo>());
 
-		private int token = Actor.InvalidConditionToken;
+		if (actor == null)
+			return;
 
-		public int Current => this.oilPatch?.Current ?? 0;
-		public int Maximum => this.oilPatchActor == null ? 1 : this.oilPatchActor.Info.TraitInfoOrDefault<OilPatchInfo>().FullAmount;
+		this.oilPatchActor = actor;
+		self.World.AddFrameEndTask(world => world.Remove(this.oilPatchActor));
+		this.oilPatch = this.oilPatchActor.TraitOrDefault<OilPatch>();
+		this.oilPatch.StopBurning();
 
-		public Drillrig(DrillrigInfo info)
-			: base(info)
-		{
-			this.info = info;
-		}
+		this.token = self.GrantCondition(this.info.Condition);
+	}
 
-		protected override void Created(Actor self)
-		{
-			base.Created(self);
+	public override bool CanDock(Actor self, Actor target)
+	{
+		if (!target.Info.HasTraitInfo<TankerInfo>())
+			return false;
 
-			var actor = self.World.FindActorsInCircle(self.CenterPosition, new(1024)).FirstOrDefault(a => a.Info.HasTraitInfo<OilPatchInfo>());
+		return this.oilPatch != null;
+	}
 
-			if (actor == null)
-				return;
+	public override bool Process(Actor self, Actor actor)
+	{
+		var tanker = actor.TraitOrDefault<Tanker>();
 
-			this.oilPatchActor = actor;
-			self.World.AddFrameEndTask(world => world.Remove(this.oilPatchActor));
-			this.oilPatch = this.oilPatchActor.TraitOrDefault<OilPatch>();
-			this.oilPatch.StopBurning();
+		if (this.oilPatch == null)
+			return true;
 
-			this.token = self.GrantCondition(this.info.Condition);
-		}
+		var amount = this.oilPatch.Pull(this.info.Rate);
+		var remaining = tanker.Push(amount);
+		this.oilPatch.Push(remaining);
 
-		public override bool CanDock(Actor self, Actor target)
-		{
-			if (!target.Info.HasTraitInfo<TankerInfo>())
-				return false;
+		return this.oilPatch == null || tanker.Current == tanker.Maximum;
+	}
 
-			return this.oilPatch != null;
-		}
+	public override void OnDock(Actor self)
+	{
+		if (this.oilPatch is { Current: <= 2500 })
+			Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", this.info.LowNotification, self.Owner.Faction.InternalName);
+	}
 
-		public override bool Process(Actor self, Actor actor)
-		{
-			var tanker = actor.TraitOrDefault<Tanker>();
+	void ITick.Tick(Actor self)
+	{
+		if (this.oilPatchActor == null)
+			return;
 
-			if (this.oilPatch == null)
-				return true;
+		this.oilPatchActor.Tick();
 
-			var amount = this.oilPatch.Pull(this.info.Rate);
-			var remaining = tanker.Push(amount);
-			this.oilPatch.Push(remaining);
+		if (!this.oilPatchActor.IsDead)
+			return;
 
-			return this.oilPatch == null || tanker.Current == tanker.Maximum;
-		}
+		Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", this.info.EmptyNotification, self.Owner.Faction.InternalName);
 
-		public override void OnDock(Actor self)
-		{
-			if (this.oilPatch is { Current: <= 2500 })
-				Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", this.info.LowNotification, self.Owner.Faction.InternalName);
-		}
+		this.oilPatchActor = null;
+		this.oilPatch = null;
+		this.token = self.RevokeCondition(this.token);
+	}
 
-		void ITick.Tick(Actor self)
-		{
-			if (this.oilPatchActor == null)
-				return;
-
-			this.oilPatchActor.Tick();
-
-			if (!this.oilPatchActor.IsDead)
-				return;
-
-			Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", this.info.EmptyNotification, self.Owner.Faction.InternalName);
-
-			this.oilPatchActor = null;
-			this.oilPatch = null;
-			this.token = self.RevokeCondition(this.token);
-		}
-
-		void INotifyRemovedFromWorld.RemovedFromWorld(Actor self)
-		{
-			if (this.oilPatchActor != null && !self.World.Disposing)
-				self.World.AddFrameEndTask(world => world.Add(this.oilPatchActor));
-		}
+	void INotifyRemovedFromWorld.RemovedFromWorld(Actor self)
+	{
+		if (this.oilPatchActor != null && !self.World.Disposing)
+			self.World.AddFrameEndTask(world => world.Add(this.oilPatchActor));
 	}
 }

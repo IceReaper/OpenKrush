@@ -11,87 +11,86 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Orders
+namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Orders;
+
+using Common.Orders;
+using Graphics;
+using OpenRA.Traits;
+using Traits;
+
+public class ResearchOrderGenerator : OrderGenerator
 {
-	using Common.Orders;
-	using Graphics;
-	using OpenRA.Traits;
-	using Traits;
+	private IEnumerable<Actor> researchActors = new List<Actor>();
 
-	public class ResearchOrderGenerator : OrderGenerator
+	protected override IEnumerable<Order> OrderInner(World world, CPos cell, int2 worldPixel, MouseInput mi)
 	{
-		private IEnumerable<Actor> researchActors = new List<Actor>();
-
-		protected override IEnumerable<Order> OrderInner(World world, CPos cell, int2 worldPixel, MouseInput mi)
-		{
-			if (mi.Button != Game.Settings.Game.MouseButtonPreference.Action)
-				world.CancelInputMode();
-			else
-			{
-				foreach (var actor in world.ActorMap.GetActorsAt(cell))
-				foreach (var researchActor in this.researchActors)
-				{
-					var action = ResearchUtils.GetAction(researchActor, actor);
-
-					if (action == ResearchAction.None)
-						continue;
-
-					yield return new(ResearchOrderTargeter.Id, researchActor, Target.FromActor(actor), true);
-				}
-			}
-		}
-
-		protected override void Tick(World world)
-		{
-			this.researchActors = world.ActorsHavingTrait<Researches>().Where(e => e.Owner == world.LocalPlayer);
-
-			if (!this.researchActors.Any())
-				world.CancelInputMode();
-		}
-
-		protected override IEnumerable<IRenderable> Render(WorldRenderer wr, World world)
-		{
-			yield break;
-		}
-
-		protected override IEnumerable<IRenderable> RenderAboveShroud(WorldRenderer wr, World world)
-		{
-			yield break;
-		}
-
-		protected override IEnumerable<IRenderable> RenderAnnotations(WorldRenderer wr, World world)
-		{
-			yield break;
-		}
-
-		protected override string? GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)
+		if (mi.Button != Game.Settings.Game.MouseButtonPreference.Action)
+			world.CancelInputMode();
+		else
 		{
 			foreach (var actor in world.ActorMap.GetActorsAt(cell))
 			foreach (var researchActor in this.researchActors)
 			{
 				var action = ResearchUtils.GetAction(researchActor, actor);
-				var info = researchActor.Info.TraitInfoOrDefault<ResearchesInfo>();
 
-				switch (action)
-				{
-					case ResearchAction.Start:
-						return info.Cursor;
+				if (action == ResearchAction.None)
+					continue;
 
-					case ResearchAction.Stop:
-						return info.BlockedCursor;
-
-					case ResearchAction.Blocked:
-						return info.BlockedCursor;
-
-					case ResearchAction.None:
-						break;
-
-					default:
-						throw new ArgumentOutOfRangeException(Enum.GetName(action));
-				}
+				yield return new(ResearchOrderTargeter.Id, researchActor, Target.FromActor(actor), true);
 			}
-
-			return null;
 		}
+	}
+
+	protected override void Tick(World world)
+	{
+		this.researchActors = world.ActorsHavingTrait<Researches>().Where(e => e.Owner == world.LocalPlayer);
+
+		if (!this.researchActors.Any())
+			world.CancelInputMode();
+	}
+
+	protected override IEnumerable<IRenderable> Render(WorldRenderer wr, World world)
+	{
+		yield break;
+	}
+
+	protected override IEnumerable<IRenderable> RenderAboveShroud(WorldRenderer wr, World world)
+	{
+		yield break;
+	}
+
+	protected override IEnumerable<IRenderable> RenderAnnotations(WorldRenderer wr, World world)
+	{
+		yield break;
+	}
+
+	protected override string? GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)
+	{
+		foreach (var actor in world.ActorMap.GetActorsAt(cell))
+		foreach (var researchActor in this.researchActors)
+		{
+			var action = ResearchUtils.GetAction(researchActor, actor);
+			var info = researchActor.Info.TraitInfoOrDefault<ResearchesInfo>();
+
+			switch (action)
+			{
+				case ResearchAction.Start:
+					return info.Cursor;
+
+				case ResearchAction.Stop:
+					return info.BlockedCursor;
+
+				case ResearchAction.Blocked:
+					return info.BlockedCursor;
+
+				case ResearchAction.None:
+					break;
+
+				default:
+					throw new ArgumentOutOfRangeException(Enum.GetName(action));
+			}
+		}
+
+		return null;
 	}
 }

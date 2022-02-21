@@ -11,65 +11,64 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Misc.Traits
+namespace OpenRA.Mods.OpenKrush.Mechanics.Misc.Traits;
+
+using Common.Traits;
+using Common.Traits.Render;
+using JetBrains.Annotations;
+using OpenRA.Traits;
+
+[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
+public class WithAimAttackAnimationInfo : TraitInfo, Requires<WithSpriteBodyInfo>
 {
-	using Common.Traits;
-	using Common.Traits.Render;
-	using JetBrains.Annotations;
-	using OpenRA.Traits;
+	[Desc("Displayed while attacking.")]
+	[SequenceReference]
+	public readonly string SequenceFire = "";
 
-	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
-	public class WithAimAttackAnimationInfo : TraitInfo, Requires<WithSpriteBodyInfo>
+	[Desc("Displayed while attacking.")]
+	[SequenceReference]
+	public readonly string SequenceAim = "";
+
+	public override object Create(ActorInitializer init)
 	{
-		[Desc("Displayed while attacking.")]
-		[SequenceReference]
-		public readonly string SequenceFire = "";
+		return new WithAimAttackAnimation(init, this);
+	}
+}
 
-		[Desc("Displayed while attacking.")]
-		[SequenceReference]
-		public readonly string SequenceAim = "";
+public class WithAimAttackAnimation : ITick, INotifyAttack, INotifyAiming
+{
+	private readonly WithAimAttackAnimationInfo info;
+	private readonly WithSpriteBody wsb;
+	private bool aiming;
 
-		public override object Create(ActorInitializer init)
-		{
-			return new WithAimAttackAnimation(init, this);
-		}
+	public WithAimAttackAnimation(ActorInitializer init, WithAimAttackAnimationInfo info)
+	{
+		this.info = info;
+		this.wsb = init.Self.TraitOrDefault<WithSpriteBody>();
 	}
 
-	public class WithAimAttackAnimation : ITick, INotifyAttack, INotifyAiming
+	void INotifyAttack.Attacking(Actor self, in Target target, Armament a, Barrel barrel)
 	{
-		private readonly WithAimAttackAnimationInfo info;
-		private readonly WithSpriteBody wsb;
-		private bool aiming;
+		this.wsb.PlayCustomAnimation(self, this.info.SequenceFire);
+	}
 
-		public WithAimAttackAnimation(ActorInitializer init, WithAimAttackAnimationInfo info)
-		{
-			this.info = info;
-			this.wsb = init.Self.TraitOrDefault<WithSpriteBody>();
-		}
+	void INotifyAttack.PreparingAttack(Actor self, in Target target, Armament a, Barrel barrel)
+	{
+	}
 
-		void INotifyAttack.Attacking(Actor self, in Target target, Armament a, Barrel barrel)
-		{
-			this.wsb.PlayCustomAnimation(self, this.info.SequenceFire);
-		}
+	void ITick.Tick(Actor self)
+	{
+		if (!string.IsNullOrEmpty(this.info.SequenceAim) && this.aiming && this.wsb.DefaultAnimation.CurrentSequence.Name == "idle")
+			this.wsb.PlayCustomAnimation(self, this.info.SequenceAim);
+	}
 
-		void INotifyAttack.PreparingAttack(Actor self, in Target target, Armament a, Barrel barrel)
-		{
-		}
+	void INotifyAiming.StartedAiming(Actor self, AttackBase attack)
+	{
+		this.aiming = true;
+	}
 
-		void ITick.Tick(Actor self)
-		{
-			if (!string.IsNullOrEmpty(this.info.SequenceAim) && this.aiming && this.wsb.DefaultAnimation.CurrentSequence.Name == "idle")
-				this.wsb.PlayCustomAnimation(self, this.info.SequenceAim);
-		}
-
-		void INotifyAiming.StartedAiming(Actor self, AttackBase attack)
-		{
-			this.aiming = true;
-		}
-
-		void INotifyAiming.StoppedAiming(Actor self, AttackBase attack)
-		{
-			this.aiming = false;
-		}
+	void INotifyAiming.StoppedAiming(Actor self, AttackBase attack)
+	{
+		this.aiming = false;
 	}
 }

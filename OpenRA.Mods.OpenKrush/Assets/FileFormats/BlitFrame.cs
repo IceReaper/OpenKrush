@@ -11,21 +11,20 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Assets.FileFormats
-{
-	public class BlitFrame
-	{
-		public readonly int Width;
-		public readonly int Height;
-		public readonly int2 Offset;
-		public readonly byte[] Pixels;
+namespace OpenRA.Mods.OpenKrush.Assets.FileFormats;
 
-		public BlitFrame(Stream stream, byte[] palette)
-		{
-			this.Width = stream.ReadInt32();
-			this.Height = stream.ReadInt32();
-			this.Offset = new(stream.ReadInt32(), stream.ReadInt32());
-			this.Pixels = stream.ReadBytes(this.Width * this.Height).SelectMany(index => palette.Skip(index * 4).Take(4)).ToArray();
-		}
+public class BlitFrame
+{
+	public readonly int Width;
+	public readonly int Height;
+	public readonly int2 Offset;
+	public readonly byte[] Pixels;
+
+	public BlitFrame(Stream stream, byte[] palette)
+	{
+		this.Width = stream.ReadInt32();
+		this.Height = stream.ReadInt32();
+		this.Offset = new(stream.ReadInt32(), stream.ReadInt32());
+		this.Pixels = stream.ReadBytes(this.Width * this.Height).SelectMany(index => palette.Skip(index * 4).Take(4)).ToArray();
 	}
 }

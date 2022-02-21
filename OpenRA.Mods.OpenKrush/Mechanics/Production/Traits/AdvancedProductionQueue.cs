@@ -11,81 +11,80 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Production.Traits
-{
-	using Common.Traits;
-	using JetBrains.Annotations;
-	using Researching.Traits;
+namespace OpenRA.Mods.OpenKrush.Mechanics.Production.Traits;
 
-	[UsedImplicitly]
-	[Desc("This version of ParallelProductionQueue references prerequisites and techlevel to itself.")]
-	public class AdvancedProductionQueueInfo : ParallelProductionQueueInfo
+using Common.Traits;
+using JetBrains.Annotations;
+using Researching.Traits;
+
+[UsedImplicitly]
+[Desc("This version of ParallelProductionQueue references prerequisites and techlevel to itself.")]
+public class AdvancedProductionQueueInfo : ParallelProductionQueueInfo
+{
+	public override object Create(ActorInitializer init)
 	{
-		public override object Create(ActorInitializer init)
-		{
-			return new AdvancedProductionQueue(init, init.Self.Owner.PlayerActor, this);
-		}
+		return new AdvancedProductionQueue(init, init.Self.Owner.PlayerActor, this);
+	}
+}
+
+public class AdvancedProductionQueue : ParallelProductionQueue
+{
+	private readonly Actor actor;
+
+	public AdvancedProductionQueue(ActorInitializer init, Actor playerActor, AdvancedProductionQueueInfo info)
+		: base(init, playerActor, info)
+	{
+		this.actor = init.Self;
 	}
 
-	public class AdvancedProductionQueue : ParallelProductionQueue
+	public override IEnumerable<ActorInfo> BuildableItems()
 	{
-		private readonly Actor actor;
+		if (this.productionTraits.Any() && this.productionTraits.All(p => p.IsTraitDisabled))
+			return Enumerable.Empty<ActorInfo>();
 
-		public AdvancedProductionQueue(ActorInitializer init, Actor playerActor, AdvancedProductionQueueInfo info)
-			: base(init, playerActor, info)
-		{
-			this.actor = init.Self;
-		}
+		if (!this.Enabled)
+			return Enumerable.Empty<ActorInfo>();
 
-		public override IEnumerable<ActorInfo> BuildableItems()
-		{
-			if (this.productionTraits.Any() && this.productionTraits.All(p => p.IsTraitDisabled))
-				return Enumerable.Empty<ActorInfo>();
+		if (this.developerMode.AllTech)
+			return this.Producible.Keys;
 
-			if (!this.Enabled)
-				return Enumerable.Empty<ActorInfo>();
+		return this.Producible.Keys.Where(
+			prod =>
+			{
+				var buildable = prod.TraitInfoOrDefault<BuildableInfo>();
 
-			if (this.developerMode.AllTech)
-				return this.Producible.Keys;
+				if (buildable == null)
+					return true;
 
-			return this.Producible.Keys.Where(
-				prod =>
-				{
-					var buildable = prod.TraitInfoOrDefault<BuildableInfo>();
+				if (buildable.BuildLimit > 0
+					&& buildable.BuildLimit
+					<= this.Actor.World.ActorsHavingTrait<Buildable>().Count(a => a.Info.Name == prod.Name && a.Owner == this.Actor.Owner))
+					return false;
 
-					if (buildable == null)
-						return true;
+				return this.ProducerHasRequirements(prod, buildable);
+			}
+		);
+	}
 
-					if (buildable.BuildLimit > 0
-						&& buildable.BuildLimit
-						<= this.Actor.World.ActorsHavingTrait<Buildable>().Count(a => a.Info.Name == prod.Name && a.Owner == this.Actor.Owner))
-						return false;
+	protected virtual bool ProducerHasRequirements(ActorInfo prod, BuildableInfo buildable)
+	{
+		if (!this.Actor.Info.TraitInfos<ProvidesPrerequisiteInfo>()
+			.Any(providesPrerequisite => buildable.Prerequisites.Contains(providesPrerequisite.Prerequisite)))
+			return false;
 
-					return this.ProducerHasRequirements(prod, buildable);
-				}
-			);
-		}
+		if (buildable is not TechLevelBuildableInfo advancedBuildable)
+			return true;
 
-		protected virtual bool ProducerHasRequirements(ActorInfo prod, BuildableInfo buildable)
-		{
-			if (!this.Actor.Info.TraitInfos<ProvidesPrerequisiteInfo>()
-				.Any(providesPrerequisite => buildable.Prerequisites.Contains(providesPrerequisite.Prerequisite)))
-				return false;
+		if (advancedBuildable.Level == -1)
+			return false;
 
-			if (buildable is not TechLevelBuildableInfo advancedBuildable)
-				return true;
+		var researchable = this.actor.TraitOrDefault<Researchable>();
 
-			if (advancedBuildable.Level == -1)
-				return false;
+		return researchable.IsResearched(TechLevelBuildableInfo.Prefix + prod.Name);
+	}
 
-			var researchable = this.actor.TraitOrDefault<Researchable>();
-
-			return researchable.IsResearched(TechLevelBuildableInfo.Prefix + prod.Name);
-		}
-
-		public override int GetBuildTime(ActorInfo unit, BuildableInfo bi)
-		{
-			return base.GetBuildTime(unit, bi) * (100 + this.actor.Owner.Handicap) / 100;
-		}
+	public override int GetBuildTime(ActorInfo unit, BuildableInfo bi)
+	{
+		return base.GetBuildTime(unit, bi) * (100 + this.actor.Owner.Handicap) / 100;
 	}
 }

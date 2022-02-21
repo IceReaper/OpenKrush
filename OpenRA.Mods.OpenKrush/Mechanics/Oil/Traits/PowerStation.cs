@@ -11,82 +11,80 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits
+namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits;
+
+using Common.Traits;
+using Docking.Traits;
+using JetBrains.Annotations;
+using OpenRA.Traits;
+using Researching;
+using Researching.Traits;
+
+[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
+[Desc("PowerStation implementation.")]
+public class PowerStationInfo : DockActionInfo, Requires<ResearchableInfo>
 {
-	using Common.Traits;
-	using Docking.Traits;
-	using JetBrains.Annotations;
-	using OpenRA.Traits;
-	using Researching;
-	using Researching.Traits;
+	public const string Prefix = "POWERSTATION::";
 
-	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
-	[Desc("PowerStation implementation.")]
-	public class PowerStationInfo : DockActionInfo, Requires<ResearchableInfo>
+	[Desc("How many oil per tick should be pumped.")]
+	public readonly int Amount = 20;
+
+	[Desc("How many additional oil is given for free per pump.")]
+	public readonly int[] Additional = { 0, 3, 6, 9, 12, 15 };
+
+	[Desc("How many ticks to wait between pumps.")]
+	public readonly int Delay = 6;
+
+	public override object Create(ActorInitializer init)
 	{
-		public const string Prefix = "POWERSTATION::";
+		return new PowerStation(init, this);
+	}
+}
 
-		[Desc("How many oil per tick should be pumped.")]
-		public readonly int Amount = 20;
+public class PowerStation : DockAction, IProvidesResearchables
+{
+	private readonly PowerStationInfo info;
 
-		[Desc("How many additional oil is given for free per pump.")]
-		public readonly int[] Additional = { 0, 3, 6, 9, 12, 15 };
+	private readonly Researchable researchable;
 
-		[Desc("How many ticks to wait between pumps.")]
-		public readonly int Delay = 6;
-
-		public override object Create(ActorInitializer init)
-		{
-			return new PowerStation(init, this);
-		}
+	public PowerStation(ActorInitializer init, PowerStationInfo info)
+		: base(info)
+	{
+		this.info = info;
+		this.researchable = init.Self.TraitOrDefault<Researchable>();
 	}
 
-	public class PowerStation : DockAction, IProvidesResearchables
+	public override bool CanDock(Actor self, Actor target)
 	{
-		private readonly PowerStationInfo info;
+		if (!target.Info.HasTraitInfo<TankerInfo>())
+			return false;
 
-		private readonly Researchable researchable;
+		// Allow to give resources to allies too.
+		return target.Owner.RelationshipWith(self.Owner) == PlayerRelationship.Ally;
+	}
 
-		public PowerStation(ActorInitializer init, PowerStationInfo info)
-			: base(info)
+	public override bool Process(Actor self, Actor actor)
+	{
+		var tanker = actor.TraitOrDefault<Tanker>();
+
+		if (tanker == null)
+			return true;
+
+		if (self.World.WorldTick % this.info.Delay == 0)
 		{
-			this.info = info;
-			this.researchable = init.Self.TraitOrDefault<Researchable>();
+			self.Owner.PlayerActor.TraitOrDefault<PlayerResources>().GiveCash(tanker.Pull(this.info.Amount) + this.info.Additional[this.researchable.Level]);
 		}
 
-		public override bool CanDock(Actor self, Actor target)
-		{
-			if (!target.Info.HasTraitInfo<TankerInfo>())
-				return false;
+		return tanker.Current == 0;
+	}
 
-			// Allow to give resources to allies too.
-			return target.Owner.RelationshipWith(self.Owner) == PlayerRelationship.Ally;
-		}
+	public Dictionary<string, int> GetResearchables(Actor self)
+	{
+		var technologies = new Dictionary<string, int>();
 
-		public override bool Process(Actor self, Actor actor)
-		{
-			var tanker = actor.TraitOrDefault<Tanker>();
+		for (var i = 0; i < this.info.Additional.Length; i++)
+			technologies.Add(PowerStationInfo.Prefix + i, i);
 
-			if (tanker == null)
-				return true;
-
-			if (self.World.WorldTick % this.info.Delay == 0)
-			{
-				self.Owner.PlayerActor.TraitOrDefault<PlayerResources>()
-					.GiveCash(tanker.Pull(this.info.Amount) + this.info.Additional[this.researchable.Level]);
-			}
-
-			return tanker.Current == 0;
-		}
-
-		public Dictionary<string, int> GetResearchables(Actor self)
-		{
-			var technologies = new Dictionary<string, int>();
-
-			for (var i = 0; i < this.info.Additional.Length; i++)
-				technologies.Add(PowerStationInfo.Prefix + i, i);
-
-			return technologies;
-		}
+		return technologies;
 	}
 }

@@ -11,36 +11,35 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.Activities
+namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.Activities;
+
+using Common.Activities;
+using OpenRA.Traits;
+using Primitives;
+using Traits;
+
+public class SaboteurEnter : Enter
 {
-	using Common.Activities;
-	using OpenRA.Traits;
-	using Primitives;
-	using Traits;
+	private readonly Actor target;
 
-	public class SaboteurEnter : Enter
+	public SaboteurEnter(Actor self, Target target, Color targetLineColor)
+		: base(self, target, targetLineColor)
 	{
-		private readonly Actor target;
+		this.target = target.Actor;
+	}
 
-		public SaboteurEnter(Actor self, Target target, Color targetLineColor)
-			: base(self, target, targetLineColor)
-		{
-			this.target = target.Actor;
-		}
+	public override bool Tick(Actor self)
+	{
+		if (!this.IsCanceling && !SaboteurUtils.CanEnter(self, this.target, out _))
+			this.Cancel(self, true);
 
-		public override bool Tick(Actor self)
-		{
-			if (!this.IsCanceling && !SaboteurUtils.CanEnter(self, this.target, out _))
-				this.Cancel(self, true);
+		return base.Tick(self);
+	}
 
-			return base.Tick(self);
-		}
-
-		protected override void OnEnterComplete(Actor self, Actor targetActor)
-		{
-			self.TraitOrDefault<Saboteur>().Enter(self, targetActor);
-			targetActor.TraitOrDefault<SaboteurConquerable>().Enter(targetActor, self);
-			self.Dispose();
-		}
+	protected override void OnEnterComplete(Actor self, Actor targetActor)
+	{
+		self.TraitOrDefault<Saboteur>().Enter(self, targetActor);
+		targetActor.TraitOrDefault<SaboteurConquerable>().Enter(targetActor, self);
+		self.Dispose();
 	}
 }

@@ -11,29 +11,28 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Activities
+namespace OpenRA.Mods.OpenKrush.Mechanics.Oil.Activities;
+
+using Common.Orders;
+using OpenRA.Traits;
+
+public class DeployOnActorOrderTargeter : UnitOrderTargeter
 {
-	using Common.Orders;
-	using OpenRA.Traits;
+	private readonly string[] validTargets;
 
-	public class DeployOnActorOrderTargeter : UnitOrderTargeter
+	public DeployOnActorOrderTargeter(string[] validTargets, string cursor)
+		: base("Move", 6, cursor, false, true)
 	{
-		private readonly string[] validTargets;
+		this.validTargets = validTargets;
+	}
 
-		public DeployOnActorOrderTargeter(string[] validTargets, string cursor)
-			: base("Move", 6, cursor, false, true)
-		{
-			this.validTargets = validTargets;
-		}
+	public override bool CanTargetActor(Actor self, Actor target, TargetModifiers modifiers, ref string cursor)
+	{
+		return this.validTargets.Contains(target.Info.Name);
+	}
 
-		public override bool CanTargetActor(Actor self, Actor target, TargetModifiers modifiers, ref string cursor)
-		{
-			return this.validTargets.Contains(target.Info.Name);
-		}
-
-		public override bool CanTargetFrozenActor(Actor self, FrozenActor target, TargetModifiers modifiers, ref string cursor)
-		{
-			return this.validTargets.Contains(target.Info.Name);
-		}
+	public override bool CanTargetFrozenActor(Actor self, FrozenActor target, TargetModifiers modifiers, ref string cursor)
+	{
+		return this.validTargets.Contains(target.Info.Name);
 	}
 }

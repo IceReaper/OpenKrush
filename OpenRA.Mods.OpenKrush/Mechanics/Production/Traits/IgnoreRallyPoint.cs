@@ -11,37 +11,36 @@
 
 #endregion
 
-namespace OpenRA.Mods.OpenKrush.Mechanics.Production.Traits
+namespace OpenRA.Mods.OpenKrush.Mechanics.Production.Traits;
+
+using Common.Activities;
+using JetBrains.Annotations;
+using OpenRA.Traits;
+
+[UsedImplicitly]
+[Desc("Makes specific actors ignore the rally point when created.")]
+public class IgnoreRallyPointInfo : TraitInfo
 {
-	using Common.Activities;
-	using JetBrains.Annotations;
-	using OpenRA.Traits;
-
-	[UsedImplicitly]
-	[Desc("Makes specific actors ignore the rally point when created.")]
-	public class IgnoreRallyPointInfo : TraitInfo
+	public override object Create(ActorInitializer init)
 	{
-		public override object Create(ActorInitializer init)
-		{
-			return new IgnoreRallyPoint();
-		}
+		return new IgnoreRallyPoint();
 	}
+}
 
-	public class IgnoreRallyPoint : INotifyCreated
+public class IgnoreRallyPoint : INotifyCreated
+{
+	void INotifyCreated.Created(Actor self)
 	{
-		void INotifyCreated.Created(Actor self)
-		{
-			self.World.AddFrameEndTask(
-				_ =>
-				{
-					var activity = self.CurrentActivity;
+		self.World.AddFrameEndTask(
+			_ =>
+			{
+				var activity = self.CurrentActivity;
 
-					while (activity != null && activity is not AttackMoveActivity)
-						activity = activity.NextActivity;
+				while (activity != null && activity is not AttackMoveActivity)
+					activity = activity.NextActivity;
 
-					activity?.Cancel(self, true);
-				}
-			);
-		}
+				activity?.Cancel(self, true);
+			}
+		);
 	}
 }
