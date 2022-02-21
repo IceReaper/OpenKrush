@@ -35,7 +35,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 		{
 		}
 
-		public void BotTick(IBot bot)
+		void IBotTick.BotTick(IBot bot)
 		{
 			if (bot.Player.World.WorldTick % 3 != 0)
 				return;
