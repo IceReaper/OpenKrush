@@ -110,6 +110,7 @@
 	#BlocksProjectiles:
 	# Show preview on placement.
 	ActorPreviewPlaceBuildingPreview:
+		PreviewAlpha: 0.5
 	# Constructions can be repaired by technicians.
 	TechnicianRepairable:
 		RequiresCondition: !selfconstructing && !deconstructing
