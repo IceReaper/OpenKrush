@@ -16,8 +16,11 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 	using Common.Traits;
 	using Construction.Traits;
 	using JetBrains.Annotations;
+	using Misc.Traits;
 	using Oil.Traits;
 	using OpenRA.Traits;
+	using Production.Traits;
+	using Repairbays.Traits;
 	using Researching.Traits;
 
 	[UsedImplicitly]
@@ -31,21 +34,26 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 
 	public class BotBaseBuilder : ConditionalTrait<BotBaseBuilderInfo>, IBotTick
 	{
-		private readonly IEnumerable<string> bases;
-		private readonly IEnumerable<string> powerStations;
-		private readonly IEnumerable<string> researchers;
-		private readonly IEnumerable<string> factories;
-		private readonly IEnumerable<string> superWeapons;
-		private readonly IEnumerable<string> moneyGenerators;
-		private readonly IEnumerable<string> repairers;
+		private readonly string[] bases;
+		private readonly string[] powerStations;
+		private readonly string[] researchers;
+		private readonly string[] factories;
+		private readonly string[] superWeapons;
+		private readonly string[] moneyGenerators;
+		private readonly string[] repairers;
 		private ProductionQueue[] queues = Array.Empty<ProductionQueue>();
 		private PlayerResources? resources;
 
 		public BotBaseBuilder(World world, BotBaseBuilderInfo info)
 			: base(info)
 		{
-			this.bases = world.Map.Rules.Actors.Where(a => a.Value.HasTraitInfo<BaseBuildingInfo>()).Select(e => e.Key);
-			this.powerStations = world.Map.Rules.Actors.Where(a => a.Value.HasTraitInfo<PowerStationInfo>()).Select(e => e.Key);
+			this.bases = world.Map.Rules.Actors.Where(a => a.Value.HasTraitInfo<BaseBuildingInfo>()).Select(e => e.Key).ToArray();
+			this.powerStations = world.Map.Rules.Actors.Where(a => a.Value.HasTraitInfo<PowerStationInfo>()).Select(e => e.Key).ToArray();
+			this.researchers = world.Map.Rules.Actors.Where(a => a.Value.HasTraitInfo<ResearchesInfo>()).Select(e => e.Key).ToArray();
+			this.factories = world.Map.Rules.Actors.Where(a => a.Value.HasTraitInfo<AdvancedProductionInfo>()).Select(e => e.Key).ToArray();
+			this.superWeapons = world.Map.Rules.Actors.Where(a => a.Value.HasTraitInfo<AdvancedAirstrikePowerInfo>()).Select(e => e.Key).ToArray();
+			this.moneyGenerators = world.Map.Rules.Actors.Where(a => a.Value.HasTraitInfo<CashTricklerInfo>()).Select(e => e.Key).ToArray();
+			this.repairers = world.Map.Rules.Actors.Where(a => a.Value.HasTraitInfo<RepairsVehiclesInfo>()).Select(e => e.Key).ToArray();
 		}
 
 		protected override void Created(Actor self)
@@ -121,12 +129,49 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 				}
 			}
 
-			// TODO continue to build base in order with priority!
-			var randomBuilding = buildables.Where(b => !this.bases.Contains(b.Name) && !this.powerStations.Contains(b.Name))
-				.RandomOrDefault(bot.Player.World.LocalRandom);
+			// Build missing factories.
+			var requiredfactories = Math.Max(1, !buildings.Any() ? 0 : buildings.Max(building => building.TraitOrDefault<Researchable>()?.Level ?? 0));
 
-			if (randomBuilding != null)
-				this.PlaceConstruction(bot, constructedBuildings, randomBuilding, PlacementType.NearBase, queue);
+			foreach (var factory in this.factories)
+			{
+				var factories = buildings.Where(building => building.Info.Name == factory).ToArray();
+
+				if (factories.Length >= requiredfactories)
+					continue;
+
+				var actorInfo = buildables.FirstOrDefault(buildable => buildable.Name == factory);
+
+				if (actorInfo == null)
+					continue;
+
+				this.PlaceConstruction(bot, constructedBuildings, actorInfo, PlacementType.NearBase, queue);
+
+				return;
+			}
+
+			// Build any if possible in this order:
+			var order = new[] { this.researchers, this.superWeapons, this.moneyGenerators };
+
+			foreach (var category in order)
+			{
+				foreach (var actorInfo in buildables)
+				{
+					if (!category.Contains(actorInfo.Name))
+						continue;
+
+					this.PlaceConstruction(bot, constructedBuildings, actorInfo, PlacementType.NearBase, queue);
+
+					return;
+				}
+			}
+			
+			// If the whole base is set up, also make sure we have at last one repairer.
+			var repairer = buildables.FirstOrDefault(buildable => this.repairers.Contains(buildable.Name));
+
+			if (repairer == null)
+				return;
+
+			this.PlaceConstruction(bot, constructedBuildings, repairer, PlacementType.NearOil, queue);
 		}
 
 		private void PlaceConstruction(IBot bot, Actor[] buildings, ActorInfo actorInfo, PlacementType type, ProductionQueue queue)
