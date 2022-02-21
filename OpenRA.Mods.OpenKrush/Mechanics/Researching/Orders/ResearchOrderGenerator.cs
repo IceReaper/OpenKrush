@@ -13,23 +13,16 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Orders
 {
-	using OpenRA.Orders;
+	using Common.Orders;
+	using Graphics;
 	using OpenRA.Traits;
 	using Traits;
 
-	public class ResearchOrderGenerator : UnitOrderGenerator
+	public class ResearchOrderGenerator : OrderGenerator
 	{
 		private IEnumerable<Actor> researchActors = new List<Actor>();
 
-		public override void Tick(World world)
-		{
-			this.researchActors = world.ActorsHavingTrait<Researches>().Where(e => e.Owner == world.LocalPlayer);
-
-			if (!this.researchActors.Any())
-				world.CancelInputMode();
-		}
-
-		public override IEnumerable<Order> Order(World world, CPos cell, int2 worldPixel, MouseInput mi)
+		protected override IEnumerable<Order> OrderInner(World world, CPos cell, int2 worldPixel, MouseInput mi)
 		{
 			if (mi.Button != Game.Settings.Game.MouseButtonPreference.Action)
 				world.CancelInputMode();
@@ -48,7 +41,30 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Orders
 			}
 		}
 
-		public override string? GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)
+		protected override void Tick(World world)
+		{
+			this.researchActors = world.ActorsHavingTrait<Researches>().Where(e => e.Owner == world.LocalPlayer);
+
+			if (!this.researchActors.Any())
+				world.CancelInputMode();
+		}
+
+		protected override IEnumerable<IRenderable> Render(WorldRenderer wr, World world)
+		{
+			yield break;
+		}
+
+		protected override IEnumerable<IRenderable> RenderAboveShroud(WorldRenderer wr, World world)
+		{
+			yield break;
+		}
+
+		protected override IEnumerable<IRenderable> RenderAnnotations(WorldRenderer wr, World world)
+		{
+			yield break;
+		}
+
+		protected override string? GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)
 		{
 			foreach (var actor in world.ActorMap.GetActorsAt(cell))
 			foreach (var researchActor in this.researchActors)
@@ -73,11 +89,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Orders
 			}
 
 			return null;
-		}
-
-		public override bool InputOverridesSelection(World world, int2 xy, MouseInput mi)
-		{
-			return true;
 		}
 	}
 }

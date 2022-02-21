@@ -13,23 +13,16 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Orders
 {
-	using OpenRA.Orders;
+	using Common.Orders;
+	using Graphics;
 	using OpenRA.Traits;
 	using Traits;
 
-	public class TechnicianEnterOrderGenerator : UnitOrderGenerator
+	public class TechnicianEnterOrderGenerator : OrderGenerator
 	{
 		private IEnumerable<Actor> technicians = new List<Actor>();
 
-		public override void Tick(World world)
-		{
-			this.technicians = world.ActorsHavingTrait<Technician>().Where(e => e.Owner == world.LocalPlayer && e.IsIdle);
-
-			if (!this.technicians.Any())
-				world.CancelInputMode();
-		}
-
-		public override IEnumerable<Order> Order(World world, CPos cell, int2 worldPixel, MouseInput mi)
+		protected override IEnumerable<Order> OrderInner(World world, CPos cell, int2 worldPixel, MouseInput mi)
 		{
 			if (mi.Button != Game.Settings.Game.MouseButtonPreference.Action)
 				world.CancelInputMode();
@@ -49,7 +42,30 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Orders
 			}
 		}
 
-		public override string? GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)
+		protected override void Tick(World world)
+		{
+			this.technicians = world.ActorsHavingTrait<Technician>().Where(e => e.Owner == world.LocalPlayer && e.IsIdle);
+
+			if (!this.technicians.Any())
+				world.CancelInputMode();
+		}
+
+		protected override IEnumerable<IRenderable> Render(WorldRenderer wr, World world)
+		{
+			yield break;
+		}
+
+		protected override IEnumerable<IRenderable> RenderAboveShroud(WorldRenderer wr, World world)
+		{
+			yield break;
+		}
+
+		protected override IEnumerable<IRenderable> RenderAnnotations(WorldRenderer wr, World world)
+		{
+			yield break;
+		}
+
+		protected override string? GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)
 		{
 			var technician = this.technicians.OrderBy(e => (e.CenterPosition - world.Map.CenterOfCell(cell)).Length).FirstOrDefault();
 
@@ -60,11 +76,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Orders
 			var info = technician.Info.TraitInfoOrDefault<TechnicianInfo>();
 
 			return actor != null ? info.Cursor : info.BlockedCursor;
-		}
-
-		public override bool InputOverridesSelection(World world, int2 xy, MouseInput mi)
-		{
-			return true;
 		}
 	}
 }
