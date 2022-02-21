@@ -31,7 +31,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Activities
 
 		public override bool Tick(Actor self)
 		{
-			if (!this.IsCanceling && !TechnicianUtils.CanEnter(self, this.target))
+			if (!this.IsCanceling && !TechnicianUtils.CanEnter(self, this.target, out _))
 				this.Cancel(self, true);
 
 			return base.Tick(self);

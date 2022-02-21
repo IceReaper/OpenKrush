@@ -18,14 +18,24 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Sacrificing
 
 	public static class SacrificingUtils
 	{
-		public static bool CanEnter(Actor source, Actor target)
+		public static bool CanEnter(Actor source, Actor target, out bool blocked)
 		{
-			var trait = target.TraitOrDefault<Sacrificer>();
+			blocked = false;
 
-			if (trait == null || trait.IsTraitDisabled)
+			if (target.IsDead || target.Disposed || !target.IsInWorld)
 				return false;
 
-			return source.Owner.RelationshipWith(target.Owner) == PlayerRelationship.Ally;
+			var trait = target.TraitOrDefault<Sacrificer>();
+
+			if (trait == null)
+				return false;
+
+			if (!trait.IsTraitDisabled && source.Owner.RelationshipWith(target.Owner) == PlayerRelationship.Ally)
+				return true;
+
+			blocked = true;
+
+			return false;
 		}
 	}
 }

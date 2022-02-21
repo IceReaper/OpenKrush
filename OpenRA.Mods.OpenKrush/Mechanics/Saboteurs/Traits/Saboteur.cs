@@ -89,7 +89,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.Traits
 			if (order.Target.Type != TargetType.Actor || order.Target.Actor == null)
 				return;
 
-			if (!SaboteurUtils.CanEnter(self, order.Target.Actor))
+			if (!SaboteurUtils.CanEnter(self, order.Target.Actor, out _))
 				return;
 
 			self.QueueActivity(order.Queued, new SaboteurEnter(self, order.Target, this.info.TargetLineColor));
@@ -97,12 +97,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.Traits
 
 		string? IOrderVoice.VoicePhraseForOrder(Actor self, Order order)
 		{
-			if (order.OrderString != SaboteurEnterOrderTargeter.Id)
-				return null;
-
-			return order.Target.Actor.Owner.RelationshipWith(self.Owner).HasRelationship(PlayerRelationship.Ally)
-				? this.info.VoiceOrderAlly
-				: this.info.VoiceOrderEnemy;
+			return order.OrderString == SaboteurEnterOrderTargeter.Id && SaboteurUtils.CanEnter(self, order.Target.Actor, out _)
+				? order.Target.Actor.Owner.RelationshipWith(self.Owner).HasRelationship(PlayerRelationship.Ally) ? this.info.VoiceOrderAlly :
+				this.info.VoiceOrderEnemy
+				: null;
 		}
 
 		public void Enter(Actor self, Actor targetActor)

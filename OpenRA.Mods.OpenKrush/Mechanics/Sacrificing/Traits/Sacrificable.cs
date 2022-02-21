@@ -27,6 +27,9 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Sacrificing.Traits
 		[Desc("Cursor used for order.")]
 		public readonly string Cursor = "enter";
 
+		[Desc("Cursor used for order.")]
+		public readonly string BlockedCursor = "enter-blocked";
+
 		[Desc("Target line color.")]
 		public readonly Color TargetLineColor = Color.Yellow;
 
@@ -57,7 +60,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Sacrificing.Traits
 		{
 			get
 			{
-				yield return new SacrificeOrderTargeter(this.info.Cursor);
+				yield return new SacrificeOrderTargeter(this.info.Cursor, this.info.BlockedCursor);
 			}
 		}
 
@@ -74,7 +77,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Sacrificing.Traits
 			if (order.Target.Type != TargetType.Actor || order.Target.Actor == null)
 				return;
 
-			if (!SacrificingUtils.CanEnter(self, order.Target.Actor))
+			if (!SacrificingUtils.CanEnter(self, order.Target.Actor, out _))
 				return;
 
 			self.QueueActivity(order.Queued, new Sacrifice(self, order.Target, this.info.TargetLineColor));
@@ -82,7 +85,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Sacrificing.Traits
 
 		string? IOrderVoice.VoicePhraseForOrder(Actor self, Order order)
 		{
-			return order.OrderString == SacrificeOrderTargeter.Id ? this.info.VoiceOrder : null;
+			return order.OrderString == SacrificeOrderTargeter.Id && SacrificingUtils.CanEnter(self, order.Target.Actor, out _) ? this.info.VoiceOrder : null;
 		}
 
 		public void Enter(Actor self)

@@ -46,6 +46,11 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Orders
 
 					return true;
 
+				case ResearchAction.Blocked:
+					cursor = this.cursorForbidden;
+
+					return true;
+
 				case ResearchAction.None:
 					cursor = null;
 

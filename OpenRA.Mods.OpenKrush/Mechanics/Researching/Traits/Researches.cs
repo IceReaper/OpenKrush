@@ -113,6 +113,9 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 
 					break;
 
+				case ResearchAction.Blocked:
+					break;
+
 				case ResearchAction.None:
 					break;
 

@@ -111,17 +111,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Traits
 				this.overlay.PlayRepeating(sequence);
 		}
 
-		public ResarchState GetState(Actor self)
-		{
-			if (this.IsTraitDisabled)
-				return ResarchState.Unavailable;
-
-			if (self.IsDead || !self.IsInWorld)
-				return ResarchState.Unavailable;
-
-			return this.ResearchedBy != null ? ResarchState.Researching : ResarchState.Available;
-		}
-
 		void INotifyAddedToWorld.AddedToWorld(Actor self)
 		{
 			var researchMode = self.World.WorldActor.TraitOrDefault<ResearchMode>().Mode;

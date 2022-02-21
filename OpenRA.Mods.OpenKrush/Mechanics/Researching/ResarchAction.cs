@@ -16,6 +16,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching
 	public enum ResearchAction
 	{
 		None,
+		Blocked,
 		Start,
 		Stop
 	}

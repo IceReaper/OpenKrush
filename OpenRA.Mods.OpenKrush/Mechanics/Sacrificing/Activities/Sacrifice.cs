@@ -30,7 +30,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Sacrificing.Activities
 
 		public override bool Tick(Actor self)
 		{
-			if (!this.IsCanceling && !SacrificingUtils.CanEnter(self, this.target))
+			if (!this.IsCanceling && !SacrificingUtils.CanEnter(self, this.target, out _))
 				this.Cancel(self, true);
 
 			return base.Tick(self);

@@ -21,48 +21,28 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching
 
 		public static ResearchAction GetAction(Actor self, Actor target)
 		{
-			if (target.Disposed)
+			if (target.IsDead || target.Disposed || !target.IsInWorld)
 				return ResearchAction.None;
 
 			if (target.Owner != self.Owner)
 				return ResearchAction.None;
 
 			var researches = self.TraitOrDefault<Researches>();
-
-			if (researches == null)
-				return ResearchAction.None;
-
-			var researchesState = researches.GetState();
-
-			if (researchesState == ResarchState.Unavailable)
-				return ResearchAction.None;
-
 			var researchable = target.TraitOrDefault<Researchable>();
 
-			if (researchable == null)
+			if (researches == null || researches.IsTraitDisabled || researchable == null)
 				return ResearchAction.None;
 
-			var currentState = researchable.GetState(target);
+			if (researchable.IsTraitDisabled)
+				return ResearchAction.Blocked;
 
-			switch (currentState)
-			{
-				case ResarchState.Unavailable:
-					return ResearchAction.None;
+			if (researchable.ResearchedBy != null)
+				return ResearchAction.Stop;
 
-				case ResarchState.Researching:
-					return ResearchAction.Stop;
-
-				case ResarchState.Available:
-					break;
-
-				default:
-					throw new ArgumentOutOfRangeException(Enum.GetName(currentState));
-			}
-
-			if (researchesState == ResarchState.Researching)
-				return ResearchAction.None;
-
-			return researchable.Level >= researchable.MaxLevel ? ResearchAction.None : ResearchAction.Start;
+			if (researches.GetState() == ResarchState.Researching)
+				return ResearchAction.Blocked;
+			
+			return researchable.Level >= researchable.MaxLevel ? ResearchAction.Blocked : ResearchAction.Start;
 		}
 	}
 }

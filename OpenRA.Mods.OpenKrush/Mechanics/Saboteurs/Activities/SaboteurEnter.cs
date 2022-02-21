@@ -30,7 +30,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.Activities
 
 		public override bool Tick(Actor self)
 		{
-			if (!this.IsCanceling && !SaboteurUtils.CanEnter(self, this.target))
+			if (!this.IsCanceling && !SaboteurUtils.CanEnter(self, this.target, out _))
 				this.Cancel(self, true);
 
 			return base.Tick(self);

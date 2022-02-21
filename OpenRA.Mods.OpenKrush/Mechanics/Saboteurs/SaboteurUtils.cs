@@ -18,17 +18,25 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs
 
 	public static class SaboteurUtils
 	{
-		public static bool CanEnter(Actor source, Actor target)
+		public static bool CanEnter(Actor source, Actor target, out bool blocked)
 		{
+			blocked = false;
+
 			if (target.IsDead || target.Disposed || !target.IsInWorld)
 				return false;
 
 			var trait = target.TraitOrDefault<SaboteurConquerable>();
 
-			if (trait == null || trait.IsTraitDisabled)
+			if (trait == null)
 				return false;
 
-			return source.Owner.RelationshipWith(target.Owner) != PlayerRelationship.Ally || trait.Population != trait.Info.MaxPopulation;
+			if (!trait.IsTraitDisabled
+				&& (source.Owner.RelationshipWith(target.Owner) != PlayerRelationship.Ally || trait.Population != trait.Info.MaxPopulation))
+				return true;
+
+			blocked = true;
+
+			return false;
 		}
 	}
 }

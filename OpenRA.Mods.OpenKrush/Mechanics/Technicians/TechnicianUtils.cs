@@ -13,28 +13,41 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians
 {
+	using Bunkers.LobbyOptions;
 	using Bunkers.Traits;
 	using OpenRA.Traits;
 	using Traits;
 
 	public static class TechnicianUtils
 	{
-		public static bool CanEnter(Actor source, Actor target)
+		public static bool CanEnter(Actor source, Actor target, out bool blocked)
 		{
+			blocked = false;
+
 			if (target.IsDead || target.Disposed || !target.IsInWorld)
 				return false;
 
 			var bunker = target.TraitOrDefault<TechBunker>();
+			var usage = source.World.WorldActor.TraitOrDefault<TechBunkerUsage>();
 
-			if (bunker != null)
-				return bunker.State == TechBunkerState.ClosedUnlocked;
+			if (bunker != null && usage.Usage == TechBunkerUsageType.Technician)
+			{
+				blocked = bunker.State != TechBunkerState.ClosedUnlocked;
+
+				return !blocked;
+			}
 
 			var trait = target.TraitOrDefault<TechnicianRepairable>();
 
-			if (trait == null || trait.IsTraitDisabled)
+			if (trait == null)
 				return false;
 
-			return source.Owner.RelationshipWith(target.Owner) == PlayerRelationship.Ally;
+			if (!trait.IsTraitDisabled && source.Owner.RelationshipWith(target.Owner) == PlayerRelationship.Ally)
+				return true;
+
+			blocked = true;
+
+			return false;
 		}
 	}
 }

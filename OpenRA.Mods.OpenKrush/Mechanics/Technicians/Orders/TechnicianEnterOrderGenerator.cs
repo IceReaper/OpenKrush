@@ -33,7 +33,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Orders
 				if (technician == null)
 					yield break;
 
-				var actor = world.ActorMap.GetActorsAt(cell).FirstOrDefault(a => TechnicianUtils.CanEnter(technician, a));
+				var actor = world.ActorMap.GetActorsAt(cell).FirstOrDefault(a => TechnicianUtils.CanEnter(technician, a, out _));
 
 				if (actor == null)
 					yield break;
@@ -72,10 +72,12 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Orders
 			if (technician == null)
 				return null;
 
-			var actor = world.ActorMap.GetActorsAt(cell).FirstOrDefault(a => TechnicianUtils.CanEnter(technician, a));
+			var blocked = true;
+			var actor = world.ActorMap.GetActorsAt(cell).FirstOrDefault(a => TechnicianUtils.CanEnter(technician, a, out blocked));
 			var info = technician.Info.TraitInfoOrDefault<TechnicianInfo>();
 
-			return actor != null ? info.Cursor : info.BlockedCursor;
+			return actor == null ? null :
+				blocked ? info.BlockedCursor : info.Cursor;
 		}
 	}
 }

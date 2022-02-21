@@ -82,7 +82,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Traits
 			if (order.Target.Type != TargetType.Actor || order.Target.Actor == null)
 				return;
 
-			if (!TechnicianUtils.CanEnter(self, order.Target.Actor))
+			if (!TechnicianUtils.CanEnter(self, order.Target.Actor, out _))
 				return;
 
 			self.QueueActivity(order.Queued, new TechnicianEnter(self, order.Target, this.info.TargetLineColor));
@@ -90,7 +90,9 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Technicians.Traits
 
 		string? IOrderVoice.VoicePhraseForOrder(Actor self, Order order)
 		{
-			return order.OrderString == TechnicianEnterOrderTargeter.Id ? this.info.VoiceOrder : null;
+			return order.OrderString == TechnicianEnterOrderTargeter.Id && TechnicianUtils.CanEnter(self, order.Target.Actor, out _)
+				? this.info.VoiceOrder
+				: null;
 		}
 
 		public void Enter(Actor self, Actor targetActor)

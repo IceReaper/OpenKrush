@@ -80,6 +80,9 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Researching.Orders
 					case ResearchAction.Stop:
 						return info.BlockedCursor;
 
+					case ResearchAction.Blocked:
+						return info.BlockedCursor;
+
 					case ResearchAction.None:
 						break;
 

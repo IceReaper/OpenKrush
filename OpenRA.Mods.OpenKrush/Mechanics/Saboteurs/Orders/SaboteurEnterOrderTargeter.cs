@@ -32,16 +32,10 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.Saboteurs.Orders
 
 		public override bool CanTargetActor(Actor self, Actor target, TargetModifiers modifiers, ref string cursor)
 		{
-			if (!SaboteurUtils.CanEnter(self, target))
-			{
-				cursor = this.cursorForbidden;
+			var result = SaboteurUtils.CanEnter(self, target, out var blocked);
+			cursor = blocked ? this.cursorForbidden : this.cursorAllowed;
 
-				return false;
-			}
-
-			cursor = this.cursorAllowed;
-
-			return true;
+			return result || blocked;
 		}
 
 		public override bool CanTargetFrozenActor(Actor self, FrozenActor target, TargetModifiers modifiers, ref string cursor)
