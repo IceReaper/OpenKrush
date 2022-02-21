@@ -1,4 +1,4 @@
-﻿#region Copyright & License Information
+#region Copyright & License Information
 
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
@@ -16,7 +16,9 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 	using Common.Traits;
 	using Construction.Traits;
 	using JetBrains.Annotations;
+	using Oil.Traits;
 	using OpenRA.Traits;
+	using Researching.Traits;
 
 	[UsedImplicitly]
 	public class BotBaseBuilderInfo : ConditionalTraitInfo
@@ -30,6 +32,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 	public class BotBaseBuilder : ConditionalTrait<BotBaseBuilderInfo>, IBotTick
 	{
 		private readonly IEnumerable<string> bases;
+		private readonly IEnumerable<string> powerStations;
 		private ProductionQueue[] queues = Array.Empty<ProductionQueue>();
 		private PlayerResources? resources;
 
@@ -37,6 +40,7 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 			: base(info)
 		{
 			this.bases = world.Map.Rules.Actors.Where(a => a.Value.HasTraitInfo<BaseBuildingInfo>()).Select(e => e.Key);
+			this.powerStations = world.Map.Rules.Actors.Where(a => a.Value.HasTraitInfo<PowerStationInfo>()).Select(e => e.Key);
 		}
 
 		protected override void Created(Actor self)
@@ -83,11 +87,11 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 			// If we do not have a base, and we can place a base, we ALWAYS place it, regardless of anything else being build!
 			if (!buildings.Any(building => this.bases.Contains(building.Info.Name)))
 			{
-				var baseActorInfo = buildables.FirstOrDefault(buildable => this.bases.Contains(buildable.Name));
+				var actorInfo = buildables.FirstOrDefault(buildable => this.bases.Contains(buildable.Name));
 
-				if (baseActorInfo != null)
+				if (actorInfo != null)
 				{
-					this.PlaceConstruction(bot, constructedBuildings, baseActorInfo, PlacementType.NearBase, queue);
+					this.PlaceConstruction(bot, constructedBuildings, actorInfo, PlacementType.NearBase, queue);
 
 					return;
 				}
@@ -97,8 +101,25 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 			if (constructedBuildings.Length < buildings.Length)
 				return;
 
+			// If we have no or less power stations than the lowest building techlevel, build another one!
+			var powerStations = buildings.Where(building => this.powerStations.Contains(building.Info.Name)).ToArray();
+			var requiredPowerStations = Math.Max(1, !buildings.Any() ? 0 : buildings.Max(building => building.TraitOrDefault<Researchable>()?.Level ?? 0));
+
+			if (powerStations.Length < requiredPowerStations)
+			{
+				var actorInfo = buildables.FirstOrDefault(buildable => this.powerStations.Contains(buildable.Name));
+
+				if (actorInfo != null)
+				{
+					this.PlaceConstruction(bot, constructedBuildings, actorInfo, PlacementType.NearOil, queue);
+
+					return;
+				}
+			}
+
 			// TODO continue to build base in order with priority!
-			var randomBuilding = buildables.Where(b => !this.bases.Contains(b.Name)).RandomOrDefault(bot.Player.World.LocalRandom);
+			var randomBuilding = buildables.Where(b => !this.bases.Contains(b.Name) && !this.powerStations.Contains(b.Name))
+				.RandomOrDefault(bot.Player.World.LocalRandom);
 
 			if (randomBuilding != null)
 				this.PlaceConstruction(bot, constructedBuildings, randomBuilding, PlacementType.NearBase, queue);
@@ -136,6 +157,12 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 
 			switch (type)
 			{
+				// TODO this should be used to place power stations.
+				case PlacementType.NearOil:
+
+				// TODO this should be used to place defences.
+				case PlacementType.NearEnemy:
+
 				case PlacementType.NearBase:
 				{
 					var baseLocation = (buildings.FirstOrDefault(b => this.bases.Contains(b.Info.Name)) ?? buildings.FirstOrDefault())?.Location;
@@ -159,14 +186,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 						.OrderBy(c => (c - baseLocation.Value).LengthSquared)
 						.FirstOrDefault();
 				}
-
-				case PlacementType.NearOil:
-					// TODO this should be used to place power stations.
-					break;
-
-				case PlacementType.NearEnemy:
-					// TODO this should be used to place defences.
-					break;
 
 				default:
 					throw new ArgumentOutOfRangeException(Enum.GetName(type));
