@@ -1,12 +1,15 @@
 Player:
-	HackedAiShit:
 	ModularBot:
 		Name: Computer
 		Type: computer
 	GrantConditionOnBotOwner:
 		Condition: enable-ai
 		Bots: computer
+	BotFakeResources:
+		RequiresCondition: enable-ai
 	BotBaseBuilder:
+		RequiresCondition: enable-ai
+	BotBaseResearcher:
 		RequiresCondition: enable-ai
 	# TODO refactor stuff below!
 	SupportPowerBotModule@placeholder:

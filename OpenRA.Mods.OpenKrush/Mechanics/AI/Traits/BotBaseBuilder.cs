@@ -1,4 +1,4 @@
-#region Copyright & License Information
+﻿#region Copyright & License Information
 
 /*
  * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
@@ -33,6 +33,11 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 	{
 		private readonly IEnumerable<string> bases;
 		private readonly IEnumerable<string> powerStations;
+		private readonly IEnumerable<string> researchers;
+		private readonly IEnumerable<string> factories;
+		private readonly IEnumerable<string> superWeapons;
+		private readonly IEnumerable<string> moneyGenerators;
+		private readonly IEnumerable<string> repairers;
 		private ProductionQueue[] queues = Array.Empty<ProductionQueue>();
 		private PlayerResources? resources;
 
@@ -52,7 +57,6 @@ namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits
 		void IBotTick.BotTick(IBot bot)
 		{
 			// For performance we delay some ai tasks => OpenKrush runs with 25 ticks per second (at normal speed).
-
 			if (bot.Player.World.WorldTick % 25 == 0)
 				this.HandleBuildings(bot);
 		}
