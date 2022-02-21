@@ -1,7 +1,7 @@
 survivors_vehicle_flameatv:
 	Range: 3c0
-	Burst: 10
-	BurstDelays: 1
+	Burst: 5
+	BurstDelays: 2
 	ReloadDelay: 41
 	Report: surv.slv|86.wav
 	Projectile: Bullet
@@ -16,6 +16,6 @@ survivors_vehicle_flameatv:
 		Spread: 512
 		Falloff: 100, 100
 		Versus:
-			infantry: 17
-			vehicle: 25
-			building: 20
+			infantry: 34
+			vehicle: 50
+			building: 40
