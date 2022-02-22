@@ -291,7 +291,7 @@ public class BotBaseBuilder : ConditionalTrait<BotBaseBuilderInfo>, IBotTick
 
 		var target = targets.Random(world.LocalRandom);
 
-		return cells.Where(
+		var cellsWithSpace = cells.Where(
 				cell =>
 				{
 					for (var y = -1; y <= 1; y++)
@@ -304,7 +304,11 @@ public class BotBaseBuilder : ConditionalTrait<BotBaseBuilderInfo>, IBotTick
 					return true;
 				}
 			)
-			.OrderBy(c => (c - target).LengthSquared)
-			.FirstOrDefault();
+			.ToArray();
+
+		if (cellsWithSpace.Any())
+			cells = cellsWithSpace;
+
+		return cells.OrderBy(c => (c - target).LengthSquared).FirstOrDefault();
 	}
 }
