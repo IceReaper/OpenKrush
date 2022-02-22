@@ -192,7 +192,8 @@ public class Researches : ConditionalTrait<ResearchesInfo>, IIssueOrder, IResolv
 				* targetResearchable.NextTechLevel()
 				* this.info.ResearchRates[this.researchable.Level]
 				/ 100
-				* this.timeFactor;
+				* this.timeFactor
+				/ 100;
 		}
 
 		targetResearchable.ResearchedBy = self;

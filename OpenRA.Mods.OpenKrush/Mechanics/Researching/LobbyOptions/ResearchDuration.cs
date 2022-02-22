@@ -28,7 +28,7 @@ public class ResearchDurationInfo : TraitInfo, ILobbyOptions
 		var values = new Dictionary<string, string>();
 
 		for (var i = 1; i <= 4; i++)
-			values.Add(i.ToString(), $"{i * 100}%");
+			values.Add((i * 50).ToString(), $"{i * 50}%");
 
 		yield return new LobbyOption(
 			ResearchDurationInfo.Id,
@@ -37,7 +37,7 @@ public class ResearchDurationInfo : TraitInfo, ILobbyOptions
 			true,
 			0,
 			new ReadOnlyDictionary<string, string>(values),
-			"1",
+			"100",
 			false,
 			ResearchUtils.LobbyOptionsCategory
 		);
@@ -55,6 +55,6 @@ public class ResearchDuration : INotifyCreated
 
 	void INotifyCreated.Created(Actor self)
 	{
-		this.Duration = int.Parse(self.World.LobbyInfo.GlobalSettings.OptionOrDefault(ResearchDurationInfo.Id, "1"));
+		this.Duration = int.Parse(self.World.LobbyInfo.GlobalSettings.OptionOrDefault(ResearchDurationInfo.Id, "100"));
 	}
 }
