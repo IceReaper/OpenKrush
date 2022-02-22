@@ -106,8 +106,7 @@
 	OwnerLostAction:
 		Action: Kill
 	# No projectiles can pass through a construction.
-	# TODO: fix this!
-	#BlocksProjectiles:
+	BlocksProjectiles:
 	# Show preview on placement.
 	ActorPreviewPlaceBuildingPreview:
 		PreviewAlpha: 0.5
@@ -294,9 +293,8 @@
 	Targetable@NoAutoAttack:
 		TargetTypes: NoAutoAttack
 	# Does only block projectiles when fully build up.
-	# TODO: fix this!
-	#BlocksProjectiles:
-	#	RequiresCondition: !selfconstructing && !deconstructing
+	BlocksProjectiles:
+		RequiresCondition: !selfconstructing && !deconstructing
 
 # Base for all infantry.
 ^CoreInfantry:

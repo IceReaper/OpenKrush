@@ -3,7 +3,7 @@ oilpatch:
 	Inherits: ^CoreConstruction
 	# Oilpatch behavior.
 	OilPatch:
-	# Put oil in resources catgegory in map editor.
+	# Put oil in resources category in map editor.
 	MapEditorData:
 		Categories: Resource
 	# Should not be auto attacked.
@@ -27,12 +27,13 @@ oilpatch:
 		Bounds: 1024, 1024, 0, 0
 	# Oil has a healthbar when hovered, which shows the oil amount.
 	AdvancedSelectionDecorations:
-	# Not build or sellable.
+    # Not buildable.
 	-SelfConstructing:
+    # Not sellable.
 	-DeconstructSellable:
 	# Not blocking projectiles.
-	# TODO: fix this!
-	#-BlocksProjectiles:
+	-BlocksProjectiles:
+    # Not repairable.
 	-TechnicianRepairable:
 	# This actor will be enforced to be owned by Neutral.
 	RequiresSpecificOwners:
