@@ -28,22 +28,25 @@ public class BotFakeResourcesInfo : ConditionalTraitInfo
 	}
 }
 
-public class BotFakeResources : ConditionalTrait<BotFakeResourcesInfo>, IBotTick
+public class BotFakeResources : ConditionalTrait<BotFakeResourcesInfo>, ITick
 {
 	public BotFakeResources(BotFakeResourcesInfo info)
 		: base(info)
 	{
 	}
 
-	void IBotTick.BotTick(IBot bot)
+	void ITick.Tick(Actor self)
 	{
-		if (bot.Player.World.WorldTick % 3 != 0)
+		if (!self.Owner.IsBot)
 			return;
 
-		var pumpForce = bot.Player.World.ActorsHavingTrait<PowerStation>()
-			.Where(a => a.Owner == bot.Player)
+		if (self.Owner.World.WorldTick % 3 != 0)
+			return;
+
+		var pumpForce = self.Owner.World.ActorsHavingTrait<PowerStation>()
+			.Where(a => a.Owner == self.Owner)
 			.Sum(a => 5 + a.TraitOrDefault<Researchable>().Level);
 
-		bot.Player.PlayerActor.TraitOrDefault<PlayerResources>().GiveCash(Math.Max(5, pumpForce));
+		self.Owner.PlayerActor.TraitOrDefault<PlayerResources>().GiveCash(Math.Max(5, pumpForce));
 	}
 }
