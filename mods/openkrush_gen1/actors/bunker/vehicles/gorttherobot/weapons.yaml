@@ -4,7 +4,6 @@ bunker_vehicles_gorttherobot:
 	ReloadDelay: 1
 	Range: 7c0
 	Projectile: InstantHit
-		Blockable: true
 	Warhead@Damage: SpreadDamage
 		Damage: 100
 		DamageTypes: Electricity

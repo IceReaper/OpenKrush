@@ -15,7 +15,7 @@ evolved_vehicle_missilecrab:
 		TrailImage: projectiles
 		TrailSequences: smoke
 		Inaccuracy: 200
-		Blockable: false
+		Blockable: true
 	Warhead@Damage: SpreadDamage
 		Versus:
 			infantry: 150

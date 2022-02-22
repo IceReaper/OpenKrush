@@ -3,6 +3,7 @@ bunker_vehicles_disintegrator:
 	ReloadDelay: 75
 	Report: openkrush_gen1|actors/bunker/vehicles/disintegrator/sound.wav
 	Projectile: Laser
+        Blockable: true
 		Duration: 4
 		Distortion: 256
 		DistortionAnimation: 64

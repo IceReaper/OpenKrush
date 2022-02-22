@@ -24,7 +24,7 @@ using Traits;
 
 [UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 [Desc("A beautiful generated laser beam.")]
-public class LaserInfo : IProjectileInfo
+public class LaserInfo : IProjectileInfo, IBlockableProjectile
 {
 	[Desc("The maximum duration (in ticks) of the beam's existence.")]
 	public readonly int Duration = 10;
@@ -53,9 +53,17 @@ public class LaserInfo : IProjectileInfo
 	[Desc("Equivalent to sequence ZOffset. Controls Z sorting.")]
 	public readonly int ZOffset;
 
+	[Desc("Can this projectile be blocked when hitting actors with an IBlocksProjectiles trait.")]
+	public readonly bool Blockable;
+
 	public IProjectile Create(ProjectileArgs args)
 	{
 		return new Laser(args, this);
+	}
+
+	public bool IsBlockable()
+	{
+		return this.Blockable;
 	}
 }
 
