@@ -71,9 +71,7 @@ public class PowerStation : DockAction, IProvidesResearchables
 			return true;
 
 		if (self.World.WorldTick % this.info.Delay == 0)
-		{
 			self.Owner.PlayerActor.TraitOrDefault<PlayerResources>().GiveCash(tanker.Pull(this.info.Amount) + this.info.Additional[this.researchable.Level]);
-		}
 
 		return tanker.Current == 0;
 	}
