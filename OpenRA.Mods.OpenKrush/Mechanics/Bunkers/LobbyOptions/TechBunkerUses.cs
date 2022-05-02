@@ -33,7 +33,7 @@ public class TechBunkerUsesInfo : TraitInfo, ILobbyOptions
 
 	IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(MapPreview mapPreview)
 	{
-		yield return new LobbyOption(
+		yield return new(
 			TechBunkerUsesInfo.Id,
 			"Uses",
 			"How many times a TechBunker can be used.",

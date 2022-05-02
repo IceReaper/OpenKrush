@@ -34,7 +34,7 @@ public class SaboteurUsageInfo : TraitInfo, ILobbyOptions
 
 	IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(MapPreview mapPreview)
 	{
-		yield return new LobbyOption(
+		yield return new(
 			SaboteurUsageInfo.Id,
 			"Usage",
 			"What happens when a saboteur conquers a building.",

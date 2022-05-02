@@ -36,7 +36,7 @@ public class OilAmountInfo : TraitInfo, ILobbyOptions
 
 		var standard = this.OilAmounts[this.OilAmountNames.IndexOf("Normal")];
 
-		yield return new LobbyOption(
+		yield return new(
 			OilAmountInfo.Id,
 			"Amount",
 			"Amount of oil every oilpatch contains.",

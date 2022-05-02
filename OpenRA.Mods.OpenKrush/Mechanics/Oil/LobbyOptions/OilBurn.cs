@@ -31,7 +31,7 @@ public class OilBurnInfo : TraitInfo, ILobbyOptions
 		for (var i = 0; i <= 100; i += 20)
 			values.Add(i.ToString(), $"{i}%");
 
-		yield return new LobbyOption(
+		yield return new(
 			OilBurnInfo.Id,
 			"Burn",
 			"Percent amount of oil to burn when ignited.",

@@ -34,7 +34,7 @@ public class TechBunkerContainsInfo : TraitInfo, ILobbyOptions
 
 	IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(MapPreview mapPreview)
 	{
-		yield return new LobbyOption(
+		yield return new(
 			TechBunkerContainsInfo.Id,
 			"Contains",
 			"What a TechBunker may contain.",

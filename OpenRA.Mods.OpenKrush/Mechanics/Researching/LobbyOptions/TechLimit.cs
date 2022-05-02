@@ -44,7 +44,7 @@ public class TechLimitInfo : TraitInfo, ILobbyOptions
 		for (var i = 1; i <= this.MaxTechLevel; i++)
 			values.Add(i.ToString(), i.ToString());
 
-		yield return new LobbyOption(
+		yield return new(
 			TechLimitInfo.Id,
 			"Limit",
 			"Maximum tech level.",

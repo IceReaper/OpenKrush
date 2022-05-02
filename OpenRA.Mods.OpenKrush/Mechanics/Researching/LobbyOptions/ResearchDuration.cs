@@ -30,7 +30,7 @@ public class ResearchDurationInfo : TraitInfo, ILobbyOptions
 		for (var i = 1; i <= 4; i++)
 			values.Add((i * 50).ToString(), $"{i * 50}%");
 
-		yield return new LobbyOption(
+		yield return new(
 			ResearchDurationInfo.Id,
 			"Duration",
 			"Research duration.",
