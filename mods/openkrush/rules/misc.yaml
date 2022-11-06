@@ -95,8 +95,6 @@ World:
 	# Required for buildable area checks.
 	BuildingInfluence:
 	# Pathfinding requirement.
-	DomainIndex:
-	# Pathfinding requirement.
 	PathFinder:
 	# Support for prespawned actors.
 	SpawnMapActors:

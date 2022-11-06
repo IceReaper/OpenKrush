@@ -72,7 +72,7 @@ ChromeLayout:
 	common|chrome/ingame-infostats.yaml
 	common|chrome/ingame-info-lobby-options.yaml
 	openkrush|chrome/ingame-menu.yaml
-	openkrush|chrome/ingame-observer.yaml
+	common|chrome/ingame-observer.yaml
 	openkrush|chrome/ingame-player.yaml
 	common|chrome/ingame-perf.yaml
 	common|chrome/ingame-debug.yaml
@@ -115,6 +115,7 @@ ChromeLayout:
 	common|chrome/text-notifications.yaml
 
 Translations:
+	common|languages/en.ftl
 
 Hotkeys:
 	openkrush|hotkeys/game.yaml
@@ -139,39 +140,39 @@ ChromeMetrics:
 
 Fonts:
 	Tiny:
-		Font: openkrush|uibits/Serpentine_Sans_ICG_Oblique.ttf
+		Font: openkrush_gen1|uibits/Serpentine_Sans_ICG_Oblique.ttf
 		Size: 10
 		Ascender: 8
 	TinyBold:
-		Font: openkrush|uibits/Serpentine_Sans_ICG_BoldOblique.ttf
+		Font: openkrush_gen1|uibits/Serpentine_Sans_ICG_BoldOblique.ttf
 		Size: 10
 		Ascender: 8
 	Small:
-		Font: openkrush|uibits/Serpentine_Sans_ICG_Oblique.ttf
+		Font: openkrush_gen1|uibits/Serpentine_Sans_ICG_Oblique.ttf
 		Size: 12
 		Ascender: 9
 	SmallBold:
-		Font: openkrush|uibits/Serpentine_Sans_ICG_BoldOblique.ttf
+		Font: openkrush_gen1|uibits/Serpentine_Sans_ICG_BoldOblique.ttf
 		Size: 12
 		Ascender: 9
 	Regular:
-		Font: openkrush|uibits/Serpentine_Sans_ICG_Oblique.ttf
+		Font: openkrush_gen1|uibits/Serpentine_Sans_ICG_Oblique.ttf
 		Size: 14
 		Ascender: 11
 	Bold:
-		Font: openkrush|uibits/Serpentine_Sans_ICG_BoldOblique.ttf
+		Font: openkrush_gen1|uibits/Serpentine_Sans_ICG_BoldOblique.ttf
 		Size: 14
 		Ascender: 11
 	Medium:
-		Font: openkrush|uibits/Serpentine_Sans_ICG_Oblique.ttf
+		Font: openkrush_gen1|uibits/Serpentine_Sans_ICG_Oblique.ttf
 		Size: 18
 		Ascender: 14
 	MediumBold:
-		Font: openkrush|uibits/Serpentine_Sans_ICG_BoldOblique.ttf
+		Font: openkrush_gen1|uibits/Serpentine_Sans_ICG_BoldOblique.ttf
 		Size: 18
 		Ascender: 14
 	Title:
-		Font: openkrush|uibits/Serpentine_Sans_ICG_BoldOblique.ttf
+		Font: openkrush_gen1|uibits/Serpentine_Sans_ICG_BoldOblique.ttf
 		Size: 32
 
 Missions:
@@ -179,6 +180,8 @@ Missions:
 MapGrid:
 	TileSize: 32,32
 	Type: Rectangular
+
+DefaultOrderGenerator: UnitOrderGenerator
 
 SupportsMapsFrom: gen1
 

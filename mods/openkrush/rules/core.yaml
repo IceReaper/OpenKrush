@@ -475,6 +475,7 @@
 ^CoreArmedSelf:
 	# Units without a turret have to stop and aim at a target to shoot.
 	AttackFrontal:
+		FacingTolerance: 0
 		Voice: Attack
 	# Specify the sequence to use when shooting.
 	WithAimAttackAnimation:

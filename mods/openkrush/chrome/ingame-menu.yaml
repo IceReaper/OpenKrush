@@ -12,15 +12,15 @@ Container@INGAME_MENU:
 			Height: WINDOW_BOTTOM + 30
 			Background: mainmenu-border
 		Image@LOGO:
-			X: WINDOW_RIGHT - 620
-			Y: 30
+			X: WINDOW_RIGHT - 512 - 32
+			Y: 32
 			ImageCollection: logos
 			ImageName: logo
 		Label@VERSION_LABEL:
-			X: WINDOW_RIGHT - 620
-			Y: 300
-			Width: 590
-			Height: 25
+			X: WINDOW_RIGHT - 512 - 32
+			Y: 128 + 32
+			Width: 512
+			Height: 32
 			Align: Center
 			Font: Regular
 			Contrast: True

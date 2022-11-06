@@ -10,7 +10,7 @@ Container@MAINMENU:
 				TakeScreenshotKey: TakeScreenshot
 				MuteAudioKey: ToggleMute
 		Image@LOGO:
-			X: (WINDOW_RIGHT - 590) / 2
+			X: (WINDOW_RIGHT - 512) / 2
 			Y: 30
 			ImageCollection: logos
 			ImageName: logo
