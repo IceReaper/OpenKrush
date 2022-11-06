@@ -1,7 +1,7 @@
 #region Copyright & License Information
 
 /*
- * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
+ * Copyright 2007-2022 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
@@ -24,7 +24,7 @@ public class SelfConstructingProductionQueueInfo : AdvancedProductionQueueInfo
 {
 	public override object Create(ActorInitializer init)
 	{
-		return new SelfConstructingProductionQueue(init, init.Self, this);
+		return new SelfConstructingProductionQueue(init, this);
 	}
 }
 
@@ -32,8 +32,8 @@ public class SelfConstructingProductionQueue : AdvancedProductionQueue
 {
 	private bool expectFakeProductionItemRequest;
 
-	public SelfConstructingProductionQueue(ActorInitializer init, Actor playerActor, SelfConstructingProductionQueueInfo info)
-		: base(init, playerActor, info)
+	public SelfConstructingProductionQueue(ActorInitializer init, SelfConstructingProductionQueueInfo info)
+		: base(init, info)
 	{
 	}
 

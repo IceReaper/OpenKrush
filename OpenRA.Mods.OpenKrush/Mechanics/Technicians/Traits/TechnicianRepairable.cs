@@ -1,7 +1,7 @@
 #region Copyright & License Information
 
 /*
- * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
+ * Copyright 2007-2022 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
@@ -66,7 +66,7 @@ public class TechnicianRepairable : ConditionalTrait<TechnicianRepairableInfo>, 
 		// TODO body.LocalToWorld messes up the position.
 		var anim = new AnimationWithOffset(
 			overlay,
-			() => body.LocalToWorld(new WVec(info.Offset.Y * -32, info.Offset.X * -32, 0).Rotate(body.QuantizeOrientation(init.Self, init.Self.Orientation))),
+			() => body.LocalToWorld(new WVec(info.Offset.Y * -32, info.Offset.X * -32, 0).Rotate(body.QuantizeOrientation(init.Self.Orientation))),
 			() => this.repairTasks.Count == 0,
 			p => RenderUtils.ZOffsetFromCenter(init.Self, p, 1)
 		);

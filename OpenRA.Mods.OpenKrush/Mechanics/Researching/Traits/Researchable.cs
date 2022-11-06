@@ -1,7 +1,7 @@
 #region Copyright & License Information
 
 /*
- * Copyright 2007-2021 The OpenKrush Developers (see AUTHORS)
+ * Copyright 2007-2022 The OpenKrush Developers (see AUTHORS)
  * This file is part of OpenKrush, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
@@ -91,7 +91,7 @@ public class Researchable : ConditionalTrait<ResearchableInfo>, INotifyAddedToWo
 		var anim = new AnimationWithOffset(
 			this.overlay,
 			() => bodyOrientation.LocalToWorld(
-				new WVec(info.Offset.Y * -32, info.Offset.X * -32, 0).Rotate(bodyOrientation.QuantizeOrientation(init.Self, init.Self.Orientation))
+				new WVec(info.Offset.Y * -32, info.Offset.X * -32, 0).Rotate(bodyOrientation.QuantizeOrientation(init.Self.Orientation))
 			),
 			hidden,
 			p => RenderUtils.ZOffsetFromCenter(init.Self, p, 1)
