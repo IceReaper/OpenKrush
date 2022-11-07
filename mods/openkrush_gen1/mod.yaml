@@ -8,10 +8,15 @@ Metadata:
 PackageFormats: LvlPackage
 
 Packages:
+	~^SupportDir|Content/openkrush_gen1/: original_gen1
 	^EngineDir
 	$openkrush: openkrush
 	$openkrush_gen1: openkrush_gen1
 	^EngineDir|mods/common: common
+	~original_gen1|fmv: gen1_fmv
+	~original_gen1|sprites.lvl: sprites.lvl
+	~original_gen1|mute.slv: mute.slv
+	~original_gen1|surv.slv: surv.slv
 
 ModCredits:
 	ModCreditsFile: openkrush_gen1|CREDITS
@@ -229,6 +234,30 @@ GameSpeeds:
 			Name: Fastest
 			Timestep: 20
 			OrderLatency: 6
+
+ModContent:
+	InstallPromptMessage: OpenKrush requires artwork and audio from the original game.\n\nQuick Install will automatically download this content (without music\nor videos) from a mirror of the 1997 KKnD Xtreme demo release.\n\nAdvanced Install includes options for copying the music, videos, and\nother content from an original game disc or digital installation.
+	QuickDownload: demo
+	HeaderMessage: Game content may be extracted from the original game discs or an\nexisting digital install. OpenKrush can also download the base game\nfiles from an online mirror of the 1997 demo release of KKnD Xtreme.
+	Packages:
+		base: Base Game Files
+			TestFiles: ^SupportDir|Content/openkrush_gen1/sprites.lvl
+			Sources: gog, steam, kknd_english, xtreme_english
+			Required: true
+			Download: demo
+		kknd: Music and Cinematics
+			TestFiles: ^SupportDir|Content/openkrush_gen1/music/surv1.wav
+			Sources: gog, steam, kknd_english, xtreme_english
+		xtreme: Addon Music and Mission Briefings
+			TestFiles: ^SupportDir|Content/openkrush_gen1/music/surv4.wav
+			Sources: gog, steam, xtreme_english
+	Downloads:
+		openkrush_gen1|installer/demo.yaml
+	Sources:
+        openkrush_gen1|installer/gog.yaml
+        openkrush_gen1|installer/steam.yaml
+		openkrush_gen1|installer/kknd_english.yaml
+		openkrush_gen1|installer/xtreme_english.yaml
 
 DiscordService:
 	ApplicationId: 944902326177644544

@@ -113,3 +113,6 @@ Voices:
 
 ChromeMetrics:
 	openkrush_gen1|actors/evolved/metrics.yaml
+
+Music:
+	openkrush_gen1|actors/evolved/music.yaml

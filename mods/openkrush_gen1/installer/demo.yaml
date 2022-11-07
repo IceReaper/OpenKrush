@@ -1,0 +1,8 @@
+demo: Demo Game Files
+	Type: Demo
+	SHA1: 90222373c1ff06a02509f0d811385c0571e398df
+	URL: https://archive.org/download/KKNDXT/KKND_XT.EXE
+	Extract:
+		^SupportDir|Content/openkrush_gen1/sprites.lvl: Multiplayer Levels\LEVELS\640\SPRITES.LVL
+		^SupportDir|Content/openkrush_gen1/mute.slv: Multiplayer Levels\LEVELS\MUTE.SLV
+		^SupportDir|Content/openkrush_gen1/surv.slv: Multiplayer Levels\LEVELS\SURV.SLV

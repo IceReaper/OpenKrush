@@ -105,3 +105,6 @@ Voices:
 
 ChromeMetrics:
 	openkrush_gen1|actors/survivors/metrics.yaml
+
+Music:
+	openkrush_gen1|actors/survivors/music.yaml

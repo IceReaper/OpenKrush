@@ -68,8 +68,12 @@ Container@MAINMENU:
 							Text: Extras
 							Font: Bold
 						Button@CONTENT_BUTTON:
-							X: WINDOW_RIGHT
-							Y: WINDOW_BOTTOM
+							X: PARENT_RIGHT / 2 - WIDTH / 2
+							Y: 220
+							Width: 140
+							Height: 30
+							Text: Manage Content
+							Font: Bold
 						Button@QUIT_BUTTON:
 							X: PARENT_RIGHT / 2 - WIDTH / 2
 							Y: 260
