@@ -30,15 +30,19 @@ public class Docking : Activity, IDockingActivity
 
 	public Docking(Actor dockableActor, Actor dockActor, Dock dock)
 	{
+		this.ChildHasPriority = false;
+
 		this.dockableActor = dockableActor;
 		this.DockActor = dockActor;
 		this.Dock = dock;
 
 		this.DockingState = DockingState.Approaching;
 	}
-
+	
 	public override bool Tick(Actor self)
 	{
+		this.TickChild(self);
+
 		if ((this.DockActor.IsDead || !this.DockActor.IsInWorld || this.Dock.IsTraitDisabled) && !this.IsCanceling)
 			this.Cancel(self, true);
 
@@ -48,17 +52,18 @@ public class Docking : Activity, IDockingActivity
 				if (this.State == ActivityState.Canceling)
 					return true;
 
-				if (this.ChildActivity != null)
-					break;
-
 				var distance = WDist.FromCells(this.Dock.Info.QueueDistance);
 
 				if ((this.dockableActor.CenterPosition - this.DockActor.CenterPosition).Length > distance.Length)
-					this.QueueChild(new Move(this.dockableActor, self.World.Map.CellContaining(this.DockActor.CenterPosition), distance));
+				{
+					if (this.ChildActivity == null)
+						this.QueueChild(new Move(this.dockableActor, self.World.Map.CellContaining(this.DockActor.CenterPosition), distance));
+				}
 				else
 				{
-					this.DockingState = DockingState.Waiting;
-					this.Dock.Add(this.dockableActor);
+						this.ChildActivity?.Cancel(self, true);
+						this.DockingState = DockingState.Waiting;
+						this.Dock.Add(this.dockableActor);
 				}
 
 				break;
@@ -69,6 +74,15 @@ public class Docking : Activity, IDockingActivity
 					this.Dock.Remove(this.dockableActor);
 
 					return true;
+				}
+				
+				var entry = this.DockActor.World.Map.CellContaining(this.DockActor.CenterPosition + this.Dock.Info.Position + this.Dock.Info.DragOffset);
+
+				if (this.dockableActor.Location == entry)
+				{
+					var cell = this.dockableActor.TraitOrDefault<Mobile>().GetAdjacentCell(entry);
+					if (cell != null)
+						this.QueueChild(new Move(this.dockableActor, cell.Value));
 				}
 
 				break;
