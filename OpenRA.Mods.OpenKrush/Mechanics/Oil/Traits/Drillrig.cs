@@ -108,7 +108,7 @@ public class Drillrig : DockAction, ITick, IHaveOil, INotifyRemovedFromWorld
 
 		this.oilPatchActor = null;
 		this.oilPatch = null;
-		
+
 		if (this.token != Actor.InvalidConditionToken)
 			this.token = self.RevokeCondition(this.token);
 	}

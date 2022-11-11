@@ -63,10 +63,10 @@ public class Dockable : IIssueOrder, IResolveOrder, IOrderVoice
 		if (order.Target.Type != TargetType.Actor || order.Target.Actor == null)
 			return;
 
-		var dock = order.Target.Actor.TraitsImplementing<Dock>()
-			.Where(d => d.GetDockAction(order.Target.Actor, self) != null)
-			.OrderBy(d => d.QueueLength)
-			.FirstOrDefault();
+		var dock = Enumerable.MinBy(
+			order.Target.Actor.TraitsImplementing<Dock>().Where(d => d.GetDockAction(order.Target.Actor, self) != null),
+			d => d.QueueLength
+		);
 
 		if (dock == null)
 			return;

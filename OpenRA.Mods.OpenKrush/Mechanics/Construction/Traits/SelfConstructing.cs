@@ -50,8 +50,6 @@ public class SelfConstructing : WithMakeAnimation, ITick, INotifyRemovedFromWorl
 	private int step;
 	private readonly SpawnType spawnType;
 
-	public bool IsConstructing => this.token != Actor.InvalidConditionToken;
-
 	public SelfConstructing(ActorInitializer init, SelfConstructingInfo info)
 		: base(init, info)
 	{

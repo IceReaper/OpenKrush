@@ -48,7 +48,8 @@ public class Mapd
 		}
 		else
 		{
-			stream.Read(palette);
+			for (var i = 0; i < palette.Length;)
+				i += stream.Read(palette, i, palette.Length - i);
 
 			for (var i = 0; i < palette.Length / 4; i++)
 				palette[i * 4 + 3] = 0xff;

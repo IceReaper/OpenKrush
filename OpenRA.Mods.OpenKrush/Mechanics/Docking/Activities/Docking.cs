@@ -51,7 +51,14 @@ public class Docking : Activity, IDockingActivity
 				var distance = WDist.FromCells(this.Dock.Info.QueueDistance);
 
 				if ((this.dockableActor.CenterPosition - this.DockActor.CenterPosition).Length > distance.Length)
-					this.QueueChild(new Move(this.dockableActor, this.DockActor.World.Map.CellContaining(this.DockActor.CenterPosition + this.Dock.Info.Position + this.Dock.Info.DragOffset)));
+				{
+					this.QueueChild(
+						new Move(
+							this.dockableActor,
+							this.DockActor.World.Map.CellContaining(this.DockActor.CenterPosition + this.Dock.Info.Position + this.Dock.Info.DragOffset)
+						)
+					);
+				}
 				else
 				{
 					this.DockingState = DockingState.Waiting;

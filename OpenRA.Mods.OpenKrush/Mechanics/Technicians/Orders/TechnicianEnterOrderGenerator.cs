@@ -28,7 +28,7 @@ public class TechnicianEnterOrderGenerator : OrderGenerator
 			world.CancelInputMode();
 		else
 		{
-			var technician = this.technicians.OrderBy(e => (e.CenterPosition - world.Map.CenterOfCell(cell)).Length).FirstOrDefault();
+			var technician = Enumerable.MinBy(this.technicians, e => (e.CenterPosition - world.Map.CenterOfCell(cell)).Length);
 
 			if (technician == null)
 				yield break;
@@ -67,7 +67,7 @@ public class TechnicianEnterOrderGenerator : OrderGenerator
 
 	protected override string? GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)
 	{
-		var technician = this.technicians.OrderBy(e => (e.CenterPosition - world.Map.CenterOfCell(cell)).Length).FirstOrDefault();
+		var technician = Enumerable.MinBy(this.technicians, e => (e.CenterPosition - world.Map.CenterOfCell(cell)).Length);
 
 		if (technician == null)
 			return null;

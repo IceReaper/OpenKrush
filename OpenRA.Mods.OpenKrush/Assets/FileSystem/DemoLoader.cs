@@ -1,9 +1,11 @@
 namespace OpenRA.Mods.OpenKrush.Assets.FileSystem;
 
+using Common.FileFormats;
 using ICSharpCode.SharpZipLib.Zip;
+using JetBrains.Annotations;
 using OpenRA.FileSystem;
-using OpenRA.Mods.Common.FileFormats;
 
+[UsedImplicitly]
 public class DemoLoader : IPackageLoader
 {
 	private class DemoPackage : IReadOnlyPackage

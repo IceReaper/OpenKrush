@@ -98,8 +98,9 @@ public class Saboteur : IIssueOrder, IResolveOrder, IOrderVoice
 	string? IOrderVoice.VoicePhraseForOrder(Actor self, Order order)
 	{
 		return order.OrderString == SaboteurEnterOrderTargeter.Id && SaboteurUtils.CanEnter(self, order.Target.Actor, out _)
-			? order.Target.Actor.Owner.RelationshipWith(self.Owner).HasRelationship(PlayerRelationship.Ally) ? this.info.VoiceOrderAlly :
-			this.info.VoiceOrderEnemy
+			? order.Target.Actor.Owner.RelationshipWith(self.Owner).HasRelationship(PlayerRelationship.Ally)
+				? this.info.VoiceOrderAlly
+				: this.info.VoiceOrderEnemy
 			: null;
 	}
 
