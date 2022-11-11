@@ -27,14 +27,19 @@ oilpatch:
 		Bounds: 1024, 1024, 0, 0
 	# Oil has a healthbar when hovered, which shows the oil amount.
 	AdvancedSelectionDecorations:
-    # Not buildable.
+	# Not buildable.
 	-SelfConstructing:
-    # Not sellable.
+	# Not sellable.
 	-DeconstructSellable:
 	# Not blocking projectiles.
 	-BlocksProjectiles:
-    # Not repairable.
+	# Not repairable.
 	-TechnicianRepairable:
 	# This actor will be enforced to be owned by Neutral.
 	RequiresSpecificOwners:
 		ValidOwnerNames: Neutral
+	# Obviously the tooltip
+	Tooltip:
+		Name: Oilpatch
+	TooltipDescription:
+		Description: Deploy a Derrick here

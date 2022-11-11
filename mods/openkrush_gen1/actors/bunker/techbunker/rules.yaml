@@ -28,3 +28,7 @@ bunker_techbunker:
 		ValidOwnerNames: Neutral
 	GrantExternalConditionToProduced:
 		Condition: produced
+	Tooltip:
+		Name: Tech Bunker
+	TooltipDescription:
+		Description: Contains powerfull technology

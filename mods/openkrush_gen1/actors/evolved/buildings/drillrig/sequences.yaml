@@ -18,11 +18,6 @@ evolved_building_drillrig:
 		Tick: 120
 		Offset: 0,-32
 		ZOffset: -500
-	oil: sprites.lvl|Oil.mobd
-		Length: 14
-		Tick: 120
-		Offset: 0,-16
-		ZOffset: -2000
 	critical-idle: actors/evolved/buildings/drillrig/frames.png
 		Offset: 0,-32
 		ZOffset: -500

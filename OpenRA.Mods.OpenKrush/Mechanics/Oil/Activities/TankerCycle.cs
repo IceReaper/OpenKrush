@@ -40,16 +40,12 @@ public class TankerCycle : Activity, IDockingActivity
 
 	public TankerCycle(Actor actor, Tanker tanker)
 	{
-		this.ChildHasPriority = false;
-
 		this.actor = actor;
 		this.tanker = tanker;
 	}
 
 	public override bool Tick(Actor self)
 	{
-		this.TickChild(self);
-
 		if (this.IsCanceling)
 			return true;
 

@@ -1,9 +1,6 @@
 ^extracts_oil:
 	WithIdleOverlay@Animation:
-		PauseOnCondition: !HasOil
-	WithIdleOverlay@FakeOil:
-		Sequence: oil
-		RequiresCondition: HasOil && (selfconstructing || deconstructing)
+        PauseOnCondition: !HasOil
 	Drillrig:
 	Dock:
 		RequiresCondition: !selfconstructing && !deconstructing
