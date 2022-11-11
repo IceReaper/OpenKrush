@@ -67,13 +67,13 @@ public class OilPatchInfo : TraitInfo, IRulesetLoaded, IHealthInfo
 
 public class OilPatch : IHealth, ITick, IHaveOil
 {
-	private readonly OilPatchInfo info;
+	public readonly OilPatchInfo Info;
 
 	private int resources;
 
 	public DamageState DamageState => DamageState.Undamaged;
-	public int HP => this.resources == -1 ? this.info.FullAmount : Math.Min(this.resources, this.info.FullAmount);
-	public int MaxHP => this.info.FullAmount;
+	public int HP => this.resources == -1 ? this.Info.FullAmount : Math.Min(this.resources, this.Info.FullAmount);
+	public int MaxHP => this.Info.FullAmount;
 	public int DisplayHP => this.HP;
 	public bool IsDead => this.resources == 0;
 
@@ -82,15 +82,17 @@ public class OilPatch : IHealth, ITick, IHaveOil
 	private readonly int burnTotal;
 	private int burnLeft;
 
+	public Actor? Drillrig;
+
 	public OilPatch(IActorInitializer init, OilPatchInfo info)
 	{
-		this.info = info;
+		this.Info = info;
 		this.resources = info.Amount == 0 ? init.World.WorldActor.TraitOrDefault<OilAmount>().Amount : info.Amount;
-		this.burnTotal = this.info.FullAmount * init.World.WorldActor.TraitOrDefault<OilBurn>().Amount / 100;
+		this.burnTotal = this.Info.FullAmount * init.World.WorldActor.TraitOrDefault<OilBurn>().Amount / 100;
 	}
 
-	public int Current => this.resources == -1 ? this.info.FullAmount : this.resources;
-	public int Maximum => this.info.FullAmount;
+	public int Current => this.resources == -1 ? this.Info.FullAmount : this.resources;
+	public int Maximum => this.Info.FullAmount;
 
 	public int Pull(int amount)
 	{
@@ -113,14 +115,14 @@ public class OilPatch : IHealth, ITick, IHaveOil
 	{
 		if (this.token != Actor.InvalidConditionToken)
 		{
-			if (!self.IsInWorld)
+			if (this.Drillrig != null)
 			{
 				this.token = self.RevokeCondition(this.token);
 				this.burnLeft = 0;
 			}
 			else
 			{
-				var damage = Math.Min(this.info.BurnAmount, this.burnLeft);
+				var damage = Math.Min(this.Info.BurnAmount, this.burnLeft);
 				this.burnLeft -= damage;
 
 				if (this.resources > 0)
@@ -129,7 +131,7 @@ public class OilPatch : IHealth, ITick, IHaveOil
 				if (this.burnLeft == 0)
 					this.token = self.RevokeCondition(this.token);
 
-				this.info.WeaponInfo?.Impact(Target.FromPos(self.CenterPosition), self);
+				this.Info.WeaponInfo?.Impact(Target.FromPos(self.CenterPosition), self);
 			}
 		}
 
@@ -139,22 +141,17 @@ public class OilPatch : IHealth, ITick, IHaveOil
 
 	void IHealth.InflictDamage(Actor self, Actor attacker, Damage damage, bool ignoreModifiers)
 	{
-		if (this.burnTotal == 0 || this.info.BurnAmount == 0 || damage.Value <= 0 || self.Equals(attacker))
+		if (this.Drillrig != null || this.burnTotal == 0 || this.Info.BurnAmount == 0 || damage.Value <= 0 || self.Equals(attacker))
 			return;
 
 		this.burnLeft = this.burnTotal;
 
-		if (!string.IsNullOrEmpty(this.info.Condition) && this.token == Actor.InvalidConditionToken)
-			this.token = self.GrantCondition(this.info.Condition);
+		if (!string.IsNullOrEmpty(this.Info.Condition) && this.token == Actor.InvalidConditionToken)
+			this.token = self.GrantCondition(this.Info.Condition);
 	}
 
 	void IHealth.Kill(Actor self, Actor attacker, BitSet<DamageType> damageTypes)
 	{
 		this.resources = 0;
-	}
-
-	public void StopBurning()
-	{
-		this.token = Actor.InvalidConditionToken;
 	}
 }

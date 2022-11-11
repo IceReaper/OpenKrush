@@ -50,7 +50,7 @@ public class Drillrig : DockAction, ITick, IHaveOil, INotifyRemovedFromWorld
 	private int token = Actor.InvalidConditionToken;
 
 	public int Current => this.oilPatch?.Current ?? 0;
-	public int Maximum => this.oilPatchActor == null ? 1 : this.oilPatchActor.Info.TraitInfoOrDefault<OilPatchInfo>().FullAmount;
+	public int Maximum => this.oilPatch?.Info.FullAmount ?? 1;
 
 	public Drillrig(DrillrigInfo info)
 		: base(info)
@@ -68,30 +68,26 @@ public class Drillrig : DockAction, ITick, IHaveOil, INotifyRemovedFromWorld
 			return;
 
 		this.oilPatchActor = actor;
-		self.World.AddFrameEndTask(world => world.Remove(this.oilPatchActor));
 		this.oilPatch = this.oilPatchActor.TraitOrDefault<OilPatch>();
-		this.oilPatch.StopBurning();
+		this.oilPatch.Drillrig = self;
 
 		this.token = self.GrantCondition(this.info.Condition);
 	}
 
 	public override bool CanDock(Actor self, Actor target)
 	{
-		if (!target.Info.HasTraitInfo<TankerInfo>())
-			return false;
-
-		return this.oilPatch != null;
+		return target.Info.HasTraitInfo<TankerInfo>() && this.oilPatch != null;
 	}
 
 	public override bool Process(Actor self, Actor actor)
 	{
-		var tanker = actor.TraitOrDefault<Tanker>();
-
 		if (this.oilPatch == null)
 			return true;
 
+		var tanker = actor.TraitOrDefault<Tanker>();
 		var amount = this.oilPatch.Pull(this.info.Rate);
 		var remaining = tanker.Push(amount);
+
 		this.oilPatch.Push(remaining);
 
 		return this.oilPatch == null || tanker.Current == tanker.Maximum;
@@ -105,24 +101,21 @@ public class Drillrig : DockAction, ITick, IHaveOil, INotifyRemovedFromWorld
 
 	void ITick.Tick(Actor self)
 	{
-		if (this.oilPatchActor == null)
-			return;
-
-		this.oilPatchActor.Tick();
-
-		if (!this.oilPatchActor.IsDead)
+		if (this.oilPatchActor is not { IsDead: true })
 			return;
 
 		Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", this.info.EmptyNotification, self.Owner.Faction.InternalName);
 
 		this.oilPatchActor = null;
 		this.oilPatch = null;
-		this.token = self.RevokeCondition(this.token);
+		
+		if (this.token != Actor.InvalidConditionToken)
+			this.token = self.RevokeCondition(this.token);
 	}
 
 	void INotifyRemovedFromWorld.RemovedFromWorld(Actor self)
 	{
-		if (this.oilPatchActor != null && !self.World.Disposing)
-			self.World.AddFrameEndTask(world => world.Add(this.oilPatchActor));
+		if (this.oilPatch != null)
+			this.oilPatch.Drillrig = null;
 	}
 }
