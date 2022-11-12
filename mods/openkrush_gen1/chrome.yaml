@@ -62,30 +62,39 @@ flags:
 		spectator: 234, 235, 22, 21
 		Random: 234, 235, 22, 21
 
-# Used for the menu
+# Used for the main menu frame
 dialog:
 	Inherits: ^Dialog
 	Regions:
-		background: 22, 22, 393, 190
-		border-r: 415, 22, 22, 190
-		border-l: 0, 22, 22, 190
-		border-b: 22, 212, 393, 22
-		border-t: 22, 0, 393, 22
-		corner-tl: 0, 0, 22, 22
-		corner-tr: 415, 0, 22, 22
-		corner-bl: 0, 212, 22, 22
-		corner-br: 415, 212, 22, 22
+		background: 1, 1, 480, 480
+		border-r: 492, 1, 9, 190
+		border-l: 483, 1, 9, 190
+		border-b: 1, 492, 189, 9
+		border-t: 1, 483, 189, 9
+		corner-tl: 192, 483, 9, 9
+		corner-tr: 201, 483, 9, 9
+		corner-bl: 192, 492, 9, 9
+		corner-br: 201, 492, 9, 9
 
+# Used for Music and Map selection (normal button)
 dialog2:
 	Inherits: button
 
+# It's a Container, used in various places, like Hotkeys, ColorPicker, Asset Browser frames (looks like a pressed button)
 dialog3:
-	Inherits: button-pressed
+	Inherits: ^Dialog
+	PanelRegion: 769, 1, 2, 2, 122, 122, 2, 2
 
-# Same as the half transparent frame used in the Asset Browser
+# Used for tooltips and the video player
 dialog4:
 	Inherits: ^Dialog
 	PanelRegion: 512, 387, 6, 6, 52, 52, 6, 6
+
+# completely black tile
+dialog5:
+	Inherits: ^Dialog
+	PanelRegion: 580, 388, 0, 0, 62, 62, 0, 0
+	PanelSides: Center
 
 lobby-bits:
 	Inherits: ^Glyphs
@@ -134,58 +143,76 @@ music:
 		fastforward: 85, 0, 16, 16
 
 progressbar-bg:
-	Inherits: button-pressed
+	Inherits: dialog3
 
 progressbar-thumb:
-	Inherits: button
+	Inherits: dialog3
 
 button:
 	Inherits: ^Dialog
-	PanelRegion: 513, 1, 6, 6, 112, 112, 6, 7
+	PanelRegion: 513, 1, 3, 3, 120, 120, 3, 3
 
-# 5% lighter than a normal button
+# 5% lighter than a normal button (mouseover)
 button-hover:
 	Inherits: ^Dialog
-	PanelRegion: 513, 129, 6, 6, 112, 112, 6, 7
+	PanelRegion: 513, 129, 3, 3, 120, 120, 3, 3
 
 button-pressed:
 	Inherits: ^Dialog
-	PanelRegion: 641, 1, 2, 2, 122, 122, 2, 2
+	PanelRegion: 641, 1, 3, 3, 120, 120, 3, 3
 
-# 10% darker than a normal button
+# 50% grey (disabled button)
 button-disabled:
 	Inherits: ^Dialog
-	PanelRegion: 513, 257, 6, 6, 112, 112, 6, 7
+	PanelRegion: 513, 257, 3, 3, 120, 120, 3, 3
 
-# A yellow (normal) button
 button-highlighted:
 	Inherits: ^Dialog
-	PanelRegion: 769, 1, 6, 6, 112, 112, 6, 7
+	PanelRegion: 769, 257, 3, 3, 120, 120, 3, 3
 
 button-highlighted-hover:
 	Inherits: button-highlighted
 
 button-highlighted-pressed:
 	Inherits: ^Dialog
-	PanelRegion: 897, 1, 2, 2, 122, 122, 2, 2
+	PanelRegion: 897, 257, 3, 3, 120, 120, 3, 3
 
 button-highlighted-disabled:
 	Inherits: button-highlighted
 
-textfield:
+newsbutton:
+	Inherits: button
+
+newsbutton-hover:
+	Inherits: button-hover
+
+newsbutton-highlighted:
+	Inherits: button-hover
+
+newsbutton-highlighted-hover:
+	Inherits: newsbutton-highlighted
+
+newsbutton-highlighted-pressed:
 	Inherits: button-pressed
+
+newsbutton-pressed:
+	Inherits: button-pressed
+
+textfield:
+	Inherits: dialog3
 
 textfield-hover:
-	Inherits: checkbox-hover
+	Inherits: dialog3
 
 textfield-disabled:
-	Inherits: button-pressed
+	Inherits: dialog3
 
 textfield-focused:
-	Inherits: button-pressed
+	Inherits: dialog3
 
 scrollpanel-bg:
-	Inherits: button-pressed
+	Inherits: ^Dialog
+	PanelRegion: 769, 385, 3, 3, 120, 120, 3, 3
 
 scrollpanel-button:
 	Inherits: button
@@ -197,12 +224,12 @@ scrollpanel-button-pressed:
 	Inherits: button-pressed
 
 scrollpanel-button-disabled:
-	Inherits: button
+	Inherits: button-disabled
 
 slider:
 	Inherits: ^Dialog
 	Regions:
-		tick: 0, 0, 0, 0
+		tick: 513, 2, 2, 4
 
 slider-track:
 	Inherits: button
@@ -220,7 +247,7 @@ slider-thumb-disabled:
 	Inherits: button-disabled
 
 checkbox:
-	Inherits: button-pressed
+	Inherits: dialog3
 
 checkmark-tick:
 	Inherits: ^Glyphs
@@ -247,28 +274,26 @@ checkmark-cross-highlighted:
 checkmark-mute:
 	Inherits: ^Glyphs
 	Regions:
-		unchecked: 221, 34, 16, 16
-		unchecked-pressed: 238, 34, 16, 16
-		checked: 238, 34, 16, 16
-		checked-pressed: 221, 34, 16, 16
+		unchecked: 0, 170, 16, 16
+		unchecked-pressed: 17, 170, 16, 16
+		checked: 17, 170, 16, 16
+		checked-pressed: 0, 170, 16, 16
 
 checkmark-mute-highlighted:
 	Inherits: checkmark-mute
 
 checkbox-hover:
 	Inherits: ^Dialog
-	PanelRegion: 641, 129, 2, 2, 122, 122, 2, 2
+	PanelRegion: 769, 129, 2, 2, 122, 122, 2, 2
 
 checkbox-pressed:
 	Inherits: checkbox-hover
 
-# Same as a button-disabled-pressed
 checkbox-disabled:
-	Inherits: ^Dialog
-	PanelRegion: 641, 257, 2, 2, 122, 122, 2, 2
+	Inherits: dialog3
 
 checkbox-highlighted:
-	Inherits: button-highlighted-pressed
+	Inherits: checkbox-hover
 
 checkbox-highlighted-hover:
 	Inherits: checkbox-highlighted
@@ -298,13 +323,15 @@ checkbox-toggle-highlighted-pressed:
 scrollitem:
 
 scrollitem-hover:
-	Inherits: button
+	Inherits: ^Dialog
+	PanelRegion: 769, 129, 2, 2, 122, 122, 2, 2
 
 scrollitem-pressed:
-	Inherits: button-hover
+	Inherits: ^Dialog
+	PanelRegion: 769, 1, 2, 2, 122, 122, 2, 2
 
 scrollitem-highlighted:
-	Inherits: button-pressed
+	Inherits: scrollitem-hover
 
 scrollitem-nohover:
 
@@ -314,26 +341,39 @@ scrollheader:
 	Inherits: button
 
 scrollheader-highlighted:
-	Inherits: button
+	Inherits: button-hover
+
+mainmenu-border:
+	Inherits: ^Dialog
+	PanelRegion: 650, 389, 39, 39, 38, 38, 39, 39
+	PanelSides: Edges
 
 scrollpanel-decorations:
 	Inherits: ^Glyphs
 	Regions:
-		down: 119, 0, 16, 16
-		up: 102, 0, 16, 16
+		down: 68, 17, 16, 16
+		down-disabled: 85, 17, 16, 16
+		up: 102, 17, 16, 16
+		up-disabled: 119, 17, 16, 16
+		right: 136, 17, 16, 16
+		right-disabled: 153, 17, 16, 16
+		left: 170, 17, 16, 16
+		left-disabled: 187, 17, 16, 16
 
 dropdown-decorations:
 	Inherits: ^Glyphs
 	Regions:
-		marker: 119, 0, 16, 16
+		marker: 68, 17, 16, 16
+		marker-disabled: 85, 17, 16, 16
 
 dropdown-separators:
 	Inherits: ^Dialog
 	Regions:
-		separator: 0, 0, 0, 0
-		separator-hover: 0, 0, 0, 0
-		separator-pressed: 0, 0, 0, 0
-		separator-disabled: 0, 0, 0, 0
+		separator: 513, 2, 1, 19
+		separator-hover: 513, 130, 1, 19
+		separator-pressed: 766, 2, 1, 19
+		separator-disabled: 513, 258, 1, 19
+		observer-separator: 769, 258, 1, 19
 
 separator:
 	Inherits: button
