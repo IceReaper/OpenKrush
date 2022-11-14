@@ -173,3 +173,7 @@ EditorWorld:
 	EditorCursorLayer:
 	# Undo / Redo support.
 	EditorActionManager:
+	# Displays where buildings can be build.
+	BuildableTerrainOverlay:
+		AllowedTerrainTypes: clear
+		Palette: openkrush
