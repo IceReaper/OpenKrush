@@ -1,18 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk">
-    <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
-        <Nullable>enable</Nullable>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-        <OutputPath>../engine/bin</OutputPath>
-    </PropertyGroup>
 
-    <ItemGroup>
-        <ProjectReference Include="../engine/OpenRA.Game/OpenRA.Game.csproj" />
-        <ProjectReference Include="../engine/OpenRA.Mods.Common/OpenRA.Mods.Common.csproj" />
-    </ItemGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<OutputPath>../engine/bin</OutputPath>
+	</PropertyGroup>
 
-    <ItemGroup>
-        <PackageReference Include="JetBrains.Annotations" Version="2021.2.0" />
-    </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="../engine/OpenRA.Game/OpenRA.Game.csproj" />
+		<ProjectReference Include="../engine/OpenRA.Mods.Common/OpenRA.Mods.Common.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="JetBrains.Annotations" Version="2021.2.0" />
+	</ItemGroup>
+
 </Project>
