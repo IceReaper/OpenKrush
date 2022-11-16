@@ -19,7 +19,7 @@ using System.Collections.ObjectModel;
 using Traits;
 
 [UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
-[Desc("Selectable oilpatch oil amount in lobby.")]
+[Desc("Selectable OilPatch oil amount in lobby.")]
 public class OilAmountInfo : TraitInfo, ILobbyOptions
 {
 	public const string Id = "OilAmount";
@@ -39,7 +39,7 @@ public class OilAmountInfo : TraitInfo, ILobbyOptions
 		yield return new(
 			OilAmountInfo.Id,
 			"Amount",
-			"Amount of oil every oilpatch contains.",
+			"Amount of oil every OilPatch contains.",
 			true,
 			0,
 			new ReadOnlyDictionary<string, string>(values),

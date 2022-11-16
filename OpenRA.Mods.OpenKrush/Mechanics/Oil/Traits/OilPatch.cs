@@ -31,7 +31,7 @@ public class OilPatchInfo : TraitInfo, IRulesetLoaded, IHealthInfo
 	[Desc("Amount of oil on spawn. Use -1 for infinite")]
 	public readonly int Amount;
 
-	[Desc("Amount of oil for a full oilpatch.")]
+	[Desc("Amount of oil for a full OilPatch.")]
 	public readonly int FullAmount = 100000;
 
 	[GrantedConditionReference]

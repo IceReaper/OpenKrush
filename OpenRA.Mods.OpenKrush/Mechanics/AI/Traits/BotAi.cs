@@ -11,15 +11,15 @@
 
 #endregion
 
-using JetBrains.Annotations;
-using OpenRA.Mods.Common.Activities;
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.OpenKrush.Mechanics.Construction.Orders;
-using OpenRA.Mods.OpenKrush.Mechanics.Construction.Traits;
-using OpenRA.Mods.OpenKrush.Mechanics.Oil.Traits;
-using OpenRA.Traits;
-
 namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits;
+
+using Common.Activities;
+using Common.Traits;
+using Construction.Orders;
+using Construction.Traits;
+using JetBrains.Annotations;
+using Oil.Traits;
+using OpenRA.Traits;
 
 [UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 public class BotAiInfo : ConditionalTraitInfo
@@ -74,13 +74,12 @@ public class BotAi : IBotTick
 		this.UpdateSectorClaims(bot);
 		this.SellEverythingInUnclaimedSectors(bot);
 		this.HandleMobileBases(bot);
+		this.HandleMobileDerricks(bot);
 	}
 
 	private void Initialize()
 	{
-		this.sectors = this.world.Actors.Where(actor => actor.Info.Name == "mpspawn")
-			.Select(actor => new Sector(actor.CenterPosition))
-			.ToArray();
+		this.sectors = this.world.Actors.Where(actor => actor.Info.Name == "mpspawn").Select(actor => new Sector(actor.CenterPosition)).ToArray();
 
 		var oilPatches = this.world.ActorsHavingTrait<OilPatch>();
 
@@ -88,9 +87,7 @@ public class BotAi : IBotTick
 		{
 			var distanceToNearestSector = this.sectors.Min(sector => (sector.Origin - oilPatch.CenterPosition).Length);
 
-			var assignToSectors = this.sectors.Where(
-				sector => (sector.Origin - oilPatch.CenterPosition).Length == distanceToNearestSector
-			);
+			var assignToSectors = this.sectors.Where(sector => (sector.Origin - oilPatch.CenterPosition).Length == distanceToNearestSector);
 
 			foreach (var sector in assignToSectors)
 				sector.OilPatches.Add(oilPatch);
@@ -119,18 +116,14 @@ public class BotAi : IBotTick
 		var buildingsInSectors = this.world.ActorsHavingTrait<ProvidesPrerequisite>()
 			.Where(actor => actor.Owner == bot.Player)
 			.GroupBy(actor => this.sectors.MinBy(sector => (sector.Origin - actor.CenterPosition).Length))
-			.ToDictionary(e => e.Key, e => e.ToArray());
+			.ToDictionary(e => e.Key, e => e);
 
 		foreach (var sector in this.sectors)
 		{
 			if (buildingsInSectors.ContainsKey(sector) && buildingsInSectors[sector].Any())
 			{
 				if (sector.Claim == Claim.Unclaimed)
-				{
-					sector.Claim = this.sectors.Any(sector => sector.Claim == Claim.Primary)
-						? Claim.Secondary
-						: Claim.Primary;
-				}
+					sector.Claim = this.sectors.Any(sector => sector.Claim == Claim.Primary) ? Claim.Secondary : Claim.Primary;
 			}
 			else
 				sector.Claim = Claim.Unclaimed;
@@ -149,9 +142,9 @@ public class BotAi : IBotTick
 	{
 		var buildingsToSell = this.world.ActorsWithTrait<DeconstructSellable>()
 			.Where(
-				e => e.Actor.Owner == bot.Player && !e.Trait.IsTraitDisabled &&
-					this.sectors.MinBy(sector => (sector.Origin - e.Actor.CenterPosition).Length).Claim ==
-					Claim.Unclaimed
+				e => e.Actor.Owner == bot.Player
+					&& !e.Trait.IsTraitDisabled
+					&& this.sectors.MinBy(sector => (sector.Origin - e.Actor.CenterPosition).Length).Claim == Claim.Unclaimed
 			)
 			.Select(e => e.Actor);
 
@@ -161,8 +154,7 @@ public class BotAi : IBotTick
 
 	private void HandleMobileBases(IBot bot)
 	{
-		var mobileBases = this.world.ActorsHavingTrait<BaseBuilding>()
-			.Where(actor => actor.TraitsImplementing<Mobile>().Any() && actor.Owner == bot.Player);
+		var mobileBases = this.world.ActorsHavingTrait<BaseBuilding>().Where(actor => actor.TraitsImplementing<Mobile>().Any() && actor.Owner == bot.Player);
 
 		var reservedSectors = new List<Sector>();
 		var idleMobileBases = new List<Actor>();
@@ -197,6 +189,56 @@ public class BotAi : IBotTick
 					? mobileBase.Trait<Transforms>().GetTransformActivity()
 					: new Move(mobileBase, mobileBase.World.Map.CellContaining(targetSector.Origin))
 			);
+		}
+	}
+
+	private void HandleMobileDerricks(IBot bot)
+	{
+		var derricks = this.world.ActorsHavingTrait<DeploysOnActor>().Where(actor => actor.Owner == bot.Player);
+		var allOilPatches = this.world.ActorsWithTrait<OilPatch>().Where(e => e.Trait.Drillrig == null).Select(e => e.Actor).ToArray();
+
+		var reservedOilpatches = new List<Actor>();
+		var idleDerricks = new List<Actor>();
+
+		foreach (var derrick in derricks)
+		{
+			if (derrick.CurrentActivity is Move move)
+			{
+				var target = move.GetTargets(derrick).FirstOrDefault();
+
+				if (target.Type == TargetType.Invalid)
+					continue;
+
+				var targetOilPatch = allOilPatches.FirstOrDefault(oilPatch => (oilPatch.CenterPosition - target.CenterPosition).Length == 0);
+
+				if (targetOilPatch != null)
+					reservedOilpatches.Add(targetOilPatch);
+			}
+			else if (!derrick.IsIdle)
+			{
+				var targetOilPatch = allOilPatches.FirstOrDefault(oilPatch => (oilPatch.CenterPosition - derrick.CenterPosition).Length == 0);
+
+				if (targetOilPatch != null)
+					reservedOilpatches.Add(targetOilPatch);
+			}
+			else
+				idleDerricks.Add(derrick);
+		}
+
+		foreach (var derrick in idleDerricks)
+		{
+			var oilPatches = this.sectors.MinBy(sector => (sector.Origin - derrick.CenterPosition).Length).OilPatches;
+
+			var targetOilpatch = oilPatches.Where(oilPatch => !reservedOilpatches.Contains(oilPatch))
+				.MinByOrDefault(oilPatch => (oilPatch.CenterPosition - derrick.CenterPosition).Length);
+
+			if (targetOilpatch == null)
+				continue;
+
+			reservedOilpatches.Add(targetOilpatch);
+			
+			if (targetOilpatch.CenterPosition != derrick.CenterPosition)
+				derrick.QueueActivity(new Move(derrick, derrick.World.Map.CellContaining(targetOilpatch.CenterPosition)));
 		}
 	}
 }
