@@ -13,19 +13,22 @@
 
 namespace OpenRA.Mods.OpenKrush.Mechanics.AI.Traits;
 
+using Common;
 using Common.Activities;
 using Common.Traits;
 using Construction.Orders;
 using Construction.Traits;
 using JetBrains.Annotations;
+using Misc.Traits;
 using Oil.Traits;
 using OpenRA.Traits;
+using Production.Traits;
+using Repairbays.Traits;
+using Researching.Traits;
 
 [UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 public class BotAiInfo : ConditionalTraitInfo
 {
-	public WDist DeployRadius;
-
 	public override object Create(ActorInitializer init)
 	{
 		return new BotAi(init.World, this);
@@ -58,6 +61,7 @@ public class BotAi : IBotTick
 
 	private Sector[] sectors = Array.Empty<Sector>();
 	private bool initialized;
+	private int thinkDelay;
 
 	public BotAi(World world, BotAiInfo info)
 	{
@@ -70,11 +74,17 @@ public class BotAi : IBotTick
 		if (!this.initialized)
 			this.Initialize();
 
+		this.thinkDelay = ++this.thinkDelay % 10;
+
+		if (this.thinkDelay != 0)
+			return;
+
 		this.UpdateSectorOilpatches();
 		this.UpdateSectorClaims(bot);
 		this.SellEverythingInUnclaimedSectors(bot);
 		this.HandleMobileBases(bot);
 		this.HandleMobileDerricks(bot);
+		this.HandleBuildingPlacement(bot);
 	}
 
 	private void Initialize()
@@ -120,7 +130,7 @@ public class BotAi : IBotTick
 
 		foreach (var sector in this.sectors)
 		{
-			if (buildingsInSectors.ContainsKey(sector) && buildingsInSectors[sector].Any())
+			if (buildingsInSectors.TryGetValue(sector, out var buildingsInSector) && buildingsInSector.Any())
 			{
 				if (sector.Claim == Claim.Unclaimed)
 					sector.Claim = this.sectors.Any(sector => sector.Claim == Claim.Primary) ? Claim.Secondary : Claim.Primary;
@@ -185,7 +195,7 @@ public class BotAi : IBotTick
 			reservedSectors.Add(targetSector);
 
 			mobileBase.QueueActivity(
-				(targetSector.Origin - mobileBase.CenterPosition).Length <= this.info.DeployRadius.Length
+				(targetSector.Origin - mobileBase.CenterPosition).Length == 0
 					? mobileBase.Trait<Transforms>().GetTransformActivity()
 					: new Move(mobileBase, mobileBase.World.Map.CellContaining(targetSector.Origin))
 			);
@@ -236,9 +246,225 @@ public class BotAi : IBotTick
 				continue;
 
 			reservedOilpatches.Add(targetOilpatch);
-			
+
 			if (targetOilpatch.CenterPosition != derrick.CenterPosition)
 				derrick.QueueActivity(new Move(derrick, derrick.World.Map.CellContaining(targetOilpatch.CenterPosition)));
 		}
+	}
+
+	private void HandleBuildingPlacement(IBot bot)
+	{
+		var productionQueue = bot.Player.World.ActorsWithTrait<SelfConstructingProductionQueue>()
+			.FirstOrDefault(a => a.Actor.Owner == bot.Player && a.Trait.Info.Type == "building")
+			.Trait;
+
+		if (productionQueue == null)
+			return;
+
+		var buildables = productionQueue.BuildableItems().ToArray();
+
+		var sectorOrder = this.sectors.Where(sector => sector.Claim != Claim.Unclaimed).OrderBy(sector => sector.Claim == Claim.Primary);
+
+		var buildingsInSectors = this.world.ActorsHavingTrait<ProvidesPrerequisite>()
+			.Where(actor => actor.Owner == bot.Player)
+			.GroupBy(actor => this.sectors.MinBy(sector => (sector.Origin - actor.CenterPosition).Length))
+			.ToDictionary(e => e.Key, e => e);
+
+		foreach (var sector in sectorOrder)
+		{
+			if (!buildingsInSectors.TryGetValue(sector, out var buildingsInSector))
+				continue;
+
+			if (!buildingsInSector.Any(b => b.Info.HasTraitInfo<BaseBuildingInfo>()))
+			{
+				var buildable = buildables.FirstOrDefault(b => b.HasTraitInfo<BaseBuildingInfo>());
+
+				if (buildable != null)
+					this.Build(bot, sector, buildable, productionQueue);
+
+				continue;
+			}
+
+			if (productionQueue.IsConstructing())
+				continue;
+
+			// TODO else if drillrig without assigned power station, build powerstation as near as possible
+			if (!buildingsInSector.Any(b => b.Info.HasTraitInfo<PowerStationInfo>()))
+			{
+				var buildable = buildables.FirstOrDefault(b => b.HasTraitInfo<PowerStationInfo>());
+
+				if (buildable != null)
+				{
+					this.Build(bot, sector, buildable, productionQueue);
+
+					break;
+				}
+			}
+
+			if (!buildingsInSector.Any(b => b.Info.TraitInfoOrDefault<AdvancedProductionInfo>()?.Produces.Contains("vehicle") ?? false))
+			{
+				var buildable = buildables.FirstOrDefault(b => b.TraitInfoOrDefault<AdvancedProductionInfo>()?.Produces.Contains("vehicle") ?? false);
+
+				if (buildable != null)
+				{
+					this.Build(bot, sector, buildable, productionQueue);
+
+					break;
+				}
+			}
+
+			if (!buildingsInSector.Any(b => b.Info.TraitInfoOrDefault<AdvancedProductionInfo>()?.Produces.Contains("infantry") ?? false))
+			{
+				var buildable = buildables.FirstOrDefault(b => b.TraitInfoOrDefault<AdvancedProductionInfo>()?.Produces.Contains("infantry") ?? false);
+
+				if (buildable != null)
+				{
+					this.Build(bot, sector, buildable, productionQueue);
+
+					break;
+				}
+			}
+
+			if (sector.Claim == Claim.Primary)
+			{
+				var alwaysTryToBuild = buildables.FirstOrDefault(b => b.HasTraitInfo<ResearchesInfo>());
+
+				if (alwaysTryToBuild != null)
+				{
+					this.Build(bot, sector, alwaysTryToBuild, productionQueue);
+
+					break;
+				}
+
+				alwaysTryToBuild = buildables.FirstOrDefault(b => b.HasTraitInfo<CashTricklerInfo>());
+
+				if (alwaysTryToBuild != null)
+				{
+					this.Build(bot, sector, alwaysTryToBuild, productionQueue);
+
+					break;
+				}
+
+				alwaysTryToBuild = buildables.FirstOrDefault(b => b.HasTraitInfo<AdvancedAirstrikePowerInfo>());
+
+				if (alwaysTryToBuild != null)
+				{
+					this.Build(bot, sector, alwaysTryToBuild, productionQueue);
+
+					break;
+				}
+			}
+
+			if (!buildingsInSector.Any(
+					actor =>
+					{
+						var isProducer = actor.Info.TraitInfoOrDefault<AdvancedProductionInfo>()?.Produces.Contains("vehicle") ?? false;
+
+						if (!isProducer)
+							return false;
+
+						var researchable = actor.TraitOrDefault<Researchable>();
+
+						if (researchable == null)
+							return false;
+
+						return researchable.Level < researchable.MaxLevel; // TODO check max-tech-level setting!
+					}
+				))
+			{
+				var buildable = buildables.FirstOrDefault(b => b.TraitInfoOrDefault<AdvancedProductionInfo>()?.Produces.Contains("vehicle") ?? false);
+
+				if (buildable != null)
+				{
+					this.Build(bot, sector, buildable, productionQueue);
+
+					break;
+				}
+			}
+
+			if (!buildingsInSector.Any(
+					actor =>
+					{
+						var isProducer = actor.Info.TraitInfoOrDefault<AdvancedProductionInfo>()?.Produces.Contains("infantry") ?? false;
+
+						if (!isProducer)
+							return false;
+
+						var researchable = actor.TraitOrDefault<Researchable>();
+
+						if (researchable == null)
+							return false;
+
+						return researchable.Level < researchable.MaxLevel; // TODO check max-tech-level setting!
+					}
+				))
+			{
+				var buildable = buildables.FirstOrDefault(b => b.TraitInfoOrDefault<AdvancedProductionInfo>()?.Produces.Contains("infantry") ?? false);
+
+				if (buildable != null)
+				{
+					this.Build(bot, sector, buildable, productionQueue);
+
+					break;
+				}
+			}
+
+			if (sector.Claim != Claim.Primary || buildingsInSector.Any(b => b.Info.HasTraitInfo<RepairsVehiclesInfo>()))
+				continue;
+
+			var buildableRepairbay = buildables.FirstOrDefault(b => b.HasTraitInfo<RepairsVehiclesInfo>());
+
+			if (buildableRepairbay == null)
+				continue;
+
+			this.Build(bot, sector, buildableRepairbay, productionQueue);
+
+			break;
+		}
+	}
+
+	private void Build(IBot bot, Sector sector, ActorInfo buildable, ProductionQueue queue)
+	{
+		var location = this.ChooseBuildLocation(bot, sector, buildable);
+
+		if (location == null)
+			return;
+
+		bot.QueueOrder(
+			new("PlaceBuilding", bot.Player.PlayerActor, Target.FromCell(bot.Player.World, location.Value), false)
+			{
+				TargetString = buildable.Name, ExtraData = queue.Actor.ActorID, SuppressVisualFeedback = true
+			}
+		);
+	}
+
+	private CPos? ChooseBuildLocation(IBot bot, Sector sector, ActorInfo actorInfo)
+	{
+		var bi = actorInfo.TraitInfoOrDefault<BuildingInfo>();
+
+		if (bi == null)
+			return null;
+
+		var center = this.world.Map.CellContaining(sector.Origin);
+		var target = center; // TODO must change for power stations and towers!
+		var minRange = 0; // TODO must change for towers!
+		var maxRange = this.sectors.Where(other => other != sector).Min(other => other.Origin - sector.Origin).Length / 1024 / 2;
+
+		var cells = this.world.Map.FindTilesInAnnulus(center, minRange, maxRange);
+
+		cells = center != target ? cells.OrderBy(c => (c - target).LengthSquared) : cells.Shuffle(this.world.LocalRandom);
+
+		foreach (var cell in cells)
+		{
+			if (!this.world.CanPlaceBuilding(cell, actorInfo, bi, null))
+				continue;
+
+			if (!bi.IsCloseEnoughToBase(this.world, bot.Player, actorInfo, cell))
+				continue;
+
+			return cell;
+		}
+
+		return null;
 	}
 }

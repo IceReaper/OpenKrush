@@ -37,6 +37,11 @@ public class SelfConstructingProductionQueue : AdvancedProductionQueue
 	{
 	}
 
+	public bool IsConstructing()
+	{
+		return this.Queue.Any();
+	}
+
 	public override IEnumerable<ProductionItem> AllQueued()
 	{
 		// Pretend to have items queued, to allow direct placement.
