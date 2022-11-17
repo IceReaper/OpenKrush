@@ -1,0 +1,29 @@
+beach_a:
+	Inherits: ^CoreDecoration
+	Tooltip:
+		Name: Beach accessories
+	Targetable:
+		TargetTypes: Ground
+	Health:
+		HP: 400
+	Building:
+		Dimensions: 1, 1
+		Footprint: x
+	AdvancedSelectionDecorations:
+		Offset: -2,2
+	HitShape:
+		Type: Circle
+			Radius: 1000
+	Selectable:
+		Bounds: 2048, 2048, 0, 0
+	Explodes:
+		Weapon: dieWall
+		EmptyWeapon: dieWall
+	RenderSprites:
+		Palette: openkrush
+
+beach_b:
+	Inherits: beach_a
+
+beach_c:
+	Inherits: beach_a
