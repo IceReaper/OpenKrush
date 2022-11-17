@@ -1,0 +1,10 @@
+beach_a:
+	idle: actors/neutral/buildings/beach/frames.png
+
+beach_b:
+	idle: actors/neutral/buildings/beach/frames.png
+		Start: 1
+
+beach_c:
+	idle: actors/neutral/buildings/beach/frames.png
+		Start: 2
