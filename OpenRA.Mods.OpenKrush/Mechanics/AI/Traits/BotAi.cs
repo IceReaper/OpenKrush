@@ -370,7 +370,7 @@ public class BotAi : IBotTick
 		var center = this.world.Map.CellContaining(sector.Origin);
 		var buildTarget = target == null ? center : this.world.Map.CellContaining(target.Value);
 		var minRange = 0;
-		var maxRange = this.sectors.Where(other => other != sector).Min(other => other.Origin - sector.Origin).Length / 1024 / 2;
+		var maxRange = this.sectors.Where(other => other != sector).Min(other => (other.Origin - sector.Origin).Length) / 1024 / 2;
 
 		var cells = this.world.Map.FindTilesInAnnulus(center, minRange, maxRange);
 
