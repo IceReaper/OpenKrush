@@ -80,7 +80,7 @@ public class BotAi : IBotTick
 		this.info = info;
 	}
 
-	public void BotTick(IBot bot)
+	void IBotTick.BotTick(IBot bot)
 	{
 		if (!this.initialized)
 			this.Initialize();
