@@ -123,13 +123,16 @@ Translations:
 	common|languages/en.ftl
 
 Hotkeys:
+	common|hotkeys/chat.yaml
+	common|hotkeys/control-groups.yaml
+	common|hotkeys/editor.yaml
+	common|hotkeys/game.yaml
 	openkrush|hotkeys/game.yaml
-	openkrush|hotkeys/observer.yaml
-	openkrush|hotkeys/production-common.yaml
-	openkrush|hotkeys/supportpowers.yaml
-	openkrush|hotkeys/viewport.yaml
-	openkrush|hotkeys/chat.yaml
-	openkrush|hotkeys/control-groups.yaml
+	common|hotkeys/observer.yaml
+	common|hotkeys/production-common.yaml
+	openkrush|hotkeys/production.yaml
+	common|hotkeys/supportpowers.yaml
+	common|hotkeys/viewport.yaml
 
 LoadScreen: LoadScreen
 

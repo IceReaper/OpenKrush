@@ -1,9 +1,0 @@
-OpenTeamChat: Return
-	Description: Open Team Chat
-	Types: Chat
-	Contexts: Player, Spectator
-
-OpenGeneralChat: Return Shift
-	Description: Open General Chat
-	Types: Chat
-	Contexts: Player, Spectator

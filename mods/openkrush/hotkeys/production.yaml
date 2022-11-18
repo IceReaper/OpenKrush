@@ -1,0 +1,39 @@
+ProductionInfantry: T
+	Description: Infantry
+	Types: ProductionSlot
+	Contexts: Player
+
+ProductionVehicles: Y
+	Description: Vehicles
+	Types: ProductionSlot
+	Contexts: Player
+
+ProductionConstructibles: 
+	Description: Constructibles
+	Types: ProductionSlot
+	Contexts: Player
+
+ProductionAircrafts: U
+	Description: Aircrafts
+	Types: ProductionSlot
+	Contexts: Player
+
+ProductionBuildings: E
+	Description: Buildings
+	Types: ProductionSlot
+	Contexts: Player
+
+ProductionTowers: R
+	Description: Towers
+	Types: ProductionSlot
+	Contexts: Player
+
+ProductionWalls: R ALT
+	Description: Walls
+	Types: ProductionSlot
+	Contexts: Player
+
+Superweapons: U
+	Description: Superweapons
+	Types: ProductionSlot
+	Contexts: Player
