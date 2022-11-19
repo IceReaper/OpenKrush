@@ -16,7 +16,6 @@ survivors_vehicle_barragecraft:
 		TrailSequences: smoke
 		Inaccuracy: 2000
 		LaunchAngle: 50
-		Blockable: false
 	Warhead@Damage: SpreadDamage
 		Versus:
 			infantry: 150

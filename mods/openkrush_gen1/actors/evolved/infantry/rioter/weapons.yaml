@@ -12,7 +12,6 @@ evolved_infantry_rioter:
 		Inaccuracy: 750
 		Speed: 150
 		LaunchAngle: 75
-		Blockable: false
 	Warhead@Damage: SpreadDamage
 		DamageTypes: Fire
 		Versus:

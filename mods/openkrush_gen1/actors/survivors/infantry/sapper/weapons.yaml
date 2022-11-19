@@ -12,7 +12,6 @@ survivors_infantry_sapper:
 		Inaccuracy: 750
 		Speed: 150
 		LaunchAngle: 75
-		Blockable: false
 	Warhead@Damage: SpreadDamage
 		Versus:
 			infantry: 150

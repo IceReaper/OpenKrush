@@ -5,7 +5,6 @@ evolved_tower_rotarycannon:
 	BurstDelays: 3
 	ReloadDelay: 4
 	Projectile: InstantHit
-		Blockable: false
 	Warhead@Damage: SpreadDamage
 		Versus:
 			infantry: 45

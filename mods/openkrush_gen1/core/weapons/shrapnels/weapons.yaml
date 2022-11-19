@@ -3,7 +3,6 @@
 	Range: 1c0
 	Projectile: Bullet
 		Speed: 50,80
-		Blockable: false
 		LaunchAngle: 70, 150
 		Inaccuracy: 2c0
 		Image: weapon_shrapnels
@@ -45,7 +44,6 @@
 	Range: 1c0
 	Projectile: Bullet
 		Speed: 50,80
-		Blockable: false
 		LaunchAngle: 70, 150
 		Inaccuracy: 2c0
 		Image: weapon_shrapnels

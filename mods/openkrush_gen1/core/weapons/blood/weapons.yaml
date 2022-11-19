@@ -3,7 +3,6 @@ weapon_blood1:
 	Range: 1c0
 	Projectile: Bullet
 		Speed: 40, 70
-		Blockable: false
 		LaunchAngle: 70, 110
 		Inaccuracy: 1c0
 		Image: weapon_blood

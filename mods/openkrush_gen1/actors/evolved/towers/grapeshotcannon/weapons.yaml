@@ -13,7 +13,6 @@ evolved_tower_grapeshotcannon:
 		Sequences: projectile
 		Speed: 655
 		Inaccuracy: 1c0
-		Blockable: false
 	Warhead@Damage: SpreadDamage
 		Versus:
 			infantry: 20

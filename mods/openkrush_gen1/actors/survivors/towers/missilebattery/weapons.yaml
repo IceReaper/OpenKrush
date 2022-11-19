@@ -13,7 +13,6 @@ survivors_tower_missilebattery:
 		TrailPalette: openkrush
 		TrailImage: projectiles
 		TrailSequences: smoke
-		Blockable: false
 	Warhead@Damage: SpreadDamage
 		Versus:
 			infantry: 150

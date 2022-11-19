@@ -6,7 +6,6 @@ evolved_tower_machinegunnest:
 	ReloadDelay: 38
 	Report: surv.slv|4.wav
 	Projectile: InstantHit
-		Blockable: false
 	Warhead@Damage: SpreadDamage
 		Versus:
 			infantry: 45

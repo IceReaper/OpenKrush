@@ -24,7 +24,7 @@ using Traits;
 
 [UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 [Desc("A beautiful generated laser beam.")]
-public class LaserInfo : IProjectileInfo, IBlockableProjectile
+public class LaserInfo : IProjectileInfo
 {
 	[Desc("The maximum duration (in ticks) of the beam's existence.")]
 	public readonly int Duration = 10;
