@@ -461,6 +461,7 @@
 ^CoreTurret:
 	# General turret behavior.
 	Turreted:
+		RealignDelay: 0
 	# Special trait to position turret depending on attachment point (only visualy).
 	WithOffsetsSpriteTurret:
 	# If it has a turret, it should attack with its turret only, meaning it can aim and fire with it while moving.

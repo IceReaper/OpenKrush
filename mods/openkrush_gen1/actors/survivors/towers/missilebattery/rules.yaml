@@ -1,6 +1,5 @@
 survivors_tower_missilebattery:
-	Inherits@1: ^CoreTower
-	Inherits@2: ^CoreTurret
+	Inherits: ^CoreTower
 	Tooltip:
 		Name: Missile Battery
 	Valued:
