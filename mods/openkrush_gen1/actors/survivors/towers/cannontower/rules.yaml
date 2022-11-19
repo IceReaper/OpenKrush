@@ -1,6 +1,5 @@
 survivors_tower_cannontower:
-	Inherits@1: ^CoreTower
-	Inherits@2: ^CoreTurret
+	Inherits: ^CoreTower
 	Tooltip:
 		Name: Cannon Tower
 	Valued:

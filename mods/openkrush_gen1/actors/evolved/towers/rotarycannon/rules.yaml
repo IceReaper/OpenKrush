@@ -1,6 +1,5 @@
 evolved_tower_rotarycannon:
 	Inherits@1: ^CoreTower
-	Inherits@2: ^CoreTurret
 	Inherits@2: ^has_muzzle
 	Tooltip:
 		Name: Rotary Cannon
