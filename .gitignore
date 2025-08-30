@@ -4,3 +4,7 @@ bin
 obj
 .DS_Store
 .idea
+.vs/
+Backup/
+UpgradeLog.htm
+*.csproj.user
