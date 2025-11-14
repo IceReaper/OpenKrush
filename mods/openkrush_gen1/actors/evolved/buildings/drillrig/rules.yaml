@@ -17,7 +17,7 @@ evolved_building_drillrig:
 	Building:
 		LocalCenterOffset: 0,512,0
 		Dimensions: 5,5
-		Footprint: ===== ==x== =xxx= =x=== =====
+		Footprint: ===== ==x== =xxx= ==x== =====
 	HitShape:
 		Type: Rectangle
 			TopLeft: -512, -1536
