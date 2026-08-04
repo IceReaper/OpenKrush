@@ -17,6 +17,7 @@ using Common.Traits;
 using JetBrains.Annotations;
 using OpenRA.Traits;
 using Primitives;
+using Widgets.Ingame;
 
 [UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 [Desc("Attack notifier which supports per actor notifications.")]
@@ -30,6 +31,9 @@ public class AdvancedAttackNotifierInfo : TraitInfo
 	[Desc("Length of time (in ticks) to display a location ping in the minimap.")]
 	public readonly int RadarPingDuration = 10 * 25;
 
+	[Desc("Cooldown in seconds between on-screen attack tooltips.")]
+	public readonly int TooltipCooldown = 15;
+
 	public override object Create(ActorInitializer init)
 	{
 		return new AdvancedAttackNotifier(this);
@@ -40,6 +44,7 @@ public class AdvancedAttackNotifier : INotifyDamage, INotifyCreated
 {
 	private readonly AdvancedAttackNotifierInfo info;
 	private readonly Dictionary<string, int> lastAttackTimes = new();
+	private int lastTooltipTick;
 	private RadarPings? radarPings;
 
 	public AdvancedAttackNotifier(AdvancedAttackNotifierInfo info)
@@ -65,6 +70,12 @@ public class AdvancedAttackNotifier : INotifyDamage, INotifyCreated
 
 		if (attackInfo.Damage.Value == 0)
 			return;
+
+		if (self.World.WorldTick - this.lastTooltipTick >= this.info.TooltipCooldown * 25)
+		{
+			this.lastTooltipTick = self.World.WorldTick;
+			TooltipWidget.Instance?.ShowCentered("Your units are under attack!");
+		}
 
 		var attackNotification = self.TraitOrDefault<AttackNotification>();
 

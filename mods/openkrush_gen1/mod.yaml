@@ -25,6 +25,8 @@ ModCredits:
 MapFolders:
 	openkrush_gen1|maps/classic: System
 	openkrush_gen1|maps/multiplayer: System
+	openkrush_gen1|maps/campaign/survivors: System
+	openkrush_gen1|maps/campaign/evolved: System
 	~^SupportDir|maps/openkrush_gen1/{DEV_VERSION}: User
 
 Rules:
@@ -184,6 +186,7 @@ Fonts:
 		Size: 32
 
 Missions:
+	openkrush_gen1|missions.yaml
 
 MapGrid:
 	TileSize: 32,32

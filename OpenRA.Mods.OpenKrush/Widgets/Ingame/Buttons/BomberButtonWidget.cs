@@ -47,7 +47,7 @@ public sealed class BomberButtonWidget : SidebarButtonWidget
 		for (var i = 0; i < lastItem; i++)
 		{
 			if (e.Key != Game.ModData.Hotkeys[$"Production{i + 1:00}"].GetValue().Key
-				|| e.Modifiers != Game.ModData.Hotkeys[$"Production{i + 1}"].GetValue().Modifiers)
+				|| e.Modifiers != Game.ModData.Hotkeys[$"Production{i + 1:00}"].GetValue().Modifiers)
 				continue;
 
 			((ProductionItemButtonWidget)this.Children[i]).ClickedLeft?.Invoke(
@@ -112,7 +112,8 @@ public sealed class BomberButtonWidget : SidebarButtonWidget
 			}
 
 			button.Visible = this.Active;
-			button.Bounds.X = (-1 - i) * SidebarButtonWidget.Size;
+			button.Bounds.X = SidebarWidget.BarWidth - SidebarWidget.GridWidth - this.Bounds.X;
+			button.Bounds.Y = -this.Bounds.Y + i * SidebarButtonWidget.Size;
 		}
 
 		if (this.Children.Count == 0)

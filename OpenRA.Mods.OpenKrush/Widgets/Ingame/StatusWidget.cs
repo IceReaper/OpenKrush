@@ -37,7 +37,11 @@ public class StatusWidget : Widget
 
 	private void Resize()
 	{
-		this.Bounds = new((Game.Renderer.Resolution.Width - 180) / 2, 0, 180, 28);
+		var radarWidth = this.ingameUi.World.Map.MapSize.X * 2;
+		var gap = Game.Renderer.Resolution.Width - radarWidth - SidebarWidget.BarWidth;
+		var x = radarWidth + gap / 2 - 90;
+
+		this.Bounds = new(Math.Max(0, x), 0, 180, 28);
 	}
 
 	public override void Tick()
@@ -45,6 +49,7 @@ public class StatusWidget : Widget
 		var numPowers = this.ingameUi.World.Players.Sum(player => player.PlayerActor.TraitOrDefault<SupportPowerManager>().Powers.Count(p => p.Value.Active));
 
 		this.Bounds.Height = 28 + (numPowers / 4 + (numPowers % 4 == 0 ? 0 : 1)) * this.powerHeight + (numPowers > 0 ? 5 : 0);
+		this.Bounds.Y = 0;
 	}
 
 	public override void Draw()

@@ -51,6 +51,7 @@ public sealed class IngameUiWidget : Widget
 		this.Palette = this.WorldRenderer.Palette($"player{this.World.LocalPlayer.InternalName}");
 
 		this.AddChild(new StatusWidget(this));
+		this.AddChild(new SelectionHealthWidget(this));
 		this.AddChild(this.Radar = new(this));
 		this.AddChild(new SidebarWidget(this));
 		this.AddChild(this.Tooltip = new());

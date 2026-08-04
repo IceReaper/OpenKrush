@@ -25,7 +25,7 @@ public class ProductionCategoryButtonWidget : SidebarButtonWidget
 		: base(sidebar, "unit")
 	{
 		this.Categories = categories;
-		this.Bounds = new(0, index * SidebarButtonWidget.Size, SidebarButtonWidget.Size, SidebarButtonWidget.Size);
+		this.Bounds = new(index * SidebarButtonWidget.Size, SidebarWidget.GridHeight, SidebarButtonWidget.Size, SidebarButtonWidget.Size);
 		this.TooltipTitle = label;
 		this.hotkey = Game.ModData.Hotkeys[$"Production{label}"].GetValue();
 	}
@@ -33,6 +33,9 @@ public class ProductionCategoryButtonWidget : SidebarButtonWidget
 	public override bool HandleKeyPress(KeyInput e)
 	{
 		if (!this.IsUsable() || e.Key != this.hotkey.Key || e.IsRepeat || e.Event != KeyInputEvent.Down || e.Modifiers != this.hotkey.Modifiers)
+			return false;
+
+		if (!this.Active && this.Sidebar.AnyCategoryOpen)
 			return false;
 
 		if (!this.Active)
@@ -119,7 +122,8 @@ public class ProductionCategoryButtonWidget : SidebarButtonWidget
 		for (var i = 0; i < this.Children.Count; i++)
 		{
 			var palette = (ProductionPaletteColumnWidget)this.Children[i];
-			palette.Bounds.X = (i + 1) * SidebarButtonWidget.Size * -1;
+			palette.Bounds.X = SidebarWidget.BarWidth - SidebarWidget.GridWidth - this.Bounds.X;
+			palette.Bounds.Y = -this.Bounds.Y;
 
 			if (palette.IsFocused)
 				focused = i;
@@ -130,7 +134,7 @@ public class ProductionCategoryButtonWidget : SidebarButtonWidget
 		else if (focused == -1)
 			((ProductionPaletteColumnWidget)this.Children[0]).IsFocused = true;
 
-		this.Children.ForEach(c => c.Visible = this.Active);
+		this.Children.ForEach(c => c.Visible = this.Active && ((ProductionPaletteColumnWidget)c).IsFocused);
 		this.Type = this.Children.Count > 0 ? "unit" : "button";
 	}
 
@@ -147,5 +151,9 @@ public class ProductionCategoryButtonWidget : SidebarButtonWidget
 
 		foreach (var productionPalette in productionPalettes)
 			productionPalette.IsFocused = productionPalette.Queue == productionQueue;
+
+		// Queues for buildings/towers/walls are global (on the player actor), so fall back to the first palette.
+		if (productionQueue == null && productionPalettes.Length > 0)
+			productionPalettes[0].IsFocused = true;
 	}
 }

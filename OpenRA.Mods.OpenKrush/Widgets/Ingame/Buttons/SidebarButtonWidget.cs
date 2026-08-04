@@ -46,7 +46,12 @@ public abstract class SidebarButtonWidget : Widget
 		this.Sidebar.IngameUi.Tooltip.TooltipText = this.TooltipText;
 
 		this.Sidebar.IngameUi.Tooltip.Bounds.X = this.RenderBounds.X;
-		this.Sidebar.IngameUi.Tooltip.Bounds.Y = this.RenderBounds.Y + SidebarButtonWidget.Size / 2;
+
+		var tooltipY = this.RenderBounds.Y + SidebarButtonWidget.Size / 2;
+		if (this.RenderBounds.Y >= Game.Renderer.Resolution.Height - SidebarButtonWidget.Size)
+			tooltipY = this.RenderBounds.Y - SidebarButtonWidget.Size / 2;
+
+		this.Sidebar.IngameUi.Tooltip.Bounds.Y = tooltipY;
 
 		this.Sidebar.IngameUi.Tooltip.Visible = true;
 	}

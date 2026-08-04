@@ -37,3 +37,78 @@ Superweapons: U
 	Description: Superweapons
 	Types: ProductionSlot
 	Contexts: Player
+
+Production01: Q
+	Description: Slot 01
+	Types: ProductionSlot
+	Contexts: Player
+
+Production02: W
+	Description: Slot 02
+	Types: ProductionSlot
+	Contexts: Player
+
+Production03: E
+	Description: Slot 03
+	Types: ProductionSlot
+	Contexts: Player
+
+Production04: R
+	Description: Slot 04
+	Types: ProductionSlot
+	Contexts: Player
+
+Production05: T
+	Description: Slot 05
+	Types: ProductionSlot
+	Contexts: Player
+
+Production06: A
+	Description: Slot 06
+	Types: ProductionSlot
+	Contexts: Player
+
+Production07: S
+	Description: Slot 07
+	Types: ProductionSlot
+	Contexts: Player
+
+Production08: D
+	Description: Slot 08
+	Types: ProductionSlot
+	Contexts: Player
+
+Production09: F
+	Description: Slot 09
+	Types: ProductionSlot
+	Contexts: Player
+
+Production10: G
+	Description: Slot 10
+	Types: ProductionSlot
+	Contexts: Player
+
+Production11: Y
+	Description: Slot 11
+	Types: ProductionSlot
+	Contexts: Player
+
+Production12: X
+	Description: Slot 12
+	Types: ProductionSlot
+	Contexts: Player
+
+Production13: C
+	Description: Slot 13
+	Types: ProductionSlot
+	Contexts: Player
+
+Production14: V
+	Description: Slot 14
+	Types: ProductionSlot
+	Contexts: Player
+
+Production15: B
+	Description: Slot 15
+	Types: ProductionSlot
+	Contexts: Player

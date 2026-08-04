@@ -53,7 +53,7 @@ public class RadarWidget : Widget
 
 		this.DrawTerrain();
 		this.Resize();
-		this.Visible = false;
+		this.Visible = true;
 	}
 
 	public override bool HandleKeyPress(KeyInput e)
@@ -69,8 +69,8 @@ public class RadarWidget : Widget
 	private void Resize()
 	{
 		this.Bounds = new(
-			0,
-			Game.Renderer.Resolution.Height - this.ingameUi.World.Map.MapSize.Y * RadarWidget.Scale,
+			4,
+			Game.Renderer.Resolution.Height - this.ingameUi.World.Map.MapSize.Y * RadarWidget.Scale - 52,
 			this.ingameUi.World.Map.MapSize.X * RadarWidget.Scale,
 			this.ingameUi.World.Map.MapSize.Y * RadarWidget.Scale
 		);

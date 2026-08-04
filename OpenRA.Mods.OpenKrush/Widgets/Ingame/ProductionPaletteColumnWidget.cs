@@ -45,16 +45,15 @@ public class ProductionPaletteColumnWidget : Widget
 		if (!this.IsFocused || e.IsRepeat || e.Event != KeyInputEvent.Down)
 			return false;
 
-		var lastItem = Math.Min(12, this.Children.Count);
-
-		for (var i = 0; i < lastItem; i++)
+		for (var i = 0; i < 15; i++)
 		{
 			if (e.Key != Game.ModData.Hotkeys[$"Production{i + 1:00}"].GetValue().Key)
 				continue;
 
-			((ProductionItemButtonWidget)this.Children[i]).ClickedLeft?.Invoke(
-				new(MouseInputEvent.Down, MouseButton.None, int2.Zero, int2.Zero, e.Modifiers, 0)
-			);
+			if (i < this.Children.Count)
+				((ProductionItemButtonWidget)this.Children[i]).ClickedLeft?.Invoke(
+					new(MouseInputEvent.Down, MouseButton.None, int2.Zero, int2.Zero, e.Modifiers, 0)
+				);
 
 			return true;
 		}
@@ -64,69 +63,17 @@ public class ProductionPaletteColumnWidget : Widget
 
 	public override bool HandleMouseInput(MouseInput mi)
 	{
-		// TODO this whole block can be removed when arrows are widgets!
-		if (!this.EventBounds.Contains(mi.Location))
-			return false;
-
-		switch (mi.Event)
-		{
-			case MouseInputEvent.Down when mi.Location.Y - this.EventBounds.Y < this.visibleIcons * SidebarButtonWidget.Size:
-				return true;
-
-			case MouseInputEvent.Down:
-			{
-				var arrow = (mi.Location.X - this.EventBounds.X) / (SidebarButtonWidget.Size / 2);
-
-				switch (arrow)
-				{
-					case 0 when this.scrollOffset > 0:
-						Game.Sound.PlayNotification(this.sidebar.IngameUi.World.Map.Rules, null, "Sounds", "ClickSound", null);
-						this.scrollOffset--;
-
-						break;
-
-					case 1 when this.scrollOffset + this.visibleIcons < this.buildableItems.Length:
-						Game.Sound.PlayNotification(this.sidebar.IngameUi.World.Map.Rules, null, "Sounds", "ClickSound", null);
-						this.scrollOffset++;
-
-						break;
-				}
-
-				break;
-			}
-
-			case MouseInputEvent.Scroll:
-				this.scrollOffset = Math.Max(0, Math.Min(this.scrollOffset += mi.Delta.Y < 0 ? 1 : -1, this.buildableItems.Length - this.visibleIcons));
-
-				break;
-
-			case MouseInputEvent.Move:
-				break;
-
-			case MouseInputEvent.Up:
-				break;
-
-			default:
-				throw new ArgumentOutOfRangeException(Enum.GetName(mi.Event));
-		}
-
-		return true;
+		return this.EventBounds.Contains(mi.Location);
 	}
 
 	public override void Tick()
 	{
 		this.buildableItems = this.Queue.BuildableItems().ToArray();
 
-		this.visibleIcons = Math.Min((Game.Renderer.Resolution.Height - this.RenderBounds.Top) / SidebarButtonWidget.Size, this.buildableItems.Length);
-		this.Bounds.Height = this.visibleIcons * SidebarButtonWidget.Size;
-
-		if (this.visibleIcons < this.buildableItems.Length)
-		{
-			this.visibleIcons = (Game.Renderer.Resolution.Height - this.RenderBounds.Top - SidebarButtonWidget.Size / 2) / SidebarButtonWidget.Size;
-			this.Bounds.Height = this.visibleIcons * SidebarButtonWidget.Size + SidebarButtonWidget.Size / 2;
-		}
-
-		this.scrollOffset = Math.Max(0, Math.Min(this.scrollOffset, this.buildableItems.Length - this.visibleIcons));
+		this.visibleIcons = Math.Min(15, this.buildableItems.Length);
+		this.Bounds.Width = SidebarWidget.GridWidth;
+		this.Bounds.Height = SidebarWidget.GridHeight;
+		this.scrollOffset = 0;
 
 		var oldButtons = this.Children
 			.Where(c => c is ProductionItemButtonWidget && this.buildableItems.All(b => b.Name != ((ProductionItemButtonWidget)c).Item))
@@ -226,56 +173,9 @@ public class ProductionPaletteColumnWidget : Widget
 			else
 			{
 				button.Visible = true;
-				button.Bounds.Y = (i - this.scrollOffset) * SidebarButtonWidget.Size;
+				button.Bounds.X = ((i - this.scrollOffset) % SidebarWidget.GridColumns) * SidebarButtonWidget.Size;
+				button.Bounds.Y = ((i - this.scrollOffset) / SidebarWidget.GridColumns) * SidebarButtonWidget.Size;
 			}
-		}
-	}
-
-	public override void Draw()
-	{
-		// TODO this whole block can be removed when arrows are widgets!
-		if (this.visibleIcons >= this.buildableItems.Length)
-			return;
-
-		var position = new int2(
-			this.RenderBounds.X + SidebarButtonWidget.Size / 4,
-			this.RenderBounds.Y + SidebarButtonWidget.Size / 4 + this.visibleIcons * SidebarButtonWidget.Size
-		);
-
-		this.sidebar.Buttons.PlayFetchIndex("button-small", () => 0);
-		WidgetUtils.DrawSpriteCentered(this.sidebar.Buttons.Image, this.sidebar.IngameUi.Palette, position);
-		this.sidebar.Buttons.PlayFetchIndex("button-small-down", () => 0);
-		WidgetUtils.DrawSpriteCentered(this.sidebar.Buttons.Image, this.sidebar.IngameUi.Palette, position);
-
-		if (this.scrollOffset == 0)
-		{
-			WidgetUtils.FillRectWithColor(
-				new(
-					this.RenderBounds.X,
-					this.RenderBounds.Y + this.visibleIcons * SidebarButtonWidget.Size,
-					SidebarButtonWidget.Size / 2,
-					SidebarButtonWidget.Size / 2
-				),
-				Color.FromArgb(128, 0, 0, 0)
-			);
-		}
-
-		this.sidebar.Buttons.PlayFetchIndex("button-small", () => 0);
-		WidgetUtils.DrawSpriteCentered(this.sidebar.Buttons.Image, this.sidebar.IngameUi.Palette, position + new int2(SidebarButtonWidget.Size / 2, 0));
-		this.sidebar.Buttons.PlayFetchIndex("button-small-up", () => 0);
-		WidgetUtils.DrawSpriteCentered(this.sidebar.Buttons.Image, this.sidebar.IngameUi.Palette, position + new int2(SidebarButtonWidget.Size / 2, 0));
-
-		if (this.scrollOffset + this.visibleIcons == this.buildableItems.Length)
-		{
-			WidgetUtils.FillRectWithColor(
-				new(
-					this.RenderBounds.X + SidebarButtonWidget.Size / 2,
-					this.RenderBounds.Y + this.visibleIcons * SidebarButtonWidget.Size,
-					SidebarButtonWidget.Size / 2,
-					SidebarButtonWidget.Size / 2
-				),
-				Color.FromArgb(128, 0, 0, 0)
-			);
 		}
 	}
 }

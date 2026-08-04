@@ -96,6 +96,8 @@ World:
 	BuildingInfluence:
 	# Pathfinding requirement.
 	PathFinder:
+	# Shows the planned path of units for a short time after a move order.
+	MovePathDisplay:
 	# Support for prespawned actors.
 	SpawnMapActors:
 	# Default game settings: gamespeed, techlevel, shortgame.
@@ -177,3 +179,9 @@ EditorWorld:
 	BuildableTerrainOverlay:
 		AllowedTerrainTypes: clear
 		Palette: openkrush
+
+# Required for campaign/mission spawn points.
+mpspawn:
+	AlwaysVisible:
+	Immobile:
+		OccupiesSpace: false

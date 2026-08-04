@@ -350,7 +350,9 @@
 			Grass: 100
 			Sand: 100
 			Path: 100
+				PathingCost: 75
 			Street: 100
+				PathingCost: 60
 
 # Base for all vehicles
 ^CoreVehicle:
@@ -394,7 +396,9 @@
 			Grass: 100
 			Sand: 100
 			Path: 100
+				PathingCost: 75
 			Street: 100
+				PathingCost: 60
 
 # Base for all aircrafts
 ^CoreAircraft:
@@ -441,7 +445,9 @@
 			Grass: 100
 			Sand: 100
 			Path: 100
+				PathingCost: 75
 			Street: 100
+				PathingCost: 60
 
 # Special heavy vehicles
 ^CoreHeavyVehicle:
@@ -469,8 +475,14 @@
 		Voice: Attack
 	# Auto target enemies nearby.
 	AutoTarget:
-	AutoTargetPriority:
+	# Attack units first...
+	AutoTargetPriority@Units:
 		InvalidTargets: Structure
+		Priority: 10
+	# ... then buildings.
+	AutoTargetPriority@Buildings:
+		ValidTargets: Structure
+		Priority: 1
 
 # Grouped traits for standard non-turreted behavior.
 ^CoreArmedSelf:
@@ -484,5 +496,11 @@
 		SequenceAim: aim
 	# Auto target enemies nearby.
 	AutoTarget:
-	AutoTargetPriority:
+	# Attack units first...
+	AutoTargetPriority@Units:
 		InvalidTargets: Structure
+		Priority: 10
+	# ... then buildings.
+	AutoTargetPriority@Buildings:
+		ValidTargets: Structure
+		Priority: 1

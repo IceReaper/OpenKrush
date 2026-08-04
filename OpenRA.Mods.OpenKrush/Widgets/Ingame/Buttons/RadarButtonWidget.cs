@@ -25,6 +25,7 @@ public class RadarButtonWidget : SidebarButtonWidget
 		: base(sidebar, "button")
 	{
 		this.TooltipTitle = "Radar";
+		this.Active = true;
 	}
 
 	public override bool HandleKeyPress(KeyInput e)
@@ -59,18 +60,13 @@ public class RadarButtonWidget : SidebarButtonWidget
 
 	public override void Tick()
 	{
-		this.hasRadar = false;
+		this.hasRadar = true;
 		var showStances = PlayerRelationship.None;
 
 		foreach (var e in this.Sidebar.IngameUi.World.ActorsWithTrait<ProvidesResearchableRadar>()
 			.Where(p => p.Actor.Owner == this.Sidebar.IngameUi.World.LocalPlayer && !p.Trait.IsTraitDisabled))
 		{
 			var researchable = e.Actor.TraitOrDefault<Researchable>();
-
-			if (!researchable.IsResearched(ProvidesResearchableRadarInfo.Available))
-				continue;
-
-			this.hasRadar = true;
 
 			if (researchable.IsResearched(ProvidesResearchableRadarInfo.ShowAllies))
 				showStances |= PlayerRelationship.Ally;
@@ -80,9 +76,6 @@ public class RadarButtonWidget : SidebarButtonWidget
 		}
 
 		this.Sidebar.IngameUi.Radar.ShowStances = showStances;
-
-		if (!this.hasRadar)
-			this.Sidebar.IngameUi.Radar.Visible = this.Active = false;
 	}
 
 	protected override void DrawContents()

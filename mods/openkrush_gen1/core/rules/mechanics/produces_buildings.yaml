@@ -6,6 +6,9 @@
 		RequiresCondition: !selfconstructing && !deconstructing
 	Researchable:
 		RequiresCondition: !selfconstructing && !deconstructing
+	FocusInUi:
+		Category: building
+		RequiresCondition: !selfconstructing && !deconstructing
 	BaseBuilding:
 	TooltipDescription:
 		Description: Produces buildings
